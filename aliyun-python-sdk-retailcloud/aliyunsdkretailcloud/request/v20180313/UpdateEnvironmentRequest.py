@@ -25,32 +25,29 @@ class UpdateEnvironmentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateEnvironment')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Replicas(self):
+	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self,Replicas):
-		self.add_query_param('Replicas',Replicas)
-
-	def get_AppId(self):
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_AppSchemaId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_AppSchemaId(self): # Long
 		return self.get_query_params().get('AppSchemaId')
 
-	def set_AppSchemaId(self,AppSchemaId):
-		self.add_query_param('AppSchemaId',AppSchemaId)
-
-	def get_AppEnvId(self):
+	def set_AppSchemaId(self, AppSchemaId):  # Long
+		self.add_query_param('AppSchemaId', AppSchemaId)
+	def get_AppEnvId(self): # Long
 		return self.get_query_params().get('AppEnvId')
 
-	def set_AppEnvId(self,AppEnvId):
-		self.add_query_param('AppEnvId',AppEnvId)
+	def set_AppEnvId(self, AppEnvId):  # Long
+		self.add_query_param('AppEnvId', AppEnvId)

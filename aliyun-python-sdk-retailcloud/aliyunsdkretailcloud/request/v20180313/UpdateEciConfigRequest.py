@@ -20,39 +20,44 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class ListAppResourceAllocsRequest(RpcRequest):
+class UpdateEciConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListAppResourceAllocs')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateEciConfig')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # Long
-		return self.get_query_params().get('AppId')
+	def get_ScheduleVirtualNode(self): # Boolean
+		return self.get_query_params().get('ScheduleVirtualNode')
 
-	def set_AppId(self, AppId):  # Long
-		self.add_query_param('AppId', AppId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_ScheduleVirtualNode(self, ScheduleVirtualNode):  # Boolean
+		self.add_query_param('ScheduleVirtualNode', ScheduleVirtualNode)
+	def get_EnableEciSchedulePolicy(self): # Boolean
+		return self.get_query_params().get('EnableEciSchedulePolicy')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_EnableEciSchedulePolicy(self, EnableEciSchedulePolicy):  # Boolean
+		self.add_query_param('EnableEciSchedulePolicy', EnableEciSchedulePolicy)
+	def get_MirrorCache(self): # Boolean
+		return self.get_query_params().get('MirrorCache')
+
+	def set_MirrorCache(self, MirrorCache):  # Boolean
+		self.add_query_param('MirrorCache', MirrorCache)
+	def get_NormalInstanceLimit(self): # Integer
+		return self.get_query_params().get('NormalInstanceLimit')
+
+	def set_NormalInstanceLimit(self, NormalInstanceLimit):  # Integer
+		self.add_query_param('NormalInstanceLimit', NormalInstanceLimit)
 	def get_AppEnvId(self): # Long
 		return self.get_query_params().get('AppEnvId')
 
 	def set_AppEnvId(self, AppEnvId):  # Long
 		self.add_query_param('AppEnvId', AppEnvId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def get_EipBandwidth(self): # Integer
+		return self.get_query_params().get('EipBandwidth')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_EipBandwidth(self, EipBandwidth):  # Integer
+		self.add_query_param('EipBandwidth', EipBandwidth)

@@ -25,20 +25,19 @@ class SetDeployPauseTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'SetDeployPauseType')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeployPauseType(self):
+	def get_DeployPauseType(self): # String
 		return self.get_query_params().get('DeployPauseType')
 
-	def set_DeployPauseType(self,DeployPauseType):
-		self.add_query_param('DeployPauseType',DeployPauseType)
-
-	def get_DeployOrderId(self):
+	def set_DeployPauseType(self, DeployPauseType):  # String
+		self.add_query_param('DeployPauseType', DeployPauseType)
+	def get_DeployOrderId(self): # Long
 		return self.get_query_params().get('DeployOrderId')
 
-	def set_DeployOrderId(self,DeployOrderId):
-		self.add_query_param('DeployOrderId',DeployOrderId)
+	def set_DeployOrderId(self, DeployOrderId):  # Long
+		self.add_query_param('DeployOrderId', DeployOrderId)

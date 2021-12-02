@@ -25,20 +25,19 @@ class DeleteDatabaseRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeleteDatabase')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBName(self):
+	def get_DBName(self): # String
 		return self.get_body_params().get('DBName')
 
-	def set_DBName(self,DBName):
+	def set_DBName(self, DBName):  # String
 		self.add_body_params('DBName', DBName)
-
-	def get_DBInstanceId(self):
+	def get_DBInstanceId(self): # String
 		return self.get_body_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
+	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_body_params('DBInstanceId', DBInstanceId)

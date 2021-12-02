@@ -25,32 +25,29 @@ class ListDeployConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListDeployConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppId(self):
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_EnvType(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_EnvType(self): # String
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
-
-	def get_Name(self):
+	def set_EnvType(self, EnvType):  # String
+		self.add_query_param('EnvType', EnvType)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Id(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

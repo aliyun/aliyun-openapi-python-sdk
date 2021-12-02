@@ -25,64 +25,56 @@ class UpdateAppRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateApp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizTitle(self):
+	def get_BizTitle(self): # String
 		return self.get_body_params().get('BizTitle')
 
-	def set_BizTitle(self,BizTitle):
+	def set_BizTitle(self, BizTitle):  # String
 		self.add_body_params('BizTitle', BizTitle)
-
-	def get_ServiceType(self):
+	def get_ServiceType(self): # String
 		return self.get_body_params().get('ServiceType')
 
-	def set_ServiceType(self,ServiceType):
+	def set_ServiceType(self, ServiceType):  # String
 		self.add_body_params('ServiceType', ServiceType)
-
-	def get_UserRoless(self):
+	def get_UserRoless(self): # RepeatList
 		return self.get_body_params().get('UserRoles')
 
-	def set_UserRoless(self, UserRoless):
-		for depth1 in range(len(UserRoless)):
-			if UserRoless[depth1].get('RoleName') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.RoleName', UserRoless[depth1].get('RoleName'))
-			if UserRoless[depth1].get('UserType') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserType', UserRoless[depth1].get('UserType'))
-			if UserRoless[depth1].get('UserId') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserId', UserRoless[depth1].get('UserId'))
-
-	def get_AppId(self):
+	def set_UserRoless(self, UserRoles):  # RepeatList
+		for depth1 in range(len(UserRoles)):
+			if UserRoles[depth1].get('RoleName') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.RoleName', UserRoles[depth1].get('RoleName'))
+			if UserRoles[depth1].get('UserType') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserType', UserRoles[depth1].get('UserType'))
+			if UserRoles[depth1].get('UserId') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserId', UserRoles[depth1].get('UserId'))
+	def get_AppId(self): # Long
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self,AppId):
+	def set_AppId(self, AppId):  # Long
 		self.add_body_params('AppId', AppId)
-
-	def get_OperatingSystem(self):
+	def get_OperatingSystem(self): # String
 		return self.get_body_params().get('OperatingSystem')
 
-	def set_OperatingSystem(self,OperatingSystem):
+	def set_OperatingSystem(self, OperatingSystem):  # String
 		self.add_body_params('OperatingSystem', OperatingSystem)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_Language(self):
+	def get_Language(self): # String
 		return self.get_body_params().get('Language')
 
-	def set_Language(self,Language):
+	def set_Language(self, Language):  # String
 		self.add_body_params('Language', Language)
-
-	def get_MiddleWareIdLists(self):
+	def get_MiddleWareIdLists(self): # RepeatList
 		return self.get_body_params().get('MiddleWareIdList')
 
-	def set_MiddleWareIdLists(self, MiddleWareIdLists):
-		for depth1 in range(len(MiddleWareIdLists)):
-			if MiddleWareIdLists[depth1] is not None:
-				self.add_body_params('MiddleWareIdList.' + str(depth1 + 1) , MiddleWareIdLists[depth1])
+	def set_MiddleWareIdLists(self, MiddleWareIdList):  # RepeatList
+		for depth1 in range(len(MiddleWareIdList)):
+			self.add_body_params('MiddleWareIdList.' + str(depth1 + 1), MiddleWareIdList[depth1])

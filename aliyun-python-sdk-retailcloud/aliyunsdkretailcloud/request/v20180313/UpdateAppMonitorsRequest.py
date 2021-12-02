@@ -25,34 +25,30 @@ class UpdateAppMonitorsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateAppMonitors')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MainUserId(self):
+	def get_MainUserId(self): # Long
 		return self.get_body_params().get('MainUserId')
 
-	def set_MainUserId(self,MainUserId):
+	def set_MainUserId(self, MainUserId):  # Long
 		self.add_body_params('MainUserId', MainUserId)
-
-	def get_SilenceTime(self):
+	def get_SilenceTime(self): # String
 		return self.get_body_params().get('SilenceTime')
 
-	def set_SilenceTime(self,SilenceTime):
+	def set_SilenceTime(self, SilenceTime):  # String
 		self.add_body_params('SilenceTime', SilenceTime)
-
-	def get_MonitorIdss(self):
+	def get_MonitorIdss(self): # RepeatList
 		return self.get_body_params().get('MonitorIds')
 
-	def set_MonitorIdss(self, MonitorIdss):
-		for depth1 in range(len(MonitorIdss)):
-			if MonitorIdss[depth1] is not None:
-				self.add_body_params('MonitorIds.' + str(depth1 + 1) , MonitorIdss[depth1])
-
-	def get_TemplateId(self):
+	def set_MonitorIdss(self, MonitorIds):  # RepeatList
+		for depth1 in range(len(MonitorIds)):
+			self.add_body_params('MonitorIds.' + str(depth1 + 1), MonitorIds[depth1])
+	def get_TemplateId(self): # Long
 		return self.get_body_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
+	def set_TemplateId(self, TemplateId):  # Long
 		self.add_body_params('TemplateId', TemplateId)

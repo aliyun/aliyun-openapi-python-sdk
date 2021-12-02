@@ -25,32 +25,29 @@ class CreateDbRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateDb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
-
-	def get_DbInstanceId(self):
+	def get_DbInstanceId(self): # String
 		return self.get_body_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
+	def set_DbInstanceId(self, DbInstanceId):  # String
 		self.add_body_params('DbInstanceId', DbInstanceId)
-
-	def get_DbDescription(self):
+	def get_DbDescription(self): # String
 		return self.get_body_params().get('DbDescription')
 
-	def set_DbDescription(self,DbDescription):
+	def set_DbDescription(self, DbDescription):  # String
 		self.add_body_params('DbDescription', DbDescription)
-
-	def get_CharacterSetName(self):
+	def get_CharacterSetName(self): # String
 		return self.get_body_params().get('CharacterSetName')
 
-	def set_CharacterSetName(self,CharacterSetName):
+	def set_CharacterSetName(self, CharacterSetName):  # String
 		self.add_body_params('CharacterSetName', CharacterSetName)

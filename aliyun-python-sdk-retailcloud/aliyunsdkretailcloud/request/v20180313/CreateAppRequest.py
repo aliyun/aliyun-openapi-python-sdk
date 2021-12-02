@@ -25,88 +25,76 @@ class CreateAppRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateApp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizTitle(self):
+	def get_BizTitle(self): # String
 		return self.get_body_params().get('BizTitle')
 
-	def set_BizTitle(self,BizTitle):
+	def set_BizTitle(self, BizTitle):  # String
 		self.add_body_params('BizTitle', BizTitle)
-
-	def get_OperatingSystem(self):
+	def get_OperatingSystem(self): # String
 		return self.get_body_params().get('OperatingSystem')
 
-	def set_OperatingSystem(self,OperatingSystem):
+	def set_OperatingSystem(self, OperatingSystem):  # String
 		self.add_body_params('OperatingSystem', OperatingSystem)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_Language(self):
+	def get_Language(self): # String
 		return self.get_body_params().get('Language')
 
-	def set_Language(self,Language):
+	def set_Language(self, Language):  # String
 		self.add_body_params('Language', Language)
-
-	def get_Title(self):
+	def get_Title(self): # String
 		return self.get_body_params().get('Title')
 
-	def set_Title(self,Title):
+	def set_Title(self, Title):  # String
 		self.add_body_params('Title', Title)
-
-	def get_GroupName(self):
+	def get_GroupName(self): # String
 		return self.get_body_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
+	def set_GroupName(self, GroupName):  # String
 		self.add_body_params('GroupName', GroupName)
-
-	def get_MiddleWareIdLists(self):
+	def get_MiddleWareIdLists(self): # RepeatList
 		return self.get_body_params().get('MiddleWareIdList')
 
-	def set_MiddleWareIdLists(self, MiddleWareIdLists):
-		for depth1 in range(len(MiddleWareIdLists)):
-			if MiddleWareIdLists[depth1] is not None:
-				self.add_body_params('MiddleWareIdList.' + str(depth1 + 1) , MiddleWareIdLists[depth1])
-
-	def get_StateType(self):
+	def set_MiddleWareIdLists(self, MiddleWareIdList):  # RepeatList
+		for depth1 in range(len(MiddleWareIdList)):
+			self.add_body_params('MiddleWareIdList.' + str(depth1 + 1), MiddleWareIdList[depth1])
+	def get_StateType(self): # Integer
 		return self.get_body_params().get('StateType')
 
-	def set_StateType(self,StateType):
+	def set_StateType(self, StateType):  # Integer
 		self.add_body_params('StateType', StateType)
-
-	def get_ServiceType(self):
+	def get_ServiceType(self): # String
 		return self.get_body_params().get('ServiceType')
 
-	def set_ServiceType(self,ServiceType):
+	def set_ServiceType(self, ServiceType):  # String
 		self.add_body_params('ServiceType', ServiceType)
-
-	def get_UserRoless(self):
+	def get_UserRoless(self): # RepeatList
 		return self.get_body_params().get('UserRoles')
 
-	def set_UserRoless(self, UserRoless):
-		for depth1 in range(len(UserRoless)):
-			if UserRoless[depth1].get('RoleName') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.RoleName', UserRoless[depth1].get('RoleName'))
-			if UserRoless[depth1].get('UserType') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserType', UserRoless[depth1].get('UserType'))
-			if UserRoless[depth1].get('UserId') is not None:
-				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserId', UserRoless[depth1].get('UserId'))
-
-	def get_BizCode(self):
+	def set_UserRoless(self, UserRoles):  # RepeatList
+		for depth1 in range(len(UserRoles)):
+			if UserRoles[depth1].get('RoleName') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.RoleName', UserRoles[depth1].get('RoleName'))
+			if UserRoles[depth1].get('UserType') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserType', UserRoles[depth1].get('UserType'))
+			if UserRoles[depth1].get('UserId') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserId', UserRoles[depth1].get('UserId'))
+	def get_BizCode(self): # String
 		return self.get_body_params().get('BizCode')
 
-	def set_BizCode(self,BizCode):
+	def set_BizCode(self, BizCode):  # String
 		self.add_body_params('BizCode', BizCode)
-
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)

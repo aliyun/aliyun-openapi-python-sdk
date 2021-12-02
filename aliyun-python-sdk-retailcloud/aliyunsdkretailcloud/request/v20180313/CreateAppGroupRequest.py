@@ -25,20 +25,19 @@ class CreateAppGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateAppGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizCode(self):
+	def get_BizCode(self): # String
 		return self.get_body_params().get('BizCode')
 
-	def set_BizCode(self,BizCode):
+	def set_BizCode(self, BizCode):  # String
 		self.add_body_params('BizCode', BizCode)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)

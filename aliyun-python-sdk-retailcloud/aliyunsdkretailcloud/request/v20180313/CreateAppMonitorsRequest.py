@@ -25,40 +25,35 @@ class CreateAppMonitorsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateAppMonitors')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppIdss(self):
+	def get_AppIdss(self): # RepeatList
 		return self.get_body_params().get('AppIds')
 
-	def set_AppIdss(self, AppIdss):
-		for depth1 in range(len(AppIdss)):
-			if AppIdss[depth1] is not None:
-				self.add_body_params('AppIds.' + str(depth1 + 1) , AppIdss[depth1])
-
-	def get_MainUserId(self):
+	def set_AppIdss(self, AppIds):  # RepeatList
+		for depth1 in range(len(AppIds)):
+			self.add_body_params('AppIds.' + str(depth1 + 1), AppIds[depth1])
+	def get_MainUserId(self): # Long
 		return self.get_query_params().get('MainUserId')
 
-	def set_MainUserId(self,MainUserId):
-		self.add_query_param('MainUserId',MainUserId)
-
-	def get_EnvType(self):
+	def set_MainUserId(self, MainUserId):  # Long
+		self.add_query_param('MainUserId', MainUserId)
+	def get_EnvType(self): # Integer
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
-
-	def get_AlarmTemplateId(self):
+	def set_EnvType(self, EnvType):  # Integer
+		self.add_query_param('EnvType', EnvType)
+	def get_AlarmTemplateId(self): # Long
 		return self.get_query_params().get('AlarmTemplateId')
 
-	def set_AlarmTemplateId(self,AlarmTemplateId):
-		self.add_query_param('AlarmTemplateId',AlarmTemplateId)
-
-	def get_SilenceTime(self):
+	def set_AlarmTemplateId(self, AlarmTemplateId):  # Long
+		self.add_query_param('AlarmTemplateId', AlarmTemplateId)
+	def get_SilenceTime(self): # String
 		return self.get_query_params().get('SilenceTime')
 
-	def set_SilenceTime(self,SilenceTime):
-		self.add_query_param('SilenceTime',SilenceTime)
+	def set_SilenceTime(self, SilenceTime):  # String
+		self.add_query_param('SilenceTime', SilenceTime)

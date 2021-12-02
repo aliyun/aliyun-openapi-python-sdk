@@ -25,68 +25,59 @@ class CreateSlbAPRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateSlbAP')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SslCertId(self):
+	def get_SslCertId(self): # String
 		return self.get_query_params().get('SslCertId')
 
-	def set_SslCertId(self,SslCertId):
-		self.add_query_param('SslCertId',SslCertId)
-
-	def get_ListenerPort(self):
+	def set_SslCertId(self, SslCertId):  # String
+		self.add_query_param('SslCertId', SslCertId)
+	def get_ListenerPort(self): # Integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_Protocol(self):
+	def set_ListenerPort(self, ListenerPort):  # Integer
+		self.add_query_param('ListenerPort', ListenerPort)
+	def get_Protocol(self): # String
 		return self.get_query_params().get('Protocol')
 
-	def set_Protocol(self,Protocol):
-		self.add_query_param('Protocol',Protocol)
-
-	def get_EstablishedTimeout(self):
+	def set_Protocol(self, Protocol):  # String
+		self.add_query_param('Protocol', Protocol)
+	def get_EstablishedTimeout(self): # Integer
 		return self.get_query_params().get('EstablishedTimeout')
 
-	def set_EstablishedTimeout(self,EstablishedTimeout):
-		self.add_query_param('EstablishedTimeout',EstablishedTimeout)
-
-	def get_SlbId(self):
+	def set_EstablishedTimeout(self, EstablishedTimeout):  # Integer
+		self.add_query_param('EstablishedTimeout', EstablishedTimeout)
+	def get_SlbId(self): # String
 		return self.get_query_params().get('SlbId')
 
-	def set_SlbId(self,SlbId):
-		self.add_query_param('SlbId',SlbId)
-
-	def get_RealServerPort(self):
+	def set_SlbId(self, SlbId):  # String
+		self.add_query_param('SlbId', SlbId)
+	def get_RealServerPort(self): # Integer
 		return self.get_query_params().get('RealServerPort')
 
-	def set_RealServerPort(self,RealServerPort):
-		self.add_query_param('RealServerPort',RealServerPort)
-
-	def get_StickySession(self):
+	def set_RealServerPort(self, RealServerPort):  # Integer
+		self.add_query_param('RealServerPort', RealServerPort)
+	def get_StickySession(self): # Integer
 		return self.get_query_params().get('StickySession')
 
-	def set_StickySession(self,StickySession):
-		self.add_query_param('StickySession',StickySession)
-
-	def get_CookieTimeout(self):
+	def set_StickySession(self, StickySession):  # Integer
+		self.add_query_param('StickySession', StickySession)
+	def get_CookieTimeout(self): # Integer
 		return self.get_query_params().get('CookieTimeout')
 
-	def set_CookieTimeout(self,CookieTimeout):
-		self.add_query_param('CookieTimeout',CookieTimeout)
-
-	def get_Name(self):
+	def set_CookieTimeout(self, CookieTimeout):  # Integer
+		self.add_query_param('CookieTimeout', CookieTimeout)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_EnvId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)

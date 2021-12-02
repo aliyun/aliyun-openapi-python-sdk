@@ -25,32 +25,29 @@ class DeleteNodeLabelRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeleteNodeLabel')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LabelKey(self):
+	def get_LabelKey(self): # String
 		return self.get_query_params().get('LabelKey')
 
-	def set_LabelKey(self,LabelKey):
-		self.add_query_param('LabelKey',LabelKey)
-
-	def get_LabelValue(self):
+	def set_LabelKey(self, LabelKey):  # String
+		self.add_query_param('LabelKey', LabelKey)
+	def get_LabelValue(self): # String
 		return self.get_query_params().get('LabelValue')
 
-	def set_LabelValue(self,LabelValue):
-		self.add_query_param('LabelValue',LabelValue)
-
-	def get_Force(self):
+	def set_LabelValue(self, LabelValue):  # String
+		self.add_query_param('LabelValue', LabelValue)
+	def get_Force(self): # Boolean
 		return self.get_query_params().get('Force')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
-
-	def get_ClusterId(self):
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

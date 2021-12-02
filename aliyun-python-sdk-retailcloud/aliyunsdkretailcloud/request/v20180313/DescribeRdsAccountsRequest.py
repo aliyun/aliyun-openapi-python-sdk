@@ -25,20 +25,19 @@ class DescribeRdsAccountsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeRdsAccounts')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AccountName(self):
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_DbInstanceId(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_DbInstanceId(self): # String
 		return self.get_query_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
-		self.add_query_param('DbInstanceId',DbInstanceId)
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)

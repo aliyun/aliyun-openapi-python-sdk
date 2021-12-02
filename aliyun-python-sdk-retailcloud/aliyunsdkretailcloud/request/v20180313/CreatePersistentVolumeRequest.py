@@ -25,62 +25,54 @@ class CreatePersistentVolumeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreatePersistentVolume')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReclaimPolicy(self):
+	def get_ReclaimPolicy(self): # String
 		return self.get_body_params().get('ReclaimPolicy')
 
-	def set_ReclaimPolicy(self,ReclaimPolicy):
+	def set_ReclaimPolicy(self, ReclaimPolicy):  # String
 		self.add_body_params('ReclaimPolicy', ReclaimPolicy)
-
-	def get_NFSVersion(self):
+	def get_NFSVersion(self): # String
 		return self.get_body_params().get('NFSVersion')
 
-	def set_NFSVersion(self,NFSVersion):
+	def set_NFSVersion(self, NFSVersion):  # String
 		self.add_body_params('NFSVersion', NFSVersion)
-
-	def get_AccessModes(self):
+	def get_AccessModes(self): # String
 		return self.get_body_params().get('AccessModes')
 
-	def set_AccessModes(self,AccessModes):
+	def set_AccessModes(self, AccessModes):  # String
 		self.add_body_params('AccessModes', AccessModes)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_MountTargetDomain(self):
+	def get_MountTargetDomain(self): # String
 		return self.get_body_params().get('MountTargetDomain')
 
-	def set_MountTargetDomain(self,MountTargetDomain):
+	def set_MountTargetDomain(self, MountTargetDomain):  # String
 		self.add_body_params('MountTargetDomain', MountTargetDomain)
-
-	def get_MountDir(self):
+	def get_MountDir(self): # String
 		return self.get_body_params().get('MountDir')
 
-	def set_MountDir(self,MountDir):
+	def set_MountDir(self, MountDir):  # String
 		self.add_body_params('MountDir', MountDir)
-
-	def get_ClusterInstanceId(self):
+	def get_ClusterInstanceId(self): # String
 		return self.get_body_params().get('ClusterInstanceId')
 
-	def set_ClusterInstanceId(self,ClusterInstanceId):
+	def set_ClusterInstanceId(self, ClusterInstanceId):  # String
 		self.add_body_params('ClusterInstanceId', ClusterInstanceId)
-
-	def get_Capacity(self):
+	def get_Capacity(self): # String
 		return self.get_body_params().get('Capacity')
 
-	def set_Capacity(self,Capacity):
+	def set_Capacity(self, Capacity):  # String
 		self.add_body_params('Capacity', Capacity)
-
-	def get_StorageClass(self):
+	def get_StorageClass(self): # String
 		return self.get_body_params().get('StorageClass')
 
-	def set_StorageClass(self,StorageClass):
+	def set_StorageClass(self, StorageClass):  # String
 		self.add_body_params('StorageClass', StorageClass)

@@ -25,14 +25,14 @@ class DescribeSlbAPDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeSlbAPDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SlbAPId(self):
+	def get_SlbAPId(self): # Long
 		return self.get_query_params().get('SlbAPId')
 
-	def set_SlbAPId(self,SlbAPId):
-		self.add_query_param('SlbAPId',SlbAPId)
+	def set_SlbAPId(self, SlbAPId):  # Long
+		self.add_query_param('SlbAPId', SlbAPId)

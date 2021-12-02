@@ -25,38 +25,34 @@ class GetRdsBackUpRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'GetRdsBackUp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackupId(self):
+	def get_BackupId(self): # String
 		return self.get_body_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
+	def set_BackupId(self, BackupId):  # String
 		self.add_body_params('BackupId', BackupId)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_DbInstanceId(self):
+	def get_DbInstanceId(self): # String
 		return self.get_body_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
+	def set_DbInstanceId(self, DbInstanceId):  # String
 		self.add_body_params('DbInstanceId', DbInstanceId)
-
-	def get_BackupType(self):
+	def get_BackupType(self): # String
 		return self.get_body_params().get('BackupType')
 
-	def set_BackupType(self,BackupType):
+	def set_BackupType(self, BackupType):  # String
 		self.add_body_params('BackupType', BackupType)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)

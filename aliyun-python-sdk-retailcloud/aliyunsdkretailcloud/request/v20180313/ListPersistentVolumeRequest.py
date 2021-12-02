@@ -25,26 +25,24 @@ class ListPersistentVolumeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListPersistentVolume')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_ClusterInstanceId(self):
+	def get_ClusterInstanceId(self): # String
 		return self.get_body_params().get('ClusterInstanceId')
 
-	def set_ClusterInstanceId(self,ClusterInstanceId):
+	def set_ClusterInstanceId(self, ClusterInstanceId):  # String
 		self.add_body_params('ClusterInstanceId', ClusterInstanceId)

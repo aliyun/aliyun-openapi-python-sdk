@@ -25,14 +25,14 @@ class DescribeAppResourceAllocRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeAppResourceAlloc')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppEnvId(self):
+	def get_AppEnvId(self): # Long
 		return self.get_query_params().get('AppEnvId')
 
-	def set_AppEnvId(self,AppEnvId):
-		self.add_query_param('AppEnvId',AppEnvId)
+	def set_AppEnvId(self, AppEnvId):  # Long
+		self.add_query_param('AppEnvId', AppEnvId)

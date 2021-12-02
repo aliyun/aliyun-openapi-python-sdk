@@ -25,14 +25,14 @@ class QueryClusterDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'QueryClusterDetail')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterInstanceId(self):
+	def get_ClusterInstanceId(self): # String
 		return self.get_query_params().get('ClusterInstanceId')
 
-	def set_ClusterInstanceId(self,ClusterInstanceId):
-		self.add_query_param('ClusterInstanceId',ClusterInstanceId)
+	def set_ClusterInstanceId(self, ClusterInstanceId):  # String
+		self.add_query_param('ClusterInstanceId', ClusterInstanceId)

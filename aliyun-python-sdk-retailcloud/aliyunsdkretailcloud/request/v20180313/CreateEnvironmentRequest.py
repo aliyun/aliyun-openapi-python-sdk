@@ -25,50 +25,44 @@ class CreateEnvironmentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateEnvironment')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EnvName(self):
+	def get_EnvName(self): # String
 		return self.get_query_params().get('EnvName')
 
-	def set_EnvName(self,EnvName):
-		self.add_query_param('EnvName',EnvName)
-
-	def get_Replicas(self):
+	def set_EnvName(self, EnvName):  # String
+		self.add_query_param('EnvName', EnvName)
+	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self,Replicas):
-		self.add_query_param('Replicas',Replicas)
-
-	def get_AppId(self):
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_EnvType(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_EnvType(self): # Integer
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
-
-	def get_AppSchemaId(self):
+	def set_EnvType(self, EnvType):  # Integer
+		self.add_query_param('EnvType', EnvType)
+	def get_AppSchemaId(self): # Long
 		return self.get_query_params().get('AppSchemaId')
 
-	def set_AppSchemaId(self,AppSchemaId):
-		self.add_query_param('AppSchemaId',AppSchemaId)
-
-	def get_ClusterId(self):
+	def set_AppSchemaId(self, AppSchemaId):  # Long
+		self.add_query_param('AppSchemaId', AppSchemaId)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Region(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

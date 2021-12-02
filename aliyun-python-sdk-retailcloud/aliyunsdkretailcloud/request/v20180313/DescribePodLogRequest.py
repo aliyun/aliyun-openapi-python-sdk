@@ -25,20 +25,19 @@ class DescribePodLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribePodLog')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeployOrderId(self):
+	def get_DeployOrderId(self): # Long
 		return self.get_body_params().get('DeployOrderId')
 
-	def set_DeployOrderId(self,DeployOrderId):
+	def set_DeployOrderId(self, DeployOrderId):  # Long
 		self.add_body_params('DeployOrderId', DeployOrderId)
-
-	def get_AppInstId(self):
+	def get_AppInstId(self): # String
 		return self.get_body_params().get('AppInstId')
 
-	def set_AppInstId(self,AppInstId):
+	def set_AppInstId(self, AppInstId):  # String
 		self.add_body_params('AppInstId', AppInstId)

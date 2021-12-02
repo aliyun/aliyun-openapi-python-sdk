@@ -25,22 +25,20 @@ class RemoveClusterNodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'RemoveClusterNode')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EcsInstanceIdLists(self):
+	def get_EcsInstanceIdLists(self): # RepeatList
 		return self.get_query_params().get('EcsInstanceIdList')
 
-	def set_EcsInstanceIdLists(self, EcsInstanceIdLists):
-		for depth1 in range(len(EcsInstanceIdLists)):
-			if EcsInstanceIdLists[depth1] is not None:
-				self.add_query_param('EcsInstanceIdList.' + str(depth1 + 1) , EcsInstanceIdLists[depth1])
-
-	def get_ClusterInstanceId(self):
+	def set_EcsInstanceIdLists(self, EcsInstanceIdList):  # RepeatList
+		for depth1 in range(len(EcsInstanceIdList)):
+			self.add_query_param('EcsInstanceIdList.' + str(depth1 + 1), EcsInstanceIdList[depth1])
+	def get_ClusterInstanceId(self): # String
 		return self.get_query_params().get('ClusterInstanceId')
 
-	def set_ClusterInstanceId(self,ClusterInstanceId):
-		self.add_query_param('ClusterInstanceId',ClusterInstanceId)
+	def set_ClusterInstanceId(self, ClusterInstanceId):  # String
+		self.add_query_param('ClusterInstanceId', ClusterInstanceId)

@@ -25,26 +25,24 @@ class ScaleAppRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ScaleApp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TotalPartitions(self):
+	def get_TotalPartitions(self): # Integer
 		return self.get_query_params().get('TotalPartitions')
 
-	def set_TotalPartitions(self,TotalPartitions):
-		self.add_query_param('TotalPartitions',TotalPartitions)
-
-	def get_Replicas(self):
+	def set_TotalPartitions(self, TotalPartitions):  # Integer
+		self.add_query_param('TotalPartitions', TotalPartitions)
+	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self,Replicas):
-		self.add_query_param('Replicas',Replicas)
-
-	def get_EnvId(self):
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)

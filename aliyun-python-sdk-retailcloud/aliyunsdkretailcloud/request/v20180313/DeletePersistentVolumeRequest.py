@@ -25,20 +25,19 @@ class DeletePersistentVolumeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeletePersistentVolume')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PersistentVolumeName(self):
+	def get_PersistentVolumeName(self): # String
 		return self.get_body_params().get('PersistentVolumeName')
 
-	def set_PersistentVolumeName(self,PersistentVolumeName):
+	def set_PersistentVolumeName(self, PersistentVolumeName):  # String
 		self.add_body_params('PersistentVolumeName', PersistentVolumeName)
-
-	def get_ClusterInstanceId(self):
+	def get_ClusterInstanceId(self): # String
 		return self.get_body_params().get('ClusterInstanceId')
 
-	def set_ClusterInstanceId(self,ClusterInstanceId):
+	def set_ClusterInstanceId(self, ClusterInstanceId):  # String
 		self.add_body_params('ClusterInstanceId', ClusterInstanceId)

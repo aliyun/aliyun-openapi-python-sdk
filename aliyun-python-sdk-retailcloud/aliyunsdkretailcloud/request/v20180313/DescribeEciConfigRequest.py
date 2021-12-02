@@ -20,19 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class ResourceStatusNotifyRequest(RpcRequest):
+class DescribeEciConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ResourceStatusNotify')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeEciConfig')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_data(self): # String
-		return self.get_body_params().get('data')
+	def get_AppEnvId(self): # Long
+		return self.get_query_params().get('AppEnvId')
 
-	def set_data(self, data):  # String
-		self.add_body_params('data', data)
+	def set_AppEnvId(self, AppEnvId):  # Long
+		self.add_query_param('AppEnvId', AppEnvId)

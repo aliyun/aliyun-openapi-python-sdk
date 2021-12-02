@@ -25,44 +25,39 @@ class CreatePersistentVolumeClaimRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreatePersistentVolumeClaim')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AccessModes(self):
+	def get_AccessModes(self): # String
 		return self.get_query_params().get('AccessModes')
 
-	def set_AccessModes(self,AccessModes):
-		self.add_query_param('AccessModes',AccessModes)
-
-	def get_AppId(self):
+	def set_AccessModes(self, AccessModes):  # String
+		self.add_query_param('AccessModes', AccessModes)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Name(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_EnvId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
-
-	def get_StorageClass(self):
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)
+	def get_StorageClass(self): # String
 		return self.get_query_params().get('StorageClass')
 
-	def set_StorageClass(self,StorageClass):
-		self.add_query_param('StorageClass',StorageClass)
-
-	def get_Capacity(self):
+	def set_StorageClass(self, StorageClass):  # String
+		self.add_query_param('StorageClass', StorageClass)
+	def get_Capacity(self): # String
 		return self.get_query_params().get('Capacity')
 
-	def set_Capacity(self,Capacity):
-		self.add_query_param('Capacity',Capacity)
+	def set_Capacity(self, Capacity):  # String
+		self.add_query_param('Capacity', Capacity)
