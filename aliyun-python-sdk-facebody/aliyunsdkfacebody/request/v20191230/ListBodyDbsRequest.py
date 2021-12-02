@@ -23,7 +23,7 @@ from aliyunsdkfacebody.endpoint import endpoint_data
 class ListBodyDbsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ListBodyDbs')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ListBodyDbs','facebody')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
