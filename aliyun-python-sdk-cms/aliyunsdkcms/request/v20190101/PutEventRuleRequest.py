@@ -52,6 +52,8 @@ class PutEventRuleRequest(RpcRequest):
 				for depth2 in range(len(EventPatterns[depth1].get('LevelList'))):
 					if EventPatterns[depth1].get('LevelList')[depth2] is not None:
 						self.add_query_param('EventPattern.' + str(depth1 + 1) + '.LevelList.' + str(depth2 + 1) , EventPatterns[depth1].get('LevelList')[depth2])
+			if EventPatterns[depth1].get('KeywordFilter') is not None:
+				self.add_query_param('EventPattern.' + str(depth1 + 1) + '.KeywordFilter', EventPatterns[depth1].get('KeywordFilter'))
 			if EventPatterns[depth1].get('Product') is not None:
 				self.add_query_param('EventPattern.' + str(depth1 + 1) + '.Product', EventPatterns[depth1].get('Product'))
 			if EventPatterns[depth1].get('StatusList') is not None:

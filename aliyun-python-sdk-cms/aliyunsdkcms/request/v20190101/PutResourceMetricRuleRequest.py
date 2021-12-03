@@ -43,23 +43,11 @@ class PutResourceMetricRuleRequest(RpcRequest):
 	def set_RuleName(self,RuleName):
 		self.add_query_param('RuleName',RuleName)
 
-	def get_EscalationsInfoStatistics(self):
-		return self.get_query_params().get('Escalations.Info.Statistics')
-
-	def set_EscalationsInfoStatistics(self,EscalationsInfoStatistics):
-		self.add_query_param('Escalations.Info.Statistics',EscalationsInfoStatistics)
-
 	def get_EffectiveInterval(self):
 		return self.get_query_params().get('EffectiveInterval')
 
 	def set_EffectiveInterval(self,EffectiveInterval):
 		self.add_query_param('EffectiveInterval',EffectiveInterval)
-
-	def get_EscalationsInfoComparisonOperator(self):
-		return self.get_query_params().get('Escalations.Info.ComparisonOperator')
-
-	def set_EscalationsInfoComparisonOperator(self,EscalationsInfoComparisonOperator):
-		self.add_query_param('Escalations.Info.ComparisonOperator',EscalationsInfoComparisonOperator)
 
 	def get_NoDataPolicy(self):
 		return self.get_query_params().get('NoDataPolicy')
@@ -78,12 +66,6 @@ class PutResourceMetricRuleRequest(RpcRequest):
 
 	def set_EmailSubject(self,EmailSubject):
 		self.add_query_param('EmailSubject',EmailSubject)
-
-	def get_SilenceTime(self):
-		return self.get_query_params().get('SilenceTime')
-
-	def set_SilenceTime(self,SilenceTime):
-		self.add_query_param('SilenceTime',SilenceTime)
 
 	def get_MetricName(self):
 		return self.get_query_params().get('MetricName')
@@ -121,6 +103,48 @@ class PutResourceMetricRuleRequest(RpcRequest):
 	def set_EscalationsCriticalStatistics(self,EscalationsCriticalStatistics):
 		self.add_query_param('Escalations.Critical.Statistics',EscalationsCriticalStatistics)
 
+	def get_Labels(self):
+		return self.get_query_params().get('Labels')
+
+	def set_Labels(self,Labels):
+		self.add_query_param('Labels',Labels)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
+
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)
+
+	def get_EscalationsCriticalThreshold(self):
+		return self.get_query_params().get('Escalations.Critical.Threshold')
+
+	def set_EscalationsCriticalThreshold(self,EscalationsCriticalThreshold):
+		self.add_query_param('Escalations.Critical.Threshold',EscalationsCriticalThreshold)
+
+	def get_EscalationsInfoStatistics(self):
+		return self.get_query_params().get('Escalations.Info.Statistics')
+
+	def set_EscalationsInfoStatistics(self,EscalationsInfoStatistics):
+		self.add_query_param('Escalations.Info.Statistics',EscalationsInfoStatistics)
+
+	def get_EscalationsInfoComparisonOperator(self):
+		return self.get_query_params().get('Escalations.Info.ComparisonOperator')
+
+	def set_EscalationsInfoComparisonOperator(self,EscalationsInfoComparisonOperator):
+		self.add_query_param('Escalations.Info.ComparisonOperator',EscalationsInfoComparisonOperator)
+
+	def get_SilenceTime(self):
+		return self.get_query_params().get('SilenceTime')
+
+	def set_SilenceTime(self,SilenceTime):
+		self.add_query_param('SilenceTime',SilenceTime)
+
 	def get_Resources(self):
 		return self.get_query_params().get('Resources')
 
@@ -157,26 +181,8 @@ class PutResourceMetricRuleRequest(RpcRequest):
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
-
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
 	def get_EscalationsCriticalComparisonOperator(self):
 		return self.get_query_params().get('Escalations.Critical.ComparisonOperator')
 
 	def set_EscalationsCriticalComparisonOperator(self,EscalationsCriticalComparisonOperator):
 		self.add_query_param('Escalations.Critical.ComparisonOperator',EscalationsCriticalComparisonOperator)
-
-	def get_EscalationsCriticalThreshold(self):
-		return self.get_query_params().get('Escalations.Critical.Threshold')
-
-	def set_EscalationsCriticalThreshold(self,EscalationsCriticalThreshold):
-		self.add_query_param('Escalations.Critical.Threshold',EscalationsCriticalThreshold)
