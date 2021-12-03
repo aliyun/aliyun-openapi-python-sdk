@@ -1,3 +1,6 @@
+2021-12-03 Version: 7.0.28
+- Add MetricRule Labels.
+
 2021-12-03 Version: 7.0.27
 - Add EventRule Content Filter.
 - Add MetricRule Labels.
