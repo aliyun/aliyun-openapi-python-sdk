@@ -57,6 +57,11 @@ class ListVpcEndpointConnectionsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_EniId(self): # String
+		return self.get_query_params().get('EniId')
+
+	def set_EniId(self, EniId):  # String
+		self.add_query_param('EniId', EniId)
 	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 

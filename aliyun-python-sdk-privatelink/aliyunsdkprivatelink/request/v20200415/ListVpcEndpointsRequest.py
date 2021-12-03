@@ -47,6 +47,11 @@ class ListVpcEndpointsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_EndpointType(self): # String
+		return self.get_query_params().get('EndpointType')
+
+	def set_EndpointType(self, EndpointType):  # String
+		self.add_query_param('EndpointType', EndpointType)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 

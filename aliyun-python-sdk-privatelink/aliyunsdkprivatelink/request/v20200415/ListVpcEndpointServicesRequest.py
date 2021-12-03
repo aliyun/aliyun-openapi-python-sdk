@@ -62,6 +62,11 @@ class ListVpcEndpointServicesRequest(RpcRequest):
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_query_param('ServiceName', ServiceName)
+	def get_ServiceResourceType(self): # String
+		return self.get_query_params().get('ServiceResourceType')
+
+	def set_ServiceResourceType(self, ServiceResourceType):  # String
+		self.add_query_param('ServiceResourceType', ServiceResourceType)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

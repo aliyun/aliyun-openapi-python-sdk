@@ -43,6 +43,11 @@ class CreateVpcEndpointRequest(RpcRequest):
 	def set_SecurityGroupIds(self, SecurityGroupId):  # RepeatList
 		for depth1 in range(len(SecurityGroupId)):
 			self.add_query_param('SecurityGroupId.' + str(depth1 + 1), SecurityGroupId[depth1])
+	def get_EndpointType(self): # String
+		return self.get_query_params().get('EndpointType')
+
+	def set_EndpointType(self, EndpointType):  # String
+		self.add_query_param('EndpointType', EndpointType)
 	def get_Zones(self): # RepeatList
 		return self.get_query_params().get('Zone')
 
@@ -69,6 +74,11 @@ class CreateVpcEndpointRequest(RpcRequest):
 
 	def set_EndpointDescription(self, EndpointDescription):  # String
 		self.add_query_param('EndpointDescription', EndpointDescription)
+	def get_ZonePrivateIpAddressCount(self): # Long
+		return self.get_query_params().get('ZonePrivateIpAddressCount')
+
+	def set_ZonePrivateIpAddressCount(self, ZonePrivateIpAddressCount):  # Long
+		self.add_query_param('ZonePrivateIpAddressCount', ZonePrivateIpAddressCount)
 	def get_EndpointName(self): # String
 		return self.get_query_params().get('EndpointName')
 
