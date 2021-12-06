@@ -25,69 +25,80 @@ class DescribeInvocationResultsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocationResults','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CommandId(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_CommandId(self):
 		return self.get_query_params().get('CommandId')
 
-	def set_CommandId(self, CommandId):  # String
-		self.add_query_param('CommandId', CommandId)
-	def get_PageNumber(self): # Long
+	def set_CommandId(self,CommandId):
+		self.add_query_param('CommandId',CommandId)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Long
-		self.add_query_param('PageNumber', PageNumber)
-	def get_ContentEncoding(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ContentEncoding(self):
 		return self.get_query_params().get('ContentEncoding')
 
-	def set_ContentEncoding(self, ContentEncoding):  # String
-		self.add_query_param('ContentEncoding', ContentEncoding)
-	def get_PageSize(self): # Long
+	def set_ContentEncoding(self,ContentEncoding):
+		self.add_query_param('ContentEncoding',ContentEncoding)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Long
-		self.add_query_param('PageSize', PageSize)
-	def get_InvokeId(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_InvokeId(self):
 		return self.get_query_params().get('InvokeId')
 
-	def set_InvokeId(self, InvokeId):  # String
-		self.add_query_param('InvokeId', InvokeId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_InvokeId(self,InvokeId):
+		self.add_query_param('InvokeId',InvokeId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_InvokeRecordStatus(self): # String
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InvokeRecordStatus(self):
 		return self.get_query_params().get('InvokeRecordStatus')
 
-	def set_InvokeRecordStatus(self, InvokeRecordStatus):  # String
-		self.add_query_param('InvokeRecordStatus', InvokeRecordStatus)
-	def get_IncludeHistory(self): # Boolean
+	def set_InvokeRecordStatus(self,InvokeRecordStatus):
+		self.add_query_param('InvokeRecordStatus',InvokeRecordStatus)
+
+	def get_IncludeHistory(self):
 		return self.get_query_params().get('IncludeHistory')
 
-	def set_IncludeHistory(self, IncludeHistory):  # Boolean
-		self.add_query_param('IncludeHistory', IncludeHistory)
+	def set_IncludeHistory(self,IncludeHistory):
+		self.add_query_param('IncludeHistory',IncludeHistory)

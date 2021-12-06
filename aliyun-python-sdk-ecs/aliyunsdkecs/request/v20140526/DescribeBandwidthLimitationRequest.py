@@ -25,54 +25,62 @@ class DescribeBandwidthLimitationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeBandwidthLimitation','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_InstanceType(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
-	def get_InstanceChargeType(self): # String
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_ResourceId(self): # String
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OperationType(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OperationType(self):
 		return self.get_query_params().get('OperationType')
 
-	def set_OperationType(self, OperationType):  # String
-		self.add_query_param('OperationType', OperationType)
-	def get_OwnerId(self): # Long
+	def set_OperationType(self,OperationType):
+		self.add_query_param('OperationType',OperationType)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SpotStrategy(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SpotStrategy(self):
 		return self.get_query_params().get('SpotStrategy')
 
-	def set_SpotStrategy(self, SpotStrategy):  # String
-		self.add_query_param('SpotStrategy', SpotStrategy)
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)

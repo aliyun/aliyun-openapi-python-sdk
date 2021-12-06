@@ -25,39 +25,44 @@ class ExportSnapshotRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ExportSnapshot','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SnapshotId(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SnapshotId(self):
 		return self.get_query_params().get('SnapshotId')
 
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
-	def get_OssBucket(self): # String
+	def set_SnapshotId(self,SnapshotId):
+		self.add_query_param('SnapshotId',SnapshotId)
+
+	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
 
-	def set_OssBucket(self, OssBucket):  # String
-		self.add_query_param('OssBucket', OssBucket)
-	def get_ResourceOwnerAccount(self): # String
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_RoleName(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self, RoleName):  # String
-		self.add_query_param('RoleName', RoleName)
-	def get_OwnerId(self): # Long
+	def set_RoleName(self,RoleName):
+		self.add_query_param('RoleName',RoleName)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

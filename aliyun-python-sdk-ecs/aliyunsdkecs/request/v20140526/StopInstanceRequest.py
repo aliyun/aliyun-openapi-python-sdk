@@ -25,59 +25,68 @@ class StopInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StopInstance','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_StoppedMode(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_StoppedMode(self):
 		return self.get_query_params().get('StoppedMode')
 
-	def set_StoppedMode(self, StoppedMode):  # String
-		self.add_query_param('StoppedMode', StoppedMode)
-	def get_Hibernate(self): # Boolean
+	def set_StoppedMode(self,StoppedMode):
+		self.add_query_param('StoppedMode',StoppedMode)
+
+	def get_Hibernate(self):
 		return self.get_query_params().get('Hibernate')
 
-	def set_Hibernate(self, Hibernate):  # Boolean
-		self.add_query_param('Hibernate', Hibernate)
-	def get_ForceStop(self): # Boolean
+	def set_Hibernate(self,Hibernate):
+		self.add_query_param('Hibernate',Hibernate)
+
+	def get_ForceStop(self):
 		return self.get_query_params().get('ForceStop')
 
-	def set_ForceStop(self, ForceStop):  # Boolean
-		self.add_query_param('ForceStop', ForceStop)
-	def get_ConfirmStop(self): # Boolean
+	def set_ForceStop(self,ForceStop):
+		self.add_query_param('ForceStop',ForceStop)
+
+	def get_ConfirmStop(self):
 		return self.get_query_params().get('ConfirmStop')
 
-	def set_ConfirmStop(self, ConfirmStop):  # Boolean
-		self.add_query_param('ConfirmStop', ConfirmStop)
-	def get_DryRun(self): # Boolean
+	def set_ConfirmStop(self,ConfirmStop):
+		self.add_query_param('ConfirmStop',ConfirmStop)
+
+	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_ResourceOwnerAccount(self): # String
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

@@ -25,59 +25,68 @@ class CreateForwardEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateForwardEntry','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ForwardTableId(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ForwardTableId(self):
 		return self.get_query_params().get('ForwardTableId')
 
-	def set_ForwardTableId(self, ForwardTableId):  # String
-		self.add_query_param('ForwardTableId', ForwardTableId)
-	def get_InternalIp(self): # String
+	def set_ForwardTableId(self,ForwardTableId):
+		self.add_query_param('ForwardTableId',ForwardTableId)
+
+	def get_InternalIp(self):
 		return self.get_query_params().get('InternalIp')
 
-	def set_InternalIp(self, InternalIp):  # String
-		self.add_query_param('InternalIp', InternalIp)
-	def get_ExternalIp(self): # String
+	def set_InternalIp(self,InternalIp):
+		self.add_query_param('InternalIp',InternalIp)
+
+	def get_ExternalIp(self):
 		return self.get_query_params().get('ExternalIp')
 
-	def set_ExternalIp(self, ExternalIp):  # String
-		self.add_query_param('ExternalIp', ExternalIp)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ExternalIp(self,ExternalIp):
+		self.add_query_param('ExternalIp',ExternalIp)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_IpProtocol(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_IpProtocol(self):
 		return self.get_query_params().get('IpProtocol')
 
-	def set_IpProtocol(self, IpProtocol):  # String
-		self.add_query_param('IpProtocol', IpProtocol)
-	def get_OwnerAccount(self): # String
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_InternalPort(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InternalPort(self):
 		return self.get_query_params().get('InternalPort')
 
-	def set_InternalPort(self, InternalPort):  # String
-		self.add_query_param('InternalPort', InternalPort)
-	def get_ExternalPort(self): # String
+	def set_InternalPort(self,InternalPort):
+		self.add_query_param('InternalPort',InternalPort)
+
+	def get_ExternalPort(self):
 		return self.get_query_params().get('ExternalPort')
 
-	def set_ExternalPort(self, ExternalPort):  # String
-		self.add_query_param('ExternalPort', ExternalPort)
+	def set_ExternalPort(self,ExternalPort):
+		self.add_query_param('ExternalPort',ExternalPort)

@@ -25,43 +25,48 @@ class DeleteImageComponentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteImageComponent','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ImageComponentId(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ImageComponentId(self):
 		return self.get_query_params().get('ImageComponentId')
 
-	def set_ImageComponentId(self, ImageComponentId):  # String
-		self.add_query_param('ImageComponentId', ImageComponentId)
-	def get_TemplateTags(self): # RepeatList
+	def set_ImageComponentId(self,ImageComponentId):
+		self.add_query_param('ImageComponentId',ImageComponentId)
+
+	def get_TemplateTags(self):
 		return self.get_query_params().get('TemplateTag')
 
-	def set_TemplateTags(self, TemplateTag):  # RepeatList
-		for depth1 in range(len(TemplateTag)):
-			if TemplateTag[depth1].get('Key') is not None:
-				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTag[depth1].get('Key'))
-			if TemplateTag[depth1].get('Value') is not None:
-				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTag[depth1].get('Value'))
-	def get_ResourceOwnerAccount(self): # String
+	def set_TemplateTags(self, TemplateTags):
+		for depth1 in range(len(TemplateTags)):
+			if TemplateTags[depth1].get('Key') is not None:
+				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTags[depth1].get('Key'))
+			if TemplateTags[depth1].get('Value') is not None:
+				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTags[depth1].get('Value'))
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

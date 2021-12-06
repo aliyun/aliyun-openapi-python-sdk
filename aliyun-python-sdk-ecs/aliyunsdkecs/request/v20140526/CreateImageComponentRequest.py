@@ -25,73 +25,84 @@ class CreateImageComponentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImageComponent','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_SystemType(self): # String
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_SystemType(self):
 		return self.get_query_params().get('SystemType')
 
-	def set_SystemType(self, SystemType):  # String
-		self.add_query_param('SystemType', SystemType)
-	def get_Content(self): # String
+	def set_SystemType(self,SystemType):
+		self.add_query_param('SystemType',SystemType)
+
+	def get_Content(self):
 		return self.get_query_params().get('Content')
 
-	def set_Content(self, Content):  # String
-		self.add_query_param('Content', Content)
-	def get_ResourceGroupId(self): # String
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
+
+	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Tags(self): # RepeatList
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-	def get_ResourceOwnerAccount(self): # String
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ComponentType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ComponentType(self):
 		return self.get_query_params().get('ComponentType')
 
-	def set_ComponentType(self, ComponentType):  # String
-		self.add_query_param('ComponentType', ComponentType)
-	def get_Name(self): # String
+	def set_ComponentType(self,ComponentType):
+		self.add_query_param('ComponentType',ComponentType)
+
+	def get_Name(self):
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

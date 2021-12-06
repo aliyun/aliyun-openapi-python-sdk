@@ -25,50 +25,58 @@ class DescribeInstanceTypesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceTypes','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_InstanceTypess(self): # RepeatList
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_InstanceTypess(self):
 		return self.get_query_params().get('InstanceTypes')
 
-	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
-		for depth1 in range(len(InstanceTypes)):
-			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes[depth1])
-	def get_NextToken(self): # String
+	def set_InstanceTypess(self, InstanceTypess):
+		for depth1 in range(len(InstanceTypess)):
+			if InstanceTypess[depth1] is not None:
+				self.add_query_param('InstanceTypes.' + str(depth1 + 1) , InstanceTypess[depth1])
+
+	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_ResourceOwnerAccount(self): # String
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_InstanceTypeFamily(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_InstanceTypeFamily(self):
 		return self.get_query_params().get('InstanceTypeFamily')
 
-	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
-		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-	def get_OwnerId(self): # Long
+	def set_InstanceTypeFamily(self,InstanceTypeFamily):
+		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_MaxResults(self): # Long
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MaxResults(self):
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

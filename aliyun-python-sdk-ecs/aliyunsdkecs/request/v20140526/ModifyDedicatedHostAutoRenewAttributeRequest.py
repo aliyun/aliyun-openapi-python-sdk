@@ -25,59 +25,68 @@ class ModifyDedicatedHostAutoRenewAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDedicatedHostAutoRenewAttribute','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DedicatedHostIds(self): # String
+
+	def get_DedicatedHostIds(self):
 		return self.get_query_params().get('DedicatedHostIds')
 
-	def set_DedicatedHostIds(self, DedicatedHostIds):  # String
-		self.add_query_param('DedicatedHostIds', DedicatedHostIds)
-	def get_ResourceOwnerId(self): # Long
+	def set_DedicatedHostIds(self,DedicatedHostIds):
+		self.add_query_param('DedicatedHostIds',DedicatedHostIds)
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Duration(self): # Integer
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Duration(self):
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self, Duration):  # Integer
-		self.add_query_param('Duration', Duration)
-	def get_RenewalStatus(self): # String
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_RenewalStatus(self):
 		return self.get_query_params().get('RenewalStatus')
 
-	def set_RenewalStatus(self, RenewalStatus):  # String
-		self.add_query_param('RenewalStatus', RenewalStatus)
-	def get_AutoRenewWithEcs(self): # String
+	def set_RenewalStatus(self,RenewalStatus):
+		self.add_query_param('RenewalStatus',RenewalStatus)
+
+	def get_AutoRenewWithEcs(self):
 		return self.get_query_params().get('AutoRenewWithEcs')
 
-	def set_AutoRenewWithEcs(self, AutoRenewWithEcs):  # String
-		self.add_query_param('AutoRenewWithEcs', AutoRenewWithEcs)
-	def get_ResourceOwnerAccount(self): # String
+	def set_AutoRenewWithEcs(self,AutoRenewWithEcs):
+		self.add_query_param('AutoRenewWithEcs',AutoRenewWithEcs)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PeriodUnit(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PeriodUnit(self):
 		return self.get_query_params().get('PeriodUnit')
 
-	def set_PeriodUnit(self, PeriodUnit):  # String
-		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_AutoRenew(self): # Boolean
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
+
+	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)

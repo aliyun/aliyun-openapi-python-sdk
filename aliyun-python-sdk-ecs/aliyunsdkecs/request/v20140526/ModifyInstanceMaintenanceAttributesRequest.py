@@ -25,54 +25,62 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceMaintenanceAttributes','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_MaintenanceWindows(self): # RepeatList
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_MaintenanceWindows(self):
 		return self.get_query_params().get('MaintenanceWindow')
 
-	def set_MaintenanceWindows(self, MaintenanceWindow):  # RepeatList
-		for depth1 in range(len(MaintenanceWindow)):
-			if MaintenanceWindow[depth1].get('EndTime') is not None:
-				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.EndTime', MaintenanceWindow[depth1].get('EndTime'))
-			if MaintenanceWindow[depth1].get('StartTime') is not None:
-				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.StartTime', MaintenanceWindow[depth1].get('StartTime'))
-	def get_ActionOnMaintenance(self): # String
+	def set_MaintenanceWindows(self, MaintenanceWindows):
+		for depth1 in range(len(MaintenanceWindows)):
+			if MaintenanceWindows[depth1].get('StartTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.StartTime', MaintenanceWindows[depth1].get('StartTime'))
+			if MaintenanceWindows[depth1].get('EndTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.EndTime', MaintenanceWindows[depth1].get('EndTime'))
+
+	def get_ActionOnMaintenance(self):
 		return self.get_query_params().get('ActionOnMaintenance')
 
-	def set_ActionOnMaintenance(self, ActionOnMaintenance):  # String
-		self.add_query_param('ActionOnMaintenance', ActionOnMaintenance)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ActionOnMaintenance(self,ActionOnMaintenance):
+		self.add_query_param('ActionOnMaintenance',ActionOnMaintenance)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_NotifyOnMaintenance(self): # Boolean
-		return self.get_query_params().get('NotifyOnMaintenance')
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def set_NotifyOnMaintenance(self, NotifyOnMaintenance):  # Boolean
-		self.add_query_param('NotifyOnMaintenance', NotifyOnMaintenance)
-	def get_InstanceIds(self): # RepeatList
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceId):  # RepeatList
-		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
+
+	def get_NotifyOnMaintenance(self):
+		return self.get_query_params().get('NotifyOnMaintenance')
+
+	def set_NotifyOnMaintenance(self,NotifyOnMaintenance):
+		self.add_query_param('NotifyOnMaintenance',NotifyOnMaintenance)

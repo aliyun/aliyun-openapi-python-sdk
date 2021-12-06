@@ -25,85 +25,100 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Recyclable(self): # Boolean
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Recyclable(self):
 		return self.get_query_params().get('Recyclable')
 
-	def set_Recyclable(self, Recyclable):  # Boolean
-		self.add_query_param('Recyclable', Recyclable)
-	def get_NetworkInterfaceQueueNumber(self): # Integer
+	def set_Recyclable(self,Recyclable):
+		self.add_query_param('Recyclable',Recyclable)
+
+	def get_NetworkInterfaceQueueNumber(self):
 		return self.get_query_params().get('NetworkInterfaceQueueNumber')
 
-	def set_NetworkInterfaceQueueNumber(self, NetworkInterfaceQueueNumber):  # Integer
-		self.add_query_param('NetworkInterfaceQueueNumber', NetworkInterfaceQueueNumber)
-	def get_Description(self): # String
+	def set_NetworkInterfaceQueueNumber(self,NetworkInterfaceQueueNumber):
+		self.add_query_param('NetworkInterfaceQueueNumber',NetworkInterfaceQueueNumber)
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_DeletionProtection(self): # Boolean
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_DeletionProtection(self):
 		return self.get_query_params().get('DeletionProtection')
 
-	def set_DeletionProtection(self, DeletionProtection):  # Boolean
-		self.add_query_param('DeletionProtection', DeletionProtection)
-	def get_UserData(self): # String
+	def set_DeletionProtection(self,DeletionProtection):
+		self.add_query_param('DeletionProtection',DeletionProtection)
+
+	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_Password(self): # String
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_Password(self):
 		return self.get_query_params().get('Password')
 
-	def set_Password(self, Password):  # String
-		self.add_query_param('Password', Password)
-	def get_HostName(self): # String
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
+	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
-	def set_HostName(self, HostName):  # String
-		self.add_query_param('HostName', HostName)
-	def get_ResourceOwnerAccount(self): # String
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_CreditSpecification(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CreditSpecification(self):
 		return self.get_query_params().get('CreditSpecification')
 
-	def set_CreditSpecification(self, CreditSpecification):  # String
-		self.add_query_param('CreditSpecification', CreditSpecification)
-	def get_OwnerId(self): # Long
+	def set_CreditSpecification(self,CreditSpecification):
+		self.add_query_param('CreditSpecification',CreditSpecification)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SecurityGroupIdss(self): # RepeatList
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityGroupIdss(self):
 		return self.get_query_params().get('SecurityGroupIds')
 
-	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
-		for depth1 in range(len(SecurityGroupIds)):
-			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
-	def get_InstanceId(self): # String
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
+
+	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_InstanceName(self): # String
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_query_param('InstanceName', InstanceName)
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)

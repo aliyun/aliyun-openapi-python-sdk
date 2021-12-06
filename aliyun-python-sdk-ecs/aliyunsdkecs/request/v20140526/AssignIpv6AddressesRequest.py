@@ -25,45 +25,52 @@ class AssignIpv6AddressesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AssignIpv6Addresses','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_Ipv6AddressCount(self): # Integer
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Ipv6AddressCount(self):
 		return self.get_query_params().get('Ipv6AddressCount')
 
-	def set_Ipv6AddressCount(self, Ipv6AddressCount):  # Integer
-		self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
-	def get_OwnerAccount(self): # String
+	def set_Ipv6AddressCount(self,Ipv6AddressCount):
+		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_NetworkInterfaceId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NetworkInterfaceId(self):
 		return self.get_query_params().get('NetworkInterfaceId')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
-	def get_Ipv6Addresss(self): # RepeatList
+	def set_NetworkInterfaceId(self,NetworkInterfaceId):
+		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)
+
+	def get_Ipv6Addresss(self):
 		return self.get_query_params().get('Ipv6Address')
 
-	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
-		for depth1 in range(len(Ipv6Address)):
-			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address[depth1])
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])

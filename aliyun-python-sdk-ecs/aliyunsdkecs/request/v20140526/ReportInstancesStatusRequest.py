@@ -25,72 +25,86 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReportInstancesStatus','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Reason(self): # String
+
+	def get_Reason(self):
 		return self.get_query_params().get('Reason')
 
-	def set_Reason(self, Reason):  # String
-		self.add_query_param('Reason', Reason)
-	def get_ResourceOwnerId(self): # Long
+	def set_Reason(self,Reason):
+		self.add_query_param('Reason',Reason)
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Description(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_StartTime(self): # String
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_IssueCategory(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_IssueCategory(self):
 		return self.get_query_params().get('IssueCategory')
 
-	def set_IssueCategory(self, IssueCategory):  # String
-		self.add_query_param('IssueCategory', IssueCategory)
-	def get_DiskIds(self): # RepeatList
+	def set_IssueCategory(self,IssueCategory):
+		self.add_query_param('IssueCategory',IssueCategory)
+
+	def get_DiskIds(self):
 		return self.get_query_params().get('DiskId')
 
-	def set_DiskIds(self, DiskId):  # RepeatList
-		for depth1 in range(len(DiskId)):
-			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId[depth1])
-	def get_ResourceOwnerAccount(self): # String
+	def set_DiskIds(self, DiskIds):
+		for depth1 in range(len(DiskIds)):
+			if DiskIds[depth1] is not None:
+				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EndTime(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceIds(self): # RepeatList
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceId):  # RepeatList
-		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_Devices(self): # RepeatList
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
+
+	def get_Devices(self):
 		return self.get_query_params().get('Device')
 
-	def set_Devices(self, Device):  # RepeatList
-		for depth1 in range(len(Device)):
-			self.add_query_param('Device.' + str(depth1 + 1), Device[depth1])
+	def set_Devices(self, Devices):
+		for depth1 in range(len(Devices)):
+			if Devices[depth1] is not None:
+				self.add_query_param('Device.' + str(depth1 + 1) , Devices[depth1])

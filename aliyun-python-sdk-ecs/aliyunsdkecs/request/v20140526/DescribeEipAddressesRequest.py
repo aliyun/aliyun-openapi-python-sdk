@@ -25,99 +25,116 @@ class DescribeEipAddressesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeEipAddresses','ecs')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Filter2Value(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Filter2Value(self):
 		return self.get_query_params().get('Filter.2.Value')
 
-	def set_Filter2Value(self, Filter2Value):  # String
-		self.add_query_param('Filter.2.Value', Filter2Value)
-	def get_ISP(self): # String
+	def set_Filter2Value(self,Filter2Value):
+		self.add_query_param('Filter.2.Value',Filter2Value)
+
+	def get_ISP(self):
 		return self.get_query_params().get('ISP')
 
-	def set_ISP(self, ISP):  # String
-		self.add_query_param('ISP', ISP)
-	def get_AllocationId(self): # String
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
+
+	def get_AllocationId(self):
 		return self.get_query_params().get('AllocationId')
 
-	def set_AllocationId(self, AllocationId):  # String
-		self.add_query_param('AllocationId', AllocationId)
-	def get_EipAddress(self): # String
+	def set_AllocationId(self,AllocationId):
+		self.add_query_param('AllocationId',AllocationId)
+
+	def get_EipAddress(self):
 		return self.get_query_params().get('EipAddress')
 
-	def set_EipAddress(self, EipAddress):  # String
-		self.add_query_param('EipAddress', EipAddress)
-	def get_PageNumber(self): # Integer
+	def set_EipAddress(self,EipAddress):
+		self.add_query_param('EipAddress',EipAddress)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_LockReason(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_LockReason(self):
 		return self.get_query_params().get('LockReason')
 
-	def set_LockReason(self, LockReason):  # String
-		self.add_query_param('LockReason', LockReason)
-	def get_Filter1Key(self): # String
+	def set_LockReason(self,LockReason):
+		self.add_query_param('LockReason',LockReason)
+
+	def get_Filter1Key(self):
 		return self.get_query_params().get('Filter.1.Key')
 
-	def set_Filter1Key(self, Filter1Key):  # String
-		self.add_query_param('Filter.1.Key', Filter1Key)
-	def get_AssociatedInstanceType(self): # String
+	def set_Filter1Key(self,Filter1Key):
+		self.add_query_param('Filter.1.Key',Filter1Key)
+
+	def get_AssociatedInstanceType(self):
 		return self.get_query_params().get('AssociatedInstanceType')
 
-	def set_AssociatedInstanceType(self, AssociatedInstanceType):  # String
-		self.add_query_param('AssociatedInstanceType', AssociatedInstanceType)
-	def get_PageSize(self): # Integer
+	def set_AssociatedInstanceType(self,AssociatedInstanceType):
+		self.add_query_param('AssociatedInstanceType',AssociatedInstanceType)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ResourceOwnerAccount(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_Filter1Value(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Filter1Value(self):
 		return self.get_query_params().get('Filter.1.Value')
 
-	def set_Filter1Value(self, Filter1Value):  # String
-		self.add_query_param('Filter.1.Value', Filter1Value)
-	def get_Filter2Key(self): # String
+	def set_Filter1Value(self,Filter1Value):
+		self.add_query_param('Filter.1.Value',Filter1Value)
+
+	def get_Filter2Key(self):
 		return self.get_query_params().get('Filter.2.Key')
 
-	def set_Filter2Key(self, Filter2Key):  # String
-		self.add_query_param('Filter.2.Key', Filter2Key)
-	def get_OwnerId(self): # Long
+	def set_Filter2Key(self,Filter2Key):
+		self.add_query_param('Filter.2.Key',Filter2Key)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ChargeType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')
 
-	def set_ChargeType(self, ChargeType):  # String
-		self.add_query_param('ChargeType', ChargeType)
-	def get_AssociatedInstanceId(self): # String
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)
+
+	def get_AssociatedInstanceId(self):
 		return self.get_query_params().get('AssociatedInstanceId')
 
-	def set_AssociatedInstanceId(self, AssociatedInstanceId):  # String
-		self.add_query_param('AssociatedInstanceId', AssociatedInstanceId)
-	def get_Status(self): # String
+	def set_AssociatedInstanceId(self,AssociatedInstanceId):
+		self.add_query_param('AssociatedInstanceId',AssociatedInstanceId)
+
+	def get_Status(self):
 		return self.get_query_params().get('Status')
 
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
