@@ -114,7 +114,7 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMName', PMInfos[depth1].get('PMName'))
 			if PMInfos[depth1].get('PMCertificateType') is not None:
 				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateType', PMInfos[depth1].get('PMCertificateType'))
-			if PMInfos[depth1].get('PMContactInfo') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMContactInfo', PMInfos[depth1].get('PMContactInfo'))
 			if PMInfos[depth1].get('PMGender') is not None:
 				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMGender', PMInfos[depth1].get('PMGender'))
+			if PMInfos[depth1].get('PMContactInfo') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMContactInfo', PMInfos[depth1].get('PMContactInfo'))

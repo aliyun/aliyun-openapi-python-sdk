@@ -51,12 +51,6 @@ class ListFullNatEntriesRequest(RpcRequest):
 			if NetworkInterfaceIdss[depth1] is not None:
 				self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1) , NetworkInterfaceIdss[depth1])
 
-	def get_FullNatEntryStatus(self):
-		return self.get_query_params().get('FullNatEntryStatus')
-
-	def set_FullNatEntryStatus(self,FullNatEntryStatus):
-		self.add_query_param('FullNatEntryStatus',FullNatEntryStatus)
-
 	def get_FullNatEntryId(self):
 		return self.get_query_params().get('FullNatEntryId')
 

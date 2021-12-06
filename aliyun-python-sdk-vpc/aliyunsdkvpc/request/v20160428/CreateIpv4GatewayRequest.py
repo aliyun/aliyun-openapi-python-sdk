@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeNatGatewaysRequest(RpcRequest):
+class CreateIpv4GatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeNatGateways','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateIpv4Gateway','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,59 +31,29 @@ class DescribeNatGatewaysRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Ipv4GatewayDescription(self):
+		return self.get_query_params().get('Ipv4GatewayDescription')
+
+	def set_Ipv4GatewayDescription(self,Ipv4GatewayDescription):
+		self.add_query_param('Ipv4GatewayDescription',Ipv4GatewayDescription)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Spec(self):
-		return self.get_query_params().get('Spec')
+	def get_Ipv4GatewayName(self):
+		return self.get_query_params().get('Ipv4GatewayName')
 
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_NatType(self):
-		return self.get_query_params().get('NatType')
-
-	def set_NatType(self,NatType):
-		self.add_query_param('NatType',NatType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_NatGatewayId(self):
-		return self.get_query_params().get('NatGatewayId')
-
-	def set_NatGatewayId(self,NatGatewayId):
-		self.add_query_param('NatGatewayId',NatGatewayId)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
+	def set_Ipv4GatewayName(self,Ipv4GatewayName):
+		self.add_query_param('Ipv4GatewayName',Ipv4GatewayName)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -114,21 +84,3 @@ class DescribeNatGatewaysRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

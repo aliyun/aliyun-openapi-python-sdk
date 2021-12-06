@@ -121,6 +121,14 @@ class AllocateEipAddressProRequest(RpcRequest):
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
+	def get_SecurityProtectionTypess(self):
+		return self.get_query_params().get('SecurityProtectionTypes')
+
+	def set_SecurityProtectionTypess(self, SecurityProtectionTypess):
+		for depth1 in range(len(SecurityProtectionTypess)):
+			if SecurityProtectionTypess[depth1] is not None:
+				self.add_query_param('SecurityProtectionTypes.' + str(depth1 + 1) , SecurityProtectionTypess[depth1])
+
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')
 

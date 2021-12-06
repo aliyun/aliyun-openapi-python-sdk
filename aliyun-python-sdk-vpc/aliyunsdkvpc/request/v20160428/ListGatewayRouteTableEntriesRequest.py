@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateRouteTableRequest(RpcRequest):
+class ListGatewayRouteTableEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteTable','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListGatewayRouteTableEntries','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,11 @@ class CreateRouteTableRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_AssociateType(self):
-		return self.get_query_params().get('AssociateType')
-
-	def set_AssociateType(self,AssociateType):
-		self.add_query_param('AssociateType',AssociateType)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -67,11 +49,23 @@ class CreateRouteTableRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
+
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_GatewayRouteTableId(self):
+		return self.get_query_params().get('GatewayRouteTableId')
+
+	def set_GatewayRouteTableId(self,GatewayRouteTableId):
+		self.add_query_param('GatewayRouteTableId',GatewayRouteTableId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -79,8 +73,8 @@ class CreateRouteTableRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateRouteTableRequest(RpcRequest):
+class ListIpv4GatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteTable','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListIpv4Gateways','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,23 @@ class CreateRouteTableRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_Ipv4GatewayName(self):
+		return self.get_query_params().get('Ipv4GatewayName')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_Ipv4GatewayName(self,Ipv4GatewayName):
+		self.add_query_param('Ipv4GatewayName',Ipv4GatewayName)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
+	def get_Ipv4GatewayId(self):
+		return self.get_query_params().get('Ipv4GatewayId')
 
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_AssociateType(self):
-		return self.get_query_params().get('AssociateType')
-
-	def set_AssociateType(self,AssociateType):
-		self.add_query_param('AssociateType',AssociateType)
+	def set_Ipv4GatewayId(self,Ipv4GatewayId):
+		self.add_query_param('Ipv4GatewayId',Ipv4GatewayId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -84,3 +78,9 @@ class CreateRouteTableRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

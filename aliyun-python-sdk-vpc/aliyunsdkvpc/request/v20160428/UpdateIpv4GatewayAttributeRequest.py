@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateRouteTableRequest(RpcRequest):
+class UpdateIpv4GatewayAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteTable','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateIpv4GatewayAttribute','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Ipv4GatewayDescription(self):
+		return self.get_query_params().get('Ipv4GatewayDescription')
+
+	def set_Ipv4GatewayDescription(self,Ipv4GatewayDescription):
+		self.add_query_param('Ipv4GatewayDescription',Ipv4GatewayDescription)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -43,23 +49,23 @@ class CreateRouteTableRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_Ipv4GatewayName(self):
+		return self.get_query_params().get('Ipv4GatewayName')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Ipv4GatewayName(self,Ipv4GatewayName):
+		self.add_query_param('Ipv4GatewayName',Ipv4GatewayName)
 
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
+	def get_Ipv4GatewayId(self):
+		return self.get_query_params().get('Ipv4GatewayId')
 
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
+	def set_Ipv4GatewayId(self,Ipv4GatewayId):
+		self.add_query_param('Ipv4GatewayId',Ipv4GatewayId)
 
-	def get_AssociateType(self):
-		return self.get_query_params().get('AssociateType')
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
 
-	def set_AssociateType(self,AssociateType):
-		self.add_query_param('AssociateType',AssociateType)
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -78,9 +84,3 @@ class CreateRouteTableRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
