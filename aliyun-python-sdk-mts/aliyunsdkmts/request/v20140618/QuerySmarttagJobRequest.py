@@ -36,6 +36,11 @@ class QuerySmarttagJobRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_JobId(self): # String
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # String
+		self.add_query_param('JobId', JobId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,8 +56,8 @@ class QuerySmarttagJobRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
 
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)

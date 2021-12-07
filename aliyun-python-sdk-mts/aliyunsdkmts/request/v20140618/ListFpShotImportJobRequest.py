@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class SubmitMediaCensorJobRequest(RpcRequest):
+class ListFpShotImportJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMediaCensorJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListFpShotImportJob','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,41 +31,11 @@ class SubmitMediaCensorJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExternalUrl(self): # String
-		return self.get_query_params().get('ExternalUrl')
-
-	def set_ExternalUrl(self, ExternalUrl):  # String
-		self.add_query_param('ExternalUrl', ExternalUrl)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Title(self): # String
-		return self.get_query_params().get('Title')
-
-	def set_Title(self, Title):  # String
-		self.add_query_param('Title', Title)
-	def get_VideoCensorConfig(self): # String
-		return self.get_query_params().get('VideoCensorConfig')
-
-	def set_VideoCensorConfig(self, VideoCensorConfig):  # String
-		self.add_query_param('VideoCensorConfig', VideoCensorConfig)
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_CoverImages(self): # String
-		return self.get_query_params().get('CoverImages')
-
-	def set_CoverImages(self, CoverImages):  # String
-		self.add_query_param('CoverImages', CoverImages)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -81,18 +51,8 @@ class SubmitMediaCensorJobRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PipelineId(self): # String
-		return self.get_query_params().get('PipelineId')
+	def get_JobIds(self): # String
+		return self.get_query_params().get('JobIds')
 
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
-	def get_Input(self): # String
-		return self.get_query_params().get('Input')
-
-	def set_Input(self, Input):  # String
-		self.add_query_param('Input', Input)
-	def get_Barrages(self): # String
-		return self.get_query_params().get('Barrages')
-
-	def set_Barrages(self, Barrages):  # String
-		self.add_query_param('Barrages', Barrages)
+	def set_JobIds(self, JobIds):  # String
+		self.add_query_param('JobIds', JobIds)

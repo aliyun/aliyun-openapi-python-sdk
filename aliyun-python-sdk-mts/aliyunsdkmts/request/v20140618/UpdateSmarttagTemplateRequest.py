@@ -36,11 +36,21 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_KnowledgeConfig(self): # String
+		return self.get_query_params().get('KnowledgeConfig')
+
+	def set_KnowledgeConfig(self, KnowledgeConfig):  # String
+		self.add_query_param('KnowledgeConfig', KnowledgeConfig)
 	def get_Industry(self): # String
 		return self.get_query_params().get('Industry')
 
 	def set_Industry(self, Industry):  # String
 		self.add_query_param('Industry', Industry)
+	def get_LabelVersion(self): # String
+		return self.get_query_params().get('LabelVersion')
+
+	def set_LabelVersion(self, LabelVersion):  # String
+		self.add_query_param('LabelVersion', LabelVersion)
 	def get_Scene(self): # String
 		return self.get_query_params().get('Scene')
 
@@ -61,6 +71,11 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_FaceCategoryIds(self, FaceCategoryIds):  # String
 		self.add_query_param('FaceCategoryIds', FaceCategoryIds)
+	def get_KeywordConfig(self): # String
+		return self.get_query_params().get('KeywordConfig')
+
+	def set_KeywordConfig(self, KeywordConfig):  # String
+		self.add_query_param('KeywordConfig', KeywordConfig)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -86,3 +101,8 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_AnalyseTypes(self, AnalyseTypes):  # String
 		self.add_query_param('AnalyseTypes', AnalyseTypes)
+	def get_LabelType(self): # String
+		return self.get_query_params().get('LabelType')
+
+	def set_LabelType(self, LabelType):  # String
+		self.add_query_param('LabelType', LabelType)
