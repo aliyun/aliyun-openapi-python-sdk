@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdktag.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class ListResourcesByTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'TagResources','tag')
+		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'ListResourcesByTag','tag')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,12 +31,26 @@ class TagResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceARNs(self): # RepeatList
-		return self.get_query_params().get('ResourceARN')
+	def get_TagFilterKey(self): # String
+		return self.get_query_params().get('TagFilter.Key')
 
-	def set_ResourceARNs(self, ResourceARN):  # RepeatList
-		for depth1 in range(len(ResourceARN)):
-			self.add_query_param('ResourceARN.' + str(depth1 + 1), ResourceARN[depth1])
+	def set_TagFilterKey(self, TagFilterKey):  # String
+		self.add_query_param('TagFilter.Key', TagFilterKey)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_IncludeAllTags(self): # Boolean
+		return self.get_query_params().get('IncludeAllTags')
+
+	def set_IncludeAllTags(self, IncludeAllTags):  # Boolean
+		self.add_query_param('IncludeAllTags', IncludeAllTags)
+	def get_TagFilterValue(self): # String
+		return self.get_query_params().get('TagFilter.Value')
+
+	def set_TagFilterValue(self, TagFilterValue):  # String
+		self.add_query_param('TagFilter.Value', TagFilterValue)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -52,8 +66,18 @@ class TagResourcesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_MaxResult(self): # Integer
+		return self.get_query_params().get('MaxResult')
+
+	def set_MaxResult(self, MaxResult):  # Integer
+		self.add_query_param('MaxResult', MaxResult)
+	def get_FuzzyType(self): # String
+		return self.get_query_params().get('FuzzyType')
+
+	def set_FuzzyType(self, FuzzyType):  # String
+		self.add_query_param('FuzzyType', FuzzyType)

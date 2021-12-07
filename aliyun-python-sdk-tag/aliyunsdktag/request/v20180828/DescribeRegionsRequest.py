@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdktag.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'TagResources','tag')
+		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'DescribeRegions','tag')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,12 +31,11 @@ class TagResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceARNs(self): # RepeatList
-		return self.get_query_params().get('ResourceARN')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceARNs(self, ResourceARN):  # RepeatList
-		for depth1 in range(len(ResourceARN)):
-			self.add_query_param('ResourceARN.' + str(depth1 + 1), ResourceARN[depth1])
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -52,8 +51,8 @@ class TagResourcesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

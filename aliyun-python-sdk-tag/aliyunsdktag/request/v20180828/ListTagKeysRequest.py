@@ -25,50 +25,59 @@ class ListTagKeysRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'ListTagKeys','tag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TagFilterKey(self): # String
+		return self.get_query_params().get('TagFilter.Key')
 
-	def get_NextToken(self):
+	def set_TagFilterKey(self, TagFilterKey):  # String
+		self.add_query_param('TagFilter.Key', TagFilterKey)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_PageSize(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_QueryType(self): # String
+		return self.get_query_params().get('QueryType')
 
-	def get_ResourceOwnerAccount(self):
+	def set_QueryType(self, QueryType):  # String
+		self.add_query_param('QueryType', QueryType)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_FuzzyType(self): # String
+		return self.get_query_params().get('FuzzyType')
 
-	def get_Category(self):
+	def set_FuzzyType(self, FuzzyType):  # String
+		self.add_query_param('FuzzyType', FuzzyType)
+	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)

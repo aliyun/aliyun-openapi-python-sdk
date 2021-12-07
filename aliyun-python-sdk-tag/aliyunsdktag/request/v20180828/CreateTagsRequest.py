@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdktag.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class CreateTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'TagResources','tag')
+		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'CreateTags','tag')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,12 +31,6 @@ class TagResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceARNs(self): # RepeatList
-		return self.get_query_params().get('ResourceARN')
-
-	def set_ResourceARNs(self, ResourceARN):  # RepeatList
-		for depth1 in range(len(ResourceARN)):
-			self.add_query_param('ResourceARN.' + str(depth1 + 1), ResourceARN[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -52,8 +46,18 @@ class TagResourcesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def get_TagKeyValueParamLists(self): # RepeatList
+		return self.get_query_params().get('TagKeyValueParamList')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
+	def set_TagKeyValueParamLists(self, TagKeyValueParamList):  # RepeatList
+		for depth1 in range(len(TagKeyValueParamList)):
+			if TagKeyValueParamList[depth1].get('Key') is not None:
+				self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.Key', TagKeyValueParamList[depth1].get('Key'))
+			if TagKeyValueParamList[depth1].get('TagValueParamList') is not None:
+				for depth2 in range(len(TagKeyValueParamList[depth1].get('TagValueParamList'))):
+					if TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Value') is not None:
+						self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Value'))
+					if TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Description') is not None:
+						self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + str(depth2 + 1) + '.Description', TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Description'))
+			if TagKeyValueParamList[depth1].get('Description') is not None:
+				self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.Description', TagKeyValueParamList[depth1].get('Description'))
