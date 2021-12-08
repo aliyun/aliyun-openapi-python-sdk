@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class UpdatePhoneSwitchRequest(RpcRequest):
+class QuerySecretNoDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'UpdatePhoneSwitch')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QuerySecretNoDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,18 +36,6 @@ class UpdatePhoneSwitchRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SwitchStatus(self):
-		return self.get_query_params().get('SwitchStatus')
-
-	def set_SwitchStatus(self,SwitchStatus):
-		self.add_query_param('SwitchStatus',SwitchStatus)
-
-	def get_SubsId(self):
-		return self.get_query_params().get('SubsId')
-
-	def set_SubsId(self,SubsId):
-		self.add_query_param('SubsId',SubsId)
 
 	def get_SecretNo(self):
 		return self.get_query_params().get('SecretNo')

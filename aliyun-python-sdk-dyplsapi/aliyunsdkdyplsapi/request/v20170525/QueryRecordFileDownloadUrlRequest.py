@@ -25,44 +25,50 @@ class QueryRecordFileDownloadUrlRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QueryRecordFileDownloadUrl')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CallId(self): # String
+
+	def get_CallId(self):
 		return self.get_query_params().get('CallId')
 
-	def set_CallId(self, CallId):  # String
-		self.add_query_param('CallId', CallId)
-	def get_ResourceOwnerId(self): # Long
+	def set_CallId(self,CallId):
+		self.add_query_param('CallId',CallId)
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ProductType(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self, ProductType):  # String
-		self.add_query_param('ProductType', ProductType)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_CallTime(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CallTime(self):
 		return self.get_query_params().get('CallTime')
 
-	def set_CallTime(self, CallTime):  # String
-		self.add_query_param('CallTime', CallTime)
-	def get_PoolKey(self): # String
+	def set_CallTime(self,CallTime):
+		self.add_query_param('CallTime',CallTime)
+
+	def get_PoolKey(self):
 		return self.get_query_params().get('PoolKey')
 
-	def set_PoolKey(self, PoolKey):  # String
-		self.add_query_param('PoolKey', PoolKey)
+	def set_PoolKey(self,PoolKey):
+		self.add_query_param('PoolKey',PoolKey)

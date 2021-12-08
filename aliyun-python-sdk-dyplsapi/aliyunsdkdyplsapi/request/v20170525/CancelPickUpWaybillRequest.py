@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class UpdatePhoneSwitchRequest(RpcRequest):
+class CancelPickUpWaybillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'UpdatePhoneSwitch')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'CancelPickUpWaybill')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,23 @@ class UpdatePhoneSwitchRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SwitchStatus(self):
-		return self.get_query_params().get('SwitchStatus')
+	def get_OuterOrderCode(self):
+		return self.get_query_params().get('OuterOrderCode')
 
-	def set_SwitchStatus(self,SwitchStatus):
-		self.add_query_param('SwitchStatus',SwitchStatus)
+	def set_OuterOrderCode(self,OuterOrderCode):
+		self.add_query_param('OuterOrderCode',OuterOrderCode)
 
-	def get_SubsId(self):
-		return self.get_query_params().get('SubsId')
+	def get_CancelDesc(self):
+		return self.get_query_params().get('CancelDesc')
 
-	def set_SubsId(self,SubsId):
-		self.add_query_param('SubsId',SubsId)
+	def set_CancelDesc(self,CancelDesc):
+		self.add_query_param('CancelDesc',CancelDesc)
 
-	def get_SecretNo(self):
-		return self.get_query_params().get('SecretNo')
+	def get_ContentType(self):
+		return self.get_headers().get('Content-Type')
 
-	def set_SecretNo(self,SecretNo):
-		self.add_query_param('SecretNo',SecretNo)
+	def set_ContentType(self,ContentType):
+		self.add_header('Content-Type',ContentType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,9 +66,3 @@ class UpdatePhoneSwitchRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PoolKey(self):
-		return self.get_query_params().get('PoolKey')
-
-	def set_PoolKey(self,PoolKey):
-		self.add_query_param('PoolKey',PoolKey)

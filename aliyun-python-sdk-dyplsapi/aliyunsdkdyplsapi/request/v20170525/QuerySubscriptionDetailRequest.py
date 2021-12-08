@@ -25,44 +25,50 @@ class QuerySubscriptionDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QuerySubscriptionDetail')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ProductType(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self, ProductType):  # String
-		self.add_query_param('ProductType', ProductType)
-	def get_SubsId(self): # String
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
+	def get_SubsId(self):
 		return self.get_query_params().get('SubsId')
 
-	def set_SubsId(self, SubsId):  # String
-		self.add_query_param('SubsId', SubsId)
-	def get_PhoneNoX(self): # String
+	def set_SubsId(self,SubsId):
+		self.add_query_param('SubsId',SubsId)
+
+	def get_PhoneNoX(self):
 		return self.get_query_params().get('PhoneNoX')
 
-	def set_PhoneNoX(self, PhoneNoX):  # String
-		self.add_query_param('PhoneNoX', PhoneNoX)
-	def get_ResourceOwnerAccount(self): # String
+	def set_PhoneNoX(self,PhoneNoX):
+		self.add_query_param('PhoneNoX',PhoneNoX)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PoolKey(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PoolKey(self):
 		return self.get_query_params().get('PoolKey')
 
-	def set_PoolKey(self, PoolKey):  # String
-		self.add_query_param('PoolKey', PoolKey)
+	def set_PoolKey(self,PoolKey):
+		self.add_query_param('PoolKey',PoolKey)
