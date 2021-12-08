@@ -101,6 +101,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_NetType(self, NetType):  # String
 		self.add_query_param('NetType', NetType)
+	def get_MseVersion(self): # String
+		return self.get_query_params().get('MseVersion')
+
+	def set_MseVersion(self, MseVersion):  # String
+		self.add_query_param('MseVersion', MseVersion)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
