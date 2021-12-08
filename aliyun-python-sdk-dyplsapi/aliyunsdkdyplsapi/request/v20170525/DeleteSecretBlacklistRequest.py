@@ -25,38 +25,34 @@ class DeleteSecretBlacklistRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'DeleteSecretBlacklist')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BlackType(self):
+	def get_BlackType(self): # String
 		return self.get_query_params().get('BlackType')
 
-	def set_BlackType(self,BlackType):
-		self.add_query_param('BlackType',BlackType)
-
-	def get_Remark(self):
+	def set_BlackType(self, BlackType):  # String
+		self.add_query_param('BlackType', BlackType)
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_PoolKey(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_PoolKey(self): # String
 		return self.get_query_params().get('PoolKey')
 
-	def set_PoolKey(self,PoolKey):
-		self.add_query_param('PoolKey',PoolKey)
-
-	def get_BlackNo(self):
+	def set_PoolKey(self, PoolKey):  # String
+		self.add_query_param('PoolKey', PoolKey)
+	def get_BlackNo(self): # String
 		return self.get_query_params().get('BlackNo')
 
-	def set_BlackNo(self,BlackNo):
-		self.add_query_param('BlackNo',BlackNo)
-
-	def get_WayControl(self):
+	def set_BlackNo(self, BlackNo):  # String
+		self.add_query_param('BlackNo', BlackNo)
+	def get_WayControl(self): # String
 		return self.get_query_params().get('WayControl')
 
-	def set_WayControl(self,WayControl):
-		self.add_query_param('WayControl',WayControl)
+	def set_WayControl(self, WayControl):  # String
+		self.add_query_param('WayControl', WayControl)

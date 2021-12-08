@@ -25,26 +25,24 @@ class GetSecretAsrDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'GetSecretAsrDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CallId(self):
+	def get_CallId(self): # String
 		return self.get_query_params().get('CallId')
 
-	def set_CallId(self,CallId):
-		self.add_query_param('CallId',CallId)
-
-	def get_CallTime(self):
+	def set_CallId(self, CallId):  # String
+		self.add_query_param('CallId', CallId)
+	def get_CallTime(self): # String
 		return self.get_query_params().get('CallTime')
 
-	def set_CallTime(self,CallTime):
-		self.add_query_param('CallTime',CallTime)
-
-	def get_PoolKey(self):
+	def set_CallTime(self, CallTime):  # String
+		self.add_query_param('CallTime', CallTime)
+	def get_PoolKey(self): # String
 		return self.get_query_params().get('PoolKey')
 
-	def set_PoolKey(self,PoolKey):
-		self.add_query_param('PoolKey',PoolKey)
+	def set_PoolKey(self, PoolKey):  # String
+		self.add_query_param('PoolKey', PoolKey)

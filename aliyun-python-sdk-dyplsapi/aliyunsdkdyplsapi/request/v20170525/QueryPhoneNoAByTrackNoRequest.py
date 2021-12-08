@@ -25,44 +25,39 @@ class QueryPhoneNoAByTrackNoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QueryPhoneNoAByTrackNo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CabinetNo(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CabinetNo(self): # String
 		return self.get_query_params().get('CabinetNo')
 
-	def set_CabinetNo(self,CabinetNo):
-		self.add_query_param('CabinetNo',CabinetNo)
-
-	def get_PhoneNoX(self):
+	def set_CabinetNo(self, CabinetNo):  # String
+		self.add_query_param('CabinetNo', CabinetNo)
+	def get_PhoneNoX(self): # String
 		return self.get_query_params().get('PhoneNoX')
 
-	def set_PhoneNoX(self,PhoneNoX):
-		self.add_query_param('PhoneNoX',PhoneNoX)
-
-	def get_ResourceOwnerAccount(self):
+	def set_PhoneNoX(self, PhoneNoX):  # String
+		self.add_query_param('PhoneNoX', PhoneNoX)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_trackNo(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_trackNo(self): # String
 		return self.get_query_params().get('trackNo')
 
-	def set_trackNo(self,trackNo):
-		self.add_query_param('trackNo',trackNo)
+	def set_trackNo(self, trackNo):  # String
+		self.add_query_param('trackNo', trackNo)
