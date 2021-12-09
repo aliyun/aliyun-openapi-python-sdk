@@ -38,17 +38,125 @@ class CreateApplicationRequest(RoaRequest):
 	def set_NasId(self,NasId):
 		self.add_query_param('NasId',NasId)
 
-	def get_WebContainer(self):
-		return self.get_query_params().get('WebContainer')
-
-	def set_WebContainer(self,WebContainer):
-		self.add_query_param('WebContainer',WebContainer)
-
 	def get_JarStartArgs(self):
 		return self.get_query_params().get('JarStartArgs')
 
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
+
+	def get_OssAkSecret(self):
+		return self.get_body_params().get('OssAkSecret')
+
+	def set_OssAkSecret(self,OssAkSecret):
+		self.add_body_params('OssAkSecret', OssAkSecret)
+
+	def get_MountHost(self):
+		return self.get_query_params().get('MountHost')
+
+	def set_MountHost(self,MountHost):
+		self.add_query_param('MountHost',MountHost)
+
+	def get_AutoConfig(self):
+		return self.get_query_params().get('AutoConfig')
+
+	def set_AutoConfig(self,AutoConfig):
+		self.add_query_param('AutoConfig',AutoConfig)
+
+	def get_Envs(self):
+		return self.get_query_params().get('Envs')
+
+	def set_Envs(self,Envs):
+		self.add_query_param('Envs',Envs)
+
+	def get_PhpArmsConfigLocation(self):
+		return self.get_query_params().get('PhpArmsConfigLocation')
+
+	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
+		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
+
+	def get_CustomHostAlias(self):
+		return self.get_query_params().get('CustomHostAlias')
+
+	def set_CustomHostAlias(self,CustomHostAlias):
+		self.add_query_param('CustomHostAlias',CustomHostAlias)
+
+	def get_Deploy(self):
+		return self.get_query_params().get('Deploy')
+
+	def set_Deploy(self,Deploy):
+		self.add_query_param('Deploy',Deploy)
+
+	def get_JarStartOptions(self):
+		return self.get_query_params().get('JarStartOptions')
+
+	def set_JarStartOptions(self,JarStartOptions):
+		self.add_query_param('JarStartOptions',JarStartOptions)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_NamespaceId(self):
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self,NamespaceId):
+		self.add_query_param('NamespaceId',NamespaceId)
+
+	def get_ConfigMapMountDesc(self):
+		return self.get_body_params().get('ConfigMapMountDesc')
+
+	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
+		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
+
+	def get_OssMountDescs(self):
+		return self.get_body_params().get('OssMountDescs')
+
+	def set_OssMountDescs(self,OssMountDescs):
+		self.add_body_params('OssMountDescs', OssMountDescs)
+
+	def get_PreStop(self):
+		return self.get_query_params().get('PreStop')
+
+	def set_PreStop(self,PreStop):
+		self.add_query_param('PreStop',PreStop)
+
+	def get_Cpu(self):
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self,Cpu):
+		self.add_query_param('Cpu',Cpu)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PackageType(self):
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self,PackageType):
+		self.add_query_param('PackageType',PackageType)
+
+	def get_PostStart(self):
+		return self.get_query_params().get('PostStart')
+
+	def set_PostStart(self,PostStart):
+		self.add_query_param('PostStart',PostStart)
+
+	def get_AssociateEip(self):
+		return self.get_body_params().get('AssociateEip')
+
+	def set_AssociateEip(self,AssociateEip):
+		self.add_body_params('AssociateEip', AssociateEip)
+
+	def get_WebContainer(self):
+		return self.get_query_params().get('WebContainer')
+
+	def set_WebContainer(self,WebContainer):
+		self.add_query_param('WebContainer',WebContainer)
 
 	def get_Memory(self):
 		return self.get_query_params().get('Memory')
@@ -86,17 +194,11 @@ class CreateApplicationRequest(RoaRequest):
 	def set_Timezone(self,Timezone):
 		self.add_query_param('Timezone',Timezone)
 
-	def get_MountHost(self):
-		return self.get_query_params().get('MountHost')
+	def get_OssAkId(self):
+		return self.get_body_params().get('OssAkId')
 
-	def set_MountHost(self,MountHost):
-		self.add_query_param('MountHost',MountHost)
-
-	def get_AutoConfig(self):
-		return self.get_query_params().get('AutoConfig')
-
-	def set_AutoConfig(self,AutoConfig):
-		self.add_query_param('AutoConfig',AutoConfig)
+	def set_OssAkId(self,OssAkId):
+		self.add_body_params('OssAkId', OssAkId)
 
 	def get_Liveness(self):
 		return self.get_query_params().get('Liveness')
@@ -110,18 +212,6 @@ class CreateApplicationRequest(RoaRequest):
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
-	def get_Envs(self):
-		return self.get_query_params().get('Envs')
-
-	def set_Envs(self,Envs):
-		self.add_query_param('Envs',Envs)
-
-	def get_PhpArmsConfigLocation(self):
-		return self.get_query_params().get('PhpArmsConfigLocation')
-
-	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
-		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
-
 	def get_PackageVersion(self):
 		return self.get_query_params().get('PackageVersion')
 
@@ -134,47 +224,17 @@ class CreateApplicationRequest(RoaRequest):
 	def set_TomcatConfig(self,TomcatConfig):
 		self.add_query_param('TomcatConfig',TomcatConfig)
 
-	def get_CustomHostAlias(self):
-		return self.get_query_params().get('CustomHostAlias')
-
-	def set_CustomHostAlias(self,CustomHostAlias):
-		self.add_query_param('CustomHostAlias',CustomHostAlias)
-
-	def get_Deploy(self):
-		return self.get_query_params().get('Deploy')
-
-	def set_Deploy(self,Deploy):
-		self.add_query_param('Deploy',Deploy)
-
 	def get_WarStartOptions(self):
 		return self.get_query_params().get('WarStartOptions')
 
 	def set_WarStartOptions(self,WarStartOptions):
 		self.add_query_param('WarStartOptions',WarStartOptions)
 
-	def get_JarStartOptions(self):
-		return self.get_query_params().get('JarStartOptions')
-
-	def set_JarStartOptions(self,JarStartOptions):
-		self.add_query_param('JarStartOptions',JarStartOptions)
-
 	def get_EdasContainerVersion(self):
 		return self.get_query_params().get('EdasContainerVersion')
 
 	def set_EdasContainerVersion(self,EdasContainerVersion):
 		self.add_query_param('EdasContainerVersion',EdasContainerVersion)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_NamespaceId(self):
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
 
 	def get_PackageUrl(self):
 		return self.get_query_params().get('PackageUrl')
@@ -188,35 +248,17 @@ class CreateApplicationRequest(RoaRequest):
 	def set_TerminationGracePeriodSeconds(self,TerminationGracePeriodSeconds):
 		self.add_query_param('TerminationGracePeriodSeconds',TerminationGracePeriodSeconds)
 
-	def get_ConfigMapMountDesc(self):
-		return self.get_body_params().get('ConfigMapMountDesc')
-
-	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
-		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
-
 	def get_PhpConfig(self):
 		return self.get_body_params().get('PhpConfig')
 
 	def set_PhpConfig(self,PhpConfig):
 		self.add_body_params('PhpConfig', PhpConfig)
 
-	def get_PreStop(self):
-		return self.get_query_params().get('PreStop')
-
-	def set_PreStop(self,PreStop):
-		self.add_query_param('PreStop',PreStop)
-
 	def get_Replicas(self):
 		return self.get_query_params().get('Replicas')
 
 	def set_Replicas(self,Replicas):
 		self.add_query_param('Replicas',Replicas)
-
-	def get_Cpu(self):
-		return self.get_query_params().get('Cpu')
-
-	def set_Cpu(self,Cpu):
-		self.add_query_param('Cpu',Cpu)
 
 	def get_Command(self):
 		return self.get_query_params().get('Command')
@@ -229,12 +271,6 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_MountDesc(self,MountDesc):
 		self.add_query_param('MountDesc',MountDesc)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_Jdk(self):
 		return self.get_query_params().get('Jdk')
@@ -260,20 +296,8 @@ class CreateApplicationRequest(RoaRequest):
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
 
-	def get_PackageType(self):
-		return self.get_query_params().get('PackageType')
-
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
 	def get_PhpConfigLocation(self):
 		return self.get_query_params().get('PhpConfigLocation')
 
 	def set_PhpConfigLocation(self,PhpConfigLocation):
 		self.add_query_param('PhpConfigLocation',PhpConfigLocation)
-
-	def get_PostStart(self):
-		return self.get_query_params().get('PostStart')
-
-	def set_PostStart(self,PostStart):
-		self.add_query_param('PostStart',PostStart)

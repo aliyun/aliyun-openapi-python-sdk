@@ -20,44 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeApplicationInstancesRequest(RoaRequest):
+class UpdateGreyTagRouteRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeApplicationInstances','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/describeApplicationInstances')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateGreyTagRoute','serverless')
+		self.set_uri_pattern('/pop/v1/sam/tagroute/greyTagRoute')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_GreyTagRouteId(self):
+		return self.get_query_params().get('GreyTagRouteId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_GreyTagRouteId(self,GreyTagRouteId):
+		self.add_query_param('GreyTagRouteId',GreyTagRouteId)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_DubboRules(self):
+		return self.get_query_params().get('DubboRules')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_DubboRules(self,DubboRules):
+		self.add_query_param('DubboRules',DubboRules)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_ScRules(self):
+		return self.get_query_params().get('ScRules')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Reverse(self):
-		return self.get_query_params().get('Reverse')
-
-	def set_Reverse(self,Reverse):
-		self.add_query_param('Reverse',Reverse)
+	def set_ScRules(self,ScRules):
+		self.add_query_param('ScRules',ScRules)

@@ -20,44 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeApplicationInstancesRequest(RoaRequest):
+class UploadFilesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeApplicationInstances','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/describeApplicationInstances')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UploadFiles','serverless')
+		self.set_uri_pattern('/pop/v1/sam/app/uploadFiles')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_CloudUrl(self):
+		return self.get_query_params().get('CloudUrl')
+
+	def set_CloudUrl(self,CloudUrl):
+		self.add_query_param('CloudUrl',CloudUrl)
+
+	def get_Localpath(self):
+		return self.get_query_params().get('Localpath')
+
+	def set_Localpath(self,Localpath):
+		self.add_query_param('Localpath',Localpath)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Reverse(self):
-		return self.get_query_params().get('Reverse')
-
-	def set_Reverse(self,Reverse):
-		self.add_query_param('Reverse',Reverse)

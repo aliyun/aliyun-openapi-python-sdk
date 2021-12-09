@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeApplicationInstancesRequest(RoaRequest):
+class DescribeAppServiceDetailRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeApplicationInstances','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/describeApplicationInstances')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeAppServiceDetail','serverless')
+		self.set_uri_pattern('/pop/v1/sam/service/describeAppServiceDetail')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,32 +32,32 @@ class DescribeApplicationInstancesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ServiceType(self):
+		return self.get_query_params().get('ServiceType')
+
+	def set_ServiceType(self,ServiceType):
+		self.add_query_param('ServiceType',ServiceType)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_ServiceVersion(self):
+		return self.get_query_params().get('ServiceVersion')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_ServiceVersion(self,ServiceVersion):
+		self.add_query_param('ServiceVersion',ServiceVersion)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_ServiceGroup(self):
+		return self.get_query_params().get('ServiceGroup')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Reverse(self):
-		return self.get_query_params().get('Reverse')
-
-	def set_Reverse(self,Reverse):
-		self.add_query_param('Reverse',Reverse)
+	def set_ServiceGroup(self,ServiceGroup):
+		self.add_query_param('ServiceGroup',ServiceGroup)

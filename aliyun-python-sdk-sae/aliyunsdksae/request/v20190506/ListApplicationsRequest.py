@@ -50,11 +50,35 @@ class ListApplicationsRequest(RoaRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_FieldValue(self):
+		return self.get_query_params().get('FieldValue')
+
+	def set_FieldValue(self,FieldValue):
+		self.add_query_param('FieldValue',FieldValue)
+
+	def get_Reverse(self):
+		return self.get_query_params().get('Reverse')
+
+	def set_Reverse(self,Reverse):
+		self.add_query_param('Reverse',Reverse)
+
+	def get_FieldType(self):
+		return self.get_query_params().get('FieldType')
+
+	def set_FieldType(self,FieldType):
+		self.add_query_param('FieldType',FieldType)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

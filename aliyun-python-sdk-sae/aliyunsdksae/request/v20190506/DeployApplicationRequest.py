@@ -62,6 +62,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_SlsConfigs(self,SlsConfigs):
 		self.add_query_param('SlsConfigs',SlsConfigs)
 
+	def get_OssAkSecret(self):
+		return self.get_body_params().get('OssAkSecret')
+
+	def set_OssAkSecret(self,OssAkSecret):
+		self.add_body_params('OssAkSecret', OssAkSecret)
+
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
 
@@ -97,6 +103,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_BatchWaitTime(self,BatchWaitTime):
 		self.add_query_param('BatchWaitTime',BatchWaitTime)
+
+	def get_OssAkId(self):
+		return self.get_body_params().get('OssAkId')
+
+	def set_OssAkId(self,OssAkId):
+		self.add_body_params('OssAkId', OssAkId)
 
 	def get_Liveness(self):
 		return self.get_query_params().get('Liveness')
@@ -170,6 +182,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
 		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
 
+	def get_OssMountDescs(self):
+		return self.get_body_params().get('OssMountDescs')
+
+	def set_OssMountDescs(self,OssMountDescs):
+		self.add_body_params('OssMountDescs', OssMountDescs)
+
 	def get_PhpConfig(self):
 		return self.get_body_params().get('PhpConfig')
 
@@ -181,6 +199,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_PreStop(self,PreStop):
 		self.add_query_param('PreStop',PreStop)
+
+	def get_EnableGreyTagRoute(self):
+		return self.get_query_params().get('EnableGreyTagRoute')
+
+	def set_EnableGreyTagRoute(self,EnableGreyTagRoute):
+		self.add_query_param('EnableGreyTagRoute',EnableGreyTagRoute)
 
 	def get_Command(self):
 		return self.get_query_params().get('Command')
@@ -218,6 +242,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_ChangeOrderDesc(self,ChangeOrderDesc):
 		self.add_query_param('ChangeOrderDesc',ChangeOrderDesc)
 
+	def get_AcrInstanceId(self):
+		return self.get_body_params().get('AcrInstanceId')
+
+	def set_AcrInstanceId(self,AcrInstanceId):
+		self.add_body_params('AcrInstanceId', AcrInstanceId)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
@@ -247,3 +277,9 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_PostStart(self,PostStart):
 		self.add_query_param('PostStart',PostStart)
+
+	def get_AssociateEip(self):
+		return self.get_body_params().get('AssociateEip')
+
+	def set_AssociateEip(self,AssociateEip):
+		self.add_body_params('AssociateEip', AssociateEip)

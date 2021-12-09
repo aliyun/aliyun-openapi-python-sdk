@@ -38,6 +38,12 @@ class CreateApplicationScalingRuleRequest(RoaRequest):
 	def set_ScalingRuleName(self,ScalingRuleName):
 		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
+	def get_ScalingRuleEnable(self):
+		return self.get_query_params().get('ScalingRuleEnable')
+
+	def set_ScalingRuleEnable(self,ScalingRuleEnable):
+		self.add_query_param('ScalingRuleEnable',ScalingRuleEnable)
+
 	def get_ScalingRuleTimer(self):
 		return self.get_query_params().get('ScalingRuleTimer')
 

@@ -49,3 +49,9 @@ class RescaleApplicationRequest(RoaRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_AutoEnableApplicationScalingRule(self):
+		return self.get_query_params().get('AutoEnableApplicationScalingRule')
+
+	def set_AutoEnableApplicationScalingRule(self,AutoEnableApplicationScalingRule):
+		self.add_query_param('AutoEnableApplicationScalingRule',AutoEnableApplicationScalingRule)

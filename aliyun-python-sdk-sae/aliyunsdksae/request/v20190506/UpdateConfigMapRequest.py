@@ -39,10 +39,10 @@ class UpdateConfigMapRequest(RoaRequest):
 		self.add_body_params('Data', Data)
 
 	def get_Description(self):
-		return self.get_body_params().get('Description')
+		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
+		self.add_query_param('Description',Description)
 
 	def get_ConfigMapId(self):
 		return self.get_query_params().get('ConfigMapId')
