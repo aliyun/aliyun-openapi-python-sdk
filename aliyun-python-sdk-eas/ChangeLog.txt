@@ -1,3 +1,6 @@
+2021-12-10 Version: 0.0.4
+- Update to v2 api.
+
 2020-03-20 Version: 0.0.3
 - Add GetNetworkInterface interface.
 
