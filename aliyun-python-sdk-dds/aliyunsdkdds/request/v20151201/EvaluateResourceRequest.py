@@ -37,6 +37,12 @@ class EvaluateResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ReadonlyReplicas(self):
+		return self.get_query_params().get('ReadonlyReplicas')
+
+	def set_ReadonlyReplicas(self,ReadonlyReplicas):
+		self.add_query_param('ReadonlyReplicas',ReadonlyReplicas)
+
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
@@ -48,6 +54,12 @@ class EvaluateResourceRequest(RpcRequest):
 
 	def set_ShardsInfo(self,ShardsInfo):
 		self.add_query_param('ShardsInfo',ShardsInfo)
+
+	def get_ReplicationFactor(self):
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self,ReplicationFactor):
+		self.add_query_param('ReplicationFactor',ReplicationFactor)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

@@ -31,6 +31,12 @@ class CreateServerlessDBInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_CapacityUnit(self):
+		return self.get_query_params().get('CapacityUnit')
+
+	def set_CapacityUnit(self,CapacityUnit):
+		self.add_query_param('CapacityUnit',CapacityUnit)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
