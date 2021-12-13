@@ -23,22 +23,21 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GetDiscoveredResourceSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'GetDiscoveredResourceSummary','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'GetDiscoveredResourceSummary')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MultiAccount(self):
+	def get_MultiAccount(self): # Boolean
 		return self.get_query_params().get('MultiAccount')
 
-	def set_MultiAccount(self,MultiAccount):
-		self.add_query_param('MultiAccount',MultiAccount)
-
-	def get_MemberId(self):
+	def set_MultiAccount(self, MultiAccount):  # Boolean
+		self.add_query_param('MultiAccount', MultiAccount)
+	def get_MemberId(self): # Long
 		return self.get_query_params().get('MemberId')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_MemberId(self, MemberId):  # Long
+		self.add_query_param('MemberId', MemberId)

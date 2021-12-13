@@ -23,16 +23,16 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class PutConfigurationRecorderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutConfigurationRecorder','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutConfigurationRecorder')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceTypes(self):
+	def get_ResourceTypes(self): # String
 		return self.get_body_params().get('ResourceTypes')
 
-	def set_ResourceTypes(self,ResourceTypes):
+	def set_ResourceTypes(self, ResourceTypes):  # String
 		self.add_body_params('ResourceTypes', ResourceTypes)

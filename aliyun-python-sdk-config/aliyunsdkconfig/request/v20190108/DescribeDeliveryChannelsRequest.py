@@ -23,16 +23,16 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class DescribeDeliveryChannelsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeDeliveryChannels','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeDeliveryChannels')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeliveryChannelIds(self):
+	def get_DeliveryChannelIds(self): # String
 		return self.get_query_params().get('DeliveryChannelIds')
 
-	def set_DeliveryChannelIds(self,DeliveryChannelIds):
-		self.add_query_param('DeliveryChannelIds',DeliveryChannelIds)
+	def set_DeliveryChannelIds(self, DeliveryChannelIds):  # String
+		self.add_query_param('DeliveryChannelIds', DeliveryChannelIds)

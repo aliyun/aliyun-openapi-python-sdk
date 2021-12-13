@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class DescribeDiscoveredResourceRequest(RpcRequest):
+class GetAggregateDiscoveredResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeDiscoveredResource')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'GetAggregateDiscoveredResource')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,16 @@ class DescribeDiscoveredResourceRequest(RpcRequest):
 
 	def set_ResourceId(self, ResourceId):  # String
 		self.add_query_param('ResourceId', ResourceId)
-	def get_MultiAccount(self): # Boolean
-		return self.get_query_params().get('MultiAccount')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_MultiAccount(self, MultiAccount):  # Boolean
-		self.add_query_param('MultiAccount', MultiAccount)
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AggregatorId(self): # String
+		return self.get_query_params().get('AggregatorId')
+
+	def set_AggregatorId(self, AggregatorId):  # String
+		self.add_query_param('AggregatorId', AggregatorId)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
@@ -51,8 +56,3 @@ class DescribeDiscoveredResourceRequest(RpcRequest):
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
-	def get_MemberId(self): # Long
-		return self.get_query_params().get('MemberId')
-
-	def set_MemberId(self, MemberId):  # Long
-		self.add_query_param('MemberId', MemberId)

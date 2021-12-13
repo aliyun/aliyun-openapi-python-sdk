@@ -23,16 +23,16 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class StopConfigRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'StopConfigRules','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'StopConfigRules')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConfigRuleIds(self):
+	def get_ConfigRuleIds(self): # String
 		return self.get_query_params().get('ConfigRuleIds')
 
-	def set_ConfigRuleIds(self,ConfigRuleIds):
-		self.add_query_param('ConfigRuleIds',ConfigRuleIds)
+	def set_ConfigRuleIds(self, ConfigRuleIds):  # String
+		self.add_query_param('ConfigRuleIds', ConfigRuleIds)

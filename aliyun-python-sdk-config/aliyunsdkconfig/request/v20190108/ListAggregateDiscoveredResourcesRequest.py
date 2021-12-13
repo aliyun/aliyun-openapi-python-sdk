@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class ListDiscoveredResourcesRequest(RpcRequest):
+class ListAggregateDiscoveredResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListDiscoveredResources')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListAggregateDiscoveredResources')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,31 @@ class ListDiscoveredResourcesRequest(RpcRequest):
 
 	def set_ResourceDeleted(self, ResourceDeleted):  # Integer
 		self.add_query_param('ResourceDeleted', ResourceDeleted)
-	def get_MultiAccount(self): # Boolean
-		return self.get_query_params().get('MultiAccount')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_MultiAccount(self, MultiAccount):  # Boolean
-		self.add_query_param('MultiAccount', MultiAccount)
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_Regions(self): # String
 		return self.get_query_params().get('Regions')
 
 	def set_Regions(self, Regions):  # String
 		self.add_query_param('Regions', Regions)
+	def get_AggregatorId(self): # String
+		return self.get_query_params().get('AggregatorId')
+
+	def set_AggregatorId(self, AggregatorId):  # String
+		self.add_query_param('AggregatorId', AggregatorId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_FolderId(self): # String
+		return self.get_query_params().get('FolderId')
+
+	def set_FolderId(self, FolderId):  # String
+		self.add_query_param('FolderId', FolderId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -71,8 +81,3 @@ class ListDiscoveredResourcesRequest(RpcRequest):
 
 	def set_ResourceTypes(self, ResourceTypes):  # String
 		self.add_query_param('ResourceTypes', ResourceTypes)
-	def get_MemberId(self): # Long
-		return self.get_query_params().get('MemberId')
-
-	def set_MemberId(self, MemberId):  # Long
-		self.add_query_param('MemberId', MemberId)

@@ -23,64 +23,56 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class PutDeliveryChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutDeliveryChannel','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutDeliveryChannel')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_DeliveryChannelTargetArn(self):
+	def get_DeliveryChannelTargetArn(self): # String
 		return self.get_body_params().get('DeliveryChannelTargetArn')
 
-	def set_DeliveryChannelTargetArn(self,DeliveryChannelTargetArn):
+	def set_DeliveryChannelTargetArn(self, DeliveryChannelTargetArn):  # String
 		self.add_body_params('DeliveryChannelTargetArn', DeliveryChannelTargetArn)
-
-	def get_DeliveryChannelCondition(self):
+	def get_DeliveryChannelCondition(self): # String
 		return self.get_body_params().get('DeliveryChannelCondition')
 
-	def set_DeliveryChannelCondition(self,DeliveryChannelCondition):
+	def set_DeliveryChannelCondition(self, DeliveryChannelCondition):  # String
 		self.add_body_params('DeliveryChannelCondition', DeliveryChannelCondition)
-
-	def get_DeliveryChannelAssumeRoleArn(self):
+	def get_DeliveryChannelAssumeRoleArn(self): # String
 		return self.get_body_params().get('DeliveryChannelAssumeRoleArn')
 
-	def set_DeliveryChannelAssumeRoleArn(self,DeliveryChannelAssumeRoleArn):
+	def set_DeliveryChannelAssumeRoleArn(self, DeliveryChannelAssumeRoleArn):  # String
 		self.add_body_params('DeliveryChannelAssumeRoleArn', DeliveryChannelAssumeRoleArn)
-
-	def get_DeliveryChannelName(self):
+	def get_DeliveryChannelName(self): # String
 		return self.get_body_params().get('DeliveryChannelName')
 
-	def set_DeliveryChannelName(self,DeliveryChannelName):
+	def set_DeliveryChannelName(self, DeliveryChannelName):  # String
 		self.add_body_params('DeliveryChannelName', DeliveryChannelName)
-
-	def get_DeliveryChannelId(self):
+	def get_DeliveryChannelId(self): # String
 		return self.get_body_params().get('DeliveryChannelId')
 
-	def set_DeliveryChannelId(self,DeliveryChannelId):
+	def set_DeliveryChannelId(self, DeliveryChannelId):  # String
 		self.add_body_params('DeliveryChannelId', DeliveryChannelId)
-
-	def get_DeliveryChannelType(self):
+	def get_DeliveryChannelType(self): # String
 		return self.get_body_params().get('DeliveryChannelType')
 
-	def set_DeliveryChannelType(self,DeliveryChannelType):
+	def set_DeliveryChannelType(self, DeliveryChannelType):  # String
 		self.add_body_params('DeliveryChannelType', DeliveryChannelType)
-
-	def get_Status(self):
+	def get_Status(self): # Integer
 		return self.get_body_params().get('Status')
 
-	def set_Status(self,Status):
+	def set_Status(self, Status):  # Integer
 		self.add_body_params('Status', Status)

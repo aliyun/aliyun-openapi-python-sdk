@@ -23,58 +23,51 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class DescribeEvaluationResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeEvaluationResults','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeEvaluationResults')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConfigRuleId(self):
+	def get_ConfigRuleId(self): # String
 		return self.get_query_params().get('ConfigRuleId')
 
-	def set_ConfigRuleId(self,ConfigRuleId):
-		self.add_query_param('ConfigRuleId',ConfigRuleId)
-
-	def get_MultiAccount(self):
+	def set_ConfigRuleId(self, ConfigRuleId):  # String
+		self.add_query_param('ConfigRuleId', ConfigRuleId)
+	def get_MultiAccount(self): # Boolean
 		return self.get_query_params().get('MultiAccount')
 
-	def set_MultiAccount(self,MultiAccount):
-		self.add_query_param('MultiAccount',MultiAccount)
-
-	def get_PageNumber(self):
+	def set_MultiAccount(self, MultiAccount):  # Boolean
+		self.add_query_param('MultiAccount', MultiAccount)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ComplianceType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ComplianceType(self): # String
 		return self.get_query_params().get('ComplianceType')
 
-	def set_ComplianceType(self,ComplianceType):
-		self.add_query_param('ComplianceType',ComplianceType)
-
-	def get_ResourceId(self):
+	def set_ComplianceType(self, ComplianceType):  # String
+		self.add_query_param('ComplianceType', ComplianceType)
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_ResourceType(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_MemberId(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_MemberId(self): # Long
 		return self.get_query_params().get('MemberId')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_MemberId(self, MemberId):  # Long
+		self.add_query_param('MemberId', MemberId)

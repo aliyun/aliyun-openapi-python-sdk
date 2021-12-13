@@ -23,64 +23,56 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GetResourceComplianceTimelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'GetResourceComplianceTimeline','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'GetResourceComplianceTimeline')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MultiAccount(self):
+	def get_MultiAccount(self): # Boolean
 		return self.get_query_params().get('MultiAccount')
 
-	def set_MultiAccount(self,MultiAccount):
-		self.add_query_param('MultiAccount',MultiAccount)
-
-	def get_StartTime(self):
+	def set_MultiAccount(self, MultiAccount):  # Boolean
+		self.add_query_param('MultiAccount', MultiAccount)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_NextToken(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_Limit(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_ResourceId(self):
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_EndTime(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_ResourceType(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_Region(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_MemberId(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_MemberId(self): # String
 		return self.get_query_params().get('MemberId')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_MemberId(self, MemberId):  # String
+		self.add_query_param('MemberId', MemberId)

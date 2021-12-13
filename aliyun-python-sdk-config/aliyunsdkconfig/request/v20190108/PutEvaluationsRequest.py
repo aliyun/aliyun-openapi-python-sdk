@@ -23,22 +23,21 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class PutEvaluationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutEvaluations','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'PutEvaluations')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Evaluations(self):
+	def get_Evaluations(self): # String
 		return self.get_body_params().get('Evaluations')
 
-	def set_Evaluations(self,Evaluations):
+	def set_Evaluations(self, Evaluations):  # String
 		self.add_body_params('Evaluations', Evaluations)
-
-	def get_ResultToken(self):
+	def get_ResultToken(self): # String
 		return self.get_body_params().get('ResultToken')
 
-	def set_ResultToken(self,ResultToken):
+	def set_ResultToken(self, ResultToken):  # String
 		self.add_body_params('ResultToken', ResultToken)

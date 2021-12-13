@@ -20,39 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class DescribeDiscoveredResourceRequest(RpcRequest):
+class ListRemediationTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeDiscoveredResource')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListRemediationTemplates')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
+	def get_ManagedRuleIdentifier(self): # String
+		return self.get_query_params().get('ManagedRuleIdentifier')
 
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
-	def get_MultiAccount(self): # Boolean
-		return self.get_query_params().get('MultiAccount')
+	def set_ManagedRuleIdentifier(self, ManagedRuleIdentifier):  # String
+		self.add_query_param('ManagedRuleIdentifier', ManagedRuleIdentifier)
+	def get_RemediationType(self): # String
+		return self.get_query_params().get('RemediationType')
 
-	def set_MultiAccount(self, MultiAccount):  # Boolean
-		self.add_query_param('MultiAccount', MultiAccount)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
-	def get_MemberId(self): # Long
-		return self.get_query_params().get('MemberId')
-
-	def set_MemberId(self, MemberId):  # Long
-		self.add_query_param('MemberId', MemberId)
+	def set_RemediationType(self, RemediationType):  # String
+		self.add_query_param('RemediationType', RemediationType)

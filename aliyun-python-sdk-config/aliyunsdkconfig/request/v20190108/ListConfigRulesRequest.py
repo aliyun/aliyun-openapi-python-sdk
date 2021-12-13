@@ -23,58 +23,56 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class ListConfigRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListConfigRules','Config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListConfigRules')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MultiAccount(self):
+	def get_MultiAccount(self): # Boolean
 		return self.get_query_params().get('MultiAccount')
 
-	def set_MultiAccount(self,MultiAccount):
-		self.add_query_param('MultiAccount',MultiAccount)
-
-	def get_MessageType(self):
-		return self.get_query_params().get('MessageType')
-
-	def set_MessageType(self,MessageType):
-		self.add_query_param('MessageType',MessageType)
-
-	def get_ConfigRuleState(self):
+	def set_MultiAccount(self, MultiAccount):  # Boolean
+		self.add_query_param('MultiAccount', MultiAccount)
+	def get_ConfigRuleState(self): # String
 		return self.get_query_params().get('ConfigRuleState')
 
-	def set_ConfigRuleState(self,ConfigRuleState):
-		self.add_query_param('ConfigRuleState',ConfigRuleState)
-
-	def get_PageNumber(self):
+	def set_ConfigRuleState(self, ConfigRuleState):  # String
+		self.add_query_param('ConfigRuleState', ConfigRuleState)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CompliancePackId(self): # String
+		return self.get_query_params().get('CompliancePackId')
 
-	def get_ComplianceType(self):
+	def set_CompliancePackId(self, CompliancePackId):  # String
+		self.add_query_param('CompliancePackId', CompliancePackId)
+	def get_ComplianceType(self): # String
 		return self.get_query_params().get('ComplianceType')
 
-	def set_ComplianceType(self,ComplianceType):
-		self.add_query_param('ComplianceType',ComplianceType)
-
-	def get_RiskLevel(self):
+	def set_ComplianceType(self, ComplianceType):  # String
+		self.add_query_param('ComplianceType', ComplianceType)
+	def get_RiskLevel(self): # Integer
 		return self.get_query_params().get('RiskLevel')
 
-	def set_RiskLevel(self,RiskLevel):
-		self.add_query_param('RiskLevel',RiskLevel)
+	def set_RiskLevel(self, RiskLevel):  # Integer
+		self.add_query_param('RiskLevel', RiskLevel)
+	def get_ConfigRuleName(self): # String
+		return self.get_query_params().get('ConfigRuleName')
 
-	def get_MemberId(self):
+	def set_ConfigRuleName(self, ConfigRuleName):  # String
+		self.add_query_param('ConfigRuleName', ConfigRuleName)
+	def get_MemberId(self): # Long
 		return self.get_query_params().get('MemberId')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_MemberId(self, MemberId):  # Long
+		self.add_query_param('MemberId', MemberId)
