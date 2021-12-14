@@ -31,17 +31,17 @@ class DescribeProtectionModuleCodeConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CodeValue(self):
-		return self.get_query_params().get('CodeValue')
-
-	def set_CodeValue(self,CodeValue):
-		self.add_query_param('CodeValue',CodeValue)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_CodeValue(self):
+		return self.get_query_params().get('CodeValue')
+
+	def set_CodeValue(self,CodeValue):
+		self.add_query_param('CodeValue',CodeValue)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -49,20 +49,8 @@ class DescribeProtectionModuleCodeConfigRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_CodeType(self):
 		return self.get_query_params().get('CodeType')
 
 	def set_CodeType(self,CodeType):
 		self.add_query_param('CodeType',CodeType)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
