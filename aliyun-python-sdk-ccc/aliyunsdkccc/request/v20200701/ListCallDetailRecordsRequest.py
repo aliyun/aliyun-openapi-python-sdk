@@ -61,6 +61,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_EarlyMediaStateList(self):
+		return self.get_query_params().get('EarlyMediaStateList')
+
+	def set_EarlyMediaStateList(self,EarlyMediaStateList):
+		self.add_query_param('EarlyMediaStateList',EarlyMediaStateList)
+
 	def get_CalledNumber(self):
 		return self.get_query_params().get('CalledNumber')
 

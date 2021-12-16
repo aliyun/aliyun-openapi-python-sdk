@@ -78,3 +78,9 @@ class StartPredictiveCallRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SkillGroupId(self):
+		return self.get_query_params().get('SkillGroupId')
+
+	def set_SkillGroupId(self,SkillGroupId):
+		self.add_query_param('SkillGroupId',SkillGroupId)
