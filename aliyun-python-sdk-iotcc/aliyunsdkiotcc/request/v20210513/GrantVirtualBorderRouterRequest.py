@@ -22,11 +22,11 @@ from aliyunsdkcore.request import RpcRequest
 class GrantVirtualBorderRouterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'GrantVirtualBorderRouter','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'GrantVirtualBorderRouter','IoTCC')
 		self.set_method('POST')
 
-	def get_VirtualBorderRouterId(self):
+	def get_VirtualBorderRouterId(self): # String
 		return self.get_query_params().get('VirtualBorderRouterId')
 
-	def set_VirtualBorderRouterId(self,VirtualBorderRouterId):
-		self.add_query_param('VirtualBorderRouterId',VirtualBorderRouterId)
+	def set_VirtualBorderRouterId(self, VirtualBorderRouterId):  # String
+		self.add_query_param('VirtualBorderRouterId', VirtualBorderRouterId)

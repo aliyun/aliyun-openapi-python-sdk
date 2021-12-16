@@ -22,47 +22,39 @@ from aliyunsdkcore.request import RpcRequest
 class ListConnectionPoolsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListConnectionPools','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListConnectionPools','IoTCC')
 		self.set_method('POST')
 
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_ConnectionPoolStatuss(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_ConnectionPoolStatuss(self): # RepeatList
 		return self.get_query_params().get('ConnectionPoolStatus')
 
-	def set_ConnectionPoolStatuss(self, ConnectionPoolStatuss):
-		for depth1 in range(len(ConnectionPoolStatuss)):
-			if ConnectionPoolStatuss[depth1] is not None:
-				self.add_query_param('ConnectionPoolStatus.' + str(depth1 + 1) , ConnectionPoolStatuss[depth1])
-
-	def get_ConnectionPoolNames(self):
+	def set_ConnectionPoolStatuss(self, ConnectionPoolStatus):  # RepeatList
+		for depth1 in range(len(ConnectionPoolStatus)):
+			self.add_query_param('ConnectionPoolStatus.' + str(depth1 + 1), ConnectionPoolStatus[depth1])
+	def get_ConnectionPoolNames(self): # RepeatList
 		return self.get_query_params().get('ConnectionPoolName')
 
-	def set_ConnectionPoolNames(self, ConnectionPoolNames):
-		for depth1 in range(len(ConnectionPoolNames)):
-			if ConnectionPoolNames[depth1] is not None:
-				self.add_query_param('ConnectionPoolName.' + str(depth1 + 1) , ConnectionPoolNames[depth1])
-
-	def get_IoTCloudConnectorId(self):
+	def set_ConnectionPoolNames(self, ConnectionPoolName):  # RepeatList
+		for depth1 in range(len(ConnectionPoolName)):
+			self.add_query_param('ConnectionPoolName.' + str(depth1 + 1), ConnectionPoolName[depth1])
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
-
-	def get_ConnectionPoolIdss(self):
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def get_ConnectionPoolIdss(self): # RepeatList
 		return self.get_query_params().get('ConnectionPoolIds')
 
-	def set_ConnectionPoolIdss(self, ConnectionPoolIdss):
-		for depth1 in range(len(ConnectionPoolIdss)):
-			if ConnectionPoolIdss[depth1] is not None:
-				self.add_query_param('ConnectionPoolIds.' + str(depth1 + 1) , ConnectionPoolIdss[depth1])
-
-	def get_MaxResults(self):
+	def set_ConnectionPoolIdss(self, ConnectionPoolIds):  # RepeatList
+		for depth1 in range(len(ConnectionPoolIds)):
+			self.add_query_param('ConnectionPoolIds.' + str(depth1 + 1), ConnectionPoolIds[depth1])
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

@@ -22,61 +22,52 @@ from aliyunsdkcore.request import RpcRequest
 class CreateAuthorizationRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateAuthorizationRule','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateAuthorizationRule','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_DestinationType(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DestinationType(self): # String
 		return self.get_query_params().get('DestinationType')
 
-	def set_DestinationType(self,DestinationType):
-		self.add_query_param('DestinationType',DestinationType)
-
-	def get_Destination(self):
+	def set_DestinationType(self, DestinationType):  # String
+		self.add_query_param('DestinationType', DestinationType)
+	def get_Destination(self): # String
 		return self.get_query_params().get('Destination')
 
-	def set_Destination(self,Destination):
-		self.add_query_param('Destination',Destination)
-
-	def get_AuthorizationRuleDescription(self):
+	def set_Destination(self, Destination):  # String
+		self.add_query_param('Destination', Destination)
+	def get_AuthorizationRuleDescription(self): # String
 		return self.get_query_params().get('AuthorizationRuleDescription')
 
-	def set_AuthorizationRuleDescription(self,AuthorizationRuleDescription):
-		self.add_query_param('AuthorizationRuleDescription',AuthorizationRuleDescription)
-
-	def get_Policy(self):
+	def set_AuthorizationRuleDescription(self, AuthorizationRuleDescription):  # String
+		self.add_query_param('AuthorizationRuleDescription', AuthorizationRuleDescription)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_DryRun(self):
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_SourceCidrss(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_SourceCidrss(self): # RepeatList
 		return self.get_query_params().get('SourceCidrs')
 
-	def set_SourceCidrss(self, SourceCidrss):
-		for depth1 in range(len(SourceCidrss)):
-			if SourceCidrss[depth1] is not None:
-				self.add_query_param('SourceCidrs.' + str(depth1 + 1) , SourceCidrss[depth1])
-
-	def get_AuthorizationRuleName(self):
+	def set_SourceCidrss(self, SourceCidrs):  # RepeatList
+		for depth1 in range(len(SourceCidrs)):
+			self.add_query_param('SourceCidrs.' + str(depth1 + 1), SourceCidrs[depth1])
+	def get_AuthorizationRuleName(self): # String
 		return self.get_query_params().get('AuthorizationRuleName')
 
-	def set_AuthorizationRuleName(self,AuthorizationRuleName):
-		self.add_query_param('AuthorizationRuleName',AuthorizationRuleName)
-
-	def get_IoTCloudConnectorId(self):
+	def set_AuthorizationRuleName(self, AuthorizationRuleName):  # String
+		self.add_query_param('AuthorizationRuleName', AuthorizationRuleName)
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

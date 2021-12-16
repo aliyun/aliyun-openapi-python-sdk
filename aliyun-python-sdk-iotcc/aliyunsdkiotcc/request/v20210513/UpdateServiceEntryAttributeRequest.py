@@ -22,47 +22,41 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateServiceEntryAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'UpdateServiceEntryAttribute','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'UpdateServiceEntryAttribute','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ServiceEntryId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ServiceEntryId(self): # String
 		return self.get_query_params().get('ServiceEntryId')
 
-	def set_ServiceEntryId(self,ServiceEntryId):
-		self.add_query_param('ServiceEntryId',ServiceEntryId)
-
-	def get_ServiceEntryDescription(self):
+	def set_ServiceEntryId(self, ServiceEntryId):  # String
+		self.add_query_param('ServiceEntryId', ServiceEntryId)
+	def get_ServiceEntryDescription(self): # String
 		return self.get_query_params().get('ServiceEntryDescription')
 
-	def set_ServiceEntryDescription(self,ServiceEntryDescription):
-		self.add_query_param('ServiceEntryDescription',ServiceEntryDescription)
-
-	def get_DryRun(self):
+	def set_ServiceEntryDescription(self, ServiceEntryDescription):  # String
+		self.add_query_param('ServiceEntryDescription', ServiceEntryDescription)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ServiceEntryName(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ServiceEntryName(self): # String
 		return self.get_query_params().get('ServiceEntryName')
 
-	def set_ServiceEntryName(self,ServiceEntryName):
-		self.add_query_param('ServiceEntryName',ServiceEntryName)
-
-	def get_IoTCloudConnectorId(self):
+	def set_ServiceEntryName(self, ServiceEntryName):  # String
+		self.add_query_param('ServiceEntryName', ServiceEntryName)
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
-
-	def get_ServiceId(self):
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_ServiceId(self, ServiceId):  # String
+		self.add_query_param('ServiceId', ServiceId)

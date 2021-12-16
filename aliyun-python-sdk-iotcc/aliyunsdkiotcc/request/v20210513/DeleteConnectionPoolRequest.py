@@ -22,29 +22,26 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteConnectionPoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'DeleteConnectionPool','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'DeleteConnectionPool','IoTCC')
 		self.set_method('POST')
 
-	def get_DryRun(self):
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ClientToken(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ConnectionPoolId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ConnectionPoolId(self): # String
 		return self.get_query_params().get('ConnectionPoolId')
 
-	def set_ConnectionPoolId(self,ConnectionPoolId):
-		self.add_query_param('ConnectionPoolId',ConnectionPoolId)
-
-	def get_IoTCloudConnectorId(self):
+	def set_ConnectionPoolId(self, ConnectionPoolId):  # String
+		self.add_query_param('ConnectionPoolId', ConnectionPoolId)
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

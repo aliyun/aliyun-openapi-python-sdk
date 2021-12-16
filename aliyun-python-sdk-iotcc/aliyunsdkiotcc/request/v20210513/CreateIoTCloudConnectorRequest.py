@@ -22,47 +22,46 @@ from aliyunsdkcore.request import RpcRequest
 class CreateIoTCloudConnectorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateIoTCloudConnector','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateIoTCloudConnector','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ISP(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ISP(self): # String
 		return self.get_query_params().get('ISP')
 
-	def set_ISP(self,ISP):
-		self.add_query_param('ISP',ISP)
-
-	def get_IoTCloudConnectorDescription(self):
+	def set_ISP(self, ISP):  # String
+		self.add_query_param('ISP', ISP)
+	def get_IoTCloudConnectorDescription(self): # String
 		return self.get_query_params().get('IoTCloudConnectorDescription')
 
-	def set_IoTCloudConnectorDescription(self,IoTCloudConnectorDescription):
-		self.add_query_param('IoTCloudConnectorDescription',IoTCloudConnectorDescription)
-
-	def get_WildcardDomainEnabled(self):
+	def set_IoTCloudConnectorDescription(self, IoTCloudConnectorDescription):  # String
+		self.add_query_param('IoTCloudConnectorDescription', IoTCloudConnectorDescription)
+	def get_WildcardDomainEnabled(self): # Boolean
 		return self.get_query_params().get('WildcardDomainEnabled')
 
-	def set_WildcardDomainEnabled(self,WildcardDomainEnabled):
-		self.add_query_param('WildcardDomainEnabled',WildcardDomainEnabled)
+	def set_WildcardDomainEnabled(self, WildcardDomainEnabled):  # Boolean
+		self.add_query_param('WildcardDomainEnabled', WildcardDomainEnabled)
+	def get_ResourceUid(self): # Long
+		return self.get_query_params().get('ResourceUid')
 
-	def get_APN(self):
+	def set_ResourceUid(self, ResourceUid):  # Long
+		self.add_query_param('ResourceUid', ResourceUid)
+	def get_APN(self): # String
 		return self.get_query_params().get('APN')
 
-	def set_APN(self,APN):
-		self.add_query_param('APN',APN)
-
-	def get_DryRun(self):
+	def set_APN(self, APN):  # String
+		self.add_query_param('APN', APN)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_IoTCloudConnectorName(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_IoTCloudConnectorName(self): # String
 		return self.get_query_params().get('IoTCloudConnectorName')
 
-	def set_IoTCloudConnectorName(self,IoTCloudConnectorName):
-		self.add_query_param('IoTCloudConnectorName',IoTCloudConnectorName)
+	def set_IoTCloudConnectorName(self, IoTCloudConnectorName):  # String
+		self.add_query_param('IoTCloudConnectorName', IoTCloudConnectorName)

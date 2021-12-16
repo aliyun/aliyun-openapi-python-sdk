@@ -22,49 +22,42 @@ from aliyunsdkcore.request import RpcRequest
 class CreateConnectionPoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateConnectionPool','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateConnectionPool','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ConnectionPoolDescription(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ConnectionPoolDescription(self): # String
 		return self.get_query_params().get('ConnectionPoolDescription')
 
-	def set_ConnectionPoolDescription(self,ConnectionPoolDescription):
-		self.add_query_param('ConnectionPoolDescription',ConnectionPoolDescription)
-
-	def get_Cidrss(self):
+	def set_ConnectionPoolDescription(self, ConnectionPoolDescription):  # String
+		self.add_query_param('ConnectionPoolDescription', ConnectionPoolDescription)
+	def get_Cidrss(self): # RepeatList
 		return self.get_query_params().get('Cidrs')
 
-	def set_Cidrss(self, Cidrss):
-		for depth1 in range(len(Cidrss)):
-			if Cidrss[depth1] is not None:
-				self.add_query_param('Cidrs.' + str(depth1 + 1) , Cidrss[depth1])
-
-	def get_ConnectionPoolName(self):
+	def set_Cidrss(self, Cidrs):  # RepeatList
+		for depth1 in range(len(Cidrs)):
+			self.add_query_param('Cidrs.' + str(depth1 + 1), Cidrs[depth1])
+	def get_ConnectionPoolName(self): # String
 		return self.get_query_params().get('ConnectionPoolName')
 
-	def set_ConnectionPoolName(self,ConnectionPoolName):
-		self.add_query_param('ConnectionPoolName',ConnectionPoolName)
-
-	def get_DryRun(self):
+	def set_ConnectionPoolName(self, ConnectionPoolName):  # String
+		self.add_query_param('ConnectionPoolName', ConnectionPoolName)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_Count(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_Count(self): # Long
 		return self.get_query_params().get('Count')
 
-	def set_Count(self,Count):
-		self.add_query_param('Count',Count)
-
-	def get_IoTCloudConnectorId(self):
+	def set_Count(self, Count):  # Long
+		self.add_query_param('Count', Count)
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

@@ -22,11 +22,11 @@ from aliyunsdkcore.request import RpcRequest
 class ListIoTCloudConnectorAvailableZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectorAvailableZones','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectorAvailableZones','IoTCC')
 		self.set_method('POST')
 
-	def get_IoTCloudConnectorId(self):
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

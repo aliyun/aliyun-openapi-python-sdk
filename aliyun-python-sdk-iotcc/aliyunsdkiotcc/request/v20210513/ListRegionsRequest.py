@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DisableIoTCloudConnectorAccessLogRequest(RpcRequest):
+class ListRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'DisableIoTCloudConnectorAccessLog','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListRegions','IoTCC')
 		self.set_method('POST')
 
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_IoTCloudConnectorId(self): # String
-		return self.get_query_params().get('IoTCloudConnectorId')
-
-	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
-		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

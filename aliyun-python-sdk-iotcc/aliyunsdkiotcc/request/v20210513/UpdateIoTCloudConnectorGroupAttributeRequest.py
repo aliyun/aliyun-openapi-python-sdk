@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateServiceRequest(RpcRequest):
+class UpdateIoTCloudConnectorGroupAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateService','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'UpdateIoTCloudConnectorGroupAttribute','IoTCC')
 		self.set_method('POST')
 
 	def get_ClientToken(self): # String
@@ -30,23 +30,23 @@ class CreateServiceRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_IoTCloudConnectorGroupId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorGroupId')
+
+	def set_IoTCloudConnectorGroupId(self, IoTCloudConnectorGroupId):  # String
+		self.add_query_param('IoTCloudConnectorGroupId', IoTCloudConnectorGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_ServiceDescription(self): # String
-		return self.get_query_params().get('ServiceDescription')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_ServiceDescription(self, ServiceDescription):  # String
-		self.add_query_param('ServiceDescription', ServiceDescription)
-	def get_IoTCloudConnectorId(self): # String
-		return self.get_query_params().get('IoTCloudConnectorId')
-
-	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
-		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

@@ -22,65 +22,52 @@ from aliyunsdkcore.request import RpcRequest
 class ListIoTCloudConnectorsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectors','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectors','IoTCC')
 		self.set_method('POST')
 
-	def get_IoTCloudConnectorStatuss(self):
+	def get_IoTCloudConnectorStatuss(self): # RepeatList
 		return self.get_query_params().get('IoTCloudConnectorStatus')
 
-	def set_IoTCloudConnectorStatuss(self, IoTCloudConnectorStatuss):
-		for depth1 in range(len(IoTCloudConnectorStatuss)):
-			if IoTCloudConnectorStatuss[depth1] is not None:
-				self.add_query_param('IoTCloudConnectorStatus.' + str(depth1 + 1) , IoTCloudConnectorStatuss[depth1])
+	def set_IoTCloudConnectorStatuss(self, IoTCloudConnectorStatus):  # RepeatList
+		for depth1 in range(len(IoTCloudConnectorStatus)):
+			self.add_query_param('IoTCloudConnectorStatus.' + str(depth1 + 1), IoTCloudConnectorStatus[depth1])
+	def get_ISPs(self): # RepeatList
+		return self.get_query_params().get('ISP')
 
-	def get_IoTCloudConnectorIdss(self):
+	def set_ISPs(self, ISP):  # RepeatList
+		for depth1 in range(len(ISP)):
+			self.add_query_param('ISP.' + str(depth1 + 1), ISP[depth1])
+	def get_IoTCloudConnectorIdss(self): # RepeatList
 		return self.get_query_params().get('IoTCloudConnectorIds')
 
-	def set_IoTCloudConnectorIdss(self, IoTCloudConnectorIdss):
-		for depth1 in range(len(IoTCloudConnectorIdss)):
-			if IoTCloudConnectorIdss[depth1] is not None:
-				self.add_query_param('IoTCloudConnectorIds.' + str(depth1 + 1) , IoTCloudConnectorIdss[depth1])
-
-	def get_NextToken(self):
+	def set_IoTCloudConnectorIdss(self, IoTCloudConnectorIds):  # RepeatList
+		for depth1 in range(len(IoTCloudConnectorIds)):
+			self.add_query_param('IoTCloudConnectorIds.' + str(depth1 + 1), IoTCloudConnectorIds[depth1])
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_APNs(self): # RepeatList
+		return self.get_query_params().get('APN')
 
-	def get_Apnss(self):
-		return self.get_query_params().get('Apns')
+	def set_APNs(self, APN):  # RepeatList
+		for depth1 in range(len(APN)):
+			self.add_query_param('APN.' + str(depth1 + 1), APN[depth1])
+	def get_VpcIds(self): # RepeatList
+		return self.get_query_params().get('VpcId')
 
-	def set_Apnss(self, Apnss):
-		for depth1 in range(len(Apnss)):
-			if Apnss[depth1] is not None:
-				self.add_query_param('Apns.' + str(depth1 + 1) , Apnss[depth1])
-
-	def get_VpcIdss(self):
-		return self.get_query_params().get('VpcIds')
-
-	def set_VpcIdss(self, VpcIdss):
-		for depth1 in range(len(VpcIdss)):
-			if VpcIdss[depth1] is not None:
-				self.add_query_param('VpcIds.' + str(depth1 + 1) , VpcIdss[depth1])
-
-	def get_Ispss(self):
-		return self.get_query_params().get('Isps')
-
-	def set_Ispss(self, Ispss):
-		for depth1 in range(len(Ispss)):
-			if Ispss[depth1] is not None:
-				self.add_query_param('Isps.' + str(depth1 + 1) , Ispss[depth1])
-
-	def get_MaxResults(self):
+	def set_VpcIds(self, VpcId):  # RepeatList
+		for depth1 in range(len(VpcId)):
+			self.add_query_param('VpcId.' + str(depth1 + 1), VpcId[depth1])
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_IoTCloudConnectorNames(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_IoTCloudConnectorNames(self): # RepeatList
 		return self.get_query_params().get('IoTCloudConnectorName')
 
-	def set_IoTCloudConnectorNames(self, IoTCloudConnectorNames):
-		for depth1 in range(len(IoTCloudConnectorNames)):
-			if IoTCloudConnectorNames[depth1] is not None:
-				self.add_query_param('IoTCloudConnectorName.' + str(depth1 + 1) , IoTCloudConnectorNames[depth1])
+	def set_IoTCloudConnectorNames(self, IoTCloudConnectorName):  # RepeatList
+		for depth1 in range(len(IoTCloudConnectorName)):
+			self.add_query_param('IoTCloudConnectorName.' + str(depth1 + 1), IoTCloudConnectorName[depth1])

@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListAuthorizationRulesRequest(RpcRequest):
+class ListGroupAuthorizationRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListAuthorizationRules','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListGroupAuthorizationRules','IoTCC')
 		self.set_method('POST')
 
 	def get_DestinationTypes(self): # RepeatList
@@ -60,17 +60,17 @@ class ListAuthorizationRulesRequest(RpcRequest):
 	def set_AuthorizationRuleStatuss(self, AuthorizationRuleStatus):  # RepeatList
 		for depth1 in range(len(AuthorizationRuleStatus)):
 			self.add_query_param('AuthorizationRuleStatus.' + str(depth1 + 1), AuthorizationRuleStatus[depth1])
+	def get_IoTCloudConnectorGroupId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorGroupId')
+
+	def set_IoTCloudConnectorGroupId(self, IoTCloudConnectorGroupId):  # String
+		self.add_query_param('IoTCloudConnectorGroupId', IoTCloudConnectorGroupId)
 	def get_AuthorizationRuleNames(self): # RepeatList
 		return self.get_query_params().get('AuthorizationRuleName')
 
 	def set_AuthorizationRuleNames(self, AuthorizationRuleName):  # RepeatList
 		for depth1 in range(len(AuthorizationRuleName)):
 			self.add_query_param('AuthorizationRuleName.' + str(depth1 + 1), AuthorizationRuleName[depth1])
-	def get_IoTCloudConnectorId(self): # String
-		return self.get_query_params().get('IoTCloudConnectorId')
-
-	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
-		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

@@ -22,35 +22,31 @@ from aliyunsdkcore.request import RpcRequest
 class EnableIoTCloudConnectorAccessLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'EnableIoTCloudConnectorAccessLog','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'EnableIoTCloudConnectorAccessLog','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_AccessLogSlsLogStore(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AccessLogSlsLogStore(self): # String
 		return self.get_query_params().get('AccessLogSlsLogStore')
 
-	def set_AccessLogSlsLogStore(self,AccessLogSlsLogStore):
-		self.add_query_param('AccessLogSlsLogStore',AccessLogSlsLogStore)
-
-	def get_DryRun(self):
+	def set_AccessLogSlsLogStore(self, AccessLogSlsLogStore):  # String
+		self.add_query_param('AccessLogSlsLogStore', AccessLogSlsLogStore)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_AccessLogSlsProject(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_AccessLogSlsProject(self): # String
 		return self.get_query_params().get('AccessLogSlsProject')
 
-	def set_AccessLogSlsProject(self,AccessLogSlsProject):
-		self.add_query_param('AccessLogSlsProject',AccessLogSlsProject)
-
-	def get_IoTCloudConnectorId(self):
+	def set_AccessLogSlsProject(self, AccessLogSlsProject):  # String
+		self.add_query_param('AccessLogSlsProject', AccessLogSlsProject)
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

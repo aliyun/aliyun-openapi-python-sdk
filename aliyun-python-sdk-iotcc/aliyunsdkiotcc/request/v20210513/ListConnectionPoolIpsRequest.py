@@ -19,34 +19,34 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateServiceRequest(RpcRequest):
+class ListConnectionPoolIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateService','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListConnectionPoolIps','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ConnectionPoolId(self): # String
+		return self.get_query_params().get('ConnectionPoolId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
+	def set_ConnectionPoolId(self, ConnectionPoolId):  # String
+		self.add_query_param('ConnectionPoolId', ConnectionPoolId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Ip(self): # String
+		return self.get_query_params().get('Ip')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_ServiceDescription(self): # String
-		return self.get_query_params().get('ServiceDescription')
-
-	def set_ServiceDescription(self, ServiceDescription):  # String
-		self.add_query_param('ServiceDescription', ServiceDescription)
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
 	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
 	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
 		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

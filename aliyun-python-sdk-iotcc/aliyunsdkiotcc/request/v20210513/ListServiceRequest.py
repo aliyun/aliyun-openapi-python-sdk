@@ -22,47 +22,39 @@ from aliyunsdkcore.request import RpcRequest
 class ListServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListService','cciot')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListService','IoTCC')
 		self.set_method('POST')
 
-	def get_ServiceIdss(self):
+	def get_ServiceIdss(self): # RepeatList
 		return self.get_query_params().get('ServiceIds')
 
-	def set_ServiceIdss(self, ServiceIdss):
-		for depth1 in range(len(ServiceIdss)):
-			if ServiceIdss[depth1] is not None:
-				self.add_query_param('ServiceIds.' + str(depth1 + 1) , ServiceIdss[depth1])
-
-	def get_ResourceStatusess(self):
+	def set_ServiceIdss(self, ServiceIds):  # RepeatList
+		for depth1 in range(len(ServiceIds)):
+			self.add_query_param('ServiceIds.' + str(depth1 + 1), ServiceIds[depth1])
+	def get_ResourceStatusess(self): # RepeatList
 		return self.get_query_params().get('ResourceStatuses')
 
-	def set_ResourceStatusess(self, ResourceStatusess):
-		for depth1 in range(len(ResourceStatusess)):
-			if ResourceStatusess[depth1] is not None:
-				self.add_query_param('ResourceStatuses.' + str(depth1 + 1) , ResourceStatusess[depth1])
-
-	def get_NextToken(self):
+	def set_ResourceStatusess(self, ResourceStatuses):  # RepeatList
+		for depth1 in range(len(ResourceStatuses)):
+			self.add_query_param('ResourceStatuses.' + str(depth1 + 1), ResourceStatuses[depth1])
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_ServiceNamess(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_ServiceNamess(self): # RepeatList
 		return self.get_query_params().get('ServiceNames')
 
-	def set_ServiceNamess(self, ServiceNamess):
-		for depth1 in range(len(ServiceNamess)):
-			if ServiceNamess[depth1] is not None:
-				self.add_query_param('ServiceNames.' + str(depth1 + 1) , ServiceNamess[depth1])
-
-	def get_IoTCloudConnectorId(self):
+	def set_ServiceNamess(self, ServiceNames):  # RepeatList
+		for depth1 in range(len(ServiceNames)):
+			self.add_query_param('ServiceNames.' + str(depth1 + 1), ServiceNames[depth1])
+	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self,IoTCloudConnectorId):
-		self.add_query_param('IoTCloudConnectorId',IoTCloudConnectorId)
-
-	def get_MaxResults(self):
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

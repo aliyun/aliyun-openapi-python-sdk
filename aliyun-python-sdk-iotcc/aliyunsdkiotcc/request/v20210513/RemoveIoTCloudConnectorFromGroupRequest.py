@@ -19,34 +19,30 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateServiceRequest(RpcRequest):
+class RemoveIoTCloudConnectorFromGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateService','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'RemoveIoTCloudConnectorFromGroup','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_IoTCloudConnectorGroupId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorGroupId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
+	def set_IoTCloudConnectorGroupId(self, IoTCloudConnectorGroupId):  # String
+		self.add_query_param('IoTCloudConnectorGroupId', IoTCloudConnectorGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_ServiceDescription(self): # String
-		return self.get_query_params().get('ServiceDescription')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ServiceDescription(self, ServiceDescription):  # String
-		self.add_query_param('ServiceDescription', ServiceDescription)
-	def get_IoTCloudConnectorId(self): # String
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_IoTCloudConnectorId(self): # Array
 		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
-		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # Array
+		for index1, value1 in enumerate(IoTCloudConnectorId):
+			self.add_query_param('IoTCloudConnectorId.' + str(index1 + 1), value1)
