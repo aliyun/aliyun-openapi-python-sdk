@@ -61,11 +61,23 @@ class TestSpeechRequest(RpcRequest):
 	def set_Text(self,Text):
 		self.add_body_params('Text', Text)
 
+	def get_SoundCodeConfig(self):
+		return self.get_body_params().get('SoundCodeConfig')
+
+	def set_SoundCodeConfig(self,SoundCodeConfig):
+		self.add_body_params('SoundCodeConfig', SoundCodeConfig)
+
 	def get_SpeechType(self):
 		return self.get_body_params().get('SpeechType')
 
 	def set_SpeechType(self,SpeechType):
 		self.add_body_params('SpeechType', SpeechType)
+
+	def get_EnableSoundCode(self):
+		return self.get_body_params().get('EnableSoundCode')
+
+	def set_EnableSoundCode(self,EnableSoundCode):
+		self.add_body_params('EnableSoundCode', EnableSoundCode)
 
 	def get_Volume(self):
 		return self.get_body_params().get('Volume')

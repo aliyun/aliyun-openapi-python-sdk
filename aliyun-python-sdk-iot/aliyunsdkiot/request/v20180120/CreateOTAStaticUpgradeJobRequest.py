@@ -31,6 +31,12 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MultiModuleMode(self):
+		return self.get_query_params().get('MultiModuleMode')
+
+	def set_MultiModuleMode(self,MultiModuleMode):
+		self.add_query_param('MultiModuleMode',MultiModuleMode)
+
 	def get_RetryCount(self):
 		return self.get_query_params().get('RetryCount')
 

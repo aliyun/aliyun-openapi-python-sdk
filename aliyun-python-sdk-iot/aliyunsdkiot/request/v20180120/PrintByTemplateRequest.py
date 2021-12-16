@@ -31,12 +31,6 @@ class PrintByTemplateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProjectCode(self):
-		return self.get_body_params().get('ProjectCode')
-
-	def set_ProjectCode(self,ProjectCode):
-		self.add_body_params('ProjectCode', ProjectCode)
-
 	def get_TemplateBizCode(self):
 		return self.get_body_params().get('TemplateBizCode')
 
@@ -54,6 +48,12 @@ class PrintByTemplateRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
+
+	def get_HistoryPrintTopic(self):
+		return self.get_body_params().get('HistoryPrintTopic')
+
+	def set_HistoryPrintTopic(self,HistoryPrintTopic):
+		self.add_body_params('HistoryPrintTopic', HistoryPrintTopic)
 
 	def get_ProductKey(self):
 		return self.get_body_params().get('ProductKey')

@@ -37,6 +37,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_DynamicMode(self,DynamicMode):
 		self.add_query_param('DynamicMode',DynamicMode)
 
+	def get_MultiModuleMode(self):
+		return self.get_query_params().get('MultiModuleMode')
+
+	def set_MultiModuleMode(self,MultiModuleMode):
+		self.add_query_param('MultiModuleMode',MultiModuleMode)
+
 	def get_RetryCount(self):
 		return self.get_query_params().get('RetryCount')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateSpeechRequest(RpcRequest):
+class SpeechBySynthesisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateSpeech','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SpeechBySynthesis','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,23 @@ class CreateSpeechRequest(RpcRequest):
 	def set_Voice(self,Voice):
 		self.add_body_params('Voice', Voice)
 
-	def get_ProjectCode(self):
-		return self.get_body_params().get('ProjectCode')
+	def get_SpeechId(self):
+		return self.get_body_params().get('SpeechId')
 
-	def set_ProjectCode(self,ProjectCode):
-		self.add_body_params('ProjectCode', ProjectCode)
+	def set_SpeechId(self,SpeechId):
+		self.add_body_params('SpeechId', SpeechId)
 
 	def get_AudioFormat(self):
 		return self.get_body_params().get('AudioFormat')
 
 	def set_AudioFormat(self,AudioFormat):
 		self.add_body_params('AudioFormat', AudioFormat)
+
+	def get_IotId(self):
+		return self.get_body_params().get('IotId')
+
+	def set_IotId(self,IotId):
+		self.add_body_params('IotId', IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')
@@ -61,23 +67,11 @@ class CreateSpeechRequest(RpcRequest):
 	def set_Text(self,Text):
 		self.add_body_params('Text', Text)
 
-	def get_SoundCodeConfig(self):
-		return self.get_body_params().get('SoundCodeConfig')
+	def get_ProductKey(self):
+		return self.get_body_params().get('ProductKey')
 
-	def set_SoundCodeConfig(self,SoundCodeConfig):
-		self.add_body_params('SoundCodeConfig', SoundCodeConfig)
-
-	def get_SpeechType(self):
-		return self.get_body_params().get('SpeechType')
-
-	def set_SpeechType(self,SpeechType):
-		self.add_body_params('SpeechType', SpeechType)
-
-	def get_EnableSoundCode(self):
-		return self.get_body_params().get('EnableSoundCode')
-
-	def set_EnableSoundCode(self,EnableSoundCode):
-		self.add_body_params('EnableSoundCode', EnableSoundCode)
+	def set_ProductKey(self,ProductKey):
+		self.add_body_params('ProductKey', ProductKey)
 
 	def get_Volume(self):
 		return self.get_body_params().get('Volume')
@@ -85,11 +79,11 @@ class CreateSpeechRequest(RpcRequest):
 	def set_Volume(self,Volume):
 		self.add_body_params('Volume', Volume)
 
-	def get_BizCode(self):
-		return self.get_body_params().get('BizCode')
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
 
-	def set_BizCode(self,BizCode):
-		self.add_body_params('BizCode', BizCode)
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)
 
 	def get_SpeechRate(self):
 		return self.get_body_params().get('SpeechRate')

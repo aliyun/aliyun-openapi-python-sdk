@@ -49,6 +49,18 @@ class UpdateSpeechRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
 
+	def get_SoundCodeConfig(self):
+		return self.get_body_params().get('SoundCodeConfig')
+
+	def set_SoundCodeConfig(self,SoundCodeConfig):
+		self.add_body_params('SoundCodeConfig', SoundCodeConfig)
+
+	def get_EnableSoundCode(self):
+		return self.get_body_params().get('EnableSoundCode')
+
+	def set_EnableSoundCode(self,EnableSoundCode):
+		self.add_body_params('EnableSoundCode', EnableSoundCode)
+
 	def get_Volume(self):
 		return self.get_body_params().get('Volume')
 
