@@ -79,6 +79,11 @@ class CreateVpcEndpointRequest(RpcRequest):
 
 	def set_ZonePrivateIpAddressCount(self, ZonePrivateIpAddressCount):  # Long
 		self.add_query_param('ZonePrivateIpAddressCount', ZonePrivateIpAddressCount)
+	def get_ProtectedEnabled(self): # Boolean
+		return self.get_query_params().get('ProtectedEnabled')
+
+	def set_ProtectedEnabled(self, ProtectedEnabled):  # Boolean
+		self.add_query_param('ProtectedEnabled', ProtectedEnabled)
 	def get_EndpointName(self): # String
 		return self.get_query_params().get('EndpointName')
 
