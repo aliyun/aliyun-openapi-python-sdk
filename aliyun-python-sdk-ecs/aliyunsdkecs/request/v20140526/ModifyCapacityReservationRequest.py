@@ -25,80 +25,69 @@ class ModifyCapacityReservationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyCapacityReservation','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Description(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_StartTime(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Platform(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 
-	def set_Platform(self,Platform):
-		self.add_query_param('Platform',Platform)
-
-	def get_PrivatePoolOptionsId(self):
+	def set_Platform(self, Platform):  # String
+		self.add_query_param('Platform', Platform)
+	def get_PrivatePoolOptionsId(self): # String
 		return self.get_query_params().get('PrivatePoolOptions.Id')
 
-	def set_PrivatePoolOptionsId(self,PrivatePoolOptionsId):
-		self.add_query_param('PrivatePoolOptions.Id',PrivatePoolOptionsId)
-
-	def get_EndTimeType(self):
+	def set_PrivatePoolOptionsId(self, PrivatePoolOptionsId):  # String
+		self.add_query_param('PrivatePoolOptions.Id', PrivatePoolOptionsId)
+	def get_EndTimeType(self): # String
 		return self.get_query_params().get('EndTimeType')
 
-	def set_EndTimeType(self,EndTimeType):
-		self.add_query_param('EndTimeType',EndTimeType)
-
-	def get_ResourceOwnerAccount(self):
+	def set_EndTimeType(self, EndTimeType):  # String
+		self.add_query_param('EndTimeType', EndTimeType)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_PrivatePoolOptionsName(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_PrivatePoolOptionsName(self): # String
 		return self.get_query_params().get('PrivatePoolOptions.Name')
 
-	def set_PrivatePoolOptionsName(self,PrivatePoolOptionsName):
-		self.add_query_param('PrivatePoolOptions.Name',PrivatePoolOptionsName)
-
-	def get_OwnerAccount(self):
+	def set_PrivatePoolOptionsName(self, PrivatePoolOptionsName):  # String
+		self.add_query_param('PrivatePoolOptions.Name', PrivatePoolOptionsName)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_EndTime(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceAmount(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceAmount(self): # Integer
 		return self.get_query_params().get('InstanceAmount')
 
-	def set_InstanceAmount(self,InstanceAmount):
-		self.add_query_param('InstanceAmount',InstanceAmount)
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)

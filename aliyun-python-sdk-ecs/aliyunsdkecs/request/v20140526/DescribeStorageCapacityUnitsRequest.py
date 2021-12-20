@@ -25,88 +25,75 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeStorageCapacityUnits','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PageNumber(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Capacity(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Capacity(self): # Integer
 		return self.get_query_params().get('Capacity')
 
-	def set_Capacity(self,Capacity):
-		self.add_query_param('Capacity',Capacity)
-
-	def get_StorageCapacityUnitIds(self):
+	def set_Capacity(self, Capacity):  # Integer
+		self.add_query_param('Capacity', Capacity)
+	def get_StorageCapacityUnitIds(self): # RepeatList
 		return self.get_query_params().get('StorageCapacityUnitId')
 
-	def set_StorageCapacityUnitIds(self, StorageCapacityUnitIds):
-		for depth1 in range(len(StorageCapacityUnitIds)):
-			if StorageCapacityUnitIds[depth1] is not None:
-				self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1) , StorageCapacityUnitIds[depth1])
-
-	def get_PageSize(self):
+	def set_StorageCapacityUnitIds(self, StorageCapacityUnitId):  # RepeatList
+		for depth1 in range(len(StorageCapacityUnitId)):
+			self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1), StorageCapacityUnitId[depth1])
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-
-	def get_ResourceOwnerAccount(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_AllocationType(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_AllocationType(self): # String
 		return self.get_query_params().get('AllocationType')
 
-	def set_AllocationType(self,AllocationType):
-		self.add_query_param('AllocationType',AllocationType)
-
-	def get_Statuss(self):
+	def set_AllocationType(self, AllocationType):  # String
+		self.add_query_param('AllocationType', AllocationType)
+	def get_Statuss(self): # RepeatList
 		return self.get_query_params().get('Status')
 
-	def set_Statuss(self, Statuss):
-		for depth1 in range(len(Statuss)):
-			if Statuss[depth1] is not None:
-				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
+	def set_Statuss(self, Status):  # RepeatList
+		for depth1 in range(len(Status)):
+			self.add_query_param('Status.' + str(depth1 + 1), Status[depth1])

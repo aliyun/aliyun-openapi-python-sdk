@@ -25,94 +25,80 @@ class CreateSnapshotGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSnapshotGroup','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_InstantAccess(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_InstantAccess(self): # Boolean
 		return self.get_query_params().get('InstantAccess')
 
-	def set_InstantAccess(self,InstantAccess):
-		self.add_query_param('InstantAccess',InstantAccess)
-
-	def get_ExcludeDiskIds(self):
+	def set_InstantAccess(self, InstantAccess):  # Boolean
+		self.add_query_param('InstantAccess', InstantAccess)
+	def get_ExcludeDiskIds(self): # RepeatList
 		return self.get_query_params().get('ExcludeDiskId')
 
-	def set_ExcludeDiskIds(self, ExcludeDiskIds):
-		for depth1 in range(len(ExcludeDiskIds)):
-			if ExcludeDiskIds[depth1] is not None:
-				self.add_query_param('ExcludeDiskId.' + str(depth1 + 1) , ExcludeDiskIds[depth1])
-
-	def get_Description(self):
+	def set_ExcludeDiskIds(self, ExcludeDiskId):  # RepeatList
+		for depth1 in range(len(ExcludeDiskId)):
+			self.add_query_param('ExcludeDiskId.' + str(depth1 + 1), ExcludeDiskId[depth1])
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ResourceGroupId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_InstantAccessRetentionDays(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_InstantAccessRetentionDays(self): # Integer
 		return self.get_query_params().get('InstantAccessRetentionDays')
 
-	def set_InstantAccessRetentionDays(self,InstantAccessRetentionDays):
-		self.add_query_param('InstantAccessRetentionDays',InstantAccessRetentionDays)
-
-	def get_DiskIds(self):
+	def set_InstantAccessRetentionDays(self, InstantAccessRetentionDays):  # Integer
+		self.add_query_param('InstantAccessRetentionDays', InstantAccessRetentionDays)
+	def get_DiskIds(self): # RepeatList
 		return self.get_query_params().get('DiskId')
 
-	def set_DiskIds(self, DiskIds):
-		for depth1 in range(len(DiskIds)):
-			if DiskIds[depth1] is not None:
-				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
-
-	def get_Tags(self):
+	def set_DiskIds(self, DiskId):  # RepeatList
+		for depth1 in range(len(DiskId)):
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId[depth1])
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-
-	def get_ResourceOwnerAccount(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Name(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

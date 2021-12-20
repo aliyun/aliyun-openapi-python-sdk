@@ -25,56 +25,50 @@ class ModifyReservedInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyReservedInstances','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Configurations(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Configurations(self): # RepeatList
 		return self.get_query_params().get('Configuration')
 
-	def set_Configurations(self, Configurations):
-		for depth1 in range(len(Configurations)):
-			if Configurations[depth1].get('ZoneId') is not None:
-				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ZoneId', Configurations[depth1].get('ZoneId'))
-			if Configurations[depth1].get('ReservedInstanceName') is not None:
-				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ReservedInstanceName', Configurations[depth1].get('ReservedInstanceName'))
-			if Configurations[depth1].get('InstanceType') is not None:
-				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceType', Configurations[depth1].get('InstanceType'))
-			if Configurations[depth1].get('Scope') is not None:
-				self.add_query_param('Configuration.' + str(depth1 + 1) + '.Scope', Configurations[depth1].get('Scope'))
-			if Configurations[depth1].get('InstanceAmount') is not None:
-				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceAmount', Configurations[depth1].get('InstanceAmount'))
-
-	def get_ResourceOwnerAccount(self):
+	def set_Configurations(self, Configuration):  # RepeatList
+		for depth1 in range(len(Configuration)):
+			if Configuration[depth1].get('ReservedInstanceName') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ReservedInstanceName', Configuration[depth1].get('ReservedInstanceName'))
+			if Configuration[depth1].get('ZoneId') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ZoneId', Configuration[depth1].get('ZoneId'))
+			if Configuration[depth1].get('Scope') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.Scope', Configuration[depth1].get('Scope'))
+			if Configuration[depth1].get('InstanceType') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceType', Configuration[depth1].get('InstanceType'))
+			if Configuration[depth1].get('InstanceAmount') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceAmount', Configuration[depth1].get('InstanceAmount'))
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ReservedInstanceIds(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ReservedInstanceIds(self): # RepeatList
 		return self.get_query_params().get('ReservedInstanceId')
 
-	def set_ReservedInstanceIds(self, ReservedInstanceIds):
-		for depth1 in range(len(ReservedInstanceIds)):
-			if ReservedInstanceIds[depth1] is not None:
-				self.add_query_param('ReservedInstanceId.' + str(depth1 + 1) , ReservedInstanceIds[depth1])
+	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
+		for depth1 in range(len(ReservedInstanceId)):
+			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])
