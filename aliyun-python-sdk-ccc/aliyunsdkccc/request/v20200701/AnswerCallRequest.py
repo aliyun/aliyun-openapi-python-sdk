@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class AnswerCallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'AnswerCall','CCC')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'AnswerCall')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
