@@ -25,7 +25,9 @@ class ListNamespacesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ListNamespaces')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

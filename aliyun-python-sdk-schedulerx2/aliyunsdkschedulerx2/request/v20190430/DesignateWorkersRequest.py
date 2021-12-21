@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class CreateAppGroupRequest(RpcRequest):
+class DesignateWorkersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateAppGroup')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DesignateWorkers')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,16 +31,6 @@ class CreateAppGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MaxJobs(self): # Integer
-		return self.get_query_params().get('MaxJobs')
-
-	def set_MaxJobs(self, MaxJobs):  # Integer
-		self.add_query_param('MaxJobs', MaxJobs)
-	def get_NamespaceName(self): # String
-		return self.get_query_params().get('NamespaceName')
-
-	def set_NamespaceName(self, NamespaceName):  # String
-		self.add_query_param('NamespaceName', NamespaceName)
 	def get_NamespaceSource(self): # String
 		return self.get_query_params().get('NamespaceSource')
 
@@ -52,23 +41,33 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_Transferable(self): # Boolean
+		return self.get_query_params().get('Transferable')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
+	def set_Transferable(self, Transferable):  # Boolean
+		self.add_query_param('Transferable', Transferable)
+	def get_Labels(self): # String
+		return self.get_query_params().get('Labels')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
+	def set_Labels(self, Labels):  # String
+		self.add_query_param('Labels', Labels)
+	def get_DesignateType(self): # Integer
+		return self.get_query_params().get('DesignateType')
+
+	def set_DesignateType(self, DesignateType):  # Integer
+		self.add_query_param('DesignateType', DesignateType)
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_AlarmJson(self): # String
-		return self.get_query_params().get('AlarmJson')
+	def get_Workers(self): # String
+		return self.get_query_params().get('Workers')
 
-	def set_AlarmJson(self, AlarmJson):  # String
-		self.add_query_param('AlarmJson', AlarmJson)
+	def set_Workers(self, Workers):  # String
+		self.add_query_param('Workers', Workers)

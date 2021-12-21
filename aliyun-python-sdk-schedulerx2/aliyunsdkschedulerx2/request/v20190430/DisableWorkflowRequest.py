@@ -26,32 +26,29 @@ class DisableWorkflowRequest(RpcRequest):
 		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DisableWorkflow')
 		self.set_protocol_type('https')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NamespaceSource(self):
+	def get_NamespaceSource(self): # String
 		return self.get_query_params().get('NamespaceSource')
 
-	def set_NamespaceSource(self,NamespaceSource):
-		self.add_query_param('NamespaceSource',NamespaceSource)
-
-	def get_GroupId(self):
+	def set_NamespaceSource(self, NamespaceSource):  # String
+		self.add_query_param('NamespaceSource', NamespaceSource)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Namespace(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_WorkflowId(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_WorkflowId(self): # Long
 		return self.get_query_params().get('WorkflowId')
 
-	def set_WorkflowId(self,WorkflowId):
-		self.add_query_param('WorkflowId',WorkflowId)
+	def set_WorkflowId(self, WorkflowId):  # Long
+		self.add_query_param('WorkflowId', WorkflowId)

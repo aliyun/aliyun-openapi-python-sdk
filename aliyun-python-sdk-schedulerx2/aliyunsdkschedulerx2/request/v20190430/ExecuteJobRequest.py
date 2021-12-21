@@ -25,38 +25,39 @@ class ExecuteJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ExecuteJob')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_NamespaceSource(self):
+	def get_NamespaceSource(self): # String
 		return self.get_query_params().get('NamespaceSource')
 
-	def set_NamespaceSource(self,NamespaceSource):
-		self.add_query_param('NamespaceSource',NamespaceSource)
+	def set_NamespaceSource(self, NamespaceSource):  # String
+		self.add_query_param('NamespaceSource', NamespaceSource)
+	def get_CheckJobStatus(self): # Boolean
+		return self.get_query_params().get('CheckJobStatus')
 
-	def get_GroupId(self):
+	def set_CheckJobStatus(self, CheckJobStatus):  # Boolean
+		self.add_query_param('CheckJobStatus', CheckJobStatus)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
 
-	def get_Namespace(self):
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_InstanceParameters(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_InstanceParameters(self): # String
 		return self.get_query_params().get('InstanceParameters')
 
-	def set_InstanceParameters(self,InstanceParameters):
-		self.add_query_param('InstanceParameters',InstanceParameters)
+	def set_InstanceParameters(self, InstanceParameters):  # String
+		self.add_query_param('InstanceParameters', InstanceParameters)
