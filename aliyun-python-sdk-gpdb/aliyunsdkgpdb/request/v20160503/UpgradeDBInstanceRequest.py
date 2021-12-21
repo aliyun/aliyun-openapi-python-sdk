@@ -23,40 +23,36 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class UpgradeDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBInstance','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBInstance')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceId(self):
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_DBInstanceGroupCount(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DBInstanceGroupCount(self): # String
 		return self.get_query_params().get('DBInstanceGroupCount')
 
-	def set_DBInstanceGroupCount(self,DBInstanceGroupCount):
-		self.add_query_param('DBInstanceGroupCount',DBInstanceGroupCount)
-
-	def get_OwnerId(self):
+	def set_DBInstanceGroupCount(self, DBInstanceGroupCount):  # String
+		self.add_query_param('DBInstanceGroupCount', DBInstanceGroupCount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBInstanceClass(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
-
-	def get_PayType(self):
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)

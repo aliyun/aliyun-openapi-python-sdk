@@ -23,34 +23,31 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterPerformance','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterPerformance')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_DBInstanceId(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Key(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Key(self): # String
 		return self.get_query_params().get('Key')
 
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
-
-	def get_EndTime(self):
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

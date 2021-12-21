@@ -23,40 +23,36 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeSpecificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSpecification','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSpecification')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StorageType(self):
+	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_CpuCores(self):
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_CpuCores(self): # Integer
 		return self.get_query_params().get('CpuCores')
 
-	def set_CpuCores(self,CpuCores):
-		self.add_query_param('CpuCores',CpuCores)
-
-	def get_DBInstanceId(self):
+	def set_CpuCores(self, CpuCores):  # Integer
+		self.add_query_param('CpuCores', CpuCores)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_TotalNodeNum(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_TotalNodeNum(self): # Integer
 		return self.get_query_params().get('TotalNodeNum')
 
-	def set_TotalNodeNum(self,TotalNodeNum):
-		self.add_query_param('TotalNodeNum',TotalNodeNum)
-
-	def get_OwnerId(self):
+	def set_TotalNodeNum(self, TotalNodeNum):  # Integer
+		self.add_query_param('TotalNodeNum', TotalNodeNum)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

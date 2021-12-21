@@ -23,28 +23,26 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceSSL','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceSSL')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConnectionString(self):
+	def get_ConnectionString(self): # String
 		return self.get_query_params().get('ConnectionString')
 
-	def set_ConnectionString(self,ConnectionString):
-		self.add_query_param('ConnectionString',ConnectionString)
-
-	def get_DBInstanceId(self):
+	def set_ConnectionString(self, ConnectionString):  # String
+		self.add_query_param('ConnectionString', ConnectionString)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_SSLEnabled(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_SSLEnabled(self): # Integer
 		return self.get_query_params().get('SSLEnabled')
 
-	def set_SSLEnabled(self,SSLEnabled):
-		self.add_query_param('SSLEnabled',SSLEnabled)
+	def set_SSLEnabled(self, SSLEnabled):  # Integer
+		self.add_query_param('SSLEnabled', SSLEnabled)

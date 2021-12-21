@@ -23,64 +23,56 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeSQLLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLLogRecords','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLLogRecords')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_QueryKeywords(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_QueryKeywords(self): # String
 		return self.get_query_params().get('QueryKeywords')
 
-	def set_QueryKeywords(self,QueryKeywords):
-		self.add_query_param('QueryKeywords',QueryKeywords)
-
-	def get_PageNumber(self):
+	def set_QueryKeywords(self, QueryKeywords):  # String
+		self.add_query_param('QueryKeywords', QueryKeywords)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Database(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Database(self): # String
 		return self.get_query_params().get('Database')
 
-	def set_Database(self,Database):
-		self.add_query_param('Database',Database)
-
-	def get_PageSize(self):
+	def set_Database(self, Database):  # String
+		self.add_query_param('Database', Database)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DBInstanceId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_EndTime(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Form(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Form(self): # String
 		return self.get_query_params().get('Form')
 
-	def set_Form(self,Form):
-		self.add_query_param('Form',Form)
-
-	def get_User(self):
+	def set_Form(self, Form):  # String
+		self.add_query_param('Form', Form)
+	def get_User(self): # String
 		return self.get_query_params().get('User')
 
-	def set_User(self,User):
-		self.add_query_param('User',User)
+	def set_User(self, User):  # String
+		self.add_query_param('User', User)

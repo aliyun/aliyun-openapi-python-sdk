@@ -23,22 +23,21 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeSQLLogByQueryIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLLogByQueryId','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLLogByQueryId')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceId(self):
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_QueryId(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_QueryId(self): # String
 		return self.get_query_params().get('QueryId')
 
-	def set_QueryId(self,QueryId):
-		self.add_query_param('QueryId',QueryId)
+	def set_QueryId(self, QueryId):  # String
+		self.add_query_param('QueryId', QueryId)

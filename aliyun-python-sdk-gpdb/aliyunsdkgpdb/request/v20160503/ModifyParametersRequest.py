@@ -23,28 +23,26 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifyParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyParameters','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyParameters')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ForceRestartInstance(self):
+	def get_ForceRestartInstance(self): # Boolean
 		return self.get_query_params().get('ForceRestartInstance')
 
-	def set_ForceRestartInstance(self,ForceRestartInstance):
-		self.add_query_param('ForceRestartInstance',ForceRestartInstance)
-
-	def get_DBInstanceId(self):
+	def set_ForceRestartInstance(self, ForceRestartInstance):  # Boolean
+		self.add_query_param('ForceRestartInstance', ForceRestartInstance)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Parameters(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

@@ -23,34 +23,31 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifySecurityIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifySecurityIps','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifySecurityIps')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceIPArrayName(self):
+	def get_DBInstanceIPArrayName(self): # String
 		return self.get_query_params().get('DBInstanceIPArrayName')
 
-	def set_DBInstanceIPArrayName(self,DBInstanceIPArrayName):
-		self.add_query_param('DBInstanceIPArrayName',DBInstanceIPArrayName)
-
-	def get_DBInstanceId(self):
+	def set_DBInstanceIPArrayName(self, DBInstanceIPArrayName):  # String
+		self.add_query_param('DBInstanceIPArrayName', DBInstanceIPArrayName)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_SecurityIPList(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_SecurityIPList(self): # String
 		return self.get_query_params().get('SecurityIPList')
 
-	def set_SecurityIPList(self,SecurityIPList):
-		self.add_query_param('SecurityIPList',SecurityIPList)
-
-	def get_DBInstanceIPArrayAttribute(self):
+	def set_SecurityIPList(self, SecurityIPList):  # String
+		self.add_query_param('SecurityIPList', SecurityIPList)
+	def get_DBInstanceIPArrayAttribute(self): # String
 		return self.get_query_params().get('DBInstanceIPArrayAttribute')
 
-	def set_DBInstanceIPArrayAttribute(self,DBInstanceIPArrayAttribute):
-		self.add_query_param('DBInstanceIPArrayAttribute',DBInstanceIPArrayAttribute)
+	def set_DBInstanceIPArrayAttribute(self, DBInstanceIPArrayAttribute):  # String
+		self.add_query_param('DBInstanceIPArrayAttribute', DBInstanceIPArrayAttribute)
