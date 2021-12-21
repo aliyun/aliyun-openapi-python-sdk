@@ -32,11 +32,6 @@ class UpdateAggregateCompliancePackRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConfigRules(self): # Array
-		return self.get_body_params().get('ConfigRules')
-
-	def set_ConfigRules(self, ConfigRules):  # Array
-		self.add_body_params("ConfigRules", json.dumps(ConfigRules))
 	def get_CompliancePackName(self): # String
 		return self.get_body_params().get('CompliancePackName')
 
@@ -57,13 +52,18 @@ class UpdateAggregateCompliancePackRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_body_params('AggregatorId', AggregatorId)
-	def get_RiskLevel(self): # Integer
-		return self.get_body_params().get('RiskLevel')
-
-	def set_RiskLevel(self, RiskLevel):  # Integer
-		self.add_body_params('RiskLevel', RiskLevel)
 	def get_CompliancePackId(self): # String
 		return self.get_body_params().get('CompliancePackId')
 
 	def set_CompliancePackId(self, CompliancePackId):  # String
 		self.add_body_params('CompliancePackId', CompliancePackId)
+	def get_ConfigRules(self): # Array
+		return self.get_body_params().get('ConfigRules')
+
+	def set_ConfigRules(self, ConfigRules):  # Array
+		self.add_body_params("ConfigRules", json.dumps(ConfigRules))
+	def get_RiskLevel(self): # Integer
+		return self.get_body_params().get('RiskLevel')
+
+	def set_RiskLevel(self, RiskLevel):  # Integer
+		self.add_body_params('RiskLevel', RiskLevel)
