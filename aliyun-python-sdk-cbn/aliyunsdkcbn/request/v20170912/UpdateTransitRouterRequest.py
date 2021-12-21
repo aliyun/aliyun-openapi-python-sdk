@@ -23,64 +23,56 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UpdateTransitRouterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouter','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouter')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TransitRouterName(self):
+	def get_TransitRouterName(self): # String
 		return self.get_query_params().get('TransitRouterName')
 
-	def set_TransitRouterName(self,TransitRouterName):
-		self.add_query_param('TransitRouterName',TransitRouterName)
-
-	def get_ResourceOwnerId(self):
+	def set_TransitRouterName(self, TransitRouterName):  # String
+		self.add_query_param('TransitRouterName', TransitRouterName)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_DryRun(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TransitRouterId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TransitRouterId(self): # String
 		return self.get_query_params().get('TransitRouterId')
 
-	def set_TransitRouterId(self,TransitRouterId):
-		self.add_query_param('TransitRouterId',TransitRouterId)
-
-	def get_TransitRouterDescription(self):
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)
+	def get_TransitRouterDescription(self): # String
 		return self.get_query_params().get('TransitRouterDescription')
 
-	def set_TransitRouterDescription(self,TransitRouterDescription):
-		self.add_query_param('TransitRouterDescription',TransitRouterDescription)
+	def set_TransitRouterDescription(self, TransitRouterDescription):  # String
+		self.add_query_param('TransitRouterDescription', TransitRouterDescription)

@@ -23,86 +23,75 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class CreateCenInterRegionTrafficQosPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenInterRegionTrafficQosPolicy','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenInterRegionTrafficQosPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_TrafficQosQueuess(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_TrafficQosQueuess(self): # RepeatList
 		return self.get_query_params().get('TrafficQosQueues')
 
-	def set_TrafficQosQueuess(self, TrafficQosQueuess):
-		for depth1 in range(len(TrafficQosQueuess)):
-			if TrafficQosQueuess[depth1].get('Dscps') is not None:
-				for depth2 in range(len(TrafficQosQueuess[depth1].get('Dscps'))):
-					if TrafficQosQueuess[depth1].get('Dscps')[depth2] is not None:
-						self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.Dscps.' + str(depth2 + 1) , TrafficQosQueuess[depth1].get('Dscps')[depth2])
-			if TrafficQosQueuess[depth1].get('QosQueueName') is not None:
-				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.QosQueueName', TrafficQosQueuess[depth1].get('QosQueueName'))
-			if TrafficQosQueuess[depth1].get('RemainBandwidthPercent') is not None:
-				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.RemainBandwidthPercent', TrafficQosQueuess[depth1].get('RemainBandwidthPercent'))
-			if TrafficQosQueuess[depth1].get('QosQueueDescription') is not None:
-				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.QosQueueDescription', TrafficQosQueuess[depth1].get('QosQueueDescription'))
-
-	def get_TrafficQosPolicyName(self):
+	def set_TrafficQosQueuess(self, TrafficQosQueues):  # RepeatList
+		for depth1 in range(len(TrafficQosQueues)):
+			if TrafficQosQueues[depth1].get('Dscps') is not None:
+				for depth2 in range(len(TrafficQosQueues[depth1].get('Dscps'))):
+					self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.Dscps' + str(depth2 + 1), TrafficQosQueues[depth1].get('Dscps')[depth2])
+			if TrafficQosQueues[depth1].get('QosQueueName') is not None:
+				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.QosQueueName', TrafficQosQueues[depth1].get('QosQueueName'))
+			if TrafficQosQueues[depth1].get('RemainBandwidthPercent') is not None:
+				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.RemainBandwidthPercent', TrafficQosQueues[depth1].get('RemainBandwidthPercent'))
+			if TrafficQosQueues[depth1].get('QosQueueDescription') is not None:
+				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.QosQueueDescription', TrafficQosQueues[depth1].get('QosQueueDescription'))
+	def get_TrafficQosPolicyName(self): # String
 		return self.get_query_params().get('TrafficQosPolicyName')
 
-	def set_TrafficQosPolicyName(self,TrafficQosPolicyName):
-		self.add_query_param('TrafficQosPolicyName',TrafficQosPolicyName)
-
-	def get_DryRun(self):
+	def set_TrafficQosPolicyName(self, TrafficQosPolicyName):  # String
+		self.add_query_param('TrafficQosPolicyName', TrafficQosPolicyName)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TrafficQosPolicyDescription(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TrafficQosPolicyDescription(self): # String
 		return self.get_query_params().get('TrafficQosPolicyDescription')
 
-	def set_TrafficQosPolicyDescription(self,TrafficQosPolicyDescription):
-		self.add_query_param('TrafficQosPolicyDescription',TrafficQosPolicyDescription)
-
-	def get_OwnerId(self):
+	def set_TrafficQosPolicyDescription(self, TrafficQosPolicyDescription):  # String
+		self.add_query_param('TrafficQosPolicyDescription', TrafficQosPolicyDescription)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TransitRouterId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TransitRouterId(self): # String
 		return self.get_query_params().get('TransitRouterId')
 
-	def set_TransitRouterId(self,TransitRouterId):
-		self.add_query_param('TransitRouterId',TransitRouterId)
-
-	def get_TransitRouterAttachmentId(self):
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)
+	def get_TransitRouterAttachmentId(self): # String
 		return self.get_query_params().get('TransitRouterAttachmentId')
 
-	def set_TransitRouterAttachmentId(self,TransitRouterAttachmentId):
-		self.add_query_param('TransitRouterAttachmentId',TransitRouterAttachmentId)
+	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
+		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)

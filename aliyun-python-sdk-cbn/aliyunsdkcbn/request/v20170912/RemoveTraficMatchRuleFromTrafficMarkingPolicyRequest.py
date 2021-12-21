@@ -23,60 +23,52 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'RemoveTraficMatchRuleFromTrafficMarkingPolicy','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'RemoveTraficMatchRuleFromTrafficMarkingPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_TrafficMarkingPolicyId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_TrafficMarkingPolicyId(self): # String
 		return self.get_query_params().get('TrafficMarkingPolicyId')
 
-	def set_TrafficMarkingPolicyId(self,TrafficMarkingPolicyId):
-		self.add_query_param('TrafficMarkingPolicyId',TrafficMarkingPolicyId)
-
-	def get_DryRun(self):
+	def set_TrafficMarkingPolicyId(self, TrafficMarkingPolicyId):  # String
+		self.add_query_param('TrafficMarkingPolicyId', TrafficMarkingPolicyId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TrafficMarkRuleIdss(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TrafficMarkRuleIdss(self): # RepeatList
 		return self.get_query_params().get('TrafficMarkRuleIds')
 
-	def set_TrafficMarkRuleIdss(self, TrafficMarkRuleIdss):
-		for depth1 in range(len(TrafficMarkRuleIdss)):
-			if TrafficMarkRuleIdss[depth1] is not None:
-				self.add_query_param('TrafficMarkRuleIds.' + str(depth1 + 1) , TrafficMarkRuleIdss[depth1])
-
-	def get_OwnerId(self):
+	def set_TrafficMarkRuleIdss(self, TrafficMarkRuleIds):  # RepeatList
+		for depth1 in range(len(TrafficMarkRuleIds)):
+			self.add_query_param('TrafficMarkRuleIds.' + str(depth1 + 1), TrafficMarkRuleIds[depth1])
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

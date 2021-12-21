@@ -23,88 +23,76 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class CreateTransitRouterVbrAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouterVbrAttachment','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouterVbrAttachment')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_CenId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
-
-	def get_VbrId(self):
+	def set_CenId(self, CenId):  # String
+		self.add_query_param('CenId', CenId)
+	def get_VbrId(self): # String
 		return self.get_query_params().get('VbrId')
 
-	def set_VbrId(self,VbrId):
-		self.add_query_param('VbrId',VbrId)
-
-	def get_TransitRouterAttachmentName(self):
+	def set_VbrId(self, VbrId):  # String
+		self.add_query_param('VbrId', VbrId)
+	def get_TransitRouterAttachmentName(self): # String
 		return self.get_query_params().get('TransitRouterAttachmentName')
 
-	def set_TransitRouterAttachmentName(self,TransitRouterAttachmentName):
-		self.add_query_param('TransitRouterAttachmentName',TransitRouterAttachmentName)
-
-	def get_AutoPublishRouteEnabled(self):
+	def set_TransitRouterAttachmentName(self, TransitRouterAttachmentName):  # String
+		self.add_query_param('TransitRouterAttachmentName', TransitRouterAttachmentName)
+	def get_AutoPublishRouteEnabled(self): # Boolean
 		return self.get_query_params().get('AutoPublishRouteEnabled')
 
-	def set_AutoPublishRouteEnabled(self,AutoPublishRouteEnabled):
-		self.add_query_param('AutoPublishRouteEnabled',AutoPublishRouteEnabled)
-
-	def get_DryRun(self):
+	def set_AutoPublishRouteEnabled(self, AutoPublishRouteEnabled):  # Boolean
+		self.add_query_param('AutoPublishRouteEnabled', AutoPublishRouteEnabled)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TransitRouterId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TransitRouterId(self): # String
 		return self.get_query_params().get('TransitRouterId')
 
-	def set_TransitRouterId(self,TransitRouterId):
-		self.add_query_param('TransitRouterId',TransitRouterId)
-
-	def get_TransitRouterAttachmentDescription(self):
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)
+	def get_TransitRouterAttachmentDescription(self): # String
 		return self.get_query_params().get('TransitRouterAttachmentDescription')
 
-	def set_TransitRouterAttachmentDescription(self,TransitRouterAttachmentDescription):
-		self.add_query_param('TransitRouterAttachmentDescription',TransitRouterAttachmentDescription)
-
-	def get_VbrOwnerId(self):
+	def set_TransitRouterAttachmentDescription(self, TransitRouterAttachmentDescription):  # String
+		self.add_query_param('TransitRouterAttachmentDescription', TransitRouterAttachmentDescription)
+	def get_VbrOwnerId(self): # Long
 		return self.get_query_params().get('VbrOwnerId')
 
-	def set_VbrOwnerId(self,VbrOwnerId):
-		self.add_query_param('VbrOwnerId',VbrOwnerId)
+	def set_VbrOwnerId(self, VbrOwnerId):  # Long
+		self.add_query_param('VbrOwnerId', VbrOwnerId)

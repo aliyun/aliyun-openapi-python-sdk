@@ -23,80 +23,68 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRouterRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterRouteEntries','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterRouteEntries')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_TransitRouterRouteEntryDestinationCidrBlock(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_TransitRouterRouteEntryDestinationCidrBlock(self): # String
 		return self.get_query_params().get('TransitRouterRouteEntryDestinationCidrBlock')
 
-	def set_TransitRouterRouteEntryDestinationCidrBlock(self,TransitRouterRouteEntryDestinationCidrBlock):
-		self.add_query_param('TransitRouterRouteEntryDestinationCidrBlock',TransitRouterRouteEntryDestinationCidrBlock)
-
-	def get_TransitRouterRouteTableId(self):
+	def set_TransitRouterRouteEntryDestinationCidrBlock(self, TransitRouterRouteEntryDestinationCidrBlock):  # String
+		self.add_query_param('TransitRouterRouteEntryDestinationCidrBlock', TransitRouterRouteEntryDestinationCidrBlock)
+	def get_TransitRouterRouteTableId(self): # String
 		return self.get_query_params().get('TransitRouterRouteTableId')
 
-	def set_TransitRouterRouteTableId(self,TransitRouterRouteTableId):
-		self.add_query_param('TransitRouterRouteTableId',TransitRouterRouteTableId)
-
-	def get_NextToken(self):
+	def set_TransitRouterRouteTableId(self, TransitRouterRouteTableId):  # String
+		self.add_query_param('TransitRouterRouteTableId', TransitRouterRouteTableId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_TransitRouterRouteEntryStatus(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_TransitRouterRouteEntryStatus(self): # String
 		return self.get_query_params().get('TransitRouterRouteEntryStatus')
 
-	def set_TransitRouterRouteEntryStatus(self,TransitRouterRouteEntryStatus):
-		self.add_query_param('TransitRouterRouteEntryStatus',TransitRouterRouteEntryStatus)
-
-	def get_ResourceOwnerAccount(self):
+	def set_TransitRouterRouteEntryStatus(self, TransitRouterRouteEntryStatus):  # String
+		self.add_query_param('TransitRouterRouteEntryStatus', TransitRouterRouteEntryStatus)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TransitRouterRouteEntryNamess(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TransitRouterRouteEntryNamess(self): # RepeatList
 		return self.get_query_params().get('TransitRouterRouteEntryNames')
 
-	def set_TransitRouterRouteEntryNamess(self, TransitRouterRouteEntryNamess):
-		for depth1 in range(len(TransitRouterRouteEntryNamess)):
-			if TransitRouterRouteEntryNamess[depth1] is not None:
-				self.add_query_param('TransitRouterRouteEntryNames.' + str(depth1 + 1) , TransitRouterRouteEntryNamess[depth1])
-
-	def get_TransitRouterRouteEntryIdss(self):
+	def set_TransitRouterRouteEntryNamess(self, TransitRouterRouteEntryNames):  # RepeatList
+		for depth1 in range(len(TransitRouterRouteEntryNames)):
+			self.add_query_param('TransitRouterRouteEntryNames.' + str(depth1 + 1), TransitRouterRouteEntryNames[depth1])
+	def get_TransitRouterRouteEntryIdss(self): # RepeatList
 		return self.get_query_params().get('TransitRouterRouteEntryIds')
 
-	def set_TransitRouterRouteEntryIdss(self, TransitRouterRouteEntryIdss):
-		for depth1 in range(len(TransitRouterRouteEntryIdss)):
-			if TransitRouterRouteEntryIdss[depth1] is not None:
-				self.add_query_param('TransitRouterRouteEntryIds.' + str(depth1 + 1) , TransitRouterRouteEntryIdss[depth1])
-
-	def get_OwnerId(self):
+	def set_TransitRouterRouteEntryIdss(self, TransitRouterRouteEntryIds):  # RepeatList
+		for depth1 in range(len(TransitRouterRouteEntryIds)):
+			self.add_query_param('TransitRouterRouteEntryIds.' + str(depth1 + 1), TransitRouterRouteEntryIds[depth1])
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MaxResults(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

@@ -23,52 +23,46 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DescribeCenPrivateZoneRoutesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenPrivateZoneRoutes','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenPrivateZoneRoutes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CenId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
-
-	def get_AccessRegionId(self):
+	def set_CenId(self, CenId):  # String
+		self.add_query_param('CenId', CenId)
+	def get_AccessRegionId(self): # String
 		return self.get_query_params().get('AccessRegionId')
 
-	def set_AccessRegionId(self,AccessRegionId):
-		self.add_query_param('AccessRegionId',AccessRegionId)
-
-	def get_PageNumber(self):
+	def set_AccessRegionId(self, AccessRegionId):  # String
+		self.add_query_param('AccessRegionId', AccessRegionId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_HostRegionId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_HostRegionId(self): # String
 		return self.get_query_params().get('HostRegionId')
 
-	def set_HostRegionId(self,HostRegionId):
-		self.add_query_param('HostRegionId',HostRegionId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_HostRegionId(self, HostRegionId):  # String
+		self.add_query_param('HostRegionId', HostRegionId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)

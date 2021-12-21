@@ -23,106 +23,91 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class CreateCenBandwidthPackageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenBandwidthPackage','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenBandwidthPackage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AutoRenewDuration(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AutoRenewDuration(self): # Integer
 		return self.get_query_params().get('AutoRenewDuration')
 
-	def set_AutoRenewDuration(self,AutoRenewDuration):
-		self.add_query_param('AutoRenewDuration',AutoRenewDuration)
-
-	def get_BandwidthPackageChargeType(self):
+	def set_AutoRenewDuration(self, AutoRenewDuration):  # Integer
+		self.add_query_param('AutoRenewDuration', AutoRenewDuration)
+	def get_BandwidthPackageChargeType(self): # String
 		return self.get_query_params().get('BandwidthPackageChargeType')
 
-	def set_BandwidthPackageChargeType(self,BandwidthPackageChargeType):
-		self.add_query_param('BandwidthPackageChargeType',BandwidthPackageChargeType)
-
-	def get_GeographicRegionBId(self):
+	def set_BandwidthPackageChargeType(self, BandwidthPackageChargeType):  # String
+		self.add_query_param('BandwidthPackageChargeType', BandwidthPackageChargeType)
+	def get_GeographicRegionBId(self): # String
 		return self.get_query_params().get('GeographicRegionBId')
 
-	def set_GeographicRegionBId(self,GeographicRegionBId):
-		self.add_query_param('GeographicRegionBId',GeographicRegionBId)
-
-	def get_Period(self):
+	def set_GeographicRegionBId(self, GeographicRegionBId):  # String
+		self.add_query_param('GeographicRegionBId', GeographicRegionBId)
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_GeographicRegionAId(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_GeographicRegionAId(self): # String
 		return self.get_query_params().get('GeographicRegionAId')
 
-	def set_GeographicRegionAId(self,GeographicRegionAId):
-		self.add_query_param('GeographicRegionAId',GeographicRegionAId)
-
-	def get_AutoPay(self):
+	def set_GeographicRegionAId(self, GeographicRegionAId):  # String
+		self.add_query_param('GeographicRegionAId', GeographicRegionAId)
+	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Bandwidth(self): # Integer
 		return self.get_query_params().get('Bandwidth')
 
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_OwnerAccount(self):
+	def set_Bandwidth(self, Bandwidth):  # Integer
+		self.add_query_param('Bandwidth', Bandwidth)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AutoRenew(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AutoRenew(self): # Boolean
 		return self.get_query_params().get('AutoRenew')
 
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
-
-	def get_Name(self):
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_PricingCycle(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_PricingCycle(self): # String
 		return self.get_query_params().get('PricingCycle')
 
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)
+	def set_PricingCycle(self, PricingCycle):  # String
+		self.add_query_param('PricingCycle', PricingCycle)

@@ -23,88 +23,76 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class EnableCenVbrHealthCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CenId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
-
-	def get_HealthCheckTargetIp(self):
+	def set_CenId(self, CenId):  # String
+		self.add_query_param('CenId', CenId)
+	def get_HealthCheckTargetIp(self): # String
 		return self.get_query_params().get('HealthCheckTargetIp')
 
-	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
-		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
-
-	def get_HealthyThreshold(self):
+	def set_HealthCheckTargetIp(self, HealthCheckTargetIp):  # String
+		self.add_query_param('HealthCheckTargetIp', HealthCheckTargetIp)
+	def get_HealthyThreshold(self): # Integer
 		return self.get_query_params().get('HealthyThreshold')
 
-	def set_HealthyThreshold(self,HealthyThreshold):
-		self.add_query_param('HealthyThreshold',HealthyThreshold)
-
-	def get_VbrInstanceOwnerId(self):
+	def set_HealthyThreshold(self, HealthyThreshold):  # Integer
+		self.add_query_param('HealthyThreshold', HealthyThreshold)
+	def get_VbrInstanceOwnerId(self): # Long
 		return self.get_query_params().get('VbrInstanceOwnerId')
 
-	def set_VbrInstanceOwnerId(self,VbrInstanceOwnerId):
-		self.add_query_param('VbrInstanceOwnerId',VbrInstanceOwnerId)
-
-	def get_HealthCheckOnly(self):
+	def set_VbrInstanceOwnerId(self, VbrInstanceOwnerId):  # Long
+		self.add_query_param('VbrInstanceOwnerId', VbrInstanceOwnerId)
+	def get_HealthCheckOnly(self): # Boolean
 		return self.get_query_params().get('HealthCheckOnly')
 
-	def set_HealthCheckOnly(self,HealthCheckOnly):
-		self.add_query_param('HealthCheckOnly',HealthCheckOnly)
-
-	def get_VbrInstanceRegionId(self):
+	def set_HealthCheckOnly(self, HealthCheckOnly):  # Boolean
+		self.add_query_param('HealthCheckOnly', HealthCheckOnly)
+	def get_VbrInstanceRegionId(self): # String
 		return self.get_query_params().get('VbrInstanceRegionId')
 
-	def set_VbrInstanceRegionId(self,VbrInstanceRegionId):
-		self.add_query_param('VbrInstanceRegionId',VbrInstanceRegionId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_VbrInstanceRegionId(self, VbrInstanceRegionId):  # String
+		self.add_query_param('VbrInstanceRegionId', VbrInstanceRegionId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_HealthCheckSourceIp(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_HealthCheckSourceIp(self): # String
 		return self.get_query_params().get('HealthCheckSourceIp')
 
-	def set_HealthCheckSourceIp(self,HealthCheckSourceIp):
-		self.add_query_param('HealthCheckSourceIp',HealthCheckSourceIp)
-
-	def get_HealthCheckInterval(self):
+	def set_HealthCheckSourceIp(self, HealthCheckSourceIp):  # String
+		self.add_query_param('HealthCheckSourceIp', HealthCheckSourceIp)
+	def get_HealthCheckInterval(self): # Integer
 		return self.get_query_params().get('HealthCheckInterval')
 
-	def set_HealthCheckInterval(self,HealthCheckInterval):
-		self.add_query_param('HealthCheckInterval',HealthCheckInterval)
-
-	def get_VbrInstanceId(self):
+	def set_HealthCheckInterval(self, HealthCheckInterval):  # Integer
+		self.add_query_param('HealthCheckInterval', HealthCheckInterval)
+	def get_VbrInstanceId(self): # String
 		return self.get_query_params().get('VbrInstanceId')
 
-	def set_VbrInstanceId(self,VbrInstanceId):
-		self.add_query_param('VbrInstanceId',VbrInstanceId)
+	def set_VbrInstanceId(self, VbrInstanceId):  # String
+		self.add_query_param('VbrInstanceId', VbrInstanceId)

@@ -23,78 +23,67 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ResolveAndRouteServiceInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_CenId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
-
-	def get_Description(self):
+	def set_CenId(self, CenId):  # String
+		self.add_query_param('CenId', CenId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Host(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Host(self): # String
 		return self.get_query_params().get('Host')
 
-	def set_Host(self,Host):
-		self.add_query_param('Host',Host)
-
-	def get_HostRegionId(self):
+	def set_Host(self, Host):  # String
+		self.add_query_param('Host', Host)
+	def get_HostRegionId(self): # String
 		return self.get_query_params().get('HostRegionId')
 
-	def set_HostRegionId(self,HostRegionId):
-		self.add_query_param('HostRegionId',HostRegionId)
-
-	def get_HostVpcId(self):
+	def set_HostRegionId(self, HostRegionId):  # String
+		self.add_query_param('HostRegionId', HostRegionId)
+	def get_HostVpcId(self): # String
 		return self.get_query_params().get('HostVpcId')
 
-	def set_HostVpcId(self,HostVpcId):
-		self.add_query_param('HostVpcId',HostVpcId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_HostVpcId(self, HostVpcId):  # String
+		self.add_query_param('HostVpcId', HostVpcId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AccessRegionIdss(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AccessRegionIdss(self): # RepeatList
 		return self.get_query_params().get('AccessRegionIds')
 
-	def set_AccessRegionIdss(self, AccessRegionIdss):
-		for depth1 in range(len(AccessRegionIdss)):
-			if AccessRegionIdss[depth1] is not None:
-				self.add_query_param('AccessRegionIds.' + str(depth1 + 1) , AccessRegionIdss[depth1])
+	def set_AccessRegionIdss(self, AccessRegionIds):  # RepeatList
+		for depth1 in range(len(AccessRegionIds)):
+			self.add_query_param('AccessRegionIds.' + str(depth1 + 1), AccessRegionIds[depth1])
