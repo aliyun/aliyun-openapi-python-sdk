@@ -1,3 +1,6 @@
+2021-12-24 Version: 1.0.3
+- Supported CheckBlockVolumeName api for Checking the volume name has been already used by the OSS bucket folder.
+
 2021-10-28 Version: 1.0.2
 - Updated tag api.
 - Updated DescribeTask api to get relatedResourceId info.
