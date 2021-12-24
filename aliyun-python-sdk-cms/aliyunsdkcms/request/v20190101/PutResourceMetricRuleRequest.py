@@ -103,11 +103,15 @@ class PutResourceMetricRuleRequest(RpcRequest):
 	def set_EscalationsCriticalStatistics(self,EscalationsCriticalStatistics):
 		self.add_query_param('Escalations.Critical.Statistics',EscalationsCriticalStatistics)
 
-	def get_Labels(self):
+	def get_Labelss(self):
 		return self.get_query_params().get('Labels')
 
-	def set_Labels(self,Labels):
-		self.add_query_param('Labels',Labels)
+	def set_Labelss(self, Labelss):
+		for depth1 in range(len(Labelss)):
+			if Labelss[depth1].get('Value') is not None:
+				self.add_query_param('Labels.' + str(depth1 + 1) + '.Value', Labelss[depth1].get('Value'))
+			if Labelss[depth1].get('Key') is not None:
+				self.add_query_param('Labels.' + str(depth1 + 1) + '.Key', Labelss[depth1].get('Key'))
 
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')

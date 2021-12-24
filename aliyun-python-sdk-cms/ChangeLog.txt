@@ -1,3 +1,6 @@
+2021-12-24 Version: 7.0.30
+- Add Event Rule Target.
+
 2021-12-24 Version: 7.0.29
 - Add Event Rule Target.
 
