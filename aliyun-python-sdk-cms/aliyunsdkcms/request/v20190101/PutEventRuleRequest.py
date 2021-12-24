@@ -75,6 +75,12 @@ class PutEventRuleRequest(RpcRequest):
 	def set_EventType(self,EventType):
 		self.add_query_param('EventType',EventType)
 
+	def get_SilenceTime(self):
+		return self.get_query_params().get('SilenceTime')
+
+	def set_SilenceTime(self,SilenceTime):
+		self.add_query_param('SilenceTime',SilenceTime)
+
 	def get_State(self):
 		return self.get_query_params().get('State')
 

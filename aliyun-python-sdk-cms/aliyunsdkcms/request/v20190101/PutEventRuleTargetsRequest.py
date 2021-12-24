@@ -51,6 +51,26 @@ class PutEventRuleTargetsRequest(RpcRequest):
 			if ContactParameterss[depth1].get('ContactGroupName') is not None:
 				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.ContactGroupName', ContactParameterss[depth1].get('ContactGroupName'))
 
+	def get_OpenApiParameterss(self):
+		return self.get_query_params().get('OpenApiParameters')
+
+	def set_OpenApiParameterss(self, OpenApiParameterss):
+		for depth1 in range(len(OpenApiParameterss)):
+			if OpenApiParameterss[depth1].get('Product') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Product', OpenApiParameterss[depth1].get('Product'))
+			if OpenApiParameterss[depth1].get('Role') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Role', OpenApiParameterss[depth1].get('Role'))
+			if OpenApiParameterss[depth1].get('Action') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Action', OpenApiParameterss[depth1].get('Action'))
+			if OpenApiParameterss[depth1].get('Id') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Id', OpenApiParameterss[depth1].get('Id'))
+			if OpenApiParameterss[depth1].get('Arn') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Arn', OpenApiParameterss[depth1].get('Arn'))
+			if OpenApiParameterss[depth1].get('Region') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Region', OpenApiParameterss[depth1].get('Region'))
+			if OpenApiParameterss[depth1].get('Version') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Version', OpenApiParameterss[depth1].get('Version'))
+
 	def get_SlsParameterss(self):
 		return self.get_query_params().get('SlsParameters')
 
