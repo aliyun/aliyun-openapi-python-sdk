@@ -284,6 +284,12 @@ class CreateApplicationRequest(RoaRequest):
 	def set_AppDescription(self,AppDescription):
 		self.add_query_param('AppDescription',AppDescription)
 
+	def get_AcrInstanceId(self):
+		return self.get_body_params().get('AcrInstanceId')
+
+	def set_AcrInstanceId(self,AcrInstanceId):
+		self.add_body_params('AcrInstanceId', AcrInstanceId)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
