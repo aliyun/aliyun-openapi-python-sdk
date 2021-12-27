@@ -20,28 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeCdnDomainConfigsRequest(RpcRequest):
+class DescribeUserConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeCdnDomainConfigs')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserConfigs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FunctionNames(self):
-		return self.get_query_params().get('FunctionNames')
-
-	def set_FunctionNames(self,FunctionNames):
-		self.add_query_param('FunctionNames',FunctionNames)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -54,3 +42,9 @@ class DescribeCdnDomainConfigsRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_Config(self):
+		return self.get_query_params().get('Config')
+
+	def set_Config(self,Config):
+		self.add_query_param('Config',Config)
