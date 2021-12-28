@@ -36,3 +36,8 @@ class GenerateConfigRulesReportRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
+	def get_ConfigRuleIds(self): # String
+		return self.get_body_params().get('ConfigRuleIds')
+
+	def set_ConfigRuleIds(self, ConfigRuleIds):  # String
+		self.add_body_params('ConfigRuleIds', ConfigRuleIds)

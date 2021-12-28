@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class GetConfigRulesReportRequest(RpcRequest):
+class ListManagedRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetConfigRulesReport')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListManagedRules')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,23 @@ class GetConfigRulesReportRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportId(self): # String
-		return self.get_query_params().get('ReportId')
+	def get_RiskLevel(self): # Integer
+		return self.get_query_params().get('RiskLevel')
 
-	def set_ReportId(self, ReportId):  # String
-		self.add_query_param('ReportId', ReportId)
+	def set_RiskLevel(self, RiskLevel):  # Integer
+		self.add_query_param('RiskLevel', RiskLevel)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

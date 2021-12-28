@@ -97,6 +97,11 @@ class CreateConfigRuleRequest(RpcRequest):
 
 	def set_ConfigRuleName(self, ConfigRuleName):  # String
 		self.add_body_params('ConfigRuleName', ConfigRuleName)
+	def get_TagKeyLogicScope(self): # String
+		return self.get_body_params().get('TagKeyLogicScope')
+
+	def set_TagKeyLogicScope(self, TagKeyLogicScope):  # String
+		self.add_body_params('TagKeyLogicScope', TagKeyLogicScope)
 	def get_MaximumExecutionFrequency(self): # String
 		return self.get_body_params().get('MaximumExecutionFrequency')
 

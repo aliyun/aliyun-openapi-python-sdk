@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class GetConfigRulesReportRequest(RpcRequest):
+class GetManagedRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetConfigRulesReport')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetManagedRule')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,8 @@ class GetConfigRulesReportRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportId(self): # String
-		return self.get_query_params().get('ReportId')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_ReportId(self, ReportId):  # String
-		self.add_query_param('ReportId', ReportId)
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)

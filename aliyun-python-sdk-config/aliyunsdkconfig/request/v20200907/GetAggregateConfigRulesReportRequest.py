@@ -24,13 +24,18 @@ class GetAggregateConfigRulesReportRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateConfigRulesReport')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ReportId(self): # String
+		return self.get_query_params().get('ReportId')
+
+	def set_ReportId(self, ReportId):  # String
+		self.add_query_param('ReportId', ReportId)
 	def get_AggregatorId(self): # String
 		return self.get_query_params().get('AggregatorId')
 
