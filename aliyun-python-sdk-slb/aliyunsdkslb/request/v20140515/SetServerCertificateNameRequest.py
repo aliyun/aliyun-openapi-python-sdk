@@ -23,46 +23,41 @@ from aliyunsdkslb.endpoint import endpoint_data
 class SetServerCertificateNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetServerCertificateName','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetServerCertificateName','Slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ServerCertificateId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ServerCertificateId(self): # String
 		return self.get_query_params().get('ServerCertificateId')
 
-	def set_ServerCertificateId(self,ServerCertificateId):
-		self.add_query_param('ServerCertificateId',ServerCertificateId)
-
-	def get_ServerCertificateName(self):
+	def set_ServerCertificateId(self, ServerCertificateId):  # String
+		self.add_query_param('ServerCertificateId', ServerCertificateId)
+	def get_ServerCertificateName(self): # String
 		return self.get_query_params().get('ServerCertificateName')
 
-	def set_ServerCertificateName(self,ServerCertificateName):
-		self.add_query_param('ServerCertificateName',ServerCertificateName)
+	def set_ServerCertificateName(self, ServerCertificateName):  # String
+		self.add_query_param('ServerCertificateName', ServerCertificateName)

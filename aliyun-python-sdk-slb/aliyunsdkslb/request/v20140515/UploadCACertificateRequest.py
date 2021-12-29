@@ -23,52 +23,46 @@ from aliyunsdkslb.endpoint import endpoint_data
 class UploadCACertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UploadCACertificate','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UploadCACertificate','Slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceGroupId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_CACertificateName(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_CACertificateName(self): # String
 		return self.get_query_params().get('CACertificateName')
 
-	def set_CACertificateName(self,CACertificateName):
-		self.add_query_param('CACertificateName',CACertificateName)
-
-	def get_CACertificate(self):
+	def set_CACertificateName(self, CACertificateName):  # String
+		self.add_query_param('CACertificateName', CACertificateName)
+	def get_CACertificate(self): # String
 		return self.get_query_params().get('CACertificate')
 
-	def set_CACertificate(self,CACertificate):
-		self.add_query_param('CACertificate',CACertificate)
-
-	def get_ResourceOwnerAccount(self):
+	def set_CACertificate(self, CACertificate):  # String
+		self.add_query_param('CACertificate', CACertificate)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

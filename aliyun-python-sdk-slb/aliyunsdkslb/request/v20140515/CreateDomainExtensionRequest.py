@@ -23,58 +23,51 @@ from aliyunsdkslb.endpoint import endpoint_data
 class CreateDomainExtensionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateDomainExtension','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateDomainExtension','Slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ListenerPort(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ListenerPort(self): # Integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ListenerPort(self, ListenerPort):  # Integer
+		self.add_query_param('ListenerPort', ListenerPort)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ServerCertificateId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ServerCertificateId(self): # String
 		return self.get_query_params().get('ServerCertificateId')
 
-	def set_ServerCertificateId(self,ServerCertificateId):
-		self.add_query_param('ServerCertificateId',ServerCertificateId)
-
-	def get_LoadBalancerId(self):
+	def set_ServerCertificateId(self, ServerCertificateId):  # String
+		self.add_query_param('ServerCertificateId', ServerCertificateId)
+	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
-	def get_Domain(self):
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

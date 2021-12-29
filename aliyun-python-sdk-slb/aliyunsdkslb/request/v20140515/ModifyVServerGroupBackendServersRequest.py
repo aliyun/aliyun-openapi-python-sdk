@@ -23,52 +23,46 @@ from aliyunsdkslb.endpoint import endpoint_data
 class ModifyVServerGroupBackendServersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'ModifyVServerGroupBackendServers','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'ModifyVServerGroupBackendServers','Slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_VServerGroupId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_VServerGroupId(self): # String
 		return self.get_query_params().get('VServerGroupId')
 
-	def set_VServerGroupId(self,VServerGroupId):
-		self.add_query_param('VServerGroupId',VServerGroupId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_VServerGroupId(self, VServerGroupId):  # String
+		self.add_query_param('VServerGroupId', VServerGroupId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_NewBackendServers(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_NewBackendServers(self): # String
 		return self.get_query_params().get('NewBackendServers')
 
-	def set_NewBackendServers(self,NewBackendServers):
-		self.add_query_param('NewBackendServers',NewBackendServers)
-
-	def get_OwnerAccount(self):
+	def set_NewBackendServers(self, NewBackendServers):  # String
+		self.add_query_param('NewBackendServers', NewBackendServers)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OldBackendServers(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_OldBackendServers(self): # String
 		return self.get_query_params().get('OldBackendServers')
 
-	def set_OldBackendServers(self,OldBackendServers):
-		self.add_query_param('OldBackendServers',OldBackendServers)
+	def set_OldBackendServers(self, OldBackendServers):  # String
+		self.add_query_param('OldBackendServers', OldBackendServers)

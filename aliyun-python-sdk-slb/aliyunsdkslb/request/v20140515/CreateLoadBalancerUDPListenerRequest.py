@@ -23,142 +23,121 @@ from aliyunsdkslb.endpoint import endpoint_data
 class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateLoadBalancerUDPListener','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateLoadBalancerUDPListener','Slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AclStatus(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AclStatus(self): # String
 		return self.get_query_params().get('AclStatus')
 
-	def set_AclStatus(self,AclStatus):
-		self.add_query_param('AclStatus',AclStatus)
-
-	def get_AclType(self):
+	def set_AclStatus(self, AclStatus):  # String
+		self.add_query_param('AclStatus', AclStatus)
+	def get_AclType(self): # String
 		return self.get_query_params().get('AclType')
 
-	def set_AclType(self,AclType):
-		self.add_query_param('AclType',AclType)
-
-	def get_VServerGroupId(self):
+	def set_AclType(self, AclType):  # String
+		self.add_query_param('AclType', AclType)
+	def get_VServerGroupId(self): # String
 		return self.get_query_params().get('VServerGroupId')
 
-	def set_VServerGroupId(self,VServerGroupId):
-		self.add_query_param('VServerGroupId',VServerGroupId)
-
-	def get_AclId(self):
+	def set_VServerGroupId(self, VServerGroupId):  # String
+		self.add_query_param('VServerGroupId', VServerGroupId)
+	def get_AclId(self): # String
 		return self.get_query_params().get('AclId')
 
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
-
-	def get_OwnerId(self):
+	def set_AclId(self, AclId):  # String
+		self.add_query_param('AclId', AclId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LoadBalancerId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
-	def get_MasterSlaveServerGroupId(self):
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)
+	def get_MasterSlaveServerGroupId(self): # String
 		return self.get_query_params().get('MasterSlaveServerGroupId')
 
-	def set_MasterSlaveServerGroupId(self,MasterSlaveServerGroupId):
-		self.add_query_param('MasterSlaveServerGroupId',MasterSlaveServerGroupId)
-
-	def get_healthCheckReq(self):
+	def set_MasterSlaveServerGroupId(self, MasterSlaveServerGroupId):  # String
+		self.add_query_param('MasterSlaveServerGroupId', MasterSlaveServerGroupId)
+	def get_healthCheckReq(self): # String
 		return self.get_query_params().get('healthCheckReq')
 
-	def set_healthCheckReq(self,healthCheckReq):
-		self.add_query_param('healthCheckReq',healthCheckReq)
-
-	def get_BackendServerPort(self):
+	def set_healthCheckReq(self, healthCheckReq):  # String
+		self.add_query_param('healthCheckReq', healthCheckReq)
+	def get_BackendServerPort(self): # Integer
 		return self.get_query_params().get('BackendServerPort')
 
-	def set_BackendServerPort(self,BackendServerPort):
-		self.add_query_param('BackendServerPort',BackendServerPort)
-
-	def get_healthCheckInterval(self):
+	def set_BackendServerPort(self, BackendServerPort):  # Integer
+		self.add_query_param('BackendServerPort', BackendServerPort)
+	def get_healthCheckInterval(self): # Integer
 		return self.get_query_params().get('healthCheckInterval')
 
-	def set_healthCheckInterval(self,healthCheckInterval):
-		self.add_query_param('healthCheckInterval',healthCheckInterval)
-
-	def get_healthCheckExp(self):
+	def set_healthCheckInterval(self, healthCheckInterval):  # Integer
+		self.add_query_param('healthCheckInterval', healthCheckInterval)
+	def get_healthCheckExp(self): # String
 		return self.get_query_params().get('healthCheckExp')
 
-	def set_healthCheckExp(self,healthCheckExp):
-		self.add_query_param('healthCheckExp',healthCheckExp)
-
-	def get_HealthCheckConnectTimeout(self):
+	def set_healthCheckExp(self, healthCheckExp):  # String
+		self.add_query_param('healthCheckExp', healthCheckExp)
+	def get_HealthCheckConnectTimeout(self): # Integer
 		return self.get_query_params().get('HealthCheckConnectTimeout')
 
-	def set_HealthCheckConnectTimeout(self,HealthCheckConnectTimeout):
-		self.add_query_param('HealthCheckConnectTimeout',HealthCheckConnectTimeout)
-
-	def get_Description(self):
+	def set_HealthCheckConnectTimeout(self, HealthCheckConnectTimeout):  # Integer
+		self.add_query_param('HealthCheckConnectTimeout', HealthCheckConnectTimeout)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_UnhealthyThreshold(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_UnhealthyThreshold(self): # Integer
 		return self.get_query_params().get('UnhealthyThreshold')
 
-	def set_UnhealthyThreshold(self,UnhealthyThreshold):
-		self.add_query_param('UnhealthyThreshold',UnhealthyThreshold)
-
-	def get_HealthyThreshold(self):
+	def set_UnhealthyThreshold(self, UnhealthyThreshold):  # Integer
+		self.add_query_param('UnhealthyThreshold', UnhealthyThreshold)
+	def get_HealthyThreshold(self): # Integer
 		return self.get_query_params().get('HealthyThreshold')
 
-	def set_HealthyThreshold(self,HealthyThreshold):
-		self.add_query_param('HealthyThreshold',HealthyThreshold)
-
-	def get_Scheduler(self):
+	def set_HealthyThreshold(self, HealthyThreshold):  # Integer
+		self.add_query_param('HealthyThreshold', HealthyThreshold)
+	def get_Scheduler(self): # String
 		return self.get_query_params().get('Scheduler')
 
-	def set_Scheduler(self,Scheduler):
-		self.add_query_param('Scheduler',Scheduler)
-
-	def get_ListenerPort(self):
+	def set_Scheduler(self, Scheduler):  # String
+		self.add_query_param('Scheduler', Scheduler)
+	def get_ListenerPort(self): # Integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ListenerPort(self, ListenerPort):  # Integer
+		self.add_query_param('ListenerPort', ListenerPort)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Bandwidth(self): # Integer
 		return self.get_query_params().get('Bandwidth')
 
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_OwnerAccount(self):
+	def set_Bandwidth(self, Bandwidth):  # Integer
+		self.add_query_param('Bandwidth', Bandwidth)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_HealthCheckConnectPort(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_HealthCheckConnectPort(self): # Integer
 		return self.get_query_params().get('HealthCheckConnectPort')
 
-	def set_HealthCheckConnectPort(self,HealthCheckConnectPort):
-		self.add_query_param('HealthCheckConnectPort',HealthCheckConnectPort)
+	def set_HealthCheckConnectPort(self, HealthCheckConnectPort):  # Integer
+		self.add_query_param('HealthCheckConnectPort', HealthCheckConnectPort)
