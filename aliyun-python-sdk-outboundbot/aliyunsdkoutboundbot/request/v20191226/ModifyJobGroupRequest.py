@@ -31,11 +31,23 @@ class ModifyJobGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RecallStrategyJson(self):
+		return self.get_query_params().get('RecallStrategyJson')
+
+	def set_RecallStrategyJson(self,RecallStrategyJson):
+		self.add_query_param('RecallStrategyJson',RecallStrategyJson)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_ScriptId(self):
+		return self.get_query_params().get('ScriptId')
+
+	def set_ScriptId(self,ScriptId):
+		self.add_query_param('ScriptId',ScriptId)
 
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumber')
@@ -44,12 +56,6 @@ class ModifyJobGroupRequest(RpcRequest):
 		for depth1 in range(len(CallingNumbers)):
 			if CallingNumbers[depth1] is not None:
 				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
-
-	def get_ScriptId(self):
-		return self.get_query_params().get('ScriptId')
-
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

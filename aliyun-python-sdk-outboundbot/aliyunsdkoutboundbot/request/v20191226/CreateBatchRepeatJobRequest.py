@@ -31,6 +31,12 @@ class CreateBatchRepeatJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RecallStrategyJson(self):
+		return self.get_query_params().get('RecallStrategyJson')
+
+	def set_RecallStrategyJson(self,RecallStrategyJson):
+		self.add_query_param('RecallStrategyJson',RecallStrategyJson)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

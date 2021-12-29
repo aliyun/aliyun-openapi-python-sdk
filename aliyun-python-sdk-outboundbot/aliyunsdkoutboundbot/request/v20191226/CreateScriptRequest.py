@@ -55,18 +55,6 @@ class CreateScriptRequest(RpcRequest):
 	def set_Scene(self,Scene):
 		self.add_query_param('Scene',Scene)
 
-	def get_ChatbotId(self):
-		return self.get_query_params().get('ChatbotId')
-
-	def set_ChatbotId(self,ChatbotId):
-		self.add_query_param('ChatbotId',ChatbotId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_ScriptWaveforms(self):
 		return self.get_query_params().get('ScriptWaveform')
 
@@ -80,6 +68,30 @@ class CreateScriptRequest(RpcRequest):
 
 	def set_AsrConfig(self,AsrConfig):
 		self.add_query_param('AsrConfig',AsrConfig)
+
+	def get_NewBargeInEnable(self):
+		return self.get_query_params().get('NewBargeInEnable')
+
+	def set_NewBargeInEnable(self,NewBargeInEnable):
+		self.add_query_param('NewBargeInEnable',NewBargeInEnable)
+
+	def get_MiniPlaybackEnable(self):
+		return self.get_query_params().get('MiniPlaybackEnable')
+
+	def set_MiniPlaybackEnable(self,MiniPlaybackEnable):
+		self.add_query_param('MiniPlaybackEnable',MiniPlaybackEnable)
+
+	def get_ChatbotId(self):
+		return self.get_query_params().get('ChatbotId')
+
+	def set_ChatbotId(self,ChatbotId):
+		self.add_query_param('ChatbotId',ChatbotId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_ScriptDescription(self):
 		return self.get_query_params().get('ScriptDescription')
