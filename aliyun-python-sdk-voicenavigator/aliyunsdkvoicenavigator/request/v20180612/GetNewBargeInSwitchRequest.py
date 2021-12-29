@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class EndDialogueRequest(RpcRequest):
+class GetNewBargeInSwitchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'EndDialogue','voicebot')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'GetNewBargeInSwitch','voicebot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,8 @@ class EndDialogueRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConversationId(self):
-		return self.get_query_params().get('ConversationId')
-
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_HangUpParams(self):
-		return self.get_query_params().get('HangUpParams')
-
-	def set_HangUpParams(self,HangUpParams):
-		self.add_query_param('HangUpParams',HangUpParams)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceOwnerId(self):
-		return self.get_query_params().get('InstanceOwnerId')
-
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
