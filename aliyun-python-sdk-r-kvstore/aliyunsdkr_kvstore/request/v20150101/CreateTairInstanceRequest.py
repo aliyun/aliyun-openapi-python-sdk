@@ -61,6 +61,12 @@ class CreateTairInstanceRequest(RpcRequest):
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 

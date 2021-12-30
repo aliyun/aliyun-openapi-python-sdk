@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class CreateUserClusterHostRequest(RpcRequest):
+class DescribeEncryptionKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateUserClusterHost','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeEncryptionKey','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,53 +37,11 @@ class CreateUserClusterHostRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CouponNo(self):
-		return self.get_query_params().get('CouponNo')
-
-	def set_CouponNo(self,CouponNo):
-		self.add_query_param('CouponNo',CouponNo)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_OrderPeriod(self):
-		return self.get_query_params().get('OrderPeriod')
-
-	def set_OrderPeriod(self,OrderPeriod):
-		self.add_query_param('OrderPeriod',OrderPeriod)
-
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
-
-	def get_AgentId(self):
-		return self.get_query_params().get('AgentId')
-
-	def set_AgentId(self,AgentId):
-		self.add_query_param('AgentId',AgentId)
-
-	def get_HostClass(self):
-		return self.get_query_params().get('HostClass')
-
-	def set_HostClass(self,HostClass):
-		self.add_query_param('HostClass',HostClass)
-
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -97,17 +55,11 @@ class CreateUserClusterHostRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OrderNum(self):
-		return self.get_query_params().get('OrderNum')
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
 
-	def set_OrderNum(self,OrderNum):
-		self.add_query_param('OrderNum',OrderNum)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -115,20 +67,8 @@ class CreateUserClusterHostRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
