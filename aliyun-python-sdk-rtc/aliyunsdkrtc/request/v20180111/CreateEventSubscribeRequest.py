@@ -36,6 +36,11 @@ class CreateEventSubscribeRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_NeedCallbackAuth(self): # Boolean
+		return self.get_query_params().get('NeedCallbackAuth')
+
+	def set_NeedCallbackAuth(self, NeedCallbackAuth):  # Boolean
+		self.add_query_param('NeedCallbackAuth', NeedCallbackAuth)
 	def get_Eventss(self): # RepeatList
 		return self.get_query_params().get('Events')
 
