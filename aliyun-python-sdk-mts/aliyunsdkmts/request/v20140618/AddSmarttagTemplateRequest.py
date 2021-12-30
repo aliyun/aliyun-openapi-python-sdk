@@ -56,6 +56,11 @@ class AddSmarttagTemplateRequest(RpcRequest):
 
 	def set_Scene(self, Scene):  # String
 		self.add_query_param('Scene', Scene)
+	def get_FaceCustomParamsConfig(self): # String
+		return self.get_query_params().get('FaceCustomParamsConfig')
+
+	def set_FaceCustomParamsConfig(self, FaceCustomParamsConfig):  # String
+		self.add_query_param('FaceCustomParamsConfig', FaceCustomParamsConfig)
 	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
