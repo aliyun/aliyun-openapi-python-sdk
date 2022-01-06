@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class OpenLiveShiftRequest(RpcRequest):
+class PlayChoosenShowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'OpenLiveShift','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'PlayChoosenShow','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,11 @@ class OpenLiveShiftRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_CasterId(self):
+		return self.get_query_params().get('CasterId')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_IgnoreTranscode(self):
-		return self.get_query_params().get('IgnoreTranscode')
-
-	def set_IgnoreTranscode(self,IgnoreTranscode):
-		self.add_query_param('IgnoreTranscode',IgnoreTranscode)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -67,8 +43,8 @@ class OpenLiveShiftRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Vision(self):
-		return self.get_query_params().get('Vision')
+	def get_ShowId(self):
+		return self.get_query_params().get('ShowId')
 
-	def set_Vision(self,Vision):
-		self.add_query_param('Vision',Vision)
+	def set_ShowId(self,ShowId):
+		self.add_query_param('ShowId',ShowId)

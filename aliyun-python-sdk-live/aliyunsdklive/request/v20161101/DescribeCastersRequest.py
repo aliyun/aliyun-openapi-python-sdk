@@ -73,6 +73,18 @@ class DescribeCastersRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_OrderByModifyAsc(self):
+		return self.get_query_params().get('OrderByModifyAsc')
+
+	def set_OrderByModifyAsc(self,OrderByModifyAsc):
+		self.add_query_param('OrderByModifyAsc',OrderByModifyAsc)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 
