@@ -25,24 +25,26 @@ class VerifySmsCodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifySmsCode')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SmsToken(self): # String
+
+	def get_SmsToken(self):
 		return self.get_query_params().get('SmsToken')
 
-	def set_SmsToken(self, SmsToken):  # String
-		self.add_query_param('SmsToken', SmsToken)
-	def get_PhoneNumber(self): # String
+	def set_SmsToken(self,SmsToken):
+		self.add_query_param('SmsToken',SmsToken)
+
+	def get_PhoneNumber(self):
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self, PhoneNumber):  # String
-		self.add_query_param('PhoneNumber', PhoneNumber)
-	def get_SmsCode(self): # String
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
+
+	def get_SmsCode(self):
 		return self.get_query_params().get('SmsCode')
 
-	def set_SmsCode(self, SmsCode):  # String
-		self.add_query_param('SmsCode', SmsCode)
+	def set_SmsCode(self,SmsCode):
+		self.add_query_param('SmsCode',SmsCode)

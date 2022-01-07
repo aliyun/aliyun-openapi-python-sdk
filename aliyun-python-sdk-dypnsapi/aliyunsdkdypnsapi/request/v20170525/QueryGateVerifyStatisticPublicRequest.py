@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class VerifyMobileRequest(RpcRequest):
+class QueryGateVerifyStatisticPublicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyMobile')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QueryGateVerifyStatisticPublic')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,17 +37,23 @@ class VerifyMobileRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PhoneNumber(self):
-		return self.get_query_params().get('PhoneNumber')
+	def get_AuthenticationType(self):
+		return self.get_query_params().get('AuthenticationType')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
+	def set_AuthenticationType(self,AuthenticationType):
+		self.add_query_param('AuthenticationType',AuthenticationType)
 
-	def get_AccessCode(self):
-		return self.get_query_params().get('AccessCode')
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
 
-	def set_AccessCode(self,AccessCode):
-		self.add_query_param('AccessCode',AccessCode)
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_SceneCode(self):
+		return self.get_query_params().get('SceneCode')
+
+	def set_SceneCode(self,SceneCode):
+		self.add_query_param('SceneCode',SceneCode)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -56,14 +61,26 @@ class VerifyMobileRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ProdCode(self):
+		return self.get_query_params().get('ProdCode')
+
+	def set_ProdCode(self,ProdCode):
+		self.add_query_param('ProdCode',ProdCode)
+
+	def get_OsType(self):
+		return self.get_query_params().get('OsType')
+
+	def set_OsType(self,OsType):
+		self.add_query_param('OsType',OsType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_OutId(self):
-		return self.get_query_params().get('OutId')
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
 
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)

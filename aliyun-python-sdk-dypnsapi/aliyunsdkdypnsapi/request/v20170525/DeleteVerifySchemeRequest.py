@@ -25,34 +25,38 @@ class DeleteVerifySchemeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DeleteVerifyScheme')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SchemeCode(self):
 		return self.get_query_params().get('SchemeCode')
 
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
+	def set_SchemeCode(self,SchemeCode):
+		self.add_query_param('SchemeCode',SchemeCode)
+
+	def get_CustomerId(self):
 		return self.get_query_params().get('CustomerId')
 
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_CustomerId(self,CustomerId):
+		self.add_query_param('CustomerId',CustomerId)
