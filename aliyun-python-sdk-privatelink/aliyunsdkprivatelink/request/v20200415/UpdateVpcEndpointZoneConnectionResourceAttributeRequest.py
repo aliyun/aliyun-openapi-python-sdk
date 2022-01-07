@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkprivatelink.endpoint import endpoint_data
 
-class ListVpcEndpointConnectionsRequest(RpcRequest):
+class UpdateVpcEndpointZoneConnectionResourceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'ListVpcEndpointConnections','privatelink')
+		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'UpdateVpcEndpointZoneConnectionResourceAttribute','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,46 +32,46 @@ class ListVpcEndpointConnectionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
 	def set_EndpointId(self, EndpointId):  # String
 		self.add_query_param('EndpointId', EndpointId)
-	def get_EndpointOwnerId(self): # Long
-		return self.get_query_params().get('EndpointOwnerId')
-
-	def set_EndpointOwnerId(self, EndpointOwnerId):  # Long
-		self.add_query_param('EndpointOwnerId', EndpointOwnerId)
-	def get_ReplacedResourceId(self): # String
-		return self.get_query_params().get('ReplacedResourceId')
-
-	def set_ReplacedResourceId(self, ReplacedResourceId):  # String
-		self.add_query_param('ReplacedResourceId', ReplacedResourceId)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
 	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceId(self, ResourceId):  # String
 		self.add_query_param('ResourceId', ResourceId)
-	def get_ConnectionStatus(self): # String
-		return self.get_query_params().get('ConnectionStatus')
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
 
-	def set_ConnectionStatus(self, ConnectionStatus):  # String
-		self.add_query_param('ConnectionStatus', ConnectionStatus)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceAllocateMode(self): # String
+		return self.get_query_params().get('ResourceAllocateMode')
 
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
-	def get_EniId(self): # String
-		return self.get_query_params().get('EniId')
+	def set_ResourceAllocateMode(self, ResourceAllocateMode):  # String
+		self.add_query_param('ResourceAllocateMode', ResourceAllocateMode)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_EniId(self, EniId):  # String
-		self.add_query_param('EniId', EniId)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceReplaceMode(self): # String
+		return self.get_query_params().get('ResourceReplaceMode')
+
+	def set_ResourceReplaceMode(self, ResourceReplaceMode):  # String
+		self.add_query_param('ResourceReplaceMode', ResourceReplaceMode)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
 	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 

@@ -66,6 +66,8 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceType', Resource[depth1].get('ResourceType'))
 			if Resource[depth1].get('ResourceId') is not None:
 				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resource[depth1].get('ResourceId'))
+			if Resource[depth1].get('ZoneId') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ZoneId', Resource[depth1].get('ZoneId'))
 	def get_ServiceResourceType(self): # String
 		return self.get_query_params().get('ServiceResourceType')
 
