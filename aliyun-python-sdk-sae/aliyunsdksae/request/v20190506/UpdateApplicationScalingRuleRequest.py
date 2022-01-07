@@ -38,14 +38,32 @@ class UpdateApplicationScalingRuleRequest(RoaRequest):
 	def set_ScalingRuleName(self,ScalingRuleName):
 		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
+	def get_MinReadyInstances(self):
+		return self.get_query_params().get('MinReadyInstances')
+
+	def set_MinReadyInstances(self,MinReadyInstances):
+		self.add_query_param('MinReadyInstances',MinReadyInstances)
+
 	def get_ScalingRuleTimer(self):
 		return self.get_query_params().get('ScalingRuleTimer')
 
 	def set_ScalingRuleTimer(self,ScalingRuleTimer):
 		self.add_query_param('ScalingRuleTimer',ScalingRuleTimer)
 
+	def get_ScalingRuleMetric(self):
+		return self.get_query_params().get('ScalingRuleMetric')
+
+	def set_ScalingRuleMetric(self,ScalingRuleMetric):
+		self.add_query_param('ScalingRuleMetric',ScalingRuleMetric)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_MinReadyInstanceRatio(self):
+		return self.get_query_params().get('MinReadyInstanceRatio')
+
+	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
+		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)

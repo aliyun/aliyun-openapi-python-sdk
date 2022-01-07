@@ -20,32 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class RestartApplicationRequest(RoaRequest):
+class DescribeApplicationScalingRuleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RestartApplication','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/restartApplication')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeApplicationScalingRule','serverless')
+		self.set_uri_pattern('/pop/v1/sam/scale/applicationScalingRule')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MinReadyInstances(self):
-		return self.get_query_params().get('MinReadyInstances')
+	def get_ScalingRuleName(self):
+		return self.get_query_params().get('ScalingRuleName')
 
-	def set_MinReadyInstances(self,MinReadyInstances):
-		self.add_query_param('MinReadyInstances',MinReadyInstances)
+	def set_ScalingRuleName(self,ScalingRuleName):
+		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_MinReadyInstanceRatio(self):
-		return self.get_query_params().get('MinReadyInstanceRatio')
-
-	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
-		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)

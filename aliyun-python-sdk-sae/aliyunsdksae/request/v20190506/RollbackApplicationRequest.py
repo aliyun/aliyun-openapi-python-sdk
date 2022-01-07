@@ -56,6 +56,12 @@ class RollbackApplicationRequest(RoaRequest):
 	def set_BatchWaitTime(self,BatchWaitTime):
 		self.add_query_param('BatchWaitTime',BatchWaitTime)
 
+	def get_MinReadyInstanceRatio(self):
+		return self.get_query_params().get('MinReadyInstanceRatio')
+
+	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
+		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)
+
 	def get_AutoEnableApplicationScalingRule(self):
 		return self.get_query_params().get('AutoEnableApplicationScalingRule')
 

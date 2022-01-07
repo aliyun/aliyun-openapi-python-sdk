@@ -50,6 +50,12 @@ class RescaleApplicationRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_MinReadyInstanceRatio(self):
+		return self.get_query_params().get('MinReadyInstanceRatio')
+
+	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
+		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)
+
 	def get_AutoEnableApplicationScalingRule(self):
 		return self.get_query_params().get('AutoEnableApplicationScalingRule')
 
