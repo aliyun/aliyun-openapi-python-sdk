@@ -85,6 +85,11 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 
 	def set_ServerGroupId(self, ServerGroupId):  # String
 		self.add_query_param('ServerGroupId', ServerGroupId)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_StickySessionConfig(self): # Struct
 		return self.get_query_params().get('StickySessionConfig')
 

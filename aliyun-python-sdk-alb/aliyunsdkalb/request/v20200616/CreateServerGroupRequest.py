@@ -90,6 +90,11 @@ class CreateServerGroupRequest(RpcRequest):
 
 	def set_Protocol(self, Protocol):  # String
 		self.add_query_param('Protocol', Protocol)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_StickySessionConfig(self): # Struct
 		return self.get_query_params().get('StickySessionConfig')
 
