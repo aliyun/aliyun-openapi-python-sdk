@@ -86,3 +86,9 @@ class CreateBatchRepeatJobRequest(RpcRequest):
 
 	def set_SourceGroupId(self,SourceGroupId):
 		self.add_query_param('SourceGroupId',SourceGroupId)
+
+	def get_RingingDuration(self):
+		return self.get_query_params().get('RingingDuration')
+
+	def set_RingingDuration(self,RingingDuration):
+		self.add_query_param('RingingDuration',RingingDuration)

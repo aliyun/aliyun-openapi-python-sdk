@@ -75,6 +75,12 @@ class CreateJobGroupRequest(RpcRequest):
 	def set_StrategyJson(self,StrategyJson):
 		self.add_query_param('StrategyJson',StrategyJson)
 
+	def get_RingingDuration(self):
+		return self.get_query_params().get('RingingDuration')
+
+	def set_RingingDuration(self,RingingDuration):
+		self.add_query_param('RingingDuration',RingingDuration)
+
 	def get_ScenarioId(self):
 		return self.get_query_params().get('ScenarioId')
 

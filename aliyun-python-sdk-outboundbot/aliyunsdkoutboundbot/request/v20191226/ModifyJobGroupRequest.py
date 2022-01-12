@@ -49,6 +49,30 @@ class ModifyJobGroupRequest(RpcRequest):
 	def set_ScriptId(self,ScriptId):
 		self.add_query_param('ScriptId',ScriptId)
 
+	def get_StrategyJson(self):
+		return self.get_query_params().get('StrategyJson')
+
+	def set_StrategyJson(self,StrategyJson):
+		self.add_query_param('StrategyJson',StrategyJson)
+
+	def get_RingingDuration(self):
+		return self.get_query_params().get('RingingDuration')
+
+	def set_RingingDuration(self,RingingDuration):
+		self.add_query_param('RingingDuration',RingingDuration)
+
+	def get_ScenarioId(self):
+		return self.get_query_params().get('ScenarioId')
+
+	def set_ScenarioId(self,ScenarioId):
+		self.add_query_param('ScenarioId',ScenarioId)
+
+	def get_JobGroupStatus(self):
+		return self.get_query_params().get('JobGroupStatus')
+
+	def set_JobGroupStatus(self,JobGroupStatus):
+		self.add_query_param('JobGroupStatus',JobGroupStatus)
+
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumber')
 
@@ -63,12 +87,6 @@ class ModifyJobGroupRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
-
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
-
 	def get_JobGroupId(self):
 		return self.get_query_params().get('JobGroupId')
 
@@ -80,9 +98,3 @@ class ModifyJobGroupRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_ScenarioId(self):
-		return self.get_query_params().get('ScenarioId')
-
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
