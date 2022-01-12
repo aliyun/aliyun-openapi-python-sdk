@@ -1,3 +1,6 @@
+2022-01-12 Version: 2.0.9
+- Support folder for rule.
+
 2021-12-28 Version: 2.0.7
 - Support managed rule query.
 

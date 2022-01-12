@@ -72,11 +72,21 @@ class CreateAggregateConfigRuleRequest(RpcRequest):
 
 	def set_TagValueScope(self, TagValueScope):  # String
 		self.add_body_params('TagValueScope', TagValueScope)
+	def get_ExcludeAccountIdsScope(self): # String
+		return self.get_body_params().get('ExcludeAccountIdsScope')
+
+	def set_ExcludeAccountIdsScope(self, ExcludeAccountIdsScope):  # String
+		self.add_body_params('ExcludeAccountIdsScope', ExcludeAccountIdsScope)
 	def get_RegionIdsScope(self): # String
 		return self.get_body_params().get('RegionIdsScope')
 
 	def set_RegionIdsScope(self, RegionIdsScope):  # String
 		self.add_body_params('RegionIdsScope', RegionIdsScope)
+	def get_ExcludeFolderIdsScope(self): # String
+		return self.get_body_params().get('ExcludeFolderIdsScope')
+
+	def set_ExcludeFolderIdsScope(self, ExcludeFolderIdsScope):  # String
+		self.add_body_params('ExcludeFolderIdsScope', ExcludeFolderIdsScope)
 	def get_RiskLevel(self): # Integer
 		return self.get_body_params().get('RiskLevel')
 
@@ -112,6 +122,11 @@ class CreateAggregateConfigRuleRequest(RpcRequest):
 
 	def set_MaximumExecutionFrequency(self, MaximumExecutionFrequency):  # String
 		self.add_body_params('MaximumExecutionFrequency', MaximumExecutionFrequency)
+	def get_FolderIdsScope(self): # String
+		return self.get_body_params().get('FolderIdsScope')
+
+	def set_FolderIdsScope(self, FolderIdsScope):  # String
+		self.add_body_params('FolderIdsScope', FolderIdsScope)
 	def get_ExcludeResourceIdsScope(self): # String
 		return self.get_body_params().get('ExcludeResourceIdsScope')
 
