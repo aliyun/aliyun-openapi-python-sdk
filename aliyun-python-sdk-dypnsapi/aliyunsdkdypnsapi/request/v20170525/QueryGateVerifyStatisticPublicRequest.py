@@ -31,12 +31,6 @@ class QueryGateVerifyStatisticPublicRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_AuthenticationType(self):
 		return self.get_query_params().get('AuthenticationType')
 
@@ -60,12 +54,6 @@ class QueryGateVerifyStatisticPublicRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ProdCode(self):
-		return self.get_query_params().get('ProdCode')
-
-	def set_ProdCode(self,ProdCode):
-		self.add_query_param('ProdCode',ProdCode)
 
 	def get_OsType(self):
 		return self.get_query_params().get('OsType')
