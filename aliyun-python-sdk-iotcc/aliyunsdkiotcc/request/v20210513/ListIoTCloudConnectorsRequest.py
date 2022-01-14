@@ -54,6 +54,16 @@ class ListIoTCloudConnectorsRequest(RpcRequest):
 	def set_APNs(self, APN):  # RepeatList
 		for depth1 in range(len(APN)):
 			self.add_query_param('APN.' + str(depth1 + 1), APN[depth1])
+	def get_IoTCloudConnectorGroupId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorGroupId')
+
+	def set_IoTCloudConnectorGroupId(self, IoTCloudConnectorGroupId):  # String
+		self.add_query_param('IoTCloudConnectorGroupId', IoTCloudConnectorGroupId)
+	def get_IsInGroup(self): # Boolean
+		return self.get_query_params().get('IsInGroup')
+
+	def set_IsInGroup(self, IsInGroup):  # Boolean
+		self.add_query_param('IsInGroup', IsInGroup)
 	def get_VpcIds(self): # RepeatList
 		return self.get_query_params().get('VpcId')
 
