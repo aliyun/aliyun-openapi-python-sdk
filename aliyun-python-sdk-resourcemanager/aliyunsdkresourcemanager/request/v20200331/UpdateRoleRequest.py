@@ -23,8 +23,9 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class UpdateRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateRole','resourcemanager')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateRole')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,3 +49,9 @@ class UpdateRoleRequest(RpcRequest):
 
 	def set_NewMaxSessionDuration(self,NewMaxSessionDuration):
 		self.add_query_param('NewMaxSessionDuration',NewMaxSessionDuration)
+
+	def get_NewDescription(self):
+		return self.get_query_params().get('NewDescription')
+
+	def set_NewDescription(self,NewDescription):
+		self.add_query_param('NewDescription',NewDescription)

@@ -23,8 +23,9 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class UpdateAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateAccount','resourcemanager')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateAccount')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +37,12 @@ class UpdateAccountRequest(RpcRequest):
 
 	def set_NewDisplayName(self,NewDisplayName):
 		self.add_query_param('NewDisplayName',NewDisplayName)
+
+	def get_NewAccountType(self):
+		return self.get_query_params().get('NewAccountType')
+
+	def set_NewAccountType(self,NewAccountType):
+		self.add_query_param('NewAccountType',NewAccountType)
 
 	def get_AccountId(self):
 		return self.get_query_params().get('AccountId')

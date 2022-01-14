@@ -23,8 +23,9 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class DeletePolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeletePolicy','resourcemanager')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeletePolicy')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
