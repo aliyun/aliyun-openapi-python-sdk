@@ -25,20 +25,19 @@ class RegisterDelegatedAdministratorRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'RegisterDelegatedAdministrator')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AccountId(self):
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_ServicePrincipal(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_ServicePrincipal(self): # String
 		return self.get_query_params().get('ServicePrincipal')
 
-	def set_ServicePrincipal(self,ServicePrincipal):
-		self.add_query_param('ServicePrincipal',ServicePrincipal)
+	def set_ServicePrincipal(self, ServicePrincipal):  # String
+		self.add_query_param('ServicePrincipal', ServicePrincipal)

@@ -26,20 +26,19 @@ class UpdateResourceGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateResourceGroup')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NewDisplayName(self):
+	def get_NewDisplayName(self): # String
 		return self.get_query_params().get('NewDisplayName')
 
-	def set_NewDisplayName(self,NewDisplayName):
-		self.add_query_param('NewDisplayName',NewDisplayName)
-
-	def get_ResourceGroupId(self):
+	def set_NewDisplayName(self, NewDisplayName):  # String
+		self.add_query_param('NewDisplayName', NewDisplayName)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

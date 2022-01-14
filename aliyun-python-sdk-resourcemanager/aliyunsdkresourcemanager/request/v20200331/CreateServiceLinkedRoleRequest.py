@@ -26,26 +26,24 @@ class CreateServiceLinkedRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateServiceLinkedRole')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CustomSuffix(self):
+	def get_CustomSuffix(self): # String
 		return self.get_query_params().get('CustomSuffix')
 
-	def set_CustomSuffix(self,CustomSuffix):
-		self.add_query_param('CustomSuffix',CustomSuffix)
-
-	def get_Description(self):
+	def set_CustomSuffix(self, CustomSuffix):  # String
+		self.add_query_param('CustomSuffix', CustomSuffix)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ServiceName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

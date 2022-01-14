@@ -26,14 +26,14 @@ class DeleteRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeleteRole')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RoleName(self):
+	def get_RoleName(self): # String
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
+	def set_RoleName(self, RoleName):  # String
+		self.add_query_param('RoleName', RoleName)

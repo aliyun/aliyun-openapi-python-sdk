@@ -26,32 +26,29 @@ class CreateRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateRole')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MaxSessionDuration(self):
+	def get_MaxSessionDuration(self): # Long
 		return self.get_query_params().get('MaxSessionDuration')
 
-	def set_MaxSessionDuration(self,MaxSessionDuration):
-		self.add_query_param('MaxSessionDuration',MaxSessionDuration)
-
-	def get_RoleName(self):
+	def set_MaxSessionDuration(self, MaxSessionDuration):  # Long
+		self.add_query_param('MaxSessionDuration', MaxSessionDuration)
+	def get_RoleName(self): # String
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
-
-	def get_Description(self):
+	def set_RoleName(self, RoleName):  # String
+		self.add_query_param('RoleName', RoleName)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AssumeRolePolicyDocument(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AssumeRolePolicyDocument(self): # String
 		return self.get_query_params().get('AssumeRolePolicyDocument')
 
-	def set_AssumeRolePolicyDocument(self,AssumeRolePolicyDocument):
-		self.add_query_param('AssumeRolePolicyDocument',AssumeRolePolicyDocument)
+	def set_AssumeRolePolicyDocument(self, AssumeRolePolicyDocument):  # String
+		self.add_query_param('AssumeRolePolicyDocument', AssumeRolePolicyDocument)

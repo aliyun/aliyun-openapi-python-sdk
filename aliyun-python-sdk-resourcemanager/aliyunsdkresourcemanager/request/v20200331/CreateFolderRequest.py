@@ -26,20 +26,19 @@ class CreateFolderRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateFolder')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FolderName(self):
+	def get_FolderName(self): # String
 		return self.get_query_params().get('FolderName')
 
-	def set_FolderName(self,FolderName):
-		self.add_query_param('FolderName',FolderName)
-
-	def get_ParentFolderId(self):
+	def set_FolderName(self, FolderName):  # String
+		self.add_query_param('FolderName', FolderName)
+	def get_ParentFolderId(self): # String
 		return self.get_query_params().get('ParentFolderId')
 
-	def set_ParentFolderId(self,ParentFolderId):
-		self.add_query_param('ParentFolderId',ParentFolderId)
+	def set_ParentFolderId(self, ParentFolderId):  # String
+		self.add_query_param('ParentFolderId', ParentFolderId)

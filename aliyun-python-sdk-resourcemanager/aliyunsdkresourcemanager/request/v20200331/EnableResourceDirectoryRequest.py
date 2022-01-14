@@ -26,32 +26,29 @@ class EnableResourceDirectoryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'EnableResourceDirectory')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EnableMode(self):
+	def get_EnableMode(self): # String
 		return self.get_query_params().get('EnableMode')
 
-	def set_EnableMode(self,EnableMode):
-		self.add_query_param('EnableMode',EnableMode)
-
-	def get_MASecureMobilePhone(self):
+	def set_EnableMode(self, EnableMode):  # String
+		self.add_query_param('EnableMode', EnableMode)
+	def get_MASecureMobilePhone(self): # String
 		return self.get_query_params().get('MASecureMobilePhone')
 
-	def set_MASecureMobilePhone(self,MASecureMobilePhone):
-		self.add_query_param('MASecureMobilePhone',MASecureMobilePhone)
-
-	def get_MAName(self):
+	def set_MASecureMobilePhone(self, MASecureMobilePhone):  # String
+		self.add_query_param('MASecureMobilePhone', MASecureMobilePhone)
+	def get_MAName(self): # String
 		return self.get_query_params().get('MAName')
 
-	def set_MAName(self,MAName):
-		self.add_query_param('MAName',MAName)
-
-	def get_VerificationCode(self):
+	def set_MAName(self, MAName):  # String
+		self.add_query_param('MAName', MAName)
+	def get_VerificationCode(self): # String
 		return self.get_query_params().get('VerificationCode')
 
-	def set_VerificationCode(self,VerificationCode):
-		self.add_query_param('VerificationCode',VerificationCode)
+	def set_VerificationCode(self, VerificationCode):  # String
+		self.add_query_param('VerificationCode', VerificationCode)

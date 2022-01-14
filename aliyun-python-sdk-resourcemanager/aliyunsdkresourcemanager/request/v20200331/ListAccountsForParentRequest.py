@@ -26,32 +26,29 @@ class ListAccountsForParentRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListAccountsForParent')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QueryKeyword(self):
+	def get_QueryKeyword(self): # String
 		return self.get_query_params().get('QueryKeyword')
 
-	def set_QueryKeyword(self,QueryKeyword):
-		self.add_query_param('QueryKeyword',QueryKeyword)
-
-	def get_PageNumber(self):
+	def set_QueryKeyword(self, QueryKeyword):  # String
+		self.add_query_param('QueryKeyword', QueryKeyword)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ParentFolderId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ParentFolderId(self): # String
 		return self.get_query_params().get('ParentFolderId')
 
-	def set_ParentFolderId(self,ParentFolderId):
-		self.add_query_param('ParentFolderId',ParentFolderId)
-
-	def get_PageSize(self):
+	def set_ParentFolderId(self, ParentFolderId):  # String
+		self.add_query_param('ParentFolderId', ParentFolderId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

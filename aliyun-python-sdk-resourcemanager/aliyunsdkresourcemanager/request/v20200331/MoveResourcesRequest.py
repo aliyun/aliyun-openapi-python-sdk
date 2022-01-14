@@ -25,20 +25,27 @@ class MoveResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'MoveResources')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Resources(self):
+	def get_Resources(self): # Array
 		return self.get_query_params().get('Resources')
 
-	def set_Resources(self,Resources):
-		self.add_query_param('Resources',Resources)
-
-	def get_ResourceGroupId(self):
+	def set_Resources(self, Resources):  # Array
+		for index1, value1 in enumerate(Resources):
+			if value1.get('ResourceId') is not None:
+				self.add_query_param('Resources.' + str(index1 + 1) + '.ResourceId', value1.get('ResourceId'))
+			if value1.get('RegionId') is not None:
+				self.add_query_param('Resources.' + str(index1 + 1) + '.RegionId', value1.get('RegionId'))
+			if value1.get('Service') is not None:
+				self.add_query_param('Resources.' + str(index1 + 1) + '.Service', value1.get('Service'))
+			if value1.get('ResourceType') is not None:
+				self.add_query_param('Resources.' + str(index1 + 1) + '.ResourceType', value1.get('ResourceType'))
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

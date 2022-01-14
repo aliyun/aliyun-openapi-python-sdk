@@ -26,20 +26,19 @@ class GetControlPolicyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetControlPolicy')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Language(self):
+	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)
-
-	def get_PolicyId(self):
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
+	def get_PolicyId(self): # String
 		return self.get_query_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
+	def set_PolicyId(self, PolicyId):  # String
+		self.add_query_param('PolicyId', PolicyId)

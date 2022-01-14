@@ -26,38 +26,34 @@ class DetachPolicyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DetachPolicy')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PolicyType(self):
+	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
-
-	def get_PrincipalType(self):
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_query_param('PolicyType', PolicyType)
+	def get_PrincipalType(self): # String
 		return self.get_query_params().get('PrincipalType')
 
-	def set_PrincipalType(self,PrincipalType):
-		self.add_query_param('PrincipalType',PrincipalType)
-
-	def get_ResourceGroupId(self):
+	def set_PrincipalType(self, PrincipalType):  # String
+		self.add_query_param('PrincipalType', PrincipalType)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PolicyName(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
-	def get_PrincipalName(self):
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_query_param('PolicyName', PolicyName)
+	def get_PrincipalName(self): # String
 		return self.get_query_params().get('PrincipalName')
 
-	def set_PrincipalName(self,PrincipalName):
-		self.add_query_param('PrincipalName',PrincipalName)
+	def set_PrincipalName(self, PrincipalName):  # String
+		self.add_query_param('PrincipalName', PrincipalName)

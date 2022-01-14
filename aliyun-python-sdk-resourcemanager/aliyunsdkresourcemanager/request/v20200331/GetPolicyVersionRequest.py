@@ -26,26 +26,24 @@ class GetPolicyVersionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetPolicyVersion')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PolicyType(self):
+	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
-
-	def get_VersionId(self):
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_query_param('PolicyType', PolicyType)
+	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
-
-	def get_PolicyName(self):
+	def set_VersionId(self, VersionId):  # String
+		self.add_query_param('VersionId', VersionId)
+	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_query_param('PolicyName', PolicyName)

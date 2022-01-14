@@ -26,32 +26,29 @@ class UpdateControlPolicyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateControlPolicy')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NewPolicyName(self):
+	def get_NewPolicyName(self): # String
 		return self.get_query_params().get('NewPolicyName')
 
-	def set_NewPolicyName(self,NewPolicyName):
-		self.add_query_param('NewPolicyName',NewPolicyName)
-
-	def get_PolicyId(self):
+	def set_NewPolicyName(self, NewPolicyName):  # String
+		self.add_query_param('NewPolicyName', NewPolicyName)
+	def get_PolicyId(self): # String
 		return self.get_query_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
-
-	def get_NewPolicyDocument(self):
+	def set_PolicyId(self, PolicyId):  # String
+		self.add_query_param('PolicyId', PolicyId)
+	def get_NewPolicyDocument(self): # String
 		return self.get_query_params().get('NewPolicyDocument')
 
-	def set_NewPolicyDocument(self,NewPolicyDocument):
-		self.add_query_param('NewPolicyDocument',NewPolicyDocument)
-
-	def get_NewDescription(self):
+	def set_NewPolicyDocument(self, NewPolicyDocument):  # String
+		self.add_query_param('NewPolicyDocument', NewPolicyDocument)
+	def get_NewDescription(self): # String
 		return self.get_query_params().get('NewDescription')
 
-	def set_NewDescription(self,NewDescription):
-		self.add_query_param('NewDescription',NewDescription)
+	def set_NewDescription(self, NewDescription):  # String
+		self.add_query_param('NewDescription', NewDescription)

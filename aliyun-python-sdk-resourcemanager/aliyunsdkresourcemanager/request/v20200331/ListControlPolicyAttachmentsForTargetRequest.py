@@ -26,20 +26,19 @@ class ListControlPolicyAttachmentsForTargetRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListControlPolicyAttachmentsForTarget')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetId(self):
+	def get_TargetId(self): # String
 		return self.get_query_params().get('TargetId')
 
-	def set_TargetId(self,TargetId):
-		self.add_query_param('TargetId',TargetId)
-
-	def get_Language(self):
+	def set_TargetId(self, TargetId):  # String
+		self.add_query_param('TargetId', TargetId)
+	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)

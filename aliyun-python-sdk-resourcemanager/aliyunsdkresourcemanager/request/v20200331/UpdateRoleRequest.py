@@ -26,32 +26,29 @@ class UpdateRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateRole')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NewAssumeRolePolicyDocument(self):
+	def get_NewAssumeRolePolicyDocument(self): # String
 		return self.get_query_params().get('NewAssumeRolePolicyDocument')
 
-	def set_NewAssumeRolePolicyDocument(self,NewAssumeRolePolicyDocument):
-		self.add_query_param('NewAssumeRolePolicyDocument',NewAssumeRolePolicyDocument)
-
-	def get_RoleName(self):
+	def set_NewAssumeRolePolicyDocument(self, NewAssumeRolePolicyDocument):  # String
+		self.add_query_param('NewAssumeRolePolicyDocument', NewAssumeRolePolicyDocument)
+	def get_RoleName(self): # String
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
-
-	def get_NewMaxSessionDuration(self):
+	def set_RoleName(self, RoleName):  # String
+		self.add_query_param('RoleName', RoleName)
+	def get_NewMaxSessionDuration(self): # Long
 		return self.get_query_params().get('NewMaxSessionDuration')
 
-	def set_NewMaxSessionDuration(self,NewMaxSessionDuration):
-		self.add_query_param('NewMaxSessionDuration',NewMaxSessionDuration)
-
-	def get_NewDescription(self):
+	def set_NewMaxSessionDuration(self, NewMaxSessionDuration):  # Long
+		self.add_query_param('NewMaxSessionDuration', NewMaxSessionDuration)
+	def get_NewDescription(self): # String
 		return self.get_query_params().get('NewDescription')
 
-	def set_NewDescription(self,NewDescription):
-		self.add_query_param('NewDescription',NewDescription)
+	def set_NewDescription(self, NewDescription):  # String
+		self.add_query_param('NewDescription', NewDescription)

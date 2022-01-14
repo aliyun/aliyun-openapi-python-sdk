@@ -26,26 +26,24 @@ class BindSecureMobilePhoneRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'BindSecureMobilePhone')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SecureMobilePhone(self):
+	def get_SecureMobilePhone(self): # String
 		return self.get_query_params().get('SecureMobilePhone')
 
-	def set_SecureMobilePhone(self,SecureMobilePhone):
-		self.add_query_param('SecureMobilePhone',SecureMobilePhone)
-
-	def get_AccountId(self):
+	def set_SecureMobilePhone(self, SecureMobilePhone):  # String
+		self.add_query_param('SecureMobilePhone', SecureMobilePhone)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_VerificationCode(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_VerificationCode(self): # String
 		return self.get_query_params().get('VerificationCode')
 
-	def set_VerificationCode(self,VerificationCode):
-		self.add_query_param('VerificationCode',VerificationCode)
+	def set_VerificationCode(self, VerificationCode):  # String
+		self.add_query_param('VerificationCode', VerificationCode)

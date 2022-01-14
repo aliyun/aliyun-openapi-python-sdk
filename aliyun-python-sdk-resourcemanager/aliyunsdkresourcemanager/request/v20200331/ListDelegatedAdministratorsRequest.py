@@ -25,26 +25,24 @@ class ListDelegatedAdministratorsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListDelegatedAdministrators')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ServicePrincipal(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_ServicePrincipal(self): # String
 		return self.get_query_params().get('ServicePrincipal')
 
-	def set_ServicePrincipal(self,ServicePrincipal):
-		self.add_query_param('ServicePrincipal',ServicePrincipal)
+	def set_ServicePrincipal(self, ServicePrincipal):  # String
+		self.add_query_param('ServicePrincipal', ServicePrincipal)

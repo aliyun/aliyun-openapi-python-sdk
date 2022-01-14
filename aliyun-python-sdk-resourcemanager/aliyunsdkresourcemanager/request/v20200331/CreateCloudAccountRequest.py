@@ -26,32 +26,29 @@ class CreateCloudAccountRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateCloudAccount')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ParentFolderId(self):
+	def get_ParentFolderId(self): # String
 		return self.get_query_params().get('ParentFolderId')
 
-	def set_ParentFolderId(self,ParentFolderId):
-		self.add_query_param('ParentFolderId',ParentFolderId)
-
-	def get_DisplayName(self):
+	def set_ParentFolderId(self, ParentFolderId):  # String
+		self.add_query_param('ParentFolderId', ParentFolderId)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
-	def get_Email(self):
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
-
-	def get_PayerAccountId(self):
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)
+	def get_PayerAccountId(self): # String
 		return self.get_query_params().get('PayerAccountId')
 
-	def set_PayerAccountId(self,PayerAccountId):
-		self.add_query_param('PayerAccountId',PayerAccountId)
+	def set_PayerAccountId(self, PayerAccountId):  # String
+		self.add_query_param('PayerAccountId', PayerAccountId)

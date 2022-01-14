@@ -26,26 +26,24 @@ class InviteAccountToResourceDirectoryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'InviteAccountToResourceDirectory')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Note(self):
+	def get_Note(self): # String
 		return self.get_query_params().get('Note')
 
-	def set_Note(self,Note):
-		self.add_query_param('Note',Note)
-
-	def get_TargetType(self):
+	def set_Note(self, Note):  # String
+		self.add_query_param('Note', Note)
+	def get_TargetType(self): # String
 		return self.get_query_params().get('TargetType')
 
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
-	def get_TargetEntity(self):
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_TargetEntity(self): # String
 		return self.get_query_params().get('TargetEntity')
 
-	def set_TargetEntity(self,TargetEntity):
-		self.add_query_param('TargetEntity',TargetEntity)
+	def set_TargetEntity(self, TargetEntity):  # String
+		self.add_query_param('TargetEntity', TargetEntity)
