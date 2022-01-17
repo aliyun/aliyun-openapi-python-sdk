@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class RejectUserSolutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'RejectUserSolution','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'RejectUserSolution')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class DeleteFeeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'DeleteFee','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'DeleteFee')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

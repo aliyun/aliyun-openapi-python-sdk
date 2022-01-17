@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class GetVoucherCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'GetVoucherCount','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'GetVoucherCount')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

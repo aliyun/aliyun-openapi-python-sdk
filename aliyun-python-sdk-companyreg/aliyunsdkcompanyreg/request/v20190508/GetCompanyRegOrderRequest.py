@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class GetCompanyRegOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'GetCompanyRegOrder','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'GetCompanyRegOrder')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

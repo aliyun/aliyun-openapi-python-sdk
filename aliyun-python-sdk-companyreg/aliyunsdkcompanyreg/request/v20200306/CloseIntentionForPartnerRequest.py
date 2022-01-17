@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class CloseIntentionForPartnerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'CloseIntentionForPartner','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'CloseIntentionForPartner')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
