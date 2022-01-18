@@ -26,32 +26,29 @@ class DescribeCertMatchStatusRequest(RpcRequest):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeCertMatchStatus','waf')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Certificate(self):
+	def get_Certificate(self): # String
 		return self.get_query_params().get('Certificate')
 
-	def set_Certificate(self,Certificate):
-		self.add_query_param('Certificate',Certificate)
-
-	def get_PrivateKey(self):
+	def set_Certificate(self, Certificate):  # String
+		self.add_query_param('Certificate', Certificate)
+	def get_PrivateKey(self): # String
 		return self.get_query_params().get('PrivateKey')
 
-	def set_PrivateKey(self,PrivateKey):
-		self.add_query_param('PrivateKey',PrivateKey)
-
-	def get_InstanceId(self):
+	def set_PrivateKey(self, PrivateKey):  # String
+		self.add_query_param('PrivateKey', PrivateKey)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Domain(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

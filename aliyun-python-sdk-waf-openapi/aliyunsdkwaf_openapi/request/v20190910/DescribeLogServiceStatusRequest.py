@@ -25,46 +25,40 @@ class DescribeLogServiceStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeLogServiceStatus','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DomainNamess(self):
+	def get_DomainNamess(self): # RepeatList
 		return self.get_query_params().get('DomainNames')
 
-	def set_DomainNamess(self, DomainNamess):
-		for depth1 in range(len(DomainNamess)):
-			if DomainNamess[depth1] is not None:
-				self.add_query_param('DomainNames.' + str(depth1 + 1) , DomainNamess[depth1])
-
-	def get_PageNumber(self):
+	def set_DomainNamess(self, DomainNames):  # RepeatList
+		for depth1 in range(len(DomainNames)):
+			self.add_query_param('DomainNames.' + str(depth1 + 1), DomainNames[depth1])
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PageSize(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Region(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

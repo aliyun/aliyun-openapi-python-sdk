@@ -25,26 +25,24 @@ class MoveResourceGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'MoveResourceGroup','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupId(self):
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_ResourceId(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_ResourceType(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)

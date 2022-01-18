@@ -25,38 +25,39 @@ class SetDomainRuleGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'SetDomainRuleGroup','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WafVersion(self):
+	def get_WafVersion(self): # Long
 		return self.get_query_params().get('WafVersion')
 
-	def set_WafVersion(self,WafVersion):
-		self.add_query_param('WafVersion',WafVersion)
+	def set_WafVersion(self, WafVersion):  # Long
+		self.add_query_param('WafVersion', WafVersion)
+	def get_WafAiStatus(self): # Integer
+		return self.get_query_params().get('WafAiStatus')
 
-	def get_RuleGroupId(self):
+	def set_WafAiStatus(self, WafAiStatus):  # Integer
+		self.add_query_param('WafAiStatus', WafAiStatus)
+	def get_RuleGroupId(self): # Long
 		return self.get_query_params().get('RuleGroupId')
 
-	def set_RuleGroupId(self,RuleGroupId):
-		self.add_query_param('RuleGroupId',RuleGroupId)
-
-	def get_ResourceGroupId(self):
+	def set_RuleGroupId(self, RuleGroupId):  # Long
+		self.add_query_param('RuleGroupId', RuleGroupId)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Domains(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Domains(self): # String
 		return self.get_query_params().get('Domains')
 
-	def set_Domains(self,Domains):
-		self.add_query_param('Domains',Domains)
-
-	def get_InstanceId(self):
+	def set_Domains(self, Domains):  # String
+		self.add_query_param('Domains', Domains)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

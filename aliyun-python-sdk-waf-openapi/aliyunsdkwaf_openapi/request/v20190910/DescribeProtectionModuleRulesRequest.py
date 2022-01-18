@@ -25,56 +25,49 @@ class DescribeProtectionModuleRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeProtectionModuleRules','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PageSize(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_DefenseType(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_DefenseType(self): # String
 		return self.get_query_params().get('DefenseType')
 
-	def set_DefenseType(self,DefenseType):
-		self.add_query_param('DefenseType',DefenseType)
-
-	def get_Query(self):
+	def set_DefenseType(self, DefenseType):  # String
+		self.add_query_param('DefenseType', DefenseType)
+	def get_Query(self): # String
 		return self.get_query_params().get('Query')
 
-	def set_Query(self,Query):
-		self.add_query_param('Query',Query)
-
-	def get_InstanceId(self):
+	def set_Query(self, Query):  # String
+		self.add_query_param('Query', Query)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Domain(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

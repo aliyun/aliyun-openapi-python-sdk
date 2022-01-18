@@ -25,32 +25,29 @@ class ModifyProtectionModuleStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'ModifyProtectionModuleStatus','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DefenseType(self):
+	def get_DefenseType(self): # String
 		return self.get_query_params().get('DefenseType')
 
-	def set_DefenseType(self,DefenseType):
-		self.add_query_param('DefenseType',DefenseType)
-
-	def get_InstanceId(self):
+	def set_DefenseType(self, DefenseType):  # String
+		self.add_query_param('DefenseType', DefenseType)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Domain(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
-
-	def get_ModuleStatus(self):
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
+	def get_ModuleStatus(self): # Integer
 		return self.get_query_params().get('ModuleStatus')
 
-	def set_ModuleStatus(self,ModuleStatus):
-		self.add_query_param('ModuleStatus',ModuleStatus)
+	def set_ModuleStatus(self, ModuleStatus):  # Integer
+		self.add_query_param('ModuleStatus', ModuleStatus)

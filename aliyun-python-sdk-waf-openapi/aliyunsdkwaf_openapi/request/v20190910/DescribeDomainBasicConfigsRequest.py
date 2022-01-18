@@ -25,50 +25,44 @@ class DescribeDomainBasicConfigsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeDomainBasicConfigs','waf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PageSize(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AccessType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AccessType(self): # String
 		return self.get_query_params().get('AccessType')
 
-	def set_AccessType(self,AccessType):
-		self.add_query_param('AccessType',AccessType)
-
-	def get_CloudNativeProductId(self):
+	def set_AccessType(self, AccessType):  # String
+		self.add_query_param('AccessType', AccessType)
+	def get_CloudNativeProductId(self): # Integer
 		return self.get_query_params().get('CloudNativeProductId')
 
-	def set_CloudNativeProductId(self,CloudNativeProductId):
-		self.add_query_param('CloudNativeProductId',CloudNativeProductId)
-
-	def get_InstanceId(self):
+	def set_CloudNativeProductId(self, CloudNativeProductId):  # Integer
+		self.add_query_param('CloudNativeProductId', CloudNativeProductId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DomainKey(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DomainKey(self): # String
 		return self.get_query_params().get('DomainKey')
 
-	def set_DomainKey(self,DomainKey):
-		self.add_query_param('DomainKey',DomainKey)
+	def set_DomainKey(self, DomainKey):  # String
+		self.add_query_param('DomainKey', DomainKey)
