@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeDBClusterPerformanceRequest(RpcRequest):
+class DescribeDBClusterNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterPerformance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterNode')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +36,8 @@ class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def set_NodeType(self, NodeType):  # String
 		self.add_query_param('NodeType', NodeType)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_Nodes(self): # String
-		return self.get_query_params().get('Nodes')
-
-	def set_Nodes(self, Nodes):  # String
-		self.add_query_param('Nodes', Nodes)
