@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdysmsapi.endpoint import endpoint_data
 
-class DeleteSmsTemplateRequest(RpcRequest):
+class QuerySendStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'DeleteSmsTemplate')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QuerySendStatistics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,30 @@ class DeleteSmsTemplateRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_IsGlobe(self):
+		return self.get_query_params().get('IsGlobe')
+
+	def set_IsGlobe(self,IsGlobe):
+		self.add_query_param('IsGlobe',IsGlobe)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageIndex(self):
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self,PageIndex):
+		self.add_query_param('PageIndex',PageIndex)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -49,8 +73,8 @@ class DeleteSmsTemplateRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TemplateCode(self):
-		return self.get_query_params().get('TemplateCode')
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
 
-	def set_TemplateCode(self,TemplateCode):
-		self.add_query_param('TemplateCode',TemplateCode)
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)

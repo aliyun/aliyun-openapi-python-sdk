@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdysmsapi.endpoint import endpoint_data
 
-class DeleteSmsTemplateRequest(RpcRequest):
+class QueryShortUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'DeleteSmsTemplate')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QueryShortUrl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,14 +43,14 @@ class DeleteSmsTemplateRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ShortUrl(self):
+		return self.get_body_params().get('ShortUrl')
+
+	def set_ShortUrl(self,ShortUrl):
+		self.add_body_params('ShortUrl', ShortUrl)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TemplateCode(self):
-		return self.get_query_params().get('TemplateCode')
-
-	def set_TemplateCode(self,TemplateCode):
-		self.add_query_param('TemplateCode',TemplateCode)

@@ -23,7 +23,7 @@ from aliyunsdkdysmsapi.endpoint import endpoint_data
 class QuerySmsSignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QuerySmsSign','dysms')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QuerySmsSign')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

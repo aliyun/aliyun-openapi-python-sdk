@@ -23,7 +23,7 @@ from aliyunsdkdysmsapi.endpoint import endpoint_data
 class AddSmsSignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'AddSmsSign','dysms')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'AddSmsSign')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -50,14 +50,14 @@ class AddSmsSignRequest(RpcRequest):
 		self.add_query_param('SignName',SignName)
 
 	def get_SignFileLists(self):
-		return self.get_query_params().get('SignFileLists')
+		return self.get_body_params().get('SignFileList')
 
 	def set_SignFileLists(self, SignFileLists):
 		for depth1 in range(len(SignFileLists)):
 			if SignFileLists[depth1].get('FileContents') is not None:
-				self.add_query_param('SignFileList.' + str(depth1 + 1) + '.FileContents', SignFileLists[depth1].get('FileContents'))
+				self.add_body_params('SignFileList.' + str(depth1 + 1) + '.FileContents', SignFileLists[depth1].get('FileContents'))
 			if SignFileLists[depth1].get('FileSuffix') is not None:
-				self.add_query_param('SignFileList.' + str(depth1 + 1) + '.FileSuffix', SignFileLists[depth1].get('FileSuffix'))
+				self.add_body_params('SignFileList.' + str(depth1 + 1) + '.FileSuffix', SignFileLists[depth1].get('FileSuffix'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

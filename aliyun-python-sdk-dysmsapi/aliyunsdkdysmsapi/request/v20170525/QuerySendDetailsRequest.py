@@ -23,7 +23,7 @@ from aliyunsdkdysmsapi.endpoint import endpoint_data
 class QuerySendDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QuerySendDetails','dysms')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'QuerySendDetails')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

@@ -23,7 +23,7 @@ from aliyunsdkdysmsapi.endpoint import endpoint_data
 class DeleteSmsSignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'DeleteSmsSign','dysms')
+		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'DeleteSmsSign')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
