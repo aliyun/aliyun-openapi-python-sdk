@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryGatewayRegionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryGatewayRegion')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryGatewayRegion','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class QueryGatewayRegionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

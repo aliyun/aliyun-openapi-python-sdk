@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class CreateAlarmRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateAlarmRule')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateAlarmRule','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,6 +61,11 @@ class CreateAlarmRuleRequest(RpcRequest):
 
 	def set_ContactGroupIds(self, ContactGroupIds):  # String
 		self.add_query_param('ContactGroupIds', ContactGroupIds)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_AlertWay(self): # String
 		return self.get_query_params().get('AlertWay')
 

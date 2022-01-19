@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListAnsServiceClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAnsServiceClusters')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAnsServiceClusters','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class ListAnsServiceClustersRequest(RpcRequest):
 
 	def set_GroupName(self, GroupName):  # String
 		self.add_query_param('GroupName', GroupName)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
@@ -66,6 +71,11 @@ class ListAnsServiceClustersRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 

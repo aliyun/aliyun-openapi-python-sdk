@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateConfig')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateConfig','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_PassWord(self, PassWord):  # String
 		self.add_query_param('PassWord', PassWord)
+	def get_MinSessionTimeout(self): # String
+		return self.get_query_params().get('MinSessionTimeout')
+
+	def set_MinSessionTimeout(self, MinSessionTimeout):  # String
+		self.add_query_param('MinSessionTimeout', MinSessionTimeout)
 	def get_MaxClientCnxns(self): # String
 		return self.get_query_params().get('MaxClientCnxns')
 
@@ -71,6 +76,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_AutopurgeSnapRetainCount(self, AutopurgeSnapRetainCount):  # String
 		self.add_query_param('AutopurgeSnapRetainCount', AutopurgeSnapRetainCount)
+	def get_MaxSessionTimeout(self): # String
+		return self.get_query_params().get('MaxSessionTimeout')
+
+	def set_MaxSessionTimeout(self, MaxSessionTimeout):  # String
+		self.add_query_param('MaxSessionTimeout', MaxSessionTimeout)
 	def get_ConfigSecretEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigSecretEnabled')
 
@@ -106,6 +116,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_AutopurgePurgeInterval(self, AutopurgePurgeInterval):  # String
 		self.add_query_param('AutopurgePurgeInterval', AutopurgePurgeInterval)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_InitLimit(self): # String
 		return self.get_query_params().get('InitLimit')
 

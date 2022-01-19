@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ModifyGovernanceKubernetesClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ModifyGovernanceKubernetesCluster')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ModifyGovernanceKubernetesCluster','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,3 +41,8 @@ class ModifyGovernanceKubernetesClusterRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

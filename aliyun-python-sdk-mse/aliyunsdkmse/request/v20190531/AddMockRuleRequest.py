@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class AddMockRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddMockRule')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddMockRule','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -76,6 +76,11 @@ class AddMockRuleRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_MockType(self): # Long
 		return self.get_query_params().get('MockType')
 

@@ -24,7 +24,7 @@ import json
 class UpdateGatewayOptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayOption')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayOption','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,6 +32,11 @@ class UpdateGatewayOptionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_GatewayUniqueId(self): # String
+		return self.get_query_params().get('GatewayUniqueId')
+
+	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
+		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
 	def get_GatewayOption(self): # Struct
 		return self.get_query_params().get('GatewayOption')
 
@@ -42,3 +47,8 @@ class UpdateGatewayOptionRequest(RpcRequest):
 
 	def set_GatewayId(self, GatewayId):  # Long
 		self.add_query_param('GatewayId', GatewayId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

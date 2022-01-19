@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ScalingClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ScalingCluster')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ScalingCluster','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,3 +56,8 @@ class ScalingClusterRequest(RpcRequest):
 
 	def set_InstanceCount(self, InstanceCount):  # Integer
 		self.add_query_param('InstanceCount', InstanceCount)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

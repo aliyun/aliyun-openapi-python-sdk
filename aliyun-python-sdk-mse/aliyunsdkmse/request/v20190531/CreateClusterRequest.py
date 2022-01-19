@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class CreateClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateCluster')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateCluster','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -106,6 +106,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_MseVersion(self, MseVersion):  # String
 		self.add_query_param('MseVersion', MseVersion)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 

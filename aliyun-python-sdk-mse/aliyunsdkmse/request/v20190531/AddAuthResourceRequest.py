@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class CreateGovernanceKubernetesClusterRequest(RpcRequest):
+class AddAuthResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateGovernanceKubernetesCluster')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddAuthResource','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class CreateGovernanceKubernetesClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterName(self): # String
-		return self.get_query_params().get('ClusterName')
+	def get_GatewayUniqueId(self): # String
+		return self.get_query_params().get('GatewayUniqueId')
 
-	def set_ClusterName(self, ClusterName):  # String
-		self.add_query_param('ClusterName', ClusterName)
-	def get_NameSpaceInfos(self): # String
-		return self.get_query_params().get('NameSpaceInfos')
+	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
+		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_AuthId(self): # Long
+		return self.get_query_params().get('AuthId')
 
-	def set_NameSpaceInfos(self, NameSpaceInfos):  # String
-		self.add_query_param('NameSpaceInfos', NameSpaceInfos)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_AuthId(self, AuthId):  # Long
+		self.add_query_param('AuthId', AuthId)
+	def get_DomainId(self): # Long
+		return self.get_query_params().get('DomainId')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_K8sVersion(self): # String
-		return self.get_query_params().get('K8sVersion')
+	def set_DomainId(self, DomainId):  # Long
+		self.add_query_param('DomainId', DomainId)
+	def get_Path(self): # String
+		return self.get_query_params().get('Path')
 
-	def set_K8sVersion(self, K8sVersion):  # String
-		self.add_query_param('K8sVersion', K8sVersion)
-	def get_PilotStartTime(self): # Long
-		return self.get_query_params().get('PilotStartTime')
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_PilotStartTime(self, PilotStartTime):  # Long
-		self.add_query_param('PilotStartTime', PilotStartTime)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

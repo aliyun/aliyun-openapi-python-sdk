@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class DeleteNacosServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosService')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosService','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class DeleteNacosServiceRequest(RpcRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 

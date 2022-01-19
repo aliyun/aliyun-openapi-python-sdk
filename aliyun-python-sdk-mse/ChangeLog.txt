@@ -1,3 +1,7 @@
+2022-01-19 Version: 3.0.4
+- ReportOneAgentInfo.
+
+
 2021-12-08 Version: 3.0.2
 - HeterogeInterworking.
 

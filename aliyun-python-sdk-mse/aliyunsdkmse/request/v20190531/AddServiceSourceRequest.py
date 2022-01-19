@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class AddServiceSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddServiceSource')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddServiceSource','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,28 +46,18 @@ class AddServiceSourceRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_GatewayId(self): # Long
-		return self.get_query_params().get('GatewayId')
-
-	def set_GatewayId(self, GatewayId):  # Long
-		self.add_query_param('GatewayId', GatewayId)
 	def get_Address(self): # String
 		return self.get_query_params().get('Address')
 
 	def set_Address(self, Address):  # String
 		self.add_query_param('Address', Address)
-	def get_Info1(self): # String
-		return self.get_query_params().get('Info1')
-
-	def set_Info1(self, Info1):  # String
-		self.add_query_param('Info1', Info1)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Info2(self): # String
-		return self.get_query_params().get('Info2')
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_Info2(self, Info2):  # String
-		self.add_query_param('Info2', Info2)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
