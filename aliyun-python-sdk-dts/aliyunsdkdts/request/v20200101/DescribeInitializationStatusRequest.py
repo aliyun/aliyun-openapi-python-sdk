@@ -25,38 +25,34 @@ class DescribeInitializationStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeInitializationStatus','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNum(self):
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_OwnerId(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SynchronizationJobId(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SynchronizationJobId(self): # String
 		return self.get_query_params().get('SynchronizationJobId')
 
-	def set_SynchronizationJobId(self,SynchronizationJobId):
-		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
-
-	def get_AccountId(self):
+	def set_SynchronizationJobId(self, SynchronizationJobId):  # String
+		self.add_query_param('SynchronizationJobId', SynchronizationJobId)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_PageSize(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

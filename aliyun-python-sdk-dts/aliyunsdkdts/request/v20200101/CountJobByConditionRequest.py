@@ -25,56 +25,49 @@ class CountJobByConditionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CountJobByCondition','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_SrcDbType(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_SrcDbType(self): # String
 		return self.get_query_params().get('SrcDbType')
 
-	def set_SrcDbType(self,SrcDbType):
-		self.add_query_param('SrcDbType',SrcDbType)
-
-	def get_GroupId(self):
+	def set_SrcDbType(self, SrcDbType):  # String
+		self.add_query_param('SrcDbType', SrcDbType)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Params(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Params(self): # String
 		return self.get_query_params().get('Params')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_JobType(self):
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_JobType(self): # String
 		return self.get_query_params().get('JobType')
 
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
-
-	def get_DestDbType(self):
+	def set_JobType(self, JobType):  # String
+		self.add_query_param('JobType', JobType)
+	def get_DestDbType(self): # String
 		return self.get_query_params().get('DestDbType')
 
-	def set_DestDbType(self,DestDbType):
-		self.add_query_param('DestDbType',DestDbType)
-
-	def get_Region(self):
+	def set_DestDbType(self, DestDbType):  # String
+		self.add_query_param('DestDbType', DestDbType)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_Status(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

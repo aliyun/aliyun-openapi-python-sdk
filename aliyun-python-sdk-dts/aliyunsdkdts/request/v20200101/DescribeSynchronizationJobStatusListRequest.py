@@ -25,32 +25,29 @@ class DescribeSynchronizationJobStatusListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSynchronizationJobStatusList','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SynchronizationJobIdListJsonStr(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SynchronizationJobIdListJsonStr(self): # String
 		return self.get_query_params().get('SynchronizationJobIdListJsonStr')
 
-	def set_SynchronizationJobIdListJsonStr(self,SynchronizationJobIdListJsonStr):
-		self.add_query_param('SynchronizationJobIdListJsonStr',SynchronizationJobIdListJsonStr)
-
-	def get_AccountId(self):
+	def set_SynchronizationJobIdListJsonStr(self, SynchronizationJobIdListJsonStr):  # String
+		self.add_query_param('SynchronizationJobIdListJsonStr', SynchronizationJobIdListJsonStr)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)

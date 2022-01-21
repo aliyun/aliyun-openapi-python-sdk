@@ -25,38 +25,34 @@ class InitDtsRdsInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'InitDtsRdsInstance','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndpointInstanceId(self):
+	def get_EndpointInstanceId(self): # String
 		return self.get_query_params().get('EndpointInstanceId')
 
-	def set_EndpointInstanceId(self,EndpointInstanceId):
-		self.add_query_param('EndpointInstanceId',EndpointInstanceId)
-
-	def get_EndpointRegion(self):
+	def set_EndpointInstanceId(self, EndpointInstanceId):  # String
+		self.add_query_param('EndpointInstanceId', EndpointInstanceId)
+	def get_EndpointRegion(self): # String
 		return self.get_query_params().get('EndpointRegion')
 
-	def set_EndpointRegion(self,EndpointRegion):
-		self.add_query_param('EndpointRegion',EndpointRegion)
-
-	def get_EndpointCenId(self):
+	def set_EndpointRegion(self, EndpointRegion):  # String
+		self.add_query_param('EndpointRegion', EndpointRegion)
+	def get_EndpointCenId(self): # String
 		return self.get_query_params().get('EndpointCenId')
 
-	def set_EndpointCenId(self,EndpointCenId):
-		self.add_query_param('EndpointCenId',EndpointCenId)
-
-	def get_EndpointInstanceType(self):
+	def set_EndpointCenId(self, EndpointCenId):  # String
+		self.add_query_param('EndpointCenId', EndpointCenId)
+	def get_EndpointInstanceType(self): # String
 		return self.get_query_params().get('EndpointInstanceType')
 
-	def set_EndpointInstanceType(self,EndpointInstanceType):
-		self.add_query_param('EndpointInstanceType',EndpointInstanceType)
-
-	def get_DtsInstanceId(self):
+	def set_EndpointInstanceType(self, EndpointInstanceType):  # String
+		self.add_query_param('EndpointInstanceType', EndpointInstanceType)
+	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceId(self,DtsInstanceId):
-		self.add_query_param('DtsInstanceId',DtsInstanceId)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)

@@ -25,74 +25,64 @@ class DescribeDtsJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobs','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OrderDirection(self):
+	def get_OrderDirection(self): # String
 		return self.get_query_params().get('OrderDirection')
 
-	def set_OrderDirection(self,OrderDirection):
-		self.add_query_param('OrderDirection',OrderDirection)
-
-	def get_Type(self):
+	def set_OrderDirection(self, OrderDirection):  # String
+		self.add_query_param('OrderDirection', OrderDirection)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_OrderColumn(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_OrderColumn(self): # String
 		return self.get_query_params().get('OrderColumn')
 
-	def set_OrderColumn(self,OrderColumn):
-		self.add_query_param('OrderColumn',OrderColumn)
-
-	def get_PageSize(self):
+	def set_OrderColumn(self, OrderColumn):  # String
+		self.add_query_param('OrderColumn', OrderColumn)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_GroupId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Params(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Params(self): # String
 		return self.get_query_params().get('Params')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_JobType(self):
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_JobType(self): # String
 		return self.get_query_params().get('JobType')
 
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
-
-	def get_Tags(self):
+	def set_JobType(self, JobType):  # String
+		self.add_query_param('JobType', JobType)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_Region(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_Status(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

@@ -25,26 +25,24 @@ class DescribeSubscriptionInstanceStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionInstanceStatus','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SubscriptionInstanceId(self):
+	def get_SubscriptionInstanceId(self): # String
 		return self.get_query_params().get('SubscriptionInstanceId')
 
-	def set_SubscriptionInstanceId(self,SubscriptionInstanceId):
-		self.add_query_param('SubscriptionInstanceId',SubscriptionInstanceId)
-
-	def get_OwnerId(self):
+	def set_SubscriptionInstanceId(self, SubscriptionInstanceId):  # String
+		self.add_query_param('SubscriptionInstanceId', SubscriptionInstanceId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AccountId(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)

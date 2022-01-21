@@ -25,56 +25,49 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateSubscriptionInstance','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Period(self):
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_ClientToken(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UsedTime(self): # Integer
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
-	def get_SourceEndpointInstanceType(self):
+	def set_UsedTime(self, UsedTime):  # Integer
+		self.add_query_param('UsedTime', UsedTime)
+	def get_SourceEndpointInstanceType(self): # String
 		return self.get_query_params().get('SourceEndpoint.InstanceType')
 
-	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
-		self.add_query_param('SourceEndpoint.InstanceType',SourceEndpointInstanceType)
-
-	def get_AccountId(self):
+	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
+		self.add_query_param('SourceEndpoint.InstanceType', SourceEndpointInstanceType)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_Region(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_PayType(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)

@@ -25,20 +25,19 @@ class ShieldPrecheckRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ShieldPrecheck','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PrecheckItems(self):
+	def get_PrecheckItems(self): # String
 		return self.get_query_params().get('PrecheckItems')
 
-	def set_PrecheckItems(self,PrecheckItems):
-		self.add_query_param('PrecheckItems',PrecheckItems)
-
-	def get_DtsInstanceId(self):
+	def set_PrecheckItems(self, PrecheckItems):  # String
+		self.add_query_param('PrecheckItems', PrecheckItems)
+	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceId(self,DtsInstanceId):
-		self.add_query_param('DtsInstanceId',DtsInstanceId)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)

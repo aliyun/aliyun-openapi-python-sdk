@@ -25,26 +25,24 @@ class DescribeDtsJobDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobDetail','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DtsJobId(self):
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_DtsInstanceID(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_DtsInstanceID(self): # String
 		return self.get_query_params().get('DtsInstanceID')
 
-	def set_DtsInstanceID(self,DtsInstanceID):
-		self.add_query_param('DtsInstanceID',DtsInstanceID)
-
-	def get_SynchronizationDirection(self):
+	def set_DtsInstanceID(self, DtsInstanceID):  # String
+		self.add_query_param('DtsInstanceID', DtsInstanceID)
+	def get_SynchronizationDirection(self): # String
 		return self.get_query_params().get('SynchronizationDirection')
 
-	def set_SynchronizationDirection(self,SynchronizationDirection):
-		self.add_query_param('SynchronizationDirection',SynchronizationDirection)
+	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
+		self.add_query_param('SynchronizationDirection', SynchronizationDirection)

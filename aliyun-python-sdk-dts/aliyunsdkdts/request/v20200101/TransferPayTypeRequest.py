@@ -25,32 +25,29 @@ class TransferPayTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferPayType','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Period(self):
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_BuyCount(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_BuyCount(self): # String
 		return self.get_query_params().get('BuyCount')
 
-	def set_BuyCount(self,BuyCount):
-		self.add_query_param('BuyCount',BuyCount)
-
-	def get_DtsJobId(self):
+	def set_BuyCount(self, BuyCount):  # String
+		self.add_query_param('BuyCount', BuyCount)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_ChargeType(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)

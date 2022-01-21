@@ -25,32 +25,29 @@ class ModifyDtsJobPasswordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyDtsJobPassword','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_Endpoint(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_Endpoint(self): # String
 		return self.get_query_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
-		self.add_query_param('Endpoint',Endpoint)
-
-	def get_DtsJobId(self):
+	def set_Endpoint(self, Endpoint):  # String
+		self.add_query_param('Endpoint', Endpoint)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_UserName(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

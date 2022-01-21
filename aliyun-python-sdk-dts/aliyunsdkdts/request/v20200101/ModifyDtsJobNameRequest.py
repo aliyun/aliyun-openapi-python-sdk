@@ -25,20 +25,19 @@ class ModifyDtsJobNameRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyDtsJobName','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DtsJobName(self):
+	def get_DtsJobName(self): # String
 		return self.get_query_params().get('DtsJobName')
 
-	def set_DtsJobName(self,DtsJobName):
-		self.add_query_param('DtsJobName',DtsJobName)
-
-	def get_DtsJobId(self):
+	def set_DtsJobName(self, DtsJobName):  # String
+		self.add_query_param('DtsJobName', DtsJobName)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)

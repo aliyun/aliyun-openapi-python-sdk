@@ -25,38 +25,34 @@ class CreateConsumerChannelRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateConsumerChannel','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConsumerGroupName(self):
+	def get_ConsumerGroupName(self): # String
 		return self.get_query_params().get('ConsumerGroupName')
 
-	def set_ConsumerGroupName(self,ConsumerGroupName):
-		self.add_query_param('ConsumerGroupName',ConsumerGroupName)
-
-	def get_ConsumerGroupPassword(self):
+	def set_ConsumerGroupName(self, ConsumerGroupName):  # String
+		self.add_query_param('ConsumerGroupName', ConsumerGroupName)
+	def get_ConsumerGroupPassword(self): # String
 		return self.get_query_params().get('ConsumerGroupPassword')
 
-	def set_ConsumerGroupPassword(self,ConsumerGroupPassword):
-		self.add_query_param('ConsumerGroupPassword',ConsumerGroupPassword)
-
-	def get_ConsumerGroupUserName(self):
+	def set_ConsumerGroupPassword(self, ConsumerGroupPassword):  # String
+		self.add_query_param('ConsumerGroupPassword', ConsumerGroupPassword)
+	def get_ConsumerGroupUserName(self): # String
 		return self.get_query_params().get('ConsumerGroupUserName')
 
-	def set_ConsumerGroupUserName(self,ConsumerGroupUserName):
-		self.add_query_param('ConsumerGroupUserName',ConsumerGroupUserName)
-
-	def get_DtsJobId(self):
+	def set_ConsumerGroupUserName(self, ConsumerGroupUserName):  # String
+		self.add_query_param('ConsumerGroupUserName', ConsumerGroupUserName)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_DtsInstanceId(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceId(self,DtsInstanceId):
-		self.add_query_param('DtsInstanceId',DtsInstanceId)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)

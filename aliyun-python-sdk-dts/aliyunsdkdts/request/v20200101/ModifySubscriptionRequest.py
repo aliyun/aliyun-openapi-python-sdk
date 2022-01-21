@@ -25,38 +25,34 @@ class ModifySubscriptionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifySubscription','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DbList(self):
+	def get_DbList(self): # String
 		return self.get_query_params().get('DbList')
 
-	def set_DbList(self,DbList):
-		self.add_query_param('DbList',DbList)
-
-	def get_SubscriptionDataTypeDDL(self):
+	def set_DbList(self, DbList):  # String
+		self.add_query_param('DbList', DbList)
+	def get_SubscriptionDataTypeDDL(self): # Boolean
 		return self.get_query_params().get('SubscriptionDataTypeDDL')
 
-	def set_SubscriptionDataTypeDDL(self,SubscriptionDataTypeDDL):
-		self.add_query_param('SubscriptionDataTypeDDL',SubscriptionDataTypeDDL)
-
-	def get_SubscriptionDataTypeDML(self):
+	def set_SubscriptionDataTypeDDL(self, SubscriptionDataTypeDDL):  # Boolean
+		self.add_query_param('SubscriptionDataTypeDDL', SubscriptionDataTypeDDL)
+	def get_SubscriptionDataTypeDML(self): # Boolean
 		return self.get_query_params().get('SubscriptionDataTypeDML')
 
-	def set_SubscriptionDataTypeDML(self,SubscriptionDataTypeDML):
-		self.add_query_param('SubscriptionDataTypeDML',SubscriptionDataTypeDML)
-
-	def get_DtsJobId(self):
+	def set_SubscriptionDataTypeDML(self, SubscriptionDataTypeDML):  # Boolean
+		self.add_query_param('SubscriptionDataTypeDML', SubscriptionDataTypeDML)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_DtsInstanceId(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceId(self,DtsInstanceId):
-		self.add_query_param('DtsInstanceId',DtsInstanceId)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)

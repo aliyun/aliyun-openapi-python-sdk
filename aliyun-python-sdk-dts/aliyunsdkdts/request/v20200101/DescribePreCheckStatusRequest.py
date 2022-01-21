@@ -25,50 +25,44 @@ class DescribePreCheckStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribePreCheckStatus','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StructType(self):
+	def get_StructType(self): # String
 		return self.get_query_params().get('StructType')
 
-	def set_StructType(self,StructType):
-		self.add_query_param('StructType',StructType)
-
-	def get_PageNo(self):
+	def set_StructType(self, StructType):  # String
+		self.add_query_param('StructType', StructType)
+	def get_PageNo(self): # String
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
+	def set_PageNo(self, PageNo):  # String
+		self.add_query_param('PageNo', PageNo)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_JobCode(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_JobCode(self): # String
 		return self.get_query_params().get('JobCode')
 
-	def set_JobCode(self,JobCode):
-		self.add_query_param('JobCode',JobCode)
-
-	def get_Name(self):
+	def set_JobCode(self, JobCode):  # String
+		self.add_query_param('JobCode', JobCode)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_DtsJobId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_StructPhase(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_StructPhase(self): # String
 		return self.get_query_params().get('StructPhase')
 
-	def set_StructPhase(self,StructPhase):
-		self.add_query_param('StructPhase',StructPhase)
+	def set_StructPhase(self, StructPhase):  # String
+		self.add_query_param('StructPhase', StructPhase)

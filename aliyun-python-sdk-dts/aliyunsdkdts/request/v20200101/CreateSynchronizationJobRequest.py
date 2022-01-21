@@ -25,92 +25,79 @@ class CreateSynchronizationJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateSynchronizationJob','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_networkType(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_networkType(self): # String
 		return self.get_query_params().get('networkType')
 
-	def set_networkType(self,networkType):
-		self.add_query_param('networkType',networkType)
-
-	def get_SourceEndpointInstanceType(self):
+	def set_networkType(self, networkType):  # String
+		self.add_query_param('networkType', networkType)
+	def get_SourceEndpointInstanceType(self): # String
 		return self.get_query_params().get('SourceEndpoint.InstanceType')
 
-	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
-		self.add_query_param('SourceEndpoint.InstanceType',SourceEndpointInstanceType)
-
-	def get_AccountId(self):
+	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
+		self.add_query_param('SourceEndpoint.InstanceType', SourceEndpointInstanceType)
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_SynchronizationJobClass(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_SynchronizationJobClass(self): # String
 		return self.get_query_params().get('SynchronizationJobClass')
 
-	def set_SynchronizationJobClass(self,SynchronizationJobClass):
-		self.add_query_param('SynchronizationJobClass',SynchronizationJobClass)
-
-	def get_Period(self):
+	def set_SynchronizationJobClass(self, SynchronizationJobClass):  # String
+		self.add_query_param('SynchronizationJobClass', SynchronizationJobClass)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_DestRegion(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_DestRegion(self): # String
 		return self.get_query_params().get('DestRegion')
 
-	def set_DestRegion(self,DestRegion):
-		self.add_query_param('DestRegion',DestRegion)
-
-	def get_Topology(self):
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
+	def get_Topology(self): # String
 		return self.get_query_params().get('Topology')
 
-	def set_Topology(self,Topology):
-		self.add_query_param('Topology',Topology)
-
-	def get_OwnerId(self):
+	def set_Topology(self, Topology):  # String
+		self.add_query_param('Topology', Topology)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UsedTime(self): # Integer
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
-	def get_DBInstanceCount(self):
+	def set_UsedTime(self, UsedTime):  # Integer
+		self.add_query_param('UsedTime', UsedTime)
+	def get_DBInstanceCount(self): # Integer
 		return self.get_query_params().get('DBInstanceCount')
 
-	def set_DBInstanceCount(self,DBInstanceCount):
-		self.add_query_param('DBInstanceCount',DBInstanceCount)
-
-	def get_SourceRegion(self):
+	def set_DBInstanceCount(self, DBInstanceCount):  # Integer
+		self.add_query_param('DBInstanceCount', DBInstanceCount)
+	def get_SourceRegion(self): # String
 		return self.get_query_params().get('SourceRegion')
 
-	def set_SourceRegion(self,SourceRegion):
-		self.add_query_param('SourceRegion',SourceRegion)
-
-	def get_PayType(self):
+	def set_SourceRegion(self, SourceRegion):  # String
+		self.add_query_param('SourceRegion', SourceRegion)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
-
-	def get_DestinationEndpointInstanceType(self):
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)
+	def get_DestinationEndpointInstanceType(self): # String
 		return self.get_query_params().get('DestinationEndpoint.InstanceType')
 
-	def set_DestinationEndpointInstanceType(self,DestinationEndpointInstanceType):
-		self.add_query_param('DestinationEndpoint.InstanceType',DestinationEndpointInstanceType)
+	def set_DestinationEndpointInstanceType(self, DestinationEndpointInstanceType):  # String
+		self.add_query_param('DestinationEndpoint.InstanceType', DestinationEndpointInstanceType)

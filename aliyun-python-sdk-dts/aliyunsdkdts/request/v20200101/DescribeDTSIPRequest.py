@@ -25,20 +25,19 @@ class DescribeDTSIPRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDTSIP','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceEndpointRegion(self):
+	def get_SourceEndpointRegion(self): # String
 		return self.get_query_params().get('SourceEndpointRegion')
 
-	def set_SourceEndpointRegion(self,SourceEndpointRegion):
-		self.add_query_param('SourceEndpointRegion',SourceEndpointRegion)
-
-	def get_DestinationEndpointRegion(self):
+	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
+		self.add_query_param('SourceEndpointRegion', SourceEndpointRegion)
+	def get_DestinationEndpointRegion(self): # String
 		return self.get_query_params().get('DestinationEndpointRegion')
 
-	def set_DestinationEndpointRegion(self,DestinationEndpointRegion):
-		self.add_query_param('DestinationEndpointRegion',DestinationEndpointRegion)
+	def set_DestinationEndpointRegion(self, DestinationEndpointRegion):  # String
+		self.add_query_param('DestinationEndpointRegion', DestinationEndpointRegion)

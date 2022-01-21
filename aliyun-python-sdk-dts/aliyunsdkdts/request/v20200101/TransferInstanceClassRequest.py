@@ -25,26 +25,24 @@ class TransferInstanceClassRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferInstanceClass','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceClass(self):
+	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
-	def set_InstanceClass(self,InstanceClass):
-		self.add_query_param('InstanceClass',InstanceClass)
-
-	def get_DtsJobId(self):
+	def set_InstanceClass(self, InstanceClass):  # String
+		self.add_query_param('InstanceClass', InstanceClass)
+	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
-
-	def get_OrderType(self):
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)

@@ -25,38 +25,44 @@ class ModifyDtsJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyDtsJob','dts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DbList(self):
+	def get_DbList(self): # String
 		return self.get_body_params().get('DbList')
 
-	def set_DbList(self,DbList):
+	def set_DbList(self, DbList):  # String
 		self.add_body_params('DbList', DbList)
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ModifyTypeEnum(self): # String
+		return self.get_body_params().get('ModifyTypeEnum')
 
-	def get_EtlOperatorColumnReference(self):
+	def set_ModifyTypeEnum(self, ModifyTypeEnum):  # String
+		self.add_body_params('ModifyTypeEnum', ModifyTypeEnum)
+	def get_EtlOperatorColumnReference(self): # String
 		return self.get_body_params().get('EtlOperatorColumnReference')
 
-	def set_EtlOperatorColumnReference(self,EtlOperatorColumnReference):
+	def set_EtlOperatorColumnReference(self, EtlOperatorColumnReference):  # String
 		self.add_body_params('EtlOperatorColumnReference', EtlOperatorColumnReference)
+	def get_Reserved(self): # String
+		return self.get_body_params().get('Reserved')
 
-	def get_DtsInstanceId(self):
+	def set_Reserved(self, Reserved):  # String
+		self.add_body_params('Reserved', Reserved)
+	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceId(self,DtsInstanceId):
-		self.add_query_param('DtsInstanceId',DtsInstanceId)
-
-	def get_SynchronizationDirection(self):
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)
+	def get_SynchronizationDirection(self): # String
 		return self.get_query_params().get('SynchronizationDirection')
 
-	def set_SynchronizationDirection(self,SynchronizationDirection):
-		self.add_query_param('SynchronizationDirection',SynchronizationDirection)
+	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
+		self.add_query_param('SynchronizationDirection', SynchronizationDirection)
