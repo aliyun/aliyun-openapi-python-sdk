@@ -54,3 +54,11 @@ class ExportConversationDetailsRequest(RpcRequest):
 
 	def set_BeginTimeRightRange(self,BeginTimeRightRange):
 		self.add_query_param('BeginTimeRightRange',BeginTimeRightRange)
+
+	def get_Optionss(self):
+		return self.get_query_params().get('Options')
+
+	def set_Optionss(self, Optionss):
+		for depth1 in range(len(Optionss)):
+			if Optionss[depth1] is not None:
+				self.add_query_param('Options.' + str(depth1 + 1) , Optionss[depth1])
