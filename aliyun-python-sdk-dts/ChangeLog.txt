@@ -1,3 +1,6 @@
+2022-01-22 Version: 2.13.37
+- DTS SDK.
+
 2022-01-21 Version: 2.13.36
 - DTS SDK.
 
