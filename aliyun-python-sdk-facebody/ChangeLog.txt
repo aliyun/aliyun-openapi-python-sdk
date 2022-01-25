@@ -1,3 +1,6 @@
+2022-01-25 Version: 1.2.30
+- Update DetectFace.
+
 2021-12-02 Version: 1.2.29
 - Update MergeImageFace QueryFaceImageTemplate AddFaceImageTemplate DeleteFaceImageTemplate.
 
