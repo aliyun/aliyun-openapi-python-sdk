@@ -41,14 +41,14 @@ class BatchEnableJobsRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
 	def get_JobIdLists(self): # RepeatList
 		return self.get_body_params().get('JobIdList')
 
 	def set_JobIdLists(self, JobIdList):  # RepeatList
 		for depth1 in range(len(JobIdList)):
 			self.add_body_params('JobIdList.' + str(depth1 + 1), JobIdList[depth1])
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

@@ -116,6 +116,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_MaxAttempt(self, MaxAttempt):  # Integer
 		self.add_body_params('MaxAttempt', MaxAttempt)
+	def get_MissWorkerEnable(self): # Boolean
+		return self.get_body_params().get('MissWorkerEnable')
+
+	def set_MissWorkerEnable(self, MissWorkerEnable):  # Boolean
+		self.add_body_params('MissWorkerEnable', MissWorkerEnable)
 	def get_DispatcherSize(self): # Integer
 		return self.get_body_params().get('DispatcherSize')
 
@@ -156,8 +161,12 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_ContactInfos(self, ContactInfo):  # RepeatList
 		for depth1 in range(len(ContactInfo)):
+			if ContactInfo[depth1].get('Ding') is not None:
+				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.Ding', ContactInfo[depth1].get('Ding'))
 			if ContactInfo[depth1].get('UserPhone') is not None:
 				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.UserPhone', ContactInfo[depth1].get('UserPhone'))
+			if ContactInfo[depth1].get('UserMail') is not None:
+				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.UserMail', ContactInfo[depth1].get('UserMail'))
 			if ContactInfo[depth1].get('UserName') is not None:
 				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.UserName', ContactInfo[depth1].get('UserName'))
 	def get_Name(self): # String

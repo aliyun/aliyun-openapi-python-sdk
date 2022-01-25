@@ -31,11 +31,6 @@ class GetJobInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobId(self): # Long
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self, JobId):  # Long
-		self.add_query_param('JobId', JobId)
 	def get_NamespaceSource(self): # String
 		return self.get_query_params().get('NamespaceSource')
 
@@ -46,6 +41,11 @@ class GetJobInfoRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
