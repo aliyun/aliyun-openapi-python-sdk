@@ -88,6 +88,23 @@ class UpdateRuleAttributeRequest(RpcRequest):
 			if value1.get('TrafficLimitConfig') is not None:
 				if value1.get('TrafficLimitConfig').get('QPS') is not None:
 					self.add_query_param('RuleActions.' + str(index1 + 1) + '.TrafficLimitConfig.QPS', value1.get('TrafficLimitConfig').get('QPS'))
+			if value1.get('CorsConfig') is not None:
+				if value1.get('CorsConfig').get('AllowCredentials') is not None:
+					self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.AllowCredentials', value1.get('CorsConfig').get('AllowCredentials'))
+				if value1.get('CorsConfig').get('AllowOrigin') is not None:
+					for index2, value2 in enumerate(value1.get('CorsConfig').get('AllowOrigin')):
+						self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.AllowOrigin' + str(index2 + 1), value2)
+				if value1.get('CorsConfig').get('MaxAge') is not None:
+					self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.MaxAge', value1.get('CorsConfig').get('MaxAge'))
+				if value1.get('CorsConfig').get('AllowMethods') is not None:
+					for index2, value2 in enumerate(value1.get('CorsConfig').get('AllowMethods')):
+						self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.AllowMethods' + str(index2 + 1), value2)
+				if value1.get('CorsConfig').get('AllowHeaders') is not None:
+					for index2, value2 in enumerate(value1.get('CorsConfig').get('AllowHeaders')):
+						self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.AllowHeaders' + str(index2 + 1), value2)
+				if value1.get('CorsConfig').get('ExposeHeaders') is not None:
+					for index2, value2 in enumerate(value1.get('CorsConfig').get('ExposeHeaders')):
+						self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.ExposeHeaders' + str(index2 + 1), value2)
 			if value1.get('RedirectConfig') is not None:
 				if value1.get('RedirectConfig').get('Path') is not None:
 					self.add_query_param('RuleActions.' + str(index1 + 1) + '.RedirectConfig.Path', value1.get('RedirectConfig').get('Path'))

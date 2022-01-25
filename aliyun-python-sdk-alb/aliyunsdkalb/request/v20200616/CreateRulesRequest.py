@@ -139,6 +139,23 @@ class CreateRulesRequest(RpcRequest):
 					if value2.get('TrafficLimitConfig') is not None:
 						if value2.get('TrafficLimitConfig').get('QPS') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.TrafficLimitConfig.QPS', value2.get('TrafficLimitConfig').get('QPS'))
+					if value2.get('CorsConfig') is not None:
+						if value2.get('CorsConfig').get('AllowCredentials') is not None:
+							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowCredentials', value2.get('CorsConfig').get('AllowCredentials'))
+						if value2.get('CorsConfig').get('AllowOrigin') is not None:
+							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowOrigin')):
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowOrigin' + str(index3 + 1), value3)
+						if value2.get('CorsConfig').get('MaxAge') is not None:
+							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.MaxAge', value2.get('CorsConfig').get('MaxAge'))
+						if value2.get('CorsConfig').get('AllowMethods') is not None:
+							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowMethods')):
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowMethods' + str(index3 + 1), value3)
+						if value2.get('CorsConfig').get('AllowHeaders') is not None:
+							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowHeaders')):
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowHeaders' + str(index3 + 1), value3)
+						if value2.get('CorsConfig').get('ExposeHeaders') is not None:
+							for index3, value3 in enumerate(value2.get('CorsConfig').get('ExposeHeaders')):
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.ExposeHeaders' + str(index3 + 1), value3)
 					if value2.get('RedirectConfig') is not None:
 						if value2.get('RedirectConfig').get('Path') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.RedirectConfig.Path', value2.get('RedirectConfig').get('Path'))
