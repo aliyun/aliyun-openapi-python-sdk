@@ -73,6 +73,12 @@ class ModifyJobGroupRequest(RpcRequest):
 	def set_JobGroupStatus(self,JobGroupStatus):
 		self.add_query_param('JobGroupStatus',JobGroupStatus)
 
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumber')
 
@@ -98,3 +104,9 @@ class ModifyJobGroupRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_MinConcurrency(self):
+		return self.get_query_params().get('MinConcurrency')
+
+	def set_MinConcurrency(self,MinConcurrency):
+		self.add_query_param('MinConcurrency',MinConcurrency)

@@ -49,6 +49,30 @@ class CreateBatchRepeatJobRequest(RpcRequest):
 	def set_ScriptId(self,ScriptId):
 		self.add_query_param('ScriptId',ScriptId)
 
+	def get_FilterStatus(self):
+		return self.get_query_params().get('FilterStatus')
+
+	def set_FilterStatus(self,FilterStatus):
+		self.add_query_param('FilterStatus',FilterStatus)
+
+	def get_StrategyJson(self):
+		return self.get_query_params().get('StrategyJson')
+
+	def set_StrategyJson(self,StrategyJson):
+		self.add_query_param('StrategyJson',StrategyJson)
+
+	def get_RingingDuration(self):
+		return self.get_query_params().get('RingingDuration')
+
+	def set_RingingDuration(self,RingingDuration):
+		self.add_query_param('RingingDuration',RingingDuration)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumber')
 
@@ -63,18 +87,6 @@ class CreateBatchRepeatJobRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_FilterStatus(self):
-		return self.get_query_params().get('FilterStatus')
-
-	def set_FilterStatus(self,FilterStatus):
-		self.add_query_param('FilterStatus',FilterStatus)
-
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
-
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -87,8 +99,8 @@ class CreateBatchRepeatJobRequest(RpcRequest):
 	def set_SourceGroupId(self,SourceGroupId):
 		self.add_query_param('SourceGroupId',SourceGroupId)
 
-	def get_RingingDuration(self):
-		return self.get_query_params().get('RingingDuration')
+	def get_MinConcurrency(self):
+		return self.get_query_params().get('MinConcurrency')
 
-	def set_RingingDuration(self,RingingDuration):
-		self.add_query_param('RingingDuration',RingingDuration)
+	def set_MinConcurrency(self,MinConcurrency):
+		self.add_query_param('MinConcurrency',MinConcurrency)

@@ -37,12 +37,6 @@ class CreateJobGroupRequest(RpcRequest):
 	def set_RecallStrategyJson(self,RecallStrategyJson):
 		self.add_query_param('RecallStrategyJson',RecallStrategyJson)
 
-	def get_JobGroupDescription(self):
-		return self.get_query_params().get('JobGroupDescription')
-
-	def set_JobGroupDescription(self,JobGroupDescription):
-		self.add_query_param('JobGroupDescription',JobGroupDescription)
-
 	def get_JobGroupName(self):
 		return self.get_query_params().get('JobGroupName')
 
@@ -54,20 +48,6 @@ class CreateJobGroupRequest(RpcRequest):
 
 	def set_ScriptId(self,ScriptId):
 		self.add_query_param('ScriptId',ScriptId)
-
-	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumbers(self, CallingNumbers):
-		for depth1 in range(len(CallingNumbers)):
-			if CallingNumbers[depth1] is not None:
-				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_StrategyJson(self):
 		return self.get_query_params().get('StrategyJson')
@@ -86,3 +66,35 @@ class CreateJobGroupRequest(RpcRequest):
 
 	def set_ScenarioId(self,ScenarioId):
 		self.add_query_param('ScenarioId',ScenarioId)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
+	def get_JobGroupDescription(self):
+		return self.get_query_params().get('JobGroupDescription')
+
+	def set_JobGroupDescription(self,JobGroupDescription):
+		self.add_query_param('JobGroupDescription',JobGroupDescription)
+
+	def get_CallingNumbers(self):
+		return self.get_query_params().get('CallingNumber')
+
+	def set_CallingNumbers(self, CallingNumbers):
+		for depth1 in range(len(CallingNumbers)):
+			if CallingNumbers[depth1] is not None:
+				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_MinConcurrency(self):
+		return self.get_query_params().get('MinConcurrency')
+
+	def set_MinConcurrency(self,MinConcurrency):
+		self.add_query_param('MinConcurrency',MinConcurrency)
