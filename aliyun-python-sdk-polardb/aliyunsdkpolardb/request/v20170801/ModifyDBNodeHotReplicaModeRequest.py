@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class CreateDBNodesRequest(RpcRequest):
+class ModifyDBNodeHotReplicaModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBNodes','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBNodeHotReplicaMode','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,11 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_DBNodeId(self):
+		return self.get_query_params().get('DBNodeId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EndpointBindList(self):
-		return self.get_query_params().get('EndpointBindList')
-
-	def set_EndpointBindList(self,EndpointBindList):
-		self.add_query_param('EndpointBindList',EndpointBindList)
-
-	def get_PlannedEndTime(self):
-		return self.get_query_params().get('PlannedEndTime')
-
-	def set_PlannedEndTime(self,PlannedEndTime):
-		self.add_query_param('PlannedEndTime',PlannedEndTime)
+	def set_DBNodeId(self,DBNodeId):
+		self.add_query_param('DBNodeId',DBNodeId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -79,24 +67,8 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PlannedStartTime(self):
-		return self.get_query_params().get('PlannedStartTime')
+	def get_HotReplicaMode(self):
+		return self.get_query_params().get('HotReplicaMode')
 
-	def set_PlannedStartTime(self,PlannedStartTime):
-		self.add_query_param('PlannedStartTime',PlannedStartTime)
-
-	def get_DBNodes(self):
-		return self.get_query_params().get('DBNode')
-
-	def set_DBNodes(self, DBNodes):
-		for depth1 in range(len(DBNodes)):
-			if DBNodes[depth1].get('TargetClass') is not None:
-				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNodes[depth1].get('TargetClass'))
-			if DBNodes[depth1].get('ZoneId') is not None:
-				self.add_query_param('DBNode.' + str(depth1 + 1) + '.ZoneId', DBNodes[depth1].get('ZoneId'))
-
-	def get_ImciSwitch(self):
-		return self.get_query_params().get('ImciSwitch')
-
-	def set_ImciSwitch(self,ImciSwitch):
-		self.add_query_param('ImciSwitch',ImciSwitch)
+	def set_HotReplicaMode(self,HotReplicaMode):
+		self.add_query_param('HotReplicaMode',HotReplicaMode)

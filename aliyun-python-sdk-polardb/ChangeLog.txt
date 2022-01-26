@@ -1,3 +1,6 @@
+2022-01-26 Version: 1.8.15
+- Fix some bugs.
+
 2021-11-12 Version: 1.8.13
 - Optimize the API for querying storage package information.
 

@@ -55,6 +55,12 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_DBNodeIds(self):
+		return self.get_query_params().get('DBNodeIds')
+
+	def set_DBNodeIds(self,DBNodeIds):
+		self.add_query_param('DBNodeIds',DBNodeIds)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -100,6 +106,12 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_DBType(self,DBType):
 		self.add_query_param('DBType',DBType)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
 	def get_DBClusterIds(self):
 		return self.get_query_params().get('DBClusterIds')
