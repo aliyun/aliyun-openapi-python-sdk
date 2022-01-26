@@ -31,11 +31,6 @@ class DeleteTLSCipherPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_access_key_id(self): # String
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self, access_key_id):  # String
-		self.add_query_param('access_key_id', access_key_id)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
