@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetAutonomousNotifyEventDetailRequest(RpcRequest):
+class GetSqlConcurrencyControlKeywordsFromSqlTextRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAutonomousNotifyEventDetail','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetSqlConcurrencyControlKeywordsFromSqlText','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class GetAutonomousNotifyEventDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get___context(self):
-		return self.get_query_params().get('__context')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_SpanId(self):
-		return self.get_query_params().get('SpanId')
-
-	def set_SpanId(self,SpanId):
-		self.add_query_param('SpanId',SpanId)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SqlText(self):
+		return self.get_query_params().get('SqlText')
+
+	def set_SqlText(self,SqlText):
+		self.add_query_param('SqlText',SqlText)

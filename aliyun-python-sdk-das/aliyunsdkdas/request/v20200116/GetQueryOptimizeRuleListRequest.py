@@ -20,31 +20,37 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class CreateDiagnosticReportRequest(RpcRequest):
+class GetQueryOptimizeRuleListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateDiagnosticReport','das')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeRuleList','das')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_TagNames(self):
+		return self.get_query_params().get('TagNames')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_TagNames(self,TagNames):
+		self.add_query_param('TagNames',TagNames)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class CreateDiagnosticReportRequest(RpcRequest):
+class CreateRequestDiagnosisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateDiagnosticReport','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateRequestDiagnosis','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class CreateDiagnosticReportRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_Sql(self):
+		return self.get_query_params().get('Sql')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_Sql(self,Sql):
+		self.add_query_param('Sql',Sql)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Database(self):
+		return self.get_query_params().get('Database')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Database(self,Database):
+		self.add_query_param('Database',Database)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)

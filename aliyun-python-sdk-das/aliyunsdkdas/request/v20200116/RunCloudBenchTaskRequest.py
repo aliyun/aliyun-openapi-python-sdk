@@ -31,12 +31,6 @@ class RunCloudBenchTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConsoleContext(self):
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 

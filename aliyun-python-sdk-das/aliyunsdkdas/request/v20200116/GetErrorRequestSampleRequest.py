@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetAutonomousNotifyEventsRequest(RpcRequest):
+class GetErrorRequestSampleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAutonomousNotifyEvents','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetErrorRequestSample','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,29 @@ class GetAutonomousNotifyEventsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get___context(self):
-		return self.get_query_params().get('__context')
+	def get_SqlId(self):
+		return self.get_query_params().get('SqlId')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
+	def set_SqlId(self,SqlId):
+		self.add_query_param('SqlId',SqlId)
 
-	def get_Level(self):
-		return self.get_query_params().get('Level')
+	def get_Role(self):
+		return self.get_query_params().get('Role')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
+	def set_Role(self,Role):
+		self.add_query_param('Role',Role)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_Start(self):
+		return self.get_query_params().get('Start')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_Start(self,Start):
+		self.add_query_param('Start',Start)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -61,29 +61,17 @@ class GetAutonomousNotifyEventsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_EventContext(self):
-		return self.get_query_params().get('EventContext')
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
 
-	def set_EventContext(self,EventContext):
-		self.add_query_param('EventContext',EventContext)
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
 
-	def get_MinLevel(self):
-		return self.get_query_params().get('MinLevel')
+	def get_End(self):
+		return self.get_query_params().get('End')
 
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
-
-	def get_PageOffset(self):
-		return self.get_query_params().get('PageOffset')
-
-	def set_PageOffset(self,PageOffset):
-		self.add_query_param('PageOffset',PageOffset)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_End(self,End):
+		self.add_query_param('End',End)
 
 	def get_NodeId(self):
 		return self.get_query_params().get('NodeId')

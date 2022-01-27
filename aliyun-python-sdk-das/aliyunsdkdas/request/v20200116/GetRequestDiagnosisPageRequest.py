@@ -20,28 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetResourceOptimizeHistoryListRequest(RpcRequest):
+class GetRequestDiagnosisPageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetResourceOptimizeHistoryList','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetRequestDiagnosisPage','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get___context(self):
-		return self.get_query_params().get('__context')
-
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_Signature(self):
-		return self.get_query_params().get('Signature')
-
-	def set_Signature(self,Signature):
-		self.add_query_param('Signature',Signature)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -55,29 +43,17 @@ class GetResourceOptimizeHistoryListRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_AccessKey(self):
-		return self.get_query_params().get('AccessKey')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_AccessKey(self,AccessKey):
-		self.add_query_param('AccessKey',AccessKey)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -85,8 +61,8 @@ class GetResourceOptimizeHistoryListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Page(self):
-		return self.get_query_params().get('Page')
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)

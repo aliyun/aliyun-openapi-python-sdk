@@ -20,49 +20,37 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetEventOverviewRequest(RpcRequest):
+class GetQueryOptimizeSolutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetEventOverview','das')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeSolution','das')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_SqlId(self):
+		return self.get_query_params().get('SqlId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_SqlId(self,SqlId):
+		self.add_query_param('SqlId',SqlId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_RuleIds(self):
+		return self.get_query_params().get('RuleIds')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_RuleIds(self,RuleIds):
+		self.add_query_param('RuleIds',RuleIds)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_MinLevel(self):
-		return self.get_query_params().get('MinLevel')
-
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
-
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
-
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)

@@ -31,35 +31,11 @@ class AddHDMInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_skipAuth(self):
-		return self.get_query_params().get('skipAuth')
-
-	def set_skipAuth(self,skipAuth):
-		self.add_query_param('skipAuth',skipAuth)
-
-	def get_signature(self):
-		return self.get_query_params().get('signature')
-
-	def set_signature(self,signature):
-		self.add_query_param('signature',signature)
-
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
 
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
 
 	def get_Password(self):
 		return self.get_query_params().get('Password')
@@ -67,23 +43,11 @@ class AddHDMInstanceRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
-	def get_accessKey(self):
-		return self.get_query_params().get('accessKey')
-
-	def set_accessKey(self,accessKey):
-		self.add_query_param('accessKey',accessKey)
-
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
-
-	def get_timestamp(self):
-		return self.get_query_params().get('timestamp')
-
-	def set_timestamp(self,timestamp):
-		self.add_query_param('timestamp',timestamp)
 
 	def get___context(self):
 		return self.get_query_params().get('__context')
