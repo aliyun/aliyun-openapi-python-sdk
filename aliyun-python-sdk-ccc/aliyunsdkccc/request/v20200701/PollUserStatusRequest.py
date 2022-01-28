@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class PollUserStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'PollUserStatus','CCC')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'PollUserStatus')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

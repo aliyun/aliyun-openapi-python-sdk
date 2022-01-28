@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ModifySkillLevelsOfUserRequest(RpcRequest):
+class GetCaseFileUploadUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ModifySkillLevelsOfUser')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'GetCaseFileUploadUrl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class ModifySkillLevelsOfUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SkillLevelList(self):
-		return self.get_query_params().get('SkillLevelList')
+	def get_FileName(self):
+		return self.get_query_params().get('FileName')
 
-	def set_SkillLevelList(self,SkillLevelList):
-		self.add_query_param('SkillLevelList',SkillLevelList)
+	def set_FileName(self,FileName):
+		self.add_query_param('FileName',FileName)
