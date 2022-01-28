@@ -25,14 +25,18 @@ class AddNetworkInterfaceToInstanceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AddNetworkInterfaceToInstance','ens')
 		self.set_method('POST')
 
-	def get_Networks(self):
+	def get_Networks(self): # String
 		return self.get_query_params().get('Networks')
 
-	def set_Networks(self,Networks):
-		self.add_query_param('Networks',Networks)
+	def set_Networks(self, Networks):  # String
+		self.add_query_param('Networks', Networks)
+	def get_AutoStart(self): # Boolean
+		return self.get_query_params().get('AutoStart')
 
-	def get_InstanceId(self):
+	def set_AutoStart(self, AutoStart):  # Boolean
+		self.add_query_param('AutoStart', AutoStart)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

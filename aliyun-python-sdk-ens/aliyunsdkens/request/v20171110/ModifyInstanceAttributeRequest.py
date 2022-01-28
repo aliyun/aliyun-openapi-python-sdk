@@ -25,26 +25,18 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyInstanceAttribute','ens')
 		self.set_method('POST')
 
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_InstanceId(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)

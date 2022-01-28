@@ -25,44 +25,38 @@ class DescribeVSwitchesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeVSwitches','ens')
 		self.set_method('POST')
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_OrderByParams(self):
+	def get_OrderByParams(self): # String
 		return self.get_query_params().get('OrderByParams')
 
-	def set_OrderByParams(self,OrderByParams):
-		self.add_query_param('OrderByParams',OrderByParams)
-
-	def get_EnsRegionId(self):
+	def set_OrderByParams(self, OrderByParams):  # String
+		self.add_query_param('OrderByParams', OrderByParams)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_VSwitchId(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
 
-	def get_VSwitchName(self):
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_VSwitchName(self): # String
 		return self.get_query_params().get('VSwitchName')
 
-	def set_VSwitchName(self,VSwitchName):
-		self.add_query_param('VSwitchName',VSwitchName)
+	def set_VSwitchName(self, VSwitchName):  # String
+		self.add_query_param('VSwitchName', VSwitchName)

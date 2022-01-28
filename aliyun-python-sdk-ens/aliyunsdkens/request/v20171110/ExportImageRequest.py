@@ -25,38 +25,28 @@ class ExportImageRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ExportImage','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_OSSRegionId(self):
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_OSSRegionId(self): # String
 		return self.get_query_params().get('OSSRegionId')
 
-	def set_OSSRegionId(self,OSSRegionId):
-		self.add_query_param('OSSRegionId',OSSRegionId)
-
-	def get_OSSBucket(self):
+	def set_OSSRegionId(self, OSSRegionId):  # String
+		self.add_query_param('OSSRegionId', OSSRegionId)
+	def get_OSSBucket(self): # String
 		return self.get_query_params().get('OSSBucket')
 
-	def set_OSSBucket(self,OSSBucket):
-		self.add_query_param('OSSBucket',OSSBucket)
-
-	def get_RoleName(self):
+	def set_OSSBucket(self, OSSBucket):  # String
+		self.add_query_param('OSSBucket', OSSBucket)
+	def get_RoleName(self): # String
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_OSSPrefix(self):
+	def set_RoleName(self, RoleName):  # String
+		self.add_query_param('RoleName', RoleName)
+	def get_OSSPrefix(self): # String
 		return self.get_query_params().get('OSSPrefix')
 
-	def set_OSSPrefix(self,OSSPrefix):
-		self.add_query_param('OSSPrefix',OSSPrefix)
+	def set_OSSPrefix(self, OSSPrefix):  # String
+		self.add_query_param('OSSPrefix', OSSPrefix)

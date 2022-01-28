@@ -25,50 +25,38 @@ class RevokeSecurityGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RevokeSecurityGroup','ens')
 		self.set_method('POST')
 
-	def get_SourcePortRange(self):
+	def get_SourcePortRange(self): # String
 		return self.get_query_params().get('SourcePortRange')
 
-	def set_SourcePortRange(self,SourcePortRange):
-		self.add_query_param('SourcePortRange',SourcePortRange)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_PortRange(self):
+	def set_SourcePortRange(self, SourcePortRange):  # String
+		self.add_query_param('SourcePortRange', SourcePortRange)
+	def get_PortRange(self): # String
 		return self.get_query_params().get('PortRange')
 
-	def set_PortRange(self,PortRange):
-		self.add_query_param('PortRange',PortRange)
-
-	def get_IpProtocol(self):
+	def set_PortRange(self, PortRange):  # String
+		self.add_query_param('PortRange', PortRange)
+	def get_IpProtocol(self): # String
 		return self.get_query_params().get('IpProtocol')
 
-	def set_IpProtocol(self,IpProtocol):
-		self.add_query_param('IpProtocol',IpProtocol)
-
-	def get_SourceCidrIp(self):
+	def set_IpProtocol(self, IpProtocol):  # String
+		self.add_query_param('IpProtocol', IpProtocol)
+	def get_SourceCidrIp(self): # String
 		return self.get_query_params().get('SourceCidrIp')
 
-	def set_SourceCidrIp(self,SourceCidrIp):
-		self.add_query_param('SourceCidrIp',SourceCidrIp)
-
-	def get_Priority(self):
+	def set_SourceCidrIp(self, SourceCidrIp):  # String
+		self.add_query_param('SourceCidrIp', SourceCidrIp)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
 
-	def get_Version(self):
-		return self.get_query_params().get('Version')
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
 
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)

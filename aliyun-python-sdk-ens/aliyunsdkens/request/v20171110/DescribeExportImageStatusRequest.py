@@ -25,14 +25,8 @@ class DescribeExportImageStatusRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeExportImageStatus','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)

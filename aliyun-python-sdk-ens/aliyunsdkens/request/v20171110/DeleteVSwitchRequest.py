@@ -25,14 +25,8 @@ class DeleteVSwitchRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteVSwitch','ens')
 		self.set_method('POST')
 
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_VSwitchId(self):
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)

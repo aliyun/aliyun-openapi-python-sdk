@@ -25,20 +25,13 @@ class DescribeEipAddressesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEipAddresses','ens')
 		self.set_method('POST')
 
-	def get_Eips(self):
+	def get_Eips(self): # String
 		return self.get_query_params().get('Eips')
 
-	def set_Eips(self,Eips):
-		self.add_query_param('Eips',Eips)
-
-	def get_EnsRegionId(self):
+	def set_Eips(self, Eips):  # String
+		self.add_query_param('Eips', Eips)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)

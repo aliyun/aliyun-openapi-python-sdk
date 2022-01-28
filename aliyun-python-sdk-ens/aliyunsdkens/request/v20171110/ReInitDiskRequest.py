@@ -25,20 +25,13 @@ class ReInitDiskRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ReInitDisk','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_DiskId(self):
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_DiskId(self): # String
 		return self.get_query_params().get('DiskId')
 
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)

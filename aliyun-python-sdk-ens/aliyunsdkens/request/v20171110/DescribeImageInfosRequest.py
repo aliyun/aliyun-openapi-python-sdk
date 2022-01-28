@@ -25,14 +25,8 @@ class DescribeImageInfosRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeImageInfos','ens')
 		self.set_method('POST')
 
-	def get_OsType(self):
+	def get_OsType(self): # String
 		return self.get_query_params().get('OsType')
 
-	def set_OsType(self,OsType):
-		self.add_query_param('OsType',OsType)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_OsType(self, OsType):  # String
+		self.add_query_param('OsType', OsType)

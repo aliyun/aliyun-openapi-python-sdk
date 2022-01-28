@@ -25,14 +25,8 @@ class DeleteKeyPairsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteKeyPairs','ens')
 		self.set_method('POST')
 
-	def get_KeyPairName(self):
+	def get_KeyPairName(self): # String
 		return self.get_query_params().get('KeyPairName')
 
-	def set_KeyPairName(self,KeyPairName):
-		self.add_query_param('KeyPairName',KeyPairName)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_KeyPairName(self, KeyPairName):  # String
+		self.add_query_param('KeyPairName', KeyPairName)

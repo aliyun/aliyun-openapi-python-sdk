@@ -25,26 +25,23 @@ class DescribeApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeApplication','ens')
 		self.set_method('POST')
 
-	def get_AppVersions(self):
+	def get_AppVersions(self): # String
 		return self.get_query_params().get('AppVersions')
 
-	def set_AppVersions(self,AppVersions):
-		self.add_query_param('AppVersions',AppVersions)
-
-	def get_OutDetailStatParams(self):
+	def set_AppVersions(self, AppVersions):  # String
+		self.add_query_param('AppVersions', AppVersions)
+	def get_OutDetailStatParams(self): # String
 		return self.get_query_params().get('OutDetailStatParams')
 
-	def set_OutDetailStatParams(self,OutDetailStatParams):
-		self.add_query_param('OutDetailStatParams',OutDetailStatParams)
-
-	def get_Level(self):
+	def set_OutDetailStatParams(self, OutDetailStatParams):  # String
+		self.add_query_param('OutDetailStatParams', OutDetailStatParams)
+	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_AppId(self):
+	def set_Level(self, Level):  # String
+		self.add_query_param('Level', Level)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

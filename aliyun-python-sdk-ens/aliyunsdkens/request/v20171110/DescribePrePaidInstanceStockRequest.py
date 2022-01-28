@@ -25,32 +25,23 @@ class DescribePrePaidInstanceStockRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribePrePaidInstanceStock','ens')
 		self.set_method('POST')
 
-	def get_InstanceSpec(self):
+	def get_InstanceSpec(self): # String
 		return self.get_query_params().get('InstanceSpec')
 
-	def set_InstanceSpec(self,InstanceSpec):
-		self.add_query_param('InstanceSpec',InstanceSpec)
-
-	def get_EnsRegionId(self):
+	def set_InstanceSpec(self, InstanceSpec):  # String
+		self.add_query_param('InstanceSpec', InstanceSpec)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_SystemDiskSize(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDiskSize')
 
-	def set_SystemDiskSize(self,SystemDiskSize):
-		self.add_query_param('SystemDiskSize',SystemDiskSize)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_DataDiskSize(self):
+	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
+		self.add_query_param('SystemDiskSize', SystemDiskSize)
+	def get_DataDiskSize(self): # Integer
 		return self.get_query_params().get('DataDiskSize')
 
-	def set_DataDiskSize(self,DataDiskSize):
-		self.add_query_param('DataDiskSize',DataDiskSize)
+	def set_DataDiskSize(self, DataDiskSize):  # Integer
+		self.add_query_param('DataDiskSize', DataDiskSize)

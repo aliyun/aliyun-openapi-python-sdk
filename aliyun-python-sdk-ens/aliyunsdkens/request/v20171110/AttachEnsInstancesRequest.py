@@ -25,20 +25,13 @@ class AttachEnsInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AttachEnsInstances','ens')
 		self.set_method('POST')
 
-	def get_Scripts(self):
+	def get_Scripts(self): # String
 		return self.get_query_params().get('Scripts')
 
-	def set_Scripts(self,Scripts):
-		self.add_query_param('Scripts',Scripts)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_InstanceId(self):
+	def set_Scripts(self, Scripts):  # String
+		self.add_query_param('Scripts', Scripts)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

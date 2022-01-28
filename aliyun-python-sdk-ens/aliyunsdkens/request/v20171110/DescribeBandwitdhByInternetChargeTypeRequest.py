@@ -25,32 +25,23 @@ class DescribeBandwitdhByInternetChargeTypeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeBandwitdhByInternetChargeType','ens')
 		self.set_method('POST')
 
-	def get_Isp(self):
+	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_StartTime(self):
+	def set_Isp(self, Isp):  # String
+		self.add_query_param('Isp', Isp)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_EnsRegionId(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_EndTime(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

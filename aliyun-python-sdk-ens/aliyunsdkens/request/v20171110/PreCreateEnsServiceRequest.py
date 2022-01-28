@@ -25,92 +25,73 @@ class PreCreateEnsServiceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'PreCreateEnsService','ens')
 		self.set_method('POST')
 
-	def get_BandwidthType(self):
+	def get_BandwidthType(self): # String
 		return self.get_query_params().get('BandwidthType')
 
-	def set_BandwidthType(self,BandwidthType):
-		self.add_query_param('BandwidthType',BandwidthType)
-
-	def get_SchedulingPriceStrategy(self):
-		return self.get_query_params().get('SchedulingPriceStrategy')
-
-	def set_SchedulingPriceStrategy(self,SchedulingPriceStrategy):
-		self.add_query_param('SchedulingPriceStrategy',SchedulingPriceStrategy)
-
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
-
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_InstanceSpec(self):
-		return self.get_query_params().get('InstanceSpec')
-
-	def set_InstanceSpec(self,InstanceSpec):
-		self.add_query_param('InstanceSpec',InstanceSpec)
-
-	def get_KeyPairName(self):
+	def set_BandwidthType(self, BandwidthType):  # String
+		self.add_query_param('BandwidthType', BandwidthType)
+	def get_KeyPairName(self): # String
 		return self.get_query_params().get('KeyPairName')
 
-	def set_KeyPairName(self,KeyPairName):
-		self.add_query_param('KeyPairName',KeyPairName)
-
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_Password(self):
+	def set_KeyPairName(self, KeyPairName):  # String
+		self.add_query_param('KeyPairName', KeyPairName)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_BuyResourcesDetail(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_BuyResourcesDetail(self): # String
 		return self.get_query_params().get('BuyResourcesDetail')
 
-	def set_BuyResourcesDetail(self,BuyResourcesDetail):
-		self.add_query_param('BuyResourcesDetail',BuyResourcesDetail)
-
-	def get_SystemDiskSize(self):
+	def set_BuyResourcesDetail(self, BuyResourcesDetail):  # String
+		self.add_query_param('BuyResourcesDetail', BuyResourcesDetail)
+	def get_SystemDiskSize(self): # String
 		return self.get_query_params().get('SystemDiskSize')
 
-	def set_SystemDiskSize(self,SystemDiskSize):
-		self.add_query_param('SystemDiskSize',SystemDiskSize)
-
-	def get_InstanceBandwithdLimit(self):
+	def set_SystemDiskSize(self, SystemDiskSize):  # String
+		self.add_query_param('SystemDiskSize', SystemDiskSize)
+	def get_InstanceBandwithdLimit(self): # String
 		return self.get_query_params().get('InstanceBandwithdLimit')
 
-	def set_InstanceBandwithdLimit(self,InstanceBandwithdLimit):
-		self.add_query_param('InstanceBandwithdLimit',InstanceBandwithdLimit)
-
-	def get_EnsServiceName(self):
+	def set_InstanceBandwithdLimit(self, InstanceBandwithdLimit):  # String
+		self.add_query_param('InstanceBandwithdLimit', InstanceBandwithdLimit)
+	def get_EnsServiceName(self): # String
 		return self.get_query_params().get('EnsServiceName')
 
-	def set_EnsServiceName(self,EnsServiceName):
-		self.add_query_param('EnsServiceName',EnsServiceName)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_NetLevel(self):
+	def set_EnsServiceName(self, EnsServiceName):  # String
+		self.add_query_param('EnsServiceName', EnsServiceName)
+	def get_NetLevel(self): # String
 		return self.get_query_params().get('NetLevel')
 
-	def set_NetLevel(self,NetLevel):
-		self.add_query_param('NetLevel',NetLevel)
-
-	def get_SchedulingStrategy(self):
-		return self.get_query_params().get('SchedulingStrategy')
-
-	def set_SchedulingStrategy(self,SchedulingStrategy):
-		self.add_query_param('SchedulingStrategy',SchedulingStrategy)
-
-	def get_DataDiskSize(self):
+	def set_NetLevel(self, NetLevel):  # String
+		self.add_query_param('NetLevel', NetLevel)
+	def get_DataDiskSize(self): # String
 		return self.get_query_params().get('DataDiskSize')
 
-	def set_DataDiskSize(self,DataDiskSize):
-		self.add_query_param('DataDiskSize',DataDiskSize)
+	def set_DataDiskSize(self, DataDiskSize):  # String
+		self.add_query_param('DataDiskSize', DataDiskSize)
+	def get_SchedulingPriceStrategy(self): # String
+		return self.get_query_params().get('SchedulingPriceStrategy')
+
+	def set_SchedulingPriceStrategy(self, SchedulingPriceStrategy):  # String
+		self.add_query_param('SchedulingPriceStrategy', SchedulingPriceStrategy)
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_InstanceSpec(self): # String
+		return self.get_query_params().get('InstanceSpec')
+
+	def set_InstanceSpec(self, InstanceSpec):  # String
+		self.add_query_param('InstanceSpec', InstanceSpec)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_SchedulingStrategy(self): # String
+		return self.get_query_params().get('SchedulingStrategy')
+
+	def set_SchedulingStrategy(self, SchedulingStrategy):  # String
+		self.add_query_param('SchedulingStrategy', SchedulingStrategy)

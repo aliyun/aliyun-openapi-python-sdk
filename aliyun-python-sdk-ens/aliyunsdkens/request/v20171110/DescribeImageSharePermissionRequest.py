@@ -25,20 +25,23 @@ class DescribeImageSharePermissionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeImageSharePermission','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_PageNumber(self):
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_AliyunId(self): # Long
+		return self.get_query_params().get('AliyunId')
+
+	def set_AliyunId(self, AliyunId):  # Long
+		self.add_query_param('AliyunId', AliyunId)

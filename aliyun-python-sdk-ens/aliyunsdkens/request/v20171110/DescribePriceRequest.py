@@ -25,50 +25,38 @@ class DescribePriceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribePrice','ens')
 		self.set_method('POST')
 
-	def get_EnsRegionId(self):
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_DataDisk1Size(self):
-		return self.get_query_params().get('DataDisk.1.Size')
-
-	def set_DataDisk1Size(self,DataDisk1Size):
-		self.add_query_param('DataDisk.1.Size',DataDisk1Size)
-
-	def get_Period(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_Quantity(self):
-		return self.get_query_params().get('Quantity')
-
-	def set_Quantity(self,Quantity):
-		self.add_query_param('Quantity',Quantity)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_SystemDiskSize(self):
-		return self.get_query_params().get('SystemDisk.Size')
-
-	def set_SystemDiskSize(self,SystemDiskSize):
-		self.add_query_param('SystemDisk.Size',SystemDiskSize)
-
-	def get_InternetChargeType(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
+	def set_InternetChargeType(self, InternetChargeType):  # String
+		self.add_query_param('InternetChargeType', InternetChargeType)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_DataDisk1Size(self): # Integer
+		return self.get_query_params().get('DataDisk.1.Size')
+
+	def set_DataDisk1Size(self, DataDisk1Size):  # Integer
+		self.add_query_param('DataDisk.1.Size', DataDisk1Size)
+	def get_Quantity(self): # Integer
+		return self.get_query_params().get('Quantity')
+
+	def set_Quantity(self, Quantity):  # Integer
+		self.add_query_param('Quantity', Quantity)
+	def get_SystemDiskSize(self): # Integer
+		return self.get_query_params().get('SystemDisk.Size')
+
+	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
+		self.add_query_param('SystemDisk.Size', SystemDiskSize)

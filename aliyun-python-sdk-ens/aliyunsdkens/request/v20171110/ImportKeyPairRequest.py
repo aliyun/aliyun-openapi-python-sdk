@@ -25,20 +25,13 @@ class ImportKeyPairRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ImportKeyPair','ens')
 		self.set_method('POST')
 
-	def get_KeyPairName(self):
+	def get_KeyPairName(self): # String
 		return self.get_query_params().get('KeyPairName')
 
-	def set_KeyPairName(self,KeyPairName):
-		self.add_query_param('KeyPairName',KeyPairName)
-
-	def get_PublicKeyBody(self):
+	def set_KeyPairName(self, KeyPairName):  # String
+		self.add_query_param('KeyPairName', KeyPairName)
+	def get_PublicKeyBody(self): # String
 		return self.get_query_params().get('PublicKeyBody')
 
-	def set_PublicKeyBody(self,PublicKeyBody):
-		self.add_query_param('PublicKeyBody',PublicKeyBody)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_PublicKeyBody(self, PublicKeyBody):  # String
+		self.add_query_param('PublicKeyBody', PublicKeyBody)

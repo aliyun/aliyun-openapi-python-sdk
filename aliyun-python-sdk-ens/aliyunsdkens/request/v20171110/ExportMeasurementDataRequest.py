@@ -25,20 +25,13 @@ class ExportMeasurementDataRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ExportMeasurementData','ens')
 		self.set_method('POST')
 
-	def get_StartDate(self):
+	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_EndDate(self):
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)

@@ -25,44 +25,33 @@ class DescribeEnsRegionIdResourceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsRegionIdResource','ens')
 		self.set_method('POST')
 
-	def get_Isp(self):
+	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_StartTime(self):
+	def set_Isp(self, Isp):  # String
+		self.add_query_param('Isp', Isp)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNumber(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_OrderByParams(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_OrderByParams(self): # String
 		return self.get_query_params().get('OrderByParams')
 
-	def set_OrderByParams(self,OrderByParams):
-		self.add_query_param('OrderByParams',OrderByParams)
-
-	def get_PageSize(self):
+	def set_OrderByParams(self, OrderByParams):  # String
+		self.add_query_param('OrderByParams', OrderByParams)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

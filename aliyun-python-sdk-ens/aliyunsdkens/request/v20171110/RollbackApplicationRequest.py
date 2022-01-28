@@ -25,26 +25,23 @@ class RollbackApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RollbackApplication','ens')
 		self.set_method('POST')
 
-	def get_Timeout(self):
+	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
-
-	def get_FromAppVersion(self):
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_query_param('Timeout', Timeout)
+	def get_FromAppVersion(self): # String
 		return self.get_query_params().get('FromAppVersion')
 
-	def set_FromAppVersion(self,FromAppVersion):
-		self.add_query_param('FromAppVersion',FromAppVersion)
-
-	def get_AppId(self):
+	def set_FromAppVersion(self, FromAppVersion):  # String
+		self.add_query_param('FromAppVersion', FromAppVersion)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ToAppVersion(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_ToAppVersion(self): # String
 		return self.get_query_params().get('ToAppVersion')
 
-	def set_ToAppVersion(self,ToAppVersion):
-		self.add_query_param('ToAppVersion',ToAppVersion)
+	def set_ToAppVersion(self, ToAppVersion):  # String
+		self.add_query_param('ToAppVersion', ToAppVersion)

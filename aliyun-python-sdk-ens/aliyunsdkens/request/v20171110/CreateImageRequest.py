@@ -25,32 +25,23 @@ class CreateImageRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateImage','ens')
 		self.set_method('POST')
 
-	def get_DeleteAfterImageUpload(self):
+	def get_DeleteAfterImageUpload(self): # String
 		return self.get_query_params().get('DeleteAfterImageUpload')
 
-	def set_DeleteAfterImageUpload(self,DeleteAfterImageUpload):
-		self.add_query_param('DeleteAfterImageUpload',DeleteAfterImageUpload)
-
-	def get_ImageName(self):
+	def set_DeleteAfterImageUpload(self, DeleteAfterImageUpload):  # String
+		self.add_query_param('DeleteAfterImageUpload', DeleteAfterImageUpload)
+	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
-
-	def get_product(self):
+	def set_ImageName(self, ImageName):  # String
+		self.add_query_param('ImageName', ImageName)
+	def get_product(self): # String
 		return self.get_query_params().get('product')
 
-	def set_product(self,product):
-		self.add_query_param('product',product)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_InstanceId(self):
+	def set_product(self, product):  # String
+		self.add_query_param('product', product)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

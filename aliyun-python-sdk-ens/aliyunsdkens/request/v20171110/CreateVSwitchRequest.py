@@ -25,26 +25,28 @@ class CreateVSwitchRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateVSwitch','ens')
 		self.set_method('POST')
 
-	def get_EnsRegionId(self):
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_VSwitchName(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_VSwitchName(self): # String
 		return self.get_query_params().get('VSwitchName')
 
-	def set_VSwitchName(self,VSwitchName):
-		self.add_query_param('VSwitchName',VSwitchName)
-
-	def get_CidrBlock(self):
+	def set_VSwitchName(self, VSwitchName):  # String
+		self.add_query_param('VSwitchName', VSwitchName)
+	def get_CidrBlock(self): # String
 		return self.get_query_params().get('CidrBlock')
 
-	def set_CidrBlock(self,CidrBlock):
-		self.add_query_param('CidrBlock',CidrBlock)
+	def set_CidrBlock(self, CidrBlock):  # String
+		self.add_query_param('CidrBlock', CidrBlock)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
+
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)

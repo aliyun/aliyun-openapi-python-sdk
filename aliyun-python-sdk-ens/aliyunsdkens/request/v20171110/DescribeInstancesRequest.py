@@ -25,86 +25,83 @@ class DescribeInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstances','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
-
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_SearchKey(self):
-		return self.get_query_params().get('SearchKey')
-
-	def set_SearchKey(self,SearchKey):
-		self.add_query_param('SearchKey',SearchKey)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_OrderByParams(self):
+	def get_OrderByParams(self): # String
 		return self.get_query_params().get('OrderByParams')
 
-	def set_OrderByParams(self,OrderByParams):
-		self.add_query_param('OrderByParams',OrderByParams)
-
-	def get_EnsRegionId(self):
+	def set_OrderByParams(self, OrderByParams):  # String
+		self.add_query_param('OrderByParams', OrderByParams)
+	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EnsRegionIds(self):
-		return self.get_query_params().get('EnsRegionIds')
-
-	def set_EnsRegionIds(self,EnsRegionIds):
-		self.add_query_param('EnsRegionIds',EnsRegionIds)
-
-	def get_InstanceResourceType(self):
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_InstanceResourceType(self): # String
 		return self.get_query_params().get('InstanceResourceType')
 
-	def set_InstanceResourceType(self,InstanceResourceType):
-		self.add_query_param('InstanceResourceType',InstanceResourceType)
-
-	def get_EnsServiceId(self):
+	def set_InstanceResourceType(self, InstanceResourceType):  # String
+		self.add_query_param('InstanceResourceType', InstanceResourceType)
+	def get_EnsServiceId(self): # String
 		return self.get_query_params().get('EnsServiceId')
 
-	def set_EnsServiceId(self,EnsServiceId):
-		self.add_query_param('EnsServiceId',EnsServiceId)
+	def set_EnsServiceId(self, EnsServiceId):  # String
+		self.add_query_param('EnsServiceId', EnsServiceId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_InstanceId(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_InstanceIds(self):
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
 
-	def get_Status(self):
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_SearchKey(self): # String
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_query_param('SearchKey', SearchKey)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_EnsRegionIds(self): # String
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # String
+		self.add_query_param('EnsRegionIds', EnsRegionIds)

@@ -25,20 +25,18 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyImageSharePermission','ens')
 		self.set_method('POST')
 
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_RemoveAccounts(self):
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_RemoveAccounts(self): # String
 		return self.get_query_params().get('RemoveAccounts')
 
-	def set_RemoveAccounts(self,RemoveAccounts):
-		self.add_query_param('RemoveAccounts',RemoveAccounts)
-
-	def get_AddAccounts(self):
+	def set_RemoveAccounts(self, RemoveAccounts):  # String
+		self.add_query_param('RemoveAccounts', RemoveAccounts)
+	def get_AddAccounts(self): # String
 		return self.get_query_params().get('AddAccounts')
 
-	def set_AddAccounts(self,AddAccounts):
-		self.add_query_param('AddAccounts',AddAccounts)
+	def set_AddAccounts(self, AddAccounts):  # String
+		self.add_query_param('AddAccounts', AddAccounts)

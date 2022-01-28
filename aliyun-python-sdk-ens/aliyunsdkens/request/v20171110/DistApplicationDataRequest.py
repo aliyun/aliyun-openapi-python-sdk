@@ -25,20 +25,18 @@ class DistApplicationDataRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DistApplicationData','ens')
 		self.set_method('POST')
 
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_query_params().get('Data')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
-
-	def get_DistStrategy(self):
+	def set_Data(self, Data):  # String
+		self.add_query_param('Data', Data)
+	def get_DistStrategy(self): # String
 		return self.get_query_params().get('DistStrategy')
 
-	def set_DistStrategy(self,DistStrategy):
-		self.add_query_param('DistStrategy',DistStrategy)
-
-	def get_AppId(self):
+	def set_DistStrategy(self, DistStrategy):  # String
+		self.add_query_param('DistStrategy', DistStrategy)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

@@ -25,26 +25,23 @@ class ModifyEpnInstanceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyEpnInstance','ens')
 		self.set_method('POST')
 
-	def get_NetworkingModel(self):
+	def get_NetworkingModel(self): # String
 		return self.get_query_params().get('NetworkingModel')
 
-	def set_NetworkingModel(self,NetworkingModel):
-		self.add_query_param('NetworkingModel',NetworkingModel)
-
-	def get_InternetMaxBandwidthOut(self):
+	def set_NetworkingModel(self, NetworkingModel):  # String
+		self.add_query_param('NetworkingModel', NetworkingModel)
+	def get_InternetMaxBandwidthOut(self): # Integer
 		return self.get_query_params().get('InternetMaxBandwidthOut')
 
-	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
-		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
-
-	def get_EPNInstanceId(self):
+	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
+		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_EPNInstanceId(self): # String
 		return self.get_query_params().get('EPNInstanceId')
 
-	def set_EPNInstanceId(self,EPNInstanceId):
-		self.add_query_param('EPNInstanceId',EPNInstanceId)
-
-	def get_EPNInstanceName(self):
+	def set_EPNInstanceId(self, EPNInstanceId):  # String
+		self.add_query_param('EPNInstanceId', EPNInstanceId)
+	def get_EPNInstanceName(self): # String
 		return self.get_query_params().get('EPNInstanceName')
 
-	def set_EPNInstanceName(self,EPNInstanceName):
-		self.add_query_param('EPNInstanceName',EPNInstanceName)
+	def set_EPNInstanceName(self, EPNInstanceName):  # String
+		self.add_query_param('EPNInstanceName', EPNInstanceName)

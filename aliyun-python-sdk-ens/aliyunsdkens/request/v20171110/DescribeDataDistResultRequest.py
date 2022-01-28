@@ -25,50 +25,43 @@ class DescribeDataDistResultRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeDataDistResult','ens')
 		self.set_method('POST')
 
-	def get_MaxDate(self):
-		return self.get_query_params().get('MaxDate')
-
-	def set_MaxDate(self,MaxDate):
-		self.add_query_param('MaxDate',MaxDate)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_MinDate(self):
-		return self.get_query_params().get('MinDate')
-
-	def set_MinDate(self,MinDate):
-		self.add_query_param('MinDate',MinDate)
-
-	def get_DataVersions(self):
+	def get_DataVersions(self): # String
 		return self.get_query_params().get('DataVersions')
 
-	def set_DataVersions(self,DataVersions):
-		self.add_query_param('DataVersions',DataVersions)
-
-	def get_InstanceIds(self):
+	def set_DataVersions(self, DataVersions):  # String
+		self.add_query_param('DataVersions', DataVersions)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_MaxDate(self): # String
+		return self.get_query_params().get('MaxDate')
 
-	def get_AppId(self):
+	def set_MaxDate(self, MaxDate):  # String
+		self.add_query_param('MaxDate', MaxDate)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_MinDate(self): # String
+		return self.get_query_params().get('MinDate')
+
+	def set_MinDate(self, MinDate):  # String
+		self.add_query_param('MinDate', MinDate)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_DataNames(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_DataNames(self): # String
 		return self.get_query_params().get('DataNames')
 
-	def set_DataNames(self,DataNames):
-		self.add_query_param('DataNames',DataNames)
+	def set_DataNames(self, DataNames):  # String
+		self.add_query_param('DataNames', DataNames)

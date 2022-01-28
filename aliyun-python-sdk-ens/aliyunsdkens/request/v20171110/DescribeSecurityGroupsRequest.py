@@ -25,32 +25,23 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSecurityGroups','ens')
 		self.set_method('POST')
 
-	def get_SecurityGroupId(self):
+	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_SecurityGroupName(self):
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_SecurityGroupName(self): # String
 		return self.get_query_params().get('SecurityGroupName')
 
-	def set_SecurityGroupName(self,SecurityGroupName):
-		self.add_query_param('SecurityGroupName',SecurityGroupName)
-
-	def get_PageNumber(self):
+	def set_SecurityGroupName(self, SecurityGroupName):  # String
+		self.add_query_param('SecurityGroupName', SecurityGroupName)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

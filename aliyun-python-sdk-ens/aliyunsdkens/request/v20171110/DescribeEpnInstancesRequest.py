@@ -25,26 +25,23 @@ class DescribeEpnInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEpnInstances','ens')
 		self.set_method('POST')
 
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EPNInstanceId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_EPNInstanceId(self): # String
 		return self.get_query_params().get('EPNInstanceId')
 
-	def set_EPNInstanceId(self,EPNInstanceId):
-		self.add_query_param('EPNInstanceId',EPNInstanceId)
-
-	def get_EPNInstanceName(self):
+	def set_EPNInstanceId(self, EPNInstanceId):  # String
+		self.add_query_param('EPNInstanceId', EPNInstanceId)
+	def get_EPNInstanceName(self): # String
 		return self.get_query_params().get('EPNInstanceName')
 
-	def set_EPNInstanceName(self,EPNInstanceName):
-		self.add_query_param('EPNInstanceName',EPNInstanceName)
+	def set_EPNInstanceName(self, EPNInstanceName):  # String
+		self.add_query_param('EPNInstanceName', EPNInstanceName)

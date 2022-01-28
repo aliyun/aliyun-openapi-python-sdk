@@ -25,20 +25,13 @@ class CreateEnsServiceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateEnsService','ens')
 		self.set_method('POST')
 
-	def get_EnsServiceId(self):
+	def get_EnsServiceId(self): # String
 		return self.get_query_params().get('EnsServiceId')
 
-	def set_EnsServiceId(self,EnsServiceId):
-		self.add_query_param('EnsServiceId',EnsServiceId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_OrderType(self):
+	def set_EnsServiceId(self, EnsServiceId):  # String
+		self.add_query_param('EnsServiceId', EnsServiceId)
+	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)
