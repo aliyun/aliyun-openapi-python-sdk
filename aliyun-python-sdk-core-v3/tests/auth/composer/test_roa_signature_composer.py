@@ -40,13 +40,14 @@ class TestRoaSignatureComposer(unittest.TestCase):
                                                                  'Date': 'date str'}, {}),
                          "GET\napplication/json\nhash\ntext/plain\ndate str\n/")
         headers = {'Accept': 'application/json', 'Content-MD5': 'hash',
-                   'Content-Type': 'text/plain', 'Date': 'date str'}
+                   'Content-Type': 'text/plain', 'Date': 'date str',
+                   'x-acs-test': 'acs str', 'xx-x-acs-test': 'no sign'}
         queries = {'key': 'value'}
         self.assertEqual(compose_string_to_sign('GET', queries, "/", headers, {}),
-                         "GET\napplication/json\nhash\ntext/plain\ndate str\n/?key=value")
+                         "GET\napplication/json\nhash\ntext/plain\ndate str\nx-acs-test:acs str\n/?key=value")
         queries = {'key': 'value', 'none': None}
         self.assertEqual(compose_string_to_sign('GET', queries, "/", headers, {}),
-                         "GET\napplication/json\nhash\ntext/plain\ndate str\n/?key=value&none")
+                         "GET\napplication/json\nhash\ntext/plain\ndate str\nx-acs-test:acs str\n/?key=value&none")
 
     def test_build_canonical_headers(self):
         self.assertEqual(build_canonical_headers({}, 'x-acs-'), '')
@@ -55,7 +56,7 @@ class TestRoaSignatureComposer(unittest.TestCase):
         self.assertEqual(build_canonical_headers(
             {'key': 'value', 'x-acs-client': 'client'}, 'x-acs-'), 'x-acs-client:client\n')
         self.assertEqual(build_canonical_headers({'key': 'value', 'x-acs-client': 'client',
-                                                  'x-acs-abc': 'abc-value'}, 'x-acs-'),
+                                                  'x-acs-abc': 'abc-value', 'xx-x-acs-abc': 'no-sign-value'}, 'x-acs-'),
                          'x-acs-abc:abc-value\nx-acs-client:client\n')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")

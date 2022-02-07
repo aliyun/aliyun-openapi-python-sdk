@@ -91,7 +91,7 @@ def build_canonical_headers(headers, header_begin):
     result = ""
     unsort_map = dict()
     for (key, value) in iteritems(headers):
-        if key.lower().find(header_begin) >= 0:
+        if key.lower().startswith(header_begin):
             unsort_map[key.lower()] = value
     sort_map = sorted(iteritems(unsort_map), key=lambda d: d[0])
     for (key, value) in sort_map:
