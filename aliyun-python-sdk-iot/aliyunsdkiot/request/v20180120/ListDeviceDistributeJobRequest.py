@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class ListDeviceDistributeJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListDeviceDistributeJob','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListDeviceDistributeJob')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -54,6 +54,12 @@ class ListDeviceDistributeJobRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
 	def get_TargetUid(self):
 		return self.get_query_params().get('TargetUid')

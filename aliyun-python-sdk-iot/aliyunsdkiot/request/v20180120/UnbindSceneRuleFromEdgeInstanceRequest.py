@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class UnbindSceneRuleFromEdgeInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UnbindSceneRuleFromEdgeInstance','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UnbindSceneRuleFromEdgeInstance')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
