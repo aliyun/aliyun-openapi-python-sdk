@@ -23,70 +23,61 @@ from aliyunsdkdas.endpoint import endpoint_data
 class UpdateAutoResourceOptimizeConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'UpdateAutoResourceOptimizeConfig','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'UpdateAutoResourceOptimizeConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get___context(self):
+	def get___context(self): # String
 		return self.get_query_params().get('__context')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_Signature(self):
+	def set___context(self, __context):  # String
+		self.add_query_param('__context', __context)
+	def get_Signature(self): # String
 		return self.get_query_params().get('Signature')
 
-	def set_Signature(self,Signature):
-		self.add_query_param('Signature',Signature)
-
-	def get_AutoDefragment(self):
+	def set_Signature(self, Signature):  # String
+		self.add_query_param('Signature', Signature)
+	def get_AutoDefragment(self): # Integer
 		return self.get_query_params().get('AutoDefragment')
 
-	def set_AutoDefragment(self,AutoDefragment):
-		self.add_query_param('AutoDefragment',AutoDefragment)
-
-	def get_AutoDuplicateIndexDelete(self):
+	def set_AutoDefragment(self, AutoDefragment):  # Integer
+		self.add_query_param('AutoDefragment', AutoDefragment)
+	def get_AutoDuplicateIndexDelete(self): # Integer
 		return self.get_query_params().get('AutoDuplicateIndexDelete')
 
-	def set_AutoDuplicateIndexDelete(self,AutoDuplicateIndexDelete):
-		self.add_query_param('AutoDuplicateIndexDelete',AutoDuplicateIndexDelete)
-
-	def get_UserId(self):
+	def set_AutoDuplicateIndexDelete(self, AutoDuplicateIndexDelete):  # Integer
+		self.add_query_param('AutoDuplicateIndexDelete', AutoDuplicateIndexDelete)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_InstanceId(self):
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AccessKey(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AccessKey(self): # String
 		return self.get_query_params().get('AccessKey')
 
-	def set_AccessKey(self,AccessKey):
-		self.add_query_param('AccessKey',AccessKey)
-
-	def get_TableSpaceSize(self):
+	def set_AccessKey(self, AccessKey):  # String
+		self.add_query_param('AccessKey', AccessKey)
+	def get_TableSpaceSize(self): # Float
 		return self.get_query_params().get('TableSpaceSize')
 
-	def set_TableSpaceSize(self,TableSpaceSize):
-		self.add_query_param('TableSpaceSize',TableSpaceSize)
-
-	def get_TableFragmentationRatio(self):
+	def set_TableSpaceSize(self, TableSpaceSize):  # Float
+		self.add_query_param('TableSpaceSize', TableSpaceSize)
+	def get_TableFragmentationRatio(self): # Float
 		return self.get_query_params().get('TableFragmentationRatio')
 
-	def set_TableFragmentationRatio(self,TableFragmentationRatio):
-		self.add_query_param('TableFragmentationRatio',TableFragmentationRatio)
+	def set_TableFragmentationRatio(self, TableFragmentationRatio):  # Float
+		self.add_query_param('TableFragmentationRatio', TableFragmentationRatio)

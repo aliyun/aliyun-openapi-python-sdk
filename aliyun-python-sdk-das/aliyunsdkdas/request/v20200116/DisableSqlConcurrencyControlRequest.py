@@ -23,28 +23,26 @@ from aliyunsdkdas.endpoint import endpoint_data
 class DisableSqlConcurrencyControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DisableSqlConcurrencyControl','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DisableSqlConcurrencyControl')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ItemId(self):
+	def get_ItemId(self): # Long
 		return self.get_query_params().get('ItemId')
 
-	def set_ItemId(self,ItemId):
-		self.add_query_param('ItemId',ItemId)
-
-	def get_ConsoleContext(self):
+	def set_ItemId(self, ItemId):  # Long
+		self.add_query_param('ItemId', ItemId)
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -23,40 +23,31 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetQueryOptimizeExecErrorSampleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeExecErrorSample','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeExecErrorSample')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SqlId(self):
+	def get_SqlId(self): # String
 		return self.get_query_params().get('SqlId')
 
-	def set_SqlId(self,SqlId):
-		self.add_query_param('SqlId',SqlId)
-
-	def get_ConsoleContext(self):
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_SqlId(self, SqlId):  # String
+		self.add_query_param('SqlId', SqlId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Engine(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_Time(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_Time(self): # String
 		return self.get_query_params().get('Time')
 
-	def set_Time(self,Time):
-		self.add_query_param('Time',Time)
+	def set_Time(self, Time):  # String
+		self.add_query_param('Time', Time)

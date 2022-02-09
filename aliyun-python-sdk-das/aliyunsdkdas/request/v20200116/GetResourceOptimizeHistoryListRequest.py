@@ -23,70 +23,61 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetResourceOptimizeHistoryListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetResourceOptimizeHistoryList','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetResourceOptimizeHistoryList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get___context(self):
+	def get___context(self): # String
 		return self.get_query_params().get('__context')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_Signature(self):
+	def set___context(self, __context):  # String
+		self.add_query_param('__context', __context)
+	def get_Signature(self): # String
 		return self.get_query_params().get('Signature')
 
-	def set_Signature(self,Signature):
-		self.add_query_param('Signature',Signature)
-
-	def get_EndTime(self):
+	def set_Signature(self, Signature):  # String
+		self.add_query_param('Signature', Signature)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_UserId(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_InstanceId(self):
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AccessKey(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AccessKey(self): # String
 		return self.get_query_params().get('AccessKey')
 
-	def set_AccessKey(self,AccessKey):
-		self.add_query_param('AccessKey',AccessKey)
-
-	def get_PageSize(self):
+	def set_AccessKey(self, AccessKey):  # String
+		self.add_query_param('AccessKey', AccessKey)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Page(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)

@@ -23,40 +23,36 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetSqlOptimizeAdviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetSqlOptimizeAdvice','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetSqlOptimizeAdvice')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndDt(self):
+	def get_EndDt(self): # String
 		return self.get_query_params().get('EndDt')
 
-	def set_EndDt(self,EndDt):
-		self.add_query_param('EndDt',EndDt)
-
-	def get_ConsoleContext(self):
+	def set_EndDt(self, EndDt):  # String
+		self.add_query_param('EndDt', EndDt)
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_Engine(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_InstanceIds(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_StartDt(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_StartDt(self): # String
 		return self.get_query_params().get('StartDt')
 
-	def set_StartDt(self,StartDt):
-		self.add_query_param('StartDt',StartDt)
+	def set_StartDt(self, StartDt):  # String
+		self.add_query_param('StartDt', StartDt)

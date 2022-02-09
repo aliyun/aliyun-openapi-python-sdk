@@ -23,28 +23,26 @@ from aliyunsdkdas.endpoint import endpoint_data
 class DescribeHotBigKeysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeHotBigKeys','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeHotBigKeys')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConsoleContext(self):
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NodeId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)

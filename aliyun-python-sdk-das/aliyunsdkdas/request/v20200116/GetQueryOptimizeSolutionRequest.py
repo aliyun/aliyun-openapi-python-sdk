@@ -23,34 +23,26 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetQueryOptimizeSolutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeSolution','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeSolution')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SqlId(self):
+	def get_SqlId(self): # String
 		return self.get_query_params().get('SqlId')
 
-	def set_SqlId(self,SqlId):
-		self.add_query_param('SqlId',SqlId)
-
-	def get_ConsoleContext(self):
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_RuleIds(self):
+	def set_SqlId(self, SqlId):  # String
+		self.add_query_param('SqlId', SqlId)
+	def get_RuleIds(self): # String
 		return self.get_query_params().get('RuleIds')
 
-	def set_RuleIds(self,RuleIds):
-		self.add_query_param('RuleIds',RuleIds)
-
-	def get_Engine(self):
+	def set_RuleIds(self, RuleIds):  # String
+		self.add_query_param('RuleIds', RuleIds)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)

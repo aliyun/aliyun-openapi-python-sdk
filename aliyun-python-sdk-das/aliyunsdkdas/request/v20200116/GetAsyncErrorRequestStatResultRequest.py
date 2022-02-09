@@ -23,58 +23,51 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetAsyncErrorRequestStatResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAsyncErrorRequestStatResult','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAsyncErrorRequestStatResult')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SqlIdList(self):
+	def get_SqlIdList(self): # String
 		return self.get_query_params().get('SqlIdList')
 
-	def set_SqlIdList(self,SqlIdList):
-		self.add_query_param('SqlIdList',SqlIdList)
-
-	def get_Role(self):
+	def set_SqlIdList(self, SqlIdList):  # String
+		self.add_query_param('SqlIdList', SqlIdList)
+	def get_Role(self): # String
 		return self.get_query_params().get('Role')
 
-	def set_Role(self,Role):
-		self.add_query_param('Role',Role)
-
-	def get_Start(self):
+	def set_Role(self, Role):  # String
+		self.add_query_param('Role', Role)
+	def get_Start(self): # String
 		return self.get_query_params().get('Start')
 
-	def set_Start(self,Start):
-		self.add_query_param('Start',Start)
-
-	def get_ConsoleContext(self):
+	def set_Start(self, Start):  # String
+		self.add_query_param('Start', Start)
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DbName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_End(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_End(self): # String
 		return self.get_query_params().get('End')
 
-	def set_End(self,End):
-		self.add_query_param('End',End)
-
-	def get_NodeId(self):
+	def set_End(self, End):  # String
+		self.add_query_param('End', End)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)

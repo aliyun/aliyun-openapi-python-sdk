@@ -23,46 +23,41 @@ from aliyunsdkdas.endpoint import endpoint_data
 class EnableSqlConcurrencyControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'EnableSqlConcurrencyControl','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'EnableSqlConcurrencyControl')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SqlType(self):
+	def get_SqlType(self): # String
 		return self.get_query_params().get('SqlType')
 
-	def set_SqlType(self,SqlType):
-		self.add_query_param('SqlType',SqlType)
-
-	def get_SqlKeywords(self):
+	def set_SqlType(self, SqlType):  # String
+		self.add_query_param('SqlType', SqlType)
+	def get_SqlKeywords(self): # String
 		return self.get_query_params().get('SqlKeywords')
 
-	def set_SqlKeywords(self,SqlKeywords):
-		self.add_query_param('SqlKeywords',SqlKeywords)
-
-	def get_ConsoleContext(self):
+	def set_SqlKeywords(self, SqlKeywords):  # String
+		self.add_query_param('SqlKeywords', SqlKeywords)
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ConcurrencyControlTime(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ConcurrencyControlTime(self): # Long
 		return self.get_query_params().get('ConcurrencyControlTime')
 
-	def set_ConcurrencyControlTime(self,ConcurrencyControlTime):
-		self.add_query_param('ConcurrencyControlTime',ConcurrencyControlTime)
-
-	def get_MaxConcurrency(self):
+	def set_ConcurrencyControlTime(self, ConcurrencyControlTime):  # Long
+		self.add_query_param('ConcurrencyControlTime', ConcurrencyControlTime)
+	def get_MaxConcurrency(self): # Long
 		return self.get_query_params().get('MaxConcurrency')
 
-	def set_MaxConcurrency(self,MaxConcurrency):
-		self.add_query_param('MaxConcurrency',MaxConcurrency)
+	def set_MaxConcurrency(self, MaxConcurrency):  # Long
+		self.add_query_param('MaxConcurrency', MaxConcurrency)

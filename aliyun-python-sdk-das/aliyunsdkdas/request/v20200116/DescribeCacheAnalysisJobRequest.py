@@ -23,22 +23,21 @@ from aliyunsdkdas.endpoint import endpoint_data
 class DescribeCacheAnalysisJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeCacheAnalysisJob','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeCacheAnalysisJob')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobId(self):
+	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_InstanceId(self):
+	def set_JobId(self, JobId):  # String
+		self.add_query_param('JobId', JobId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

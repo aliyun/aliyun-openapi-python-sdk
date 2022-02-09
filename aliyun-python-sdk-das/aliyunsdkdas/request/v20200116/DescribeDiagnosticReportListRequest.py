@@ -23,40 +23,36 @@ from aliyunsdkdas.endpoint import endpoint_data
 class DescribeDiagnosticReportListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeDiagnosticReportList','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeDiagnosticReportList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNo(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNo(self): # String
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
+	def set_PageNo(self, PageNo):  # String
+		self.add_query_param('PageNo', PageNo)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DBInstanceId(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)

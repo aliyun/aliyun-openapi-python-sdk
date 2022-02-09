@@ -23,64 +23,56 @@ from aliyunsdkdas.endpoint import endpoint_data
 class StopOrRollbackOptimizeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'StopOrRollbackOptimizeTask','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'StopOrRollbackOptimizeTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StopOrRollback(self):
+	def get_StopOrRollback(self): # String
 		return self.get_query_params().get('StopOrRollback')
 
-	def set_StopOrRollback(self,StopOrRollback):
-		self.add_query_param('StopOrRollback',StopOrRollback)
-
-	def get_TaskType(self):
+	def set_StopOrRollback(self, StopOrRollback):  # String
+		self.add_query_param('StopOrRollback', StopOrRollback)
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get___context(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get___context(self): # String
 		return self.get_query_params().get('__context')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_Signature(self):
+	def set___context(self, __context):  # String
+		self.add_query_param('__context', __context)
+	def get_Signature(self): # String
 		return self.get_query_params().get('Signature')
 
-	def set_Signature(self,Signature):
-		self.add_query_param('Signature',Signature)
-
-	def get_UserId(self):
+	def set_Signature(self, Signature):  # String
+		self.add_query_param('Signature', Signature)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_InstanceId(self):
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AccessKey(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AccessKey(self): # String
 		return self.get_query_params().get('AccessKey')
 
-	def set_AccessKey(self,AccessKey):
-		self.add_query_param('AccessKey',AccessKey)
-
-	def get_TaskUuid(self):
+	def set_AccessKey(self, AccessKey):  # String
+		self.add_query_param('AccessKey', AccessKey)
+	def get_TaskUuid(self): # String
 		return self.get_query_params().get('TaskUuid')
 
-	def set_TaskUuid(self,TaskUuid):
-		self.add_query_param('TaskUuid',TaskUuid)
+	def set_TaskUuid(self, TaskUuid):  # String
+		self.add_query_param('TaskUuid', TaskUuid)

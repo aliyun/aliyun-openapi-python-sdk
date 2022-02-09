@@ -23,70 +23,61 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetAutonomousNotifyEventsInRangeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAutonomousNotifyEventsInRange','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAutonomousNotifyEventsInRange')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get___context(self):
+	def get___context(self): # String
 		return self.get_query_params().get('__context')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_Level(self):
+	def set___context(self, __context):  # String
+		self.add_query_param('__context', __context)
+	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_EndTime(self):
+	def set_Level(self, Level):  # String
+		self.add_query_param('Level', Level)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_InstanceId(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_EventContext(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_EventContext(self): # String
 		return self.get_query_params().get('EventContext')
 
-	def set_EventContext(self,EventContext):
-		self.add_query_param('EventContext',EventContext)
-
-	def get_MinLevel(self):
+	def set_EventContext(self, EventContext):  # String
+		self.add_query_param('EventContext', EventContext)
+	def get_MinLevel(self): # String
 		return self.get_query_params().get('MinLevel')
 
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
-
-	def get_PageOffset(self):
+	def set_MinLevel(self, MinLevel):  # String
+		self.add_query_param('MinLevel', MinLevel)
+	def get_PageOffset(self): # String
 		return self.get_query_params().get('PageOffset')
 
-	def set_PageOffset(self,PageOffset):
-		self.add_query_param('PageOffset',PageOffset)
-
-	def get_PageSize(self):
+	def set_PageOffset(self, PageOffset):  # String
+		self.add_query_param('PageOffset', PageOffset)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_NodeId(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)

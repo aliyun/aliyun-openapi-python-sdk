@@ -23,46 +23,41 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetAsyncErrorRequestListByCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAsyncErrorRequestListByCode','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAsyncErrorRequestListByCode')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Start(self):
+	def get_Start(self): # String
 		return self.get_query_params().get('Start')
 
-	def set_Start(self,Start):
-		self.add_query_param('Start',Start)
-
-	def get_ConsoleContext(self):
+	def set_Start(self, Start):  # String
+		self.add_query_param('Start', Start)
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_End(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_End(self): # String
 		return self.get_query_params().get('End')
 
-	def set_End(self,End):
-		self.add_query_param('End',End)
-
-	def get_NodeId(self):
+	def set_End(self, End):  # String
+		self.add_query_param('End', End)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
-
-	def get_ErrorCode(self):
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
+	def get_ErrorCode(self): # String
 		return self.get_query_params().get('ErrorCode')
 
-	def set_ErrorCode(self,ErrorCode):
-		self.add_query_param('ErrorCode',ErrorCode)
+	def set_ErrorCode(self, ErrorCode):  # String
+		self.add_query_param('ErrorCode', ErrorCode)

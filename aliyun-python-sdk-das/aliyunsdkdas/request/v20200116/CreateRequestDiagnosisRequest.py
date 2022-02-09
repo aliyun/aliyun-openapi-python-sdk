@@ -23,34 +23,31 @@ from aliyunsdkdas.endpoint import endpoint_data
 class CreateRequestDiagnosisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateRequestDiagnosis','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateRequestDiagnosis')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Sql(self):
+	def get_Sql(self): # String
 		return self.get_query_params().get('Sql')
 
-	def set_Sql(self,Sql):
-		self.add_query_param('Sql',Sql)
-
-	def get_Database(self):
+	def set_Sql(self, Sql):  # String
+		self.add_query_param('Sql', Sql)
+	def get_Database(self): # String
 		return self.get_query_params().get('Database')
 
-	def set_Database(self,Database):
-		self.add_query_param('Database',Database)
-
-	def get_InstanceId(self):
+	def set_Database(self, Database):  # String
+		self.add_query_param('Database', Database)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NodeId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)

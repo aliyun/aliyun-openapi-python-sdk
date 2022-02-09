@@ -23,52 +23,46 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetHDMLastAliyunResourceSyncResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetHDMLastAliyunResourceSyncResult','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetHDMLastAliyunResourceSyncResult')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_skipAuth(self):
+	def get_skipAuth(self): # String
 		return self.get_query_params().get('skipAuth')
 
-	def set_skipAuth(self,skipAuth):
-		self.add_query_param('skipAuth',skipAuth)
-
-	def get___context(self):
+	def set_skipAuth(self, skipAuth):  # String
+		self.add_query_param('skipAuth', skipAuth)
+	def get___context(self): # String
 		return self.get_query_params().get('__context')
 
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_signature(self):
+	def set___context(self, __context):  # String
+		self.add_query_param('__context', __context)
+	def get_signature(self): # String
 		return self.get_query_params().get('signature')
 
-	def set_signature(self,signature):
-		self.add_query_param('signature',signature)
-
-	def get_UserId(self):
+	def set_signature(self, signature):  # String
+		self.add_query_param('signature', signature)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_accessKey(self):
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_accessKey(self): # String
 		return self.get_query_params().get('accessKey')
 
-	def set_accessKey(self,accessKey):
-		self.add_query_param('accessKey',accessKey)
-
-	def get_timestamp(self):
+	def set_accessKey(self, accessKey):  # String
+		self.add_query_param('accessKey', accessKey)
+	def get_timestamp(self): # String
 		return self.get_query_params().get('timestamp')
 
-	def set_timestamp(self,timestamp):
-		self.add_query_param('timestamp',timestamp)
+	def set_timestamp(self, timestamp):  # String
+		self.add_query_param('timestamp', timestamp)

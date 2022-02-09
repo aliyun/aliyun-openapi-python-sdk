@@ -23,46 +23,36 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetQueryOptimizeDataTrendRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeDataTrend','das')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeDataTrend')
+		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Start(self):
+	def get_Start(self): # String
 		return self.get_query_params().get('Start')
 
-	def set_Start(self,Start):
-		self.add_query_param('Start',Start)
-
-	def get_TagNames(self):
+	def set_Start(self, Start):  # String
+		self.add_query_param('Start', Start)
+	def get_TagNames(self): # String
 		return self.get_query_params().get('TagNames')
 
-	def set_TagNames(self,TagNames):
-		self.add_query_param('TagNames',TagNames)
-
-	def get_ConsoleContext(self):
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_Engine(self):
+	def set_TagNames(self, TagNames):  # String
+		self.add_query_param('TagNames', TagNames)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_InstanceIds(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_End(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_End(self): # String
 		return self.get_query_params().get('End')
 
-	def set_End(self,End):
-		self.add_query_param('End',End)
+	def set_End(self, End):  # String
+		self.add_query_param('End', End)

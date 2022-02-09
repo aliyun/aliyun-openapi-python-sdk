@@ -23,34 +23,26 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetQueryOptimizeRuleListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeRuleList','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeRuleList')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagNames(self):
+	def get_TagNames(self): # String
 		return self.get_query_params().get('TagNames')
 
-	def set_TagNames(self,TagNames):
-		self.add_query_param('TagNames',TagNames)
-
-	def get_ConsoleContext(self):
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_Engine(self):
+	def set_TagNames(self, TagNames):  # String
+		self.add_query_param('TagNames', TagNames)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_InstanceIds(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)

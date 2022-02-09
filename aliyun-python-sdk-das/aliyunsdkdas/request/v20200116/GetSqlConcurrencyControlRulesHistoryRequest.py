@@ -23,34 +23,31 @@ from aliyunsdkdas.endpoint import endpoint_data
 class GetSqlConcurrencyControlRulesHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetSqlConcurrencyControlRulesHistory','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetSqlConcurrencyControlRulesHistory')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConsoleContext(self):
+	def get_ConsoleContext(self): # String
 		return self.get_query_params().get('ConsoleContext')
 
-	def set_ConsoleContext(self,ConsoleContext):
-		self.add_query_param('ConsoleContext',ConsoleContext)
-
-	def get_InstanceId(self):
+	def set_ConsoleContext(self, ConsoleContext):  # String
+		self.add_query_param('ConsoleContext', ConsoleContext)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PageNo(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageNo(self): # Long
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
+	def set_PageNo(self, PageNo):  # Long
+		self.add_query_param('PageNo', PageNo)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
