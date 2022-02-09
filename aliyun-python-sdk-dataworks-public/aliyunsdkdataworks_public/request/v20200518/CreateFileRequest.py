@@ -61,11 +61,23 @@ class CreateFileRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_body_params('ResourceGroupId', ResourceGroupId)
 
+	def get_StartImmediately(self):
+		return self.get_body_params().get('StartImmediately')
+
+	def set_StartImmediately(self,StartImmediately):
+		self.add_body_params('StartImmediately', StartImmediately)
+
 	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
 	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
+
+	def get_AdvancedSettings(self):
+		return self.get_body_params().get('AdvancedSettings')
+
+	def set_AdvancedSettings(self,AdvancedSettings):
+		self.add_body_params('AdvancedSettings', AdvancedSettings)
 
 	def get_StartEffectDate(self):
 		return self.get_body_params().get('StartEffectDate')
