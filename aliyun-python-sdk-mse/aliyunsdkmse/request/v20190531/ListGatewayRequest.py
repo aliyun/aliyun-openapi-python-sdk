@@ -24,7 +24,7 @@ import json
 class ListGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListGateway','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListGateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

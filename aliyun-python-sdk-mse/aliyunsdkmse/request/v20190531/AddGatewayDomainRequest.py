@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class AddGatewayDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddGatewayDomain','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddGatewayDomain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

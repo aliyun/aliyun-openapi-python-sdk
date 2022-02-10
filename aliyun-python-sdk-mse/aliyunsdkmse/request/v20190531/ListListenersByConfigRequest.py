@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListListenersByConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListListenersByConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListListenersByConfig')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class GetKubernetesSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetKubernetesSource','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetKubernetesSource')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

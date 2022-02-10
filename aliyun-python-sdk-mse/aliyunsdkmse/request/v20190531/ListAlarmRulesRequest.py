@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListAlarmRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAlarmRules','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAlarmRules')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
