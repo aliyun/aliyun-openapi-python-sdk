@@ -23,46 +23,52 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class AllocateInstancePublicConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'AllocateInstancePublicConnection')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'AllocateInstancePublicConnection','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ConnectionStringPrefix(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ConnectionStringPrefix(self):
 		return self.get_query_params().get('ConnectionStringPrefix')
 
-	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
-		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
-	def get_AddressType(self): # String
+	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
+		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
+
+	def get_AddressType(self):
 		return self.get_query_params().get('AddressType')
 
-	def set_AddressType(self, AddressType):  # String
-		self.add_query_param('AddressType', AddressType)
-	def get_DBInstanceId(self): # String
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
+	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Port(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Port(self):
 		return self.get_query_params().get('Port')
 
-	def set_Port(self, Port):  # String
-		self.add_query_param('Port', Port)
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)

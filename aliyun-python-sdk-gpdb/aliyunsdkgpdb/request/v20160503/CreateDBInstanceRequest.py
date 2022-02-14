@@ -23,131 +23,154 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateDBInstance','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EngineVersion(self): # String
+
+	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
-	def set_EngineVersion(self, EngineVersion):  # String
-		self.add_query_param('EngineVersion', EngineVersion)
-	def get_DBInstanceCategory(self): # String
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_DBInstanceCategory(self):
 		return self.get_query_params().get('DBInstanceCategory')
 
-	def set_DBInstanceCategory(self, DBInstanceCategory):  # String
-		self.add_query_param('DBInstanceCategory', DBInstanceCategory)
-	def get_StorageType(self): # String
+	def set_DBInstanceCategory(self,DBInstanceCategory):
+		self.add_query_param('DBInstanceCategory',DBInstanceCategory)
+
+	def get_StorageType(self):
 		return self.get_query_params().get('StorageType')
 
-	def set_StorageType(self, StorageType):  # String
-		self.add_query_param('StorageType', StorageType)
-	def get_DBInstanceDescription(self): # String
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
+	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
 
-	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
-		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
-	def get_Period(self): # String
+	def set_DBInstanceDescription(self,DBInstanceDescription):
+		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_Period(self):
 		return self.get_query_params().get('Period')
 
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
-	def get_OwnerId(self): # Long
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_DBInstanceClass(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceClass(self, DBInstanceClass):  # String
-		self.add_query_param('DBInstanceClass', DBInstanceClass)
-	def get_SecurityIPList(self): # String
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
+	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
 
-	def set_SecurityIPList(self, SecurityIPList):  # String
-		self.add_query_param('SecurityIPList', SecurityIPList)
-	def get_VSwitchId(self): # String
+	def set_SecurityIPList(self,SecurityIPList):
+		self.add_query_param('SecurityIPList',SecurityIPList)
+
+	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_PrivateIpAddress(self): # String
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddress(self):
 		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-	def get_ZoneId(self): # String
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_InstanceNetworkType(self): # String
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
 
-	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
-		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
-	def get_ClientToken(self): # String
+	def set_InstanceNetworkType(self,InstanceNetworkType):
+		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_InstanceSpec(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_InstanceSpec(self):
 		return self.get_query_params().get('InstanceSpec')
 
-	def set_InstanceSpec(self, InstanceSpec):  # String
-		self.add_query_param('InstanceSpec', InstanceSpec)
-	def get_StorageSize(self): # Long
+	def set_InstanceSpec(self,InstanceSpec):
+		self.add_query_param('InstanceSpec',InstanceSpec)
+
+	def get_StorageSize(self):
 		return self.get_query_params().get('StorageSize')
 
-	def set_StorageSize(self, StorageSize):  # Long
-		self.add_query_param('StorageSize', StorageSize)
-	def get_SegStorageType(self): # String
+	def set_StorageSize(self,StorageSize):
+		self.add_query_param('StorageSize',StorageSize)
+
+	def get_SegStorageType(self):
 		return self.get_query_params().get('SegStorageType')
 
-	def set_SegStorageType(self, SegStorageType):  # String
-		self.add_query_param('SegStorageType', SegStorageType)
-	def get_MasterNodeNum(self): # String
+	def set_SegStorageType(self,SegStorageType):
+		self.add_query_param('SegStorageType',SegStorageType)
+
+	def get_MasterNodeNum(self):
 		return self.get_query_params().get('MasterNodeNum')
 
-	def set_MasterNodeNum(self, MasterNodeNum):  # String
-		self.add_query_param('MasterNodeNum', MasterNodeNum)
-	def get_SegNodeNum(self): # String
+	def set_MasterNodeNum(self,MasterNodeNum):
+		self.add_query_param('MasterNodeNum',MasterNodeNum)
+
+	def get_SegNodeNum(self):
 		return self.get_query_params().get('SegNodeNum')
 
-	def set_SegNodeNum(self, SegNodeNum):  # String
-		self.add_query_param('SegNodeNum', SegNodeNum)
-	def get_Engine(self): # String
+	def set_SegNodeNum(self,SegNodeNum):
+		self.add_query_param('SegNodeNum',SegNodeNum)
+
+	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self, Engine):  # String
-		self.add_query_param('Engine', Engine)
-	def get_DBInstanceGroupCount(self): # String
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_DBInstanceGroupCount(self):
 		return self.get_query_params().get('DBInstanceGroupCount')
 
-	def set_DBInstanceGroupCount(self, DBInstanceGroupCount):  # String
-		self.add_query_param('DBInstanceGroupCount', DBInstanceGroupCount)
-	def get_DBInstanceMode(self): # String
+	def set_DBInstanceGroupCount(self,DBInstanceGroupCount):
+		self.add_query_param('DBInstanceGroupCount',DBInstanceGroupCount)
+
+	def get_DBInstanceMode(self):
 		return self.get_query_params().get('DBInstanceMode')
 
-	def set_DBInstanceMode(self, DBInstanceMode):  # String
-		self.add_query_param('DBInstanceMode', DBInstanceMode)
-	def get_UsedTime(self): # String
+	def set_DBInstanceMode(self,DBInstanceMode):
+		self.add_query_param('DBInstanceMode',DBInstanceMode)
+
+	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self, UsedTime):  # String
-		self.add_query_param('UsedTime', UsedTime)
-	def get_VPCId(self): # String
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
-	def set_VPCId(self, VPCId):  # String
-		self.add_query_param('VPCId', VPCId)
-	def get_PayType(self): # String
+	def set_VPCId(self,VPCId):
+		self.add_query_param('VPCId',VPCId)
+
+	def get_PayType(self):
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self, PayType):  # String
-		self.add_query_param('PayType', PayType)
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

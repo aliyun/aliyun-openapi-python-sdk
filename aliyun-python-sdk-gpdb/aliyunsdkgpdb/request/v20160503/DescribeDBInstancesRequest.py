@@ -23,74 +23,80 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBInstanceModes(self): # Array
+
+	def get_DBInstanceModes(self):
 		return self.get_query_params().get('DBInstanceModes')
 
-	def set_DBInstanceModes(self, DBInstanceModes):  # Array
-		for index1, value1 in enumerate(DBInstanceModes):
-			self.add_query_param('DBInstanceModes.' + str(index1 + 1), value1)
-	def get_DBInstanceStatuses(self): # Array
+	def set_DBInstanceModes(self,DBInstanceModes):
+		self.add_query_param('DBInstanceModes',DBInstanceModes)
+
+	def get_DBInstanceStatuses(self):
 		return self.get_query_params().get('DBInstanceStatuses')
 
-	def set_DBInstanceStatuses(self, DBInstanceStatuses):  # Array
-		for index1, value1 in enumerate(DBInstanceStatuses):
-			self.add_query_param('DBInstanceStatuses.' + str(index1 + 1), value1)
-	def get_PageNumber(self): # Integer
+	def set_DBInstanceStatuses(self,DBInstanceStatuses):
+		self.add_query_param('DBInstanceStatuses',DBInstanceStatuses)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_DBInstanceDescription(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
 
-	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
-		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
-	def get_Tags(self): # RepeatList
+	def set_DBInstanceDescription(self,DBInstanceDescription):
+		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_DBInstanceIds(self): # String
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_DBInstanceIds(self):
 		return self.get_query_params().get('DBInstanceIds')
 
-	def set_DBInstanceIds(self, DBInstanceIds):  # String
-		self.add_query_param('DBInstanceIds', DBInstanceIds)
-	def get_OwnerId(self): # Long
+	def set_DBInstanceIds(self,DBInstanceIds):
+		self.add_query_param('DBInstanceIds',DBInstanceIds)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_DBInstanceCategories(self): # Array
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBInstanceCategories(self):
 		return self.get_query_params().get('DBInstanceCategories')
 
-	def set_DBInstanceCategories(self, DBInstanceCategories):  # Array
-		for index1, value1 in enumerate(DBInstanceCategories):
-			self.add_query_param('DBInstanceCategories.' + str(index1 + 1), value1)
-	def get_InstanceDeployTypes(self): # Array
+	def set_DBInstanceCategories(self,DBInstanceCategories):
+		self.add_query_param('DBInstanceCategories',DBInstanceCategories)
+
+	def get_InstanceDeployTypes(self):
 		return self.get_query_params().get('InstanceDeployTypes')
 
-	def set_InstanceDeployTypes(self, InstanceDeployTypes):  # Array
-		for index1, value1 in enumerate(InstanceDeployTypes):
-			self.add_query_param('InstanceDeployTypes.' + str(index1 + 1), value1)
-	def get_InstanceNetworkType(self): # String
+	def set_InstanceDeployTypes(self,InstanceDeployTypes):
+		self.add_query_param('InstanceDeployTypes',InstanceDeployTypes)
+
+	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
 
-	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
-		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def set_InstanceNetworkType(self,InstanceNetworkType):
+		self.add_query_param('InstanceNetworkType',InstanceNetworkType)

@@ -23,56 +23,64 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDataBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDataBackups')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDataBackups','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_PageNumber(self): # Integer
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_DataType(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_DataType(self):
 		return self.get_query_params().get('DataType')
 
-	def set_DataType(self, DataType):  # String
-		self.add_query_param('DataType', DataType)
-	def get_PageSize(self): # Integer
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_DBInstanceId(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_BackupId(self): # String
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self, BackupId):  # String
-		self.add_query_param('BackupId', BackupId)
-	def get_EndTime(self): # String
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_BackupStatus(self): # String
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_BackupStatus(self):
 		return self.get_query_params().get('BackupStatus')
 
-	def set_BackupStatus(self, BackupStatus):  # String
-		self.add_query_param('BackupStatus', BackupStatus)
-	def get_BackupMode(self): # String
+	def set_BackupStatus(self,BackupStatus):
+		self.add_query_param('BackupStatus',BackupStatus)
+
+	def get_BackupMode(self):
 		return self.get_query_params().get('BackupMode')
 
-	def set_BackupMode(self, BackupMode):  # String
-		self.add_query_param('BackupMode', BackupMode)
+	def set_BackupMode(self,BackupMode):
+		self.add_query_param('BackupMode',BackupMode)

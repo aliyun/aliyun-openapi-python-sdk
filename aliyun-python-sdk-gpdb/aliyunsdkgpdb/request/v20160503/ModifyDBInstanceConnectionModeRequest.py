@@ -23,21 +23,22 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifyDBInstanceConnectionModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionMode')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionMode','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConnectionMode(self): # String
+
+	def get_ConnectionMode(self):
 		return self.get_query_params().get('ConnectionMode')
 
-	def set_ConnectionMode(self, ConnectionMode):  # String
-		self.add_query_param('ConnectionMode', ConnectionMode)
-	def get_DBInstanceId(self): # String
+	def set_ConnectionMode(self,ConnectionMode):
+		self.add_query_param('ConnectionMode',ConnectionMode)
+
+	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)

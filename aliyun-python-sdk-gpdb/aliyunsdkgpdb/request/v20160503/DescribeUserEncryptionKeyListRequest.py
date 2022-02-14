@@ -23,21 +23,22 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeUserEncryptionKeyListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeUserEncryptionKeyList')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeUserEncryptionKeyList','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # String
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # String
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

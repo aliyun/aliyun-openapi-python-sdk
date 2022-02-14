@@ -23,21 +23,22 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeHealthStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeHealthStatus')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeHealthStatus','gpdb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBInstanceId(self): # String
+
+	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_Key(self): # String
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_Key(self):
 		return self.get_query_params().get('Key')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
