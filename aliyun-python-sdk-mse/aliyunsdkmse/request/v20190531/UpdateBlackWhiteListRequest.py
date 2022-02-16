@@ -46,6 +46,11 @@ class UpdateBlackWhiteListRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_IsWhite(self): # Boolean
+		return self.get_query_params().get('IsWhite')
+
+	def set_IsWhite(self, IsWhite):  # Boolean
+		self.add_query_param('IsWhite', IsWhite)
 	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 

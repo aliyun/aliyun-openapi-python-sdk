@@ -31,6 +31,11 @@ class QueryClusterSpecificationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ConnectType(self): # String
+		return self.get_query_params().get('ConnectType')
+
+	def set_ConnectType(self, ConnectType):  # String
+		self.add_query_param('ConnectType', ConnectType)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

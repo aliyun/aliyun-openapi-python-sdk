@@ -46,6 +46,11 @@ class GetBlackWhiteListRequest(RpcRequest):
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
+	def get_IsWhite(self): # Boolean
+		return self.get_query_params().get('IsWhite')
+
+	def set_IsWhite(self, IsWhite):  # Boolean
+		self.add_query_param('IsWhite', IsWhite)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
