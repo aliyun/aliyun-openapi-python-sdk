@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class ListTaskByPageRequest(RpcRequest):
+class GisQueryDeviceLocationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListTaskByPage','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GisQueryDeviceLocation','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,50 +31,18 @@ class ListTaskByPageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ThingLists(self):
+		return self.get_query_params().get('ThingList')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_JobName(self):
-		return self.get_query_params().get('JobName')
-
-	def set_JobName(self,JobName):
-		self.add_query_param('JobName',JobName)
-
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
-
-	def get_Device(self):
-		return self.get_query_params().get('Device')
-
-	def set_Device(self,Device):
-		self.add_query_param('Device',Device)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ThingLists(self, ThingLists):
+		for depth1 in range(len(ThingLists)):
+			if ThingLists[depth1].get('ProductKey') is not None:
+				self.add_query_param('ThingList.' + str(depth1 + 1) + '.ProductKey', ThingLists[depth1].get('ProductKey'))
+			if ThingLists[depth1].get('DeviceName') is not None:
+				self.add_query_param('ThingList.' + str(depth1 + 1) + '.DeviceName', ThingLists[depth1].get('DeviceName'))
