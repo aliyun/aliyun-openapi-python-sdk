@@ -66,11 +66,6 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ClusterVersion(self, ClusterVersion):  # String
 		self.add_query_param('ClusterVersion', ClusterVersion)
-	def get_DiskCapacity(self): # Integer
-		return self.get_query_params().get('DiskCapacity')
-
-	def set_DiskCapacity(self, DiskCapacity):  # Integer
-		self.add_query_param('DiskCapacity', DiskCapacity)
 	def get_DiskType(self): # String
 		return self.get_query_params().get('DiskType')
 
