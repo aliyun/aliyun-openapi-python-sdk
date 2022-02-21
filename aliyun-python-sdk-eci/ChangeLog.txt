@@ -1,3 +1,6 @@
+2022-02-21 Version: 1.2.0
+1、Support Api: DescribeAvailableResource UpdateImageCache
+
 2021-08-17 Version: 1.1.9
 1、ExecCommand Api update
 
