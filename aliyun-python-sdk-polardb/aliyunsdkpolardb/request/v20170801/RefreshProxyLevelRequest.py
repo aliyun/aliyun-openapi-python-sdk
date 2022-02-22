@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class CreateDBClusterEndpointRequest(RpcRequest):
+class RefreshProxyLevelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBClusterEndpoint')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'RefreshProxyLevel')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,23 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AutoAddNewNodes(self):
-		return self.get_query_params().get('AutoAddNewNodes')
-
-	def set_AutoAddNewNodes(self,AutoAddNewNodes):
-		self.add_query_param('AutoAddNewNodes',AutoAddNewNodes)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_PlannedEndTime(self):
+		return self.get_query_params().get('PlannedEndTime')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
 
-	def get_ReadWriteMode(self):
-		return self.get_query_params().get('ReadWriteMode')
+	def get_ProxyTargetClass(self):
+		return self.get_query_params().get('ProxyTargetClass')
 
-	def set_ReadWriteMode(self,ReadWriteMode):
-		self.add_query_param('ReadWriteMode',ReadWriteMode)
-
-	def get_EndpointType(self):
-		return self.get_query_params().get('EndpointType')
-
-	def set_EndpointType(self,EndpointType):
-		self.add_query_param('EndpointType',EndpointType)
+	def set_ProxyTargetClass(self,ProxyTargetClass):
+		self.add_query_param('ProxyTargetClass',ProxyTargetClass)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -79,26 +67,20 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndpointConfig(self):
-		return self.get_query_params().get('EndpointConfig')
-
-	def set_EndpointConfig(self,EndpointConfig):
-		self.add_query_param('EndpointConfig',EndpointConfig)
-
-	def get_DBEndpointDescription(self):
-		return self.get_query_params().get('DBEndpointDescription')
-
-	def set_DBEndpointDescription(self,DBEndpointDescription):
-		self.add_query_param('DBEndpointDescription',DBEndpointDescription)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Nodes(self):
-		return self.get_query_params().get('Nodes')
+	def get_PlannedStartTime(self):
+		return self.get_query_params().get('PlannedStartTime')
 
-	def set_Nodes(self,Nodes):
-		self.add_query_param('Nodes',Nodes)
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
+
+	def get_FromTimeService(self):
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self,FromTimeService):
+		self.add_query_param('FromTimeService',FromTimeService)

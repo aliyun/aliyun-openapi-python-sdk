@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DescribeDetachedBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDetachedBackups','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDetachedBackups')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

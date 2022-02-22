@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class ModifyDBNodeClassRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBNodeClass','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBNodeClass')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -90,3 +90,9 @@ class ModifyDBNodeClassRequest(RpcRequest):
 
 	def set_ModifyType(self,ModifyType):
 		self.add_query_param('ModifyType',ModifyType)
+
+	def get_SubCategory(self):
+		return self.get_query_params().get('SubCategory')
+
+	def set_SubCategory(self,SubCategory):
+		self.add_query_param('SubCategory',SubCategory)
