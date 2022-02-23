@@ -20,22 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class GetAggregateResourceComplianceByConfigRuleRequest(RpcRequest):
+class GetAggregateDiscoveredResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateResourceComplianceByConfigRule')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateDiscoveredResource')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConfigRuleId(self): # String
-		return self.get_query_params().get('ConfigRuleId')
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_ConfigRuleId(self, ConfigRuleId):  # String
-		self.add_query_param('ConfigRuleId', ConfigRuleId)
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,8 +46,13 @@ class GetAggregateResourceComplianceByConfigRuleRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
-	def get_ComplianceType(self): # String
-		return self.get_query_params().get('ComplianceType')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_ComplianceType(self, ComplianceType):  # String
-		self.add_query_param('ComplianceType', ComplianceType)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class GetAggregateResourceComplianceByConfigRuleRequest(RpcRequest):
+class DeleteAggregateRemediationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateResourceComplianceByConfigRule')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'DeleteAggregateRemediations')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,13 @@ class GetAggregateResourceComplianceByConfigRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConfigRuleId(self): # String
-		return self.get_query_params().get('ConfigRuleId')
+	def get_RemediationIds(self): # String
+		return self.get_body_params().get('RemediationIds')
 
-	def set_ConfigRuleId(self, ConfigRuleId):  # String
-		self.add_query_param('ConfigRuleId', ConfigRuleId)
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def set_RemediationIds(self, RemediationIds):  # String
+		self.add_body_params('RemediationIds', RemediationIds)
 	def get_AggregatorId(self): # String
-		return self.get_query_params().get('AggregatorId')
+		return self.get_body_params().get('AggregatorId')
 
 	def set_AggregatorId(self, AggregatorId):  # String
-		self.add_query_param('AggregatorId', AggregatorId)
-	def get_ComplianceType(self): # String
-		return self.get_query_params().get('ComplianceType')
-
-	def set_ComplianceType(self, ComplianceType):  # String
-		self.add_query_param('ComplianceType', ComplianceType)
+		self.add_body_params('AggregatorId', AggregatorId)
