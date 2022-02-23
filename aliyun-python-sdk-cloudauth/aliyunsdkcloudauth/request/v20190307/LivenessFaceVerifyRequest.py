@@ -37,29 +37,11 @@ class LivenessFaceVerifyRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_body_params('ProductCode', ProductCode)
 
-	def get_OssObjectName(self):
-		return self.get_body_params().get('OssObjectName')
-
-	def set_OssObjectName(self,OssObjectName):
-		self.add_body_params('OssObjectName', OssObjectName)
-
 	def get_FaceContrastPicture(self):
 		return self.get_body_params().get('FaceContrastPicture')
 
 	def set_FaceContrastPicture(self,FaceContrastPicture):
 		self.add_body_params('FaceContrastPicture', FaceContrastPicture)
-
-	def get_Ip(self):
-		return self.get_body_params().get('Ip')
-
-	def set_Ip(self,Ip):
-		self.add_body_params('Ip', Ip)
-
-	def get_Mobile(self):
-		return self.get_body_params().get('Mobile')
-
-	def set_Mobile(self,Mobile):
-		self.add_body_params('Mobile', Mobile)
 
 	def get_DeviceToken(self):
 		return self.get_body_params().get('DeviceToken')
@@ -91,6 +73,30 @@ class LivenessFaceVerifyRequest(RpcRequest):
 	def set_FaceContrastPictureUrl(self,FaceContrastPictureUrl):
 		self.add_body_params('FaceContrastPictureUrl', FaceContrastPictureUrl)
 
+	def get_Model(self):
+		return self.get_query_params().get('Model')
+
+	def set_Model(self,Model):
+		self.add_query_param('Model',Model)
+
+	def get_OssObjectName(self):
+		return self.get_body_params().get('OssObjectName')
+
+	def set_OssObjectName(self,OssObjectName):
+		self.add_body_params('OssObjectName', OssObjectName)
+
+	def get_Ip(self):
+		return self.get_body_params().get('Ip')
+
+	def set_Ip(self,Ip):
+		self.add_body_params('Ip', Ip)
+
+	def get_Mobile(self):
+		return self.get_body_params().get('Mobile')
+
+	def set_Mobile(self,Mobile):
+		self.add_body_params('Mobile', Mobile)
+
 	def get_SceneId(self):
 		return self.get_body_params().get('SceneId')
 
@@ -102,12 +108,6 @@ class LivenessFaceVerifyRequest(RpcRequest):
 
 	def set_OssBucketName(self,OssBucketName):
 		self.add_body_params('OssBucketName', OssBucketName)
-
-	def get_Model(self):
-		return self.get_query_params().get('Model')
-
-	def set_Model(self,Model):
-		self.add_query_param('Model',Model)
 
 	def get_Crop(self):
 		return self.get_body_params().get('Crop')

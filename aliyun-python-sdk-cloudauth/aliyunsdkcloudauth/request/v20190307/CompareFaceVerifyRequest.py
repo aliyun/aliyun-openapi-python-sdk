@@ -31,12 +31,6 @@ class CompareFaceVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetFaceContrastPictureUrl(self):
-		return self.get_body_params().get('TargetFaceContrastPictureUrl')
-
-	def set_TargetFaceContrastPictureUrl(self,TargetFaceContrastPictureUrl):
-		self.add_body_params('TargetFaceContrastPictureUrl', TargetFaceContrastPictureUrl)
-
 	def get_ProductCode(self):
 		return self.get_body_params().get('ProductCode')
 
@@ -48,12 +42,6 @@ class CompareFaceVerifyRequest(RpcRequest):
 
 	def set_TargetCertifyId(self,TargetCertifyId):
 		self.add_body_params('TargetCertifyId', TargetCertifyId)
-
-	def get_SourceOssObjectName(self):
-		return self.get_body_params().get('SourceOssObjectName')
-
-	def set_SourceOssObjectName(self,SourceOssObjectName):
-		self.add_body_params('SourceOssObjectName', SourceOssObjectName)
 
 	def get_TargetFaceContrastPicture(self):
 		return self.get_body_params().get('TargetFaceContrastPicture')
@@ -67,29 +55,47 @@ class CompareFaceVerifyRequest(RpcRequest):
 	def set_TargetOssBucketName(self,TargetOssBucketName):
 		self.add_body_params('TargetOssBucketName', TargetOssBucketName)
 
-	def get_SourceOssBucketName(self):
-		return self.get_body_params().get('SourceOssBucketName')
-
-	def set_SourceOssBucketName(self,SourceOssBucketName):
-		self.add_body_params('SourceOssBucketName', SourceOssBucketName)
-
 	def get_OuterOrderNo(self):
 		return self.get_body_params().get('OuterOrderNo')
 
 	def set_OuterOrderNo(self,OuterOrderNo):
 		self.add_body_params('OuterOrderNo', OuterOrderNo)
 
-	def get_TargetOssObjectName(self):
-		return self.get_body_params().get('TargetOssObjectName')
-
-	def set_TargetOssObjectName(self,TargetOssObjectName):
-		self.add_body_params('TargetOssObjectName', TargetOssObjectName)
-
 	def get_SourceFaceContrastPicture(self):
 		return self.get_body_params().get('SourceFaceContrastPicture')
 
 	def set_SourceFaceContrastPicture(self,SourceFaceContrastPicture):
 		self.add_body_params('SourceFaceContrastPicture', SourceFaceContrastPicture)
+
+	def get_SourceCertifyId(self):
+		return self.get_body_params().get('SourceCertifyId')
+
+	def set_SourceCertifyId(self,SourceCertifyId):
+		self.add_body_params('SourceCertifyId', SourceCertifyId)
+
+	def get_TargetFaceContrastPictureUrl(self):
+		return self.get_body_params().get('TargetFaceContrastPictureUrl')
+
+	def set_TargetFaceContrastPictureUrl(self,TargetFaceContrastPictureUrl):
+		self.add_body_params('TargetFaceContrastPictureUrl', TargetFaceContrastPictureUrl)
+
+	def get_SourceOssObjectName(self):
+		return self.get_body_params().get('SourceOssObjectName')
+
+	def set_SourceOssObjectName(self,SourceOssObjectName):
+		self.add_body_params('SourceOssObjectName', SourceOssObjectName)
+
+	def get_SourceOssBucketName(self):
+		return self.get_body_params().get('SourceOssBucketName')
+
+	def set_SourceOssBucketName(self,SourceOssBucketName):
+		self.add_body_params('SourceOssBucketName', SourceOssBucketName)
+
+	def get_TargetOssObjectName(self):
+		return self.get_body_params().get('TargetOssObjectName')
+
+	def set_TargetOssObjectName(self,TargetOssObjectName):
+		self.add_body_params('TargetOssObjectName', TargetOssObjectName)
 
 	def get_SceneId(self):
 		return self.get_body_params().get('SceneId')
@@ -102,12 +108,6 @@ class CompareFaceVerifyRequest(RpcRequest):
 
 	def set_SourceFaceContrastPictureUrl(self,SourceFaceContrastPictureUrl):
 		self.add_body_params('SourceFaceContrastPictureUrl', SourceFaceContrastPictureUrl)
-
-	def get_SourceCertifyId(self):
-		return self.get_body_params().get('SourceCertifyId')
-
-	def set_SourceCertifyId(self,SourceCertifyId):
-		self.add_body_params('SourceCertifyId', SourceCertifyId)
 
 	def get_Crop(self):
 		return self.get_body_params().get('Crop')

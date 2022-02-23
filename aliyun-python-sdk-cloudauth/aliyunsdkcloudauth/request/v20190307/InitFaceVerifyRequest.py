@@ -115,6 +115,12 @@ class InitFaceVerifyRequest(RpcRequest):
 	def set_Mobile(self,Mobile):
 		self.add_query_param('Mobile',Mobile)
 
+	def get_AuthId(self):
+		return self.get_body_params().get('AuthId')
+
+	def set_AuthId(self,AuthId):
+		self.add_body_params('AuthId', AuthId)
+
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
 
