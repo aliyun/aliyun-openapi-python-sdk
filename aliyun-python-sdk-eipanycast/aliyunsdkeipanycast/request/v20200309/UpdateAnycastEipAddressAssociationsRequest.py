@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeipanycast.endpoint import endpoint_data
 
-class UnassociateAnycastEipAddressRequest(RpcRequest):
+class UpdateAnycastEipAddressAssociationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'UnassociateAnycastEipAddress','eipanycast')
+		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'UpdateAnycastEipAddressAssociations','eipanycast')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,35 +37,35 @@ class UnassociateAnycastEipAddressRequest(RpcRequest):
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
+	def get_AssociationMode(self):
+		return self.get_query_params().get('AssociationMode')
+
+	def set_AssociationMode(self,AssociationMode):
+		self.add_query_param('AssociationMode',AssociationMode)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_BindInstanceType(self):
-		return self.get_query_params().get('BindInstanceType')
+	def get_PopLocationDeleteList(self):
+		return self.get_query_params().get('PopLocationDeleteList')
 
-	def set_BindInstanceType(self,BindInstanceType):
-		self.add_query_param('BindInstanceType',BindInstanceType)
-
-	def get_BindInstanceRegionId(self):
-		return self.get_query_params().get('BindInstanceRegionId')
-
-	def set_BindInstanceRegionId(self,BindInstanceRegionId):
-		self.add_query_param('BindInstanceRegionId',BindInstanceRegionId)
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+	def set_PopLocationDeleteList(self,PopLocationDeleteList):
+		self.add_query_param('PopLocationDeleteList',PopLocationDeleteList)
 
 	def get_AnycastId(self):
 		return self.get_query_params().get('AnycastId')
 
 	def set_AnycastId(self,AnycastId):
 		self.add_query_param('AnycastId',AnycastId)
+
+	def get_PopLocationAddList(self):
+		return self.get_query_params().get('PopLocationAddList')
+
+	def set_PopLocationAddList(self,PopLocationAddList):
+		self.add_query_param('PopLocationAddList',PopLocationAddList)
 
 	def get_BindInstanceId(self):
 		return self.get_query_params().get('BindInstanceId')

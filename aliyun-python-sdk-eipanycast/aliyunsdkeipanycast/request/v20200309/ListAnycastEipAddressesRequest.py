@@ -31,6 +31,18 @@ class ListAnycastEipAddressesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_BusinessStatus(self):
 		return self.get_query_params().get('BusinessStatus')
 
@@ -48,12 +60,6 @@ class ListAnycastEipAddressesRequest(RpcRequest):
 
 	def set_AnycastEipAddress(self,AnycastEipAddress):
 		self.add_query_param('AnycastEipAddress',AnycastEipAddress)
-
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
 
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
@@ -86,12 +92,6 @@ class ListAnycastEipAddressesRequest(RpcRequest):
 
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

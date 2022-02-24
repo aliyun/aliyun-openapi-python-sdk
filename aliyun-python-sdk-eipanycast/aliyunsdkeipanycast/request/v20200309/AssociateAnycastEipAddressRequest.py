@@ -37,11 +37,23 @@ class AssociateAnycastEipAddressRequest(RpcRequest):
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
+	def get_AssociationMode(self):
+		return self.get_query_params().get('AssociationMode')
+
+	def set_AssociationMode(self,AssociationMode):
+		self.add_query_param('AssociationMode',AssociationMode)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_PopLocations(self):
+		return self.get_query_params().get('PopLocations')
+
+	def set_PopLocations(self,PopLocations):
+		self.add_query_param('PopLocations',PopLocations)
 
 	def get_BindInstanceType(self):
 		return self.get_query_params().get('BindInstanceType')
@@ -54,6 +66,12 @@ class AssociateAnycastEipAddressRequest(RpcRequest):
 
 	def set_BindInstanceRegionId(self,BindInstanceRegionId):
 		self.add_query_param('BindInstanceRegionId',BindInstanceRegionId)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
 	def get_AnycastId(self):
 		return self.get_query_params().get('AnycastId')

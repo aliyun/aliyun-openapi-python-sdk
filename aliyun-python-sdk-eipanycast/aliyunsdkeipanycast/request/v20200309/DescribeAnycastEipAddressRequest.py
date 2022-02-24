@@ -31,6 +31,12 @@ class DescribeAnycastEipAddressRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Ip(self):
+		return self.get_query_params().get('Ip')
+
+	def set_Ip(self,Ip):
+		self.add_query_param('Ip',Ip)
+
 	def get_AnycastId(self):
 		return self.get_query_params().get('AnycastId')
 
