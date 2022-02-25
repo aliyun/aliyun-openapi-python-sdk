@@ -31,25 +31,20 @@ class GetAsyncErrorRequestListByCodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Start(self): # String
+	def get_Start(self): # Long
 		return self.get_query_params().get('Start')
 
-	def set_Start(self, Start):  # String
+	def set_Start(self, Start):  # Long
 		self.add_query_param('Start', Start)
-	def get_ConsoleContext(self): # String
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self, ConsoleContext):  # String
-		self.add_query_param('ConsoleContext', ConsoleContext)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_End(self): # String
+	def get_End(self): # Long
 		return self.get_query_params().get('End')
 
-	def set_End(self, End):  # String
+	def set_End(self, End):  # Long
 		self.add_query_param('End', End)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')

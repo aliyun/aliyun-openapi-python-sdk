@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetRequestDiagnosisPageRequest(RpcRequest):
+class GetFullRequestOriginStatByInstanceIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetRequestDiagnosisPage')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetFullRequestOriginStatByInstanceId')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,41 @@ class GetRequestDiagnosisPageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
 
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
+	def get_Start(self): # Long
+		return self.get_query_params().get('Start')
+
+	def set_Start(self, Start):  # Long
+		self.add_query_param('Start', Start)
+	def get_End(self): # Long
+		return self.get_query_params().get('End')
+
+	def set_End(self, End):  # Long
+		self.add_query_param('End', End)
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)
+	def get_Asc(self): # Boolean
+		return self.get_query_params().get('Asc')
+
+	def set_Asc(self, Asc):  # Boolean
+		self.add_query_param('Asc', Asc)
 	def get_PageNo(self): # Integer
 		return self.get_query_params().get('PageNo')
 
@@ -56,8 +76,13 @@ class GetRequestDiagnosisPageRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
+	def get_SqlType(self): # String
+		return self.get_query_params().get('SqlType')
 
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
+	def set_SqlType(self, SqlType):  # String
+		self.add_query_param('SqlType', SqlType)
+	def get_Role(self): # String
+		return self.get_query_params().get('Role')
+
+	def set_Role(self, Role):  # String
+		self.add_query_param('Role', Role)

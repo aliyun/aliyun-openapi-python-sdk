@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetAsyncErrorRequestStatResultRequest(RpcRequest):
+class DisableDasProRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetAsyncErrorRequestStatResult')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DisableDasPro')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,13 @@ class GetAsyncErrorRequestStatResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SqlIdList(self): # String
-		return self.get_query_params().get('SqlIdList')
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
 
-	def set_SqlIdList(self, SqlIdList):  # String
-		self.add_query_param('SqlIdList', SqlIdList)
-	def get_Start(self): # Long
-		return self.get_query_params().get('Start')
-
-	def set_Start(self, Start):  # Long
-		self.add_query_param('Start', Start)
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_DbName(self): # String
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self, DbName):  # String
-		self.add_query_param('DbName', DbName)
-	def get_End(self): # Long
-		return self.get_query_params().get('End')
-
-	def set_End(self, End):  # Long
-		self.add_query_param('End', End)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
