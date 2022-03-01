@@ -25,32 +25,29 @@ class ListUserIntentionNotesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserIntentionNotes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizType(self):
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_PageSize(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_IntentionBizId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_IntentionBizId(self): # String
 		return self.get_query_params().get('IntentionBizId')
 
-	def set_IntentionBizId(self,IntentionBizId):
-		self.add_query_param('IntentionBizId',IntentionBizId)
-
-	def get_PageNum(self):
+	def set_IntentionBizId(self, IntentionBizId):  # String
+		self.add_query_param('IntentionBizId', IntentionBizId)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)

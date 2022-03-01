@@ -25,26 +25,24 @@ class QueryCommodityConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'QueryCommodityConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizType(self):
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_QueryModule(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_QueryModule(self): # Boolean
 		return self.get_query_params().get('QueryModule')
 
-	def set_QueryModule(self,QueryModule):
-		self.add_query_param('QueryModule',QueryModule)
-
-	def get_CommodityCode(self):
+	def set_QueryModule(self, QueryModule):  # Boolean
+		self.add_query_param('QueryModule', QueryModule)
+	def get_CommodityCode(self): # String
 		return self.get_query_params().get('CommodityCode')
 
-	def set_CommodityCode(self,CommodityCode):
-		self.add_query_param('CommodityCode',CommodityCode)
+	def set_CommodityCode(self, CommodityCode):  # String
+		self.add_query_param('CommodityCode', CommodityCode)

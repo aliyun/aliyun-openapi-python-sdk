@@ -25,20 +25,19 @@ class SubmitIntentionNoteRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'SubmitIntentionNote')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Note(self):
+	def get_Note(self): # String
 		return self.get_query_params().get('Note')
 
-	def set_Note(self,Note):
-		self.add_query_param('Note',Note)
-
-	def get_IntentionBizId(self):
+	def set_Note(self, Note):  # String
+		self.add_query_param('Note', Note)
+	def get_IntentionBizId(self): # String
 		return self.get_query_params().get('IntentionBizId')
 
-	def set_IntentionBizId(self,IntentionBizId):
-		self.add_query_param('IntentionBizId',IntentionBizId)
+	def set_IntentionBizId(self, IntentionBizId):  # String
+		self.add_query_param('IntentionBizId', IntentionBizId)

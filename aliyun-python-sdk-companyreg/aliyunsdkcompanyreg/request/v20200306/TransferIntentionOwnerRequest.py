@@ -20,19 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ConfirmIntentionRequest(RpcRequest):
+class TransferIntentionOwnerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'ConfirmIntention')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'TransferIntentionOwner')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BizType(self): # String
+		return self.get_query_params().get('BizType')
 
-	def get_BizId(self):
-		return self.get_body_params().get('BizId')
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_BizId(self): # String
+		return self.get_query_params().get('BizId')
 
-	def set_BizId(self,BizId):
-		self.add_body_params('BizId', BizId)
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_PersonId(self): # Integer
+		return self.get_query_params().get('PersonId')
+
+	def set_PersonId(self, PersonId):  # Integer
+		self.add_query_param('PersonId', PersonId)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)

@@ -25,20 +25,19 @@ class DescribePartnerConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'DescribePartnerConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PartnerCode(self):
+	def get_PartnerCode(self): # String
 		return self.get_query_params().get('PartnerCode')
 
-	def set_PartnerCode(self,PartnerCode):
-		self.add_query_param('PartnerCode',PartnerCode)
-
-	def get_BizType(self):
+	def set_PartnerCode(self, PartnerCode):  # String
+		self.add_query_param('PartnerCode', PartnerCode)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)

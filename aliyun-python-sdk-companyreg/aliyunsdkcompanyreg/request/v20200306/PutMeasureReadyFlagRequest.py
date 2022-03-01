@@ -25,38 +25,34 @@ class PutMeasureReadyFlagRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'PutMeasureReadyFlag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReadyFlag(self):
+	def get_ReadyFlag(self): # String
 		return self.get_query_params().get('ReadyFlag')
 
-	def set_ReadyFlag(self,ReadyFlag):
-		self.add_query_param('ReadyFlag',ReadyFlag)
-
-	def get_EndTime(self):
+	def set_ReadyFlag(self, ReadyFlag):  # String
+		self.add_query_param('ReadyFlag', ReadyFlag)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_BizType(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_DataType(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_DataType(self): # String
 		return self.get_query_params().get('DataType')
 
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
+	def set_DataType(self, DataType):  # String
+		self.add_query_param('DataType', DataType)

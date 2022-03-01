@@ -25,26 +25,24 @@ class GenerateUploadFilePolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'GenerateUploadFilePolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileType(self):
+	def get_FileType(self): # String
 		return self.get_query_params().get('FileType')
 
-	def set_FileType(self,FileType):
-		self.add_query_param('FileType',FileType)
-
-	def get_BizType(self):
+	def set_FileType(self, FileType):  # String
+		self.add_query_param('FileType', FileType)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_FileName(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_FileName(self): # String
 		return self.get_query_params().get('FileName')
 
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)

@@ -25,20 +25,19 @@ class RejectSolutionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'RejectSolution')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Note(self):
+	def get_Note(self): # String
 		return self.get_query_params().get('Note')
 
-	def set_Note(self,Note):
-		self.add_query_param('Note',Note)
-
-	def get_SolutionBizId(self):
+	def set_Note(self, Note):  # String
+		self.add_query_param('Note', Note)
+	def get_SolutionBizId(self): # String
 		return self.get_query_params().get('SolutionBizId')
 
-	def set_SolutionBizId(self,SolutionBizId):
-		self.add_query_param('SolutionBizId',SolutionBizId)
+	def set_SolutionBizId(self, SolutionBizId):  # String
+		self.add_query_param('SolutionBizId', SolutionBizId)

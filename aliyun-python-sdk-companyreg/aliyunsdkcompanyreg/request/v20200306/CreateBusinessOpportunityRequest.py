@@ -25,38 +25,34 @@ class CreateBusinessOpportunityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'CreateBusinessOpportunity')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mobile(self):
+	def get_Mobile(self): # String
 		return self.get_query_params().get('Mobile')
 
-	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
-
-	def get_Source(self):
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)
+	def get_Source(self): # Integer
 		return self.get_query_params().get('Source')
 
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_VCode(self):
+	def set_Source(self, Source):  # Integer
+		self.add_query_param('Source', Source)
+	def get_VCode(self): # String
 		return self.get_query_params().get('VCode')
 
-	def set_VCode(self,VCode):
-		self.add_query_param('VCode',VCode)
-
-	def get_ContactName(self):
+	def set_VCode(self, VCode):  # String
+		self.add_query_param('VCode', VCode)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_BizType(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)

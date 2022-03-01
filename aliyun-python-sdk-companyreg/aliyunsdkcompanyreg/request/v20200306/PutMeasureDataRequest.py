@@ -25,38 +25,34 @@ class PutMeasureDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'PutMeasureData')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_body_params().get('Data')
 
-	def set_Data(self,Data):
+	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)
-
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_body_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
+	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
-
-	def get_BizType(self):
+	def get_BizType(self): # String
 		return self.get_body_params().get('BizType')
 
-	def set_BizType(self,BizType):
+	def set_BizType(self, BizType):  # String
 		self.add_body_params('BizType', BizType)
-
-	def get_DataType(self):
+	def get_DataType(self): # String
 		return self.get_body_params().get('DataType')
 
-	def set_DataType(self,DataType):
+	def set_DataType(self, DataType):  # String
 		self.add_body_params('DataType', DataType)

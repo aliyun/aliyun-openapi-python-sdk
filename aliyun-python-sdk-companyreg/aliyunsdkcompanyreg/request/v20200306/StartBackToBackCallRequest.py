@@ -25,38 +25,34 @@ class StartBackToBackCallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'StartBackToBackCall')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizType(self):
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_Caller(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_Caller(self): # String
 		return self.get_query_params().get('Caller')
 
-	def set_Caller(self,Caller):
-		self.add_query_param('Caller',Caller)
-
-	def get_CallCenterNumber(self):
+	def set_Caller(self, Caller):  # String
+		self.add_query_param('Caller', Caller)
+	def get_CallCenterNumber(self): # String
 		return self.get_query_params().get('CallCenterNumber')
 
-	def set_CallCenterNumber(self,CallCenterNumber):
-		self.add_query_param('CallCenterNumber',CallCenterNumber)
-
-	def get_SkillType(self):
+	def set_CallCenterNumber(self, CallCenterNumber):  # String
+		self.add_query_param('CallCenterNumber', CallCenterNumber)
+	def get_SkillType(self): # Long
 		return self.get_query_params().get('SkillType')
 
-	def set_SkillType(self,SkillType):
-		self.add_query_param('SkillType',SkillType)
-
-	def get_BizId(self):
+	def set_SkillType(self, SkillType):  # Long
+		self.add_query_param('SkillType', SkillType)
+	def get_BizId(self): # String
 		return self.get_query_params().get('BizId')
 
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
