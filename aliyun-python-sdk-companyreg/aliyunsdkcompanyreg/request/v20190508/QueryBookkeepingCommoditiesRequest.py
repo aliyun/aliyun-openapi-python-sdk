@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class QueryBookkeepingCommoditiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'QueryBookkeepingCommodities')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class ListUserSolutionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_ServiceType(self): # String
+		return self.get_query_params().get('ServiceType')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
+	def get_City(self): # String
+		return self.get_query_params().get('City')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
+	def set_City(self, City):  # String
+		self.add_query_param('City', City)
+	def get_CompanyType(self): # String
+		return self.get_query_params().get('CompanyType')
 
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_CompanyType(self, CompanyType):  # String
+		self.add_query_param('CompanyType', CompanyType)
+	def get_AreaType(self): # String
+		return self.get_query_params().get('AreaType')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_AreaType(self, AreaType):  # String
+		self.add_query_param('AreaType', AreaType)

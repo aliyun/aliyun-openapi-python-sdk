@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class CheckCompanyRegRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'CheckCompanyReg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,28 @@ class ListUserSolutionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_OrgType(self): # String
+		return self.get_query_params().get('OrgType')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def set_OrgType(self, OrgType):  # String
+		self.add_query_param('OrgType', OrgType)
+	def get_IndustryType(self): # String
+		return self.get_query_params().get('IndustryType')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
+	def set_IndustryType(self, IndustryType):  # String
+		self.add_query_param('IndustryType', IndustryType)
+	def get_TradeName(self): # String
+		return self.get_query_params().get('TradeName')
 
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_TradeName(self, TradeName):  # String
+		self.add_query_param('TradeName', TradeName)
+	def get_City(self): # String
+		return self.get_query_params().get('City')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_City(self, City):  # String
+		self.add_query_param('City', City)
+	def get_NameType(self): # Integer
+		return self.get_query_params().get('NameType')
+
+	def set_NameType(self, NameType):  # Integer
+		self.add_query_param('NameType', NameType)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class GetAcctgpltAliGenerateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'GetAcctgpltAliGenerate')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class ListUserSolutionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_Period(self): # String
+		return self.get_query_params().get('Period')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_BizId(self): # String
+		return self.get_query_params().get('BizId')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_LoanBillTO(self): # String
+		return self.get_query_params().get('LoanBillTO')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_LoanBillTO(self, LoanBillTO):  # String
+		self.add_query_param('LoanBillTO', LoanBillTO)

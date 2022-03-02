@@ -20,34 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class PrintAcctgTransRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'companyreg', '2020-10-22', 'PrintAcctgTrans')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_ShowCustomComments(self): # Boolean
+		return self.get_query_params().get('ShowCustomComments')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def set_ShowCustomComments(self, ShowCustomComments):  # Boolean
+		self.add_query_param('ShowCustomComments', ShowCustomComments)
+	def get_PrintStyle(self): # String
+		return self.get_query_params().get('PrintStyle')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
+	def set_PrintStyle(self, PrintStyle):  # String
+		self.add_query_param('PrintStyle', PrintStyle)
+	def get_BizId(self): # String
+		return self.get_query_params().get('BizId')
 
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_PrintCount(self): # String
+		return self.get_query_params().get('PrintCount')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_PrintCount(self, PrintCount):  # String
+		self.add_query_param('PrintCount', PrintCount)
+	def get_VoucherIds(self): # String
+		return self.get_query_params().get('VoucherIds')
+
+	def set_VoucherIds(self, VoucherIds):  # String
+		self.add_query_param('VoucherIds', VoucherIds)

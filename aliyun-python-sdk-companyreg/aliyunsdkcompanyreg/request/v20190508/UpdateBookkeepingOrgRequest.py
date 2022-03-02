@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class UpdateBookkeepingOrgRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'UpdateBookkeepingOrg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class ListUserSolutionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_OrgAddress(self): # String
+		return self.get_query_params().get('OrgAddress')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def set_OrgAddress(self, OrgAddress):  # String
+		self.add_query_param('OrgAddress', OrgAddress)
+	def get_OrgName(self): # String
+		return self.get_query_params().get('OrgName')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
+	def set_OrgName(self, OrgName):  # String
+		self.add_query_param('OrgName', OrgName)
+	def get_OrgCode(self): # String
+		return self.get_query_params().get('OrgCode')
 
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_OrgCode(self, OrgCode):  # String
+		self.add_query_param('OrgCode', OrgCode)
+	def get_OrgMobile(self): # String
+		return self.get_query_params().get('OrgMobile')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_OrgMobile(self, OrgMobile):  # String
+		self.add_query_param('OrgMobile', OrgMobile)

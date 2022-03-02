@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
 
-class ListUserSolutionsRequest(RpcRequest):
+class QueryIcpProduceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'QueryIcpProduceList')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class ListUserSolutionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
+	def get_BizId(self): # String
+		return self.get_query_params().get('BizId')
+
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
-	def get_ExistStatus(self): # Array
-		return self.get_query_params().get('ExistStatus')
+	def get_Type(self): # Long
+		return self.get_query_params().get('Type')
 
-	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
-	def get_IntentionBizId(self): # String
-		return self.get_query_params().get('IntentionBizId')
-
-	def set_IntentionBizId(self, IntentionBizId):  # String
-		self.add_query_param('IntentionBizId', IntentionBizId)
-	def get_PageNum(self): # Integer
+	def set_Type(self, Type):  # Long
+		self.add_query_param('Type', Type)
+	def get_PageNum(self): # Long
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # Integer
+	def set_PageNum(self, PageNum):  # Long
 		self.add_query_param('PageNum', PageNum)
