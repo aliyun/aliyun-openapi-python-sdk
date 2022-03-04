@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcompanyreg.endpoint import endpoint_data
+import json
 
 class ListUserSolutionsRequest(RpcRequest):
 
@@ -40,7 +41,7 @@ class ListUserSolutionsRequest(RpcRequest):
 		return self.get_query_params().get('ExistStatus')
 
 	def set_ExistStatus(self, ExistStatus):  # Array
-		pass
+		self.add_query_param("ExistStatus", json.dumps(ExistStatus))
 	def get_IntentionBizId(self): # String
 		return self.get_query_params().get('IntentionBizId')
 
