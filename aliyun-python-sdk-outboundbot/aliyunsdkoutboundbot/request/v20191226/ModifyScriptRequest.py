@@ -75,6 +75,12 @@ class ModifyScriptRequest(RpcRequest):
 	def set_AsrConfig(self,AsrConfig):
 		self.add_query_param('AsrConfig',AsrConfig)
 
+	def get_NlsConfig(self):
+		return self.get_query_params().get('NlsConfig')
+
+	def set_NlsConfig(self,NlsConfig):
+		self.add_query_param('NlsConfig',NlsConfig)
+
 	def get_MiniPlaybackEnabled(self):
 		return self.get_query_params().get('MiniPlaybackEnabled')
 

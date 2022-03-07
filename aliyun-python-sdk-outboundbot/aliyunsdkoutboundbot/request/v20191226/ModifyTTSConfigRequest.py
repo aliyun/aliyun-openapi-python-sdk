@@ -37,6 +37,12 @@ class ModifyTTSConfigRequest(RpcRequest):
 	def set_Voice(self,Voice):
 		self.add_query_param('Voice',Voice)
 
+	def get_NlsServiceType(self):
+		return self.get_query_params().get('NlsServiceType')
+
+	def set_NlsServiceType(self,NlsServiceType):
+		self.add_query_param('NlsServiceType',NlsServiceType)
+
 	def get_Volume(self):
 		return self.get_query_params().get('Volume')
 
@@ -54,6 +60,12 @@ class ModifyTTSConfigRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
 
 	def get_SpeechRate(self):
 		return self.get_query_params().get('SpeechRate')

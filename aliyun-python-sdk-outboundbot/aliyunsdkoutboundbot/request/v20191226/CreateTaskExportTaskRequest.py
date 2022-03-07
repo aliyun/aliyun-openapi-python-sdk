@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class SearchTaskRequest(RpcRequest):
+class CreateTaskExportTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SearchTask','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateTaskExportTask','outboundbot')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_HasAnswered(self):
+		return self.get_query_params().get('HasAnswered')
+
+	def set_HasAnswered(self,HasAnswered):
+		self.add_query_param('HasAnswered',HasAnswered)
 
 	def get_ActualTimeLte(self):
 		return self.get_query_params().get('ActualTimeLte')
@@ -114,6 +120,18 @@ class SearchTaskRequest(RpcRequest):
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_HasHangUpByRejection(self):
+		return self.get_query_params().get('HasHangUpByRejection')
+
+	def set_HasHangUpByRejection(self,HasHangUpByRejection):
+		self.add_query_param('HasHangUpByRejection',HasHangUpByRejection)
+
+	def get_HasReachedEndOfFlow(self):
+		return self.get_query_params().get('HasReachedEndOfFlow')
+
+	def set_HasReachedEndOfFlow(self,HasReachedEndOfFlow):
+		self.add_query_param('HasReachedEndOfFlow',HasReachedEndOfFlow)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
