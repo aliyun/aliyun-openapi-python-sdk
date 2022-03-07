@@ -20,28 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class ListConversationsRequest(RpcRequest):
+class ListSandBoxWhileListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListConversations','voicebot')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListSandBoxWhileList','voicebot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BeginTimeLeftRange(self):
-		return self.get_query_params().get('BeginTimeLeftRange')
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_BeginTimeLeftRange(self,BeginTimeLeftRange):
-		self.add_query_param('BeginTimeLeftRange',BeginTimeLeftRange)
-
-	def get_Query(self):
-		return self.get_query_params().get('Query')
-
-	def set_Query(self,Query):
-		self.add_query_param('Query',Query)
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -49,35 +43,17 @@ class ListConversationsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Result(self):
-		return self.get_query_params().get('Result')
-
-	def set_Result(self,Result):
-		self.add_query_param('Result',Result)
-
-	def get_CallingNumber(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_BeginTimeRightRange(self):
-		return self.get_query_params().get('BeginTimeRightRange')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_BeginTimeRightRange(self,BeginTimeRightRange):
-		self.add_query_param('BeginTimeRightRange',BeginTimeRightRange)
-
-	def get_IsSandBox(self):
-		return self.get_query_params().get('IsSandBox')
-
-	def set_IsSandBox(self,IsSandBox):
-		self.add_query_param('IsSandBox',IsSandBox)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
