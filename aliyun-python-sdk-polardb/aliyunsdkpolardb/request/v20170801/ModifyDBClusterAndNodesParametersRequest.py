@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeBackupPolicyRequest(RpcRequest):
+class ModifyDBClusterAndNodesParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeBackupPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterAndNodesParameters','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,18 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DBNodeIds(self):
+		return self.get_query_params().get('DBNodeIds')
+
+	def set_DBNodeIds(self,DBNodeIds):
+		self.add_query_param('DBNodeIds',DBNodeIds)
+
+	def get_ParameterGroupId(self):
+		return self.get_query_params().get('ParameterGroupId')
+
+	def set_ParameterGroupId(self,ParameterGroupId):
+		self.add_query_param('ParameterGroupId',ParameterGroupId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,3 +72,9 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Parameters(self):
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameters(self,Parameters):
+		self.add_query_param('Parameters',Parameters)
