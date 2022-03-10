@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class GetSparkJobDriverLogRequest(RpcRequest):
+class ListStandardGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetSparkJobDriverLog','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListStandardGroups','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class GetSparkJobDriverLogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobId(self): # Long
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self, JobId):  # Long
-		self.add_query_param('JobId', JobId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
