@@ -56,6 +56,11 @@ class CreateDtsInstanceRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
+	def get_Du(self): # Integer
+		return self.get_query_params().get('Du')
+
+	def set_Du(self, Du):  # Integer
+		self.add_query_param('Du', Du)
 	def get_ComputeUnit(self): # Integer
 		return self.get_query_params().get('ComputeUnit')
 

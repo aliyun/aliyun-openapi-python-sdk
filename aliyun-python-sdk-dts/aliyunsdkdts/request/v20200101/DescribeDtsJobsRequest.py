@@ -36,6 +36,16 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_OrderDirection(self, OrderDirection):  # String
 		self.add_query_param('OrderDirection', OrderDirection)
+	def get_DedicatedClusterId(self): # String
+		return self.get_query_params().get('DedicatedClusterId')
+
+	def set_DedicatedClusterId(self, DedicatedClusterId):  # String
+		self.add_query_param('DedicatedClusterId', DedicatedClusterId)
+	def get_DedicatedClusterNodeId(self): # Long
+		return self.get_query_params().get('DedicatedClusterNodeId')
+
+	def set_DedicatedClusterNodeId(self, DedicatedClusterNodeId):  # Long
+		self.add_query_param('DedicatedClusterNodeId', DedicatedClusterNodeId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -56,6 +66,11 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_DtsJobId(self): # String
+		return self.get_query_params().get('DtsJobId')
+
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -66,6 +81,11 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_Params(self, Params):  # String
 		self.add_query_param('Params', Params)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
 	def get_JobType(self): # String
 		return self.get_query_params().get('JobType')
 

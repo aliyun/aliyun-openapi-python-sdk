@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class ModifySynchronizationObjectRequest(RpcRequest):
+class SummaryJobDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifySynchronizationObject','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SummaryJobDetail','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,21 @@ class ModifySynchronizationObjectRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SynchronizationObjects(self): # String
-		return self.get_body_params().get('SynchronizationObjects')
+	def get_JobCode(self): # String
+		return self.get_query_params().get('JobCode')
 
-	def set_SynchronizationObjects(self, SynchronizationObjects):  # String
-		self.add_body_params('SynchronizationObjects', SynchronizationObjects)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
+	def set_JobCode(self, JobCode):  # String
+		self.add_query_param('JobCode', JobCode)
+	def get_DtsJobId(self): # String
+		return self.get_query_params().get('DtsJobId')
 
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SynchronizationJobId(self): # String
-		return self.get_query_params().get('SynchronizationJobId')
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_DtsInstanceId(self): # String
+		return self.get_query_params().get('DtsInstanceId')
 
-	def set_SynchronizationJobId(self, SynchronizationJobId):  # String
-		self.add_query_param('SynchronizationJobId', SynchronizationJobId)
-	def get_AccountId(self): # String
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self, AccountId):  # String
-		self.add_query_param('AccountId', AccountId)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)
 	def get_SynchronizationDirection(self): # String
 		return self.get_query_params().get('SynchronizationDirection')
 

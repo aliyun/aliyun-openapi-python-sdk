@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeDtsJobDetailRequest(RpcRequest):
+class DescribeDtsEtlJobVersionInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobDetail','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsEtlJobVersionInfo','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class DescribeDtsJobDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SyncSubJobHistory(self): # Boolean
-		return self.get_query_params().get('SyncSubJobHistory')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_SyncSubJobHistory(self, SyncSubJobHistory):  # Boolean
-		self.add_query_param('SyncSubJobHistory', SyncSubJobHistory)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
 	def set_DtsJobId(self, DtsJobId):  # String
 		self.add_query_param('DtsJobId', DtsJobId)
-	def get_DtsInstanceID(self): # String
-		return self.get_query_params().get('DtsInstanceID')
+	def get_DtsInstanceId(self): # String
+		return self.get_query_params().get('DtsInstanceId')
 
-	def set_DtsInstanceID(self, DtsInstanceID):  # String
-		self.add_query_param('DtsInstanceID', DtsInstanceID)
-	def get_SynchronizationDirection(self): # String
-		return self.get_query_params().get('SynchronizationDirection')
-
-	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
-		self.add_query_param('SynchronizationDirection', SynchronizationDirection)
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeDtsJobDetailRequest(RpcRequest):
+class StopDtsJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobDetail','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'StopDtsJobs','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,8 @@ class DescribeDtsJobDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SyncSubJobHistory(self): # Boolean
-		return self.get_query_params().get('SyncSubJobHistory')
+	def get_DtsJobIds(self): # String
+		return self.get_query_params().get('DtsJobIds')
 
-	def set_SyncSubJobHistory(self, SyncSubJobHistory):  # Boolean
-		self.add_query_param('SyncSubJobHistory', SyncSubJobHistory)
-	def get_DtsJobId(self): # String
-		return self.get_query_params().get('DtsJobId')
-
-	def set_DtsJobId(self, DtsJobId):  # String
-		self.add_query_param('DtsJobId', DtsJobId)
-	def get_DtsInstanceID(self): # String
-		return self.get_query_params().get('DtsInstanceID')
-
-	def set_DtsInstanceID(self, DtsInstanceID):  # String
-		self.add_query_param('DtsInstanceID', DtsInstanceID)
-	def get_SynchronizationDirection(self): # String
-		return self.get_query_params().get('SynchronizationDirection')
-
-	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
-		self.add_query_param('SynchronizationDirection', SynchronizationDirection)
+	def set_DtsJobIds(self, DtsJobIds):  # String
+		self.add_query_param('DtsJobIds', DtsJobIds)

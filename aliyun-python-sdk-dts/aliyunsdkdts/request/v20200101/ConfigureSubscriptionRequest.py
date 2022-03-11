@@ -66,6 +66,11 @@ class ConfigureSubscriptionRequest(RpcRequest):
 
 	def set_SourceEndpointOwnerID(self, SourceEndpointOwnerID):  # String
 		self.add_query_param('SourceEndpointOwnerID', SourceEndpointOwnerID)
+	def get_DedicatedClusterId(self): # String
+		return self.get_query_params().get('DedicatedClusterId')
+
+	def set_DedicatedClusterId(self, DedicatedClusterId):  # String
+		self.add_query_param('DedicatedClusterId', DedicatedClusterId)
 	def get_DelayPhone(self): # String
 		return self.get_query_params().get('DelayPhone')
 
