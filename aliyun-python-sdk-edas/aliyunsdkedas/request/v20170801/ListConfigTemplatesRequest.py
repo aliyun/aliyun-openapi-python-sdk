@@ -20,32 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ToggleGrayIngressRequest(RoaRequest):
+class ListConfigTemplatesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ToggleGrayIngress','Edas')
-		self.set_uri_pattern('/pop/v5/gray/env_switch')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConfigTemplates','Edas')
+		self.set_uri_pattern('/pop/v5/config_template')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LogicalRegionId(self):
-		return self.get_body_params().get('LogicalRegionId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_body_params('LogicalRegionId', LogicalRegionId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Enable(self):
-		return self.get_body_params().get('Enable')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_Enable(self,Enable):
-		self.add_body_params('Enable', Enable)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_PointcutName(self):
-		return self.get_body_params().get('PointcutName')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_PointcutName(self,PointcutName):
-		self.add_body_params('PointcutName', PointcutName)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

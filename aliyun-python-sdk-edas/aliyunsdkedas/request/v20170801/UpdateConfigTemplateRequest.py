@@ -20,44 +20,44 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class InsertConfigCenterRequest(RoaRequest):
+class UpdateConfigTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertConfigCenter','Edas')
-		self.set_uri_pattern('/pop/v5/configCenter')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateConfigTemplate','Edas')
+		self.set_uri_pattern('/pop/v5/config_template')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
 
-	def get_Data(self):
-		return self.get_query_params().get('Data')
+	def get_Format(self):
+		return self.get_body_params().get('Format')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
+	def set_Format(self,Format):
+		self.add_body_params('Format', Format)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_Description(self):
+		return self.get_body_params().get('Description')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
 
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
+	def get_Id(self):
+		return self.get_body_params().get('Id')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
+	def set_Id(self,Id):
+		self.add_body_params('Id', Id)
 
-	def get_Group(self):
-		return self.get_query_params().get('Group')
+	def get_Content(self):
+		return self.get_body_params().get('Content')
 
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_Content(self,Content):
+		self.add_body_params('Content', Content)

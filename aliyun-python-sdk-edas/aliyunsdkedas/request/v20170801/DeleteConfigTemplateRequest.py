@@ -20,32 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListChildrenStacksRequest(RoaRequest):
+class DeleteConfigTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListChildrenStacks','Edas')
-		self.set_uri_pattern('/pop/v5/s2i/list_children_stack')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteConfigTemplate','Edas')
+		self.set_uri_pattern('/pop/v5/config_template')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StackId(self):
-		return self.get_query_params().get('StackId')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_StackId(self,StackId):
-		self.add_query_param('StackId',StackId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

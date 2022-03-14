@@ -62,17 +62,17 @@ class AddMockRuleRequest(RoaRequest):
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
 
-	def get_ProviderAppName(self):
-		return self.get_query_params().get('ProviderAppName')
-
-	def set_ProviderAppName(self,ProviderAppName):
-		self.add_query_param('ProviderAppName',ProviderAppName)
-
 	def get_Enable(self):
 		return self.get_query_params().get('Enable')
 
 	def set_Enable(self,Enable):
 		self.add_query_param('Enable',Enable)
+
+	def get_ProviderAppName(self):
+		return self.get_query_params().get('ProviderAppName')
+
+	def set_ProviderAppName(self,ProviderAppName):
+		self.add_query_param('ProviderAppName',ProviderAppName)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -91,6 +91,12 @@ class AddMockRuleRequest(RoaRequest):
 
 	def set_ConsumerAppsJson(self,ConsumerAppsJson):
 		self.add_query_param('ConsumerAppsJson',ConsumerAppsJson)
+
+	def get_MockType(self):
+		return self.get_query_params().get('MockType')
+
+	def set_MockType(self,MockType):
+		self.add_query_param('MockType',MockType)
 
 	def get_Region(self):
 		return self.get_query_params().get('Region')

@@ -62,6 +62,12 @@ class GetAccountMockRuleRequest(RoaRequest):
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
 
+	def get_MockType(self):
+		return self.get_query_params().get('MockType')
+
+	def set_MockType(self,MockType):
+		self.add_query_param('MockType',MockType)
+
 	def get_Region(self):
 		return self.get_query_params().get('Region')
 

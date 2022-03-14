@@ -146,6 +146,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_PostStart(self,PostStart):
 		self.add_query_param('PostStart',PostStart)
 
+	def get_CustomAffinity(self):
+		return self.get_query_params().get('CustomAffinity')
+
+	def set_CustomAffinity(self,CustomAffinity):
+		self.add_query_param('CustomAffinity',CustomAffinity)
+
 	def get_RepoId(self):
 		return self.get_query_params().get('RepoId')
 
@@ -289,6 +295,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_LimitCpu(self,LimitCpu):
 		self.add_query_param('LimitCpu',LimitCpu)
+
+	def get_CustomTolerations(self):
+		return self.get_query_params().get('CustomTolerations')
+
+	def set_CustomTolerations(self,CustomTolerations):
+		self.add_query_param('CustomTolerations',CustomTolerations)
 
 	def get_WebContainerConfig(self):
 		return self.get_query_params().get('WebContainerConfig')

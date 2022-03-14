@@ -20,20 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class GetGrayEnvironmentsRequest(RoaRequest):
+class CreateConfigTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetGrayEnvironments','Edas')
-		self.set_uri_pattern('/pop/v5/gray/env_list')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'CreateConfigTemplate','Edas')
+		self.set_uri_pattern('/pop/v5/config_template')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
+	def get_Format(self):
+		return self.get_body_params().get('Format')
+
+	def set_Format(self,Format):
+		self.add_body_params('Format', Format)
+
+	def get_Description(self):
+		return self.get_body_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
+
+	def get_Content(self):
+		return self.get_body_params().get('Content')
+
+	def set_Content(self,Content):
+		self.add_body_params('Content', Content)
