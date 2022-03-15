@@ -49,6 +49,12 @@ class DeleteShardingNodeRequest(RpcRequest):
 	def set_NodeId(self,NodeId):
 		self.add_query_param('NodeId',NodeId)
 
+	def get_ShardCount(self):
+		return self.get_query_params().get('ShardCount')
+
+	def set_ShardCount(self,ShardCount):
+		self.add_query_param('ShardCount',ShardCount)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
