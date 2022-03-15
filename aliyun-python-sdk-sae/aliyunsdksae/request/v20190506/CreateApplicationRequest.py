@@ -68,6 +68,12 @@ class CreateApplicationRequest(RoaRequest):
 	def set_Envs(self,Envs):
 		self.add_query_param('Envs',Envs)
 
+	def get_KafkaInstanceId(self):
+		return self.get_query_params().get('KafkaInstanceId')
+
+	def set_KafkaInstanceId(self,KafkaInstanceId):
+		self.add_query_param('KafkaInstanceId',KafkaInstanceId)
+
 	def get_PhpArmsConfigLocation(self):
 		return self.get_query_params().get('PhpArmsConfigLocation')
 
@@ -115,6 +121,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_OssMountDescs(self,OssMountDescs):
 		self.add_body_params('OssMountDescs', OssMountDescs)
+
+	def get_KafkaEndpoint(self):
+		return self.get_query_params().get('KafkaEndpoint')
+
+	def set_KafkaEndpoint(self,KafkaEndpoint):
+		self.add_query_param('KafkaEndpoint',KafkaEndpoint)
 
 	def get_PreStop(self):
 		return self.get_query_params().get('PreStop')
@@ -169,6 +181,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_SlsConfigs(self,SlsConfigs):
 		self.add_query_param('SlsConfigs',SlsConfigs)
+
+	def get_OpenCollectToKafka(self):
+		return self.get_query_params().get('OpenCollectToKafka')
+
+	def set_OpenCollectToKafka(self,OpenCollectToKafka):
+		self.add_query_param('OpenCollectToKafka',OpenCollectToKafka)
 
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
@@ -283,6 +301,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_AppDescription(self,AppDescription):
 		self.add_query_param('AppDescription',AppDescription)
+
+	def get_KafkaLogfileConfig(self):
+		return self.get_query_params().get('KafkaLogfileConfig')
+
+	def set_KafkaLogfileConfig(self,KafkaLogfileConfig):
+		self.add_query_param('KafkaLogfileConfig',KafkaLogfileConfig)
 
 	def get_AcrInstanceId(self):
 		return self.get_body_params().get('AcrInstanceId')

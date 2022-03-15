@@ -38,17 +38,125 @@ class DeployApplicationRequest(RoaRequest):
 	def set_NasId(self,NasId):
 		self.add_query_param('NasId',NasId)
 
-	def get_WebContainer(self):
-		return self.get_query_params().get('WebContainer')
-
-	def set_WebContainer(self,WebContainer):
-		self.add_query_param('WebContainer',WebContainer)
-
 	def get_JarStartArgs(self):
 		return self.get_query_params().get('JarStartArgs')
 
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
+
+	def get_OssAkSecret(self):
+		return self.get_body_params().get('OssAkSecret')
+
+	def set_OssAkSecret(self,OssAkSecret):
+		self.add_body_params('OssAkSecret', OssAkSecret)
+
+	def get_MountHost(self):
+		return self.get_query_params().get('MountHost')
+
+	def set_MountHost(self,MountHost):
+		self.add_query_param('MountHost',MountHost)
+
+	def get_BatchWaitTime(self):
+		return self.get_query_params().get('BatchWaitTime')
+
+	def set_BatchWaitTime(self,BatchWaitTime):
+		self.add_query_param('BatchWaitTime',BatchWaitTime)
+
+	def get_Envs(self):
+		return self.get_query_params().get('Envs')
+
+	def set_Envs(self,Envs):
+		self.add_query_param('Envs',Envs)
+
+	def get_KafkaInstanceId(self):
+		return self.get_query_params().get('KafkaInstanceId')
+
+	def set_KafkaInstanceId(self,KafkaInstanceId):
+		self.add_query_param('KafkaInstanceId',KafkaInstanceId)
+
+	def get_PhpArmsConfigLocation(self):
+		return self.get_query_params().get('PhpArmsConfigLocation')
+
+	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
+		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
+
+	def get_CustomHostAlias(self):
+		return self.get_query_params().get('CustomHostAlias')
+
+	def set_CustomHostAlias(self,CustomHostAlias):
+		self.add_query_param('CustomHostAlias',CustomHostAlias)
+
+	def get_JarStartOptions(self):
+		return self.get_query_params().get('JarStartOptions')
+
+	def set_JarStartOptions(self,JarStartOptions):
+		self.add_query_param('JarStartOptions',JarStartOptions)
+
+	def get_ConfigMapMountDesc(self):
+		return self.get_body_params().get('ConfigMapMountDesc')
+
+	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
+		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
+
+	def get_OssMountDescs(self):
+		return self.get_body_params().get('OssMountDescs')
+
+	def set_OssMountDescs(self,OssMountDescs):
+		self.add_body_params('OssMountDescs', OssMountDescs)
+
+	def get_KafkaEndpoint(self):
+		return self.get_query_params().get('KafkaEndpoint')
+
+	def set_KafkaEndpoint(self,KafkaEndpoint):
+		self.add_query_param('KafkaEndpoint',KafkaEndpoint)
+
+	def get_PreStop(self):
+		return self.get_query_params().get('PreStop')
+
+	def set_PreStop(self,PreStop):
+		self.add_query_param('PreStop',PreStop)
+
+	def get_UpdateStrategy(self):
+		return self.get_query_params().get('UpdateStrategy')
+
+	def set_UpdateStrategy(self,UpdateStrategy):
+		self.add_query_param('UpdateStrategy',UpdateStrategy)
+
+	def get_ChangeOrderDesc(self):
+		return self.get_query_params().get('ChangeOrderDesc')
+
+	def set_ChangeOrderDesc(self,ChangeOrderDesc):
+		self.add_query_param('ChangeOrderDesc',ChangeOrderDesc)
+
+	def get_MinReadyInstanceRatio(self):
+		return self.get_query_params().get('MinReadyInstanceRatio')
+
+	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
+		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)
+
+	def get_AutoEnableApplicationScalingRule(self):
+		return self.get_query_params().get('AutoEnableApplicationScalingRule')
+
+	def set_AutoEnableApplicationScalingRule(self,AutoEnableApplicationScalingRule):
+		self.add_query_param('AutoEnableApplicationScalingRule',AutoEnableApplicationScalingRule)
+
+	def get_PostStart(self):
+		return self.get_query_params().get('PostStart')
+
+	def set_PostStart(self,PostStart):
+		self.add_query_param('PostStart',PostStart)
+
+	def get_AssociateEip(self):
+		return self.get_body_params().get('AssociateEip')
+
+	def set_AssociateEip(self,AssociateEip):
+		self.add_body_params('AssociateEip', AssociateEip)
+
+	def get_WebContainer(self):
+		return self.get_query_params().get('WebContainer')
+
+	def set_WebContainer(self,WebContainer):
+		self.add_query_param('WebContainer',WebContainer)
 
 	def get_EnableAhas(self):
 		return self.get_query_params().get('EnableAhas')
@@ -62,11 +170,11 @@ class DeployApplicationRequest(RoaRequest):
 	def set_SlsConfigs(self,SlsConfigs):
 		self.add_query_param('SlsConfigs',SlsConfigs)
 
-	def get_OssAkSecret(self):
-		return self.get_body_params().get('OssAkSecret')
+	def get_OpenCollectToKafka(self):
+		return self.get_query_params().get('OpenCollectToKafka')
 
-	def set_OssAkSecret(self,OssAkSecret):
-		self.add_body_params('OssAkSecret', OssAkSecret)
+	def set_OpenCollectToKafka(self,OpenCollectToKafka):
+		self.add_query_param('OpenCollectToKafka',OpenCollectToKafka)
 
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
@@ -92,18 +200,6 @@ class DeployApplicationRequest(RoaRequest):
 	def set_Timezone(self,Timezone):
 		self.add_query_param('Timezone',Timezone)
 
-	def get_MountHost(self):
-		return self.get_query_params().get('MountHost')
-
-	def set_MountHost(self,MountHost):
-		self.add_query_param('MountHost',MountHost)
-
-	def get_BatchWaitTime(self):
-		return self.get_query_params().get('BatchWaitTime')
-
-	def set_BatchWaitTime(self,BatchWaitTime):
-		self.add_query_param('BatchWaitTime',BatchWaitTime)
-
 	def get_OssAkId(self):
 		return self.get_body_params().get('OssAkId')
 
@@ -115,18 +211,6 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Liveness(self,Liveness):
 		self.add_query_param('Liveness',Liveness)
-
-	def get_Envs(self):
-		return self.get_query_params().get('Envs')
-
-	def set_Envs(self,Envs):
-		self.add_query_param('Envs',Envs)
-
-	def get_PhpArmsConfigLocation(self):
-		return self.get_query_params().get('PhpArmsConfigLocation')
-
-	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
-		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
 
 	def get_PackageVersion(self):
 		return self.get_query_params().get('PackageVersion')
@@ -140,23 +224,11 @@ class DeployApplicationRequest(RoaRequest):
 	def set_TomcatConfig(self,TomcatConfig):
 		self.add_query_param('TomcatConfig',TomcatConfig)
 
-	def get_CustomHostAlias(self):
-		return self.get_query_params().get('CustomHostAlias')
-
-	def set_CustomHostAlias(self,CustomHostAlias):
-		self.add_query_param('CustomHostAlias',CustomHostAlias)
-
 	def get_WarStartOptions(self):
 		return self.get_query_params().get('WarStartOptions')
 
 	def set_WarStartOptions(self,WarStartOptions):
 		self.add_query_param('WarStartOptions',WarStartOptions)
-
-	def get_JarStartOptions(self):
-		return self.get_query_params().get('JarStartOptions')
-
-	def set_JarStartOptions(self,JarStartOptions):
-		self.add_query_param('JarStartOptions',JarStartOptions)
 
 	def get_EdasContainerVersion(self):
 		return self.get_query_params().get('EdasContainerVersion')
@@ -176,29 +248,11 @@ class DeployApplicationRequest(RoaRequest):
 	def set_TerminationGracePeriodSeconds(self,TerminationGracePeriodSeconds):
 		self.add_query_param('TerminationGracePeriodSeconds',TerminationGracePeriodSeconds)
 
-	def get_ConfigMapMountDesc(self):
-		return self.get_body_params().get('ConfigMapMountDesc')
-
-	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
-		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
-
-	def get_OssMountDescs(self):
-		return self.get_body_params().get('OssMountDescs')
-
-	def set_OssMountDescs(self,OssMountDescs):
-		self.add_body_params('OssMountDescs', OssMountDescs)
-
 	def get_PhpConfig(self):
 		return self.get_body_params().get('PhpConfig')
 
 	def set_PhpConfig(self,PhpConfig):
 		self.add_body_params('PhpConfig', PhpConfig)
-
-	def get_PreStop(self):
-		return self.get_query_params().get('PreStop')
-
-	def set_PreStop(self,PreStop):
-		self.add_query_param('PreStop',PreStop)
 
 	def get_EnableGreyTagRoute(self):
 		return self.get_query_params().get('EnableGreyTagRoute')
@@ -211,12 +265,6 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
-
-	def get_UpdateStrategy(self):
-		return self.get_query_params().get('UpdateStrategy')
-
-	def set_UpdateStrategy(self,UpdateStrategy):
-		self.add_query_param('UpdateStrategy',UpdateStrategy)
 
 	def get_MountDesc(self):
 		return self.get_query_params().get('MountDesc')
@@ -236,11 +284,11 @@ class DeployApplicationRequest(RoaRequest):
 	def set_MinReadyInstances(self,MinReadyInstances):
 		self.add_query_param('MinReadyInstances',MinReadyInstances)
 
-	def get_ChangeOrderDesc(self):
-		return self.get_query_params().get('ChangeOrderDesc')
+	def get_KafkaLogfileConfig(self):
+		return self.get_query_params().get('KafkaLogfileConfig')
 
-	def set_ChangeOrderDesc(self,ChangeOrderDesc):
-		self.add_query_param('ChangeOrderDesc',ChangeOrderDesc)
+	def set_KafkaLogfileConfig(self,KafkaLogfileConfig):
+		self.add_query_param('KafkaLogfileConfig',KafkaLogfileConfig)
 
 	def get_AcrInstanceId(self):
 		return self.get_body_params().get('AcrInstanceId')
@@ -260,32 +308,8 @@ class DeployApplicationRequest(RoaRequest):
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
 
-	def get_MinReadyInstanceRatio(self):
-		return self.get_query_params().get('MinReadyInstanceRatio')
-
-	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
-		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)
-
-	def get_AutoEnableApplicationScalingRule(self):
-		return self.get_query_params().get('AutoEnableApplicationScalingRule')
-
-	def set_AutoEnableApplicationScalingRule(self,AutoEnableApplicationScalingRule):
-		self.add_query_param('AutoEnableApplicationScalingRule',AutoEnableApplicationScalingRule)
-
 	def get_PhpConfigLocation(self):
 		return self.get_query_params().get('PhpConfigLocation')
 
 	def set_PhpConfigLocation(self,PhpConfigLocation):
 		self.add_query_param('PhpConfigLocation',PhpConfigLocation)
-
-	def get_PostStart(self):
-		return self.get_query_params().get('PostStart')
-
-	def set_PostStart(self,PostStart):
-		self.add_query_param('PostStart',PostStart)
-
-	def get_AssociateEip(self):
-		return self.get_body_params().get('AssociateEip')
-
-	def set_AssociateEip(self,AssociateEip):
-		self.add_body_params('AssociateEip', AssociateEip)
