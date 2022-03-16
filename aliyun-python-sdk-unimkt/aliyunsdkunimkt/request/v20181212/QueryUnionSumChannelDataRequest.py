@@ -23,22 +23,21 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryUnionSumChannelDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionSumChannelData','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionSumChannelData')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskType(self):
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_ChannelId(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

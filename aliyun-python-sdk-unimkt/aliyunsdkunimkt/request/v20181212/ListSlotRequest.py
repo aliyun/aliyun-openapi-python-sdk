@@ -23,118 +23,101 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class ListSlotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ListSlot','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ListSlot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AdSlotType(self):
+	def get_AdSlotType(self): # String
 		return self.get_query_params().get('AdSlotType')
 
-	def set_AdSlotType(self,AdSlotType):
-		self.add_query_param('AdSlotType',AdSlotType)
-
-	def get_UserId(self):
+	def set_AdSlotType(self, AdSlotType):  # String
+		self.add_query_param('AdSlotType', AdSlotType)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_OriginSiteUserId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_OriginSiteUserId(self): # String
 		return self.get_query_params().get('OriginSiteUserId')
 
-	def set_OriginSiteUserId(self,OriginSiteUserId):
-		self.add_query_param('OriginSiteUserId',OriginSiteUserId)
-
-	def get_PageNumber(self):
+	def set_OriginSiteUserId(self, OriginSiteUserId):  # String
+		self.add_query_param('OriginSiteUserId', OriginSiteUserId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_MediaName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_MediaName(self): # String
 		return self.get_query_params().get('MediaName')
 
-	def set_MediaName(self,MediaName):
-		self.add_query_param('MediaName',MediaName)
-
-	def get_AppName(self):
+	def set_MediaName(self, MediaName):  # String
+		self.add_query_param('MediaName', MediaName)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_AdSlotStatus(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_AdSlotStatus(self): # String
 		return self.get_query_params().get('AdSlotStatus')
 
-	def set_AdSlotStatus(self,AdSlotStatus):
-		self.add_query_param('AdSlotStatus',AdSlotStatus)
-
-	def get_TenantId(self):
+	def set_AdSlotStatus(self, AdSlotStatus):  # String
+		self.add_query_param('AdSlotStatus', AdSlotStatus)
+	def get_TenantId(self): # String
 		return self.get_query_params().get('TenantId')
 
-	def set_TenantId(self,TenantId):
-		self.add_query_param('TenantId',TenantId)
-
-	def get_AdSlotId(self):
+	def set_TenantId(self, TenantId):  # String
+		self.add_query_param('TenantId', TenantId)
+	def get_AdSlotId(self): # String
 		return self.get_query_params().get('AdSlotId')
 
-	def set_AdSlotId(self,AdSlotId):
-		self.add_query_param('AdSlotId',AdSlotId)
-
-	def get_PageSize(self):
+	def set_AdSlotId(self, AdSlotId):  # String
+		self.add_query_param('AdSlotId', AdSlotId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AdSlotCorporateStatus(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AdSlotCorporateStatus(self): # String
 		return self.get_query_params().get('AdSlotCorporateStatus')
 
-	def set_AdSlotCorporateStatus(self,AdSlotCorporateStatus):
-		self.add_query_param('AdSlotCorporateStatus',AdSlotCorporateStatus)
-
-	def get_EndCreateTime(self):
+	def set_AdSlotCorporateStatus(self, AdSlotCorporateStatus):  # String
+		self.add_query_param('AdSlotCorporateStatus', AdSlotCorporateStatus)
+	def get_EndCreateTime(self): # Long
 		return self.get_query_params().get('EndCreateTime')
 
-	def set_EndCreateTime(self,EndCreateTime):
-		self.add_query_param('EndCreateTime',EndCreateTime)
-
-	def get_Business(self):
+	def set_EndCreateTime(self, EndCreateTime):  # Long
+		self.add_query_param('EndCreateTime', EndCreateTime)
+	def get_Business(self): # String
 		return self.get_query_params().get('Business')
 
-	def set_Business(self,Business):
-		self.add_query_param('Business',Business)
-
-	def get_MediaId(self):
+	def set_Business(self, Business):  # String
+		self.add_query_param('Business', Business)
+	def get_MediaId(self): # String
 		return self.get_query_params().get('MediaId')
 
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
-
-	def get_Environment(self):
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)
+	def get_Environment(self): # String
 		return self.get_query_params().get('Environment')
 
-	def set_Environment(self,Environment):
-		self.add_query_param('Environment',Environment)
-
-	def get_StartCreateTime(self):
+	def set_Environment(self, Environment):  # String
+		self.add_query_param('Environment', Environment)
+	def get_StartCreateTime(self): # Long
 		return self.get_query_params().get('StartCreateTime')
 
-	def set_StartCreateTime(self,StartCreateTime):
-		self.add_query_param('StartCreateTime',StartCreateTime)
-
-	def get_UserSite(self):
+	def set_StartCreateTime(self, StartCreateTime):  # Long
+		self.add_query_param('StartCreateTime', StartCreateTime)
+	def get_UserSite(self): # String
 		return self.get_query_params().get('UserSite')
 
-	def set_UserSite(self,UserSite):
-		self.add_query_param('UserSite',UserSite)
-
-	def get_AdSlotName(self):
+	def set_UserSite(self, UserSite):  # String
+		self.add_query_param('UserSite', UserSite)
+	def get_AdSlotName(self): # String
 		return self.get_query_params().get('AdSlotName')
 
-	def set_AdSlotName(self,AdSlotName):
-		self.add_query_param('AdSlotName',AdSlotName)
+	def set_AdSlotName(self, AdSlotName):  # String
+		self.add_query_param('AdSlotName', AdSlotName)

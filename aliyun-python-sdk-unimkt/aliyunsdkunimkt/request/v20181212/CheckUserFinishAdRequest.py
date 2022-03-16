@@ -20,26 +20,44 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkunimkt.endpoint import endpoint_data
 
-class GetDeviceShortChainUrlRequest(RpcRequest):
+class CheckUserFinishAdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2019-07-24', 'GetDeviceShortChainUrl','1.0.0')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CheckUserFinishAd')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Uid(self): # String
+		return self.get_query_params().get('Uid')
 
-	def get_Longterm(self):
-		return self.get_body_params().get('Longterm')
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_Adid(self): # Long
+		return self.get_query_params().get('Adid')
 
-	def set_Longterm(self,Longterm):
-		self.add_body_params('Longterm', Longterm)
+	def set_Adid(self, Adid):  # Long
+		self.add_query_param('Adid', Adid)
+	def get_Tagid(self): # String
+		return self.get_query_params().get('Tagid')
 
-	def get_Url(self):
-		return self.get_body_params().get('Url')
+	def set_Tagid(self, Tagid):  # String
+		self.add_query_param('Tagid', Tagid)
+	def get_Clicklink(self): # String
+		return self.get_query_params().get('Clicklink')
 
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
+	def set_Clicklink(self, Clicklink):  # String
+		self.add_query_param('Clicklink', Clicklink)
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
+	def get_Mediaid(self): # String
+		return self.get_query_params().get('Mediaid')
+
+	def set_Mediaid(self, Mediaid):  # String
+		self.add_query_param('Mediaid', Mediaid)

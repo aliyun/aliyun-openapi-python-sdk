@@ -19,21 +19,21 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkunimkt.endpoint import endpoint_data
+import json
 
-class GetConsoleInfoRequest(RpcRequest):
+class DeviceApiAddDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'GetConsoleInfo','1.0.0')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'DeviceApiAddDevice')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_body(self): # Struct
+		return self.get_body_params().get('body')
 
-	def get_Message(self):
-		return self.get_body_params().get('Message')
-
-	def set_Message(self,Message):
-		self.add_body_params('Message', Message)
+	def set_body(self, body):  # Struct
+		self.add_body_params("body", json.dumps(body))

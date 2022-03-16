@@ -23,64 +23,56 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class CreateTenantUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateTenantUser','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateTenantUser')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Business(self):
+	def get_Business(self): # String
 		return self.get_query_params().get('Business')
 
-	def set_Business(self,Business):
-		self.add_query_param('Business',Business)
-
-	def get_ClientToken(self):
+	def set_Business(self, Business):  # String
+		self.add_query_param('Business', Business)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_TenantUser(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_TenantUser(self): # String
 		return self.get_body_params().get('TenantUser')
 
-	def set_TenantUser(self,TenantUser):
+	def set_TenantUser(self, TenantUser):  # String
 		self.add_body_params('TenantUser', TenantUser)
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_OriginSiteUserId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_OriginSiteUserId(self): # String
 		return self.get_query_params().get('OriginSiteUserId')
 
-	def set_OriginSiteUserId(self,OriginSiteUserId):
-		self.add_query_param('OriginSiteUserId',OriginSiteUserId)
-
-	def get_Environment(self):
+	def set_OriginSiteUserId(self, OriginSiteUserId):  # String
+		self.add_query_param('OriginSiteUserId', OriginSiteUserId)
+	def get_Environment(self): # String
 		return self.get_query_params().get('Environment')
 
-	def set_Environment(self,Environment):
-		self.add_query_param('Environment',Environment)
-
-	def get_AppName(self):
+	def set_Environment(self, Environment):  # String
+		self.add_query_param('Environment', Environment)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_TenantId(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_TenantId(self): # String
 		return self.get_query_params().get('TenantId')
 
-	def set_TenantId(self,TenantId):
-		self.add_query_param('TenantId',TenantId)
-
-	def get_UserSite(self):
+	def set_TenantId(self, TenantId):  # String
+		self.add_query_param('TenantId', TenantId)
+	def get_UserSite(self): # String
 		return self.get_query_params().get('UserSite')
 
-	def set_UserSite(self,UserSite):
-		self.add_query_param('UserSite',UserSite)
+	def set_UserSite(self, UserSite):  # String
+		self.add_query_param('UserSite', UserSite)

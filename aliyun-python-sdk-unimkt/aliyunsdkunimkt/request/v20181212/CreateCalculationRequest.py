@@ -23,28 +23,26 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class CreateCalculationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateCalculation','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateCalculation')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CloudCodeUserId(self):
+	def get_CloudCodeUserId(self): # String
 		return self.get_query_params().get('CloudCodeUserId')
 
-	def set_CloudCodeUserId(self,CloudCodeUserId):
-		self.add_query_param('CloudCodeUserId',CloudCodeUserId)
-
-	def get_ClientToken(self):
+	def set_CloudCodeUserId(self, CloudCodeUserId):  # String
+		self.add_query_param('CloudCodeUserId', CloudCodeUserId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_QueryString(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_QueryString(self): # String
 		return self.get_query_params().get('QueryString')
 
-	def set_QueryString(self,QueryString):
-		self.add_query_param('QueryString',QueryString)
+	def set_QueryString(self, QueryString):  # String
+		self.add_query_param('QueryString', QueryString)

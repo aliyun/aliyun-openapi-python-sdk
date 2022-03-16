@@ -23,47 +23,42 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class PushFaultEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'PushFaultEvent','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'PushFaultEvent')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FaultComment(self):
+	def get_FaultComment(self): # String
 		return self.get_body_params().get('FaultComment')
 
-	def set_FaultComment(self,FaultComment):
+	def set_FaultComment(self, FaultComment):  # String
 		self.add_body_params('FaultComment', FaultComment)
-
-	def get_Time(self):
+	def get_Time(self): # Long
 		return self.get_body_params().get('Time')
 
-	def set_Time(self,Time):
+	def set_Time(self, Time):  # Long
 		self.add_body_params('Time', Time)
-
-	def get_Type(self):
+	def get_Type(self): # Integer
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # Integer
 		self.add_body_params('Type', Type)
-
-	def get_DeviceSn(self):
+	def get_DeviceSn(self): # String
 		return self.get_body_params().get('DeviceSn')
 
-	def set_DeviceSn(self,DeviceSn):
+	def set_DeviceSn(self, DeviceSn):  # String
 		self.add_body_params('DeviceSn', DeviceSn)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)
-
-	def get_FaultType(self):
+	def get_FaultType(self): # String
 		return self.get_body_params().get('FaultType')
 
-	def set_FaultType(self,FaultType):
+	def set_FaultType(self, FaultType):  # String
 		self.add_body_params('FaultType', FaultType)

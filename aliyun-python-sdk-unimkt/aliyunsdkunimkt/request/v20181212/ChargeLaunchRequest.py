@@ -23,34 +23,31 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class ChargeLaunchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ChargeLaunch','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ChargeLaunch')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_query_params().get('Extra')
 
-	def set_Extra(self,Extra):
-		self.add_query_param('Extra',Extra)
-
-	def get_AlipayOpenId(self):
+	def set_Extra(self, Extra):  # String
+		self.add_query_param('Extra', Extra)
+	def get_AlipayOpenId(self): # String
 		return self.get_query_params().get('AlipayOpenId')
 
-	def set_AlipayOpenId(self,AlipayOpenId):
-		self.add_query_param('AlipayOpenId',AlipayOpenId)
-
-	def get_ChannelId(self):
+	def set_AlipayOpenId(self, AlipayOpenId):  # String
+		self.add_query_param('AlipayOpenId', AlipayOpenId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
-
-	def get_OuterCode(self):
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)
+	def get_OuterCode(self): # String
 		return self.get_query_params().get('OuterCode')
 
-	def set_OuterCode(self,OuterCode):
-		self.add_query_param('OuterCode',OuterCode)
+	def set_OuterCode(self, OuterCode):  # String
+		self.add_query_param('OuterCode', OuterCode)

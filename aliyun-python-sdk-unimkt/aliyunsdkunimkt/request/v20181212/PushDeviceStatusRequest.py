@@ -23,29 +23,27 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class PushDeviceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'PushDeviceStatus','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'PushDeviceStatus')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeviceSn(self):
+	def get_DeviceSn(self): # String
 		return self.get_body_params().get('DeviceSn')
 
-	def set_DeviceSn(self,DeviceSn):
+	def set_DeviceSn(self, DeviceSn):  # String
 		self.add_body_params('DeviceSn', DeviceSn)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)
-
-	def get_Status(self):
+	def get_Status(self): # Integer
 		return self.get_body_params().get('Status')
 
-	def set_Status(self,Status):
+	def set_Status(self, Status):  # Integer
 		self.add_body_params('Status', Status)

@@ -23,29 +23,27 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class CheckReceivingDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CheckReceivingDetail','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CheckReceivingDetail')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeviceCode(self):
+	def get_DeviceCode(self): # String
 		return self.get_body_params().get('DeviceCode')
 
-	def set_DeviceCode(self,DeviceCode):
+	def set_DeviceCode(self, DeviceCode):  # String
 		self.add_body_params('DeviceCode', DeviceCode)
-
-	def get_V(self):
+	def get_V(self): # String
 		return self.get_body_params().get('V')
 
-	def set_V(self,V):
+	def set_V(self, V):  # String
 		self.add_body_params('V', V)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)

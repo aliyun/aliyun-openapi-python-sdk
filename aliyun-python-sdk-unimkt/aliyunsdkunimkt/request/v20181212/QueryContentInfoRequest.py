@@ -23,16 +23,16 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryContentInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryContentInfo','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryContentInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContentId(self):
+	def get_ContentId(self): # Long
 		return self.get_query_params().get('ContentId')
 
-	def set_ContentId(self,ContentId):
-		self.add_query_param('ContentId',ContentId)
+	def set_ContentId(self, ContentId):  # Long
+		self.add_query_param('ContentId', ContentId)

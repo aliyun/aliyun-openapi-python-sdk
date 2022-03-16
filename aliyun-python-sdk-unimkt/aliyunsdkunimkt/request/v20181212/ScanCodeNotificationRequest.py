@@ -23,161 +23,142 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class ScanCodeNotificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ScanCodeNotification','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ScanCodeNotification')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RealCostAmount(self):
+	def get_RealCostAmount(self): # String
 		return self.get_query_params().get('RealCostAmount')
 
-	def set_RealCostAmount(self,RealCostAmount):
-		self.add_query_param('RealCostAmount',RealCostAmount)
-
-	def get_SalePrice(self):
+	def set_RealCostAmount(self, RealCostAmount):  # String
+		self.add_query_param('RealCostAmount', RealCostAmount)
+	def get_SalePrice(self): # Integer
 		return self.get_query_params().get('SalePrice')
 
-	def set_SalePrice(self,SalePrice):
-		self.add_query_param('SalePrice',SalePrice)
-
-	def get_CommodityId(self):
+	def set_SalePrice(self, SalePrice):  # Integer
+		self.add_query_param('SalePrice', SalePrice)
+	def get_CommodityId(self): # String
 		return self.get_query_params().get('CommodityId')
 
-	def set_CommodityId(self,CommodityId):
-		self.add_query_param('CommodityId',CommodityId)
+	def set_CommodityId(self, CommodityId):  # String
+		self.add_query_param('CommodityId', CommodityId)
+	def get_TradeTimeStr(self): # String
+		return self.get_query_params().get('TradeTimeStr')
 
-	def get_HolderId(self):
+	def set_TradeTimeStr(self, TradeTimeStr):  # String
+		self.add_query_param('TradeTimeStr', TradeTimeStr)
+	def get_HolderId(self): # String
 		return self.get_query_params().get('HolderId')
 
-	def set_HolderId(self,HolderId):
-		self.add_query_param('HolderId',HolderId)
-
-	def get_DeviceType(self):
+	def set_HolderId(self, HolderId):  # String
+		self.add_query_param('HolderId', HolderId)
+	def get_DeviceType(self): # String
 		return self.get_query_params().get('DeviceType')
 
-	def set_DeviceType(self,DeviceType):
-		self.add_query_param('DeviceType',DeviceType)
-
-	def get_DeviceCode(self):
+	def set_DeviceType(self, DeviceType):  # String
+		self.add_query_param('DeviceType', DeviceType)
+	def get_DeviceCode(self): # String
 		return self.get_query_params().get('DeviceCode')
 
-	def set_DeviceCode(self,DeviceCode):
-		self.add_query_param('DeviceCode',DeviceCode)
-
-	def get_ApplyPrice(self):
+	def set_DeviceCode(self, DeviceCode):  # String
+		self.add_query_param('DeviceCode', DeviceCode)
+	def get_ApplyPrice(self): # Integer
 		return self.get_query_params().get('ApplyPrice')
 
-	def set_ApplyPrice(self,ApplyPrice):
-		self.add_query_param('ApplyPrice',ApplyPrice)
-
-	def get_TaskId(self):
+	def set_ApplyPrice(self, ApplyPrice):  # Integer
+		self.add_query_param('ApplyPrice', ApplyPrice)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_OuterCode(self):
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_OuterCode(self): # String
 		return self.get_query_params().get('OuterCode')
 
-	def set_OuterCode(self,OuterCode):
-		self.add_query_param('OuterCode',OuterCode)
-
-	def get_QueryStr(self):
+	def set_OuterCode(self, OuterCode):  # String
+		self.add_query_param('OuterCode', OuterCode)
+	def get_QueryStr(self): # String
 		return self.get_query_params().get('QueryStr')
 
-	def set_QueryStr(self,QueryStr):
-		self.add_query_param('QueryStr',QueryStr)
-
-	def get_Phase(self):
+	def set_QueryStr(self, QueryStr):  # String
+		self.add_query_param('QueryStr', QueryStr)
+	def get_Phase(self): # String
 		return self.get_query_params().get('Phase')
 
-	def set_Phase(self,Phase):
-		self.add_query_param('Phase',Phase)
-
-	def get_BizResult(self):
+	def set_Phase(self, Phase):  # String
+		self.add_query_param('Phase', Phase)
+	def get_BizResult(self): # String
 		return self.get_query_params().get('BizResult')
 
-	def set_BizResult(self,BizResult):
-		self.add_query_param('BizResult',BizResult)
-
-	def get_TaskType(self):
+	def set_BizResult(self, BizResult):  # String
+		self.add_query_param('BizResult', BizResult)
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_BrandUserId(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_BrandUserId(self): # String
 		return self.get_query_params().get('BrandUserId')
 
-	def set_BrandUserId(self,BrandUserId):
-		self.add_query_param('BrandUserId',BrandUserId)
-
-	def get_Sex(self):
+	def set_BrandUserId(self, BrandUserId):  # String
+		self.add_query_param('BrandUserId', BrandUserId)
+	def get_Sex(self): # String
 		return self.get_query_params().get('Sex')
 
-	def set_Sex(self,Sex):
-		self.add_query_param('Sex',Sex)
-
-	def get_CostDetail(self):
+	def set_Sex(self, Sex):  # String
+		self.add_query_param('Sex', Sex)
+	def get_CostDetail(self): # String
 		return self.get_query_params().get('CostDetail')
 
-	def set_CostDetail(self,CostDetail):
-		self.add_query_param('CostDetail',CostDetail)
-
-	def get_ProxyUserId(self):
+	def set_CostDetail(self, CostDetail):  # String
+		self.add_query_param('CostDetail', CostDetail)
+	def get_ProxyUserId(self): # String
 		return self.get_query_params().get('ProxyUserId')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_AlipayOpenId(self):
+	def set_ProxyUserId(self, ProxyUserId):  # String
+		self.add_query_param('ProxyUserId', ProxyUserId)
+	def get_AlipayOpenId(self): # String
 		return self.get_query_params().get('AlipayOpenId')
 
-	def set_AlipayOpenId(self,AlipayOpenId):
-		self.add_query_param('AlipayOpenId',AlipayOpenId)
-
-	def get_BizType(self):
+	def set_AlipayOpenId(self, AlipayOpenId):  # String
+		self.add_query_param('AlipayOpenId', AlipayOpenId)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_BrandNick(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_BrandNick(self): # String
 		return self.get_query_params().get('BrandNick')
 
-	def set_BrandNick(self,BrandNick):
-		self.add_query_param('BrandNick',BrandNick)
-
-	def get_V(self):
+	def set_BrandNick(self, BrandNick):  # String
+		self.add_query_param('BrandNick', BrandNick)
+	def get_V(self): # String
 		return self.get_query_params().get('V')
 
-	def set_V(self,V):
-		self.add_query_param('V',V)
-
-	def get_ChargeTag(self):
+	def set_V(self, V):  # String
+		self.add_query_param('V', V)
+	def get_ChargeTag(self): # String
 		return self.get_query_params().get('ChargeTag')
 
-	def set_ChargeTag(self,ChargeTag):
-		self.add_query_param('ChargeTag',ChargeTag)
-
-	def get_Age(self):
+	def set_ChargeTag(self, ChargeTag):  # String
+		self.add_query_param('ChargeTag', ChargeTag)
+	def get_Age(self): # Integer
 		return self.get_query_params().get('Age')
 
-	def set_Age(self,Age):
-		self.add_query_param('Age',Age)
-
-	def get_ChannelId(self):
+	def set_Age(self, Age):  # Integer
+		self.add_query_param('Age', Age)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
-
-	def get_Cid(self):
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)
+	def get_Cid(self): # String
 		return self.get_query_params().get('Cid')
 
-	def set_Cid(self,Cid):
-		self.add_query_param('Cid',Cid)
+	def set_Cid(self, Cid):  # String
+		self.add_query_param('Cid', Cid)

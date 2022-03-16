@@ -23,28 +23,26 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryUnionContentInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionContentInfo','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionContentInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContentId(self):
+	def get_ContentId(self): # String
 		return self.get_query_params().get('ContentId')
 
-	def set_ContentId(self,ContentId):
-		self.add_query_param('ContentId',ContentId)
-
-	def get_ProxyUserId(self):
+	def set_ContentId(self, ContentId):  # String
+		self.add_query_param('ContentId', ContentId)
+	def get_ProxyUserId(self): # Long
 		return self.get_query_params().get('ProxyUserId')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_ChannelId(self):
+	def set_ProxyUserId(self, ProxyUserId):  # Long
+		self.add_query_param('ProxyUserId', ProxyUserId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

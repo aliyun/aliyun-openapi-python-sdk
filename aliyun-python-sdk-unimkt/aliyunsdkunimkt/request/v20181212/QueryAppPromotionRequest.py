@@ -23,34 +23,31 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryAppPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryAppPromotion','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryAppPromotion')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_query_params().get('Extra')
 
-	def set_Extra(self,Extra):
-		self.add_query_param('Extra',Extra)
-
-	def get_UserType(self):
+	def set_Extra(self, Extra):  # String
+		self.add_query_param('Extra', Extra)
+	def get_UserType(self): # String
 		return self.get_query_params().get('UserType')
 
-	def set_UserType(self,UserType):
-		self.add_query_param('UserType',UserType)
-
-	def get_UserId(self):
+	def set_UserType(self, UserType):  # String
+		self.add_query_param('UserType', UserType)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_ChannelId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

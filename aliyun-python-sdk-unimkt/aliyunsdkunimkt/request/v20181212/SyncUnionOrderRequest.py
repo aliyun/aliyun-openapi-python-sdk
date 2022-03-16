@@ -23,136 +23,116 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class SyncUnionOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProxyChannelId(self):
+	def get_ProxyChannelId(self): # String
 		return self.get_query_params().get('ProxyChannelId')
 
-	def set_ProxyChannelId(self,ProxyChannelId):
-		self.add_query_param('ProxyChannelId',ProxyChannelId)
-
-	def get_TaskType(self):
+	def set_ProxyChannelId(self, ProxyChannelId):  # String
+		self.add_query_param('ProxyChannelId', ProxyChannelId)
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_RealCostAmount(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_RealCostAmount(self): # Long
 		return self.get_query_params().get('RealCostAmount')
 
-	def set_RealCostAmount(self,RealCostAmount):
-		self.add_query_param('RealCostAmount',RealCostAmount)
-
-	def get_TaskBizType(self):
+	def set_RealCostAmount(self, RealCostAmount):  # Long
+		self.add_query_param('RealCostAmount', RealCostAmount)
+	def get_TaskBizType(self): # String
 		return self.get_query_params().get('TaskBizType')
 
-	def set_TaskBizType(self,TaskBizType):
-		self.add_query_param('TaskBizType',TaskBizType)
-
-	def get_Sex(self):
+	def set_TaskBizType(self, TaskBizType):  # String
+		self.add_query_param('TaskBizType', TaskBizType)
+	def get_Sex(self): # String
 		return self.get_query_params().get('Sex')
 
-	def set_Sex(self,Sex):
-		self.add_query_param('Sex',Sex)
-
-	def get_BrandUserId(self):
+	def set_Sex(self, Sex):  # String
+		self.add_query_param('Sex', Sex)
+	def get_BrandUserId(self): # Long
 		return self.get_query_params().get('BrandUserId')
 
-	def set_BrandUserId(self,BrandUserId):
-		self.add_query_param('BrandUserId',BrandUserId)
-
-	def get_BrandName(self):
+	def set_BrandUserId(self, BrandUserId):  # Long
+		self.add_query_param('BrandUserId', BrandUserId)
+	def get_BrandName(self): # String
 		return self.get_query_params().get('BrandName')
 
-	def set_BrandName(self,BrandName):
-		self.add_query_param('BrandName',BrandName)
-
-	def get_ProxyUserId(self):
+	def set_BrandName(self, BrandName):  # String
+		self.add_query_param('BrandName', BrandName)
+	def get_ProxyUserId(self): # Long
 		return self.get_query_params().get('ProxyUserId')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_DeviceId(self):
+	def set_ProxyUserId(self, ProxyUserId):  # Long
+		self.add_query_param('ProxyUserId', ProxyUserId)
+	def get_DeviceId(self): # String
 		return self.get_query_params().get('DeviceId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_HolderId(self):
+	def set_DeviceId(self, DeviceId):  # String
+		self.add_query_param('DeviceId', DeviceId)
+	def get_HolderId(self): # String
 		return self.get_query_params().get('HolderId')
 
-	def set_HolderId(self,HolderId):
-		self.add_query_param('HolderId',HolderId)
-
-	def get_BizSerialNumber(self):
+	def set_HolderId(self, HolderId):  # String
+		self.add_query_param('HolderId', HolderId)
+	def get_BizSerialNumber(self): # String
 		return self.get_query_params().get('BizSerialNumber')
 
-	def set_BizSerialNumber(self,BizSerialNumber):
-		self.add_query_param('BizSerialNumber',BizSerialNumber)
-
-	def get_TaskRuleType(self):
+	def set_BizSerialNumber(self, BizSerialNumber):  # String
+		self.add_query_param('BizSerialNumber', BizSerialNumber)
+	def get_TaskRuleType(self): # String
 		return self.get_query_params().get('TaskRuleType')
 
-	def set_TaskRuleType(self,TaskRuleType):
-		self.add_query_param('TaskRuleType',TaskRuleType)
-
-	def get_V(self):
+	def set_TaskRuleType(self, TaskRuleType):  # String
+		self.add_query_param('TaskRuleType', TaskRuleType)
+	def get_V(self): # String
 		return self.get_query_params().get('V')
 
-	def set_V(self,V):
-		self.add_query_param('V',V)
-
-	def get_IndustryLabelBagId(self):
+	def set_V(self, V):  # String
+		self.add_query_param('V', V)
+	def get_IndustryLabelBagId(self): # Integer
 		return self.get_query_params().get('IndustryLabelBagId')
 
-	def set_IndustryLabelBagId(self,IndustryLabelBagId):
-		self.add_query_param('IndustryLabelBagId',IndustryLabelBagId)
-
-	def get_ApplyPrice(self):
+	def set_IndustryLabelBagId(self, IndustryLabelBagId):  # Integer
+		self.add_query_param('IndustryLabelBagId', IndustryLabelBagId)
+	def get_ApplyPrice(self): # Long
 		return self.get_query_params().get('ApplyPrice')
 
-	def set_ApplyPrice(self,ApplyPrice):
-		self.add_query_param('ApplyPrice',ApplyPrice)
-
-	def get_TradeTimeString(self):
+	def set_ApplyPrice(self, ApplyPrice):  # Long
+		self.add_query_param('ApplyPrice', ApplyPrice)
+	def get_TradeTimeString(self): # String
 		return self.get_query_params().get('TradeTimeString')
 
-	def set_TradeTimeString(self,TradeTimeString):
-		self.add_query_param('TradeTimeString',TradeTimeString)
-
-	def get_ExtendInfo(self):
+	def set_TradeTimeString(self, TradeTimeString):  # String
+		self.add_query_param('TradeTimeString', TradeTimeString)
+	def get_ExtendInfo(self): # String
 		return self.get_query_params().get('ExtendInfo')
 
-	def set_ExtendInfo(self,ExtendInfo):
-		self.add_query_param('ExtendInfo',ExtendInfo)
-
-	def get_ChannelId(self):
+	def set_ExtendInfo(self, ExtendInfo):  # String
+		self.add_query_param('ExtendInfo', ExtendInfo)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
-
-	def get_Age(self):
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)
+	def get_Age(self): # Integer
 		return self.get_query_params().get('Age')
 
-	def set_Age(self,Age):
-		self.add_query_param('Age',Age)
-
-	def get_TaskId(self):
+	def set_Age(self, Age):  # Integer
+		self.add_query_param('Age', Age)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

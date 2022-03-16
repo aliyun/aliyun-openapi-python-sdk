@@ -23,40 +23,41 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryUnionTaskListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionTaskList','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionTaskList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BrandUserId(self):
+	def get_BrandUserId(self): # Long
 		return self.get_query_params().get('BrandUserId')
 
-	def set_BrandUserId(self,BrandUserId):
-		self.add_query_param('BrandUserId',BrandUserId)
-
-	def get_PageSize(self):
+	def set_BrandUserId(self, BrandUserId):  # Long
+		self.add_query_param('BrandUserId', BrandUserId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_BrandUserNick(self): # String
+		return self.get_query_params().get('BrandUserNick')
 
-	def get_PageIndex(self):
+	def set_BrandUserNick(self, BrandUserNick):  # String
+		self.add_query_param('BrandUserNick', BrandUserNick)
+	def get_PageIndex(self): # Integer
 		return self.get_query_params().get('PageIndex')
 
-	def set_PageIndex(self,PageIndex):
-		self.add_query_param('PageIndex',PageIndex)
-
-	def get_ProxyUserId(self):
+	def set_PageIndex(self, PageIndex):  # Integer
+		self.add_query_param('PageIndex', PageIndex)
+	def get_ProxyUserId(self): # Long
 		return self.get_query_params().get('ProxyUserId')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_ChannelId(self):
+	def set_ProxyUserId(self, ProxyUserId):  # Long
+		self.add_query_param('ProxyUserId', ProxyUserId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

@@ -23,41 +23,37 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class KeepAliveRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'KeepAlive','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'KeepAlive')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Tac(self):
+	def get_Tac(self): # String
 		return self.get_body_params().get('Tac')
 
-	def set_Tac(self,Tac):
+	def set_Tac(self, Tac):  # String
 		self.add_body_params('Tac', Tac)
-
-	def get_NetworkType(self):
+	def get_NetworkType(self): # Integer
 		return self.get_body_params().get('NetworkType')
 
-	def set_NetworkType(self,NetworkType):
+	def set_NetworkType(self, NetworkType):  # Integer
 		self.add_body_params('NetworkType', NetworkType)
-
-	def get_CellId(self):
+	def get_CellId(self): # String
 		return self.get_body_params().get('CellId')
 
-	def set_CellId(self,CellId):
+	def set_CellId(self, CellId):  # String
 		self.add_body_params('CellId', CellId)
-
-	def get_DeviceSn(self):
+	def get_DeviceSn(self): # String
 		return self.get_body_params().get('DeviceSn')
 
-	def set_DeviceSn(self,DeviceSn):
+	def set_DeviceSn(self, DeviceSn):  # String
 		self.add_body_params('DeviceSn', DeviceSn)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)

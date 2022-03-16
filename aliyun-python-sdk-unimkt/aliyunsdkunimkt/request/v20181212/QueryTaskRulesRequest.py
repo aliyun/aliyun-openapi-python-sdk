@@ -23,22 +23,21 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryTaskRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryTaskRules','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryTaskRules')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskRuleType(self):
+	def get_TaskRuleType(self): # String
 		return self.get_query_params().get('TaskRuleType')
 
-	def set_TaskRuleType(self,TaskRuleType):
-		self.add_query_param('TaskRuleType',TaskRuleType)
-
-	def get_TaskId(self):
+	def set_TaskRuleType(self, TaskRuleType):  # String
+		self.add_query_param('TaskRuleType', TaskRuleType)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)

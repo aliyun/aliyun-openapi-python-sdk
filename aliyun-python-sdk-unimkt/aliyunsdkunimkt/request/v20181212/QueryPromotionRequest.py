@@ -23,41 +23,37 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProxyChannelId(self):
+	def get_ProxyChannelId(self): # String
 		return self.get_body_params().get('ProxyChannelId')
 
-	def set_ProxyChannelId(self,ProxyChannelId):
+	def set_ProxyChannelId(self, ProxyChannelId):  # String
 		self.add_body_params('ProxyChannelId', ProxyChannelId)
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_body_params().get('Extra')
 
-	def set_Extra(self,Extra):
+	def set_Extra(self, Extra):  # String
 		self.add_body_params('Extra', Extra)
-
-	def get_AlipayOpenId(self):
+	def get_AlipayOpenId(self): # String
 		return self.get_body_params().get('AlipayOpenId')
 
-	def set_AlipayOpenId(self,AlipayOpenId):
+	def set_AlipayOpenId(self, AlipayOpenId):  # String
 		self.add_body_params('AlipayOpenId', AlipayOpenId)
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)

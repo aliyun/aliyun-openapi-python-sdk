@@ -23,52 +23,46 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryUnionPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionPromotion','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionPromotion')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UnionBizType(self):
+	def get_UnionBizType(self): # String
 		return self.get_query_params().get('UnionBizType')
 
-	def set_UnionBizType(self,UnionBizType):
-		self.add_query_param('UnionBizType',UnionBizType)
-
-	def get_ProxyChannelId(self):
+	def set_UnionBizType(self, UnionBizType):  # String
+		self.add_query_param('UnionBizType', UnionBizType)
+	def get_ProxyChannelId(self): # String
 		return self.get_query_params().get('ProxyChannelId')
 
-	def set_ProxyChannelId(self,ProxyChannelId):
-		self.add_query_param('ProxyChannelId',ProxyChannelId)
-
-	def get_UserNick(self):
+	def set_ProxyChannelId(self, ProxyChannelId):  # String
+		self.add_query_param('ProxyChannelId', ProxyChannelId)
+	def get_UserNick(self): # String
 		return self.get_query_params().get('UserNick')
 
-	def set_UserNick(self,UserNick):
-		self.add_query_param('UserNick',UserNick)
-
-	def get_Sign(self):
+	def set_UserNick(self, UserNick):  # String
+		self.add_query_param('UserNick', UserNick)
+	def get_Sign(self): # String
 		return self.get_query_params().get('Sign')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
-
-	def get_AlipayOpenId(self):
+	def set_Sign(self, Sign):  # String
+		self.add_query_param('Sign', Sign)
+	def get_AlipayOpenId(self): # Long
 		return self.get_query_params().get('AlipayOpenId')
 
-	def set_AlipayOpenId(self,AlipayOpenId):
-		self.add_query_param('AlipayOpenId',AlipayOpenId)
-
-	def get_UserId(self):
+	def set_AlipayOpenId(self, AlipayOpenId):  # Long
+		self.add_query_param('AlipayOpenId', AlipayOpenId)
+	def get_UserId(self): # Long
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_ChannelId(self):
+	def set_UserId(self, UserId):  # Long
+		self.add_query_param('UserId', UserId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

@@ -23,148 +23,126 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class SendTaokeInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SendTaokeInfo','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SendTaokeInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductId(self):
+	def get_ProductId(self): # String
 		return self.get_body_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
+	def set_ProductId(self, ProductId):  # String
 		self.add_body_params('ProductId', ProductId)
-
-	def get_Gender(self):
+	def get_Gender(self): # String
 		return self.get_body_params().get('Gender')
 
-	def set_Gender(self,Gender):
+	def set_Gender(self, Gender):  # String
 		self.add_body_params('Gender', Gender)
-
-	def get_City(self):
+	def get_City(self): # String
 		return self.get_body_params().get('City')
 
-	def set_City(self,City):
+	def set_City(self, City):  # String
 		self.add_body_params('City', City)
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_Mac(self):
+	def get_Mac(self): # String
 		return self.get_body_params().get('Mac')
 
-	def set_Mac(self,Mac):
+	def set_Mac(self, Mac):  # String
 		self.add_body_params('Mac', Mac)
-
-	def get_Province(self):
+	def get_Province(self): # String
 		return self.get_body_params().get('Province')
 
-	def set_Province(self,Province):
+	def set_Province(self, Province):  # String
 		self.add_body_params('Province', Province)
-
-	def get_ProductTitle(self):
+	def get_ProductTitle(self): # String
 		return self.get_body_params().get('ProductTitle')
 
-	def set_ProductTitle(self,ProductTitle):
+	def set_ProductTitle(self, ProductTitle):  # String
 		self.add_body_params('ProductTitle', ProductTitle)
-
-	def get_BrandId(self):
+	def get_BrandId(self): # String
 		return self.get_body_params().get('BrandId')
 
-	def set_BrandId(self,BrandId):
+	def set_BrandId(self, BrandId):  # String
 		self.add_body_params('BrandId', BrandId)
-
-	def get_SellPrice(self):
+	def get_SellPrice(self): # String
 		return self.get_body_params().get('SellPrice')
 
-	def set_SellPrice(self,SellPrice):
+	def set_SellPrice(self, SellPrice):  # String
 		self.add_body_params('SellPrice', SellPrice)
-
-	def get_Plat(self):
+	def get_Plat(self): # String
 		return self.get_body_params().get('Plat')
 
-	def set_Plat(self,Plat):
+	def set_Plat(self, Plat):  # String
 		self.add_body_params('Plat', Plat)
-
-	def get_ComponentId(self):
+	def get_ComponentId(self): # String
 		return self.get_body_params().get('ComponentId')
 
-	def set_ComponentId(self,ComponentId):
+	def set_ComponentId(self, ComponentId):  # String
 		self.add_body_params('ComponentId', ComponentId)
-
-	def get_Address(self):
+	def get_Address(self): # String
 		return self.get_body_params().get('Address')
 
-	def set_Address(self,Address):
+	def set_Address(self, Address):  # String
 		self.add_body_params('Address', Address)
-
-	def get_Ip(self):
+	def get_Ip(self): # String
 		return self.get_body_params().get('Ip')
 
-	def set_Ip(self,Ip):
+	def set_Ip(self, Ip):  # String
 		self.add_body_params('Ip', Ip)
-
-	def get_MediaId(self):
+	def get_MediaId(self): # String
 		return self.get_body_params().get('MediaId')
 
-	def set_MediaId(self,MediaId):
+	def set_MediaId(self, MediaId):  # String
 		self.add_body_params('MediaId', MediaId)
-
-	def get_Phone(self):
+	def get_Phone(self): # String
 		return self.get_body_params().get('Phone')
 
-	def set_Phone(self,Phone):
+	def set_Phone(self, Phone):  # String
 		self.add_body_params('Phone', Phone)
-
-	def get_V(self):
+	def get_V(self): # String
 		return self.get_body_params().get('V')
 
-	def set_V(self,V):
+	def set_V(self, V):  # String
 		self.add_body_params('V', V)
-
-	def get_EnvironmentType(self):
+	def get_EnvironmentType(self): # String
 		return self.get_body_params().get('EnvironmentType')
 
-	def set_EnvironmentType(self,EnvironmentType):
+	def set_EnvironmentType(self, EnvironmentType):  # String
 		self.add_body_params('EnvironmentType', EnvironmentType)
-
-	def get_District(self):
+	def get_District(self): # String
 		return self.get_body_params().get('District')
 
-	def set_District(self,District):
+	def set_District(self, District):  # String
 		self.add_body_params('District', District)
-
-	def get_Imei(self):
+	def get_Imei(self): # String
 		return self.get_body_params().get('Imei')
 
-	def set_Imei(self,Imei):
+	def set_Imei(self, Imei):  # String
 		self.add_body_params('Imei', Imei)
-
-	def get_PayPrice(self):
+	def get_PayPrice(self): # String
 		return self.get_body_params().get('PayPrice')
 
-	def set_PayPrice(self,PayPrice):
+	def set_PayPrice(self, PayPrice):  # String
 		self.add_body_params('PayPrice', PayPrice)
-
-	def get_ChannelId(self):
+	def get_ChannelId(self): # String
 		return self.get_body_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
+	def set_ChannelId(self, ChannelId):  # String
 		self.add_body_params('ChannelId', ChannelId)
-
-	def get_Age(self):
+	def get_Age(self): # String
 		return self.get_body_params().get('Age')
 
-	def set_Age(self,Age):
+	def set_Age(self, Age):  # String
 		self.add_body_params('Age', Age)
-
-	def get_Status(self):
+	def get_Status(self): # String
 		return self.get_body_params().get('Status')
 
-	def set_Status(self,Status):
+	def set_Status(self, Status):  # String
 		self.add_body_params('Status', Status)

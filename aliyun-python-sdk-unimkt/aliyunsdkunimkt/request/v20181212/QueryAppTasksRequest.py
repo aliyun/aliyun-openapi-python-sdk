@@ -23,34 +23,31 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryAppTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryAppTasks','1.0.0')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryAppTasks')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskType(self):
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_PageSize(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageIndex(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PageIndex(self): # Integer
 		return self.get_query_params().get('PageIndex')
 
-	def set_PageIndex(self,PageIndex):
-		self.add_query_param('PageIndex',PageIndex)
-
-	def get_TaskId(self):
+	def set_PageIndex(self, PageIndex):  # Integer
+		self.add_query_param('PageIndex', PageIndex)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)
