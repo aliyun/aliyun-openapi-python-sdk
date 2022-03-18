@@ -31,11 +31,6 @@ class QuerySqlAnalysisDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsoleContext(self): # String
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self, ConsoleContext):  # String
-		self.add_query_param('ConsoleContext', ConsoleContext)
 	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 

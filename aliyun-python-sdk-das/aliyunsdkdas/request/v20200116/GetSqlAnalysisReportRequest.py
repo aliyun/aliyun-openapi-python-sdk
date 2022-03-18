@@ -36,11 +36,6 @@ class GetSqlAnalysisReportRequest(RpcRequest):
 
 	def set_ModuleNameList(self, ModuleNameList):  # String
 		self.add_query_param('ModuleNameList', ModuleNameList)
-	def get_ConsoleContext(self): # String
-		return self.get_query_params().get('ConsoleContext')
-
-	def set_ConsoleContext(self, ConsoleContext):  # String
-		self.add_query_param('ConsoleContext', ConsoleContext)
 	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
