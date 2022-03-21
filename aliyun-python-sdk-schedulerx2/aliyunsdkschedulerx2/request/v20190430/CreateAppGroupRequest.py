@@ -57,6 +57,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_MonitorConfigJson(self): # String
+		return self.get_query_params().get('MonitorConfigJson')
+
+	def set_MonitorConfigJson(self, MonitorConfigJson):  # String
+		self.add_query_param('MonitorConfigJson', MonitorConfigJson)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -72,3 +77,13 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_AlarmJson(self, AlarmJson):  # String
 		self.add_query_param('AlarmJson', AlarmJson)
+	def get_AppKey(self): # String
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self, AppKey):  # String
+		self.add_query_param('AppKey', AppKey)
+	def get_MonitorContactsJson(self): # String
+		return self.get_query_params().get('MonitorContactsJson')
+
+	def set_MonitorContactsJson(self, MonitorContactsJson):  # String
+		self.add_query_param('MonitorContactsJson', MonitorContactsJson)
