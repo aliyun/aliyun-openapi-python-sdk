@@ -133,6 +133,12 @@ class UpdateQualityRuleRequest(RpcRequest):
 	def set_CriticalThreshold(self,CriticalThreshold):
 		self.add_body_params('CriticalThreshold', CriticalThreshold)
 
+	def get_OpenSwitch(self):
+		return self.get_body_params().get('OpenSwitch')
+
+	def set_OpenSwitch(self,OpenSwitch):
+		self.add_body_params('OpenSwitch', OpenSwitch)
+
 	def get_Comment(self):
 		return self.get_body_params().get('Comment')
 
