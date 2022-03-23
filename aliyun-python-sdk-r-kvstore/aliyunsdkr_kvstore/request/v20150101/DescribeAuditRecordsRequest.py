@@ -25,98 +25,84 @@ class DescribeAuditRecordsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeAuditRecords','redisa')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_StartTime(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_QueryKeywords(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_QueryKeywords(self): # String
 		return self.get_query_params().get('QueryKeywords')
 
-	def set_QueryKeywords(self,QueryKeywords):
-		self.add_query_param('QueryKeywords',QueryKeywords)
-
-	def get_PageNumber(self):
+	def set_QueryKeywords(self, QueryKeywords):  # String
+		self.add_query_param('QueryKeywords', QueryKeywords)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_HostAddress(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_HostAddress(self): # String
 		return self.get_query_params().get('HostAddress')
 
-	def set_HostAddress(self,HostAddress):
-		self.add_query_param('HostAddress',HostAddress)
-
-	def get_AccountName(self):
+	def set_HostAddress(self, HostAddress):  # String
+		self.add_query_param('HostAddress', HostAddress)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_SecurityToken(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_NodeId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_EndTime(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DatabaseName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DatabaseName(self): # String
 		return self.get_query_params().get('DatabaseName')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)

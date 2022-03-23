@@ -25,222 +25,188 @@ class CreateInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstance','redisa')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SecondaryZoneId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecondaryZoneId(self): # String
 		return self.get_query_params().get('SecondaryZoneId')
 
-	def set_SecondaryZoneId(self,SecondaryZoneId):
-		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
-
-	def get_CouponNo(self):
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
+	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
-	def set_CouponNo(self,CouponNo):
-		self.add_query_param('CouponNo',CouponNo)
-
-	def get_NetworkType(self):
+	def set_CouponNo(self, CouponNo):  # String
+		self.add_query_param('CouponNo', CouponNo)
+	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
-	def get_EngineVersion(self):
+	def set_NetworkType(self, NetworkType):  # String
+		self.add_query_param('NetworkType', NetworkType)
+	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_ResourceGroupId(self):
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Password(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_SecurityToken(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Tags(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_BusinessInfo(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
-
-	def get_AutoRenewPeriod(self):
+	def set_BusinessInfo(self, BusinessInfo):  # String
+		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_AutoRenewPeriod(self): # String
 		return self.get_query_params().get('AutoRenewPeriod')
 
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
-
-	def get_Period(self):
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # String
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_DryRun(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_BackupId(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_OwnerId(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VSwitchId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_PrivateIpAddress(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_PrivateIpAddress(self): # String
 		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
-
-	def get_InstanceName(self):
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_AutoRenew(self):
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
-
-	def get_Port(self):
+	def set_AutoRenew(self, AutoRenew):  # String
+		self.add_query_param('AutoRenew', AutoRenew)
+	def get_Port(self): # String
 		return self.get_query_params().get('Port')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_ZoneId(self):
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)
+	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_AutoUseCoupon(self):
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_AutoUseCoupon(self): # String
 		return self.get_query_params().get('AutoUseCoupon')
 
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
-	def get_InstanceClass(self):
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # String
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
-	def set_InstanceClass(self,InstanceClass):
-		self.add_query_param('InstanceClass',InstanceClass)
-
-	def get_Capacity(self):
+	def set_InstanceClass(self, InstanceClass):  # String
+		self.add_query_param('InstanceClass', InstanceClass)
+	def get_Capacity(self): # Long
 		return self.get_query_params().get('Capacity')
 
-	def set_Capacity(self,Capacity):
-		self.add_query_param('Capacity',Capacity)
-
-	def get_InstanceType(self):
+	def set_Capacity(self, Capacity):  # Long
+		self.add_query_param('Capacity', Capacity)
+	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_DedicatedHostGroupId(self):
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_DedicatedHostGroupId(self): # String
 		return self.get_query_params().get('DedicatedHostGroupId')
 
-	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
-		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
-
-	def get_RestoreTime(self):
+	def set_DedicatedHostGroupId(self, DedicatedHostGroupId):  # String
+		self.add_query_param('DedicatedHostGroupId', DedicatedHostGroupId)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SrcDBInstanceId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SrcDBInstanceId(self): # String
 		return self.get_query_params().get('SrcDBInstanceId')
 
-	def set_SrcDBInstanceId(self,SrcDBInstanceId):
-		self.add_query_param('SrcDBInstanceId',SrcDBInstanceId)
-
-	def get_OwnerAccount(self):
+	def set_SrcDBInstanceId(self, SrcDBInstanceId):  # String
+		self.add_query_param('SrcDBInstanceId', SrcDBInstanceId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_GlobalInstance(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_GlobalInstance(self): # Boolean
 		return self.get_query_params().get('GlobalInstance')
 
-	def set_GlobalInstance(self,GlobalInstance):
-		self.add_query_param('GlobalInstance',GlobalInstance)
-
-	def get_Token(self):
+	def set_GlobalInstance(self, GlobalInstance):  # Boolean
+		self.add_query_param('GlobalInstance', GlobalInstance)
+	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
-	def get_GlobalInstanceId(self):
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)
+	def get_GlobalInstanceId(self): # String
 		return self.get_query_params().get('GlobalInstanceId')
 
-	def set_GlobalInstanceId(self,GlobalInstanceId):
-		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
-
-	def get_VpcId(self):
+	def set_GlobalInstanceId(self, GlobalInstanceId):  # String
+		self.add_query_param('GlobalInstanceId', GlobalInstanceId)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_ChargeType(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
