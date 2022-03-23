@@ -23,136 +23,127 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class OperateLogHubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'OperateLogHub','clickhouse')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'OperateLogHub')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Description(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_UseLorne(self): # Boolean
+		return self.get_query_params().get('UseLorne')
 
-	def get_DeliverName(self):
+	def set_UseLorne(self, UseLorne):  # Boolean
+		self.add_query_param('UseLorne', UseLorne)
+	def get_DeliverName(self): # String
 		return self.get_query_params().get('DeliverName')
 
-	def set_DeliverName(self,DeliverName):
-		self.add_query_param('DeliverName',DeliverName)
-
-	def get_DeliverTime(self):
+	def set_DeliverName(self, DeliverName):  # String
+		self.add_query_param('DeliverName', DeliverName)
+	def get_DeliverTime(self): # String
 		return self.get_query_params().get('DeliverTime')
 
-	def set_DeliverTime(self,DeliverTime):
-		self.add_query_param('DeliverTime',DeliverTime)
-
-	def get_DomainUrl(self):
+	def set_DeliverTime(self, DeliverTime):  # String
+		self.add_query_param('DeliverTime', DeliverTime)
+	def get_DomainUrl(self): # String
 		return self.get_query_params().get('DomainUrl')
 
-	def set_DomainUrl(self,DomainUrl):
-		self.add_query_param('DomainUrl',DomainUrl)
-
-	def get_Password(self):
+	def set_DomainUrl(self, DomainUrl):  # String
+		self.add_query_param('DomainUrl', DomainUrl)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_AccessKey(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_AccessKey(self): # String
 		return self.get_query_params().get('AccessKey')
 
-	def set_AccessKey(self,AccessKey):
-		self.add_query_param('AccessKey',AccessKey)
-
-	def get_Create(self):
+	def set_AccessKey(self, AccessKey):  # String
+		self.add_query_param('AccessKey', AccessKey)
+	def get_Create(self): # Boolean
 		return self.get_query_params().get('Create')
 
-	def set_Create(self,Create):
-		self.add_query_param('Create',Create)
-
-	def get_TableName(self):
+	def set_Create(self, Create):  # Boolean
+		self.add_query_param('Create', Create)
+	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def get_ProjectName(self):
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_ProjectName(self): # String
 		return self.get_query_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
-		self.add_query_param('ProjectName',ProjectName)
-
-	def get_SchemaName(self):
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 
-	def set_SchemaName(self,SchemaName):
-		self.add_query_param('SchemaName',SchemaName)
-
-	def get_AccessSecret(self):
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_AccessSecret(self): # String
 		return self.get_query_params().get('AccessSecret')
 
-	def set_AccessSecret(self,AccessSecret):
-		self.add_query_param('AccessSecret',AccessSecret)
-
-	def get_LogStoreName(self):
+	def set_AccessSecret(self, AccessSecret):  # String
+		self.add_query_param('AccessSecret', AccessSecret)
+	def get_LogStoreName(self): # String
 		return self.get_query_params().get('LogStoreName')
 
-	def set_LogStoreName(self,LogStoreName):
-		self.add_query_param('LogStoreName',LogStoreName)
-
-	def get_ResourceOwnerAccount(self):
+	def set_LogStoreName(self, LogStoreName):  # String
+		self.add_query_param('LogStoreName', LogStoreName)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
-
-	def get_OwnerAccount(self):
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_FilterDirty(self):
-		return self.get_query_params().get('FilterDirty')
-
-	def set_FilterDirty(self,FilterDirty):
-		self.add_query_param('FilterDirty',FilterDirty)
-
-	def get_LogHubStoress(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_LogHubStoress(self): # RepeatList
 		return self.get_query_params().get('LogHubStores')
 
-	def set_LogHubStoress(self, LogHubStoress):
-		for depth1 in range(len(LogHubStoress)):
-			if LogHubStoress[depth1].get('LogKey') is not None:
-				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.LogKey', LogHubStoress[depth1].get('LogKey'))
-			if LogHubStoress[depth1].get('FieldKey') is not None:
-				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.FieldKey', LogHubStoress[depth1].get('FieldKey'))
-			if LogHubStoress[depth1].get('Type') is not None:
-				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.Type', LogHubStoress[depth1].get('Type'))
+	def set_LogHubStoress(self, LogHubStores):  # RepeatList
+		for depth1 in range(len(LogHubStores)):
+			if LogHubStores[depth1].get('LogKey') is not None:
+				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.LogKey', LogHubStores[depth1].get('LogKey'))
+			if LogHubStores[depth1].get('FieldKey') is not None:
+				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.FieldKey', LogHubStores[depth1].get('FieldKey'))
+			if LogHubStores[depth1].get('Type') is not None:
+				self.add_query_param('LogHubStores.' + str(depth1 + 1) + '.Type', LogHubStores[depth1].get('Type'))
+	def get_FilterDirtyData(self): # Boolean
+		return self.get_query_params().get('FilterDirtyData')
 
-	def get_UserName(self):
+	def set_FilterDirtyData(self, FilterDirtyData):  # Boolean
+		self.add_query_param('FilterDirtyData', FilterDirtyData)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

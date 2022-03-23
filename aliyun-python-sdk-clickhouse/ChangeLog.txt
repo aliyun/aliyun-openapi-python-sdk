@@ -1,3 +1,6 @@
+2022-03-23 Version: 3.1.1
+- Clickhouse add restore.
+
 2020-10-10 Version: 2.0.0
 - Support NMD.
 
