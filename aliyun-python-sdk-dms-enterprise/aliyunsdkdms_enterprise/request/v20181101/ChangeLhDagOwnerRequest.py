@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
-import json
 
-class CreateDataExportOrderRequest(RpcRequest):
+class ChangeLhDagOwnerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateDataExportOrder','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ChangeLhDagOwner','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,28 +31,18 @@ class CreateDataExportOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OwnerUserId(self): # Long
+		return self.get_query_params().get('OwnerUserId')
+
+	def set_OwnerUserId(self, OwnerUserId):  # Long
+		self.add_query_param('OwnerUserId', OwnerUserId)
+	def get_DagId(self): # Long
+		return self.get_query_params().get('DagId')
+
+	def set_DagId(self, DagId):  # Long
+		self.add_query_param('DagId', DagId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_AttachmentKey(self): # String
-		return self.get_query_params().get('AttachmentKey')
-
-	def set_AttachmentKey(self, AttachmentKey):  # String
-		self.add_query_param('AttachmentKey', AttachmentKey)
-	def get_Param(self): # Struct
-		return self.get_query_params().get('Param')
-
-	def set_Param(self, Param):  # Struct
-		self.add_query_param("Param", json.dumps(Param))
-	def get_Comment(self): # String
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self, Comment):  # String
-		self.add_query_param('Comment', Comment)
-	def get_RelatedUserList(self): # Array
-		return self.get_query_params().get('RelatedUserList')
-
-	def set_RelatedUserList(self, RelatedUserList):  # Array
-		self.add_query_param("RelatedUserList", json.dumps(RelatedUserList))
