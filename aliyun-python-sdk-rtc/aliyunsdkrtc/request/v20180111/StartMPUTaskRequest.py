@@ -77,6 +77,18 @@ class StartMPUTaskRequest(RpcRequest):
 						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.X', UserPanes[depth1].get('Texts')[depth2].get('X'))
 					if UserPanes[depth1].get('Texts')[depth2].get('FontSize') is not None:
 						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.FontSize', UserPanes[depth1].get('Texts')[depth2].get('FontSize'))
+					if UserPanes[depth1].get('Texts')[depth2].get('BorderWidth') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.BorderWidth', UserPanes[depth1].get('Texts')[depth2].get('BorderWidth'))
+					if UserPanes[depth1].get('Texts')[depth2].get('BorderColor') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.BorderColor', UserPanes[depth1].get('Texts')[depth2].get('BorderColor'))
+					if UserPanes[depth1].get('Texts')[depth2].get('Box') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.Box', UserPanes[depth1].get('Texts')[depth2].get('Box'))
+					if UserPanes[depth1].get('Texts')[depth2].get('BoxColor') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.BoxColor', UserPanes[depth1].get('Texts')[depth2].get('BoxColor'))
+					if UserPanes[depth1].get('Texts')[depth2].get('BoxBorderWidth') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.BoxBorderWidth', UserPanes[depth1].get('Texts')[depth2].get('BoxBorderWidth'))
+					if UserPanes[depth1].get('Texts')[depth2].get('Alpha') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + str(depth2 + 1) + '.Alpha', UserPanes[depth1].get('Texts')[depth2].get('Alpha'))
 			if UserPanes[depth1].get('SourceType') is not None:
 				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SourceType', UserPanes[depth1].get('SourceType'))
 			if UserPanes[depth1].get('PaneId') is not None:
@@ -118,6 +130,18 @@ class StartMPUTaskRequest(RpcRequest):
 				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.X', ClockWidgets[depth1].get('X'))
 			if ClockWidgets[depth1].get('FontSize') is not None:
 				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontSize', ClockWidgets[depth1].get('FontSize'))
+			if ClockWidgets[depth1].get('BorderWidth') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.BorderWidth', ClockWidgets[depth1].get('BorderWidth'))
+			if ClockWidgets[depth1].get('BorderColor') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.BorderColor', ClockWidgets[depth1].get('BorderColor'))
+			if ClockWidgets[depth1].get('Box') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.Box', ClockWidgets[depth1].get('Box'))
+			if ClockWidgets[depth1].get('BoxColor') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.BoxColor', ClockWidgets[depth1].get('BoxColor'))
+			if ClockWidgets[depth1].get('BoxBorderWidth') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.BoxBorderWidth', ClockWidgets[depth1].get('BoxBorderWidth'))
+			if ClockWidgets[depth1].get('Alpha') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.Alpha', ClockWidgets[depth1].get('Alpha'))
 	def get_UnsubSpecCameraUserss(self): # RepeatList
 		return self.get_query_params().get('UnsubSpecCameraUsers')
 
