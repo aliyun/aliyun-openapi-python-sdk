@@ -1,3 +1,7 @@
+2022-03-28 Version: 1.7.9
+- Refund instance.
+- Refund instance query price.
+
 2021-11-23 Version: 2.0.3
 - Add Create Savingplan Instance API.
 

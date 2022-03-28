@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class RelieveAccountRelationRequest(RpcRequest):
+class InquiryPriceRefundInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RelieveAccountRelation')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'InquiryPriceRefundInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class RelieveAccountRelationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RelationType(self): # String
-		return self.get_query_params().get('RelationType')
+	def get_ProductCode(self): # String
+		return self.get_query_params().get('ProductCode')
 
-	def set_RelationType(self, RelationType):  # String
-		self.add_query_param('RelationType', RelationType)
-	def get_ParentUserId(self): # Long
-		return self.get_query_params().get('ParentUserId')
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ParentUserId(self, ParentUserId):  # Long
-		self.add_query_param('ParentUserId', ParentUserId)
-	def get_ChildUserId(self): # Long
-		return self.get_query_params().get('ChildUserId')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ProductType(self): # String
+		return self.get_query_params().get('ProductType')
 
-	def set_ChildUserId(self, ChildUserId):  # Long
-		self.add_query_param('ChildUserId', ChildUserId)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
-	def get_RelationId(self): # Long
-		return self.get_query_params().get('RelationId')
-
-	def set_RelationId(self, RelationId):  # Long
-		self.add_query_param('RelationId', RelationId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

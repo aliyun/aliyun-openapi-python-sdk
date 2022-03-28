@@ -36,6 +36,22 @@ class ModifyAccountRelationRequest(RpcRequest):
 
 	def set_ChildNick(self, ChildNick):  # String
 		self.add_query_param('ChildNick', ChildNick)
+	def get_ParentUserId(self): # Long
+		return self.get_query_params().get('ParentUserId')
+
+	def set_ParentUserId(self, ParentUserId):  # Long
+		self.add_query_param('ParentUserId', ParentUserId)
+	def get_RelationId(self): # Long
+		return self.get_query_params().get('RelationId')
+
+	def set_RelationId(self, RelationId):  # Long
+		self.add_query_param('RelationId', RelationId)
+	def get_RoleCodess(self): # RepeatList
+		return self.get_query_params().get('RoleCodes')
+
+	def set_RoleCodess(self, RoleCodes):  # RepeatList
+		for depth1 in range(len(RoleCodes)):
+			self.add_query_param('RoleCodes.' + str(depth1 + 1), RoleCodes[depth1])
 	def get_RelationOperation(self): # String
 		return self.get_query_params().get('RelationOperation')
 
@@ -46,11 +62,6 @@ class ModifyAccountRelationRequest(RpcRequest):
 
 	def set_RelationType(self, RelationType):  # String
 		self.add_query_param('RelationType', RelationType)
-	def get_ParentUserId(self): # Long
-		return self.get_query_params().get('ParentUserId')
-
-	def set_ParentUserId(self, ParentUserId):  # Long
-		self.add_query_param('ParentUserId', ParentUserId)
 	def get_ChildUserId(self): # Long
 		return self.get_query_params().get('ChildUserId')
 
@@ -67,9 +78,3 @@ class ModifyAccountRelationRequest(RpcRequest):
 	def set_PermissionCodess(self, PermissionCodes):  # RepeatList
 		for depth1 in range(len(PermissionCodes)):
 			self.add_query_param('PermissionCodes.' + str(depth1 + 1), PermissionCodes[depth1])
-	def get_RoleCodess(self): # RepeatList
-		return self.get_query_params().get('RoleCodes')
-
-	def set_RoleCodess(self, RoleCodes):  # RepeatList
-		for depth1 in range(len(RoleCodes)):
-			self.add_query_param('RoleCodes.' + str(depth1 + 1), RoleCodes[depth1])
