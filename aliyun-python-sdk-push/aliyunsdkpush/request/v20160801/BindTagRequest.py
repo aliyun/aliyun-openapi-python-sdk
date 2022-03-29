@@ -25,32 +25,29 @@ class BindTagRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindTag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_KeyType(self):
+	def get_KeyType(self): # String
 		return self.get_query_params().get('KeyType')
 
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
-
-	def get_TagName(self):
+	def set_KeyType(self, KeyType):  # String
+		self.add_query_param('KeyType', KeyType)
+	def get_TagName(self): # String
 		return self.get_query_params().get('TagName')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
-	def get_ClientKey(self):
+	def set_TagName(self, TagName):  # String
+		self.add_query_param('TagName', TagName)
+	def get_ClientKey(self): # String
 		return self.get_query_params().get('ClientKey')
 
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
-
-	def get_AppKey(self):
+	def set_ClientKey(self, ClientKey):  # String
+		self.add_query_param('ClientKey', ClientKey)
+	def get_AppKey(self): # Long
 		return self.get_query_params().get('AppKey')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_AppKey(self, AppKey):  # Long
+		self.add_query_param('AppKey', AppKey)

@@ -25,44 +25,39 @@ class PushMessageToAndroidRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushMessageToAndroid')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Title(self):
+	def get_Title(self): # String
 		return self.get_query_params().get('Title')
 
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
-
-	def get_Body(self):
+	def set_Title(self, Title):  # String
+		self.add_query_param('Title', Title)
+	def get_Body(self): # String
 		return self.get_query_params().get('Body')
 
-	def set_Body(self,Body):
-		self.add_query_param('Body',Body)
-
-	def get_JobKey(self):
+	def set_Body(self, Body):  # String
+		self.add_query_param('Body', Body)
+	def get_JobKey(self): # String
 		return self.get_query_params().get('JobKey')
 
-	def set_JobKey(self,JobKey):
-		self.add_query_param('JobKey',JobKey)
-
-	def get_Target(self):
+	def set_JobKey(self, JobKey):  # String
+		self.add_query_param('JobKey', JobKey)
+	def get_Target(self): # String
 		return self.get_query_params().get('Target')
 
-	def set_Target(self,Target):
-		self.add_query_param('Target',Target)
-
-	def get_AppKey(self):
+	def set_Target(self, Target):  # String
+		self.add_query_param('Target', Target)
+	def get_AppKey(self): # Long
 		return self.get_query_params().get('AppKey')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_TargetValue(self):
+	def set_AppKey(self, AppKey):  # Long
+		self.add_query_param('AppKey', AppKey)
+	def get_TargetValue(self): # String
 		return self.get_query_params().get('TargetValue')
 
-	def set_TargetValue(self,TargetValue):
-		self.add_query_param('TargetValue',TargetValue)
+	def set_TargetValue(self, TargetValue):  # String
+		self.add_query_param('TargetValue', TargetValue)

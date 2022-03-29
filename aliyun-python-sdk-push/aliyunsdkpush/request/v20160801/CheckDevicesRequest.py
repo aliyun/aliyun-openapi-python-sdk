@@ -25,20 +25,19 @@ class CheckDevicesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'CheckDevices')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeviceIds(self):
+	def get_DeviceIds(self): # String
 		return self.get_query_params().get('DeviceIds')
 
-	def set_DeviceIds(self,DeviceIds):
-		self.add_query_param('DeviceIds',DeviceIds)
-
-	def get_AppKey(self):
+	def set_DeviceIds(self, DeviceIds):  # String
+		self.add_query_param('DeviceIds', DeviceIds)
+	def get_AppKey(self): # Long
 		return self.get_query_params().get('AppKey')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_AppKey(self, AppKey):  # Long
+		self.add_query_param('AppKey', AppKey)
