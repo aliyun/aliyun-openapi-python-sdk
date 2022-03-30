@@ -25,62 +25,54 @@ class SetLiveDomainCertificateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveDomainCertificate','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SSLProtocol(self):
+	def get_SSLProtocol(self): # String
 		return self.get_query_params().get('SSLProtocol')
 
-	def set_SSLProtocol(self,SSLProtocol):
-		self.add_query_param('SSLProtocol',SSLProtocol)
-
-	def get_SecurityToken(self):
+	def set_SSLProtocol(self, SSLProtocol):  # String
+		self.add_query_param('SSLProtocol', SSLProtocol)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_CertType(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_CertType(self): # String
 		return self.get_query_params().get('CertType')
 
-	def set_CertType(self,CertType):
-		self.add_query_param('CertType',CertType)
-
-	def get_SSLPri(self):
+	def set_CertType(self, CertType):  # String
+		self.add_query_param('CertType', CertType)
+	def get_SSLPri(self): # String
 		return self.get_query_params().get('SSLPri')
 
-	def set_SSLPri(self,SSLPri):
-		self.add_query_param('SSLPri',SSLPri)
-
-	def get_ForceSet(self):
+	def set_SSLPri(self, SSLPri):  # String
+		self.add_query_param('SSLPri', SSLPri)
+	def get_ForceSet(self): # String
 		return self.get_query_params().get('ForceSet')
 
-	def set_ForceSet(self,ForceSet):
-		self.add_query_param('ForceSet',ForceSet)
-
-	def get_CertName(self):
+	def set_ForceSet(self, ForceSet):  # String
+		self.add_query_param('ForceSet', ForceSet)
+	def get_CertName(self): # String
 		return self.get_query_params().get('CertName')
 
-	def set_CertName(self,CertName):
-		self.add_query_param('CertName',CertName)
-
-	def get_DomainName(self):
+	def set_CertName(self, CertName):  # String
+		self.add_query_param('CertName', CertName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SSLPub(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SSLPub(self): # String
 		return self.get_query_params().get('SSLPub')
 
-	def set_SSLPub(self,SSLPub):
-		self.add_query_param('SSLPub',SSLPub)
+	def set_SSLPub(self, SSLPub):  # String
+		self.add_query_param('SSLPub', SSLPub)

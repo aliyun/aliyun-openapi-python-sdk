@@ -25,44 +25,39 @@ class DeleteMultiRateConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteMultiRateConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeleteAll(self):
+	def get_DeleteAll(self): # String
 		return self.get_query_params().get('DeleteAll')
 
-	def set_DeleteAll(self,DeleteAll):
-		self.add_query_param('DeleteAll',DeleteAll)
-
-	def get_App(self):
+	def set_DeleteAll(self, DeleteAll):  # String
+		self.add_query_param('DeleteAll', DeleteAll)
+	def get_App(self): # String
 		return self.get_query_params().get('App')
 
-	def set_App(self,App):
-		self.add_query_param('App',App)
-
-	def get_GroupId(self):
+	def set_App(self, App):  # String
+		self.add_query_param('App', App)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Templates(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Templates(self): # String
 		return self.get_query_params().get('Templates')
 
-	def set_Templates(self,Templates):
-		self.add_query_param('Templates',Templates)
-
-	def get_DomainName(self):
+	def set_Templates(self, Templates):  # String
+		self.add_query_param('Templates', Templates)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

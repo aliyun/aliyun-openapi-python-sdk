@@ -25,38 +25,34 @@ class UpdateLiveStreamWatermarkRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveStreamWatermarkRule','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TemplateId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_Name(self):
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_query_param('TemplateId', TemplateId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_RuleId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_RuleId(self): # String
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

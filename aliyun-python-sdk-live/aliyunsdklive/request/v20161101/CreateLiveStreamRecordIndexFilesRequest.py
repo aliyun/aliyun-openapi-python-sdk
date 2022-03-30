@@ -25,68 +25,59 @@ class CreateLiveStreamRecordIndexFilesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateLiveStreamRecordIndexFiles','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OssEndpoint(self):
+	def get_OssEndpoint(self): # String
 		return self.get_query_params().get('OssEndpoint')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_StartTime(self):
+	def set_OssEndpoint(self, OssEndpoint):  # String
+		self.add_query_param('OssEndpoint', OssEndpoint)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_OssObject(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_OssObject(self): # String
 		return self.get_query_params().get('OssObject')
 
-	def set_OssObject(self,OssObject):
-		self.add_query_param('OssObject',OssObject)
-
-	def get_AppName(self):
+	def set_OssObject(self, OssObject):  # String
+		self.add_query_param('OssObject', OssObject)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_StreamName(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_OssBucket(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_OssBucket(self): # String
 		return self.get_query_params().get('OssBucket')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_DomainName(self):
+	def set_OssBucket(self, OssBucket):  # String
+		self.add_query_param('OssBucket', OssBucket)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

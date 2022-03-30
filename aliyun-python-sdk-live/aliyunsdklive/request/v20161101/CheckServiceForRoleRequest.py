@@ -25,38 +25,34 @@ class CheckServiceForRoleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CheckServiceForRole','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AccountId(self):
+	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_SPIRegionId(self):
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_SPIRegionId(self): # String
 		return self.get_query_params().get('SPIRegionId')
 
-	def set_SPIRegionId(self,SPIRegionId):
-		self.add_query_param('SPIRegionId',SPIRegionId)
-
-	def get_RoleArn(self):
+	def set_SPIRegionId(self, SPIRegionId):  # String
+		self.add_query_param('SPIRegionId', SPIRegionId)
+	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_DeletionTaskId(self):
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_DeletionTaskId(self): # String
 		return self.get_query_params().get('DeletionTaskId')
 
-	def set_DeletionTaskId(self,DeletionTaskId):
-		self.add_query_param('DeletionTaskId',DeletionTaskId)
-
-	def get_ServiceName(self):
+	def set_DeletionTaskId(self, DeletionTaskId):  # String
+		self.add_query_param('DeletionTaskId', DeletionTaskId)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

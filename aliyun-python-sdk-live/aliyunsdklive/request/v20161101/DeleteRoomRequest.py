@@ -25,26 +25,24 @@ class DeleteRoomRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteRoom','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RoomId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RoomId(self): # String
 		return self.get_query_params().get('RoomId')
 
-	def set_RoomId(self,RoomId):
-		self.add_query_param('RoomId',RoomId)
-
-	def get_AppId(self):
+	def set_RoomId(self, RoomId):  # String
+		self.add_query_param('RoomId', RoomId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

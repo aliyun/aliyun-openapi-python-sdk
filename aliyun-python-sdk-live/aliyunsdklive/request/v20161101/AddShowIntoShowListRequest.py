@@ -25,68 +25,59 @@ class AddShowIntoShowListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddShowIntoShowList','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LiveInputType(self):
+	def get_LiveInputType(self): # Integer
 		return self.get_query_params().get('LiveInputType')
 
-	def set_LiveInputType(self,LiveInputType):
-		self.add_query_param('LiveInputType',LiveInputType)
-
-	def get_Duration(self):
+	def set_LiveInputType(self, LiveInputType):  # Integer
+		self.add_query_param('LiveInputType', LiveInputType)
+	def get_Duration(self): # Long
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_RepeatTimes(self):
+	def set_Duration(self, Duration):  # Long
+		self.add_query_param('Duration', Duration)
+	def get_RepeatTimes(self): # Integer
 		return self.get_query_params().get('RepeatTimes')
 
-	def set_RepeatTimes(self,RepeatTimes):
-		self.add_query_param('RepeatTimes',RepeatTimes)
-
-	def get_ShowName(self):
+	def set_RepeatTimes(self, RepeatTimes):  # Integer
+		self.add_query_param('RepeatTimes', RepeatTimes)
+	def get_ShowName(self): # String
 		return self.get_query_params().get('ShowName')
 
-	def set_ShowName(self,ShowName):
-		self.add_query_param('ShowName',ShowName)
-
-	def get_ResourceId(self):
+	def set_ShowName(self, ShowName):  # String
+		self.add_query_param('ShowName', ShowName)
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_CasterId(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_CasterId(self): # String
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
-
-	def get_OwnerId(self):
+	def set_CasterId(self, CasterId):  # String
+		self.add_query_param('CasterId', CasterId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_ResourceUrl(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceUrl(self): # String
 		return self.get_query_params().get('ResourceUrl')
 
-	def set_ResourceUrl(self,ResourceUrl):
-		self.add_query_param('ResourceUrl',ResourceUrl)
-
-	def get_Spot(self):
+	def set_ResourceUrl(self, ResourceUrl):  # String
+		self.add_query_param('ResourceUrl', ResourceUrl)
+	def get_Spot(self): # Integer
 		return self.get_query_params().get('Spot')
 
-	def set_Spot(self,Spot):
-		self.add_query_param('Spot',Spot)
+	def set_Spot(self, Spot):  # Integer
+		self.add_query_param('Spot', Spot)

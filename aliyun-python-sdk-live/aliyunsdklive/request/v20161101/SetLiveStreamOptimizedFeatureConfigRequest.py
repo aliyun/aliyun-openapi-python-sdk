@@ -25,38 +25,34 @@ class SetLiveStreamOptimizedFeatureConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamOptimizedFeatureConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConfigStatus(self):
+	def get_ConfigStatus(self): # String
 		return self.get_query_params().get('ConfigStatus')
 
-	def set_ConfigStatus(self,ConfigStatus):
-		self.add_query_param('ConfigStatus',ConfigStatus)
-
-	def get_ConfigName(self):
+	def set_ConfigStatus(self, ConfigStatus):  # String
+		self.add_query_param('ConfigStatus', ConfigStatus)
+	def get_ConfigName(self): # String
 		return self.get_query_params().get('ConfigName')
 
-	def set_ConfigName(self,ConfigName):
-		self.add_query_param('ConfigName',ConfigName)
-
-	def get_DomainName(self):
+	def set_ConfigName(self, ConfigName):  # String
+		self.add_query_param('ConfigName', ConfigName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_ConfigValue(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_ConfigValue(self): # String
 		return self.get_query_params().get('ConfigValue')
 
-	def set_ConfigValue(self,ConfigValue):
-		self.add_query_param('ConfigValue',ConfigValue)
-
-	def get_OwnerId(self):
+	def set_ConfigValue(self, ConfigValue):  # String
+		self.add_query_param('ConfigValue', ConfigValue)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

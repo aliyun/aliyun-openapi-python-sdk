@@ -25,20 +25,19 @@ class DescribeLiveRealtimeLogAuthorizedRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRealtimeLogAuthorized','live')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LiveOpenapiReserve(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_LiveOpenapiReserve(self): # String
 		return self.get_query_params().get('LiveOpenapiReserve')
 
-	def set_LiveOpenapiReserve(self,LiveOpenapiReserve):
-		self.add_query_param('LiveOpenapiReserve',LiveOpenapiReserve)
+	def set_LiveOpenapiReserve(self, LiveOpenapiReserve):  # String
+		self.add_query_param('LiveOpenapiReserve', LiveOpenapiReserve)

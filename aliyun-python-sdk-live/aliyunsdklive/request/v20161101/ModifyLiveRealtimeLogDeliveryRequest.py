@@ -25,38 +25,34 @@ class ModifyLiveRealtimeLogDeliveryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyLiveRealtimeLogDelivery','live')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_DomainName(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Region(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_Logstore(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_Logstore(self): # String
 		return self.get_query_params().get('Logstore')
 
-	def set_Logstore(self,Logstore):
-		self.add_query_param('Logstore',Logstore)
+	def set_Logstore(self, Logstore):  # String
+		self.add_query_param('Logstore', Logstore)

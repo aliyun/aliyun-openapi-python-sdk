@@ -25,62 +25,54 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordVodConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AutoCompose(self):
+	def get_AutoCompose(self): # String
 		return self.get_query_params().get('AutoCompose')
 
-	def set_AutoCompose(self,AutoCompose):
-		self.add_query_param('AutoCompose',AutoCompose)
-
-	def get_ComposeVodTranscodeGroupId(self):
+	def set_AutoCompose(self, AutoCompose):  # String
+		self.add_query_param('AutoCompose', AutoCompose)
+	def get_ComposeVodTranscodeGroupId(self): # String
 		return self.get_query_params().get('ComposeVodTranscodeGroupId')
 
-	def set_ComposeVodTranscodeGroupId(self,ComposeVodTranscodeGroupId):
-		self.add_query_param('ComposeVodTranscodeGroupId',ComposeVodTranscodeGroupId)
-
-	def get_StorageLocation(self):
+	def set_ComposeVodTranscodeGroupId(self, ComposeVodTranscodeGroupId):  # String
+		self.add_query_param('ComposeVodTranscodeGroupId', ComposeVodTranscodeGroupId)
+	def get_StorageLocation(self): # String
 		return self.get_query_params().get('StorageLocation')
 
-	def set_StorageLocation(self,StorageLocation):
-		self.add_query_param('StorageLocation',StorageLocation)
-
-	def get_AppName(self):
+	def set_StorageLocation(self, StorageLocation):  # String
+		self.add_query_param('StorageLocation', StorageLocation)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_VodTranscodeGroupId(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_VodTranscodeGroupId(self): # String
 		return self.get_query_params().get('VodTranscodeGroupId')
 
-	def set_VodTranscodeGroupId(self,VodTranscodeGroupId):
-		self.add_query_param('VodTranscodeGroupId',VodTranscodeGroupId)
-
-	def get_DomainName(self):
+	def set_VodTranscodeGroupId(self, VodTranscodeGroupId):  # String
+		self.add_query_param('VodTranscodeGroupId', VodTranscodeGroupId)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_CycleDuration(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_CycleDuration(self): # Integer
 		return self.get_query_params().get('CycleDuration')
 
-	def set_CycleDuration(self,CycleDuration):
-		self.add_query_param('CycleDuration',CycleDuration)
-
-	def get_OwnerId(self):
+	def set_CycleDuration(self, CycleDuration):  # Integer
+		self.add_query_param('CycleDuration', CycleDuration)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

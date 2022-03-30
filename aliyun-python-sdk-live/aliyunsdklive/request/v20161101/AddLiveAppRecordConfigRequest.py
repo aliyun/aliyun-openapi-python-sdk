@@ -25,108 +25,95 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OssEndpoint(self):
+	def get_OssEndpoint(self): # String
 		return self.get_query_params().get('OssEndpoint')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_TranscodeTemplatess(self):
+	def set_OssEndpoint(self, OssEndpoint):  # String
+		self.add_query_param('OssEndpoint', OssEndpoint)
+	def get_TranscodeTemplatess(self): # RepeatList
 		return self.get_query_params().get('TranscodeTemplates')
 
-	def set_TranscodeTemplatess(self, TranscodeTemplatess):
-		for depth1 in range(len(TranscodeTemplatess)):
-			if TranscodeTemplatess[depth1] is not None:
-				self.add_query_param('TranscodeTemplates.' + str(depth1 + 1) , TranscodeTemplatess[depth1])
-
-	def get_StartTime(self):
+	def set_TranscodeTemplatess(self, TranscodeTemplates):  # RepeatList
+		for depth1 in range(len(TranscodeTemplates)):
+			self.add_query_param('TranscodeTemplates.' + str(depth1 + 1), TranscodeTemplates[depth1])
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_AppName(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_TranscodeRecordFormats(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_TranscodeRecordFormats(self): # RepeatList
 		return self.get_query_params().get('TranscodeRecordFormat')
 
-	def set_TranscodeRecordFormats(self, TranscodeRecordFormats):
-		for depth1 in range(len(TranscodeRecordFormats)):
-			if TranscodeRecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', TranscodeRecordFormats[depth1].get('SliceOssObjectPrefix'))
-			if TranscodeRecordFormats[depth1].get('SliceDuration') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceDuration', TranscodeRecordFormats[depth1].get('SliceDuration'))
-			if TranscodeRecordFormats[depth1].get('Format') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.Format', TranscodeRecordFormats[depth1].get('Format'))
-			if TranscodeRecordFormats[depth1].get('OssObjectPrefix') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', TranscodeRecordFormats[depth1].get('OssObjectPrefix'))
-			if TranscodeRecordFormats[depth1].get('CycleDuration') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.CycleDuration', TranscodeRecordFormats[depth1].get('CycleDuration'))
-
-	def get_OnDemand(self):
+	def set_TranscodeRecordFormats(self, TranscodeRecordFormat):  # RepeatList
+		for depth1 in range(len(TranscodeRecordFormat)):
+			if TranscodeRecordFormat[depth1].get('SliceOssObjectPrefix') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', TranscodeRecordFormat[depth1].get('SliceOssObjectPrefix'))
+			if TranscodeRecordFormat[depth1].get('SliceDuration') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceDuration', TranscodeRecordFormat[depth1].get('SliceDuration'))
+			if TranscodeRecordFormat[depth1].get('OssObjectPrefix') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', TranscodeRecordFormat[depth1].get('OssObjectPrefix'))
+			if TranscodeRecordFormat[depth1].get('Format') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.Format', TranscodeRecordFormat[depth1].get('Format'))
+			if TranscodeRecordFormat[depth1].get('CycleDuration') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.CycleDuration', TranscodeRecordFormat[depth1].get('CycleDuration'))
+	def get_OnDemand(self): # Integer
 		return self.get_query_params().get('OnDemand')
 
-	def set_OnDemand(self,OnDemand):
-		self.add_query_param('OnDemand',OnDemand)
-
-	def get_StreamName(self):
+	def set_OnDemand(self, OnDemand):  # Integer
+		self.add_query_param('OnDemand', OnDemand)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_OssBucket(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_OssBucket(self): # String
 		return self.get_query_params().get('OssBucket')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_DomainName(self):
+	def set_OssBucket(self, OssBucket):  # String
+		self.add_query_param('OssBucket', OssBucket)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RecordFormats(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RecordFormats(self): # RepeatList
 		return self.get_query_params().get('RecordFormat')
 
-	def set_RecordFormats(self, RecordFormats):
-		for depth1 in range(len(RecordFormats)):
-			if RecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormats[depth1].get('SliceOssObjectPrefix'))
-			if RecordFormats[depth1].get('SliceDuration') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceDuration', RecordFormats[depth1].get('SliceDuration'))
-			if RecordFormats[depth1].get('Format') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.Format', RecordFormats[depth1].get('Format'))
-			if RecordFormats[depth1].get('OssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', RecordFormats[depth1].get('OssObjectPrefix'))
-			if RecordFormats[depth1].get('CycleDuration') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.CycleDuration', RecordFormats[depth1].get('CycleDuration'))
+	def set_RecordFormats(self, RecordFormat):  # RepeatList
+		for depth1 in range(len(RecordFormat)):
+			if RecordFormat[depth1].get('SliceOssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormat[depth1].get('SliceOssObjectPrefix'))
+			if RecordFormat[depth1].get('SliceDuration') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceDuration', RecordFormat[depth1].get('SliceDuration'))
+			if RecordFormat[depth1].get('OssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', RecordFormat[depth1].get('OssObjectPrefix'))
+			if RecordFormat[depth1].get('Format') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.Format', RecordFormat[depth1].get('Format'))
+			if RecordFormat[depth1].get('CycleDuration') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.CycleDuration', RecordFormat[depth1].get('CycleDuration'))

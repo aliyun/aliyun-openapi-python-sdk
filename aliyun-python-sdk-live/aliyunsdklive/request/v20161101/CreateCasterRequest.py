@@ -25,56 +25,49 @@ class CreateCasterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_CasterName(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_CasterName(self): # String
 		return self.get_query_params().get('CasterName')
 
-	def set_CasterName(self,CasterName):
-		self.add_query_param('CasterName',CasterName)
-
-	def get_CasterTemplate(self):
+	def set_CasterName(self, CasterName):  # String
+		self.add_query_param('CasterName', CasterName)
+	def get_CasterTemplate(self): # String
 		return self.get_query_params().get('CasterTemplate')
 
-	def set_CasterTemplate(self,CasterTemplate):
-		self.add_query_param('CasterTemplate',CasterTemplate)
-
-	def get_ExpireTime(self):
+	def set_CasterTemplate(self, CasterTemplate):  # String
+		self.add_query_param('CasterTemplate', CasterTemplate)
+	def get_ExpireTime(self): # String
 		return self.get_query_params().get('ExpireTime')
 
-	def set_ExpireTime(self,ExpireTime):
-		self.add_query_param('ExpireTime',ExpireTime)
-
-	def get_NormType(self):
+	def set_ExpireTime(self, ExpireTime):  # String
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_NormType(self): # Integer
 		return self.get_query_params().get('NormType')
 
-	def set_NormType(self,NormType):
-		self.add_query_param('NormType',NormType)
-
-	def get_OwnerId(self):
+	def set_NormType(self, NormType):  # Integer
+		self.add_query_param('NormType', NormType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PurchaseTime(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PurchaseTime(self): # String
 		return self.get_query_params().get('PurchaseTime')
 
-	def set_PurchaseTime(self,PurchaseTime):
-		self.add_query_param('PurchaseTime',PurchaseTime)
-
-	def get_ChargeType(self):
+	def set_PurchaseTime(self, PurchaseTime):  # String
+		self.add_query_param('PurchaseTime', PurchaseTime)
+	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
