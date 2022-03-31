@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class CreateLakeHouseSpaceRequest(RpcRequest):
+class GetLhSpaceByNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateLakeHouseSpace','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetLhSpaceByName','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,38 +36,8 @@ class CreateLakeHouseSpaceRequest(RpcRequest):
 
 	def set_SpaceName(self, SpaceName):  # String
 		self.add_query_param('SpaceName', SpaceName)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_Mode(self): # String
-		return self.get_query_params().get('Mode')
-
-	def set_Mode(self, Mode):  # String
-		self.add_query_param('Mode', Mode)
-	def get_DwDbType(self): # String
-		return self.get_query_params().get('DwDbType')
-
-	def set_DwDbType(self, DwDbType):  # String
-		self.add_query_param('DwDbType', DwDbType)
-	def get_ProdDbId(self): # String
-		return self.get_query_params().get('ProdDbId')
-
-	def set_ProdDbId(self, ProdDbId):  # String
-		self.add_query_param('ProdDbId', ProdDbId)
-	def get_DevDbId(self): # String
-		return self.get_query_params().get('DevDbId')
-
-	def set_DevDbId(self, DevDbId):  # String
-		self.add_query_param('DevDbId', DevDbId)
-	def get_SpaceConfig(self): # String
-		return self.get_query_params().get('SpaceConfig')
-
-	def set_SpaceConfig(self, SpaceConfig):  # String
-		self.add_query_param('SpaceConfig', SpaceConfig)
