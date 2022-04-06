@@ -47,6 +47,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
+	def get_ScheduleBusyWorkers(self): # Boolean
+		return self.get_query_params().get('ScheduleBusyWorkers')
+
+	def set_ScheduleBusyWorkers(self, ScheduleBusyWorkers):  # Boolean
+		self.add_query_param('ScheduleBusyWorkers', ScheduleBusyWorkers)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -72,11 +77,6 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_AlarmJson(self): # String
-		return self.get_query_params().get('AlarmJson')
-
-	def set_AlarmJson(self, AlarmJson):  # String
-		self.add_query_param('AlarmJson', AlarmJson)
 	def get_AppKey(self): # String
 		return self.get_query_params().get('AppKey')
 

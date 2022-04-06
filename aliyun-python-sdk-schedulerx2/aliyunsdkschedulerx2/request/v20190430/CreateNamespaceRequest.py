@@ -31,6 +31,16 @@ class CreateNamespaceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
+
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
@@ -41,8 +51,3 @@ class CreateNamespaceRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
