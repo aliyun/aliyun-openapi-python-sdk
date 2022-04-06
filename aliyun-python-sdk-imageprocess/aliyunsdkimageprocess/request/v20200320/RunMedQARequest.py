@@ -25,62 +25,55 @@ class RunMedQARequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'RunMedQA','imageprocess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SessionId(self):
+	def get_SessionId(self): # String
 		return self.get_body_params().get('SessionId')
 
-	def set_SessionId(self,SessionId):
+	def set_SessionId(self, SessionId):  # String
 		self.add_body_params('SessionId', SessionId)
-
-	def get_OrgName(self):
+	def get_OrgName(self): # String
 		return self.get_body_params().get('OrgName')
 
-	def set_OrgName(self,OrgName):
+	def set_OrgName(self, OrgName):  # String
 		self.add_body_params('OrgName', OrgName)
-
-	def get_AnswerImageDataLists(self):
+	def get_AnswerImageDataLists(self): # RepeatList
 		return self.get_body_params().get('AnswerImageDataList')
 
-	def set_AnswerImageDataLists(self, AnswerImageDataLists):
-		for depth1 in range(len(AnswerImageDataLists)):
-			if AnswerImageDataLists[depth1].get('AnswerImageData') is not None:
-				self.add_body_params('AnswerImageDataList.' + str(depth1 + 1) + '.AnswerImageData', AnswerImageDataLists[depth1].get('AnswerImageData'))
-
-	def get_AnswerTextLists(self):
+	def set_AnswerImageDataLists(self, AnswerImageDataList):  # RepeatList
+		for depth1 in range(len(AnswerImageDataList)):
+			if AnswerImageDataList[depth1].get('AnswerImageData') is not None:
+				self.add_body_params('AnswerImageDataList.' + str(depth1 + 1) + '.AnswerImageData', AnswerImageDataList[depth1].get('AnswerImageData'))
+	def get_AnswerTextLists(self): # RepeatList
 		return self.get_body_params().get('AnswerTextList')
 
-	def set_AnswerTextLists(self, AnswerTextLists):
-		for depth1 in range(len(AnswerTextLists)):
-			if AnswerTextLists[depth1].get('AnswerText') is not None:
-				self.add_body_params('AnswerTextList.' + str(depth1 + 1) + '.AnswerText', AnswerTextLists[depth1].get('AnswerText'))
-
-	def get_Department(self):
+	def set_AnswerTextLists(self, AnswerTextList):  # RepeatList
+		for depth1 in range(len(AnswerTextList)):
+			if AnswerTextList[depth1].get('AnswerText') is not None:
+				self.add_body_params('AnswerTextList.' + str(depth1 + 1) + '.AnswerText', AnswerTextList[depth1].get('AnswerText'))
+	def get_Department(self): # String
 		return self.get_body_params().get('Department')
 
-	def set_Department(self,Department):
+	def set_Department(self, Department):  # String
 		self.add_body_params('Department', Department)
-
-	def get_AnswerImageURLLists(self):
+	def get_AnswerImageURLLists(self): # RepeatList
 		return self.get_body_params().get('AnswerImageURLList')
 
-	def set_AnswerImageURLLists(self, AnswerImageURLLists):
-		for depth1 in range(len(AnswerImageURLLists)):
-			if AnswerImageURLLists[depth1].get('AnswerImageURL') is not None:
-				self.add_body_params('AnswerImageURLList.' + str(depth1 + 1) + '.AnswerImageURL', AnswerImageURLLists[depth1].get('AnswerImageURL'))
-
-	def get_QuestionType(self):
+	def set_AnswerImageURLLists(self, AnswerImageURLList):  # RepeatList
+		for depth1 in range(len(AnswerImageURLList)):
+			if AnswerImageURLList[depth1].get('AnswerImageURL') is not None:
+				self.add_body_params('AnswerImageURLList.' + str(depth1 + 1) + '.AnswerImageURL', AnswerImageURLList[depth1].get('AnswerImageURL'))
+	def get_QuestionType(self): # String
 		return self.get_body_params().get('QuestionType')
 
-	def set_QuestionType(self,QuestionType):
+	def set_QuestionType(self, QuestionType):  # String
 		self.add_body_params('QuestionType', QuestionType)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

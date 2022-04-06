@@ -25,38 +25,34 @@ class ClassifyFNFRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'ClassifyFNF','imageprocess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataFormat(self):
-		return self.get_body_params().get('DataFormat')
-
-	def set_DataFormat(self,DataFormat):
-		self.add_body_params('DataFormat', DataFormat)
-
-	def get_OrgId(self):
-		return self.get_body_params().get('OrgId')
-
-	def set_OrgId(self,OrgId):
-		self.add_body_params('OrgId', OrgId)
-
-	def get_OrgName(self):
+	def get_OrgName(self): # String
 		return self.get_body_params().get('OrgName')
 
-	def set_OrgName(self,OrgName):
+	def set_OrgName(self, OrgName):  # String
 		self.add_body_params('OrgName', OrgName)
-
-	def get_ImageUrl(self):
-		return self.get_body_params().get('ImageUrl')
-
-	def set_ImageUrl(self,ImageUrl):
-		self.add_body_params('ImageUrl', ImageUrl)
-
-	def get_TracerId(self):
+	def get_TracerId(self): # String
 		return self.get_body_params().get('TracerId')
 
-	def set_TracerId(self,TracerId):
+	def set_TracerId(self, TracerId):  # String
 		self.add_body_params('TracerId', TracerId)
+	def get_DataFormat(self): # String
+		return self.get_body_params().get('DataFormat')
+
+	def set_DataFormat(self, DataFormat):  # String
+		self.add_body_params('DataFormat', DataFormat)
+	def get_OrgId(self): # String
+		return self.get_body_params().get('OrgId')
+
+	def set_OrgId(self, OrgId):  # String
+		self.add_body_params('OrgId', OrgId)
+	def get_ImageUrl(self): # String
+		return self.get_body_params().get('ImageUrl')
+
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_body_params('ImageUrl', ImageUrl)

@@ -25,26 +25,24 @@ class DetectSkinDiseaseRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'DetectSkinDisease','imageprocess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
-
-	def get_OrgId(self):
-		return self.get_body_params().get('OrgId')
-
-	def set_OrgId(self,OrgId):
-		self.add_body_params('OrgId', OrgId)
-
-	def get_OrgName(self):
+	def get_OrgName(self): # String
 		return self.get_body_params().get('OrgName')
 
-	def set_OrgName(self,OrgName):
+	def set_OrgName(self, OrgName):  # String
 		self.add_body_params('OrgName', OrgName)
+	def get_Url(self): # String
+		return self.get_body_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_body_params('Url', Url)
+	def get_OrgId(self): # String
+		return self.get_body_params().get('OrgId')
+
+	def set_OrgId(self, OrgId):  # String
+		self.add_body_params('OrgId', OrgId)

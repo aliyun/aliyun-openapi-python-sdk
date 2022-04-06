@@ -25,26 +25,24 @@ class TranslateMedRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'TranslateMed','imageprocess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FromLanguage(self):
-		return self.get_body_params().get('FromLanguage')
-
-	def set_FromLanguage(self,FromLanguage):
-		self.add_body_params('FromLanguage', FromLanguage)
-
-	def get_ToLanguage(self):
+	def get_ToLanguage(self): # String
 		return self.get_body_params().get('ToLanguage')
 
-	def set_ToLanguage(self,ToLanguage):
+	def set_ToLanguage(self, ToLanguage):  # String
 		self.add_body_params('ToLanguage', ToLanguage)
-
-	def get_Text(self):
+	def get_Text(self): # String
 		return self.get_body_params().get('Text')
 
-	def set_Text(self,Text):
+	def set_Text(self, Text):  # String
 		self.add_body_params('Text', Text)
+	def get_FromLanguage(self): # String
+		return self.get_body_params().get('FromLanguage')
+
+	def set_FromLanguage(self, FromLanguage):  # String
+		self.add_body_params('FromLanguage', FromLanguage)

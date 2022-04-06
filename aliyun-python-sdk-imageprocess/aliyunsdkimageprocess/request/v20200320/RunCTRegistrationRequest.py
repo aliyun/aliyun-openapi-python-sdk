@@ -25,48 +25,43 @@ class RunCTRegistrationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'RunCTRegistration','imageprocess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataSourceType(self):
+	def get_DataSourceType(self): # String
 		return self.get_body_params().get('DataSourceType')
 
-	def set_DataSourceType(self,DataSourceType):
+	def set_DataSourceType(self, DataSourceType):  # String
 		self.add_body_params('DataSourceType', DataSourceType)
-
-	def get_OrgName(self):
+	def get_OrgName(self): # String
 		return self.get_body_params().get('OrgName')
 
-	def set_OrgName(self,OrgName):
+	def set_OrgName(self, OrgName):  # String
 		self.add_body_params('OrgName', OrgName)
-
-	def get_ReferenceLists(self):
+	def get_ReferenceLists(self): # RepeatList
 		return self.get_body_params().get('ReferenceList')
 
-	def set_ReferenceLists(self, ReferenceLists):
-		for depth1 in range(len(ReferenceLists)):
-			if ReferenceLists[depth1].get('ReferenceURL') is not None:
-				self.add_body_params('ReferenceList.' + str(depth1 + 1) + '.ReferenceURL', ReferenceLists[depth1].get('ReferenceURL'))
-
-	def get_DataFormat(self):
+	def set_ReferenceLists(self, ReferenceList):  # RepeatList
+		for depth1 in range(len(ReferenceList)):
+			if ReferenceList[depth1].get('ReferenceURL') is not None:
+				self.add_body_params('ReferenceList.' + str(depth1 + 1) + '.ReferenceURL', ReferenceList[depth1].get('ReferenceURL'))
+	def get_DataFormat(self): # String
 		return self.get_body_params().get('DataFormat')
 
-	def set_DataFormat(self,DataFormat):
+	def set_DataFormat(self, DataFormat):  # String
 		self.add_body_params('DataFormat', DataFormat)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_FloatingLists(self):
+	def get_FloatingLists(self): # RepeatList
 		return self.get_body_params().get('FloatingList')
 
-	def set_FloatingLists(self, FloatingLists):
-		for depth1 in range(len(FloatingLists)):
-			if FloatingLists[depth1].get('FloatingURL') is not None:
-				self.add_body_params('FloatingList.' + str(depth1 + 1) + '.FloatingURL', FloatingLists[depth1].get('FloatingURL'))
+	def set_FloatingLists(self, FloatingList):  # RepeatList
+		for depth1 in range(len(FloatingList)):
+			if FloatingList[depth1].get('FloatingURL') is not None:
+				self.add_body_params('FloatingList.' + str(depth1 + 1) + '.FloatingURL', FloatingList[depth1].get('FloatingURL'))
