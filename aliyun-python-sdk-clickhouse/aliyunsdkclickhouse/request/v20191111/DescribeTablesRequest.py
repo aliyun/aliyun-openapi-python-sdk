@@ -36,11 +36,6 @@ class DescribeTablesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)
 	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 

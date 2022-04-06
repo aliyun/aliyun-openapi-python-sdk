@@ -46,6 +46,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_SourceDBClusterId(self): # String
+		return self.get_query_params().get('SourceDBClusterId')
+
+	def set_SourceDBClusterId(self, SourceDBClusterId):  # String
+		self.add_query_param('SourceDBClusterId', SourceDBClusterId)
 	def get_DbNodeStorageType(self): # String
 		return self.get_query_params().get('DbNodeStorageType')
 
