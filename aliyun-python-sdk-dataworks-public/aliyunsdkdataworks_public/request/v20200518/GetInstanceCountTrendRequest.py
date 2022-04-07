@@ -25,26 +25,24 @@ class GetInstanceCountTrendRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetInstanceCountTrend')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BeginDate(self):
+	def get_BeginDate(self): # String
 		return self.get_body_params().get('BeginDate')
 
-	def set_BeginDate(self,BeginDate):
+	def set_BeginDate(self, BeginDate):  # String
 		self.add_body_params('BeginDate', BeginDate)
-
-	def get_EndDate(self):
+	def get_EndDate(self): # String
 		return self.get_body_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
+	def set_EndDate(self, EndDate):  # String
 		self.add_body_params('EndDate', EndDate)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)

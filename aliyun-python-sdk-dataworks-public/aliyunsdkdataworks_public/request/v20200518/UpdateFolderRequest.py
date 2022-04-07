@@ -25,32 +25,29 @@ class UpdateFolderRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateFolder')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FolderName(self):
+	def get_FolderName(self): # String
 		return self.get_body_params().get('FolderName')
 
-	def set_FolderName(self,FolderName):
+	def set_FolderName(self, FolderName):  # String
 		self.add_body_params('FolderName', FolderName)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_ProjectIdentifier(self):
+	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self,ProjectIdentifier):
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-
-	def get_FolderId(self):
+	def get_FolderId(self): # String
 		return self.get_body_params().get('FolderId')
 
-	def set_FolderId(self,FolderId):
+	def set_FolderId(self, FolderId):  # String
 		self.add_body_params('FolderId', FolderId)

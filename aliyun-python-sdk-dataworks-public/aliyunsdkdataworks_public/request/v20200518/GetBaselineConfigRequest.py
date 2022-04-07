@@ -25,14 +25,14 @@ class GetBaselineConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetBaselineConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BaselineId(self):
+	def get_BaselineId(self): # Long
 		return self.get_body_params().get('BaselineId')
 
-	def set_BaselineId(self,BaselineId):
+	def set_BaselineId(self, BaselineId):  # Long
 		self.add_body_params('BaselineId', BaselineId)

@@ -25,62 +25,54 @@ class RunManualDagNodesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'RunManualDagNodes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectEnv(self):
+	def get_ProjectEnv(self): # String
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self,ProjectEnv):
+	def set_ProjectEnv(self, ProjectEnv):  # String
 		self.add_body_params('ProjectEnv', ProjectEnv)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_DagParameters(self):
+	def get_DagParameters(self): # String
 		return self.get_body_params().get('DagParameters')
 
-	def set_DagParameters(self,DagParameters):
+	def set_DagParameters(self, DagParameters):  # String
 		self.add_body_params('DagParameters', DagParameters)
-
-	def get_IncludeNodeIds(self):
+	def get_IncludeNodeIds(self): # String
 		return self.get_body_params().get('IncludeNodeIds')
 
-	def set_IncludeNodeIds(self,IncludeNodeIds):
+	def set_IncludeNodeIds(self, IncludeNodeIds):  # String
 		self.add_body_params('IncludeNodeIds', IncludeNodeIds)
-
-	def get_BizDate(self):
+	def get_BizDate(self): # String
 		return self.get_body_params().get('BizDate')
 
-	def set_BizDate(self,BizDate):
+	def set_BizDate(self, BizDate):  # String
 		self.add_body_params('BizDate', BizDate)
-
-	def get_ExcludeNodeIds(self):
+	def get_ExcludeNodeIds(self): # String
 		return self.get_body_params().get('ExcludeNodeIds')
 
-	def set_ExcludeNodeIds(self,ExcludeNodeIds):
+	def set_ExcludeNodeIds(self, ExcludeNodeIds):  # String
 		self.add_body_params('ExcludeNodeIds', ExcludeNodeIds)
-
-	def get_FlowName(self):
+	def get_FlowName(self): # String
 		return self.get_body_params().get('FlowName')
 
-	def set_FlowName(self,FlowName):
+	def set_FlowName(self, FlowName):  # String
 		self.add_body_params('FlowName', FlowName)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_NodeParameters(self):
+	def get_NodeParameters(self): # String
 		return self.get_body_params().get('NodeParameters')
 
-	def set_NodeParameters(self,NodeParameters):
+	def set_NodeParameters(self, NodeParameters):  # String
 		self.add_body_params('NodeParameters', NodeParameters)

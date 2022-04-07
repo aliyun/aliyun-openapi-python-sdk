@@ -25,44 +25,39 @@ class UpdateBusinessRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateBusiness')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Owner(self):
+	def get_Owner(self): # String
 		return self.get_body_params().get('Owner')
 
-	def set_Owner(self,Owner):
+	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
-
-	def get_BusinessId(self):
+	def get_BusinessId(self): # Long
 		return self.get_body_params().get('BusinessId')
 
-	def set_BusinessId(self,BusinessId):
+	def set_BusinessId(self, BusinessId):  # Long
 		self.add_body_params('BusinessId', BusinessId)
-
-	def get_BusinessName(self):
+	def get_BusinessName(self): # String
 		return self.get_body_params().get('BusinessName')
 
-	def set_BusinessName(self,BusinessName):
+	def set_BusinessName(self, BusinessName):  # String
 		self.add_body_params('BusinessName', BusinessName)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_ProjectIdentifier(self):
+	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self,ProjectIdentifier):
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)

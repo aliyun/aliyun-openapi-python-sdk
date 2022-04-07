@@ -25,14 +25,14 @@ class DeleteRemindRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteRemind')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RemindId(self):
+	def get_RemindId(self): # Long
 		return self.get_body_params().get('RemindId')
 
-	def set_RemindId(self,RemindId):
+	def set_RemindId(self, RemindId):  # Long
 		self.add_body_params('RemindId', RemindId)

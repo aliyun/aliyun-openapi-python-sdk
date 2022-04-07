@@ -25,56 +25,49 @@ class ListBaselineConfigsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListBaselineConfigs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Owner(self):
+	def get_Owner(self): # String
 		return self.get_body_params().get('Owner')
 
-	def set_Owner(self,Owner):
+	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
-
-	def get_SearchText(self):
+	def get_SearchText(self): # String
 		return self.get_body_params().get('SearchText')
 
-	def set_SearchText(self,SearchText):
+	def set_SearchText(self, SearchText):  # String
 		self.add_body_params('SearchText', SearchText)
-
-	def get_Useflag(self):
+	def get_Useflag(self): # Boolean
 		return self.get_body_params().get('Useflag')
 
-	def set_Useflag(self,Useflag):
+	def set_Useflag(self, Useflag):  # Boolean
 		self.add_body_params('Useflag', Useflag)
-
-	def get_Priority(self):
+	def get_Priority(self): # String
 		return self.get_body_params().get('Priority')
 
-	def set_Priority(self,Priority):
+	def set_Priority(self, Priority):  # String
 		self.add_body_params('Priority', Priority)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_BaselineTypes(self):
+	def get_BaselineTypes(self): # String
 		return self.get_body_params().get('BaselineTypes')
 
-	def set_BaselineTypes(self,BaselineTypes):
+	def set_BaselineTypes(self, BaselineTypes):  # String
 		self.add_body_params('BaselineTypes', BaselineTypes)

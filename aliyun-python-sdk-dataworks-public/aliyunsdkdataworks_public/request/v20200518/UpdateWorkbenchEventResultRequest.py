@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class SubmitFileRequest(RpcRequest):
+class UpdateWorkbenchEventResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'SubmitFile')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateWorkbenchEventResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class SubmitFileRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Comment(self): # String
-		return self.get_body_params().get('Comment')
+	def get_CheckResultTip(self): # String
+		return self.get_query_params().get('CheckResultTip')
 
-	def set_Comment(self, Comment):  # String
-		self.add_body_params('Comment', Comment)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
+	def set_CheckResultTip(self, CheckResultTip):  # String
+		self.add_query_param('CheckResultTip', CheckResultTip)
+	def get_CheckResult(self): # String
+		return self.get_query_params().get('CheckResult')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
-	def get_ProjectIdentifier(self): # String
-		return self.get_body_params().get('ProjectIdentifier')
+	def set_CheckResult(self, CheckResult):  # String
+		self.add_query_param('CheckResult', CheckResult)
+	def get_MessageId(self): # String
+		return self.get_query_params().get('MessageId')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
-		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-	def get_FileId(self): # Long
-		return self.get_body_params().get('FileId')
+	def set_MessageId(self, MessageId):  # String
+		self.add_query_param('MessageId', MessageId)
+	def get_ExtensionCode(self): # String
+		return self.get_query_params().get('ExtensionCode')
 
-	def set_FileId(self, FileId):  # Long
-		self.add_body_params('FileId', FileId)
+	def set_ExtensionCode(self, ExtensionCode):  # String
+		self.add_query_param('ExtensionCode', ExtensionCode)

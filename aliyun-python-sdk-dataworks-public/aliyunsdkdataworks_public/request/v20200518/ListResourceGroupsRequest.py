@@ -25,26 +25,24 @@ class ListResourceGroupsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizExtKey(self):
+	def get_BizExtKey(self): # String
 		return self.get_query_params().get('BizExtKey')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
-
-	def get_ResourceGroupType(self):
+	def set_BizExtKey(self, BizExtKey):  # String
+		self.add_query_param('BizExtKey', BizExtKey)
+	def get_ResourceGroupType(self): # Integer
 		return self.get_query_params().get('ResourceGroupType')
 
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
-
-	def get_Keyword(self):
+	def set_ResourceGroupType(self, ResourceGroupType):  # Integer
+		self.add_query_param('ResourceGroupType', ResourceGroupType)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

@@ -25,32 +25,29 @@ class CreateTableThemeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateTableTheme')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Level(self):
+	def get_Level(self): # Integer
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_Name(self):
+	def set_Level(self, Level):  # Integer
+		self.add_query_param('Level', Level)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_ProjectId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
-	def get_ParentId(self):
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_ParentId(self): # Long
 		return self.get_query_params().get('ParentId')
 
-	def set_ParentId(self,ParentId):
-		self.add_query_param('ParentId',ParentId)
+	def set_ParentId(self, ParentId):  # Long
+		self.add_query_param('ParentId', ParentId)

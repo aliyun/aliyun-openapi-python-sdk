@@ -25,38 +25,34 @@ class UpdateDISyncTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateDISyncTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskType(self):
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_TaskParam(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_TaskParam(self): # String
 		return self.get_query_params().get('TaskParam')
 
-	def set_TaskParam(self,TaskParam):
-		self.add_query_param('TaskParam',TaskParam)
-
-	def get_TaskContent(self):
+	def set_TaskParam(self, TaskParam):  # String
+		self.add_query_param('TaskParam', TaskParam)
+	def get_TaskContent(self): # String
 		return self.get_query_params().get('TaskContent')
 
-	def set_TaskContent(self,TaskContent):
-		self.add_query_param('TaskContent',TaskContent)
-
-	def get_ProjectId(self):
+	def set_TaskContent(self, TaskContent):  # String
+		self.add_query_param('TaskContent', TaskContent)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
-	def get_FileId(self):
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_FileId(self): # Long
 		return self.get_query_params().get('FileId')
 
-	def set_FileId(self,FileId):
-		self.add_query_param('FileId',FileId)
+	def set_FileId(self, FileId):  # Long
+		self.add_query_param('FileId', FileId)

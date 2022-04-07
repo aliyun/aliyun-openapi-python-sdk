@@ -25,38 +25,34 @@ class CreateDataServiceApiAuthorityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDataServiceApiAuthority')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthorizedProjectId(self):
+	def get_AuthorizedProjectId(self): # Long
 		return self.get_body_params().get('AuthorizedProjectId')
 
-	def set_AuthorizedProjectId(self,AuthorizedProjectId):
+	def set_AuthorizedProjectId(self, AuthorizedProjectId):  # Long
 		self.add_body_params('AuthorizedProjectId', AuthorizedProjectId)
-
-	def get_TenantId(self):
+	def get_TenantId(self): # Long
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self,TenantId):
+	def set_TenantId(self, TenantId):  # Long
 		self.add_body_params('TenantId', TenantId)
-
-	def get_EndTime(self):
+	def get_EndTime(self): # Long
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # Long
 		self.add_body_params('EndTime', EndTime)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_ApiId(self):
+	def get_ApiId(self): # Long
 		return self.get_body_params().get('ApiId')
 
-	def set_ApiId(self,ApiId):
+	def set_ApiId(self, ApiId):  # Long
 		self.add_body_params('ApiId', ApiId)

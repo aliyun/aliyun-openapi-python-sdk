@@ -25,26 +25,24 @@ class GetBaselineKeyPathRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetBaselineKeyPath')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Bizdate(self):
+	def get_Bizdate(self): # String
 		return self.get_body_params().get('Bizdate')
 
-	def set_Bizdate(self,Bizdate):
+	def set_Bizdate(self, Bizdate):  # String
 		self.add_body_params('Bizdate', Bizdate)
-
-	def get_InGroupId(self):
+	def get_InGroupId(self): # Integer
 		return self.get_body_params().get('InGroupId')
 
-	def set_InGroupId(self,InGroupId):
+	def set_InGroupId(self, InGroupId):  # Integer
 		self.add_body_params('InGroupId', InGroupId)
-
-	def get_BaselineId(self):
+	def get_BaselineId(self): # Long
 		return self.get_body_params().get('BaselineId')
 
-	def set_BaselineId(self,BaselineId):
+	def set_BaselineId(self, BaselineId):  # Long
 		self.add_body_params('BaselineId', BaselineId)

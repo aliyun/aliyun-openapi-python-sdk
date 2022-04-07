@@ -25,26 +25,24 @@ class DeleteQualityEntityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteQualityEntity')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_EnvType(self):
+	def get_EnvType(self): # String
 		return self.get_body_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
+	def set_EnvType(self, EnvType):  # String
 		self.add_body_params('EnvType', EnvType)
-
-	def get_EntityId(self):
+	def get_EntityId(self): # Long
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self,EntityId):
+	def set_EntityId(self, EntityId):  # Long
 		self.add_body_params('EntityId', EntityId)

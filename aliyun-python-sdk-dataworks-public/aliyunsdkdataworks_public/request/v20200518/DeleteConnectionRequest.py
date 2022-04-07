@@ -25,14 +25,14 @@ class DeleteConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteConnection')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConnectionId(self):
+	def get_ConnectionId(self): # Long
 		return self.get_query_params().get('ConnectionId')
 
-	def set_ConnectionId(self,ConnectionId):
-		self.add_query_param('ConnectionId',ConnectionId)
+	def set_ConnectionId(self, ConnectionId):  # Long
+		self.add_query_param('ConnectionId', ConnectionId)

@@ -25,38 +25,34 @@ class CreateDagTestRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDagTest')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectEnv(self):
+	def get_ProjectEnv(self): # String
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self,ProjectEnv):
+	def set_ProjectEnv(self, ProjectEnv):  # String
 		self.add_body_params('ProjectEnv', ProjectEnv)
-
-	def get_Bizdate(self):
+	def get_Bizdate(self): # String
 		return self.get_body_params().get('Bizdate')
 
-	def set_Bizdate(self,Bizdate):
+	def set_Bizdate(self, Bizdate):  # String
 		self.add_body_params('Bizdate', Bizdate)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_NodeParams(self):
+	def get_NodeParams(self): # String
 		return self.get_body_params().get('NodeParams')
 
-	def set_NodeParams(self,NodeParams):
+	def set_NodeParams(self, NodeParams):  # String
 		self.add_body_params('NodeParams', NodeParams)
-
-	def get_NodeId(self):
+	def get_NodeId(self): # Long
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
+	def set_NodeId(self, NodeId):  # Long
 		self.add_body_params('NodeId', NodeId)

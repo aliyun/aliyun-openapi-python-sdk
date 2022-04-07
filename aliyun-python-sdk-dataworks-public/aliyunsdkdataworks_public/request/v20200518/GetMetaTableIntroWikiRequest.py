@@ -25,20 +25,19 @@ class GetMetaTableIntroWikiRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableIntroWiki')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WikiVersion(self):
+	def get_WikiVersion(self): # Long
 		return self.get_query_params().get('WikiVersion')
 
-	def set_WikiVersion(self,WikiVersion):
-		self.add_query_param('WikiVersion',WikiVersion)
-
-	def get_TableGuid(self):
+	def set_WikiVersion(self, WikiVersion):  # Long
+		self.add_query_param('WikiVersion', WikiVersion)
+	def get_TableGuid(self): # String
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)
