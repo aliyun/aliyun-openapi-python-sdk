@@ -23,19 +23,14 @@ from aliyunsdkmse.endpoint import endpoint_data
 class PullServicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'PullServices')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'PullServices','mse')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceId(self): # String
-		return self.get_query_params().get('SourceId')
-
-	def set_SourceId(self, SourceId):  # String
-		self.add_query_param('SourceId', SourceId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 

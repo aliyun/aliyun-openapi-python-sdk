@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
 class AddServiceSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddServiceSource')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddServiceSource','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +32,11 @@ class AddServiceSourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IngressOptionsRequest(self): # Struct
+		return self.get_query_params().get('IngressOptionsRequest')
+
+	def set_IngressOptionsRequest(self, IngressOptionsRequest):  # Struct
+		self.add_query_param("IngressOptionsRequest", json.dumps(IngressOptionsRequest))
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 

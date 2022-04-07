@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryClusterSpecificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterSpecification')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterSpecification','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

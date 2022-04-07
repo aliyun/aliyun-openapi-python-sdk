@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateAclRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateAcl')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateAcl','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

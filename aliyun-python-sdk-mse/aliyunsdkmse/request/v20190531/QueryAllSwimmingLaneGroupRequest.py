@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryAllSwimmingLaneGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryAllSwimmingLaneGroup')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryAllSwimmingLaneGroup','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

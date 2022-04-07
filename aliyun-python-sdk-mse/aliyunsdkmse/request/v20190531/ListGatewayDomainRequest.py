@@ -23,8 +23,8 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListGatewayDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListGatewayDomain')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListGatewayDomain','mse')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,11 @@ class ListGatewayDomainRequest(RpcRequest):
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

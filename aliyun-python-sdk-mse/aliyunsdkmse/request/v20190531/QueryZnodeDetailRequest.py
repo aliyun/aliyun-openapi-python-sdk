@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryZnodeDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryZnodeDetail')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryZnodeDetail','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class QueryZnodeDetailRequest(RpcRequest):
 
 	def set_Path(self, Path):  # String
 		self.add_query_param('Path', Path)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 

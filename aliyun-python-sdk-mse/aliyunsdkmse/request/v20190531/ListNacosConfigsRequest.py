@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListNacosConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListNacosConfigs')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListNacosConfigs','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

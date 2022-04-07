@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryConfig')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryConfig','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

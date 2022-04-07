@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
-class UpdateZnodeRequest(RpcRequest):
+class UpdateGatewayServiceTrafficPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateZnode','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayServiceTrafficPolicy','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +32,28 @@ class UpdateZnodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Data(self): # String
-		return self.get_query_params().get('Data')
+	def get_GatewayUniqueId(self): # String
+		return self.get_query_params().get('GatewayUniqueId')
 
-	def set_Data(self, Data):  # String
-		self.add_query_param('Data', Data)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
+		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_GatewayTrafficPolicy(self): # Struct
+		return self.get_query_params().get('GatewayTrafficPolicy')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_Path(self): # String
-		return self.get_query_params().get('Path')
-
-	def set_Path(self, Path):  # String
-		self.add_query_param('Path', Path)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
+	def set_GatewayTrafficPolicy(self, GatewayTrafficPolicy):  # Struct
+		self.add_query_param("GatewayTrafficPolicy", json.dumps(GatewayTrafficPolicy))
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_ServiceId(self): # Long
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self, ServiceId):  # Long
+		self.add_query_param('ServiceId', ServiceId)
+	def get_GatewayId(self): # Long
+		return self.get_query_params().get('GatewayId')
+
+	def set_GatewayId(self, GatewayId):  # Long
+		self.add_query_param('GatewayId', GatewayId)

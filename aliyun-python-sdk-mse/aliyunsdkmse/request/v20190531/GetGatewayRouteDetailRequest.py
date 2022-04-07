@@ -23,8 +23,8 @@ from aliyunsdkmse.endpoint import endpoint_data
 class GetGatewayRouteDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetGatewayRouteDetail')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetGatewayRouteDetail','mse')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

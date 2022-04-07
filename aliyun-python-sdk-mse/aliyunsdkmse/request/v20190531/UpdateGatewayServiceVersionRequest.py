@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateGatewayServiceVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayServiceVersion')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayServiceVersion','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

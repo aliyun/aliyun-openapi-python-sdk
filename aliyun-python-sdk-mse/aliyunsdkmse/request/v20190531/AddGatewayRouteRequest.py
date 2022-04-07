@@ -24,7 +24,7 @@ import json
 class AddGatewayRouteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddGatewayRoute')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddGatewayRoute','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,6 +62,11 @@ class AddGatewayRouteRequest(RpcRequest):
 
 	def set_RouteOrder(self, RouteOrder):  # Integer
 		self.add_query_param('RouteOrder', RouteOrder)
+	def get_EnableWaf(self): # Boolean
+		return self.get_query_params().get('EnableWaf')
+
+	def set_EnableWaf(self, EnableWaf):  # Boolean
+		self.add_query_param('EnableWaf', EnableWaf)
 	def get_Services(self): # Array
 		return self.get_query_params().get('Services')
 

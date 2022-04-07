@@ -23,8 +23,8 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListServiceSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListServiceSource')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListServiceSource','mse')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

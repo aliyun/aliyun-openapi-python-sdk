@@ -23,7 +23,7 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListAnsServiceClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAnsServiceClusters')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAnsServiceClusters','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

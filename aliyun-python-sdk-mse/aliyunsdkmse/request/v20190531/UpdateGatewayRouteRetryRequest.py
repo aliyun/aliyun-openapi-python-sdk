@@ -24,7 +24,7 @@ import json
 class UpdateGatewayRouteRetryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayRouteRetry')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewayRouteRetry','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
