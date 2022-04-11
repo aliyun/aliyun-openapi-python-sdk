@@ -25,20 +25,19 @@ class CreateAppInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateAppInfo','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AppName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)

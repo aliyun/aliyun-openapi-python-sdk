@@ -25,20 +25,19 @@ class CancelUrlUploadJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CancelUrlUploadJobs','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobIds(self):
+	def get_JobIds(self): # String
 		return self.get_query_params().get('JobIds')
 
-	def set_JobIds(self,JobIds):
-		self.add_query_param('JobIds',JobIds)
-
-	def get_UploadUrls(self):
+	def set_JobIds(self, JobIds):  # String
+		self.add_query_param('JobIds', JobIds)
+	def get_UploadUrls(self): # String
 		return self.get_query_params().get('UploadUrls')
 
-	def set_UploadUrls(self,UploadUrls):
-		self.add_query_param('UploadUrls',UploadUrls)
+	def set_UploadUrls(self, UploadUrls):  # String
+		self.add_query_param('UploadUrls', UploadUrls)

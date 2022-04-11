@@ -25,62 +25,54 @@ class SetMessageCallbackRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthKey(self):
+	def get_AuthKey(self): # String
 		return self.get_query_params().get('AuthKey')
 
-	def set_AuthKey(self,AuthKey):
-		self.add_query_param('AuthKey',AuthKey)
-
-	def get_CallbackType(self):
+	def set_AuthKey(self, AuthKey):  # String
+		self.add_query_param('AuthKey', AuthKey)
+	def get_CallbackType(self): # String
 		return self.get_query_params().get('CallbackType')
 
-	def set_CallbackType(self,CallbackType):
-		self.add_query_param('CallbackType',CallbackType)
-
-	def get_OwnerAccount(self):
+	def set_CallbackType(self, CallbackType):  # String
+		self.add_query_param('CallbackType', CallbackType)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_EventTypeList(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EventTypeList(self): # String
 		return self.get_query_params().get('EventTypeList')
 
-	def set_EventTypeList(self,EventTypeList):
-		self.add_query_param('EventTypeList',EventTypeList)
-
-	def get_MnsQueueName(self):
+	def set_EventTypeList(self, EventTypeList):  # String
+		self.add_query_param('EventTypeList', EventTypeList)
+	def get_MnsQueueName(self): # String
 		return self.get_query_params().get('MnsQueueName')
 
-	def set_MnsQueueName(self,MnsQueueName):
-		self.add_query_param('MnsQueueName',MnsQueueName)
-
-	def get_MnsEndpoint(self):
+	def set_MnsQueueName(self, MnsQueueName):  # String
+		self.add_query_param('MnsQueueName', MnsQueueName)
+	def get_MnsEndpoint(self): # String
 		return self.get_query_params().get('MnsEndpoint')
 
-	def set_MnsEndpoint(self,MnsEndpoint):
-		self.add_query_param('MnsEndpoint',MnsEndpoint)
-
-	def get_AppId(self):
+	def set_MnsEndpoint(self, MnsEndpoint):  # String
+		self.add_query_param('MnsEndpoint', MnsEndpoint)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_AuthSwitch(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_AuthSwitch(self): # String
 		return self.get_query_params().get('AuthSwitch')
 
-	def set_AuthSwitch(self,AuthSwitch):
-		self.add_query_param('AuthSwitch',AuthSwitch)
-
-	def get_CallbackURL(self):
+	def set_AuthSwitch(self, AuthSwitch):  # String
+		self.add_query_param('AuthSwitch', AuthSwitch)
+	def get_CallbackURL(self): # String
 		return self.get_query_params().get('CallbackURL')
 
-	def set_CallbackURL(self,CallbackURL):
-		self.add_query_param('CallbackURL',CallbackURL)
+	def set_CallbackURL(self, CallbackURL):  # String
+		self.add_query_param('CallbackURL', CallbackURL)

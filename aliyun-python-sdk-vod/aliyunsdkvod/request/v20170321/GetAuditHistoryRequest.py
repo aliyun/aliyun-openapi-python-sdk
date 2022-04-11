@@ -25,32 +25,29 @@ class GetAuditHistoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetAuditHistory','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_VideoId(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_PageNo(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_PageNo(self): # Long
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_SortBy(self):
+	def set_PageNo(self, PageNo):  # Long
+		self.add_query_param('PageNo', PageNo)
+	def get_SortBy(self): # String
 		return self.get_query_params().get('SortBy')
 
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
+	def set_SortBy(self, SortBy):  # String
+		self.add_query_param('SortBy', SortBy)

@@ -25,14 +25,14 @@ class SetDefaultWatermarkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetDefaultWatermark','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WatermarkId(self):
+	def get_WatermarkId(self): # String
 		return self.get_query_params().get('WatermarkId')
 
-	def set_WatermarkId(self,WatermarkId):
-		self.add_query_param('WatermarkId',WatermarkId)
+	def set_WatermarkId(self, WatermarkId):  # String
+		self.add_query_param('WatermarkId', WatermarkId)

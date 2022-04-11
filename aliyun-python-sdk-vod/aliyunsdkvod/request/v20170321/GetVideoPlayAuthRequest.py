@@ -25,26 +25,24 @@ class GetVideoPlayAuthRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoPlayAuth','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VideoId(self):
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_ApiVersion(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_ApiVersion(self): # String
 		return self.get_query_params().get('ApiVersion')
 
-	def set_ApiVersion(self,ApiVersion):
-		self.add_query_param('ApiVersion',ApiVersion)
-
-	def get_AuthInfoTimeout(self):
+	def set_ApiVersion(self, ApiVersion):  # String
+		self.add_query_param('ApiVersion', ApiVersion)
+	def get_AuthInfoTimeout(self): # Long
 		return self.get_query_params().get('AuthInfoTimeout')
 
-	def set_AuthInfoTimeout(self,AuthInfoTimeout):
-		self.add_query_param('AuthInfoTimeout',AuthInfoTimeout)
+	def set_AuthInfoTimeout(self, AuthInfoTimeout):  # Long
+		self.add_query_param('AuthInfoTimeout', AuthInfoTimeout)

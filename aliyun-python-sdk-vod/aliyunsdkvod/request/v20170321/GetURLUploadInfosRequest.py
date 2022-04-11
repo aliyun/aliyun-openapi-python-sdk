@@ -25,20 +25,19 @@ class GetURLUploadInfosRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetURLUploadInfos','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobIds(self):
+	def get_JobIds(self): # String
 		return self.get_query_params().get('JobIds')
 
-	def set_JobIds(self,JobIds):
-		self.add_query_param('JobIds',JobIds)
-
-	def get_UploadURLs(self):
+	def set_JobIds(self, JobIds):  # String
+		self.add_query_param('JobIds', JobIds)
+	def get_UploadURLs(self): # String
 		return self.get_query_params().get('UploadURLs')
 
-	def set_UploadURLs(self,UploadURLs):
-		self.add_query_param('UploadURLs',UploadURLs)
+	def set_UploadURLs(self, UploadURLs):  # String
+		self.add_query_param('UploadURLs', UploadURLs)

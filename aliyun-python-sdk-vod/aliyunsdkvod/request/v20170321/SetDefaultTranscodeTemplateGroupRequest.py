@@ -25,14 +25,14 @@ class SetDefaultTranscodeTemplateGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetDefaultTranscodeTemplateGroup','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TranscodeTemplateGroupId(self):
+	def get_TranscodeTemplateGroupId(self): # String
 		return self.get_query_params().get('TranscodeTemplateGroupId')
 
-	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
-		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)
+	def set_TranscodeTemplateGroupId(self, TranscodeTemplateGroupId):  # String
+		self.add_query_param('TranscodeTemplateGroupId', TranscodeTemplateGroupId)

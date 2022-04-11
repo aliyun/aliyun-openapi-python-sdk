@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class GetPlayInfoRequest(RpcRequest):
+class RefreshMediaPlayUrlsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetPlayInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RefreshMediaPlayUrls','vod')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,48 +36,43 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def set_Formats(self, Formats):  # String
 		self.add_query_param('Formats', Formats)
-	def get_ReAuthInfo(self): # String
-		return self.get_query_params().get('ReAuthInfo')
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
 
-	def set_ReAuthInfo(self, ReAuthInfo):  # String
-		self.add_query_param('ReAuthInfo', ReAuthInfo)
-	def get_PlayConfig(self): # String
-		return self.get_query_params().get('PlayConfig')
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_MediaIds(self): # String
+		return self.get_query_params().get('MediaIds')
 
-	def set_PlayConfig(self, PlayConfig):  # String
-		self.add_query_param('PlayConfig', PlayConfig)
-	def get_OutputType(self): # String
-		return self.get_query_params().get('OutputType')
+	def set_MediaIds(self, MediaIds):  # String
+		self.add_query_param('MediaIds', MediaIds)
+	def get_Definitions(self): # String
+		return self.get_query_params().get('Definitions')
 
-	def set_OutputType(self, OutputType):  # String
-		self.add_query_param('OutputType', OutputType)
-	def get_Definition(self): # String
-		return self.get_query_params().get('Definition')
-
-	def set_Definition(self, Definition):  # String
-		self.add_query_param('Definition', Definition)
-	def get_AuthTimeout(self): # Long
-		return self.get_query_params().get('AuthTimeout')
-
-	def set_AuthTimeout(self, AuthTimeout):  # Long
-		self.add_query_param('AuthTimeout', AuthTimeout)
+	def set_Definitions(self, Definitions):  # String
+		self.add_query_param('Definitions', Definitions)
 	def get_StreamType(self): # String
 		return self.get_query_params().get('StreamType')
 
 	def set_StreamType(self, StreamType):  # String
 		self.add_query_param('StreamType', StreamType)
-	def get_VideoId(self): # String
-		return self.get_query_params().get('VideoId')
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def set_VideoId(self, VideoId):  # String
-		self.add_query_param('VideoId', VideoId)
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_SliceFlag(self): # Boolean
+		return self.get_query_params().get('SliceFlag')
+
+	def set_SliceFlag(self, SliceFlag):  # Boolean
+		self.add_query_param('SliceFlag', SliceFlag)
 	def get_ResultType(self): # String
 		return self.get_query_params().get('ResultType')
 
 	def set_ResultType(self, ResultType):  # String
 		self.add_query_param('ResultType', ResultType)
-	def get_AdditionType(self): # String
-		return self.get_query_params().get('AdditionType')
+	def get_SliceCount(self): # Integer
+		return self.get_query_params().get('SliceCount')
 
-	def set_AdditionType(self, AdditionType):  # String
-		self.add_query_param('AdditionType', AdditionType)
+	def set_SliceCount(self, SliceCount):  # Integer
+		self.add_query_param('SliceCount', SliceCount)

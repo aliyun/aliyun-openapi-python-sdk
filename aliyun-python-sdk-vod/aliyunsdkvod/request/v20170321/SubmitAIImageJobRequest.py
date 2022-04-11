@@ -25,56 +25,49 @@ class SubmitAIImageJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIImageJob','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # String
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AIPipelineId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # String
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AIPipelineId(self): # String
 		return self.get_query_params().get('AIPipelineId')
 
-	def set_AIPipelineId(self,AIPipelineId):
-		self.add_query_param('AIPipelineId',AIPipelineId)
-
-	def get_UserData(self):
+	def set_AIPipelineId(self, AIPipelineId):  # String
+		self.add_query_param('AIPipelineId', AIPipelineId)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_ResourceOwnerAccount(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VideoId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_AITemplateId(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_AITemplateId(self): # String
 		return self.get_query_params().get('AITemplateId')
 
-	def set_AITemplateId(self,AITemplateId):
-		self.add_query_param('AITemplateId',AITemplateId)
-
-	def get_OwnerId(self):
+	def set_AITemplateId(self, AITemplateId):  # String
+		self.add_query_param('AITemplateId', AITemplateId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

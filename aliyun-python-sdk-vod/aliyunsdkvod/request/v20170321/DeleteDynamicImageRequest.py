@@ -25,20 +25,19 @@ class DeleteDynamicImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteDynamicImage','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VideoId(self):
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_DynamicImageIds(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_DynamicImageIds(self): # String
 		return self.get_query_params().get('DynamicImageIds')
 
-	def set_DynamicImageIds(self,DynamicImageIds):
-		self.add_query_param('DynamicImageIds',DynamicImageIds)
+	def set_DynamicImageIds(self, DynamicImageIds):  # String
+		self.add_query_param('DynamicImageIds', DynamicImageIds)

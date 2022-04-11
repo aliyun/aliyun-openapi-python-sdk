@@ -25,14 +25,14 @@ class ListAITemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAITemplate','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TemplateType(self):
+	def get_TemplateType(self): # String
 		return self.get_query_params().get('TemplateType')
 
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)

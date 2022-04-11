@@ -25,14 +25,14 @@ class ListAuditSecurityIpRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAuditSecurityIp','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SecurityGroupName(self):
+	def get_SecurityGroupName(self): # String
 		return self.get_query_params().get('SecurityGroupName')
 
-	def set_SecurityGroupName(self,SecurityGroupName):
-		self.add_query_param('SecurityGroupName',SecurityGroupName)
+	def set_SecurityGroupName(self, SecurityGroupName):  # String
+		self.add_query_param('SecurityGroupName', SecurityGroupName)

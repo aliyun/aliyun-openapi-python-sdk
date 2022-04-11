@@ -25,26 +25,24 @@ class ListAppPoliciesForIdentityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAppPoliciesForIdentity','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IdentityType(self):
+	def get_IdentityType(self): # String
 		return self.get_query_params().get('IdentityType')
 
-	def set_IdentityType(self,IdentityType):
-		self.add_query_param('IdentityType',IdentityType)
-
-	def get_IdentityName(self):
+	def set_IdentityType(self, IdentityType):  # String
+		self.add_query_param('IdentityType', IdentityType)
+	def get_IdentityName(self): # String
 		return self.get_query_params().get('IdentityName')
 
-	def set_IdentityName(self,IdentityName):
-		self.add_query_param('IdentityName',IdentityName)
-
-	def get_AppId(self):
+	def set_IdentityName(self, IdentityName):  # String
+		self.add_query_param('IdentityName', IdentityName)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

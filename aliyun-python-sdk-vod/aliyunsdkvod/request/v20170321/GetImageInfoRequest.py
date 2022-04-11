@@ -25,26 +25,24 @@ class GetImageInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetImageInfo','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageId(self):
+	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_OutputType(self):
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_OutputType(self): # String
 		return self.get_query_params().get('OutputType')
 
-	def set_OutputType(self,OutputType):
-		self.add_query_param('OutputType',OutputType)
-
-	def get_AuthTimeout(self):
+	def set_OutputType(self, OutputType):  # String
+		self.add_query_param('OutputType', OutputType)
+	def get_AuthTimeout(self): # Long
 		return self.get_query_params().get('AuthTimeout')
 
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
+	def set_AuthTimeout(self, AuthTimeout):  # Long
+		self.add_query_param('AuthTimeout', AuthTimeout)

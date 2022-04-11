@@ -25,14 +25,14 @@ class CreateAuditRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateAudit','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuditContent(self):
+	def get_AuditContent(self): # String
 		return self.get_query_params().get('AuditContent')
 
-	def set_AuditContent(self,AuditContent):
-		self.add_query_param('AuditContent',AuditContent)
+	def set_AuditContent(self, AuditContent):  # String
+		self.add_query_param('AuditContent', AuditContent)

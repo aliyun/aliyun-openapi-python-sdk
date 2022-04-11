@@ -25,26 +25,24 @@ class AddCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddCategory','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ParentId(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_ParentId(self): # Long
 		return self.get_query_params().get('ParentId')
 
-	def set_ParentId(self,ParentId):
-		self.add_query_param('ParentId',ParentId)
-
-	def get_CateName(self):
+	def set_ParentId(self, ParentId):  # Long
+		self.add_query_param('ParentId', ParentId)
+	def get_CateName(self): # String
 		return self.get_query_params().get('CateName')
 
-	def set_CateName(self,CateName):
-		self.add_query_param('CateName',CateName)
+	def set_CateName(self, CateName):  # String
+		self.add_query_param('CateName', CateName)

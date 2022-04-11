@@ -20,34 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class AttachAppPolicyToIdentityRequest(RpcRequest):
+class GetMediaRefreshJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AttachAppPolicyToIdentity','vod')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMediaRefreshJobs','vod')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyNames(self): # String
-		return self.get_query_params().get('PolicyNames')
+	def get_MediaRefreshJobId(self): # String
+		return self.get_query_params().get('MediaRefreshJobId')
 
-	def set_PolicyNames(self, PolicyNames):  # String
-		self.add_query_param('PolicyNames', PolicyNames)
-	def get_IdentityName(self): # String
-		return self.get_query_params().get('IdentityName')
+	def set_MediaRefreshJobId(self, MediaRefreshJobId):  # String
+		self.add_query_param('MediaRefreshJobId', MediaRefreshJobId)
+	def get_MediaId(self): # String
+		return self.get_query_params().get('MediaId')
 
-	def set_IdentityName(self, IdentityName):  # String
-		self.add_query_param('IdentityName', IdentityName)
-	def get_IdentityType(self): # String
-		return self.get_query_params().get('IdentityType')
-
-	def set_IdentityType(self, IdentityType):  # String
-		self.add_query_param('IdentityType', IdentityType)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)

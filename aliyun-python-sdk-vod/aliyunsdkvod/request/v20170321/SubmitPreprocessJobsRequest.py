@@ -25,20 +25,19 @@ class SubmitPreprocessJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitPreprocessJobs','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VideoId(self):
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_PreprocessType(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_PreprocessType(self): # String
 		return self.get_query_params().get('PreprocessType')
 
-	def set_PreprocessType(self,PreprocessType):
-		self.add_query_param('PreprocessType',PreprocessType)
+	def set_PreprocessType(self, PreprocessType):  # String
+		self.add_query_param('PreprocessType', PreprocessType)

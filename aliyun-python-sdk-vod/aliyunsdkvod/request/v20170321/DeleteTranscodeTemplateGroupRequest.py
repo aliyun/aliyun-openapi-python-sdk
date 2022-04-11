@@ -25,26 +25,24 @@ class DeleteTranscodeTemplateGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteTranscodeTemplateGroup','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TranscodeTemplateIds(self):
+	def get_TranscodeTemplateIds(self): # String
 		return self.get_query_params().get('TranscodeTemplateIds')
 
-	def set_TranscodeTemplateIds(self,TranscodeTemplateIds):
-		self.add_query_param('TranscodeTemplateIds',TranscodeTemplateIds)
-
-	def get_TranscodeTemplateGroupId(self):
+	def set_TranscodeTemplateIds(self, TranscodeTemplateIds):  # String
+		self.add_query_param('TranscodeTemplateIds', TranscodeTemplateIds)
+	def get_TranscodeTemplateGroupId(self): # String
 		return self.get_query_params().get('TranscodeTemplateGroupId')
 
-	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
-		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)
-
-	def get_ForceDelGroup(self):
+	def set_TranscodeTemplateGroupId(self, TranscodeTemplateGroupId):  # String
+		self.add_query_param('TranscodeTemplateGroupId', TranscodeTemplateGroupId)
+	def get_ForceDelGroup(self): # String
 		return self.get_query_params().get('ForceDelGroup')
 
-	def set_ForceDelGroup(self,ForceDelGroup):
-		self.add_query_param('ForceDelGroup',ForceDelGroup)
+	def set_ForceDelGroup(self, ForceDelGroup):  # String
+		self.add_query_param('ForceDelGroup', ForceDelGroup)

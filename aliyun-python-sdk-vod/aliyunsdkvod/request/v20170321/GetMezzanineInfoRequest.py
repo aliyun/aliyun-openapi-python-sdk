@@ -25,32 +25,29 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMezzanineInfo','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OutputType(self):
+	def get_OutputType(self): # String
 		return self.get_query_params().get('OutputType')
 
-	def set_OutputType(self,OutputType):
-		self.add_query_param('OutputType',OutputType)
-
-	def get_AuthTimeout(self):
+	def set_OutputType(self, OutputType):  # String
+		self.add_query_param('OutputType', OutputType)
+	def get_AuthTimeout(self): # Long
 		return self.get_query_params().get('AuthTimeout')
 
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
-
-	def get_VideoId(self):
+	def set_AuthTimeout(self, AuthTimeout):  # Long
+		self.add_query_param('AuthTimeout', AuthTimeout)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_AdditionType(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_AdditionType(self): # String
 		return self.get_query_params().get('AdditionType')
 
-	def set_AdditionType(self,AdditionType):
-		self.add_query_param('AdditionType',AdditionType)
+	def set_AdditionType(self, AdditionType):  # String
+		self.add_query_param('AdditionType', AdditionType)

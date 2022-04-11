@@ -25,38 +25,34 @@ class DeleteImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteImage','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageURLs(self):
+	def get_ImageURLs(self): # String
 		return self.get_query_params().get('ImageURLs')
 
-	def set_ImageURLs(self,ImageURLs):
-		self.add_query_param('ImageURLs',ImageURLs)
-
-	def get_ImageType(self):
+	def set_ImageURLs(self, ImageURLs):  # String
+		self.add_query_param('ImageURLs', ImageURLs)
+	def get_ImageType(self): # String
 		return self.get_query_params().get('ImageType')
 
-	def set_ImageType(self,ImageType):
-		self.add_query_param('ImageType',ImageType)
-
-	def get_VideoId(self):
+	def set_ImageType(self, ImageType):  # String
+		self.add_query_param('ImageType', ImageType)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_DeleteImageType(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_DeleteImageType(self): # String
 		return self.get_query_params().get('DeleteImageType')
 
-	def set_DeleteImageType(self,DeleteImageType):
-		self.add_query_param('DeleteImageType',DeleteImageType)
-
-	def get_ImageIds(self):
+	def set_DeleteImageType(self, DeleteImageType):  # String
+		self.add_query_param('DeleteImageType', DeleteImageType)
+	def get_ImageIds(self): # String
 		return self.get_query_params().get('ImageIds')
 
-	def set_ImageIds(self,ImageIds):
-		self.add_query_param('ImageIds',ImageIds)
+	def set_ImageIds(self, ImageIds):  # String
+		self.add_query_param('ImageIds', ImageIds)

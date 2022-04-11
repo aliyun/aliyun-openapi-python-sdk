@@ -25,26 +25,24 @@ class UpdateWatermarkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateWatermark','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WatermarkConfig(self):
+	def get_WatermarkConfig(self): # String
 		return self.get_query_params().get('WatermarkConfig')
 
-	def set_WatermarkConfig(self,WatermarkConfig):
-		self.add_query_param('WatermarkConfig',WatermarkConfig)
-
-	def get_WatermarkId(self):
+	def set_WatermarkConfig(self, WatermarkConfig):  # String
+		self.add_query_param('WatermarkConfig', WatermarkConfig)
+	def get_WatermarkId(self): # String
 		return self.get_query_params().get('WatermarkId')
 
-	def set_WatermarkId(self,WatermarkId):
-		self.add_query_param('WatermarkId',WatermarkId)
-
-	def get_Name(self):
+	def set_WatermarkId(self, WatermarkId):  # String
+		self.add_query_param('WatermarkId', WatermarkId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

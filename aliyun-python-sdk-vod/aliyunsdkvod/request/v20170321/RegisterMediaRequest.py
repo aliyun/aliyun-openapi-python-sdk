@@ -25,32 +25,29 @@ class RegisterMediaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RegisterMedia','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserData(self):
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_TemplateGroupId(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_TemplateGroupId(self): # String
 		return self.get_query_params().get('TemplateGroupId')
 
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
-
-	def get_RegisterMetadatas(self):
+	def set_TemplateGroupId(self, TemplateGroupId):  # String
+		self.add_query_param('TemplateGroupId', TemplateGroupId)
+	def get_RegisterMetadatas(self): # String
 		return self.get_query_params().get('RegisterMetadatas')
 
-	def set_RegisterMetadatas(self,RegisterMetadatas):
-		self.add_query_param('RegisterMetadatas',RegisterMetadatas)
-
-	def get_WorkflowId(self):
+	def set_RegisterMetadatas(self, RegisterMetadatas):  # String
+		self.add_query_param('RegisterMetadatas', RegisterMetadatas)
+	def get_WorkflowId(self): # String
 		return self.get_query_params().get('WorkflowId')
 
-	def set_WorkflowId(self,WorkflowId):
-		self.add_query_param('WorkflowId',WorkflowId)
+	def set_WorkflowId(self, WorkflowId):  # String
+		self.add_query_param('WorkflowId', WorkflowId)

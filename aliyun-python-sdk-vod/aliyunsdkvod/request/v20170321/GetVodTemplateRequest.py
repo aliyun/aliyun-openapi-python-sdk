@@ -25,14 +25,14 @@ class GetVodTemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVodTemplate','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VodTemplateId(self):
+	def get_VodTemplateId(self): # String
 		return self.get_query_params().get('VodTemplateId')
 
-	def set_VodTemplateId(self,VodTemplateId):
-		self.add_query_param('VodTemplateId',VodTemplateId)
+	def set_VodTemplateId(self, VodTemplateId):  # String
+		self.add_query_param('VodTemplateId', VodTemplateId)

@@ -25,38 +25,34 @@ class GetCategoriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetCategories','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_CateId(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_CateId(self): # Long
 		return self.get_query_params().get('CateId')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
-
-	def get_PageSize(self):
+	def set_CateId(self, CateId):  # Long
+		self.add_query_param('CateId', CateId)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNo(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNo(self): # Long
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_SortBy(self):
+	def set_PageNo(self, PageNo):  # Long
+		self.add_query_param('PageNo', PageNo)
+	def get_SortBy(self): # String
 		return self.get_query_params().get('SortBy')
 
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
+	def set_SortBy(self, SortBy):  # String
+		self.add_query_param('SortBy', SortBy)

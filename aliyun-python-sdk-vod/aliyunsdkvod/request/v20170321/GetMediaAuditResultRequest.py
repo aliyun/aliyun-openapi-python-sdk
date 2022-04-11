@@ -25,14 +25,14 @@ class GetMediaAuditResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMediaAuditResult','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MediaId(self):
+	def get_MediaId(self): # String
 		return self.get_query_params().get('MediaId')
 
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)

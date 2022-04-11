@@ -25,44 +25,39 @@ class UploadStreamByURLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadStreamByURL','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileExtension(self):
+	def get_FileExtension(self): # String
 		return self.get_query_params().get('FileExtension')
 
-	def set_FileExtension(self,FileExtension):
-		self.add_query_param('FileExtension',FileExtension)
-
-	def get_UserData(self):
+	def set_FileExtension(self, FileExtension):  # String
+		self.add_query_param('FileExtension', FileExtension)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_HDRType(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_HDRType(self): # String
 		return self.get_query_params().get('HDRType')
 
-	def set_HDRType(self,HDRType):
-		self.add_query_param('HDRType',HDRType)
-
-	def get_Definition(self):
+	def set_HDRType(self, HDRType):  # String
+		self.add_query_param('HDRType', HDRType)
+	def get_Definition(self): # String
 		return self.get_query_params().get('Definition')
 
-	def set_Definition(self,Definition):
-		self.add_query_param('Definition',Definition)
-
-	def get_StreamURL(self):
+	def set_Definition(self, Definition):  # String
+		self.add_query_param('Definition', Definition)
+	def get_StreamURL(self): # String
 		return self.get_query_params().get('StreamURL')
 
-	def set_StreamURL(self,StreamURL):
-		self.add_query_param('StreamURL',StreamURL)
-
-	def get_MediaId(self):
+	def set_StreamURL(self, StreamURL):  # String
+		self.add_query_param('StreamURL', StreamURL)
+	def get_MediaId(self): # String
 		return self.get_query_params().get('MediaId')
 
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)

@@ -25,50 +25,44 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitTranscodeJobs','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserData(self):
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_VideoId(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_OverrideParams(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_OverrideParams(self): # String
 		return self.get_query_params().get('OverrideParams')
 
-	def set_OverrideParams(self,OverrideParams):
-		self.add_query_param('OverrideParams',OverrideParams)
-
-	def get_Priority(self):
+	def set_OverrideParams(self, OverrideParams):  # String
+		self.add_query_param('OverrideParams', OverrideParams)
+	def get_Priority(self): # String
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_PipelineId(self):
+	def set_Priority(self, Priority):  # String
+		self.add_query_param('Priority', Priority)
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
-
-	def get_TemplateGroupId(self):
+	def set_PipelineId(self, PipelineId):  # String
+		self.add_query_param('PipelineId', PipelineId)
+	def get_TemplateGroupId(self): # String
 		return self.get_query_params().get('TemplateGroupId')
 
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
-
-	def get_EncryptConfig(self):
+	def set_TemplateGroupId(self, TemplateGroupId):  # String
+		self.add_query_param('TemplateGroupId', TemplateGroupId)
+	def get_EncryptConfig(self): # String
 		return self.get_query_params().get('EncryptConfig')
 
-	def set_EncryptConfig(self,EncryptConfig):
-		self.add_query_param('EncryptConfig',EncryptConfig)
+	def set_EncryptConfig(self, EncryptConfig):  # String
+		self.add_query_param('EncryptConfig', EncryptConfig)

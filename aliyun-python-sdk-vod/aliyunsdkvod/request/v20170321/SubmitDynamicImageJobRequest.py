@@ -25,26 +25,24 @@ class SubmitDynamicImageJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitDynamicImageJob','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DynamicImageTemplateId(self):
+	def get_DynamicImageTemplateId(self): # String
 		return self.get_query_params().get('DynamicImageTemplateId')
 
-	def set_DynamicImageTemplateId(self,DynamicImageTemplateId):
-		self.add_query_param('DynamicImageTemplateId',DynamicImageTemplateId)
-
-	def get_VideoId(self):
+	def set_DynamicImageTemplateId(self, DynamicImageTemplateId):  # String
+		self.add_query_param('DynamicImageTemplateId', DynamicImageTemplateId)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_OverrideParams(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_OverrideParams(self): # String
 		return self.get_query_params().get('OverrideParams')
 
-	def set_OverrideParams(self,OverrideParams):
-		self.add_query_param('OverrideParams',OverrideParams)
+	def set_OverrideParams(self, OverrideParams):  # String
+		self.add_query_param('OverrideParams', OverrideParams)

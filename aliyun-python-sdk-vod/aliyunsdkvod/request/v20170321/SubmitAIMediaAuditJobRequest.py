@@ -25,38 +25,34 @@ class SubmitAIMediaAuditJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIMediaAuditJob','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserData(self):
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_MediaId(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_MediaId(self): # String
 		return self.get_query_params().get('MediaId')
 
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
-
-	def get_TemplateId(self):
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)
+	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_MediaAuditConfiguration(self):
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_query_param('TemplateId', TemplateId)
+	def get_MediaAuditConfiguration(self): # String
 		return self.get_query_params().get('MediaAuditConfiguration')
 
-	def set_MediaAuditConfiguration(self,MediaAuditConfiguration):
-		self.add_query_param('MediaAuditConfiguration',MediaAuditConfiguration)
-
-	def get_MediaType(self):
+	def set_MediaAuditConfiguration(self, MediaAuditConfiguration):  # String
+		self.add_query_param('MediaAuditConfiguration', MediaAuditConfiguration)
+	def get_MediaType(self): # String
 		return self.get_query_params().get('MediaType')
 
-	def set_MediaType(self,MediaType):
-		self.add_query_param('MediaType',MediaType)
+	def set_MediaType(self, MediaType):  # String
+		self.add_query_param('MediaType', MediaType)

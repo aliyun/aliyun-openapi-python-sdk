@@ -25,26 +25,24 @@ class AddAITemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddAITemplate','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TemplateConfig(self):
+	def get_TemplateConfig(self): # String
 		return self.get_query_params().get('TemplateConfig')
 
-	def set_TemplateConfig(self,TemplateConfig):
-		self.add_query_param('TemplateConfig',TemplateConfig)
-
-	def get_TemplateType(self):
+	def set_TemplateConfig(self, TemplateConfig):  # String
+		self.add_query_param('TemplateConfig', TemplateConfig)
+	def get_TemplateType(self): # String
 		return self.get_query_params().get('TemplateType')
 
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
-
-	def get_TemplateName(self):
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)

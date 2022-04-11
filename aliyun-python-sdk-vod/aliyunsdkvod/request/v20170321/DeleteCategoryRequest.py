@@ -25,14 +25,14 @@ class DeleteCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteCategory','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CateId(self):
+	def get_CateId(self): # Long
 		return self.get_query_params().get('CateId')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_CateId(self, CateId):  # Long
+		self.add_query_param('CateId', CateId)

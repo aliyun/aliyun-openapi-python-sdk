@@ -25,38 +25,34 @@ class ListSnapshotsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListSnapshots','vod')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AuthTimeout(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_AuthTimeout(self): # String
 		return self.get_query_params().get('AuthTimeout')
 
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
-
-	def get_VideoId(self):
+	def set_AuthTimeout(self, AuthTimeout):  # String
+		self.add_query_param('AuthTimeout', AuthTimeout)
+	def get_VideoId(self): # String
 		return self.get_query_params().get('VideoId')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_SnapshotType(self):
+	def set_VideoId(self, VideoId):  # String
+		self.add_query_param('VideoId', VideoId)
+	def get_SnapshotType(self): # String
 		return self.get_query_params().get('SnapshotType')
 
-	def set_SnapshotType(self,SnapshotType):
-		self.add_query_param('SnapshotType',SnapshotType)
-
-	def get_PageNo(self):
+	def set_SnapshotType(self, SnapshotType):  # String
+		self.add_query_param('SnapshotType', SnapshotType)
+	def get_PageNo(self): # String
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
+	def set_PageNo(self, PageNo):  # String
+		self.add_query_param('PageNo', PageNo)
