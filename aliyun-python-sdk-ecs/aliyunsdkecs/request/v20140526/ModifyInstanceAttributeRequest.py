@@ -107,3 +107,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
+	def get_RemoteConnectionOptions(self): # Struct
+		return self.get_query_params().get('RemoteConnectionOptions')
+
+	def set_RemoteConnectionOptions(self, RemoteConnectionOptions):  # Struct
+		if RemoteConnectionOptions.get('Password') is not None:
+			self.add_query_param('RemoteConnectionOptions.Password', RemoteConnectionOptions.get('Password'))
+		if RemoteConnectionOptions.get('Type') is not None:
+			self.add_query_param('RemoteConnectionOptions.Type', RemoteConnectionOptions.get('Type'))

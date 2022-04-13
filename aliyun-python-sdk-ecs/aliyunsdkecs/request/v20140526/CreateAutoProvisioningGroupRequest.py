@@ -82,6 +82,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 	def set_LaunchConfigurationHostNamess(self, LaunchConfigurationHostNames):  # RepeatList
 		for depth1 in range(len(LaunchConfigurationHostNames)):
 			self.add_query_param('LaunchConfiguration.HostNames.' + str(depth1 + 1), LaunchConfigurationHostNames[depth1])
+	def get_LaunchConfigurationSecurityGroupIdss(self): # RepeatList
+		return self.get_query_params().get('LaunchConfiguration.SecurityGroupIds')
+
+	def set_LaunchConfigurationSecurityGroupIdss(self, LaunchConfigurationSecurityGroupIds):  # RepeatList
+		for depth1 in range(len(LaunchConfigurationSecurityGroupIds)):
+			self.add_query_param('LaunchConfiguration.SecurityGroupIds.' + str(depth1 + 1), LaunchConfigurationSecurityGroupIds[depth1])
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -97,6 +103,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationResourceGroupId(self, LaunchConfigurationResourceGroupId):  # String
 		self.add_query_param('LaunchConfiguration.ResourceGroupId', LaunchConfigurationResourceGroupId)
+	def get_LaunchConfigurationPassword(self): # String
+		return self.get_query_params().get('LaunchConfiguration.Password')
+
+	def set_LaunchConfigurationPassword(self, LaunchConfigurationPassword):  # String
+		self.add_query_param('LaunchConfiguration.Password', LaunchConfigurationPassword)
 	def get_PayAsYouGoAllocationStrategy(self): # String
 		return self.get_query_params().get('PayAsYouGoAllocationStrategy')
 

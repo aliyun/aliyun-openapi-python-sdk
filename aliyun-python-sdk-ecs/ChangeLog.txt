@@ -1,3 +1,7 @@
+2022-04-13 Version: 4.24.17
+- Support throughput for API DescribeDisks.
+
+
 2021-12-20 Version: 4.24.13
 - Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
 - Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.

@@ -77,6 +77,16 @@ class RunInstancesRequest(RpcRequest):
 	def set_SystemDisk(self, SystemDisk):  # Struct
 		if SystemDisk.get('StorageClusterId') is not None:
 			self.add_query_param('SystemDisk.StorageClusterId', SystemDisk.get('StorageClusterId'))
+		if SystemDisk.get('ProvisionedIops') is not None:
+			self.add_query_param('SystemDisk.ProvisionedIops', SystemDisk.get('ProvisionedIops'))
+		if SystemDisk.get('BurstingEnabled') is not None:
+			self.add_query_param('SystemDisk.BurstingEnabled', SystemDisk.get('BurstingEnabled'))
+		if SystemDisk.get('Encrypted') is not None:
+			self.add_query_param('SystemDisk.Encrypted', SystemDisk.get('Encrypted'))
+		if SystemDisk.get('KMSKeyId') is not None:
+			self.add_query_param('SystemDisk.KMSKeyId', SystemDisk.get('KMSKeyId'))
+		if SystemDisk.get('EncryptAlgorithm') is not None:
+			self.add_query_param('SystemDisk.EncryptAlgorithm', SystemDisk.get('EncryptAlgorithm'))
 	def get_DeploymentSetGroupNo(self): # Integer
 		return self.get_query_params().get('DeploymentSetGroupNo')
 
@@ -492,6 +502,10 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisk[depth1].get('KMSKeyId'))
 			if DataDisk[depth1].get('StorageClusterId') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.StorageClusterId', DataDisk[depth1].get('StorageClusterId'))
+			if DataDisk[depth1].get('ProvisionedIops') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', DataDisk[depth1].get('ProvisionedIops'))
+			if DataDisk[depth1].get('BurstingEnabled') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', DataDisk[depth1].get('BurstingEnabled'))
 	def get_StorageSetId(self): # String
 		return self.get_query_params().get('StorageSetId')
 

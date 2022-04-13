@@ -87,3 +87,8 @@ class ModifyDiskAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_BurstingEnabled(self): # Boolean
+		return self.get_query_params().get('BurstingEnabled')
+
+	def set_BurstingEnabled(self, BurstingEnabled):  # Boolean
+		self.add_query_param('BurstingEnabled', BurstingEnabled)
