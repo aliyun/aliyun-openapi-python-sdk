@@ -26,50 +26,44 @@ class InsertClusterRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertCluster','Edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterType(self):
+	def get_ClusterType(self): # Integer
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
-
-	def get_IaasProvider(self):
+	def set_ClusterType(self, ClusterType):  # Integer
+		self.add_query_param('ClusterType', ClusterType)
+	def get_IaasProvider(self): # String
 		return self.get_query_params().get('IaasProvider')
 
-	def set_IaasProvider(self,IaasProvider):
-		self.add_query_param('IaasProvider',IaasProvider)
-
-	def get_LogicalRegionId(self):
+	def set_IaasProvider(self, IaasProvider):  # String
+		self.add_query_param('IaasProvider', IaasProvider)
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_ClusterName(self):
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)
+	def get_ClusterName(self): # String
 		return self.get_query_params().get('ClusterName')
 
-	def set_ClusterName(self,ClusterName):
-		self.add_query_param('ClusterName',ClusterName)
-
-	def get_VpcId(self):
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_NetworkMode(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_NetworkMode(self): # Integer
 		return self.get_query_params().get('NetworkMode')
 
-	def set_NetworkMode(self,NetworkMode):
-		self.add_query_param('NetworkMode',NetworkMode)
-
-	def get_OversoldFactor(self):
+	def set_NetworkMode(self, NetworkMode):  # Integer
+		self.add_query_param('NetworkMode', NetworkMode)
+	def get_OversoldFactor(self): # Integer
 		return self.get_query_params().get('OversoldFactor')
 
-	def set_OversoldFactor(self,OversoldFactor):
-		self.add_query_param('OversoldFactor',OversoldFactor)
+	def set_OversoldFactor(self, OversoldFactor):  # Integer
+		self.add_query_param('OversoldFactor', OversoldFactor)

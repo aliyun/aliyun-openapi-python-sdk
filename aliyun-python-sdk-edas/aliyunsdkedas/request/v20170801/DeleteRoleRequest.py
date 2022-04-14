@@ -26,14 +26,14 @@ class DeleteRoleRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteRole','Edas')
 		self.set_uri_pattern('/pop/v5/account/delete_role')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RoleId(self):
+	def get_RoleId(self): # Integer
 		return self.get_query_params().get('RoleId')
 
-	def set_RoleId(self,RoleId):
-		self.add_query_param('RoleId',RoleId)
+	def set_RoleId(self, RoleId):  # Integer
+		self.add_query_param('RoleId', RoleId)

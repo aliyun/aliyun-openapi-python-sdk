@@ -26,26 +26,24 @@ class ListK8sIngressRulesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListK8sIngressRules','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_ingress')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Condition(self):
+	def get_Condition(self): # String
 		return self.get_query_params().get('Condition')
 
-	def set_Condition(self,Condition):
-		self.add_query_param('Condition',Condition)
-
-	def get_Namespace(self):
+	def set_Condition(self, Condition):  # String
+		self.add_query_param('Condition', Condition)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_ClusterId(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

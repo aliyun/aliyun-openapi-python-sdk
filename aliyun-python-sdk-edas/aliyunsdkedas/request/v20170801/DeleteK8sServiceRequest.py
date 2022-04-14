@@ -26,20 +26,19 @@ class DeleteK8sServiceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteK8sService','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_service')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Name(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

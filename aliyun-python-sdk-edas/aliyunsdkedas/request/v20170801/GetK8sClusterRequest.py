@@ -26,32 +26,29 @@ class GetK8sClusterRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetK8sCluster','Edas')
 		self.set_uri_pattern('/pop/v5/k8s_clusters')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterType(self):
+	def get_ClusterType(self): # Integer
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
-
-	def get_RegionTag(self):
+	def set_ClusterType(self, ClusterType):  # Integer
+		self.add_query_param('ClusterType', ClusterType)
+	def get_RegionTag(self): # String
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self,RegionTag):
-		self.add_query_param('RegionTag',RegionTag)
-
-	def get_PageSize(self):
+	def set_RegionTag(self, RegionTag):  # String
+		self.add_query_param('RegionTag', RegionTag)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

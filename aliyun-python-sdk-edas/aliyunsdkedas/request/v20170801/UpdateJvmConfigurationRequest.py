@@ -26,44 +26,39 @@ class UpdateJvmConfigurationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateJvmConfiguration','Edas')
 		self.set_uri_pattern('/pop/v5/app/app_jvm_config')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MinHeapSize(self):
+	def get_MinHeapSize(self): # Integer
 		return self.get_query_params().get('MinHeapSize')
 
-	def set_MinHeapSize(self,MinHeapSize):
-		self.add_query_param('MinHeapSize',MinHeapSize)
-
-	def get_AppId(self):
+	def set_MinHeapSize(self, MinHeapSize):  # Integer
+		self.add_query_param('MinHeapSize', MinHeapSize)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_GroupId(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Options(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Options(self): # String
 		return self.get_query_params().get('Options')
 
-	def set_Options(self,Options):
-		self.add_query_param('Options',Options)
-
-	def get_MaxPermSize(self):
+	def set_Options(self, Options):  # String
+		self.add_query_param('Options', Options)
+	def get_MaxPermSize(self): # Integer
 		return self.get_query_params().get('MaxPermSize')
 
-	def set_MaxPermSize(self,MaxPermSize):
-		self.add_query_param('MaxPermSize',MaxPermSize)
-
-	def get_MaxHeapSize(self):
+	def set_MaxPermSize(self, MaxPermSize):  # Integer
+		self.add_query_param('MaxPermSize', MaxPermSize)
+	def get_MaxHeapSize(self): # Integer
 		return self.get_query_params().get('MaxHeapSize')
 
-	def set_MaxHeapSize(self,MaxHeapSize):
-		self.add_query_param('MaxHeapSize',MaxHeapSize)
+	def set_MaxHeapSize(self, MaxHeapSize):  # Integer
+		self.add_query_param('MaxHeapSize', MaxHeapSize)

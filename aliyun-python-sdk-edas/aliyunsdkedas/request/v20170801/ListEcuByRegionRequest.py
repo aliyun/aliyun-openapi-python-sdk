@@ -26,20 +26,19 @@ class ListEcuByRegionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListEcuByRegion','Edas')
 		self.set_uri_pattern('/pop/v5/resource/ecu_list')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Act(self):
+	def get_Act(self): # String
 		return self.get_query_params().get('Act')
 
-	def set_Act(self,Act):
-		self.add_query_param('Act',Act)
-
-	def get_LogicalRegionId(self):
+	def set_Act(self, Act):  # String
+		self.add_query_param('Act', Act)
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)

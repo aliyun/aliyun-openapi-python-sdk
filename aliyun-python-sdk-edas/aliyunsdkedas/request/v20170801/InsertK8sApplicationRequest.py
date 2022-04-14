@@ -26,362 +26,304 @@ class InsertK8sApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NasId(self):
+	def get_NasId(self): # String
 		return self.get_query_params().get('NasId')
 
-	def set_NasId(self,NasId):
-		self.add_query_param('NasId',NasId)
-
-	def get_IntranetSlbId(self):
+	def set_NasId(self, NasId):  # String
+		self.add_query_param('NasId', NasId)
+	def get_IntranetSlbId(self): # String
 		return self.get_query_params().get('IntranetSlbId')
 
-	def set_IntranetSlbId(self,IntranetSlbId):
-		self.add_query_param('IntranetSlbId',IntranetSlbId)
-
-	def get_Envs(self):
+	def set_IntranetSlbId(self, IntranetSlbId):  # String
+		self.add_query_param('IntranetSlbId', IntranetSlbId)
+	def get_Envs(self): # String
 		return self.get_query_params().get('Envs')
 
-	def set_Envs(self,Envs):
-		self.add_query_param('Envs',Envs)
-
-	def get_RequestsMem(self):
+	def set_Envs(self, Envs):  # String
+		self.add_query_param('Envs', Envs)
+	def get_RequestsMem(self): # Integer
 		return self.get_query_params().get('RequestsMem')
 
-	def set_RequestsMem(self,RequestsMem):
-		self.add_query_param('RequestsMem',RequestsMem)
-
-	def get_StorageType(self):
+	def set_RequestsMem(self, RequestsMem):  # Integer
+		self.add_query_param('RequestsMem', RequestsMem)
+	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_ConfigMountDescs(self):
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_ConfigMountDescs(self): # String
 		return self.get_query_params().get('ConfigMountDescs')
 
-	def set_ConfigMountDescs(self,ConfigMountDescs):
-		self.add_query_param('ConfigMountDescs',ConfigMountDescs)
-
-	def get_AppName(self):
+	def set_ConfigMountDescs(self, ConfigMountDescs):  # String
+		self.add_query_param('ConfigMountDescs', ConfigMountDescs)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_RequestsmCpu(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_RequestsmCpu(self): # Integer
 		return self.get_query_params().get('RequestsmCpu')
 
-	def set_RequestsmCpu(self,RequestsmCpu):
-		self.add_query_param('RequestsmCpu',RequestsmCpu)
-
-	def get_DeployAcrossZones(self):
+	def set_RequestsmCpu(self, RequestsmCpu):  # Integer
+		self.add_query_param('RequestsmCpu', RequestsmCpu)
+	def get_DeployAcrossZones(self): # String
 		return self.get_query_params().get('DeployAcrossZones')
 
-	def set_DeployAcrossZones(self,DeployAcrossZones):
-		self.add_query_param('DeployAcrossZones',DeployAcrossZones)
-
-	def get_IntranetSlbPort(self):
+	def set_DeployAcrossZones(self, DeployAcrossZones):  # String
+		self.add_query_param('DeployAcrossZones', DeployAcrossZones)
+	def get_IntranetSlbPort(self): # Integer
 		return self.get_query_params().get('IntranetSlbPort')
 
-	def set_IntranetSlbPort(self,IntranetSlbPort):
-		self.add_query_param('IntranetSlbPort',IntranetSlbPort)
-
-	def get_DeployAcrossNodes(self):
+	def set_IntranetSlbPort(self, IntranetSlbPort):  # Integer
+		self.add_query_param('IntranetSlbPort', IntranetSlbPort)
+	def get_DeployAcrossNodes(self): # String
 		return self.get_query_params().get('DeployAcrossNodes')
 
-	def set_DeployAcrossNodes(self,DeployAcrossNodes):
-		self.add_query_param('DeployAcrossNodes',DeployAcrossNodes)
-
-	def get_PreStop(self):
+	def set_DeployAcrossNodes(self, DeployAcrossNodes):  # String
+		self.add_query_param('DeployAcrossNodes', DeployAcrossNodes)
+	def get_PreStop(self): # String
 		return self.get_query_params().get('PreStop')
 
-	def set_PreStop(self,PreStop):
-		self.add_query_param('PreStop',PreStop)
-
-	def get_BuildPackId(self):
+	def set_PreStop(self, PreStop):  # String
+		self.add_query_param('PreStop', PreStop)
+	def get_BuildPackId(self): # String
 		return self.get_query_params().get('BuildPackId')
 
-	def set_BuildPackId(self,BuildPackId):
-		self.add_query_param('BuildPackId',BuildPackId)
-
-	def get_LocalVolume(self):
+	def set_BuildPackId(self, BuildPackId):  # String
+		self.add_query_param('BuildPackId', BuildPackId)
+	def get_LocalVolume(self): # String
 		return self.get_query_params().get('LocalVolume')
 
-	def set_LocalVolume(self,LocalVolume):
-		self.add_query_param('LocalVolume',LocalVolume)
-
-	def get_UseBodyEncoding(self):
+	def set_LocalVolume(self, LocalVolume):  # String
+		self.add_query_param('LocalVolume', LocalVolume)
+	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
-	def set_UseBodyEncoding(self,UseBodyEncoding):
-		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
-
-	def get_EmptyDirs(self):
+	def set_UseBodyEncoding(self, UseBodyEncoding):  # Boolean
+		self.add_query_param('UseBodyEncoding', UseBodyEncoding)
+	def get_EmptyDirs(self): # String
 		return self.get_query_params().get('EmptyDirs')
 
-	def set_EmptyDirs(self,EmptyDirs):
-		self.add_query_param('EmptyDirs',EmptyDirs)
-
-	def get_PackageType(self):
+	def set_EmptyDirs(self, EmptyDirs):  # String
+		self.add_query_param('EmptyDirs', EmptyDirs)
+	def get_PackageType(self): # String
 		return self.get_query_params().get('PackageType')
 
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
-	def get_RuntimeClassName(self):
+	def set_PackageType(self, PackageType):  # String
+		self.add_query_param('PackageType', PackageType)
+	def get_RuntimeClassName(self): # String
 		return self.get_query_params().get('RuntimeClassName')
 
-	def set_RuntimeClassName(self,RuntimeClassName):
-		self.add_query_param('RuntimeClassName',RuntimeClassName)
-
-	def get_PostStart(self):
+	def set_RuntimeClassName(self, RuntimeClassName):  # String
+		self.add_query_param('RuntimeClassName', RuntimeClassName)
+	def get_PostStart(self): # String
 		return self.get_query_params().get('PostStart')
 
-	def set_PostStart(self,PostStart):
-		self.add_query_param('PostStart',PostStart)
-
-	def get_CustomAffinity(self):
+	def set_PostStart(self, PostStart):  # String
+		self.add_query_param('PostStart', PostStart)
+	def get_CustomAffinity(self): # String
 		return self.get_query_params().get('CustomAffinity')
 
-	def set_CustomAffinity(self,CustomAffinity):
-		self.add_query_param('CustomAffinity',CustomAffinity)
-
-	def get_RepoId(self):
+	def set_CustomAffinity(self, CustomAffinity):  # String
+		self.add_query_param('CustomAffinity', CustomAffinity)
+	def get_RepoId(self): # String
 		return self.get_query_params().get('RepoId')
 
-	def set_RepoId(self,RepoId):
-		self.add_query_param('RepoId',RepoId)
-
-	def get_InternetTargetPort(self):
+	def set_RepoId(self, RepoId):  # String
+		self.add_query_param('RepoId', RepoId)
+	def get_InternetTargetPort(self): # Integer
 		return self.get_query_params().get('InternetTargetPort')
 
-	def set_InternetTargetPort(self,InternetTargetPort):
-		self.add_query_param('InternetTargetPort',InternetTargetPort)
-
-	def get_WebContainer(self):
+	def set_InternetTargetPort(self, InternetTargetPort):  # Integer
+		self.add_query_param('InternetTargetPort', InternetTargetPort)
+	def get_WebContainer(self): # String
 		return self.get_query_params().get('WebContainer')
 
-	def set_WebContainer(self,WebContainer):
-		self.add_query_param('WebContainer',WebContainer)
-
-	def get_EnableAsm(self):
+	def set_WebContainer(self, WebContainer):  # String
+		self.add_query_param('WebContainer', WebContainer)
+	def get_EnableAsm(self): # Boolean
 		return self.get_query_params().get('EnableAsm')
 
-	def set_EnableAsm(self,EnableAsm):
-		self.add_query_param('EnableAsm',EnableAsm)
-
-	def get_EnableAhas(self):
+	def set_EnableAsm(self, EnableAsm):  # Boolean
+		self.add_query_param('EnableAsm', EnableAsm)
+	def get_EnableAhas(self): # Boolean
 		return self.get_query_params().get('EnableAhas')
 
-	def set_EnableAhas(self,EnableAhas):
-		self.add_query_param('EnableAhas',EnableAhas)
-
-	def get_SlsConfigs(self):
+	def set_EnableAhas(self, EnableAhas):  # Boolean
+		self.add_query_param('EnableAhas', EnableAhas)
+	def get_SlsConfigs(self): # String
 		return self.get_query_params().get('SlsConfigs')
 
-	def set_SlsConfigs(self,SlsConfigs):
-		self.add_query_param('SlsConfigs',SlsConfigs)
-
-	def get_CommandArgs(self):
+	def set_SlsConfigs(self, SlsConfigs):  # String
+		self.add_query_param('SlsConfigs', SlsConfigs)
+	def get_CommandArgs(self): # String
 		return self.get_query_params().get('CommandArgs')
 
-	def set_CommandArgs(self,CommandArgs):
-		self.add_query_param('CommandArgs',CommandArgs)
-
-	def get_Readiness(self):
+	def set_CommandArgs(self, CommandArgs):  # String
+		self.add_query_param('CommandArgs', CommandArgs)
+	def get_Readiness(self): # String
 		return self.get_query_params().get('Readiness')
 
-	def set_Readiness(self,Readiness):
-		self.add_query_param('Readiness',Readiness)
-
-	def get_Liveness(self):
+	def set_Readiness(self, Readiness):  # String
+		self.add_query_param('Readiness', Readiness)
+	def get_Liveness(self): # String
 		return self.get_query_params().get('Liveness')
 
-	def set_Liveness(self,Liveness):
-		self.add_query_param('Liveness',Liveness)
-
-	def get_CsClusterId(self):
+	def set_Liveness(self, Liveness):  # String
+		self.add_query_param('Liveness', Liveness)
+	def get_CsClusterId(self): # String
 		return self.get_query_params().get('CsClusterId')
 
-	def set_CsClusterId(self,CsClusterId):
-		self.add_query_param('CsClusterId',CsClusterId)
-
-	def get_InternetSlbPort(self):
+	def set_CsClusterId(self, CsClusterId):  # String
+		self.add_query_param('CsClusterId', CsClusterId)
+	def get_InternetSlbPort(self): # Integer
 		return self.get_query_params().get('InternetSlbPort')
 
-	def set_InternetSlbPort(self,InternetSlbPort):
-		self.add_query_param('InternetSlbPort',InternetSlbPort)
-
-	def get_PackageVersion(self):
+	def set_InternetSlbPort(self, InternetSlbPort):  # Integer
+		self.add_query_param('InternetSlbPort', InternetSlbPort)
+	def get_PackageVersion(self): # String
 		return self.get_query_params().get('PackageVersion')
 
-	def set_PackageVersion(self,PackageVersion):
-		self.add_query_param('PackageVersion',PackageVersion)
-
-	def get_Timeout(self):
+	def set_PackageVersion(self, PackageVersion):  # String
+		self.add_query_param('PackageVersion', PackageVersion)
+	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
-
-	def get_EnvFroms(self):
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_query_param('Timeout', Timeout)
+	def get_EnvFroms(self): # String
 		return self.get_query_params().get('EnvFroms')
 
-	def set_EnvFroms(self,EnvFroms):
-		self.add_query_param('EnvFroms',EnvFroms)
-
-	def get_LimitMem(self):
+	def set_EnvFroms(self, EnvFroms):  # String
+		self.add_query_param('EnvFroms', EnvFroms)
+	def get_LimitMem(self): # Integer
 		return self.get_query_params().get('LimitMem')
 
-	def set_LimitMem(self,LimitMem):
-		self.add_query_param('LimitMem',LimitMem)
-
-	def get_LimitmCpu(self):
+	def set_LimitMem(self, LimitMem):  # Integer
+		self.add_query_param('LimitMem', LimitMem)
+	def get_LimitmCpu(self): # Integer
 		return self.get_query_params().get('LimitmCpu')
 
-	def set_LimitmCpu(self,LimitmCpu):
-		self.add_query_param('LimitmCpu',LimitmCpu)
-
-	def get_EdasContainerVersion(self):
+	def set_LimitmCpu(self, LimitmCpu):  # Integer
+		self.add_query_param('LimitmCpu', LimitmCpu)
+	def get_EdasContainerVersion(self): # String
 		return self.get_query_params().get('EdasContainerVersion')
 
-	def set_EdasContainerVersion(self,EdasContainerVersion):
-		self.add_query_param('EdasContainerVersion',EdasContainerVersion)
-
-	def get_InternetSlbId(self):
+	def set_EdasContainerVersion(self, EdasContainerVersion):  # String
+		self.add_query_param('EdasContainerVersion', EdasContainerVersion)
+	def get_InternetSlbId(self): # String
 		return self.get_query_params().get('InternetSlbId')
 
-	def set_InternetSlbId(self,InternetSlbId):
-		self.add_query_param('InternetSlbId',InternetSlbId)
-
-	def get_LogicalRegionId(self):
+	def set_InternetSlbId(self, InternetSlbId):  # String
+		self.add_query_param('InternetSlbId', InternetSlbId)
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_PackageUrl(self):
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)
+	def get_PackageUrl(self): # String
 		return self.get_query_params().get('PackageUrl')
 
-	def set_PackageUrl(self,PackageUrl):
-		self.add_query_param('PackageUrl',PackageUrl)
-
-	def get_InternetSlbProtocol(self):
+	def set_PackageUrl(self, PackageUrl):  # String
+		self.add_query_param('PackageUrl', PackageUrl)
+	def get_InternetSlbProtocol(self): # String
 		return self.get_query_params().get('InternetSlbProtocol')
 
-	def set_InternetSlbProtocol(self,InternetSlbProtocol):
-		self.add_query_param('InternetSlbProtocol',InternetSlbProtocol)
-
-	def get_MountDescs(self):
+	def set_InternetSlbProtocol(self, InternetSlbProtocol):  # String
+		self.add_query_param('InternetSlbProtocol', InternetSlbProtocol)
+	def get_MountDescs(self): # String
 		return self.get_query_params().get('MountDescs')
 
-	def set_MountDescs(self,MountDescs):
-		self.add_query_param('MountDescs',MountDescs)
-
-	def get_Replicas(self):
+	def set_MountDescs(self, MountDescs):  # String
+		self.add_query_param('MountDescs', MountDescs)
+	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self,Replicas):
-		self.add_query_param('Replicas',Replicas)
-
-	def get_LimitCpu(self):
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
+	def get_LimitCpu(self): # Integer
 		return self.get_query_params().get('LimitCpu')
 
-	def set_LimitCpu(self,LimitCpu):
-		self.add_query_param('LimitCpu',LimitCpu)
-
-	def get_CustomTolerations(self):
+	def set_LimitCpu(self, LimitCpu):  # Integer
+		self.add_query_param('LimitCpu', LimitCpu)
+	def get_CustomTolerations(self): # String
 		return self.get_query_params().get('CustomTolerations')
 
-	def set_CustomTolerations(self,CustomTolerations):
-		self.add_query_param('CustomTolerations',CustomTolerations)
-
-	def get_WebContainerConfig(self):
+	def set_CustomTolerations(self, CustomTolerations):  # String
+		self.add_query_param('CustomTolerations', CustomTolerations)
+	def get_WebContainerConfig(self): # String
 		return self.get_query_params().get('WebContainerConfig')
 
-	def set_WebContainerConfig(self,WebContainerConfig):
-		self.add_query_param('WebContainerConfig',WebContainerConfig)
-
-	def get_IsMultilingualApp(self):
+	def set_WebContainerConfig(self, WebContainerConfig):  # String
+		self.add_query_param('WebContainerConfig', WebContainerConfig)
+	def get_IsMultilingualApp(self): # Boolean
 		return self.get_query_params().get('IsMultilingualApp')
 
-	def set_IsMultilingualApp(self,IsMultilingualApp):
-		self.add_query_param('IsMultilingualApp',IsMultilingualApp)
-
-	def get_ClusterId(self):
+	def set_IsMultilingualApp(self, IsMultilingualApp):  # Boolean
+		self.add_query_param('IsMultilingualApp', IsMultilingualApp)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_IntranetTargetPort(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_IntranetTargetPort(self): # Integer
 		return self.get_query_params().get('IntranetTargetPort')
 
-	def set_IntranetTargetPort(self,IntranetTargetPort):
-		self.add_query_param('IntranetTargetPort',IntranetTargetPort)
-
-	def get_Command(self):
+	def set_IntranetTargetPort(self, IntranetTargetPort):  # Integer
+		self.add_query_param('IntranetTargetPort', IntranetTargetPort)
+	def get_Command(self): # String
 		return self.get_query_params().get('Command')
 
-	def set_Command(self,Command):
-		self.add_query_param('Command',Command)
-
-	def get_JDK(self):
+	def set_Command(self, Command):  # String
+		self.add_query_param('Command', Command)
+	def get_JDK(self): # String
 		return self.get_query_params().get('JDK')
 
-	def set_JDK(self,JDK):
-		self.add_query_param('JDK',JDK)
-
-	def get_UriEncoding(self):
+	def set_JDK(self, JDK):  # String
+		self.add_query_param('JDK', JDK)
+	def get_UriEncoding(self): # String
 		return self.get_query_params().get('UriEncoding')
 
-	def set_UriEncoding(self,UriEncoding):
-		self.add_query_param('UriEncoding',UriEncoding)
-
-	def get_IntranetSlbProtocol(self):
+	def set_UriEncoding(self, UriEncoding):  # String
+		self.add_query_param('UriEncoding', UriEncoding)
+	def get_IntranetSlbProtocol(self): # String
 		return self.get_query_params().get('IntranetSlbProtocol')
 
-	def set_IntranetSlbProtocol(self,IntranetSlbProtocol):
-		self.add_query_param('IntranetSlbProtocol',IntranetSlbProtocol)
-
-	def get_ImageUrl(self):
+	def set_IntranetSlbProtocol(self, IntranetSlbProtocol):  # String
+		self.add_query_param('IntranetSlbProtocol', IntranetSlbProtocol)
+	def get_ImageUrl(self): # String
 		return self.get_query_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
-		self.add_query_param('ImageUrl',ImageUrl)
-
-	def get_PvcMountDescs(self):
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_query_param('ImageUrl', ImageUrl)
+	def get_PvcMountDescs(self): # String
 		return self.get_query_params().get('PvcMountDescs')
 
-	def set_PvcMountDescs(self,PvcMountDescs):
-		self.add_query_param('PvcMountDescs',PvcMountDescs)
-
-	def get_Namespace(self):
+	def set_PvcMountDescs(self, PvcMountDescs):  # String
+		self.add_query_param('PvcMountDescs', PvcMountDescs)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_ApplicationDescription(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_ApplicationDescription(self): # String
 		return self.get_query_params().get('ApplicationDescription')
 
-	def set_ApplicationDescription(self,ApplicationDescription):
-		self.add_query_param('ApplicationDescription',ApplicationDescription)
-
-	def get_RequestsCpu(self):
+	def set_ApplicationDescription(self, ApplicationDescription):  # String
+		self.add_query_param('ApplicationDescription', ApplicationDescription)
+	def get_RequestsCpu(self): # Integer
 		return self.get_query_params().get('RequestsCpu')
 
-	def set_RequestsCpu(self,RequestsCpu):
-		self.add_query_param('RequestsCpu',RequestsCpu)
-
-	def get_JavaStartUpConfig(self):
+	def set_RequestsCpu(self, RequestsCpu):  # Integer
+		self.add_query_param('RequestsCpu', RequestsCpu)
+	def get_JavaStartUpConfig(self): # String
 		return self.get_query_params().get('JavaStartUpConfig')
 
-	def set_JavaStartUpConfig(self,JavaStartUpConfig):
-		self.add_query_param('JavaStartUpConfig',JavaStartUpConfig)
+	def set_JavaStartUpConfig(self, JavaStartUpConfig):  # String
+		self.add_query_param('JavaStartUpConfig', JavaStartUpConfig)

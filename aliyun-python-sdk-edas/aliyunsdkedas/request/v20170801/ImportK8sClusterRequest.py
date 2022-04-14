@@ -26,32 +26,29 @@ class ImportK8sClusterRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ImportK8sCluster','Edas')
 		self.set_uri_pattern('/pop/v5/import_k8s_cluster')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mode(self):
+	def get_Mode(self): # Integer
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
-
-	def get_EnableAsm(self):
+	def set_Mode(self, Mode):  # Integer
+		self.add_query_param('Mode', Mode)
+	def get_EnableAsm(self): # Boolean
 		return self.get_query_params().get('EnableAsm')
 
-	def set_EnableAsm(self,EnableAsm):
-		self.add_query_param('EnableAsm',EnableAsm)
-
-	def get_NamespaceId(self):
+	def set_EnableAsm(self, EnableAsm):  # Boolean
+		self.add_query_param('EnableAsm', EnableAsm)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
-
-	def get_ClusterId(self):
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

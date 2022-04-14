@@ -26,62 +26,54 @@ class GetServiceListPageRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetServiceListPage','Edas')
 		self.set_uri_pattern('/pop/sp/api/mseForOam/getServiceListPage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_serviceType(self):
+	def get_serviceType(self): # String
 		return self.get_query_params().get('serviceType')
 
-	def set_serviceType(self,serviceType):
-		self.add_query_param('serviceType',serviceType)
-
-	def get_side(self):
+	def set_serviceType(self, serviceType):  # String
+		self.add_query_param('serviceType', serviceType)
+	def get_side(self): # String
 		return self.get_query_params().get('side')
 
-	def set_side(self,side):
-		self.add_query_param('side',side)
-
-	def get_size(self):
+	def set_side(self, side):  # String
+		self.add_query_param('side', side)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_origin(self):
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_origin(self): # String
 		return self.get_query_params().get('origin')
 
-	def set_origin(self,origin):
-		self.add_query_param('origin',origin)
-
-	def get_searchType(self):
+	def set_origin(self, origin):  # String
+		self.add_query_param('origin', origin)
+	def get_searchType(self): # String
 		return self.get_query_params().get('searchType')
 
-	def set_searchType(self,searchType):
-		self.add_query_param('searchType',searchType)
-
-	def get_namespace(self):
+	def set_searchType(self, searchType):  # String
+		self.add_query_param('searchType', searchType)
+	def get_namespace(self): # String
 		return self.get_query_params().get('namespace')
 
-	def set_namespace(self,namespace):
-		self.add_query_param('namespace',namespace)
-
-	def get_page(self):
+	def set_namespace(self, namespace):  # String
+		self.add_query_param('namespace', namespace)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_region(self):
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)
+	def get_region(self): # String
 		return self.get_query_params().get('region')
 
-	def set_region(self,region):
-		self.add_query_param('region',region)
-
-	def get_searchValue(self):
+	def set_region(self, region):  # String
+		self.add_query_param('region', region)
+	def get_searchValue(self): # String
 		return self.get_query_params().get('searchValue')
 
-	def set_searchValue(self,searchValue):
-		self.add_query_param('searchValue',searchValue)
+	def set_searchValue(self, searchValue):  # String
+		self.add_query_param('searchValue', searchValue)

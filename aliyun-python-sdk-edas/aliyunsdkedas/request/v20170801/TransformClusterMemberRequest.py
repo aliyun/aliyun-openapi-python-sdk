@@ -26,26 +26,24 @@ class TransformClusterMemberRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'TransformClusterMember','Edas')
 		self.set_uri_pattern('/pop/v5/resource/transform_cluster_member')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_InstanceIds(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_TargetClusterId(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_TargetClusterId(self): # String
 		return self.get_query_params().get('TargetClusterId')
 
-	def set_TargetClusterId(self,TargetClusterId):
-		self.add_query_param('TargetClusterId',TargetClusterId)
+	def set_TargetClusterId(self, TargetClusterId):  # String
+		self.add_query_param('TargetClusterId', TargetClusterId)

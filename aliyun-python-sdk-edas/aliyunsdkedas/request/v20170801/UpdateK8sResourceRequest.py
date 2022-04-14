@@ -26,26 +26,24 @@ class UpdateK8sResourceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sResource','Edas')
 		self.set_uri_pattern('/pop/v5/oam/update_k8s_resource_config')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
-
-	def get_ResourceContent(self):
+	def get_ResourceContent(self): # String
 		return self.get_body_params().get('ResourceContent')
 
-	def set_ResourceContent(self,ResourceContent):
+	def set_ResourceContent(self, ResourceContent):  # String
 		self.add_body_params('ResourceContent', ResourceContent)

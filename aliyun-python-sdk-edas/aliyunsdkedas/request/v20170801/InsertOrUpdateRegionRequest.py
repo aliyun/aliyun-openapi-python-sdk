@@ -26,38 +26,34 @@ class InsertOrUpdateRegionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertOrUpdateRegion','Edas')
 		self.set_uri_pattern('/pop/v5/user_region_def')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DebugEnable(self):
+	def get_DebugEnable(self): # Boolean
 		return self.get_query_params().get('DebugEnable')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
-
-	def get_RegionTag(self):
+	def set_DebugEnable(self, DebugEnable):  # Boolean
+		self.add_query_param('DebugEnable', DebugEnable)
+	def get_RegionTag(self): # String
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self,RegionTag):
-		self.add_query_param('RegionTag',RegionTag)
-
-	def get_RegionName(self):
+	def set_RegionTag(self, RegionTag):  # String
+		self.add_query_param('RegionTag', RegionTag)
+	def get_RegionName(self): # String
 		return self.get_query_params().get('RegionName')
 
-	def set_RegionName(self,RegionName):
-		self.add_query_param('RegionName',RegionName)
-
-	def get_Description(self):
+	def set_RegionName(self, RegionName):  # String
+		self.add_query_param('RegionName', RegionName)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Id(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

@@ -26,32 +26,29 @@ class ConvertK8sResourceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ConvertK8sResource','Edas')
 		self.set_uri_pattern('/pop/v5/oam/k8s_resource_convert')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_ResourceName(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_ResourceName(self): # String
 		return self.get_query_params().get('ResourceName')
 
-	def set_ResourceName(self,ResourceName):
-		self.add_query_param('ResourceName',ResourceName)
-
-	def get_ClusterId(self):
+	def set_ResourceName(self, ResourceName):  # String
+		self.add_query_param('ResourceName', ResourceName)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_ResourceType(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)

@@ -26,44 +26,39 @@ class BindSlbRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindSlb','Edas')
 		self.set_uri_pattern('/pop/app/bind_slb_json')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VServerGroupId(self):
+	def get_VServerGroupId(self): # String
 		return self.get_query_params().get('VServerGroupId')
 
-	def set_VServerGroupId(self,VServerGroupId):
-		self.add_query_param('VServerGroupId',VServerGroupId)
-
-	def get_ListenerPort(self):
+	def set_VServerGroupId(self, VServerGroupId):  # String
+		self.add_query_param('VServerGroupId', VServerGroupId)
+	def get_ListenerPort(self): # Integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_SlbId(self):
+	def set_ListenerPort(self, ListenerPort):  # Integer
+		self.add_query_param('ListenerPort', ListenerPort)
+	def get_SlbId(self): # String
 		return self.get_query_params().get('SlbId')
 
-	def set_SlbId(self,SlbId):
-		self.add_query_param('SlbId',SlbId)
-
-	def get_AppId(self):
+	def set_SlbId(self, SlbId):  # String
+		self.add_query_param('SlbId', SlbId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_SlbIp(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_SlbIp(self): # String
 		return self.get_query_params().get('SlbIp')
 
-	def set_SlbIp(self,SlbIp):
-		self.add_query_param('SlbIp',SlbIp)
-
-	def get_Type(self):
+	def set_SlbIp(self, SlbIp):  # String
+		self.add_query_param('SlbIp', SlbIp)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)

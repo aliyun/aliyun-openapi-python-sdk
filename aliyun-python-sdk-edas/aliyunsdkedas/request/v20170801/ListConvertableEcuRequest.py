@@ -26,14 +26,14 @@ class ListConvertableEcuRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConvertableEcu','Edas')
 		self.set_uri_pattern('/pop/v5/resource/convertable_ecu_list')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_clusterId(self):
+	def get_clusterId(self): # String
 		return self.get_query_params().get('clusterId')
 
-	def set_clusterId(self,clusterId):
-		self.add_query_param('clusterId',clusterId)
+	def set_clusterId(self, clusterId):  # String
+		self.add_query_param('clusterId', clusterId)

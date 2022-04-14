@@ -26,32 +26,29 @@ class UpdateK8sConfigMapRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sConfigMap','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_config_map')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_body_params().get('Data')
 
-	def set_Data(self,Data):
+	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)
-
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)

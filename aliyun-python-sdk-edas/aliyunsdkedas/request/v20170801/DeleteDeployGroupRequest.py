@@ -26,20 +26,19 @@ class DeleteDeployGroupRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteDeployGroup','Edas')
 		self.set_uri_pattern('/pop/v5/deploy_group')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_GroupName(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)

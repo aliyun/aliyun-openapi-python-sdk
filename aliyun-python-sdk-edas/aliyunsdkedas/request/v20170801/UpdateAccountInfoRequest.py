@@ -26,26 +26,24 @@ class UpdateAccountInfoRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateAccountInfo','Edas')
 		self.set_uri_pattern('/pop/v5/account/edit_account_info')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Telephone(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Telephone(self): # String
 		return self.get_query_params().get('Telephone')
 
-	def set_Telephone(self,Telephone):
-		self.add_query_param('Telephone',Telephone)
-
-	def get_Email(self):
+	def set_Telephone(self, Telephone):  # String
+		self.add_query_param('Telephone', Telephone)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

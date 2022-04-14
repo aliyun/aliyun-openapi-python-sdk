@@ -26,50 +26,44 @@ class UpdateContainerConfigurationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateContainerConfiguration','Edas')
 		self.set_uri_pattern('/pop/v5/app/container_config')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UseBodyEncoding(self):
+	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
-	def set_UseBodyEncoding(self,UseBodyEncoding):
-		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
-
-	def get_MaxThreads(self):
+	def set_UseBodyEncoding(self, UseBodyEncoding):  # Boolean
+		self.add_query_param('UseBodyEncoding', UseBodyEncoding)
+	def get_MaxThreads(self): # Integer
 		return self.get_query_params().get('MaxThreads')
 
-	def set_MaxThreads(self,MaxThreads):
-		self.add_query_param('MaxThreads',MaxThreads)
-
-	def get_URIEncoding(self):
+	def set_MaxThreads(self, MaxThreads):  # Integer
+		self.add_query_param('MaxThreads', MaxThreads)
+	def get_URIEncoding(self): # String
 		return self.get_query_params().get('URIEncoding')
 
-	def set_URIEncoding(self,URIEncoding):
-		self.add_query_param('URIEncoding',URIEncoding)
-
-	def get_AppId(self):
+	def set_URIEncoding(self, URIEncoding):  # String
+		self.add_query_param('URIEncoding', URIEncoding)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_GroupId(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_HttpPort(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_HttpPort(self): # Integer
 		return self.get_query_params().get('HttpPort')
 
-	def set_HttpPort(self,HttpPort):
-		self.add_query_param('HttpPort',HttpPort)
-
-	def get_ContextPath(self):
+	def set_HttpPort(self, HttpPort):  # Integer
+		self.add_query_param('HttpPort', HttpPort)
+	def get_ContextPath(self): # String
 		return self.get_query_params().get('ContextPath')
 
-	def set_ContextPath(self,ContextPath):
-		self.add_query_param('ContextPath',ContextPath)
+	def set_ContextPath(self, ContextPath):  # String
+		self.add_query_param('ContextPath', ContextPath)

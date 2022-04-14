@@ -26,32 +26,29 @@ class UpdateApplicationBaseInfoRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateApplicationBaseInfo','Edas')
 		self.set_uri_pattern('/pop/v5/app/update_app_info')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Owner(self):
+	def get_Owner(self): # String
 		return self.get_query_params().get('Owner')
 
-	def set_Owner(self,Owner):
-		self.add_query_param('Owner',Owner)
-
-	def get_AppName(self):
+	def set_Owner(self, Owner):  # String
+		self.add_query_param('Owner', Owner)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_AppId(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Desc(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 
-	def set_Desc(self,Desc):
-		self.add_query_param('Desc',Desc)
+	def set_Desc(self, Desc):  # String
+		self.add_query_param('Desc', Desc)

@@ -26,20 +26,19 @@ class DeleteClusterMemberRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteClusterMember','Edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster_member')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterMemberId(self):
+	def get_ClusterMemberId(self): # String
 		return self.get_query_params().get('ClusterMemberId')
 
-	def set_ClusterMemberId(self,ClusterMemberId):
-		self.add_query_param('ClusterMemberId',ClusterMemberId)
-
-	def get_ClusterId(self):
+	def set_ClusterMemberId(self, ClusterMemberId):  # String
+		self.add_query_param('ClusterMemberId', ClusterMemberId)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

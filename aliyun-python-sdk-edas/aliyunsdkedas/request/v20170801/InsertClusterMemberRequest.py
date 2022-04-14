@@ -26,26 +26,24 @@ class InsertClusterMemberRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertClusterMember','Edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster_member')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_password(self):
+	def get_password(self): # String
 		return self.get_query_params().get('password')
 
-	def set_password(self,password):
-		self.add_query_param('password',password)
-
-	def get_instanceIds(self):
+	def set_password(self, password):  # String
+		self.add_query_param('password', password)
+	def get_instanceIds(self): # String
 		return self.get_query_params().get('instanceIds')
 
-	def set_instanceIds(self,instanceIds):
-		self.add_query_param('instanceIds',instanceIds)
-
-	def get_clusterId(self):
+	def set_instanceIds(self, instanceIds):  # String
+		self.add_query_param('instanceIds', instanceIds)
+	def get_clusterId(self): # String
 		return self.get_query_params().get('clusterId')
 
-	def set_clusterId(self,clusterId):
-		self.add_query_param('clusterId',clusterId)
+	def set_clusterId(self, clusterId):  # String
+		self.add_query_param('clusterId', clusterId)

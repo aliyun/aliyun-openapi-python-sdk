@@ -26,50 +26,44 @@ class ListScaleOutEcuRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListScaleOutEcu','Edas')
 		self.set_uri_pattern('/pop/v5/resource/scale_out_ecu_list')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mem(self):
+	def get_Mem(self): # Integer
 		return self.get_query_params().get('Mem')
 
-	def set_Mem(self,Mem):
-		self.add_query_param('Mem',Mem)
-
-	def get_LogicalRegionId(self):
+	def set_Mem(self, Mem):  # Integer
+		self.add_query_param('Mem', Mem)
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_AppId(self):
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_GroupId(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_InstanceNum(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_InstanceNum(self): # Integer
 		return self.get_query_params().get('InstanceNum')
 
-	def set_InstanceNum(self,InstanceNum):
-		self.add_query_param('InstanceNum',InstanceNum)
-
-	def get_Cpu(self):
+	def set_InstanceNum(self, InstanceNum):  # Integer
+		self.add_query_param('InstanceNum', InstanceNum)
+	def get_Cpu(self): # Integer
 		return self.get_query_params().get('Cpu')
 
-	def set_Cpu(self,Cpu):
-		self.add_query_param('Cpu',Cpu)
-
-	def get_ClusterId(self):
+	def set_Cpu(self, Cpu):  # Integer
+		self.add_query_param('Cpu', Cpu)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

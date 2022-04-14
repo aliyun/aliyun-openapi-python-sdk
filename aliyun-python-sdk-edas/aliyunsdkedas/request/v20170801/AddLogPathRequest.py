@@ -26,20 +26,19 @@ class AddLogPathRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AddLogPath','Edas')
 		self.set_uri_pattern('/pop/v5/log/popListLogDirs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Path(self):
+	def get_Path(self): # String
 		return self.get_body_params().get('Path')
 
-	def set_Path(self,Path):
+	def set_Path(self, Path):  # String
 		self.add_body_params('Path', Path)
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self,AppId):
+	def set_AppId(self, AppId):  # String
 		self.add_body_params('AppId', AppId)

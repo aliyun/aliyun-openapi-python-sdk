@@ -26,14 +26,14 @@ class InsertServiceGroupRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertServiceGroup','Edas')
 		self.set_uri_pattern('/pop/v5/service/serviceGroups')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupName(self):
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)

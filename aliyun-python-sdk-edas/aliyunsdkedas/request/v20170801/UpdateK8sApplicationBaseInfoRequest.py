@@ -26,38 +26,34 @@ class UpdateK8sApplicationBaseInfoRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationBaseInfo','Edas')
 		self.set_uri_pattern('/pop/v5/oam/update_app_basic_info')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Owner(self):
+	def get_Owner(self): # String
 		return self.get_query_params().get('Owner')
 
-	def set_Owner(self,Owner):
-		self.add_query_param('Owner',Owner)
-
-	def get_AppId(self):
+	def set_Owner(self, Owner):  # String
+		self.add_query_param('Owner', Owner)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_PhoneNumber(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
-
-	def get_Description(self):
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Email(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

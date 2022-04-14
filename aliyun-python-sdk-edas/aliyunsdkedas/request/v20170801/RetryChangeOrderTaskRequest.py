@@ -26,20 +26,19 @@ class RetryChangeOrderTaskRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'RetryChangeOrderTask','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/task_retry')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RetryStatus(self):
+	def get_RetryStatus(self): # Boolean
 		return self.get_query_params().get('RetryStatus')
 
-	def set_RetryStatus(self,RetryStatus):
-		self.add_query_param('RetryStatus',RetryStatus)
-
-	def get_TaskId(self):
+	def set_RetryStatus(self, RetryStatus):  # Boolean
+		self.add_query_param('RetryStatus', RetryStatus)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

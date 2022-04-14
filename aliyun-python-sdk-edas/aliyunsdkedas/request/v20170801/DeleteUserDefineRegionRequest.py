@@ -26,20 +26,19 @@ class DeleteUserDefineRegionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteUserDefineRegion','Edas')
 		self.set_uri_pattern('/pop/v5/user_region_def')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RegionTag(self):
+	def get_RegionTag(self): # String
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self,RegionTag):
-		self.add_query_param('RegionTag',RegionTag)
-
-	def get_Id(self):
+	def set_RegionTag(self, RegionTag):  # String
+		self.add_query_param('RegionTag', RegionTag)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

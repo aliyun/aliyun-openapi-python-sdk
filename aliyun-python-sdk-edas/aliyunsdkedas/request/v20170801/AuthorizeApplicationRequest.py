@@ -26,20 +26,19 @@ class AuthorizeApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeApplication','Edas')
 		self.set_uri_pattern('/pop/v5/account/authorize_app')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppIds(self):
+	def get_AppIds(self): # String
 		return self.get_query_params().get('AppIds')
 
-	def set_AppIds(self,AppIds):
-		self.add_query_param('AppIds',AppIds)
-
-	def get_TargetUserId(self):
+	def set_AppIds(self, AppIds):  # String
+		self.add_query_param('AppIds', AppIds)
+	def get_TargetUserId(self): # String
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self,TargetUserId):
-		self.add_query_param('TargetUserId',TargetUserId)
+	def set_TargetUserId(self, TargetUserId):  # String
+		self.add_query_param('TargetUserId', TargetUserId)

@@ -26,32 +26,29 @@ class TagResourcesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'TagResources','Edas')
 		self.set_uri_pattern('/pop/v5/tag/tags')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceType(self):
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_ResourceRegionId(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceRegionId(self): # String
 		return self.get_query_params().get('ResourceRegionId')
 
-	def set_ResourceRegionId(self,ResourceRegionId):
-		self.add_query_param('ResourceRegionId',ResourceRegionId)
-
-	def get_ResourceIds(self):
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
+		self.add_query_param('ResourceRegionId', ResourceRegionId)
+	def get_ResourceIds(self): # String
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
-
-	def get_Tags(self):
+	def set_ResourceIds(self, ResourceIds):  # String
+		self.add_query_param('ResourceIds', ResourceIds)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)

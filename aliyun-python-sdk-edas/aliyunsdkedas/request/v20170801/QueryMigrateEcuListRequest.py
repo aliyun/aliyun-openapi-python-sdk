@@ -26,14 +26,14 @@ class QueryMigrateEcuListRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryMigrateEcuList','Edas')
 		self.set_uri_pattern('/pop/v5/resource/migrate_ecu_list')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LogicalRegionId(self):
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)

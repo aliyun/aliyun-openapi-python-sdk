@@ -26,44 +26,39 @@ class UpdateMockRuleRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateMockRule','Edas')
 		self.set_uri_pattern('/pop/sp/api/mock/updateMockRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScMockItemJson(self):
+	def get_ScMockItemJson(self): # String
 		return self.get_query_params().get('ScMockItemJson')
 
-	def set_ScMockItemJson(self,ScMockItemJson):
-		self.add_query_param('ScMockItemJson',ScMockItemJson)
-
-	def get_DubboMockItemJson(self):
+	def set_ScMockItemJson(self, ScMockItemJson):  # String
+		self.add_query_param('ScMockItemJson', ScMockItemJson)
+	def get_DubboMockItemJson(self): # String
 		return self.get_query_params().get('DubboMockItemJson')
 
-	def set_DubboMockItemJson(self,DubboMockItemJson):
-		self.add_query_param('DubboMockItemJson',DubboMockItemJson)
-
-	def get_ExtraJson(self):
+	def set_DubboMockItemJson(self, DubboMockItemJson):  # String
+		self.add_query_param('DubboMockItemJson', DubboMockItemJson)
+	def get_ExtraJson(self): # String
 		return self.get_query_params().get('ExtraJson')
 
-	def set_ExtraJson(self,ExtraJson):
-		self.add_query_param('ExtraJson',ExtraJson)
-
-	def get_Name(self):
+	def set_ExtraJson(self, ExtraJson):  # String
+		self.add_query_param('ExtraJson', ExtraJson)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Id(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Id(self): # String
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Region(self):
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

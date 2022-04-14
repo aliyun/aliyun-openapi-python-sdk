@@ -26,14 +26,14 @@ class ListUserDefineRegionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion','Edas')
 		self.set_uri_pattern('/pop/v5/user_region_defs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DebugEnable(self):
+	def get_DebugEnable(self): # Boolean
 		return self.get_query_params().get('DebugEnable')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+	def set_DebugEnable(self, DebugEnable):  # Boolean
+		self.add_query_param('DebugEnable', DebugEnable)

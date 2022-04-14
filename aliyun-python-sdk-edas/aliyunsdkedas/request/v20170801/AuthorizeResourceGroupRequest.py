@@ -26,20 +26,19 @@ class AuthorizeResourceGroupRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeResourceGroup','Edas')
 		self.set_uri_pattern('/pop/v5/account/authorize_res_group')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupIds(self):
+	def get_ResourceGroupIds(self): # String
 		return self.get_query_params().get('ResourceGroupIds')
 
-	def set_ResourceGroupIds(self,ResourceGroupIds):
-		self.add_query_param('ResourceGroupIds',ResourceGroupIds)
-
-	def get_TargetUserId(self):
+	def set_ResourceGroupIds(self, ResourceGroupIds):  # String
+		self.add_query_param('ResourceGroupIds', ResourceGroupIds)
+	def get_TargetUserId(self): # String
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self,TargetUserId):
-		self.add_query_param('TargetUserId',TargetUserId)
+	def set_TargetUserId(self, TargetUserId):  # String
+		self.add_query_param('TargetUserId', TargetUserId)

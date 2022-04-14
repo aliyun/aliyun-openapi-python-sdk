@@ -26,20 +26,19 @@ class GetMockRuleByConsumerAppIdRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetMockRuleByConsumerAppId','Edas')
 		self.set_uri_pattern('/pop/sp/api/mock/getMockRuleByConsumerAppId')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConsumerAppId(self):
+	def get_ConsumerAppId(self): # String
 		return self.get_query_params().get('ConsumerAppId')
 
-	def set_ConsumerAppId(self,ConsumerAppId):
-		self.add_query_param('ConsumerAppId',ConsumerAppId)
-
-	def get_Region(self):
+	def set_ConsumerAppId(self, ConsumerAppId):  # String
+		self.add_query_param('ConsumerAppId', ConsumerAppId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

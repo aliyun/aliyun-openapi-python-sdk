@@ -26,20 +26,19 @@ class StartApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'StartApplication','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_start')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_EccInfo(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_EccInfo(self): # String
 		return self.get_query_params().get('EccInfo')
 
-	def set_EccInfo(self,EccInfo):
-		self.add_query_param('EccInfo',EccInfo)
+	def set_EccInfo(self, EccInfo):  # String
+		self.add_query_param('EccInfo', EccInfo)

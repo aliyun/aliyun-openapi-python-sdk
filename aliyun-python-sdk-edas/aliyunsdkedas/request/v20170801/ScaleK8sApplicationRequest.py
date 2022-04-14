@@ -26,26 +26,24 @@ class ScaleK8sApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Replicas(self):
+	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self,Replicas):
-		self.add_query_param('Replicas',Replicas)
-
-	def get_AppId(self):
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Timeout(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_query_param('Timeout', Timeout)

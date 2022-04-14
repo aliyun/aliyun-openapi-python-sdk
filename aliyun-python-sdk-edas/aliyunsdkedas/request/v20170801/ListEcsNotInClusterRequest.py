@@ -26,20 +26,19 @@ class ListEcsNotInClusterRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListEcsNotInCluster','Edas')
 		self.set_uri_pattern('/pop/v5/resource/ecs_not_in_cluster')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VpcId(self):
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_NetworkMode(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_NetworkMode(self): # Integer
 		return self.get_query_params().get('NetworkMode')
 
-	def set_NetworkMode(self,NetworkMode):
-		self.add_query_param('NetworkMode',NetworkMode)
+	def set_NetworkMode(self, NetworkMode):  # Integer
+		self.add_query_param('NetworkMode', NetworkMode)

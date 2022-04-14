@@ -26,50 +26,44 @@ class UpdateApplicationScalingRuleRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateApplicationScalingRule','Edas')
 		self.set_uri_pattern('/pop/v1/eam/scale/application_scaling_rule')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScalingRuleName(self):
+	def get_ScalingRuleName(self): # String
 		return self.get_query_params().get('ScalingRuleName')
 
-	def set_ScalingRuleName(self,ScalingRuleName):
-		self.add_query_param('ScalingRuleName',ScalingRuleName)
-
-	def get_ScalingRuleEnable(self):
+	def set_ScalingRuleName(self, ScalingRuleName):  # String
+		self.add_query_param('ScalingRuleName', ScalingRuleName)
+	def get_ScalingRuleEnable(self): # Boolean
 		return self.get_query_params().get('ScalingRuleEnable')
 
-	def set_ScalingRuleEnable(self,ScalingRuleEnable):
-		self.add_query_param('ScalingRuleEnable',ScalingRuleEnable)
-
-	def get_ScalingRuleTimer(self):
+	def set_ScalingRuleEnable(self, ScalingRuleEnable):  # Boolean
+		self.add_query_param('ScalingRuleEnable', ScalingRuleEnable)
+	def get_ScalingRuleTimer(self): # String
 		return self.get_query_params().get('ScalingRuleTimer')
 
-	def set_ScalingRuleTimer(self,ScalingRuleTimer):
-		self.add_query_param('ScalingRuleTimer',ScalingRuleTimer)
-
-	def get_ScalingRuleMetric(self):
+	def set_ScalingRuleTimer(self, ScalingRuleTimer):  # String
+		self.add_query_param('ScalingRuleTimer', ScalingRuleTimer)
+	def get_ScalingRuleMetric(self): # String
 		return self.get_query_params().get('ScalingRuleMetric')
 
-	def set_ScalingRuleMetric(self,ScalingRuleMetric):
-		self.add_query_param('ScalingRuleMetric',ScalingRuleMetric)
-
-	def get_AppId(self):
+	def set_ScalingRuleMetric(self, ScalingRuleMetric):  # String
+		self.add_query_param('ScalingRuleMetric', ScalingRuleMetric)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ScalingRuleTrigger(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_ScalingRuleTrigger(self): # String
 		return self.get_query_params().get('ScalingRuleTrigger')
 
-	def set_ScalingRuleTrigger(self,ScalingRuleTrigger):
-		self.add_query_param('ScalingRuleTrigger',ScalingRuleTrigger)
-
-	def get_ScalingRuleType(self):
+	def set_ScalingRuleTrigger(self, ScalingRuleTrigger):  # String
+		self.add_query_param('ScalingRuleTrigger', ScalingRuleTrigger)
+	def get_ScalingRuleType(self): # String
 		return self.get_query_params().get('ScalingRuleType')
 
-	def set_ScalingRuleType(self,ScalingRuleType):
-		self.add_query_param('ScalingRuleType',ScalingRuleType)
+	def set_ScalingRuleType(self, ScalingRuleType):  # String
+		self.add_query_param('ScalingRuleType', ScalingRuleType)

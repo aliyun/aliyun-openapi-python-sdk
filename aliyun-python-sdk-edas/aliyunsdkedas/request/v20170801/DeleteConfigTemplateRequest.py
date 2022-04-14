@@ -26,14 +26,14 @@ class DeleteConfigTemplateRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteConfigTemplate','Edas')
 		self.set_uri_pattern('/pop/v5/config_template')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Id(self):
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

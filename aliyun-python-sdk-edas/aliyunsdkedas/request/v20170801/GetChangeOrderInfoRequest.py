@@ -26,14 +26,14 @@ class GetChangeOrderInfoRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetChangeOrderInfo','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/change_order_info')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ChangeOrderId(self):
+	def get_ChangeOrderId(self): # String
 		return self.get_query_params().get('ChangeOrderId')
 
-	def set_ChangeOrderId(self,ChangeOrderId):
-		self.add_query_param('ChangeOrderId',ChangeOrderId)
+	def set_ChangeOrderId(self, ChangeOrderId):  # String
+		self.add_query_param('ChangeOrderId', ChangeOrderId)

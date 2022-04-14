@@ -26,32 +26,29 @@ class ChangeDeployGroupRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ChangeDeployGroup','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_change_group')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ForceStatus(self):
+	def get_ForceStatus(self): # Boolean
 		return self.get_query_params().get('ForceStatus')
 
-	def set_ForceStatus(self,ForceStatus):
-		self.add_query_param('ForceStatus',ForceStatus)
-
-	def get_AppId(self):
+	def set_ForceStatus(self, ForceStatus):  # Boolean
+		self.add_query_param('ForceStatus', ForceStatus)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_EccInfo(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_EccInfo(self): # String
 		return self.get_query_params().get('EccInfo')
 
-	def set_EccInfo(self,EccInfo):
-		self.add_query_param('EccInfo',EccInfo)
-
-	def get_GroupName(self):
+	def set_EccInfo(self, EccInfo):  # String
+		self.add_query_param('EccInfo', EccInfo)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)

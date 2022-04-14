@@ -26,32 +26,29 @@ class QuerySlsLogStoreListRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QuerySlsLogStoreList','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/sls/query_sls_log_store_list')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_PageSize(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Type(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)

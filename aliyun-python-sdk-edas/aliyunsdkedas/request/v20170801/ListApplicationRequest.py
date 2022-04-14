@@ -26,38 +26,34 @@ class ListApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListApplication','Edas')
 		self.set_uri_pattern('/pop/v5/app/app_list')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupId(self):
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_AppName(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_LogicalRegionId(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_ClusterId(self):
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
+		self.add_query_param('LogicalRegionId', LogicalRegionId)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_LogicalRegionIdFilter(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_LogicalRegionIdFilter(self): # String
 		return self.get_query_params().get('LogicalRegionIdFilter')
 
-	def set_LogicalRegionIdFilter(self,LogicalRegionIdFilter):
-		self.add_query_param('LogicalRegionIdFilter',LogicalRegionIdFilter)
+	def set_LogicalRegionIdFilter(self, LogicalRegionIdFilter):  # String
+		self.add_query_param('LogicalRegionIdFilter', LogicalRegionIdFilter)

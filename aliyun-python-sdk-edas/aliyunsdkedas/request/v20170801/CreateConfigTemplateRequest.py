@@ -26,32 +26,29 @@ class CreateConfigTemplateRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'CreateConfigTemplate','Edas')
 		self.set_uri_pattern('/pop/v5/config_template')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_Format(self):
+	def get_Format(self): # String
 		return self.get_body_params().get('Format')
 
-	def set_Format(self,Format):
+	def set_Format(self, Format):  # String
 		self.add_body_params('Format', Format)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_Content(self):
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)

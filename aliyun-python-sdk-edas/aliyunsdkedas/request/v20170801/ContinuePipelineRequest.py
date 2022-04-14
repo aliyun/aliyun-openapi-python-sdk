@@ -26,20 +26,19 @@ class ContinuePipelineRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ContinuePipeline','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/pipeline_batch_confirm')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Confirm(self):
+	def get_Confirm(self): # Boolean
 		return self.get_query_params().get('Confirm')
 
-	def set_Confirm(self,Confirm):
-		self.add_query_param('Confirm',Confirm)
-
-	def get_PipelineId(self):
+	def set_Confirm(self, Confirm):  # Boolean
+		self.add_query_param('Confirm', Confirm)
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
+	def set_PipelineId(self, PipelineId):  # String
+		self.add_query_param('PipelineId', PipelineId)

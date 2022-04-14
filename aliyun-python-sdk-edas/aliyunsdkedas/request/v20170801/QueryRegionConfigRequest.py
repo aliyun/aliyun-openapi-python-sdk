@@ -26,7 +26,9 @@ class QueryRegionConfigRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryRegionConfig','Edas')
 		self.set_uri_pattern('/pop/v5/region_config')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

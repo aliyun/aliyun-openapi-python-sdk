@@ -26,32 +26,29 @@ class ListConfigTemplatesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConfigTemplates','Edas')
 		self.set_uri_pattern('/pop/v5/config_template')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Name(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_CurrentPage(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_CurrentPage(self): # Long
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Id(self):
+	def set_CurrentPage(self, CurrentPage):  # Long
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

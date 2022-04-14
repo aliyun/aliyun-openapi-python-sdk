@@ -26,110 +26,94 @@ class GetServiceMethodPageRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetServiceMethodPage','Edas')
 		self.set_uri_pattern('/pop/sp/api/mseForOam/getServiceMethodPage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_registryType(self):
+	def get_registryType(self): # String
 		return self.get_query_params().get('registryType')
 
-	def set_registryType(self,registryType):
-		self.add_query_param('registryType',registryType)
-
-	def get_origin(self):
+	def set_registryType(self, registryType):  # String
+		self.add_query_param('registryType', registryType)
+	def get_origin(self): # String
 		return self.get_query_params().get('origin')
 
-	def set_origin(self,origin):
-		self.add_query_param('origin',origin)
-
-	def get_ip(self):
+	def set_origin(self, origin):  # String
+		self.add_query_param('origin', origin)
+	def get_ip(self): # String
 		return self.get_query_params().get('ip')
 
-	def set_ip(self,ip):
-		self.add_query_param('ip',ip)
-
-	def get_source(self):
+	def set_ip(self, ip):  # String
+		self.add_query_param('ip', ip)
+	def get_source(self): # String
 		return self.get_query_params().get('source')
 
-	def set_source(self,source):
-		self.add_query_param('source',source)
-
-	def get_pageNumber(self):
+	def set_source(self, source):  # String
+		self.add_query_param('source', source)
+	def get_pageNumber(self): # Integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self,pageNumber):
-		self.add_query_param('pageNumber',pageNumber)
-
-	def get_path(self):
+	def set_pageNumber(self, pageNumber):  # Integer
+		self.add_query_param('pageNumber', pageNumber)
+	def get_path(self): # String
 		return self.get_query_params().get('path')
 
-	def set_path(self,path):
-		self.add_query_param('path',path)
-
-	def get_serviceType(self):
+	def set_path(self, path):  # String
+		self.add_query_param('path', path)
+	def get_serviceType(self): # String
 		return self.get_query_params().get('serviceType')
 
-	def set_serviceType(self,serviceType):
-		self.add_query_param('serviceType',serviceType)
-
-	def get_appId(self):
+	def set_serviceType(self, serviceType):  # String
+		self.add_query_param('serviceType', serviceType)
+	def get_appId(self): # String
 		return self.get_query_params().get('appId')
 
-	def set_appId(self,appId):
-		self.add_query_param('appId',appId)
-
-	def get_namespace(self):
+	def set_appId(self, appId):  # String
+		self.add_query_param('appId', appId)
+	def get_namespace(self): # String
 		return self.get_query_params().get('namespace')
 
-	def set_namespace(self,namespace):
-		self.add_query_param('namespace',namespace)
-
-	def get_serviceVersion(self):
+	def set_namespace(self, namespace):  # String
+		self.add_query_param('namespace', namespace)
+	def get_serviceVersion(self): # String
 		return self.get_query_params().get('serviceVersion')
 
-	def set_serviceVersion(self,serviceVersion):
-		self.add_query_param('serviceVersion',serviceVersion)
-
-	def get_pageSize(self):
+	def set_serviceVersion(self, serviceVersion):  # String
+		self.add_query_param('serviceVersion', serviceVersion)
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_name(self):
+	def set_pageSize(self, pageSize):  # Integer
+		self.add_query_param('pageSize', pageSize)
+	def get_name(self): # String
 		return self.get_query_params().get('name')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
-
-	def get_serviceName(self):
+	def set_name(self, name):  # String
+		self.add_query_param('name', name)
+	def get_serviceName(self): # String
 		return self.get_query_params().get('serviceName')
 
-	def set_serviceName(self,serviceName):
-		self.add_query_param('serviceName',serviceName)
-
-	def get_region(self):
+	def set_serviceName(self, serviceName):  # String
+		self.add_query_param('serviceName', serviceName)
+	def get_region(self): # String
 		return self.get_query_params().get('region')
 
-	def set_region(self,region):
-		self.add_query_param('region',region)
-
-	def get_serviceId(self):
+	def set_region(self, region):  # String
+		self.add_query_param('region', region)
+	def get_serviceId(self): # String
 		return self.get_query_params().get('serviceId')
 
-	def set_serviceId(self,serviceId):
-		self.add_query_param('serviceId',serviceId)
-
-	def get_methodController(self):
+	def set_serviceId(self, serviceId):  # String
+		self.add_query_param('serviceId', serviceId)
+	def get_methodController(self): # String
 		return self.get_query_params().get('methodController')
 
-	def set_methodController(self,methodController):
-		self.add_query_param('methodController',methodController)
-
-	def get_group(self):
+	def set_methodController(self, methodController):  # String
+		self.add_query_param('methodController', methodController)
+	def get_group(self): # String
 		return self.get_query_params().get('group')
 
-	def set_group(self,group):
-		self.add_query_param('group',group)
+	def set_group(self, group):  # String
+		self.add_query_param('group', group)

@@ -26,56 +26,49 @@ class UpdateK8sSecretRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sSecret','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_secret')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Base64Encoded(self):
+	def get_Base64Encoded(self): # Boolean
 		return self.get_body_params().get('Base64Encoded')
 
-	def set_Base64Encoded(self,Base64Encoded):
+	def set_Base64Encoded(self, Base64Encoded):  # Boolean
 		self.add_body_params('Base64Encoded', Base64Encoded)
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_body_params().get('Data')
 
-	def set_Data(self,Data):
+	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
-
-	def get_CertId(self):
+	def get_CertId(self): # String
 		return self.get_body_params().get('CertId')
 
-	def set_CertId(self,CertId):
+	def set_CertId(self, CertId):  # String
 		self.add_body_params('CertId', CertId)
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-
-	def get_CertRegionId(self):
+	def get_CertRegionId(self): # String
 		return self.get_body_params().get('CertRegionId')
 
-	def set_CertRegionId(self,CertRegionId):
+	def set_CertRegionId(self, CertRegionId):  # String
 		self.add_body_params('CertRegionId', CertRegionId)

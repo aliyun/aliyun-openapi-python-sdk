@@ -26,38 +26,34 @@ class UntagResourcesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UntagResources','Edas')
 		self.set_uri_pattern('/pop/v5/tag/tags')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagKeys(self):
+	def get_TagKeys(self): # String
 		return self.get_query_params().get('TagKeys')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
-
-	def get_DeleteAll(self):
+	def set_TagKeys(self, TagKeys):  # String
+		self.add_query_param('TagKeys', TagKeys)
+	def get_DeleteAll(self): # Boolean
 		return self.get_query_params().get('DeleteAll')
 
-	def set_DeleteAll(self,DeleteAll):
-		self.add_query_param('DeleteAll',DeleteAll)
-
-	def get_ResourceRegionId(self):
+	def set_DeleteAll(self, DeleteAll):  # Boolean
+		self.add_query_param('DeleteAll', DeleteAll)
+	def get_ResourceRegionId(self): # String
 		return self.get_query_params().get('ResourceRegionId')
 
-	def set_ResourceRegionId(self,ResourceRegionId):
-		self.add_query_param('ResourceRegionId',ResourceRegionId)
-
-	def get_ResourceType(self):
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
+		self.add_query_param('ResourceRegionId', ResourceRegionId)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_ResourceIds(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceIds(self): # String
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_ResourceIds(self, ResourceIds):  # String
+		self.add_query_param('ResourceIds', ResourceIds)
