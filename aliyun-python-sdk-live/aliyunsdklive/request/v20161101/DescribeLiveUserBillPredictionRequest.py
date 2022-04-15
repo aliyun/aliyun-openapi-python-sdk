@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class CheckServiceForRoleRequest(RpcRequest):
+class DescribeLiveUserBillPredictionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CheckServiceForRole','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserBillPrediction','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class CheckServiceForRoleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AccountId(self): # String
-		return self.get_query_params().get('AccountId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_AccountId(self, AccountId):  # String
-		self.add_query_param('AccountId', AccountId)
-	def get_SPIRegionId(self): # String
-		return self.get_query_params().get('SPIRegionId')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Dimension(self): # String
+		return self.get_query_params().get('Dimension')
 
-	def set_SPIRegionId(self, SPIRegionId):  # String
-		self.add_query_param('SPIRegionId', SPIRegionId)
-	def get_RoleArn(self): # String
-		return self.get_query_params().get('RoleArn')
+	def set_Dimension(self, Dimension):  # String
+		self.add_query_param('Dimension', Dimension)
+	def get_Area(self): # String
+		return self.get_query_params().get('Area')
 
-	def set_RoleArn(self, RoleArn):  # String
-		self.add_query_param('RoleArn', RoleArn)
-	def get_DeletionTaskId(self): # String
-		return self.get_query_params().get('DeletionTaskId')
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_DeletionTaskId(self, DeletionTaskId):  # String
-		self.add_query_param('DeletionTaskId', DeletionTaskId)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
