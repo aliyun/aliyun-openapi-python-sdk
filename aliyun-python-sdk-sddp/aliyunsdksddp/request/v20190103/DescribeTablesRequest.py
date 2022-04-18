@@ -23,118 +23,66 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeTables')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeTables','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_ProductId(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_PackageId(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_PackageId(self): # Long
 		return self.get_query_params().get('PackageId')
 
-	def set_PackageId(self,PackageId):
-		self.add_query_param('PackageId',PackageId)
-
-	def get_RuleName(self):
-		return self.get_query_params().get('RuleName')
-
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_RiskLevelId(self):
+	def set_PackageId(self, PackageId):  # Long
+		self.add_query_param('PackageId', PackageId)
+	def get_RiskLevelId(self): # Long
 		return self.get_query_params().get('RiskLevelId')
 
-	def set_RiskLevelId(self,RiskLevelId):
-		self.add_query_param('RiskLevelId',RiskLevelId)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_LastScanTimeEnd(self):
-		return self.get_query_params().get('LastScanTimeEnd')
-
-	def set_LastScanTimeEnd(self,LastScanTimeEnd):
-		self.add_query_param('LastScanTimeEnd',LastScanTimeEnd)
-
-	def get_LastScanTimeStart(self):
-		return self.get_query_params().get('LastScanTimeStart')
-
-	def set_LastScanTimeStart(self,LastScanTimeStart):
-		self.add_query_param('LastScanTimeStart',LastScanTimeStart)
-
-	def get_SensLevelName(self):
-		return self.get_query_params().get('SensLevelName')
-
-	def set_SensLevelName(self,SensLevelName):
-		self.add_query_param('SensLevelName',SensLevelName)
-
-	def get_PageSize(self):
+	def set_RiskLevelId(self, RiskLevelId):  # Long
+		self.add_query_param('RiskLevelId', RiskLevelId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceDescription(self):
-		return self.get_query_params().get('InstanceDescription')
-
-	def set_InstanceDescription(self,InstanceDescription):
-		self.add_query_param('InstanceDescription',InstanceDescription)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ServiceRegionId(self): # String
+		return self.get_query_params().get('ServiceRegionId')
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_CurrentPage(self):
+	def set_ServiceRegionId(self, ServiceRegionId):  # String
+		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_InstanceId(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_InstanceId(self): # Long
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_Name(self):
+	def set_InstanceId(self, InstanceId):  # Long
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_RuleId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_RuleId(self): # Long
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_RuleId(self, RuleId):  # Long
+		self.add_query_param('RuleId', RuleId)

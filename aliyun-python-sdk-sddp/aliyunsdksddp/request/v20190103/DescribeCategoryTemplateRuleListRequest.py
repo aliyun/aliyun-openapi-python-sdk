@@ -20,31 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeInstancePortraitRequest(RpcRequest):
+class DescribeCategoryTemplateRuleListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeInstancePortrait')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeCategoryTemplateRuleList','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RiskLevelId(self): # Long
+		return self.get_query_params().get('RiskLevelId')
 
-	def get_ProductId(self):
-		return self.get_query_params().get('ProductId')
+	def set_RiskLevelId(self, RiskLevelId):  # Long
+		self.add_query_param('RiskLevelId', RiskLevelId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
 
-	def get_ItemKeys(self):
-		return self.get_query_params().get('ItemKeys')
-
-	def set_ItemKeys(self,ItemKeys):
-		self.add_query_param('ItemKeys',ItemKeys)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

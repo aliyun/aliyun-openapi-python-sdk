@@ -23,34 +23,31 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeEventTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeEventTypes')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeEventTypes','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # Integer
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_ParentTypeId(self):
+	def set_ResourceId(self, ResourceId):  # Integer
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ParentTypeId(self): # Long
 		return self.get_query_params().get('ParentTypeId')
 
-	def set_ParentTypeId(self,ParentTypeId):
-		self.add_query_param('ParentTypeId',ParentTypeId)
-
-	def get_Lang(self):
+	def set_ParentTypeId(self, ParentTypeId):  # Long
+		self.add_query_param('ParentTypeId', ParentTypeId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

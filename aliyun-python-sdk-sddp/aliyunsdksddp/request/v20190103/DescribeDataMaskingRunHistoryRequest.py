@@ -23,76 +23,66 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeDataMaskingRunHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataMaskingRunHistory')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataMaskingRunHistory','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SrcType(self):
+	def get_SrcType(self): # Integer
 		return self.get_query_params().get('SrcType')
 
-	def set_SrcType(self,SrcType):
-		self.add_query_param('SrcType',SrcType)
-
-	def get_MainProcessId(self):
+	def set_SrcType(self, SrcType):  # Integer
+		self.add_query_param('SrcType', SrcType)
+	def get_MainProcessId(self): # Long
 		return self.get_query_params().get('MainProcessId')
 
-	def set_MainProcessId(self,MainProcessId):
-		self.add_query_param('MainProcessId',MainProcessId)
-
-	def get_StartTime(self):
+	def set_MainProcessId(self, MainProcessId):  # Long
+		self.add_query_param('MainProcessId', MainProcessId)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageSize(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_TaskId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_SrcTableName(self):
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_SrcTableName(self): # String
 		return self.get_query_params().get('SrcTableName')
 
-	def set_SrcTableName(self,SrcTableName):
-		self.add_query_param('SrcTableName',SrcTableName)
-
-	def get_EndTime(self):
+	def set_SrcTableName(self, SrcTableName):  # String
+		self.add_query_param('SrcTableName', SrcTableName)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_CurrentPage(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_DstType(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_DstType(self): # Integer
 		return self.get_query_params().get('DstType')
 
-	def set_DstType(self,DstType):
-		self.add_query_param('DstType',DstType)
-
-	def get_Status(self):
+	def set_DstType(self, DstType):  # Integer
+		self.add_query_param('DstType', DstType)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

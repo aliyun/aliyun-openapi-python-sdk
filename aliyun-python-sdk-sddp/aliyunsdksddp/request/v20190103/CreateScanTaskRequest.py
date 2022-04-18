@@ -23,70 +23,66 @@ from aliyunsdksddp.endpoint import endpoint_data
 class CreateScanTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateScanTask')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateScanTask','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RunHour(self):
+	def get_RunHour(self): # Integer
 		return self.get_query_params().get('RunHour')
 
-	def set_RunHour(self,RunHour):
-		self.add_query_param('RunHour',RunHour)
-
-	def get_ScanRangeContent(self):
+	def set_RunHour(self, RunHour):  # Integer
+		self.add_query_param('RunHour', RunHour)
+	def get_ScanRangeContent(self): # String
 		return self.get_query_params().get('ScanRangeContent')
 
-	def set_ScanRangeContent(self,ScanRangeContent):
-		self.add_query_param('ScanRangeContent',ScanRangeContent)
-
-	def get_TaskName(self):
+	def set_ScanRangeContent(self, ScanRangeContent):  # String
+		self.add_query_param('ScanRangeContent', ScanRangeContent)
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_DataLimitId(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_DataLimitId(self): # Long
 		return self.get_query_params().get('DataLimitId')
 
-	def set_DataLimitId(self,DataLimitId):
-		self.add_query_param('DataLimitId',DataLimitId)
-
-	def get_RunMinute(self):
+	def set_DataLimitId(self, DataLimitId):  # Long
+		self.add_query_param('DataLimitId', DataLimitId)
+	def get_RunMinute(self): # Integer
 		return self.get_query_params().get('RunMinute')
 
-	def set_RunMinute(self,RunMinute):
-		self.add_query_param('RunMinute',RunMinute)
-
-	def get_IntervalDay(self):
+	def set_RunMinute(self, RunMinute):  # Integer
+		self.add_query_param('RunMinute', RunMinute)
+	def get_IntervalDay(self): # Integer
 		return self.get_query_params().get('IntervalDay')
 
-	def set_IntervalDay(self,IntervalDay):
-		self.add_query_param('IntervalDay',IntervalDay)
-
-	def get_ScanRange(self):
+	def set_IntervalDay(self, IntervalDay):  # Integer
+		self.add_query_param('IntervalDay', IntervalDay)
+	def get_ScanRange(self): # Integer
 		return self.get_query_params().get('ScanRange')
 
-	def set_ScanRange(self,ScanRange):
-		self.add_query_param('ScanRange',ScanRange)
+	def set_ScanRange(self, ScanRange):  # Integer
+		self.add_query_param('ScanRange', ScanRange)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
 
-	def get_OssScanPath(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_OssScanPath(self): # String
 		return self.get_query_params().get('OssScanPath')
 
-	def set_OssScanPath(self,OssScanPath):
-		self.add_query_param('OssScanPath',OssScanPath)
-
-	def get_ResourceType(self):
+	def set_OssScanPath(self, OssScanPath):  # String
+		self.add_query_param('OssScanPath', OssScanPath)
+	def get_ResourceType(self): # Long
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TaskUserName(self):
+	def set_ResourceType(self, ResourceType):  # Long
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TaskUserName(self): # String
 		return self.get_query_params().get('TaskUserName')
 
-	def set_TaskUserName(self,TaskUserName):
-		self.add_query_param('TaskUserName',TaskUserName)
+	def set_TaskUserName(self, TaskUserName):  # String
+		self.add_query_param('TaskUserName', TaskUserName)

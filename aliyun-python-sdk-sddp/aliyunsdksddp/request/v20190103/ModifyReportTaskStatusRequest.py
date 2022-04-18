@@ -20,19 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeUserCountRequest(RpcRequest):
+class ModifyReportTaskStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeUserCount')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyReportTaskStatus','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ReportTaskStatus(self): # Integer
+		return self.get_query_params().get('ReportTaskStatus')
 
-	def get_Lang(self):
+	def set_ReportTaskStatus(self, ReportTaskStatus):  # Integer
+		self.add_query_param('ReportTaskStatus', ReportTaskStatus)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

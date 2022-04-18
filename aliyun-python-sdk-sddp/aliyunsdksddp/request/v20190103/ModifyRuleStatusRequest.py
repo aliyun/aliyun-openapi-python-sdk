@@ -23,34 +23,31 @@ from aliyunsdksddp.endpoint import endpoint_data
 class ModifyRuleStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyRuleStatus')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyRuleStatus','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ids(self):
+	def get_Ids(self): # String
 		return self.get_query_params().get('Ids')
 
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_Id(self):
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Lang(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

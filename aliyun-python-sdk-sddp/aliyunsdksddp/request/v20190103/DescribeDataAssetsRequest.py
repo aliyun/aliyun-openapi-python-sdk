@@ -23,52 +23,46 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeDataAssetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataAssets')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataAssets','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RiskLevels(self):
+	def get_RiskLevels(self): # String
 		return self.get_query_params().get('RiskLevels')
 
-	def set_RiskLevels(self,RiskLevels):
-		self.add_query_param('RiskLevels',RiskLevels)
-
-	def get_RangeId(self):
+	def set_RiskLevels(self, RiskLevels):  # String
+		self.add_query_param('RiskLevels', RiskLevels)
+	def get_RangeId(self): # Integer
 		return self.get_query_params().get('RangeId')
 
-	def set_RangeId(self,RangeId):
-		self.add_query_param('RangeId',RangeId)
-
-	def get_PageSize(self):
+	def set_RangeId(self, RangeId):  # Integer
+		self.add_query_param('RangeId', RangeId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_CurrentPage(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Name(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_RuleId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_RuleId(self): # Long
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_RuleId(self, RuleId):  # Long
+		self.add_query_param('RuleId', RuleId)

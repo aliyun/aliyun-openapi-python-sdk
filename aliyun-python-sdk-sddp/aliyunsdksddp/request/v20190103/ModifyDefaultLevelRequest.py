@@ -23,28 +23,26 @@ from aliyunsdksddp.endpoint import endpoint_data
 class ModifyDefaultLevelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDefaultLevel')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDefaultLevel','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DefaultId(self):
+	def get_DefaultId(self): # Long
 		return self.get_query_params().get('DefaultId')
 
-	def set_DefaultId(self,DefaultId):
-		self.add_query_param('DefaultId',DefaultId)
-
-	def get_Lang(self):
+	def set_DefaultId(self, DefaultId):  # Long
+		self.add_query_param('DefaultId', DefaultId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_SensitiveIds(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_SensitiveIds(self): # String
 		return self.get_query_params().get('SensitiveIds')
 
-	def set_SensitiveIds(self,SensitiveIds):
-		self.add_query_param('SensitiveIds',SensitiveIds)
+	def set_SensitiveIds(self, SensitiveIds):  # String
+		self.add_query_param('SensitiveIds', SensitiveIds)

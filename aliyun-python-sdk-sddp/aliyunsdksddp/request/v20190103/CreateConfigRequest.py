@@ -23,34 +23,31 @@ from aliyunsdksddp.endpoint import endpoint_data
 class CreateConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateConfig')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateConfig','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Code(self):
+	def get_Code(self): # String
 		return self.get_query_params().get('Code')
 
-	def set_Code(self,Code):
-		self.add_query_param('Code',Code)
-
-	def get_Description(self):
+	def set_Code(self, Code):  # String
+		self.add_query_param('Code', Code)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Lang(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Value(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)

@@ -23,82 +23,71 @@ from aliyunsdksddp.endpoint import endpoint_data
 class ModifyDataLimitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDataLimit')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDataLimit','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ModifyPassword(self):
+	def get_ModifyPassword(self): # Boolean
 		return self.get_query_params().get('ModifyPassword')
 
-	def set_ModifyPassword(self,ModifyPassword):
-		self.add_query_param('ModifyPassword',ModifyPassword)
-
-	def get_Password(self):
+	def set_ModifyPassword(self, ModifyPassword):  # Boolean
+		self.add_query_param('ModifyPassword', ModifyPassword)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_Id(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Lang(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_ServiceRegionId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ServiceRegionId(self): # String
 		return self.get_query_params().get('ServiceRegionId')
 
-	def set_ServiceRegionId(self,ServiceRegionId):
-		self.add_query_param('ServiceRegionId',ServiceRegionId)
-
-	def get_EngineType(self):
+	def set_ServiceRegionId(self, ServiceRegionId):  # String
+		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_EngineType(self): # String
 		return self.get_query_params().get('EngineType')
 
-	def set_EngineType(self,EngineType):
-		self.add_query_param('EngineType',EngineType)
-
-	def get_AuditStatus(self):
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
+	def get_AuditStatus(self): # Integer
 		return self.get_query_params().get('AuditStatus')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
-
-	def get_AutoScan(self):
+	def set_AuditStatus(self, AuditStatus):  # Integer
+		self.add_query_param('AuditStatus', AuditStatus)
+	def get_AutoScan(self): # Integer
 		return self.get_query_params().get('AutoScan')
 
-	def set_AutoScan(self,AutoScan):
-		self.add_query_param('AutoScan',AutoScan)
-
-	def get_LogStoreDay(self):
+	def set_AutoScan(self, AutoScan):  # Integer
+		self.add_query_param('AutoScan', AutoScan)
+	def get_LogStoreDay(self): # Integer
 		return self.get_query_params().get('LogStoreDay')
 
-	def set_LogStoreDay(self,LogStoreDay):
-		self.add_query_param('LogStoreDay',LogStoreDay)
-
-	def get_ResourceType(self):
+	def set_LogStoreDay(self, LogStoreDay):  # Integer
+		self.add_query_param('LogStoreDay', LogStoreDay)
+	def get_ResourceType(self): # Integer
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_Port(self):
+	def set_ResourceType(self, ResourceType):  # Integer
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Port(self): # Integer
 		return self.get_query_params().get('Port')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_UserName(self):
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

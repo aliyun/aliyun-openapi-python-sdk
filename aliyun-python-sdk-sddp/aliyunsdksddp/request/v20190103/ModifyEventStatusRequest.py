@@ -23,40 +23,36 @@ from aliyunsdksddp.endpoint import endpoint_data
 class ModifyEventStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyEventStatus')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyEventStatus','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Backed(self):
+	def get_Backed(self): # Boolean
 		return self.get_query_params().get('Backed')
 
-	def set_Backed(self,Backed):
-		self.add_query_param('Backed',Backed)
-
-	def get_DealReason(self):
+	def set_Backed(self, Backed):  # Boolean
+		self.add_query_param('Backed', Backed)
+	def get_DealReason(self): # String
 		return self.get_query_params().get('DealReason')
 
-	def set_DealReason(self,DealReason):
-		self.add_query_param('DealReason',DealReason)
-
-	def get_Id(self):
+	def set_DealReason(self, DealReason):  # String
+		self.add_query_param('DealReason', DealReason)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Lang(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

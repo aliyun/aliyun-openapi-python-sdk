@@ -23,130 +23,61 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeInstances')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeInstances','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_ProductId(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_RiskLevelId(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_RiskLevelId(self): # Long
 		return self.get_query_params().get('RiskLevelId')
 
-	def set_RiskLevelId(self,RiskLevelId):
-		self.add_query_param('RiskLevelId',RiskLevelId)
-
-	def get_Source(self):
-		return self.get_query_params().get('Source')
-
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_NameAccurate(self):
-		return self.get_query_params().get('NameAccurate')
-
-	def set_NameAccurate(self,NameAccurate):
-		self.add_query_param('NameAccurate',NameAccurate)
-
-	def get_SensLevelName(self):
-		return self.get_query_params().get('SensLevelName')
-
-	def set_SensLevelName(self,SensLevelName):
-		self.add_query_param('SensLevelName',SensLevelName)
-
-	def get_LastFinishTimeStart(self):
-		return self.get_query_params().get('LastFinishTimeStart')
-
-	def set_LastFinishTimeStart(self,LastFinishTimeStart):
-		self.add_query_param('LastFinishTimeStart',LastFinishTimeStart)
-
-	def get_PageSize(self):
+	def set_RiskLevelId(self, RiskLevelId):  # Long
+		self.add_query_param('RiskLevelId', RiskLevelId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CheckStatus(self):
-		return self.get_query_params().get('CheckStatus')
-
-	def set_CheckStatus(self,CheckStatus):
-		self.add_query_param('CheckStatus',CheckStatus)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_ServiceRegionId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ServiceRegionId(self): # String
 		return self.get_query_params().get('ServiceRegionId')
 
-	def set_ServiceRegionId(self,ServiceRegionId):
-		self.add_query_param('ServiceRegionId',ServiceRegionId)
-
-	def get_FeatureType(self):
+	def set_ServiceRegionId(self, ServiceRegionId):  # String
+		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_FeatureType(self): # Integer
 		return self.get_query_params().get('FeatureType')
 
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
-
-	def get_UserType(self):
-		return self.get_query_params().get('UserType')
-
-	def set_UserType(self,UserType):
-		self.add_query_param('UserType',UserType)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_CurrentPage(self):
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Name(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_RuleId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_RuleId(self): # Long
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
-	def get_LastFinishTimeEnd(self):
-		return self.get_query_params().get('LastFinishTimeEnd')
-
-	def set_LastFinishTimeEnd(self,LastFinishTimeEnd):
-		self.add_query_param('LastFinishTimeEnd',LastFinishTimeEnd)
+	def set_RuleId(self, RuleId):  # Long
+		self.add_query_param('RuleId', RuleId)

@@ -23,88 +23,76 @@ from aliyunsdksddp.endpoint import endpoint_data
 class DescribeDataLimitsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataLimits')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataLimits','sddp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_ParentId(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_ParentId(self): # String
 		return self.get_query_params().get('ParentId')
 
-	def set_ParentId(self,ParentId):
-		self.add_query_param('ParentId',ParentId)
-
-	def get_Enable(self):
+	def set_ParentId(self, ParentId):  # String
+		self.add_query_param('ParentId', ParentId)
+	def get_Enable(self): # Integer
 		return self.get_query_params().get('Enable')
 
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_PageSize(self):
+	def set_Enable(self, Enable):  # Integer
+		self.add_query_param('Enable', Enable)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CheckStatus(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CheckStatus(self): # Integer
 		return self.get_query_params().get('CheckStatus')
 
-	def set_CheckStatus(self,CheckStatus):
-		self.add_query_param('CheckStatus',CheckStatus)
-
-	def get_DatamaskStatus(self):
+	def set_CheckStatus(self, CheckStatus):  # Integer
+		self.add_query_param('CheckStatus', CheckStatus)
+	def get_DatamaskStatus(self): # Integer
 		return self.get_query_params().get('DatamaskStatus')
 
-	def set_DatamaskStatus(self,DatamaskStatus):
-		self.add_query_param('DatamaskStatus',DatamaskStatus)
-
-	def get_Lang(self):
+	def set_DatamaskStatus(self, DatamaskStatus):  # Integer
+		self.add_query_param('DatamaskStatus', DatamaskStatus)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_ServiceRegionId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ServiceRegionId(self): # String
 		return self.get_query_params().get('ServiceRegionId')
 
-	def set_ServiceRegionId(self,ServiceRegionId):
-		self.add_query_param('ServiceRegionId',ServiceRegionId)
-
-	def get_EngineType(self):
+	def set_ServiceRegionId(self, ServiceRegionId):  # String
+		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_EngineType(self): # String
 		return self.get_query_params().get('EngineType')
 
-	def set_EngineType(self,EngineType):
-		self.add_query_param('EngineType',EngineType)
-
-	def get_AuditStatus(self):
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
+	def get_AuditStatus(self): # Integer
 		return self.get_query_params().get('AuditStatus')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
-
-	def get_EndTime(self):
+	def set_AuditStatus(self, AuditStatus):  # Integer
+		self.add_query_param('AuditStatus', AuditStatus)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_CurrentPage(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ResourceType(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_ResourceType(self): # Integer
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_ResourceType(self, ResourceType):  # Integer
+		self.add_query_param('ResourceType', ResourceType)
