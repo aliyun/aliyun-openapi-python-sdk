@@ -25,29 +25,32 @@ class RunTriggerNodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'RunTriggerNode')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BizDate(self): # Long
+
+	def get_BizDate(self):
 		return self.get_body_params().get('BizDate')
 
-	def set_BizDate(self, BizDate):  # Long
+	def set_BizDate(self,BizDate):
 		self.add_body_params('BizDate', BizDate)
-	def get_AppId(self): # Long
+
+	def get_AppId(self):
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self, AppId):  # Long
+	def set_AppId(self,AppId):
 		self.add_body_params('AppId', AppId)
-	def get_CycleTime(self): # Long
+
+	def get_CycleTime(self):
 		return self.get_body_params().get('CycleTime')
 
-	def set_CycleTime(self, CycleTime):  # Long
+	def set_CycleTime(self,CycleTime):
 		self.add_body_params('CycleTime', CycleTime)
-	def get_NodeId(self): # Long
+
+	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self, NodeId):  # Long
+	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)

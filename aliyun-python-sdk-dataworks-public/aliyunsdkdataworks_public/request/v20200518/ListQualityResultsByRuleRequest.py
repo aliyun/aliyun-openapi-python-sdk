@@ -25,39 +25,44 @@ class ListQualityResultsByRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListQualityResultsByRule')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_EndDate(self): # String
+
+	def get_EndDate(self):
 		return self.get_body_params().get('EndDate')
 
-	def set_EndDate(self, EndDate):  # String
+	def set_EndDate(self,EndDate):
 		self.add_body_params('EndDate', EndDate)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_RuleId(self): # Integer
+
+	def get_RuleId(self):
 		return self.get_body_params().get('RuleId')
 
-	def set_RuleId(self, RuleId):  # Integer
+	def set_RuleId(self,RuleId):
 		self.add_body_params('RuleId', RuleId)
-	def get_StartDate(self): # String
+
+	def get_StartDate(self):
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self, StartDate):  # String
+	def set_StartDate(self,StartDate):
 		self.add_body_params('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)

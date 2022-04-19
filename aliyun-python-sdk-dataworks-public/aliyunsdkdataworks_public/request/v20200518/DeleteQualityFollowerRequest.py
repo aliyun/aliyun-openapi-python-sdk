@@ -25,19 +25,20 @@ class DeleteQualityFollowerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteQualityFollower')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_FollowerId(self): # Long
+
+	def get_FollowerId(self):
 		return self.get_body_params().get('FollowerId')
 
-	def set_FollowerId(self, FollowerId):  # Long
+	def set_FollowerId(self,FollowerId):
 		self.add_body_params('FollowerId', FollowerId)

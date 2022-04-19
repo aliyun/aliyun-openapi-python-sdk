@@ -25,34 +25,38 @@ class UpdateDataSourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateDataSource')
 		self.set_method('PUT')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EnvType(self): # Integer
+
+	def get_EnvType(self):
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # Integer
-		self.add_query_param('EnvType', EnvType)
-	def get_DataSourceId(self): # Long
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_DataSourceId(self):
 		return self.get_query_params().get('DataSourceId')
 
-	def set_DataSourceId(self, DataSourceId):  # Long
-		self.add_query_param('DataSourceId', DataSourceId)
-	def get_Description(self): # String
+	def set_DataSourceId(self,DataSourceId):
+		self.add_query_param('DataSourceId',DataSourceId)
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Content(self): # String
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Content(self):
 		return self.get_query_params().get('Content')
 
-	def set_Content(self, Content):  # String
-		self.add_query_param('Content', Content)
-	def get_Status(self): # String
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
+
+	def get_Status(self):
 		return self.get_query_params().get('Status')
 
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -25,49 +25,56 @@ class ListAlertMessagesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListAlertMessages')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlertUser(self): # String
+
+	def get_AlertUser(self):
 		return self.get_body_params().get('AlertUser')
 
-	def set_AlertUser(self, AlertUser):  # String
+	def set_AlertUser(self,AlertUser):
 		self.add_body_params('AlertUser', AlertUser)
-	def get_EndTime(self): # String
+
+	def get_EndTime(self):
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
+	def set_EndTime(self,EndTime):
 		self.add_body_params('EndTime', EndTime)
-	def get_BeginTime(self): # String
+
+	def get_BeginTime(self):
 		return self.get_body_params().get('BeginTime')
 
-	def set_BeginTime(self, BeginTime):  # String
+	def set_BeginTime(self,BeginTime):
 		self.add_body_params('BeginTime', BeginTime)
-	def get_AlertMethods(self): # String
+
+	def get_AlertMethods(self):
 		return self.get_body_params().get('AlertMethods')
 
-	def set_AlertMethods(self, AlertMethods):  # String
+	def set_AlertMethods(self,AlertMethods):
 		self.add_body_params('AlertMethods', AlertMethods)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
-	def get_RemindId(self): # Long
+
+	def get_RemindId(self):
 		return self.get_body_params().get('RemindId')
 
-	def set_RemindId(self, RemindId):  # Long
+	def set_RemindId(self,RemindId):
 		self.add_body_params('RemindId', RemindId)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_AlertRuleTypes(self): # String
+
+	def get_AlertRuleTypes(self):
 		return self.get_body_params().get('AlertRuleTypes')
 
-	def set_AlertRuleTypes(self, AlertRuleTypes):  # String
+	def set_AlertRuleTypes(self,AlertRuleTypes):
 		self.add_body_params('AlertRuleTypes', AlertRuleTypes)

@@ -25,24 +25,26 @@ class CheckFileDeploymentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CheckFileDeployment')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CheckDetailUrl(self): # String
+
+	def get_CheckDetailUrl(self):
 		return self.get_body_params().get('CheckDetailUrl')
 
-	def set_CheckDetailUrl(self, CheckDetailUrl):  # String
+	def set_CheckDetailUrl(self,CheckDetailUrl):
 		self.add_body_params('CheckDetailUrl', CheckDetailUrl)
-	def get_CheckerInstanceId(self): # String
+
+	def get_CheckerInstanceId(self):
 		return self.get_body_params().get('CheckerInstanceId')
 
-	def set_CheckerInstanceId(self, CheckerInstanceId):  # String
+	def set_CheckerInstanceId(self,CheckerInstanceId):
 		self.add_body_params('CheckerInstanceId', CheckerInstanceId)
-	def get_Status(self): # String
+
+	def get_Status(self):
 		return self.get_body_params().get('Status')
 
-	def set_Status(self, Status):  # String
+	def set_Status(self,Status):
 		self.add_body_params('Status', Status)

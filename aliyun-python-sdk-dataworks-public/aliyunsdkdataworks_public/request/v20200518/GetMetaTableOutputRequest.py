@@ -25,34 +25,38 @@ class GetMetaTableOutputRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableOutput')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndDate(self): # String
+
+	def get_EndDate(self):
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self, EndDate):  # String
-		self.add_query_param('EndDate', EndDate)
-	def get_TableGuid(self): # String
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
+
+	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_query_param('TableGuid', TableGuid)
-	def get_PageSize(self): # Integer
+	def set_TableGuid(self,TableGuid):
+		self.add_query_param('TableGuid',TableGuid)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_StartDate(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_StartDate(self):
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self, StartDate):  # String
-		self.add_query_param('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

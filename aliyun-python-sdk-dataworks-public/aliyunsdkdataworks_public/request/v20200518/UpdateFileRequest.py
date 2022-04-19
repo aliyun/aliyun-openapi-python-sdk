@@ -25,144 +25,170 @@ class UpdateFileRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateFile')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OutputList(self): # String
+
+	def get_OutputList(self):
 		return self.get_body_params().get('OutputList')
 
-	def set_OutputList(self, OutputList):  # String
+	def set_OutputList(self,OutputList):
 		self.add_body_params('OutputList', OutputList)
-	def get_DependentNodeIdList(self): # String
+
+	def get_DependentNodeIdList(self):
 		return self.get_body_params().get('DependentNodeIdList')
 
-	def set_DependentNodeIdList(self, DependentNodeIdList):  # String
+	def set_DependentNodeIdList(self,DependentNodeIdList):
 		self.add_body_params('DependentNodeIdList', DependentNodeIdList)
-	def get_Content(self): # String
+
+	def get_Content(self):
 		return self.get_body_params().get('Content')
 
-	def set_Content(self, Content):  # String
+	def set_Content(self,Content):
 		self.add_body_params('Content', Content)
-	def get_ProjectIdentifier(self): # String
+
+	def get_ProjectIdentifier(self):
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+	def set_ProjectIdentifier(self,ProjectIdentifier):
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-	def get_StartImmediately(self): # Boolean
+
+	def get_StartImmediately(self):
 		return self.get_body_params().get('StartImmediately')
 
-	def set_StartImmediately(self, StartImmediately):  # Boolean
+	def set_StartImmediately(self,StartImmediately):
 		self.add_body_params('StartImmediately', StartImmediately)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_AdvancedSettings(self): # String
+
+	def get_AdvancedSettings(self):
 		return self.get_body_params().get('AdvancedSettings')
 
-	def set_AdvancedSettings(self, AdvancedSettings):  # String
+	def set_AdvancedSettings(self,AdvancedSettings):
 		self.add_body_params('AdvancedSettings', AdvancedSettings)
-	def get_StartEffectDate(self): # Long
+
+	def get_StartEffectDate(self):
 		return self.get_body_params().get('StartEffectDate')
 
-	def set_StartEffectDate(self, StartEffectDate):  # Long
+	def set_StartEffectDate(self,StartEffectDate):
 		self.add_body_params('StartEffectDate', StartEffectDate)
-	def get_CycleType(self): # String
+
+	def get_CycleType(self):
 		return self.get_body_params().get('CycleType')
 
-	def set_CycleType(self, CycleType):  # String
+	def set_CycleType(self,CycleType):
 		self.add_body_params('CycleType', CycleType)
-	def get_FileId(self): # Long
+
+	def get_FileId(self):
 		return self.get_body_params().get('FileId')
 
-	def set_FileId(self, FileId):  # Long
+	def set_FileId(self,FileId):
 		self.add_body_params('FileId', FileId)
-	def get_AutoRerunIntervalMillis(self): # Integer
+
+	def get_AutoRerunIntervalMillis(self):
 		return self.get_body_params().get('AutoRerunIntervalMillis')
 
-	def set_AutoRerunIntervalMillis(self, AutoRerunIntervalMillis):  # Integer
+	def set_AutoRerunIntervalMillis(self,AutoRerunIntervalMillis):
 		self.add_body_params('AutoRerunIntervalMillis', AutoRerunIntervalMillis)
-	def get_Owner(self): # String
+
+	def get_Owner(self):
 		return self.get_body_params().get('Owner')
 
-	def set_Owner(self, Owner):  # String
+	def set_Owner(self,Owner):
 		self.add_body_params('Owner', Owner)
-	def get_InputList(self): # String
+
+	def get_InputList(self):
 		return self.get_body_params().get('InputList')
 
-	def set_InputList(self, InputList):  # String
+	def set_InputList(self,InputList):
 		self.add_body_params('InputList', InputList)
-	def get_RerunMode(self): # String
+
+	def get_RerunMode(self):
 		return self.get_body_params().get('RerunMode')
 
-	def set_RerunMode(self, RerunMode):  # String
+	def set_RerunMode(self,RerunMode):
 		self.add_body_params('RerunMode', RerunMode)
-	def get_ConnectionName(self): # String
+
+	def get_ConnectionName(self):
 		return self.get_body_params().get('ConnectionName')
 
-	def set_ConnectionName(self, ConnectionName):  # String
+	def set_ConnectionName(self,ConnectionName):
 		self.add_body_params('ConnectionName', ConnectionName)
-	def get_ParaValue(self): # String
+
+	def get_ParaValue(self):
 		return self.get_body_params().get('ParaValue')
 
-	def set_ParaValue(self, ParaValue):  # String
+	def set_ParaValue(self,ParaValue):
 		self.add_body_params('ParaValue', ParaValue)
-	def get_ResourceGroupIdentifier(self): # String
+
+	def get_ResourceGroupIdentifier(self):
 		return self.get_body_params().get('ResourceGroupIdentifier')
 
-	def set_ResourceGroupIdentifier(self, ResourceGroupIdentifier):  # String
+	def set_ResourceGroupIdentifier(self,ResourceGroupIdentifier):
 		self.add_body_params('ResourceGroupIdentifier', ResourceGroupIdentifier)
-	def get_AutoRerunTimes(self): # Integer
+
+	def get_AutoRerunTimes(self):
 		return self.get_body_params().get('AutoRerunTimes')
 
-	def set_AutoRerunTimes(self, AutoRerunTimes):  # Integer
+	def set_AutoRerunTimes(self,AutoRerunTimes):
 		self.add_body_params('AutoRerunTimes', AutoRerunTimes)
-	def get_CronExpress(self): # String
+
+	def get_CronExpress(self):
 		return self.get_body_params().get('CronExpress')
 
-	def set_CronExpress(self, CronExpress):  # String
+	def set_CronExpress(self,CronExpress):
 		self.add_body_params('CronExpress', CronExpress)
-	def get_EndEffectDate(self): # Long
+
+	def get_EndEffectDate(self):
 		return self.get_body_params().get('EndEffectDate')
 
-	def set_EndEffectDate(self, EndEffectDate):  # Long
+	def set_EndEffectDate(self,EndEffectDate):
 		self.add_body_params('EndEffectDate', EndEffectDate)
-	def get_FileName(self): # String
+
+	def get_FileName(self):
 		return self.get_body_params().get('FileName')
 
-	def set_FileName(self, FileName):  # String
+	def set_FileName(self,FileName):
 		self.add_body_params('FileName', FileName)
-	def get_Stop(self): # Boolean
+
+	def get_Stop(self):
 		return self.get_body_params().get('Stop')
 
-	def set_Stop(self, Stop):  # Boolean
+	def set_Stop(self,Stop):
 		self.add_body_params('Stop', Stop)
-	def get_DependentType(self): # String
+
+	def get_DependentType(self):
 		return self.get_body_params().get('DependentType')
 
-	def set_DependentType(self, DependentType):  # String
+	def set_DependentType(self,DependentType):
 		self.add_body_params('DependentType', DependentType)
-	def get_FileFolderPath(self): # String
+
+	def get_FileFolderPath(self):
 		return self.get_body_params().get('FileFolderPath')
 
-	def set_FileFolderPath(self, FileFolderPath):  # String
+	def set_FileFolderPath(self,FileFolderPath):
 		self.add_body_params('FileFolderPath', FileFolderPath)
-	def get_FileDescription(self): # String
+
+	def get_FileDescription(self):
 		return self.get_body_params().get('FileDescription')
 
-	def set_FileDescription(self, FileDescription):  # String
+	def set_FileDescription(self,FileDescription):
 		self.add_body_params('FileDescription', FileDescription)
-	def get_AutoParsing(self): # Boolean
+
+	def get_AutoParsing(self):
 		return self.get_body_params().get('AutoParsing')
 
-	def set_AutoParsing(self, AutoParsing):  # Boolean
+	def set_AutoParsing(self,AutoParsing):
 		self.add_body_params('AutoParsing', AutoParsing)
-	def get_SchedulerType(self): # String
+
+	def get_SchedulerType(self):
 		return self.get_body_params().get('SchedulerType')
 
-	def set_SchedulerType(self, SchedulerType):  # String
+	def set_SchedulerType(self,SchedulerType):
 		self.add_body_params('SchedulerType', SchedulerType)

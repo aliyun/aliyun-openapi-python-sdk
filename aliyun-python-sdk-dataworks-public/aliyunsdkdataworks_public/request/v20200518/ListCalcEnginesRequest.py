@@ -25,39 +25,44 @@ class ListCalcEnginesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListCalcEngines')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CalcEngineType(self): # String
+
+	def get_CalcEngineType(self):
 		return self.get_query_params().get('CalcEngineType')
 
-	def set_CalcEngineType(self, CalcEngineType):  # String
-		self.add_query_param('CalcEngineType', CalcEngineType)
-	def get_PageNumber(self): # Integer
+	def set_CalcEngineType(self,CalcEngineType):
+		self.add_query_param('CalcEngineType',CalcEngineType)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_Name(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Name(self):
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
-	def get_EnvType(self): # String
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_EnvType(self):
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # String
-		self.add_query_param('EnvType', EnvType)
-	def get_PageSize(self): # Integer
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ProjectId(self): # Long
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

@@ -25,34 +25,38 @@ class GenerateDISyncTaskConfigForUpdatingRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GenerateDISyncTaskConfigForUpdating')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TaskType(self): # String
+
+	def get_TaskType(self):
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self, TaskType):  # String
-		self.add_query_param('TaskType', TaskType)
-	def get_ClientToken(self): # String
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_TaskParam(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_TaskParam(self):
 		return self.get_query_params().get('TaskParam')
 
-	def set_TaskParam(self, TaskParam):  # String
-		self.add_query_param('TaskParam', TaskParam)
-	def get_ProjectId(self): # Long
+	def set_TaskParam(self,TaskParam):
+		self.add_query_param('TaskParam',TaskParam)
+
+	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
-	def get_TaskId(self): # Long
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
+
+	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self, TaskId):  # Long
-		self.add_query_param('TaskId', TaskId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

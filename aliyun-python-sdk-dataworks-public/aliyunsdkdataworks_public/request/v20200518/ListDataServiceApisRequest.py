@@ -25,44 +25,50 @@ class ListDataServiceApisRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDataServiceApis')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ApiNameKeyword(self): # String
+
+	def get_ApiNameKeyword(self):
 		return self.get_body_params().get('ApiNameKeyword')
 
-	def set_ApiNameKeyword(self, ApiNameKeyword):  # String
+	def set_ApiNameKeyword(self,ApiNameKeyword):
 		self.add_body_params('ApiNameKeyword', ApiNameKeyword)
-	def get_ApiPathKeyword(self): # String
+
+	def get_ApiPathKeyword(self):
 		return self.get_body_params().get('ApiPathKeyword')
 
-	def set_ApiPathKeyword(self, ApiPathKeyword):  # String
+	def set_ApiPathKeyword(self,ApiPathKeyword):
 		self.add_body_params('ApiPathKeyword', ApiPathKeyword)
-	def get_CreatorId(self): # String
+
+	def get_CreatorId(self):
 		return self.get_body_params().get('CreatorId')
 
-	def set_CreatorId(self, CreatorId):  # String
+	def set_CreatorId(self,CreatorId):
 		self.add_body_params('CreatorId', CreatorId)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_TenantId(self): # Long
+
+	def get_TenantId(self):
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self, TenantId):  # Long
+	def set_TenantId(self,TenantId):
 		self.add_body_params('TenantId', TenantId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

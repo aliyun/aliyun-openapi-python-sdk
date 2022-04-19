@@ -25,57 +25,64 @@ class CreatePermissionApplyOrderRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreatePermissionApplyOrder')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ApplyReason(self): # String
+
+	def get_ApplyReason(self):
 		return self.get_query_params().get('ApplyReason')
 
-	def set_ApplyReason(self, ApplyReason):  # String
-		self.add_query_param('ApplyReason', ApplyReason)
-	def get_MaxComputeProjectName(self): # String
+	def set_ApplyReason(self,ApplyReason):
+		self.add_query_param('ApplyReason',ApplyReason)
+
+	def get_MaxComputeProjectName(self):
 		return self.get_query_params().get('MaxComputeProjectName')
 
-	def set_MaxComputeProjectName(self, MaxComputeProjectName):  # String
-		self.add_query_param('MaxComputeProjectName', MaxComputeProjectName)
-	def get_ApplyObjects(self): # RepeatList
+	def set_MaxComputeProjectName(self,MaxComputeProjectName):
+		self.add_query_param('MaxComputeProjectName',MaxComputeProjectName)
+
+	def get_ApplyObjects(self):
 		return self.get_query_params().get('ApplyObject')
 
-	def set_ApplyObjects(self, ApplyObject):  # RepeatList
-		for depth1 in range(len(ApplyObject)):
-			if ApplyObject[depth1].get('ColumnMetaList') is not None:
-				for depth2 in range(len(ApplyObject[depth1].get('ColumnMetaList'))):
-					if ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name') is not None:
-						self.add_query_param('ApplyObject.' + str(depth1 + 1) + str(depth2 + 1) + '.Name', ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name'))
-			if ApplyObject[depth1].get('Name') is not None:
-				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Name', ApplyObject[depth1].get('Name'))
-			if ApplyObject[depth1].get('Actions') is not None:
-				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Actions', ApplyObject[depth1].get('Actions'))
-	def get_ApplyUserIds(self): # String
+	def set_ApplyObjects(self, ApplyObjects):
+		for depth1 in range(len(ApplyObjects)):
+			if ApplyObjects[depth1].get('ColumnMetaList') is not None:
+				for depth2 in range(len(ApplyObjects[depth1].get('ColumnMetaList'))):
+					if ApplyObjects[depth1].get('ColumnMetaList')[depth2].get('Name') is not None:
+						self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.ColumnMetaList.' + str(depth2 + 1) + '.Name', ApplyObjects[depth1].get('ColumnMetaList')[depth2].get('Name'))
+			if ApplyObjects[depth1].get('Name') is not None:
+				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Name', ApplyObjects[depth1].get('Name'))
+			if ApplyObjects[depth1].get('Actions') is not None:
+				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Actions', ApplyObjects[depth1].get('Actions'))
+
+	def get_ApplyUserIds(self):
 		return self.get_query_params().get('ApplyUserIds')
 
-	def set_ApplyUserIds(self, ApplyUserIds):  # String
-		self.add_query_param('ApplyUserIds', ApplyUserIds)
-	def get_Deadline(self): # Long
+	def set_ApplyUserIds(self,ApplyUserIds):
+		self.add_query_param('ApplyUserIds',ApplyUserIds)
+
+	def get_Deadline(self):
 		return self.get_query_params().get('Deadline')
 
-	def set_Deadline(self, Deadline):  # Long
-		self.add_query_param('Deadline', Deadline)
-	def get_WorkspaceId(self): # Integer
+	def set_Deadline(self,Deadline):
+		self.add_query_param('Deadline',Deadline)
+
+	def get_WorkspaceId(self):
 		return self.get_query_params().get('WorkspaceId')
 
-	def set_WorkspaceId(self, WorkspaceId):  # Integer
-		self.add_query_param('WorkspaceId', WorkspaceId)
-	def get_OrderType(self): # Integer
+	def set_WorkspaceId(self,WorkspaceId):
+		self.add_query_param('WorkspaceId',WorkspaceId)
+
+	def get_OrderType(self):
 		return self.get_query_params().get('OrderType')
 
-	def set_OrderType(self, OrderType):  # Integer
-		self.add_query_param('OrderType', OrderType)
-	def get_EngineType(self): # String
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)
+
+	def get_EngineType(self):
 		return self.get_query_params().get('EngineType')
 
-	def set_EngineType(self, EngineType):  # String
-		self.add_query_param('EngineType', EngineType)
+	def set_EngineType(self,EngineType):
+		self.add_query_param('EngineType',EngineType)

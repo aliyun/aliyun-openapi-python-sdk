@@ -25,24 +25,26 @@ class GetSensitiveDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetSensitiveData')
 		self.set_method('GET')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNo(self): # Integer
+
+	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self, PageNo):  # Integer
-		self.add_query_param('PageNo', PageNo)
-	def get_PageSize(self): # Integer
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Name(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Name(self):
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

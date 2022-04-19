@@ -25,19 +25,20 @@ class AddToMetaCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'AddToMetaCategory')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TableGuid(self): # String
+
+	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_query_param('TableGuid', TableGuid)
-	def get_CategoryId(self): # Long
+	def set_TableGuid(self,TableGuid):
+		self.add_query_param('TableGuid',TableGuid)
+
+	def get_CategoryId(self):
 		return self.get_query_params().get('CategoryId')
 
-	def set_CategoryId(self, CategoryId):  # Long
-		self.add_query_param('CategoryId', CategoryId)
+	def set_CategoryId(self,CategoryId):
+		self.add_query_param('CategoryId',CategoryId)

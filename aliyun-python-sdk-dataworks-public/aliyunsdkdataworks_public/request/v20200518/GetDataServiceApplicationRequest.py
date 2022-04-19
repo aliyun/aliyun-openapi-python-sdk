@@ -25,24 +25,26 @@ class GetDataServiceApplicationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetDataServiceApplication')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TenantId(self): # Long
+
+	def get_TenantId(self):
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self, TenantId):  # Long
+	def set_TenantId(self,TenantId):
 		self.add_body_params('TenantId', TenantId)
-	def get_ApplicationId(self): # Long
+
+	def get_ApplicationId(self):
 		return self.get_body_params().get('ApplicationId')
 
-	def set_ApplicationId(self, ApplicationId):  # Long
+	def set_ApplicationId(self,ApplicationId):
 		self.add_body_params('ApplicationId', ApplicationId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

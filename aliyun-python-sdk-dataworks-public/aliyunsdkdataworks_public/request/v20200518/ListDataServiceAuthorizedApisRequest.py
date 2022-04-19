@@ -25,34 +25,38 @@ class ListDataServiceAuthorizedApisRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDataServiceAuthorizedApis')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ApiNameKeyword(self): # String
+
+	def get_ApiNameKeyword(self):
 		return self.get_body_params().get('ApiNameKeyword')
 
-	def set_ApiNameKeyword(self, ApiNameKeyword):  # String
+	def set_ApiNameKeyword(self,ApiNameKeyword):
 		self.add_body_params('ApiNameKeyword', ApiNameKeyword)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_TenantId(self): # Long
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_TenantId(self):
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self, TenantId):  # Long
+	def set_TenantId(self,TenantId):
 		self.add_body_params('TenantId', TenantId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

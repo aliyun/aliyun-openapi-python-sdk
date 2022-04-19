@@ -25,89 +25,104 @@ class CreateDataServiceApiRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDataServiceApi')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScriptDetails(self): # String
+
+	def get_ScriptDetails(self):
 		return self.get_body_params().get('ScriptDetails')
 
-	def set_ScriptDetails(self, ScriptDetails):  # String
+	def set_ScriptDetails(self,ScriptDetails):
 		self.add_body_params('ScriptDetails', ScriptDetails)
-	def get_RequestMethod(self): # Integer
+
+	def get_RequestMethod(self):
 		return self.get_body_params().get('RequestMethod')
 
-	def set_RequestMethod(self, RequestMethod):  # Integer
+	def set_RequestMethod(self,RequestMethod):
 		self.add_body_params('RequestMethod', RequestMethod)
-	def get_GroupId(self): # String
+
+	def get_GroupId(self):
 		return self.get_body_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self,GroupId):
 		self.add_body_params('GroupId', GroupId)
-	def get_ApiPath(self): # String
+
+	def get_ApiPath(self):
 		return self.get_body_params().get('ApiPath')
 
-	def set_ApiPath(self, ApiPath):  # String
+	def set_ApiPath(self,ApiPath):
 		self.add_body_params('ApiPath', ApiPath)
-	def get_WizardDetails(self): # String
+
+	def get_WizardDetails(self):
 		return self.get_body_params().get('WizardDetails')
 
-	def set_WizardDetails(self, WizardDetails):  # String
+	def set_WizardDetails(self,WizardDetails):
 		self.add_body_params('WizardDetails', WizardDetails)
-	def get_ApiMode(self): # Integer
+
+	def get_ApiMode(self):
 		return self.get_body_params().get('ApiMode')
 
-	def set_ApiMode(self, ApiMode):  # Integer
+	def set_ApiMode(self,ApiMode):
 		self.add_body_params('ApiMode', ApiMode)
-	def get_VisibleRange(self): # Integer
+
+	def get_VisibleRange(self):
 		return self.get_body_params().get('VisibleRange')
 
-	def set_VisibleRange(self, VisibleRange):  # Integer
+	def set_VisibleRange(self,VisibleRange):
 		self.add_body_params('VisibleRange', VisibleRange)
-	def get_ApiDescription(self): # String
+
+	def get_ApiDescription(self):
 		return self.get_body_params().get('ApiDescription')
 
-	def set_ApiDescription(self, ApiDescription):  # String
+	def set_ApiDescription(self,ApiDescription):
 		self.add_body_params('ApiDescription', ApiDescription)
-	def get_Timeout(self): # Integer
+
+	def get_Timeout(self):
 		return self.get_body_params().get('Timeout')
 
-	def set_Timeout(self, Timeout):  # Integer
+	def set_Timeout(self,Timeout):
 		self.add_body_params('Timeout', Timeout)
-	def get_FolderId(self): # Long
+
+	def get_FolderId(self):
 		return self.get_body_params().get('FolderId')
 
-	def set_FolderId(self, FolderId):  # Long
+	def set_FolderId(self,FolderId):
 		self.add_body_params('FolderId', FolderId)
-	def get_RegistrationDetails(self): # String
+
+	def get_RegistrationDetails(self):
 		return self.get_body_params().get('RegistrationDetails')
 
-	def set_RegistrationDetails(self, RegistrationDetails):  # String
+	def set_RegistrationDetails(self,RegistrationDetails):
 		self.add_body_params('RegistrationDetails', RegistrationDetails)
-	def get_ApiName(self): # String
+
+	def get_ApiName(self):
 		return self.get_body_params().get('ApiName')
 
-	def set_ApiName(self, ApiName):  # String
+	def set_ApiName(self,ApiName):
 		self.add_body_params('ApiName', ApiName)
-	def get_TenantId(self): # Long
+
+	def get_TenantId(self):
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self, TenantId):  # Long
+	def set_TenantId(self,TenantId):
 		self.add_body_params('TenantId', TenantId)
-	def get_Protocols(self): # String
+
+	def get_Protocols(self):
 		return self.get_body_params().get('Protocols')
 
-	def set_Protocols(self, Protocols):  # String
+	def set_Protocols(self,Protocols):
 		self.add_body_params('Protocols', Protocols)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ResponseContentType(self): # Integer
+
+	def get_ResponseContentType(self):
 		return self.get_body_params().get('ResponseContentType')
 
-	def set_ResponseContentType(self, ResponseContentType):  # Integer
+	def set_ResponseContentType(self,ResponseContentType):
 		self.add_body_params('ResponseContentType', ResponseContentType)

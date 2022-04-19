@@ -25,29 +25,32 @@ class UpdateIDEEventResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateIDEEventResult')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CheckResultTip(self): # String
+
+	def get_CheckResultTip(self):
 		return self.get_body_params().get('CheckResultTip')
 
-	def set_CheckResultTip(self, CheckResultTip):  # String
+	def set_CheckResultTip(self,CheckResultTip):
 		self.add_body_params('CheckResultTip', CheckResultTip)
-	def get_CheckResult(self): # String
+
+	def get_CheckResult(self):
 		return self.get_body_params().get('CheckResult')
 
-	def set_CheckResult(self, CheckResult):  # String
+	def set_CheckResult(self,CheckResult):
 		self.add_body_params('CheckResult', CheckResult)
-	def get_MessageId(self): # String
+
+	def get_MessageId(self):
 		return self.get_body_params().get('MessageId')
 
-	def set_MessageId(self, MessageId):  # String
+	def set_MessageId(self,MessageId):
 		self.add_body_params('MessageId', MessageId)
-	def get_ExtensionCode(self): # String
+
+	def get_ExtensionCode(self):
 		return self.get_body_params().get('ExtensionCode')
 
-	def set_ExtensionCode(self, ExtensionCode):  # String
+	def set_ExtensionCode(self,ExtensionCode):
 		self.add_body_params('ExtensionCode', ExtensionCode)

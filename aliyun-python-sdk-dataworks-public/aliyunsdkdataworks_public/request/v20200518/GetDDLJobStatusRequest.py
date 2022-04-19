@@ -25,14 +25,14 @@ class GetDDLJobStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetDDLJobStatus')
 		self.set_method('GET')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TaskId(self): # String
+
+	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self, TaskId):  # String
-		self.add_query_param('TaskId', TaskId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

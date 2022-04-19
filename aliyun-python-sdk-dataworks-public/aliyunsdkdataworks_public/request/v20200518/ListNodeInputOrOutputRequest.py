@@ -25,24 +25,26 @@ class ListNodeInputOrOutputRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListNodeInputOrOutput')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
+
+	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
+	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_NodeId(self): # Long
+
+	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self, NodeId):  # Long
+	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)
-	def get_IoType(self): # String
+
+	def get_IoType(self):
 		return self.get_body_params().get('IoType')
 
-	def set_IoType(self, IoType):  # String
+	def set_IoType(self,IoType):
 		self.add_body_params('IoType', IoType)

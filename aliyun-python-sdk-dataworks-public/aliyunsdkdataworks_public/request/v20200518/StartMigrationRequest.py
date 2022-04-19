@@ -25,19 +25,20 @@ class StartMigrationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'StartMigration')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MigrationId(self): # Long
+
+	def get_MigrationId(self):
 		return self.get_body_params().get('MigrationId')
 
-	def set_MigrationId(self, MigrationId):  # Long
+	def set_MigrationId(self,MigrationId):
 		self.add_body_params('MigrationId', MigrationId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

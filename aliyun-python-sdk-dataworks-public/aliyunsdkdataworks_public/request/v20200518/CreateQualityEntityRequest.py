@@ -25,34 +25,38 @@ class CreateQualityEntityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateQualityEntity')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_EntityLevel(self): # Integer
+
+	def get_EntityLevel(self):
 		return self.get_body_params().get('EntityLevel')
 
-	def set_EntityLevel(self, EntityLevel):  # Integer
+	def set_EntityLevel(self,EntityLevel):
 		self.add_body_params('EntityLevel', EntityLevel)
-	def get_MatchExpression(self): # String
+
+	def get_MatchExpression(self):
 		return self.get_body_params().get('MatchExpression')
 
-	def set_MatchExpression(self, MatchExpression):  # String
+	def set_MatchExpression(self,MatchExpression):
 		self.add_body_params('MatchExpression', MatchExpression)
-	def get_EnvType(self): # String
+
+	def get_EnvType(self):
 		return self.get_body_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # String
+	def set_EnvType(self,EnvType):
 		self.add_body_params('EnvType', EnvType)
-	def get_TableName(self): # String
+
+	def get_TableName(self):
 		return self.get_body_params().get('TableName')
 
-	def set_TableName(self, TableName):  # String
+	def set_TableName(self,TableName):
 		self.add_body_params('TableName', TableName)

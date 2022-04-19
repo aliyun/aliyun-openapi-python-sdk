@@ -25,44 +25,50 @@ class GetMetaTableChangeLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableChangeLog')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartDate(self): # String
+
+	def get_StartDate(self):
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self, StartDate):  # String
+	def set_StartDate(self,StartDate):
 		self.add_body_params('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
-	def get_EndDate(self): # String
+
+	def get_EndDate(self):
 		return self.get_body_params().get('EndDate')
 
-	def set_EndDate(self, EndDate):  # String
+	def set_EndDate(self,EndDate):
 		self.add_body_params('EndDate', EndDate)
-	def get_TableGuid(self): # String
+
+	def get_TableGuid(self):
 		return self.get_body_params().get('TableGuid')
 
-	def set_TableGuid(self, TableGuid):  # String
+	def set_TableGuid(self,TableGuid):
 		self.add_body_params('TableGuid', TableGuid)
-	def get_ChangeType(self): # String
+
+	def get_ChangeType(self):
 		return self.get_body_params().get('ChangeType')
 
-	def set_ChangeType(self, ChangeType):  # String
+	def set_ChangeType(self,ChangeType):
 		self.add_body_params('ChangeType', ChangeType)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_ObjectType(self): # String
+
+	def get_ObjectType(self):
 		return self.get_body_params().get('ObjectType')
 
-	def set_ObjectType(self, ObjectType):  # String
+	def set_ObjectType(self,ObjectType):
 		self.add_body_params('ObjectType', ObjectType)

@@ -25,24 +25,26 @@ class GetDeploymentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetDeployment')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DeploymentId(self): # Long
+
+	def get_DeploymentId(self):
 		return self.get_body_params().get('DeploymentId')
 
-	def set_DeploymentId(self, DeploymentId):  # Long
+	def set_DeploymentId(self,DeploymentId):
 		self.add_body_params('DeploymentId', DeploymentId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ProjectIdentifier(self): # String
+
+	def get_ProjectIdentifier(self):
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+	def set_ProjectIdentifier(self,ProjectIdentifier):
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)

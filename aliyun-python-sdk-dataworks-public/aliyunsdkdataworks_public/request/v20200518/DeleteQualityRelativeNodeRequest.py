@@ -25,49 +25,56 @@ class DeleteQualityRelativeNodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteQualityRelativeNode')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_TargetNodeProjectId(self): # Long
+
+	def get_TargetNodeProjectId(self):
 		return self.get_body_params().get('TargetNodeProjectId')
 
-	def set_TargetNodeProjectId(self, TargetNodeProjectId):  # Long
+	def set_TargetNodeProjectId(self,TargetNodeProjectId):
 		self.add_body_params('TargetNodeProjectId', TargetNodeProjectId)
-	def get_MatchExpression(self): # String
+
+	def get_MatchExpression(self):
 		return self.get_body_params().get('MatchExpression')
 
-	def set_MatchExpression(self, MatchExpression):  # String
+	def set_MatchExpression(self,MatchExpression):
 		self.add_body_params('MatchExpression', MatchExpression)
-	def get_EnvType(self): # String
+
+	def get_EnvType(self):
 		return self.get_body_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # String
+	def set_EnvType(self,EnvType):
 		self.add_body_params('EnvType', EnvType)
-	def get_TargetNodeProjectName(self): # String
+
+	def get_TargetNodeProjectName(self):
 		return self.get_body_params().get('TargetNodeProjectName')
 
-	def set_TargetNodeProjectName(self, TargetNodeProjectName):  # String
+	def set_TargetNodeProjectName(self,TargetNodeProjectName):
 		self.add_body_params('TargetNodeProjectName', TargetNodeProjectName)
-	def get_TableName(self): # String
+
+	def get_TableName(self):
 		return self.get_body_params().get('TableName')
 
-	def set_TableName(self, TableName):  # String
+	def set_TableName(self,TableName):
 		self.add_body_params('TableName', TableName)
-	def get_NodeId(self): # Long
+
+	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self, NodeId):  # Long
+	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

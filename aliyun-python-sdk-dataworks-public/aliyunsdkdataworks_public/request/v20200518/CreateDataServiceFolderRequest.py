@@ -25,34 +25,38 @@ class CreateDataServiceFolderRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDataServiceFolder')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # String
+
+	def get_GroupId(self):
 		return self.get_body_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self,GroupId):
 		self.add_body_params('GroupId', GroupId)
-	def get_TenantId(self): # Long
+
+	def get_TenantId(self):
 		return self.get_body_params().get('TenantId')
 
-	def set_TenantId(self, TenantId):  # Long
+	def set_TenantId(self,TenantId):
 		self.add_body_params('TenantId', TenantId)
-	def get_FolderName(self): # String
+
+	def get_FolderName(self):
 		return self.get_body_params().get('FolderName')
 
-	def set_FolderName(self, FolderName):  # String
+	def set_FolderName(self,FolderName):
 		self.add_body_params('FolderName', FolderName)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ParentId(self): # Long
+
+	def get_ParentId(self):
 		return self.get_body_params().get('ParentId')
 
-	def set_ParentId(self, ParentId):  # Long
+	def set_ParentId(self,ParentId):
 		self.add_body_params('ParentId', ParentId)

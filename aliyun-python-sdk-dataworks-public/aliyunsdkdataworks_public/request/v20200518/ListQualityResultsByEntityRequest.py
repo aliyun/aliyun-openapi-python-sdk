@@ -25,39 +25,44 @@ class ListQualityResultsByEntityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListQualityResultsByEntity')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_EndDate(self): # String
+
+	def get_EndDate(self):
 		return self.get_body_params().get('EndDate')
 
-	def set_EndDate(self, EndDate):  # String
+	def set_EndDate(self,EndDate):
 		self.add_body_params('EndDate', EndDate)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_EntityId(self): # Integer
+
+	def get_EntityId(self):
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self, EntityId):  # Integer
+	def set_EntityId(self,EntityId):
 		self.add_body_params('EntityId', EntityId)
-	def get_StartDate(self): # String
+
+	def get_StartDate(self):
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self, StartDate):  # String
+	def set_StartDate(self,StartDate):
 		self.add_body_params('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)

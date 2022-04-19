@@ -25,19 +25,20 @@ class ListDagsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDags')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
+
+	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
+	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_OpSeq(self): # Long
+
+	def get_OpSeq(self):
 		return self.get_body_params().get('OpSeq')
 
-	def set_OpSeq(self, OpSeq):  # Long
+	def set_OpSeq(self,OpSeq):
 		self.add_body_params('OpSeq', OpSeq)

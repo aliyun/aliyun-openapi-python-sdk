@@ -25,24 +25,26 @@ class UpdateNodeRunModeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateNodeRunMode')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
+
+	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
+	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_SchedulerType(self): # Integer
+
+	def get_SchedulerType(self):
 		return self.get_body_params().get('SchedulerType')
 
-	def set_SchedulerType(self, SchedulerType):  # Integer
+	def set_SchedulerType(self,SchedulerType):
 		self.add_body_params('SchedulerType', SchedulerType)
-	def get_NodeId(self): # Long
+
+	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self, NodeId):  # Long
+	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)

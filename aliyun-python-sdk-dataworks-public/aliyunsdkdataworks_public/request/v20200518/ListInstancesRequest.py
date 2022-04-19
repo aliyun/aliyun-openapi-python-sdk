@@ -25,74 +25,86 @@ class ListInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListInstances')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
+
+	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
+	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_Owner(self): # String
+
+	def get_Owner(self):
 		return self.get_body_params().get('Owner')
 
-	def set_Owner(self, Owner):  # String
+	def set_Owner(self,Owner):
 		self.add_body_params('Owner', Owner)
-	def get_BizName(self): # String
+
+	def get_BizName(self):
 		return self.get_body_params().get('BizName')
 
-	def set_BizName(self, BizName):  # String
+	def set_BizName(self,BizName):
 		self.add_body_params('BizName', BizName)
-	def get_BeginBizdate(self): # String
+
+	def get_BeginBizdate(self):
 		return self.get_body_params().get('BeginBizdate')
 
-	def set_BeginBizdate(self, BeginBizdate):  # String
+	def set_BeginBizdate(self,BeginBizdate):
 		self.add_body_params('BeginBizdate', BeginBizdate)
-	def get_EndBizdate(self): # String
+
+	def get_EndBizdate(self):
 		return self.get_body_params().get('EndBizdate')
 
-	def set_EndBizdate(self, EndBizdate):  # String
+	def set_EndBizdate(self,EndBizdate):
 		self.add_body_params('EndBizdate', EndBizdate)
-	def get_DagId(self): # Long
+
+	def get_DagId(self):
 		return self.get_body_params().get('DagId')
 
-	def set_DagId(self, DagId):  # Long
+	def set_DagId(self,DagId):
 		self.add_body_params('DagId', DagId)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
-	def get_NodeName(self): # String
+
+	def get_NodeName(self):
 		return self.get_body_params().get('NodeName')
 
-	def set_NodeName(self, NodeName):  # String
+	def set_NodeName(self,NodeName):
 		self.add_body_params('NodeName', NodeName)
-	def get_ProgramType(self): # String
+
+	def get_ProgramType(self):
 		return self.get_body_params().get('ProgramType')
 
-	def set_ProgramType(self, ProgramType):  # String
+	def set_ProgramType(self,ProgramType):
 		self.add_body_params('ProgramType', ProgramType)
-	def get_Bizdate(self): # String
+
+	def get_Bizdate(self):
 		return self.get_body_params().get('Bizdate')
 
-	def set_Bizdate(self, Bizdate):  # String
+	def set_Bizdate(self,Bizdate):
 		self.add_body_params('Bizdate', Bizdate)
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_NodeId(self): # Long
+
+	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self, NodeId):  # Long
+	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

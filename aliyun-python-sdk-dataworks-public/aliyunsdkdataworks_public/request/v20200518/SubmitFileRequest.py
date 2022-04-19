@@ -25,29 +25,32 @@ class SubmitFileRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'SubmitFile')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Comment(self): # String
+
+	def get_Comment(self):
 		return self.get_body_params().get('Comment')
 
-	def set_Comment(self, Comment):  # String
+	def set_Comment(self,Comment):
 		self.add_body_params('Comment', Comment)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ProjectIdentifier(self): # String
+
+	def get_ProjectIdentifier(self):
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+	def set_ProjectIdentifier(self,ProjectIdentifier):
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-	def get_FileId(self): # Long
+
+	def get_FileId(self):
 		return self.get_body_params().get('FileId')
 
-	def set_FileId(self, FileId):  # Long
+	def set_FileId(self,FileId):
 		self.add_body_params('FileId', FileId)

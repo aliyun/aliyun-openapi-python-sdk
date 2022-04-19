@@ -25,24 +25,26 @@ class ApprovePermissionApplyOrderRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ApprovePermissionApplyOrder')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FlowId(self): # String
+
+	def get_FlowId(self):
 		return self.get_query_params().get('FlowId')
 
-	def set_FlowId(self, FlowId):  # String
-		self.add_query_param('FlowId', FlowId)
-	def get_ApproveComment(self): # String
+	def set_FlowId(self,FlowId):
+		self.add_query_param('FlowId',FlowId)
+
+	def get_ApproveComment(self):
 		return self.get_query_params().get('ApproveComment')
 
-	def set_ApproveComment(self, ApproveComment):  # String
-		self.add_query_param('ApproveComment', ApproveComment)
-	def get_ApproveAction(self): # Integer
+	def set_ApproveComment(self,ApproveComment):
+		self.add_query_param('ApproveComment',ApproveComment)
+
+	def get_ApproveAction(self):
 		return self.get_query_params().get('ApproveAction')
 
-	def set_ApproveAction(self, ApproveAction):  # Integer
-		self.add_query_param('ApproveAction', ApproveAction)
+	def set_ApproveAction(self,ApproveAction):
+		self.add_query_param('ApproveAction',ApproveAction)

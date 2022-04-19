@@ -25,24 +25,26 @@ class ListInstanceAmountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListInstanceAmount')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BeginDate(self): # String
+
+	def get_BeginDate(self):
 		return self.get_body_params().get('BeginDate')
 
-	def set_BeginDate(self, BeginDate):  # String
+	def set_BeginDate(self,BeginDate):
 		self.add_body_params('BeginDate', BeginDate)
-	def get_EndDate(self): # String
+
+	def get_EndDate(self):
 		return self.get_body_params().get('EndDate')
 
-	def set_EndDate(self, EndDate):  # String
+	def set_EndDate(self,EndDate):
 		self.add_body_params('EndDate', EndDate)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

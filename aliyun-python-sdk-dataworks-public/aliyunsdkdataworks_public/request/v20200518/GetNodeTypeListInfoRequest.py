@@ -25,39 +25,44 @@ class GetNodeTypeListInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetNodeTypeListInfo')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
+
+	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-	def get_Keyword(self): # String
+
+	def get_Keyword(self):
 		return self.get_body_params().get('Keyword')
 
-	def set_Keyword(self, Keyword):  # String
+	def set_Keyword(self,Keyword):
 		self.add_body_params('Keyword', Keyword)
-	def get_Locale(self): # String
+
+	def get_Locale(self):
 		return self.get_body_params().get('Locale')
 
-	def set_Locale(self, Locale):  # String
+	def set_Locale(self,Locale):
 		self.add_body_params('Locale', Locale)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ProjectIdentifier(self): # String
+
+	def get_ProjectIdentifier(self):
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+	def set_ProjectIdentifier(self,ProjectIdentifier):
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-	def get_PageNumber(self): # Integer
+
+	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)

@@ -25,44 +25,50 @@ class GetMetaTableColumnRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableColumn')
 		self.set_method('GET')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DataSourceType(self): # String
+
+	def get_DataSourceType(self):
 		return self.get_query_params().get('DataSourceType')
 
-	def set_DataSourceType(self, DataSourceType):  # String
-		self.add_query_param('DataSourceType', DataSourceType)
-	def get_ClusterId(self): # String
+	def set_DataSourceType(self,DataSourceType):
+		self.add_query_param('DataSourceType',DataSourceType)
+
+	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_PageNum(self): # Integer
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
-	def get_TableGuid(self): # String
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_query_param('TableGuid', TableGuid)
-	def get_DatabaseName(self): # String
+	def set_TableGuid(self,TableGuid):
+		self.add_query_param('TableGuid',TableGuid)
+
+	def get_DatabaseName(self):
 		return self.get_query_params().get('DatabaseName')
 
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_query_param('DatabaseName', DatabaseName)
-	def get_PageSize(self): # Integer
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_TableName(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_TableName(self):
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)

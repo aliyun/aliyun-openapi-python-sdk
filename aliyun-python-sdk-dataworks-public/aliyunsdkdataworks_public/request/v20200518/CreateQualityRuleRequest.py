@@ -25,99 +25,116 @@ class CreateQualityRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateQualityRule')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
+
+	def get_ProjectName(self):
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self, ProjectName):  # String
+	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
-	def get_Trend(self): # String
+
+	def get_Trend(self):
 		return self.get_body_params().get('Trend')
 
-	def set_Trend(self, Trend):  # String
+	def set_Trend(self,Trend):
 		self.add_body_params('Trend', Trend)
-	def get_RuleType(self): # Integer
+
+	def get_RuleType(self):
 		return self.get_body_params().get('RuleType')
 
-	def set_RuleType(self, RuleType):  # Integer
+	def set_RuleType(self,RuleType):
 		self.add_body_params('RuleType', RuleType)
-	def get_BlockType(self): # Integer
+
+	def get_BlockType(self):
 		return self.get_body_params().get('BlockType')
 
-	def set_BlockType(self, BlockType):  # Integer
+	def set_BlockType(self,BlockType):
 		self.add_body_params('BlockType', BlockType)
-	def get_PropertyType(self): # String
+
+	def get_PropertyType(self):
 		return self.get_body_params().get('PropertyType')
 
-	def set_PropertyType(self, PropertyType):  # String
+	def set_PropertyType(self,PropertyType):
 		self.add_body_params('PropertyType', PropertyType)
-	def get_EntityId(self): # Long
+
+	def get_EntityId(self):
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self, EntityId):  # Long
+	def set_EntityId(self,EntityId):
 		self.add_body_params('EntityId', EntityId)
-	def get_RuleName(self): # String
+
+	def get_RuleName(self):
 		return self.get_body_params().get('RuleName')
 
-	def set_RuleName(self, RuleName):  # String
+	def set_RuleName(self,RuleName):
 		self.add_body_params('RuleName', RuleName)
-	def get_Checker(self): # Integer
+
+	def get_Checker(self):
 		return self.get_body_params().get('Checker')
 
-	def set_Checker(self, Checker):  # Integer
+	def set_Checker(self,Checker):
 		self.add_body_params('Checker', Checker)
-	def get_TemplateId(self): # Integer
+
+	def get_TemplateId(self):
 		return self.get_body_params().get('TemplateId')
 
-	def set_TemplateId(self, TemplateId):  # Integer
+	def set_TemplateId(self,TemplateId):
 		self.add_body_params('TemplateId', TemplateId)
-	def get_ExpectValue(self): # String
+
+	def get_ExpectValue(self):
 		return self.get_body_params().get('ExpectValue')
 
-	def set_ExpectValue(self, ExpectValue):  # String
+	def set_ExpectValue(self,ExpectValue):
 		self.add_body_params('ExpectValue', ExpectValue)
-	def get_Operator(self): # String
+
+	def get_Operator(self):
 		return self.get_body_params().get('Operator')
 
-	def set_Operator(self, Operator):  # String
+	def set_Operator(self,Operator):
 		self.add_body_params('Operator', Operator)
-	def get_WhereCondition(self): # String
+
+	def get_WhereCondition(self):
 		return self.get_body_params().get('WhereCondition')
 
-	def set_WhereCondition(self, WhereCondition):  # String
+	def set_WhereCondition(self,WhereCondition):
 		self.add_body_params('WhereCondition', WhereCondition)
-	def get_CriticalThreshold(self): # String
+
+	def get_CriticalThreshold(self):
 		return self.get_body_params().get('CriticalThreshold')
 
-	def set_CriticalThreshold(self, CriticalThreshold):  # String
+	def set_CriticalThreshold(self,CriticalThreshold):
 		self.add_body_params('CriticalThreshold', CriticalThreshold)
-	def get_Property(self): # String
+
+	def get_Property(self):
 		return self.get_body_params().get('Property')
 
-	def set_Property(self, Property):  # String
+	def set_Property(self,Property):
 		self.add_body_params('Property', Property)
-	def get_Comment(self): # String
+
+	def get_Comment(self):
 		return self.get_body_params().get('Comment')
 
-	def set_Comment(self, Comment):  # String
+	def set_Comment(self,Comment):
 		self.add_body_params('Comment', Comment)
-	def get_PredictType(self): # Integer
+
+	def get_PredictType(self):
 		return self.get_body_params().get('PredictType')
 
-	def set_PredictType(self, PredictType):  # Integer
+	def set_PredictType(self,PredictType):
 		self.add_body_params('PredictType', PredictType)
-	def get_WarningThreshold(self): # String
+
+	def get_WarningThreshold(self):
 		return self.get_body_params().get('WarningThreshold')
 
-	def set_WarningThreshold(self, WarningThreshold):  # String
+	def set_WarningThreshold(self,WarningThreshold):
 		self.add_body_params('WarningThreshold', WarningThreshold)
-	def get_MethodName(self): # String
+
+	def get_MethodName(self):
 		return self.get_body_params().get('MethodName')
 
-	def set_MethodName(self, MethodName):  # String
+	def set_MethodName(self,MethodName):
 		self.add_body_params('MethodName', MethodName)

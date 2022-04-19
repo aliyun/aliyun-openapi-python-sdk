@@ -25,29 +25,32 @@ class DeleteTableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteTable')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EnvType(self): # Integer
+
+	def get_EnvType(self):
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # Integer
-		self.add_query_param('EnvType', EnvType)
-	def get_TableName(self): # String
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_TableName(self):
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)
-	def get_AppGuid(self): # String
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
+
+	def get_AppGuid(self):
 		return self.get_query_params().get('AppGuid')
 
-	def set_AppGuid(self, AppGuid):  # String
-		self.add_query_param('AppGuid', AppGuid)
-	def get_ProjectId(self): # Long
+	def set_AppGuid(self,AppGuid):
+		self.add_query_param('AppGuid',AppGuid)
+
+	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

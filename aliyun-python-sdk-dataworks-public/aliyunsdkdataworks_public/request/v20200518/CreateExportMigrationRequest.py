@@ -25,39 +25,44 @@ class CreateExportMigrationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateExportMigration')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExportObjectStatus(self): # String
+
+	def get_ExportObjectStatus(self):
 		return self.get_body_params().get('ExportObjectStatus')
 
-	def set_ExportObjectStatus(self, ExportObjectStatus):  # String
+	def set_ExportObjectStatus(self,ExportObjectStatus):
 		self.add_body_params('ExportObjectStatus', ExportObjectStatus)
-	def get_ExportMode(self): # String
+
+	def get_ExportMode(self):
 		return self.get_body_params().get('ExportMode')
 
-	def set_ExportMode(self, ExportMode):  # String
+	def set_ExportMode(self,ExportMode):
 		self.add_body_params('ExportMode', ExportMode)
-	def get_IncrementalSince(self): # Long
+
+	def get_IncrementalSince(self):
 		return self.get_body_params().get('IncrementalSince')
 
-	def set_IncrementalSince(self, IncrementalSince):  # Long
+	def set_IncrementalSince(self,IncrementalSince):
 		self.add_body_params('IncrementalSince', IncrementalSince)
-	def get_Name(self): # String
+
+	def get_Name(self):
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self,Name):
 		self.add_body_params('Name', Name)
-	def get_Description(self): # String
+
+	def get_Description(self):
 		return self.get_body_params().get('Description')
 
-	def set_Description(self, Description):  # String
+	def set_Description(self,Description):
 		self.add_body_params('Description', Description)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)

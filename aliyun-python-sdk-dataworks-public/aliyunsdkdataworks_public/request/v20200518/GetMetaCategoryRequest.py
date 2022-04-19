@@ -25,24 +25,26 @@ class GetMetaCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaCategory')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ParentCategoryId(self): # Long
+
+	def get_ParentCategoryId(self):
 		return self.get_query_params().get('ParentCategoryId')
 
-	def set_ParentCategoryId(self, ParentCategoryId):  # Long
-		self.add_query_param('ParentCategoryId', ParentCategoryId)
-	def get_PageSize(self): # Integer
+	def set_ParentCategoryId(self,ParentCategoryId):
+		self.add_query_param('ParentCategoryId',ParentCategoryId)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_PageNum(self): # Integer
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)

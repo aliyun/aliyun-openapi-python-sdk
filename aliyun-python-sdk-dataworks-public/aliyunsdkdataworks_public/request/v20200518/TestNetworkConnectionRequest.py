@@ -25,29 +25,32 @@ class TestNetworkConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'TestNetworkConnection')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroup(self): # String
+
+	def get_ResourceGroup(self):
 		return self.get_query_params().get('ResourceGroup')
 
-	def set_ResourceGroup(self, ResourceGroup):  # String
-		self.add_query_param('ResourceGroup', ResourceGroup)
-	def get_EnvType(self): # String
+	def set_ResourceGroup(self,ResourceGroup):
+		self.add_query_param('ResourceGroup',ResourceGroup)
+
+	def get_EnvType(self):
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self, EnvType):  # String
-		self.add_query_param('EnvType', EnvType)
-	def get_DatasourceName(self): # String
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_DatasourceName(self):
 		return self.get_query_params().get('DatasourceName')
 
-	def set_DatasourceName(self, DatasourceName):  # String
-		self.add_query_param('DatasourceName', DatasourceName)
-	def get_ProjectId(self): # Long
+	def set_DatasourceName(self,DatasourceName):
+		self.add_query_param('DatasourceName',DatasourceName)
+
+	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

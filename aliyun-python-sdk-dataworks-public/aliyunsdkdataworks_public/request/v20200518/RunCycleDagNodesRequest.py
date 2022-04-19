@@ -25,64 +25,74 @@ class RunCycleDagNodesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'RunCycleDagNodes')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
+
+	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
+	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_StartBizDate(self): # String
+
+	def get_StartBizDate(self):
 		return self.get_body_params().get('StartBizDate')
 
-	def set_StartBizDate(self, StartBizDate):  # String
+	def set_StartBizDate(self,StartBizDate):
 		self.add_body_params('StartBizDate', StartBizDate)
-	def get_Parallelism(self): # Boolean
+
+	def get_Parallelism(self):
 		return self.get_body_params().get('Parallelism')
 
-	def set_Parallelism(self, Parallelism):  # Boolean
+	def set_Parallelism(self,Parallelism):
 		self.add_body_params('Parallelism', Parallelism)
-	def get_RootNodeId(self): # Long
+
+	def get_RootNodeId(self):
 		return self.get_body_params().get('RootNodeId')
 
-	def set_RootNodeId(self, RootNodeId):  # Long
+	def set_RootNodeId(self,RootNodeId):
 		self.add_body_params('RootNodeId', RootNodeId)
-	def get_BizBeginTime(self): # String
+
+	def get_BizBeginTime(self):
 		return self.get_body_params().get('BizBeginTime')
 
-	def set_BizBeginTime(self, BizBeginTime):  # String
+	def set_BizBeginTime(self,BizBeginTime):
 		self.add_body_params('BizBeginTime', BizBeginTime)
-	def get_EndBizDate(self): # String
+
+	def get_EndBizDate(self):
 		return self.get_body_params().get('EndBizDate')
 
-	def set_EndBizDate(self, EndBizDate):  # String
+	def set_EndBizDate(self,EndBizDate):
 		self.add_body_params('EndBizDate', EndBizDate)
-	def get_IncludeNodeIds(self): # String
+
+	def get_IncludeNodeIds(self):
 		return self.get_body_params().get('IncludeNodeIds')
 
-	def set_IncludeNodeIds(self, IncludeNodeIds):  # String
+	def set_IncludeNodeIds(self,IncludeNodeIds):
 		self.add_body_params('IncludeNodeIds', IncludeNodeIds)
-	def get_BizEndTime(self): # String
+
+	def get_BizEndTime(self):
 		return self.get_body_params().get('BizEndTime')
 
-	def set_BizEndTime(self, BizEndTime):  # String
+	def set_BizEndTime(self,BizEndTime):
 		self.add_body_params('BizEndTime', BizEndTime)
-	def get_Name(self): # String
+
+	def get_Name(self):
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self,Name):
 		self.add_body_params('Name', Name)
-	def get_ExcludeNodeIds(self): # String
+
+	def get_ExcludeNodeIds(self):
 		return self.get_body_params().get('ExcludeNodeIds')
 
-	def set_ExcludeNodeIds(self, ExcludeNodeIds):  # String
+	def set_ExcludeNodeIds(self,ExcludeNodeIds):
 		self.add_body_params('ExcludeNodeIds', ExcludeNodeIds)
-	def get_NodeParams(self): # String
+
+	def get_NodeParams(self):
 		return self.get_body_params().get('NodeParams')
 
-	def set_NodeParams(self, NodeParams):  # String
+	def set_NodeParams(self,NodeParams):
 		self.add_body_params('NodeParams', NodeParams)

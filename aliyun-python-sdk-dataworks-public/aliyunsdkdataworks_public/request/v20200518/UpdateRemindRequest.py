@@ -25,94 +25,110 @@ class UpdateRemindRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateRemind')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DndEnd(self): # String
+
+	def get_DndEnd(self):
 		return self.get_body_params().get('DndEnd')
 
-	def set_DndEnd(self, DndEnd):  # String
+	def set_DndEnd(self,DndEnd):
 		self.add_body_params('DndEnd', DndEnd)
-	def get_AlertUnit(self): # String
+
+	def get_AlertUnit(self):
 		return self.get_body_params().get('AlertUnit')
 
-	def set_AlertUnit(self, AlertUnit):  # String
+	def set_AlertUnit(self,AlertUnit):
 		self.add_body_params('AlertUnit', AlertUnit)
-	def get_RemindUnit(self): # String
+
+	def get_RemindUnit(self):
 		return self.get_body_params().get('RemindUnit')
 
-	def set_RemindUnit(self, RemindUnit):  # String
+	def set_RemindUnit(self,RemindUnit):
 		self.add_body_params('RemindUnit', RemindUnit)
-	def get_UseFlag(self): # Boolean
+
+	def get_UseFlag(self):
 		return self.get_body_params().get('UseFlag')
 
-	def set_UseFlag(self, UseFlag):  # Boolean
+	def set_UseFlag(self,UseFlag):
 		self.add_body_params('UseFlag', UseFlag)
-	def get_AlertInterval(self): # Integer
+
+	def get_AlertInterval(self):
 		return self.get_body_params().get('AlertInterval')
 
-	def set_AlertInterval(self, AlertInterval):  # Integer
+	def set_AlertInterval(self,AlertInterval):
 		self.add_body_params('AlertInterval', AlertInterval)
-	def get_AlertMethods(self): # String
+
+	def get_AlertMethods(self):
 		return self.get_body_params().get('AlertMethods')
 
-	def set_AlertMethods(self, AlertMethods):  # String
+	def set_AlertMethods(self,AlertMethods):
 		self.add_body_params('AlertMethods', AlertMethods)
-	def get_RobotUrls(self): # String
+
+	def get_RobotUrls(self):
 		return self.get_body_params().get('RobotUrls')
 
-	def set_RobotUrls(self, RobotUrls):  # String
+	def set_RobotUrls(self,RobotUrls):
 		self.add_body_params('RobotUrls', RobotUrls)
-	def get_MaxAlertTimes(self): # Integer
+
+	def get_MaxAlertTimes(self):
 		return self.get_body_params().get('MaxAlertTimes')
 
-	def set_MaxAlertTimes(self, MaxAlertTimes):  # Integer
+	def set_MaxAlertTimes(self,MaxAlertTimes):
 		self.add_body_params('MaxAlertTimes', MaxAlertTimes)
-	def get_BizProcessIds(self): # String
+
+	def get_BizProcessIds(self):
 		return self.get_body_params().get('BizProcessIds')
 
-	def set_BizProcessIds(self, BizProcessIds):  # String
+	def set_BizProcessIds(self,BizProcessIds):
 		self.add_body_params('BizProcessIds', BizProcessIds)
-	def get_RemindType(self): # String
+
+	def get_RemindType(self):
 		return self.get_body_params().get('RemindType')
 
-	def set_RemindType(self, RemindType):  # String
+	def set_RemindType(self,RemindType):
 		self.add_body_params('RemindType', RemindType)
-	def get_AlertTargets(self): # String
+
+	def get_AlertTargets(self):
 		return self.get_body_params().get('AlertTargets')
 
-	def set_AlertTargets(self, AlertTargets):  # String
+	def set_AlertTargets(self,AlertTargets):
 		self.add_body_params('AlertTargets', AlertTargets)
-	def get_BaselineIds(self): # String
+
+	def get_BaselineIds(self):
 		return self.get_body_params().get('BaselineIds')
 
-	def set_BaselineIds(self, BaselineIds):  # String
+	def set_BaselineIds(self,BaselineIds):
 		self.add_body_params('BaselineIds', BaselineIds)
-	def get_RemindId(self): # Long
+
+	def get_RemindId(self):
 		return self.get_body_params().get('RemindId')
 
-	def set_RemindId(self, RemindId):  # Long
+	def set_RemindId(self,RemindId):
 		self.add_body_params('RemindId', RemindId)
-	def get_Detail(self): # String
+
+	def get_Detail(self):
 		return self.get_body_params().get('Detail')
 
-	def set_Detail(self, Detail):  # String
+	def set_Detail(self,Detail):
 		self.add_body_params('Detail', Detail)
-	def get_RemindName(self): # String
+
+	def get_RemindName(self):
 		return self.get_body_params().get('RemindName')
 
-	def set_RemindName(self, RemindName):  # String
+	def set_RemindName(self,RemindName):
 		self.add_body_params('RemindName', RemindName)
-	def get_ProjectId(self): # Long
+
+	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self, ProjectId):  # Long
+	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-	def get_NodeIds(self): # String
+
+	def get_NodeIds(self):
 		return self.get_body_params().get('NodeIds')
 
-	def set_NodeIds(self, NodeIds):  # String
+	def set_NodeIds(self,NodeIds):
 		self.add_body_params('NodeIds', NodeIds)
