@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertyCronDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,6 +60,12 @@ class DescribePropertyCronDetailRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Extend(self):
+		return self.get_query_params().get('Extend')
+
+	def set_Extend(self,Extend):
+		self.add_query_param('Extend',Extend)
 
 	def get_User(self):
 		return self.get_query_params().get('User')

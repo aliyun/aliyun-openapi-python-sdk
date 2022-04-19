@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyCreateVulWhitelistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyCreateVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyCreateVulWhitelist')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,3 +42,9 @@ class ModifyCreateVulWhitelistRequest(RpcRequest):
 
 	def set_Whitelist(self,Whitelist):
 		self.add_query_param('Whitelist',Whitelist)
+
+	def get_TargetInfo(self):
+		return self.get_query_params().get('TargetInfo')
+
+	def set_TargetInfo(self,TargetInfo):
+		self.add_query_param('TargetInfo',TargetInfo)

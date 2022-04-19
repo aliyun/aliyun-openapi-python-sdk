@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class CreateAssetRequest(RpcRequest):
+class DescribeImageFixTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateAsset','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageFixTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,29 @@ class CreateAssetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InternetIp(self):
-		return self.get_query_params().get('InternetIp')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_InternetIp(self,InternetIp):
-		self.add_query_param('InternetIp',InternetIp)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_OsName(self):
-		return self.get_query_params().get('OsName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_OsName(self,OsName):
-		self.add_query_param('OsName',OsName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Os(self):
-		return self.get_query_params().get('Os')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_Os(self,Os):
-		self.add_query_param('Os',Os)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_IntranetIp(self):
-		return self.get_query_params().get('IntranetIp')
-
-	def set_IntranetIp(self,IntranetIp):
-		self.add_query_param('IntranetIp',IntranetIp)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

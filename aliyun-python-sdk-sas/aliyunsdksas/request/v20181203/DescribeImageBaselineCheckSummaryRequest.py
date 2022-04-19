@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeExcludeSystemPathRequest(RpcRequest):
+class DescribeImageBaselineCheckSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeExcludeSystemPath','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageBaselineCheckSummary')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class DescribeExcludeSystemPathRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Criteria(self):
+		return self.get_query_params().get('Criteria')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_Criteria(self,Criteria):
+		self.add_query_param('Criteria',Criteria)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -49,8 +43,32 @@ class DescribeExcludeSystemPathRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_CriteriaType(self):
+		return self.get_query_params().get('CriteriaType')
+
+	def set_CriteriaType(self,CriteriaType):
+		self.add_query_param('CriteriaType',CriteriaType)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_RiskLevel(self):
+		return self.get_query_params().get('RiskLevel')
+
+	def set_RiskLevel(self,RiskLevel):
+		self.add_query_param('RiskLevel',RiskLevel)

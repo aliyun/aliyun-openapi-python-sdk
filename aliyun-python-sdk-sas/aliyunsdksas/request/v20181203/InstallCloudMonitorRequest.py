@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
+class InstallCloudMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstanceAntiBruteForceRules')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'InstallCloudMonitor')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,17 @@ class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_AgentAccessKey(self):
+		return self.get_query_params().get('AgentAccessKey')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_AgentAccessKey(self,AgentAccessKey):
+		self.add_query_param('AgentAccessKey',AgentAccessKey)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_AgentSecretKey(self):
+		return self.get_query_params().get('AgentSecretKey')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_AgentSecretKey(self,AgentSecretKey):
+		self.add_query_param('AgentSecretKey',AgentSecretKey)
 
 	def get_UuidLists(self):
 		return self.get_query_params().get('UuidList')
@@ -50,3 +50,17 @@ class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 		for depth1 in range(len(UuidLists)):
 			if UuidLists[depth1] is not None:
 				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
+
+	def get_ArgusVersion(self):
+		return self.get_query_params().get('ArgusVersion')
+
+	def set_ArgusVersion(self,ArgusVersion):
+		self.add_query_param('ArgusVersion',ArgusVersion)
+
+	def get_InstanceIdLists(self):
+		return self.get_query_params().get('InstanceIdList')
+
+	def set_InstanceIdLists(self, InstanceIdLists):
+		for depth1 in range(len(InstanceIdLists)):
+			if InstanceIdLists[depth1] is not None:
+				self.add_query_param('InstanceIdList.' + str(depth1 + 1) , InstanceIdLists[depth1])

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeAlarmEventStackInfoRequest(RpcRequest):
+class ListVulAutoRepairConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventStackInfo','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListVulAutoRepairConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class DescribeAlarmEventStackInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UniqueInfo(self):
-		return self.get_query_params().get('UniqueInfo')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_UniqueInfo(self,UniqueInfo):
-		self.add_query_param('UniqueInfo',UniqueInfo)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_EventName(self):
-		return self.get_query_params().get('EventName')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_EventName(self,EventName):
-		self.add_query_param('EventName',EventName)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_AliasName(self):
+		return self.get_query_params().get('AliasName')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_AliasName(self,AliasName):
+		self.add_query_param('AliasName',AliasName)

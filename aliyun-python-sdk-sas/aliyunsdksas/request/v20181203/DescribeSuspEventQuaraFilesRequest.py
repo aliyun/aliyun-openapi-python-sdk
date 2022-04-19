@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventQuaraFiles','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventQuaraFiles')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,6 +48,12 @@ class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 
 	def set_From(self,_From):
 		self.add_query_param('From',_From)
+
+	def get_GroupingId(self):
+		return self.get_query_params().get('GroupingId')
+
+	def set_GroupingId(self,GroupingId):
+		self.add_query_param('GroupingId',GroupingId)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')

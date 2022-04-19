@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeQuaraFileDownloadInfoRequest(RpcRequest):
+class GetHoneypotNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeQuaraFileDownloadInfo','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetHoneypotNode')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,8 @@ class DescribeQuaraFileDownloadInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
-		return self.get_query_params().get('From')
-
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_QuaraFileId(self):
-		return self.get_query_params().get('QuaraFileId')
-
-	def set_QuaraFileId(self,QuaraFileId):
-		self.add_query_param('QuaraFileId',QuaraFileId)
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)

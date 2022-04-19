@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeStrategy','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeStrategy')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,14 +37,20 @@ class DescribeStrategyRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_StrategyIds(self):
-		return self.get_query_params().get('StrategyIds')
-
-	def set_StrategyIds(self,StrategyIds):
-		self.add_query_param('StrategyIds',StrategyIds)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_CustomType(self):
+		return self.get_query_params().get('CustomType')
+
+	def set_CustomType(self,CustomType):
+		self.add_query_param('CustomType',CustomType)
+
+	def get_StrategyIds(self):
+		return self.get_query_params().get('StrategyIds')
+
+	def set_StrategyIds(self,StrategyIds):
+		self.add_query_param('StrategyIds',StrategyIds)

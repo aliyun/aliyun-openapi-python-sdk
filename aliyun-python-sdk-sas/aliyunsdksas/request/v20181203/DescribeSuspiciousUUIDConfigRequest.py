@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyWebLockUnbindRequest(RpcRequest):
+class DescribeSuspiciousUUIDConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockUnbind','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspiciousUUIDConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class ModifyWebLockUnbindRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

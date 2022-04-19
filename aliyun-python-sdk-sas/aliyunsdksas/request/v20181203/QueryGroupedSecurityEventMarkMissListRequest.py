@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyStrategyTargetRequest(RpcRequest):
+class QueryGroupedSecurityEventMarkMissListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStrategyTarget','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'QueryGroupedSecurityEventMarkMissList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class ModifyStrategyTargetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Remark(self):
+		return self.get_body_params().get('Remark')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Remark(self,Remark):
+		self.add_body_params('Remark', Remark)
+
+	def get_EventName(self):
+		return self.get_body_params().get('EventName')
+
+	def set_EventName(self,EventName):
+		self.add_body_params('EventName', EventName)
+
+	def get_MaxId(self):
+		return self.get_body_params().get('MaxId')
+
+	def set_MaxId(self,MaxId):
+		self.add_body_params('MaxId', MaxId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -43,14 +55,26 @@ class ModifyStrategyTargetRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Target(self):
-		return self.get_query_params().get('Target')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_Target(self,Target):
-		self.add_query_param('Target',Target)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
-	def get_Config(self):
-		return self.get_query_params().get('Config')
+	def get_From(self):
+		return self.get_body_params().get('From')
 
-	def set_Config(self,Config):
-		self.add_query_param('Config',Config)
+	def set_From(self,_From):
+		self.add_body_params('From', _From)
+
+	def get_Lang(self):
+		return self.get_body_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_body_params('Lang', Lang)
+
+	def get_CurrentPage(self):
+		return self.get_body_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_body_params('CurrentPage', CurrentPage)

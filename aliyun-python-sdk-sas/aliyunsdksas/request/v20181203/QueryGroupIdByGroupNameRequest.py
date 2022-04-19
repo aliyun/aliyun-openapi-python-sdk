@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyNoticeConfigRequest(RpcRequest):
+class QueryGroupIdByGroupNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyNoticeConfig','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'QueryGroupIdByGroupName')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class ModifyNoticeConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_TimeLimit(self):
-		return self.get_query_params().get('TimeLimit')
-
-	def set_TimeLimit(self,TimeLimit):
-		self.add_query_param('TimeLimit',TimeLimit)
-
-	def get_Route(self):
-		return self.get_query_params().get('Route')
-
-	def set_Route(self,Route):
-		self.add_query_param('Route',Route)
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

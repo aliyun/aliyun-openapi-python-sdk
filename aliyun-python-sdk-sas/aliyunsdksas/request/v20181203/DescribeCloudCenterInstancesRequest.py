@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,12 +42,6 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def set_Importance(self,Importance):
 		self.add_query_param('Importance',Importance)
-
-	def get_NoPage(self):
-		return self.get_query_params().get('NoPage')
-
-	def set_NoPage(self,NoPage):
-		self.add_query_param('NoPage',NoPage)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -72,3 +66,9 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def set_MachineTypes(self,MachineTypes):
 		self.add_query_param('MachineTypes',MachineTypes)
+
+	def get_NoGroupTrace(self):
+		return self.get_query_params().get('NoGroupTrace')
+
+	def set_NoGroupTrace(self,NoGroupTrace):
+		self.add_query_param('NoGroupTrace',NoGroupTrace)

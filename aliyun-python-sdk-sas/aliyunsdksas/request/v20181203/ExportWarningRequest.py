@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCheckWarningSummaryRequest(RpcRequest):
+class ExportWarningRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckWarningSummary')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ExportWarning')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class DescribeCheckWarningSummaryRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetType(self):
-		return self.get_query_params().get('TargetType')
+	def get_IsCleartextPwd(self):
+		return self.get_query_params().get('IsCleartextPwd')
 
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
+	def set_IsCleartextPwd(self,IsCleartextPwd):
+		self.add_query_param('IsCleartextPwd',IsCleartextPwd)
 
-	def get_ContainerFieldName(self):
-		return self.get_query_params().get('ContainerFieldName')
+	def get_StatusList(self):
+		return self.get_query_params().get('StatusList')
 
-	def set_ContainerFieldName(self,ContainerFieldName):
-		self.add_query_param('ContainerFieldName',ContainerFieldName)
+	def set_StatusList(self,StatusList):
+		self.add_query_param('StatusList',StatusList)
+
+	def get_RiskLevels(self):
+		return self.get_query_params().get('RiskLevels')
+
+	def set_RiskLevels(self,RiskLevels):
+		self.add_query_param('RiskLevels',RiskLevels)
 
 	def get_RiskName(self):
 		return self.get_query_params().get('RiskName')
@@ -55,41 +61,41 @@ class DescribeCheckWarningSummaryRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_ContainerFieldValue(self):
-		return self.get_query_params().get('ContainerFieldValue')
-
-	def set_ContainerFieldValue(self,ContainerFieldValue):
-		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_ExportType(self):
+		return self.get_query_params().get('ExportType')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_ExportType(self,ExportType):
+		self.add_query_param('ExportType',ExportType)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_Dealed(self):
+		return self.get_query_params().get('Dealed')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_Dealed(self,Dealed):
+		self.add_query_param('Dealed',Dealed)
 
-	def get_RiskStatus(self):
-		return self.get_query_params().get('RiskStatus')
+	def get_TypeNames(self):
+		return self.get_query_params().get('TypeNames')
 
-	def set_RiskStatus(self,RiskStatus):
-		self.add_query_param('RiskStatus',RiskStatus)
+	def set_TypeNames(self,TypeNames):
+		self.add_query_param('TypeNames',TypeNames)
+
+	def get_IsSummaryExport(self):
+		return self.get_query_params().get('IsSummaryExport')
+
+	def set_IsSummaryExport(self,IsSummaryExport):
+		self.add_query_param('IsSummaryExport',IsSummaryExport)
+
+	def get_RiskIds(self):
+		return self.get_query_params().get('RiskIds')
+
+	def set_RiskIds(self,RiskIds):
+		self.add_query_param('RiskIds',RiskIds)
 
 	def get_StrategyId(self):
 		return self.get_query_params().get('StrategyId')
@@ -103,11 +109,11 @@ class DescribeCheckWarningSummaryRequest(RpcRequest):
 	def set_TypeName(self,TypeName):
 		self.add_query_param('TypeName',TypeName)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_SubTypeNames(self):
+		return self.get_query_params().get('SubTypeNames')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_SubTypeNames(self,SubTypeNames):
+		self.add_query_param('SubTypeNames',SubTypeNames)
 
 	def get_Uuids(self):
 		return self.get_query_params().get('Uuids')

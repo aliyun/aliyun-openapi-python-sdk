@@ -23,19 +23,13 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeAlarmEventListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventList','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetType(self):
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
 
 	def get_AlarmEventType(self):
 		return self.get_query_params().get('AlarmEventType')
@@ -49,12 +43,6 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
 
-	def get_ContainerFieldName(self):
-		return self.get_query_params().get('ContainerFieldName')
-
-	def set_ContainerFieldName(self,ContainerFieldName):
-		self.add_query_param('ContainerFieldName',ContainerFieldName)
-
 	def get_AlarmEventName(self):
 		return self.get_query_params().get('AlarmEventName')
 
@@ -67,12 +55,6 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_ContainerFieldValue(self):
-		return self.get_query_params().get('ContainerFieldValue')
-
-	def set_ContainerFieldValue(self,ContainerFieldValue):
-		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -84,6 +66,12 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def set_From(self,_From):
 		self.add_query_param('From',_From)
+
+	def get_TacticId(self):
+		return self.get_query_params().get('TacticId')
+
+	def set_TacticId(self,TacticId):
+		self.add_query_param('TacticId',TacticId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -108,12 +96,6 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
 
 	def get_OperateErrorCodeLists(self):
 		return self.get_query_params().get('OperateErrorCodeList')

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeCriteriaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCriteria','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCriteria')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,20 @@ class DescribeCriteriaRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MachineTypes(self):
-		return self.get_query_params().get('MachineTypes')
+	def get_SupportAutoTag(self):
+		return self.get_query_params().get('SupportAutoTag')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
+	def set_SupportAutoTag(self,SupportAutoTag):
+		self.add_query_param('SupportAutoTag',SupportAutoTag)
 
 	def get_Value(self):
 		return self.get_query_params().get('Value')
 
 	def set_Value(self,Value):
 		self.add_query_param('Value',Value)
+
+	def get_MachineTypes(self):
+		return self.get_query_params().get('MachineTypes')
+
+	def set_MachineTypes(self,MachineTypes):
+		self.add_query_param('MachineTypes',MachineTypes)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertyPortDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyPortDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyPortDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,6 +43,12 @@ class DescribePropertyPortDetailRequest(RpcRequest):
 	def set_Uuid(self,Uuid):
 		self.add_query_param('Uuid',Uuid)
 
+	def get_BindIp(self):
+		return self.get_query_params().get('BindIp')
+
+	def set_BindIp(self,BindIp):
+		self.add_query_param('BindIp',BindIp)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -54,6 +60,12 @@ class DescribePropertyPortDetailRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Extend(self):
+		return self.get_query_params().get('Extend')
+
+	def set_Extend(self,Extend):
+		self.add_query_param('Extend',Extend)
 
 	def get_Port(self):
 		return self.get_query_params().get('Port')

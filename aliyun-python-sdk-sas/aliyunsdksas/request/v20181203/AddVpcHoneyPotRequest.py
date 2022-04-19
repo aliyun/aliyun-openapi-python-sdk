@@ -23,19 +23,13 @@ from aliyunsdksas.endpoint import endpoint_data
 class AddVpcHoneyPotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddVpcHoneyPot','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddVpcHoneyPot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VpcSwitchId(self):
-		return self.get_query_params().get('VpcSwitchId')
-
-	def set_VpcSwitchId(self,VpcSwitchId):
-		self.add_query_param('VpcSwitchId',VpcSwitchId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

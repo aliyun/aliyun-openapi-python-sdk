@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DeleteGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteGroup','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

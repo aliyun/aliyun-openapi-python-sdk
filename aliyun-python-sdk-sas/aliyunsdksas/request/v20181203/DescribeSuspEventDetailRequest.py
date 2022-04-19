@@ -23,19 +23,13 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeSuspEventDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
-
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -54,3 +48,9 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_SuspiciousEventId(self):
+		return self.get_query_params().get('SuspiciousEventId')
+
+	def set_SuspiciousEventId(self,SuspiciousEventId):
+		self.add_query_param('SuspiciousEventId',SuspiciousEventId)

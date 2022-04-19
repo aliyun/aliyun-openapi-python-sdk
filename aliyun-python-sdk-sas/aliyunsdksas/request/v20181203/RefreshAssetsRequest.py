@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DeleteAssetRequest(RpcRequest):
+class RefreshAssetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteAsset','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RefreshAssets')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class DeleteAssetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
+	def get_AssetType(self):
+		return self.get_query_params().get('AssetType')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_AssetType(self,AssetType):
+		self.add_query_param('AssetType',AssetType)

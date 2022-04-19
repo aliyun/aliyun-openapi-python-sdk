@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class CheckQuaraFileIdRequest(RpcRequest):
+class DescribeVulExportInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CheckQuaraFileId','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulExportInfo')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,16 +31,8 @@ class CheckQuaraFileIdRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_QuaraFileIdss(self):
-		return self.get_query_params().get('QuaraFileIds')
+	def get_ExportId(self):
+		return self.get_query_params().get('ExportId')
 
-	def set_QuaraFileIdss(self, QuaraFileIdss):
-		for depth1 in range(len(QuaraFileIdss)):
-			if QuaraFileIdss[depth1] is not None:
-				self.add_query_param('QuaraFileIds.' + str(depth1 + 1) , QuaraFileIdss[depth1])
-
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
-
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_ExportId(self,ExportId):
+		self.add_query_param('ExportId',ExportId)

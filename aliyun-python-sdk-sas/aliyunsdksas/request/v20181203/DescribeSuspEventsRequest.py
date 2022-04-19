@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeSuspEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEvents','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEvents')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -67,6 +67,12 @@ class DescribeSuspEventsRequest(RpcRequest):
 	def set_ContainerFieldValue(self,ContainerFieldValue):
 		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
+	def get_EventNames(self):
+		return self.get_query_params().get('EventNames')
+
+	def set_EventNames(self,EventNames):
+		self.add_query_param('EventNames',EventNames)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -78,6 +84,12 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_From(self,_From):
 		self.add_query_param('From',_From)
+
+	def get_TacticId(self):
+		return self.get_body_params().get('TacticId')
+
+	def set_TacticId(self,TacticId):
+		self.add_body_params('TacticId', TacticId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

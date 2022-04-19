@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeGroupedVulRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedVul','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedVul')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,17 @@ class DescribeGroupedVulRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetType(self):
-		return self.get_query_params().get('TargetType')
+	def get_AttachTypes(self):
+		return self.get_query_params().get('AttachTypes')
 
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
-	def get_MinScore(self):
-		return self.get_query_params().get('MinScore')
-
-	def set_MinScore(self,MinScore):
-		self.add_query_param('MinScore',MinScore)
+	def set_AttachTypes(self,AttachTypes):
+		self.add_query_param('AttachTypes',AttachTypes)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
-
-	def get_ContainerFieldName(self):
-		return self.get_query_params().get('ContainerFieldName')
-
-	def set_ContainerFieldName(self,ContainerFieldName):
-		self.add_query_param('ContainerFieldName',ContainerFieldName)
-
-	def get_ContainerFieldValue(self):
-		return self.get_query_params().get('ContainerFieldValue')
-
-	def set_ContainerFieldValue(self,ContainerFieldValue):
-		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -91,17 +73,17 @@ class DescribeGroupedVulRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')
 
 	def set_AliasName(self,AliasName):
 		self.add_query_param('AliasName',AliasName)
+
+	def get_SearchTags(self):
+		return self.get_query_params().get('SearchTags')
+
+	def set_SearchTags(self,SearchTags):
+		self.add_query_param('SearchTags',SearchTags)
 
 	def get_Necessity(self):
 		return self.get_query_params().get('Necessity')

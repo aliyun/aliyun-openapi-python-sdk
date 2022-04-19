@@ -23,19 +23,13 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperateVulsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateVuls','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateVuls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Reason(self):
-		return self.get_query_params().get('Reason')
-
-	def set_Reason(self,Reason):
-		self.add_query_param('Reason',Reason)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -50,12 +44,6 @@ class OperateVulsRequest(RpcRequest):
 		for depth1 in range(len(VulNamess)):
 			if VulNamess[depth1] is not None:
 				self.add_query_param('VulNames.' + str(depth1 + 1) , VulNamess[depth1])
-
-	def get_Precondition(self):
-		return self.get_query_params().get('Precondition')
-
-	def set_Precondition(self,Precondition):
-		self.add_query_param('Precondition',Precondition)
 
 	def get_OperateType(self):
 		return self.get_query_params().get('OperateType')

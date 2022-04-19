@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertySoftwareDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertySoftwareDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertySoftwareDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -55,17 +55,35 @@ class DescribePropertySoftwareDetailRequest(RpcRequest):
 	def set_Path(self,Path):
 		self.add_query_param('Path',Path)
 
+	def get_InstallTimeStart(self):
+		return self.get_query_params().get('InstallTimeStart')
+
+	def set_InstallTimeStart(self,InstallTimeStart):
+		self.add_query_param('InstallTimeStart',InstallTimeStart)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_InstallTimeEnd(self):
+		return self.get_query_params().get('InstallTimeEnd')
+
+	def set_InstallTimeEnd(self,InstallTimeEnd):
+		self.add_query_param('InstallTimeEnd',InstallTimeEnd)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Extend(self):
+		return self.get_query_params().get('Extend')
+
+	def set_Extend(self,Extend):
+		self.add_query_param('Extend',Extend)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

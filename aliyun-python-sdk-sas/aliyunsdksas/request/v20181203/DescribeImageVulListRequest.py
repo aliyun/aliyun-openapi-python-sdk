@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeImageVulListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageVulList','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageVulList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,12 +36,6 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
-
-	def get_ContainerFieldName(self):
-		return self.get_query_params().get('ContainerFieldName')
-
-	def set_ContainerFieldName(self,ContainerFieldName):
-		self.add_query_param('ContainerFieldName',ContainerFieldName)
 
 	def get_Tag(self):
 		return self.get_query_params().get('Tag')
@@ -91,23 +85,11 @@ class DescribeImageVulListRequest(RpcRequest):
 	def set_StatusList(self,StatusList):
 		self.add_query_param('StatusList',StatusList)
 
-	def get_TargetType(self):
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
 	def get_RepoNamespace(self):
 		return self.get_query_params().get('RepoNamespace')
 
 	def set_RepoNamespace(self,RepoNamespace):
 		self.add_query_param('RepoNamespace',RepoNamespace)
-
-	def get_ContainerFieldValue(self):
-		return self.get_query_params().get('ContainerFieldValue')
-
-	def set_ContainerFieldValue(self,ContainerFieldValue):
-		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -138,6 +120,12 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_RepoName(self):
 		return self.get_query_params().get('RepoName')

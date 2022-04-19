@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCheckWarningsRequest(RpcRequest):
+class DescribeImageListWithBaselineNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageListWithBaselineName')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class DescribeCheckWarningsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
+	def get_Criteria(self):
+		return self.get_query_params().get('Criteria')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_Criteria(self,Criteria):
+		self.add_query_param('Criteria',Criteria)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_RepoNamespace(self):
+		return self.get_query_params().get('RepoNamespace')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_RepoNamespace(self,RepoNamespace):
+		self.add_query_param('RepoNamespace',RepoNamespace)
+
+	def get_ImageDigest(self):
+		return self.get_query_params().get('ImageDigest')
+
+	def set_ImageDigest(self,ImageDigest):
+		self.add_query_param('ImageDigest',ImageDigest)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -49,17 +55,17 @@ class DescribeCheckWarningsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_CriteriaType(self):
+		return self.get_query_params().get('CriteriaType')
+
+	def set_CriteriaType(self,CriteriaType):
+		self.add_query_param('CriteriaType',CriteriaType)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_CheckId(self):
-		return self.get_query_params().get('CheckId')
-
-	def set_CheckId(self,CheckId):
-		self.add_query_param('CheckId',CheckId)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -67,8 +73,26 @@ class DescribeCheckWarningsRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_RiskId(self):
-		return self.get_query_params().get('RiskId')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_RiskId(self,RiskId):
-		self.add_query_param('RiskId',RiskId)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_RepoName(self):
+		return self.get_query_params().get('RepoName')
+
+	def set_RepoName(self,RepoName):
+		self.add_query_param('RepoName',RepoName)
+
+	def get_BaselineNameKey(self):
+		return self.get_query_params().get('BaselineNameKey')
+
+	def set_BaselineNameKey(self,BaselineNameKey):
+		self.add_query_param('BaselineNameKey',BaselineNameKey)
+
+	def get_RepoInstanceId(self):
+		return self.get_query_params().get('RepoInstanceId')
+
+	def set_RepoInstanceId(self,RepoInstanceId):
+		self.add_query_param('RepoInstanceId',RepoInstanceId)

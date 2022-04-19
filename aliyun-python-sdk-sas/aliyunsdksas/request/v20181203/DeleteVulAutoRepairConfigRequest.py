@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeDialogMessagesRequest(RpcRequest):
+class DeleteVulAutoRepairConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeDialogMessages','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteVulAutoRepairConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class DescribeDialogMessagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_AliasName(self):
+		return self.get_query_params().get('AliasName')
+
+	def set_AliasName(self,AliasName):
+		self.add_query_param('AliasName',AliasName)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeIpInfoRequest(RpcRequest):
+class OperateAgentClientInstallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeIpInfo','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class DescribeIpInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Ip(self):
-		return self.get_query_params().get('Ip')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
 
-	def get_Field(self):
-		return self.get_query_params().get('Field')
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
 
-	def set_Field(self,Field):
-		self.add_query_param('Field',Field)
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)
