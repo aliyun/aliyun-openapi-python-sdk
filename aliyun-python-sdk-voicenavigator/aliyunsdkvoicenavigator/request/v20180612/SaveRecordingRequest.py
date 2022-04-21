@@ -25,56 +25,49 @@ class SaveRecordingRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'SaveRecording','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConversationId(self):
+	def get_ConversationId(self): # String
 		return self.get_query_params().get('ConversationId')
 
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_StartTime(self):
+	def set_ConversationId(self, ConversationId):  # String
+		self.add_query_param('ConversationId', ConversationId)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Type(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Duration(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Duration(self): # String
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_InstanceId(self):
+	def set_Duration(self, Duration):  # String
+		self.add_query_param('Duration', Duration)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_FileName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_FileName(self): # String
 		return self.get_query_params().get('FileName')
 
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
-
-	def get_FilePath(self):
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
+	def get_FilePath(self): # String
 		return self.get_query_params().get('FilePath')
 
-	def set_FilePath(self,FilePath):
-		self.add_query_param('FilePath',FilePath)
-
-	def get_InstanceOwnerId(self):
+	def set_FilePath(self, FilePath):  # String
+		self.add_query_param('FilePath', FilePath)
+	def get_InstanceOwnerId(self): # Long
 		return self.get_query_params().get('InstanceOwnerId')
 
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
+	def set_InstanceOwnerId(self, InstanceOwnerId):  # Long
+		self.add_query_param('InstanceOwnerId', InstanceOwnerId)

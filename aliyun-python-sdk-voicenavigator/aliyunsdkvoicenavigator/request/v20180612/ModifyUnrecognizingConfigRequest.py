@@ -25,44 +25,39 @@ class ModifyUnrecognizingConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ModifyUnrecognizingConfig','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FinalAction(self):
+	def get_FinalAction(self): # String
 		return self.get_query_params().get('FinalAction')
 
-	def set_FinalAction(self,FinalAction):
-		self.add_query_param('FinalAction',FinalAction)
-
-	def get_FinalPrompt(self):
+	def set_FinalAction(self, FinalAction):  # String
+		self.add_query_param('FinalAction', FinalAction)
+	def get_FinalPrompt(self): # String
 		return self.get_query_params().get('FinalPrompt')
 
-	def set_FinalPrompt(self,FinalPrompt):
-		self.add_query_param('FinalPrompt',FinalPrompt)
-
-	def get_Threshold(self):
+	def set_FinalPrompt(self, FinalPrompt):  # String
+		self.add_query_param('FinalPrompt', FinalPrompt)
+	def get_Threshold(self): # Integer
 		return self.get_query_params().get('Threshold')
 
-	def set_Threshold(self,Threshold):
-		self.add_query_param('Threshold',Threshold)
-
-	def get_InstanceId(self):
+	def set_Threshold(self, Threshold):  # Integer
+		self.add_query_param('Threshold', Threshold)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_FinalActionParams(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_FinalActionParams(self): # String
 		return self.get_query_params().get('FinalActionParams')
 
-	def set_FinalActionParams(self,FinalActionParams):
-		self.add_query_param('FinalActionParams',FinalActionParams)
-
-	def get_Prompt(self):
+	def set_FinalActionParams(self, FinalActionParams):  # String
+		self.add_query_param('FinalActionParams', FinalActionParams)
+	def get_Prompt(self): # String
 		return self.get_query_params().get('Prompt')
 
-	def set_Prompt(self,Prompt):
-		self.add_query_param('Prompt',Prompt)
+	def set_Prompt(self, Prompt):  # String
+		self.add_query_param('Prompt', Prompt)

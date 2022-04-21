@@ -25,44 +25,39 @@ class BeginDialogueRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'BeginDialogue','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConversationId(self):
+	def get_ConversationId(self): # String
 		return self.get_query_params().get('ConversationId')
 
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_InitialContext(self):
+	def set_ConversationId(self, ConversationId):  # String
+		self.add_query_param('ConversationId', ConversationId)
+	def get_InitialContext(self): # String
 		return self.get_query_params().get('InitialContext')
 
-	def set_InitialContext(self,InitialContext):
-		self.add_query_param('InitialContext',InitialContext)
-
-	def get_CallingNumber(self):
+	def set_InitialContext(self, InitialContext):  # String
+		self.add_query_param('InitialContext', InitialContext)
+	def get_CallingNumber(self): # String
 		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
-	def get_InstanceId(self):
+	def set_CallingNumber(self, CallingNumber):  # String
+		self.add_query_param('CallingNumber', CallingNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CalledNumber(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_CalledNumber(self): # String
 		return self.get_query_params().get('CalledNumber')
 
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_InstanceOwnerId(self):
+	def set_CalledNumber(self, CalledNumber):  # String
+		self.add_query_param('CalledNumber', CalledNumber)
+	def get_InstanceOwnerId(self): # Long
 		return self.get_query_params().get('InstanceOwnerId')
 
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
+	def set_InstanceOwnerId(self, InstanceOwnerId):  # Long
+		self.add_query_param('InstanceOwnerId', InstanceOwnerId)

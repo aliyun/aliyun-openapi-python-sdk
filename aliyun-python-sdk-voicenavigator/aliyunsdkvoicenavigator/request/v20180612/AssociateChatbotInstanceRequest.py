@@ -25,26 +25,24 @@ class AssociateChatbotInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'AssociateChatbotInstance','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ChatbotInstanceId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ChatbotInstanceId(self): # String
 		return self.get_query_params().get('ChatbotInstanceId')
 
-	def set_ChatbotInstanceId(self,ChatbotInstanceId):
-		self.add_query_param('ChatbotInstanceId',ChatbotInstanceId)
-
-	def get_ChatbotName(self):
+	def set_ChatbotInstanceId(self, ChatbotInstanceId):  # String
+		self.add_query_param('ChatbotInstanceId', ChatbotInstanceId)
+	def get_ChatbotName(self): # String
 		return self.get_query_params().get('ChatbotName')
 
-	def set_ChatbotName(self,ChatbotName):
-		self.add_query_param('ChatbotName',ChatbotName)
+	def set_ChatbotName(self, ChatbotName):  # String
+		self.add_query_param('ChatbotName', ChatbotName)

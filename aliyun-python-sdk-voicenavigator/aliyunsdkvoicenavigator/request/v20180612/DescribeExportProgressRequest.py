@@ -25,20 +25,19 @@ class DescribeExportProgressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'DescribeExportProgress','voicebot')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ExportTaskId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ExportTaskId(self): # String
 		return self.get_query_params().get('ExportTaskId')
 
-	def set_ExportTaskId(self,ExportTaskId):
-		self.add_query_param('ExportTaskId',ExportTaskId)
+	def set_ExportTaskId(self, ExportTaskId):  # String
+		self.add_query_param('ExportTaskId', ExportTaskId)

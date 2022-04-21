@@ -25,20 +25,19 @@ class ListConversationDetailsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListConversationDetails','voicebot')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConversationId(self):
+	def get_ConversationId(self): # String
 		return self.get_query_params().get('ConversationId')
 
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_InstanceId(self):
+	def set_ConversationId(self, ConversationId):  # String
+		self.add_query_param('ConversationId', ConversationId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

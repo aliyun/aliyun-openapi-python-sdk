@@ -25,44 +25,39 @@ class QueryConversationsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'QueryConversations','voicebot')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BeginTimeLeftRange(self):
+	def get_BeginTimeLeftRange(self): # Long
 		return self.get_query_params().get('BeginTimeLeftRange')
 
-	def set_BeginTimeLeftRange(self,BeginTimeLeftRange):
-		self.add_query_param('BeginTimeLeftRange',BeginTimeLeftRange)
-
-	def get_PageNumber(self):
+	def set_BeginTimeLeftRange(self, BeginTimeLeftRange):  # Long
+		self.add_query_param('BeginTimeLeftRange', BeginTimeLeftRange)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_CallingNumber(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_CallingNumber(self): # String
 		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
-	def get_InstanceId(self):
+	def set_CallingNumber(self, CallingNumber):  # String
+		self.add_query_param('CallingNumber', CallingNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_BeginTimeRightRange(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_BeginTimeRightRange(self): # Long
 		return self.get_query_params().get('BeginTimeRightRange')
 
-	def set_BeginTimeRightRange(self,BeginTimeRightRange):
-		self.add_query_param('BeginTimeRightRange',BeginTimeRightRange)
-
-	def get_PageSize(self):
+	def set_BeginTimeRightRange(self, BeginTimeRightRange):  # Long
+		self.add_query_param('BeginTimeRightRange', BeginTimeRightRange)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

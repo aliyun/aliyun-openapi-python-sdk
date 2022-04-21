@@ -25,32 +25,29 @@ class ModifyGreetingConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ModifyGreetingConfig','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GreetingWords(self):
+	def get_GreetingWords(self): # String
 		return self.get_query_params().get('GreetingWords')
 
-	def set_GreetingWords(self,GreetingWords):
-		self.add_query_param('GreetingWords',GreetingWords)
-
-	def get_IntentTrigger(self):
+	def set_GreetingWords(self, GreetingWords):  # String
+		self.add_query_param('GreetingWords', GreetingWords)
+	def get_IntentTrigger(self): # String
 		return self.get_query_params().get('IntentTrigger')
 
-	def set_IntentTrigger(self,IntentTrigger):
-		self.add_query_param('IntentTrigger',IntentTrigger)
-
-	def get_InstanceId(self):
+	def set_IntentTrigger(self, IntentTrigger):  # String
+		self.add_query_param('IntentTrigger', IntentTrigger)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SourceType(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)

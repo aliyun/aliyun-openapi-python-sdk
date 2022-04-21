@@ -25,38 +25,34 @@ class AuditTTSVoiceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'AuditTTSVoice','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Voice(self):
+	def get_Voice(self): # String
 		return self.get_query_params().get('Voice')
 
-	def set_Voice(self,Voice):
-		self.add_query_param('Voice',Voice)
-
-	def get_Volume(self):
+	def set_Voice(self, Voice):  # String
+		self.add_query_param('Voice', Voice)
+	def get_Volume(self): # String
 		return self.get_query_params().get('Volume')
 
-	def set_Volume(self,Volume):
-		self.add_query_param('Volume',Volume)
-
-	def get_InstanceId(self):
+	def set_Volume(self, Volume):  # String
+		self.add_query_param('Volume', Volume)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Text(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Text(self): # String
 		return self.get_query_params().get('Text')
 
-	def set_Text(self,Text):
-		self.add_query_param('Text',Text)
-
-	def get_SpeechRate(self):
+	def set_Text(self, Text):  # String
+		self.add_query_param('Text', Text)
+	def get_SpeechRate(self): # String
 		return self.get_query_params().get('SpeechRate')
 
-	def set_SpeechRate(self,SpeechRate):
-		self.add_query_param('SpeechRate',SpeechRate)
+	def set_SpeechRate(self, SpeechRate):  # String
+		self.add_query_param('SpeechRate', SpeechRate)

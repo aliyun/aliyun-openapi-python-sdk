@@ -25,40 +25,35 @@ class ExportConversationDetailsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ExportConversationDetails','voicebot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BeginTimeLeftRange(self):
+	def get_BeginTimeLeftRange(self): # Long
 		return self.get_query_params().get('BeginTimeLeftRange')
 
-	def set_BeginTimeLeftRange(self,BeginTimeLeftRange):
-		self.add_query_param('BeginTimeLeftRange',BeginTimeLeftRange)
-
-	def get_CallingNumber(self):
+	def set_BeginTimeLeftRange(self, BeginTimeLeftRange):  # Long
+		self.add_query_param('BeginTimeLeftRange', BeginTimeLeftRange)
+	def get_CallingNumber(self): # String
 		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
-	def get_InstanceId(self):
+	def set_CallingNumber(self, CallingNumber):  # String
+		self.add_query_param('CallingNumber', CallingNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_BeginTimeRightRange(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_BeginTimeRightRange(self): # Long
 		return self.get_query_params().get('BeginTimeRightRange')
 
-	def set_BeginTimeRightRange(self,BeginTimeRightRange):
-		self.add_query_param('BeginTimeRightRange',BeginTimeRightRange)
-
-	def get_Optionss(self):
+	def set_BeginTimeRightRange(self, BeginTimeRightRange):  # Long
+		self.add_query_param('BeginTimeRightRange', BeginTimeRightRange)
+	def get_Optionss(self): # RepeatList
 		return self.get_query_params().get('Options')
 
-	def set_Optionss(self, Optionss):
-		for depth1 in range(len(Optionss)):
-			if Optionss[depth1] is not None:
-				self.add_query_param('Options.' + str(depth1 + 1) , Optionss[depth1])
+	def set_Optionss(self, Options):  # RepeatList
+		for depth1 in range(len(Options)):
+			self.add_query_param('Options.' + str(depth1 + 1), Options[depth1])
