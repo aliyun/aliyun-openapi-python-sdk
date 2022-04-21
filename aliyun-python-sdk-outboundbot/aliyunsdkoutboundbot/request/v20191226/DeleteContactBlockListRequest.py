@@ -25,26 +25,24 @@ class DeleteContactBlockListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DeleteContactBlockList','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactBlockListId(self):
+	def get_ContactBlockListId(self): # String
 		return self.get_query_params().get('ContactBlockListId')
 
-	def set_ContactBlockListId(self,ContactBlockListId):
-		self.add_query_param('ContactBlockListId',ContactBlockListId)
-
-	def get_Operator(self):
+	def set_ContactBlockListId(self, ContactBlockListId):  # String
+		self.add_query_param('ContactBlockListId', ContactBlockListId)
+	def get_Operator(self): # String
 		return self.get_query_params().get('Operator')
 
-	def set_Operator(self,Operator):
-		self.add_query_param('Operator',Operator)
-
-	def get_InstanceId(self):
+	def set_Operator(self, Operator):  # String
+		self.add_query_param('Operator', Operator)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

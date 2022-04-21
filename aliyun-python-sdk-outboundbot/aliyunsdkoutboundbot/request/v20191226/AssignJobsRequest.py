@@ -25,60 +25,51 @@ class AssignJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'AssignJobs','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobsJsons(self):
+	def get_JobsJsons(self): # RepeatList
 		return self.get_query_params().get('JobsJson')
 
-	def set_JobsJsons(self, JobsJsons):
-		for depth1 in range(len(JobsJsons)):
-			if JobsJsons[depth1] is not None:
-				self.add_query_param('JobsJson.' + str(depth1 + 1) , JobsJsons[depth1])
-
-	def get_CallingNumbers(self):
+	def set_JobsJsons(self, JobsJson):  # RepeatList
+		for depth1 in range(len(JobsJson)):
+			self.add_query_param('JobsJson.' + str(depth1 + 1), JobsJson[depth1])
+	def get_CallingNumbers(self): # RepeatList
 		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumbers(self, CallingNumbers):
-		for depth1 in range(len(CallingNumbers)):
-			if CallingNumbers[depth1] is not None:
-				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
-
-	def get_InstanceId(self):
+	def set_CallingNumbers(self, CallingNumber):  # RepeatList
+		for depth1 in range(len(CallingNumber)):
+			self.add_query_param('CallingNumber.' + str(depth1 + 1), CallingNumber[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_RosterType(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_RosterType(self): # String
 		return self.get_query_params().get('RosterType')
 
-	def set_RosterType(self,RosterType):
-		self.add_query_param('RosterType',RosterType)
-
-	def get_JobDataParsingTaskId(self):
+	def set_RosterType(self, RosterType):  # String
+		self.add_query_param('RosterType', RosterType)
+	def get_JobDataParsingTaskId(self): # String
 		return self.get_query_params().get('JobDataParsingTaskId')
 
-	def set_JobDataParsingTaskId(self,JobDataParsingTaskId):
-		self.add_query_param('JobDataParsingTaskId',JobDataParsingTaskId)
-
-	def get_StrategyJson(self):
+	def set_JobDataParsingTaskId(self, JobDataParsingTaskId):  # String
+		self.add_query_param('JobDataParsingTaskId', JobDataParsingTaskId)
+	def get_StrategyJson(self): # String
 		return self.get_query_params().get('StrategyJson')
 
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
-
-	def get_JobGroupId(self):
+	def set_StrategyJson(self, StrategyJson):  # String
+		self.add_query_param('StrategyJson', StrategyJson)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_IsAsynchrony(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_IsAsynchrony(self): # Boolean
 		return self.get_query_params().get('IsAsynchrony')
 
-	def set_IsAsynchrony(self,IsAsynchrony):
-		self.add_query_param('IsAsynchrony',IsAsynchrony)
+	def set_IsAsynchrony(self, IsAsynchrony):  # Boolean
+		self.add_query_param('IsAsynchrony', IsAsynchrony)

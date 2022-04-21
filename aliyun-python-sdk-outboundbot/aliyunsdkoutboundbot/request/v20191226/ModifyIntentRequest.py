@@ -25,50 +25,44 @@ class ModifyIntentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyIntent','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Utterances(self):
+	def get_Utterances(self): # String
 		return self.get_query_params().get('Utterances')
 
-	def set_Utterances(self,Utterances):
-		self.add_query_param('Utterances',Utterances)
-
-	def get_Keywords(self):
+	def set_Utterances(self, Utterances):  # String
+		self.add_query_param('Utterances', Utterances)
+	def get_Keywords(self): # String
 		return self.get_query_params().get('Keywords')
 
-	def set_Keywords(self,Keywords):
-		self.add_query_param('Keywords',Keywords)
-
-	def get_IntentDescription(self):
+	def set_Keywords(self, Keywords):  # String
+		self.add_query_param('Keywords', Keywords)
+	def get_IntentDescription(self): # String
 		return self.get_query_params().get('IntentDescription')
 
-	def set_IntentDescription(self,IntentDescription):
-		self.add_query_param('IntentDescription',IntentDescription)
-
-	def get_IntentId(self):
+	def set_IntentDescription(self, IntentDescription):  # String
+		self.add_query_param('IntentDescription', IntentDescription)
+	def get_IntentId(self): # String
 		return self.get_query_params().get('IntentId')
 
-	def set_IntentId(self,IntentId):
-		self.add_query_param('IntentId',IntentId)
-
-	def get_ScriptId(self):
+	def set_IntentId(self, IntentId):  # String
+		self.add_query_param('IntentId', IntentId)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
-
-	def get_InstanceId(self):
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_IntentName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_IntentName(self): # String
 		return self.get_query_params().get('IntentName')
 
-	def set_IntentName(self,IntentName):
-		self.add_query_param('IntentName',IntentName)
+	def set_IntentName(self, IntentName):  # String
+		self.add_query_param('IntentName', IntentName)

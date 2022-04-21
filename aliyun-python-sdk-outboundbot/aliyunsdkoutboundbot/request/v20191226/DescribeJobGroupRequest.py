@@ -25,28 +25,25 @@ class DescribeJobGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeJobGroup','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BriefTypess(self):
+	def get_BriefTypess(self): # RepeatList
 		return self.get_query_params().get('BriefTypes')
 
-	def set_BriefTypess(self, BriefTypess):
-		for depth1 in range(len(BriefTypess)):
-			if BriefTypess[depth1] is not None:
-				self.add_query_param('BriefTypes.' + str(depth1 + 1) , BriefTypess[depth1])
-
-	def get_InstanceId(self):
+	def set_BriefTypess(self, BriefTypes):  # RepeatList
+		for depth1 in range(len(BriefTypes)):
+			self.add_query_param('BriefTypes.' + str(depth1 + 1), BriefTypes[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_JobGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)

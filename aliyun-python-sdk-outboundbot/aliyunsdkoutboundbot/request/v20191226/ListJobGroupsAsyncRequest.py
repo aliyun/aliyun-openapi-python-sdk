@@ -25,14 +25,14 @@ class ListJobGroupsAsyncRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobGroupsAsync','outboundbot')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AsyncTaskId(self):
+	def get_AsyncTaskId(self): # String
 		return self.get_query_params().get('AsyncTaskId')
 
-	def set_AsyncTaskId(self,AsyncTaskId):
-		self.add_query_param('AsyncTaskId',AsyncTaskId)
+	def set_AsyncTaskId(self, AsyncTaskId):  # String
+		self.add_query_param('AsyncTaskId', AsyncTaskId)

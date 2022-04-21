@@ -25,14 +25,14 @@ class DismissNumberDistrictInfoParsingResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DismissNumberDistrictInfoParsingResult','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VersionId(self):
+	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
+	def set_VersionId(self, VersionId):  # String
+		self.add_query_param('VersionId', VersionId)

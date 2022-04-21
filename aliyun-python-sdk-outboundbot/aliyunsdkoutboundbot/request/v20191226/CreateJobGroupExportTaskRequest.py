@@ -25,28 +25,25 @@ class CreateJobGroupExportTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateJobGroupExportTask','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_JobGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_Options(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_Options(self): # RepeatList
 		return self.get_query_params().get('Option')
 
-	def set_Options(self, Options):
-		for depth1 in range(len(Options)):
-			if Options[depth1] is not None:
-				self.add_query_param('Option.' + str(depth1 + 1) , Options[depth1])
+	def set_Options(self, Option):  # RepeatList
+		for depth1 in range(len(Option)):
+			self.add_query_param('Option.' + str(depth1 + 1), Option[depth1])

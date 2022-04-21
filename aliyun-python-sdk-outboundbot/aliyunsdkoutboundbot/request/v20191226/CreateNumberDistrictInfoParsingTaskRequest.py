@@ -25,20 +25,19 @@ class CreateNumberDistrictInfoParsingTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateNumberDistrictInfoParsingTask','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSize(self):
+	def get_FileSize(self): # Long
 		return self.get_query_params().get('FileSize')
 
-	def set_FileSize(self,FileSize):
-		self.add_query_param('FileSize',FileSize)
-
-	def get_FilePath(self):
+	def set_FileSize(self, FileSize):  # Long
+		self.add_query_param('FileSize', FileSize)
+	def get_FilePath(self): # String
 		return self.get_query_params().get('FilePath')
 
-	def set_FilePath(self,FilePath):
-		self.add_query_param('FilePath',FilePath)
+	def set_FilePath(self, FilePath):  # String
+		self.add_query_param('FilePath', FilePath)

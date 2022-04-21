@@ -25,26 +25,24 @@ class SaveEffectiveDaysRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SaveEffectiveDays','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EffectiveDays(self):
+	def get_EffectiveDays(self): # Integer
 		return self.get_query_params().get('EffectiveDays')
 
-	def set_EffectiveDays(self,EffectiveDays):
-		self.add_query_param('EffectiveDays',EffectiveDays)
-
-	def get_StrategyLevel(self):
+	def set_EffectiveDays(self, EffectiveDays):  # Integer
+		self.add_query_param('EffectiveDays', EffectiveDays)
+	def get_StrategyLevel(self): # Integer
 		return self.get_query_params().get('StrategyLevel')
 
-	def set_StrategyLevel(self,StrategyLevel):
-		self.add_query_param('StrategyLevel',StrategyLevel)
-
-	def get_EntryId(self):
+	def set_StrategyLevel(self, StrategyLevel):  # Integer
+		self.add_query_param('StrategyLevel', StrategyLevel)
+	def get_EntryId(self): # String
 		return self.get_query_params().get('EntryId')
 
-	def set_EntryId(self,EntryId):
-		self.add_query_param('EntryId',EntryId)
+	def set_EntryId(self, EntryId):  # String
+		self.add_query_param('EntryId', EntryId)

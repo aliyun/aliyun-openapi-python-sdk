@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class DescribeJobRequest(RpcRequest):
+class GenerateUploadUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeJob','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GenerateUploadUrl','outboundbot')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,13 @@ class DescribeJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
+	def get_FileName(self): # String
+		return self.get_query_params().get('FileName')
 
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_WithScript(self): # Boolean
-		return self.get_query_params().get('WithScript')
-
-	def set_WithScript(self, WithScript):  # Boolean
-		self.add_query_param('WithScript', WithScript)
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)

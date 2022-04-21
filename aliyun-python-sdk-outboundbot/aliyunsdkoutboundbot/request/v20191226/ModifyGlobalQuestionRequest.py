@@ -25,50 +25,44 @@ class ModifyGlobalQuestionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyGlobalQuestion','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GlobalQuestionId(self):
+	def get_GlobalQuestionId(self): # String
 		return self.get_query_params().get('GlobalQuestionId')
 
-	def set_GlobalQuestionId(self,GlobalQuestionId):
-		self.add_query_param('GlobalQuestionId',GlobalQuestionId)
-
-	def get_GlobalQuestionName(self):
+	def set_GlobalQuestionId(self, GlobalQuestionId):  # String
+		self.add_query_param('GlobalQuestionId', GlobalQuestionId)
+	def get_GlobalQuestionName(self): # String
 		return self.get_query_params().get('GlobalQuestionName')
 
-	def set_GlobalQuestionName(self,GlobalQuestionName):
-		self.add_query_param('GlobalQuestionName',GlobalQuestionName)
-
-	def get_Questions(self):
+	def set_GlobalQuestionName(self, GlobalQuestionName):  # String
+		self.add_query_param('GlobalQuestionName', GlobalQuestionName)
+	def get_Questions(self): # String
 		return self.get_query_params().get('Questions')
 
-	def set_Questions(self,Questions):
-		self.add_query_param('Questions',Questions)
-
-	def get_Answers(self):
+	def set_Questions(self, Questions):  # String
+		self.add_query_param('Questions', Questions)
+	def get_Answers(self): # String
 		return self.get_query_params().get('Answers')
 
-	def set_Answers(self,Answers):
-		self.add_query_param('Answers',Answers)
-
-	def get_ScriptId(self):
+	def set_Answers(self, Answers):  # String
+		self.add_query_param('Answers', Answers)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
-
-	def get_InstanceId(self):
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_GlobalQuestionType(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_GlobalQuestionType(self): # String
 		return self.get_query_params().get('GlobalQuestionType')
 
-	def set_GlobalQuestionType(self,GlobalQuestionType):
-		self.add_query_param('GlobalQuestionType',GlobalQuestionType)
+	def set_GlobalQuestionType(self, GlobalQuestionType):  # String
+		self.add_query_param('GlobalQuestionType', GlobalQuestionType)

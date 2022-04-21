@@ -25,26 +25,24 @@ class DeleteContactWhiteListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DeleteContactWhiteList','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Operator(self):
+	def get_Operator(self): # String
 		return self.get_query_params().get('Operator')
 
-	def set_Operator(self,Operator):
-		self.add_query_param('Operator',Operator)
-
-	def get_InstanceId(self):
+	def set_Operator(self, Operator):  # String
+		self.add_query_param('Operator', Operator)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ContactWhiteListId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ContactWhiteListId(self): # String
 		return self.get_query_params().get('ContactWhiteListId')
 
-	def set_ContactWhiteListId(self,ContactWhiteListId):
-		self.add_query_param('ContactWhiteListId',ContactWhiteListId)
+	def set_ContactWhiteListId(self, ContactWhiteListId):  # String
+		self.add_query_param('ContactWhiteListId', ContactWhiteListId)

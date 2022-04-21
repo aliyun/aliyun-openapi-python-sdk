@@ -25,26 +25,24 @@ class DescribeIntentStatisticsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeIntentStatistics','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_JobGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_Limit(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)

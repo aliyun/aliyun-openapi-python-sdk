@@ -25,68 +25,59 @@ class QueryJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'QueryJobs','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TimeAlignment(self):
+	def get_TimeAlignment(self): # String
 		return self.get_query_params().get('TimeAlignment')
 
-	def set_TimeAlignment(self,TimeAlignment):
-		self.add_query_param('TimeAlignment',TimeAlignment)
-
-	def get_PhoneNumber(self):
+	def set_TimeAlignment(self, TimeAlignment):  # String
+		self.add_query_param('TimeAlignment', TimeAlignment)
+	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
-
-	def get_EndTime(self):
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNumber(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ContactName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_InstanceId(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_JobGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_PageSize(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ScenarioId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ScenarioId(self): # String
 		return self.get_query_params().get('ScenarioId')
 
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
+	def set_ScenarioId(self, ScenarioId):  # String
+		self.add_query_param('ScenarioId', ScenarioId)

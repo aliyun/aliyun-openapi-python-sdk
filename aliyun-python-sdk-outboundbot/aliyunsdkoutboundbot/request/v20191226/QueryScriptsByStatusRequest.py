@@ -25,34 +25,30 @@ class QueryScriptsByStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'QueryScriptsByStatus','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StatusLists(self):
+	def get_StatusLists(self): # RepeatList
 		return self.get_query_params().get('StatusList')
 
-	def set_StatusLists(self, StatusLists):
-		for depth1 in range(len(StatusLists)):
-			if StatusLists[depth1] is not None:
-				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
-
-	def get_PageNumber(self):
+	def set_StatusLists(self, StatusList):  # RepeatList
+		for depth1 in range(len(StatusList)):
+			self.add_query_param('StatusList.' + str(depth1 + 1), StatusList[depth1])
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PageSize(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

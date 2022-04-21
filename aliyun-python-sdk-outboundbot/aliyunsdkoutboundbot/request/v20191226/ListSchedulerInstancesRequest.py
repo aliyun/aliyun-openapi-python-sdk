@@ -25,14 +25,14 @@ class ListSchedulerInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListSchedulerInstances','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceOwnerId(self):
+	def get_InstanceOwnerId(self): # Long
 		return self.get_query_params().get('InstanceOwnerId')
 
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
+	def set_InstanceOwnerId(self, InstanceOwnerId):  # Long
+		self.add_query_param('InstanceOwnerId', InstanceOwnerId)

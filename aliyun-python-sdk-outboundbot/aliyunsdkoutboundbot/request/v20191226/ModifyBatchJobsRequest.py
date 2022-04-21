@@ -25,70 +25,60 @@ class ModifyBatchJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyBatchJobs','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_JobFilePath(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_JobFilePath(self): # String
 		return self.get_query_params().get('JobFilePath')
 
-	def set_JobFilePath(self,JobFilePath):
-		self.add_query_param('JobFilePath',JobFilePath)
-
-	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumbers(self, CallingNumbers):
-		for depth1 in range(len(CallingNumbers)):
-			if CallingNumbers[depth1] is not None:
-				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
-
-	def get_ScriptId(self):
+	def set_JobFilePath(self, JobFilePath):  # String
+		self.add_query_param('JobFilePath', JobFilePath)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_CallingNumbers(self): # RepeatList
+		return self.get_query_params().get('CallingNumber')
 
-	def get_InstanceId(self):
+	def set_CallingNumbers(self, CallingNumber):  # RepeatList
+		for depth1 in range(len(CallingNumber)):
+			self.add_query_param('CallingNumber.' + str(depth1 + 1), CallingNumber[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Submitted(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Submitted(self): # Boolean
 		return self.get_query_params().get('Submitted')
 
-	def set_Submitted(self,Submitted):
-		self.add_query_param('Submitted',Submitted)
-
-	def get_BatchJobName(self):
+	def set_Submitted(self, Submitted):  # Boolean
+		self.add_query_param('Submitted', Submitted)
+	def get_BatchJobName(self): # String
 		return self.get_query_params().get('BatchJobName')
 
-	def set_BatchJobName(self,BatchJobName):
-		self.add_query_param('BatchJobName',BatchJobName)
-
-	def get_StrategyJson(self):
+	def set_BatchJobName(self, BatchJobName):  # String
+		self.add_query_param('BatchJobName', BatchJobName)
+	def get_StrategyJson(self): # String
 		return self.get_query_params().get('StrategyJson')
 
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
-
-	def get_JobGroupId(self):
+	def set_StrategyJson(self, StrategyJson):  # String
+		self.add_query_param('StrategyJson', StrategyJson)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_ScenarioId(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_ScenarioId(self): # String
 		return self.get_query_params().get('ScenarioId')
 
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
+	def set_ScenarioId(self, ScenarioId):  # String
+		self.add_query_param('ScenarioId', ScenarioId)

@@ -25,28 +25,25 @@ class SuspendCallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SuspendCall','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_CalledNumberss(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_CalledNumberss(self): # RepeatList
 		return self.get_query_params().get('CalledNumbers')
 
-	def set_CalledNumberss(self, CalledNumberss):
-		for depth1 in range(len(CalledNumberss)):
-			if CalledNumberss[depth1] is not None:
-				self.add_query_param('CalledNumbers.' + str(depth1 + 1) , CalledNumberss[depth1])
-
-	def get_InstanceId(self):
+	def set_CalledNumberss(self, CalledNumbers):  # RepeatList
+		for depth1 in range(len(CalledNumbers)):
+			self.add_query_param('CalledNumbers.' + str(depth1 + 1), CalledNumbers[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

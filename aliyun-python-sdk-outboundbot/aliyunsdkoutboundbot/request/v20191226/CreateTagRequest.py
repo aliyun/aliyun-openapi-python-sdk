@@ -25,32 +25,29 @@ class CreateTagRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateTag','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagGroup(self):
+	def get_TagGroup(self): # String
 		return self.get_query_params().get('TagGroup')
 
-	def set_TagGroup(self,TagGroup):
-		self.add_query_param('TagGroup',TagGroup)
-
-	def get_ScriptId(self):
+	def set_TagGroup(self, TagGroup):  # String
+		self.add_query_param('TagGroup', TagGroup)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
-
-	def get_TagName(self):
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_TagName(self): # String
 		return self.get_query_params().get('TagName')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
-	def get_InstanceId(self):
+	def set_TagName(self, TagName):  # String
+		self.add_query_param('TagName', TagName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

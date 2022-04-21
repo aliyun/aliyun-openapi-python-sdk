@@ -25,20 +25,19 @@ class CreateDownloadUrlRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateDownloadUrl','outboundbot')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DownloadTaskId(self):
+	def get_DownloadTaskId(self): # String
 		return self.get_query_params().get('DownloadTaskId')
 
-	def set_DownloadTaskId(self,DownloadTaskId):
-		self.add_query_param('DownloadTaskId',DownloadTaskId)
-
-	def get_FileId(self):
+	def set_DownloadTaskId(self, DownloadTaskId):  # String
+		self.add_query_param('DownloadTaskId', DownloadTaskId)
+	def get_FileId(self): # String
 		return self.get_query_params().get('FileId')
 
-	def set_FileId(self,FileId):
-		self.add_query_param('FileId',FileId)
+	def set_FileId(self, FileId):  # String
+		self.add_query_param('FileId', FileId)

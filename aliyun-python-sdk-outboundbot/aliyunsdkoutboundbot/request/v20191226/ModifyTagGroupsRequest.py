@@ -25,32 +25,29 @@ class ModifyTagGroupsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyTagGroups','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Tags(self):
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_ScriptId(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
-
-	def get_InstanceId(self):
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_TagGroups(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_TagGroups(self): # String
 		return self.get_query_params().get('TagGroups')
 
-	def set_TagGroups(self,TagGroups):
-		self.add_query_param('TagGroups',TagGroups)
+	def set_TagGroups(self, TagGroups):  # String
+		self.add_query_param('TagGroups', TagGroups)

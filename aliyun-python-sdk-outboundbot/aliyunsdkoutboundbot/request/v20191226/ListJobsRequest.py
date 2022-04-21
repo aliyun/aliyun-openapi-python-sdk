@@ -25,22 +25,20 @@ class ListJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobs','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobIds(self):
+	def get_JobIds(self): # RepeatList
 		return self.get_query_params().get('JobId')
 
-	def set_JobIds(self, JobIds):
-		for depth1 in range(len(JobIds)):
-			if JobIds[depth1] is not None:
-				self.add_query_param('JobId.' + str(depth1 + 1) , JobIds[depth1])
-
-	def get_InstanceId(self):
+	def set_JobIds(self, JobId):  # RepeatList
+		for depth1 in range(len(JobId)):
+			self.add_query_param('JobId.' + str(depth1 + 1), JobId[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -25,44 +25,39 @@ class ListJobsByGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobsByGroup','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobStatus(self):
+	def get_JobStatus(self): # String
 		return self.get_query_params().get('JobStatus')
 
-	def set_JobStatus(self,JobStatus):
-		self.add_query_param('JobStatus',JobStatus)
-
-	def get_PageNumber(self):
+	def set_JobStatus(self, JobStatus):  # String
+		self.add_query_param('JobStatus', JobStatus)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_JobFailureReason(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_JobFailureReason(self): # String
 		return self.get_query_params().get('JobFailureReason')
 
-	def set_JobFailureReason(self,JobFailureReason):
-		self.add_query_param('JobFailureReason',JobFailureReason)
-
-	def get_JobGroupId(self):
+	def set_JobFailureReason(self, JobFailureReason):  # String
+		self.add_query_param('JobFailureReason', JobFailureReason)
+	def get_JobGroupId(self): # String
 		return self.get_query_params().get('JobGroupId')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_PageSize(self):
+	def set_JobGroupId(self, JobGroupId):  # String
+		self.add_query_param('JobGroupId', JobGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

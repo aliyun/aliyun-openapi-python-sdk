@@ -25,28 +25,25 @@ class SaveContactBlockListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SaveContactBlockList','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactBlockListLists(self):
+	def get_ContactBlockListLists(self): # RepeatList
 		return self.get_query_params().get('ContactBlockListList')
 
-	def set_ContactBlockListLists(self, ContactBlockListLists):
-		for depth1 in range(len(ContactBlockListLists)):
-			if ContactBlockListLists[depth1] is not None:
-				self.add_query_param('ContactBlockListList.' + str(depth1 + 1) , ContactBlockListLists[depth1])
-
-	def get_InstanceId(self):
+	def set_ContactBlockListLists(self, ContactBlockListList):  # RepeatList
+		for depth1 in range(len(ContactBlockListList)):
+			self.add_query_param('ContactBlockListList.' + str(depth1 + 1), ContactBlockListList[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ContactBlockListsJson(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ContactBlockListsJson(self): # String
 		return self.get_query_params().get('ContactBlockListsJson')
 
-	def set_ContactBlockListsJson(self,ContactBlockListsJson):
-		self.add_query_param('ContactBlockListsJson',ContactBlockListsJson)
+	def set_ContactBlockListsJson(self, ContactBlockListsJson):  # String
+		self.add_query_param('ContactBlockListsJson', ContactBlockListsJson)

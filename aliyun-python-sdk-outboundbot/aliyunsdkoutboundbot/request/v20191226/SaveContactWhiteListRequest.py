@@ -25,28 +25,25 @@ class SaveContactWhiteListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SaveContactWhiteList','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactWhiteListLists(self):
+	def get_ContactWhiteListLists(self): # RepeatList
 		return self.get_query_params().get('ContactWhiteListList')
 
-	def set_ContactWhiteListLists(self, ContactWhiteListLists):
-		for depth1 in range(len(ContactWhiteListLists)):
-			if ContactWhiteListLists[depth1] is not None:
-				self.add_query_param('ContactWhiteListList.' + str(depth1 + 1) , ContactWhiteListLists[depth1])
-
-	def get_ContactWhiteListsJson(self):
+	def set_ContactWhiteListLists(self, ContactWhiteListList):  # RepeatList
+		for depth1 in range(len(ContactWhiteListList)):
+			self.add_query_param('ContactWhiteListList.' + str(depth1 + 1), ContactWhiteListList[depth1])
+	def get_ContactWhiteListsJson(self): # String
 		return self.get_query_params().get('ContactWhiteListsJson')
 
-	def set_ContactWhiteListsJson(self,ContactWhiteListsJson):
-		self.add_query_param('ContactWhiteListsJson',ContactWhiteListsJson)
-
-	def get_InstanceId(self):
+	def set_ContactWhiteListsJson(self, ContactWhiteListsJson):  # String
+		self.add_query_param('ContactWhiteListsJson', ContactWhiteListsJson)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

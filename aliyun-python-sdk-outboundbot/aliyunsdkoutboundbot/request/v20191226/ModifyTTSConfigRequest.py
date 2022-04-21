@@ -25,50 +25,44 @@ class ModifyTTSConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyTTSConfig','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Voice(self):
+	def get_Voice(self): # String
 		return self.get_query_params().get('Voice')
 
-	def set_Voice(self,Voice):
-		self.add_query_param('Voice',Voice)
-
-	def get_NlsServiceType(self):
+	def set_Voice(self, Voice):  # String
+		self.add_query_param('Voice', Voice)
+	def get_NlsServiceType(self): # String
 		return self.get_query_params().get('NlsServiceType')
 
-	def set_NlsServiceType(self,NlsServiceType):
-		self.add_query_param('NlsServiceType',NlsServiceType)
-
-	def get_Volume(self):
+	def set_NlsServiceType(self, NlsServiceType):  # String
+		self.add_query_param('NlsServiceType', NlsServiceType)
+	def get_Volume(self): # String
 		return self.get_query_params().get('Volume')
 
-	def set_Volume(self,Volume):
-		self.add_query_param('Volume',Volume)
-
-	def get_ScriptId(self):
+	def set_Volume(self, Volume):  # String
+		self.add_query_param('Volume', Volume)
+	def get_ScriptId(self): # String
 		return self.get_query_params().get('ScriptId')
 
-	def set_ScriptId(self,ScriptId):
-		self.add_query_param('ScriptId',ScriptId)
-
-	def get_InstanceId(self):
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AppKey(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AppKey(self): # String
 		return self.get_query_params().get('AppKey')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_SpeechRate(self):
+	def set_AppKey(self, AppKey):  # String
+		self.add_query_param('AppKey', AppKey)
+	def get_SpeechRate(self): # String
 		return self.get_query_params().get('SpeechRate')
 
-	def set_SpeechRate(self,SpeechRate):
-		self.add_query_param('SpeechRate',SpeechRate)
+	def set_SpeechRate(self, SpeechRate):  # String
+		self.add_query_param('SpeechRate', SpeechRate)

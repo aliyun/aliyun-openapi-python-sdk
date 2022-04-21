@@ -25,20 +25,19 @@ class DeleteOutboundCallNumberRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DeleteOutboundCallNumber','outboundbot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OutboundCallNumberId(self):
+	def get_OutboundCallNumberId(self): # String
 		return self.get_query_params().get('OutboundCallNumberId')
 
-	def set_OutboundCallNumberId(self,OutboundCallNumberId):
-		self.add_query_param('OutboundCallNumberId',OutboundCallNumberId)
-
-	def get_InstanceId(self):
+	def set_OutboundCallNumberId(self, OutboundCallNumberId):  # String
+		self.add_query_param('OutboundCallNumberId', OutboundCallNumberId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
