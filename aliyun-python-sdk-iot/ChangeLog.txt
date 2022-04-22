@@ -1,3 +1,6 @@
+2022-04-22 Version: 8.39.0
+- Iot_20180120 old version sdk.
+
 2022-03-31 Version: 8.38.0
 - CreateDataSourceItem.
 - ListDataSourceItem.
