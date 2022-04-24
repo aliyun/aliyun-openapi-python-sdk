@@ -36,6 +36,11 @@ class QueryAccountTransactionsRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
+	def get_TransactionType(self): # String
+		return self.get_query_params().get('TransactionType')
+
+	def set_TransactionType(self, TransactionType):  # String
+		self.add_query_param('TransactionType', TransactionType)
 	def get_CreateTimeEnd(self): # String
 		return self.get_query_params().get('CreateTimeEnd')
 
@@ -51,6 +56,11 @@ class QueryAccountTransactionsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_TransactionChannel(self): # String
+		return self.get_query_params().get('TransactionChannel')
+
+	def set_TransactionChannel(self, TransactionChannel):  # String
+		self.add_query_param('TransactionChannel', TransactionChannel)
 	def get_TransactionChannelSN(self): # String
 		return self.get_query_params().get('TransactionChannelSN')
 
@@ -66,3 +76,8 @@ class QueryAccountTransactionsRequest(RpcRequest):
 
 	def set_TransactionNumber(self, TransactionNumber):  # String
 		self.add_query_param('TransactionNumber', TransactionNumber)
+	def get_TransactionFlow(self): # String
+		return self.get_query_params().get('TransactionFlow')
+
+	def set_TransactionFlow(self, TransactionFlow):  # String
+		self.add_query_param('TransactionFlow', TransactionFlow)
