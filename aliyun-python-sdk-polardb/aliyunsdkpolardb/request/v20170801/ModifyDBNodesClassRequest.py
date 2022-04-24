@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DeleteDBClusterRequest(RpcRequest):
+class ModifyDBNodesClassRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteDBCluster')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBNodesClass')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,16 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_BackupRetentionPolicyOnClusterDeletion(self): # String
-		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_BackupRetentionPolicyOnClusterDeletion(self, BackupRetentionPolicyOnClusterDeletion):  # String
-		self.add_query_param('BackupRetentionPolicyOnClusterDeletion', BackupRetentionPolicyOnClusterDeletion)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_PlannedEndTime(self): # String
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self, PlannedEndTime):  # String
+		self.add_query_param('PlannedEndTime', PlannedEndTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,3 +66,27 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PlannedStartTime(self): # String
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self, PlannedStartTime):  # String
+		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_ModifyType(self): # String
+		return self.get_query_params().get('ModifyType')
+
+	def set_ModifyType(self, ModifyType):  # String
+		self.add_query_param('ModifyType', ModifyType)
+	def get_SubCategory(self): # String
+		return self.get_query_params().get('SubCategory')
+
+	def set_SubCategory(self, SubCategory):  # String
+		self.add_query_param('SubCategory', SubCategory)
+	def get_DBNodes(self): # RepeatList
+		return self.get_query_params().get('DBNode')
+
+	def set_DBNodes(self, DBNode):  # RepeatList
+		for depth1 in range(len(DBNode)):
+			if DBNode[depth1].get('DBNodeId') is not None:
+				self.add_query_param('DBNode.' + str(depth1 + 1) + '.DBNodeId', DBNode[depth1].get('DBNodeId'))
+			if DBNode[depth1].get('TargetClass') is not None:
+				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNode[depth1].get('TargetClass'))

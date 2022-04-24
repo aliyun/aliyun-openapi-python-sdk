@@ -23,64 +23,56 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class CreateParameterGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateParameterGroup','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateParameterGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBType(self): # String
 		return self.get_query_params().get('DBType')
 
-	def set_DBType(self,DBType):
-		self.add_query_param('DBType',DBType)
-
-	def get_DBVersion(self):
+	def set_DBType(self, DBType):  # String
+		self.add_query_param('DBType', DBType)
+	def get_DBVersion(self): # String
 		return self.get_query_params().get('DBVersion')
 
-	def set_DBVersion(self,DBVersion):
-		self.add_query_param('DBVersion',DBVersion)
-
-	def get_ParameterGroupName(self):
+	def set_DBVersion(self, DBVersion):  # String
+		self.add_query_param('DBVersion', DBVersion)
+	def get_ParameterGroupName(self): # String
 		return self.get_query_params().get('ParameterGroupName')
 
-	def set_ParameterGroupName(self,ParameterGroupName):
-		self.add_query_param('ParameterGroupName',ParameterGroupName)
-
-	def get_Parameters(self):
+	def set_ParameterGroupName(self, ParameterGroupName):  # String
+		self.add_query_param('ParameterGroupName', ParameterGroupName)
+	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
-
-	def get_ParameterGroupDesc(self):
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)
+	def get_ParameterGroupDesc(self): # String
 		return self.get_query_params().get('ParameterGroupDesc')
 
-	def set_ParameterGroupDesc(self,ParameterGroupDesc):
-		self.add_query_param('ParameterGroupDesc',ParameterGroupDesc)
+	def set_ParameterGroupDesc(self, ParameterGroupDesc):  # String
+		self.add_query_param('ParameterGroupDesc', ParameterGroupDesc)

@@ -23,22 +23,21 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DeleteMaskingRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteMaskingRules','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteMaskingRules')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBClusterId(self):
+	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
-
-	def get_RuleNameList(self):
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_RuleNameList(self): # String
 		return self.get_query_params().get('RuleNameList')
 
-	def set_RuleNameList(self,RuleNameList):
-		self.add_query_param('RuleNameList',RuleNameList)
+	def set_RuleNameList(self, RuleNameList):  # String
+		self.add_query_param('RuleNameList', RuleNameList)
