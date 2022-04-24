@@ -86,6 +86,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 

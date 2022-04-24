@@ -19,14 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateElbBuyOrderRequest(RpcRequest):
+class DeleteEnsRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateElbBuyOrder','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteEnsRouteEntry','ens')
 		self.set_method('POST')
 
-	def get_OrderDetails(self): # String
-		return self.get_query_params().get('OrderDetails')
+	def get_RouteEntryId(self): # String
+		return self.get_query_params().get('RouteEntryId')
 
-	def set_OrderDetails(self, OrderDetails):  # String
-		self.add_query_param('OrderDetails', OrderDetails)
+	def set_RouteEntryId(self, RouteEntryId):  # String
+		self.add_query_param('RouteEntryId', RouteEntryId)

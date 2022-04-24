@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CheckQuotaRequest(RpcRequest):
+class DeleteForwardEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CheckQuota','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteForwardEntry','ens')
 		self.set_method('POST')
 
-	def get_GroupUuid(self): # String
-		return self.get_query_params().get('GroupUuid')
+	def get_ForwardEntryId(self): # String
+		return self.get_query_params().get('ForwardEntryId')
 
-	def set_GroupUuid(self, GroupUuid):  # String
-		self.add_query_param('GroupUuid', GroupUuid)
-	def get_ResourceAttribute(self): # String
-		return self.get_body_params().get('ResourceAttribute')
-
-	def set_ResourceAttribute(self, ResourceAttribute):  # String
-		self.add_body_params('ResourceAttribute', ResourceAttribute)
-	def get_AliUid(self): # Long
-		return self.get_query_params().get('AliUid')
-
-	def set_AliUid(self, AliUid):  # Long
-		self.add_query_param('AliUid', AliUid)
+	def set_ForwardEntryId(self, ForwardEntryId):  # String
+		self.add_query_param('ForwardEntryId', ForwardEntryId)

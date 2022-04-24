@@ -19,29 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class MigrateVmRequest(RpcRequest):
+class CreateNatGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'MigrateVm','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateNatGateway','ens')
 		self.set_method('POST')
 
-	def get_Instances(self): # String
-		return self.get_body_params().get('Instances')
+	def get_EnsRegionId(self): # String
+		return self.get_query_params().get('EnsRegionId')
 
-	def set_Instances(self, Instances):  # String
-		self.add_body_params('Instances', Instances)
-	def get_GroupUuid(self): # String
-		return self.get_query_params().get('GroupUuid')
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-	def set_GroupUuid(self, GroupUuid):  # String
-		self.add_query_param('GroupUuid', GroupUuid)
-	def get_Tenant(self): # String
-		return self.get_query_params().get('Tenant')
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_Tenant(self, Tenant):  # String
-		self.add_query_param('Tenant', Tenant)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
 
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)

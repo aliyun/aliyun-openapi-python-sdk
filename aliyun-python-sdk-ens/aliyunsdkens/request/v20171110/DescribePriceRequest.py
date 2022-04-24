@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class DescribePriceRequest(RpcRequest):
 
@@ -25,6 +26,11 @@ class DescribePriceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribePrice','ens')
 		self.set_method('POST')
 
+	def get_DataDisks(self): # Array
+		return self.get_query_params().get('DataDisks')
+
+	def set_DataDisks(self, DataDisks):  # Array
+		self.add_query_param("DataDisks", json.dumps(DataDisks))
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
@@ -35,6 +41,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 

@@ -19,14 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateDiskBuyOrderRequest(RpcRequest):
+class ModifyPrepayInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateDiskBuyOrder','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyPrepayInstanceSpec','ens')
 		self.set_method('POST')
 
-	def get_OrderDetails(self): # String
-		return self.get_query_params().get('OrderDetails')
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
 
-	def set_OrderDetails(self, OrderDetails):  # String
-		self.add_query_param('OrderDetails', OrderDetails)
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

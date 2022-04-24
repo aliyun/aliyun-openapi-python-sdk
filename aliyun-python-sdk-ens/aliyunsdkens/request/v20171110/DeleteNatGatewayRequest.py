@@ -19,19 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteVmRequest(RpcRequest):
+class DeleteNatGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteVm','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteNatGateway','ens')
 		self.set_method('POST')
 
-	def get_AliUid(self): # Long
-		return self.get_query_params().get('AliUid')
+	def get_NatGatewayId(self): # String
+		return self.get_query_params().get('NatGatewayId')
 
-	def set_AliUid(self, AliUid):  # Long
-		self.add_query_param('AliUid', AliUid)
-	def get_WorkloadUuid(self): # String
-		return self.get_query_params().get('WorkloadUuid')
-
-	def set_WorkloadUuid(self, WorkloadUuid):  # String
-		self.add_query_param('WorkloadUuid', WorkloadUuid)
+	def set_NatGatewayId(self, NatGatewayId):  # String
+		self.add_query_param('NatGatewayId', NatGatewayId)

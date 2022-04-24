@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class AssociateEipAddressRequest(RpcRequest):
+class DeleteSnatEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AssociateEipAddress','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSnatEntry','ens')
 		self.set_method('POST')
 
-	def get_Eip(self): # String
-		return self.get_query_params().get('Eip')
+	def get_SnatEntryId(self): # String
+		return self.get_query_params().get('SnatEntryId')
 
-	def set_Eip(self, Eip):  # String
-		self.add_query_param('Eip', Eip)
-	def get_EnsRegionId(self): # String
-		return self.get_query_params().get('EnsRegionId')
-
-	def set_EnsRegionId(self, EnsRegionId):  # String
-		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceIdInternetIp(self): # String
-		return self.get_query_params().get('InstanceIdInternetIp')
-
-	def set_InstanceIdInternetIp(self, InstanceIdInternetIp):  # String
-		self.add_query_param('InstanceIdInternetIp', InstanceIdInternetIp)
+	def set_SnatEntryId(self, SnatEntryId):  # String
+		self.add_query_param('SnatEntryId', SnatEntryId)

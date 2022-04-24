@@ -19,39 +19,44 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVmListRequest(RpcRequest):
+class DescribeNatGatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetVmList','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeNatGateways','ens')
 		self.set_method('GET')
 
-	def get_InstanceUuid(self): # String
-		return self.get_query_params().get('InstanceUuid')
+	def get_EnsRegionId(self): # String
+		return self.get_query_params().get('EnsRegionId')
 
-	def set_InstanceUuid(self, InstanceUuid):  # String
-		self.add_query_param('InstanceUuid', InstanceUuid)
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
+
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_GroupUuid(self): # String
-		return self.get_query_params().get('GroupUuid')
-
-	def set_GroupUuid(self, GroupUuid):  # String
-		self.add_query_param('GroupUuid', GroupUuid)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_AliUid(self): # Long
-		return self.get_query_params().get('AliUid')
+	def get_NatGatewayId(self): # String
+		return self.get_query_params().get('NatGatewayId')
 
-	def set_AliUid(self, AliUid):  # Long
-		self.add_query_param('AliUid', AliUid)
-	def get_WorkloadUuid(self): # String
-		return self.get_query_params().get('WorkloadUuid')
-
-	def set_WorkloadUuid(self, WorkloadUuid):  # String
-		self.add_query_param('WorkloadUuid', WorkloadUuid)
+	def set_NatGatewayId(self, NatGatewayId):  # String
+		self.add_query_param('NatGatewayId', NatGatewayId)
