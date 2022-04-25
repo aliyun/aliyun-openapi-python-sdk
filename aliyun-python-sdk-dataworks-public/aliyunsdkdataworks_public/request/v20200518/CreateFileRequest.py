@@ -121,6 +121,12 @@ class CreateFileRequest(RpcRequest):
 	def set_ConnectionName(self,ConnectionName):
 		self.add_body_params('ConnectionName', ConnectionName)
 
+	def get_OutputParameters(self):
+		return self.get_body_params().get('OutputParameters')
+
+	def set_OutputParameters(self,OutputParameters):
+		self.add_body_params('OutputParameters', OutputParameters)
+
 	def get_ParaValue(self):
 		return self.get_body_params().get('ParaValue')
 
@@ -156,6 +162,12 @@ class CreateFileRequest(RpcRequest):
 
 	def set_FileName(self,FileName):
 		self.add_body_params('FileName', FileName)
+
+	def get_InputParameters(self):
+		return self.get_body_params().get('InputParameters')
+
+	def set_InputParameters(self,InputParameters):
+		self.add_body_params('InputParameters', InputParameters)
 
 	def get_Stop(self):
 		return self.get_body_params().get('Stop')
