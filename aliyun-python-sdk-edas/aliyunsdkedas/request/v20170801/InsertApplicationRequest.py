@@ -112,6 +112,11 @@ class InsertApplicationRequest(RoaRequest):
 
 	def set_Jdk(self, Jdk):  # String
 		self.add_query_param('Jdk', Jdk)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Mem(self): # Integer
 		return self.get_query_params().get('Mem')
 
