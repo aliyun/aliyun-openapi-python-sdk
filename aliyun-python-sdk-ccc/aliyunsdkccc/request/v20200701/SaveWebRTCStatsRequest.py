@@ -25,44 +25,39 @@ class SaveWebRTCStatsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'SaveWebRTCStats')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CallId(self):
+	def get_CallId(self): # String
 		return self.get_query_params().get('CallId')
 
-	def set_CallId(self,CallId):
-		self.add_query_param('CallId',CallId)
-
-	def get_SenderReport(self):
+	def set_CallId(self, CallId):  # String
+		self.add_query_param('CallId', CallId)
+	def get_SenderReport(self): # String
 		return self.get_query_params().get('SenderReport')
 
-	def set_SenderReport(self,SenderReport):
-		self.add_query_param('SenderReport',SenderReport)
-
-	def get_InstanceId(self):
+	def set_SenderReport(self, SenderReport):  # String
+		self.add_query_param('SenderReport', SenderReport)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ReceiverReport(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ReceiverReport(self): # String
 		return self.get_query_params().get('ReceiverReport')
 
-	def set_ReceiverReport(self,ReceiverReport):
-		self.add_query_param('ReceiverReport',ReceiverReport)
-
-	def get_GoogAddress(self):
+	def set_ReceiverReport(self, ReceiverReport):  # String
+		self.add_query_param('ReceiverReport', ReceiverReport)
+	def get_GoogAddress(self): # String
 		return self.get_query_params().get('GoogAddress')
 
-	def set_GoogAddress(self,GoogAddress):
-		self.add_query_param('GoogAddress',GoogAddress)
-
-	def get_GeneralInfo(self):
+	def set_GoogAddress(self, GoogAddress):  # String
+		self.add_query_param('GoogAddress', GoogAddress)
+	def get_GeneralInfo(self): # String
 		return self.get_query_params().get('GeneralInfo')
 
-	def set_GeneralInfo(self,GeneralInfo):
-		self.add_query_param('GeneralInfo',GeneralInfo)
+	def set_GeneralInfo(self, GeneralInfo):  # String
+		self.add_query_param('GeneralInfo', GeneralInfo)

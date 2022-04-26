@@ -25,68 +25,59 @@ class ListCampaignsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListCampaigns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ActualStartTimeTo(self):
+	def get_ActualStartTimeTo(self): # String
 		return self.get_query_params().get('ActualStartTimeTo')
 
-	def set_ActualStartTimeTo(self,ActualStartTimeTo):
-		self.add_query_param('ActualStartTimeTo',ActualStartTimeTo)
-
-	def get_QueueId(self):
+	def set_ActualStartTimeTo(self, ActualStartTimeTo):  # String
+		self.add_query_param('ActualStartTimeTo', ActualStartTimeTo)
+	def get_QueueId(self): # String
 		return self.get_query_params().get('QueueId')
 
-	def set_QueueId(self,QueueId):
-		self.add_query_param('QueueId',QueueId)
-
-	def get_ActualStartTimeFrom(self):
+	def set_QueueId(self, QueueId):  # String
+		self.add_query_param('QueueId', QueueId)
+	def get_ActualStartTimeFrom(self): # String
 		return self.get_query_params().get('ActualStartTimeFrom')
 
-	def set_ActualStartTimeFrom(self,ActualStartTimeFrom):
-		self.add_query_param('ActualStartTimeFrom',ActualStartTimeFrom)
-
-	def get_PageNumber(self):
+	def set_ActualStartTimeFrom(self, ActualStartTimeFrom):  # String
+		self.add_query_param('ActualStartTimeFrom', ActualStartTimeFrom)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PlanedStartTimeFrom(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PlanedStartTimeFrom(self): # String
 		return self.get_query_params().get('PlanedStartTimeFrom')
 
-	def set_PlanedStartTimeFrom(self,PlanedStartTimeFrom):
-		self.add_query_param('PlanedStartTimeFrom',PlanedStartTimeFrom)
-
-	def get_InstanceId(self):
+	def set_PlanedStartTimeFrom(self, PlanedStartTimeFrom):  # String
+		self.add_query_param('PlanedStartTimeFrom', PlanedStartTimeFrom)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Name(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_PageSize(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PlanedStartTimeTo(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_PlanedStartTimeTo(self): # String
 		return self.get_query_params().get('PlanedStartTimeTo')
 
-	def set_PlanedStartTimeTo(self,PlanedStartTimeTo):
-		self.add_query_param('PlanedStartTimeTo',PlanedStartTimeTo)
-
-	def get_State(self):
+	def set_PlanedStartTimeTo(self, PlanedStartTimeTo):  # String
+		self.add_query_param('PlanedStartTimeTo', PlanedStartTimeTo)
+	def get_State(self): # String
 		return self.get_query_params().get('State')
 
-	def set_State(self,State):
-		self.add_query_param('State',State)
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)

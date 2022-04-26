@@ -25,38 +25,34 @@ class CreateInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CreateInstance')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AdminRamIdList(self):
+	def get_AdminRamIdList(self): # String
 		return self.get_query_params().get('AdminRamIdList')
 
-	def set_AdminRamIdList(self,AdminRamIdList):
-		self.add_query_param('AdminRamIdList',AdminRamIdList)
-
-	def get_DomainName(self):
+	def set_AdminRamIdList(self, AdminRamIdList):  # String
+		self.add_query_param('AdminRamIdList', AdminRamIdList)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_Description(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_NumberList(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_NumberList(self): # String
 		return self.get_query_params().get('NumberList')
 
-	def set_NumberList(self,NumberList):
-		self.add_query_param('NumberList',NumberList)
-
-	def get_Name(self):
+	def set_NumberList(self, NumberList):  # String
+		self.add_query_param('NumberList', NumberList)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

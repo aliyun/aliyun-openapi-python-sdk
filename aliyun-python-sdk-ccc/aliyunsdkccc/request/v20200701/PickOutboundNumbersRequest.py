@@ -25,32 +25,29 @@ class PickOutboundNumbersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'PickOutboundNumbers')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Count(self):
+	def get_Count(self): # Integer
 		return self.get_query_params().get('Count')
 
-	def set_Count(self,Count):
-		self.add_query_param('Count',Count)
-
-	def get_InstanceId(self):
+	def set_Count(self, Count):  # Integer
+		self.add_query_param('Count', Count)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SkillGroupIdList(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SkillGroupIdList(self): # String
 		return self.get_query_params().get('SkillGroupIdList')
 
-	def set_SkillGroupIdList(self,SkillGroupIdList):
-		self.add_query_param('SkillGroupIdList',SkillGroupIdList)
-
-	def get_CalledNumber(self):
+	def set_SkillGroupIdList(self, SkillGroupIdList):  # String
+		self.add_query_param('SkillGroupIdList', SkillGroupIdList)
+	def get_CalledNumber(self): # String
 		return self.get_query_params().get('CalledNumber')
 
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
+	def set_CalledNumber(self, CalledNumber):  # String
+		self.add_query_param('CalledNumber', CalledNumber)

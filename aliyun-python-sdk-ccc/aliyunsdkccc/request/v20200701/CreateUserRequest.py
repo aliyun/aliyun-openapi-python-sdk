@@ -25,62 +25,59 @@ class CreateUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CreateUser')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LoginName(self):
+	def get_LoginName(self): # String
 		return self.get_query_params().get('LoginName')
 
-	def set_LoginName(self,LoginName):
-		self.add_query_param('LoginName',LoginName)
-
-	def get_RoleId(self):
+	def set_LoginName(self, LoginName):  # String
+		self.add_query_param('LoginName', LoginName)
+	def get_RoleId(self): # String
 		return self.get_query_params().get('RoleId')
 
-	def set_RoleId(self,RoleId):
-		self.add_query_param('RoleId',RoleId)
-
-	def get_Mobile(self):
+	def set_RoleId(self, RoleId):  # String
+		self.add_query_param('RoleId', RoleId)
+	def get_Mobile(self): # String
 		return self.get_query_params().get('Mobile')
 
-	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
-
-	def get_WorkMode(self):
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)
+	def get_WorkMode(self): # String
 		return self.get_query_params().get('WorkMode')
 
-	def set_WorkMode(self,WorkMode):
-		self.add_query_param('WorkMode',WorkMode)
-
-	def get_InstanceId(self):
+	def set_WorkMode(self, WorkMode):  # String
+		self.add_query_param('WorkMode', WorkMode)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DisplayName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
-	def get_ResetPassword(self):
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
+	def get_ResetPassword(self): # Boolean
 		return self.get_query_params().get('ResetPassword')
 
-	def set_ResetPassword(self,ResetPassword):
-		self.add_query_param('ResetPassword',ResetPassword)
+	def set_ResetPassword(self, ResetPassword):  # Boolean
+		self.add_query_param('ResetPassword', ResetPassword)
+	def get_DisplayId(self): # String
+		return self.get_query_params().get('DisplayId')
 
-	def get_SkillLevelList(self):
+	def set_DisplayId(self, DisplayId):  # String
+		self.add_query_param('DisplayId', DisplayId)
+	def get_SkillLevelList(self): # String
 		return self.get_query_params().get('SkillLevelList')
 
-	def set_SkillLevelList(self,SkillLevelList):
-		self.add_query_param('SkillLevelList',SkillLevelList)
-
-	def get_Email(self):
+	def set_SkillLevelList(self, SkillLevelList):  # String
+		self.add_query_param('SkillLevelList', SkillLevelList)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

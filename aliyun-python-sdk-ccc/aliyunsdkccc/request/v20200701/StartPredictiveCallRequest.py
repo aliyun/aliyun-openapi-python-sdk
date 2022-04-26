@@ -25,62 +25,54 @@ class StartPredictiveCallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'StartPredictiveCall')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactFlowId(self):
+	def get_ContactFlowId(self): # String
 		return self.get_query_params().get('ContactFlowId')
 
-	def set_ContactFlowId(self,ContactFlowId):
-		self.add_query_param('ContactFlowId',ContactFlowId)
-
-	def get_Callee(self):
+	def set_ContactFlowId(self, ContactFlowId):  # String
+		self.add_query_param('ContactFlowId', ContactFlowId)
+	def get_Callee(self): # String
 		return self.get_query_params().get('Callee')
 
-	def set_Callee(self,Callee):
-		self.add_query_param('Callee',Callee)
-
-	def get_MaskedCallee(self):
+	def set_Callee(self, Callee):  # String
+		self.add_query_param('Callee', Callee)
+	def get_MaskedCallee(self): # String
 		return self.get_query_params().get('MaskedCallee')
 
-	def set_MaskedCallee(self,MaskedCallee):
-		self.add_query_param('MaskedCallee',MaskedCallee)
-
-	def get_ContactFlowVariables(self):
+	def set_MaskedCallee(self, MaskedCallee):  # String
+		self.add_query_param('MaskedCallee', MaskedCallee)
+	def get_ContactFlowVariables(self): # String
 		return self.get_query_params().get('ContactFlowVariables')
 
-	def set_ContactFlowVariables(self,ContactFlowVariables):
-		self.add_query_param('ContactFlowVariables',ContactFlowVariables)
-
-	def get_Tags(self):
+	def set_ContactFlowVariables(self, ContactFlowVariables):  # String
+		self.add_query_param('ContactFlowVariables', ContactFlowVariables)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_TimeoutSeconds(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_TimeoutSeconds(self): # Integer
 		return self.get_query_params().get('TimeoutSeconds')
 
-	def set_TimeoutSeconds(self,TimeoutSeconds):
-		self.add_query_param('TimeoutSeconds',TimeoutSeconds)
-
-	def get_Caller(self):
+	def set_TimeoutSeconds(self, TimeoutSeconds):  # Integer
+		self.add_query_param('TimeoutSeconds', TimeoutSeconds)
+	def get_Caller(self): # String
 		return self.get_query_params().get('Caller')
 
-	def set_Caller(self,Caller):
-		self.add_query_param('Caller',Caller)
-
-	def get_InstanceId(self):
+	def set_Caller(self, Caller):  # String
+		self.add_query_param('Caller', Caller)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SkillGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SkillGroupId(self): # String
 		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
+	def set_SkillGroupId(self, SkillGroupId):  # String
+		self.add_query_param('SkillGroupId', SkillGroupId)

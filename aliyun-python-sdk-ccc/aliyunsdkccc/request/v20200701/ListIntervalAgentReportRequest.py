@@ -25,38 +25,34 @@ class ListIntervalAgentReportRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListIntervalAgentReport')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AgentId(self):
+	def get_AgentId(self): # String
 		return self.get_query_params().get('AgentId')
 
-	def set_AgentId(self,AgentId):
-		self.add_query_param('AgentId',AgentId)
-
-	def get_EndTime(self):
+	def set_AgentId(self, AgentId):  # String
+		self.add_query_param('AgentId', AgentId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_InstanceId(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Interval(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)

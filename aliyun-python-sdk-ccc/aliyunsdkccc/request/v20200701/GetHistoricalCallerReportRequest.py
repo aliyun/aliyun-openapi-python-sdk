@@ -25,32 +25,29 @@ class GetHistoricalCallerReportRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'GetHistoricalCallerReport')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StopTime(self):
+	def get_StopTime(self): # Long
 		return self.get_query_params().get('StopTime')
 
-	def set_StopTime(self,StopTime):
-		self.add_query_param('StopTime',StopTime)
-
-	def get_StartTime(self):
+	def set_StopTime(self, StopTime):  # Long
+		self.add_query_param('StopTime', StopTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_CallingNumber(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_CallingNumber(self): # String
 		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
-	def get_InstanceId(self):
+	def set_CallingNumber(self, CallingNumber):  # String
+		self.add_query_param('CallingNumber', CallingNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

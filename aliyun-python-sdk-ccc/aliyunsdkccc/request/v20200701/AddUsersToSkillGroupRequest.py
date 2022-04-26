@@ -25,26 +25,24 @@ class AddUsersToSkillGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'AddUsersToSkillGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_UserSkillLevelList(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_UserSkillLevelList(self): # String
 		return self.get_query_params().get('UserSkillLevelList')
 
-	def set_UserSkillLevelList(self,UserSkillLevelList):
-		self.add_query_param('UserSkillLevelList',UserSkillLevelList)
-
-	def get_SkillGroupId(self):
+	def set_UserSkillLevelList(self, UserSkillLevelList):  # String
+		self.add_query_param('UserSkillLevelList', UserSkillLevelList)
+	def get_SkillGroupId(self): # String
 		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
+	def set_SkillGroupId(self, SkillGroupId):  # String
+		self.add_query_param('SkillGroupId', SkillGroupId)

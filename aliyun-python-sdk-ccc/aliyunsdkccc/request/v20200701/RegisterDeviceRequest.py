@@ -25,32 +25,29 @@ class RegisterDeviceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'RegisterDevice')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_DeviceId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_DeviceId(self): # String
 		return self.get_query_params().get('DeviceId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_Password(self):
+	def set_DeviceId(self, DeviceId):  # String
+		self.add_query_param('DeviceId', DeviceId)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_InstanceId(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

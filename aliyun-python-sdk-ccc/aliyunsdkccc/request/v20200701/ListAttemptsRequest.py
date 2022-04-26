@@ -25,86 +25,74 @@ class ListAttemptsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListAttempts')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactId(self):
+	def get_ContactId(self): # String
 		return self.get_query_params().get('ContactId')
 
-	def set_ContactId(self,ContactId):
-		self.add_query_param('ContactId',ContactId)
-
-	def get_CampaignId(self):
+	def set_ContactId(self, ContactId):  # String
+		self.add_query_param('ContactId', ContactId)
+	def get_CampaignId(self): # String
 		return self.get_query_params().get('CampaignId')
 
-	def set_CampaignId(self,CampaignId):
-		self.add_query_param('CampaignId',CampaignId)
-
-	def get_Callee(self):
+	def set_CampaignId(self, CampaignId):  # String
+		self.add_query_param('CampaignId', CampaignId)
+	def get_Callee(self): # String
 		return self.get_query_params().get('Callee')
 
-	def set_Callee(self,Callee):
-		self.add_query_param('Callee',Callee)
-
-	def get_StartTime(self):
+	def set_Callee(self, Callee):  # String
+		self.add_query_param('Callee', Callee)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNumber(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_QueueId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_QueueId(self): # String
 		return self.get_query_params().get('QueueId')
 
-	def set_QueueId(self,QueueId):
-		self.add_query_param('QueueId',QueueId)
-
-	def get_AgentId(self):
+	def set_QueueId(self, QueueId):  # String
+		self.add_query_param('QueueId', QueueId)
+	def get_AgentId(self): # String
 		return self.get_query_params().get('AgentId')
 
-	def set_AgentId(self,AgentId):
-		self.add_query_param('AgentId',AgentId)
-
-	def get_EndTime(self):
+	def set_AgentId(self, AgentId):  # String
+		self.add_query_param('AgentId', AgentId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Caller(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_Caller(self): # String
 		return self.get_query_params().get('Caller')
 
-	def set_Caller(self,Caller):
-		self.add_query_param('Caller',Caller)
-
-	def get_InstanceId(self):
+	def set_Caller(self, Caller):  # String
+		self.add_query_param('Caller', Caller)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CaseId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_CaseId(self): # String
 		return self.get_query_params().get('CaseId')
 
-	def set_CaseId(self,CaseId):
-		self.add_query_param('CaseId',CaseId)
-
-	def get_AttemptId(self):
+	def set_CaseId(self, CaseId):  # String
+		self.add_query_param('CaseId', CaseId)
+	def get_AttemptId(self): # String
 		return self.get_query_params().get('AttemptId')
 
-	def set_AttemptId(self,AttemptId):
-		self.add_query_param('AttemptId',AttemptId)
+	def set_AttemptId(self, AttemptId):  # String
+		self.add_query_param('AttemptId', AttemptId)

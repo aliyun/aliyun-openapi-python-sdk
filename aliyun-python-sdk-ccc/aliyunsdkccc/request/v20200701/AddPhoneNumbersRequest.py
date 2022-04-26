@@ -25,38 +25,34 @@ class AddPhoneNumbersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'AddPhoneNumbers')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactFlowId(self):
+	def get_ContactFlowId(self): # String
 		return self.get_query_params().get('ContactFlowId')
 
-	def set_ContactFlowId(self,ContactFlowId):
-		self.add_query_param('ContactFlowId',ContactFlowId)
-
-	def get_Usage(self):
+	def set_ContactFlowId(self, ContactFlowId):  # String
+		self.add_query_param('ContactFlowId', ContactFlowId)
+	def get_Usage(self): # String
 		return self.get_query_params().get('Usage')
 
-	def set_Usage(self,Usage):
-		self.add_query_param('Usage',Usage)
-
-	def get_NumberGroupId(self):
+	def set_Usage(self, Usage):  # String
+		self.add_query_param('Usage', Usage)
+	def get_NumberGroupId(self): # String
 		return self.get_query_params().get('NumberGroupId')
 
-	def set_NumberGroupId(self,NumberGroupId):
-		self.add_query_param('NumberGroupId',NumberGroupId)
-
-	def get_NumberList(self):
+	def set_NumberGroupId(self, NumberGroupId):  # String
+		self.add_query_param('NumberGroupId', NumberGroupId)
+	def get_NumberList(self): # String
 		return self.get_query_params().get('NumberList')
 
-	def set_NumberList(self,NumberList):
-		self.add_query_param('NumberList',NumberList)
-
-	def get_InstanceId(self):
+	def set_NumberList(self, NumberList):  # String
+		self.add_query_param('NumberList', NumberList)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -25,26 +25,24 @@ class RemovePhoneNumbersFromSkillGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'RemovePhoneNumbersFromSkillGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NumberList(self):
+	def get_NumberList(self): # String
 		return self.get_query_params().get('NumberList')
 
-	def set_NumberList(self,NumberList):
-		self.add_query_param('NumberList',NumberList)
-
-	def get_InstanceId(self):
+	def set_NumberList(self, NumberList):  # String
+		self.add_query_param('NumberList', NumberList)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SkillGroupId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SkillGroupId(self): # String
 		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
+	def set_SkillGroupId(self, SkillGroupId):  # String
+		self.add_query_param('SkillGroupId', SkillGroupId)

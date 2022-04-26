@@ -25,38 +25,34 @@ class ListCasesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListCases')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CampaignId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_CampaignId(self): # String
 		return self.get_query_params().get('CampaignId')
 
-	def set_CampaignId(self,CampaignId):
-		self.add_query_param('CampaignId',CampaignId)
-
-	def get_PhoneNumber(self):
+	def set_CampaignId(self, CampaignId):  # String
+		self.add_query_param('CampaignId', CampaignId)
+	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
-
-	def get_PageSize(self):
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)

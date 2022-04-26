@@ -25,50 +25,44 @@ class ListRealtimeAgentStatesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListRealtimeAgentStates')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AgentIdList(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AgentIdList(self): # String
 		return self.get_body_params().get('AgentIdList')
 
-	def set_AgentIdList(self,AgentIdList):
+	def set_AgentIdList(self, AgentIdList):  # String
 		self.add_body_params('AgentIdList', AgentIdList)
-
-	def get_SkillGroupId(self):
+	def get_SkillGroupId(self): # String
 		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
-
-	def get_AgentName(self):
+	def set_SkillGroupId(self, SkillGroupId):  # String
+		self.add_query_param('SkillGroupId', SkillGroupId)
+	def get_AgentName(self): # String
 		return self.get_query_params().get('AgentName')
 
-	def set_AgentName(self,AgentName):
-		self.add_query_param('AgentName',AgentName)
-
-	def get_PageSize(self):
+	def set_AgentName(self, AgentName):  # String
+		self.add_query_param('AgentName', AgentName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_StateList(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_StateList(self): # String
 		return self.get_body_params().get('StateList')
 
-	def set_StateList(self,StateList):
+	def set_StateList(self, StateList):  # String
 		self.add_body_params('StateList', StateList)

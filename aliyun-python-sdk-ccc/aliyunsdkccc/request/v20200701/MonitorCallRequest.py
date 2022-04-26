@@ -25,38 +25,34 @@ class MonitorCallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'MonitorCall')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_DeviceId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_DeviceId(self): # String
 		return self.get_query_params().get('DeviceId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_TimeoutSeconds(self):
+	def set_DeviceId(self, DeviceId):  # String
+		self.add_query_param('DeviceId', DeviceId)
+	def get_TimeoutSeconds(self): # Integer
 		return self.get_query_params().get('TimeoutSeconds')
 
-	def set_TimeoutSeconds(self,TimeoutSeconds):
-		self.add_query_param('TimeoutSeconds',TimeoutSeconds)
-
-	def get_InstanceId(self):
+	def set_TimeoutSeconds(self, TimeoutSeconds):  # Integer
+		self.add_query_param('TimeoutSeconds', TimeoutSeconds)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_MonitoredUserId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_MonitoredUserId(self): # String
 		return self.get_query_params().get('MonitoredUserId')
 
-	def set_MonitoredUserId(self,MonitoredUserId):
-		self.add_query_param('MonitoredUserId',MonitoredUserId)
+	def set_MonitoredUserId(self, MonitoredUserId):  # String
+		self.add_query_param('MonitoredUserId', MonitoredUserId)

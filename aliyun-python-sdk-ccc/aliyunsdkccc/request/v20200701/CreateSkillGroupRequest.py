@@ -25,32 +25,29 @@ class CreateSkillGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CreateSkillGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_InstanceId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DisplayName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
-	def get_Name(self):
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

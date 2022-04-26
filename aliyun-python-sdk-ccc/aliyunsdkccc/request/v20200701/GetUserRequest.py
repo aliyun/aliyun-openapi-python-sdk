@@ -25,26 +25,24 @@ class GetUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'GetUser')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Extension(self):
+	def get_Extension(self): # String
 		return self.get_query_params().get('Extension')
 
-	def set_Extension(self,Extension):
-		self.add_query_param('Extension',Extension)
-
-	def get_UserId(self):
+	def set_Extension(self, Extension):  # String
+		self.add_query_param('Extension', Extension)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_InstanceId(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
