@@ -46,6 +46,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_Password(self, Password):  # String
 		self.add_query_param('Password', Password)
+	def get_Enable(self): # Integer
+		return self.get_query_params().get('Enable')
+
+	def set_Enable(self, Enable):  # Integer
+		self.add_query_param('Enable', Enable)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
