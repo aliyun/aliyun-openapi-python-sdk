@@ -25,32 +25,29 @@ class CreateSnapshotRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateSnapshot','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SnapshotName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SnapshotName(self): # String
 		return self.get_query_params().get('SnapshotName')
 
-	def set_SnapshotName(self,SnapshotName):
-		self.add_query_param('SnapshotName',SnapshotName)
-
-	def get_FileSystemId(self):
+	def set_SnapshotName(self, SnapshotName):  # String
+		self.add_query_param('SnapshotName', SnapshotName)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_RetentionDays(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_RetentionDays(self): # Integer
 		return self.get_query_params().get('RetentionDays')
 
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
+	def set_RetentionDays(self, RetentionDays):  # Integer
+		self.add_query_param('RetentionDays', RetentionDays)

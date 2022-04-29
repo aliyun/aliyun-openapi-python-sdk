@@ -25,38 +25,34 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateAutoSnapshotPolicy','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TimePoints(self):
+	def get_TimePoints(self): # String
 		return self.get_query_params().get('TimePoints')
 
-	def set_TimePoints(self,TimePoints):
-		self.add_query_param('TimePoints',TimePoints)
-
-	def get_RepeatWeekdays(self):
+	def set_TimePoints(self, TimePoints):  # String
+		self.add_query_param('TimePoints', TimePoints)
+	def get_RepeatWeekdays(self): # String
 		return self.get_query_params().get('RepeatWeekdays')
 
-	def set_RepeatWeekdays(self,RepeatWeekdays):
-		self.add_query_param('RepeatWeekdays',RepeatWeekdays)
-
-	def get_FileSystemType(self):
+	def set_RepeatWeekdays(self, RepeatWeekdays):  # String
+		self.add_query_param('RepeatWeekdays', RepeatWeekdays)
+	def get_FileSystemType(self): # String
 		return self.get_query_params().get('FileSystemType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
-	def get_AutoSnapshotPolicyName(self):
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
+	def get_AutoSnapshotPolicyName(self): # String
 		return self.get_query_params().get('AutoSnapshotPolicyName')
 
-	def set_AutoSnapshotPolicyName(self,AutoSnapshotPolicyName):
-		self.add_query_param('AutoSnapshotPolicyName',AutoSnapshotPolicyName)
-
-	def get_RetentionDays(self):
+	def set_AutoSnapshotPolicyName(self, AutoSnapshotPolicyName):  # String
+		self.add_query_param('AutoSnapshotPolicyName', AutoSnapshotPolicyName)
+	def get_RetentionDays(self): # Integer
 		return self.get_query_params().get('RetentionDays')
 
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
+	def set_RetentionDays(self, RetentionDays):  # Integer
+		self.add_query_param('RetentionDays', RetentionDays)

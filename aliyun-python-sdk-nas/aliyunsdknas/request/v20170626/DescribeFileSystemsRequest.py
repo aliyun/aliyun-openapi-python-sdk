@@ -25,48 +25,43 @@ class DescribeFileSystemsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeFileSystems','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemType(self):
+	def get_FileSystemType(self): # String
 		return self.get_query_params().get('FileSystemType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
-	def get_PageNumber(self):
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_FileSystemId(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_VpcId(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

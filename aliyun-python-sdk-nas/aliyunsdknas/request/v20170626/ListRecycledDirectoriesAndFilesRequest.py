@@ -25,32 +25,29 @@ class ListRecycledDirectoriesAndFilesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ListRecycledDirectoriesAndFiles','nas')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_FileSystemId(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_FileId(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_FileId(self): # String
 		return self.get_query_params().get('FileId')
 
-	def set_FileId(self,FileId):
-		self.add_query_param('FileId',FileId)
-
-	def get_MaxResults(self):
+	def set_FileId(self, FileId):  # String
+		self.add_query_param('FileId', FileId)
+	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

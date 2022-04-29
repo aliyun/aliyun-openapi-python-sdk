@@ -25,38 +25,34 @@ class DescribeAccessRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeAccessRules','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemType(self):
+	def get_FileSystemType(self): # String
 		return self.get_query_params().get('FileSystemType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
-	def get_PageNumber(self):
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AccessRuleId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AccessRuleId(self): # String
 		return self.get_query_params().get('AccessRuleId')
 
-	def set_AccessRuleId(self,AccessRuleId):
-		self.add_query_param('AccessRuleId',AccessRuleId)
-
-	def get_AccessGroupName(self):
+	def set_AccessRuleId(self, AccessRuleId):  # String
+		self.add_query_param('AccessRuleId', AccessRuleId)
+	def get_AccessGroupName(self): # String
 		return self.get_query_params().get('AccessGroupName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)

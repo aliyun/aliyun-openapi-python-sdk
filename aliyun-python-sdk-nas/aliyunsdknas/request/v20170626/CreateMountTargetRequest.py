@@ -25,56 +25,49 @@ class CreateMountTargetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateMountTarget','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SecurityGroupId(self):
+	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_EnableIpv6(self):
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_EnableIpv6(self): # Boolean
 		return self.get_query_params().get('EnableIpv6')
 
-	def set_EnableIpv6(self,EnableIpv6):
-		self.add_query_param('EnableIpv6',EnableIpv6)
-
-	def get_NetworkType(self):
+	def set_EnableIpv6(self, EnableIpv6):  # Boolean
+		self.add_query_param('EnableIpv6', EnableIpv6)
+	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
-	def get_FileSystemId(self):
+	def set_NetworkType(self, NetworkType):  # String
+		self.add_query_param('NetworkType', NetworkType)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_DryRun(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_AccessGroupName(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_AccessGroupName(self): # String
 		return self.get_query_params().get('AccessGroupName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_VSwitchId(self):
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_VpcId(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

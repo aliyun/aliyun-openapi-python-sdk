@@ -25,20 +25,19 @@ class EnableRecycleBinRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'EnableRecycleBin','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemId(self):
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_ReservedDays(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_ReservedDays(self): # Long
 		return self.get_query_params().get('ReservedDays')
 
-	def set_ReservedDays(self,ReservedDays):
-		self.add_query_param('ReservedDays',ReservedDays)
+	def set_ReservedDays(self, ReservedDays):  # Long
+		self.add_query_param('ReservedDays', ReservedDays)

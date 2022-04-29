@@ -25,32 +25,29 @@ class CreateAccessGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateAccessGroup','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_FileSystemType(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_FileSystemType(self): # String
 		return self.get_query_params().get('FileSystemType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
-	def get_AccessGroupType(self):
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
+	def get_AccessGroupType(self): # String
 		return self.get_query_params().get('AccessGroupType')
 
-	def set_AccessGroupType(self,AccessGroupType):
-		self.add_query_param('AccessGroupType',AccessGroupType)
-
-	def get_AccessGroupName(self):
+	def set_AccessGroupType(self, AccessGroupType):  # String
+		self.add_query_param('AccessGroupType', AccessGroupType)
+	def get_AccessGroupName(self): # String
 		return self.get_query_params().get('AccessGroupName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)

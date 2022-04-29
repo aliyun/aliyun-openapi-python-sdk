@@ -25,26 +25,24 @@ class EnableSmbAclRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'EnableSmbAcl','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Keytab(self):
+	def get_Keytab(self): # String
 		return self.get_query_params().get('Keytab')
 
-	def set_Keytab(self,Keytab):
-		self.add_query_param('Keytab',Keytab)
-
-	def get_KeytabMd5(self):
+	def set_Keytab(self, Keytab):  # String
+		self.add_query_param('Keytab', Keytab)
+	def get_KeytabMd5(self): # String
 		return self.get_query_params().get('KeytabMd5')
 
-	def set_KeytabMd5(self,KeytabMd5):
-		self.add_query_param('KeytabMd5',KeytabMd5)
-
-	def get_FileSystemId(self):
+	def set_KeytabMd5(self, KeytabMd5):  # String
+		self.add_query_param('KeytabMd5', KeytabMd5)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)

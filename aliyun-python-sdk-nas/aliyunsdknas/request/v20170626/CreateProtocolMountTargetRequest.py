@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class CreateDataFlowTaskRequest(RpcRequest):
+class CreateProtocolMountTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDataFlowTask','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateProtocolMountTarget','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,31 @@ class CreateDataFlowTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProtocolServiceId(self): # String
+		return self.get_query_params().get('ProtocolServiceId')
+
+	def set_ProtocolServiceId(self, ProtocolServiceId):  # String
+		self.add_query_param('ProtocolServiceId', ProtocolServiceId)
+	def get_FsetId(self): # String
+		return self.get_query_params().get('FsetId')
+
+	def set_FsetId(self, FsetId):  # String
+		self.add_query_param('FsetId', FsetId)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_Directory(self): # String
-		return self.get_query_params().get('Directory')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_Directory(self, Directory):  # String
-		self.add_query_param('Directory', Directory)
-	def get_SrcTaskId(self): # String
-		return self.get_query_params().get('SrcTaskId')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Path(self): # String
+		return self.get_query_params().get('Path')
 
-	def set_SrcTaskId(self, SrcTaskId):  # String
-		self.add_query_param('SrcTaskId', SrcTaskId)
-	def get_DataType(self): # String
-		return self.get_query_params().get('DataType')
-
-	def set_DataType(self, DataType):  # String
-		self.add_query_param('DataType', DataType)
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
@@ -61,18 +66,18 @@ class CreateDataFlowTaskRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_DataFlowId(self): # String
-		return self.get_query_params().get('DataFlowId')
+	def get_AccessGroupName(self): # String
+		return self.get_query_params().get('AccessGroupName')
 
-	def set_DataFlowId(self, DataFlowId):  # String
-		self.add_query_param('DataFlowId', DataFlowId)
-	def get_EntryList(self): # String
-		return self.get_query_params().get('EntryList')
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-	def set_EntryList(self, EntryList):  # String
-		self.add_query_param('EntryList', EntryList)
-	def get_TaskAction(self): # String
-		return self.get_query_params().get('TaskAction')
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-	def set_TaskAction(self, TaskAction):  # String
-		self.add_query_param('TaskAction', TaskAction)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

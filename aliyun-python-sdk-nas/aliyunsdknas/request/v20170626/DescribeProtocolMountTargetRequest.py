@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class RemoveClientFromBlackListRequest(RpcRequest):
+class DescribeProtocolMountTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'RemoveClientFromBlackList','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeProtocolMountTarget','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,27 @@ class RemoveClientFromBlackListRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ClientIP(self): # String
-		return self.get_query_params().get('ClientIP')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_ClientIP(self, ClientIP):  # String
-		self.add_query_param('ClientIP', ClientIP)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_Filterss(self): # RepeatList
+		return self.get_query_params().get('Filters')
+
+	def set_Filterss(self, Filters):  # RepeatList
+		for depth1 in range(len(Filters)):
+			if Filters[depth1].get('Value') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Value', Filters[depth1].get('Value'))
+			if Filters[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filters[depth1].get('Key'))
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

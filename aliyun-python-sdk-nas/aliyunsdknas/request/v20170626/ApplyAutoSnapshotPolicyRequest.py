@@ -25,20 +25,19 @@ class ApplyAutoSnapshotPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ApplyAutoSnapshotPolicy','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AutoSnapshotPolicyId(self):
+	def get_AutoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('AutoSnapshotPolicyId')
 
-	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
-		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
-
-	def get_FileSystemIds(self):
+	def set_AutoSnapshotPolicyId(self, AutoSnapshotPolicyId):  # String
+		self.add_query_param('AutoSnapshotPolicyId', AutoSnapshotPolicyId)
+	def get_FileSystemIds(self): # String
 		return self.get_query_params().get('FileSystemIds')
 
-	def set_FileSystemIds(self,FileSystemIds):
-		self.add_query_param('FileSystemIds',FileSystemIds)
+	def set_FileSystemIds(self, FileSystemIds):  # String
+		self.add_query_param('FileSystemIds', FileSystemIds)

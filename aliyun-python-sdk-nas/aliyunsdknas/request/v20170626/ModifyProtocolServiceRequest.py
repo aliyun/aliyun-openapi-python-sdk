@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class RemoveClientFromBlackListRequest(RpcRequest):
+class ModifyProtocolServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'RemoveClientFromBlackList','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyProtocolService','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,28 @@ class RemoveClientFromBlackListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProtocolServiceId(self): # String
+		return self.get_query_params().get('ProtocolServiceId')
+
+	def set_ProtocolServiceId(self, ProtocolServiceId):  # String
+		self.add_query_param('ProtocolServiceId', ProtocolServiceId)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ClientIP(self): # String
-		return self.get_query_params().get('ClientIP')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_ClientIP(self, ClientIP):  # String
-		self.add_query_param('ClientIP', ClientIP)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)

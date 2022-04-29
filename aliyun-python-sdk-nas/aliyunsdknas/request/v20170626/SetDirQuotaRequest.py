@@ -25,50 +25,44 @@ class SetDirQuotaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'SetDirQuota','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QuotaType(self):
+	def get_QuotaType(self): # String
 		return self.get_query_params().get('QuotaType')
 
-	def set_QuotaType(self,QuotaType):
-		self.add_query_param('QuotaType',QuotaType)
-
-	def get_UserId(self):
+	def set_QuotaType(self, QuotaType):  # String
+		self.add_query_param('QuotaType', QuotaType)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_FileCountLimit(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_FileCountLimit(self): # Long
 		return self.get_query_params().get('FileCountLimit')
 
-	def set_FileCountLimit(self,FileCountLimit):
-		self.add_query_param('FileCountLimit',FileCountLimit)
-
-	def get_Path(self):
+	def set_FileCountLimit(self, FileCountLimit):  # Long
+		self.add_query_param('FileCountLimit', FileCountLimit)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_SizeLimit(self):
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_SizeLimit(self): # Long
 		return self.get_query_params().get('SizeLimit')
 
-	def set_SizeLimit(self,SizeLimit):
-		self.add_query_param('SizeLimit',SizeLimit)
-
-	def get_FileSystemId(self):
+	def set_SizeLimit(self, SizeLimit):  # Long
+		self.add_query_param('SizeLimit', SizeLimit)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_UserType(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_UserType(self): # String
 		return self.get_query_params().get('UserType')
 
-	def set_UserType(self,UserType):
-		self.add_query_param('UserType',UserType)
+	def set_UserType(self, UserType):  # String
+		self.add_query_param('UserType', UserType)

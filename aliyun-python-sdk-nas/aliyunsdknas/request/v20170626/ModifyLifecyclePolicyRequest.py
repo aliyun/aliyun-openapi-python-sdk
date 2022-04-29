@@ -25,38 +25,34 @@ class ModifyLifecyclePolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyLifecyclePolicy','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StorageType(self):
+	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_Path(self):
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_LifecyclePolicyName(self):
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_LifecyclePolicyName(self): # String
 		return self.get_query_params().get('LifecyclePolicyName')
 
-	def set_LifecyclePolicyName(self,LifecyclePolicyName):
-		self.add_query_param('LifecyclePolicyName',LifecyclePolicyName)
-
-	def get_FileSystemId(self):
+	def set_LifecyclePolicyName(self, LifecyclePolicyName):  # String
+		self.add_query_param('LifecyclePolicyName', LifecyclePolicyName)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_LifecycleRuleName(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_LifecycleRuleName(self): # String
 		return self.get_query_params().get('LifecycleRuleName')
 
-	def set_LifecycleRuleName(self,LifecycleRuleName):
-		self.add_query_param('LifecycleRuleName',LifecycleRuleName)
+	def set_LifecycleRuleName(self, LifecycleRuleName):  # String
+		self.add_query_param('LifecycleRuleName', LifecycleRuleName)

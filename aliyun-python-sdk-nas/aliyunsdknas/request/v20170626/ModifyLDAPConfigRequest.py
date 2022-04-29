@@ -25,32 +25,29 @@ class ModifyLDAPConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyLDAPConfig','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SearchBase(self):
+	def get_SearchBase(self): # String
 		return self.get_query_params().get('SearchBase')
 
-	def set_SearchBase(self,SearchBase):
-		self.add_query_param('SearchBase',SearchBase)
-
-	def get_FileSystemId(self):
+	def set_SearchBase(self, SearchBase):  # String
+		self.add_query_param('SearchBase', SearchBase)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_URI(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_URI(self): # String
 		return self.get_query_params().get('URI')
 
-	def set_URI(self,URI):
-		self.add_query_param('URI',URI)
-
-	def get_BindDN(self):
+	def set_URI(self, URI):  # String
+		self.add_query_param('URI', URI)
+	def get_BindDN(self): # String
 		return self.get_query_params().get('BindDN')
 
-	def set_BindDN(self,BindDN):
-		self.add_query_param('BindDN',BindDN)
+	def set_BindDN(self, BindDN):  # String
+		self.add_query_param('BindDN', BindDN)

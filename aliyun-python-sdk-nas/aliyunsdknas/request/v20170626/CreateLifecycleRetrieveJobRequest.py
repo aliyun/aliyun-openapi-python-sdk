@@ -25,22 +25,20 @@ class CreateLifecycleRetrieveJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateLifecycleRetrieveJob','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemId(self):
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_Pathss(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_Pathss(self): # RepeatList
 		return self.get_query_params().get('Paths')
 
-	def set_Pathss(self, Pathss):
-		for depth1 in range(len(Pathss)):
-			if Pathss[depth1] is not None:
-				self.add_query_param('Paths.' + str(depth1 + 1) , Pathss[depth1])
+	def set_Pathss(self, Paths):  # RepeatList
+		for depth1 in range(len(Paths)):
+			self.add_query_param('Paths.' + str(depth1 + 1), Paths[depth1])

@@ -25,52 +25,46 @@ class ApplyDataFlowAutoRefreshRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ApplyDataFlowAutoRefresh','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AutoRefreshPolicy(self):
+	def get_AutoRefreshPolicy(self): # String
 		return self.get_query_params().get('AutoRefreshPolicy')
 
-	def set_AutoRefreshPolicy(self,AutoRefreshPolicy):
-		self.add_query_param('AutoRefreshPolicy',AutoRefreshPolicy)
-
-	def get_ClientToken(self):
+	def set_AutoRefreshPolicy(self, AutoRefreshPolicy):  # String
+		self.add_query_param('AutoRefreshPolicy', AutoRefreshPolicy)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_AutoRefreshss(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AutoRefreshss(self): # RepeatList
 		return self.get_query_params().get('AutoRefreshs')
 
-	def set_AutoRefreshss(self, AutoRefreshss):
-		for depth1 in range(len(AutoRefreshss)):
-			if AutoRefreshss[depth1].get('RefreshPath') is not None:
-				self.add_query_param('AutoRefreshs.' + str(depth1 + 1) + '.RefreshPath', AutoRefreshss[depth1].get('RefreshPath'))
-
-	def get_FileSystemId(self):
+	def set_AutoRefreshss(self, AutoRefreshs):  # RepeatList
+		for depth1 in range(len(AutoRefreshs)):
+			if AutoRefreshs[depth1].get('RefreshPath') is not None:
+				self.add_query_param('AutoRefreshs.' + str(depth1 + 1) + '.RefreshPath', AutoRefreshs[depth1].get('RefreshPath'))
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_DryRun(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_DataFlowId(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_DataFlowId(self): # String
 		return self.get_query_params().get('DataFlowId')
 
-	def set_DataFlowId(self,DataFlowId):
-		self.add_query_param('DataFlowId',DataFlowId)
-
-	def get_AutoRefreshInterval(self):
+	def set_DataFlowId(self, DataFlowId):  # String
+		self.add_query_param('DataFlowId', DataFlowId)
+	def get_AutoRefreshInterval(self): # Long
 		return self.get_query_params().get('AutoRefreshInterval')
 
-	def set_AutoRefreshInterval(self,AutoRefreshInterval):
-		self.add_query_param('AutoRefreshInterval',AutoRefreshInterval)
+	def set_AutoRefreshInterval(self, AutoRefreshInterval):  # Long
+		self.add_query_param('AutoRefreshInterval', AutoRefreshInterval)

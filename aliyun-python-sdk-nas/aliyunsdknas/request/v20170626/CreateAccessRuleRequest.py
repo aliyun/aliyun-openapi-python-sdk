@@ -25,50 +25,44 @@ class CreateAccessRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateAccessRule','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RWAccessType(self):
+	def get_RWAccessType(self): # String
 		return self.get_query_params().get('RWAccessType')
 
-	def set_RWAccessType(self,RWAccessType):
-		self.add_query_param('RWAccessType',RWAccessType)
-
-	def get_UserAccessType(self):
+	def set_RWAccessType(self, RWAccessType):  # String
+		self.add_query_param('RWAccessType', RWAccessType)
+	def get_UserAccessType(self): # String
 		return self.get_query_params().get('UserAccessType')
 
-	def set_UserAccessType(self,UserAccessType):
-		self.add_query_param('UserAccessType',UserAccessType)
-
-	def get_FileSystemType(self):
+	def set_UserAccessType(self, UserAccessType):  # String
+		self.add_query_param('UserAccessType', UserAccessType)
+	def get_FileSystemType(self): # String
 		return self.get_query_params().get('FileSystemType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
-	def get_Ipv6SourceCidrIp(self):
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
+	def get_Ipv6SourceCidrIp(self): # String
 		return self.get_query_params().get('Ipv6SourceCidrIp')
 
-	def set_Ipv6SourceCidrIp(self,Ipv6SourceCidrIp):
-		self.add_query_param('Ipv6SourceCidrIp',Ipv6SourceCidrIp)
-
-	def get_SourceCidrIp(self):
+	def set_Ipv6SourceCidrIp(self, Ipv6SourceCidrIp):  # String
+		self.add_query_param('Ipv6SourceCidrIp', Ipv6SourceCidrIp)
+	def get_SourceCidrIp(self): # String
 		return self.get_query_params().get('SourceCidrIp')
 
-	def set_SourceCidrIp(self,SourceCidrIp):
-		self.add_query_param('SourceCidrIp',SourceCidrIp)
-
-	def get_Priority(self):
+	def set_SourceCidrIp(self, SourceCidrIp):  # String
+		self.add_query_param('SourceCidrIp', SourceCidrIp)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_AccessGroupName(self):
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_AccessGroupName(self): # String
 		return self.get_query_params().get('AccessGroupName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)

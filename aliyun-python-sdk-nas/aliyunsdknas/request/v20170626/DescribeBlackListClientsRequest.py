@@ -25,20 +25,19 @@ class DescribeBlackListClientsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeBlackListClients','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientIP(self):
+	def get_ClientIP(self): # String
 		return self.get_query_params().get('ClientIP')
 
-	def set_ClientIP(self,ClientIP):
-		self.add_query_param('ClientIP',ClientIP)
-
-	def get_FileSystemId(self):
+	def set_ClientIP(self, ClientIP):  # String
+		self.add_query_param('ClientIP', ClientIP)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)

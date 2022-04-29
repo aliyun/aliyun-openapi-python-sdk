@@ -25,36 +25,33 @@ class DescribeDataFlowsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeDataFlows','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_FileSystemId(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_Filterss(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_Filterss(self): # RepeatList
 		return self.get_query_params().get('Filters')
 
-	def set_Filterss(self, Filterss):
-		for depth1 in range(len(Filterss)):
-			if Filterss[depth1].get('Value') is not None:
-				self.add_query_param('Filters.' + str(depth1 + 1) + '.Value', Filterss[depth1].get('Value'))
-			if Filterss[depth1].get('Key') is not None:
-				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filterss[depth1].get('Key'))
-
-	def get_MaxResults(self):
+	def set_Filterss(self, Filters):  # RepeatList
+		for depth1 in range(len(Filters)):
+			if Filters[depth1].get('Value') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Value', Filters[depth1].get('Value'))
+			if Filters[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filters[depth1].get('Key'))
+	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

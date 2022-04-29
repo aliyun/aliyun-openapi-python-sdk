@@ -25,38 +25,34 @@ class ModifyMountTargetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyMountTarget','nas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemId(self):
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
-
-	def get_MountTargetDomain(self):
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
+	def get_MountTargetDomain(self): # String
 		return self.get_query_params().get('MountTargetDomain')
 
-	def set_MountTargetDomain(self,MountTargetDomain):
-		self.add_query_param('MountTargetDomain',MountTargetDomain)
-
-	def get_AccessGroupName(self):
+	def set_MountTargetDomain(self, MountTargetDomain):  # String
+		self.add_query_param('MountTargetDomain', MountTargetDomain)
+	def get_AccessGroupName(self): # String
 		return self.get_query_params().get('AccessGroupName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_DualStackMountTargetDomain(self):
+	def set_AccessGroupName(self, AccessGroupName):  # String
+		self.add_query_param('AccessGroupName', AccessGroupName)
+	def get_DualStackMountTargetDomain(self): # String
 		return self.get_query_params().get('DualStackMountTargetDomain')
 
-	def set_DualStackMountTargetDomain(self,DualStackMountTargetDomain):
-		self.add_query_param('DualStackMountTargetDomain',DualStackMountTargetDomain)
-
-	def get_Status(self):
+	def set_DualStackMountTargetDomain(self, DualStackMountTargetDomain):  # String
+		self.add_query_param('DualStackMountTargetDomain', DualStackMountTargetDomain)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
