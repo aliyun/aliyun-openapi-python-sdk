@@ -56,6 +56,11 @@ class CreateEngineNamespaceRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
 	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 
