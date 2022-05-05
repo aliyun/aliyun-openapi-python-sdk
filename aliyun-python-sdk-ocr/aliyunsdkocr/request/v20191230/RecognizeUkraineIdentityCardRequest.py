@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
 
-class RecognizeBankCardRequest(RpcRequest):
+class RecognizeUkraineIdentityCardRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeBankCard','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeUkraineIdentityCard','ocr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,8 @@ class RecognizeBankCardRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ImageURL(self): # String
-		return self.get_body_params().get('ImageURL')
+	def get_ImageUrl(self): # String
+		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageURL(self, ImageURL):  # String
-		self.add_body_params('ImageURL', ImageURL)
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_body_params('ImageUrl', ImageUrl)

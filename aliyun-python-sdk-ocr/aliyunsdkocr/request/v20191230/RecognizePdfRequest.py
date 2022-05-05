@@ -20,19 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
 
-class RecognizePDFRequest(RpcRequest):
+class RecognizePdfRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizePDF','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizePdf','ocr')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileURL(self):
+	def get_FileURL(self): # String
 		return self.get_body_params().get('FileURL')
 
-	def set_FileURL(self,FileURL):
+	def set_FileURL(self, FileURL):  # String
 		self.add_body_params('FileURL', FileURL)

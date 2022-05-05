@@ -19,32 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
+import json
 
 class RecognizeVideoCastCrewListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeVideoCastCrewList','ocr')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Params(self):
+	def get_Params(self): # Array
 		return self.get_body_params().get('Params')
 
-	def set_Params(self,Params):
-		self.add_body_params('Params', Params)
-
-	def get_RegisterUrl(self):
+	def set_Params(self, Params):  # Array
+		self.add_body_params("Params", json.dumps(Params))
+	def get_RegisterUrl(self): # String
 		return self.get_body_params().get('RegisterUrl')
 
-	def set_RegisterUrl(self,RegisterUrl):
+	def set_RegisterUrl(self, RegisterUrl):  # String
 		self.add_body_params('RegisterUrl', RegisterUrl)
-
-	def get_VideoUrl(self):
+	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
-	def set_VideoUrl(self,VideoUrl):
+	def set_VideoUrl(self, VideoUrl):  # String
 		self.add_body_params('VideoUrl', VideoUrl)

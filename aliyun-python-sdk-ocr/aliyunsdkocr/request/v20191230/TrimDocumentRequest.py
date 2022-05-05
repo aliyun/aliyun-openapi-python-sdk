@@ -25,26 +25,24 @@ class TrimDocumentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'TrimDocument','ocr')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileType(self):
+	def get_FileType(self): # String
 		return self.get_body_params().get('FileType')
 
-	def set_FileType(self,FileType):
+	def set_FileType(self, FileType):  # String
 		self.add_body_params('FileType', FileType)
-
-	def get_FileURL(self):
-		return self.get_body_params().get('FileURL')
-
-	def set_FileURL(self,FileURL):
-		self.add_body_params('FileURL', FileURL)
-
-	def get_OutputType(self):
+	def get_OutputType(self): # String
 		return self.get_body_params().get('OutputType')
 
-	def set_OutputType(self,OutputType):
+	def set_OutputType(self, OutputType):  # String
 		self.add_body_params('OutputType', OutputType)
+	def get_FileURL(self): # String
+		return self.get_body_params().get('FileURL')
+
+	def set_FileURL(self, FileURL):  # String
+		self.add_body_params('FileURL', FileURL)
