@@ -48,6 +48,8 @@ class UpdateLoadBalancerZonesRequest(RpcRequest):
 		for index1, value1 in enumerate(ZoneMappings):
 			if value1.get('VSwitchId') is not None:
 				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.VSwitchId', value1.get('VSwitchId'))
+			if value1.get('EipType') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.EipType', value1.get('EipType'))
 			if value1.get('ZoneId') is not None:
 				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.ZoneId', value1.get('ZoneId'))
 			if value1.get('AllocationId') is not None:

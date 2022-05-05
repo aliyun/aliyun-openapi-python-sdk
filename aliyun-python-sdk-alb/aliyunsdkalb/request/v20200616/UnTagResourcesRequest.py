@@ -40,6 +40,11 @@ class UnTagResourcesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
 			if value1.get('Key') is not None:
 				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
+
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
 	def get_ResourceId(self): # Array
 		return self.get_query_params().get('ResourceId')
 
