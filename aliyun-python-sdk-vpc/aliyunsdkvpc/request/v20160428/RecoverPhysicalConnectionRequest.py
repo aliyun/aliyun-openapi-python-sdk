@@ -25,26 +25,24 @@ class RecoverPhysicalConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'RecoverPhysicalConnection','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DryRun(self):
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_Token(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
-	def get_InstanceId(self):
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

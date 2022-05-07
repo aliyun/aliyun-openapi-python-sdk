@@ -1,3 +1,6 @@
+2022-05-07 Version: 3.0.17
+- Supported API for PublicIpAddressPool.
+
 2021-12-06 Version: 3.0.16
 - Supported SecurityProtectionTypes for AllocateEipAddress.
 - Supported SecurityProtectionTypes for CreateCommonBandwidthPackage.

@@ -25,42 +25,36 @@ class ListVpnCertificateAssociationsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListVpnCertificateAssociations','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CertificateIds(self):
+	def get_CertificateIds(self): # RepeatList
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateIds(self, CertificateIds):
-		for depth1 in range(len(CertificateIds)):
-			if CertificateIds[depth1] is not None:
-				self.add_query_param('CertificateId.' + str(depth1 + 1) , CertificateIds[depth1])
-
-	def get_VpnGatewayIds(self):
+	def set_CertificateIds(self, CertificateId):  # RepeatList
+		for depth1 in range(len(CertificateId)):
+			self.add_query_param('CertificateId.' + str(depth1 + 1), CertificateId[depth1])
+	def get_VpnGatewayIds(self): # RepeatList
 		return self.get_query_params().get('VpnGatewayId')
 
-	def set_VpnGatewayIds(self, VpnGatewayIds):
-		for depth1 in range(len(VpnGatewayIds)):
-			if VpnGatewayIds[depth1] is not None:
-				self.add_query_param('VpnGatewayId.' + str(depth1 + 1) , VpnGatewayIds[depth1])
-
-	def get_CertificateType(self):
+	def set_VpnGatewayIds(self, VpnGatewayId):  # RepeatList
+		for depth1 in range(len(VpnGatewayId)):
+			self.add_query_param('VpnGatewayId.' + str(depth1 + 1), VpnGatewayId[depth1])
+	def get_CertificateType(self): # String
 		return self.get_query_params().get('CertificateType')
 
-	def set_CertificateType(self,CertificateType):
-		self.add_query_param('CertificateType',CertificateType)
-
-	def get_NextToken(self):
+	def set_CertificateType(self, CertificateType):  # String
+		self.add_query_param('CertificateType', CertificateType)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

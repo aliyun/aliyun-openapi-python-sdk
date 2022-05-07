@@ -25,74 +25,64 @@ class UpdateIpsecServerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateIpsecServer','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IkeConfig(self):
+	def get_IkeConfig(self): # String
 		return self.get_query_params().get('IkeConfig')
 
-	def set_IkeConfig(self,IkeConfig):
-		self.add_query_param('IkeConfig',IkeConfig)
-
-	def get_ClientToken(self):
+	def set_IkeConfig(self, IkeConfig):  # String
+		self.add_query_param('IkeConfig', IkeConfig)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_IpsecConfig(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_IpsecConfig(self): # String
 		return self.get_query_params().get('IpsecConfig')
 
-	def set_IpsecConfig(self,IpsecConfig):
-		self.add_query_param('IpsecConfig',IpsecConfig)
-
-	def get_Psk(self):
+	def set_IpsecConfig(self, IpsecConfig):  # String
+		self.add_query_param('IpsecConfig', IpsecConfig)
+	def get_Psk(self): # String
 		return self.get_query_params().get('Psk')
 
-	def set_Psk(self,Psk):
-		self.add_query_param('Psk',Psk)
-
-	def get_LocalSubnet(self):
+	def set_Psk(self, Psk):  # String
+		self.add_query_param('Psk', Psk)
+	def get_LocalSubnet(self): # String
 		return self.get_query_params().get('LocalSubnet')
 
-	def set_LocalSubnet(self,LocalSubnet):
-		self.add_query_param('LocalSubnet',LocalSubnet)
-
-	def get_EffectImmediately(self):
+	def set_LocalSubnet(self, LocalSubnet):  # String
+		self.add_query_param('LocalSubnet', LocalSubnet)
+	def get_EffectImmediately(self): # Boolean
 		return self.get_query_params().get('EffectImmediately')
 
-	def set_EffectImmediately(self,EffectImmediately):
-		self.add_query_param('EffectImmediately',EffectImmediately)
-
-	def get_ClientIpPool(self):
+	def set_EffectImmediately(self, EffectImmediately):  # Boolean
+		self.add_query_param('EffectImmediately', EffectImmediately)
+	def get_ClientIpPool(self): # String
 		return self.get_query_params().get('ClientIpPool')
 
-	def set_ClientIpPool(self,ClientIpPool):
-		self.add_query_param('ClientIpPool',ClientIpPool)
-
-	def get_DryRun(self):
+	def set_ClientIpPool(self, ClientIpPool):  # String
+		self.add_query_param('ClientIpPool', ClientIpPool)
+	def get_DryRun(self): # String
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_PskEnabled(self):
+	def set_DryRun(self, DryRun):  # String
+		self.add_query_param('DryRun', DryRun)
+	def get_PskEnabled(self): # Boolean
 		return self.get_query_params().get('PskEnabled')
 
-	def set_PskEnabled(self,PskEnabled):
-		self.add_query_param('PskEnabled',PskEnabled)
-
-	def get_IpsecServerName(self):
+	def set_PskEnabled(self, PskEnabled):  # Boolean
+		self.add_query_param('PskEnabled', PskEnabled)
+	def get_IpsecServerName(self): # String
 		return self.get_query_params().get('IpsecServerName')
 
-	def set_IpsecServerName(self,IpsecServerName):
-		self.add_query_param('IpsecServerName',IpsecServerName)
-
-	def get_IpsecServerId(self):
+	def set_IpsecServerName(self, IpsecServerName):  # String
+		self.add_query_param('IpsecServerName', IpsecServerName)
+	def get_IpsecServerId(self): # String
 		return self.get_query_params().get('IpsecServerId')
 
-	def set_IpsecServerId(self,IpsecServerId):
-		self.add_query_param('IpsecServerId',IpsecServerId)
+	def set_IpsecServerId(self, IpsecServerId):  # String
+		self.add_query_param('IpsecServerId', IpsecServerId)

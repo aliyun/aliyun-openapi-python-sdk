@@ -25,64 +25,55 @@ class ListDhcpOptionsSetsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListDhcpOptionsSets','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NextToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_DhcpOptionsSetIds(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_DhcpOptionsSetIds(self): # RepeatList
 		return self.get_query_params().get('DhcpOptionsSetId')
 
-	def set_DhcpOptionsSetIds(self, DhcpOptionsSetIds):
-		for depth1 in range(len(DhcpOptionsSetIds)):
-			if DhcpOptionsSetIds[depth1] is not None:
-				self.add_query_param('DhcpOptionsSetId.' + str(depth1 + 1) , DhcpOptionsSetIds[depth1])
-
-	def get_ResourceOwnerAccount(self):
+	def set_DhcpOptionsSetIds(self, DhcpOptionsSetId):  # RepeatList
+		for depth1 in range(len(DhcpOptionsSetId)):
+			self.add_query_param('DhcpOptionsSetId.' + str(depth1 + 1), DhcpOptionsSetId[depth1])
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DomainName(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DhcpOptionsSetName(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DhcpOptionsSetName(self): # String
 		return self.get_query_params().get('DhcpOptionsSetName')
 
-	def set_DhcpOptionsSetName(self,DhcpOptionsSetName):
-		self.add_query_param('DhcpOptionsSetName',DhcpOptionsSetName)
-
-	def get_MaxResults(self):
+	def set_DhcpOptionsSetName(self, DhcpOptionsSetName):  # String
+		self.add_query_param('DhcpOptionsSetName', DhcpOptionsSetName)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

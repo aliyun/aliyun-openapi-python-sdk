@@ -25,66 +25,58 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteRouteEntry','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NextHopId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NextHopId(self): # String
 		return self.get_query_params().get('NextHopId')
 
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
-
-	def get_RouteTableId(self):
+	def set_NextHopId(self, NextHopId):  # String
+		self.add_query_param('NextHopId', NextHopId)
+	def get_RouteTableId(self): # String
 		return self.get_query_params().get('RouteTableId')
 
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RouteTableId(self, RouteTableId):  # String
+		self.add_query_param('RouteTableId', RouteTableId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DestinationCidrBlock(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DestinationCidrBlock(self): # String
 		return self.get_query_params().get('DestinationCidrBlock')
 
-	def set_DestinationCidrBlock(self,DestinationCidrBlock):
-		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
-
-	def get_OwnerAccount(self):
+	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
+		self.add_query_param('DestinationCidrBlock', DestinationCidrBlock)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RouteEntryId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RouteEntryId(self): # String
 		return self.get_query_params().get('RouteEntryId')
 
-	def set_RouteEntryId(self,RouteEntryId):
-		self.add_query_param('RouteEntryId',RouteEntryId)
-
-	def get_NextHopLists(self):
+	def set_RouteEntryId(self, RouteEntryId):  # String
+		self.add_query_param('RouteEntryId', RouteEntryId)
+	def get_NextHopLists(self): # RepeatList
 		return self.get_query_params().get('NextHopList')
 
-	def set_NextHopLists(self, NextHopLists):
-		for depth1 in range(len(NextHopLists)):
-			if NextHopLists[depth1].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopId', NextHopLists[depth1].get('NextHopId'))
-			if NextHopLists[depth1].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopType', NextHopLists[depth1].get('NextHopType'))
+	def set_NextHopLists(self, NextHopList):  # RepeatList
+		for depth1 in range(len(NextHopList)):
+			if NextHopList[depth1].get('NextHopId') is not None:
+				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopId', NextHopList[depth1].get('NextHopId'))
+			if NextHopList[depth1].get('NextHopType') is not None:
+				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopType', NextHopList[depth1].get('NextHopType'))

@@ -25,80 +25,64 @@ class ModifyBgpGroupAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyBgpGroupAttribute','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthKey(self):
+	def get_AuthKey(self): # String
 		return self.get_query_params().get('AuthKey')
 
-	def set_AuthKey(self,AuthKey):
-		self.add_query_param('AuthKey',AuthKey)
-
-	def get_ResourceOwnerId(self):
+	def set_AuthKey(self, AuthKey):  # String
+		self.add_query_param('AuthKey', AuthKey)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BgpGroupId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BgpGroupId(self): # String
 		return self.get_query_params().get('BgpGroupId')
 
-	def set_BgpGroupId(self,BgpGroupId):
-		self.add_query_param('BgpGroupId',BgpGroupId)
-
-	def get_Description(self):
+	def set_BgpGroupId(self, BgpGroupId):  # String
+		self.add_query_param('BgpGroupId', BgpGroupId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_PeerAsn(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_PeerAsn(self): # Long
 		return self.get_query_params().get('PeerAsn')
 
-	def set_PeerAsn(self,PeerAsn):
-		self.add_query_param('PeerAsn',PeerAsn)
-
-	def get_IsFakeAsn(self):
+	def set_PeerAsn(self, PeerAsn):  # Long
+		self.add_query_param('PeerAsn', PeerAsn)
+	def get_IsFakeAsn(self): # Boolean
 		return self.get_query_params().get('IsFakeAsn')
 
-	def set_IsFakeAsn(self,IsFakeAsn):
-		self.add_query_param('IsFakeAsn',IsFakeAsn)
-
-	def get_ResourceOwnerAccount(self):
+	def set_IsFakeAsn(self, IsFakeAsn):  # Boolean
+		self.add_query_param('IsFakeAsn', IsFakeAsn)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_LocalAsn(self):
-		return self.get_query_params().get('LocalAsn')
-
-	def set_LocalAsn(self,LocalAsn):
-		self.add_query_param('LocalAsn',LocalAsn)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

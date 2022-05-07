@@ -25,32 +25,29 @@ class AttachVbrToVpconnRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AttachVbrToVpconn','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DryRun(self):
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_VpconnId(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_VpconnId(self): # String
 		return self.get_query_params().get('VpconnId')
 
-	def set_VpconnId(self,VpconnId):
-		self.add_query_param('VpconnId',VpconnId)
-
-	def get_VbrId(self):
+	def set_VpconnId(self, VpconnId):  # String
+		self.add_query_param('VpconnId', VpconnId)
+	def get_VbrId(self): # String
 		return self.get_query_params().get('VbrId')
 
-	def set_VbrId(self,VbrId):
-		self.add_query_param('VbrId',VbrId)
-
-	def get_Token(self):
+	def set_VbrId(self, VbrId):  # String
+		self.add_query_param('VbrId', VbrId)
+	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)

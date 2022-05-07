@@ -25,90 +25,76 @@ class ListNatIpCidrsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListNatIpCidrs','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NatIpCidrss(self):
+	def get_NatIpCidrss(self): # RepeatList
 		return self.get_query_params().get('NatIpCidrs')
 
-	def set_NatIpCidrss(self, NatIpCidrss):
-		for depth1 in range(len(NatIpCidrss)):
-			if NatIpCidrss[depth1] is not None:
-				self.add_query_param('NatIpCidrs.' + str(depth1 + 1) , NatIpCidrss[depth1])
-
-	def get_ResourceOwnerId(self):
+	def set_NatIpCidrss(self, NatIpCidrs):  # RepeatList
+		for depth1 in range(len(NatIpCidrs)):
+			self.add_query_param('NatIpCidrs.' + str(depth1 + 1), NatIpCidrs[depth1])
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_NextToken(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_NatGatewayId(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_NatGatewayId(self): # String
 		return self.get_query_params().get('NatGatewayId')
 
-	def set_NatGatewayId(self,NatGatewayId):
-		self.add_query_param('NatGatewayId',NatGatewayId)
-
-	def get_DryRun(self):
+	def set_NatGatewayId(self, NatGatewayId):  # String
+		self.add_query_param('NatGatewayId', NatGatewayId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_NatIpCidrNames(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_NatIpCidrNames(self): # RepeatList
 		return self.get_query_params().get('NatIpCidrName')
 
-	def set_NatIpCidrNames(self, NatIpCidrNames):
-		for depth1 in range(len(NatIpCidrNames)):
-			if NatIpCidrNames[depth1] is not None:
-				self.add_query_param('NatIpCidrName.' + str(depth1 + 1) , NatIpCidrNames[depth1])
-
-	def get_OwnerId(self):
+	def set_NatIpCidrNames(self, NatIpCidrName):  # RepeatList
+		for depth1 in range(len(NatIpCidrName)):
+			self.add_query_param('NatIpCidrName.' + str(depth1 + 1), NatIpCidrName[depth1])
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_NatIpCidr(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NatIpCidr(self): # String
 		return self.get_query_params().get('NatIpCidr')
 
-	def set_NatIpCidr(self,NatIpCidr):
-		self.add_query_param('NatIpCidr',NatIpCidr)
-
-	def get_NatIpCidrStatus(self):
+	def set_NatIpCidr(self, NatIpCidr):  # String
+		self.add_query_param('NatIpCidr', NatIpCidr)
+	def get_NatIpCidrStatus(self): # String
 		return self.get_query_params().get('NatIpCidrStatus')
 
-	def set_NatIpCidrStatus(self,NatIpCidrStatus):
-		self.add_query_param('NatIpCidrStatus',NatIpCidrStatus)
-
-	def get_MaxResults(self):
+	def set_NatIpCidrStatus(self, NatIpCidrStatus):  # String
+		self.add_query_param('NatIpCidrStatus', NatIpCidrStatus)
+	def get_MaxResults(self): # String
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # String
+		self.add_query_param('MaxResults', MaxResults)

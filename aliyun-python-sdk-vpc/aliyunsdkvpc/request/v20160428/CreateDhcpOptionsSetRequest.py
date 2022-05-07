@@ -25,80 +25,69 @@ class CreateDhcpOptionsSetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateDhcpOptionsSet','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BootFileName(self):
+	def get_BootFileName(self): # String
 		return self.get_query_params().get('BootFileName')
 
-	def set_BootFileName(self,BootFileName):
-		self.add_query_param('BootFileName',BootFileName)
-
-	def get_ResourceOwnerId(self):
+	def set_BootFileName(self, BootFileName):  # String
+		self.add_query_param('BootFileName', BootFileName)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_TFTPServerName(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_TFTPServerName(self): # String
 		return self.get_query_params().get('TFTPServerName')
 
-	def set_TFTPServerName(self,TFTPServerName):
-		self.add_query_param('TFTPServerName',TFTPServerName)
-
-	def get_DomainNameServers(self):
+	def set_TFTPServerName(self, TFTPServerName):  # String
+		self.add_query_param('TFTPServerName', TFTPServerName)
+	def get_DomainNameServers(self): # String
 		return self.get_query_params().get('DomainNameServers')
 
-	def set_DomainNameServers(self,DomainNameServers):
-		self.add_query_param('DomainNameServers',DomainNameServers)
-
-	def get_DhcpOptionsSetDescription(self):
+	def set_DomainNameServers(self, DomainNameServers):  # String
+		self.add_query_param('DomainNameServers', DomainNameServers)
+	def get_DhcpOptionsSetDescription(self): # String
 		return self.get_query_params().get('DhcpOptionsSetDescription')
 
-	def set_DhcpOptionsSetDescription(self,DhcpOptionsSetDescription):
-		self.add_query_param('DhcpOptionsSetDescription',DhcpOptionsSetDescription)
-
-	def get_DryRun(self):
+	def set_DhcpOptionsSetDescription(self, DhcpOptionsSetDescription):  # String
+		self.add_query_param('DhcpOptionsSetDescription', DhcpOptionsSetDescription)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DomainName(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DhcpOptionsSetName(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DhcpOptionsSetName(self): # String
 		return self.get_query_params().get('DhcpOptionsSetName')
 
-	def set_DhcpOptionsSetName(self,DhcpOptionsSetName):
-		self.add_query_param('DhcpOptionsSetName',DhcpOptionsSetName)
+	def set_DhcpOptionsSetName(self, DhcpOptionsSetName):  # String
+		self.add_query_param('DhcpOptionsSetName', DhcpOptionsSetName)

@@ -25,92 +25,79 @@ class UpdateTrafficMirrorFilterRuleAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateTrafficMirrorFilterRuleAttribute','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourcePortRange(self):
+	def get_SourcePortRange(self): # String
 		return self.get_query_params().get('SourcePortRange')
 
-	def set_SourcePortRange(self,SourcePortRange):
-		self.add_query_param('SourcePortRange',SourcePortRange)
-
-	def get_ResourceOwnerId(self):
+	def set_SourcePortRange(self, SourcePortRange):  # String
+		self.add_query_param('SourcePortRange', SourcePortRange)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DestinationPortRange(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DestinationPortRange(self): # String
 		return self.get_query_params().get('DestinationPortRange')
 
-	def set_DestinationPortRange(self,DestinationPortRange):
-		self.add_query_param('DestinationPortRange',DestinationPortRange)
-
-	def get_ClientToken(self):
+	def set_DestinationPortRange(self, DestinationPortRange):  # String
+		self.add_query_param('DestinationPortRange', DestinationPortRange)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_RuleAction(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_RuleAction(self): # String
 		return self.get_query_params().get('RuleAction')
 
-	def set_RuleAction(self,RuleAction):
-		self.add_query_param('RuleAction',RuleAction)
-
-	def get_Protocol(self):
+	def set_RuleAction(self, RuleAction):  # String
+		self.add_query_param('RuleAction', RuleAction)
+	def get_Protocol(self): # String
 		return self.get_query_params().get('Protocol')
 
-	def set_Protocol(self,Protocol):
-		self.add_query_param('Protocol',Protocol)
-
-	def get_SourceCidrBlock(self):
+	def set_Protocol(self, Protocol):  # String
+		self.add_query_param('Protocol', Protocol)
+	def get_SourceCidrBlock(self): # String
 		return self.get_query_params().get('SourceCidrBlock')
 
-	def set_SourceCidrBlock(self,SourceCidrBlock):
-		self.add_query_param('SourceCidrBlock',SourceCidrBlock)
-
-	def get_DryRun(self):
+	def set_SourceCidrBlock(self, SourceCidrBlock):  # String
+		self.add_query_param('SourceCidrBlock', SourceCidrBlock)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DestinationCidrBlock(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DestinationCidrBlock(self): # String
 		return self.get_query_params().get('DestinationCidrBlock')
 
-	def set_DestinationCidrBlock(self,DestinationCidrBlock):
-		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
-
-	def get_OwnerAccount(self):
+	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
+		self.add_query_param('DestinationCidrBlock', DestinationCidrBlock)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Priority(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_OwnerId(self):
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TrafficMirrorFilterRuleId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TrafficMirrorFilterRuleId(self): # String
 		return self.get_query_params().get('TrafficMirrorFilterRuleId')
 
-	def set_TrafficMirrorFilterRuleId(self,TrafficMirrorFilterRuleId):
-		self.add_query_param('TrafficMirrorFilterRuleId',TrafficMirrorFilterRuleId)
+	def set_TrafficMirrorFilterRuleId(self, TrafficMirrorFilterRuleId):  # String
+		self.add_query_param('TrafficMirrorFilterRuleId', TrafficMirrorFilterRuleId)

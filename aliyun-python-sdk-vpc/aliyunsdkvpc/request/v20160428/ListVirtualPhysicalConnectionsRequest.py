@@ -25,70 +25,58 @@ class ListVirtualPhysicalConnectionsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListVirtualPhysicalConnections','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VlanIdss(self):
+	def get_VlanIdss(self): # RepeatList
 		return self.get_query_params().get('VlanIds')
 
-	def set_VlanIdss(self, VlanIdss):
-		for depth1 in range(len(VlanIdss)):
-			if VlanIdss[depth1] is not None:
-				self.add_query_param('VlanIds.' + str(depth1 + 1) , VlanIdss[depth1])
-
-	def get_VirtualPhysicalConnectionBusinessStatus(self):
+	def set_VlanIdss(self, VlanIds):  # RepeatList
+		for depth1 in range(len(VlanIds)):
+			self.add_query_param('VlanIds.' + str(depth1 + 1), VlanIds[depth1])
+	def get_VirtualPhysicalConnectionBusinessStatus(self): # String
 		return self.get_query_params().get('VirtualPhysicalConnectionBusinessStatus')
 
-	def set_VirtualPhysicalConnectionBusinessStatus(self,VirtualPhysicalConnectionBusinessStatus):
-		self.add_query_param('VirtualPhysicalConnectionBusinessStatus',VirtualPhysicalConnectionBusinessStatus)
-
-	def get_VirtualPhysicalConnectionAliUidss(self):
+	def set_VirtualPhysicalConnectionBusinessStatus(self, VirtualPhysicalConnectionBusinessStatus):  # String
+		self.add_query_param('VirtualPhysicalConnectionBusinessStatus', VirtualPhysicalConnectionBusinessStatus)
+	def get_VirtualPhysicalConnectionAliUidss(self): # RepeatList
 		return self.get_query_params().get('VirtualPhysicalConnectionAliUids')
 
-	def set_VirtualPhysicalConnectionAliUidss(self, VirtualPhysicalConnectionAliUidss):
-		for depth1 in range(len(VirtualPhysicalConnectionAliUidss)):
-			if VirtualPhysicalConnectionAliUidss[depth1] is not None:
-				self.add_query_param('VirtualPhysicalConnectionAliUids.' + str(depth1 + 1) , VirtualPhysicalConnectionAliUidss[depth1])
-
-	def get_NextToken(self):
+	def set_VirtualPhysicalConnectionAliUidss(self, VirtualPhysicalConnectionAliUids):  # RepeatList
+		for depth1 in range(len(VirtualPhysicalConnectionAliUids)):
+			self.add_query_param('VirtualPhysicalConnectionAliUids.' + str(depth1 + 1), VirtualPhysicalConnectionAliUids[depth1])
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_VirtualPhysicalConnectionIdss(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_VirtualPhysicalConnectionIdss(self): # RepeatList
 		return self.get_query_params().get('VirtualPhysicalConnectionIds')
 
-	def set_VirtualPhysicalConnectionIdss(self, VirtualPhysicalConnectionIdss):
-		for depth1 in range(len(VirtualPhysicalConnectionIdss)):
-			if VirtualPhysicalConnectionIdss[depth1] is not None:
-				self.add_query_param('VirtualPhysicalConnectionIds.' + str(depth1 + 1) , VirtualPhysicalConnectionIdss[depth1])
-
-	def get_IsConfirmed(self):
+	def set_VirtualPhysicalConnectionIdss(self, VirtualPhysicalConnectionIds):  # RepeatList
+		for depth1 in range(len(VirtualPhysicalConnectionIds)):
+			self.add_query_param('VirtualPhysicalConnectionIds.' + str(depth1 + 1), VirtualPhysicalConnectionIds[depth1])
+	def get_IsConfirmed(self): # Boolean
 		return self.get_query_params().get('IsConfirmed')
 
-	def set_IsConfirmed(self,IsConfirmed):
-		self.add_query_param('IsConfirmed',IsConfirmed)
-
-	def get_VirtualPhysicalConnectionStatusess(self):
+	def set_IsConfirmed(self, IsConfirmed):  # Boolean
+		self.add_query_param('IsConfirmed', IsConfirmed)
+	def get_VirtualPhysicalConnectionStatusess(self): # RepeatList
 		return self.get_query_params().get('VirtualPhysicalConnectionStatuses')
 
-	def set_VirtualPhysicalConnectionStatusess(self, VirtualPhysicalConnectionStatusess):
-		for depth1 in range(len(VirtualPhysicalConnectionStatusess)):
-			if VirtualPhysicalConnectionStatusess[depth1] is not None:
-				self.add_query_param('VirtualPhysicalConnectionStatuses.' + str(depth1 + 1) , VirtualPhysicalConnectionStatusess[depth1])
-
-	def get_PhysicalConnectionId(self):
+	def set_VirtualPhysicalConnectionStatusess(self, VirtualPhysicalConnectionStatuses):  # RepeatList
+		for depth1 in range(len(VirtualPhysicalConnectionStatuses)):
+			self.add_query_param('VirtualPhysicalConnectionStatuses.' + str(depth1 + 1), VirtualPhysicalConnectionStatuses[depth1])
+	def get_PhysicalConnectionId(self): # String
 		return self.get_query_params().get('PhysicalConnectionId')
 
-	def set_PhysicalConnectionId(self,PhysicalConnectionId):
-		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
-
-	def get_MaxResults(self):
+	def set_PhysicalConnectionId(self, PhysicalConnectionId):  # String
+		self.add_query_param('PhysicalConnectionId', PhysicalConnectionId)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

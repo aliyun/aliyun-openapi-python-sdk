@@ -25,68 +25,59 @@ class PublishVpnRouteEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'PublishVpnRouteEntry','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_RouteType(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_RouteType(self): # String
 		return self.get_query_params().get('RouteType')
 
-	def set_RouteType(self,RouteType):
-		self.add_query_param('RouteType',RouteType)
-
-	def get_PublishVpc(self):
+	def set_RouteType(self, RouteType):  # String
+		self.add_query_param('RouteType', RouteType)
+	def get_PublishVpc(self): # Boolean
 		return self.get_query_params().get('PublishVpc')
 
-	def set_PublishVpc(self,PublishVpc):
-		self.add_query_param('PublishVpc',PublishVpc)
-
-	def get_ResourceOwnerAccount(self):
+	def set_PublishVpc(self, PublishVpc):  # Boolean
+		self.add_query_param('PublishVpc', PublishVpc)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VpnGatewayId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_VpnGatewayId(self): # String
 		return self.get_query_params().get('VpnGatewayId')
 
-	def set_VpnGatewayId(self,VpnGatewayId):
-		self.add_query_param('VpnGatewayId',VpnGatewayId)
-
-	def get_OwnerId(self):
+	def set_VpnGatewayId(self, VpnGatewayId):  # String
+		self.add_query_param('VpnGatewayId', VpnGatewayId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RouteDest(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RouteDest(self): # String
 		return self.get_query_params().get('RouteDest')
 
-	def set_RouteDest(self,RouteDest):
-		self.add_query_param('RouteDest',RouteDest)
-
-	def get_NextHop(self):
+	def set_RouteDest(self, RouteDest):  # String
+		self.add_query_param('RouteDest', RouteDest)
+	def get_NextHop(self): # String
 		return self.get_query_params().get('NextHop')
 
-	def set_NextHop(self,NextHop):
-		self.add_query_param('NextHop',NextHop)
+	def set_NextHop(self, NextHop):  # String
+		self.add_query_param('NextHop', NextHop)

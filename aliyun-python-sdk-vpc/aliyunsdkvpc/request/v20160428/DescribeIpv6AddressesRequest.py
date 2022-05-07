@@ -25,98 +25,84 @@ class DescribeIpv6AddressesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeIpv6Addresses','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Ipv6InternetBandwidthId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Ipv6InternetBandwidthId(self): # String
 		return self.get_query_params().get('Ipv6InternetBandwidthId')
 
-	def set_Ipv6InternetBandwidthId(self,Ipv6InternetBandwidthId):
-		self.add_query_param('Ipv6InternetBandwidthId',Ipv6InternetBandwidthId)
-
-	def get_NetworkType(self):
+	def set_Ipv6InternetBandwidthId(self, Ipv6InternetBandwidthId):  # String
+		self.add_query_param('Ipv6InternetBandwidthId', Ipv6InternetBandwidthId)
+	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
-	def get_PageNumber(self):
+	def set_NetworkType(self, NetworkType):  # String
+		self.add_query_param('NetworkType', NetworkType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_AssociatedInstanceType(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_AssociatedInstanceType(self): # String
 		return self.get_query_params().get('AssociatedInstanceType')
 
-	def set_AssociatedInstanceType(self,AssociatedInstanceType):
-		self.add_query_param('AssociatedInstanceType',AssociatedInstanceType)
-
-	def get_PageSize(self):
+	def set_AssociatedInstanceType(self, AssociatedInstanceType):  # String
+		self.add_query_param('AssociatedInstanceType', AssociatedInstanceType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ResourceOwnerAccount(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VSwitchId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_Ipv6AddressId(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_Ipv6AddressId(self): # String
 		return self.get_query_params().get('Ipv6AddressId')
 
-	def set_Ipv6AddressId(self,Ipv6AddressId):
-		self.add_query_param('Ipv6AddressId',Ipv6AddressId)
-
-	def get_VpcId(self):
+	def set_Ipv6AddressId(self, Ipv6AddressId):  # String
+		self.add_query_param('Ipv6AddressId', Ipv6AddressId)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_Name(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Ipv6Address(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Ipv6Address(self): # String
 		return self.get_query_params().get('Ipv6Address')
 
-	def set_Ipv6Address(self,Ipv6Address):
-		self.add_query_param('Ipv6Address',Ipv6Address)
-
-	def get_AssociatedInstanceId(self):
+	def set_Ipv6Address(self, Ipv6Address):  # String
+		self.add_query_param('Ipv6Address', Ipv6Address)
+	def get_AssociatedInstanceId(self): # String
 		return self.get_query_params().get('AssociatedInstanceId')
 
-	def set_AssociatedInstanceId(self,AssociatedInstanceId):
-		self.add_query_param('AssociatedInstanceId',AssociatedInstanceId)
+	def set_AssociatedInstanceId(self, AssociatedInstanceId):  # String
+		self.add_query_param('AssociatedInstanceId', AssociatedInstanceId)

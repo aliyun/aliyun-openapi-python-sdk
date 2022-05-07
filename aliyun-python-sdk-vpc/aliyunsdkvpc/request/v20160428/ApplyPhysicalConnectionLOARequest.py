@@ -25,96 +25,84 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ApplyPhysicalConnectionLOA','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_LineType(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_LineType(self): # String
 		return self.get_query_params().get('LineType')
 
-	def set_LineType(self,LineType):
-		self.add_query_param('LineType',LineType)
-
-	def get_Si(self):
+	def set_LineType(self, LineType):  # String
+		self.add_query_param('LineType', LineType)
+	def get_Si(self): # String
 		return self.get_query_params().get('Si')
 
-	def set_Si(self,Si):
-		self.add_query_param('Si',Si)
-
-	def get_PeerLocation(self):
+	def set_Si(self, Si):  # String
+		self.add_query_param('Si', Si)
+	def get_PeerLocation(self): # String
 		return self.get_query_params().get('PeerLocation')
 
-	def set_PeerLocation(self,PeerLocation):
-		self.add_query_param('PeerLocation',PeerLocation)
-
-	def get_ResourceOwnerAccount(self):
+	def set_PeerLocation(self, PeerLocation):  # String
+		self.add_query_param('PeerLocation', PeerLocation)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Bandwidth(self): # Integer
 		return self.get_query_params().get('Bandwidth')
 
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_OwnerAccount(self):
+	def set_Bandwidth(self, Bandwidth):  # Integer
+		self.add_query_param('Bandwidth', Bandwidth)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_ConstructionTime(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ConstructionTime(self): # String
 		return self.get_query_params().get('ConstructionTime')
 
-	def set_ConstructionTime(self,ConstructionTime):
-		self.add_query_param('ConstructionTime',ConstructionTime)
-
-	def get_OwnerId(self):
+	def set_ConstructionTime(self, ConstructionTime):  # String
+		self.add_query_param('ConstructionTime', ConstructionTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CompanyName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_CompanyName(self): # String
 		return self.get_query_params().get('CompanyName')
 
-	def set_CompanyName(self,CompanyName):
-		self.add_query_param('CompanyName',CompanyName)
-
-	def get_PMInfos(self):
+	def set_CompanyName(self, CompanyName):  # String
+		self.add_query_param('CompanyName', CompanyName)
+	def get_PMInfos(self): # RepeatList
 		return self.get_query_params().get('PMInfo')
 
-	def set_PMInfos(self, PMInfos):
-		for depth1 in range(len(PMInfos)):
-			if PMInfos[depth1].get('PMCertificateNo') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateNo', PMInfos[depth1].get('PMCertificateNo'))
-			if PMInfos[depth1].get('PMName') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMName', PMInfos[depth1].get('PMName'))
-			if PMInfos[depth1].get('PMCertificateType') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateType', PMInfos[depth1].get('PMCertificateType'))
-			if PMInfos[depth1].get('PMGender') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMGender', PMInfos[depth1].get('PMGender'))
-			if PMInfos[depth1].get('PMContactInfo') is not None:
-				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMContactInfo', PMInfos[depth1].get('PMContactInfo'))
+	def set_PMInfos(self, PMInfo):  # RepeatList
+		for depth1 in range(len(PMInfo)):
+			if PMInfo[depth1].get('PMCertificateNo') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateNo', PMInfo[depth1].get('PMCertificateNo'))
+			if PMInfo[depth1].get('PMName') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMName', PMInfo[depth1].get('PMName'))
+			if PMInfo[depth1].get('PMCertificateType') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateType', PMInfo[depth1].get('PMCertificateType'))
+			if PMInfo[depth1].get('PMGender') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMGender', PMInfo[depth1].get('PMGender'))
+			if PMInfo[depth1].get('PMContactInfo') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMContactInfo', PMInfo[depth1].get('PMContactInfo'))

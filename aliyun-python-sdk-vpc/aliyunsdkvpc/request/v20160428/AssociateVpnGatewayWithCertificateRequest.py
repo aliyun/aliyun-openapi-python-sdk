@@ -25,38 +25,34 @@ class AssociateVpnGatewayWithCertificateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateVpnGatewayWithCertificate','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DryRun(self):
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ClientToken(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_CertificateId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_CertificateId(self): # String
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_VpnGatewayId(self):
+	def set_CertificateId(self, CertificateId):  # String
+		self.add_query_param('CertificateId', CertificateId)
+	def get_VpnGatewayId(self): # String
 		return self.get_query_params().get('VpnGatewayId')
 
-	def set_VpnGatewayId(self,VpnGatewayId):
-		self.add_query_param('VpnGatewayId',VpnGatewayId)
-
-	def get_CertificateType(self):
+	def set_VpnGatewayId(self, VpnGatewayId):  # String
+		self.add_query_param('VpnGatewayId', VpnGatewayId)
+	def get_CertificateType(self): # String
 		return self.get_query_params().get('CertificateType')
 
-	def set_CertificateType(self,CertificateType):
-		self.add_query_param('CertificateType',CertificateType)
+	def set_CertificateType(self, CertificateType):  # String
+		self.add_query_param('CertificateType', CertificateType)

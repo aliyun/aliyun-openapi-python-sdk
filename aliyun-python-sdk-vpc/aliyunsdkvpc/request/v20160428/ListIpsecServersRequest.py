@@ -25,40 +25,35 @@ class ListIpsecServersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListIpsecServers','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VpnGatewayId(self):
+	def get_VpnGatewayId(self): # String
 		return self.get_query_params().get('VpnGatewayId')
 
-	def set_VpnGatewayId(self,VpnGatewayId):
-		self.add_query_param('VpnGatewayId',VpnGatewayId)
-
-	def get_NextToken(self):
+	def set_VpnGatewayId(self, VpnGatewayId):  # String
+		self.add_query_param('VpnGatewayId', VpnGatewayId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_IpsecServerName(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_IpsecServerName(self): # String
 		return self.get_query_params().get('IpsecServerName')
 
-	def set_IpsecServerName(self,IpsecServerName):
-		self.add_query_param('IpsecServerName',IpsecServerName)
-
-	def get_MaxResults(self):
+	def set_IpsecServerName(self, IpsecServerName):  # String
+		self.add_query_param('IpsecServerName', IpsecServerName)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_IpsecServerIds(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_IpsecServerIds(self): # RepeatList
 		return self.get_query_params().get('IpsecServerId')
 
-	def set_IpsecServerIds(self, IpsecServerIds):
-		for depth1 in range(len(IpsecServerIds)):
-			if IpsecServerIds[depth1] is not None:
-				self.add_query_param('IpsecServerId.' + str(depth1 + 1) , IpsecServerIds[depth1])
+	def set_IpsecServerIds(self, IpsecServerId):  # RepeatList
+		for depth1 in range(len(IpsecServerId)):
+			self.add_query_param('IpsecServerId.' + str(depth1 + 1), IpsecServerId[depth1])

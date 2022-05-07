@@ -25,90 +25,82 @@ class CreateTrafficMirrorFilterRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateTrafficMirrorFilterRules','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_IngressRuless(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_IngressRuless(self): # RepeatList
 		return self.get_query_params().get('IngressRules')
 
-	def set_IngressRuless(self, IngressRuless):
-		for depth1 in range(len(IngressRuless)):
-			if IngressRuless[depth1].get('Action') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Action', IngressRuless[depth1].get('Action'))
-			if IngressRuless[depth1].get('SourceCidrBlock') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.SourceCidrBlock', IngressRuless[depth1].get('SourceCidrBlock'))
-			if IngressRuless[depth1].get('Protocol') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Protocol', IngressRuless[depth1].get('Protocol'))
-			if IngressRuless[depth1].get('DestinationPortRange') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.DestinationPortRange', IngressRuless[depth1].get('DestinationPortRange'))
-			if IngressRuless[depth1].get('Priority') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Priority', IngressRuless[depth1].get('Priority'))
-			if IngressRuless[depth1].get('DestinationCidrBlock') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.DestinationCidrBlock', IngressRuless[depth1].get('DestinationCidrBlock'))
-			if IngressRuless[depth1].get('SourcePortRange') is not None:
-				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.SourcePortRange', IngressRuless[depth1].get('SourcePortRange'))
-
-	def get_EgressRuless(self):
+	def set_IngressRuless(self, IngressRules):  # RepeatList
+		for depth1 in range(len(IngressRules)):
+			if IngressRules[depth1].get('Action') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Action', IngressRules[depth1].get('Action'))
+			if IngressRules[depth1].get('SourceCidrBlock') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.SourceCidrBlock', IngressRules[depth1].get('SourceCidrBlock'))
+			if IngressRules[depth1].get('Protocol') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Protocol', IngressRules[depth1].get('Protocol'))
+			if IngressRules[depth1].get('DestinationPortRange') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.DestinationPortRange', IngressRules[depth1].get('DestinationPortRange'))
+			if IngressRules[depth1].get('Priority') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Priority', IngressRules[depth1].get('Priority'))
+			if IngressRules[depth1].get('DestinationCidrBlock') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.DestinationCidrBlock', IngressRules[depth1].get('DestinationCidrBlock'))
+			if IngressRules[depth1].get('SourcePortRange') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.SourcePortRange', IngressRules[depth1].get('SourcePortRange'))
+	def get_EgressRuless(self): # RepeatList
 		return self.get_query_params().get('EgressRules')
 
-	def set_EgressRuless(self, EgressRuless):
-		for depth1 in range(len(EgressRuless)):
-			if EgressRuless[depth1].get('Action') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Action', EgressRuless[depth1].get('Action'))
-			if EgressRuless[depth1].get('SourceCidrBlock') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.SourceCidrBlock', EgressRuless[depth1].get('SourceCidrBlock'))
-			if EgressRuless[depth1].get('Protocol') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Protocol', EgressRuless[depth1].get('Protocol'))
-			if EgressRuless[depth1].get('DestinationPortRange') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.DestinationPortRange', EgressRuless[depth1].get('DestinationPortRange'))
-			if EgressRuless[depth1].get('Priority') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Priority', EgressRuless[depth1].get('Priority'))
-			if EgressRuless[depth1].get('DestinationCidrBlock') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.DestinationCidrBlock', EgressRuless[depth1].get('DestinationCidrBlock'))
-			if EgressRuless[depth1].get('SourcePortRange') is not None:
-				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.SourcePortRange', EgressRuless[depth1].get('SourcePortRange'))
-
-	def get_DryRun(self):
+	def set_EgressRuless(self, EgressRules):  # RepeatList
+		for depth1 in range(len(EgressRules)):
+			if EgressRules[depth1].get('Action') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Action', EgressRules[depth1].get('Action'))
+			if EgressRules[depth1].get('SourceCidrBlock') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.SourceCidrBlock', EgressRules[depth1].get('SourceCidrBlock'))
+			if EgressRules[depth1].get('Protocol') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Protocol', EgressRules[depth1].get('Protocol'))
+			if EgressRules[depth1].get('DestinationPortRange') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.DestinationPortRange', EgressRules[depth1].get('DestinationPortRange'))
+			if EgressRules[depth1].get('Priority') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Priority', EgressRules[depth1].get('Priority'))
+			if EgressRules[depth1].get('DestinationCidrBlock') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.DestinationCidrBlock', EgressRules[depth1].get('DestinationCidrBlock'))
+			if EgressRules[depth1].get('SourcePortRange') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.SourcePortRange', EgressRules[depth1].get('SourcePortRange'))
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TrafficMirrorFilterId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TrafficMirrorFilterId(self): # String
 		return self.get_query_params().get('TrafficMirrorFilterId')
 
-	def set_TrafficMirrorFilterId(self,TrafficMirrorFilterId):
-		self.add_query_param('TrafficMirrorFilterId',TrafficMirrorFilterId)
+	def set_TrafficMirrorFilterId(self, TrafficMirrorFilterId):  # String
+		self.add_query_param('TrafficMirrorFilterId', TrafficMirrorFilterId)

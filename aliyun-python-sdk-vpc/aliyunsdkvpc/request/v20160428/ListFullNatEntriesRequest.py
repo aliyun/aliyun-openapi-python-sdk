@@ -25,84 +25,71 @@ class ListFullNatEntriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListFullNatEntries','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_NetworkInterfaceIdss(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_NetworkInterfaceIdss(self): # RepeatList
 		return self.get_query_params().get('NetworkInterfaceIds')
 
-	def set_NetworkInterfaceIdss(self, NetworkInterfaceIdss):
-		for depth1 in range(len(NetworkInterfaceIdss)):
-			if NetworkInterfaceIdss[depth1] is not None:
-				self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1) , NetworkInterfaceIdss[depth1])
-
-	def get_FullNatEntryId(self):
+	def set_NetworkInterfaceIdss(self, NetworkInterfaceIds):  # RepeatList
+		for depth1 in range(len(NetworkInterfaceIds)):
+			self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1), NetworkInterfaceIds[depth1])
+	def get_FullNatEntryId(self): # String
 		return self.get_query_params().get('FullNatEntryId')
 
-	def set_FullNatEntryId(self,FullNatEntryId):
-		self.add_query_param('FullNatEntryId',FullNatEntryId)
-
-	def get_FullNatTableId(self):
+	def set_FullNatEntryId(self, FullNatEntryId):  # String
+		self.add_query_param('FullNatEntryId', FullNatEntryId)
+	def get_FullNatTableId(self): # String
 		return self.get_query_params().get('FullNatTableId')
 
-	def set_FullNatTableId(self,FullNatTableId):
-		self.add_query_param('FullNatTableId',FullNatTableId)
-
-	def get_NextToken(self):
+	def set_FullNatTableId(self, FullNatTableId):  # String
+		self.add_query_param('FullNatTableId', FullNatTableId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_FullNatEntryNamess(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_FullNatEntryNamess(self): # RepeatList
 		return self.get_query_params().get('FullNatEntryNames')
 
-	def set_FullNatEntryNamess(self, FullNatEntryNamess):
-		for depth1 in range(len(FullNatEntryNamess)):
-			if FullNatEntryNamess[depth1] is not None:
-				self.add_query_param('FullNatEntryNames.' + str(depth1 + 1) , FullNatEntryNamess[depth1])
-
-	def get_ResourceOwnerAccount(self):
+	def set_FullNatEntryNamess(self, FullNatEntryNames):  # RepeatList
+		for depth1 in range(len(FullNatEntryNames)):
+			self.add_query_param('FullNatEntryNames.' + str(depth1 + 1), FullNatEntryNames[depth1])
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_IpProtocol(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_IpProtocol(self): # String
 		return self.get_query_params().get('IpProtocol')
 
-	def set_IpProtocol(self,IpProtocol):
-		self.add_query_param('IpProtocol',IpProtocol)
-
-	def get_OwnerAccount(self):
+	def set_IpProtocol(self, IpProtocol):  # String
+		self.add_query_param('IpProtocol', IpProtocol)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MaxResults(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

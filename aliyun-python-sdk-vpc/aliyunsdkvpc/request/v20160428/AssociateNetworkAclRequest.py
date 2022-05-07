@@ -25,48 +25,43 @@ class AssociateNetworkAclRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateNetworkAcl','vpc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_NetworkAclId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_NetworkAclId(self): # String
 		return self.get_query_params().get('NetworkAclId')
 
-	def set_NetworkAclId(self,NetworkAclId):
-		self.add_query_param('NetworkAclId',NetworkAclId)
-
-	def get_Resources(self):
+	def set_NetworkAclId(self, NetworkAclId):  # String
+		self.add_query_param('NetworkAclId', NetworkAclId)
+	def get_Resources(self): # RepeatList
 		return self.get_query_params().get('Resource')
 
-	def set_Resources(self, Resources):
-		for depth1 in range(len(Resources)):
-			if Resources[depth1].get('ResourceType') is not None:
-				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceType', Resources[depth1].get('ResourceType'))
-			if Resources[depth1].get('ResourceId') is not None:
-				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resources[depth1].get('ResourceId'))
-
-	def get_ResourceOwnerAccount(self):
+	def set_Resources(self, Resource):  # RepeatList
+		for depth1 in range(len(Resource)):
+			if Resource[depth1].get('ResourceType') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceType', Resource[depth1].get('ResourceType'))
+			if Resource[depth1].get('ResourceId') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resource[depth1].get('ResourceId'))
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
