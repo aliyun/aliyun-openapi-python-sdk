@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeDtsJobsRequest(RpcRequest):
+class ListDedicatedClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobs','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ListDedicatedCluster','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,21 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_OrderDirection(self, OrderDirection):  # String
 		self.add_query_param('OrderDirection', OrderDirection)
-	def get_DedicatedClusterId(self): # String
-		return self.get_query_params().get('DedicatedClusterId')
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
 
-	def set_DedicatedClusterId(self, DedicatedClusterId):  # String
-		self.add_query_param('DedicatedClusterId', DedicatedClusterId)
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
+
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -61,43 +66,8 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_DtsJobId(self): # String
-		return self.get_query_params().get('DtsJobId')
+	def get_State(self): # String
+		return self.get_query_params().get('State')
 
-	def set_DtsJobId(self, DtsJobId):  # String
-		self.add_query_param('DtsJobId', DtsJobId)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_Params(self): # String
-		return self.get_query_params().get('Params')
-
-	def set_Params(self, Params):  # String
-		self.add_query_param('Params', Params)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
-	def get_JobType(self): # String
-		return self.get_query_params().get('JobType')
-
-	def set_JobType(self, JobType):  # String
-		self.add_query_param('JobType', JobType)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)

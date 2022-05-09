@@ -186,6 +186,11 @@ class ConfigureDtsJobRequest(RpcRequest):
 
 	def set_DataSynchronization(self, DataSynchronization):  # Boolean
 		self.add_query_param('DataSynchronization', DataSynchronization)
+	def get_FileOssUrl(self): # String
+		return self.get_query_params().get('FileOssUrl')
+
+	def set_FileOssUrl(self, FileOssUrl):  # String
+		self.add_query_param('FileOssUrl', FileOssUrl)
 	def get_DestinationEndpointEngineName(self): # String
 		return self.get_query_params().get('DestinationEndpointEngineName')
 

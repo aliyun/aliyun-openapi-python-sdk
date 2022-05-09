@@ -36,6 +36,11 @@ class ModifyDtsJobRequest(RpcRequest):
 
 	def set_DbList(self, DbList):  # String
 		self.add_body_params('DbList', DbList)
+	def get_FileOssUrl(self): # String
+		return self.get_query_params().get('FileOssUrl')
+
+	def set_FileOssUrl(self, FileOssUrl):  # String
+		self.add_query_param('FileOssUrl', FileOssUrl)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
