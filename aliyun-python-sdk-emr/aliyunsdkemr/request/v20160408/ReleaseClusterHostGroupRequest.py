@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ReleaseClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ReleaseClusterHostGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ReleaseClusterHostGroup','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class ReleaseClusterHostGroupRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_EnableGracefulDecommission(self):
+		return self.get_query_params().get('EnableGracefulDecommission')
+
+	def set_EnableGracefulDecommission(self,EnableGracefulDecommission):
+		self.add_query_param('EnableGracefulDecommission',EnableGracefulDecommission)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -54,3 +60,15 @@ class ReleaseClusterHostGroupRequest(RpcRequest):
 
 	def set_InstanceIdList(self,InstanceIdList):
 		self.add_query_param('InstanceIdList',InstanceIdList)
+
+	def get_ReleaseNumber(self):
+		return self.get_query_params().get('ReleaseNumber')
+
+	def set_ReleaseNumber(self,ReleaseNumber):
+		self.add_query_param('ReleaseNumber',ReleaseNumber)
+
+	def get_DecommissionTimeout(self):
+		return self.get_query_params().get('DecommissionTimeout')
+
+	def set_DecommissionTimeout(self,DecommissionTimeout):
+		self.add_query_param('DecommissionTimeout',DecommissionTimeout)
