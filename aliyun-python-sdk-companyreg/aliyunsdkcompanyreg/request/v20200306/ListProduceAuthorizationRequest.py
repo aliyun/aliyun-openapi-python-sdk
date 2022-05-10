@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class ListProduceAuthorizationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListProduceAuthorization')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListProduceAuthorization','companyreg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

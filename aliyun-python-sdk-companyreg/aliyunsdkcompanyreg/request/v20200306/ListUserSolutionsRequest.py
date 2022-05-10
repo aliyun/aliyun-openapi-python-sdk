@@ -24,7 +24,7 @@ import json
 class ListUserSolutionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'ListUserSolutions','companyreg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

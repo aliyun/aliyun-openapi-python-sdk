@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class GetAlipayUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'GetAlipayUrl')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'GetAlipayUrl','companyreg')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

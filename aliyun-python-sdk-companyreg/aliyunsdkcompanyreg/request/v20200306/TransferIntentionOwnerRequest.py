@@ -23,7 +23,7 @@ from aliyunsdkcompanyreg.endpoint import endpoint_data
 class TransferIntentionOwnerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'TransferIntentionOwner')
+		RpcRequest.__init__(self, 'companyreg', '2020-03-06', 'TransferIntentionOwner','companyreg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
