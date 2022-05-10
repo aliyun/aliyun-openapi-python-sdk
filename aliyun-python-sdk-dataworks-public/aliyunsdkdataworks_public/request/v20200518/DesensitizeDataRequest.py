@@ -25,20 +25,19 @@ class DesensitizeDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DesensitizeData')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SceneCode(self):
+	def get_SceneCode(self): # String
 		return self.get_body_params().get('SceneCode')
 
-	def set_SceneCode(self,SceneCode):
+	def set_SceneCode(self, SceneCode):  # String
 		self.add_body_params('SceneCode', SceneCode)
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_body_params().get('Data')
 
-	def set_Data(self,Data):
+	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)

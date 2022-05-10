@@ -25,20 +25,19 @@ class DeleteTableLevelRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteTableLevel')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LevelId(self):
+	def get_LevelId(self): # Long
 		return self.get_query_params().get('LevelId')
 
-	def set_LevelId(self,LevelId):
-		self.add_query_param('LevelId',LevelId)
-
-	def get_ProjectId(self):
+	def set_LevelId(self, LevelId):  # Long
+		self.add_query_param('LevelId', LevelId)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

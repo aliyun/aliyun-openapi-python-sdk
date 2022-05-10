@@ -25,14 +25,14 @@ class GetTopicInfluenceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetTopicInfluence')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TopicId(self):
+	def get_TopicId(self): # Long
 		return self.get_body_params().get('TopicId')
 
-	def set_TopicId(self,TopicId):
+	def set_TopicId(self, TopicId):  # Long
 		self.add_body_params('TopicId', TopicId)

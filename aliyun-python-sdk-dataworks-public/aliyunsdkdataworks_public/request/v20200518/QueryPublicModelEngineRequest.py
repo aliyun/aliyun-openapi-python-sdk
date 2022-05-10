@@ -25,20 +25,19 @@ class QueryPublicModelEngineRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'QueryPublicModelEngine')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Text(self):
+	def get_Text(self): # String
 		return self.get_body_params().get('Text')
 
-	def set_Text(self,Text):
+	def set_Text(self, Text):  # String
 		self.add_body_params('Text', Text)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)

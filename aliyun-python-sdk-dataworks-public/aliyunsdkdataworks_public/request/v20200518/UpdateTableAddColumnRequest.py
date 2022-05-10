@@ -25,28 +25,27 @@ class UpdateTableAddColumnRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateTableAddColumn')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TableGuid(self):
+	def get_TableGuid(self): # String
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
-
-	def get_Columns(self):
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)
+	def get_Columns(self): # RepeatList
 		return self.get_body_params().get('Column')
 
-	def set_Columns(self, Columns):
-		for depth1 in range(len(Columns)):
-			if Columns[depth1].get('ColumnNameCn') is not None:
-				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnNameCn', Columns[depth1].get('ColumnNameCn'))
-			if Columns[depth1].get('Comment') is not None:
-				self.add_body_params('Column.' + str(depth1 + 1) + '.Comment', Columns[depth1].get('Comment'))
-			if Columns[depth1].get('ColumnName') is not None:
-				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnName', Columns[depth1].get('ColumnName'))
-			if Columns[depth1].get('ColumnType') is not None:
-				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnType', Columns[depth1].get('ColumnType'))
+	def set_Columns(self, Column):  # RepeatList
+		for depth1 in range(len(Column)):
+			if Column[depth1].get('ColumnNameCn') is not None:
+				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnNameCn', Column[depth1].get('ColumnNameCn'))
+			if Column[depth1].get('Comment') is not None:
+				self.add_body_params('Column.' + str(depth1 + 1) + '.Comment', Column[depth1].get('Comment'))
+			if Column[depth1].get('ColumnName') is not None:
+				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnName', Column[depth1].get('ColumnName'))
+			if Column[depth1].get('ColumnType') is not None:
+				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnType', Column[depth1].get('ColumnType'))

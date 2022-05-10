@@ -25,38 +25,34 @@ class GetOpRiskDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetOpRiskData')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Date(self):
+	def get_Date(self): # String
 		return self.get_query_params().get('Date')
 
-	def set_Date(self,Date):
-		self.add_query_param('Date',Date)
-
-	def get_RiskType(self):
+	def set_Date(self, Date):  # String
+		self.add_query_param('Date', Date)
+	def get_RiskType(self): # String
 		return self.get_query_params().get('RiskType')
 
-	def set_RiskType(self,RiskType):
-		self.add_query_param('RiskType',RiskType)
-
-	def get_PageNo(self):
+	def set_RiskType(self, RiskType):  # String
+		self.add_query_param('RiskType', RiskType)
+	def get_PageNo(self): # Integer
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
+	def set_PageNo(self, PageNo):  # Integer
+		self.add_query_param('PageNo', PageNo)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Name(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

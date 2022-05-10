@@ -25,32 +25,29 @@ class GetDISyncTaskMetricInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetDISyncTaskMetricInfo')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndDate(self):
+	def get_EndDate(self): # Long
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
-	def get_StartDate(self):
+	def set_EndDate(self, EndDate):  # Long
+		self.add_query_param('EndDate', EndDate)
+	def get_StartDate(self): # Long
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_ProjectId(self):
+	def set_StartDate(self, StartDate):  # Long
+		self.add_query_param('StartDate', StartDate)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
-	def get_FileId(self):
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_FileId(self): # Long
 		return self.get_query_params().get('FileId')
 
-	def set_FileId(self,FileId):
-		self.add_query_param('FileId',FileId)
+	def set_FileId(self, FileId):  # Long
+		self.add_query_param('FileId', FileId)

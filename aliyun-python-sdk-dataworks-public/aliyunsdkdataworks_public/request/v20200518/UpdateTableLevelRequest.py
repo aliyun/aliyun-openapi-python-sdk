@@ -25,38 +25,34 @@ class UpdateTableLevelRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateTableLevel')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LevelId(self):
+	def get_LevelId(self): # Long
 		return self.get_query_params().get('LevelId')
 
-	def set_LevelId(self,LevelId):
-		self.add_query_param('LevelId',LevelId)
-
-	def get_LevelType(self):
+	def set_LevelId(self, LevelId):  # Long
+		self.add_query_param('LevelId', LevelId)
+	def get_LevelType(self): # Integer
 		return self.get_query_params().get('LevelType')
 
-	def set_LevelType(self,LevelType):
-		self.add_query_param('LevelType',LevelType)
-
-	def get_Name(self):
+	def set_LevelType(self, LevelType):  # Integer
+		self.add_query_param('LevelType', LevelType)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Description(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ProjectId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

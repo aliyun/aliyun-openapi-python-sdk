@@ -25,32 +25,29 @@ class UpdateWorkbenchEventResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateWorkbenchEventResult')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CheckResultTip(self):
+	def get_CheckResultTip(self): # String
 		return self.get_query_params().get('CheckResultTip')
 
-	def set_CheckResultTip(self,CheckResultTip):
-		self.add_query_param('CheckResultTip',CheckResultTip)
-
-	def get_CheckResult(self):
+	def set_CheckResultTip(self, CheckResultTip):  # String
+		self.add_query_param('CheckResultTip', CheckResultTip)
+	def get_CheckResult(self): # String
 		return self.get_query_params().get('CheckResult')
 
-	def set_CheckResult(self,CheckResult):
-		self.add_query_param('CheckResult',CheckResult)
-
-	def get_MessageId(self):
+	def set_CheckResult(self, CheckResult):  # String
+		self.add_query_param('CheckResult', CheckResult)
+	def get_MessageId(self): # String
 		return self.get_query_params().get('MessageId')
 
-	def set_MessageId(self,MessageId):
-		self.add_query_param('MessageId',MessageId)
-
-	def get_ExtensionCode(self):
+	def set_MessageId(self, MessageId):  # String
+		self.add_query_param('MessageId', MessageId)
+	def get_ExtensionCode(self): # String
 		return self.get_query_params().get('ExtensionCode')
 
-	def set_ExtensionCode(self,ExtensionCode):
-		self.add_query_param('ExtensionCode',ExtensionCode)
+	def set_ExtensionCode(self, ExtensionCode):  # String
+		self.add_query_param('ExtensionCode', ExtensionCode)

@@ -25,20 +25,19 @@ class ListNodesByOutputRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListNodesByOutput')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectEnv(self):
+	def get_ProjectEnv(self): # String
 		return self.get_body_params().get('ProjectEnv')
 
-	def set_ProjectEnv(self,ProjectEnv):
+	def set_ProjectEnv(self, ProjectEnv):  # String
 		self.add_body_params('ProjectEnv', ProjectEnv)
-
-	def get_Outputs(self):
+	def get_Outputs(self): # String
 		return self.get_body_params().get('Outputs')
 
-	def set_Outputs(self,Outputs):
+	def set_Outputs(self, Outputs):  # String
 		self.add_body_params('Outputs', Outputs)

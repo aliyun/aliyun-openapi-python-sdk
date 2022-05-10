@@ -25,38 +25,34 @@ class DeployFileRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeployFile')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Comment(self):
+	def get_Comment(self): # String
 		return self.get_body_params().get('Comment')
 
-	def set_Comment(self,Comment):
+	def set_Comment(self, Comment):  # String
 		self.add_body_params('Comment', Comment)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_NodeId(self):
+	def get_NodeId(self): # Long
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
+	def set_NodeId(self, NodeId):  # Long
 		self.add_body_params('NodeId', NodeId)
-
-	def get_ProjectIdentifier(self):
+	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_ProjectIdentifier(self,ProjectIdentifier):
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-
-	def get_FileId(self):
+	def get_FileId(self): # Long
 		return self.get_body_params().get('FileId')
 
-	def set_FileId(self,FileId):
+	def set_FileId(self, FileId):  # Long
 		self.add_body_params('FileId', FileId)

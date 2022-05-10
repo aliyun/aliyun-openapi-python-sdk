@@ -25,140 +25,122 @@ class UpdateTableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateTable')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Columnss(self):
+	def get_Columnss(self): # RepeatList
 		return self.get_body_params().get('Columns')
 
-	def set_Columnss(self, Columnss):
-		for depth1 in range(len(Columnss)):
-			if Columnss[depth1].get('SeqNumber') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.SeqNumber', Columnss[depth1].get('SeqNumber'))
-			if Columnss[depth1].get('IsPartitionCol') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.IsPartitionCol', Columnss[depth1].get('IsPartitionCol'))
-			if Columnss[depth1].get('ColumnNameCn') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnNameCn', Columnss[depth1].get('ColumnNameCn'))
-			if Columnss[depth1].get('Length') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.Length', Columnss[depth1].get('Length'))
-			if Columnss[depth1].get('Comment') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.Comment', Columnss[depth1].get('Comment'))
-			if Columnss[depth1].get('ColumnName') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnName', Columnss[depth1].get('ColumnName'))
-			if Columnss[depth1].get('ColumnType') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnType', Columnss[depth1].get('ColumnType'))
-
-	def get_LifeCycle(self):
+	def set_Columnss(self, Columns):  # RepeatList
+		for depth1 in range(len(Columns)):
+			if Columns[depth1].get('SeqNumber') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.SeqNumber', Columns[depth1].get('SeqNumber'))
+			if Columns[depth1].get('IsPartitionCol') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.IsPartitionCol', Columns[depth1].get('IsPartitionCol'))
+			if Columns[depth1].get('ColumnNameCn') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnNameCn', Columns[depth1].get('ColumnNameCn'))
+			if Columns[depth1].get('Length') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.Length', Columns[depth1].get('Length'))
+			if Columns[depth1].get('Comment') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.Comment', Columns[depth1].get('Comment'))
+			if Columns[depth1].get('ColumnName') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnName', Columns[depth1].get('ColumnName'))
+			if Columns[depth1].get('ColumnType') is not None:
+				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnType', Columns[depth1].get('ColumnType'))
+	def get_LifeCycle(self): # Integer
 		return self.get_query_params().get('LifeCycle')
 
-	def set_LifeCycle(self,LifeCycle):
-		self.add_query_param('LifeCycle',LifeCycle)
-
-	def get_Themess(self):
+	def set_LifeCycle(self, LifeCycle):  # Integer
+		self.add_query_param('LifeCycle', LifeCycle)
+	def get_Themess(self): # RepeatList
 		return self.get_body_params().get('Themes')
 
-	def set_Themess(self, Themess):
-		for depth1 in range(len(Themess)):
-			if Themess[depth1].get('ThemeLevel') is not None:
-				self.add_body_params('Themes.' + str(depth1 + 1) + '.ThemeLevel', Themess[depth1].get('ThemeLevel'))
-			if Themess[depth1].get('ThemeId') is not None:
-				self.add_body_params('Themes.' + str(depth1 + 1) + '.ThemeId', Themess[depth1].get('ThemeId'))
-
-	def get_LogicalLevelId(self):
+	def set_Themess(self, Themes):  # RepeatList
+		for depth1 in range(len(Themes)):
+			if Themes[depth1].get('ThemeLevel') is not None:
+				self.add_body_params('Themes.' + str(depth1 + 1) + '.ThemeLevel', Themes[depth1].get('ThemeLevel'))
+			if Themes[depth1].get('ThemeId') is not None:
+				self.add_body_params('Themes.' + str(depth1 + 1) + '.ThemeId', Themes[depth1].get('ThemeId'))
+	def get_LogicalLevelId(self): # Long
 		return self.get_query_params().get('LogicalLevelId')
 
-	def set_LogicalLevelId(self,LogicalLevelId):
-		self.add_query_param('LogicalLevelId',LogicalLevelId)
-
-	def get_Endpoint(self):
+	def set_LogicalLevelId(self, LogicalLevelId):  # Long
+		self.add_query_param('LogicalLevelId', LogicalLevelId)
+	def get_Endpoint(self): # String
 		return self.get_body_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
+	def set_Endpoint(self, Endpoint):  # String
 		self.add_body_params('Endpoint', Endpoint)
-
-	def get_EnvType(self):
+	def get_EnvType(self): # Integer
 		return self.get_body_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
+	def set_EnvType(self, EnvType):  # Integer
 		self.add_body_params('EnvType', EnvType)
-
-	def get_HasPart(self):
+	def get_HasPart(self): # Integer
 		return self.get_query_params().get('HasPart')
 
-	def set_HasPart(self,HasPart):
-		self.add_query_param('HasPart',HasPart)
-
-	def get_TableName(self):
+	def set_HasPart(self, HasPart):  # Integer
+		self.add_query_param('HasPart', HasPart)
+	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
-
-	def get_AppGuid(self):
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
+	def get_AppGuid(self): # String
 		return self.get_query_params().get('AppGuid')
 
-	def set_AppGuid(self,AppGuid):
-		self.add_query_param('AppGuid',AppGuid)
-
-	def get_ProjectId(self):
+	def set_AppGuid(self, AppGuid):  # String
+		self.add_query_param('AppGuid', AppGuid)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
-	def get_CategoryId(self):
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_CategoryId(self): # Long
 		return self.get_query_params().get('CategoryId')
 
-	def set_CategoryId(self,CategoryId):
-		self.add_query_param('CategoryId',CategoryId)
-
-	def get_Visibility(self):
+	def set_CategoryId(self, CategoryId):  # Long
+		self.add_query_param('CategoryId', CategoryId)
+	def get_Visibility(self): # Integer
 		return self.get_query_params().get('Visibility')
 
-	def set_Visibility(self,Visibility):
-		self.add_query_param('Visibility',Visibility)
-
-	def get_PhysicsLevelId(self):
+	def set_Visibility(self, Visibility):  # Integer
+		self.add_query_param('Visibility', Visibility)
+	def get_PhysicsLevelId(self): # Long
 		return self.get_query_params().get('PhysicsLevelId')
 
-	def set_PhysicsLevelId(self,PhysicsLevelId):
-		self.add_query_param('PhysicsLevelId',PhysicsLevelId)
-
-	def get_OwnerId(self):
+	def set_PhysicsLevelId(self, PhysicsLevelId):  # Long
+		self.add_query_param('PhysicsLevelId', PhysicsLevelId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_IsView(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_IsView(self): # Integer
 		return self.get_query_params().get('IsView')
 
-	def set_IsView(self,IsView):
-		self.add_query_param('IsView',IsView)
-
-	def get_ExternalTableType(self):
+	def set_IsView(self, IsView):  # Integer
+		self.add_query_param('IsView', IsView)
+	def get_ExternalTableType(self): # String
 		return self.get_query_params().get('ExternalTableType')
 
-	def set_ExternalTableType(self,ExternalTableType):
-		self.add_query_param('ExternalTableType',ExternalTableType)
-
-	def get_Location(self):
+	def set_ExternalTableType(self, ExternalTableType):  # String
+		self.add_query_param('ExternalTableType', ExternalTableType)
+	def get_Location(self): # String
 		return self.get_query_params().get('Location')
 
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)
-
-	def get_Comment(self):
+	def set_Location(self, Location):  # String
+		self.add_query_param('Location', Location)
+	def get_Comment(self): # String
 		return self.get_query_params().get('Comment')
 
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
-
-	def get_CreateIfNotExists(self):
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)
+	def get_CreateIfNotExists(self): # Boolean
 		return self.get_query_params().get('CreateIfNotExists')
 
-	def set_CreateIfNotExists(self,CreateIfNotExists):
-		self.add_query_param('CreateIfNotExists',CreateIfNotExists)
+	def set_CreateIfNotExists(self, CreateIfNotExists):  # Boolean
+		self.add_query_param('CreateIfNotExists', CreateIfNotExists)

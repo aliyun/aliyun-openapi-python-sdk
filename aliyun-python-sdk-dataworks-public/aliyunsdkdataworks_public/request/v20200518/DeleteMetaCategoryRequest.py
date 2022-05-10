@@ -25,14 +25,14 @@ class DeleteMetaCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteMetaCategory')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CategoryId(self):
+	def get_CategoryId(self): # Long
 		return self.get_query_params().get('CategoryId')
 
-	def set_CategoryId(self,CategoryId):
-		self.add_query_param('CategoryId',CategoryId)
+	def set_CategoryId(self, CategoryId):  # Long
+		self.add_query_param('CategoryId', CategoryId)

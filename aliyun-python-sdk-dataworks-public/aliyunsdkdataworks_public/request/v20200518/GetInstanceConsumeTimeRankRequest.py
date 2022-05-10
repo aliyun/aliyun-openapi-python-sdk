@@ -25,20 +25,19 @@ class GetInstanceConsumeTimeRankRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetInstanceConsumeTimeRank')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Bizdate(self):
+	def get_Bizdate(self): # String
 		return self.get_body_params().get('Bizdate')
 
-	def set_Bizdate(self,Bizdate):
+	def set_Bizdate(self, Bizdate):  # String
 		self.add_body_params('Bizdate', Bizdate)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)

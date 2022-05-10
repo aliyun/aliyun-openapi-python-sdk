@@ -25,26 +25,24 @@ class UpdateMetaCategoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateMetaCategory')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_Comment(self):
+	def get_Comment(self): # String
 		return self.get_body_params().get('Comment')
 
-	def set_Comment(self,Comment):
+	def set_Comment(self, Comment):  # String
 		self.add_body_params('Comment', Comment)
-
-	def get_CategoryId(self):
+	def get_CategoryId(self): # Long
 		return self.get_body_params().get('CategoryId')
 
-	def set_CategoryId(self,CategoryId):
+	def set_CategoryId(self, CategoryId):  # Long
 		self.add_body_params('CategoryId', CategoryId)

@@ -25,62 +25,54 @@ class ListTopicsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListTopics')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Owner(self):
+	def get_Owner(self): # String
 		return self.get_body_params().get('Owner')
 
-	def set_Owner(self,Owner):
+	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
-
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-
-	def get_BeginTime(self):
+	def get_BeginTime(self): # String
 		return self.get_body_params().get('BeginTime')
 
-	def set_BeginTime(self,BeginTime):
+	def set_BeginTime(self, BeginTime):  # String
 		self.add_body_params('BeginTime', BeginTime)
-
-	def get_TopicStatuses(self):
+	def get_TopicStatuses(self): # String
 		return self.get_body_params().get('TopicStatuses')
 
-	def set_TopicStatuses(self,TopicStatuses):
+	def set_TopicStatuses(self, TopicStatuses):  # String
 		self.add_body_params('TopicStatuses', TopicStatuses)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # Long
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # Long
 		self.add_body_params('InstanceId', InstanceId)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_TopicTypes(self):
+	def get_TopicTypes(self): # String
 		return self.get_body_params().get('TopicTypes')
 
-	def set_TopicTypes(self,TopicTypes):
+	def set_TopicTypes(self, TopicTypes):  # String
 		self.add_body_params('TopicTypes', TopicTypes)
-
-	def get_NodeId(self):
+	def get_NodeId(self): # Long
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
+	def set_NodeId(self, NodeId):  # Long
 		self.add_body_params('NodeId', NodeId)

@@ -25,20 +25,19 @@ class UpdateMetaTableIntroWikiRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateMetaTableIntroWiki')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TableGuid(self):
+	def get_TableGuid(self): # String
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
-
-	def get_Content(self):
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)

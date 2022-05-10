@@ -25,20 +25,19 @@ class GetMetaTableThemeLevelRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableThemeLevel')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataSourceType(self):
+	def get_DataSourceType(self): # String
 		return self.get_query_params().get('DataSourceType')
 
-	def set_DataSourceType(self,DataSourceType):
-		self.add_query_param('DataSourceType',DataSourceType)
-
-	def get_TableGuid(self):
+	def set_DataSourceType(self, DataSourceType):  # String
+		self.add_query_param('DataSourceType', DataSourceType)
+	def get_TableGuid(self): # String
 		return self.get_query_params().get('TableGuid')
 
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)

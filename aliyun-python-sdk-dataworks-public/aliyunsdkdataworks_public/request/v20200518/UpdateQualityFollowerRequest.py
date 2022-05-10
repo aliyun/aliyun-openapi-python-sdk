@@ -25,32 +25,29 @@ class UpdateQualityFollowerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateQualityFollower')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlarmMode(self):
+	def get_AlarmMode(self): # Integer
 		return self.get_body_params().get('AlarmMode')
 
-	def set_AlarmMode(self,AlarmMode):
+	def set_AlarmMode(self, AlarmMode):  # Integer
 		self.add_body_params('AlarmMode', AlarmMode)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_Follower(self):
+	def get_Follower(self): # String
 		return self.get_body_params().get('Follower')
 
-	def set_Follower(self,Follower):
+	def set_Follower(self, Follower):  # String
 		self.add_body_params('Follower', Follower)
-
-	def get_FollowerId(self):
+	def get_FollowerId(self): # Long
 		return self.get_body_params().get('FollowerId')
 
-	def set_FollowerId(self,FollowerId):
+	def set_FollowerId(self, FollowerId):  # Long
 		self.add_body_params('FollowerId', FollowerId)

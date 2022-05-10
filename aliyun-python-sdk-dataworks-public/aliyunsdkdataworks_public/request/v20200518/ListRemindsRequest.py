@@ -25,50 +25,44 @@ class ListRemindsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListReminds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SearchText(self):
+	def get_SearchText(self): # String
 		return self.get_body_params().get('SearchText')
 
-	def set_SearchText(self,SearchText):
+	def set_SearchText(self, SearchText):  # String
 		self.add_body_params('SearchText', SearchText)
-
-	def get_Founder(self):
+	def get_Founder(self): # String
 		return self.get_body_params().get('Founder')
 
-	def set_Founder(self,Founder):
+	def set_Founder(self, Founder):  # String
 		self.add_body_params('Founder', Founder)
-
-	def get_RemindTypes(self):
+	def get_RemindTypes(self): # String
 		return self.get_body_params().get('RemindTypes')
 
-	def set_RemindTypes(self,RemindTypes):
+	def set_RemindTypes(self, RemindTypes):  # String
 		self.add_body_params('RemindTypes', RemindTypes)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_AlertTarget(self):
+	def get_AlertTarget(self): # String
 		return self.get_body_params().get('AlertTarget')
 
-	def set_AlertTarget(self,AlertTarget):
+	def set_AlertTarget(self, AlertTarget):  # String
 		self.add_body_params('AlertTarget', AlertTarget)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_NodeId(self):
+	def get_NodeId(self): # Long
 		return self.get_body_params().get('NodeId')
 
-	def set_NodeId(self,NodeId):
+	def set_NodeId(self, NodeId):  # Long
 		self.add_body_params('NodeId', NodeId)

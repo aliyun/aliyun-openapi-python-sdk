@@ -25,38 +25,34 @@ class SetDataSourceShareRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'SetDataSourceShare')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectPermissions(self):
+	def get_ProjectPermissions(self): # String
 		return self.get_query_params().get('ProjectPermissions')
 
-	def set_ProjectPermissions(self,ProjectPermissions):
-		self.add_query_param('ProjectPermissions',ProjectPermissions)
-
-	def get_DatasourceName(self):
+	def set_ProjectPermissions(self, ProjectPermissions):  # String
+		self.add_query_param('ProjectPermissions', ProjectPermissions)
+	def get_DatasourceName(self): # String
 		return self.get_query_params().get('DatasourceName')
 
-	def set_DatasourceName(self,DatasourceName):
-		self.add_query_param('DatasourceName',DatasourceName)
-
-	def get_UserPermissions(self):
+	def set_DatasourceName(self, DatasourceName):  # String
+		self.add_query_param('DatasourceName', DatasourceName)
+	def get_UserPermissions(self): # String
 		return self.get_query_params().get('UserPermissions')
 
-	def set_UserPermissions(self,UserPermissions):
-		self.add_query_param('UserPermissions',UserPermissions)
-
-	def get_EnvType(self):
+	def set_UserPermissions(self, UserPermissions):  # String
+		self.add_query_param('UserPermissions', UserPermissions)
+	def get_EnvType(self): # String
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
-
-	def get_ProjectId(self):
+	def set_EnvType(self, EnvType):  # String
+		self.add_query_param('EnvType', EnvType)
+	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
