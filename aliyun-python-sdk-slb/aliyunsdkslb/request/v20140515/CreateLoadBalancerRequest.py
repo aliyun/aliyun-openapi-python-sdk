@@ -106,6 +106,11 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_AddressType(self, AddressType):  # String
 		self.add_query_param('AddressType', AddressType)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
 	def get_DeleteProtection(self): # String
 		return self.get_query_params().get('DeleteProtection')
 
