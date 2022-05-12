@@ -173,3 +173,13 @@ class UpdateImageCacheRequest(RpcRequest):
     def set_Annotations(self, Annotations):
         self.add_query_param("Annotations", Annotations)
 
+    def get_Tags(self):
+        return self.get_query_params().get('Tags')
+
+    def set_Tags(self, Tags):
+        for i in range(len(Tags)):
+            if Tags[i].get('Key') is not None:
+                self.add_query_param('Tag.' + str(i + 1) + '.Key', Tags[i].get('Key'))
+            if Tags[i].get('Value') is not None:
+                self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
+

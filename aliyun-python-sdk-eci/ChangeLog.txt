@@ -1,3 +1,6 @@
+2022-05-12 Version: 1.2.1
+1、ImageCache Tag
+
 2022-02-21 Version: 1.2.0
 1、Support Api: DescribeAvailableResource UpdateImageCache
 
