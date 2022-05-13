@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class QueryClusterDetailRequest(RpcRequest):
+class AddTestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterDetail','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddTest','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,28 @@ class QueryClusterDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclSwitch(self): # Boolean
-		return self.get_query_params().get('AclSwitch')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_AclSwitch(self, AclSwitch):  # Boolean
-		self.add_query_param('AclSwitch', AclSwitch)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_OrderItem(self): # String
+		return self.get_query_params().get('OrderItem')
 
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_OrderItem(self, OrderItem):  # String
+		self.add_query_param('OrderItem', OrderItem)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_DescSort(self): # Boolean
+		return self.get_query_params().get('DescSort')
+
+	def set_DescSort(self, DescSort):  # Boolean
+		self.add_query_param('DescSort', DescSort)

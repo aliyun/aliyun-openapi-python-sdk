@@ -20,34 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class QueryClusterDetailRequest(RpcRequest):
+class ListInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterDetail','mse')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListInstances','mse')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclSwitch(self): # Boolean
-		return self.get_query_params().get('AclSwitch')
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
 
-	def set_AclSwitch(self, AclSwitch):  # Boolean
-		self.add_query_param('AclSwitch', AclSwitch)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class QueryClusterDetailRequest(RpcRequest):
+class ListClusterDetailFeatureRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterDetail','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusterDetailFeature','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,16 @@ class QueryClusterDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclSwitch(self): # Boolean
-		return self.get_query_params().get('AclSwitch')
-
-	def set_AclSwitch(self, AclSwitch):  # Boolean
-		self.add_query_param('AclSwitch', AclSwitch)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

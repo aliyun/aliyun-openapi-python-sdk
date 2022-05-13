@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class QueryClusterDetailRequest(RpcRequest):
+class AddSeataServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryClusterDetail','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddSeataServer','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,43 @@ class QueryClusterDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclSwitch(self): # Boolean
-		return self.get_query_params().get('AclSwitch')
+	def get_Replica(self): # Integer
+		return self.get_query_params().get('Replica')
 
-	def set_AclSwitch(self, AclSwitch):  # Boolean
-		self.add_query_param('AclSwitch', AclSwitch)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
+	def set_Replica(self, Replica):  # Integer
+		self.add_query_param('Replica', Replica)
+	def get_PrimaryUser(self): # String
+		return self.get_query_params().get('PrimaryUser')
 
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_PrimaryUser(self, PrimaryUser):  # String
+		self.add_query_param('PrimaryUser', PrimaryUser)
+	def get_Vpc(self): # String
+		return self.get_query_params().get('Vpc')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_Vpc(self, Vpc):  # String
+		self.add_query_param('Vpc', Vpc)
+	def get_Vswitch(self): # String
+		return self.get_query_params().get('Vswitch')
+
+	def set_Vswitch(self, Vswitch):  # String
+		self.add_query_param('Vswitch', Vswitch)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
