@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class AddClusterServiceRequest(RpcRequest):
+class CreateClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AddClusterService')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterHostGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,24 +37,50 @@ class AddClusterServiceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_HostGroupParams(self):
+		return self.get_query_params().get('HostGroupParams')
+
+	def set_HostGroupParams(self,HostGroupParams):
+		self.add_query_param('HostGroupParams',HostGroupParams)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_HostGroupName(self):
+		return self.get_query_params().get('HostGroupName')
+
+	def set_HostGroupName(self,HostGroupName):
+		self.add_query_param('HostGroupName',HostGroupName)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Services(self):
-		return self.get_query_params().get('Service')
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
 
-	def set_Services(self, Services):
-		for depth1 in range(len(Services)):
-			if Services[depth1].get('ServiceVersion') is not None:
-				self.add_query_param('Service.' + str(depth1 + 1) + '.ServiceVersion', Services[depth1].get('ServiceVersion'))
-			if Services[depth1].get('ServiceName') is not None:
-				self.add_query_param('Service.' + str(depth1 + 1) + '.ServiceName', Services[depth1].get('ServiceName'))
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
 
 	def get_Comment(self):
 		return self.get_query_params().get('Comment')
 
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
+
+	def get_HostGroupType(self):
+		return self.get_query_params().get('HostGroupType')
+
+	def set_HostGroupType(self,HostGroupType):
+		self.add_query_param('HostGroupType',HostGroupType)

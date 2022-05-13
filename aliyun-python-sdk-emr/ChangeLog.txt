@@ -1,3 +1,6 @@
+2022-05-13 Version: 3.3.10
+- Publish.
+
 2022-05-09 Version: 3.3.9
 - ReleaseClusterHostGroup add support for ReleaseNumber.
 - ReleaseClusterHostGroup add support for Decommission Gracefully.
