@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDataSetTaskRequest(RpcRequest):
+class ListQualityCheckSchemeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'ListDataSetTask')
+		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'ListQualityCheckScheme')
 		self.set_method('POST')
 
 	def get_JsonStr(self): # String
