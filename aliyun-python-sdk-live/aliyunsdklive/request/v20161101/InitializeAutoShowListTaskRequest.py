@@ -56,6 +56,11 @@ class InitializeAutoShowListTaskRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_CallBackUrl(self): # String
+		return self.get_query_params().get('CallBackUrl')
+
+	def set_CallBackUrl(self, CallBackUrl):  # String
+		self.add_query_param('CallBackUrl', CallBackUrl)
 	def get_ResourceIds(self): # String
 		return self.get_query_params().get('ResourceIds')
 
