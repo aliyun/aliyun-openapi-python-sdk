@@ -26,14 +26,14 @@ class DescribeConfigMapRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeConfigMap','serverless')
 		self.set_uri_pattern('/pop/v1/sam/configmap/configMap')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConfigMapId(self):
+	def get_ConfigMapId(self): # Long
 		return self.get_query_params().get('ConfigMapId')
 
-	def set_ConfigMapId(self,ConfigMapId):
-		self.add_query_param('ConfigMapId',ConfigMapId)
+	def set_ConfigMapId(self, ConfigMapId):  # Long
+		self.add_query_param('ConfigMapId', ConfigMapId)

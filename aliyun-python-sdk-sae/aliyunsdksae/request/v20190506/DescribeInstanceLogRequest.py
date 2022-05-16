@@ -26,14 +26,14 @@ class DescribeInstanceLogRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeInstanceLog','serverless')
 		self.set_uri_pattern('/pop/v1/sam/instance/describeInstanceLog')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

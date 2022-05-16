@@ -26,20 +26,19 @@ class DeleteApplicationScalingRuleRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeleteApplicationScalingRule','serverless')
 		self.set_uri_pattern('/pop/v1/sam/scale/applicationScalingRule')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScalingRuleName(self):
+	def get_ScalingRuleName(self): # String
 		return self.get_query_params().get('ScalingRuleName')
 
-	def set_ScalingRuleName(self,ScalingRuleName):
-		self.add_query_param('ScalingRuleName',ScalingRuleName)
-
-	def get_AppId(self):
+	def set_ScalingRuleName(self, ScalingRuleName):  # String
+		self.add_query_param('ScalingRuleName', ScalingRuleName)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

@@ -26,26 +26,24 @@ class RestartApplicationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RestartApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/restartApplication')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MinReadyInstances(self):
+	def get_MinReadyInstances(self): # Integer
 		return self.get_query_params().get('MinReadyInstances')
 
-	def set_MinReadyInstances(self,MinReadyInstances):
-		self.add_query_param('MinReadyInstances',MinReadyInstances)
-
-	def get_AppId(self):
+	def set_MinReadyInstances(self, MinReadyInstances):  # Integer
+		self.add_query_param('MinReadyInstances', MinReadyInstances)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_MinReadyInstanceRatio(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_MinReadyInstanceRatio(self): # Integer
 		return self.get_query_params().get('MinReadyInstanceRatio')
 
-	def set_MinReadyInstanceRatio(self,MinReadyInstanceRatio):
-		self.add_query_param('MinReadyInstanceRatio',MinReadyInstanceRatio)
+	def set_MinReadyInstanceRatio(self, MinReadyInstanceRatio):  # Integer
+		self.add_query_param('MinReadyInstanceRatio', MinReadyInstanceRatio)

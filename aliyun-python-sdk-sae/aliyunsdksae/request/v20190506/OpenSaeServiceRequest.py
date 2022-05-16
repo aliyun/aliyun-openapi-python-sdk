@@ -26,7 +26,9 @@ class OpenSaeServiceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'OpenSaeService','serverless')
 		self.set_uri_pattern('/service/open')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

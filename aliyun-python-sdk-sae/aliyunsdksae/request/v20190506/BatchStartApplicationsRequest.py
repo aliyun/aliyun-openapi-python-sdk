@@ -26,20 +26,19 @@ class BatchStartApplicationsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'BatchStartApplications','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/batchStartApplications')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppIds(self):
+	def get_AppIds(self): # String
 		return self.get_query_params().get('AppIds')
 
-	def set_AppIds(self,AppIds):
-		self.add_query_param('AppIds',AppIds)
-
-	def get_NamespaceId(self):
+	def set_AppIds(self, AppIds):  # String
+		self.add_query_param('AppIds', AppIds)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)

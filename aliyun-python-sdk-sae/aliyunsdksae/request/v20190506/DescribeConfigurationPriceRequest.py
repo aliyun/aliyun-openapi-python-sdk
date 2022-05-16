@@ -26,20 +26,19 @@ class DescribeConfigurationPriceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeConfigurationPrice','serverless')
 		self.set_uri_pattern('/pop/v1/paas/configurationPrice')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Memory(self):
+	def get_Memory(self): # Integer
 		return self.get_query_params().get('Memory')
 
-	def set_Memory(self,Memory):
-		self.add_query_param('Memory',Memory)
-
-	def get_Cpu(self):
+	def set_Memory(self, Memory):  # Integer
+		self.add_query_param('Memory', Memory)
+	def get_Cpu(self): # Integer
 		return self.get_query_params().get('Cpu')
 
-	def set_Cpu(self,Cpu):
-		self.add_query_param('Cpu',Cpu)
+	def set_Cpu(self, Cpu):  # Integer
+		self.add_query_param('Cpu', Cpu)

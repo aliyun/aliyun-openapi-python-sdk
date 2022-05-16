@@ -26,26 +26,24 @@ class UpdateNamespaceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateNamespace','serverless')
 		self.set_uri_pattern('/pop/v1/paas/namespace')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NamespaceName(self):
+	def get_NamespaceName(self): # String
 		return self.get_query_params().get('NamespaceName')
 
-	def set_NamespaceName(self,NamespaceName):
-		self.add_query_param('NamespaceName',NamespaceName)
-
-	def get_NamespaceDescription(self):
+	def set_NamespaceName(self, NamespaceName):  # String
+		self.add_query_param('NamespaceName', NamespaceName)
+	def get_NamespaceDescription(self): # String
 		return self.get_query_params().get('NamespaceDescription')
 
-	def set_NamespaceDescription(self,NamespaceDescription):
-		self.add_query_param('NamespaceDescription',NamespaceDescription)
-
-	def get_NamespaceId(self):
+	def set_NamespaceDescription(self, NamespaceDescription):  # String
+		self.add_query_param('NamespaceDescription', NamespaceDescription)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)

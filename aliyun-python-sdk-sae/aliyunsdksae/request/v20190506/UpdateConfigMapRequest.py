@@ -26,26 +26,24 @@ class UpdateConfigMapRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateConfigMap','serverless')
 		self.set_uri_pattern('/pop/v1/sam/configmap/configMap')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_body_params().get('Data')
 
-	def set_Data(self,Data):
+	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ConfigMapId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ConfigMapId(self): # Long
 		return self.get_query_params().get('ConfigMapId')
 
-	def set_ConfigMapId(self,ConfigMapId):
-		self.add_query_param('ConfigMapId',ConfigMapId)
+	def set_ConfigMapId(self, ConfigMapId):  # Long
+		self.add_query_param('ConfigMapId', ConfigMapId)

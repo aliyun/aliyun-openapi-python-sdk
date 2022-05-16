@@ -26,20 +26,19 @@ class DescribeApplicationConfigRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeApplicationConfig','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/describeApplicationConfig')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VersionId(self):
+	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
-
-	def get_AppId(self):
+	def set_VersionId(self, VersionId):  # String
+		self.add_query_param('VersionId', VersionId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

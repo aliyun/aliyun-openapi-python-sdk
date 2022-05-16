@@ -26,38 +26,34 @@ class BindSlbRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'BindSlb','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/slb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Intranet(self):
+	def get_Intranet(self): # String
 		return self.get_query_params().get('Intranet')
 
-	def set_Intranet(self,Intranet):
-		self.add_query_param('Intranet',Intranet)
-
-	def get_IntranetSlbId(self):
+	def set_Intranet(self, Intranet):  # String
+		self.add_query_param('Intranet', Intranet)
+	def get_IntranetSlbId(self): # String
 		return self.get_query_params().get('IntranetSlbId')
 
-	def set_IntranetSlbId(self,IntranetSlbId):
-		self.add_query_param('IntranetSlbId',IntranetSlbId)
-
-	def get_InternetSlbId(self):
+	def set_IntranetSlbId(self, IntranetSlbId):  # String
+		self.add_query_param('IntranetSlbId', IntranetSlbId)
+	def get_InternetSlbId(self): # String
 		return self.get_query_params().get('InternetSlbId')
 
-	def set_InternetSlbId(self,InternetSlbId):
-		self.add_query_param('InternetSlbId',InternetSlbId)
-
-	def get_AppId(self):
+	def set_InternetSlbId(self, InternetSlbId):  # String
+		self.add_query_param('InternetSlbId', InternetSlbId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Internet(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Internet(self): # String
 		return self.get_query_params().get('Internet')
 
-	def set_Internet(self,Internet):
-		self.add_query_param('Internet',Internet)
+	def set_Internet(self, Internet):  # String
+		self.add_query_param('Internet', Internet)

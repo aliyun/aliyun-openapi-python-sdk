@@ -26,38 +26,34 @@ class DescribeAppServiceDetailRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeAppServiceDetail','serverless')
 		self.set_uri_pattern('/pop/v1/sam/service/describeAppServiceDetail')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ServiceType(self):
+	def get_ServiceType(self): # String
 		return self.get_query_params().get('ServiceType')
 
-	def set_ServiceType(self,ServiceType):
-		self.add_query_param('ServiceType',ServiceType)
-
-	def get_AppId(self):
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ServiceVersion(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_ServiceVersion(self): # String
 		return self.get_query_params().get('ServiceVersion')
 
-	def set_ServiceVersion(self,ServiceVersion):
-		self.add_query_param('ServiceVersion',ServiceVersion)
-
-	def get_ServiceName(self):
+	def set_ServiceVersion(self, ServiceVersion):  # String
+		self.add_query_param('ServiceVersion', ServiceVersion)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
-	def get_ServiceGroup(self):
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
+	def get_ServiceGroup(self): # String
 		return self.get_query_params().get('ServiceGroup')
 
-	def set_ServiceGroup(self,ServiceGroup):
-		self.add_query_param('ServiceGroup',ServiceGroup)
+	def set_ServiceGroup(self, ServiceGroup):  # String
+		self.add_query_param('ServiceGroup', ServiceGroup)

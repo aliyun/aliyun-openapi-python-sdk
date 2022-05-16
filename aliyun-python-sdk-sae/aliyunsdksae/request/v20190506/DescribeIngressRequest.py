@@ -26,14 +26,14 @@ class DescribeIngressRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeIngress','serverless')
 		self.set_uri_pattern('/pop/v1/sam/ingress/Ingress')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IngressId(self):
+	def get_IngressId(self): # Long
 		return self.get_query_params().get('IngressId')
 
-	def set_IngressId(self,IngressId):
-		self.add_query_param('IngressId',IngressId)
+	def set_IngressId(self, IngressId):  # Long
+		self.add_query_param('IngressId', IngressId)

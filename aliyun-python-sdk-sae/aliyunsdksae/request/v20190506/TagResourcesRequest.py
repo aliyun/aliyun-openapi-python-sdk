@@ -26,26 +26,24 @@ class TagResourcesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'TagResources','serverless')
 		self.set_uri_pattern('/tags')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceType(self):
+	def get_ResourceType(self): # String
 		return self.get_body_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
+	def set_ResourceType(self, ResourceType):  # String
 		self.add_body_params('ResourceType', ResourceType)
-
-	def get_Tags(self):
+	def get_Tags(self): # String
 		return self.get_body_params().get('Tags')
 
-	def set_Tags(self,Tags):
+	def set_Tags(self, Tags):  # String
 		self.add_body_params('Tags', Tags)
-
-	def get_ResourceIds(self):
+	def get_ResourceIds(self): # String
 		return self.get_body_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
+	def set_ResourceIds(self, ResourceIds):  # String
 		self.add_body_params('ResourceIds', ResourceIds)

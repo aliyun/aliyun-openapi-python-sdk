@@ -26,44 +26,49 @@ class UpdateIngressRequest(RoaRequest):
 		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateIngress','serverless')
 		self.set_uri_pattern('/pop/v1/sam/ingress/Ingress')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IngressId(self):
+	def get_IngressId(self): # Long
 		return self.get_query_params().get('IngressId')
 
-	def set_IngressId(self,IngressId):
-		self.add_query_param('IngressId',IngressId)
-
-	def get_ListenerPort(self):
+	def set_IngressId(self, IngressId):  # Long
+		self.add_query_param('IngressId', IngressId)
+	def get_ListenerPort(self): # String
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_Description(self):
+	def set_ListenerPort(self, ListenerPort):  # String
+		self.add_query_param('ListenerPort', ListenerPort)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_LoadBalanceType(self): # String
+		return self.get_query_params().get('LoadBalanceType')
 
-	def get_Rules(self):
+	def set_LoadBalanceType(self, LoadBalanceType):  # String
+		self.add_query_param('LoadBalanceType', LoadBalanceType)
+	def get_Rules(self): # String
 		return self.get_body_params().get('Rules')
 
-	def set_Rules(self,Rules):
+	def set_Rules(self, Rules):  # String
 		self.add_body_params('Rules', Rules)
-
-	def get_CertId(self):
+	def get_CertId(self): # String
 		return self.get_query_params().get('CertId')
 
-	def set_CertId(self,CertId):
-		self.add_query_param('CertId',CertId)
+	def set_CertId(self, CertId):  # String
+		self.add_query_param('CertId', CertId)
+	def get_ListenerProtocol(self): # String
+		return self.get_query_params().get('ListenerProtocol')
 
-	def get_DefaultRule(self):
+	def set_ListenerProtocol(self, ListenerProtocol):  # String
+		self.add_query_param('ListenerProtocol', ListenerProtocol)
+	def get_DefaultRule(self): # String
 		return self.get_query_params().get('DefaultRule')
 
-	def set_DefaultRule(self,DefaultRule):
-		self.add_query_param('DefaultRule',DefaultRule)
+	def set_DefaultRule(self, DefaultRule):  # String
+		self.add_query_param('DefaultRule', DefaultRule)
