@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class CreateDomainExtensionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateDomainExtension','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateDomainExtension','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

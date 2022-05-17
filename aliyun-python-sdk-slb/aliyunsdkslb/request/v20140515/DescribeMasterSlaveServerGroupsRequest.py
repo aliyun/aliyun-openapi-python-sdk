@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class DescribeMasterSlaveServerGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeMasterSlaveServerGroups','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeMasterSlaveServerGroups','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class DeleteServerCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DeleteServerCertificate','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DeleteServerCertificate','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

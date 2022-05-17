@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class DescribeZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeZones','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeZones','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class DescribeLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeLoadBalancerHTTPListenerAttribute','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeLoadBalancerHTTPListenerAttribute','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

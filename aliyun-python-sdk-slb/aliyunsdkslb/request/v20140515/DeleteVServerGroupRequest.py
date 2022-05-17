@@ -23,7 +23,7 @@ from aliyunsdkslb.endpoint import endpoint_data
 class DeleteVServerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DeleteVServerGroup','Slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DeleteVServerGroup','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
