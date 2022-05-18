@@ -47,6 +47,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_Envs(self, Envs):  # String
 		self.add_query_param('Envs', Envs)
+	def get_Annotations(self): # String
+		return self.get_query_params().get('Annotations')
+
+	def set_Annotations(self, Annotations):  # String
+		self.add_query_param('Annotations', Annotations)
 	def get_RequestsMem(self): # Integer
 		return self.get_query_params().get('RequestsMem')
 
@@ -102,16 +107,31 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_BuildPackId(self, BuildPackId):  # String
 		self.add_query_param('BuildPackId', BuildPackId)
+	def get_EnableEmptyPushReject(self): # Boolean
+		return self.get_query_params().get('EnableEmptyPushReject')
+
+	def set_EnableEmptyPushReject(self, EnableEmptyPushReject):  # Boolean
+		self.add_query_param('EnableEmptyPushReject', EnableEmptyPushReject)
 	def get_LocalVolume(self): # String
 		return self.get_query_params().get('LocalVolume')
 
 	def set_LocalVolume(self, LocalVolume):  # String
 		self.add_query_param('LocalVolume', LocalVolume)
+	def get_Labels(self): # String
+		return self.get_query_params().get('Labels')
+
+	def set_Labels(self, Labels):  # String
+		self.add_query_param('Labels', Labels)
 	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
 	def set_UseBodyEncoding(self, UseBodyEncoding):  # Boolean
 		self.add_query_param('UseBodyEncoding', UseBodyEncoding)
+	def get_LosslessRuleFuncType(self): # Integer
+		return self.get_query_params().get('LosslessRuleFuncType')
+
+	def set_LosslessRuleFuncType(self, LosslessRuleFuncType):  # Integer
+		self.add_query_param('LosslessRuleFuncType', LosslessRuleFuncType)
 	def get_EmptyDirs(self): # String
 		return self.get_query_params().get('EmptyDirs')
 
@@ -122,6 +142,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_PackageType(self, PackageType):  # String
 		self.add_query_param('PackageType', PackageType)
+	def get_LosslessRuleRelated(self): # Boolean
+		return self.get_query_params().get('LosslessRuleRelated')
+
+	def set_LosslessRuleRelated(self, LosslessRuleRelated):  # Boolean
+		self.add_query_param('LosslessRuleRelated', LosslessRuleRelated)
 	def get_RuntimeClassName(self): # String
 		return self.get_query_params().get('RuntimeClassName')
 
@@ -137,6 +162,16 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_CustomAffinity(self, CustomAffinity):  # String
 		self.add_query_param('CustomAffinity', CustomAffinity)
+	def get_EnableLosslessRule(self): # Boolean
+		return self.get_query_params().get('EnableLosslessRule')
+
+	def set_EnableLosslessRule(self, EnableLosslessRule):  # Boolean
+		self.add_query_param('EnableLosslessRule', EnableLosslessRule)
+	def get_LosslessRuleWarmupTime(self): # Integer
+		return self.get_query_params().get('LosslessRuleWarmupTime')
+
+	def set_LosslessRuleWarmupTime(self, LosslessRuleWarmupTime):  # Integer
+		self.add_query_param('LosslessRuleWarmupTime', LosslessRuleWarmupTime)
 	def get_RepoId(self): # String
 		return self.get_query_params().get('RepoId')
 
@@ -242,6 +277,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_InternetSlbProtocol(self, InternetSlbProtocol):  # String
 		self.add_query_param('InternetSlbProtocol', InternetSlbProtocol)
+	def get_LosslessRuleDelayTime(self): # Integer
+		return self.get_query_params().get('LosslessRuleDelayTime')
+
+	def set_LosslessRuleDelayTime(self, LosslessRuleDelayTime):  # Integer
+		self.add_query_param('LosslessRuleDelayTime', LosslessRuleDelayTime)
 	def get_MountDescs(self): # String
 		return self.get_query_params().get('MountDescs')
 
@@ -322,6 +362,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_ApplicationDescription(self, ApplicationDescription):  # String
 		self.add_query_param('ApplicationDescription', ApplicationDescription)
+	def get_LosslessRuleAligned(self): # Boolean
+		return self.get_query_params().get('LosslessRuleAligned')
+
+	def set_LosslessRuleAligned(self, LosslessRuleAligned):  # Boolean
+		self.add_query_param('LosslessRuleAligned', LosslessRuleAligned)
 	def get_RequestsCpu(self): # Integer
 		return self.get_query_params().get('RequestsCpu')
 
