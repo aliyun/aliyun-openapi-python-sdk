@@ -46,6 +46,11 @@ class SubscribeBillToOSSRequest(RpcRequest):
 
 	def set_SubscribeBucket(self, SubscribeBucket):  # String
 		self.add_query_param('SubscribeBucket', SubscribeBucket)
+	def get_BucketPath(self): # String
+		return self.get_query_params().get('BucketPath')
+
+	def set_BucketPath(self, BucketPath):  # String
+		self.add_query_param('BucketPath', BucketPath)
 	def get_BeginBillingCycle(self): # String
 		return self.get_query_params().get('BeginBillingCycle')
 
