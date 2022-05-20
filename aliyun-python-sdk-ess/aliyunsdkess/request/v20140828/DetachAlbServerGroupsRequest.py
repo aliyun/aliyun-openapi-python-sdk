@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
 
-class ResumeProcessesRequest(RpcRequest):
+class DetachAlbServerGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ResumeProcesses','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachAlbServerGroups','ess')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,12 +41,6 @@ class ResumeProcessesRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_Processs(self): # RepeatList
-		return self.get_query_params().get('Process')
-
-	def set_Processs(self, Process):  # RepeatList
-		for depth1 in range(len(Process)):
-			self.add_query_param('Process.' + str(depth1 + 1), Process[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -57,3 +51,17 @@ class ResumeProcessesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AlbServerGroups(self): # RepeatList
+		return self.get_query_params().get('AlbServerGroup')
+
+	def set_AlbServerGroups(self, AlbServerGroup):  # RepeatList
+		for depth1 in range(len(AlbServerGroup)):
+			if AlbServerGroup[depth1].get('AlbServerGroupId') is not None:
+				self.add_query_param('AlbServerGroup.' + str(depth1 + 1) + '.AlbServerGroupId', AlbServerGroup[depth1].get('AlbServerGroupId'))
+			if AlbServerGroup[depth1].get('Port') is not None:
+				self.add_query_param('AlbServerGroup.' + str(depth1 + 1) + '.Port', AlbServerGroup[depth1].get('Port'))
+	def get_ForceDetach(self): # Boolean
+		return self.get_query_params().get('ForceDetach')
+
+	def set_ForceDetach(self, ForceDetach):  # Boolean
+		self.add_query_param('ForceDetach', ForceDetach)

@@ -25,104 +25,89 @@ class CreateScheduledTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScheduledTask','ess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScheduledAction(self):
+	def get_ScheduledAction(self): # String
 		return self.get_query_params().get('ScheduledAction')
 
-	def set_ScheduledAction(self,ScheduledAction):
-		self.add_query_param('ScheduledAction',ScheduledAction)
-
-	def get_MaxValue(self):
+	def set_ScheduledAction(self, ScheduledAction):  # String
+		self.add_query_param('ScheduledAction', ScheduledAction)
+	def get_MaxValue(self): # Integer
 		return self.get_query_params().get('MaxValue')
 
-	def set_MaxValue(self,MaxValue):
-		self.add_query_param('MaxValue',MaxValue)
-
-	def get_ScalingGroupId(self):
+	def set_MaxValue(self, MaxValue):  # Integer
+		self.add_query_param('MaxValue', MaxValue)
+	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_Description(self):
+	def set_ScalingGroupId(self, ScalingGroupId):  # String
+		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_RecurrenceEndTime(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_RecurrenceEndTime(self): # String
 		return self.get_query_params().get('RecurrenceEndTime')
 
-	def set_RecurrenceEndTime(self,RecurrenceEndTime):
-		self.add_query_param('RecurrenceEndTime',RecurrenceEndTime)
-
-	def get_LaunchTime(self):
+	def set_RecurrenceEndTime(self, RecurrenceEndTime):  # String
+		self.add_query_param('RecurrenceEndTime', RecurrenceEndTime)
+	def get_LaunchTime(self): # String
 		return self.get_query_params().get('LaunchTime')
 
-	def set_LaunchTime(self,LaunchTime):
-		self.add_query_param('LaunchTime',LaunchTime)
-
-	def get_DesiredCapacity(self):
+	def set_LaunchTime(self, LaunchTime):  # String
+		self.add_query_param('LaunchTime', LaunchTime)
+	def get_DesiredCapacity(self): # Integer
 		return self.get_query_params().get('DesiredCapacity')
 
-	def set_DesiredCapacity(self,DesiredCapacity):
-		self.add_query_param('DesiredCapacity',DesiredCapacity)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DesiredCapacity(self, DesiredCapacity):  # Integer
+		self.add_query_param('DesiredCapacity', DesiredCapacity)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RecurrenceValue(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RecurrenceValue(self): # String
 		return self.get_query_params().get('RecurrenceValue')
 
-	def set_RecurrenceValue(self,RecurrenceValue):
-		self.add_query_param('RecurrenceValue',RecurrenceValue)
-
-	def get_LaunchExpirationTime(self):
+	def set_RecurrenceValue(self, RecurrenceValue):  # String
+		self.add_query_param('RecurrenceValue', RecurrenceValue)
+	def get_LaunchExpirationTime(self): # Integer
 		return self.get_query_params().get('LaunchExpirationTime')
 
-	def set_LaunchExpirationTime(self,LaunchExpirationTime):
-		self.add_query_param('LaunchExpirationTime',LaunchExpirationTime)
-
-	def get_MinValue(self):
+	def set_LaunchExpirationTime(self, LaunchExpirationTime):  # Integer
+		self.add_query_param('LaunchExpirationTime', LaunchExpirationTime)
+	def get_MinValue(self): # Integer
 		return self.get_query_params().get('MinValue')
 
-	def set_MinValue(self,MinValue):
-		self.add_query_param('MinValue',MinValue)
-
-	def get_ScheduledTaskName(self):
+	def set_MinValue(self, MinValue):  # Integer
+		self.add_query_param('MinValue', MinValue)
+	def get_ScheduledTaskName(self): # String
 		return self.get_query_params().get('ScheduledTaskName')
 
-	def set_ScheduledTaskName(self,ScheduledTaskName):
-		self.add_query_param('ScheduledTaskName',ScheduledTaskName)
-
-	def get_TaskEnabled(self):
+	def set_ScheduledTaskName(self, ScheduledTaskName):  # String
+		self.add_query_param('ScheduledTaskName', ScheduledTaskName)
+	def get_TaskEnabled(self): # Boolean
 		return self.get_query_params().get('TaskEnabled')
 
-	def set_TaskEnabled(self,TaskEnabled):
-		self.add_query_param('TaskEnabled',TaskEnabled)
-
-	def get_RecurrenceType(self):
+	def set_TaskEnabled(self, TaskEnabled):  # Boolean
+		self.add_query_param('TaskEnabled', TaskEnabled)
+	def get_RecurrenceType(self): # String
 		return self.get_query_params().get('RecurrenceType')
 
-	def set_RecurrenceType(self,RecurrenceType):
-		self.add_query_param('RecurrenceType',RecurrenceType)
+	def set_RecurrenceType(self, RecurrenceType):  # String
+		self.add_query_param('RecurrenceType', RecurrenceType)
