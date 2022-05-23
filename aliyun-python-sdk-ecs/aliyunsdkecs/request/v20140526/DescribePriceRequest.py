@@ -31,31 +31,26 @@ class DescribePriceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DataDisk3Size(self): # Integer
-		return self.get_query_params().get('DataDisk.3.Size')
-
-	def set_DataDisk3Size(self, DataDisk3Size):  # Integer
-		self.add_query_param('DataDisk.3.Size', DataDisk3Size)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DataDisk3Category(self): # String
-		return self.get_query_params().get('DataDisk.3.Category')
-
-	def set_DataDisk3Category(self, DataDisk3Category):  # String
-		self.add_query_param('DataDisk.3.Category', DataDisk3Category)
 	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 
 	def set_Isp(self, Isp):  # String
 		self.add_query_param('Isp', Isp)
-	def get_DataDisk4Size(self): # Integer
-		return self.get_query_params().get('DataDisk.4.Size')
+	def get_SystemDisk(self): # Struct
+		return self.get_query_params().get('SystemDisk')
 
-	def set_DataDisk4Size(self, DataDisk4Size):  # Integer
-		self.add_query_param('DataDisk.4.Size', DataDisk4Size)
+	def set_SystemDisk(self, SystemDisk):  # Struct
+		if SystemDisk.get('Size') is not None:
+			self.add_query_param('SystemDisk.Size', SystemDisk.get('Size'))
+		if SystemDisk.get('PerformanceLevel') is not None:
+			self.add_query_param('SystemDisk.PerformanceLevel', SystemDisk.get('PerformanceLevel'))
+		if SystemDisk.get('Category') is not None:
+			self.add_query_param('SystemDisk.Category', SystemDisk.get('Category'))
 	def get_PriceUnit(self): # String
 		return self.get_query_params().get('PriceUnit')
 
@@ -66,11 +61,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
-	def get_DataDisk1PerformanceLevel(self): # String
-		return self.get_query_params().get('DataDisk.1.PerformanceLevel')
-
-	def set_DataDisk1PerformanceLevel(self, DataDisk1PerformanceLevel):  # String
-		self.add_query_param('DataDisk.1.PerformanceLevel', DataDisk1PerformanceLevel)
 	def get_AssuranceTimes(self): # String
 		return self.get_query_params().get('AssuranceTimes')
 
@@ -117,11 +107,6 @@ class DescribePriceRequest(RpcRequest):
 	def set_InstanceTypeLists(self, InstanceTypeList):  # RepeatList
 		for depth1 in range(len(InstanceTypeList)):
 			self.add_query_param('InstanceTypeList.' + str(depth1 + 1), InstanceTypeList[depth1])
-	def get_DataDisk3PerformanceLevel(self): # String
-		return self.get_query_params().get('DataDisk.3.PerformanceLevel')
-
-	def set_DataDisk3PerformanceLevel(self, DataDisk3PerformanceLevel):  # String
-		self.add_query_param('DataDisk.3.PerformanceLevel', DataDisk3PerformanceLevel)
 	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
@@ -137,11 +122,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
 		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
-	def get_SystemDiskCategory(self): # String
-		return self.get_query_params().get('SystemDisk.Category')
-
-	def set_SystemDiskCategory(self, SystemDiskCategory):  # String
-		self.add_query_param('SystemDisk.Category', SystemDiskCategory)
 	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 
@@ -152,21 +132,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Capacity(self, Capacity):  # Integer
 		self.add_query_param('Capacity', Capacity)
-	def get_SystemDiskPerformanceLevel(self): # String
-		return self.get_query_params().get('SystemDisk.PerformanceLevel')
-
-	def set_SystemDiskPerformanceLevel(self, SystemDiskPerformanceLevel):  # String
-		self.add_query_param('SystemDisk.PerformanceLevel', SystemDiskPerformanceLevel)
-	def get_DataDisk4Category(self): # String
-		return self.get_query_params().get('DataDisk.4.Category')
-
-	def set_DataDisk4Category(self, DataDisk4Category):  # String
-		self.add_query_param('DataDisk.4.Category', DataDisk4Category)
-	def get_DataDisk4PerformanceLevel(self): # String
-		return self.get_query_params().get('DataDisk.4.PerformanceLevel')
-
-	def set_DataDisk4PerformanceLevel(self, DataDisk4PerformanceLevel):  # String
-		self.add_query_param('DataDisk.4.PerformanceLevel', DataDisk4PerformanceLevel)
 	def get_Scope(self): # String
 		return self.get_query_params().get('Scope')
 
@@ -182,16 +147,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DedicatedHostType(self, DedicatedHostType):  # String
 		self.add_query_param('DedicatedHostType', DedicatedHostType)
-	def get_DataDisk2Category(self): # String
-		return self.get_query_params().get('DataDisk.2.Category')
-
-	def set_DataDisk2Category(self, DataDisk2Category):  # String
-		self.add_query_param('DataDisk.2.Category', DataDisk2Category)
-	def get_DataDisk1Size(self): # Integer
-		return self.get_query_params().get('DataDisk.1.Size')
-
-	def set_DataDisk1Size(self, DataDisk1Size):  # Integer
-		self.add_query_param('DataDisk.1.Size', DataDisk1Size)
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 
@@ -207,11 +162,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_DataDisk2Size(self): # Integer
-		return self.get_query_params().get('DataDisk.2.Size')
-
-	def set_DataDisk2Size(self, DataDisk2Size):  # Integer
-		self.add_query_param('DataDisk.2.Size', DataDisk2Size)
 	def get_SpotDuration(self): # Integer
 		return self.get_query_params().get('SpotDuration')
 
@@ -222,21 +172,17 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
-	def get_DataDisk1Category(self): # String
-		return self.get_query_params().get('DataDisk.1.Category')
+	def get_DataDisk(self): # Array
+		return self.get_query_params().get('DataDisk')
 
-	def set_DataDisk1Category(self, DataDisk1Category):  # String
-		self.add_query_param('DataDisk.1.Category', DataDisk1Category)
-	def get_DataDisk2PerformanceLevel(self): # String
-		return self.get_query_params().get('DataDisk.2.PerformanceLevel')
-
-	def set_DataDisk2PerformanceLevel(self, DataDisk2PerformanceLevel):  # String
-		self.add_query_param('DataDisk.2.PerformanceLevel', DataDisk2PerformanceLevel)
-	def get_SystemDiskSize(self): # Integer
-		return self.get_query_params().get('SystemDisk.Size')
-
-	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
-		self.add_query_param('SystemDisk.Size', SystemDiskSize)
+	def set_DataDisk(self, DataDisk):  # Array
+		for index1, value1 in enumerate(DataDisk):
+			if value1.get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(index1 + 1) + '.Size', value1.get('Size'))
+			if value1.get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(index1 + 1) + '.PerformanceLevel', value1.get('PerformanceLevel'))
+			if value1.get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(index1 + 1) + '.Category', value1.get('Category'))
 	def get_OfferingType(self): # String
 		return self.get_query_params().get('OfferingType')
 

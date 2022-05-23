@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class CreateSecurityGroupRequest(RpcRequest):
+class CreateDiagnosticReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSecurityGroup','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDiagnosticReport','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,35 +41,33 @@ class CreateSecurityGroupRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ServiceManaged(self): # Boolean
-		return self.get_query_params().get('ServiceManaged')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_ServiceManaged(self, ServiceManaged):  # Boolean
-		self.add_query_param('ServiceManaged', ServiceManaged)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_SourceSystem(self): # String
+		return self.get_query_params().get('SourceSystem')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_SecurityGroupName(self): # String
-		return self.get_query_params().get('SecurityGroupName')
+	def set_SourceSystem(self, SourceSystem):  # String
+		self.add_query_param('SourceSystem', SourceSystem)
+	def get_PluginVersion(self): # String
+		return self.get_query_params().get('PluginVersion')
 
-	def set_SecurityGroupName(self, SecurityGroupName):  # String
-		self.add_query_param('SecurityGroupName', SecurityGroupName)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_PluginVersion(self, PluginVersion):  # String
+		self.add_query_param('PluginVersion', PluginVersion)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_CommandNames(self): # RepeatList
+		return self.get_query_params().get('CommandName')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_CommandNames(self, CommandName):  # RepeatList
+		for depth1 in range(len(CommandName)):
+			self.add_query_param('CommandName.' + str(depth1 + 1), CommandName[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -80,18 +78,28 @@ class CreateSecurityGroupRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SecurityGroupType(self): # String
-		return self.get_query_params().get('SecurityGroupType')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_SecurityGroupType(self, SecurityGroupType):  # String
-		self.add_query_param('SecurityGroupType', SecurityGroupType)
-	def get_VpcId(self): # String
-		return self.get_query_params().get('VpcId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_CommandType(self): # String
+		return self.get_query_params().get('CommandType')
 
-	def set_VpcId(self, VpcId):  # String
-		self.add_query_param('VpcId', VpcId)
+	def set_CommandType(self, CommandType):  # String
+		self.add_query_param('CommandType', CommandType)
+	def get_DiagnosticCategory(self): # String
+		return self.get_query_params().get('DiagnosticCategory')
+
+	def set_DiagnosticCategory(self, DiagnosticCategory):  # String
+		self.add_query_param('DiagnosticCategory', DiagnosticCategory)

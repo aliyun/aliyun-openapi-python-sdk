@@ -177,6 +177,17 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_MaxSpotPrice(self, MaxSpotPrice):  # Float
 		self.add_query_param('MaxSpotPrice', MaxSpotPrice)
+	def get_LaunchConfigurationArns(self): # RepeatList
+		return self.get_query_params().get('LaunchConfiguration.Arn')
+
+	def set_LaunchConfigurationArns(self, LaunchConfigurationArn):  # RepeatList
+		for depth1 in range(len(LaunchConfigurationArn)):
+			if LaunchConfigurationArn[depth1].get('Rolearn') is not None:
+				self.add_query_param('LaunchConfiguration.Arn.' + str(depth1 + 1) + '.Rolearn', LaunchConfigurationArn[depth1].get('Rolearn'))
+			if LaunchConfigurationArn[depth1].get('RoleType') is not None:
+				self.add_query_param('LaunchConfiguration.Arn.' + str(depth1 + 1) + '.RoleType', LaunchConfigurationArn[depth1].get('RoleType'))
+			if LaunchConfigurationArn[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('LaunchConfiguration.Arn.' + str(depth1 + 1) + '.AssumeRoleFor', LaunchConfigurationArn[depth1].get('AssumeRoleFor'))
 	def get_LaunchConfigurationPasswordInherit(self): # Boolean
 		return self.get_query_params().get('LaunchConfiguration.PasswordInherit')
 
@@ -212,6 +223,16 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationCreditSpecification(self, LaunchConfigurationCreditSpecification):  # String
 		self.add_query_param('LaunchConfiguration.CreditSpecification', LaunchConfigurationCreditSpecification)
+	def get_LaunchConfigurationSystemDisk(self): # Struct
+		return self.get_query_params().get('LaunchConfiguration.SystemDisk')
+
+	def set_LaunchConfigurationSystemDisk(self, LaunchConfigurationSystemDisk):  # Struct
+		if LaunchConfigurationSystemDisk.get('Encrypted') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.Encrypted', LaunchConfigurationSystemDisk.get('Encrypted'))
+		if LaunchConfigurationSystemDisk.get('KMSKeyId') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.KMSKeyId', LaunchConfigurationSystemDisk.get('KMSKeyId'))
+		if LaunchConfigurationSystemDisk.get('EncryptAlgorithm') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.EncryptAlgorithm', LaunchConfigurationSystemDisk.get('EncryptAlgorithm'))
 	def get_LaunchConfigurationInstanceName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.InstanceName')
 

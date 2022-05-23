@@ -80,3 +80,8 @@ class DescribeAutoSnapshotPolicyExRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AutoSnapshotPolicyName(self): # String
+		return self.get_query_params().get('AutoSnapshotPolicyName')
+
+	def set_AutoSnapshotPolicyName(self, AutoSnapshotPolicyName):  # String
+		self.add_query_param('AutoSnapshotPolicyName', AutoSnapshotPolicyName)

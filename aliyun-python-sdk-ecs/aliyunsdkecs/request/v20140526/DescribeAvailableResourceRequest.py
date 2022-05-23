@@ -36,6 +36,11 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NeedInventoryScore(self): # Boolean
+		return self.get_query_params().get('NeedInventoryScore')
+
+	def set_NeedInventoryScore(self, NeedInventoryScore):  # Boolean
+		self.add_query_param('NeedInventoryScore', NeedInventoryScore)
 	def get_Memory(self): # Float
 		return self.get_query_params().get('Memory')
 
@@ -81,6 +86,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_InstanceChargeType(self, InstanceChargeType):  # String
 		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_InstanceFeatureOptionss(self): # RepeatList
+		return self.get_query_params().get('InstanceFeatureOptions')
+
+	def set_InstanceFeatureOptionss(self, InstanceFeatureOptions):  # RepeatList
+		for depth1 in range(len(InstanceFeatureOptions)):
+			self.add_query_param('InstanceFeatureOptions.' + str(depth1 + 1), InstanceFeatureOptions[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

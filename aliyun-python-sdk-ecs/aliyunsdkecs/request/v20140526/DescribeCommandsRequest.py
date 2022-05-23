@@ -71,6 +71,11 @@ class DescribeCommandsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
+	def get_Latest(self): # Boolean
+		return self.get_query_params().get('Latest')
+
+	def set_Latest(self, Latest):  # Boolean
+		self.add_query_param('Latest', Latest)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

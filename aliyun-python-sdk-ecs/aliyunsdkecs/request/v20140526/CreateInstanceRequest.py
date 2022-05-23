@@ -90,8 +90,14 @@ class CreateInstanceRequest(RpcRequest):
 		return self.get_query_params().get('SystemDisk')
 
 	def set_SystemDisk(self, SystemDisk):  # Struct
+		if SystemDisk.get('Encrypted') is not None:
+			self.add_query_param('SystemDisk.Encrypted', SystemDisk.get('Encrypted'))
+		if SystemDisk.get('EncryptAlgorithm') is not None:
+			self.add_query_param('SystemDisk.EncryptAlgorithm', SystemDisk.get('EncryptAlgorithm'))
 		if SystemDisk.get('StorageClusterId') is not None:
 			self.add_query_param('SystemDisk.StorageClusterId', SystemDisk.get('StorageClusterId'))
+		if SystemDisk.get('KMSKeyId') is not None:
+			self.add_query_param('SystemDisk.KMSKeyId', SystemDisk.get('KMSKeyId'))
 	def get_DeploymentSetGroupNo(self): # Integer
 		return self.get_query_params().get('DeploymentSetGroupNo')
 
@@ -107,8 +113,8 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Tags(self, Tag):  # RepeatList
 		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tag[depth1].get('value'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_PrivatePoolOptionsId(self): # String

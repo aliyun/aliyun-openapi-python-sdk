@@ -56,3 +56,8 @@ class RedeployDedicatedHostRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_WaiveLocalDiskData(self): # Boolean
+		return self.get_query_params().get('WaiveLocalDiskData')
+
+	def set_WaiveLocalDiskData(self, WaiveLocalDiskData):  # Boolean
+		self.add_query_param('WaiveLocalDiskData', WaiveLocalDiskData)
