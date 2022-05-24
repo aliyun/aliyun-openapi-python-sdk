@@ -18,18 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkdds.endpoint import endpoint_data
 
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRegions','dds')
 		self.set_method('POST')
-
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -56,3 +50,8 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
