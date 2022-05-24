@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class CreateTransitRouterRequest(RpcRequest):
+class CreateTransitRouterMulticastDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouter')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouterMulticastDomain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class CreateTransitRouterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TransitRouterName(self): # String
-		return self.get_query_params().get('TransitRouterName')
-
-	def set_TransitRouterName(self, TransitRouterName):  # String
-		self.add_query_param('TransitRouterName', TransitRouterName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -51,6 +46,16 @@ class CreateTransitRouterRequest(RpcRequest):
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
+	def get_TransitRouterMulticastDomainDescription(self): # String
+		return self.get_query_params().get('TransitRouterMulticastDomainDescription')
+
+	def set_TransitRouterMulticastDomainDescription(self, TransitRouterMulticastDomainDescription):  # String
+		self.add_query_param('TransitRouterMulticastDomainDescription', TransitRouterMulticastDomainDescription)
+	def get_TransitRouterMulticastDomainName(self): # String
+		return self.get_query_params().get('TransitRouterMulticastDomainName')
+
+	def set_TransitRouterMulticastDomainName(self, TransitRouterMulticastDomainName):  # String
+		self.add_query_param('TransitRouterMulticastDomainName', TransitRouterMulticastDomainName)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
@@ -71,13 +76,8 @@ class CreateTransitRouterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TransitRouterDescription(self): # String
-		return self.get_query_params().get('TransitRouterDescription')
+	def get_TransitRouterId(self): # String
+		return self.get_query_params().get('TransitRouterId')
 
-	def set_TransitRouterDescription(self, TransitRouterDescription):  # String
-		self.add_query_param('TransitRouterDescription', TransitRouterDescription)
-	def get_SupportMulticast(self): # Boolean
-		return self.get_query_params().get('SupportMulticast')
-
-	def set_SupportMulticast(self, SupportMulticast):  # Boolean
-		self.add_query_param('SupportMulticast', SupportMulticast)
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)

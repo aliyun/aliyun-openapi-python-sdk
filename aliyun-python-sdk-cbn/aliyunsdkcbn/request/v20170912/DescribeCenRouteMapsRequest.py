@@ -46,6 +46,11 @@ class DescribeCenRouteMapsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_TransitRouterRouteTableId(self): # String
+		return self.get_query_params().get('TransitRouterRouteTableId')
+
+	def set_TransitRouterRouteTableId(self, TransitRouterRouteTableId):  # String
+		self.add_query_param('TransitRouterRouteTableId', TransitRouterRouteTableId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

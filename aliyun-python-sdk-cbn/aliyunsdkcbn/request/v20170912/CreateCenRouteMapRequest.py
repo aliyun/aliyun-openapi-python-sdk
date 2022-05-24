@@ -57,6 +57,11 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def set_DestinationCidrBlockss(self, DestinationCidrBlocks):  # RepeatList
 		for depth1 in range(len(DestinationCidrBlocks)):
 			self.add_query_param('DestinationCidrBlocks.' + str(depth1 + 1), DestinationCidrBlocks[depth1])
+	def get_TransitRouterRouteTableId(self): # String
+		return self.get_query_params().get('TransitRouterRouteTableId')
+
+	def set_TransitRouterRouteTableId(self, TransitRouterRouteTableId):  # String
+		self.add_query_param('TransitRouterRouteTableId', TransitRouterRouteTableId)
 	def get_SourceInstanceIdss(self): # RepeatList
 		return self.get_query_params().get('SourceInstanceIds')
 

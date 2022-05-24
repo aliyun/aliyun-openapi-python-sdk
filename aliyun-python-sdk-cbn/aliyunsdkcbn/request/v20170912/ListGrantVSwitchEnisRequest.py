@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class CreateTransitRouterRequest(RpcRequest):
+class ListGrantVSwitchEnisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouter')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListGrantVSwitchEnis')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,31 +31,16 @@ class CreateTransitRouterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TransitRouterName(self): # String
-		return self.get_query_params().get('TransitRouterName')
-
-	def set_TransitRouterName(self, TransitRouterName):  # String
-		self.add_query_param('TransitRouterName', TransitRouterName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,13 +56,13 @@ class CreateTransitRouterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TransitRouterDescription(self): # String
-		return self.get_query_params().get('TransitRouterDescription')
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-	def set_TransitRouterDescription(self, TransitRouterDescription):  # String
-		self.add_query_param('TransitRouterDescription', TransitRouterDescription)
-	def get_SupportMulticast(self): # Boolean
-		return self.get_query_params().get('SupportMulticast')
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-	def set_SupportMulticast(self, SupportMulticast):  # Boolean
-		self.add_query_param('SupportMulticast', SupportMulticast)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

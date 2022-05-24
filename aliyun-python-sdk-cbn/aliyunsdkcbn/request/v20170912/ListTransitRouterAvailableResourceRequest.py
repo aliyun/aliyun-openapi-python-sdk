@@ -51,3 +51,8 @@ class ListTransitRouterAvailableResourceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SupportMulticast(self): # Boolean
+		return self.get_query_params().get('SupportMulticast')
+
+	def set_SupportMulticast(self, SupportMulticast):  # Boolean
+		self.add_query_param('SupportMulticast', SupportMulticast)
