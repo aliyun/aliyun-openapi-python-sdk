@@ -25,80 +25,69 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceTDE','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Certificate(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Certificate(self): # String
 		return self.get_query_params().get('Certificate')
 
-	def set_Certificate(self,Certificate):
-		self.add_query_param('Certificate',Certificate)
-
-	def get_PrivateKey(self):
+	def set_Certificate(self, Certificate):  # String
+		self.add_query_param('Certificate', Certificate)
+	def get_PrivateKey(self): # String
 		return self.get_query_params().get('PrivateKey')
 
-	def set_PrivateKey(self,PrivateKey):
-		self.add_query_param('PrivateKey',PrivateKey)
-
-	def get_PassWord(self):
+	def set_PrivateKey(self, PrivateKey):  # String
+		self.add_query_param('PrivateKey', PrivateKey)
+	def get_PassWord(self): # String
 		return self.get_query_params().get('PassWord')
 
-	def set_PassWord(self,PassWord):
-		self.add_query_param('PassWord',PassWord)
-
-	def get_DBInstanceId(self):
+	def set_PassWord(self, PassWord):  # String
+		self.add_query_param('PassWord', PassWord)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_EncryptionKey(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EncryptionKey(self): # String
 		return self.get_query_params().get('EncryptionKey')
 
-	def set_EncryptionKey(self,EncryptionKey):
-		self.add_query_param('EncryptionKey',EncryptionKey)
-
-	def get_OwnerId(self):
+	def set_EncryptionKey(self, EncryptionKey):  # String
+		self.add_query_param('EncryptionKey', EncryptionKey)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBName(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBName(self): # String
 		return self.get_query_params().get('DBName')
 
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
-
-	def get_RoleArn(self):
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)
+	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_TDEStatus(self):
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_TDEStatus(self): # String
 		return self.get_query_params().get('TDEStatus')
 
-	def set_TDEStatus(self,TDEStatus):
-		self.add_query_param('TDEStatus',TDEStatus)
+	def set_TDEStatus(self, TDEStatus):  # String
+		self.add_query_param('TDEStatus', TDEStatus)

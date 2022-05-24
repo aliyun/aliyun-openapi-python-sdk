@@ -19,122 +19,116 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSpec','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceStorage(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceStorage(self): # Integer
 		return self.get_query_params().get('DBInstanceStorage')
 
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
-	def get_EngineVersion(self):
+	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
+		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_ResourceGroupId(self):
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ServerlessConfiguration(self): # Struct
+		return self.get_query_params().get('ServerlessConfiguration')
 
-	def get_EffectiveTime(self):
+	def set_ServerlessConfiguration(self, ServerlessConfiguration):  # Struct
+		self.add_query_param("ServerlessConfiguration", json.dumps(ServerlessConfiguration))
+	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
-
-	def get_DBInstanceId(self):
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_SwitchTime(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_SwitchTime(self): # String
 		return self.get_query_params().get('SwitchTime')
 
-	def set_SwitchTime(self,SwitchTime):
-		self.add_query_param('SwitchTime',SwitchTime)
-
-	def get_DBInstanceStorageType(self):
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)
+	def get_DBInstanceStorageType(self): # String
 		return self.get_query_params().get('DBInstanceStorageType')
 
-	def set_DBInstanceStorageType(self,DBInstanceStorageType):
-		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
-
-	def get_SourceBiz(self):
+	def set_DBInstanceStorageType(self, DBInstanceStorageType):  # String
+		self.add_query_param('DBInstanceStorageType', DBInstanceStorageType)
+	def get_SourceBiz(self): # String
 		return self.get_query_params().get('SourceBiz')
 
-	def set_SourceBiz(self,SourceBiz):
-		self.add_query_param('SourceBiz',SourceBiz)
-
-	def get_DedicatedHostGroupId(self):
+	def set_SourceBiz(self, SourceBiz):  # String
+		self.add_query_param('SourceBiz', SourceBiz)
+	def get_DedicatedHostGroupId(self): # String
 		return self.get_query_params().get('DedicatedHostGroupId')
 
-	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
-		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
-
-	def get_Direction(self):
+	def set_DedicatedHostGroupId(self, DedicatedHostGroupId):  # String
+		self.add_query_param('DedicatedHostGroupId', DedicatedHostGroupId)
+	def get_Direction(self): # String
 		return self.get_query_params().get('Direction')
 
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Direction(self, Direction):  # String
+		self.add_query_param('Direction', Direction)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UsedTime(self): # Long
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
-	def get_DBInstanceClass(self):
+	def set_UsedTime(self, UsedTime):  # Long
+		self.add_query_param('UsedTime', UsedTime)
+	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
-
-	def get_ZoneId(self):
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
 
-	def get_PayType(self):
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)

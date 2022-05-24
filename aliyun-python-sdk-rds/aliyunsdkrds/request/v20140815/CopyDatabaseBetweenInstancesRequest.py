@@ -25,50 +25,44 @@ class CopyDatabaseBetweenInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CopyDatabaseBetweenInstances','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_RestoreTime(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_BackupId(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_SyncUserPrivilege(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_SyncUserPrivilege(self): # String
 		return self.get_query_params().get('SyncUserPrivilege')
 
-	def set_SyncUserPrivilege(self,SyncUserPrivilege):
-		self.add_query_param('SyncUserPrivilege',SyncUserPrivilege)
-
-	def get_DbNames(self):
+	def set_SyncUserPrivilege(self, SyncUserPrivilege):  # String
+		self.add_query_param('SyncUserPrivilege', SyncUserPrivilege)
+	def get_DbNames(self): # String
 		return self.get_query_params().get('DbNames')
 
-	def set_DbNames(self,DbNames):
-		self.add_query_param('DbNames',DbNames)
-
-	def get_TargetDBInstanceId(self):
+	def set_DbNames(self, DbNames):  # String
+		self.add_query_param('DbNames', DbNames)
+	def get_TargetDBInstanceId(self): # String
 		return self.get_query_params().get('TargetDBInstanceId')
 
-	def set_TargetDBInstanceId(self,TargetDBInstanceId):
-		self.add_query_param('TargetDBInstanceId',TargetDBInstanceId)
+	def set_TargetDBInstanceId(self, TargetDBInstanceId):  # String
+		self.add_query_param('TargetDBInstanceId', TargetDBInstanceId)

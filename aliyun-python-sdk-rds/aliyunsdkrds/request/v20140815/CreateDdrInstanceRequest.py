@@ -25,200 +25,169 @@ class CreateDdrInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDdrInstance','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceStorage(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceStorage(self): # Integer
 		return self.get_query_params().get('DBInstanceStorage')
 
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
-	def get_SystemDBCharset(self):
+	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
+		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_SystemDBCharset(self): # String
 		return self.get_query_params().get('SystemDBCharset')
 
-	def set_SystemDBCharset(self,SystemDBCharset):
-		self.add_query_param('SystemDBCharset',SystemDBCharset)
-
-	def get_BinlogRole(self):
+	def set_SystemDBCharset(self, SystemDBCharset):  # String
+		self.add_query_param('SystemDBCharset', SystemDBCharset)
+	def get_BinlogRole(self): # String
 		return self.get_query_params().get('BinlogRole')
 
-	def set_BinlogRole(self,BinlogRole):
-		self.add_query_param('BinlogRole',BinlogRole)
-
-	def get_EngineVersion(self):
+	def set_BinlogRole(self, BinlogRole):  # String
+		self.add_query_param('BinlogRole', BinlogRole)
+	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_ResourceGroupId(self):
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_DBInstanceDescription(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
-
-	def get_Period(self):
+	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
+		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_BackupSetId(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_BackupSetId(self): # String
 		return self.get_query_params().get('BackupSetId')
 
-	def set_BackupSetId(self,BackupSetId):
-		self.add_query_param('BackupSetId',BackupSetId)
-
-	def get_OwnerId(self):
+	def set_BackupSetId(self, BackupSetId):  # String
+		self.add_query_param('BackupSetId', BackupSetId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBInstanceClass(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
-
-	def get_SecurityIPList(self):
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_SecurityIPList(self): # String
 		return self.get_query_params().get('SecurityIPList')
 
-	def set_SecurityIPList(self,SecurityIPList):
-		self.add_query_param('SecurityIPList',SecurityIPList)
-
-	def get_VSwitchId(self):
+	def set_SecurityIPList(self, SecurityIPList):  # String
+		self.add_query_param('SecurityIPList', SecurityIPList)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_PrivateIpAddress(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_PrivateIpAddress(self): # String
 		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
-
-	def get_BinlogName(self):
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_BinlogName(self): # String
 		return self.get_query_params().get('BinlogName')
 
-	def set_BinlogName(self,BinlogName):
-		self.add_query_param('BinlogName',BinlogName)
-
-	def get_ZoneId(self):
+	def set_BinlogName(self, BinlogName):  # String
+		self.add_query_param('BinlogName', BinlogName)
+	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_InstanceNetworkType(self):
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_InstanceNetworkType(self): # String
 		return self.get_query_params().get('InstanceNetworkType')
 
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
-
-	def get_ConnectionMode(self):
+	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
+		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def get_ConnectionMode(self): # String
 		return self.get_query_params().get('ConnectionMode')
 
-	def set_ConnectionMode(self,ConnectionMode):
-		self.add_query_param('ConnectionMode',ConnectionMode)
-
-	def get_SourceDBInstanceName(self):
+	def set_ConnectionMode(self, ConnectionMode):  # String
+		self.add_query_param('ConnectionMode', ConnectionMode)
+	def get_SourceDBInstanceName(self): # String
 		return self.get_query_params().get('SourceDBInstanceName')
 
-	def set_SourceDBInstanceName(self,SourceDBInstanceName):
-		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
-
-	def get_ClientToken(self):
+	def set_SourceDBInstanceName(self, SourceDBInstanceName):  # String
+		self.add_query_param('SourceDBInstanceName', SourceDBInstanceName)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Engine(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_DBInstanceStorageType(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_DBInstanceStorageType(self): # String
 		return self.get_query_params().get('DBInstanceStorageType')
 
-	def set_DBInstanceStorageType(self,DBInstanceStorageType):
-		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
-
-	def get_DBInstanceNetType(self):
+	def set_DBInstanceStorageType(self, DBInstanceStorageType):  # String
+		self.add_query_param('DBInstanceStorageType', DBInstanceStorageType)
+	def get_DBInstanceNetType(self): # String
 		return self.get_query_params().get('DBInstanceNetType')
 
-	def set_DBInstanceNetType(self,DBInstanceNetType):
-		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
-
-	def get_RestoreTime(self):
+	def set_DBInstanceNetType(self, DBInstanceNetType):  # String
+		self.add_query_param('DBInstanceNetType', DBInstanceNetType)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_UsedTime(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_UsedTime(self): # String
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
-	def get_BinlogPosition(self):
+	def set_UsedTime(self, UsedTime):  # String
+		self.add_query_param('UsedTime', UsedTime)
+	def get_BinlogPosition(self): # String
 		return self.get_query_params().get('BinlogPosition')
 
-	def set_BinlogPosition(self,BinlogPosition):
-		self.add_query_param('BinlogPosition',BinlogPosition)
-
-	def get_RestoreType(self):
+	def set_BinlogPosition(self, BinlogPosition):  # String
+		self.add_query_param('BinlogPosition', BinlogPosition)
+	def get_RestoreType(self): # String
 		return self.get_query_params().get('RestoreType')
 
-	def set_RestoreType(self,RestoreType):
-		self.add_query_param('RestoreType',RestoreType)
-
-	def get_VPCId(self):
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
+	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
-	def set_VPCId(self,VPCId):
-		self.add_query_param('VPCId',VPCId)
-
-	def get_PayType(self):
+	def set_VPCId(self, VPCId):  # String
+		self.add_query_param('VPCId', VPCId)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
-
-	def get_SourceRegion(self):
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)
+	def get_SourceRegion(self): # String
 		return self.get_query_params().get('SourceRegion')
 
-	def set_SourceRegion(self,SourceRegion):
-		self.add_query_param('SourceRegion',SourceRegion)
+	def set_SourceRegion(self, SourceRegion):  # String
+		self.add_query_param('SourceRegion', SourceRegion)

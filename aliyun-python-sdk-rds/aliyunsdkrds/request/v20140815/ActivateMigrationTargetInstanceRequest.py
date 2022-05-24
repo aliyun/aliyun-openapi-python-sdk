@@ -20,43 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeOssDownloadsForSQLServerRequest(RpcRequest):
+class ActivateMigrationTargetInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeOssDownloadsForSQLServer','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ActivateMigrationTargetInstance','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBInstanceName(self): # String
+		return self.get_query_params().get('DBInstanceName')
 
-	def get_ResourceOwnerId(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ForceSwitch(self): # String
+		return self.get_query_params().get('ForceSwitch')
 
-	def get_MigrateTaskId(self):
-		return self.get_query_params().get('MigrateTaskId')
+	def set_ForceSwitch(self, ForceSwitch):  # String
+		self.add_query_param('ForceSwitch', ForceSwitch)
+	def get_SwitchTimeMode(self): # String
+		return self.get_query_params().get('SwitchTimeMode')
 
-	def set_MigrateTaskId(self,MigrateTaskId):
-		self.add_query_param('MigrateTaskId',MigrateTaskId)
+	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
+		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)

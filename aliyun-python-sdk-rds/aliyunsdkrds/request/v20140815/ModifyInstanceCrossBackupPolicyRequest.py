@@ -25,68 +25,59 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyInstanceCrossBackupPolicy','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RetentType(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RetentType(self): # Integer
 		return self.get_query_params().get('RetentType')
 
-	def set_RetentType(self,RetentType):
-		self.add_query_param('RetentType',RetentType)
-
-	def get_BackupEnabled(self):
+	def set_RetentType(self, RetentType):  # Integer
+		self.add_query_param('RetentType', RetentType)
+	def get_BackupEnabled(self): # String
 		return self.get_query_params().get('BackupEnabled')
 
-	def set_BackupEnabled(self,BackupEnabled):
-		self.add_query_param('BackupEnabled',BackupEnabled)
-
-	def get_DBInstanceId(self):
+	def set_BackupEnabled(self, BackupEnabled):  # String
+		self.add_query_param('BackupEnabled', BackupEnabled)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Retention(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Retention(self): # Integer
 		return self.get_query_params().get('Retention')
 
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Retention(self, Retention):  # Integer
+		self.add_query_param('Retention', Retention)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_CrossBackupType(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_CrossBackupType(self): # String
 		return self.get_query_params().get('CrossBackupType')
 
-	def set_CrossBackupType(self,CrossBackupType):
-		self.add_query_param('CrossBackupType',CrossBackupType)
-
-	def get_LogBackupEnabled(self):
+	def set_CrossBackupType(self, CrossBackupType):  # String
+		self.add_query_param('CrossBackupType', CrossBackupType)
+	def get_LogBackupEnabled(self): # String
 		return self.get_query_params().get('LogBackupEnabled')
 
-	def set_LogBackupEnabled(self,LogBackupEnabled):
-		self.add_query_param('LogBackupEnabled',LogBackupEnabled)
-
-	def get_OwnerId(self):
+	def set_LogBackupEnabled(self, LogBackupEnabled):  # String
+		self.add_query_param('LogBackupEnabled', LogBackupEnabled)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_CrossBackupRegion(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_CrossBackupRegion(self): # String
 		return self.get_query_params().get('CrossBackupRegion')
 
-	def set_CrossBackupRegion(self,CrossBackupRegion):
-		self.add_query_param('CrossBackupRegion',CrossBackupRegion)
+	def set_CrossBackupRegion(self, CrossBackupRegion):  # String
+		self.add_query_param('CrossBackupRegion', CrossBackupRegion)

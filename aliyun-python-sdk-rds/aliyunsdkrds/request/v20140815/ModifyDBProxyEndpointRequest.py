@@ -25,86 +25,74 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyEndpoint','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ConfigDBProxyFeatures(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ConfigDBProxyFeatures(self): # String
 		return self.get_query_params().get('ConfigDBProxyFeatures')
 
-	def set_ConfigDBProxyFeatures(self,ConfigDBProxyFeatures):
-		self.add_query_param('ConfigDBProxyFeatures',ConfigDBProxyFeatures)
-
-	def get_DBInstanceId(self):
+	def set_ConfigDBProxyFeatures(self, ConfigDBProxyFeatures):  # String
+		self.add_query_param('ConfigDBProxyFeatures', ConfigDBProxyFeatures)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_ReadOnlyInstanceWeight(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ReadOnlyInstanceWeight(self): # String
 		return self.get_query_params().get('ReadOnlyInstanceWeight')
 
-	def set_ReadOnlyInstanceWeight(self,ReadOnlyInstanceWeight):
-		self.add_query_param('ReadOnlyInstanceWeight',ReadOnlyInstanceWeight)
-
-	def get_ReadOnlyInstanceMaxDelayTime(self):
+	def set_ReadOnlyInstanceWeight(self, ReadOnlyInstanceWeight):  # String
+		self.add_query_param('ReadOnlyInstanceWeight', ReadOnlyInstanceWeight)
+	def get_ReadOnlyInstanceMaxDelayTime(self): # String
 		return self.get_query_params().get('ReadOnlyInstanceMaxDelayTime')
 
-	def set_ReadOnlyInstanceMaxDelayTime(self,ReadOnlyInstanceMaxDelayTime):
-		self.add_query_param('ReadOnlyInstanceMaxDelayTime',ReadOnlyInstanceMaxDelayTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ReadOnlyInstanceMaxDelayTime(self, ReadOnlyInstanceMaxDelayTime):  # String
+		self.add_query_param('ReadOnlyInstanceMaxDelayTime', ReadOnlyInstanceMaxDelayTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DbEndpointAliases(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DbEndpointAliases(self): # String
 		return self.get_query_params().get('DbEndpointAliases')
 
-	def set_DbEndpointAliases(self,DbEndpointAliases):
-		self.add_query_param('DbEndpointAliases',DbEndpointAliases)
-
-	def get_DbEndpointOperator(self):
+	def set_DbEndpointAliases(self, DbEndpointAliases):  # String
+		self.add_query_param('DbEndpointAliases', DbEndpointAliases)
+	def get_DbEndpointOperator(self): # String
 		return self.get_query_params().get('DbEndpointOperator')
 
-	def set_DbEndpointOperator(self,DbEndpointOperator):
-		self.add_query_param('DbEndpointOperator',DbEndpointOperator)
-
-	def get_DbEndpointType(self):
+	def set_DbEndpointOperator(self, DbEndpointOperator):  # String
+		self.add_query_param('DbEndpointOperator', DbEndpointOperator)
+	def get_DbEndpointType(self): # String
 		return self.get_query_params().get('DbEndpointType')
 
-	def set_DbEndpointType(self,DbEndpointType):
-		self.add_query_param('DbEndpointType',DbEndpointType)
-
-	def get_OwnerId(self):
+	def set_DbEndpointType(self, DbEndpointType):  # String
+		self.add_query_param('DbEndpointType', DbEndpointType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DbEndpointReadWriteMode(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DbEndpointReadWriteMode(self): # String
 		return self.get_query_params().get('DbEndpointReadWriteMode')
 
-	def set_DbEndpointReadWriteMode(self,DbEndpointReadWriteMode):
-		self.add_query_param('DbEndpointReadWriteMode',DbEndpointReadWriteMode)
-
-	def get_DBProxyEndpointId(self):
+	def set_DbEndpointReadWriteMode(self, DbEndpointReadWriteMode):  # String
+		self.add_query_param('DbEndpointReadWriteMode', DbEndpointReadWriteMode)
+	def get_DBProxyEndpointId(self): # String
 		return self.get_query_params().get('DBProxyEndpointId')
 
-	def set_DBProxyEndpointId(self,DBProxyEndpointId):
-		self.add_query_param('DBProxyEndpointId',DBProxyEndpointId)
-
-	def get_ReadOnlyInstanceDistributionType(self):
+	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
+		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)
+	def get_ReadOnlyInstanceDistributionType(self): # String
 		return self.get_query_params().get('ReadOnlyInstanceDistributionType')
 
-	def set_ReadOnlyInstanceDistributionType(self,ReadOnlyInstanceDistributionType):
-		self.add_query_param('ReadOnlyInstanceDistributionType',ReadOnlyInstanceDistributionType)
+	def set_ReadOnlyInstanceDistributionType(self, ReadOnlyInstanceDistributionType):  # String
+		self.add_query_param('ReadOnlyInstanceDistributionType', ReadOnlyInstanceDistributionType)

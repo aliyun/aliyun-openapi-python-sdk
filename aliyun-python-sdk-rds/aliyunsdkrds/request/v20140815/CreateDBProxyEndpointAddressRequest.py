@@ -25,50 +25,44 @@ class CreateDBProxyEndpointAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBProxyEndpointAddress','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConnectionStringPrefix(self):
+	def get_ConnectionStringPrefix(self): # String
 		return self.get_query_params().get('ConnectionStringPrefix')
 
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
-
-	def get_DBProxyConnectStringNetType(self):
+	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
+		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
+	def get_DBProxyConnectStringNetType(self): # String
 		return self.get_query_params().get('DBProxyConnectStringNetType')
 
-	def set_DBProxyConnectStringNetType(self,DBProxyConnectStringNetType):
-		self.add_query_param('DBProxyConnectStringNetType',DBProxyConnectStringNetType)
-
-	def get_DBInstanceId(self):
+	def set_DBProxyConnectStringNetType(self, DBProxyConnectStringNetType):  # String
+		self.add_query_param('DBProxyConnectStringNetType', DBProxyConnectStringNetType)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_DBProxyNewConnectStringPort(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DBProxyNewConnectStringPort(self): # String
 		return self.get_query_params().get('DBProxyNewConnectStringPort')
 
-	def set_DBProxyNewConnectStringPort(self,DBProxyNewConnectStringPort):
-		self.add_query_param('DBProxyNewConnectStringPort',DBProxyNewConnectStringPort)
-
-	def get_VSwitchId(self):
+	def set_DBProxyNewConnectStringPort(self, DBProxyNewConnectStringPort):  # String
+		self.add_query_param('DBProxyNewConnectStringPort', DBProxyNewConnectStringPort)
+	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_DBProxyEndpointId(self):
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_DBProxyEndpointId(self): # String
 		return self.get_query_params().get('DBProxyEndpointId')
 
-	def set_DBProxyEndpointId(self,DBProxyEndpointId):
-		self.add_query_param('DBProxyEndpointId',DBProxyEndpointId)
-
-	def get_VPCId(self):
+	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
+		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)
+	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
-	def set_VPCId(self,VPCId):
-		self.add_query_param('VPCId',VPCId)
+	def set_VPCId(self, VPCId):  # String
+		self.add_query_param('VPCId', VPCId)

@@ -25,50 +25,44 @@ class CloneParameterGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CloneParameterGroup','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ParameterGroupId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ParameterGroupId(self): # String
 		return self.get_query_params().get('ParameterGroupId')
 
-	def set_ParameterGroupId(self,ParameterGroupId):
-		self.add_query_param('ParameterGroupId',ParameterGroupId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ParameterGroupId(self, ParameterGroupId):  # String
+		self.add_query_param('ParameterGroupId', ParameterGroupId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TargetRegionId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TargetRegionId(self): # String
 		return self.get_query_params().get('TargetRegionId')
 
-	def set_TargetRegionId(self,TargetRegionId):
-		self.add_query_param('TargetRegionId',TargetRegionId)
-
-	def get_ParameterGroupName(self):
+	def set_TargetRegionId(self, TargetRegionId):  # String
+		self.add_query_param('TargetRegionId', TargetRegionId)
+	def get_ParameterGroupName(self): # String
 		return self.get_query_params().get('ParameterGroupName')
 
-	def set_ParameterGroupName(self,ParameterGroupName):
-		self.add_query_param('ParameterGroupName',ParameterGroupName)
-
-	def get_ParameterGroupDesc(self):
+	def set_ParameterGroupName(self, ParameterGroupName):  # String
+		self.add_query_param('ParameterGroupName', ParameterGroupName)
+	def get_ParameterGroupDesc(self): # String
 		return self.get_query_params().get('ParameterGroupDesc')
 
-	def set_ParameterGroupDesc(self,ParameterGroupDesc):
-		self.add_query_param('ParameterGroupDesc',ParameterGroupDesc)
+	def set_ParameterGroupDesc(self, ParameterGroupDesc):  # String
+		self.add_query_param('ParameterGroupDesc', ParameterGroupDesc)

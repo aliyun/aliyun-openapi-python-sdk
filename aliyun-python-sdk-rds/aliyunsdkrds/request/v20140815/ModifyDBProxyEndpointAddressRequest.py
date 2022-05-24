@@ -25,56 +25,49 @@ class ModifyDBProxyEndpointAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyEndpointAddress','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBProxyConnectStringNetType(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBProxyConnectStringNetType(self): # String
 		return self.get_query_params().get('DBProxyConnectStringNetType')
 
-	def set_DBProxyConnectStringNetType(self,DBProxyConnectStringNetType):
-		self.add_query_param('DBProxyConnectStringNetType',DBProxyConnectStringNetType)
-
-	def get_DBInstanceId(self):
+	def set_DBProxyConnectStringNetType(self, DBProxyConnectStringNetType):  # String
+		self.add_query_param('DBProxyConnectStringNetType', DBProxyConnectStringNetType)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_DBProxyNewConnectStringPort(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DBProxyNewConnectStringPort(self): # String
 		return self.get_query_params().get('DBProxyNewConnectStringPort')
 
-	def set_DBProxyNewConnectStringPort(self,DBProxyNewConnectStringPort):
-		self.add_query_param('DBProxyNewConnectStringPort',DBProxyNewConnectStringPort)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DBProxyNewConnectStringPort(self, DBProxyNewConnectStringPort):  # String
+		self.add_query_param('DBProxyNewConnectStringPort', DBProxyNewConnectStringPort)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBProxyEndpointId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBProxyEndpointId(self): # String
 		return self.get_query_params().get('DBProxyEndpointId')
 
-	def set_DBProxyEndpointId(self,DBProxyEndpointId):
-		self.add_query_param('DBProxyEndpointId',DBProxyEndpointId)
-
-	def get_DBProxyNewConnectString(self):
+	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
+		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)
+	def get_DBProxyNewConnectString(self): # String
 		return self.get_query_params().get('DBProxyNewConnectString')
 
-	def set_DBProxyNewConnectString(self,DBProxyNewConnectString):
-		self.add_query_param('DBProxyNewConnectString',DBProxyNewConnectString)
+	def set_DBProxyNewConnectString(self, DBProxyNewConnectString):  # String
+		self.add_query_param('DBProxyNewConnectString', DBProxyNewConnectString)

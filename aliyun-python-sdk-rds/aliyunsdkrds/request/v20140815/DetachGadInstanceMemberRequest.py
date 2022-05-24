@@ -25,20 +25,19 @@ class DetachGadInstanceMemberRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DetachGadInstanceMember','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MemberInstanceName(self):
+	def get_MemberInstanceName(self): # String
 		return self.get_query_params().get('MemberInstanceName')
 
-	def set_MemberInstanceName(self,MemberInstanceName):
-		self.add_query_param('MemberInstanceName',MemberInstanceName)
-
-	def get_GadInstanceName(self):
+	def set_MemberInstanceName(self, MemberInstanceName):  # String
+		self.add_query_param('MemberInstanceName', MemberInstanceName)
+	def get_GadInstanceName(self): # String
 		return self.get_query_params().get('GadInstanceName')
 
-	def set_GadInstanceName(self,GadInstanceName):
-		self.add_query_param('GadInstanceName',GadInstanceName)
+	def set_GadInstanceName(self, GadInstanceName):  # String
+		self.add_query_param('GadInstanceName', GadInstanceName)

@@ -19,44 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
-class DescribeAvailableDedicatedHostClassesRequest(RpcRequest):
+class ConfirmNotifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableDedicatedHostClasses','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ConfirmNotify','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_NotifyIdList(self): # Array
+		return self.get_body_params().get('NotifyIdList')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def set_NotifyIdList(self, NotifyIdList):  # Array
+		self.add_body_params("NotifyIdList", json.dumps(NotifyIdList))
+	def get_Confirmor(self): # Long
+		return self.get_body_params().get('Confirmor')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_StorageType(self):
-		return self.get_query_params().get('StorageType')
-
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_Confirmor(self, Confirmor):  # Long
+		self.add_body_params('Confirmor', Confirmor)

@@ -25,68 +25,59 @@ class ModifyReadWriteSplittingConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyReadWriteSplittingConnection','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ConnectionStringPrefix(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ConnectionStringPrefix(self): # String
 		return self.get_query_params().get('ConnectionStringPrefix')
 
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
-
-	def get_DistributionType(self):
+	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
+		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
+	def get_DistributionType(self): # String
 		return self.get_query_params().get('DistributionType')
 
-	def set_DistributionType(self,DistributionType):
-		self.add_query_param('DistributionType',DistributionType)
-
-	def get_DBInstanceId(self):
+	def set_DistributionType(self, DistributionType):  # String
+		self.add_query_param('DistributionType', DistributionType)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Weight(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_Weight(self): # String
 		return self.get_query_params().get('Weight')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
-
-	def get_OwnerId(self):
+	def set_Weight(self, Weight):  # String
+		self.add_query_param('Weight', Weight)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Port(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Port(self): # String
 		return self.get_query_params().get('Port')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_MaxDelayTime(self):
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)
+	def get_MaxDelayTime(self): # String
 		return self.get_query_params().get('MaxDelayTime')
 
-	def set_MaxDelayTime(self,MaxDelayTime):
-		self.add_query_param('MaxDelayTime',MaxDelayTime)
+	def set_MaxDelayTime(self, MaxDelayTime):  # String
+		self.add_query_param('MaxDelayTime', MaxDelayTime)

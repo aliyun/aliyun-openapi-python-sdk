@@ -25,74 +25,64 @@ class RestoreDdrTableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'RestoreDdrTable','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SourceDBInstanceName(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SourceDBInstanceName(self): # String
 		return self.get_query_params().get('SourceDBInstanceName')
 
-	def set_SourceDBInstanceName(self,SourceDBInstanceName):
-		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
-
-	def get_ClientToken(self):
+	def set_SourceDBInstanceName(self, SourceDBInstanceName):  # String
+		self.add_query_param('SourceDBInstanceName', SourceDBInstanceName)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_TableMeta(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_TableMeta(self): # String
 		return self.get_query_params().get('TableMeta')
 
-	def set_TableMeta(self,TableMeta):
-		self.add_query_param('TableMeta',TableMeta)
-
-	def get_DBInstanceId(self):
+	def set_TableMeta(self, TableMeta):  # String
+		self.add_query_param('TableMeta', TableMeta)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_RestoreTime(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_BackupId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_OwnerId(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RestoreType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RestoreType(self): # String
 		return self.get_query_params().get('RestoreType')
 
-	def set_RestoreType(self,RestoreType):
-		self.add_query_param('RestoreType',RestoreType)
-
-	def get_SourceRegion(self):
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
+	def get_SourceRegion(self): # String
 		return self.get_query_params().get('SourceRegion')
 
-	def set_SourceRegion(self,SourceRegion):
-		self.add_query_param('SourceRegion',SourceRegion)
+	def set_SourceRegion(self, SourceRegion):  # String
+		self.add_query_param('SourceRegion', SourceRegion)

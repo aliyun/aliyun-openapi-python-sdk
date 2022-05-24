@@ -25,32 +25,29 @@ class ModifyDbProxyInstanceSslRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDbProxyInstanceSsl','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DbProxySslEnabled(self):
+	def get_DbProxySslEnabled(self): # String
 		return self.get_query_params().get('DbProxySslEnabled')
 
-	def set_DbProxySslEnabled(self,DbProxySslEnabled):
-		self.add_query_param('DbProxySslEnabled',DbProxySslEnabled)
-
-	def get_DbProxyConnectString(self):
+	def set_DbProxySslEnabled(self, DbProxySslEnabled):  # String
+		self.add_query_param('DbProxySslEnabled', DbProxySslEnabled)
+	def get_DbProxyConnectString(self): # String
 		return self.get_query_params().get('DbProxyConnectString')
 
-	def set_DbProxyConnectString(self,DbProxyConnectString):
-		self.add_query_param('DbProxyConnectString',DbProxyConnectString)
-
-	def get_DbInstanceId(self):
+	def set_DbProxyConnectString(self, DbProxyConnectString):  # String
+		self.add_query_param('DbProxyConnectString', DbProxyConnectString)
+	def get_DbInstanceId(self): # String
 		return self.get_query_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
-		self.add_query_param('DbInstanceId',DbInstanceId)
-
-	def get_DbProxyEndpointId(self):
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)
+	def get_DbProxyEndpointId(self): # String
 		return self.get_query_params().get('DbProxyEndpointId')
 
-	def set_DbProxyEndpointId(self,DbProxyEndpointId):
-		self.add_query_param('DbProxyEndpointId',DbProxyEndpointId)
+	def set_DbProxyEndpointId(self, DbProxyEndpointId):  # String
+		self.add_query_param('DbProxyEndpointId', DbProxyEndpointId)

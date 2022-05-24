@@ -25,98 +25,84 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckCreateDdrDBInstance','rds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceStorage(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceStorage(self): # Integer
 		return self.get_query_params().get('DBInstanceStorage')
 
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
-	def get_SourceDBInstanceName(self):
+	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
+		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_SourceDBInstanceName(self): # String
 		return self.get_query_params().get('SourceDBInstanceName')
 
-	def set_SourceDBInstanceName(self,SourceDBInstanceName):
-		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
-
-	def get_BinlogRole(self):
+	def set_SourceDBInstanceName(self, SourceDBInstanceName):  # String
+		self.add_query_param('SourceDBInstanceName', SourceDBInstanceName)
+	def get_BinlogRole(self): # String
 		return self.get_query_params().get('BinlogRole')
 
-	def set_BinlogRole(self,BinlogRole):
-		self.add_query_param('BinlogRole',BinlogRole)
-
-	def get_EngineVersion(self):
+	def set_BinlogRole(self, BinlogRole):  # String
+		self.add_query_param('BinlogRole', BinlogRole)
+	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_Engine(self):
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
+	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_RestoreTime(self):
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_BackupSetId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_BackupSetId(self): # String
 		return self.get_query_params().get('BackupSetId')
 
-	def set_BackupSetId(self,BackupSetId):
-		self.add_query_param('BackupSetId',BackupSetId)
-
-	def get_OwnerId(self):
+	def set_BackupSetId(self, BackupSetId):  # String
+		self.add_query_param('BackupSetId', BackupSetId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BinlogPosition(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BinlogPosition(self): # String
 		return self.get_query_params().get('BinlogPosition')
 
-	def set_BinlogPosition(self,BinlogPosition):
-		self.add_query_param('BinlogPosition',BinlogPosition)
-
-	def get_DBInstanceClass(self):
+	def set_BinlogPosition(self, BinlogPosition):  # String
+		self.add_query_param('BinlogPosition', BinlogPosition)
+	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
-
-	def get_RestoreType(self):
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_RestoreType(self): # String
 		return self.get_query_params().get('RestoreType')
 
-	def set_RestoreType(self,RestoreType):
-		self.add_query_param('RestoreType',RestoreType)
-
-	def get_BinlogName(self):
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
+	def get_BinlogName(self): # String
 		return self.get_query_params().get('BinlogName')
 
-	def set_BinlogName(self,BinlogName):
-		self.add_query_param('BinlogName',BinlogName)
-
-	def get_SourceRegion(self):
+	def set_BinlogName(self, BinlogName):  # String
+		self.add_query_param('BinlogName', BinlogName)
+	def get_SourceRegion(self): # String
 		return self.get_query_params().get('SourceRegion')
 
-	def set_SourceRegion(self,SourceRegion):
-		self.add_query_param('SourceRegion',SourceRegion)
+	def set_SourceRegion(self, SourceRegion):  # String
+		self.add_query_param('SourceRegion', SourceRegion)
