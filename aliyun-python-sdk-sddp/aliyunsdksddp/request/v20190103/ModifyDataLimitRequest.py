@@ -36,6 +36,11 @@ class ModifyDataLimitRequest(RpcRequest):
 
 	def set_ModifyPassword(self, ModifyPassword):  # Boolean
 		self.add_query_param('ModifyPassword', ModifyPassword)
+	def get_SamplingSize(self): # Integer
+		return self.get_query_params().get('SamplingSize')
+
+	def set_SamplingSize(self, SamplingSize):  # Integer
+		self.add_query_param('SamplingSize', SamplingSize)
 	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 

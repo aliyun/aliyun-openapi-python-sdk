@@ -36,6 +36,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_OcrStatus(self, OcrStatus):  # Integer
 		self.add_query_param('OcrStatus', OcrStatus)
+	def get_SamplingSize(self): # Integer
+		return self.get_query_params().get('SamplingSize')
+
+	def set_SamplingSize(self, SamplingSize):  # Integer
+		self.add_query_param('SamplingSize', SamplingSize)
 	def get_ParentId(self): # String
 		return self.get_query_params().get('ParentId')
 
