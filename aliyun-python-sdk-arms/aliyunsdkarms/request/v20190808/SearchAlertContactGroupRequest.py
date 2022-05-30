@@ -25,38 +25,34 @@ class SearchAlertContactGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchAlertContactGroup','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactId(self):
+	def get_ContactId(self): # Long
 		return self.get_query_params().get('ContactId')
 
-	def set_ContactId(self,ContactId):
-		self.add_query_param('ContactId',ContactId)
-
-	def get_IsDetail(self):
+	def set_ContactId(self, ContactId):  # Long
+		self.add_query_param('ContactId', ContactId)
+	def get_IsDetail(self): # Boolean
 		return self.get_query_params().get('IsDetail')
 
-	def set_IsDetail(self,IsDetail):
-		self.add_query_param('IsDetail',IsDetail)
-
-	def get_ContactGroupName(self):
+	def set_IsDetail(self, IsDetail):  # Boolean
+		self.add_query_param('IsDetail', IsDetail)
+	def get_ContactGroupName(self): # String
 		return self.get_query_params().get('ContactGroupName')
 
-	def set_ContactGroupName(self,ContactGroupName):
-		self.add_query_param('ContactGroupName',ContactGroupName)
-
-	def get_ContactName(self):
+	def set_ContactGroupName(self, ContactGroupName):  # String
+		self.add_query_param('ContactGroupName', ContactGroupName)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_ContactGroupIds(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_ContactGroupIds(self): # String
 		return self.get_query_params().get('ContactGroupIds')
 
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
+	def set_ContactGroupIds(self, ContactGroupIds):  # String
+		self.add_query_param('ContactGroupIds', ContactGroupIds)

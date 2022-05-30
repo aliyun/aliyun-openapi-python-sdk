@@ -25,38 +25,34 @@ class ListPrometheusAlertRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusAlertRules','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Type(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Name(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_MatchExpressions(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_MatchExpressions(self): # String
 		return self.get_query_params().get('MatchExpressions')
 
-	def set_MatchExpressions(self,MatchExpressions):
-		self.add_query_param('MatchExpressions',MatchExpressions)
-
-	def get_Status(self):
+	def set_MatchExpressions(self, MatchExpressions):  # String
+		self.add_query_param('MatchExpressions', MatchExpressions)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

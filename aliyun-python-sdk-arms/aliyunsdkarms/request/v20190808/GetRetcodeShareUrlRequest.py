@@ -25,14 +25,14 @@ class GetRetcodeShareUrlRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetRetcodeShareUrl','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Pid(self):
+	def get_Pid(self): # String
 		return self.get_query_params().get('Pid')
 
-	def set_Pid(self,Pid):
-		self.add_query_param('Pid',Pid)
+	def set_Pid(self, Pid):  # String
+		self.add_query_param('Pid', Pid)

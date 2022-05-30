@@ -25,72 +25,77 @@ class SearchTracesByPageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchTracesByPage','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndTime(self):
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_Pid(self): # String
+		return self.get_query_params().get('Pid')
 
-	def get_StartTime(self):
+	def set_Pid(self, Pid):  # String
+		self.add_query_param('Pid', Pid)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Reverse(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_Reverse(self): # Boolean
 		return self.get_query_params().get('Reverse')
 
-	def set_Reverse(self,Reverse):
-		self.add_query_param('Reverse',Reverse)
-
-	def get_MinDuration(self):
+	def set_Reverse(self, Reverse):  # Boolean
+		self.add_query_param('Reverse', Reverse)
+	def get_MinDuration(self): # Long
 		return self.get_query_params().get('MinDuration')
 
-	def set_MinDuration(self,MinDuration):
-		self.add_query_param('MinDuration',MinDuration)
-
-	def get_PageNumber(self):
+	def set_MinDuration(self, MinDuration):  # Long
+		self.add_query_param('MinDuration', MinDuration)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
 
-	def get_ServiceIp(self):
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def get_ServiceIp(self): # String
 		return self.get_query_params().get('ServiceIp')
 
-	def set_ServiceIp(self,ServiceIp):
-		self.add_query_param('ServiceIp',ServiceIp)
-
-	def get_ExclusionFilterss(self):
+	def set_ServiceIp(self, ServiceIp):  # String
+		self.add_query_param('ServiceIp', ServiceIp)
+	def get_ExclusionFilterss(self): # RepeatList
 		return self.get_query_params().get('ExclusionFilters')
 
-	def set_ExclusionFilterss(self, ExclusionFilterss):
-		for depth1 in range(len(ExclusionFilterss)):
-			if ExclusionFilterss[depth1].get('Value') is not None:
-				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Value', ExclusionFilterss[depth1].get('Value'))
-			if ExclusionFilterss[depth1].get('Key') is not None:
-				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Key', ExclusionFilterss[depth1].get('Key'))
-
-	def get_OperationName(self):
+	def set_ExclusionFilterss(self, ExclusionFilters):  # RepeatList
+		for depth1 in range(len(ExclusionFilters)):
+			if ExclusionFilters[depth1].get('Value') is not None:
+				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Value', ExclusionFilters[depth1].get('Value'))
+			if ExclusionFilters[depth1].get('Key') is not None:
+				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Key', ExclusionFilters[depth1].get('Key'))
+	def get_OperationName(self): # String
 		return self.get_query_params().get('OperationName')
 
-	def set_OperationName(self,OperationName):
-		self.add_query_param('OperationName',OperationName)
-
-	def get_PageSize(self):
+	def set_OperationName(self, OperationName):  # String
+		self.add_query_param('OperationName', OperationName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ServiceName(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

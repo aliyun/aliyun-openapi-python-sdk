@@ -25,26 +25,24 @@ class SearchRetcodeAppByPageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchRetcodeAppByPage','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RetcodeAppName(self):
+	def get_RetcodeAppName(self): # String
 		return self.get_query_params().get('RetcodeAppName')
 
-	def set_RetcodeAppName(self,RetcodeAppName):
-		self.add_query_param('RetcodeAppName',RetcodeAppName)
-
-	def get_PageSize(self):
+	def set_RetcodeAppName(self, RetcodeAppName):  # String
+		self.add_query_param('RetcodeAppName', RetcodeAppName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)

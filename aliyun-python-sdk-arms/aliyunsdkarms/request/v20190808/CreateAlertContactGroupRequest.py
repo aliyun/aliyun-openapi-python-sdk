@@ -25,20 +25,19 @@ class CreateAlertContactGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateAlertContactGroup','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactGroupName(self):
+	def get_ContactGroupName(self): # String
 		return self.get_query_params().get('ContactGroupName')
 
-	def set_ContactGroupName(self,ContactGroupName):
-		self.add_query_param('ContactGroupName',ContactGroupName)
-
-	def get_ContactIds(self):
+	def set_ContactGroupName(self, ContactGroupName):  # String
+		self.add_query_param('ContactGroupName', ContactGroupName)
+	def get_ContactIds(self): # String
 		return self.get_query_params().get('ContactIds')
 
-	def set_ContactIds(self,ContactIds):
-		self.add_query_param('ContactIds',ContactIds)
+	def set_ContactIds(self, ContactIds):  # String
+		self.add_query_param('ContactIds', ContactIds)

@@ -25,44 +25,44 @@ class CreateWebhookRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateWebhook','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HttpHeaders(self):
+	def get_HttpHeaders(self): # String
 		return self.get_query_params().get('HttpHeaders')
 
-	def set_HttpHeaders(self,HttpHeaders):
-		self.add_query_param('HttpHeaders',HttpHeaders)
-
-	def get_Method(self):
+	def set_HttpHeaders(self, HttpHeaders):  # String
+		self.add_query_param('HttpHeaders', HttpHeaders)
+	def get_Method(self): # String
 		return self.get_query_params().get('Method')
 
-	def set_Method(self,Method):
-		self.add_query_param('Method',Method)
-
-	def get_HttpParams(self):
+	def set_Method(self, Method):  # String
+		self.add_query_param('Method', Method)
+	def get_HttpParams(self): # String
 		return self.get_query_params().get('HttpParams')
 
-	def set_HttpParams(self,HttpParams):
-		self.add_query_param('HttpParams',HttpParams)
-
-	def get_Body(self):
+	def set_HttpParams(self, HttpParams):  # String
+		self.add_query_param('HttpParams', HttpParams)
+	def get_Body(self): # String
 		return self.get_query_params().get('Body')
 
-	def set_Body(self,Body):
-		self.add_query_param('Body',Body)
-
-	def get_Url(self):
+	def set_Body(self, Body):  # String
+		self.add_query_param('Body', Body)
+	def get_Url(self): # String
 		return self.get_query_params().get('Url')
 
-	def set_Url(self,Url):
-		self.add_query_param('Url',Url)
-
-	def get_ContactName(self):
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_RecoverBody(self): # String
+		return self.get_query_params().get('RecoverBody')
+
+	def set_RecoverBody(self, RecoverBody):  # String
+		self.add_query_param('RecoverBody', RecoverBody)

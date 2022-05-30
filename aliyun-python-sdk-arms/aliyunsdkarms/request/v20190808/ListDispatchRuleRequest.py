@@ -25,20 +25,19 @@ class ListDispatchRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListDispatchRule','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_System(self):
+	def get_System(self): # Boolean
 		return self.get_query_params().get('System')
 
-	def set_System(self,System):
-		self.add_query_param('System',System)
-
-	def get_Name(self):
+	def set_System(self, System):  # Boolean
+		self.add_query_param('System', System)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

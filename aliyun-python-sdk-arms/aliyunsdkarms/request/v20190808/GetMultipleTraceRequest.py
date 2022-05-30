@@ -25,16 +25,15 @@ class GetMultipleTraceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetMultipleTrace','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TraceIDss(self):
+	def get_TraceIDss(self): # RepeatList
 		return self.get_query_params().get('TraceIDs')
 
-	def set_TraceIDss(self, TraceIDss):
-		for depth1 in range(len(TraceIDss)):
-			if TraceIDss[depth1] is not None:
-				self.add_query_param('TraceIDs.' + str(depth1 + 1) , TraceIDss[depth1])
+	def set_TraceIDss(self, TraceIDs):  # RepeatList
+		for depth1 in range(len(TraceIDs)):
+			self.add_query_param('TraceIDs.' + str(depth1 + 1), TraceIDs[depth1])

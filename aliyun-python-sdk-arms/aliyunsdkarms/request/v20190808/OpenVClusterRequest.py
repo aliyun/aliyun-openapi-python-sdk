@@ -25,32 +25,29 @@ class OpenVClusterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'OpenVCluster','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterType(self):
+	def get_ClusterType(self): # String
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
-
-	def get_Product(self):
+	def set_ClusterType(self, ClusterType):  # String
+		self.add_query_param('ClusterType', ClusterType)
+	def get_Product(self): # String
 		return self.get_query_params().get('Product')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
-	def get_RecreateSwitch(self):
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)
+	def get_RecreateSwitch(self): # Boolean
 		return self.get_query_params().get('RecreateSwitch')
 
-	def set_RecreateSwitch(self,RecreateSwitch):
-		self.add_query_param('RecreateSwitch',RecreateSwitch)
-
-	def get_Length(self):
+	def set_RecreateSwitch(self, RecreateSwitch):  # Boolean
+		self.add_query_param('RecreateSwitch', RecreateSwitch)
+	def get_Length(self): # Integer
 		return self.get_query_params().get('Length')
 
-	def set_Length(self,Length):
-		self.add_query_param('Length',Length)
+	def set_Length(self, Length):  # Integer
+		self.add_query_param('Length', Length)

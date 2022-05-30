@@ -25,20 +25,19 @@ class AddIntegrationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'AddIntegration','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Integration(self):
+	def get_Integration(self): # String
 		return self.get_query_params().get('Integration')
 
-	def set_Integration(self,Integration):
-		self.add_query_param('Integration',Integration)
-
-	def get_ClusterId(self):
+	def set_Integration(self, Integration):  # String
+		self.add_query_param('Integration', Integration)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

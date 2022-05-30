@@ -25,68 +25,59 @@ class ApplyScenarioRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ApplyScenario','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SnForce(self):
+	def get_SnForce(self): # Boolean
 		return self.get_query_params().get('SnForce')
 
-	def set_SnForce(self,SnForce):
-		self.add_query_param('SnForce',SnForce)
-
-	def get_Sign(self):
+	def set_SnForce(self, SnForce):  # Boolean
+		self.add_query_param('SnForce', SnForce)
+	def get_Sign(self): # String
 		return self.get_query_params().get('Sign')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
-
-	def get_SnStat(self):
+	def set_Sign(self, Sign):  # String
+		self.add_query_param('Sign', Sign)
+	def get_SnStat(self): # Boolean
 		return self.get_query_params().get('SnStat')
 
-	def set_SnStat(self,SnStat):
-		self.add_query_param('SnStat',SnStat)
-
-	def get_Scenario(self):
+	def set_SnStat(self, SnStat):  # Boolean
+		self.add_query_param('SnStat', SnStat)
+	def get_Scenario(self): # String
 		return self.get_query_params().get('Scenario')
 
-	def set_Scenario(self,Scenario):
-		self.add_query_param('Scenario',Scenario)
-
-	def get_SnDump(self):
+	def set_Scenario(self, Scenario):  # String
+		self.add_query_param('Scenario', Scenario)
+	def get_SnDump(self): # Boolean
 		return self.get_query_params().get('SnDump')
 
-	def set_SnDump(self,SnDump):
-		self.add_query_param('SnDump',SnDump)
-
-	def get_AppId(self):
+	def set_SnDump(self, SnDump):  # Boolean
+		self.add_query_param('SnDump', SnDump)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Name(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_SnTransfer(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_SnTransfer(self): # Boolean
 		return self.get_query_params().get('SnTransfer')
 
-	def set_SnTransfer(self,SnTransfer):
-		self.add_query_param('SnTransfer',SnTransfer)
-
-	def get_UpdateOption(self):
+	def set_SnTransfer(self, SnTransfer):  # Boolean
+		self.add_query_param('SnTransfer', SnTransfer)
+	def get_UpdateOption(self): # Boolean
 		return self.get_query_params().get('UpdateOption')
 
-	def set_UpdateOption(self,UpdateOption):
-		self.add_query_param('UpdateOption',UpdateOption)
-
-	def get_Config(self):
+	def set_UpdateOption(self, UpdateOption):  # Boolean
+		self.add_query_param('UpdateOption', UpdateOption)
+	def get_Config(self): # String
 		return self.get_query_params().get('Config')
 
-	def set_Config(self,Config):
-		self.add_query_param('Config',Config)
+	def set_Config(self, Config):  # String
+		self.add_query_param('Config', Config)

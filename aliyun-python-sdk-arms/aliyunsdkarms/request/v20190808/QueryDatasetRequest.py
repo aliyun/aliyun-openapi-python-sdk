@@ -25,118 +25,103 @@ class QueryDatasetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'QueryDataset','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DateStr(self):
+	def get_DateStr(self): # String
 		return self.get_query_params().get('DateStr')
 
-	def set_DateStr(self,DateStr):
-		self.add_query_param('DateStr',DateStr)
-
-	def get_MinTime(self):
+	def set_DateStr(self, DateStr):  # String
+		self.add_query_param('DateStr', DateStr)
+	def get_MinTime(self): # Long
 		return self.get_query_params().get('MinTime')
 
-	def set_MinTime(self,MinTime):
-		self.add_query_param('MinTime',MinTime)
-
-	def get_ProxyUserId(self):
+	def set_MinTime(self, MinTime):  # Long
+		self.add_query_param('MinTime', MinTime)
+	def get_ProxyUserId(self): # String
 		return self.get_query_params().get('ProxyUserId')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_ReduceTail(self):
+	def set_ProxyUserId(self, ProxyUserId):  # String
+		self.add_query_param('ProxyUserId', ProxyUserId)
+	def get_ReduceTail(self): # Boolean
 		return self.get_query_params().get('ReduceTail')
 
-	def set_ReduceTail(self,ReduceTail):
-		self.add_query_param('ReduceTail',ReduceTail)
-
-	def get_MaxTime(self):
+	def set_ReduceTail(self, ReduceTail):  # Boolean
+		self.add_query_param('ReduceTail', ReduceTail)
+	def get_MaxTime(self): # Long
 		return self.get_query_params().get('MaxTime')
 
-	def set_MaxTime(self,MaxTime):
-		self.add_query_param('MaxTime',MaxTime)
-
-	def get_OptionalDimss(self):
+	def set_MaxTime(self, MaxTime):  # Long
+		self.add_query_param('MaxTime', MaxTime)
+	def get_OptionalDimss(self): # RepeatList
 		return self.get_query_params().get('OptionalDims')
 
-	def set_OptionalDimss(self, OptionalDimss):
-		for depth1 in range(len(OptionalDimss)):
-			if OptionalDimss[depth1].get('Type') is not None:
-				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Type', OptionalDimss[depth1].get('Type'))
-			if OptionalDimss[depth1].get('Value') is not None:
-				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Value', OptionalDimss[depth1].get('Value'))
-			if OptionalDimss[depth1].get('Key') is not None:
-				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Key', OptionalDimss[depth1].get('Key'))
-
-	def get_Measuress(self):
+	def set_OptionalDimss(self, OptionalDims):  # RepeatList
+		for depth1 in range(len(OptionalDims)):
+			if OptionalDims[depth1].get('Type') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Type', OptionalDims[depth1].get('Type'))
+			if OptionalDims[depth1].get('Value') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Value', OptionalDims[depth1].get('Value'))
+			if OptionalDims[depth1].get('Key') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Key', OptionalDims[depth1].get('Key'))
+	def get_Measuress(self): # RepeatList
 		return self.get_query_params().get('Measures')
 
-	def set_Measuress(self, Measuress):
-		for depth1 in range(len(Measuress)):
-			if Measuress[depth1] is not None:
-				self.add_query_param('Measures.' + str(depth1 + 1) , Measuress[depth1])
-
-	def get_IntervalInSec(self):
+	def set_Measuress(self, Measures):  # RepeatList
+		for depth1 in range(len(Measures)):
+			self.add_query_param('Measures.' + str(depth1 + 1), Measures[depth1])
+	def get_IntervalInSec(self): # Integer
 		return self.get_query_params().get('IntervalInSec')
 
-	def set_IntervalInSec(self,IntervalInSec):
-		self.add_query_param('IntervalInSec',IntervalInSec)
-
-	def get_IsDrillDown(self):
+	def set_IntervalInSec(self, IntervalInSec):  # Integer
+		self.add_query_param('IntervalInSec', IntervalInSec)
+	def get_IsDrillDown(self): # Boolean
 		return self.get_query_params().get('IsDrillDown')
 
-	def set_IsDrillDown(self,IsDrillDown):
-		self.add_query_param('IsDrillDown',IsDrillDown)
-
-	def get_HungryMode(self):
+	def set_IsDrillDown(self, IsDrillDown):  # Boolean
+		self.add_query_param('IsDrillDown', IsDrillDown)
+	def get_HungryMode(self): # Boolean
 		return self.get_query_params().get('HungryMode')
 
-	def set_HungryMode(self,HungryMode):
-		self.add_query_param('HungryMode',HungryMode)
-
-	def get_OrderByKey(self):
+	def set_HungryMode(self, HungryMode):  # Boolean
+		self.add_query_param('HungryMode', HungryMode)
+	def get_OrderByKey(self): # String
 		return self.get_query_params().get('OrderByKey')
 
-	def set_OrderByKey(self,OrderByKey):
-		self.add_query_param('OrderByKey',OrderByKey)
-
-	def get_Limit(self):
+	def set_OrderByKey(self, OrderByKey):  # String
+		self.add_query_param('OrderByKey', OrderByKey)
+	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_DatasetId(self):
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)
+	def get_DatasetId(self): # Long
 		return self.get_query_params().get('DatasetId')
 
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
-
-	def get_RequiredDimss(self):
+	def set_DatasetId(self, DatasetId):  # Long
+		self.add_query_param('DatasetId', DatasetId)
+	def get_RequiredDimss(self): # RepeatList
 		return self.get_query_params().get('RequiredDims')
 
-	def set_RequiredDimss(self, RequiredDimss):
-		for depth1 in range(len(RequiredDimss)):
-			if RequiredDimss[depth1].get('Type') is not None:
-				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Type', RequiredDimss[depth1].get('Type'))
-			if RequiredDimss[depth1].get('Value') is not None:
-				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Value', RequiredDimss[depth1].get('Value'))
-			if RequiredDimss[depth1].get('Key') is not None:
-				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Key', RequiredDimss[depth1].get('Key'))
-
-	def get_Dimensionss(self):
+	def set_RequiredDimss(self, RequiredDims):  # RepeatList
+		for depth1 in range(len(RequiredDims)):
+			if RequiredDims[depth1].get('Type') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Type', RequiredDims[depth1].get('Type'))
+			if RequiredDims[depth1].get('Value') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Value', RequiredDims[depth1].get('Value'))
+			if RequiredDims[depth1].get('Key') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Key', RequiredDims[depth1].get('Key'))
+	def get_Dimensionss(self): # RepeatList
 		return self.get_query_params().get('Dimensions')
 
-	def set_Dimensionss(self, Dimensionss):
-		for depth1 in range(len(Dimensionss)):
-			if Dimensionss[depth1].get('Type') is not None:
-				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Type', Dimensionss[depth1].get('Type'))
-			if Dimensionss[depth1].get('Value') is not None:
-				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Value', Dimensionss[depth1].get('Value'))
-			if Dimensionss[depth1].get('Key') is not None:
-				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Key', Dimensionss[depth1].get('Key'))
+	def set_Dimensionss(self, Dimensions):  # RepeatList
+		for depth1 in range(len(Dimensions)):
+			if Dimensions[depth1].get('Type') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Type', Dimensions[depth1].get('Type'))
+			if Dimensions[depth1].get('Value') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Value', Dimensions[depth1].get('Value'))
+			if Dimensions[depth1].get('Key') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Key', Dimensions[depth1].get('Key'))

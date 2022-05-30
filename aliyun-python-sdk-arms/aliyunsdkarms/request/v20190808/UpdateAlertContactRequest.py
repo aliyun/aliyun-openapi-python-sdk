@@ -25,44 +25,39 @@ class UpdateAlertContactRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertContact','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactId(self):
+	def get_ContactId(self): # Long
 		return self.get_query_params().get('ContactId')
 
-	def set_ContactId(self,ContactId):
-		self.add_query_param('ContactId',ContactId)
-
-	def get_PhoneNum(self):
+	def set_ContactId(self, ContactId):  # Long
+		self.add_query_param('ContactId', ContactId)
+	def get_PhoneNum(self): # String
 		return self.get_query_params().get('PhoneNum')
 
-	def set_PhoneNum(self,PhoneNum):
-		self.add_query_param('PhoneNum',PhoneNum)
-
-	def get_ContactName(self):
+	def set_PhoneNum(self, PhoneNum):  # String
+		self.add_query_param('PhoneNum', PhoneNum)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_DingRobotWebhookUrl(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_DingRobotWebhookUrl(self): # String
 		return self.get_query_params().get('DingRobotWebhookUrl')
 
-	def set_DingRobotWebhookUrl(self,DingRobotWebhookUrl):
-		self.add_query_param('DingRobotWebhookUrl',DingRobotWebhookUrl)
-
-	def get_Email(self):
+	def set_DingRobotWebhookUrl(self, DingRobotWebhookUrl):  # String
+		self.add_query_param('DingRobotWebhookUrl', DingRobotWebhookUrl)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
-
-	def get_SystemNoc(self):
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)
+	def get_SystemNoc(self): # Boolean
 		return self.get_query_params().get('SystemNoc')
 
-	def set_SystemNoc(self,SystemNoc):
-		self.add_query_param('SystemNoc',SystemNoc)
+	def set_SystemNoc(self, SystemNoc):  # Boolean
+		self.add_query_param('SystemNoc', SystemNoc)

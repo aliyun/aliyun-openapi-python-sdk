@@ -25,32 +25,29 @@ class UpdateAlertRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertRule','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IsAutoStart(self):
+	def get_IsAutoStart(self): # Boolean
 		return self.get_query_params().get('IsAutoStart')
 
-	def set_IsAutoStart(self,IsAutoStart):
-		self.add_query_param('IsAutoStart',IsAutoStart)
-
-	def get_ContactGroupIds(self):
+	def set_IsAutoStart(self, IsAutoStart):  # Boolean
+		self.add_query_param('IsAutoStart', IsAutoStart)
+	def get_ContactGroupIds(self): # String
 		return self.get_query_params().get('ContactGroupIds')
 
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
-
-	def get_AlertId(self):
+	def set_ContactGroupIds(self, ContactGroupIds):  # String
+		self.add_query_param('ContactGroupIds', ContactGroupIds)
+	def get_AlertId(self): # Long
 		return self.get_query_params().get('AlertId')
 
-	def set_AlertId(self,AlertId):
-		self.add_query_param('AlertId',AlertId)
-
-	def get_TemplageAlertConfig(self):
+	def set_AlertId(self, AlertId):  # Long
+		self.add_query_param('AlertId', AlertId)
+	def get_TemplageAlertConfig(self): # String
 		return self.get_query_params().get('TemplageAlertConfig')
 
-	def set_TemplageAlertConfig(self,TemplageAlertConfig):
-		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
+	def set_TemplageAlertConfig(self, TemplageAlertConfig):  # String
+		self.add_query_param('TemplageAlertConfig', TemplageAlertConfig)

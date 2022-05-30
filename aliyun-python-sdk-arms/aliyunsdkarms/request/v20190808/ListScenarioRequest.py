@@ -25,32 +25,29 @@ class ListScenarioRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListScenario','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Scenario(self):
+	def get_Scenario(self): # String
 		return self.get_query_params().get('Scenario')
 
-	def set_Scenario(self,Scenario):
-		self.add_query_param('Scenario',Scenario)
-
-	def get_AppId(self):
+	def set_Scenario(self, Scenario):  # String
+		self.add_query_param('Scenario', Scenario)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Name(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Sign(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Sign(self): # String
 		return self.get_query_params().get('Sign')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
+	def set_Sign(self, Sign):  # String
+		self.add_query_param('Sign', Sign)

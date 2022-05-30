@@ -25,14 +25,14 @@ class DeleteScenarioRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteScenario','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScenarioId(self):
+	def get_ScenarioId(self): # Long
 		return self.get_query_params().get('ScenarioId')
 
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
+	def set_ScenarioId(self, ScenarioId):  # Long
+		self.add_query_param('ScenarioId', ScenarioId)

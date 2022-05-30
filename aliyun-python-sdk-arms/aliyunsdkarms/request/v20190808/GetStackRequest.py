@@ -25,26 +25,34 @@ class GetStackRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetStack','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TraceID(self):
+	def get_TraceID(self): # String
 		return self.get_query_params().get('TraceID')
 
-	def set_TraceID(self,TraceID):
-		self.add_query_param('TraceID',TraceID)
+	def set_TraceID(self, TraceID):  # String
+		self.add_query_param('TraceID', TraceID)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
 
-	def get_RpcID(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_RpcID(self): # String
 		return self.get_query_params().get('RpcID')
 
-	def set_RpcID(self,RpcID):
-		self.add_query_param('RpcID',RpcID)
-
-	def get_Pid(self):
+	def set_RpcID(self, RpcID):  # String
+		self.add_query_param('RpcID', RpcID)
+	def get_Pid(self): # String
 		return self.get_query_params().get('Pid')
 
-	def set_Pid(self,Pid):
-		self.add_query_param('Pid',Pid)
+	def set_Pid(self, Pid):  # String
+		self.add_query_param('Pid', Pid)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)

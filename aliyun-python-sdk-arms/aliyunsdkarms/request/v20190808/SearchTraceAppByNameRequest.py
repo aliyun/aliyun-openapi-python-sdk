@@ -25,14 +25,14 @@ class SearchTraceAppByNameRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchTraceAppByName','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TraceAppName(self):
+	def get_TraceAppName(self): # String
 		return self.get_query_params().get('TraceAppName')
 
-	def set_TraceAppName(self,TraceAppName):
-		self.add_query_param('TraceAppName',TraceAppName)
+	def set_TraceAppName(self, TraceAppName):  # String
+		self.add_query_param('TraceAppName', TraceAppName)

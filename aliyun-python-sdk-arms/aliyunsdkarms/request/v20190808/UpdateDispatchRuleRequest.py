@@ -25,14 +25,14 @@ class UpdateDispatchRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateDispatchRule','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DispatchRule(self):
+	def get_DispatchRule(self): # String
 		return self.get_query_params().get('DispatchRule')
 
-	def set_DispatchRule(self,DispatchRule):
-		self.add_query_param('DispatchRule',DispatchRule)
+	def set_DispatchRule(self, DispatchRule):  # String
+		self.add_query_param('DispatchRule', DispatchRule)

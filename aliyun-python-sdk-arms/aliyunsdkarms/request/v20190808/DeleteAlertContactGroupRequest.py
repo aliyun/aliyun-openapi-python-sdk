@@ -25,14 +25,14 @@ class DeleteAlertContactGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteAlertContactGroup','arms')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContactGroupId(self):
+	def get_ContactGroupId(self): # Long
 		return self.get_query_params().get('ContactGroupId')
 
-	def set_ContactGroupId(self,ContactGroupId):
-		self.add_query_param('ContactGroupId',ContactGroupId)
+	def set_ContactGroupId(self, ContactGroupId):  # Long
+		self.add_query_param('ContactGroupId', ContactGroupId)
