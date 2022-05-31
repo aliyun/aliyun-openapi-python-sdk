@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class AssignUserRequest(RpcRequest):
+class CheckServiceLinkedRoleForDeletingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AssignUser')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'CheckServiceLinkedRoleForDeleting')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,32 @@ class AssignUserRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_Stores(self):
-		return self.get_body_params().get('Stores')
+	def get_DeletionTaskId(self):
+		return self.get_query_params().get('DeletionTaskId')
 
-	def set_Stores(self,Stores):
-		self.add_body_params('Stores', Stores)
+	def set_DeletionTaskId(self,DeletionTaskId):
+		self.add_query_param('DeletionTaskId',DeletionTaskId)
 
-	def get_UserType(self):
-		return self.get_body_params().get('UserType')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_UserType(self,UserType):
-		self.add_body_params('UserType', UserType)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SPIRegionId(self):
+		return self.get_query_params().get('SPIRegionId')
+
+	def set_SPIRegionId(self,SPIRegionId):
+		self.add_query_param('SPIRegionId',SPIRegionId)
+
+	def get_RoleArn(self):
+		return self.get_query_params().get('RoleArn')
+
+	def set_RoleArn(self,RoleArn):
+		self.add_query_param('RoleArn',RoleArn)

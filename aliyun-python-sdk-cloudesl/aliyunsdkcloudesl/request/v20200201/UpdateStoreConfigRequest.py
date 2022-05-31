@@ -23,7 +23,7 @@ from aliyunsdkcloudesl.endpoint import endpoint_data
 class UpdateStoreConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateStoreConfig','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateStoreConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,6 +42,12 @@ class UpdateStoreConfigRequest(RpcRequest):
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_SubscribeContents(self):
+		return self.get_body_params().get('SubscribeContents')
+
+	def set_SubscribeContents(self,SubscribeContents):
+		self.add_body_params('SubscribeContents', SubscribeContents)
 
 	def get_EnableNotification(self):
 		return self.get_body_params().get('EnableNotification')

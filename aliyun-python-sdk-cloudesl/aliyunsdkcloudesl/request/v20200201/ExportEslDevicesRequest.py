@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class DescribeEslDevicesRequest(RpcRequest):
+class ExportEslDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEslDevices')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'ExportEslDevices')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,12 @@ class DescribeEslDevicesRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
+	def get_Language(self):
+		return self.get_body_params().get('Language')
+
+	def set_Language(self,Language):
+		self.add_body_params('Language', Language)
+
 	def get_Type(self):
 		return self.get_body_params().get('Type')
 
@@ -49,23 +55,11 @@ class DescribeEslDevicesRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
-
 	def get_EslBarCode(self):
 		return self.get_body_params().get('EslBarCode')
 
 	def set_EslBarCode(self,EslBarCode):
 		self.add_body_params('EslBarCode', EslBarCode)
-
-	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
 
 	def get_TypeEncode(self):
 		return self.get_body_params().get('TypeEncode')
@@ -85,8 +79,20 @@ class DescribeEslDevicesRequest(RpcRequest):
 	def set_ToBatteryLevel(self,ToBatteryLevel):
 		self.add_body_params('ToBatteryLevel', ToBatteryLevel)
 
+	def get_LevelLower(self):
+		return self.get_body_params().get('LevelLower')
+
+	def set_LevelLower(self,LevelLower):
+		self.add_body_params('LevelLower', LevelLower)
+
 	def get_FromBatteryLevel(self):
 		return self.get_body_params().get('FromBatteryLevel')
 
 	def set_FromBatteryLevel(self,FromBatteryLevel):
 		self.add_body_params('FromBatteryLevel', FromBatteryLevel)
+
+	def get_LevelOrder(self):
+		return self.get_body_params().get('LevelOrder')
+
+	def set_LevelOrder(self,LevelOrder):
+		self.add_body_params('LevelOrder', LevelOrder)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class DescribeEslDeviceRequest(RpcRequest):
+class DeleteMaterialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEslDevice','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DeleteMaterial')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,8 @@ class DescribeEslDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+	def get_MaterialId(self):
+		return self.get_body_params().get('MaterialId')
 
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
-
-	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
-
-	def get_FromDate(self):
-		return self.get_body_params().get('FromDate')
-
-	def set_FromDate(self,FromDate):
-		self.add_body_params('FromDate', FromDate)
-
-	def get_ToDate(self):
-		return self.get_body_params().get('ToDate')
-
-	def set_ToDate(self,ToDate):
-		self.add_body_params('ToDate', ToDate)
-
-	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
+	def set_MaterialId(self,MaterialId):
+		self.add_body_params('MaterialId', MaterialId)

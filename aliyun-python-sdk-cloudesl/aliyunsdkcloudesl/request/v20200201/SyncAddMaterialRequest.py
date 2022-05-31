@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class AssignUserRequest(RpcRequest):
+class SyncAddMaterialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AssignUser')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'SyncAddMaterial')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class AssignUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_Content(self):
+		return self.get_body_params().get('Content')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_Content(self,Content):
+		self.add_body_params('Content', Content)
 
-	def get_Stores(self):
-		return self.get_body_params().get('Stores')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_Stores(self,Stores):
-		self.add_body_params('Stores', Stores)
-
-	def get_UserType(self):
-		return self.get_body_params().get('UserType')
-
-	def set_UserType(self,UserType):
-		self.add_body_params('UserType', UserType)
-
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)

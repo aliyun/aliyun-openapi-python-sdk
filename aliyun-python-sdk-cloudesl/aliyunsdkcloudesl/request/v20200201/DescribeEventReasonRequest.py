@@ -20,12 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class ConfirmServerLocationRequest(RpcRequest):
+class DescribeEventReasonRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'ConfirmServerLocation','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEventReason')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)

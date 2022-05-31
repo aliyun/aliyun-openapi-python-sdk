@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class AssignUserRequest(RpcRequest):
+class ApplyImageDitheringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AssignUser')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'ApplyImageDithering')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,26 @@ class AssignUserRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_Stores(self):
-		return self.get_body_params().get('Stores')
+	def get_Content(self):
+		return self.get_body_params().get('Content')
 
-	def set_Stores(self,Stores):
-		self.add_body_params('Stores', Stores)
+	def set_Content(self,Content):
+		self.add_body_params('Content', Content)
 
-	def get_UserType(self):
-		return self.get_body_params().get('UserType')
+	def get_DeviceType(self):
+		return self.get_body_params().get('DeviceType')
 
-	def set_UserType(self,UserType):
-		self.add_body_params('UserType', UserType)
+	def set_DeviceType(self,DeviceType):
+		self.add_body_params('DeviceType', DeviceType)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_Height(self):
+		return self.get_body_params().get('Height')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_Height(self,Height):
+		self.add_body_params('Height', Height)
+
+	def get_Width(self):
+		return self.get_body_params().get('Width')
+
+	def set_Width(self,Width):
+		self.add_body_params('Width', Width)

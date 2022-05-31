@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class DescribeApDevicesRequest(RpcRequest):
+class DescribeEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeApDevices')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEvents')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
 
 	def get_ApMac(self):
 		return self.get_body_params().get('ApMac')
@@ -49,29 +43,29 @@ class DescribeApDevicesRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
+	def get_Type(self):
+		return self.get_body_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_body_params('Type', Type)
+
 	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
 
+	def get_EslBarCode(self):
+		return self.get_body_params().get('EslBarCode')
+
+	def set_EslBarCode(self,EslBarCode):
+		self.add_body_params('EslBarCode', EslBarCode)
+
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-
-	def get_Model(self):
-		return self.get_body_params().get('Model')
-
-	def set_Model(self,Model):
-		self.add_body_params('Model', Model)
-
-	def get_BeActivate(self):
-		return self.get_body_params().get('BeActivate')
-
-	def set_BeActivate(self,BeActivate):
-		self.add_body_params('BeActivate', BeActivate)
 
 	def get_Status(self):
 		return self.get_body_params().get('Status')

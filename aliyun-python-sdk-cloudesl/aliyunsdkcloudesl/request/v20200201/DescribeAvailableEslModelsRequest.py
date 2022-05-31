@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class DescribeClientPackageRequest(RpcRequest):
+class DescribeAvailableEslModelsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeClientPackage','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeAvailableEslModels')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,26 @@ class DescribeClientPackageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientType(self):
-		return self.get_body_params().get('ClientType')
+	def get_ModelId(self):
+		return self.get_body_params().get('ModelId')
 
-	def set_ClientType(self,ClientType):
-		self.add_body_params('ClientType', ClientType)
+	def set_ModelId(self,ModelId):
+		self.add_body_params('ModelId', ModelId)
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)

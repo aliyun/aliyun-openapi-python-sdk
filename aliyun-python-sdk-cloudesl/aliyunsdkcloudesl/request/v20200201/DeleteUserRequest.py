@@ -23,7 +23,7 @@ from aliyunsdkcloudesl.endpoint import endpoint_data
 class DeleteUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DeleteUser','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DeleteUser')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

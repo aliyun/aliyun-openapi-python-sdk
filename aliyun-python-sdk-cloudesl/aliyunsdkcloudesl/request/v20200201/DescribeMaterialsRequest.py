@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class AssignUserRequest(RpcRequest):
+class DescribeMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AssignUser')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeMaterials')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,44 @@ class AssignUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_Source(self):
+		return self.get_body_params().get('Source')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_Source(self,Source):
+		self.add_body_params('Source', Source)
 
-	def get_Stores(self):
-		return self.get_body_params().get('Stores')
+	def get_Type(self):
+		return self.get_body_params().get('Type')
 
-	def set_Stores(self,Stores):
-		self.add_body_params('Stores', Stores)
+	def set_Type(self,Type):
+		self.add_body_params('Type', Type)
 
-	def get_UserType(self):
-		return self.get_body_params().get('UserType')
+	def get_MaterialId(self):
+		return self.get_body_params().get('MaterialId')
 
-	def set_UserType(self,UserType):
-		self.add_body_params('UserType', UserType)
+	def set_MaterialId(self,MaterialId):
+		self.add_body_params('MaterialId', MaterialId)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_Size(self):
+		return self.get_body_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_body_params('Size', Size)
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
