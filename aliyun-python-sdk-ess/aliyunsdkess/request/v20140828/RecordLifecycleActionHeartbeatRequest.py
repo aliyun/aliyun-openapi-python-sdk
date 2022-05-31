@@ -25,39 +25,44 @@ class RecordLifecycleActionHeartbeatRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RecordLifecycleActionHeartbeat','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_lifecycleActionToken(self): # String
+
+	def get_lifecycleActionToken(self):
 		return self.get_query_params().get('lifecycleActionToken')
 
-	def set_lifecycleActionToken(self, lifecycleActionToken):  # String
-		self.add_query_param('lifecycleActionToken', lifecycleActionToken)
-	def get_heartbeatTimeout(self): # Integer
+	def set_lifecycleActionToken(self,lifecycleActionToken):
+		self.add_query_param('lifecycleActionToken',lifecycleActionToken)
+
+	def get_heartbeatTimeout(self):
 		return self.get_query_params().get('heartbeatTimeout')
 
-	def set_heartbeatTimeout(self, heartbeatTimeout):  # Integer
-		self.add_query_param('heartbeatTimeout', heartbeatTimeout)
-	def get_ResourceOwnerAccount(self): # String
+	def set_heartbeatTimeout(self,heartbeatTimeout):
+		self.add_query_param('heartbeatTimeout',heartbeatTimeout)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_lifecycleHookId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_lifecycleHookId(self):
 		return self.get_query_params().get('lifecycleHookId')
 
-	def set_lifecycleHookId(self, lifecycleHookId):  # String
-		self.add_query_param('lifecycleHookId', lifecycleHookId)
-	def get_OwnerAccount(self): # String
+	def set_lifecycleHookId(self,lifecycleHookId):
+		self.add_query_param('lifecycleHookId',lifecycleHookId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -25,45 +25,52 @@ class AttachLoadBalancersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'AttachLoadBalancers','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ScalingGroupId(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self, ScalingGroupId):  # String
-		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_ForceAttach(self): # Boolean
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_ForceAttach(self):
 		return self.get_query_params().get('ForceAttach')
 
-	def set_ForceAttach(self, ForceAttach):  # Boolean
-		self.add_query_param('ForceAttach', ForceAttach)
-	def get_LoadBalancers(self): # RepeatList
+	def set_ForceAttach(self,ForceAttach):
+		self.add_query_param('ForceAttach',ForceAttach)
+
+	def get_LoadBalancers(self):
 		return self.get_query_params().get('LoadBalancer')
 
-	def set_LoadBalancers(self, LoadBalancer):  # RepeatList
-		for depth1 in range(len(LoadBalancer)):
-			self.add_query_param('LoadBalancer.' + str(depth1 + 1), LoadBalancer[depth1])
-	def get_ResourceOwnerAccount(self): # String
+	def set_LoadBalancers(self, LoadBalancers):
+		for depth1 in range(len(LoadBalancers)):
+			if LoadBalancers[depth1] is not None:
+				self.add_query_param('LoadBalancer.' + str(depth1 + 1) , LoadBalancers[depth1])
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Async(self): # Boolean
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Async(self):
 		return self.get_query_params().get('Async')
 
-	def set_Async(self, _Async):  # Boolean
-		self.add_query_param('Async', _Async)
+	def set_Async(self,_Async):
+		self.add_query_param('Async',_Async)

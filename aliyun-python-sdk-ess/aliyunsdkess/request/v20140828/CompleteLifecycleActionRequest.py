@@ -25,44 +25,50 @@ class CompleteLifecycleActionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LifecycleActionToken(self): # String
+
+	def get_LifecycleActionToken(self):
 		return self.get_query_params().get('LifecycleActionToken')
 
-	def set_LifecycleActionToken(self, LifecycleActionToken):  # String
-		self.add_query_param('LifecycleActionToken', LifecycleActionToken)
-	def get_ClientToken(self): # String
+	def set_LifecycleActionToken(self,LifecycleActionToken):
+		self.add_query_param('LifecycleActionToken',LifecycleActionToken)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ResourceOwnerAccount(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_LifecycleHookId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_LifecycleHookId(self):
 		return self.get_query_params().get('LifecycleHookId')
 
-	def set_LifecycleHookId(self, LifecycleHookId):  # String
-		self.add_query_param('LifecycleHookId', LifecycleHookId)
-	def get_OwnerAccount(self): # String
+	def set_LifecycleHookId(self,LifecycleHookId):
+		self.add_query_param('LifecycleHookId',LifecycleHookId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_LifecycleActionResult(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LifecycleActionResult(self):
 		return self.get_query_params().get('LifecycleActionResult')
 
-	def set_LifecycleActionResult(self, LifecycleActionResult):  # String
-		self.add_query_param('LifecycleActionResult', LifecycleActionResult)
+	def set_LifecycleActionResult(self,LifecycleActionResult):
+		self.add_query_param('LifecycleActionResult',LifecycleActionResult)

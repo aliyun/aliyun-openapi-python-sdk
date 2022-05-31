@@ -25,39 +25,44 @@ class ListTagValuesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ListTagValues','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NextToken(self): # String
+
+	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_PageSize(self): # Integer
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Key(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Key(self):
 		return self.get_query_params().get('Key')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
-	def get_ResourceOwnerAccount(self): # String
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ResourceType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

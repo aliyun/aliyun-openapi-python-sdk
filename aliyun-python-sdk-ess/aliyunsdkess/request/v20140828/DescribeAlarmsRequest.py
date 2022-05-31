@@ -25,59 +25,68 @@ class DescribeAlarmsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeAlarms','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MetricType(self): # String
+
+	def get_MetricType(self):
 		return self.get_query_params().get('MetricType')
 
-	def set_MetricType(self, MetricType):  # String
-		self.add_query_param('MetricType', MetricType)
-	def get_ScalingGroupId(self): # String
+	def set_MetricType(self,MetricType):
+		self.add_query_param('MetricType',MetricType)
+
+	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self, ScalingGroupId):  # String
-		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_PageNumber(self): # Integer
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_State(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_State(self):
 		return self.get_query_params().get('State')
 
-	def set_State(self, State):  # String
-		self.add_query_param('State', State)
-	def get_MetricName(self): # String
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_MetricName(self):
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self, MetricName):  # String
-		self.add_query_param('MetricName', MetricName)
-	def get_ResourceOwnerAccount(self): # String
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_AlarmTaskId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AlarmTaskId(self):
 		return self.get_query_params().get('AlarmTaskId')
 
-	def set_AlarmTaskId(self, AlarmTaskId):  # String
-		self.add_query_param('AlarmTaskId', AlarmTaskId)
-	def get_IsEnable(self): # Boolean
+	def set_AlarmTaskId(self,AlarmTaskId):
+		self.add_query_param('AlarmTaskId',AlarmTaskId)
+
+	def get_IsEnable(self):
 		return self.get_query_params().get('IsEnable')
 
-	def set_IsEnable(self, IsEnable):  # Boolean
-		self.add_query_param('IsEnable', IsEnable)
+	def set_IsEnable(self,IsEnable):
+		self.add_query_param('IsEnable',IsEnable)

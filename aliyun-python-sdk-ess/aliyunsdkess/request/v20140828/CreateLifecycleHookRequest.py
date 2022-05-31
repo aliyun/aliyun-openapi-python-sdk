@@ -25,59 +25,68 @@ class CreateLifecycleHookRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateLifecycleHook','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DefaultResult(self): # String
+
+	def get_DefaultResult(self):
 		return self.get_query_params().get('DefaultResult')
 
-	def set_DefaultResult(self, DefaultResult):  # String
-		self.add_query_param('DefaultResult', DefaultResult)
-	def get_HeartbeatTimeout(self): # Integer
+	def set_DefaultResult(self,DefaultResult):
+		self.add_query_param('DefaultResult',DefaultResult)
+
+	def get_HeartbeatTimeout(self):
 		return self.get_query_params().get('HeartbeatTimeout')
 
-	def set_HeartbeatTimeout(self, HeartbeatTimeout):  # Integer
-		self.add_query_param('HeartbeatTimeout', HeartbeatTimeout)
-	def get_ScalingGroupId(self): # String
+	def set_HeartbeatTimeout(self,HeartbeatTimeout):
+		self.add_query_param('HeartbeatTimeout',HeartbeatTimeout)
+
+	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self, ScalingGroupId):  # String
-		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_LifecycleTransition(self): # String
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_LifecycleTransition(self):
 		return self.get_query_params().get('LifecycleTransition')
 
-	def set_LifecycleTransition(self, LifecycleTransition):  # String
-		self.add_query_param('LifecycleTransition', LifecycleTransition)
-	def get_LifecycleHookName(self): # String
+	def set_LifecycleTransition(self,LifecycleTransition):
+		self.add_query_param('LifecycleTransition',LifecycleTransition)
+
+	def get_LifecycleHookName(self):
 		return self.get_query_params().get('LifecycleHookName')
 
-	def set_LifecycleHookName(self, LifecycleHookName):  # String
-		self.add_query_param('LifecycleHookName', LifecycleHookName)
-	def get_NotificationArn(self): # String
+	def set_LifecycleHookName(self,LifecycleHookName):
+		self.add_query_param('LifecycleHookName',LifecycleHookName)
+
+	def get_NotificationArn(self):
 		return self.get_query_params().get('NotificationArn')
 
-	def set_NotificationArn(self, NotificationArn):  # String
-		self.add_query_param('NotificationArn', NotificationArn)
-	def get_ResourceOwnerAccount(self): # String
+	def set_NotificationArn(self,NotificationArn):
+		self.add_query_param('NotificationArn',NotificationArn)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_NotificationMetadata(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_NotificationMetadata(self):
 		return self.get_query_params().get('NotificationMetadata')
 
-	def set_NotificationMetadata(self, NotificationMetadata):  # String
-		self.add_query_param('NotificationMetadata', NotificationMetadata)
-	def get_OwnerId(self): # Long
+	def set_NotificationMetadata(self,NotificationMetadata):
+		self.add_query_param('NotificationMetadata',NotificationMetadata)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

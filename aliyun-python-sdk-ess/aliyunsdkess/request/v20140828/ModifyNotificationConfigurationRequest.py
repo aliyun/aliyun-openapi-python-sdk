@@ -25,35 +25,40 @@ class ModifyNotificationConfigurationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyNotificationConfiguration','ess')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScalingGroupId(self): # String
+
+	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self, ScalingGroupId):  # String
-		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_NotificationArn(self): # String
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_NotificationArn(self):
 		return self.get_query_params().get('NotificationArn')
 
-	def set_NotificationArn(self, NotificationArn):  # String
-		self.add_query_param('NotificationArn', NotificationArn)
-	def get_ResourceOwnerAccount(self): # String
+	def set_NotificationArn(self,NotificationArn):
+		self.add_query_param('NotificationArn',NotificationArn)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_NotificationTypes(self): # RepeatList
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NotificationTypes(self):
 		return self.get_query_params().get('NotificationType')
 
-	def set_NotificationTypes(self, NotificationType):  # RepeatList
-		for depth1 in range(len(NotificationType)):
-			self.add_query_param('NotificationType.' + str(depth1 + 1), NotificationType[depth1])
+	def set_NotificationTypes(self, NotificationTypes):
+		for depth1 in range(len(NotificationTypes)):
+			if NotificationTypes[depth1] is not None:
+				self.add_query_param('NotificationType.' + str(depth1 + 1) , NotificationTypes[depth1])
