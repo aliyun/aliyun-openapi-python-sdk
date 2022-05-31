@@ -42,6 +42,11 @@ class IgnoreAggregateEvaluationResultsRequest(RpcRequest):
 
 	def set_Reason(self, Reason):  # String
 		self.add_body_params('Reason', Reason)
+	def get_IgnoreDate(self): # String
+		return self.get_body_params().get('IgnoreDate')
+
+	def set_IgnoreDate(self, IgnoreDate):  # String
+		self.add_body_params('IgnoreDate', IgnoreDate)
 	def get_Resources(self): # Array
 		return self.get_body_params().get('Resources')
 
