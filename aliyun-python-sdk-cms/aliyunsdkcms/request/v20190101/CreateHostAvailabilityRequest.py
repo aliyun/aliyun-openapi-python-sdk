@@ -25,134 +25,114 @@ class CreateHostAvailabilityRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateHostAvailability','cms')
 		self.set_method('POST')
 
-	def get_TaskOptionHttpMethod(self):
+	def get_TaskOptionHttpMethod(self): # String
 		return self.get_query_params().get('TaskOption.HttpMethod')
 
-	def set_TaskOptionHttpMethod(self,TaskOptionHttpMethod):
-		self.add_query_param('TaskOption.HttpMethod',TaskOptionHttpMethod)
-
-	def get_TaskOptionHttpHeader(self):
+	def set_TaskOptionHttpMethod(self, TaskOptionHttpMethod):  # String
+		self.add_query_param('TaskOption.HttpMethod', TaskOptionHttpMethod)
+	def get_TaskOptionHttpHeader(self): # String
 		return self.get_query_params().get('TaskOption.HttpHeader')
 
-	def set_TaskOptionHttpHeader(self,TaskOptionHttpHeader):
-		self.add_query_param('TaskOption.HttpHeader',TaskOptionHttpHeader)
-
-	def get_AlertConfigEscalationLists(self):
+	def set_TaskOptionHttpHeader(self, TaskOptionHttpHeader):  # String
+		self.add_query_param('TaskOption.HttpHeader', TaskOptionHttpHeader)
+	def get_AlertConfigEscalationLists(self): # RepeatList
 		return self.get_query_params().get('AlertConfigEscalationList')
 
-	def set_AlertConfigEscalationLists(self, AlertConfigEscalationLists):
-		for depth1 in range(len(AlertConfigEscalationLists)):
-			if AlertConfigEscalationLists[depth1].get('Times') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Times', AlertConfigEscalationLists[depth1].get('Times'))
-			if AlertConfigEscalationLists[depth1].get('MetricName') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.MetricName', AlertConfigEscalationLists[depth1].get('MetricName'))
-			if AlertConfigEscalationLists[depth1].get('Value') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Value', AlertConfigEscalationLists[depth1].get('Value'))
-			if AlertConfigEscalationLists[depth1].get('Operator') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Operator', AlertConfigEscalationLists[depth1].get('Operator'))
-			if AlertConfigEscalationLists[depth1].get('Aggregate') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Aggregate', AlertConfigEscalationLists[depth1].get('Aggregate'))
-
-	def get_TaskName(self):
+	def set_AlertConfigEscalationLists(self, AlertConfigEscalationList):  # RepeatList
+		for depth1 in range(len(AlertConfigEscalationList)):
+			if AlertConfigEscalationList[depth1].get('Times') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Times', AlertConfigEscalationList[depth1].get('Times'))
+			if AlertConfigEscalationList[depth1].get('MetricName') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.MetricName', AlertConfigEscalationList[depth1].get('MetricName'))
+			if AlertConfigEscalationList[depth1].get('Value') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Value', AlertConfigEscalationList[depth1].get('Value'))
+			if AlertConfigEscalationList[depth1].get('Operator') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Operator', AlertConfigEscalationList[depth1].get('Operator'))
+			if AlertConfigEscalationList[depth1].get('Aggregate') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Aggregate', AlertConfigEscalationList[depth1].get('Aggregate'))
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_AlertConfigSilenceTime(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_AlertConfigSilenceTime(self): # Integer
 		return self.get_query_params().get('AlertConfig.SilenceTime')
 
-	def set_AlertConfigSilenceTime(self,AlertConfigSilenceTime):
-		self.add_query_param('AlertConfig.SilenceTime',AlertConfigSilenceTime)
-
-	def get_TaskOptionHttpResponseCharset(self):
+	def set_AlertConfigSilenceTime(self, AlertConfigSilenceTime):  # Integer
+		self.add_query_param('AlertConfig.SilenceTime', AlertConfigSilenceTime)
+	def get_TaskOptionHttpResponseCharset(self): # String
 		return self.get_query_params().get('TaskOption.HttpResponseCharset')
 
-	def set_TaskOptionHttpResponseCharset(self,TaskOptionHttpResponseCharset):
-		self.add_query_param('TaskOption.HttpResponseCharset',TaskOptionHttpResponseCharset)
-
-	def get_TaskOptionHttpNegative(self):
+	def set_TaskOptionHttpResponseCharset(self, TaskOptionHttpResponseCharset):  # String
+		self.add_query_param('TaskOption.HttpResponseCharset', TaskOptionHttpResponseCharset)
+	def get_TaskOptionHttpNegative(self): # Boolean
 		return self.get_query_params().get('TaskOption.HttpNegative')
 
-	def set_TaskOptionHttpNegative(self,TaskOptionHttpNegative):
-		self.add_query_param('TaskOption.HttpNegative',TaskOptionHttpNegative)
-
-	def get_TaskOptionInterval(self):
+	def set_TaskOptionHttpNegative(self, TaskOptionHttpNegative):  # Boolean
+		self.add_query_param('TaskOption.HttpNegative', TaskOptionHttpNegative)
+	def get_TaskOptionInterval(self): # Integer
 		return self.get_query_params().get('TaskOption.Interval')
 
-	def set_TaskOptionInterval(self,TaskOptionInterval):
-		self.add_query_param('TaskOption.Interval',TaskOptionInterval)
-
-	def get_AlertConfigNotifyType(self):
+	def set_TaskOptionInterval(self, TaskOptionInterval):  # Integer
+		self.add_query_param('TaskOption.Interval', TaskOptionInterval)
+	def get_AlertConfigNotifyType(self): # Integer
 		return self.get_query_params().get('AlertConfig.NotifyType')
 
-	def set_AlertConfigNotifyType(self,AlertConfigNotifyType):
-		self.add_query_param('AlertConfig.NotifyType',AlertConfigNotifyType)
-
-	def get_TaskOptionTelnetOrPingHost(self):
+	def set_AlertConfigNotifyType(self, AlertConfigNotifyType):  # Integer
+		self.add_query_param('AlertConfig.NotifyType', AlertConfigNotifyType)
+	def get_TaskOptionTelnetOrPingHost(self): # String
 		return self.get_query_params().get('TaskOption.TelnetOrPingHost')
 
-	def set_TaskOptionTelnetOrPingHost(self,TaskOptionTelnetOrPingHost):
-		self.add_query_param('TaskOption.TelnetOrPingHost',TaskOptionTelnetOrPingHost)
-
-	def get_TaskOptionHttpResponseMatchContent(self):
+	def set_TaskOptionTelnetOrPingHost(self, TaskOptionTelnetOrPingHost):  # String
+		self.add_query_param('TaskOption.TelnetOrPingHost', TaskOptionTelnetOrPingHost)
+	def get_TaskOptionHttpResponseMatchContent(self): # String
 		return self.get_query_params().get('TaskOption.HttpResponseMatchContent')
 
-	def set_TaskOptionHttpResponseMatchContent(self,TaskOptionHttpResponseMatchContent):
-		self.add_query_param('TaskOption.HttpResponseMatchContent',TaskOptionHttpResponseMatchContent)
-
-	def get_InstanceLists(self):
+	def set_TaskOptionHttpResponseMatchContent(self, TaskOptionHttpResponseMatchContent):  # String
+		self.add_query_param('TaskOption.HttpResponseMatchContent', TaskOptionHttpResponseMatchContent)
+	def get_InstanceLists(self): # RepeatList
 		return self.get_query_params().get('InstanceList')
 
-	def set_InstanceLists(self, InstanceLists):
-		for depth1 in range(len(InstanceLists)):
-			if InstanceLists[depth1] is not None:
-				self.add_query_param('InstanceList.' + str(depth1 + 1) , InstanceLists[depth1])
-
-	def get_TaskType(self):
+	def set_InstanceLists(self, InstanceList):  # RepeatList
+		for depth1 in range(len(InstanceList)):
+			self.add_query_param('InstanceList.' + str(depth1 + 1), InstanceList[depth1])
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_GroupId(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_AlertConfigEndTime(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_AlertConfigEndTime(self): # Integer
 		return self.get_query_params().get('AlertConfig.EndTime')
 
-	def set_AlertConfigEndTime(self,AlertConfigEndTime):
-		self.add_query_param('AlertConfig.EndTime',AlertConfigEndTime)
-
-	def get_TaskOptionHttpURI(self):
+	def set_AlertConfigEndTime(self, AlertConfigEndTime):  # Integer
+		self.add_query_param('AlertConfig.EndTime', AlertConfigEndTime)
+	def get_TaskOptionHttpURI(self): # String
 		return self.get_query_params().get('TaskOption.HttpURI')
 
-	def set_TaskOptionHttpURI(self,TaskOptionHttpURI):
-		self.add_query_param('TaskOption.HttpURI',TaskOptionHttpURI)
-
-	def get_TaskScope(self):
+	def set_TaskOptionHttpURI(self, TaskOptionHttpURI):  # String
+		self.add_query_param('TaskOption.HttpURI', TaskOptionHttpURI)
+	def get_TaskScope(self): # String
 		return self.get_query_params().get('TaskScope')
 
-	def set_TaskScope(self,TaskScope):
-		self.add_query_param('TaskScope',TaskScope)
-
-	def get_TaskOptionHttpPostContent(self):
+	def set_TaskScope(self, TaskScope):  # String
+		self.add_query_param('TaskScope', TaskScope)
+	def get_TaskOptionHttpPostContent(self): # String
 		return self.get_query_params().get('TaskOption.HttpPostContent')
 
-	def set_TaskOptionHttpPostContent(self,TaskOptionHttpPostContent):
-		self.add_query_param('TaskOption.HttpPostContent',TaskOptionHttpPostContent)
-
-	def get_AlertConfigStartTime(self):
+	def set_TaskOptionHttpPostContent(self, TaskOptionHttpPostContent):  # String
+		self.add_query_param('TaskOption.HttpPostContent', TaskOptionHttpPostContent)
+	def get_AlertConfigStartTime(self): # Integer
 		return self.get_query_params().get('AlertConfig.StartTime')
 
-	def set_AlertConfigStartTime(self,AlertConfigStartTime):
-		self.add_query_param('AlertConfig.StartTime',AlertConfigStartTime)
-
-	def get_AlertConfigWebHook(self):
+	def set_AlertConfigStartTime(self, AlertConfigStartTime):  # Integer
+		self.add_query_param('AlertConfig.StartTime', AlertConfigStartTime)
+	def get_AlertConfigWebHook(self): # String
 		return self.get_query_params().get('AlertConfig.WebHook')
 
-	def set_AlertConfigWebHook(self,AlertConfigWebHook):
-		self.add_query_param('AlertConfig.WebHook',AlertConfigWebHook)
+	def set_AlertConfigWebHook(self, AlertConfigWebHook):  # String
+		self.add_query_param('AlertConfig.WebHook', AlertConfigWebHook)

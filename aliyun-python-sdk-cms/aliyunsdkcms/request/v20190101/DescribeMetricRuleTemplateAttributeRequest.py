@@ -25,14 +25,13 @@ class DescribeMetricRuleTemplateAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricRuleTemplateAttribute','cms')
 		self.set_method('POST')
 
-	def get_TemplateId(self):
+	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_Name(self):
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_query_param('TemplateId', TemplateId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

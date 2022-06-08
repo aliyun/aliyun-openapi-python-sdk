@@ -25,74 +25,63 @@ class DescribeAlertHistoryListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeAlertHistoryList','cms')
 		self.set_method('POST')
 
-	def get_RuleName(self):
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_StartTime(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageSize(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_State(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_State(self): # String
 		return self.get_query_params().get('State')
 
-	def set_State(self,State):
-		self.add_query_param('State',State)
-
-	def get_MetricName(self):
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_GroupId(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_EndTime(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Ascending(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Ascending(self): # Boolean
 		return self.get_query_params().get('Ascending')
 
-	def set_Ascending(self,Ascending):
-		self.add_query_param('Ascending',Ascending)
-
-	def get_Namespace(self):
+	def set_Ascending(self, Ascending):  # Boolean
+		self.add_query_param('Ascending', Ascending)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_Page(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
-
-	def get_RuleId(self):
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)
+	def get_RuleId(self): # String
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
-	def get_Status(self):
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

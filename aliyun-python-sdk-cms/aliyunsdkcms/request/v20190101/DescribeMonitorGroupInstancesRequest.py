@@ -25,38 +25,33 @@ class DescribeMonitorGroupInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorGroupInstances','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageNumber(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceIds(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_PageSize(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Category(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
-
-	def get_Keyword(self):
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

@@ -25,10 +25,9 @@ class DisableEventRulesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DisableEventRules','cms')
 		self.set_method('POST')
 
-	def get_RuleNamess(self):
+	def get_RuleNamess(self): # RepeatList
 		return self.get_query_params().get('RuleNames')
 
-	def set_RuleNamess(self, RuleNamess):
-		for depth1 in range(len(RuleNamess)):
-			if RuleNamess[depth1] is not None:
-				self.add_query_param('RuleNames.' + str(depth1 + 1) , RuleNamess[depth1])
+	def set_RuleNamess(self, RuleNames):  # RepeatList
+		for depth1 in range(len(RuleNames)):
+			self.add_query_param('RuleNames.' + str(depth1 + 1), RuleNames[depth1])

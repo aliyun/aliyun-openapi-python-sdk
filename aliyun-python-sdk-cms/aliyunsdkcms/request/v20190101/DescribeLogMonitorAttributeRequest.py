@@ -25,8 +25,8 @@ class DescribeLogMonitorAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeLogMonitorAttribute','cms')
 		self.set_method('GET')
 
-	def get_MetricName(self):
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)

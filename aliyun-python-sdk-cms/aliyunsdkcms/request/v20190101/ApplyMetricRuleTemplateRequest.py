@@ -25,50 +25,43 @@ class ApplyMetricRuleTemplateRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ApplyMetricRuleTemplate','cms')
 		self.set_method('POST')
 
-	def get_ApplyMode(self):
+	def get_ApplyMode(self): # String
 		return self.get_query_params().get('ApplyMode')
 
-	def set_ApplyMode(self,ApplyMode):
-		self.add_query_param('ApplyMode',ApplyMode)
-
-	def get_Webhook(self):
+	def set_ApplyMode(self, ApplyMode):  # String
+		self.add_query_param('ApplyMode', ApplyMode)
+	def get_Webhook(self): # String
 		return self.get_query_params().get('Webhook')
 
-	def set_Webhook(self,Webhook):
-		self.add_query_param('Webhook',Webhook)
-
-	def get_TemplateIds(self):
+	def set_Webhook(self, Webhook):  # String
+		self.add_query_param('Webhook', Webhook)
+	def get_TemplateIds(self): # String
 		return self.get_query_params().get('TemplateIds')
 
-	def set_TemplateIds(self,TemplateIds):
-		self.add_query_param('TemplateIds',TemplateIds)
-
-	def get_EnableEndTime(self):
+	def set_TemplateIds(self, TemplateIds):  # String
+		self.add_query_param('TemplateIds', TemplateIds)
+	def get_EnableEndTime(self): # Long
 		return self.get_query_params().get('EnableEndTime')
 
-	def set_EnableEndTime(self,EnableEndTime):
-		self.add_query_param('EnableEndTime',EnableEndTime)
-
-	def get_GroupId(self):
+	def set_EnableEndTime(self, EnableEndTime):  # Long
+		self.add_query_param('EnableEndTime', EnableEndTime)
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_NotifyLevel(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_NotifyLevel(self): # Long
 		return self.get_query_params().get('NotifyLevel')
 
-	def set_NotifyLevel(self,NotifyLevel):
-		self.add_query_param('NotifyLevel',NotifyLevel)
-
-	def get_EnableStartTime(self):
+	def set_NotifyLevel(self, NotifyLevel):  # Long
+		self.add_query_param('NotifyLevel', NotifyLevel)
+	def get_EnableStartTime(self): # Long
 		return self.get_query_params().get('EnableStartTime')
 
-	def set_EnableStartTime(self,EnableStartTime):
-		self.add_query_param('EnableStartTime',EnableStartTime)
-
-	def get_SilenceTime(self):
+	def set_EnableStartTime(self, EnableStartTime):  # Long
+		self.add_query_param('EnableStartTime', EnableStartTime)
+	def get_SilenceTime(self): # Long
 		return self.get_query_params().get('SilenceTime')
 
-	def set_SilenceTime(self,SilenceTime):
-		self.add_query_param('SilenceTime',SilenceTime)
+	def set_SilenceTime(self, SilenceTime):  # Long
+		self.add_query_param('SilenceTime', SilenceTime)

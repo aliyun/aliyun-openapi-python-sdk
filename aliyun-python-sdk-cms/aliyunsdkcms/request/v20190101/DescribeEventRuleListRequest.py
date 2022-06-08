@@ -25,26 +25,23 @@ class DescribeEventRuleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeEventRuleList','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_NamePrefix(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_NamePrefix(self): # String
 		return self.get_query_params().get('NamePrefix')
 
-	def set_NamePrefix(self,NamePrefix):
-		self.add_query_param('NamePrefix',NamePrefix)
+	def set_NamePrefix(self, NamePrefix):  # String
+		self.add_query_param('NamePrefix', NamePrefix)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)

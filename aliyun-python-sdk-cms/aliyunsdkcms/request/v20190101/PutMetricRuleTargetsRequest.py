@@ -25,20 +25,21 @@ class PutMetricRuleTargetsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutMetricRuleTargets','cms')
 		self.set_method('POST')
 
-	def get_Targetss(self):
+	def get_Targetss(self): # RepeatList
 		return self.get_query_params().get('Targets')
 
-	def set_Targetss(self, Targetss):
-		for depth1 in range(len(Targetss)):
-			if Targetss[depth1].get('Level') is not None:
-				self.add_query_param('Targets.' + str(depth1 + 1) + '.Level', Targetss[depth1].get('Level'))
-			if Targetss[depth1].get('Id') is not None:
-				self.add_query_param('Targets.' + str(depth1 + 1) + '.Id', Targetss[depth1].get('Id'))
-			if Targetss[depth1].get('Arn') is not None:
-				self.add_query_param('Targets.' + str(depth1 + 1) + '.Arn', Targetss[depth1].get('Arn'))
-
-	def get_RuleId(self):
+	def set_Targetss(self, Targets):  # RepeatList
+		for depth1 in range(len(Targets)):
+			if Targets[depth1].get('Level') is not None:
+				self.add_query_param('Targets.' + str(depth1 + 1) + '.Level', Targets[depth1].get('Level'))
+			if Targets[depth1].get('Id') is not None:
+				self.add_query_param('Targets.' + str(depth1 + 1) + '.Id', Targets[depth1].get('Id'))
+			if Targets[depth1].get('Arn') is not None:
+				self.add_query_param('Targets.' + str(depth1 + 1) + '.Arn', Targets[depth1].get('Arn'))
+			if Targets[depth1].get('JsonParams') is not None:
+				self.add_query_param('Targets.' + str(depth1 + 1) + '.JsonParams', Targets[depth1].get('JsonParams'))
+	def get_RuleId(self): # String
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

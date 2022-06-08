@@ -25,20 +25,18 @@ class CreateMonitorAgentProcessRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateMonitorAgentProcess','cms')
 		self.set_method('POST')
 
-	def get_ProcessName(self):
+	def get_ProcessName(self): # String
 		return self.get_query_params().get('ProcessName')
 
-	def set_ProcessName(self,ProcessName):
-		self.add_query_param('ProcessName',ProcessName)
-
-	def get_InstanceId(self):
+	def set_ProcessName(self, ProcessName):  # String
+		self.add_query_param('ProcessName', ProcessName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ProcessUser(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ProcessUser(self): # String
 		return self.get_query_params().get('ProcessUser')
 
-	def set_ProcessUser(self,ProcessUser):
-		self.add_query_param('ProcessUser',ProcessUser)
+	def set_ProcessUser(self, ProcessUser):  # String
+		self.add_query_param('ProcessUser', ProcessUser)

@@ -25,14 +25,13 @@ class DescribeSiteMonitorAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorAttribute','cms')
 		self.set_method('POST')
 
-	def get_IncludeAlert(self):
+	def get_IncludeAlert(self): # Boolean
 		return self.get_query_params().get('IncludeAlert')
 
-	def set_IncludeAlert(self,IncludeAlert):
-		self.add_query_param('IncludeAlert',IncludeAlert)
-
-	def get_TaskId(self):
+	def set_IncludeAlert(self, IncludeAlert):  # Boolean
+		self.add_query_param('IncludeAlert', IncludeAlert)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

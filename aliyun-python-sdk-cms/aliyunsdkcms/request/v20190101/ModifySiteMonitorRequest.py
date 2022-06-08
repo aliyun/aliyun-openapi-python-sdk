@@ -25,50 +25,43 @@ class ModifySiteMonitorRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifySiteMonitor','cms')
 		self.set_method('POST')
 
-	def get_Address(self):
-		return self.get_query_params().get('Address')
-
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
-
-	def get_TaskName(self):
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_IspCities(self):
-		return self.get_query_params().get('IspCities')
-
-	def set_IspCities(self,IspCities):
-		self.add_query_param('IspCities',IspCities)
-
-	def get_OptionsJson(self):
-		return self.get_query_params().get('OptionsJson')
-
-	def set_OptionsJson(self,OptionsJson):
-		self.add_query_param('OptionsJson',OptionsJson)
-
-	def get_AlertIds(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_AlertIds(self): # String
 		return self.get_query_params().get('AlertIds')
 
-	def set_AlertIds(self,AlertIds):
-		self.add_query_param('AlertIds',AlertIds)
-
-	def get_IntervalUnit(self):
-		return self.get_query_params().get('IntervalUnit')
-
-	def set_IntervalUnit(self,IntervalUnit):
-		self.add_query_param('IntervalUnit',IntervalUnit)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
-
-	def get_TaskId(self):
+	def set_AlertIds(self, AlertIds):  # String
+		self.add_query_param('AlertIds', AlertIds)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_Address(self): # String
+		return self.get_query_params().get('Address')
+
+	def set_Address(self, Address):  # String
+		self.add_query_param('Address', Address)
+	def get_IspCities(self): # String
+		return self.get_query_params().get('IspCities')
+
+	def set_IspCities(self, IspCities):  # String
+		self.add_query_param('IspCities', IspCities)
+	def get_OptionsJson(self): # String
+		return self.get_query_params().get('OptionsJson')
+
+	def set_OptionsJson(self, OptionsJson):  # String
+		self.add_query_param('OptionsJson', OptionsJson)
+	def get_IntervalUnit(self): # String
+		return self.get_query_params().get('IntervalUnit')
+
+	def set_IntervalUnit(self, IntervalUnit):  # String
+		self.add_query_param('IntervalUnit', IntervalUnit)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)

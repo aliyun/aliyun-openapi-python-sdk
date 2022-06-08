@@ -25,62 +25,53 @@ class DescribeMetricRuleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricRuleList','cms')
 		self.set_method('POST')
 
-	def get_EnableState(self):
+	def get_EnableState(self): # Boolean
 		return self.get_query_params().get('EnableState')
 
-	def set_EnableState(self,EnableState):
-		self.add_query_param('EnableState',EnableState)
-
-	def get_RuleName(self):
+	def set_EnableState(self, EnableState):  # Boolean
+		self.add_query_param('EnableState', EnableState)
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_PageSize(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_MetricName(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_GroupId(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_RuleIds(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_RuleIds(self): # String
 		return self.get_query_params().get('RuleIds')
 
-	def set_RuleIds(self,RuleIds):
-		self.add_query_param('RuleIds',RuleIds)
-
-	def get_Namespace(self):
+	def set_RuleIds(self, RuleIds):  # String
+		self.add_query_param('RuleIds', RuleIds)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_AlertState(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_AlertState(self): # String
 		return self.get_query_params().get('AlertState')
 
-	def set_AlertState(self,AlertState):
-		self.add_query_param('AlertState',AlertState)
-
-	def get_Page(self):
+	def set_AlertState(self, AlertState):  # String
+		self.add_query_param('AlertState', AlertState)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
-
-	def get_Dimensions(self):
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)
+	def get_Dimensions(self): # String
 		return self.get_query_params().get('Dimensions')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_Dimensions(self, Dimensions):  # String
+		self.add_query_param('Dimensions', Dimensions)

@@ -25,22 +25,21 @@ class ModifyMonitorGroupInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyMonitorGroupInstances','cms')
 		self.set_method('POST')
 
-	def get_Instancess(self):
+	def get_Instancess(self): # RepeatList
 		return self.get_query_params().get('Instances')
 
-	def set_Instancess(self, Instancess):
-		for depth1 in range(len(Instancess)):
-			if Instancess[depth1].get('InstanceId') is not None:
-				self.add_query_param('Instances.' + str(depth1 + 1) + '.InstanceId', Instancess[depth1].get('InstanceId'))
-			if Instancess[depth1].get('InstanceName') is not None:
-				self.add_query_param('Instances.' + str(depth1 + 1) + '.InstanceName', Instancess[depth1].get('InstanceName'))
-			if Instancess[depth1].get('RegionId') is not None:
-				self.add_query_param('Instances.' + str(depth1 + 1) + '.RegionId', Instancess[depth1].get('RegionId'))
-			if Instancess[depth1].get('Category') is not None:
-				self.add_query_param('Instances.' + str(depth1 + 1) + '.Category', Instancess[depth1].get('Category'))
-
-	def get_GroupId(self):
+	def set_Instancess(self, Instances):  # RepeatList
+		for depth1 in range(len(Instances)):
+			if Instances[depth1].get('InstanceName') is not None:
+				self.add_query_param('Instances.' + str(depth1 + 1) + '.InstanceName', Instances[depth1].get('InstanceName'))
+			if Instances[depth1].get('InstanceId') is not None:
+				self.add_query_param('Instances.' + str(depth1 + 1) + '.InstanceId', Instances[depth1].get('InstanceId'))
+			if Instances[depth1].get('RegionId') is not None:
+				self.add_query_param('Instances.' + str(depth1 + 1) + '.RegionId', Instances[depth1].get('RegionId'))
+			if Instances[depth1].get('Category') is not None:
+				self.add_query_param('Instances.' + str(depth1 + 1) + '.Category', Instances[depth1].get('Category'))
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)

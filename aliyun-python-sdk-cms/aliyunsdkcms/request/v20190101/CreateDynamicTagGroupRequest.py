@@ -25,58 +25,49 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateDynamicTagGroup','cms')
 		self.set_method('POST')
 
-	def get_EnableSubscribeEvent(self):
+	def get_EnableSubscribeEvent(self): # Boolean
 		return self.get_query_params().get('EnableSubscribeEvent')
 
-	def set_EnableSubscribeEvent(self,EnableSubscribeEvent):
-		self.add_query_param('EnableSubscribeEvent',EnableSubscribeEvent)
-
-	def get_MatchExpressFilterRelation(self):
+	def set_EnableSubscribeEvent(self, EnableSubscribeEvent):  # Boolean
+		self.add_query_param('EnableSubscribeEvent', EnableSubscribeEvent)
+	def get_MatchExpressFilterRelation(self): # String
 		return self.get_query_params().get('MatchExpressFilterRelation')
 
-	def set_MatchExpressFilterRelation(self,MatchExpressFilterRelation):
-		self.add_query_param('MatchExpressFilterRelation',MatchExpressFilterRelation)
-
-	def get_EnableInstallAgent(self):
+	def set_MatchExpressFilterRelation(self, MatchExpressFilterRelation):  # String
+		self.add_query_param('MatchExpressFilterRelation', MatchExpressFilterRelation)
+	def get_EnableInstallAgent(self): # Boolean
 		return self.get_query_params().get('EnableInstallAgent')
 
-	def set_EnableInstallAgent(self,EnableInstallAgent):
-		self.add_query_param('EnableInstallAgent',EnableInstallAgent)
-
-	def get_MatchExpresss(self):
+	def set_EnableInstallAgent(self, EnableInstallAgent):  # Boolean
+		self.add_query_param('EnableInstallAgent', EnableInstallAgent)
+	def get_MatchExpresss(self): # RepeatList
 		return self.get_query_params().get('MatchExpress')
 
-	def set_MatchExpresss(self, MatchExpresss):
-		for depth1 in range(len(MatchExpresss)):
-			if MatchExpresss[depth1].get('TagValue') is not None:
-				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValue', MatchExpresss[depth1].get('TagValue'))
-			if MatchExpresss[depth1].get('TagValueMatchFunction') is not None:
-				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValueMatchFunction', MatchExpresss[depth1].get('TagValueMatchFunction'))
-
-	def get_ContactGroupLists(self):
+	def set_MatchExpresss(self, MatchExpress):  # RepeatList
+		for depth1 in range(len(MatchExpress)):
+			if MatchExpress[depth1].get('TagValue') is not None:
+				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValue', MatchExpress[depth1].get('TagValue'))
+			if MatchExpress[depth1].get('TagValueMatchFunction') is not None:
+				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValueMatchFunction', MatchExpress[depth1].get('TagValueMatchFunction'))
+	def get_ContactGroupLists(self): # RepeatList
 		return self.get_query_params().get('ContactGroupList')
 
-	def set_ContactGroupLists(self, ContactGroupLists):
-		for depth1 in range(len(ContactGroupLists)):
-			if ContactGroupLists[depth1] is not None:
-				self.add_query_param('ContactGroupList.' + str(depth1 + 1) , ContactGroupLists[depth1])
-
-	def get_TemplateIdLists(self):
+	def set_ContactGroupLists(self, ContactGroupList):  # RepeatList
+		for depth1 in range(len(ContactGroupList)):
+			self.add_query_param('ContactGroupList.' + str(depth1 + 1), ContactGroupList[depth1])
+	def get_TemplateIdLists(self): # RepeatList
 		return self.get_query_params().get('TemplateIdList')
 
-	def set_TemplateIdLists(self, TemplateIdLists):
-		for depth1 in range(len(TemplateIdLists)):
-			if TemplateIdLists[depth1] is not None:
-				self.add_query_param('TemplateIdList.' + str(depth1 + 1) , TemplateIdLists[depth1])
-
-	def get_TagKey(self):
+	def set_TemplateIdLists(self, TemplateIdList):  # RepeatList
+		for depth1 in range(len(TemplateIdList)):
+			self.add_query_param('TemplateIdList.' + str(depth1 + 1), TemplateIdList[depth1])
+	def get_TagKey(self): # String
 		return self.get_query_params().get('TagKey')
 
-	def set_TagKey(self,TagKey):
-		self.add_query_param('TagKey',TagKey)
-
-	def get_TagRegionId(self):
+	def set_TagKey(self, TagKey):  # String
+		self.add_query_param('TagKey', TagKey)
+	def get_TagRegionId(self): # String
 		return self.get_query_params().get('TagRegionId')
 
-	def set_TagRegionId(self,TagRegionId):
-		self.add_query_param('TagRegionId',TagRegionId)
+	def set_TagRegionId(self, TagRegionId):  # String
+		self.add_query_param('TagRegionId', TagRegionId)

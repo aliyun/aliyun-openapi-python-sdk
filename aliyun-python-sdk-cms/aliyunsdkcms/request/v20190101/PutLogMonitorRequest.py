@@ -25,96 +25,84 @@ class PutLogMonitorRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutLogMonitor','cms')
 		self.set_method('POST')
 
-	def get_SlsLogstore(self):
+	def get_SlsLogstore(self): # String
 		return self.get_query_params().get('SlsLogstore')
 
-	def set_SlsLogstore(self,SlsLogstore):
-		self.add_query_param('SlsLogstore',SlsLogstore)
-
-	def get_SlsProject(self):
+	def set_SlsLogstore(self, SlsLogstore):  # String
+		self.add_query_param('SlsLogstore', SlsLogstore)
+	def get_SlsProject(self): # String
 		return self.get_query_params().get('SlsProject')
 
-	def set_SlsProject(self,SlsProject):
-		self.add_query_param('SlsProject',SlsProject)
-
-	def get_ValueFilters(self):
+	def set_SlsProject(self, SlsProject):  # String
+		self.add_query_param('SlsProject', SlsProject)
+	def get_ValueFilters(self): # RepeatList
 		return self.get_query_params().get('ValueFilter')
 
-	def set_ValueFilters(self, ValueFilters):
-		for depth1 in range(len(ValueFilters)):
-			if ValueFilters[depth1].get('Value') is not None:
-				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Value', ValueFilters[depth1].get('Value'))
-			if ValueFilters[depth1].get('Key') is not None:
-				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Key', ValueFilters[depth1].get('Key'))
-			if ValueFilters[depth1].get('Operator') is not None:
-				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Operator', ValueFilters[depth1].get('Operator'))
-
-	def get_MetricExpress(self):
+	def set_ValueFilters(self, ValueFilter):  # RepeatList
+		for depth1 in range(len(ValueFilter)):
+			if ValueFilter[depth1].get('Value') is not None:
+				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Value', ValueFilter[depth1].get('Value'))
+			if ValueFilter[depth1].get('Key') is not None:
+				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Key', ValueFilter[depth1].get('Key'))
+			if ValueFilter[depth1].get('Operator') is not None:
+				self.add_query_param('ValueFilter.' + str(depth1 + 1) + '.Operator', ValueFilter[depth1].get('Operator'))
+	def get_MetricExpress(self): # String
 		return self.get_query_params().get('MetricExpress')
 
-	def set_MetricExpress(self,MetricExpress):
-		self.add_query_param('MetricExpress',MetricExpress)
-
-	def get_SlsRegionId(self):
+	def set_MetricExpress(self, MetricExpress):  # String
+		self.add_query_param('MetricExpress', MetricExpress)
+	def get_SlsRegionId(self): # String
 		return self.get_query_params().get('SlsRegionId')
 
-	def set_SlsRegionId(self,SlsRegionId):
-		self.add_query_param('SlsRegionId',SlsRegionId)
-
-	def get_MetricName(self):
+	def set_SlsRegionId(self, SlsRegionId):  # String
+		self.add_query_param('SlsRegionId', SlsRegionId)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_GroupId(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Tumblingwindows(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Tumblingwindows(self): # String
 		return self.get_query_params().get('Tumblingwindows')
 
-	def set_Tumblingwindows(self,Tumblingwindows):
-		self.add_query_param('Tumblingwindows',Tumblingwindows)
-
-	def get_ValueFilterRelation(self):
+	def set_Tumblingwindows(self, Tumblingwindows):  # String
+		self.add_query_param('Tumblingwindows', Tumblingwindows)
+	def get_ValueFilterRelation(self): # String
 		return self.get_query_params().get('ValueFilterRelation')
 
-	def set_ValueFilterRelation(self,ValueFilterRelation):
-		self.add_query_param('ValueFilterRelation',ValueFilterRelation)
-
-	def get_Unit(self):
+	def set_ValueFilterRelation(self, ValueFilterRelation):  # String
+		self.add_query_param('ValueFilterRelation', ValueFilterRelation)
+	def get_Unit(self): # String
 		return self.get_query_params().get('Unit')
 
-	def set_Unit(self,Unit):
-		self.add_query_param('Unit',Unit)
-
-	def get_Groupbyss(self):
+	def set_Unit(self, Unit):  # String
+		self.add_query_param('Unit', Unit)
+	def get_Groupbyss(self): # RepeatList
 		return self.get_query_params().get('Groupbys')
 
-	def set_Groupbyss(self, Groupbyss):
-		for depth1 in range(len(Groupbyss)):
-			if Groupbyss[depth1].get('FieldName') is not None:
-				self.add_query_param('Groupbys.' + str(depth1 + 1) + '.FieldName', Groupbyss[depth1].get('FieldName'))
-			if Groupbyss[depth1].get('Alias') is not None:
-				self.add_query_param('Groupbys.' + str(depth1 + 1) + '.Alias', Groupbyss[depth1].get('Alias'))
-
-	def get_LogId(self):
+	def set_Groupbyss(self, Groupbys):  # RepeatList
+		for depth1 in range(len(Groupbys)):
+			if Groupbys[depth1].get('FieldName') is not None:
+				self.add_query_param('Groupbys.' + str(depth1 + 1) + '.FieldName', Groupbys[depth1].get('FieldName'))
+			if Groupbys[depth1].get('Alias') is not None:
+				self.add_query_param('Groupbys.' + str(depth1 + 1) + '.Alias', Groupbys[depth1].get('Alias'))
+	def get_LogId(self): # String
 		return self.get_query_params().get('LogId')
 
-	def set_LogId(self,LogId):
-		self.add_query_param('LogId',LogId)
-
-	def get_Aggregatess(self):
+	def set_LogId(self, LogId):  # String
+		self.add_query_param('LogId', LogId)
+	def get_Aggregatess(self): # RepeatList
 		return self.get_query_params().get('Aggregates')
 
-	def set_Aggregatess(self, Aggregatess):
-		for depth1 in range(len(Aggregatess)):
-			if Aggregatess[depth1].get('FieldName') is not None:
-				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.FieldName', Aggregatess[depth1].get('FieldName'))
-			if Aggregatess[depth1].get('Function') is not None:
-				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.Function', Aggregatess[depth1].get('Function'))
-			if Aggregatess[depth1].get('Alias') is not None:
-				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.Alias', Aggregatess[depth1].get('Alias'))
+	def set_Aggregatess(self, Aggregates):  # RepeatList
+		for depth1 in range(len(Aggregates)):
+			if Aggregates[depth1].get('FieldName') is not None:
+				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.FieldName', Aggregates[depth1].get('FieldName'))
+			if Aggregates[depth1].get('Function') is not None:
+				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.Function', Aggregates[depth1].get('Function'))
+			if Aggregates[depth1].get('Alias') is not None:
+				self.add_query_param('Aggregates.' + str(depth1 + 1) + '.Alias', Aggregates[depth1].get('Alias'))

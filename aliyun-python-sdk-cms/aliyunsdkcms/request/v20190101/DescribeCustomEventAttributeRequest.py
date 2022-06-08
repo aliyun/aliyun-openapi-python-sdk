@@ -25,50 +25,43 @@ class DescribeCustomEventAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeCustomEventAttribute','cms')
 		self.set_method('POST')
 
-	def get_EventId(self):
+	def get_EventId(self): # String
 		return self.get_query_params().get('EventId')
 
-	def set_EventId(self,EventId):
-		self.add_query_param('EventId',EventId)
-
-	def get_StartTime(self):
+	def set_EventId(self, EventId):  # String
+		self.add_query_param('EventId', EventId)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_SearchKeywords(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_SearchKeywords(self): # String
 		return self.get_query_params().get('SearchKeywords')
 
-	def set_SearchKeywords(self,SearchKeywords):
-		self.add_query_param('SearchKeywords',SearchKeywords)
-
-	def get_PageNumber(self):
+	def set_SearchKeywords(self, SearchKeywords):  # String
+		self.add_query_param('SearchKeywords', SearchKeywords)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_GroupId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_EndTime(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Name(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

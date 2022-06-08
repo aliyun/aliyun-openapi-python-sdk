@@ -25,38 +25,33 @@ class DescribeHostAvailabilityListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeHostAvailabilityList','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_TaskName(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_PageNumber(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Ids(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Ids(self): # String
 		return self.get_query_params().get('Ids')
 
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_Id(self):
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

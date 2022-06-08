@@ -25,26 +25,30 @@ class PutMonitorGroupDynamicRuleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutMonitorGroupDynamicRule','cms')
 		self.set_method('POST')
 
-	def get_GroupRuless(self):
+	def get_GroupRuless(self): # RepeatList
 		return self.get_query_params().get('GroupRules')
 
-	def set_GroupRuless(self, GroupRuless):
-		for depth1 in range(len(GroupRuless)):
-			if GroupRuless[depth1].get('FilterRelation') is not None:
-				self.add_query_param('GroupRules.' + str(depth1 + 1) + '.FilterRelation', GroupRuless[depth1].get('FilterRelation'))
-			if GroupRuless[depth1].get('Filters') is not None:
-				for depth2 in range(len(GroupRuless[depth1].get('Filters'))):
-					if GroupRuless[depth1].get('Filters')[depth2].get('Function') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.' + str(depth2 + 1) + '.Function', GroupRuless[depth1].get('Filters')[depth2].get('Function'))
-					if GroupRuless[depth1].get('Filters')[depth2].get('Name') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.' + str(depth2 + 1) + '.Name', GroupRuless[depth1].get('Filters')[depth2].get('Name'))
-					if GroupRuless[depth1].get('Filters')[depth2].get('Value') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.' + str(depth2 + 1) + '.Value', GroupRuless[depth1].get('Filters')[depth2].get('Value'))
-			if GroupRuless[depth1].get('Category') is not None:
-				self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Category', GroupRuless[depth1].get('Category'))
-
-	def get_GroupId(self):
+	def set_GroupRuless(self, GroupRules):  # RepeatList
+		for depth1 in range(len(GroupRules)):
+			if GroupRules[depth1].get('FilterRelation') is not None:
+				self.add_query_param('GroupRules.' + str(depth1 + 1) + '.FilterRelation', GroupRules[depth1].get('FilterRelation'))
+			if GroupRules[depth1].get('Filters') is not None:
+				for depth2 in range(len(GroupRules[depth1].get('Filters'))):
+					if GroupRules[depth1].get('Filters')[depth2].get('Function') is not None:
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Function', GroupRules[depth1].get('Filters')[depth2].get('Function'))
+					if GroupRules[depth1].get('Filters')[depth2].get('Name') is not None:
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Name', GroupRules[depth1].get('Filters')[depth2].get('Name'))
+					if GroupRules[depth1].get('Filters')[depth2].get('Value') is not None:
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', GroupRules[depth1].get('Filters')[depth2].get('Value'))
+			if GroupRules[depth1].get('Category') is not None:
+				self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Category', GroupRules[depth1].get('Category'))
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_IsAsync(self): # Boolean
+		return self.get_query_params().get('IsAsync')
+
+	def set_IsAsync(self, IsAsync):  # Boolean
+		self.add_query_param('IsAsync', IsAsync)

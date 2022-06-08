@@ -25,14 +25,13 @@ class DeleteMetricRuleResourcesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMetricRuleResources','cms')
 		self.set_method('POST')
 
-	def get_Resources(self):
+	def get_Resources(self): # String
 		return self.get_query_params().get('Resources')
 
-	def set_Resources(self,Resources):
-		self.add_query_param('Resources',Resources)
-
-	def get_RuleId(self):
+	def set_Resources(self, Resources):  # String
+		self.add_query_param('Resources', Resources)
+	def get_RuleId(self): # String
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

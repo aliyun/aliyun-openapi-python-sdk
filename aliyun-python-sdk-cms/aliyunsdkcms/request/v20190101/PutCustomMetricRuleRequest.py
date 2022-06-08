@@ -25,98 +25,83 @@ class PutCustomMetricRuleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutCustomMetricRule','cms')
 		self.set_method('POST')
 
-	def get_Webhook(self):
+	def get_Webhook(self): # String
 		return self.get_query_params().get('Webhook')
 
-	def set_Webhook(self,Webhook):
-		self.add_query_param('Webhook',Webhook)
-
-	def get_RuleName(self):
+	def set_Webhook(self, Webhook):  # String
+		self.add_query_param('Webhook', Webhook)
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_Threshold(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_Threshold(self): # String
 		return self.get_query_params().get('Threshold')
 
-	def set_Threshold(self,Threshold):
-		self.add_query_param('Threshold',Threshold)
-
-	def get_EffectiveInterval(self):
+	def set_Threshold(self, Threshold):  # String
+		self.add_query_param('Threshold', Threshold)
+	def get_EffectiveInterval(self): # String
 		return self.get_query_params().get('EffectiveInterval')
 
-	def set_EffectiveInterval(self,EffectiveInterval):
-		self.add_query_param('EffectiveInterval',EffectiveInterval)
-
-	def get_EmailSubject(self):
+	def set_EffectiveInterval(self, EffectiveInterval):  # String
+		self.add_query_param('EffectiveInterval', EffectiveInterval)
+	def get_EmailSubject(self): # String
 		return self.get_query_params().get('EmailSubject')
 
-	def set_EmailSubject(self,EmailSubject):
-		self.add_query_param('EmailSubject',EmailSubject)
-
-	def get_EvaluationCount(self):
+	def set_EmailSubject(self, EmailSubject):  # String
+		self.add_query_param('EmailSubject', EmailSubject)
+	def get_EvaluationCount(self): # Integer
 		return self.get_query_params().get('EvaluationCount')
 
-	def set_EvaluationCount(self,EvaluationCount):
-		self.add_query_param('EvaluationCount',EvaluationCount)
-
-	def get_SilenceTime(self):
+	def set_EvaluationCount(self, EvaluationCount):  # Integer
+		self.add_query_param('EvaluationCount', EvaluationCount)
+	def get_SilenceTime(self): # Integer
 		return self.get_query_params().get('SilenceTime')
 
-	def set_SilenceTime(self,SilenceTime):
-		self.add_query_param('SilenceTime',SilenceTime)
-
-	def get_MetricName(self):
+	def set_SilenceTime(self, SilenceTime):  # Integer
+		self.add_query_param('SilenceTime', SilenceTime)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_Period(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_ContactGroups(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_ContactGroups(self): # String
 		return self.get_query_params().get('ContactGroups')
 
-	def set_ContactGroups(self,ContactGroups):
-		self.add_query_param('ContactGroups',ContactGroups)
-
-	def get_Level(self):
+	def set_ContactGroups(self, ContactGroups):  # String
+		self.add_query_param('ContactGroups', ContactGroups)
+	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_GroupId(self):
+	def set_Level(self, Level):  # String
+		self.add_query_param('Level', Level)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Resources(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Resources(self): # String
 		return self.get_query_params().get('Resources')
 
-	def set_Resources(self,Resources):
-		self.add_query_param('Resources',Resources)
-
-	def get_RuleId(self):
+	def set_Resources(self, Resources):  # String
+		self.add_query_param('Resources', Resources)
+	def get_RuleId(self): # String
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
-	def get_ComparisonOperator(self):
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)
+	def get_ComparisonOperator(self): # String
 		return self.get_query_params().get('ComparisonOperator')
 
-	def set_ComparisonOperator(self,ComparisonOperator):
-		self.add_query_param('ComparisonOperator',ComparisonOperator)
-
-	def get_Statistics(self):
+	def set_ComparisonOperator(self, ComparisonOperator):  # String
+		self.add_query_param('ComparisonOperator', ComparisonOperator)
+	def get_Statistics(self): # String
 		return self.get_query_params().get('Statistics')
 
-	def set_Statistics(self,Statistics):
-		self.add_query_param('Statistics',Statistics)
+	def set_Statistics(self, Statistics):  # String
+		self.add_query_param('Statistics', Statistics)

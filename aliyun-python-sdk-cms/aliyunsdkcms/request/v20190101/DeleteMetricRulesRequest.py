@@ -25,10 +25,9 @@ class DeleteMetricRulesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMetricRules','cms')
 		self.set_method('POST')
 
-	def get_Ids(self):
+	def get_Ids(self): # RepeatList
 		return self.get_query_params().get('Id')
 
-	def set_Ids(self, Ids):
-		for depth1 in range(len(Ids)):
-			if Ids[depth1] is not None:
-				self.add_query_param('Id.' + str(depth1 + 1) , Ids[depth1])
+	def set_Ids(self, Id):  # RepeatList
+		for depth1 in range(len(Id)):
+			self.add_query_param('Id.' + str(depth1 + 1), Id[depth1])

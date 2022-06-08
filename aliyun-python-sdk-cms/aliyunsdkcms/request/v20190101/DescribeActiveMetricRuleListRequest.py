@@ -25,8 +25,8 @@ class DescribeActiveMetricRuleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeActiveMetricRuleList','cms')
 		self.set_method('GET')
 
-	def get_Product(self):
+	def get_Product(self): # String
 		return self.get_query_params().get('Product')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)

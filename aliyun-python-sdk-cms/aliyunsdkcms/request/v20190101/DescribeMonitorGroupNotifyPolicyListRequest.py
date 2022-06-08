@@ -25,26 +25,23 @@ class DescribeMonitorGroupNotifyPolicyListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorGroupNotifyPolicyList','cms')
 		self.set_method('POST')
 
-	def get_PolicyType(self):
+	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
-
-	def get_GroupId(self):
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_query_param('PolicyType', PolicyType)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageNumber(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

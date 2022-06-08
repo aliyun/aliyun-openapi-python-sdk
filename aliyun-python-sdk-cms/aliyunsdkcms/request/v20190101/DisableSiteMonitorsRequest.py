@@ -25,8 +25,8 @@ class DisableSiteMonitorsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DisableSiteMonitors','cms')
 		self.set_method('POST')
 
-	def get_TaskIds(self):
+	def get_TaskIds(self): # String
 		return self.get_query_params().get('TaskIds')
 
-	def set_TaskIds(self,TaskIds):
-		self.add_query_param('TaskIds',TaskIds)
+	def set_TaskIds(self, TaskIds):  # String
+		self.add_query_param('TaskIds', TaskIds)

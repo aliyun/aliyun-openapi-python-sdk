@@ -25,34 +25,29 @@ class CreateMonitorGroupByResourceGroupIdRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateMonitorGroupByResourceGroupId','cms')
 		self.set_method('POST')
 
-	def get_ResourceGroupName(self):
+	def get_ResourceGroupName(self): # String
 		return self.get_query_params().get('ResourceGroupName')
 
-	def set_ResourceGroupName(self,ResourceGroupName):
-		self.add_query_param('ResourceGroupName',ResourceGroupName)
-
-	def get_EnableSubscribeEvent(self):
+	def set_ResourceGroupName(self, ResourceGroupName):  # String
+		self.add_query_param('ResourceGroupName', ResourceGroupName)
+	def get_EnableSubscribeEvent(self): # Boolean
 		return self.get_query_params().get('EnableSubscribeEvent')
 
-	def set_EnableSubscribeEvent(self,EnableSubscribeEvent):
-		self.add_query_param('EnableSubscribeEvent',EnableSubscribeEvent)
-
-	def get_ResourceGroupId(self):
+	def set_EnableSubscribeEvent(self, EnableSubscribeEvent):  # Boolean
+		self.add_query_param('EnableSubscribeEvent', EnableSubscribeEvent)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_EnableInstallAgent(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_EnableInstallAgent(self): # Boolean
 		return self.get_query_params().get('EnableInstallAgent')
 
-	def set_EnableInstallAgent(self,EnableInstallAgent):
-		self.add_query_param('EnableInstallAgent',EnableInstallAgent)
-
-	def get_ContactGroupLists(self):
+	def set_EnableInstallAgent(self, EnableInstallAgent):  # Boolean
+		self.add_query_param('EnableInstallAgent', EnableInstallAgent)
+	def get_ContactGroupLists(self): # RepeatList
 		return self.get_query_params().get('ContactGroupList')
 
-	def set_ContactGroupLists(self, ContactGroupLists):
-		for depth1 in range(len(ContactGroupLists)):
-			if ContactGroupLists[depth1] is not None:
-				self.add_query_param('ContactGroupList.' + str(depth1 + 1) , ContactGroupLists[depth1])
+	def set_ContactGroupLists(self, ContactGroupList):  # RepeatList
+		for depth1 in range(len(ContactGroupList)):
+			self.add_query_param('ContactGroupList.' + str(depth1 + 1), ContactGroupList[depth1])

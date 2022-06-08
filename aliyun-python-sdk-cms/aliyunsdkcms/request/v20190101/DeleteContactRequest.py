@@ -25,8 +25,8 @@ class DeleteContactRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteContact','cms')
 		self.set_method('POST')
 
-	def get_ContactName(self):
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)

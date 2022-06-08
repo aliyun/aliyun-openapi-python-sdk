@@ -25,38 +25,33 @@ class CreateCmsCallNumOrderRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateCmsCallNumOrder','cms')
 		self.set_method('POST')
 
-	def get_AutoRenewPeriod(self):
+	def get_AutoRenewPeriod(self): # Integer
 		return self.get_query_params().get('AutoRenewPeriod')
 
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
-
-	def get_Period(self):
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_AutoPay(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_AutoUseCoupon(self):
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_AutoUseCoupon(self): # Boolean
 		return self.get_query_params().get('AutoUseCoupon')
 
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
-	def get_PeriodUnit(self):
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
-
-	def get_PhoneCount(self):
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
+	def get_PhoneCount(self): # String
 		return self.get_query_params().get('PhoneCount')
 
-	def set_PhoneCount(self,PhoneCount):
-		self.add_query_param('PhoneCount',PhoneCount)
+	def set_PhoneCount(self, PhoneCount):  # String
+		self.add_query_param('PhoneCount', PhoneCount)

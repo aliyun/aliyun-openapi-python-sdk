@@ -25,26 +25,23 @@ class DescribeGroupMonitoringAgentProcessRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeGroupMonitoringAgentProcess','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_ProcessName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_ProcessName(self): # String
 		return self.get_query_params().get('ProcessName')
 
-	def set_ProcessName(self,ProcessName):
-		self.add_query_param('ProcessName',ProcessName)
-
-	def get_PageNumber(self):
+	def set_ProcessName(self, ProcessName):  # String
+		self.add_query_param('ProcessName', ProcessName)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

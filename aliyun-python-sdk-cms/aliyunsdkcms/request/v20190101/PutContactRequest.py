@@ -25,44 +25,38 @@ class PutContactRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutContact','cms')
 		self.set_method('POST')
 
-	def get_ChannelsDingWebHook(self):
+	def get_ChannelsDingWebHook(self): # String
 		return self.get_query_params().get('Channels.DingWebHook')
 
-	def set_ChannelsDingWebHook(self,ChannelsDingWebHook):
-		self.add_query_param('Channels.DingWebHook',ChannelsDingWebHook)
-
-	def get_ContactName(self):
+	def set_ChannelsDingWebHook(self, ChannelsDingWebHook):  # String
+		self.add_query_param('Channels.DingWebHook', ChannelsDingWebHook)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_ChannelsMail(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_ChannelsMail(self): # String
 		return self.get_query_params().get('Channels.Mail')
 
-	def set_ChannelsMail(self,ChannelsMail):
-		self.add_query_param('Channels.Mail',ChannelsMail)
-
-	def get_ChannelsAliIM(self):
+	def set_ChannelsMail(self, ChannelsMail):  # String
+		self.add_query_param('Channels.Mail', ChannelsMail)
+	def get_ChannelsAliIM(self): # String
 		return self.get_query_params().get('Channels.AliIM')
 
-	def set_ChannelsAliIM(self,ChannelsAliIM):
-		self.add_query_param('Channels.AliIM',ChannelsAliIM)
-
-	def get_Describe(self):
+	def set_ChannelsAliIM(self, ChannelsAliIM):  # String
+		self.add_query_param('Channels.AliIM', ChannelsAliIM)
+	def get_Describe(self): # String
 		return self.get_query_params().get('Describe')
 
-	def set_Describe(self,Describe):
-		self.add_query_param('Describe',Describe)
-
-	def get_Lang(self):
+	def set_Describe(self, Describe):  # String
+		self.add_query_param('Describe', Describe)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_ChannelsSMS(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ChannelsSMS(self): # String
 		return self.get_query_params().get('Channels.SMS')
 
-	def set_ChannelsSMS(self,ChannelsSMS):
-		self.add_query_param('Channels.SMS',ChannelsSMS)
+	def set_ChannelsSMS(self, ChannelsSMS):  # String
+		self.add_query_param('Channels.SMS', ChannelsSMS)

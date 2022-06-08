@@ -25,26 +25,23 @@ class PutExporterOutputRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutExporterOutput','cms')
 		self.set_method('POST')
 
-	def get_DestName(self):
+	def get_DestName(self): # String
 		return self.get_query_params().get('DestName')
 
-	def set_DestName(self,DestName):
-		self.add_query_param('DestName',DestName)
-
-	def get_ConfigJson(self):
+	def set_DestName(self, DestName):  # String
+		self.add_query_param('DestName', DestName)
+	def get_ConfigJson(self): # String
 		return self.get_query_params().get('ConfigJson')
 
-	def set_ConfigJson(self,ConfigJson):
-		self.add_query_param('ConfigJson',ConfigJson)
-
-	def get_DestType(self):
+	def set_ConfigJson(self, ConfigJson):  # String
+		self.add_query_param('ConfigJson', ConfigJson)
+	def get_DestType(self): # String
 		return self.get_query_params().get('DestType')
 
-	def set_DestType(self,DestType):
-		self.add_query_param('DestType',DestType)
-
-	def get_Desc(self):
+	def set_DestType(self, DestType):  # String
+		self.add_query_param('DestType', DestType)
+	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 
-	def set_Desc(self,Desc):
-		self.add_query_param('Desc',Desc)
+	def set_Desc(self, Desc):  # String
+		self.add_query_param('Desc', Desc)

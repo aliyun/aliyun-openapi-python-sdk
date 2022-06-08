@@ -25,14 +25,13 @@ class PutMonitoringConfigRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutMonitoringConfig','cms')
 		self.set_method('POST')
 
-	def get_AutoInstall(self):
+	def get_AutoInstall(self): # Boolean
 		return self.get_query_params().get('AutoInstall')
 
-	def set_AutoInstall(self,AutoInstall):
-		self.add_query_param('AutoInstall',AutoInstall)
-
-	def get_EnableInstallAgentNewECS(self):
+	def set_AutoInstall(self, AutoInstall):  # Boolean
+		self.add_query_param('AutoInstall', AutoInstall)
+	def get_EnableInstallAgentNewECS(self): # Boolean
 		return self.get_query_params().get('EnableInstallAgentNewECS')
 
-	def set_EnableInstallAgentNewECS(self,EnableInstallAgentNewECS):
-		self.add_query_param('EnableInstallAgentNewECS',EnableInstallAgentNewECS)
+	def set_EnableInstallAgentNewECS(self, EnableInstallAgentNewECS):  # Boolean
+		self.add_query_param('EnableInstallAgentNewECS', EnableInstallAgentNewECS)

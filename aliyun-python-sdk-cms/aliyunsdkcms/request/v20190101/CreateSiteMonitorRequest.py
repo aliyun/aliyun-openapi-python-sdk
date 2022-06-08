@@ -25,44 +25,38 @@ class CreateSiteMonitorRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateSiteMonitor','cms')
 		self.set_method('POST')
 
-	def get_TaskName(self):
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_AlertIds(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_AlertIds(self): # String
 		return self.get_query_params().get('AlertIds')
 
-	def set_AlertIds(self,AlertIds):
-		self.add_query_param('AlertIds',AlertIds)
-
-	def get_Address(self):
+	def set_AlertIds(self, AlertIds):  # String
+		self.add_query_param('AlertIds', AlertIds)
+	def get_Address(self): # String
 		return self.get_query_params().get('Address')
 
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
-
-	def get_TaskType(self):
+	def set_Address(self, Address):  # String
+		self.add_query_param('Address', Address)
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_IspCities(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_IspCities(self): # String
 		return self.get_query_params().get('IspCities')
 
-	def set_IspCities(self,IspCities):
-		self.add_query_param('IspCities',IspCities)
-
-	def get_OptionsJson(self):
+	def set_IspCities(self, IspCities):  # String
+		self.add_query_param('IspCities', IspCities)
+	def get_OptionsJson(self): # String
 		return self.get_query_params().get('OptionsJson')
 
-	def set_OptionsJson(self,OptionsJson):
-		self.add_query_param('OptionsJson',OptionsJson)
-
-	def get_Interval(self):
+	def set_OptionsJson(self, OptionsJson):  # String
+		self.add_query_param('OptionsJson', OptionsJson)
+	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)

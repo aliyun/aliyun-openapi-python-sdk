@@ -25,22 +25,19 @@ class InstallMonitoringAgentRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'InstallMonitoringAgent','cms')
 		self.set_method('POST')
 
-	def get_InstanceIdss(self):
+	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
-
-	def get_Force(self):
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
+	def get_Force(self): # Boolean
 		return self.get_query_params().get('Force')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
-
-	def get_InstallCommand(self):
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
+	def get_InstallCommand(self): # String
 		return self.get_query_params().get('InstallCommand')
 
-	def set_InstallCommand(self,InstallCommand):
-		self.add_query_param('InstallCommand',InstallCommand)
+	def set_InstallCommand(self, InstallCommand):  # String
+		self.add_query_param('InstallCommand', InstallCommand)

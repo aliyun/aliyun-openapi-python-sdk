@@ -25,94 +25,92 @@ class PutEventRuleTargetsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutEventRuleTargets','cms')
 		self.set_method('POST')
 
-	def get_WebhookParameterss(self):
+	def get_WebhookParameterss(self): # RepeatList
 		return self.get_query_params().get('WebhookParameters')
 
-	def set_WebhookParameterss(self, WebhookParameterss):
-		for depth1 in range(len(WebhookParameterss)):
-			if WebhookParameterss[depth1].get('Protocol') is not None:
-				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Protocol', WebhookParameterss[depth1].get('Protocol'))
-			if WebhookParameterss[depth1].get('Method') is not None:
-				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Method', WebhookParameterss[depth1].get('Method'))
-			if WebhookParameterss[depth1].get('Id') is not None:
-				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Id', WebhookParameterss[depth1].get('Id'))
-			if WebhookParameterss[depth1].get('Url') is not None:
-				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Url', WebhookParameterss[depth1].get('Url'))
-
-	def get_ContactParameterss(self):
+	def set_WebhookParameterss(self, WebhookParameters):  # RepeatList
+		for depth1 in range(len(WebhookParameters)):
+			if WebhookParameters[depth1].get('Protocol') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Protocol', WebhookParameters[depth1].get('Protocol'))
+			if WebhookParameters[depth1].get('Method') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Method', WebhookParameters[depth1].get('Method'))
+			if WebhookParameters[depth1].get('Id') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Id', WebhookParameters[depth1].get('Id'))
+			if WebhookParameters[depth1].get('Url') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Url', WebhookParameters[depth1].get('Url'))
+	def get_ContactParameterss(self): # RepeatList
 		return self.get_query_params().get('ContactParameters')
 
-	def set_ContactParameterss(self, ContactParameterss):
-		for depth1 in range(len(ContactParameterss)):
-			if ContactParameterss[depth1].get('Level') is not None:
-				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Level', ContactParameterss[depth1].get('Level'))
-			if ContactParameterss[depth1].get('Id') is not None:
-				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Id', ContactParameterss[depth1].get('Id'))
-			if ContactParameterss[depth1].get('ContactGroupName') is not None:
-				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.ContactGroupName', ContactParameterss[depth1].get('ContactGroupName'))
-
-	def get_OpenApiParameterss(self):
-		return self.get_query_params().get('OpenApiParameters')
-
-	def set_OpenApiParameterss(self, OpenApiParameterss):
-		for depth1 in range(len(OpenApiParameterss)):
-			if OpenApiParameterss[depth1].get('Product') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Product', OpenApiParameterss[depth1].get('Product'))
-			if OpenApiParameterss[depth1].get('Role') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Role', OpenApiParameterss[depth1].get('Role'))
-			if OpenApiParameterss[depth1].get('Action') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Action', OpenApiParameterss[depth1].get('Action'))
-			if OpenApiParameterss[depth1].get('Id') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Id', OpenApiParameterss[depth1].get('Id'))
-			if OpenApiParameterss[depth1].get('Arn') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Arn', OpenApiParameterss[depth1].get('Arn'))
-			if OpenApiParameterss[depth1].get('Region') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Region', OpenApiParameterss[depth1].get('Region'))
-			if OpenApiParameterss[depth1].get('Version') is not None:
-				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Version', OpenApiParameterss[depth1].get('Version'))
-
-	def get_SlsParameterss(self):
+	def set_ContactParameterss(self, ContactParameters):  # RepeatList
+		for depth1 in range(len(ContactParameters)):
+			if ContactParameters[depth1].get('Level') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Level', ContactParameters[depth1].get('Level'))
+			if ContactParameters[depth1].get('Id') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Id', ContactParameters[depth1].get('Id'))
+			if ContactParameters[depth1].get('ContactGroupName') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.ContactGroupName', ContactParameters[depth1].get('ContactGroupName'))
+	def get_SlsParameterss(self): # RepeatList
 		return self.get_query_params().get('SlsParameters')
 
-	def set_SlsParameterss(self, SlsParameterss):
-		for depth1 in range(len(SlsParameterss)):
-			if SlsParameterss[depth1].get('Project') is not None:
-				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Project', SlsParameterss[depth1].get('Project'))
-			if SlsParameterss[depth1].get('Id') is not None:
-				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Id', SlsParameterss[depth1].get('Id'))
-			if SlsParameterss[depth1].get('Region') is not None:
-				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Region', SlsParameterss[depth1].get('Region'))
-			if SlsParameterss[depth1].get('LogStore') is not None:
-				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.LogStore', SlsParameterss[depth1].get('LogStore'))
-
-	def get_RuleName(self):
+	def set_SlsParameterss(self, SlsParameters):  # RepeatList
+		for depth1 in range(len(SlsParameters)):
+			if SlsParameters[depth1].get('Project') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Project', SlsParameters[depth1].get('Project'))
+			if SlsParameters[depth1].get('Id') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Id', SlsParameters[depth1].get('Id'))
+			if SlsParameters[depth1].get('Region') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Region', SlsParameters[depth1].get('Region'))
+			if SlsParameters[depth1].get('LogStore') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.LogStore', SlsParameters[depth1].get('LogStore'))
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_OpenApiParameterss(self): # RepeatList
+		return self.get_query_params().get('OpenApiParameters')
 
-	def get_MnsParameterss(self):
+	def set_OpenApiParameterss(self, OpenApiParameters):  # RepeatList
+		for depth1 in range(len(OpenApiParameters)):
+			if OpenApiParameters[depth1].get('Product') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Product', OpenApiParameters[depth1].get('Product'))
+			if OpenApiParameters[depth1].get('Role') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Role', OpenApiParameters[depth1].get('Role'))
+			if OpenApiParameters[depth1].get('Action') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Action', OpenApiParameters[depth1].get('Action'))
+			if OpenApiParameters[depth1].get('Id') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Id', OpenApiParameters[depth1].get('Id'))
+			if OpenApiParameters[depth1].get('Arn') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Arn', OpenApiParameters[depth1].get('Arn'))
+			if OpenApiParameters[depth1].get('Region') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Region', OpenApiParameters[depth1].get('Region'))
+			if OpenApiParameters[depth1].get('Version') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.Version', OpenApiParameters[depth1].get('Version'))
+			if OpenApiParameters[depth1].get('JsonParams') is not None:
+				self.add_query_param('OpenApiParameters.' + str(depth1 + 1) + '.JsonParams', OpenApiParameters[depth1].get('JsonParams'))
+	def get_MnsParameterss(self): # RepeatList
 		return self.get_query_params().get('MnsParameters')
 
-	def set_MnsParameterss(self, MnsParameterss):
-		for depth1 in range(len(MnsParameterss)):
-			if MnsParameterss[depth1].get('Id') is not None:
-				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Id', MnsParameterss[depth1].get('Id'))
-			if MnsParameterss[depth1].get('Region') is not None:
-				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Region', MnsParameterss[depth1].get('Region'))
-			if MnsParameterss[depth1].get('Queue') is not None:
-				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Queue', MnsParameterss[depth1].get('Queue'))
-
-	def get_FcParameterss(self):
+	def set_MnsParameterss(self, MnsParameters):  # RepeatList
+		for depth1 in range(len(MnsParameters)):
+			if MnsParameters[depth1].get('Topic') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Topic', MnsParameters[depth1].get('Topic'))
+			if MnsParameters[depth1].get('Id') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Id', MnsParameters[depth1].get('Id'))
+			if MnsParameters[depth1].get('Region') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Region', MnsParameters[depth1].get('Region'))
+			if MnsParameters[depth1].get('Queue') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Queue', MnsParameters[depth1].get('Queue'))
+	def get_FcParameterss(self): # RepeatList
 		return self.get_query_params().get('FcParameters')
 
-	def set_FcParameterss(self, FcParameterss):
-		for depth1 in range(len(FcParameterss)):
-			if FcParameterss[depth1].get('FunctionName') is not None:
-				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.FunctionName', FcParameterss[depth1].get('FunctionName'))
-			if FcParameterss[depth1].get('ServiceName') is not None:
-				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.ServiceName', FcParameterss[depth1].get('ServiceName'))
-			if FcParameterss[depth1].get('Id') is not None:
-				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Id', FcParameterss[depth1].get('Id'))
-			if FcParameterss[depth1].get('Region') is not None:
-				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Region', FcParameterss[depth1].get('Region'))
+	def set_FcParameterss(self, FcParameters):  # RepeatList
+		for depth1 in range(len(FcParameters)):
+			if FcParameters[depth1].get('FunctionName') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.FunctionName', FcParameters[depth1].get('FunctionName'))
+			if FcParameters[depth1].get('ServiceName') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.ServiceName', FcParameters[depth1].get('ServiceName'))
+			if FcParameters[depth1].get('Id') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Id', FcParameters[depth1].get('Id'))
+			if FcParameters[depth1].get('Region') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Region', FcParameters[depth1].get('Region'))

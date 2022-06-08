@@ -25,38 +25,33 @@ class DescribeCustomMetricListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeCustomMetricList','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageNumber(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_MetricName(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_Dimension(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Dimension(self): # String
 		return self.get_query_params().get('Dimension')
 
-	def set_Dimension(self,Dimension):
-		self.add_query_param('Dimension',Dimension)
-
-	def get_Md5(self):
+	def set_Dimension(self, Dimension):  # String
+		self.add_query_param('Dimension', Dimension)
+	def get_Md5(self): # String
 		return self.get_query_params().get('Md5')
 
-	def set_Md5(self,Md5):
-		self.add_query_param('Md5',Md5)
+	def set_Md5(self, Md5):  # String
+		self.add_query_param('Md5', Md5)

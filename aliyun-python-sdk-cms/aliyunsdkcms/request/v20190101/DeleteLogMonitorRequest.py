@@ -25,8 +25,8 @@ class DeleteLogMonitorRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteLogMonitor','cms')
 		self.set_method('POST')
 
-	def get_LogId(self):
+	def get_LogId(self): # Long
 		return self.get_query_params().get('LogId')
 
-	def set_LogId(self,LogId):
-		self.add_query_param('LogId',LogId)
+	def set_LogId(self, LogId):  # Long
+		self.add_query_param('LogId', LogId)

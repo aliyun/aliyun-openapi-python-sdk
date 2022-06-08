@@ -25,20 +25,18 @@ class RemoveTagsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'RemoveTags','cms')
 		self.set_method('POST')
 
-	def get_GroupIdss(self):
+	def get_GroupIdss(self): # RepeatList
 		return self.get_query_params().get('GroupIds')
 
-	def set_GroupIdss(self, GroupIdss):
-		for depth1 in range(len(GroupIdss)):
-			if GroupIdss[depth1] is not None:
-				self.add_query_param('GroupIds.' + str(depth1 + 1) , GroupIdss[depth1])
-
-	def get_Tags(self):
+	def set_GroupIdss(self, GroupIds):  # RepeatList
+		for depth1 in range(len(GroupIds)):
+			self.add_query_param('GroupIds.' + str(depth1 + 1), GroupIds[depth1])
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

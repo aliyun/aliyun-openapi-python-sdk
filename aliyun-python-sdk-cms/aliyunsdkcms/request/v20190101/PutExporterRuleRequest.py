@@ -25,40 +25,34 @@ class PutExporterRuleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutExporterRule','cms')
 		self.set_method('POST')
 
-	def get_RuleName(self):
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_DstNamess(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_DstNamess(self): # RepeatList
 		return self.get_query_params().get('DstNames')
 
-	def set_DstNamess(self, DstNamess):
-		for depth1 in range(len(DstNamess)):
-			if DstNamess[depth1] is not None:
-				self.add_query_param('DstNames.' + str(depth1 + 1) , DstNamess[depth1])
-
-	def get_Namespace(self):
+	def set_DstNamess(self, DstNames):  # RepeatList
+		for depth1 in range(len(DstNames)):
+			self.add_query_param('DstNames.' + str(depth1 + 1), DstNames[depth1])
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_TargetWindows(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_TargetWindows(self): # String
 		return self.get_query_params().get('TargetWindows')
 
-	def set_TargetWindows(self,TargetWindows):
-		self.add_query_param('TargetWindows',TargetWindows)
-
-	def get_Describe(self):
+	def set_TargetWindows(self, TargetWindows):  # String
+		self.add_query_param('TargetWindows', TargetWindows)
+	def get_Describe(self): # String
 		return self.get_query_params().get('Describe')
 
-	def set_Describe(self,Describe):
-		self.add_query_param('Describe',Describe)
-
-	def get_MetricName(self):
+	def set_Describe(self, Describe):  # String
+		self.add_query_param('Describe', Describe)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)

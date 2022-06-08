@@ -25,38 +25,43 @@ class DescribeMetricRuleTemplateListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricRuleTemplateList','cms')
 		self.set_method('POST')
 
-	def get_History(self):
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)
+	def get_History(self): # Boolean
 		return self.get_query_params().get('History')
 
-	def set_History(self,History):
-		self.add_query_param('History',History)
-
-	def get_TemplateId(self):
+	def set_History(self, History):  # Boolean
+		self.add_query_param('History', History)
+	def get_TemplateId(self): # Long
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_PageNumber(self):
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Name(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_PageSize(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Keyword(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_Order(self): # Boolean
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # Boolean
+		self.add_query_param('Order', Order)

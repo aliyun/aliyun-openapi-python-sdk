@@ -25,84 +25,72 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorGroups','cms')
 		self.set_method('POST')
 
-	def get_SelectContactGroups(self):
+	def get_SelectContactGroups(self): # Boolean
 		return self.get_query_params().get('SelectContactGroups')
 
-	def set_SelectContactGroups(self,SelectContactGroups):
-		self.add_query_param('SelectContactGroups',SelectContactGroups)
-
-	def get_IncludeTemplateHistory(self):
+	def set_SelectContactGroups(self, SelectContactGroups):  # Boolean
+		self.add_query_param('SelectContactGroups', SelectContactGroups)
+	def get_IncludeTemplateHistory(self): # Boolean
 		return self.get_query_params().get('IncludeTemplateHistory')
 
-	def set_IncludeTemplateHistory(self,IncludeTemplateHistory):
-		self.add_query_param('IncludeTemplateHistory',IncludeTemplateHistory)
-
-	def get_DynamicTagRuleId(self):
+	def set_IncludeTemplateHistory(self, IncludeTemplateHistory):  # Boolean
+		self.add_query_param('IncludeTemplateHistory', IncludeTemplateHistory)
+	def get_DynamicTagRuleId(self): # String
 		return self.get_query_params().get('DynamicTagRuleId')
 
-	def set_DynamicTagRuleId(self,DynamicTagRuleId):
-		self.add_query_param('DynamicTagRuleId',DynamicTagRuleId)
-
-	def get_Type(self):
+	def set_DynamicTagRuleId(self, DynamicTagRuleId):  # String
+		self.add_query_param('DynamicTagRuleId', DynamicTagRuleId)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_GroupFounderTagKey(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_GroupFounderTagKey(self): # String
 		return self.get_query_params().get('GroupFounderTagKey')
 
-	def set_GroupFounderTagKey(self,GroupFounderTagKey):
-		self.add_query_param('GroupFounderTagKey',GroupFounderTagKey)
-
-	def get_PageSize(self):
+	def set_GroupFounderTagKey(self, GroupFounderTagKey):  # String
+		self.add_query_param('GroupFounderTagKey', GroupFounderTagKey)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_GroupFounderTagValue(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_GroupFounderTagValue(self): # String
 		return self.get_query_params().get('GroupFounderTagValue')
 
-	def set_GroupFounderTagValue(self,GroupFounderTagValue):
-		self.add_query_param('GroupFounderTagValue',GroupFounderTagValue)
+	def set_GroupFounderTagValue(self, GroupFounderTagValue):  # String
+		self.add_query_param('GroupFounderTagValue', GroupFounderTagValue)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def get_Keyword(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_GroupId(self):
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_GroupName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_InstanceId(self):
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

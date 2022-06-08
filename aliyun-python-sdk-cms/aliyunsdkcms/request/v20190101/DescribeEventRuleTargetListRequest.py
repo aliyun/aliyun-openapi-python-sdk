@@ -25,8 +25,8 @@ class DescribeEventRuleTargetListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeEventRuleTargetList','cms')
 		self.set_method('POST')
 
-	def get_RuleName(self):
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)

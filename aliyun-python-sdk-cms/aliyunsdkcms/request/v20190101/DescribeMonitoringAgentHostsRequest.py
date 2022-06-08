@@ -25,56 +25,48 @@ class DescribeMonitoringAgentHostsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitoringAgentHosts','cms')
 		self.set_method('POST')
 
-	def get_SerialNumbers(self):
+	def get_SerialNumbers(self): # String
 		return self.get_query_params().get('SerialNumbers')
 
-	def set_SerialNumbers(self,SerialNumbers):
-		self.add_query_param('SerialNumbers',SerialNumbers)
-
-	def get_PageNumber(self):
+	def set_SerialNumbers(self, SerialNumbers):  # String
+		self.add_query_param('SerialNumbers', SerialNumbers)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_HostName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_HostName(self): # String
 		return self.get_query_params().get('HostName')
 
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
-	def get_InstanceRegionId(self):
+	def set_HostName(self, HostName):  # String
+		self.add_query_param('HostName', HostName)
+	def get_InstanceRegionId(self): # String
 		return self.get_query_params().get('InstanceRegionId')
 
-	def set_InstanceRegionId(self,InstanceRegionId):
-		self.add_query_param('InstanceRegionId',InstanceRegionId)
-
-	def get_PageSize(self):
+	def set_InstanceRegionId(self, InstanceRegionId):  # String
+		self.add_query_param('InstanceRegionId', InstanceRegionId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AliyunHost(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AliyunHost(self): # Boolean
 		return self.get_query_params().get('AliyunHost')
 
-	def set_AliyunHost(self,AliyunHost):
-		self.add_query_param('AliyunHost',AliyunHost)
-
-	def get_KeyWord(self):
+	def set_AliyunHost(self, AliyunHost):  # Boolean
+		self.add_query_param('AliyunHost', AliyunHost)
+	def get_KeyWord(self): # String
 		return self.get_query_params().get('KeyWord')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
-
-	def get_InstanceIds(self):
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_Status(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

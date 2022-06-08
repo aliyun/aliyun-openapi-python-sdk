@@ -25,32 +25,28 @@ class DescribeContactListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeContactList','cms')
 		self.set_method('POST')
 
-	def get_ChanelType(self):
+	def get_ChanelType(self): # String
 		return self.get_query_params().get('ChanelType')
 
-	def set_ChanelType(self,ChanelType):
-		self.add_query_param('ChanelType',ChanelType)
-
-	def get_PageNumber(self):
+	def set_ChanelType(self, ChanelType):  # String
+		self.add_query_param('ChanelType', ChanelType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ContactName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_PageSize(self):
+	def set_ContactName(self, ContactName):  # String
+		self.add_query_param('ContactName', ContactName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ChanelValue(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ChanelValue(self): # String
 		return self.get_query_params().get('ChanelValue')
 
-	def set_ChanelValue(self,ChanelValue):
-		self.add_query_param('ChanelValue',ChanelValue)
+	def set_ChanelValue(self, ChanelValue):  # String
+		self.add_query_param('ChanelValue', ChanelValue)

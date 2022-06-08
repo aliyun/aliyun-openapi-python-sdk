@@ -25,26 +25,23 @@ class SendDryRunSystemEventRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'SendDryRunSystemEvent','cms')
 		self.set_method('POST')
 
-	def get_Product(self):
+	def get_Product(self): # String
 		return self.get_query_params().get('Product')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
-	def get_GroupId(self):
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_EventName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_EventName(self): # String
 		return self.get_query_params().get('EventName')
 
-	def set_EventName(self,EventName):
-		self.add_query_param('EventName',EventName)
-
-	def get_EventContent(self):
+	def set_EventName(self, EventName):  # String
+		self.add_query_param('EventName', EventName)
+	def get_EventContent(self): # String
 		return self.get_query_params().get('EventContent')
 
-	def set_EventContent(self,EventContent):
-		self.add_query_param('EventContent',EventContent)
+	def set_EventContent(self, EventContent):  # String
+		self.add_query_param('EventContent', EventContent)

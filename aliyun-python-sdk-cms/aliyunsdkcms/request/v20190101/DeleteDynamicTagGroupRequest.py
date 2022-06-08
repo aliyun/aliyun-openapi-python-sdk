@@ -25,8 +25,8 @@ class DeleteDynamicTagGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteDynamicTagGroup','cms')
 		self.set_method('POST')
 
-	def get_DynamicTagRuleId(self):
+	def get_DynamicTagRuleId(self): # String
 		return self.get_query_params().get('DynamicTagRuleId')
 
-	def set_DynamicTagRuleId(self,DynamicTagRuleId):
-		self.add_query_param('DynamicTagRuleId',DynamicTagRuleId)
+	def set_DynamicTagRuleId(self, DynamicTagRuleId):  # String
+		self.add_query_param('DynamicTagRuleId', DynamicTagRuleId)

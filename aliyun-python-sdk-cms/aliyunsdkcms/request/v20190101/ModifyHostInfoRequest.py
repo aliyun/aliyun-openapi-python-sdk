@@ -25,14 +25,13 @@ class ModifyHostInfoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyHostInfo','cms')
 		self.set_method('POST')
 
-	def get_HostName(self):
+	def get_HostName(self): # String
 		return self.get_query_params().get('HostName')
 
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
-	def get_InstanceId(self):
+	def set_HostName(self, HostName):  # String
+		self.add_query_param('HostName', HostName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

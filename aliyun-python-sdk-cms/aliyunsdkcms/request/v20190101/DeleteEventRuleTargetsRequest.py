@@ -25,16 +25,14 @@ class DeleteEventRuleTargetsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteEventRuleTargets','cms')
 		self.set_method('POST')
 
-	def get_RuleName(self):
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_Idss(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_Idss(self): # RepeatList
 		return self.get_query_params().get('Ids')
 
-	def set_Idss(self, Idss):
-		for depth1 in range(len(Idss)):
-			if Idss[depth1] is not None:
-				self.add_query_param('Ids.' + str(depth1 + 1) , Idss[depth1])
+	def set_Idss(self, Ids):  # RepeatList
+		for depth1 in range(len(Ids)):
+			self.add_query_param('Ids.' + str(depth1 + 1), Ids[depth1])

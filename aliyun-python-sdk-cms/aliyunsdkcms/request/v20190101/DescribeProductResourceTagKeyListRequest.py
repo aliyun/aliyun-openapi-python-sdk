@@ -25,8 +25,8 @@ class DescribeProductResourceTagKeyListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeProductResourceTagKeyList','cms')
 		self.set_method('POST')
 
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)

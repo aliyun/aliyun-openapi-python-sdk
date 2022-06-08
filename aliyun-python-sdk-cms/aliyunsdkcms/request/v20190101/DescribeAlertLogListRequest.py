@@ -25,92 +25,83 @@ class DescribeAlertLogListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeAlertLogList','cms')
 		self.set_method('POST')
 
-	def get_SendStatus(self):
+	def get_SendStatus(self): # String
 		return self.get_query_params().get('SendStatus')
 
-	def set_SendStatus(self,SendStatus):
-		self.add_query_param('SendStatus',SendStatus)
-
-	def get_ContactGroup(self):
+	def set_SendStatus(self, SendStatus):  # String
+		self.add_query_param('SendStatus', SendStatus)
+	def get_ContactGroup(self): # String
 		return self.get_query_params().get('ContactGroup')
 
-	def set_ContactGroup(self,ContactGroup):
-		self.add_query_param('ContactGroup',ContactGroup)
-
-	def get_SearchKey(self):
+	def set_ContactGroup(self, ContactGroup):  # String
+		self.add_query_param('ContactGroup', ContactGroup)
+	def get_SearchKey(self): # String
 		return self.get_query_params().get('SearchKey')
 
-	def set_SearchKey(self,SearchKey):
-		self.add_query_param('SearchKey',SearchKey)
-
-	def get_RuleName(self):
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_query_param('SearchKey', SearchKey)
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_StartTime(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNumber(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_LastMin(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_LastMin(self): # String
 		return self.get_query_params().get('LastMin')
 
-	def set_LastMin(self,LastMin):
-		self.add_query_param('LastMin',LastMin)
-
-	def get_PageSize(self):
+	def set_LastMin(self, LastMin):  # String
+		self.add_query_param('LastMin', LastMin)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_MetricName(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_Product(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Product(self): # String
 		return self.get_query_params().get('Product')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
-	def get_Level(self):
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)
+	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_GroupId(self):
+	def set_Level(self, Level):  # String
+		self.add_query_param('Level', Level)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_EndTime(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_GroupBy(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_GroupBy(self): # String
 		return self.get_query_params().get('GroupBy')
 
-	def set_GroupBy(self,GroupBy):
-		self.add_query_param('GroupBy',GroupBy)
-
-	def get_Namespace(self):
+	def set_GroupBy(self, GroupBy):  # String
+		self.add_query_param('GroupBy', GroupBy)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_RuleId(self): # String
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

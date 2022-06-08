@@ -25,26 +25,23 @@ class DescribeSiteMonitorStatisticsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorStatistics','cms')
 		self.set_method('POST')
 
-	def get_TimeRange(self):
+	def get_TimeRange(self): # String
 		return self.get_query_params().get('TimeRange')
 
-	def set_TimeRange(self,TimeRange):
-		self.add_query_param('TimeRange',TimeRange)
-
-	def get_StartTime(self):
+	def set_TimeRange(self, TimeRange):  # String
+		self.add_query_param('TimeRange', TimeRange)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_MetricName(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_TaskId(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

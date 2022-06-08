@@ -25,8 +25,8 @@ class DeleteExporterOutputRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteExporterOutput','cms')
 		self.set_method('POST')
 
-	def get_DestName(self):
+	def get_DestName(self): # String
 		return self.get_query_params().get('DestName')
 
-	def set_DestName(self,DestName):
-		self.add_query_param('DestName',DestName)
+	def set_DestName(self, DestName):  # String
+		self.add_query_param('DestName', DestName)

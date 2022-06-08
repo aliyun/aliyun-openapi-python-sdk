@@ -25,14 +25,13 @@ class DeleteSiteMonitorsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteSiteMonitors','cms')
 		self.set_method('POST')
 
-	def get_IsDeleteAlarms(self):
+	def get_IsDeleteAlarms(self): # Boolean
 		return self.get_query_params().get('IsDeleteAlarms')
 
-	def set_IsDeleteAlarms(self,IsDeleteAlarms):
-		self.add_query_param('IsDeleteAlarms',IsDeleteAlarms)
-
-	def get_TaskIds(self):
+	def set_IsDeleteAlarms(self, IsDeleteAlarms):  # Boolean
+		self.add_query_param('IsDeleteAlarms', IsDeleteAlarms)
+	def get_TaskIds(self): # String
 		return self.get_query_params().get('TaskIds')
 
-	def set_TaskIds(self,TaskIds):
-		self.add_query_param('TaskIds',TaskIds)
+	def set_TaskIds(self, TaskIds):  # String
+		self.add_query_param('TaskIds', TaskIds)

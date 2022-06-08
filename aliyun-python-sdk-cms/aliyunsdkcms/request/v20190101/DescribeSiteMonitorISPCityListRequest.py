@@ -25,26 +25,23 @@ class DescribeSiteMonitorISPCityListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorISPCityList','cms')
 		self.set_method('POST')
 
-	def get_City(self):
+	def get_City(self): # String
 		return self.get_query_params().get('City')
 
-	def set_City(self,City):
-		self.add_query_param('City',City)
-
-	def get_Isp(self):
+	def set_City(self, City):  # String
+		self.add_query_param('City', City)
+	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_IPV4(self):
+	def set_Isp(self, Isp):  # String
+		self.add_query_param('Isp', Isp)
+	def get_IPV4(self): # Boolean
 		return self.get_query_params().get('IPV4')
 
-	def set_IPV4(self,IPV4):
-		self.add_query_param('IPV4',IPV4)
-
-	def get_IPV6(self):
+	def set_IPV4(self, IPV4):  # Boolean
+		self.add_query_param('IPV4', IPV4)
+	def get_IPV6(self): # Boolean
 		return self.get_query_params().get('IPV6')
 
-	def set_IPV6(self,IPV6):
-		self.add_query_param('IPV6',IPV6)
+	def set_IPV6(self, IPV6):  # Boolean
+		self.add_query_param('IPV6', IPV6)

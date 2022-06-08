@@ -25,22 +25,22 @@ class PutCustomMetricRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutCustomMetric','cms')
 		self.set_method('POST')
 
-	def get_MetricLists(self):
+	def get_MetricLists(self): # RepeatList
 		return self.get_query_params().get('MetricList')
 
-	def set_MetricLists(self, MetricLists):
-		for depth1 in range(len(MetricLists)):
-			if MetricLists[depth1].get('Period') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Period', MetricLists[depth1].get('Period'))
-			if MetricLists[depth1].get('GroupId') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.GroupId', MetricLists[depth1].get('GroupId'))
-			if MetricLists[depth1].get('Values') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Values', MetricLists[depth1].get('Values'))
-			if MetricLists[depth1].get('Time') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Time', MetricLists[depth1].get('Time'))
-			if MetricLists[depth1].get('MetricName') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.MetricName', MetricLists[depth1].get('MetricName'))
-			if MetricLists[depth1].get('Type') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Type', MetricLists[depth1].get('Type'))
-			if MetricLists[depth1].get('Dimensions') is not None:
-				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Dimensions', MetricLists[depth1].get('Dimensions'))
+	def set_MetricLists(self, MetricList):  # RepeatList
+		for depth1 in range(len(MetricList)):
+			if MetricList[depth1].get('Period') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Period', MetricList[depth1].get('Period'))
+			if MetricList[depth1].get('GroupId') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.GroupId', MetricList[depth1].get('GroupId'))
+			if MetricList[depth1].get('Values') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Values', MetricList[depth1].get('Values'))
+			if MetricList[depth1].get('Time') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Time', MetricList[depth1].get('Time'))
+			if MetricList[depth1].get('Type') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Type', MetricList[depth1].get('Type'))
+			if MetricList[depth1].get('MetricName') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.MetricName', MetricList[depth1].get('MetricName'))
+			if MetricList[depth1].get('Dimensions') is not None:
+				self.add_query_param('MetricList.' + str(depth1 + 1) + '.Dimensions', MetricList[depth1].get('Dimensions'))

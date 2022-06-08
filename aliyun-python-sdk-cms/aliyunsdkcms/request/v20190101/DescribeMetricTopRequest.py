@@ -25,62 +25,53 @@ class DescribeMetricTopRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricTop','cms')
 		self.set_method('POST')
 
-	def get_Express(self):
+	def get_Express(self): # String
 		return self.get_query_params().get('Express')
 
-	def set_Express(self,Express):
-		self.add_query_param('Express',Express)
-
-	def get_StartTime(self):
+	def set_Express(self, Express):  # String
+		self.add_query_param('Express', Express)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_MetricName(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_Period(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_Length(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_Length(self): # String
 		return self.get_query_params().get('Length')
 
-	def set_Length(self,Length):
-		self.add_query_param('Length',Length)
-
-	def get_EndTime(self):
+	def set_Length(self, Length):  # String
+		self.add_query_param('Length', Length)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Orderby(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Orderby(self): # String
 		return self.get_query_params().get('Orderby')
 
-	def set_Orderby(self,Orderby):
-		self.add_query_param('Orderby',Orderby)
-
-	def get_OrderDesc(self):
+	def set_Orderby(self, Orderby):  # String
+		self.add_query_param('Orderby', Orderby)
+	def get_OrderDesc(self): # String
 		return self.get_query_params().get('OrderDesc')
 
-	def set_OrderDesc(self,OrderDesc):
-		self.add_query_param('OrderDesc',OrderDesc)
-
-	def get_Namespace(self):
+	def set_OrderDesc(self, OrderDesc):  # String
+		self.add_query_param('OrderDesc', OrderDesc)
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_Dimensions(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_Dimensions(self): # String
 		return self.get_query_params().get('Dimensions')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_Dimensions(self, Dimensions):  # String
+		self.add_query_param('Dimensions', Dimensions)

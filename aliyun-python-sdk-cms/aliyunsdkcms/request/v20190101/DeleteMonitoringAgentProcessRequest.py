@@ -25,20 +25,18 @@ class DeleteMonitoringAgentProcessRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMonitoringAgentProcess','cms')
 		self.set_method('POST')
 
-	def get_ProcessName(self):
+	def get_ProcessName(self): # String
 		return self.get_query_params().get('ProcessName')
 
-	def set_ProcessName(self,ProcessName):
-		self.add_query_param('ProcessName',ProcessName)
-
-	def get_InstanceId(self):
+	def set_ProcessName(self, ProcessName):  # String
+		self.add_query_param('ProcessName', ProcessName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ProcessId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ProcessId(self): # String
 		return self.get_query_params().get('ProcessId')
 
-	def set_ProcessId(self,ProcessId):
-		self.add_query_param('ProcessId',ProcessId)
+	def set_ProcessId(self, ProcessId):  # String
+		self.add_query_param('ProcessId', ProcessId)

@@ -25,14 +25,13 @@ class DescribeMetricRuleCountRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricRuleCount','cms')
 		self.set_method('GET')
 
-	def get_Namespace(self):
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_MetricName(self):
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)

@@ -25,8 +25,8 @@ class DescribeMonitorResourceQuotaAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorResourceQuotaAttribute','cms')
 		self.set_method('POST')
 
-	def get_ShowUsed(self):
+	def get_ShowUsed(self): # Boolean
 		return self.get_query_params().get('ShowUsed')
 
-	def set_ShowUsed(self,ShowUsed):
-		self.add_query_param('ShowUsed',ShowUsed)
+	def set_ShowUsed(self, ShowUsed):  # Boolean
+		self.add_query_param('ShowUsed', ShowUsed)

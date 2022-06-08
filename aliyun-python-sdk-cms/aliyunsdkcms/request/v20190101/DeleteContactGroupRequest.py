@@ -25,8 +25,8 @@ class DeleteContactGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteContactGroup','cms')
 		self.set_method('POST')
 
-	def get_ContactGroupName(self):
+	def get_ContactGroupName(self): # String
 		return self.get_query_params().get('ContactGroupName')
 
-	def set_ContactGroupName(self,ContactGroupName):
-		self.add_query_param('ContactGroupName',ContactGroupName)
+	def set_ContactGroupName(self, ContactGroupName):  # String
+		self.add_query_param('ContactGroupName', ContactGroupName)

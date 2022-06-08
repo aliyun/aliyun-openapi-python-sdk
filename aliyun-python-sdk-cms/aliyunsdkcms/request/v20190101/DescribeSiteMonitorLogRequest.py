@@ -25,56 +25,48 @@ class DescribeSiteMonitorLogRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorLog','cms')
 		self.set_method('POST')
 
-	def get_City(self):
+	def get_City(self): # String
 		return self.get_query_params().get('City')
 
-	def set_City(self,City):
-		self.add_query_param('City',City)
-
-	def get_Isp(self):
+	def set_City(self, City):  # String
+		self.add_query_param('City', City)
+	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_StartTime(self):
+	def set_Isp(self, Isp):  # String
+		self.add_query_param('Isp', Isp)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_TaskIds(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_TaskIds(self): # String
 		return self.get_query_params().get('TaskIds')
 
-	def set_TaskIds(self,TaskIds):
-		self.add_query_param('TaskIds',TaskIds)
-
-	def get_NextToken(self):
+	def set_TaskIds(self, TaskIds):  # String
+		self.add_query_param('TaskIds', TaskIds)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MetricName(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
-	def get_Length(self):
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Length(self): # Integer
 		return self.get_query_params().get('Length')
 
-	def set_Length(self,Length):
-		self.add_query_param('Length',Length)
-
-	def get_EndTime(self):
+	def set_Length(self, Length):  # Integer
+		self.add_query_param('Length', Length)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Filter(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Filter(self): # String
 		return self.get_query_params().get('Filter')
 
-	def set_Filter(self,Filter):
-		self.add_query_param('Filter',Filter)
+	def set_Filter(self, Filter):  # String
+		self.add_query_param('Filter', Filter)

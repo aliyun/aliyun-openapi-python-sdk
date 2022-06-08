@@ -25,20 +25,18 @@ class ModifyMonitorGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyMonitorGroup','cms')
 		self.set_method('POST')
 
-	def get_ContactGroups(self):
+	def get_ContactGroups(self): # String
 		return self.get_query_params().get('ContactGroups')
 
-	def set_ContactGroups(self,ContactGroups):
-		self.add_query_param('ContactGroups',ContactGroups)
-
-	def get_GroupId(self):
+	def set_ContactGroups(self, ContactGroups):  # String
+		self.add_query_param('ContactGroups', ContactGroups)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_GroupName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)

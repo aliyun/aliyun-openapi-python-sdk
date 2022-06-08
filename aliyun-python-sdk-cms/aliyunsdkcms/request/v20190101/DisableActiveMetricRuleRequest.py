@@ -25,8 +25,8 @@ class DisableActiveMetricRuleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DisableActiveMetricRule','cms')
 		self.set_method('POST')
 
-	def get_Product(self):
+	def get_Product(self): # String
 		return self.get_query_params().get('Product')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)

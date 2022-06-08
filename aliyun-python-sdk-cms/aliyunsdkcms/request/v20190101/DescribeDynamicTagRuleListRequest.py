@@ -25,32 +25,28 @@ class DescribeDynamicTagRuleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeDynamicTagRuleList','cms')
 		self.set_method('POST')
 
-	def get_TagValue(self):
+	def get_TagValue(self): # String
 		return self.get_query_params().get('TagValue')
 
-	def set_TagValue(self,TagValue):
-		self.add_query_param('TagValue',TagValue)
-
-	def get_PageNumber(self):
+	def set_TagValue(self, TagValue):  # String
+		self.add_query_param('TagValue', TagValue)
+	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_TagKey(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_TagKey(self): # String
 		return self.get_query_params().get('TagKey')
 
-	def set_TagKey(self,TagKey):
-		self.add_query_param('TagKey',TagKey)
-
-	def get_TagRegionId(self):
+	def set_TagKey(self, TagKey):  # String
+		self.add_query_param('TagKey', TagKey)
+	def get_TagRegionId(self): # String
 		return self.get_query_params().get('TagRegionId')
 
-	def set_TagRegionId(self,TagRegionId):
-		self.add_query_param('TagRegionId',TagRegionId)
+	def set_TagRegionId(self, TagRegionId):  # String
+		self.add_query_param('TagRegionId', TagRegionId)

@@ -25,14 +25,13 @@ class DeleteMonitorGroupDynamicRuleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMonitorGroupDynamicRule','cms')
 		self.set_method('POST')
 
-	def get_GroupId(self):
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Category(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
