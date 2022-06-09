@@ -58,3 +58,8 @@ class ScreenChestCTRequest(RpcRequest):
 
 	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
+	def get_Verbose(self): # Long
+		return self.get_body_params().get('Verbose')
+
+	def set_Verbose(self, Verbose):  # Long
+		self.add_body_params('Verbose', Verbose)
