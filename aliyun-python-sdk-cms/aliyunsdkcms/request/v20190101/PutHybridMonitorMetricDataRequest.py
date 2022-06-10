@@ -37,9 +37,9 @@ class PutHybridMonitorMetricDataRequest(RpcRequest):
 			if MetricList[depth1].get('Labels') is not None:
 				for depth2 in range(len(MetricList[depth1].get('Labels'))):
 					if MetricList[depth1].get('Labels')[depth2].get('Value') is not None:
-						self.add_query_param('MetricList.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', MetricList[depth1].get('Labels')[depth2].get('Value'))
+						self.add_query_param('MetricList.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Value', MetricList[depth1].get('Labels')[depth2].get('Value'))
 					if MetricList[depth1].get('Labels')[depth2].get('Key') is not None:
-						self.add_query_param('MetricList.' + str(depth1 + 1) + str(depth2 + 1) + '.Key', MetricList[depth1].get('Labels')[depth2].get('Key'))
+						self.add_query_param('MetricList.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Key', MetricList[depth1].get('Labels')[depth2].get('Key'))
 			if MetricList[depth1].get('TS') is not None:
 				self.add_query_param('MetricList.' + str(depth1 + 1) + '.TS', MetricList[depth1].get('TS'))
 	def get_Namespace(self): # String

@@ -87,9 +87,9 @@ class PutResourceMetricRulesRequest(RpcRequest):
 			if Rules[depth1].get('Labels') is not None:
 				for depth2 in range(len(Rules[depth1].get('Labels'))):
 					if Rules[depth1].get('Labels')[depth2].get('Value') is not None:
-						self.add_query_param('Rules.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', Rules[depth1].get('Labels')[depth2].get('Value'))
+						self.add_query_param('Rules.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Value', Rules[depth1].get('Labels')[depth2].get('Value'))
 					if Rules[depth1].get('Labels')[depth2].get('Key') is not None:
-						self.add_query_param('Rules.' + str(depth1 + 1) + str(depth2 + 1) + '.Key', Rules[depth1].get('Labels')[depth2].get('Key'))
+						self.add_query_param('Rules.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Key', Rules[depth1].get('Labels')[depth2].get('Key'))
 			if Rules[depth1].get('Escalations.Critical.Times') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Critical.Times', Rules[depth1].get('Escalations.Critical.Times'))
 			if Rules[depth1].get('Escalations.Info.Threshold') is not None:

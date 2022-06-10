@@ -35,11 +35,11 @@ class PutMonitorGroupDynamicRuleRequest(RpcRequest):
 			if GroupRules[depth1].get('Filters') is not None:
 				for depth2 in range(len(GroupRules[depth1].get('Filters'))):
 					if GroupRules[depth1].get('Filters')[depth2].get('Function') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Function', GroupRules[depth1].get('Filters')[depth2].get('Function'))
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.'  + str(depth2 + 1) + '.Function', GroupRules[depth1].get('Filters')[depth2].get('Function'))
 					if GroupRules[depth1].get('Filters')[depth2].get('Name') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Name', GroupRules[depth1].get('Filters')[depth2].get('Name'))
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.'  + str(depth2 + 1) + '.Name', GroupRules[depth1].get('Filters')[depth2].get('Name'))
 					if GroupRules[depth1].get('Filters')[depth2].get('Value') is not None:
-						self.add_query_param('GroupRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', GroupRules[depth1].get('Filters')[depth2].get('Value'))
+						self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Filters.'  + str(depth2 + 1) + '.Value', GroupRules[depth1].get('Filters')[depth2].get('Value'))
 			if GroupRules[depth1].get('Category') is not None:
 				self.add_query_param('GroupRules.' + str(depth1 + 1) + '.Category', GroupRules[depth1].get('Category'))
 	def get_GroupId(self): # Long

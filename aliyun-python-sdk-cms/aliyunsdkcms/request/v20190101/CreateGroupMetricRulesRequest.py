@@ -86,9 +86,9 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 			if GroupMetricRules[depth1].get('Labels') is not None:
 				for depth2 in range(len(GroupMetricRules[depth1].get('Labels'))):
 					if GroupMetricRules[depth1].get('Labels')[depth2].get('Value') is not None:
-						self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Value', GroupMetricRules[depth1].get('Labels')[depth2].get('Value'))
+						self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Value', GroupMetricRules[depth1].get('Labels')[depth2].get('Value'))
 					if GroupMetricRules[depth1].get('Labels')[depth2].get('Key') is not None:
-						self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + str(depth2 + 1) + '.Key', GroupMetricRules[depth1].get('Labels')[depth2].get('Key'))
+						self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Labels.'  + str(depth2 + 1) + '.Key', GroupMetricRules[depth1].get('Labels')[depth2].get('Key'))
 			if GroupMetricRules[depth1].get('Escalations.Critical.Times') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Critical.Times', GroupMetricRules[depth1].get('Escalations.Critical.Times'))
 			if GroupMetricRules[depth1].get('Escalations.Info.Threshold') is not None:
