@@ -47,11 +47,6 @@ class DescribeAccountAttributesRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_BizAliUid(self): # String
-		return self.get_query_params().get('BizAliUid')
-
-	def set_BizAliUid(self, BizAliUid):  # String
-		self.add_query_param('BizAliUid', BizAliUid)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

@@ -36,6 +36,11 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RemoveFromDeploymentSet(self): # Boolean
+		return self.get_query_params().get('RemoveFromDeploymentSet')
+
+	def set_RemoveFromDeploymentSet(self, RemoveFromDeploymentSet):  # Boolean
+		self.add_query_param('RemoveFromDeploymentSet', RemoveFromDeploymentSet)
 	def get_DeploymentSetGroupNo(self): # Integer
 		return self.get_query_params().get('DeploymentSetGroupNo')
 

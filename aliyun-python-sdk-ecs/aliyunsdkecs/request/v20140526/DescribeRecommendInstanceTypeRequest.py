@@ -122,11 +122,6 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
 		self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
-	def get_InstanceTypeSupportIPv6(self): # Boolean
-		return self.get_query_params().get('InstanceTypeSupportIPv6')
-
-	def set_InstanceTypeSupportIPv6(self, InstanceTypeSupportIPv6):  # Boolean
-		self.add_query_param('InstanceTypeSupportIPv6', InstanceTypeSupportIPv6)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 

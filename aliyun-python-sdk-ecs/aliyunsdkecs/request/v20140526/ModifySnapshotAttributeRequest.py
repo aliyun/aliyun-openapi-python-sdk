@@ -51,11 +51,6 @@ class ModifySnapshotAttributeRequest(RpcRequest):
 
 	def set_SnapshotName(self, SnapshotName):  # String
 		self.add_query_param('SnapshotName', SnapshotName)
-	def get_InstantAccessRetentionDays(self): # Long
-		return self.get_query_params().get('InstantAccessRetentionDays')
-
-	def set_InstantAccessRetentionDays(self, InstantAccessRetentionDays):  # Long
-		self.add_query_param('InstantAccessRetentionDays', InstantAccessRetentionDays)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,8 +71,3 @@ class ModifySnapshotAttributeRequest(RpcRequest):
 
 	def set_DisableInstantAccess(self, DisableInstantAccess):  # Boolean
 		self.add_query_param('DisableInstantAccess', DisableInstantAccess)
-	def get_RetentionDays(self): # Long
-		return self.get_query_params().get('RetentionDays')
-
-	def set_RetentionDays(self, RetentionDays):  # Long
-		self.add_query_param('RetentionDays', RetentionDays)

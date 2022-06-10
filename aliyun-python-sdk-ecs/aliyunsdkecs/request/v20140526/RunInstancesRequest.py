@@ -424,7 +424,7 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterface[depth1].get('QueueNumber'))
 			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
-					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds')[depth2])
+					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds')[depth2])
 			if NetworkInterface[depth1].get('NetworkInterfaceTrafficMode') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterface[depth1].get('NetworkInterfaceTrafficMode'))
 			if NetworkInterface[depth1].get('QueuePairNumber') is not None:
@@ -435,7 +435,7 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Ipv6AddressCount', NetworkInterface[depth1].get('Ipv6AddressCount'))
 			if NetworkInterface[depth1].get('Ipv6Address') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('Ipv6Address'))):
-					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Ipv6Address' + str(depth2 + 1), NetworkInterface[depth1].get('Ipv6Address')[depth2])
+					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Ipv6Address.' + str(depth2 + 1), NetworkInterface[depth1].get('Ipv6Address')[depth2])
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

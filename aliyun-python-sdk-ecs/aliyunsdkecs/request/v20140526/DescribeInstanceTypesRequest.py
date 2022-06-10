@@ -62,15 +62,6 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
 		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-	def get_Filters(self): # Array
-		return self.get_query_params().get('Filters')
-
-	def set_Filters(self, Filters):  # Array
-		for index1, value1 in enumerate(Filters):
-			if value1.get('Name') is not None:
-				self.add_query_param('Filters.' + str(index1 + 1) + '.Name', value1.get('Name'))
-			if value1.get('Value') is not None:
-				self.add_query_param('Filters.' + str(index1 + 1) + '.Value', value1.get('Value'))
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
