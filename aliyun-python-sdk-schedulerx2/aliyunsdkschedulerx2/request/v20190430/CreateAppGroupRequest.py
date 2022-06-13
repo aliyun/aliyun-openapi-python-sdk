@@ -32,11 +32,6 @@ class CreateAppGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MaxJobs(self): # Integer
-		return self.get_query_params().get('MaxJobs')
-
-	def set_MaxJobs(self, MaxJobs):  # Integer
-		self.add_query_param('MaxJobs', MaxJobs)
 	def get_NamespaceName(self): # String
 		return self.get_query_params().get('NamespaceName')
 
@@ -52,26 +47,36 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_ScheduleBusyWorkers(self, ScheduleBusyWorkers):  # Boolean
 		self.add_query_param('ScheduleBusyWorkers', ScheduleBusyWorkers)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_MonitorConfigJson(self): # String
-		return self.get_query_params().get('MonitorConfigJson')
-
-	def set_MonitorConfigJson(self, MonitorConfigJson):  # String
-		self.add_query_param('MonitorConfigJson', MonitorConfigJson)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
+	def get_MonitorContactsJson(self): # String
+		return self.get_query_params().get('MonitorContactsJson')
+
+	def set_MonitorContactsJson(self, MonitorContactsJson):  # String
+		self.add_query_param('MonitorContactsJson', MonitorContactsJson)
+	def get_MaxJobs(self): # Integer
+		return self.get_query_params().get('MaxJobs')
+
+	def set_MaxJobs(self, MaxJobs):  # Integer
+		self.add_query_param('MaxJobs', MaxJobs)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_MonitorConfigJson(self): # String
+		return self.get_query_params().get('MonitorConfigJson')
+
+	def set_MonitorConfigJson(self, MonitorConfigJson):  # String
+		self.add_query_param('MonitorConfigJson', MonitorConfigJson)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
@@ -82,8 +87,3 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_AppKey(self, AppKey):  # String
 		self.add_query_param('AppKey', AppKey)
-	def get_MonitorContactsJson(self): # String
-		return self.get_query_params().get('MonitorContactsJson')
-
-	def set_MonitorContactsJson(self, MonitorContactsJson):  # String
-		self.add_query_param('MonitorContactsJson', MonitorContactsJson)

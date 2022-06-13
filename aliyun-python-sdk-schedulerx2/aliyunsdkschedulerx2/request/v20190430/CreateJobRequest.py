@@ -194,3 +194,8 @@ class CreateJobRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # String
 		self.add_body_params('Parameters', Parameters)
+	def get_Status(self): # Integer
+		return self.get_body_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_body_params('Status', Status)
