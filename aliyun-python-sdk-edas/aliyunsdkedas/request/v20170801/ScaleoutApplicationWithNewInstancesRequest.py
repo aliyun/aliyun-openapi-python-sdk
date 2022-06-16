@@ -32,68 +32,68 @@ class ScaleoutApplicationWithNewInstancesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AutoRenewPeriod(self): # Integer
+	def get_AutoRenewPeriod(self): # integer
 		return self.get_query_params().get('AutoRenewPeriod')
 
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # integer
 		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_TemplateInstanceId(self): # String
+	def get_TemplateInstanceId(self): # string
 		return self.get_query_params().get('TemplateInstanceId')
 
-	def set_TemplateInstanceId(self, TemplateInstanceId):  # String
+	def set_TemplateInstanceId(self, TemplateInstanceId):  # string
 		self.add_query_param('TemplateInstanceId', TemplateInstanceId)
-	def get_GroupId(self): # String
+	def get_GroupId(self): # string
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self, GroupId):  # string
 		self.add_query_param('GroupId', GroupId)
-	def get_InstanceChargePeriodUnit(self): # String
+	def get_InstanceChargePeriodUnit(self): # string
 		return self.get_query_params().get('InstanceChargePeriodUnit')
 
-	def set_InstanceChargePeriodUnit(self, InstanceChargePeriodUnit):  # String
+	def set_InstanceChargePeriodUnit(self, InstanceChargePeriodUnit):  # string
 		self.add_query_param('InstanceChargePeriodUnit', InstanceChargePeriodUnit)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ScalingNum(self): # Integer
+	def get_ScalingNum(self): # integer
 		return self.get_query_params().get('ScalingNum')
 
-	def set_ScalingNum(self, ScalingNum):  # Integer
+	def set_ScalingNum(self, ScalingNum):  # integer
 		self.add_query_param('ScalingNum', ScalingNum)
-	def get_TemplateId(self): # String
+	def get_TemplateId(self): # string
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self, TemplateId):  # String
+	def set_TemplateId(self, TemplateId):  # string
 		self.add_query_param('TemplateId', TemplateId)
-	def get_ScalingPolicy(self): # String
+	def get_ScalingPolicy(self): # string
 		return self.get_query_params().get('ScalingPolicy')
 
-	def set_ScalingPolicy(self, ScalingPolicy):  # String
+	def set_ScalingPolicy(self, ScalingPolicy):  # string
 		self.add_query_param('ScalingPolicy', ScalingPolicy)
-	def get_TemplateVersion(self): # String
+	def get_TemplateVersion(self): # string
 		return self.get_query_params().get('TemplateVersion')
 
-	def set_TemplateVersion(self, TemplateVersion):  # String
+	def set_TemplateVersion(self, TemplateVersion):  # string
 		self.add_query_param('TemplateVersion', TemplateVersion)
-	def get_AutoRenew(self): # Boolean
+	def get_AutoRenew(self): # boolean
 		return self.get_query_params().get('AutoRenew')
 
-	def set_AutoRenew(self, AutoRenew):  # Boolean
+	def set_AutoRenew(self, AutoRenew):  # boolean
 		self.add_query_param('AutoRenew', AutoRenew)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_InstanceChargePeriod(self): # Integer
+	def get_InstanceChargePeriod(self): # integer
 		return self.get_query_params().get('InstanceChargePeriod')
 
-	def set_InstanceChargePeriod(self, InstanceChargePeriod):  # Integer
+	def set_InstanceChargePeriod(self, InstanceChargePeriod):  # integer
 		self.add_query_param('InstanceChargePeriod', InstanceChargePeriod)
-	def get_InstanceChargeType(self): # String
+	def get_InstanceChargeType(self): # string
 		return self.get_query_params().get('InstanceChargeType')
 
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
+	def set_InstanceChargeType(self, InstanceChargeType):  # string
 		self.add_query_param('InstanceChargeType', InstanceChargeType)

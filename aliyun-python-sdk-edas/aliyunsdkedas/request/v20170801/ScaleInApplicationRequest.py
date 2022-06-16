@@ -32,18 +32,18 @@ class ScaleInApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ForceStatus(self): # Boolean
+	def get_ForceStatus(self): # boolean
 		return self.get_query_params().get('ForceStatus')
 
-	def set_ForceStatus(self, ForceStatus):  # Boolean
+	def set_ForceStatus(self, ForceStatus):  # boolean
 		self.add_query_param('ForceStatus', ForceStatus)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_EccInfo(self): # String
+	def get_EccInfo(self): # string
 		return self.get_query_params().get('EccInfo')
 
-	def set_EccInfo(self, EccInfo):  # String
+	def set_EccInfo(self, EccInfo):  # string
 		self.add_query_param('EccInfo', EccInfo)

@@ -32,13 +32,13 @@ class GetMockRuleByConsumerAppIdRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsumerAppId(self): # String
+	def get_ConsumerAppId(self): # string
 		return self.get_query_params().get('ConsumerAppId')
 
-	def set_ConsumerAppId(self, ConsumerAppId):  # String
+	def set_ConsumerAppId(self, ConsumerAppId):  # string
 		self.add_query_param('ConsumerAppId', ConsumerAppId)
-	def get_Region(self): # String
+	def get_Region(self): # string
 		return self.get_query_params().get('Region')
 
-	def set_Region(self, Region):  # String
+	def set_Region(self, Region):  # string
 		self.add_query_param('Region', Region)

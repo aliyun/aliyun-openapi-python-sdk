@@ -32,13 +32,13 @@ class UpdateSlsLogStoreRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Configs(self): # String
+	def get_Configs(self): # string
 		return self.get_body_params().get('Configs')
 
-	def set_Configs(self, Configs):  # String
+	def set_Configs(self, Configs):  # string
 		self.add_body_params('Configs', Configs)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_body_params('AppId', AppId)

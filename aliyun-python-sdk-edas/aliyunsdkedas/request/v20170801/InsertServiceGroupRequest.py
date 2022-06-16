@@ -32,8 +32,8 @@ class InsertServiceGroupRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupName(self): # String
+	def get_GroupName(self): # string
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self, GroupName):  # String
+	def set_GroupName(self, GroupName):  # string
 		self.add_query_param('GroupName', GroupName)

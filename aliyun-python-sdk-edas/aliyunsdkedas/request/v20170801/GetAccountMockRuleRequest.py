@@ -32,43 +32,43 @@ class GetAccountMockRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProviderAppName(self): # String
+	def get_ProviderAppName(self): # string
 		return self.get_query_params().get('ProviderAppName')
 
-	def set_ProviderAppName(self, ProviderAppName):  # String
+	def set_ProviderAppName(self, ProviderAppName):  # string
 		self.add_query_param('ProviderAppName', ProviderAppName)
-	def get_PageNumber(self): # String
+	def get_PageNumber(self): # string
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # String
+	def set_PageNumber(self, PageNumber):  # string
 		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # String
+	def get_PageSize(self): # string
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
+	def set_PageSize(self, PageSize):  # string
 		self.add_query_param('PageSize', PageSize)
-	def get_Name(self): # String
+	def get_Name(self): # string
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self, Name):  # string
 		self.add_query_param('Name', Name)
-	def get_Namespace(self): # String
+	def get_Namespace(self): # string
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # String
+	def set_Namespace(self, Namespace):  # string
 		self.add_query_param('Namespace', Namespace)
-	def get_MockType(self): # Long
+	def get_MockType(self): # integer
 		return self.get_query_params().get('MockType')
 
-	def set_MockType(self, MockType):  # Long
+	def set_MockType(self, MockType):  # integer
 		self.add_query_param('MockType', MockType)
-	def get_Region(self): # String
+	def get_Region(self): # string
 		return self.get_query_params().get('Region')
 
-	def set_Region(self, Region):  # String
+	def set_Region(self, Region):  # string
 		self.add_query_param('Region', Region)
-	def get_ConsumerAppName(self): # String
+	def get_ConsumerAppName(self): # string
 		return self.get_query_params().get('ConsumerAppName')
 
-	def set_ConsumerAppName(self, ConsumerAppName):  # String
+	def set_ConsumerAppName(self, ConsumerAppName):  # string
 		self.add_query_param('ConsumerAppName', ConsumerAppName)

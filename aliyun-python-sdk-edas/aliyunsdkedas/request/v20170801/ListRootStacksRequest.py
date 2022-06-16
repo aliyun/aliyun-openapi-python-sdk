@@ -32,13 +32,13 @@ class ListRootStacksRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
+	def get_PageSize(self): # integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # integer
 		self.add_query_param('PageSize', PageSize)
-	def get_CurrentPage(self): # Integer
+	def get_CurrentPage(self): # integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # Integer
+	def set_CurrentPage(self, CurrentPage):  # integer
 		self.add_query_param('CurrentPage', CurrentPage)

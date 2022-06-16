@@ -32,18 +32,18 @@ class InsertClusterMemberRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_password(self): # String
+	def get_password(self): # string
 		return self.get_query_params().get('password')
 
-	def set_password(self, password):  # String
+	def set_password(self, password):  # string
 		self.add_query_param('password', password)
-	def get_instanceIds(self): # String
+	def get_instanceIds(self): # string
 		return self.get_query_params().get('instanceIds')
 
-	def set_instanceIds(self, instanceIds):  # String
+	def set_instanceIds(self, instanceIds):  # string
 		self.add_query_param('instanceIds', instanceIds)
-	def get_clusterId(self): # String
+	def get_clusterId(self): # string
 		return self.get_query_params().get('clusterId')
 
-	def set_clusterId(self, clusterId):  # String
+	def set_clusterId(self, clusterId):  # string
 		self.add_query_param('clusterId', clusterId)

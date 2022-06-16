@@ -32,13 +32,13 @@ class GetMockRuleByProviderAppIdRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProviderAppId(self): # String
+	def get_ProviderAppId(self): # string
 		return self.get_query_params().get('ProviderAppId')
 
-	def set_ProviderAppId(self, ProviderAppId):  # String
+	def set_ProviderAppId(self, ProviderAppId):  # string
 		self.add_query_param('ProviderAppId', ProviderAppId)
-	def get_Region(self): # String
+	def get_Region(self): # string
 		return self.get_query_params().get('Region')
 
-	def set_Region(self, Region):  # String
+	def set_Region(self, Region):  # string
 		self.add_query_param('Region', Region)

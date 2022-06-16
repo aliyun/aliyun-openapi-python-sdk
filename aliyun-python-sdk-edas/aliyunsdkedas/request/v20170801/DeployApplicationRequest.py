@@ -32,78 +32,78 @@ class DeployApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BuildPackId(self): # Long
+	def get_BuildPackId(self): # integer
 		return self.get_query_params().get('BuildPackId')
 
-	def set_BuildPackId(self, BuildPackId):  # Long
+	def set_BuildPackId(self, BuildPackId):  # integer
 		self.add_query_param('BuildPackId', BuildPackId)
-	def get_ComponentIds(self): # String
+	def get_ComponentIds(self): # string
 		return self.get_query_params().get('ComponentIds')
 
-	def set_ComponentIds(self, ComponentIds):  # String
+	def set_ComponentIds(self, ComponentIds):  # string
 		self.add_query_param('ComponentIds', ComponentIds)
-	def get_GroupId(self): # String
+	def get_GroupId(self): # string
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self, GroupId):  # string
 		self.add_query_param('GroupId', GroupId)
-	def get_BatchWaitTime(self): # Integer
+	def get_BatchWaitTime(self): # integer
 		return self.get_query_params().get('BatchWaitTime')
 
-	def set_BatchWaitTime(self, BatchWaitTime):  # Integer
+	def set_BatchWaitTime(self, BatchWaitTime):  # integer
 		self.add_query_param('BatchWaitTime', BatchWaitTime)
-	def get_ReleaseType(self): # Long
+	def get_ReleaseType(self): # integer
 		return self.get_query_params().get('ReleaseType')
 
-	def set_ReleaseType(self, ReleaseType):  # Long
+	def set_ReleaseType(self, ReleaseType):  # integer
 		self.add_query_param('ReleaseType', ReleaseType)
-	def get_Batch(self): # Integer
+	def get_Batch(self): # integer
 		return self.get_query_params().get('Batch')
 
-	def set_Batch(self, Batch):  # Integer
+	def set_Batch(self, Batch):  # integer
 		self.add_query_param('Batch', Batch)
-	def get_AppEnv(self): # String
+	def get_AppEnv(self): # string
 		return self.get_query_params().get('AppEnv')
 
-	def set_AppEnv(self, AppEnv):  # String
+	def set_AppEnv(self, AppEnv):  # string
 		self.add_query_param('AppEnv', AppEnv)
-	def get_PackageVersion(self): # String
+	def get_PackageVersion(self): # string
 		return self.get_query_params().get('PackageVersion')
 
-	def set_PackageVersion(self, PackageVersion):  # String
+	def set_PackageVersion(self, PackageVersion):  # string
 		self.add_query_param('PackageVersion', PackageVersion)
-	def get_Gray(self): # Boolean
+	def get_Gray(self): # boolean
 		return self.get_query_params().get('Gray')
 
-	def set_Gray(self, Gray):  # Boolean
+	def set_Gray(self, Gray):  # boolean
 		self.add_query_param('Gray', Gray)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_ImageUrl(self): # String
+	def get_ImageUrl(self): # string
 		return self.get_query_params().get('ImageUrl')
 
-	def set_ImageUrl(self, ImageUrl):  # String
+	def set_ImageUrl(self, ImageUrl):  # string
 		self.add_query_param('ImageUrl', ImageUrl)
-	def get_WarUrl(self): # String
+	def get_WarUrl(self): # string
 		return self.get_query_params().get('WarUrl')
 
-	def set_WarUrl(self, WarUrl):  # String
+	def set_WarUrl(self, WarUrl):  # string
 		self.add_query_param('WarUrl', WarUrl)
-	def get_TrafficControlStrategy(self): # String
+	def get_TrafficControlStrategy(self): # string
 		return self.get_query_params().get('TrafficControlStrategy')
 
-	def set_TrafficControlStrategy(self, TrafficControlStrategy):  # String
+	def set_TrafficControlStrategy(self, TrafficControlStrategy):  # string
 		self.add_query_param('TrafficControlStrategy', TrafficControlStrategy)
-	def get_Desc(self): # String
+	def get_Desc(self): # string
 		return self.get_query_params().get('Desc')
 
-	def set_Desc(self, Desc):  # String
+	def set_Desc(self, Desc):  # string
 		self.add_query_param('Desc', Desc)
-	def get_DeployType(self): # String
+	def get_DeployType(self): # string
 		return self.get_query_params().get('DeployType')
 
-	def set_DeployType(self, DeployType):  # String
+	def set_DeployType(self, DeployType):  # string
 		self.add_query_param('DeployType', DeployType)

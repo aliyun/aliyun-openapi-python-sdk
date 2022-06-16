@@ -32,13 +32,13 @@ class GetK8sApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_From(self): # String
+	def get_From(self): # string
 		return self.get_query_params().get('From')
 
-	def set_From(self, _From):  # String
+	def set_From(self, _From):  # string
 		self.add_query_param('From', _From)

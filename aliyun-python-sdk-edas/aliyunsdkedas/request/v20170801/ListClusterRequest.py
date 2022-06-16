@@ -32,13 +32,13 @@ class ListClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # String
+	def get_ResourceGroupId(self): # string
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
+	def set_ResourceGroupId(self, ResourceGroupId):  # string
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_LogicalRegionId(self): # String
+	def get_LogicalRegionId(self): # string
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # String
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
 		self.add_query_param('LogicalRegionId', LogicalRegionId)

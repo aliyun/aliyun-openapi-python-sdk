@@ -32,33 +32,33 @@ class ListK8sSecretsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Condition(self): # String
+	def get_Condition(self): # string
 		return self.get_query_params().get('Condition')
 
-	def set_Condition(self, Condition):  # String
+	def set_Condition(self, Condition):  # string
 		self.add_query_param('Condition', Condition)
-	def get_PageNo(self): # Integer
+	def get_PageNo(self): # integer
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self, PageNo):  # Integer
+	def set_PageNo(self, PageNo):  # integer
 		self.add_query_param('PageNo', PageNo)
-	def get_Namespace(self): # String
+	def get_Namespace(self): # string
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # String
+	def set_Namespace(self, Namespace):  # string
 		self.add_query_param('Namespace', Namespace)
-	def get_PageSize(self): # Integer
+	def get_PageSize(self): # integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # integer
 		self.add_query_param('PageSize', PageSize)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ShowRelatedApps(self): # Boolean
+	def get_ShowRelatedApps(self): # boolean
 		return self.get_query_params().get('ShowRelatedApps')
 
-	def set_ShowRelatedApps(self, ShowRelatedApps):  # Boolean
+	def set_ShowRelatedApps(self, ShowRelatedApps):  # boolean
 		self.add_query_param('ShowRelatedApps', ShowRelatedApps)

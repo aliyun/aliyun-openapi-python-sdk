@@ -32,18 +32,18 @@ class ScaleK8sApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Replicas(self): # Integer
+	def get_Replicas(self): # integer
 		return self.get_query_params().get('Replicas')
 
-	def set_Replicas(self, Replicas):  # Integer
+	def set_Replicas(self, Replicas):  # integer
 		self.add_query_param('Replicas', Replicas)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_Timeout(self): # Integer
+	def get_Timeout(self): # integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self, Timeout):  # Integer
+	def set_Timeout(self, Timeout):  # integer
 		self.add_query_param('Timeout', Timeout)

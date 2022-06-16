@@ -32,73 +32,73 @@ class GetServiceConsumersPageRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_registryType(self): # String
+	def get_registryType(self): # string
 		return self.get_query_params().get('registryType')
 
-	def set_registryType(self, registryType):  # String
+	def set_registryType(self, registryType):  # string
 		self.add_query_param('registryType', registryType)
-	def get_origin(self): # String
+	def get_origin(self): # string
 		return self.get_query_params().get('origin')
 
-	def set_origin(self, origin):  # String
+	def set_origin(self, origin):  # string
 		self.add_query_param('origin', origin)
-	def get_ip(self): # String
+	def get_ip(self): # string
 		return self.get_query_params().get('ip')
 
-	def set_ip(self, ip):  # String
+	def set_ip(self, ip):  # string
 		self.add_query_param('ip', ip)
-	def get_source(self): # String
+	def get_source(self): # string
 		return self.get_query_params().get('source')
 
-	def set_source(self, source):  # String
+	def set_source(self, source):  # string
 		self.add_query_param('source', source)
-	def get_serviceType(self): # String
+	def get_serviceType(self): # string
 		return self.get_query_params().get('serviceType')
 
-	def set_serviceType(self, serviceType):  # String
+	def set_serviceType(self, serviceType):  # string
 		self.add_query_param('serviceType', serviceType)
-	def get_size(self): # Integer
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # Integer
+	def set_size(self, size):  # integer
 		self.add_query_param('size', size)
-	def get_appId(self): # String
+	def get_appId(self): # string
 		return self.get_query_params().get('appId')
 
-	def set_appId(self, appId):  # String
+	def set_appId(self, appId):  # string
 		self.add_query_param('appId', appId)
-	def get_namespace(self): # String
+	def get_namespace(self): # string
 		return self.get_query_params().get('namespace')
 
-	def set_namespace(self, namespace):  # String
+	def set_namespace(self, namespace):  # string
 		self.add_query_param('namespace', namespace)
-	def get_serviceVersion(self): # String
+	def get_serviceVersion(self): # string
 		return self.get_query_params().get('serviceVersion')
 
-	def set_serviceVersion(self, serviceVersion):  # String
+	def set_serviceVersion(self, serviceVersion):  # string
 		self.add_query_param('serviceVersion', serviceVersion)
-	def get_serviceName(self): # String
+	def get_serviceName(self): # string
 		return self.get_query_params().get('serviceName')
 
-	def set_serviceName(self, serviceName):  # String
+	def set_serviceName(self, serviceName):  # string
 		self.add_query_param('serviceName', serviceName)
-	def get_page(self): # Integer
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # Integer
+	def set_page(self, page):  # integer
 		self.add_query_param('page', page)
-	def get_region(self): # String
+	def get_region(self): # string
 		return self.get_query_params().get('region')
 
-	def set_region(self, region):  # String
+	def set_region(self, region):  # string
 		self.add_query_param('region', region)
-	def get_serviceId(self): # String
+	def get_serviceId(self): # string
 		return self.get_query_params().get('serviceId')
 
-	def set_serviceId(self, serviceId):  # String
+	def set_serviceId(self, serviceId):  # string
 		self.add_query_param('serviceId', serviceId)
-	def get_group(self): # String
+	def get_group(self): # string
 		return self.get_query_params().get('group')
 
-	def set_group(self, group):  # String
+	def set_group(self, group):  # string
 		self.add_query_param('group', group)

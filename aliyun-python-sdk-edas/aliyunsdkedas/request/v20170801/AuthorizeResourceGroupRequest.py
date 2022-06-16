@@ -32,13 +32,13 @@ class AuthorizeResourceGroupRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupIds(self): # String
+	def get_ResourceGroupIds(self): # string
 		return self.get_query_params().get('ResourceGroupIds')
 
-	def set_ResourceGroupIds(self, ResourceGroupIds):  # String
+	def set_ResourceGroupIds(self, ResourceGroupIds):  # string
 		self.add_query_param('ResourceGroupIds', ResourceGroupIds)
-	def get_TargetUserId(self): # String
+	def get_TargetUserId(self): # string
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self, TargetUserId):  # String
+	def set_TargetUserId(self, TargetUserId):  # string
 		self.add_query_param('TargetUserId', TargetUserId)

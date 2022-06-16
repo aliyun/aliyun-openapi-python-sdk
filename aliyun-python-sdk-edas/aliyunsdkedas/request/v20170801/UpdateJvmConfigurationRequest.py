@@ -32,33 +32,33 @@ class UpdateJvmConfigurationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MinHeapSize(self): # Integer
+	def get_MinHeapSize(self): # integer
 		return self.get_query_params().get('MinHeapSize')
 
-	def set_MinHeapSize(self, MinHeapSize):  # Integer
+	def set_MinHeapSize(self, MinHeapSize):  # integer
 		self.add_query_param('MinHeapSize', MinHeapSize)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_GroupId(self): # String
+	def get_GroupId(self): # string
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self, GroupId):  # string
 		self.add_query_param('GroupId', GroupId)
-	def get_Options(self): # String
+	def get_Options(self): # string
 		return self.get_query_params().get('Options')
 
-	def set_Options(self, Options):  # String
+	def set_Options(self, Options):  # string
 		self.add_query_param('Options', Options)
-	def get_MaxPermSize(self): # Integer
+	def get_MaxPermSize(self): # integer
 		return self.get_query_params().get('MaxPermSize')
 
-	def set_MaxPermSize(self, MaxPermSize):  # Integer
+	def set_MaxPermSize(self, MaxPermSize):  # integer
 		self.add_query_param('MaxPermSize', MaxPermSize)
-	def get_MaxHeapSize(self): # Integer
+	def get_MaxHeapSize(self): # integer
 		return self.get_query_params().get('MaxHeapSize')
 
-	def set_MaxHeapSize(self, MaxHeapSize):  # Integer
+	def set_MaxHeapSize(self, MaxHeapSize):  # integer
 		self.add_query_param('MaxHeapSize', MaxHeapSize)

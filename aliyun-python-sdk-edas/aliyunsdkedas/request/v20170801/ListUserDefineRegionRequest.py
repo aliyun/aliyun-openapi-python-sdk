@@ -32,8 +32,8 @@ class ListUserDefineRegionRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DebugEnable(self): # Boolean
+	def get_DebugEnable(self): # boolean
 		return self.get_query_params().get('DebugEnable')
 
-	def set_DebugEnable(self, DebugEnable):  # Boolean
+	def set_DebugEnable(self, DebugEnable):  # boolean
 		self.add_query_param('DebugEnable', DebugEnable)

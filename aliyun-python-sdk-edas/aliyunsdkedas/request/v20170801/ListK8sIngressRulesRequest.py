@@ -32,18 +32,18 @@ class ListK8sIngressRulesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Condition(self): # String
+	def get_Condition(self): # string
 		return self.get_query_params().get('Condition')
 
-	def set_Condition(self, Condition):  # String
+	def set_Condition(self, Condition):  # string
 		self.add_query_param('Condition', Condition)
-	def get_Namespace(self): # String
+	def get_Namespace(self): # string
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # String
+	def set_Namespace(self, Namespace):  # string
 		self.add_query_param('Namespace', Namespace)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)

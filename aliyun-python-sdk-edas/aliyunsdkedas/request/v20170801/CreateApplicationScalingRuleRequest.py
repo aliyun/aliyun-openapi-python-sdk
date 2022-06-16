@@ -32,38 +32,38 @@ class CreateApplicationScalingRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScalingRuleName(self): # String
+	def get_ScalingRuleName(self): # string
 		return self.get_query_params().get('ScalingRuleName')
 
-	def set_ScalingRuleName(self, ScalingRuleName):  # String
+	def set_ScalingRuleName(self, ScalingRuleName):  # string
 		self.add_query_param('ScalingRuleName', ScalingRuleName)
-	def get_ScalingRuleEnable(self): # Boolean
+	def get_ScalingRuleEnable(self): # boolean
 		return self.get_query_params().get('ScalingRuleEnable')
 
-	def set_ScalingRuleEnable(self, ScalingRuleEnable):  # Boolean
+	def set_ScalingRuleEnable(self, ScalingRuleEnable):  # boolean
 		self.add_query_param('ScalingRuleEnable', ScalingRuleEnable)
-	def get_ScalingRuleTimer(self): # String
+	def get_ScalingRuleTimer(self): # string
 		return self.get_query_params().get('ScalingRuleTimer')
 
-	def set_ScalingRuleTimer(self, ScalingRuleTimer):  # String
+	def set_ScalingRuleTimer(self, ScalingRuleTimer):  # string
 		self.add_query_param('ScalingRuleTimer', ScalingRuleTimer)
-	def get_ScalingRuleMetric(self): # String
+	def get_ScalingRuleMetric(self): # string
 		return self.get_query_params().get('ScalingRuleMetric')
 
-	def set_ScalingRuleMetric(self, ScalingRuleMetric):  # String
+	def set_ScalingRuleMetric(self, ScalingRuleMetric):  # string
 		self.add_query_param('ScalingRuleMetric', ScalingRuleMetric)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_ScalingRuleTrigger(self): # String
+	def get_ScalingRuleTrigger(self): # string
 		return self.get_query_params().get('ScalingRuleTrigger')
 
-	def set_ScalingRuleTrigger(self, ScalingRuleTrigger):  # String
+	def set_ScalingRuleTrigger(self, ScalingRuleTrigger):  # string
 		self.add_query_param('ScalingRuleTrigger', ScalingRuleTrigger)
-	def get_ScalingRuleType(self): # String
+	def get_ScalingRuleType(self): # string
 		return self.get_query_params().get('ScalingRuleType')
 
-	def set_ScalingRuleType(self, ScalingRuleType):  # String
+	def set_ScalingRuleType(self, ScalingRuleType):  # string
 		self.add_query_param('ScalingRuleType', ScalingRuleType)

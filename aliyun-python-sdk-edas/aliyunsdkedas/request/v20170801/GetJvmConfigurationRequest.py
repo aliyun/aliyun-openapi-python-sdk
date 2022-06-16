@@ -32,13 +32,13 @@ class GetJvmConfigurationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_GroupId(self): # String
+	def get_GroupId(self): # string
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self, GroupId):  # string
 		self.add_query_param('GroupId', GroupId)

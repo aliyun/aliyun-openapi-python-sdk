@@ -32,43 +32,43 @@ class CreateK8sSecretRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Base64Encoded(self): # Boolean
+	def get_Base64Encoded(self): # boolean
 		return self.get_body_params().get('Base64Encoded')
 
-	def set_Base64Encoded(self, Base64Encoded):  # Boolean
+	def set_Base64Encoded(self, Base64Encoded):  # boolean
 		self.add_body_params('Base64Encoded', Base64Encoded)
-	def get_Data(self): # String
+	def get_Data(self): # string
 		return self.get_body_params().get('Data')
 
-	def set_Data(self, Data):  # String
+	def set_Data(self, Data):  # string
 		self.add_body_params('Data', Data)
-	def get_Name(self): # String
+	def get_Name(self): # string
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self, Name):  # string
 		self.add_body_params('Name', Name)
-	def get_Namespace(self): # String
+	def get_Namespace(self): # string
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # String
+	def set_Namespace(self, Namespace):  # string
 		self.add_body_params('Namespace', Namespace)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_body_params('ClusterId', ClusterId)
-	def get_CertId(self): # String
+	def get_CertId(self): # string
 		return self.get_body_params().get('CertId')
 
-	def set_CertId(self, CertId):  # String
+	def set_CertId(self, CertId):  # string
 		self.add_body_params('CertId', CertId)
-	def get_Type(self): # String
+	def get_Type(self): # string
 		return self.get_body_params().get('Type')
 
-	def set_Type(self, Type):  # String
+	def set_Type(self, Type):  # string
 		self.add_body_params('Type', Type)
-	def get_CertRegionId(self): # String
+	def get_CertRegionId(self): # string
 		return self.get_body_params().get('CertRegionId')
 
-	def set_CertRegionId(self, CertRegionId):  # String
+	def set_CertRegionId(self, CertRegionId):  # string
 		self.add_body_params('CertRegionId', CertRegionId)

@@ -32,23 +32,23 @@ class UnbindSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SlbId(self): # String
+	def get_SlbId(self): # string
 		return self.get_query_params().get('SlbId')
 
-	def set_SlbId(self, SlbId):  # String
+	def set_SlbId(self, SlbId):  # string
 		self.add_query_param('SlbId', SlbId)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_DeleteListener(self): # String
+	def get_DeleteListener(self): # string
 		return self.get_query_params().get('DeleteListener')
 
-	def set_DeleteListener(self, DeleteListener):  # String
+	def set_DeleteListener(self, DeleteListener):  # string
 		self.add_query_param('DeleteListener', DeleteListener)
-	def get_Type(self): # String
+	def get_Type(self): # string
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # String
+	def set_Type(self, Type):  # string
 		self.add_query_param('Type', Type)

@@ -32,38 +32,38 @@ class ListScaleOutEcuRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Mem(self): # Integer
+	def get_Mem(self): # integer
 		return self.get_query_params().get('Mem')
 
-	def set_Mem(self, Mem):  # Integer
+	def set_Mem(self, Mem):  # integer
 		self.add_query_param('Mem', Mem)
-	def get_LogicalRegionId(self): # String
+	def get_LogicalRegionId(self): # string
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # String
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
 		self.add_query_param('LogicalRegionId', LogicalRegionId)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_GroupId(self): # String
+	def get_GroupId(self): # string
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # String
+	def set_GroupId(self, GroupId):  # string
 		self.add_query_param('GroupId', GroupId)
-	def get_InstanceNum(self): # Integer
+	def get_InstanceNum(self): # integer
 		return self.get_query_params().get('InstanceNum')
 
-	def set_InstanceNum(self, InstanceNum):  # Integer
+	def set_InstanceNum(self, InstanceNum):  # integer
 		self.add_query_param('InstanceNum', InstanceNum)
-	def get_Cpu(self): # Integer
+	def get_Cpu(self): # integer
 		return self.get_query_params().get('Cpu')
 
-	def set_Cpu(self, Cpu):  # Integer
+	def set_Cpu(self, Cpu):  # integer
 		self.add_query_param('Cpu', Cpu)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)

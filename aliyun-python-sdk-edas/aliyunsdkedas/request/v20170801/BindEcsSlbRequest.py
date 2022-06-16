@@ -32,48 +32,48 @@ class BindEcsSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VServerGroupId(self): # String
+	def get_VServerGroupId(self): # string
 		return self.get_query_params().get('VServerGroupId')
 
-	def set_VServerGroupId(self, VServerGroupId):  # String
+	def set_VServerGroupId(self, VServerGroupId):  # string
 		self.add_query_param('VServerGroupId', VServerGroupId)
-	def get_ListenerPort(self): # Integer
+	def get_ListenerPort(self): # integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self, ListenerPort):  # Integer
+	def set_ListenerPort(self, ListenerPort):  # integer
 		self.add_query_param('ListenerPort', ListenerPort)
-	def get_VForwardingUrlRule(self): # String
+	def get_VForwardingUrlRule(self): # string
 		return self.get_query_params().get('VForwardingUrlRule')
 
-	def set_VForwardingUrlRule(self, VForwardingUrlRule):  # String
+	def set_VForwardingUrlRule(self, VForwardingUrlRule):  # string
 		self.add_query_param('VForwardingUrlRule', VForwardingUrlRule)
-	def get_SlbId(self): # String
+	def get_SlbId(self): # string
 		return self.get_query_params().get('SlbId')
 
-	def set_SlbId(self, SlbId):  # String
+	def set_SlbId(self, SlbId):  # string
 		self.add_query_param('SlbId', SlbId)
-	def get_DeployGroupId(self): # String
+	def get_DeployGroupId(self): # string
 		return self.get_query_params().get('DeployGroupId')
 
-	def set_DeployGroupId(self, DeployGroupId):  # String
+	def set_DeployGroupId(self, DeployGroupId):  # string
 		self.add_query_param('DeployGroupId', DeployGroupId)
-	def get_ListenerHealthCheckUrl(self): # String
+	def get_ListenerHealthCheckUrl(self): # string
 		return self.get_query_params().get('ListenerHealthCheckUrl')
 
-	def set_ListenerHealthCheckUrl(self, ListenerHealthCheckUrl):  # String
+	def set_ListenerHealthCheckUrl(self, ListenerHealthCheckUrl):  # string
 		self.add_query_param('ListenerHealthCheckUrl', ListenerHealthCheckUrl)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_ListenerProtocol(self): # String
+	def get_ListenerProtocol(self): # string
 		return self.get_query_params().get('ListenerProtocol')
 
-	def set_ListenerProtocol(self, ListenerProtocol):  # String
+	def set_ListenerProtocol(self, ListenerProtocol):  # string
 		self.add_query_param('ListenerProtocol', ListenerProtocol)
-	def get_VServerGroupName(self): # String
+	def get_VServerGroupName(self): # string
 		return self.get_query_params().get('VServerGroupName')
 
-	def set_VServerGroupName(self, VServerGroupName):  # String
+	def set_VServerGroupName(self, VServerGroupName):  # string
 		self.add_query_param('VServerGroupName', VServerGroupName)

@@ -32,13 +32,13 @@ class UpdateContainerRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BuildPackId(self): # Integer
+	def get_BuildPackId(self): # integer
 		return self.get_query_params().get('BuildPackId')
 
-	def set_BuildPackId(self, BuildPackId):  # Integer
+	def set_BuildPackId(self, BuildPackId):  # integer
 		self.add_query_param('BuildPackId', BuildPackId)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)

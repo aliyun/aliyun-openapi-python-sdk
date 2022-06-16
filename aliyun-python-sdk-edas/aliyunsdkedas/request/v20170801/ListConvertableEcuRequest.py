@@ -32,8 +32,8 @@ class ListConvertableEcuRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_clusterId(self): # String
+	def get_clusterId(self): # string
 		return self.get_query_params().get('clusterId')
 
-	def set_clusterId(self, clusterId):  # String
+	def set_clusterId(self, clusterId):  # string
 		self.add_query_param('clusterId', clusterId)

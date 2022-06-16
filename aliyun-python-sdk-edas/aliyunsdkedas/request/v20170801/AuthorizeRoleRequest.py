@@ -32,13 +32,13 @@ class AuthorizeRoleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RoleIds(self): # String
+	def get_RoleIds(self): # string
 		return self.get_query_params().get('RoleIds')
 
-	def set_RoleIds(self, RoleIds):  # String
+	def set_RoleIds(self, RoleIds):  # string
 		self.add_query_param('RoleIds', RoleIds)
-	def get_TargetUserId(self): # String
+	def get_TargetUserId(self): # string
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self, TargetUserId):  # String
+	def set_TargetUserId(self, TargetUserId):  # string
 		self.add_query_param('TargetUserId', TargetUserId)

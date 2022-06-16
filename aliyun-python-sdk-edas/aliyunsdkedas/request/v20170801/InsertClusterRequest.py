@@ -32,38 +32,38 @@ class InsertClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterType(self): # Integer
+	def get_ClusterType(self): # integer
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self, ClusterType):  # Integer
+	def set_ClusterType(self, ClusterType):  # integer
 		self.add_query_param('ClusterType', ClusterType)
-	def get_IaasProvider(self): # String
+	def get_IaasProvider(self): # string
 		return self.get_query_params().get('IaasProvider')
 
-	def set_IaasProvider(self, IaasProvider):  # String
+	def set_IaasProvider(self, IaasProvider):  # string
 		self.add_query_param('IaasProvider', IaasProvider)
-	def get_LogicalRegionId(self): # String
+	def get_LogicalRegionId(self): # string
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # String
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
 		self.add_query_param('LogicalRegionId', LogicalRegionId)
-	def get_ClusterName(self): # String
+	def get_ClusterName(self): # string
 		return self.get_query_params().get('ClusterName')
 
-	def set_ClusterName(self, ClusterName):  # String
+	def set_ClusterName(self, ClusterName):  # string
 		self.add_query_param('ClusterName', ClusterName)
-	def get_VpcId(self): # String
+	def get_VpcId(self): # string
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self, VpcId):  # String
+	def set_VpcId(self, VpcId):  # string
 		self.add_query_param('VpcId', VpcId)
-	def get_NetworkMode(self): # Integer
+	def get_NetworkMode(self): # integer
 		return self.get_query_params().get('NetworkMode')
 
-	def set_NetworkMode(self, NetworkMode):  # Integer
+	def set_NetworkMode(self, NetworkMode):  # integer
 		self.add_query_param('NetworkMode', NetworkMode)
-	def get_OversoldFactor(self): # Integer
+	def get_OversoldFactor(self): # integer
 		return self.get_query_params().get('OversoldFactor')
 
-	def set_OversoldFactor(self, OversoldFactor):  # Integer
+	def set_OversoldFactor(self, OversoldFactor):  # integer
 		self.add_query_param('OversoldFactor', OversoldFactor)

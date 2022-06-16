@@ -32,13 +32,13 @@ class ListEcsNotInClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VpcId(self): # String
+	def get_VpcId(self): # string
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self, VpcId):  # String
+	def set_VpcId(self, VpcId):  # string
 		self.add_query_param('VpcId', VpcId)
-	def get_NetworkMode(self): # Integer
+	def get_NetworkMode(self): # integer
 		return self.get_query_params().get('NetworkMode')
 
-	def set_NetworkMode(self, NetworkMode):  # Integer
+	def set_NetworkMode(self, NetworkMode):  # integer
 		self.add_query_param('NetworkMode', NetworkMode)

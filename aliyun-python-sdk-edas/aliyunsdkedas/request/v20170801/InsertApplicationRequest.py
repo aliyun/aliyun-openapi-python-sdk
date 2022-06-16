@@ -32,113 +32,113 @@ class InsertApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WebContainer(self): # String
+	def get_WebContainer(self): # string
 		return self.get_query_params().get('WebContainer')
 
-	def set_WebContainer(self, WebContainer):  # String
+	def set_WebContainer(self, WebContainer):  # string
 		self.add_query_param('WebContainer', WebContainer)
-	def get_EcuInfo(self): # String
+	def get_EcuInfo(self): # string
 		return self.get_query_params().get('EcuInfo')
 
-	def set_EcuInfo(self, EcuInfo):  # String
+	def set_EcuInfo(self, EcuInfo):  # string
 		self.add_query_param('EcuInfo', EcuInfo)
-	def get_MinHeapSize(self): # Integer
+	def get_MinHeapSize(self): # integer
 		return self.get_query_params().get('MinHeapSize')
 
-	def set_MinHeapSize(self, MinHeapSize):  # Integer
+	def set_MinHeapSize(self, MinHeapSize):  # integer
 		self.add_query_param('MinHeapSize', MinHeapSize)
-	def get_BuildPackId(self): # Integer
+	def get_BuildPackId(self): # integer
 		return self.get_query_params().get('BuildPackId')
 
-	def set_BuildPackId(self, BuildPackId):  # Integer
+	def set_BuildPackId(self, BuildPackId):  # integer
 		self.add_query_param('BuildPackId', BuildPackId)
-	def get_ComponentIds(self): # String
+	def get_ComponentIds(self): # string
 		return self.get_query_params().get('ComponentIds')
 
-	def set_ComponentIds(self, ComponentIds):  # String
+	def set_ComponentIds(self, ComponentIds):  # string
 		self.add_query_param('ComponentIds', ComponentIds)
-	def get_HealthCheckUrl(self): # String
+	def get_HealthCheckUrl(self): # string
 		return self.get_query_params().get('HealthCheckUrl')
 
-	def set_HealthCheckUrl(self, HealthCheckUrl):  # String
+	def set_HealthCheckUrl(self, HealthCheckUrl):  # string
 		self.add_query_param('HealthCheckUrl', HealthCheckUrl)
-	def get_ReservedPortStr(self): # String
+	def get_ReservedPortStr(self): # string
 		return self.get_query_params().get('ReservedPortStr')
 
-	def set_ReservedPortStr(self, ReservedPortStr):  # String
+	def set_ReservedPortStr(self, ReservedPortStr):  # string
 		self.add_query_param('ReservedPortStr', ReservedPortStr)
-	def get_JvmOptions(self): # String
+	def get_JvmOptions(self): # string
 		return self.get_query_params().get('JvmOptions')
 
-	def set_JvmOptions(self, JvmOptions):  # String
+	def set_JvmOptions(self, JvmOptions):  # string
 		self.add_query_param('JvmOptions', JvmOptions)
-	def get_Description(self): # String
+	def get_Description(self): # string
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
+	def set_Description(self, Description):  # string
 		self.add_query_param('Description', Description)
-	def get_Cpu(self): # Integer
+	def get_Cpu(self): # integer
 		return self.get_query_params().get('Cpu')
 
-	def set_Cpu(self, Cpu):  # Integer
+	def set_Cpu(self, Cpu):  # integer
 		self.add_query_param('Cpu', Cpu)
-	def get_MaxPermSize(self): # Integer
+	def get_MaxPermSize(self): # integer
 		return self.get_query_params().get('MaxPermSize')
 
-	def set_MaxPermSize(self, MaxPermSize):  # Integer
+	def set_MaxPermSize(self, MaxPermSize):  # integer
 		self.add_query_param('MaxPermSize', MaxPermSize)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
-	def get_MaxHeapSize(self): # Integer
+	def get_MaxHeapSize(self): # integer
 		return self.get_query_params().get('MaxHeapSize')
 
-	def set_MaxHeapSize(self, MaxHeapSize):  # Integer
+	def set_MaxHeapSize(self, MaxHeapSize):  # integer
 		self.add_query_param('MaxHeapSize', MaxHeapSize)
-	def get_EnablePortCheck(self): # Boolean
+	def get_EnablePortCheck(self): # boolean
 		return self.get_query_params().get('EnablePortCheck')
 
-	def set_EnablePortCheck(self, EnablePortCheck):  # Boolean
+	def set_EnablePortCheck(self, EnablePortCheck):  # boolean
 		self.add_query_param('EnablePortCheck', EnablePortCheck)
-	def get_ApplicationName(self): # String
+	def get_ApplicationName(self): # string
 		return self.get_query_params().get('ApplicationName')
 
-	def set_ApplicationName(self, ApplicationName):  # String
+	def set_ApplicationName(self, ApplicationName):  # string
 		self.add_query_param('ApplicationName', ApplicationName)
-	def get_Jdk(self): # String
+	def get_Jdk(self): # string
 		return self.get_query_params().get('Jdk')
 
-	def set_Jdk(self, Jdk):  # String
+	def set_Jdk(self, Jdk):  # string
 		self.add_query_param('Jdk', Jdk)
-	def get_ResourceGroupId(self): # String
+	def get_ResourceGroupId(self): # string
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
+	def set_ResourceGroupId(self, ResourceGroupId):  # string
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Mem(self): # Integer
+	def get_Mem(self): # integer
 		return self.get_query_params().get('Mem')
 
-	def set_Mem(self, Mem):  # Integer
+	def set_Mem(self, Mem):  # integer
 		self.add_query_param('Mem', Mem)
-	def get_LogicalRegionId(self): # String
+	def get_LogicalRegionId(self): # string
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # String
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
 		self.add_query_param('LogicalRegionId', LogicalRegionId)
-	def get_EnableUrlCheck(self): # Boolean
+	def get_EnableUrlCheck(self): # boolean
 		return self.get_query_params().get('EnableUrlCheck')
 
-	def set_EnableUrlCheck(self, EnableUrlCheck):  # Boolean
+	def set_EnableUrlCheck(self, EnableUrlCheck):  # boolean
 		self.add_query_param('EnableUrlCheck', EnableUrlCheck)
-	def get_PackageType(self): # String
+	def get_PackageType(self): # string
 		return self.get_query_params().get('PackageType')
 
-	def set_PackageType(self, PackageType):  # String
+	def set_PackageType(self, PackageType):  # string
 		self.add_query_param('PackageType', PackageType)
-	def get_Hooks(self): # String
+	def get_Hooks(self): # string
 		return self.get_query_params().get('Hooks')
 
-	def set_Hooks(self, Hooks):  # String
+	def set_Hooks(self, Hooks):  # string
 		self.add_query_param('Hooks', Hooks)

@@ -32,13 +32,13 @@ class DeleteUserDefineRegionRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RegionTag(self): # String
+	def get_RegionTag(self): # string
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self, RegionTag):  # String
+	def set_RegionTag(self, RegionTag):  # string
 		self.add_query_param('RegionTag', RegionTag)
-	def get_Id(self): # Long
+	def get_Id(self): # integer
 		return self.get_query_params().get('Id')
 
-	def set_Id(self, Id):  # Long
+	def set_Id(self, Id):  # integer
 		self.add_query_param('Id', Id)

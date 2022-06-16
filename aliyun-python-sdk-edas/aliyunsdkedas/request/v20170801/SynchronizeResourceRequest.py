@@ -32,13 +32,13 @@ class SynchronizeResourceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Type(self): # String
+	def get_Type(self): # string
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # String
+	def set_Type(self, Type):  # string
 		self.add_query_param('Type', Type)
-	def get_ResourceIds(self): # String
+	def get_ResourceIds(self): # string
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self, ResourceIds):  # String
+	def set_ResourceIds(self, ResourceIds):  # string
 		self.add_query_param('ResourceIds', ResourceIds)

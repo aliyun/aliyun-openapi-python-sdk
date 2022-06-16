@@ -32,23 +32,28 @@ class CreateK8sServiceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_Name(self): # String
+	def get_Name(self): # string
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self, Name):  # string
 		self.add_query_param('Name', Name)
-	def get_Type(self): # String
+	def get_Type(self): # string
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # String
+	def set_Type(self, Type):  # string
 		self.add_query_param('Type', Type)
-	def get_ServicePorts(self): # String
+	def get_ExternalTrafficPolicy(self): # string
+		return self.get_query_params().get('ExternalTrafficPolicy')
+
+	def set_ExternalTrafficPolicy(self, ExternalTrafficPolicy):  # string
+		self.add_query_param('ExternalTrafficPolicy', ExternalTrafficPolicy)
+	def get_ServicePorts(self): # string
 		return self.get_query_params().get('ServicePorts')
 
-	def set_ServicePorts(self, ServicePorts):  # String
+	def set_ServicePorts(self, ServicePorts):  # string
 		self.add_query_param('ServicePorts', ServicePorts)

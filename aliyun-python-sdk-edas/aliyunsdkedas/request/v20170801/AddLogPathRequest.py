@@ -32,13 +32,13 @@ class AddLogPathRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Path(self): # String
+	def get_Path(self): # string
 		return self.get_body_params().get('Path')
 
-	def set_Path(self, Path):  # String
+	def set_Path(self, Path):  # string
 		self.add_body_params('Path', Path)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_body_params('AppId', AppId)

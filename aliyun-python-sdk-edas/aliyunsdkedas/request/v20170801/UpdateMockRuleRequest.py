@@ -32,33 +32,33 @@ class UpdateMockRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScMockItemJson(self): # String
+	def get_ScMockItemJson(self): # string
 		return self.get_query_params().get('ScMockItemJson')
 
-	def set_ScMockItemJson(self, ScMockItemJson):  # String
+	def set_ScMockItemJson(self, ScMockItemJson):  # string
 		self.add_query_param('ScMockItemJson', ScMockItemJson)
-	def get_DubboMockItemJson(self): # String
+	def get_DubboMockItemJson(self): # string
 		return self.get_query_params().get('DubboMockItemJson')
 
-	def set_DubboMockItemJson(self, DubboMockItemJson):  # String
+	def set_DubboMockItemJson(self, DubboMockItemJson):  # string
 		self.add_query_param('DubboMockItemJson', DubboMockItemJson)
-	def get_ExtraJson(self): # String
+	def get_ExtraJson(self): # string
 		return self.get_query_params().get('ExtraJson')
 
-	def set_ExtraJson(self, ExtraJson):  # String
+	def set_ExtraJson(self, ExtraJson):  # string
 		self.add_query_param('ExtraJson', ExtraJson)
-	def get_Name(self): # String
+	def get_Name(self): # string
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self, Name):  # string
 		self.add_query_param('Name', Name)
-	def get_Id(self): # String
+	def get_Id(self): # string
 		return self.get_query_params().get('Id')
 
-	def set_Id(self, Id):  # String
+	def set_Id(self, Id):  # string
 		self.add_query_param('Id', Id)
-	def get_Region(self): # String
+	def get_Region(self): # string
 		return self.get_query_params().get('Region')
 
-	def set_Region(self, Region):  # String
+	def set_Region(self, Region):  # string
 		self.add_query_param('Region', Region)

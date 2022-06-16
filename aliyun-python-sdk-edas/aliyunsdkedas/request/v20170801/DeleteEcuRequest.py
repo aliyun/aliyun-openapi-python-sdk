@@ -32,8 +32,8 @@ class DeleteEcuRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EcuId(self): # String
+	def get_EcuId(self): # string
 		return self.get_query_params().get('EcuId')
 
-	def set_EcuId(self, EcuId):  # String
+	def set_EcuId(self, EcuId):  # string
 		self.add_query_param('EcuId', EcuId)

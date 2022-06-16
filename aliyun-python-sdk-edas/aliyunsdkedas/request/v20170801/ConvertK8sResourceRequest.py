@@ -32,23 +32,23 @@ class ConvertK8sResourceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Namespace(self): # String
+	def get_Namespace(self): # string
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # String
+	def set_Namespace(self, Namespace):  # string
 		self.add_query_param('Namespace', Namespace)
-	def get_ResourceName(self): # String
+	def get_ResourceName(self): # string
 		return self.get_query_params().get('ResourceName')
 
-	def set_ResourceName(self, ResourceName):  # String
+	def set_ResourceName(self, ResourceName):  # string
 		self.add_query_param('ResourceName', ResourceName)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ResourceType(self): # String
+	def get_ResourceType(self): # string
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self, ResourceType):  # String
+	def set_ResourceType(self, ResourceType):  # string
 		self.add_query_param('ResourceType', ResourceType)

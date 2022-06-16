@@ -32,18 +32,18 @@ class TransformClusterMemberRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Password(self): # String
+	def get_Password(self): # string
 		return self.get_query_params().get('Password')
 
-	def set_Password(self, Password):  # String
+	def set_Password(self, Password):  # string
 		self.add_query_param('Password', Password)
-	def get_InstanceIds(self): # String
+	def get_InstanceIds(self): # string
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self, InstanceIds):  # String
+	def set_InstanceIds(self, InstanceIds):  # string
 		self.add_query_param('InstanceIds', InstanceIds)
-	def get_TargetClusterId(self): # String
+	def get_TargetClusterId(self): # string
 		return self.get_query_params().get('TargetClusterId')
 
-	def set_TargetClusterId(self, TargetClusterId):  # String
+	def set_TargetClusterId(self, TargetClusterId):  # string
 		self.add_query_param('TargetClusterId', TargetClusterId)

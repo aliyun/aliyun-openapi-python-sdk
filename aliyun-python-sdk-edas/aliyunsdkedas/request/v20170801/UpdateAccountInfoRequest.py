@@ -32,18 +32,18 @@ class UpdateAccountInfoRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Name(self): # String
+	def get_Name(self): # string
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
+	def set_Name(self, Name):  # string
 		self.add_query_param('Name', Name)
-	def get_Telephone(self): # String
+	def get_Telephone(self): # string
 		return self.get_query_params().get('Telephone')
 
-	def set_Telephone(self, Telephone):  # String
+	def set_Telephone(self, Telephone):  # string
 		self.add_query_param('Telephone', Telephone)
-	def get_Email(self): # String
+	def get_Email(self): # string
 		return self.get_query_params().get('Email')
 
-	def set_Email(self, Email):  # String
+	def set_Email(self, Email):  # string
 		self.add_query_param('Email', Email)

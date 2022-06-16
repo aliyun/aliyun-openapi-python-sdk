@@ -32,48 +32,48 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MemoryRequest(self): # String
+	def get_MemoryRequest(self): # string
 		return self.get_query_params().get('MemoryRequest')
 
-	def set_MemoryRequest(self, MemoryRequest):  # String
+	def set_MemoryRequest(self, MemoryRequest):  # string
 		self.add_query_param('MemoryRequest', MemoryRequest)
-	def get_AppId(self): # String
+	def get_AppId(self): # string
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
+	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
-	def get_CpuRequest(self): # String
+	def get_CpuRequest(self): # string
 		return self.get_query_params().get('CpuRequest')
 
-	def set_CpuRequest(self, CpuRequest):  # String
+	def set_CpuRequest(self, CpuRequest):  # string
 		self.add_query_param('CpuRequest', CpuRequest)
-	def get_MemoryLimit(self): # String
+	def get_MemoryLimit(self): # string
 		return self.get_query_params().get('MemoryLimit')
 
-	def set_MemoryLimit(self, MemoryLimit):  # String
+	def set_MemoryLimit(self, MemoryLimit):  # string
 		self.add_query_param('MemoryLimit', MemoryLimit)
-	def get_ClusterId(self): # String
+	def get_ClusterId(self): # string
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # String
+	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
-	def get_CpuLimit(self): # String
+	def get_CpuLimit(self): # string
 		return self.get_query_params().get('CpuLimit')
 
-	def set_CpuLimit(self, CpuLimit):  # String
+	def set_CpuLimit(self, CpuLimit):  # string
 		self.add_query_param('CpuLimit', CpuLimit)
-	def get_McpuLimit(self): # String
+	def get_McpuLimit(self): # string
 		return self.get_query_params().get('McpuLimit')
 
-	def set_McpuLimit(self, McpuLimit):  # String
+	def set_McpuLimit(self, McpuLimit):  # string
 		self.add_query_param('McpuLimit', McpuLimit)
-	def get_McpuRequest(self): # String
+	def get_McpuRequest(self): # string
 		return self.get_query_params().get('McpuRequest')
 
-	def set_McpuRequest(self, McpuRequest):  # String
+	def set_McpuRequest(self, McpuRequest):  # string
 		self.add_query_param('McpuRequest', McpuRequest)
-	def get_Timeout(self): # Integer
+	def get_Timeout(self): # integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self, Timeout):  # Integer
+	def set_Timeout(self, Timeout):  # integer
 		self.add_query_param('Timeout', Timeout)

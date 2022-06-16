@@ -32,88 +32,88 @@ class GetServiceMethodPageRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_registryType(self): # String
+	def get_registryType(self): # string
 		return self.get_query_params().get('registryType')
 
-	def set_registryType(self, registryType):  # String
+	def set_registryType(self, registryType):  # string
 		self.add_query_param('registryType', registryType)
-	def get_origin(self): # String
+	def get_origin(self): # string
 		return self.get_query_params().get('origin')
 
-	def set_origin(self, origin):  # String
+	def set_origin(self, origin):  # string
 		self.add_query_param('origin', origin)
-	def get_ip(self): # String
+	def get_ip(self): # string
 		return self.get_query_params().get('ip')
 
-	def set_ip(self, ip):  # String
+	def set_ip(self, ip):  # string
 		self.add_query_param('ip', ip)
-	def get_source(self): # String
+	def get_source(self): # string
 		return self.get_query_params().get('source')
 
-	def set_source(self, source):  # String
+	def set_source(self, source):  # string
 		self.add_query_param('source', source)
-	def get_pageNumber(self): # Integer
+	def get_pageNumber(self): # integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self, pageNumber):  # Integer
+	def set_pageNumber(self, pageNumber):  # integer
 		self.add_query_param('pageNumber', pageNumber)
-	def get_path(self): # String
+	def get_path(self): # string
 		return self.get_query_params().get('path')
 
-	def set_path(self, path):  # String
+	def set_path(self, path):  # string
 		self.add_query_param('path', path)
-	def get_serviceType(self): # String
+	def get_serviceType(self): # string
 		return self.get_query_params().get('serviceType')
 
-	def set_serviceType(self, serviceType):  # String
+	def set_serviceType(self, serviceType):  # string
 		self.add_query_param('serviceType', serviceType)
-	def get_appId(self): # String
+	def get_appId(self): # string
 		return self.get_query_params().get('appId')
 
-	def set_appId(self, appId):  # String
+	def set_appId(self, appId):  # string
 		self.add_query_param('appId', appId)
-	def get_namespace(self): # String
+	def get_namespace(self): # string
 		return self.get_query_params().get('namespace')
 
-	def set_namespace(self, namespace):  # String
+	def set_namespace(self, namespace):  # string
 		self.add_query_param('namespace', namespace)
-	def get_serviceVersion(self): # String
+	def get_serviceVersion(self): # string
 		return self.get_query_params().get('serviceVersion')
 
-	def set_serviceVersion(self, serviceVersion):  # String
+	def set_serviceVersion(self, serviceVersion):  # string
 		self.add_query_param('serviceVersion', serviceVersion)
-	def get_pageSize(self): # Integer
+	def get_pageSize(self): # integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self, pageSize):  # Integer
+	def set_pageSize(self, pageSize):  # integer
 		self.add_query_param('pageSize', pageSize)
-	def get_name(self): # String
+	def get_name(self): # string
 		return self.get_query_params().get('name')
 
-	def set_name(self, name):  # String
+	def set_name(self, name):  # string
 		self.add_query_param('name', name)
-	def get_serviceName(self): # String
+	def get_serviceName(self): # string
 		return self.get_query_params().get('serviceName')
 
-	def set_serviceName(self, serviceName):  # String
+	def set_serviceName(self, serviceName):  # string
 		self.add_query_param('serviceName', serviceName)
-	def get_region(self): # String
+	def get_region(self): # string
 		return self.get_query_params().get('region')
 
-	def set_region(self, region):  # String
+	def set_region(self, region):  # string
 		self.add_query_param('region', region)
-	def get_serviceId(self): # String
+	def get_serviceId(self): # string
 		return self.get_query_params().get('serviceId')
 
-	def set_serviceId(self, serviceId):  # String
+	def set_serviceId(self, serviceId):  # string
 		self.add_query_param('serviceId', serviceId)
-	def get_methodController(self): # String
+	def get_methodController(self): # string
 		return self.get_query_params().get('methodController')
 
-	def set_methodController(self, methodController):  # String
+	def set_methodController(self, methodController):  # string
 		self.add_query_param('methodController', methodController)
-	def get_group(self): # String
+	def get_group(self): # string
 		return self.get_query_params().get('group')
 
-	def set_group(self, group):  # String
+	def set_group(self, group):  # string
 		self.add_query_param('group', group)

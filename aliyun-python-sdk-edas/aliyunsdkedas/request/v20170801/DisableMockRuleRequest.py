@@ -32,8 +32,8 @@ class DisableMockRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Id(self): # Long
+	def get_Id(self): # integer
 		return self.get_query_params().get('Id')
 
-	def set_Id(self, Id):  # Long
+	def set_Id(self, Id):  # integer
 		self.add_query_param('Id', Id)
