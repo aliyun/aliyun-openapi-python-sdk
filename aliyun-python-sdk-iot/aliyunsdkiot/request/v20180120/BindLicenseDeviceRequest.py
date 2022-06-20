@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateSoundCodeScheduleRequest(RpcRequest):
+class BindLicenseDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateSoundCodeSchedule')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BindLicenseDevice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,28 @@ class CreateSoundCodeScheduleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Description(self):
-		return self.get_body_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
-
-	def get_StartDate(self):
-		return self.get_body_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_body_params('StartDate', StartDate)
-
 	def get_IotInstanceId(self):
-		return self.get_body_params().get('IotInstanceId')
+		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_body_params('IotInstanceId', IotInstanceId)
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_EndDate(self):
-		return self.get_body_params().get('EndDate')
+	def get_IotIdLists(self):
+		return self.get_query_params().get('IotIdList')
 
-	def set_EndDate(self,EndDate):
-		self.add_body_params('EndDate', EndDate)
+	def set_IotIdLists(self, IotIdLists):
+		for depth1 in range(len(IotIdLists)):
+			if IotIdLists[depth1] is not None:
+				self.add_query_param('IotIdList.' + str(depth1 + 1) , IotIdLists[depth1])
 
-	def get_Name(self):
-		return self.get_body_params().get('Name')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_Name(self,Name):
-		self.add_body_params('Name', Name)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
-	def get_OpenType(self):
-		return self.get_body_params().get('OpenType')
+	def get_LicenseCode(self):
+		return self.get_query_params().get('LicenseCode')
 
-	def set_OpenType(self,OpenType):
-		self.add_body_params('OpenType', OpenType)
+	def set_LicenseCode(self,LicenseCode):
+		self.add_query_param('LicenseCode',LicenseCode)

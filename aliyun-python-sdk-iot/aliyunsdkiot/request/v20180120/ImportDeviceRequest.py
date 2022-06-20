@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class PubRequest(RpcRequest):
+class ImportDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'Pub')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ImportDevice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,51 +31,29 @@ class PubRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserProps(self):
-		return self.get_query_params().get('UserProp')
-
-	def set_UserProps(self, UserProps):
-		for depth1 in range(len(UserProps)):
-			if UserProps[depth1].get('Value') is not None:
-				self.add_query_param('UserProp.' + str(depth1 + 1) + '.Value', UserProps[depth1].get('Value'))
-			if UserProps[depth1].get('Key') is not None:
-				self.add_query_param('UserProp.' + str(depth1 + 1) + '.Key', UserProps[depth1].get('Key'))
-
-	def get_MessageContent(self):
-		return self.get_body_params().get('MessageContent')
-
-	def set_MessageContent(self,MessageContent):
-		self.add_body_params('MessageContent', MessageContent)
-
-	def get_Qos(self):
-		return self.get_query_params().get('Qos')
-
-	def set_Qos(self,Qos):
-		self.add_query_param('Qos',Qos)
-
-	def get_CorrelationData(self):
-		return self.get_query_params().get('CorrelationData')
-
-	def set_CorrelationData(self,CorrelationData):
-		self.add_query_param('CorrelationData',CorrelationData)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_ResponseTopic(self):
-		return self.get_query_params().get('ResponseTopic')
+	def get_Nickname(self):
+		return self.get_query_params().get('Nickname')
 
-	def set_ResponseTopic(self,ResponseTopic):
-		self.add_query_param('ResponseTopic',ResponseTopic)
+	def set_Nickname(self,Nickname):
+		self.add_query_param('Nickname',Nickname)
 
-	def get_TopicFullName(self):
-		return self.get_query_params().get('TopicFullName')
+	def get_Sn(self):
+		return self.get_query_params().get('Sn')
 
-	def set_TopicFullName(self,TopicFullName):
-		self.add_query_param('TopicFullName',TopicFullName)
+	def set_Sn(self,Sn):
+		self.add_query_param('Sn',Sn)
+
+	def get_DeviceSecret(self):
+		return self.get_query_params().get('DeviceSecret')
+
+	def set_DeviceSecret(self,DeviceSecret):
+		self.add_query_param('DeviceSecret',DeviceSecret)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

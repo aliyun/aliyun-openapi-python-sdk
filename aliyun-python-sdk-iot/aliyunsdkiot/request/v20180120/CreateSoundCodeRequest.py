@@ -48,3 +48,15 @@ class CreateSoundCodeRequest(RpcRequest):
 
 	def set_SoundCodeContent(self,SoundCodeContent):
 		self.add_body_params('SoundCodeContent', SoundCodeContent)
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
+	def get_OpenType(self):
+		return self.get_body_params().get('OpenType')
+
+	def set_OpenType(self,OpenType):
+		self.add_body_params('OpenType', OpenType)
