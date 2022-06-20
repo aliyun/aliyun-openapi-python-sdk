@@ -25,40 +25,36 @@ class RecolorImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'RecolorImage','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ColorTemplates(self):
-		return self.get_body_params().get('ColorTemplate')
-
-	def set_ColorTemplates(self, ColorTemplates):
-		for depth1 in range(len(ColorTemplates)):
-			if ColorTemplates[depth1].get('Color') is not None:
-				self.add_body_params('ColorTemplate.' + str(depth1 + 1) + '.Color', ColorTemplates[depth1].get('Color'))
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
-
-	def get_Mode(self):
+	def get_Mode(self): # String
 		return self.get_body_params().get('Mode')
 
-	def set_Mode(self,Mode):
+	def set_Mode(self, Mode):  # String
 		self.add_body_params('Mode', Mode)
-
-	def get_ColorCount(self):
+	def get_ColorCount(self): # Integer
 		return self.get_body_params().get('ColorCount')
 
-	def set_ColorCount(self,ColorCount):
+	def set_ColorCount(self, ColorCount):  # Integer
 		self.add_body_params('ColorCount', ColorCount)
+	def get_ColorTemplates(self): # RepeatList
+		return self.get_body_params().get('ColorTemplate')
 
-	def get_RefUrl(self):
+	def set_ColorTemplates(self, ColorTemplate):  # RepeatList
+		for depth1 in range(len(ColorTemplate)):
+			if ColorTemplate[depth1].get('Color') is not None:
+				self.add_body_params('ColorTemplate.' + str(depth1 + 1) + '.Color', ColorTemplate[depth1].get('Color'))
+	def get_Url(self): # String
+		return self.get_body_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_body_params('Url', Url)
+	def get_RefUrl(self): # String
 		return self.get_body_params().get('RefUrl')
 
-	def set_RefUrl(self,RefUrl):
+	def set_RefUrl(self, RefUrl):  # String
 		self.add_body_params('RefUrl', RefUrl)

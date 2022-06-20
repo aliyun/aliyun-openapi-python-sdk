@@ -25,20 +25,19 @@ class ImitatePhotoStyleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ImitatePhotoStyle','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StyleUrl(self):
+	def get_StyleUrl(self): # String
 		return self.get_body_params().get('StyleUrl')
 
-	def set_StyleUrl(self,StyleUrl):
+	def set_StyleUrl(self, StyleUrl):  # String
 		self.add_body_params('StyleUrl', StyleUrl)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

@@ -25,20 +25,19 @@ class ErasePersonRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ErasePerson','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
-
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
-
-	def get_UserMask(self):
+	def get_UserMask(self): # String
 		return self.get_body_params().get('UserMask')
 
-	def set_UserMask(self,UserMask):
+	def set_UserMask(self, UserMask):  # String
 		self.add_body_params('UserMask', UserMask)
+	def get_ImageURL(self): # String
+		return self.get_body_params().get('ImageURL')
+
+	def set_ImageURL(self, ImageURL):  # String
+		self.add_body_params('ImageURL', ImageURL)

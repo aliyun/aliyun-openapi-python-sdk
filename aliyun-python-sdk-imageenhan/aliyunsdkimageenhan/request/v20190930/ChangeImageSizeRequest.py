@@ -25,26 +25,24 @@ class ChangeImageSizeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ChangeImageSize','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
-
-	def get_Width(self):
-		return self.get_body_params().get('Width')
-
-	def set_Width(self,Width):
-		self.add_body_params('Width', Width)
-
-	def get_Height(self):
+	def get_Height(self): # Integer
 		return self.get_body_params().get('Height')
 
-	def set_Height(self,Height):
+	def set_Height(self, Height):  # Integer
 		self.add_body_params('Height', Height)
+	def get_Url(self): # String
+		return self.get_body_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_body_params('Url', Url)
+	def get_Width(self): # Integer
+		return self.get_body_params().get('Width')
+
+	def set_Width(self, Width):  # Integer
+		self.add_body_params('Width', Width)

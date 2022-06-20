@@ -25,38 +25,34 @@ class RemoveImageSubtitlesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'RemoveImageSubtitles','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BH(self):
+	def get_BH(self): # Float
 		return self.get_body_params().get('BH')
 
-	def set_BH(self,BH):
+	def set_BH(self, BH):  # Float
 		self.add_body_params('BH', BH)
-
-	def get_BW(self):
+	def get_BW(self): # Float
 		return self.get_body_params().get('BW')
 
-	def set_BW(self,BW):
+	def set_BW(self, BW):  # Float
 		self.add_body_params('BW', BW)
-
-	def get_BX(self):
+	def get_BX(self): # Float
 		return self.get_body_params().get('BX')
 
-	def set_BX(self,BX):
+	def set_BX(self, BX):  # Float
 		self.add_body_params('BX', BX)
-
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
-
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
-
-	def get_BY(self):
+	def get_BY(self): # Float
 		return self.get_body_params().get('BY')
 
-	def set_BY(self,BY):
+	def set_BY(self, BY):  # Float
 		self.add_body_params('BY', BY)
+	def get_ImageURL(self): # String
+		return self.get_body_params().get('ImageURL')
+
+	def set_ImageURL(self, ImageURL):  # String
+		self.add_body_params('ImageURL', ImageURL)

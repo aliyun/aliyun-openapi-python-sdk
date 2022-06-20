@@ -25,26 +25,34 @@ class MakeSuperResolutionImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'MakeSuperResolutionImage','imageenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UpscaleFactor(self):
+	def get_UpscaleFactor(self): # Long
 		return self.get_body_params().get('UpscaleFactor')
 
-	def set_UpscaleFactor(self,UpscaleFactor):
+	def set_UpscaleFactor(self, UpscaleFactor):  # Long
 		self.add_body_params('UpscaleFactor', UpscaleFactor)
-
-	def get_Mode(self):
+	def get_Mode(self): # String
 		return self.get_body_params().get('Mode')
 
-	def set_Mode(self,Mode):
+	def set_Mode(self, Mode):  # String
 		self.add_body_params('Mode', Mode)
+	def get_OutputFormat(self): # String
+		return self.get_body_params().get('OutputFormat')
 
-	def get_Url(self):
+	def set_OutputFormat(self, OutputFormat):  # String
+		self.add_body_params('OutputFormat', OutputFormat)
+	def get_Url(self): # String
 		return self.get_body_params().get('Url')
 
-	def set_Url(self,Url):
+	def set_Url(self, Url):  # String
 		self.add_body_params('Url', Url)
+	def get_OutputQuality(self): # Long
+		return self.get_body_params().get('OutputQuality')
+
+	def set_OutputQuality(self, OutputQuality):  # Long
+		self.add_body_params('OutputQuality', OutputQuality)
