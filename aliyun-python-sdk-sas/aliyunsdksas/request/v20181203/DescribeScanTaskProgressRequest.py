@@ -25,14 +25,14 @@ class DescribeScanTaskProgressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeScanTaskProgress')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskId(self):
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)

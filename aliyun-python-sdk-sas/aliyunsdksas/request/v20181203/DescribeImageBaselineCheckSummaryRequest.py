@@ -25,50 +25,44 @@ class DescribeImageBaselineCheckSummaryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageBaselineCheckSummary')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Criteria(self):
+	def get_Criteria(self): # String
 		return self.get_query_params().get('Criteria')
 
-	def set_Criteria(self,Criteria):
-		self.add_query_param('Criteria',Criteria)
-
-	def get_PageSize(self):
+	def set_Criteria(self, Criteria):  # String
+		self.add_query_param('Criteria', Criteria)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CriteriaType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CriteriaType(self): # String
 		return self.get_query_params().get('CriteriaType')
 
-	def set_CriteriaType(self,CriteriaType):
-		self.add_query_param('CriteriaType',CriteriaType)
-
-	def get_Lang(self):
+	def set_CriteriaType(self, CriteriaType):  # String
+		self.add_query_param('CriteriaType', CriteriaType)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_CurrentPage(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ClusterId(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_RiskLevel(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_RiskLevel(self): # String
 		return self.get_query_params().get('RiskLevel')
 
-	def set_RiskLevel(self,RiskLevel):
-		self.add_query_param('RiskLevel',RiskLevel)
+	def set_RiskLevel(self, RiskLevel):  # String
+		self.add_query_param('RiskLevel', RiskLevel)

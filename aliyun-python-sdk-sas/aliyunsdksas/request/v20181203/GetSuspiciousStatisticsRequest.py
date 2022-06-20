@@ -25,20 +25,19 @@ class GetSuspiciousStatisticsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetSuspiciousStatistics')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupIdList(self):
+	def get_GroupIdList(self): # String
 		return self.get_query_params().get('GroupIdList')
 
-	def set_GroupIdList(self,GroupIdList):
-		self.add_query_param('GroupIdList',GroupIdList)
-
-	def get_SourceIp(self):
+	def set_GroupIdList(self, GroupIdList):  # String
+		self.add_query_param('GroupIdList', GroupIdList)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)

@@ -25,100 +25,85 @@ class DescribeUuidsByVulNamesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUuidsByVulNames')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StatusList(self):
+	def get_StatusList(self): # String
 		return self.get_query_params().get('StatusList')
 
-	def set_StatusList(self,StatusList):
-		self.add_query_param('StatusList',StatusList)
-
-	def get_TargetType(self):
+	def set_StatusList(self, StatusList):  # String
+		self.add_query_param('StatusList', StatusList)
+	def get_TargetType(self): # String
 		return self.get_query_params().get('TargetType')
 
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
-	def get_Remark(self):
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_Type(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_VpcInstanceIds(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_VpcInstanceIds(self): # String
 		return self.get_query_params().get('VpcInstanceIds')
 
-	def set_VpcInstanceIds(self,VpcInstanceIds):
-		self.add_query_param('VpcInstanceIds',VpcInstanceIds)
-
-	def get_VulNamess(self):
+	def set_VpcInstanceIds(self, VpcInstanceIds):  # String
+		self.add_query_param('VpcInstanceIds', VpcInstanceIds)
+	def get_VulNamess(self): # RepeatList
 		return self.get_query_params().get('VulNames')
 
-	def set_VulNamess(self, VulNamess):
-		for depth1 in range(len(VulNamess)):
-			if VulNamess[depth1] is not None:
-				self.add_query_param('VulNames.' + str(depth1 + 1) , VulNamess[depth1])
-
-	def get_Tag(self):
+	def set_VulNamess(self, VulNames):  # RepeatList
+		for depth1 in range(len(VulNames)):
+			self.add_query_param('VulNames.' + str(depth1 + 1), VulNames[depth1])
+	def get_Tag(self): # String
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self,Tag):
-		self.add_query_param('Tag',Tag)
-
-	def get_Lang(self):
+	def set_Tag(self, Tag):  # String
+		self.add_query_param('Tag', Tag)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Level(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_GroupId(self):
+	def set_Level(self, Level):  # String
+		self.add_query_param('Level', Level)
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Dealed(self):
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_Dealed(self): # String
 		return self.get_query_params().get('Dealed')
 
-	def set_Dealed(self,Dealed):
-		self.add_query_param('Dealed',Dealed)
-
-	def get_FieldValue(self):
+	def set_Dealed(self, Dealed):  # String
+		self.add_query_param('Dealed', Dealed)
+	def get_FieldValue(self): # String
 		return self.get_query_params().get('FieldValue')
 
-	def set_FieldValue(self,FieldValue):
-		self.add_query_param('FieldValue',FieldValue)
-
-	def get_FieldName(self):
+	def set_FieldValue(self, FieldValue):  # String
+		self.add_query_param('FieldValue', FieldValue)
+	def get_FieldName(self): # String
 		return self.get_query_params().get('FieldName')
 
-	def set_FieldName(self,FieldName):
-		self.add_query_param('FieldName',FieldName)
-
-	def get_SearchTags(self):
+	def set_FieldName(self, FieldName):  # String
+		self.add_query_param('FieldName', FieldName)
+	def get_SearchTags(self): # String
 		return self.get_query_params().get('SearchTags')
 
-	def set_SearchTags(self,SearchTags):
-		self.add_query_param('SearchTags',SearchTags)
-
-	def get_Necessity(self):
+	def set_SearchTags(self, SearchTags):  # String
+		self.add_query_param('SearchTags', SearchTags)
+	def get_Necessity(self): # String
 		return self.get_query_params().get('Necessity')
 
-	def set_Necessity(self,Necessity):
-		self.add_query_param('Necessity',Necessity)
+	def set_Necessity(self, Necessity):  # String
+		self.add_query_param('Necessity', Necessity)

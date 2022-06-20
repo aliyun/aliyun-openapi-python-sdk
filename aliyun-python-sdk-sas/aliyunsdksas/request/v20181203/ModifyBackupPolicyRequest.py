@@ -25,46 +25,40 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyBackupPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UuidLists(self):
+	def get_UuidLists(self): # RepeatList
 		return self.get_query_params().get('UuidList')
 
-	def set_UuidLists(self, UuidLists):
-		for depth1 in range(len(UuidLists)):
-			if UuidLists[depth1] is not None:
-				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
-
-	def get_Id(self):
+	def set_UuidLists(self, UuidList):  # RepeatList
+		for depth1 in range(len(UuidList)):
+			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Policy(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_PolicyVersion(self):
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
+	def get_PolicyVersion(self): # String
 		return self.get_query_params().get('PolicyVersion')
 
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
-
-	def get_PolicyRegionId(self):
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)
+	def get_PolicyRegionId(self): # String
 		return self.get_query_params().get('PolicyRegionId')
 
-	def set_PolicyRegionId(self,PolicyRegionId):
-		self.add_query_param('PolicyRegionId',PolicyRegionId)
-
-	def get_Name(self):
+	def set_PolicyRegionId(self, PolicyRegionId):  # String
+		self.add_query_param('PolicyRegionId', PolicyRegionId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

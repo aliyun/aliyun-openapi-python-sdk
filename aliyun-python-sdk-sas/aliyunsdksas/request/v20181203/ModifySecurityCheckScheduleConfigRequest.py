@@ -25,44 +25,39 @@ class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifySecurityCheckScheduleConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_EndTime(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_EndTime(self): # Integer
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Integer
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Integer
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_SourceIp(self):
+	def set_StartTime(self, StartTime):  # Integer
+		self.add_query_param('StartTime', StartTime)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_DaysOfWeek(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_DaysOfWeek(self): # String
 		return self.get_query_params().get('DaysOfWeek')
 
-	def set_DaysOfWeek(self,DaysOfWeek):
-		self.add_query_param('DaysOfWeek',DaysOfWeek)
-
-	def get_Lang(self):
+	def set_DaysOfWeek(self, DaysOfWeek):  # String
+		self.add_query_param('DaysOfWeek', DaysOfWeek)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

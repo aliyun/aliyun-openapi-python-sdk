@@ -25,14 +25,14 @@ class ModifyGroupPropertyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyGroupProperty')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_query_params().get('Data')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
+	def set_Data(self, Data):  # String
+		self.add_query_param('Data', Data)

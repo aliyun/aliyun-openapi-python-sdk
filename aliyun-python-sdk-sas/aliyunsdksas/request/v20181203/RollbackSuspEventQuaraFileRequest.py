@@ -25,26 +25,24 @@ class RollbackSuspEventQuaraFileRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RollbackSuspEventQuaraFile')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceIp(self):
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_From(self): # String
 		return self.get_query_params().get('From')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_QuaraFileId(self):
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
+	def get_QuaraFileId(self): # Integer
 		return self.get_query_params().get('QuaraFileId')
 
-	def set_QuaraFileId(self,QuaraFileId):
-		self.add_query_param('QuaraFileId',QuaraFileId)
+	def set_QuaraFileId(self, QuaraFileId):  # Integer
+		self.add_query_param('QuaraFileId', QuaraFileId)

@@ -25,34 +25,30 @@ class DeleteBackupPolicyMachineRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteBackupPolicyMachine')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Uuid(self):
+	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
-	def get_PolicyId(self):
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)
+	def get_PolicyId(self): # Long
 		return self.get_query_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
-
-	def get_UuidLists(self):
+	def set_PolicyId(self, PolicyId):  # Long
+		self.add_query_param('PolicyId', PolicyId)
+	def get_UuidLists(self): # RepeatList
 		return self.get_query_params().get('UuidList')
 
-	def set_UuidLists(self, UuidLists):
-		for depth1 in range(len(UuidLists)):
-			if UuidLists[depth1] is not None:
-				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
-
-	def get_PolicyVersion(self):
+	def set_UuidLists(self, UuidList):  # RepeatList
+		for depth1 in range(len(UuidList)):
+			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
+	def get_PolicyVersion(self): # String
 		return self.get_query_params().get('PolicyVersion')
 
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)

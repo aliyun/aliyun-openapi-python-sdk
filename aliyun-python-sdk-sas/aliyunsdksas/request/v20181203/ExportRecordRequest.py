@@ -25,26 +25,24 @@ class ExportRecordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ExportRecord')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExportType(self):
+	def get_ExportType(self): # String
 		return self.get_query_params().get('ExportType')
 
-	def set_ExportType(self,ExportType):
-		self.add_query_param('ExportType',ExportType)
-
-	def get_Params(self):
+	def set_ExportType(self, ExportType):  # String
+		self.add_query_param('ExportType', ExportType)
+	def get_Params(self): # String
 		return self.get_query_params().get('Params')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_Lang(self):
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

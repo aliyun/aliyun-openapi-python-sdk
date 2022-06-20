@@ -25,26 +25,24 @@ class ModifyBackupPolicyStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyBackupPolicyStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Id(self):
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_PolicyVersion(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_PolicyVersion(self): # String
 		return self.get_query_params().get('PolicyVersion')
 
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
-
-	def get_Status(self):
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

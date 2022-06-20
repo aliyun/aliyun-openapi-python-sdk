@@ -25,14 +25,14 @@ class DescribeBackupClientsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeBackupClients')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SupportRegionId(self):
+	def get_SupportRegionId(self): # String
 		return self.get_query_params().get('SupportRegionId')
 
-	def set_SupportRegionId(self,SupportRegionId):
-		self.add_query_param('SupportRegionId',SupportRegionId)
+	def set_SupportRegionId(self, SupportRegionId):  # String
+		self.add_query_param('SupportRegionId', SupportRegionId)

@@ -25,50 +25,44 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Criteria(self):
+	def get_Criteria(self): # String
 		return self.get_query_params().get('Criteria')
 
-	def set_Criteria(self,Criteria):
-		self.add_query_param('Criteria',Criteria)
-
-	def get_Importance(self):
+	def set_Criteria(self, Criteria):  # String
+		self.add_query_param('Criteria', Criteria)
+	def get_Importance(self): # Integer
 		return self.get_query_params().get('Importance')
 
-	def set_Importance(self,Importance):
-		self.add_query_param('Importance',Importance)
-
-	def get_PageSize(self):
+	def set_Importance(self, Importance):  # Integer
+		self.add_query_param('Importance', Importance)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_LogicalExp(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_LogicalExp(self): # String
 		return self.get_query_params().get('LogicalExp')
 
-	def set_LogicalExp(self,LogicalExp):
-		self.add_query_param('LogicalExp',LogicalExp)
-
-	def get_CurrentPage(self):
+	def set_LogicalExp(self, LogicalExp):  # String
+		self.add_query_param('LogicalExp', LogicalExp)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_MachineTypes(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
-
-	def get_NoGroupTrace(self):
+	def set_MachineTypes(self, MachineTypes):  # String
+		self.add_query_param('MachineTypes', MachineTypes)
+	def get_NoGroupTrace(self): # Boolean
 		return self.get_query_params().get('NoGroupTrace')
 
-	def set_NoGroupTrace(self,NoGroupTrace):
-		self.add_query_param('NoGroupTrace',NoGroupTrace)
+	def set_NoGroupTrace(self, NoGroupTrace):  # Boolean
+		self.add_query_param('NoGroupTrace', NoGroupTrace)

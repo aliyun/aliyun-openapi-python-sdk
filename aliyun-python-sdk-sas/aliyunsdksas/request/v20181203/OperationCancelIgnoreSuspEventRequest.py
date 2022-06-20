@@ -20,19 +20,20 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class GetHoneypotNodeRequest(RpcRequest):
+class OperationCancelIgnoreSuspEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetHoneypotNode')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperationCancelIgnoreSuspEvent')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SecurityEventIdss(self): # RepeatList
+		return self.get_query_params().get('SecurityEventIds')
 
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_SecurityEventIdss(self, SecurityEventIds):  # RepeatList
+		for depth1 in range(len(SecurityEventIds)):
+			self.add_query_param('SecurityEventIds.' + str(depth1 + 1), SecurityEventIds[depth1])

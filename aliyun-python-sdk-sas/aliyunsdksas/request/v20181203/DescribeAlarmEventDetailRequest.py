@@ -25,32 +25,29 @@ class DescribeAlarmEventDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlarmUniqueInfo(self):
+	def get_AlarmUniqueInfo(self): # String
 		return self.get_query_params().get('AlarmUniqueInfo')
 
-	def set_AlarmUniqueInfo(self,AlarmUniqueInfo):
-		self.add_query_param('AlarmUniqueInfo',AlarmUniqueInfo)
-
-	def get_SourceIp(self):
+	def set_AlarmUniqueInfo(self, AlarmUniqueInfo):  # String
+		self.add_query_param('AlarmUniqueInfo', AlarmUniqueInfo)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_From(self): # String
 		return self.get_query_params().get('From')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Lang(self):
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

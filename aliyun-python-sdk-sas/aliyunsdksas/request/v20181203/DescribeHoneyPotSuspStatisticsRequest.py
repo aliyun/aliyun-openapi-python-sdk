@@ -25,26 +25,24 @@ class DescribeHoneyPotSuspStatisticsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeHoneyPotSuspStatistics')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StatisticsDays(self):
+	def get_StatisticsDays(self): # Integer
 		return self.get_query_params().get('StatisticsDays')
 
-	def set_StatisticsDays(self,StatisticsDays):
-		self.add_query_param('StatisticsDays',StatisticsDays)
-
-	def get_StatisticsKeyType(self):
+	def set_StatisticsDays(self, StatisticsDays):  # Integer
+		self.add_query_param('StatisticsDays', StatisticsDays)
+	def get_StatisticsKeyType(self): # String
 		return self.get_query_params().get('StatisticsKeyType')
 
-	def set_StatisticsKeyType(self,StatisticsKeyType):
-		self.add_query_param('StatisticsKeyType',StatisticsKeyType)
-
-	def get_From(self):
+	def set_StatisticsKeyType(self, StatisticsKeyType):  # String
+		self.add_query_param('StatisticsKeyType', StatisticsKeyType)
+	def get_From(self): # String
 		return self.get_query_params().get('From')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)

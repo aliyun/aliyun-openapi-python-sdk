@@ -25,32 +25,29 @@ class ModifyOperateVulRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyOperateVul')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Reason(self):
+	def get_Reason(self): # String
 		return self.get_query_params().get('Reason')
 
-	def set_Reason(self,Reason):
-		self.add_query_param('Reason',Reason)
-
-	def get_Type(self):
+	def set_Reason(self, Reason):  # String
+		self.add_query_param('Reason', Reason)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Info(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Info(self): # String
 		return self.get_query_params().get('Info')
 
-	def set_Info(self,Info):
-		self.add_query_param('Info',Info)
-
-	def get_OperateType(self):
+	def set_Info(self, Info):  # String
+		self.add_query_param('Info', Info)
+	def get_OperateType(self): # String
 		return self.get_query_params().get('OperateType')
 
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
+	def set_OperateType(self, OperateType):  # String
+		self.add_query_param('OperateType', OperateType)

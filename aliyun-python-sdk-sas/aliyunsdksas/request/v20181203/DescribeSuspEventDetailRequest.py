@@ -25,32 +25,29 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceIp(self):
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_From(self): # String
 		return self.get_query_params().get('From')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Lang(self):
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_SuspiciousEventId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_SuspiciousEventId(self): # Integer
 		return self.get_query_params().get('SuspiciousEventId')
 
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
+	def set_SuspiciousEventId(self, SuspiciousEventId):  # Integer
+		self.add_query_param('SuspiciousEventId', SuspiciousEventId)

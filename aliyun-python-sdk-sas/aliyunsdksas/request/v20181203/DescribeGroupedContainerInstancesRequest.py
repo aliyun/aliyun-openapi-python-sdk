@@ -25,44 +25,39 @@ class DescribeGroupedContainerInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedContainerInstances')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Criteria(self):
+	def get_Criteria(self): # String
 		return self.get_query_params().get('Criteria')
 
-	def set_Criteria(self,Criteria):
-		self.add_query_param('Criteria',Criteria)
-
-	def get_GroupField(self):
+	def set_Criteria(self, Criteria):  # String
+		self.add_query_param('Criteria', Criteria)
+	def get_GroupField(self): # String
 		return self.get_query_params().get('GroupField')
 
-	def set_GroupField(self,GroupField):
-		self.add_query_param('GroupField',GroupField)
-
-	def get_PageSize(self):
+	def set_GroupField(self, GroupField):  # String
+		self.add_query_param('GroupField', GroupField)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_LogicalExp(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_LogicalExp(self): # String
 		return self.get_query_params().get('LogicalExp')
 
-	def set_LogicalExp(self,LogicalExp):
-		self.add_query_param('LogicalExp',LogicalExp)
-
-	def get_FieldValue(self):
+	def set_LogicalExp(self, LogicalExp):  # String
+		self.add_query_param('LogicalExp', LogicalExp)
+	def get_FieldValue(self): # String
 		return self.get_query_params().get('FieldValue')
 
-	def set_FieldValue(self,FieldValue):
-		self.add_query_param('FieldValue',FieldValue)
-
-	def get_CurrentPage(self):
+	def set_FieldValue(self, FieldValue):  # String
+		self.add_query_param('FieldValue', FieldValue)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeServiceLinkedRoleStatusRequest(RpcRequest):
+class CreateSuspEventNoteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeServiceLinkedRoleStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateSuspEventNote')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,13 @@ class DescribeServiceLinkedRoleStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_EventId(self): # Long
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self, EventId):  # Long
+		self.add_query_param('EventId', EventId)
+	def get_Note(self): # String
+		return self.get_query_params().get('Note')
+
+	def set_Note(self, Note):  # String
+		self.add_query_param('Note', Note)

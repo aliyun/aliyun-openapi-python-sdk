@@ -25,50 +25,44 @@ class DescribeGroupedInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedInstances')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupField(self):
+	def get_GroupField(self): # String
 		return self.get_query_params().get('GroupField')
 
-	def set_GroupField(self,GroupField):
-		self.add_query_param('GroupField',GroupField)
-
-	def get_NoPage(self):
+	def set_GroupField(self, GroupField):  # String
+		self.add_query_param('GroupField', GroupField)
+	def get_NoPage(self): # Boolean
 		return self.get_query_params().get('NoPage')
 
-	def set_NoPage(self,NoPage):
-		self.add_query_param('NoPage',NoPage)
-
-	def get_PageSize(self):
+	def set_NoPage(self, NoPage):  # Boolean
+		self.add_query_param('NoPage', NoPage)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_FieldValue(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_FieldValue(self): # String
 		return self.get_query_params().get('FieldValue')
 
-	def set_FieldValue(self,FieldValue):
-		self.add_query_param('FieldValue',FieldValue)
-
-	def get_CurrentPage(self):
+	def set_FieldValue(self, FieldValue):  # String
+		self.add_query_param('FieldValue', FieldValue)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_MachineTypes(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
+	def set_MachineTypes(self, MachineTypes):  # String
+		self.add_query_param('MachineTypes', MachineTypes)

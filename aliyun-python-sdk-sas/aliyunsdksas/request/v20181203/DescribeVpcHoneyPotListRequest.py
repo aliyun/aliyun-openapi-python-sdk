@@ -25,44 +25,39 @@ class DescribeVpcHoneyPotListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVpcHoneyPotList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VpcName(self):
+	def get_VpcName(self): # String
 		return self.get_query_params().get('VpcName')
 
-	def set_VpcName(self,VpcName):
-		self.add_query_param('VpcName',VpcName)
-
-	def get_PageSize(self):
+	def set_VpcName(self, VpcName):  # String
+		self.add_query_param('VpcName', VpcName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_HoneyPotExistence(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_HoneyPotExistence(self): # Boolean
 		return self.get_query_params().get('HoneyPotExistence')
 
-	def set_HoneyPotExistence(self,HoneyPotExistence):
-		self.add_query_param('HoneyPotExistence',HoneyPotExistence)
-
-	def get_VpcRegionId(self):
+	def set_HoneyPotExistence(self, HoneyPotExistence):  # Boolean
+		self.add_query_param('HoneyPotExistence', HoneyPotExistence)
+	def get_VpcRegionId(self): # String
 		return self.get_query_params().get('VpcRegionId')
 
-	def set_VpcRegionId(self,VpcRegionId):
-		self.add_query_param('VpcRegionId',VpcRegionId)
-
-	def get_CurrentPage(self):
+	def set_VpcRegionId(self, VpcRegionId):  # String
+		self.add_query_param('VpcRegionId', VpcRegionId)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_VpcId(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

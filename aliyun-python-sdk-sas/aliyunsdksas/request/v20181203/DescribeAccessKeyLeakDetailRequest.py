@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeServiceLinkedRoleStatusRequest(RpcRequest):
+class DescribeAccessKeyLeakDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeServiceLinkedRoleStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAccessKeyLeakDetail')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class DescribeServiceLinkedRoleStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

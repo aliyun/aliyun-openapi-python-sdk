@@ -25,56 +25,49 @@ class DescribePropertyPortDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyPortDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Remark(self):
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_Uuid(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
-	def get_BindIp(self):
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)
+	def get_BindIp(self): # String
 		return self.get_query_params().get('BindIp')
 
-	def set_BindIp(self,BindIp):
-		self.add_query_param('BindIp',BindIp)
-
-	def get_PageSize(self):
+	def set_BindIp(self, BindIp):  # String
+		self.add_query_param('BindIp', BindIp)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Extend(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Extend(self): # String
 		return self.get_query_params().get('Extend')
 
-	def set_Extend(self,Extend):
-		self.add_query_param('Extend',Extend)
-
-	def get_Port(self):
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
+	def get_Port(self): # String
 		return self.get_query_params().get('Port')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_ProcName(self):
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)
+	def get_ProcName(self): # String
 		return self.get_query_params().get('ProcName')
 
-	def set_ProcName(self,ProcName):
-		self.add_query_param('ProcName',ProcName)
+	def set_ProcName(self, ProcName):  # String
+		self.add_query_param('ProcName', ProcName)

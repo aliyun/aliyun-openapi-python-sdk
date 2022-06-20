@@ -25,46 +25,40 @@ class HandleSecurityEventsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'HandleSecurityEvents')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MarkMissParam(self):
+	def get_MarkMissParam(self): # String
 		return self.get_query_params().get('MarkMissParam')
 
-	def set_MarkMissParam(self,MarkMissParam):
-		self.add_query_param('MarkMissParam',MarkMissParam)
-
-	def get_SecurityEventIdss(self):
+	def set_MarkMissParam(self, MarkMissParam):  # String
+		self.add_query_param('MarkMissParam', MarkMissParam)
+	def get_SecurityEventIdss(self): # RepeatList
 		return self.get_query_params().get('SecurityEventIds')
 
-	def set_SecurityEventIdss(self, SecurityEventIdss):
-		for depth1 in range(len(SecurityEventIdss)):
-			if SecurityEventIdss[depth1] is not None:
-				self.add_query_param('SecurityEventIds.' + str(depth1 + 1) , SecurityEventIdss[depth1])
-
-	def get_SourceIp(self):
+	def set_SecurityEventIdss(self, SecurityEventIds):  # RepeatList
+		for depth1 in range(len(SecurityEventIds)):
+			self.add_query_param('SecurityEventIds.' + str(depth1 + 1), SecurityEventIds[depth1])
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_OperationCode(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_OperationCode(self): # String
 		return self.get_query_params().get('OperationCode')
 
-	def set_OperationCode(self,OperationCode):
-		self.add_query_param('OperationCode',OperationCode)
-
-	def get_OperationParams(self):
+	def set_OperationCode(self, OperationCode):  # String
+		self.add_query_param('OperationCode', OperationCode)
+	def get_OperationParams(self): # String
 		return self.get_query_params().get('OperationParams')
 
-	def set_OperationParams(self,OperationParams):
-		self.add_query_param('OperationParams',OperationParams)
-
-	def get_MarkBatch(self):
+	def set_OperationParams(self, OperationParams):  # String
+		self.add_query_param('OperationParams', OperationParams)
+	def get_MarkBatch(self): # String
 		return self.get_query_params().get('MarkBatch')
 
-	def set_MarkBatch(self,MarkBatch):
-		self.add_query_param('MarkBatch',MarkBatch)
+	def set_MarkBatch(self, MarkBatch):  # String
+		self.add_query_param('MarkBatch', MarkBatch)

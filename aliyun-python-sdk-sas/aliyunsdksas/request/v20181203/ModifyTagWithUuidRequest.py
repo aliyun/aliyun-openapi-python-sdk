@@ -25,32 +25,29 @@ class ModifyTagWithUuidRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyTagWithUuid')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagId(self):
+	def get_TagId(self): # String
 		return self.get_query_params().get('TagId')
 
-	def set_TagId(self,TagId):
-		self.add_query_param('TagId',TagId)
-
-	def get_MachineTypes(self):
+	def set_TagId(self, TagId):  # String
+		self.add_query_param('TagId', TagId)
+	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
-
-	def get_TagList(self):
+	def set_MachineTypes(self, MachineTypes):  # String
+		self.add_query_param('MachineTypes', MachineTypes)
+	def get_TagList(self): # String
 		return self.get_query_params().get('TagList')
 
-	def set_TagList(self,TagList):
-		self.add_query_param('TagList',TagList)
-
-	def get_UuidList(self):
+	def set_TagList(self, TagList):  # String
+		self.add_query_param('TagList', TagList)
+	def get_UuidList(self): # String
 		return self.get_query_params().get('UuidList')
 
-	def set_UuidList(self,UuidList):
-		self.add_query_param('UuidList',UuidList)
+	def set_UuidList(self, UuidList):  # String
+		self.add_query_param('UuidList', UuidList)

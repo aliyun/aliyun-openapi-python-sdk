@@ -25,44 +25,39 @@ class IgnoreHcCheckWarningsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'IgnoreHcCheckWarnings')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Reason(self):
+	def get_Reason(self): # String
 		return self.get_query_params().get('Reason')
 
-	def set_Reason(self,Reason):
-		self.add_query_param('Reason',Reason)
-
-	def get_CheckIds(self):
+	def set_Reason(self, Reason):  # String
+		self.add_query_param('Reason', Reason)
+	def get_CheckIds(self): # String
 		return self.get_query_params().get('CheckIds')
 
-	def set_CheckIds(self,CheckIds):
-		self.add_query_param('CheckIds',CheckIds)
-
-	def get_RiskId(self):
+	def set_CheckIds(self, CheckIds):  # String
+		self.add_query_param('CheckIds', CheckIds)
+	def get_RiskId(self): # String
 		return self.get_query_params().get('RiskId')
 
-	def set_RiskId(self,RiskId):
-		self.add_query_param('RiskId',RiskId)
-
-	def get_Type(self):
+	def set_RiskId(self, RiskId):  # String
+		self.add_query_param('RiskId', RiskId)
+	def get_Type(self): # Long
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_SourceIp(self):
+	def set_Type(self, Type):  # Long
+		self.add_query_param('Type', Type)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_CheckWarningIds(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_CheckWarningIds(self): # String
 		return self.get_query_params().get('CheckWarningIds')
 
-	def set_CheckWarningIds(self,CheckWarningIds):
-		self.add_query_param('CheckWarningIds',CheckWarningIds)
+	def set_CheckWarningIds(self, CheckWarningIds):  # String
+		self.add_query_param('CheckWarningIds', CheckWarningIds)

@@ -25,14 +25,14 @@ class RefreshAssetsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RefreshAssets')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AssetType(self):
+	def get_AssetType(self): # String
 		return self.get_query_params().get('AssetType')
 
-	def set_AssetType(self,AssetType):
-		self.add_query_param('AssetType',AssetType)
+	def set_AssetType(self, AssetType):  # String
+		self.add_query_param('AssetType', AssetType)

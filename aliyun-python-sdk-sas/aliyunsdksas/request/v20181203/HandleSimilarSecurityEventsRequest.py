@@ -25,44 +25,39 @@ class HandleSimilarSecurityEventsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'HandleSimilarSecurityEvents')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MarkMissParam(self):
+	def get_MarkMissParam(self): # String
 		return self.get_query_params().get('MarkMissParam')
 
-	def set_MarkMissParam(self,MarkMissParam):
-		self.add_query_param('MarkMissParam',MarkMissParam)
-
-	def get_ResourceOwnerId(self):
+	def set_MarkMissParam(self, MarkMissParam):  # String
+		self.add_query_param('MarkMissParam', MarkMissParam)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SourceIp(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_OperationCode(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_OperationCode(self): # String
 		return self.get_query_params().get('OperationCode')
 
-	def set_OperationCode(self,OperationCode):
-		self.add_query_param('OperationCode',OperationCode)
-
-	def get_TaskId(self):
+	def set_OperationCode(self, OperationCode):  # String
+		self.add_query_param('OperationCode', OperationCode)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_OperationParams(self):
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)
+	def get_OperationParams(self): # String
 		return self.get_query_params().get('OperationParams')
 
-	def set_OperationParams(self,OperationParams):
-		self.add_query_param('OperationParams',OperationParams)
+	def set_OperationParams(self, OperationParams):  # String
+		self.add_query_param('OperationParams', OperationParams)

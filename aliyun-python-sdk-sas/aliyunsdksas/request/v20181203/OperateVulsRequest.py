@@ -25,36 +25,31 @@ class OperateVulsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateVuls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_VulNamess(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_VulNamess(self): # RepeatList
 		return self.get_query_params().get('VulNames')
 
-	def set_VulNamess(self, VulNamess):
-		for depth1 in range(len(VulNamess)):
-			if VulNamess[depth1] is not None:
-				self.add_query_param('VulNames.' + str(depth1 + 1) , VulNamess[depth1])
-
-	def get_OperateType(self):
+	def set_VulNamess(self, VulNames):  # RepeatList
+		for depth1 in range(len(VulNames)):
+			self.add_query_param('VulNames.' + str(depth1 + 1), VulNames[depth1])
+	def get_OperateType(self): # String
 		return self.get_query_params().get('OperateType')
 
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
-
-	def get_Uuidss(self):
+	def set_OperateType(self, OperateType):  # String
+		self.add_query_param('OperateType', OperateType)
+	def get_Uuidss(self): # RepeatList
 		return self.get_query_params().get('Uuids')
 
-	def set_Uuidss(self, Uuidss):
-		for depth1 in range(len(Uuidss)):
-			if Uuidss[depth1] is not None:
-				self.add_query_param('Uuids.' + str(depth1 + 1) , Uuidss[depth1])
+	def set_Uuidss(self, Uuids):  # RepeatList
+		for depth1 in range(len(Uuids)):
+			self.add_query_param('Uuids.' + str(depth1 + 1), Uuids[depth1])

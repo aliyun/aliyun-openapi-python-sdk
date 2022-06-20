@@ -25,20 +25,19 @@ class ModifyPropertyScheduleConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyPropertyScheduleConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ScheduleTime(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_ScheduleTime(self): # String
 		return self.get_query_params().get('ScheduleTime')
 
-	def set_ScheduleTime(self,ScheduleTime):
-		self.add_query_param('ScheduleTime',ScheduleTime)
+	def set_ScheduleTime(self, ScheduleTime):  # String
+		self.add_query_param('ScheduleTime', ScheduleTime)

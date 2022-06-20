@@ -25,50 +25,44 @@ class DescribePropertyCronDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Remark(self):
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_Source(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_Uuid(self):
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
-	def get_PageSize(self):
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Extend(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Extend(self): # String
 		return self.get_query_params().get('Extend')
 
-	def set_Extend(self,Extend):
-		self.add_query_param('Extend',Extend)
-
-	def get_User(self):
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
+	def get_User(self): # String
 		return self.get_query_params().get('User')
 
-	def set_User(self,User):
-		self.add_query_param('User',User)
+	def set_User(self, User):  # String
+		self.add_query_param('User', User)

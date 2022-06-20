@@ -25,44 +25,44 @@ class DescribeEmgVulItemRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeEmgVulItem')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScanType(self):
+	def get_ScanType(self): # String
 		return self.get_query_params().get('ScanType')
 
-	def set_ScanType(self,ScanType):
-		self.add_query_param('ScanType',ScanType)
+	def set_ScanType(self, ScanType):  # String
+		self.add_query_param('ScanType', ScanType)
+	def get_CheckType(self): # Integer
+		return self.get_query_params().get('CheckType')
 
-	def get_PageSize(self):
+	def set_CheckType(self, CheckType):  # Integer
+		self.add_query_param('CheckType', CheckType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_CurrentPage(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_VulName(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_VulName(self): # String
 		return self.get_query_params().get('VulName')
 
-	def set_VulName(self,VulName):
-		self.add_query_param('VulName',VulName)
-
-	def get_RiskStatus(self):
+	def set_VulName(self, VulName):  # String
+		self.add_query_param('VulName', VulName)
+	def get_RiskStatus(self): # String
 		return self.get_query_params().get('RiskStatus')
 
-	def set_RiskStatus(self,RiskStatus):
-		self.add_query_param('RiskStatus',RiskStatus)
+	def set_RiskStatus(self, RiskStatus):  # String
+		self.add_query_param('RiskStatus', RiskStatus)

@@ -25,68 +25,59 @@ class DescribePropertySoftwareDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertySoftwareDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SoftwareVersion(self):
+	def get_SoftwareVersion(self): # String
 		return self.get_query_params().get('SoftwareVersion')
 
-	def set_SoftwareVersion(self,SoftwareVersion):
-		self.add_query_param('SoftwareVersion',SoftwareVersion)
-
-	def get_Remark(self):
+	def set_SoftwareVersion(self, SoftwareVersion):  # String
+		self.add_query_param('SoftwareVersion', SoftwareVersion)
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_Uuid(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
-	def get_Path(self):
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_InstallTimeStart(self):
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_InstallTimeStart(self): # Long
 		return self.get_query_params().get('InstallTimeStart')
 
-	def set_InstallTimeStart(self,InstallTimeStart):
-		self.add_query_param('InstallTimeStart',InstallTimeStart)
-
-	def get_PageSize(self):
+	def set_InstallTimeStart(self, InstallTimeStart):  # Long
+		self.add_query_param('InstallTimeStart', InstallTimeStart)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstallTimeEnd(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_InstallTimeEnd(self): # Long
 		return self.get_query_params().get('InstallTimeEnd')
 
-	def set_InstallTimeEnd(self,InstallTimeEnd):
-		self.add_query_param('InstallTimeEnd',InstallTimeEnd)
-
-	def get_CurrentPage(self):
+	def set_InstallTimeEnd(self, InstallTimeEnd):  # Long
+		self.add_query_param('InstallTimeEnd', InstallTimeEnd)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Extend(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Extend(self): # String
 		return self.get_query_params().get('Extend')
 
-	def set_Extend(self,Extend):
-		self.add_query_param('Extend',Extend)
-
-	def get_Name(self):
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

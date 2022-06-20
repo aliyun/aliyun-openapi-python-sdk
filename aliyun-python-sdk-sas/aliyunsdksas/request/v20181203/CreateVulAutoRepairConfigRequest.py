@@ -25,30 +25,28 @@ class CreateVulAutoRepairConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateVulAutoRepairConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Reason(self):
+	def get_Reason(self): # String
 		return self.get_query_params().get('Reason')
 
-	def set_Reason(self,Reason):
-		self.add_query_param('Reason',Reason)
-
-	def get_Type(self):
+	def set_Reason(self, Reason):  # String
+		self.add_query_param('Reason', Reason)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_VulAutoRepairConfigLists(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_VulAutoRepairConfigLists(self): # RepeatList
 		return self.get_query_params().get('VulAutoRepairConfigList')
 
-	def set_VulAutoRepairConfigLists(self, VulAutoRepairConfigLists):
-		for depth1 in range(len(VulAutoRepairConfigLists)):
-			if VulAutoRepairConfigLists[depth1].get('AliasName') is not None:
-				self.add_query_param('VulAutoRepairConfigList.' + str(depth1 + 1) + '.AliasName', VulAutoRepairConfigLists[depth1].get('AliasName'))
-			if VulAutoRepairConfigLists[depth1].get('Name') is not None:
-				self.add_query_param('VulAutoRepairConfigList.' + str(depth1 + 1) + '.Name', VulAutoRepairConfigLists[depth1].get('Name'))
+	def set_VulAutoRepairConfigLists(self, VulAutoRepairConfigList):  # RepeatList
+		for depth1 in range(len(VulAutoRepairConfigList)):
+			if VulAutoRepairConfigList[depth1].get('AliasName') is not None:
+				self.add_query_param('VulAutoRepairConfigList.' + str(depth1 + 1) + '.AliasName', VulAutoRepairConfigList[depth1].get('AliasName'))
+			if VulAutoRepairConfigList[depth1].get('Name') is not None:
+				self.add_query_param('VulAutoRepairConfigList.' + str(depth1 + 1) + '.Name', VulAutoRepairConfigList[depth1].get('Name'))

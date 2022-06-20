@@ -25,28 +25,25 @@ class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstanceAntiBruteForceRules')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SourceIp(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_UuidLists(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_UuidLists(self): # RepeatList
 		return self.get_query_params().get('UuidList')
 
-	def set_UuidLists(self, UuidLists):
-		for depth1 in range(len(UuidLists)):
-			if UuidLists[depth1] is not None:
-				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
+	def set_UuidLists(self, UuidList):  # RepeatList
+		for depth1 in range(len(UuidList)):
+			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])

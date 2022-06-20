@@ -25,14 +25,14 @@ class DescribeVulExportInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulExportInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExportId(self):
+	def get_ExportId(self): # Long
 		return self.get_query_params().get('ExportId')
 
-	def set_ExportId(self,ExportId):
-		self.add_query_param('ExportId',ExportId)
+	def set_ExportId(self, ExportId):  # Long
+		self.add_query_param('ExportId', ExportId)

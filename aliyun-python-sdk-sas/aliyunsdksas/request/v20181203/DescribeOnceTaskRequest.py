@@ -20,55 +20,44 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class RetryInstallProbeRequest(RpcRequest):
+class DescribeOnceTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RetryInstallProbe')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeOnceTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RootTaskId(self): # String
+		return self.get_query_params().get('RootTaskId')
 
-	def get_ProbeId(self):
-		return self.get_query_params().get('ProbeId')
+	def set_RootTaskId(self, RootTaskId):  # String
+		self.add_query_param('RootTaskId', RootTaskId)
+	def get_EndTimeQuery(self): # Long
+		return self.get_query_params().get('EndTimeQuery')
 
-	def set_ProbeId(self,ProbeId):
-		self.add_query_param('ProbeId',ProbeId)
-
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
-
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
-	def get_ProbeVersion(self):
-		return self.get_query_params().get('ProbeVersion')
-
-	def set_ProbeVersion(self,ProbeVersion):
-		self.add_query_param('ProbeVersion',ProbeVersion)
-
-	def get_PageSize(self):
+	def set_EndTimeQuery(self, EndTimeQuery):  # Long
+		self.add_query_param('EndTimeQuery', EndTimeQuery)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_StartTimeQuery(self): # Long
+		return self.get_query_params().get('StartTimeQuery')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_CurrentPage(self):
+	def set_StartTimeQuery(self, StartTimeQuery):  # Long
+		self.add_query_param('StartTimeQuery', StartTimeQuery)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

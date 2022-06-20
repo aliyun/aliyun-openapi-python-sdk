@@ -25,20 +25,19 @@ class OperateAgentClientInstallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceIds(self):
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_Uuids(self):
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 
-	def set_Uuids(self,Uuids):
-		self.add_query_param('Uuids',Uuids)
+	def set_Uuids(self, Uuids):  # String
+		self.add_query_param('Uuids', Uuids)

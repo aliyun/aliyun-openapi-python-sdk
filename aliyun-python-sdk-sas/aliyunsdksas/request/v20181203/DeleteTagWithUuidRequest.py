@@ -25,20 +25,19 @@ class DeleteTagWithUuidRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteTagWithUuid')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagName(self):
+	def get_TagName(self): # String
 		return self.get_query_params().get('TagName')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
-	def get_UuidList(self):
+	def set_TagName(self, TagName):  # String
+		self.add_query_param('TagName', TagName)
+	def get_UuidList(self): # String
 		return self.get_query_params().get('UuidList')
 
-	def set_UuidList(self,UuidList):
-		self.add_query_param('UuidList',UuidList)
+	def set_UuidList(self, UuidList):  # String
+		self.add_query_param('UuidList', UuidList)

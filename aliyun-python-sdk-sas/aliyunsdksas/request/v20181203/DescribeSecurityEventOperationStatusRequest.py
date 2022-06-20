@@ -25,34 +25,30 @@ class DescribeSecurityEventOperationStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSecurityEventOperationStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SecurityEventIdss(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecurityEventIdss(self): # RepeatList
 		return self.get_query_params().get('SecurityEventIds')
 
-	def set_SecurityEventIdss(self, SecurityEventIdss):
-		for depth1 in range(len(SecurityEventIdss)):
-			if SecurityEventIdss[depth1] is not None:
-				self.add_query_param('SecurityEventIds.' + str(depth1 + 1) , SecurityEventIdss[depth1])
-
-	def get_SourceIp(self):
+	def set_SecurityEventIdss(self, SecurityEventIds):  # RepeatList
+		for depth1 in range(len(SecurityEventIds)):
+			self.add_query_param('SecurityEventIds.' + str(depth1 + 1), SecurityEventIds[depth1])
+	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_TaskId(self):
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)

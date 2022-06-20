@@ -25,22 +25,20 @@ class CheckQuaraFileIdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CheckQuaraFileId')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QuaraFileIdss(self):
+	def get_QuaraFileIdss(self): # RepeatList
 		return self.get_query_params().get('QuaraFileIds')
 
-	def set_QuaraFileIdss(self, QuaraFileIdss):
-		for depth1 in range(len(QuaraFileIdss)):
-			if QuaraFileIdss[depth1] is not None:
-				self.add_query_param('QuaraFileIds.' + str(depth1 + 1) , QuaraFileIdss[depth1])
-
-	def get_Uuid(self):
+	def set_QuaraFileIdss(self, QuaraFileIds):  # RepeatList
+		for depth1 in range(len(QuaraFileIds)):
+			self.add_query_param('QuaraFileIds.' + str(depth1 + 1), QuaraFileIds[depth1])
+	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)

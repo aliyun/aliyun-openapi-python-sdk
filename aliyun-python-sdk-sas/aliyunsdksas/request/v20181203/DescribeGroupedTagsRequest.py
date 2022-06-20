@@ -25,14 +25,14 @@ class DescribeGroupedTagsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedTags')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MachineTypes(self):
+	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
+	def set_MachineTypes(self, MachineTypes):  # String
+		self.add_query_param('MachineTypes', MachineTypes)

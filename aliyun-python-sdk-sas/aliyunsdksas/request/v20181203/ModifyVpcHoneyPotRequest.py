@@ -25,20 +25,19 @@ class ModifyVpcHoneyPotRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyVpcHoneyPot')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HoneyPotAction(self):
+	def get_HoneyPotAction(self): # String
 		return self.get_query_params().get('HoneyPotAction')
 
-	def set_HoneyPotAction(self,HoneyPotAction):
-		self.add_query_param('HoneyPotAction',HoneyPotAction)
-
-	def get_VpcId(self):
+	def set_HoneyPotAction(self, HoneyPotAction):  # String
+		self.add_query_param('HoneyPotAction', HoneyPotAction)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

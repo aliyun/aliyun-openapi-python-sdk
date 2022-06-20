@@ -25,20 +25,19 @@ class ModifyLoginSwitchConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyLoginSwitchConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Item(self):
+	def get_Item(self): # String
 		return self.get_query_params().get('Item')
 
-	def set_Item(self,Item):
-		self.add_query_param('Item',Item)
-
-	def get_Status(self):
+	def set_Item(self, Item):  # String
+		self.add_query_param('Item', Item)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

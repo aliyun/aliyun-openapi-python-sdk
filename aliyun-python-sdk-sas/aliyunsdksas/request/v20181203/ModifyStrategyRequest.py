@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeStrategyRequest(RpcRequest):
+class ModifyStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeStrategy')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStrategy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,43 @@ class DescribeStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CycleDays(self): # String
+		return self.get_query_params().get('CycleDays')
+
+	def set_CycleDays(self, CycleDays):  # String
+		self.add_query_param('CycleDays', CycleDays)
+	def get_RiskSubTypeName(self): # String
+		return self.get_query_params().get('RiskSubTypeName')
+
+	def set_RiskSubTypeName(self, RiskSubTypeName):  # String
+		self.add_query_param('RiskSubTypeName', RiskSubTypeName)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
 
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
+	def get_RiskCustomParams(self): # String
+		return self.get_query_params().get('RiskCustomParams')
+
+	def set_RiskCustomParams(self, RiskCustomParams):  # String
+		self.add_query_param('RiskCustomParams', RiskCustomParams)
 	def get_CustomType(self): # String
 		return self.get_query_params().get('CustomType')
 
 	def set_CustomType(self, CustomType):  # String
 		self.add_query_param('CustomType', CustomType)
-	def get_StrategyIds(self): # String
-		return self.get_query_params().get('StrategyIds')
+	def get_CycleStartTime(self): # String
+		return self.get_query_params().get('CycleStartTime')
 
-	def set_StrategyIds(self, StrategyIds):  # String
-		self.add_query_param('StrategyIds', StrategyIds)
+	def set_CycleStartTime(self, CycleStartTime):  # String
+		self.add_query_param('CycleStartTime', CycleStartTime)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

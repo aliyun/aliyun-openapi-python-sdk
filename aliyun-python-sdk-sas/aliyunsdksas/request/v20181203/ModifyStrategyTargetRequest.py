@@ -20,43 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ListCriteriaStrategyRequest(RpcRequest):
+class ModifyStrategyTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCriteriaStrategy')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStrategyTarget')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
 
-	def get_ImageName(self):
-		return self.get_query_params().get('ImageName')
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
 
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_Target(self): # String
+		return self.get_query_params().get('Target')
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def set_Target(self, Target):  # String
+		self.add_query_param('Target', Target)
+	def get_Config(self): # String
+		return self.get_query_params().get('Config')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Label(self):
-		return self.get_query_params().get('Label')
-
-	def set_Label(self,Label):
-		self.add_query_param('Label',Label)
-
-	def get_StrategyName(self):
-		return self.get_query_params().get('StrategyName')
-
-	def set_StrategyName(self,StrategyName):
-		self.add_query_param('StrategyName',StrategyName)
-
-	def get_Namespace(self):
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
+	def set_Config(self, Config):  # String
+		self.add_query_param('Config', Config)

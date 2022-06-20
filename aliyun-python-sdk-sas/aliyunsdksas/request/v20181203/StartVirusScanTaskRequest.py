@@ -25,14 +25,14 @@ class StartVirusScanTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartVirusScanTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetInfo(self):
+	def get_TargetInfo(self): # String
 		return self.get_query_params().get('TargetInfo')
 
-	def set_TargetInfo(self,TargetInfo):
-		self.add_query_param('TargetInfo',TargetInfo)
+	def set_TargetInfo(self, TargetInfo):  # String
+		self.add_query_param('TargetInfo', TargetInfo)
