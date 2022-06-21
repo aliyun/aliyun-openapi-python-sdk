@@ -46,49 +46,49 @@ class UpdateRulesAttributeRequest(RpcRequest):
 					if value2.get('MethodConfig') is not None:
 						if value2.get('MethodConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('MethodConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.MethodConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.MethodConfig.Values.' + str(index3 + 1), value3)
 					if value2.get('SourceIpConfig') is not None:
 						if value2.get('SourceIpConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('SourceIpConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.SourceIpConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.SourceIpConfig.Values.' + str(index3 + 1), value3)
 					if value2.get('HostConfig') is not None:
 						if value2.get('HostConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('HostConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.HostConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.HostConfig.Values.' + str(index3 + 1), value3)
 					if value2.get('QueryStringConfig') is not None:
 						if value2.get('QueryStringConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('QueryStringConfig').get('Values')):
 								if value3.get('Value') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.QueryStringConfig.Values' + str(index3 + 1) + '.Value', value3.get('Value'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.QueryStringConfig.Values.' + str(index3 + 1) + '.Value', value3.get('Value'))
 								if value3.get('Key') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.QueryStringConfig.Values' + str(index3 + 1) + '.Key', value3.get('Key'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.QueryStringConfig.Values.' + str(index3 + 1) + '.Key', value3.get('Key'))
 					if value2.get('ResponseStatusCodeConfig') is not None:
 						if value2.get('ResponseStatusCodeConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('ResponseStatusCodeConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseStatusCodeConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseStatusCodeConfig.Values.' + str(index3 + 1), value3)
 					if value2.get('PathConfig') is not None:
 						if value2.get('PathConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('PathConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.PathConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.PathConfig.Values.' + str(index3 + 1), value3)
 					if value2.get('CookieConfig') is not None:
 						if value2.get('CookieConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('CookieConfig').get('Values')):
 								if value3.get('Value') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.CookieConfig.Values' + str(index3 + 1) + '.Value', value3.get('Value'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.CookieConfig.Values.' + str(index3 + 1) + '.Value', value3.get('Value'))
 								if value3.get('Key') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.CookieConfig.Values' + str(index3 + 1) + '.Key', value3.get('Key'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.CookieConfig.Values.' + str(index3 + 1) + '.Key', value3.get('Key'))
 					if value2.get('Type') is not None:
 						self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.Type', value2.get('Type'))
 					if value2.get('HeaderConfig') is not None:
 						if value2.get('HeaderConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('HeaderConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.HeaderConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.HeaderConfig.Values.' + str(index3 + 1), value3)
 						if value2.get('HeaderConfig').get('Key') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.HeaderConfig.Key', value2.get('HeaderConfig').get('Key'))
 					if value2.get('ResponseHeaderConfig') is not None:
 						if value2.get('ResponseHeaderConfig').get('Values') is not None:
 							for index3, value3 in enumerate(value2.get('ResponseHeaderConfig').get('Values')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseHeaderConfig.Values' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseHeaderConfig.Values.' + str(index3 + 1), value3)
 						if value2.get('ResponseHeaderConfig').get('Key') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseHeaderConfig.Key', value2.get('ResponseHeaderConfig').get('Key'))
 			if value1.get('RuleName') is not None:
@@ -111,7 +111,7 @@ class UpdateRulesAttributeRequest(RpcRequest):
 							if value2.get('TrafficMirrorConfig').get('MirrorGroupConfig').get('ServerGroupTuples') is not None:
 								for index3, value3 in enumerate(value2.get('TrafficMirrorConfig').get('MirrorGroupConfig').get('ServerGroupTuples')):
 									if value3.get('ServerGroupId') is not None:
-										self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples' + str(index3 + 1) + '.ServerGroupId', value3.get('ServerGroupId'))
+										self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.TrafficMirrorConfig.MirrorGroupConfig.ServerGroupTuples.' + str(index3 + 1) + '.ServerGroupId', value3.get('ServerGroupId'))
 						if value2.get('TrafficMirrorConfig').get('TargetType') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.TrafficMirrorConfig.TargetType', value2.get('TrafficMirrorConfig').get('TargetType'))
 					if value2.get('ForwardGroupConfig') is not None:
@@ -123,9 +123,9 @@ class UpdateRulesAttributeRequest(RpcRequest):
 						if value2.get('ForwardGroupConfig').get('ServerGroupTuples') is not None:
 							for index3, value3 in enumerate(value2.get('ForwardGroupConfig').get('ServerGroupTuples')):
 								if value3.get('ServerGroupId') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.ForwardGroupConfig.ServerGroupTuples' + str(index3 + 1) + '.ServerGroupId', value3.get('ServerGroupId'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.ForwardGroupConfig.ServerGroupTuples.' + str(index3 + 1) + '.ServerGroupId', value3.get('ServerGroupId'))
 								if value3.get('Weight') is not None:
-									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.ForwardGroupConfig.ServerGroupTuples' + str(index3 + 1) + '.Weight', value3.get('Weight'))
+									self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.ForwardGroupConfig.ServerGroupTuples.' + str(index3 + 1) + '.Weight', value3.get('Weight'))
 					if value2.get('RemoveHeaderConfig') is not None:
 						if value2.get('RemoveHeaderConfig').get('Key') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.RemoveHeaderConfig.Key', value2.get('RemoveHeaderConfig').get('Key'))
@@ -146,18 +146,18 @@ class UpdateRulesAttributeRequest(RpcRequest):
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowCredentials', value2.get('CorsConfig').get('AllowCredentials'))
 						if value2.get('CorsConfig').get('AllowOrigin') is not None:
 							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowOrigin')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowOrigin' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowOrigin.' + str(index3 + 1), value3)
 						if value2.get('CorsConfig').get('MaxAge') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.MaxAge', value2.get('CorsConfig').get('MaxAge'))
 						if value2.get('CorsConfig').get('AllowMethods') is not None:
 							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowMethods')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowMethods' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowMethods.' + str(index3 + 1), value3)
 						if value2.get('CorsConfig').get('AllowHeaders') is not None:
 							for index3, value3 in enumerate(value2.get('CorsConfig').get('AllowHeaders')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowHeaders' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.AllowHeaders.' + str(index3 + 1), value3)
 						if value2.get('CorsConfig').get('ExposeHeaders') is not None:
 							for index3, value3 in enumerate(value2.get('CorsConfig').get('ExposeHeaders')):
-								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.ExposeHeaders' + str(index3 + 1), value3)
+								self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.CorsConfig.ExposeHeaders.' + str(index3 + 1), value3)
 					if value2.get('RedirectConfig') is not None:
 						if value2.get('RedirectConfig').get('Path') is not None:
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleActions.' + str(index2 + 1) + '.RedirectConfig.Path', value2.get('RedirectConfig').get('Path'))

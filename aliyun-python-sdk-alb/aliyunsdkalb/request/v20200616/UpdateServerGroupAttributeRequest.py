@@ -47,7 +47,7 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 	def set_HealthCheckConfig(self, HealthCheckConfig):  # Struct
 		if HealthCheckConfig.get('HealthCheckCodes') is not None:
 			for index1, value1 in enumerate(HealthCheckConfig.get('HealthCheckCodes')):
-				self.add_query_param('HealthCheckConfig.HealthCheckCodes' + str(index1 + 1), value1)
+				self.add_query_param('HealthCheckConfig.HealthCheckCodes.' + str(index1 + 1), value1)
 		if HealthCheckConfig.get('HealthCheckEnabled') is not None:
 			self.add_query_param('HealthCheckConfig.HealthCheckEnabled', HealthCheckConfig.get('HealthCheckEnabled'))
 		if HealthCheckConfig.get('HealthCheckTimeout') is not None:
@@ -70,7 +70,7 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 			self.add_query_param('HealthCheckConfig.HealthCheckInterval', HealthCheckConfig.get('HealthCheckInterval'))
 		if HealthCheckConfig.get('HealthCheckHttpCodes') is not None:
 			for index1, value1 in enumerate(HealthCheckConfig.get('HealthCheckHttpCodes')):
-				self.add_query_param('HealthCheckConfig.HealthCheckHttpCodes' + str(index1 + 1), value1)
+				self.add_query_param('HealthCheckConfig.HealthCheckHttpCodes.' + str(index1 + 1), value1)
 		if HealthCheckConfig.get('HealthCheckHttpVersion') is not None:
 			self.add_query_param('HealthCheckConfig.HealthCheckHttpVersion', HealthCheckConfig.get('HealthCheckHttpVersion'))
 		if HealthCheckConfig.get('HealthCheckConnectPort') is not None:

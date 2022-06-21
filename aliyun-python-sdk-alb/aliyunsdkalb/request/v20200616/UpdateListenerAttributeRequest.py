@@ -68,7 +68,7 @@ class UpdateListenerAttributeRequest(RpcRequest):
 				if value1.get('ForwardGroupConfig').get('ServerGroupTuples') is not None:
 					for index2, value2 in enumerate(value1.get('ForwardGroupConfig').get('ServerGroupTuples')):
 						if value2.get('ServerGroupId') is not None:
-							self.add_query_param('DefaultActions.' + str(index1 + 1) + '.ForwardGroupConfig.ServerGroupTuples' + str(index2 + 1) + '.ServerGroupId', value2.get('ServerGroupId'))
+							self.add_query_param('DefaultActions.' + str(index1 + 1) + '.ForwardGroupConfig.ServerGroupTuples.' + str(index2 + 1) + '.ServerGroupId', value2.get('ServerGroupId'))
 			if value1.get('Type') is not None:
 				self.add_query_param('DefaultActions.' + str(index1 + 1) + '.Type', value1.get('Type'))
 	def get_DryRun(self): # Boolean

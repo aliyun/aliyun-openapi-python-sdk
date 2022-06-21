@@ -61,6 +61,11 @@ class CreateLoadBalancerRequest(RpcRequest):
 			self.add_query_param('LoadBalancerBillingConfig.InternetBandwidth', LoadBalancerBillingConfig.get('InternetBandwidth'))
 		if LoadBalancerBillingConfig.get('PayType') is not None:
 			self.add_query_param('LoadBalancerBillingConfig.PayType', LoadBalancerBillingConfig.get('PayType'))
+	def get_AddressIpVersion(self): # String
+		return self.get_query_params().get('AddressIpVersion')
+
+	def set_AddressIpVersion(self, AddressIpVersion):  # String
+		self.add_query_param('AddressIpVersion', AddressIpVersion)
 	def get_DeletionProtectionEnabled(self): # Boolean
 		return self.get_query_params().get('DeletionProtectionEnabled')
 
