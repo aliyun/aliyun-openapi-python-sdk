@@ -25,59 +25,68 @@ class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TimeInterval(self): # Integer
+
+	def get_TimeInterval(self):
 		return self.get_query_params().get('TimeInterval')
 
-	def set_TimeInterval(self, TimeInterval):  # Integer
-		self.add_query_param('TimeInterval', TimeInterval)
-	def get_OssEndpoint(self): # String
+	def set_TimeInterval(self,TimeInterval):
+		self.add_query_param('TimeInterval',TimeInterval)
+
+	def get_OssEndpoint(self):
 		return self.get_query_params().get('OssEndpoint')
 
-	def set_OssEndpoint(self, OssEndpoint):  # String
-		self.add_query_param('OssEndpoint', OssEndpoint)
-	def get_AppName(self): # String
+	def set_OssEndpoint(self,OssEndpoint):
+		self.add_query_param('OssEndpoint',OssEndpoint)
+
+	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_SecurityToken(self): # String
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_OverwriteOssObject(self): # String
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_OverwriteOssObject(self):
 		return self.get_query_params().get('OverwriteOssObject')
 
-	def set_OverwriteOssObject(self, OverwriteOssObject):  # String
-		self.add_query_param('OverwriteOssObject', OverwriteOssObject)
-	def get_OssBucket(self): # String
+	def set_OverwriteOssObject(self,OverwriteOssObject):
+		self.add_query_param('OverwriteOssObject',OverwriteOssObject)
+
+	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
 
-	def set_OssBucket(self, OssBucket):  # String
-		self.add_query_param('OssBucket', OssBucket)
-	def get_DomainName(self): # String
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_SequenceOssObject(self): # String
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_SequenceOssObject(self):
 		return self.get_query_params().get('SequenceOssObject')
 
-	def set_SequenceOssObject(self, SequenceOssObject):  # String
-		self.add_query_param('SequenceOssObject', SequenceOssObject)
-	def get_OwnerId(self): # Long
+	def set_SequenceOssObject(self,SequenceOssObject):
+		self.add_query_param('SequenceOssObject',SequenceOssObject)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Callback(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Callback(self):
 		return self.get_query_params().get('Callback')
 
-	def set_Callback(self, Callback):  # String
-		self.add_query_param('Callback', Callback)
+	def set_Callback(self,Callback):
+		self.add_query_param('Callback',Callback)

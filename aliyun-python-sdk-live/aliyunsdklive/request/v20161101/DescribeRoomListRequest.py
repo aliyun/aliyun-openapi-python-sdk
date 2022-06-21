@@ -25,59 +25,68 @@ class DescribeRoomListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeRoomList','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_AnchorId(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_AnchorId(self):
 		return self.get_query_params().get('AnchorId')
 
-	def set_AnchorId(self, AnchorId):  # String
-		self.add_query_param('AnchorId', AnchorId)
-	def get_PageNum(self): # Integer
+	def set_AnchorId(self,AnchorId):
+		self.add_query_param('AnchorId',AnchorId)
+
+	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
-	def get_RoomStatus(self): # Integer
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_RoomStatus(self):
 		return self.get_query_params().get('RoomStatus')
 
-	def set_RoomStatus(self, RoomStatus):  # Integer
-		self.add_query_param('RoomStatus', RoomStatus)
-	def get_PageSize(self): # Integer
+	def set_RoomStatus(self,RoomStatus):
+		self.add_query_param('RoomStatus',RoomStatus)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Order(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Order(self):
 		return self.get_query_params().get('Order')
 
-	def set_Order(self, Order):  # String
-		self.add_query_param('Order', Order)
-	def get_EndTime(self): # String
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_RoomId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RoomId(self):
 		return self.get_query_params().get('RoomId')
 
-	def set_RoomId(self, RoomId):  # String
-		self.add_query_param('RoomId', RoomId)
-	def get_AppId(self): # String
+	def set_RoomId(self,RoomId):
+		self.add_query_param('RoomId',RoomId)
+
+	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

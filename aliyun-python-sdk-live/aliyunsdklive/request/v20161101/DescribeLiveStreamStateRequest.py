@@ -25,29 +25,32 @@ class DescribeLiveStreamStateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamState','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppName(self): # String
+
+	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_StreamName(self): # String
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self, StreamName):  # String
-		self.add_query_param('StreamName', StreamName)
-	def get_DomainName(self): # String
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

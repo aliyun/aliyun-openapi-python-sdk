@@ -25,19 +25,20 @@ class DeleteLiveStreamWatermarkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveStreamWatermark','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OwnerId(self): # Long
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_TemplateId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TemplateId(self):
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self, TemplateId):  # String
-		self.add_query_param('TemplateId', TemplateId)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)

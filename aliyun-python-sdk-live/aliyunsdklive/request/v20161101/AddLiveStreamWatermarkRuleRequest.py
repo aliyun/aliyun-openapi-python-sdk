@@ -25,44 +25,50 @@ class AddLiveStreamWatermarkRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveStreamWatermarkRule','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Stream(self): # String
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Stream(self):
 		return self.get_query_params().get('Stream')
 
-	def set_Stream(self, Stream):  # String
-		self.add_query_param('Stream', Stream)
-	def get_App(self): # String
+	def set_Stream(self,Stream):
+		self.add_query_param('Stream',Stream)
+
+	def get_App(self):
 		return self.get_query_params().get('App')
 
-	def set_App(self, App):  # String
-		self.add_query_param('App', App)
-	def get_OwnerId(self): # Long
+	def set_App(self,App):
+		self.add_query_param('App',App)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_TemplateId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TemplateId(self):
 		return self.get_query_params().get('TemplateId')
 
-	def set_TemplateId(self, TemplateId):  # String
-		self.add_query_param('TemplateId', TemplateId)
-	def get_Domain(self): # String
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
+	def get_Domain(self):
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
-	def get_Name(self): # String
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
+
+	def get_Name(self):
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

@@ -25,24 +25,26 @@ class UpdateLiveTopLevelDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveTopLevelDomain','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TopLevelDomain(self): # String
+
+	def get_TopLevelDomain(self):
 		return self.get_query_params().get('TopLevelDomain')
 
-	def set_TopLevelDomain(self, TopLevelDomain):  # String
-		self.add_query_param('TopLevelDomain', TopLevelDomain)
-	def get_DomainName(self): # String
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_SecurityToken(self): # String
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

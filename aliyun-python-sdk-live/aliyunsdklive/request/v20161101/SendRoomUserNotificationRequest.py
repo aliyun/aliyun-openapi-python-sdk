@@ -25,44 +25,50 @@ class SendRoomUserNotificationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SendRoomUserNotification','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Data(self): # String
+
+	def get_Data(self):
 		return self.get_query_params().get('Data')
 
-	def set_Data(self, Data):  # String
-		self.add_query_param('Data', Data)
-	def get_ToAppUid(self): # String
+	def set_Data(self,Data):
+		self.add_query_param('Data',Data)
+
+	def get_ToAppUid(self):
 		return self.get_query_params().get('ToAppUid')
 
-	def set_ToAppUid(self, ToAppUid):  # String
-		self.add_query_param('ToAppUid', ToAppUid)
-	def get_AppUid(self): # String
+	def set_ToAppUid(self,ToAppUid):
+		self.add_query_param('ToAppUid',ToAppUid)
+
+	def get_AppUid(self):
 		return self.get_query_params().get('AppUid')
 
-	def set_AppUid(self, AppUid):  # String
-		self.add_query_param('AppUid', AppUid)
-	def get_OwnerId(self): # Long
+	def set_AppUid(self,AppUid):
+		self.add_query_param('AppUid',AppUid)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Priority(self): # Integer
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Priority(self):
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self, Priority):  # Integer
-		self.add_query_param('Priority', Priority)
-	def get_RoomId(self): # String
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
+	def get_RoomId(self):
 		return self.get_query_params().get('RoomId')
 
-	def set_RoomId(self, RoomId):  # String
-		self.add_query_param('RoomId', RoomId)
-	def get_AppId(self): # String
+	def set_RoomId(self,RoomId):
+		self.add_query_param('RoomId',RoomId)
+
+	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

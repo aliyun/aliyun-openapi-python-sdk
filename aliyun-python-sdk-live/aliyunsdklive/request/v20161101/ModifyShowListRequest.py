@@ -25,44 +25,50 @@ class ModifyShowListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyShowList','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RepeatTimes(self): # Integer
+
+	def get_RepeatTimes(self):
 		return self.get_query_params().get('RepeatTimes')
 
-	def set_RepeatTimes(self, RepeatTimes):  # Integer
-		self.add_query_param('RepeatTimes', RepeatTimes)
-	def get_HighPriorityShowStartTime(self): # String
+	def set_RepeatTimes(self,RepeatTimes):
+		self.add_query_param('RepeatTimes',RepeatTimes)
+
+	def get_HighPriorityShowStartTime(self):
 		return self.get_query_params().get('HighPriorityShowStartTime')
 
-	def set_HighPriorityShowStartTime(self, HighPriorityShowStartTime):  # String
-		self.add_query_param('HighPriorityShowStartTime', HighPriorityShowStartTime)
-	def get_CasterId(self): # String
+	def set_HighPriorityShowStartTime(self,HighPriorityShowStartTime):
+		self.add_query_param('HighPriorityShowStartTime',HighPriorityShowStartTime)
+
+	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self, CasterId):  # String
-		self.add_query_param('CasterId', CasterId)
-	def get_HighPriorityShowId(self): # String
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
+
+	def get_HighPriorityShowId(self):
 		return self.get_query_params().get('HighPriorityShowId')
 
-	def set_HighPriorityShowId(self, HighPriorityShowId):  # String
-		self.add_query_param('HighPriorityShowId', HighPriorityShowId)
-	def get_OwnerId(self): # Long
+	def set_HighPriorityShowId(self,HighPriorityShowId):
+		self.add_query_param('HighPriorityShowId',HighPriorityShowId)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ShowId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ShowId(self):
 		return self.get_query_params().get('ShowId')
 
-	def set_ShowId(self, ShowId):  # String
-		self.add_query_param('ShowId', ShowId)
-	def get_Spot(self): # Integer
+	def set_ShowId(self,ShowId):
+		self.add_query_param('ShowId',ShowId)
+
+	def get_Spot(self):
 		return self.get_query_params().get('Spot')
 
-	def set_Spot(self, Spot):  # Integer
-		self.add_query_param('Spot', Spot)
+	def set_Spot(self,Spot):
+		self.add_query_param('Spot',Spot)

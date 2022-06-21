@@ -25,44 +25,50 @@ class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRealtimeDeliveryAcc','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
+
+	def get_Project(self):
 		return self.get_query_params().get('Project')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_StartTime(self): # String
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_DomainName(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Interval(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Interval(self):
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
-	def get_LogStore(self): # String
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
+
+	def get_LogStore(self):
 		return self.get_query_params().get('LogStore')
 
-	def set_LogStore(self, LogStore):  # String
-		self.add_query_param('LogStore', LogStore)
+	def set_LogStore(self,LogStore):
+		self.add_query_param('LogStore',LogStore)

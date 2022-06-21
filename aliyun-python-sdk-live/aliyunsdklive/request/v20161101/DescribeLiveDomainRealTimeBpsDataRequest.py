@@ -25,39 +25,44 @@ class DescribeLiveDomainRealTimeBpsDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainRealTimeBpsData','live')
 		self.set_method('GET')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LocationNameEn(self): # String
+
+	def get_LocationNameEn(self):
 		return self.get_query_params().get('LocationNameEn')
 
-	def set_LocationNameEn(self, LocationNameEn):  # String
-		self.add_query_param('LocationNameEn', LocationNameEn)
-	def get_IspNameEn(self): # String
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
+
+	def get_IspNameEn(self):
 		return self.get_query_params().get('IspNameEn')
 
-	def set_IspNameEn(self, IspNameEn):  # String
-		self.add_query_param('IspNameEn', IspNameEn)
-	def get_StartTime(self): # String
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_DomainName(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -25,55 +25,64 @@ class AddCasterEpisodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisode','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EpisodeName(self): # String
+
+	def get_EpisodeName(self):
 		return self.get_query_params().get('EpisodeName')
 
-	def set_EpisodeName(self, EpisodeName):  # String
-		self.add_query_param('EpisodeName', EpisodeName)
-	def get_StartTime(self): # String
+	def set_EpisodeName(self,EpisodeName):
+		self.add_query_param('EpisodeName',EpisodeName)
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_ResourceId(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
-	def get_ComponentIds(self): # RepeatList
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
+	def get_ComponentIds(self):
 		return self.get_query_params().get('ComponentId')
 
-	def set_ComponentIds(self, ComponentId):  # RepeatList
-		for depth1 in range(len(ComponentId)):
-			self.add_query_param('ComponentId.' + str(depth1 + 1), ComponentId[depth1])
-	def get_CasterId(self): # String
+	def set_ComponentIds(self, ComponentIds):
+		for depth1 in range(len(ComponentIds)):
+			if ComponentIds[depth1] is not None:
+				self.add_query_param('ComponentId.' + str(depth1 + 1) , ComponentIds[depth1])
+
+	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self, CasterId):  # String
-		self.add_query_param('CasterId', CasterId)
-	def get_EpisodeType(self): # String
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
+
+	def get_EpisodeType(self):
 		return self.get_query_params().get('EpisodeType')
 
-	def set_EpisodeType(self, EpisodeType):  # String
-		self.add_query_param('EpisodeType', EpisodeType)
-	def get_EndTime(self): # String
+	def set_EpisodeType(self,EpisodeType):
+		self.add_query_param('EpisodeType',EpisodeType)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SwitchType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SwitchType(self):
 		return self.get_query_params().get('SwitchType')
 
-	def set_SwitchType(self, SwitchType):  # String
-		self.add_query_param('SwitchType', SwitchType)
+	def set_SwitchType(self,SwitchType):
+		self.add_query_param('SwitchType',SwitchType)

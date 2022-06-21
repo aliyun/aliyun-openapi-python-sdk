@@ -25,49 +25,56 @@ class UpdateLiveStreamMonitorRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveStreamMonitor','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MonitorId(self): # String
+
+	def get_MonitorId(self):
 		return self.get_query_params().get('MonitorId')
 
-	def set_MonitorId(self, MonitorId):  # String
-		self.add_query_param('MonitorId', MonitorId)
-	def get_MonitorName(self): # String
+	def set_MonitorId(self,MonitorId):
+		self.add_query_param('MonitorId',MonitorId)
+
+	def get_MonitorName(self):
 		return self.get_query_params().get('MonitorName')
 
-	def set_MonitorName(self, MonitorName):  # String
-		self.add_query_param('MonitorName', MonitorName)
-	def get_Stream(self): # String
+	def set_MonitorName(self,MonitorName):
+		self.add_query_param('MonitorName',MonitorName)
+
+	def get_Stream(self):
 		return self.get_query_params().get('Stream')
 
-	def set_Stream(self, Stream):  # String
-		self.add_query_param('Stream', Stream)
-	def get_OutputTemplate(self): # String
+	def set_Stream(self,Stream):
+		self.add_query_param('Stream',Stream)
+
+	def get_OutputTemplate(self):
 		return self.get_query_params().get('OutputTemplate')
 
-	def set_OutputTemplate(self, OutputTemplate):  # String
-		self.add_query_param('OutputTemplate', OutputTemplate)
-	def get_App(self): # String
+	def set_OutputTemplate(self,OutputTemplate):
+		self.add_query_param('OutputTemplate',OutputTemplate)
+
+	def get_App(self):
 		return self.get_query_params().get('App')
 
-	def set_App(self, App):  # String
-		self.add_query_param('App', App)
-	def get_InputList(self): # String
+	def set_App(self,App):
+		self.add_query_param('App',App)
+
+	def get_InputList(self):
 		return self.get_query_params().get('InputList')
 
-	def set_InputList(self, InputList):  # String
-		self.add_query_param('InputList', InputList)
-	def get_OwnerId(self): # Long
+	def set_InputList(self,InputList):
+		self.add_query_param('InputList',InputList)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Domain(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Domain(self):
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)

@@ -25,34 +25,38 @@ class StartPlaylistRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartPlaylist','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResumeMode(self): # String
+
+	def get_ResumeMode(self):
 		return self.get_query_params().get('ResumeMode')
 
-	def set_ResumeMode(self, ResumeMode):  # String
-		self.add_query_param('ResumeMode', ResumeMode)
-	def get_StartItemId(self): # String
+	def set_ResumeMode(self,ResumeMode):
+		self.add_query_param('ResumeMode',ResumeMode)
+
+	def get_StartItemId(self):
 		return self.get_query_params().get('StartItemId')
 
-	def set_StartItemId(self, StartItemId):  # String
-		self.add_query_param('StartItemId', StartItemId)
-	def get_ProgramId(self): # String
+	def set_StartItemId(self,StartItemId):
+		self.add_query_param('StartItemId',StartItemId)
+
+	def get_ProgramId(self):
 		return self.get_query_params().get('ProgramId')
 
-	def set_ProgramId(self, ProgramId):  # String
-		self.add_query_param('ProgramId', ProgramId)
-	def get_Offset(self): # Integer
+	def set_ProgramId(self,ProgramId):
+		self.add_query_param('ProgramId',ProgramId)
+
+	def get_Offset(self):
 		return self.get_query_params().get('Offset')
 
-	def set_Offset(self, Offset):  # Integer
-		self.add_query_param('Offset', Offset)
-	def get_OwnerId(self): # Long
+	def set_Offset(self,Offset):
+		self.add_query_param('Offset',Offset)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

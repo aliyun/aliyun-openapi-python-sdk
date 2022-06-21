@@ -25,29 +25,32 @@ class UpdateLiveAudioAuditNotifyConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAudioAuditNotifyConfig','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DomainName(self): # String
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_CallbackTemplate(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CallbackTemplate(self):
 		return self.get_query_params().get('CallbackTemplate')
 
-	def set_CallbackTemplate(self, CallbackTemplate):  # String
-		self.add_query_param('CallbackTemplate', CallbackTemplate)
-	def get_Callback(self): # String
+	def set_CallbackTemplate(self,CallbackTemplate):
+		self.add_query_param('CallbackTemplate',CallbackTemplate)
+
+	def get_Callback(self):
 		return self.get_query_params().get('Callback')
 
-	def set_Callback(self, Callback):  # String
-		self.add_query_param('Callback', Callback)
+	def set_Callback(self,Callback):
+		self.add_query_param('Callback',Callback)

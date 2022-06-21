@@ -25,44 +25,50 @@ class InitializeAutoShowListTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'InitializeAutoShowListTask','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # Long
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
-	def get_CasterConfig(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_CasterConfig(self):
 		return self.get_query_params().get('CasterConfig')
 
-	def set_CasterConfig(self, CasterConfig):  # String
-		self.add_query_param('CasterConfig', CasterConfig)
-	def get_DomainName(self): # String
+	def set_CasterConfig(self,CasterConfig):
+		self.add_query_param('CasterConfig',CasterConfig)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # Long
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_CallBackUrl(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CallBackUrl(self):
 		return self.get_query_params().get('CallBackUrl')
 
-	def set_CallBackUrl(self, CallBackUrl):  # String
-		self.add_query_param('CallBackUrl', CallBackUrl)
-	def get_ResourceIds(self): # String
+	def set_CallBackUrl(self,CallBackUrl):
+		self.add_query_param('CallBackUrl',CallBackUrl)
+
+	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self, ResourceIds):  # String
-		self.add_query_param('ResourceIds', ResourceIds)
+	def set_ResourceIds(self,ResourceIds):
+		self.add_query_param('ResourceIds',ResourceIds)

@@ -25,34 +25,38 @@ class TagLiveResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'TagLiveResources','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Tags(self): # RepeatList
+
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-	def get_ResourceIds(self): # RepeatList
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
+	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceIds(self, ResourceId):  # RepeatList
-		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
-	def get_OwnerId(self): # Long
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ResourceType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

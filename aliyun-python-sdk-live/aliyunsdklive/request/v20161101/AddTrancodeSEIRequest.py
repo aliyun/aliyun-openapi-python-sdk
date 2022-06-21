@@ -25,49 +25,56 @@ class AddTrancodeSEIRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddTrancodeSEI','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Pattern(self): # String
+
+	def get_Pattern(self):
 		return self.get_query_params().get('Pattern')
 
-	def set_Pattern(self, Pattern):  # String
-		self.add_query_param('Pattern', Pattern)
-	def get_AppName(self): # String
+	def set_Pattern(self,Pattern):
+		self.add_query_param('Pattern',Pattern)
+
+	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_Repeat(self): # Integer
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_Repeat(self):
 		return self.get_query_params().get('Repeat')
 
-	def set_Repeat(self, Repeat):  # Integer
-		self.add_query_param('Repeat', Repeat)
-	def get_Text(self): # String
+	def set_Repeat(self,Repeat):
+		self.add_query_param('Repeat',Repeat)
+
+	def get_Text(self):
 		return self.get_query_params().get('Text')
 
-	def set_Text(self, Text):  # String
-		self.add_query_param('Text', Text)
-	def get_StreamName(self): # String
+	def set_Text(self,Text):
+		self.add_query_param('Text',Text)
+
+	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self, StreamName):  # String
-		self.add_query_param('StreamName', StreamName)
-	def get_DomainName(self): # String
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Delay(self): # Integer
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Delay(self):
 		return self.get_query_params().get('Delay')
 
-	def set_Delay(self, Delay):  # Integer
-		self.add_query_param('Delay', Delay)
+	def set_Delay(self,Delay):
+		self.add_query_param('Delay',Delay)

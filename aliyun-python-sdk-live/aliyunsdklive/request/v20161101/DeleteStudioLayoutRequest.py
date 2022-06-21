@@ -25,24 +25,26 @@ class DeleteStudioLayoutRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteStudioLayout','live')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LayoutId(self): # String
+
+	def get_LayoutId(self):
 		return self.get_query_params().get('LayoutId')
 
-	def set_LayoutId(self, LayoutId):  # String
-		self.add_query_param('LayoutId', LayoutId)
-	def get_CasterId(self): # String
+	def set_LayoutId(self,LayoutId):
+		self.add_query_param('LayoutId',LayoutId)
+
+	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self, CasterId):  # String
-		self.add_query_param('CasterId', CasterId)
-	def get_OwnerId(self): # Long
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
