@@ -19,24 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class StopLoadBalancerListenerRequest(RpcRequest):
+class UnassignPrivateIpAddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'StopLoadBalancerListener','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'UnassignPrivateIpAddresses','ens')
 		self.set_method('POST')
 
-	def get_ListenerPort(self): # Integer
-		return self.get_query_params().get('ListenerPort')
+	def get_PrivateIpAddress(self): # Array
+		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_ListenerPort(self, ListenerPort):  # Integer
-		self.add_query_param('ListenerPort', ListenerPort)
-	def get_ListenerProtocol(self): # String
-		return self.get_query_params().get('ListenerProtocol')
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # Array
+		for index1, value1 in enumerate(PrivateIpAddress):
+			self.add_query_param('PrivateIpAddress.' + str(index1 + 1), value1)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
 
-	def set_ListenerProtocol(self, ListenerProtocol):  # String
-		self.add_query_param('ListenerProtocol', ListenerProtocol)
-	def get_LoadBalancerId(self): # String
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self, LoadBalancerId):  # String
-		self.add_query_param('LoadBalancerId', LoadBalancerId)
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

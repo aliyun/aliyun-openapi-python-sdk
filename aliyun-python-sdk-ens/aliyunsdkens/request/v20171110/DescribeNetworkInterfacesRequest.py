@@ -25,11 +25,21 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeNetworkInterfaces','ens')
 		self.set_method('POST')
 
+	def get_PageNumber(self): # String
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -40,16 +50,6 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_PageNumber(self): # String
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # String
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # String
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
 	def get_PrimaryIpAddress(self): # String
 		return self.get_query_params().get('PrimaryIpAddress')
 

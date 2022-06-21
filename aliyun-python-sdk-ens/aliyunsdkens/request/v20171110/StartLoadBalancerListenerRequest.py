@@ -30,6 +30,11 @@ class StartLoadBalancerListenerRequest(RpcRequest):
 
 	def set_ListenerPort(self, ListenerPort):  # Integer
 		self.add_query_param('ListenerPort', ListenerPort)
+	def get_ListenerProtocol(self): # String
+		return self.get_query_params().get('ListenerProtocol')
+
+	def set_ListenerProtocol(self, ListenerProtocol):  # String
+		self.add_query_param('ListenerProtocol', ListenerProtocol)
 	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 

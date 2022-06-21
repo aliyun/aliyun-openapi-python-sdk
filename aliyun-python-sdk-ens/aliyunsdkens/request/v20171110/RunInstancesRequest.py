@@ -76,6 +76,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Long
 		self.add_query_param('Period', Period)
+	def get_PublicIpIdentification(self): # Boolean
+		return self.get_query_params().get('PublicIpIdentification')
+
+	def set_PublicIpIdentification(self, PublicIpIdentification):  # Boolean
+		self.add_query_param('PublicIpIdentification', PublicIpIdentification)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
