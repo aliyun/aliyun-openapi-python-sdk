@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class CreateFlowlogRequest(RpcRequest):
+class CreateTransitRouterVpnAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateFlowlog')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouterVpnAttachment')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,21 +46,28 @@ class CreateFlowlogRequest(RpcRequest):
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_TransitRouterAttachmentName(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentName')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
+	def set_TransitRouterAttachmentName(self, TransitRouterAttachmentName):  # String
+		self.add_query_param('TransitRouterAttachmentName', TransitRouterAttachmentName)
+	def get_Zones(self): # RepeatList
+		return self.get_query_params().get('Zone')
 
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_LogStoreName(self): # String
-		return self.get_query_params().get('LogStoreName')
+	def set_Zones(self, Zone):  # RepeatList
+		for depth1 in range(len(Zone)):
+			if Zone[depth1].get('ZoneId') is not None:
+				self.add_query_param('Zone.' + str(depth1 + 1) + '.ZoneId', Zone[depth1].get('ZoneId'))
+	def get_AutoPublishRouteEnabled(self): # Boolean
+		return self.get_query_params().get('AutoPublishRouteEnabled')
 
-	def set_LogStoreName(self, LogStoreName):  # String
-		self.add_query_param('LogStoreName', LogStoreName)
+	def set_AutoPublishRouteEnabled(self, AutoPublishRouteEnabled):  # Boolean
+		self.add_query_param('AutoPublishRouteEnabled', AutoPublishRouteEnabled)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,18 +83,28 @@ class CreateFlowlogRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TransitRouterAttachmentId(self): # String
-		return self.get_query_params().get('TransitRouterAttachmentId')
+	def get_TransitRouterId(self): # String
+		return self.get_query_params().get('TransitRouterId')
 
-	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
-		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
-	def get_Interval(self): # Long
-		return self.get_query_params().get('Interval')
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)
+	def get_TransitRouterAttachmentDescription(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentDescription')
 
-	def set_Interval(self, Interval):  # Long
-		self.add_query_param('Interval', Interval)
-	def get_FlowLogName(self): # String
-		return self.get_query_params().get('FlowLogName')
+	def set_TransitRouterAttachmentDescription(self, TransitRouterAttachmentDescription):  # String
+		self.add_query_param('TransitRouterAttachmentDescription', TransitRouterAttachmentDescription)
+	def get_VpnOwnerId(self): # Long
+		return self.get_query_params().get('VpnOwnerId')
 
-	def set_FlowLogName(self, FlowLogName):  # String
-		self.add_query_param('FlowLogName', FlowLogName)
+	def set_VpnOwnerId(self, VpnOwnerId):  # Long
+		self.add_query_param('VpnOwnerId', VpnOwnerId)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
+	def get_VpnId(self): # String
+		return self.get_query_params().get('VpnId')
+
+	def set_VpnId(self, VpnId):  # String
+		self.add_query_param('VpnId', VpnId)

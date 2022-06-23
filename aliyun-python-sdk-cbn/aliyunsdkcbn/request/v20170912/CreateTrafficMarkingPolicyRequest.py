@@ -63,7 +63,7 @@ class CreateTrafficMarkingPolicyRequest(RpcRequest):
 		for depth1 in range(len(TrafficMatchRules)):
 			if TrafficMatchRules[depth1].get('DstPortRange') is not None:
 				for depth2 in range(len(TrafficMatchRules[depth1].get('DstPortRange'))):
-					self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.DstPortRange' + str(depth2 + 1), TrafficMatchRules[depth1].get('DstPortRange')[depth2])
+					self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.DstPortRange.' + str(depth2 + 1), TrafficMatchRules[depth1].get('DstPortRange')[depth2])
 			if TrafficMatchRules[depth1].get('MatchDscp') is not None:
 				self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.MatchDscp', TrafficMatchRules[depth1].get('MatchDscp'))
 			if TrafficMatchRules[depth1].get('Protocol') is not None:
@@ -72,7 +72,7 @@ class CreateTrafficMarkingPolicyRequest(RpcRequest):
 				self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.TrafficMatchRuleDescription', TrafficMatchRules[depth1].get('TrafficMatchRuleDescription'))
 			if TrafficMatchRules[depth1].get('SrcPortRange') is not None:
 				for depth2 in range(len(TrafficMatchRules[depth1].get('SrcPortRange'))):
-					self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.SrcPortRange' + str(depth2 + 1), TrafficMatchRules[depth1].get('SrcPortRange')[depth2])
+					self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.SrcPortRange.' + str(depth2 + 1), TrafficMatchRules[depth1].get('SrcPortRange')[depth2])
 			if TrafficMatchRules[depth1].get('DstCidr') is not None:
 				self.add_query_param('TrafficMatchRules.' + str(depth1 + 1) + '.DstCidr', TrafficMatchRules[depth1].get('DstCidr'))
 			if TrafficMatchRules[depth1].get('TrafficMatchRuleName') is not None:

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class DescribeCenBandwidthPackagesRequest(RpcRequest):
+class DescribeCenVpcFlowStatisticSwitchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenBandwidthPackages')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenVpcFlowStatisticSwitch')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,26 +36,11 @@ class DescribeCenBandwidthPackagesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_IncludeReservationData(self): # Boolean
-		return self.get_query_params().get('IncludeReservationData')
+	def get_CenId(self): # String
+		return self.get_query_params().get('CenId')
 
-	def set_IncludeReservationData(self, IncludeReservationData):  # Boolean
-		self.add_query_param('IncludeReservationData', IncludeReservationData)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_IsOrKey(self): # Boolean
-		return self.get_query_params().get('IsOrKey')
-
-	def set_IsOrKey(self, IsOrKey):  # Boolean
-		self.add_query_param('IsOrKey', IsOrKey)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_CenId(self, CenId):  # String
+		self.add_query_param('CenId', CenId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,13 +56,3 @@ class DescribeCenBandwidthPackagesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Filters(self): # RepeatList
-		return self.get_query_params().get('Filter')
-
-	def set_Filters(self, Filter):  # RepeatList
-		for depth1 in range(len(Filter)):
-			if Filter[depth1].get('Value') is not None:
-				for depth2 in range(len(Filter[depth1].get('Value'))):
-					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), Filter[depth1].get('Value')[depth2])
-			if Filter[depth1].get('Key') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))

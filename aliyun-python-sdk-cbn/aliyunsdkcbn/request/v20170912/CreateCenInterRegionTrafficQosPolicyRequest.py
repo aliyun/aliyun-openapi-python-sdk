@@ -48,7 +48,7 @@ class CreateCenInterRegionTrafficQosPolicyRequest(RpcRequest):
 		for depth1 in range(len(TrafficQosQueues)):
 			if TrafficQosQueues[depth1].get('Dscps') is not None:
 				for depth2 in range(len(TrafficQosQueues[depth1].get('Dscps'))):
-					self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.Dscps' + str(depth2 + 1), TrafficQosQueues[depth1].get('Dscps')[depth2])
+					self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.Dscps.' + str(depth2 + 1), TrafficQosQueues[depth1].get('Dscps')[depth2])
 			if TrafficQosQueues[depth1].get('QosQueueName') is not None:
 				self.add_query_param('TrafficQosQueues.' + str(depth1 + 1) + '.QosQueueName', TrafficQosQueues[depth1].get('QosQueueName'))
 			if TrafficQosQueues[depth1].get('RemainBandwidthPercent') is not None:
