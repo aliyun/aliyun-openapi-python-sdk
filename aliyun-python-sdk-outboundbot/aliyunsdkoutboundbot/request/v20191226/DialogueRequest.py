@@ -36,6 +36,11 @@ class DialogueRequest(RpcRequest):
 
 	def set_CallId(self, CallId):  # String
 		self.add_query_param('CallId', CallId)
+	def get_ScriptId(self): # String
+		return self.get_query_params().get('ScriptId')
+
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
 	def get_CalledNumber(self): # String
 		return self.get_query_params().get('CalledNumber')
 

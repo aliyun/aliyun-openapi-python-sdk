@@ -61,3 +61,8 @@ class DescribeTTSDemoRequest(RpcRequest):
 
 	def set_SpeechRate(self, SpeechRate):  # Integer
 		self.add_query_param('SpeechRate', SpeechRate)
+	def get_PitchRate(self): # Integer
+		return self.get_query_params().get('PitchRate')
+
+	def set_PitchRate(self, PitchRate):  # Integer
+		self.add_query_param('PitchRate', PitchRate)

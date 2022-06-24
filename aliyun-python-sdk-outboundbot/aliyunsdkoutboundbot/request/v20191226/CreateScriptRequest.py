@@ -87,6 +87,11 @@ class CreateScriptRequest(RpcRequest):
 
 	def set_ScriptDescription(self, ScriptDescription):  # String
 		self.add_query_param('ScriptDescription', ScriptDescription)
+	def get_LongWaitEnable(self): # Boolean
+		return self.get_query_params().get('LongWaitEnable')
+
+	def set_LongWaitEnable(self, LongWaitEnable):  # Boolean
+		self.add_query_param('LongWaitEnable', LongWaitEnable)
 	def get_ScriptContents(self): # RepeatList
 		return self.get_query_params().get('ScriptContent')
 

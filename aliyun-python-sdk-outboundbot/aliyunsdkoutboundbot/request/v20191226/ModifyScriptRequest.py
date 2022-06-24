@@ -72,11 +72,16 @@ class ModifyScriptRequest(RpcRequest):
 
 	def set_NlsConfig(self, NlsConfig):  # String
 		self.add_query_param('NlsConfig', NlsConfig)
-	def get_MiniPlaybackEnabled(self): # Boolean
-		return self.get_query_params().get('MiniPlaybackEnabled')
+	def get_NewBargeInEnable(self): # Boolean
+		return self.get_query_params().get('NewBargeInEnable')
 
-	def set_MiniPlaybackEnabled(self, MiniPlaybackEnabled):  # Boolean
-		self.add_query_param('MiniPlaybackEnabled', MiniPlaybackEnabled)
+	def set_NewBargeInEnable(self, NewBargeInEnable):  # Boolean
+		self.add_query_param('NewBargeInEnable', NewBargeInEnable)
+	def get_MiniPlaybackEnable(self): # Boolean
+		return self.get_query_params().get('MiniPlaybackEnable')
+
+	def set_MiniPlaybackEnable(self, MiniPlaybackEnable):  # Boolean
+		self.add_query_param('MiniPlaybackEnable', MiniPlaybackEnable)
 	def get_ChatbotId(self): # String
 		return self.get_query_params().get('ChatbotId')
 
@@ -92,6 +97,11 @@ class ModifyScriptRequest(RpcRequest):
 
 	def set_ScriptDescription(self, ScriptDescription):  # String
 		self.add_query_param('ScriptDescription', ScriptDescription)
+	def get_LongWaitEnable(self): # Boolean
+		return self.get_query_params().get('LongWaitEnable')
+
+	def set_LongWaitEnable(self, LongWaitEnable):  # Boolean
+		self.add_query_param('LongWaitEnable', LongWaitEnable)
 	def get_ScriptContents(self): # RepeatList
 		return self.get_query_params().get('ScriptContent')
 

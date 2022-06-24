@@ -31,8 +31,3 @@ class ListAllTenantBindNumberBindingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Tenant(self): # String
-		return self.get_query_params().get('Tenant')
-
-	def set_Tenant(self, Tenant):  # String
-		self.add_query_param('Tenant', Tenant)
