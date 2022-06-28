@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvideorecog.endpoint import endpoint_data
 
-class GenerateVideoCoverRequest(RpcRequest):
+class SplitVideoPartsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'videorecog', '2020-03-20', 'GenerateVideoCover','videorecog')
+		RpcRequest.__init__(self, 'videorecog', '2020-03-20', 'SplitVideoParts','videorecog')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class GenerateVideoCoverRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsGif(self): # Boolean
-		return self.get_body_params().get('IsGif')
-
-	def set_IsGif(self, IsGif):  # Boolean
-		self.add_body_params('IsGif', IsGif)
 	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 

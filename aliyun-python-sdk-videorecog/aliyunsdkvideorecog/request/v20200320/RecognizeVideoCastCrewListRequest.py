@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvideorecog.endpoint import endpoint_data
+import json
 
-class GenerateVideoCoverRequest(RpcRequest):
+class RecognizeVideoCastCrewListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'videorecog', '2020-03-20', 'GenerateVideoCover','videorecog')
+		RpcRequest.__init__(self, 'videorecog', '2020-03-20', 'RecognizeVideoCastCrewList','videorecog')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +32,16 @@ class GenerateVideoCoverRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsGif(self): # Boolean
-		return self.get_body_params().get('IsGif')
+	def get_Params(self): # Array
+		return self.get_body_params().get('Params')
 
-	def set_IsGif(self, IsGif):  # Boolean
-		self.add_body_params('IsGif', IsGif)
+	def set_Params(self, Params):  # Array
+		self.add_body_params("Params", json.dumps(Params))
+	def get_RegisterUrl(self): # String
+		return self.get_body_params().get('RegisterUrl')
+
+	def set_RegisterUrl(self, RegisterUrl):  # String
+		self.add_body_params('RegisterUrl', RegisterUrl)
 	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
