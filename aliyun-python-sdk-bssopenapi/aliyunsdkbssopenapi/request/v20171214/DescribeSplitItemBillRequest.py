@@ -78,7 +78,7 @@ class DescribeSplitItemBillRequest(RpcRequest):
 		for depth1 in range(len(TagFilter)):
 			if TagFilter[depth1].get('TagValues') is not None:
 				for depth2 in range(len(TagFilter[depth1].get('TagValues'))):
-					self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues' + str(depth2 + 1), TagFilter[depth1].get('TagValues')[depth2])
+					self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues.' + str(depth2 + 1), TagFilter[depth1].get('TagValues')[depth2])
 			if TagFilter[depth1].get('TagKey') is not None:
 				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilter[depth1].get('TagKey'))
 	def get_BillingDate(self): # String
