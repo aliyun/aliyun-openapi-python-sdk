@@ -23,52 +23,46 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class DescribeDeviceInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeDeviceInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeDeviceInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserDeviceId(self):
+	def get_UserDeviceId(self): # String
 		return self.get_query_params().get('UserDeviceId')
 
-	def set_UserDeviceId(self,UserDeviceId):
-		self.add_query_param('UserDeviceId',UserDeviceId)
-
-	def get_PageSize(self):
+	def set_UserDeviceId(self, UserDeviceId):  # String
+		self.add_query_param('UserDeviceId', UserDeviceId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ExpiredStartDay(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ExpiredStartDay(self): # String
 		return self.get_query_params().get('ExpiredStartDay')
 
-	def set_ExpiredStartDay(self,ExpiredStartDay):
-		self.add_query_param('ExpiredStartDay',ExpiredStartDay)
-
-	def get_CurrentPage(self):
+	def set_ExpiredStartDay(self, ExpiredStartDay):  # String
+		self.add_query_param('ExpiredStartDay', ExpiredStartDay)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_DeviceId(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_DeviceId(self): # String
 		return self.get_query_params().get('DeviceId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_BizType(self):
+	def set_DeviceId(self, DeviceId):  # String
+		self.add_query_param('DeviceId', DeviceId)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_ExpiredEndDay(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_ExpiredEndDay(self): # String
 		return self.get_query_params().get('ExpiredEndDay')
 
-	def set_ExpiredEndDay(self,ExpiredEndDay):
-		self.add_query_param('ExpiredEndDay',ExpiredEndDay)
+	def set_ExpiredEndDay(self, ExpiredEndDay):  # String
+		self.add_query_param('ExpiredEndDay', ExpiredEndDay)

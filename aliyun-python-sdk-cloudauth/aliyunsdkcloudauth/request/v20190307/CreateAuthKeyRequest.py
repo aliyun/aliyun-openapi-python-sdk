@@ -23,34 +23,31 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class CreateAuthKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateAuthKey','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateAuthKey')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserDeviceId(self):
+	def get_UserDeviceId(self): # String
 		return self.get_query_params().get('UserDeviceId')
 
-	def set_UserDeviceId(self,UserDeviceId):
-		self.add_query_param('UserDeviceId',UserDeviceId)
-
-	def get_Test(self):
+	def set_UserDeviceId(self, UserDeviceId):  # String
+		self.add_query_param('UserDeviceId', UserDeviceId)
+	def get_Test(self): # Boolean
 		return self.get_query_params().get('Test')
 
-	def set_Test(self,Test):
-		self.add_query_param('Test',Test)
-
-	def get_BizType(self):
+	def set_Test(self, Test):  # Boolean
+		self.add_query_param('Test', Test)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_AuthYears(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_AuthYears(self): # Integer
 		return self.get_query_params().get('AuthYears')
 
-	def set_AuthYears(self,AuthYears):
-		self.add_query_param('AuthYears',AuthYears)
+	def set_AuthYears(self, AuthYears):  # Integer
+		self.add_query_param('AuthYears', AuthYears)

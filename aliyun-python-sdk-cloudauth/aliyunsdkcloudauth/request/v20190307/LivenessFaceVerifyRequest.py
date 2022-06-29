@@ -23,94 +23,81 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class LivenessFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'LivenessFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'LivenessFaceVerify')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_body_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
+	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-
-	def get_FaceContrastPicture(self):
+	def get_FaceContrastPicture(self): # String
 		return self.get_body_params().get('FaceContrastPicture')
 
-	def set_FaceContrastPicture(self,FaceContrastPicture):
+	def set_FaceContrastPicture(self, FaceContrastPicture):  # String
 		self.add_body_params('FaceContrastPicture', FaceContrastPicture)
-
-	def get_DeviceToken(self):
+	def get_DeviceToken(self): # String
 		return self.get_body_params().get('DeviceToken')
 
-	def set_DeviceToken(self,DeviceToken):
+	def set_DeviceToken(self, DeviceToken):  # String
 		self.add_body_params('DeviceToken', DeviceToken)
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_CertifyId(self):
+	def get_CertifyId(self): # String
 		return self.get_body_params().get('CertifyId')
 
-	def set_CertifyId(self,CertifyId):
+	def set_CertifyId(self, CertifyId):  # String
 		self.add_body_params('CertifyId', CertifyId)
-
-	def get_OuterOrderNo(self):
+	def get_OuterOrderNo(self): # String
 		return self.get_body_params().get('OuterOrderNo')
 
-	def set_OuterOrderNo(self,OuterOrderNo):
+	def set_OuterOrderNo(self, OuterOrderNo):  # String
 		self.add_body_params('OuterOrderNo', OuterOrderNo)
-
-	def get_FaceContrastPictureUrl(self):
+	def get_FaceContrastPictureUrl(self): # String
 		return self.get_body_params().get('FaceContrastPictureUrl')
 
-	def set_FaceContrastPictureUrl(self,FaceContrastPictureUrl):
+	def set_FaceContrastPictureUrl(self, FaceContrastPictureUrl):  # String
 		self.add_body_params('FaceContrastPictureUrl', FaceContrastPictureUrl)
-
-	def get_Model(self):
+	def get_Model(self): # String
 		return self.get_query_params().get('Model')
 
-	def set_Model(self,Model):
-		self.add_query_param('Model',Model)
-
-	def get_OssObjectName(self):
+	def set_Model(self, Model):  # String
+		self.add_query_param('Model', Model)
+	def get_OssObjectName(self): # String
 		return self.get_body_params().get('OssObjectName')
 
-	def set_OssObjectName(self,OssObjectName):
+	def set_OssObjectName(self, OssObjectName):  # String
 		self.add_body_params('OssObjectName', OssObjectName)
-
-	def get_Ip(self):
+	def get_Ip(self): # String
 		return self.get_body_params().get('Ip')
 
-	def set_Ip(self,Ip):
+	def set_Ip(self, Ip):  # String
 		self.add_body_params('Ip', Ip)
-
-	def get_Mobile(self):
+	def get_Mobile(self): # String
 		return self.get_body_params().get('Mobile')
 
-	def set_Mobile(self,Mobile):
+	def set_Mobile(self, Mobile):  # String
 		self.add_body_params('Mobile', Mobile)
-
-	def get_SceneId(self):
+	def get_SceneId(self): # Long
 		return self.get_body_params().get('SceneId')
 
-	def set_SceneId(self,SceneId):
+	def set_SceneId(self, SceneId):  # Long
 		self.add_body_params('SceneId', SceneId)
-
-	def get_OssBucketName(self):
+	def get_OssBucketName(self): # String
 		return self.get_body_params().get('OssBucketName')
 
-	def set_OssBucketName(self,OssBucketName):
+	def set_OssBucketName(self, OssBucketName):  # String
 		self.add_body_params('OssBucketName', OssBucketName)
-
-	def get_Crop(self):
+	def get_Crop(self): # String
 		return self.get_body_params().get('Crop')
 
-	def set_Crop(self,Crop):
+	def set_Crop(self, Crop):  # String
 		self.add_body_params('Crop', Crop)

@@ -23,46 +23,41 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class CreateVerifySettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateVerifySetting','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateVerifySetting')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GuideStep(self):
+	def get_GuideStep(self): # Boolean
 		return self.get_query_params().get('GuideStep')
 
-	def set_GuideStep(self,GuideStep):
-		self.add_query_param('GuideStep',GuideStep)
-
-	def get_ResultStep(self):
+	def set_GuideStep(self, GuideStep):  # Boolean
+		self.add_query_param('GuideStep', GuideStep)
+	def get_ResultStep(self): # Boolean
 		return self.get_query_params().get('ResultStep')
 
-	def set_ResultStep(self,ResultStep):
-		self.add_query_param('ResultStep',ResultStep)
-
-	def get_Solution(self):
+	def set_ResultStep(self, ResultStep):  # Boolean
+		self.add_query_param('ResultStep', ResultStep)
+	def get_Solution(self): # String
 		return self.get_query_params().get('Solution')
 
-	def set_Solution(self,Solution):
-		self.add_query_param('Solution',Solution)
-
-	def get_BizName(self):
+	def set_Solution(self, Solution):  # String
+		self.add_query_param('Solution', Solution)
+	def get_BizName(self): # String
 		return self.get_query_params().get('BizName')
 
-	def set_BizName(self,BizName):
-		self.add_query_param('BizName',BizName)
-
-	def get_BizType(self):
+	def set_BizName(self, BizName):  # String
+		self.add_query_param('BizName', BizName)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_PrivacyStep(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_PrivacyStep(self): # Boolean
 		return self.get_query_params().get('PrivacyStep')
 
-	def set_PrivacyStep(self,PrivacyStep):
-		self.add_query_param('PrivacyStep',PrivacyStep)
+	def set_PrivacyStep(self, PrivacyStep):  # Boolean
+		self.add_query_param('PrivacyStep', PrivacyStep)

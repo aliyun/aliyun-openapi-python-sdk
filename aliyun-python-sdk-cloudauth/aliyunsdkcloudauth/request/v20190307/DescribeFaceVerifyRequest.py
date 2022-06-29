@@ -23,28 +23,26 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class DescribeFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeFaceVerify')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CertifyId(self):
+	def get_CertifyId(self): # String
 		return self.get_query_params().get('CertifyId')
 
-	def set_CertifyId(self,CertifyId):
-		self.add_query_param('CertifyId',CertifyId)
-
-	def get_PictureReturnType(self):
+	def set_CertifyId(self, CertifyId):  # String
+		self.add_query_param('CertifyId', CertifyId)
+	def get_PictureReturnType(self): # String
 		return self.get_query_params().get('PictureReturnType')
 
-	def set_PictureReturnType(self,PictureReturnType):
-		self.add_query_param('PictureReturnType',PictureReturnType)
-
-	def get_SceneId(self):
+	def set_PictureReturnType(self, PictureReturnType):  # String
+		self.add_query_param('PictureReturnType', PictureReturnType)
+	def get_SceneId(self): # Long
 		return self.get_query_params().get('SceneId')
 
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+	def set_SceneId(self, SceneId):  # Long
+		self.add_query_param('SceneId', SceneId)

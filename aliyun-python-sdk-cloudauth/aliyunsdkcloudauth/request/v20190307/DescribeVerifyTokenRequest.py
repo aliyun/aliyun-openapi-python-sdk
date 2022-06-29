@@ -23,100 +23,86 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class DescribeVerifyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeVerifyToken','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeVerifyToken')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FaceRetainedImageUrl(self):
+	def get_FaceRetainedImageUrl(self): # String
 		return self.get_query_params().get('FaceRetainedImageUrl')
 
-	def set_FaceRetainedImageUrl(self,FaceRetainedImageUrl):
-		self.add_query_param('FaceRetainedImageUrl',FaceRetainedImageUrl)
-
-	def get_UserId(self):
+	def set_FaceRetainedImageUrl(self, FaceRetainedImageUrl):  # String
+		self.add_query_param('FaceRetainedImageUrl', FaceRetainedImageUrl)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_CallbackSeed(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_CallbackSeed(self): # String
 		return self.get_query_params().get('CallbackSeed')
 
-	def set_CallbackSeed(self,CallbackSeed):
-		self.add_query_param('CallbackSeed',CallbackSeed)
-
-	def get_UserIp(self):
+	def set_CallbackSeed(self, CallbackSeed):  # String
+		self.add_query_param('CallbackSeed', CallbackSeed)
+	def get_UserIp(self): # String
 		return self.get_query_params().get('UserIp')
 
-	def set_UserIp(self,UserIp):
-		self.add_query_param('UserIp',UserIp)
-
-	def get_IdCardBackImageUrl(self):
+	def set_UserIp(self, UserIp):  # String
+		self.add_query_param('UserIp', UserIp)
+	def get_IdCardBackImageUrl(self): # String
 		return self.get_query_params().get('IdCardBackImageUrl')
 
-	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
-		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
-
-	def get_IdCardNumber(self):
+	def set_IdCardBackImageUrl(self, IdCardBackImageUrl):  # String
+		self.add_query_param('IdCardBackImageUrl', IdCardBackImageUrl)
+	def get_IdCardNumber(self): # String
 		return self.get_query_params().get('IdCardNumber')
 
-	def set_IdCardNumber(self,IdCardNumber):
-		self.add_query_param('IdCardNumber',IdCardNumber)
-
-	def get_IdCardFrontImageUrl(self):
+	def set_IdCardNumber(self, IdCardNumber):  # String
+		self.add_query_param('IdCardNumber', IdCardNumber)
+	def get_IdCardFrontImageUrl(self): # String
 		return self.get_query_params().get('IdCardFrontImageUrl')
 
-	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
-		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
-
-	def get_BizType(self):
+	def set_IdCardFrontImageUrl(self, IdCardFrontImageUrl):  # String
+		self.add_query_param('IdCardFrontImageUrl', IdCardFrontImageUrl)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_PassedRedirectUrl(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_PassedRedirectUrl(self): # String
 		return self.get_query_params().get('PassedRedirectUrl')
 
-	def set_PassedRedirectUrl(self,PassedRedirectUrl):
-		self.add_query_param('PassedRedirectUrl',PassedRedirectUrl)
-
-	def get_UserRegistTime(self):
+	def set_PassedRedirectUrl(self, PassedRedirectUrl):  # String
+		self.add_query_param('PassedRedirectUrl', PassedRedirectUrl)
+	def get_UserRegistTime(self): # Long
 		return self.get_query_params().get('UserRegistTime')
 
-	def set_UserRegistTime(self,UserRegistTime):
-		self.add_query_param('UserRegistTime',UserRegistTime)
-
-	def get_BizId(self):
+	def set_UserRegistTime(self, UserRegistTime):  # Long
+		self.add_query_param('UserRegistTime', UserRegistTime)
+	def get_BizId(self): # String
 		return self.get_query_params().get('BizId')
 
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
-
-	def get_Name(self):
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_UserPhoneNumber(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_UserPhoneNumber(self): # String
 		return self.get_query_params().get('UserPhoneNumber')
 
-	def set_UserPhoneNumber(self,UserPhoneNumber):
-		self.add_query_param('UserPhoneNumber',UserPhoneNumber)
-
-	def get_CallbackUrl(self):
+	def set_UserPhoneNumber(self, UserPhoneNumber):  # String
+		self.add_query_param('UserPhoneNumber', UserPhoneNumber)
+	def get_CallbackUrl(self): # String
 		return self.get_query_params().get('CallbackUrl')
 
-	def set_CallbackUrl(self,CallbackUrl):
-		self.add_query_param('CallbackUrl',CallbackUrl)
-
-	def get_FailedRedirectUrl(self):
+	def set_CallbackUrl(self, CallbackUrl):  # String
+		self.add_query_param('CallbackUrl', CallbackUrl)
+	def get_FailedRedirectUrl(self): # String
 		return self.get_query_params().get('FailedRedirectUrl')
 
-	def set_FailedRedirectUrl(self,FailedRedirectUrl):
-		self.add_query_param('FailedRedirectUrl',FailedRedirectUrl)
+	def set_FailedRedirectUrl(self, FailedRedirectUrl):  # String
+		self.add_query_param('FailedRedirectUrl', FailedRedirectUrl)

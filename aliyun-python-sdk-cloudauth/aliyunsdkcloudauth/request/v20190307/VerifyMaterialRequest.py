@@ -23,58 +23,51 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class VerifyMaterialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VerifyMaterial','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VerifyMaterial')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FaceImageUrl(self):
+	def get_FaceImageUrl(self): # String
 		return self.get_query_params().get('FaceImageUrl')
 
-	def set_FaceImageUrl(self,FaceImageUrl):
-		self.add_query_param('FaceImageUrl',FaceImageUrl)
-
-	def get_UserId(self):
+	def set_FaceImageUrl(self, FaceImageUrl):  # String
+		self.add_query_param('FaceImageUrl', FaceImageUrl)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_IdCardBackImageUrl(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_IdCardBackImageUrl(self): # String
 		return self.get_query_params().get('IdCardBackImageUrl')
 
-	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
-		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
-
-	def get_IdCardNumber(self):
+	def set_IdCardBackImageUrl(self, IdCardBackImageUrl):  # String
+		self.add_query_param('IdCardBackImageUrl', IdCardBackImageUrl)
+	def get_IdCardNumber(self): # String
 		return self.get_query_params().get('IdCardNumber')
 
-	def set_IdCardNumber(self,IdCardNumber):
-		self.add_query_param('IdCardNumber',IdCardNumber)
-
-	def get_IdCardFrontImageUrl(self):
+	def set_IdCardNumber(self, IdCardNumber):  # String
+		self.add_query_param('IdCardNumber', IdCardNumber)
+	def get_IdCardFrontImageUrl(self): # String
 		return self.get_query_params().get('IdCardFrontImageUrl')
 
-	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
-		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
-
-	def get_BizType(self):
+	def set_IdCardFrontImageUrl(self, IdCardFrontImageUrl):  # String
+		self.add_query_param('IdCardFrontImageUrl', IdCardFrontImageUrl)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_BizId(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_BizId(self): # String
 		return self.get_query_params().get('BizId')
 
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
-
-	def get_Name(self):
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

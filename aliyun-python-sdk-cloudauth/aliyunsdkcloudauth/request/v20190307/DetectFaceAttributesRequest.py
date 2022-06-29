@@ -23,22 +23,21 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class DetectFaceAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DetectFaceAttributes','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DetectFaceAttributes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizType(self):
+	def get_BizType(self): # String
 		return self.get_body_params().get('BizType')
 
-	def set_BizType(self,BizType):
+	def set_BizType(self, BizType):  # String
 		self.add_body_params('BizType', BizType)
-
-	def get_MaterialValue(self):
+	def get_MaterialValue(self): # String
 		return self.get_body_params().get('MaterialValue')
 
-	def set_MaterialValue(self,MaterialValue):
+	def set_MaterialValue(self, MaterialValue):  # String
 		self.add_body_params('MaterialValue', MaterialValue)

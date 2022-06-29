@@ -23,40 +23,36 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class ModifyDeviceInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'ModifyDeviceInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'ModifyDeviceInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserDeviceId(self):
+	def get_UserDeviceId(self): # String
 		return self.get_query_params().get('UserDeviceId')
 
-	def set_UserDeviceId(self,UserDeviceId):
-		self.add_query_param('UserDeviceId',UserDeviceId)
-
-	def get_Duration(self):
+	def set_UserDeviceId(self, UserDeviceId):  # String
+		self.add_query_param('UserDeviceId', UserDeviceId)
+	def get_Duration(self): # String
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_ExpiredDay(self):
+	def set_Duration(self, Duration):  # String
+		self.add_query_param('Duration', Duration)
+	def get_ExpiredDay(self): # String
 		return self.get_query_params().get('ExpiredDay')
 
-	def set_ExpiredDay(self,ExpiredDay):
-		self.add_query_param('ExpiredDay',ExpiredDay)
-
-	def get_DeviceId(self):
+	def set_ExpiredDay(self, ExpiredDay):  # String
+		self.add_query_param('ExpiredDay', ExpiredDay)
+	def get_DeviceId(self): # String
 		return self.get_query_params().get('DeviceId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_BizType(self):
+	def set_DeviceId(self, DeviceId):  # String
+		self.add_query_param('DeviceId', DeviceId)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)

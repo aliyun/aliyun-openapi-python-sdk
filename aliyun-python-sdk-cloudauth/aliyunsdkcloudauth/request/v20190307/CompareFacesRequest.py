@@ -23,35 +23,32 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class CompareFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CompareFaces','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CompareFaces')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceImageType(self):
+	def get_SourceImageType(self): # String
 		return self.get_body_params().get('SourceImageType')
 
-	def set_SourceImageType(self,SourceImageType):
+	def set_SourceImageType(self, SourceImageType):  # String
 		self.add_body_params('SourceImageType', SourceImageType)
-
-	def get_TargetImageType(self):
+	def get_TargetImageType(self): # String
 		return self.get_body_params().get('TargetImageType')
 
-	def set_TargetImageType(self,TargetImageType):
+	def set_TargetImageType(self, TargetImageType):  # String
 		self.add_body_params('TargetImageType', TargetImageType)
-
-	def get_TargetImageValue(self):
+	def get_TargetImageValue(self): # String
 		return self.get_body_params().get('TargetImageValue')
 
-	def set_TargetImageValue(self,TargetImageValue):
+	def set_TargetImageValue(self, TargetImageValue):  # String
 		self.add_body_params('TargetImageValue', TargetImageValue)
-
-	def get_SourceImageValue(self):
+	def get_SourceImageValue(self): # String
 		return self.get_body_params().get('SourceImageValue')
 
-	def set_SourceImageValue(self,SourceImageValue):
+	def set_SourceImageValue(self, SourceImageValue):  # String
 		self.add_body_params('SourceImageValue', SourceImageValue)
