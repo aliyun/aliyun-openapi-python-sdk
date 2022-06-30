@@ -19,32 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
+import json
 
 class DetectPedestrianIntrusionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectPedestrianIntrusion','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DetectRegion(self):
+	def get_DetectRegion(self): # Array
 		return self.get_body_params().get('DetectRegion')
 
-	def set_DetectRegion(self,DetectRegion):
-		self.add_body_params('DetectRegion', DetectRegion)
-
-	def get_RegionType(self):
+	def set_DetectRegion(self, DetectRegion):  # Array
+		self.add_body_params("DetectRegion", json.dumps(DetectRegion))
+	def get_RegionType(self): # String
 		return self.get_body_params().get('RegionType')
 
-	def set_RegionType(self,RegionType):
+	def set_RegionType(self, RegionType):  # String
 		self.add_body_params('RegionType', RegionType)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

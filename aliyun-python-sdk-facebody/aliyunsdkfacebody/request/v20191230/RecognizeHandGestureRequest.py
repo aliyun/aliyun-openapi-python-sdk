@@ -25,26 +25,24 @@ class RecognizeHandGestureRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'RecognizeHandGesture','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GestureType(self):
+	def get_GestureType(self): # String
 		return self.get_body_params().get('GestureType')
 
-	def set_GestureType(self,GestureType):
+	def set_GestureType(self, GestureType):  # String
 		self.add_body_params('GestureType', GestureType)
-
-	def get_AppId(self):
+	def get_AppId(self): # String
 		return self.get_body_params().get('AppId')
 
-	def set_AppId(self,AppId):
+	def set_AppId(self, AppId):  # String
 		self.add_body_params('AppId', AppId)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

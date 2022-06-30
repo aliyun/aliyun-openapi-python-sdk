@@ -25,50 +25,44 @@ class AddFaceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'AddFace','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EntityId(self):
+	def get_EntityId(self): # String
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self,EntityId):
+	def set_EntityId(self, EntityId):  # String
 		self.add_body_params('EntityId', EntityId)
-
-	def get_QualityScoreThreshold(self):
+	def get_QualityScoreThreshold(self): # Float
 		return self.get_body_params().get('QualityScoreThreshold')
 
-	def set_QualityScoreThreshold(self,QualityScoreThreshold):
+	def set_QualityScoreThreshold(self, QualityScoreThreshold):  # Float
 		self.add_body_params('QualityScoreThreshold', QualityScoreThreshold)
-
-	def get_SimilarityScoreThresholdBetweenEntity(self):
+	def get_SimilarityScoreThresholdBetweenEntity(self): # Float
 		return self.get_body_params().get('SimilarityScoreThresholdBetweenEntity')
 
-	def set_SimilarityScoreThresholdBetweenEntity(self,SimilarityScoreThresholdBetweenEntity):
+	def set_SimilarityScoreThresholdBetweenEntity(self, SimilarityScoreThresholdBetweenEntity):  # Float
 		self.add_body_params('SimilarityScoreThresholdBetweenEntity', SimilarityScoreThresholdBetweenEntity)
-
-	def get_ExtraData(self):
+	def get_ExtraData(self): # String
 		return self.get_body_params().get('ExtraData')
 
-	def set_ExtraData(self,ExtraData):
+	def set_ExtraData(self, ExtraData):  # String
 		self.add_body_params('ExtraData', ExtraData)
-
-	def get_SimilarityScoreThresholdInEntity(self):
+	def get_SimilarityScoreThresholdInEntity(self): # Float
 		return self.get_body_params().get('SimilarityScoreThresholdInEntity')
 
-	def set_SimilarityScoreThresholdInEntity(self,SimilarityScoreThresholdInEntity):
+	def set_SimilarityScoreThresholdInEntity(self, SimilarityScoreThresholdInEntity):  # Float
 		self.add_body_params('SimilarityScoreThresholdInEntity', SimilarityScoreThresholdInEntity)
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
-
-	def get_ImageUrl(self):
+	def get_ImageUrl(self): # String
 		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
+	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_body_params('ImageUrl', ImageUrl)

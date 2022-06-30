@@ -25,32 +25,29 @@ class FaceBeautyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'FaceBeauty','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_White(self):
+	def get_White(self): # Float
 		return self.get_body_params().get('White')
 
-	def set_White(self,White):
+	def set_White(self, White):  # Float
 		self.add_body_params('White', White)
-
-	def get_Smooth(self):
+	def get_Smooth(self): # Float
 		return self.get_body_params().get('Smooth')
 
-	def set_Smooth(self,Smooth):
+	def set_Smooth(self, Smooth):  # Float
 		self.add_body_params('Smooth', Smooth)
-
-	def get_Sharp(self):
+	def get_Sharp(self): # Float
 		return self.get_body_params().get('Sharp')
 
-	def set_Sharp(self,Sharp):
+	def set_Sharp(self, Sharp):  # Float
 		self.add_body_params('Sharp', Sharp)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

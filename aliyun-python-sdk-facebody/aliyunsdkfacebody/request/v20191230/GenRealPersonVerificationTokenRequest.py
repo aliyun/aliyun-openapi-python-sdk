@@ -25,26 +25,24 @@ class GenRealPersonVerificationTokenRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GenRealPersonVerificationToken','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MetaInfo(self):
+	def get_MetaInfo(self): # String
 		return self.get_body_params().get('MetaInfo')
 
-	def set_MetaInfo(self,MetaInfo):
+	def set_MetaInfo(self, MetaInfo):  # String
 		self.add_body_params('MetaInfo', MetaInfo)
-
-	def get_CertificateNumber(self):
+	def get_CertificateNumber(self): # String
 		return self.get_body_params().get('CertificateNumber')
 
-	def set_CertificateNumber(self,CertificateNumber):
+	def set_CertificateNumber(self, CertificateNumber):  # String
 		self.add_body_params('CertificateNumber', CertificateNumber)
-
-	def get_CertificateName(self):
+	def get_CertificateName(self): # String
 		return self.get_body_params().get('CertificateName')
 
-	def set_CertificateName(self,CertificateName):
+	def set_CertificateName(self, CertificateName):  # String
 		self.add_body_params('CertificateName', CertificateName)

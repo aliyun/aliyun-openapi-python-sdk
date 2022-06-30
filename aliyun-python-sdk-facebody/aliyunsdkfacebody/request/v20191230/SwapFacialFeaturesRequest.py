@@ -25,38 +25,34 @@ class SwapFacialFeaturesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'SwapFacialFeatures','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetImageURL(self):
+	def get_TargetImageURL(self): # String
 		return self.get_body_params().get('TargetImageURL')
 
-	def set_TargetImageURL(self,TargetImageURL):
+	def set_TargetImageURL(self, TargetImageURL):  # String
 		self.add_body_params('TargetImageURL', TargetImageURL)
-
-	def get_SourceImageData(self):
+	def get_SourceImageData(self): # String
 		return self.get_body_params().get('SourceImageData')
 
-	def set_SourceImageData(self,SourceImageData):
+	def set_SourceImageData(self, SourceImageData):  # String
 		self.add_body_params('SourceImageData', SourceImageData)
-
-	def get_SourceImageURL(self):
+	def get_SourceImageURL(self): # String
 		return self.get_body_params().get('SourceImageURL')
 
-	def set_SourceImageURL(self,SourceImageURL):
+	def set_SourceImageURL(self, SourceImageURL):  # String
 		self.add_body_params('SourceImageURL', SourceImageURL)
-
-	def get_TargetImageData(self):
+	def get_TargetImageData(self): # String
 		return self.get_body_params().get('TargetImageData')
 
-	def set_TargetImageData(self,TargetImageData):
+	def set_TargetImageData(self, TargetImageData):  # String
 		self.add_body_params('TargetImageData', TargetImageData)
-
-	def get_EditPart(self):
+	def get_EditPart(self): # String
 		return self.get_body_params().get('EditPart')
 
-	def set_EditPart(self,EditPart):
+	def set_EditPart(self, EditPart):  # String
 		self.add_body_params('EditPart', EditPart)

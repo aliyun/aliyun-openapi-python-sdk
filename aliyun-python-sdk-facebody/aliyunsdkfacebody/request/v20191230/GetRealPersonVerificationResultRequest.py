@@ -25,20 +25,19 @@ class GetRealPersonVerificationResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GetRealPersonVerificationResult','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MaterialHash(self):
+	def get_MaterialHash(self): # String
 		return self.get_body_params().get('MaterialHash')
 
-	def set_MaterialHash(self,MaterialHash):
+	def set_MaterialHash(self, MaterialHash):  # String
 		self.add_body_params('MaterialHash', MaterialHash)
-
-	def get_VerificationToken(self):
+	def get_VerificationToken(self): # String
 		return self.get_body_params().get('VerificationToken')
 
-	def set_VerificationToken(self,VerificationToken):
+	def set_VerificationToken(self, VerificationToken):  # String
 		self.add_body_params('VerificationToken', VerificationToken)

@@ -25,20 +25,19 @@ class ExtractFingerPrintRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ExtractFingerPrint','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageData(self):
+	def get_ImageData(self): # String
 		return self.get_body_params().get('ImageData')
 
-	def set_ImageData(self,ImageData):
+	def set_ImageData(self, ImageData):  # String
 		self.add_body_params('ImageData', ImageData)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

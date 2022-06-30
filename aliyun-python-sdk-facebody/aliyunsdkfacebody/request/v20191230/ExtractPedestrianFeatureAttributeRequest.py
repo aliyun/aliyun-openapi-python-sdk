@@ -25,28 +25,26 @@ class ExtractPedestrianFeatureAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ExtractPedestrianFeatureAttribute','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UrlLists(self):
-		return self.get_body_params().get('UrlList')
-
-	def set_UrlLists(self, UrlLists):
-		for depth1 in range(len(UrlLists)):
-			if UrlLists[depth1].get('Url') is not None:
-				self.add_body_params('UrlList.' + str(depth1 + 1) + '.Url', UrlLists[depth1].get('Url'))
-
-	def get_Mode(self):
+	def get_Mode(self): # String
 		return self.get_body_params().get('Mode')
 
-	def set_Mode(self,Mode):
+	def set_Mode(self, Mode):  # String
 		self.add_body_params('Mode', Mode)
+	def get_UrlLists(self): # RepeatList
+		return self.get_body_params().get('UrlList')
 
-	def get_ImageURL(self):
+	def set_UrlLists(self, UrlList):  # RepeatList
+		for depth1 in range(len(UrlList)):
+			if UrlList[depth1].get('Url') is not None:
+				self.add_body_params('UrlList.' + str(depth1 + 1) + '.Url', UrlList[depth1].get('Url'))
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

@@ -25,20 +25,19 @@ class GenerateHumanAnimeStyleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GenerateHumanAnimeStyle','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlgoType(self):
+	def get_AlgoType(self): # String
 		return self.get_query_params().get('AlgoType')
 
-	def set_AlgoType(self,AlgoType):
-		self.add_query_param('AlgoType',AlgoType)
-
-	def get_ImageURL(self):
+	def set_AlgoType(self, AlgoType):  # String
+		self.add_query_param('AlgoType', AlgoType)
+	def get_ImageURL(self): # String
 		return self.get_query_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_query_param('ImageURL',ImageURL)
+	def set_ImageURL(self, ImageURL):  # String
+		self.add_query_param('ImageURL', ImageURL)

@@ -25,26 +25,24 @@ class FaceFilterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'FaceFilter','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Strength(self):
+	def get_Strength(self): # Float
 		return self.get_body_params().get('Strength')
 
-	def set_Strength(self,Strength):
+	def set_Strength(self, Strength):  # Float
 		self.add_body_params('Strength', Strength)
-
-	def get_ResourceType(self):
+	def get_ResourceType(self): # String
 		return self.get_body_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
+	def set_ResourceType(self, ResourceType):  # String
 		self.add_body_params('ResourceType', ResourceType)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

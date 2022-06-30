@@ -25,26 +25,24 @@ class ListBodyPersonRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ListBodyPerson','facebody')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Limit(self):
+	def get_Limit(self): # Long
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_Offset(self):
+	def set_Limit(self, Limit):  # Long
+		self.add_query_param('Limit', Limit)
+	def get_Offset(self): # Long
 		return self.get_query_params().get('Offset')
 
-	def set_Offset(self,Offset):
-		self.add_query_param('Offset',Offset)
-
-	def get_DbId(self):
+	def set_Offset(self, Offset):  # Long
+		self.add_query_param('Offset', Offset)
+	def get_DbId(self): # Long
 		return self.get_query_params().get('DbId')
 
-	def set_DbId(self,DbId):
-		self.add_query_param('DbId',DbId)
+	def set_DbId(self, DbId):  # Long
+		self.add_query_param('DbId', DbId)

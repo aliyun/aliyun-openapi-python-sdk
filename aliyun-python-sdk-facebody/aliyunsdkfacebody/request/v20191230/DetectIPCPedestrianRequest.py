@@ -25,32 +25,29 @@ class DetectIPCPedestrianRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectIPCPedestrian','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Height(self):
+	def get_Height(self): # Integer
 		return self.get_body_params().get('Height')
 
-	def set_Height(self,Height):
+	def set_Height(self, Height):  # Integer
 		self.add_body_params('Height', Height)
-
-	def get_ImageData(self):
+	def get_ImageData(self): # String
 		return self.get_body_params().get('ImageData')
 
-	def set_ImageData(self,ImageData):
+	def set_ImageData(self, ImageData):  # String
 		self.add_body_params('ImageData', ImageData)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)
-
-	def get_Width(self):
+	def get_Width(self): # Integer
 		return self.get_body_params().get('Width')
 
-	def set_Width(self,Width):
+	def set_Width(self, Width):  # Integer
 		self.add_body_params('Width', Width)

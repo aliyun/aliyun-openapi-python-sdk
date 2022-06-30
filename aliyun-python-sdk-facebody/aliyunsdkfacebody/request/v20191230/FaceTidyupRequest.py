@@ -25,26 +25,24 @@ class FaceTidyupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'FaceTidyup','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ShapeType(self):
+	def get_ShapeType(self): # Integer
 		return self.get_body_params().get('ShapeType')
 
-	def set_ShapeType(self,ShapeType):
+	def set_ShapeType(self, ShapeType):  # Integer
 		self.add_body_params('ShapeType', ShapeType)
-
-	def get_Strength(self):
+	def get_Strength(self): # Float
 		return self.get_body_params().get('Strength')
 
-	def set_Strength(self,Strength):
+	def set_Strength(self, Strength):  # Float
 		self.add_body_params('Strength', Strength)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

@@ -25,26 +25,24 @@ class ExtractPedestrianFeatureAttrRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ExtractPedestrianFeatureAttr','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mode(self):
+	def get_Mode(self): # String
 		return self.get_body_params().get('Mode')
 
-	def set_Mode(self,Mode):
+	def set_Mode(self, Mode):  # String
 		self.add_body_params('Mode', Mode)
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)
-
-	def get_ServiceVersion(self):
+	def get_ServiceVersion(self): # String
 		return self.get_body_params().get('ServiceVersion')
 
-	def set_ServiceVersion(self,ServiceVersion):
+	def set_ServiceVersion(self, ServiceVersion):  # String
 		self.add_body_params('ServiceVersion', ServiceVersion)

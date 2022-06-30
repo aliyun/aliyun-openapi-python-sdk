@@ -19,38 +19,36 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
+import json
 
 class SearchBodyTraceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'SearchBodyTrace','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MinScore(self):
+	def get_MinScore(self): # Float
 		return self.get_body_params().get('MinScore')
 
-	def set_MinScore(self,MinScore):
+	def set_MinScore(self, MinScore):  # Float
 		self.add_body_params('MinScore', MinScore)
-
-	def get_Limit(self):
+	def get_Limit(self): # Long
 		return self.get_body_params().get('Limit')
 
-	def set_Limit(self,Limit):
+	def set_Limit(self, Limit):  # Long
 		self.add_body_params('Limit', Limit)
-
-	def get_Images(self):
+	def get_Images(self): # Array
 		return self.get_body_params().get('Images')
 
-	def set_Images(self,Images):
-		self.add_body_params('Images', Images)
-
-	def get_DbId(self):
+	def set_Images(self, Images):  # Array
+		self.add_body_params("Images", json.dumps(Images))
+	def get_DbId(self): # Long
 		return self.get_body_params().get('DbId')
 
-	def set_DbId(self,DbId):
+	def set_DbId(self, DbId):  # Long
 		self.add_body_params('DbId', DbId)

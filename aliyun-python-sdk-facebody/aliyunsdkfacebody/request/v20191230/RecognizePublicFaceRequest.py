@@ -25,18 +25,18 @@ class RecognizePublicFaceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'RecognizePublicFace','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Tasks(self):
+	def get_Tasks(self): # RepeatList
 		return self.get_body_params().get('Task')
 
-	def set_Tasks(self, Tasks):
-		for depth1 in range(len(Tasks)):
-			if Tasks[depth1].get('ImageURL') is not None:
-				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageURL', Tasks[depth1].get('ImageURL'))
-			if Tasks[depth1].get('ImageData') is not None:
-				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageData', Tasks[depth1].get('ImageData'))
+	def set_Tasks(self, Task):  # RepeatList
+		for depth1 in range(len(Task)):
+			if Task[depth1].get('ImageURL') is not None:
+				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageURL', Task[depth1].get('ImageURL'))
+			if Task[depth1].get('ImageData') is not None:
+				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageData', Task[depth1].get('ImageData'))

@@ -25,20 +25,19 @@ class DeleteFaceImageTemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DeleteFaceImageTemplate','facebody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_TemplateId(self):
+	def get_TemplateId(self): # String
 		return self.get_body_params().get('TemplateId')
 
-	def set_TemplateId(self,TemplateId):
+	def set_TemplateId(self, TemplateId):  # String
 		self.add_body_params('TemplateId', TemplateId)

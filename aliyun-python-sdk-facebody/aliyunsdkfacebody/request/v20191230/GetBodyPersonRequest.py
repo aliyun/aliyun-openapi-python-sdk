@@ -25,20 +25,19 @@ class GetBodyPersonRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GetBodyPerson','facebody')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PersonId(self):
+	def get_PersonId(self): # Long
 		return self.get_query_params().get('PersonId')
 
-	def set_PersonId(self,PersonId):
-		self.add_query_param('PersonId',PersonId)
-
-	def get_DbId(self):
+	def set_PersonId(self, PersonId):  # Long
+		self.add_query_param('PersonId', PersonId)
+	def get_DbId(self): # Long
 		return self.get_query_params().get('DbId')
 
-	def set_DbId(self,DbId):
-		self.add_query_param('DbId',DbId)
+	def set_DbId(self, DbId):  # Long
+		self.add_query_param('DbId', DbId)
