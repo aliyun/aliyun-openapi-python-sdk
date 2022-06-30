@@ -25,26 +25,24 @@ class ModifyPortAutoCcStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyPortAutoCcStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Switch(self):
+	def get_Switch(self): # String
 		return self.get_query_params().get('Switch')
 
-	def set_Switch(self,Switch):
-		self.add_query_param('Switch',Switch)
-
-	def get_Mode(self):
+	def set_Switch(self, Switch):  # String
+		self.add_query_param('Switch', Switch)
+	def get_Mode(self): # String
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
-
-	def get_InstanceId(self):
+	def set_Mode(self, Mode):  # String
+		self.add_query_param('Mode', Mode)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

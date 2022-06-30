@@ -25,32 +25,29 @@ class ModifyWebPreciseAccessRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyWebPreciseAccessRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Expires(self):
+	def get_Expires(self): # Integer
 		return self.get_query_params().get('Expires')
 
-	def set_Expires(self,Expires):
-		self.add_query_param('Expires',Expires)
-
-	def get_Rules(self):
+	def set_Expires(self, Expires):  # Integer
+		self.add_query_param('Expires', Expires)
+	def get_Rules(self): # String
 		return self.get_query_params().get('Rules')
 
-	def set_Rules(self,Rules):
-		self.add_query_param('Rules',Rules)
-
-	def get_ResourceGroupId(self):
+	def set_Rules(self, Rules):  # String
+		self.add_query_param('Rules', Rules)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Domain(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

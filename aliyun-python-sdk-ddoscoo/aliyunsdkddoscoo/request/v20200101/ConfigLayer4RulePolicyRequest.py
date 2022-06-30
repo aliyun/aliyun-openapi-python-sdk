@@ -25,14 +25,14 @@ class ConfigLayer4RulePolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ConfigLayer4RulePolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Listeners(self):
+	def get_Listeners(self): # String
 		return self.get_query_params().get('Listeners')
 
-	def set_Listeners(self,Listeners):
-		self.add_query_param('Listeners',Listeners)
+	def set_Listeners(self, Listeners):  # String
+		self.add_query_param('Listeners', Listeners)

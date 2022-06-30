@@ -25,26 +25,24 @@ class CreateAsyncTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateAsyncTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskType(self):
+	def get_TaskType(self): # Integer
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_TaskParams(self):
+	def set_TaskType(self, TaskType):  # Integer
+		self.add_query_param('TaskType', TaskType)
+	def get_TaskParams(self): # String
 		return self.get_query_params().get('TaskParams')
 
-	def set_TaskParams(self,TaskParams):
-		self.add_query_param('TaskParams',TaskParams)
-
-	def get_ResourceGroupId(self):
+	def set_TaskParams(self, TaskParams):  # String
+		self.add_query_param('TaskParams', TaskParams)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

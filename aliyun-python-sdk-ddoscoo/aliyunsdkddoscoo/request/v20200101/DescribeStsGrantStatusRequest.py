@@ -25,20 +25,19 @@ class DescribeStsGrantStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeStsGrantStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Role(self):
+	def get_Role(self): # String
 		return self.get_query_params().get('Role')
 
-	def set_Role(self,Role):
-		self.add_query_param('Role',Role)
-
-	def get_ResourceGroupId(self):
+	def set_Role(self, Role):  # String
+		self.add_query_param('Role', Role)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

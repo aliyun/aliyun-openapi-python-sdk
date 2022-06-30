@@ -25,40 +25,35 @@ class DescribeDomainResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDomainResource')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceIdss(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
-
-	def get_QueryDomainPattern(self):
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
+	def get_QueryDomainPattern(self): # String
 		return self.get_query_params().get('QueryDomainPattern')
 
-	def set_QueryDomainPattern(self,QueryDomainPattern):
-		self.add_query_param('QueryDomainPattern',QueryDomainPattern)
-
-	def get_Domain(self):
+	def set_QueryDomainPattern(self, QueryDomainPattern):  # String
+		self.add_query_param('QueryDomainPattern', QueryDomainPattern)
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

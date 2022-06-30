@@ -25,38 +25,34 @@ class DescribePortRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribePort')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_FrontendProtocol(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_FrontendProtocol(self): # String
 		return self.get_query_params().get('FrontendProtocol')
 
-	def set_FrontendProtocol(self,FrontendProtocol):
-		self.add_query_param('FrontendProtocol',FrontendProtocol)
-
-	def get_InstanceId(self):
+	def set_FrontendProtocol(self, FrontendProtocol):  # String
+		self.add_query_param('FrontendProtocol', FrontendProtocol)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_FrontendPort(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_FrontendPort(self): # Integer
 		return self.get_query_params().get('FrontendPort')
 
-	def set_FrontendPort(self,FrontendPort):
-		self.add_query_param('FrontendPort',FrontendPort)
+	def set_FrontendPort(self, FrontendPort):  # Integer
+		self.add_query_param('FrontendPort', FrontendPort)

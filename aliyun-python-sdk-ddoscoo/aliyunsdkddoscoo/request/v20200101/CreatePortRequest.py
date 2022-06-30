@@ -25,40 +25,35 @@ class CreatePortRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreatePort')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackendPort(self):
+	def get_BackendPort(self): # String
 		return self.get_query_params().get('BackendPort')
 
-	def set_BackendPort(self,BackendPort):
-		self.add_query_param('BackendPort',BackendPort)
-
-	def get_FrontendProtocol(self):
+	def set_BackendPort(self, BackendPort):  # String
+		self.add_query_param('BackendPort', BackendPort)
+	def get_FrontendProtocol(self): # String
 		return self.get_query_params().get('FrontendProtocol')
 
-	def set_FrontendProtocol(self,FrontendProtocol):
-		self.add_query_param('FrontendProtocol',FrontendProtocol)
-
-	def get_InstanceId(self):
+	def set_FrontendProtocol(self, FrontendProtocol):  # String
+		self.add_query_param('FrontendProtocol', FrontendProtocol)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_RealServerss(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_RealServerss(self): # RepeatList
 		return self.get_query_params().get('RealServers')
 
-	def set_RealServerss(self, RealServerss):
-		for depth1 in range(len(RealServerss)):
-			if RealServerss[depth1] is not None:
-				self.add_query_param('RealServers.' + str(depth1 + 1) , RealServerss[depth1])
-
-	def get_FrontendPort(self):
+	def set_RealServerss(self, RealServers):  # RepeatList
+		for depth1 in range(len(RealServers)):
+			self.add_query_param('RealServers.' + str(depth1 + 1), RealServers[depth1])
+	def get_FrontendPort(self): # String
 		return self.get_query_params().get('FrontendPort')
 
-	def set_FrontendPort(self,FrontendPort):
-		self.add_query_param('FrontendPort',FrontendPort)
+	def set_FrontendPort(self, FrontendPort):  # String
+		self.add_query_param('FrontendPort', FrontendPort)

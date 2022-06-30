@@ -25,26 +25,24 @@ class AddAutoCcWhitelistRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'AddAutoCcWhitelist')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExpireTime(self):
+	def get_ExpireTime(self): # Integer
 		return self.get_query_params().get('ExpireTime')
 
-	def set_ExpireTime(self,ExpireTime):
-		self.add_query_param('ExpireTime',ExpireTime)
-
-	def get_Whitelist(self):
+	def set_ExpireTime(self, ExpireTime):  # Integer
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_Whitelist(self): # String
 		return self.get_query_params().get('Whitelist')
 
-	def set_Whitelist(self,Whitelist):
-		self.add_query_param('Whitelist',Whitelist)
-
-	def get_InstanceId(self):
+	def set_Whitelist(self, Whitelist):  # String
+		self.add_query_param('Whitelist', Whitelist)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

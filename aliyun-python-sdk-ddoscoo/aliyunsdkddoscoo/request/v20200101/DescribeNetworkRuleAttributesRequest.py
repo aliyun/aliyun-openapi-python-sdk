@@ -25,14 +25,14 @@ class DescribeNetworkRuleAttributesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeNetworkRuleAttributes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NetworkRules(self):
+	def get_NetworkRules(self): # String
 		return self.get_query_params().get('NetworkRules')
 
-	def set_NetworkRules(self,NetworkRules):
-		self.add_query_param('NetworkRules',NetworkRules)
+	def set_NetworkRules(self, NetworkRules):  # String
+		self.add_query_param('NetworkRules', NetworkRules)

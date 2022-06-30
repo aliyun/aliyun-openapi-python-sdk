@@ -25,34 +25,30 @@ class ModifyBlockStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyBlockStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Duration(self):
+	def get_Duration(self): # Integer
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_Liness(self):
+	def set_Duration(self, Duration):  # Integer
+		self.add_query_param('Duration', Duration)
+	def get_Liness(self): # RepeatList
 		return self.get_query_params().get('Lines')
 
-	def set_Liness(self, Liness):
-		for depth1 in range(len(Liness)):
-			if Liness[depth1] is not None:
-				self.add_query_param('Lines.' + str(depth1 + 1) , Liness[depth1])
-
-	def get_InstanceId(self):
+	def set_Liness(self, Lines):  # RepeatList
+		for depth1 in range(len(Lines)):
+			self.add_query_param('Lines.' + str(depth1 + 1), Lines[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Status(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

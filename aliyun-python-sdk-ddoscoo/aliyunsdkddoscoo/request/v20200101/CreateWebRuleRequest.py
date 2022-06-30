@@ -25,52 +25,45 @@ class CreateWebRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateWebRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HttpsExt(self):
+	def get_HttpsExt(self): # String
 		return self.get_query_params().get('HttpsExt')
 
-	def set_HttpsExt(self,HttpsExt):
-		self.add_query_param('HttpsExt',HttpsExt)
-
-	def get_Rules(self):
+	def set_HttpsExt(self, HttpsExt):  # String
+		self.add_query_param('HttpsExt', HttpsExt)
+	def get_Rules(self): # String
 		return self.get_query_params().get('Rules')
 
-	def set_Rules(self,Rules):
-		self.add_query_param('Rules',Rules)
-
-	def get_ResourceGroupId(self):
+	def set_Rules(self, Rules):  # String
+		self.add_query_param('Rules', Rules)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RsType(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_RsType(self): # Integer
 		return self.get_query_params().get('RsType')
 
-	def set_RsType(self,RsType):
-		self.add_query_param('RsType',RsType)
-
-	def get_DefenseId(self):
+	def set_RsType(self, RsType):  # Integer
+		self.add_query_param('RsType', RsType)
+	def get_DefenseId(self): # String
 		return self.get_query_params().get('DefenseId')
 
-	def set_DefenseId(self,DefenseId):
-		self.add_query_param('DefenseId',DefenseId)
-
-	def get_InstanceIdss(self):
+	def set_DefenseId(self, DefenseId):  # String
+		self.add_query_param('DefenseId', DefenseId)
+	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
-
-	def get_Domain(self):
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

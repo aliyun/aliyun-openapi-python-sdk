@@ -25,28 +25,25 @@ class DescribeL7RsPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeL7RsPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupId(self):
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RealServerss(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_RealServerss(self): # RepeatList
 		return self.get_query_params().get('RealServers')
 
-	def set_RealServerss(self, RealServerss):
-		for depth1 in range(len(RealServerss)):
-			if RealServerss[depth1] is not None:
-				self.add_query_param('RealServers.' + str(depth1 + 1) , RealServerss[depth1])
-
-	def get_Domain(self):
+	def set_RealServerss(self, RealServers):  # RepeatList
+		for depth1 in range(len(RealServers)):
+			self.add_query_param('RealServers.' + str(depth1 + 1), RealServers[depth1])
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

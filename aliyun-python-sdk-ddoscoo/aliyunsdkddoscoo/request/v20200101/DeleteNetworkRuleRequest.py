@@ -25,14 +25,14 @@ class DeleteNetworkRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteNetworkRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NetworkRule(self):
+	def get_NetworkRule(self): # String
 		return self.get_query_params().get('NetworkRule')
 
-	def set_NetworkRule(self,NetworkRule):
-		self.add_query_param('NetworkRule',NetworkRule)
+	def set_NetworkRule(self, NetworkRule):  # String
+		self.add_query_param('NetworkRule', NetworkRule)

@@ -25,26 +25,24 @@ class DescribeDDosEventIspRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDDosEventIsp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ip(self):
+	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
-
-	def get_StartTime(self):
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_EventType(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_EventType(self): # String
 		return self.get_query_params().get('EventType')
 
-	def set_EventType(self,EventType):
-		self.add_query_param('EventType',EventType)
+	def set_EventType(self, EventType):  # String
+		self.add_query_param('EventType', EventType)

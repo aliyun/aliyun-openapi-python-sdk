@@ -25,16 +25,15 @@ class DescribePortAutoCcStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribePortAutoCcStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceIdss(self):
+	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])

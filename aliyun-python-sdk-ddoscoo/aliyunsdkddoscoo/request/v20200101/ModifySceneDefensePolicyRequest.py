@@ -25,38 +25,34 @@ class ModifySceneDefensePolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifySceneDefensePolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Template(self):
+	def get_Template(self): # String
 		return self.get_query_params().get('Template')
 
-	def set_Template(self,Template):
-		self.add_query_param('Template',Template)
-
-	def get_StartTime(self):
+	def set_Template(self, Template):  # String
+		self.add_query_param('Template', Template)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PolicyId(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PolicyId(self): # String
 		return self.get_query_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
-
-	def get_EndTime(self):
+	def set_PolicyId(self, PolicyId):  # String
+		self.add_query_param('PolicyId', PolicyId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Name(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

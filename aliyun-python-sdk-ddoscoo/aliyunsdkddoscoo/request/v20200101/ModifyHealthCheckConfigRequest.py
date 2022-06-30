@@ -25,32 +25,29 @@ class ModifyHealthCheckConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyHealthCheckConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HealthCheck(self):
+	def get_HealthCheck(self): # String
 		return self.get_query_params().get('HealthCheck')
 
-	def set_HealthCheck(self,HealthCheck):
-		self.add_query_param('HealthCheck',HealthCheck)
-
-	def get_InstanceId(self):
+	def set_HealthCheck(self, HealthCheck):  # String
+		self.add_query_param('HealthCheck', HealthCheck)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_FrontendPort(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_FrontendPort(self): # Integer
 		return self.get_query_params().get('FrontendPort')
 
-	def set_FrontendPort(self,FrontendPort):
-		self.add_query_param('FrontendPort',FrontendPort)
-
-	def get_ForwardProtocol(self):
+	def set_FrontendPort(self, FrontendPort):  # Integer
+		self.add_query_param('FrontendPort', FrontendPort)
+	def get_ForwardProtocol(self): # String
 		return self.get_query_params().get('ForwardProtocol')
 
-	def set_ForwardProtocol(self,ForwardProtocol):
-		self.add_query_param('ForwardProtocol',ForwardProtocol)
+	def set_ForwardProtocol(self, ForwardProtocol):  # String
+		self.add_query_param('ForwardProtocol', ForwardProtocol)

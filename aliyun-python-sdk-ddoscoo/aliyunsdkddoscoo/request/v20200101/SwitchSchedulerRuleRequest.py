@@ -25,26 +25,24 @@ class SwitchSchedulerRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'SwitchSchedulerRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RuleType(self):
+	def get_RuleType(self): # Integer
 		return self.get_query_params().get('RuleType')
 
-	def set_RuleType(self,RuleType):
-		self.add_query_param('RuleType',RuleType)
-
-	def get_RuleName(self):
+	def set_RuleType(self, RuleType):  # Integer
+		self.add_query_param('RuleType', RuleType)
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_SwitchData(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_SwitchData(self): # String
 		return self.get_query_params().get('SwitchData')
 
-	def set_SwitchData(self,SwitchData):
-		self.add_query_param('SwitchData',SwitchData)
+	def set_SwitchData(self, SwitchData):  # String
+		self.add_query_param('SwitchData', SwitchData)

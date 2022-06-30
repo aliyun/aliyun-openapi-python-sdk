@@ -25,36 +25,31 @@ class ConfigWebIpSetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ConfigWebIpSet')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupId(self):
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_BlackLists(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_BlackLists(self): # RepeatList
 		return self.get_query_params().get('BlackList')
 
-	def set_BlackLists(self, BlackLists):
-		for depth1 in range(len(BlackLists)):
-			if BlackLists[depth1] is not None:
-				self.add_query_param('BlackList.' + str(depth1 + 1) , BlackLists[depth1])
-
-	def get_WhiteLists(self):
+	def set_BlackLists(self, BlackList):  # RepeatList
+		for depth1 in range(len(BlackList)):
+			self.add_query_param('BlackList.' + str(depth1 + 1), BlackList[depth1])
+	def get_WhiteLists(self): # RepeatList
 		return self.get_query_params().get('WhiteList')
 
-	def set_WhiteLists(self, WhiteLists):
-		for depth1 in range(len(WhiteLists)):
-			if WhiteLists[depth1] is not None:
-				self.add_query_param('WhiteList.' + str(depth1 + 1) , WhiteLists[depth1])
-
-	def get_Domain(self):
+	def set_WhiteLists(self, WhiteList):  # RepeatList
+		for depth1 in range(len(WhiteList)):
+			self.add_query_param('WhiteList.' + str(depth1 + 1), WhiteList[depth1])
+	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

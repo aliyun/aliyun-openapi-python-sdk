@@ -25,42 +25,36 @@ class DeleteTagResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteTagResources')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceGroupId(self):
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_All(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_All(self): # Boolean
 		return self.get_query_params().get('All')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
-
-	def get_ResourceType(self):
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TagKeys(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
 		return self.get_query_params().get('TagKey')
 
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
-
-	def get_ResourceIdss(self):
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])
+	def get_ResourceIdss(self): # RepeatList
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIdss(self, ResourceIdss):
-		for depth1 in range(len(ResourceIdss)):
-			if ResourceIdss[depth1] is not None:
-				self.add_query_param('ResourceIds.' + str(depth1 + 1) , ResourceIdss[depth1])
+	def set_ResourceIdss(self, ResourceIds):  # RepeatList
+		for depth1 in range(len(ResourceIds)):
+			self.add_query_param('ResourceIds.' + str(depth1 + 1), ResourceIds[depth1])

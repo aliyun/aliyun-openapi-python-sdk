@@ -25,26 +25,24 @@ class AttachSceneDefenseObjectRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'AttachSceneDefenseObject')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Objects(self):
+	def get_Objects(self): # String
 		return self.get_query_params().get('Objects')
 
-	def set_Objects(self,Objects):
-		self.add_query_param('Objects',Objects)
-
-	def get_PolicyId(self):
+	def set_Objects(self, Objects):  # String
+		self.add_query_param('Objects', Objects)
+	def get_PolicyId(self): # String
 		return self.get_query_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
-
-	def get_ObjectType(self):
+	def set_PolicyId(self, PolicyId):  # String
+		self.add_query_param('PolicyId', PolicyId)
+	def get_ObjectType(self): # String
 		return self.get_query_params().get('ObjectType')
 
-	def set_ObjectType(self,ObjectType):
-		self.add_query_param('ObjectType',ObjectType)
+	def set_ObjectType(self, ObjectType):  # String
+		self.add_query_param('ObjectType', ObjectType)

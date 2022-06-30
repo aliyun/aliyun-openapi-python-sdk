@@ -25,20 +25,19 @@ class ModifyElasticBandWidthRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyElasticBandWidth')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ElasticBandwidth(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ElasticBandwidth(self): # Integer
 		return self.get_query_params().get('ElasticBandwidth')
 
-	def set_ElasticBandwidth(self,ElasticBandwidth):
-		self.add_query_param('ElasticBandwidth',ElasticBandwidth)
+	def set_ElasticBandwidth(self, ElasticBandwidth):  # Integer
+		self.add_query_param('ElasticBandwidth', ElasticBandwidth)

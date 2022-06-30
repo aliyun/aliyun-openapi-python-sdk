@@ -25,38 +25,34 @@ class CreateTagResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateTagResources')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceType(self):
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_Tagss(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Tagss(self): # RepeatList
 		return self.get_query_params().get('Tags')
 
-	def set_Tagss(self, Tagss):
-		for depth1 in range(len(Tagss)):
-			if Tagss[depth1].get('Value') is not None:
-				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tagss[depth1].get('Value'))
-			if Tagss[depth1].get('Key') is not None:
-				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tagss[depth1].get('Key'))
-
-	def get_ResourceGroupId(self):
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_ResourceIdss(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ResourceIdss(self): # RepeatList
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIdss(self, ResourceIdss):
-		for depth1 in range(len(ResourceIdss)):
-			if ResourceIdss[depth1] is not None:
-				self.add_query_param('ResourceIds.' + str(depth1 + 1) , ResourceIdss[depth1])
+	def set_ResourceIdss(self, ResourceIds):  # RepeatList
+		for depth1 in range(len(ResourceIds)):
+			self.add_query_param('ResourceIds.' + str(depth1 + 1), ResourceIds[depth1])
