@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdktag.endpoint import endpoint_data
 
-class CreateTagsRequest(RpcRequest):
+class ListPoliciesForTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'CreateTags','tag')
+		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'ListPoliciesForTarget','tag')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,21 @@ class CreateTagsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TargetId(self): # String
+		return self.get_query_params().get('TargetId')
+
+	def set_TargetId(self, TargetId):  # String
+		self.add_query_param('TargetId', TargetId)
+	def get_TargetType(self): # String
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,18 +61,8 @@ class CreateTagsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TagKeyValueParamLists(self): # RepeatList
-		return self.get_query_params().get('TagKeyValueParamList')
+	def get_MaxResult(self): # Integer
+		return self.get_query_params().get('MaxResult')
 
-	def set_TagKeyValueParamLists(self, TagKeyValueParamList):  # RepeatList
-		for depth1 in range(len(TagKeyValueParamList)):
-			if TagKeyValueParamList[depth1].get('Key') is not None:
-				self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.Key', TagKeyValueParamList[depth1].get('Key'))
-			if TagKeyValueParamList[depth1].get('TagValueParamList') is not None:
-				for depth2 in range(len(TagKeyValueParamList[depth1].get('TagValueParamList'))):
-					if TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Value') is not None:
-						self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.TagValueParamList.'  + str(depth2 + 1) + '.Value', TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Value'))
-					if TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Description') is not None:
-						self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.TagValueParamList.'  + str(depth2 + 1) + '.Description', TagKeyValueParamList[depth1].get('TagValueParamList')[depth2].get('Description'))
-			if TagKeyValueParamList[depth1].get('Description') is not None:
-				self.add_query_param('TagKeyValueParamList.' + str(depth1 + 1) + '.Description', TagKeyValueParamList[depth1].get('Description'))
+	def set_MaxResult(self, MaxResult):  # Integer
+		self.add_query_param('MaxResult', MaxResult)
