@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListSharedReportsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListSharedReports','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListSharedReports','quickbi')
 		self.set_method('POST')
 
 	def get_TreeType(self): # String

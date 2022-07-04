@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDatasetDetailInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetDetailInfo','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetDetailInfo','quickbi')
 		self.set_method('POST')
 
 	def get_DatasetId(self): # String

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteUserTagMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserTagMeta','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserTagMeta','quickbi')
 		self.set_method('POST')
 
 	def get_TagId(self): # String

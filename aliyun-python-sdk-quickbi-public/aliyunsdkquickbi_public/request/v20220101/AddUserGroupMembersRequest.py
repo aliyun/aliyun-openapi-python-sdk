@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddUserGroupMembersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUserGroupMembers','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUserGroupMembers','quickbi')
 		self.set_method('POST')
 
 	def get_UserGroupIds(self): # String

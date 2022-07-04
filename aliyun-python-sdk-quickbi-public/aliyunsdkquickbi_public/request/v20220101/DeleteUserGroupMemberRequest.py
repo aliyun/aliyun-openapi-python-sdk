@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteUserGroupMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserGroupMember','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserGroupMember','quickbi')
 		self.set_method('POST')
 
 	def get_UserGroupId(self): # String

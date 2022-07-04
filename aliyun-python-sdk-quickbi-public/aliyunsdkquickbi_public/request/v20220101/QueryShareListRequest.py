@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryShareListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryShareList','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryShareList','quickbi')
 		self.set_method('POST')
 
 	def get_ReportId(self): # String

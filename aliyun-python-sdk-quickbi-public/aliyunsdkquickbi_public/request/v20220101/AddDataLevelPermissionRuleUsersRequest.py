@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddDataLevelPermissionRuleUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionRuleUsers','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionRuleUsers','quickbi')
 		self.set_method('POST')
 
 	def get_AddUserModel(self): # String

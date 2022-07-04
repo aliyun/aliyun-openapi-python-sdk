@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ResultCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ResultCallback','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ResultCallback','quickbi')
 		self.set_method('POST')
 
 	def get_HandleReason(self): # String

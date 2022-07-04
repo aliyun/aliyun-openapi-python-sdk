@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryUserTagValueListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserTagValueList','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserTagValueList','quickbi')
 		self.set_method('GET')
 
 	def get_UserId(self): # String

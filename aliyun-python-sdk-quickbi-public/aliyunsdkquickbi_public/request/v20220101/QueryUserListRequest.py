@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryUserListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserList','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserList','quickbi')
 		self.set_method('GET')
 
 	def get_PageSize(self): # Integer

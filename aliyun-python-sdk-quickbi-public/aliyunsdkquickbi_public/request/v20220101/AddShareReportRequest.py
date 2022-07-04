@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddShareReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddShareReport','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddShareReport','quickbi')
 		self.set_method('POST')
 
 	def get_AuthPoint(self): # Integer

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDatasetSwitchInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetSwitchInfo','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetSwitchInfo','quickbi')
 		self.set_method('POST')
 
 	def get_CubeId(self): # String

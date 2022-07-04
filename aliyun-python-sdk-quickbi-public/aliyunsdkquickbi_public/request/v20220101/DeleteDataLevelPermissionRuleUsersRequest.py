@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteDataLevelPermissionRuleUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteDataLevelPermissionRuleUsers','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteDataLevelPermissionRuleUsers','quickbi')
 		self.set_method('POST')
 
 	def get_DeleteUserModel(self): # String

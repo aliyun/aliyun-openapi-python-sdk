@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryWorksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorks','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorks','quickbi')
 		self.set_method('POST')
 
 	def get_WorksId(self): # String

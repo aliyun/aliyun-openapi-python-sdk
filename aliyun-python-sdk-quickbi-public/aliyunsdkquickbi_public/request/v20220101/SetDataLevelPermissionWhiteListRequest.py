@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetDataLevelPermissionWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'SetDataLevelPermissionWhiteList','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'SetDataLevelPermissionWhiteList','quickbi')
 		self.set_method('POST')
 
 	def get_WhiteListModel(self): # String

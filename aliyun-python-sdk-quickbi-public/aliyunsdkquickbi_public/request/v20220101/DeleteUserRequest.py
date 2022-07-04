@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUser','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUser','quickbi')
 		self.set_method('POST')
 
 	def get_TransferUserId(self): # String

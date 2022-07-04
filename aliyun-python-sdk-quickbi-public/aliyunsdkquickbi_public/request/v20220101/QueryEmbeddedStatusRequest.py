@@ -19,14 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryUserInfoByUserIdRequest(RpcRequest):
+class QueryEmbeddedStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserInfoByUserId','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryEmbeddedStatus','quickbi')
 		self.set_method('POST')
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def get_WorksId(self): # String
+		return self.get_query_params().get('WorksId')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
+	def set_WorksId(self, WorksId):  # String
+		self.add_query_param('WorksId', WorksId)

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateTicketNumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateTicketNum','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateTicketNum','quickbi')
 		self.set_method('POST')
 
 	def get_Ticket(self): # String

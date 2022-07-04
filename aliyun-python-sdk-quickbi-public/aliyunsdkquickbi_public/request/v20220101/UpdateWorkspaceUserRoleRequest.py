@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateWorkspaceUserRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateWorkspaceUserRole','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateWorkspaceUserRole','quickbi')
 		self.set_method('POST')
 
 	def get_RoleId(self): # Long

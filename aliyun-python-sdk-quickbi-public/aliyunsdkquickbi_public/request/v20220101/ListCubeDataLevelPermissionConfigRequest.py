@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListCubeDataLevelPermissionConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListCubeDataLevelPermissionConfig','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListCubeDataLevelPermissionConfig','quickbi')
 		self.set_method('POST')
 
 	def get_RuleType(self): # String

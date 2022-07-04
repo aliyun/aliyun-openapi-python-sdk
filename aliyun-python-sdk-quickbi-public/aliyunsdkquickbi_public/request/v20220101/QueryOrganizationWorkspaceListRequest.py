@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryOrganizationWorkspaceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryOrganizationWorkspaceList','quick')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryOrganizationWorkspaceList','quickbi')
 		self.set_method('POST')
 
 	def get_PageSize(self): # Integer
