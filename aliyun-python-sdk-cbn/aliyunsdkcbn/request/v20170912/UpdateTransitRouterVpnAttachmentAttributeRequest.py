@@ -46,6 +46,11 @@ class UpdateTransitRouterVpnAttachmentAttributeRequest(RpcRequest):
 
 	def set_TransitRouterAttachmentName(self, TransitRouterAttachmentName):  # String
 		self.add_query_param('TransitRouterAttachmentName', TransitRouterAttachmentName)
+	def get_AutoPublishRouteEnabled(self): # Boolean
+		return self.get_query_params().get('AutoPublishRouteEnabled')
+
+	def set_AutoPublishRouteEnabled(self, AutoPublishRouteEnabled):  # Boolean
+		self.add_query_param('AutoPublishRouteEnabled', AutoPublishRouteEnabled)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
