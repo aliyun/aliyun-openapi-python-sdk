@@ -18,69 +18,55 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class CreateTicketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CreateTicket','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CreateTicket','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExpireTime(self):
+	def get_ExpireTime(self): # Integer
 		return self.get_query_params().get('ExpireTime')
 
-	def set_ExpireTime(self,ExpireTime):
-		self.add_query_param('ExpireTime',ExpireTime)
-
-	def get_AccountType(self):
+	def set_ExpireTime(self, ExpireTime):  # Integer
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_AccountType(self): # Integer
 		return self.get_query_params().get('AccountType')
 
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
-
-	def get_CmptId(self):
+	def set_AccountType(self, AccountType):  # Integer
+		self.add_query_param('AccountType', AccountType)
+	def get_CmptId(self): # String
 		return self.get_query_params().get('CmptId')
 
-	def set_CmptId(self,CmptId):
-		self.add_query_param('CmptId',CmptId)
-
-	def get_UserId(self):
+	def set_CmptId(self, CmptId):  # String
+		self.add_query_param('CmptId', CmptId)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_AccountName(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_GlobalParam(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_GlobalParam(self): # String
 		return self.get_query_params().get('GlobalParam')
 
-	def set_GlobalParam(self,GlobalParam):
-		self.add_query_param('GlobalParam',GlobalParam)
-
-	def get_WorksId(self):
+	def set_GlobalParam(self, GlobalParam):  # String
+		self.add_query_param('GlobalParam', GlobalParam)
+	def get_WorksId(self): # String
 		return self.get_query_params().get('WorksId')
 
-	def set_WorksId(self,WorksId):
-		self.add_query_param('WorksId',WorksId)
-
-	def get_TicketNum(self):
+	def set_WorksId(self, WorksId):  # String
+		self.add_query_param('WorksId', WorksId)
+	def get_TicketNum(self): # Integer
 		return self.get_query_params().get('TicketNum')
 
-	def set_TicketNum(self,TicketNum):
-		self.add_query_param('TicketNum',TicketNum)
-
-	def get_WatermarkParam(self):
+	def set_TicketNum(self, TicketNum):  # Integer
+		self.add_query_param('TicketNum', TicketNum)
+	def get_WatermarkParam(self): # String
 		return self.get_query_params().get('WatermarkParam')
 
-	def set_WatermarkParam(self,WatermarkParam):
-		self.add_query_param('WatermarkParam',WatermarkParam)
+	def set_WatermarkParam(self, WatermarkParam):  # String
+		self.add_query_param('WatermarkParam', WatermarkParam)

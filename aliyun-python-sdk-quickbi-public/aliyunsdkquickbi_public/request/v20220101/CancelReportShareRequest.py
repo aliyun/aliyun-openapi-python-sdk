@@ -18,33 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class CancelReportShareRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CancelReportShare','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CancelReportShare','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReportId(self):
+	def get_ReportId(self): # String
 		return self.get_query_params().get('ReportId')
 
-	def set_ReportId(self,ReportId):
-		self.add_query_param('ReportId',ReportId)
-
-	def get_ShareToType(self):
+	def set_ReportId(self, ReportId):  # String
+		self.add_query_param('ReportId', ReportId)
+	def get_ShareToType(self): # Integer
 		return self.get_query_params().get('ShareToType')
 
-	def set_ShareToType(self,ShareToType):
-		self.add_query_param('ShareToType',ShareToType)
-
-	def get_ShareToIds(self):
+	def set_ShareToType(self, ShareToType):  # Integer
+		self.add_query_param('ShareToType', ShareToType)
+	def get_ShareToIds(self): # String
 		return self.get_query_params().get('ShareToIds')
 
-	def set_ShareToIds(self,ShareToIds):
-		self.add_query_param('ShareToIds',ShareToIds)
+	def set_ShareToIds(self, ShareToIds):  # String
+		self.add_query_param('ShareToIds', ShareToIds)

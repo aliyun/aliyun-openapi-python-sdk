@@ -18,27 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class AddUserTagMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUserTagMeta','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUserTagMeta','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TagDescription(self):
+	def get_TagDescription(self): # String
 		return self.get_query_params().get('TagDescription')
 
-	def set_TagDescription(self,TagDescription):
-		self.add_query_param('TagDescription',TagDescription)
-
-	def get_TagName(self):
+	def set_TagDescription(self, TagDescription):  # String
+		self.add_query_param('TagDescription', TagDescription)
+	def get_TagName(self): # String
 		return self.get_query_params().get('TagName')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
+	def set_TagName(self, TagName):  # String
+		self.add_query_param('TagName', TagName)

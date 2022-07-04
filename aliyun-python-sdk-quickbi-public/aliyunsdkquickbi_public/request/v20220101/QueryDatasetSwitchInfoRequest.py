@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class QueryDatasetSwitchInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetSwitchInfo','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetSwitchInfo','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CubeId(self):
+	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
-	def set_CubeId(self,CubeId):
-		self.add_query_param('CubeId',CubeId)
+	def set_CubeId(self, CubeId):  # String
+		self.add_query_param('CubeId', CubeId)

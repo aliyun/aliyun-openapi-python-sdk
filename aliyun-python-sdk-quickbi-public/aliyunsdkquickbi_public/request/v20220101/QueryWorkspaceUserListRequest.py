@@ -18,39 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class QueryWorkspaceUserListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorkspaceUserList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorkspaceUserList','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Keyword(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_PageNum(self):
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_WorkspaceId(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 
-	def set_WorkspaceId(self,WorkspaceId):
-		self.add_query_param('WorkspaceId',WorkspaceId)
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

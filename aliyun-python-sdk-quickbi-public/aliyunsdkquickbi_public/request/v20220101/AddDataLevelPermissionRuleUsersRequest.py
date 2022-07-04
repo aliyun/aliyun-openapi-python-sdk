@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class AddDataLevelPermissionRuleUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionRuleUsers','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionRuleUsers','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AddUserModel(self):
+	def get_AddUserModel(self): # String
 		return self.get_query_params().get('AddUserModel')
 
-	def set_AddUserModel(self,AddUserModel):
-		self.add_query_param('AddUserModel',AddUserModel)
+	def set_AddUserModel(self, AddUserModel):  # String
+		self.add_query_param('AddUserModel', AddUserModel)

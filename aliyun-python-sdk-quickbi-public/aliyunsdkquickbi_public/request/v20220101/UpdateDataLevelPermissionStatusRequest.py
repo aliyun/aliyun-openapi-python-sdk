@@ -18,33 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class UpdateDataLevelPermissionStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateDataLevelPermissionStatus','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateDataLevelPermissionStatus','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IsOpen(self):
+	def get_IsOpen(self): # Integer
 		return self.get_query_params().get('IsOpen')
 
-	def set_IsOpen(self,IsOpen):
-		self.add_query_param('IsOpen',IsOpen)
-
-	def get_RuleType(self):
+	def set_IsOpen(self, IsOpen):  # Integer
+		self.add_query_param('IsOpen', IsOpen)
+	def get_RuleType(self): # String
 		return self.get_query_params().get('RuleType')
 
-	def set_RuleType(self,RuleType):
-		self.add_query_param('RuleType',RuleType)
-
-	def get_CubeId(self):
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)
+	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
-	def set_CubeId(self,CubeId):
-		self.add_query_param('CubeId',CubeId)
+	def set_CubeId(self, CubeId):  # String
+		self.add_query_param('CubeId', CubeId)

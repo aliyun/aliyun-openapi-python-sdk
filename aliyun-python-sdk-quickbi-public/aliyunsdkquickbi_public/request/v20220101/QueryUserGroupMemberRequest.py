@@ -18,27 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class QueryUserGroupMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserGroupMember','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserGroupMember','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserGroupId(self):
+	def get_UserGroupId(self): # String
 		return self.get_query_params().get('UserGroupId')
 
-	def set_UserGroupId(self,UserGroupId):
-		self.add_query_param('UserGroupId',UserGroupId)
-
-	def get_Keyword(self):
+	def set_UserGroupId(self, UserGroupId):  # String
+		self.add_query_param('UserGroupId', UserGroupId)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

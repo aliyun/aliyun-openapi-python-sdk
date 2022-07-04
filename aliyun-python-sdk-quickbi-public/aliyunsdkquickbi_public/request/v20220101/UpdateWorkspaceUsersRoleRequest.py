@@ -18,33 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class UpdateWorkspaceUsersRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateWorkspaceUsersRole','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateWorkspaceUsersRole','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserIds(self):
+	def get_UserIds(self): # String
 		return self.get_query_params().get('UserIds')
 
-	def set_UserIds(self,UserIds):
-		self.add_query_param('UserIds',UserIds)
-
-	def get_RoleId(self):
+	def set_UserIds(self, UserIds):  # String
+		self.add_query_param('UserIds', UserIds)
+	def get_RoleId(self): # Long
 		return self.get_query_params().get('RoleId')
 
-	def set_RoleId(self,RoleId):
-		self.add_query_param('RoleId',RoleId)
-
-	def get_WorkspaceId(self):
+	def set_RoleId(self, RoleId):  # Long
+		self.add_query_param('RoleId', RoleId)
+	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 
-	def set_WorkspaceId(self,WorkspaceId):
-		self.add_query_param('WorkspaceId',WorkspaceId)
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

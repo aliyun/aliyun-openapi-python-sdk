@@ -18,45 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class AuthorizeMenuRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AuthorizeMenu','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AuthorizeMenu','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataPortalId(self):
+	def get_DataPortalId(self): # String
 		return self.get_query_params().get('DataPortalId')
 
-	def set_DataPortalId(self,DataPortalId):
-		self.add_query_param('DataPortalId',DataPortalId)
-
-	def get_UserIds(self):
+	def set_DataPortalId(self, DataPortalId):  # String
+		self.add_query_param('DataPortalId', DataPortalId)
+	def get_UserIds(self): # String
 		return self.get_query_params().get('UserIds')
 
-	def set_UserIds(self,UserIds):
-		self.add_query_param('UserIds',UserIds)
-
-	def get_AuthPointsValue(self):
+	def set_UserIds(self, UserIds):  # String
+		self.add_query_param('UserIds', UserIds)
+	def get_AuthPointsValue(self): # Integer
 		return self.get_query_params().get('AuthPointsValue')
 
-	def set_AuthPointsValue(self,AuthPointsValue):
-		self.add_query_param('AuthPointsValue',AuthPointsValue)
-
-	def get_UserGroupIds(self):
+	def set_AuthPointsValue(self, AuthPointsValue):  # Integer
+		self.add_query_param('AuthPointsValue', AuthPointsValue)
+	def get_UserGroupIds(self): # String
 		return self.get_query_params().get('UserGroupIds')
 
-	def set_UserGroupIds(self,UserGroupIds):
-		self.add_query_param('UserGroupIds',UserGroupIds)
-
-	def get_MenuIds(self):
+	def set_UserGroupIds(self, UserGroupIds):  # String
+		self.add_query_param('UserGroupIds', UserGroupIds)
+	def get_MenuIds(self): # String
 		return self.get_query_params().get('MenuIds')
 
-	def set_MenuIds(self,MenuIds):
-		self.add_query_param('MenuIds',MenuIds)
+	def set_MenuIds(self, MenuIds):  # String
+		self.add_query_param('MenuIds', MenuIds)

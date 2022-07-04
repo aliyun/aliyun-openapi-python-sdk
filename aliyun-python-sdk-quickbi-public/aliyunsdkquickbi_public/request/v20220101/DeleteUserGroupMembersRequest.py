@@ -18,27 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class DeleteUserGroupMembersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserGroupMembers','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserGroupMembers','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserGroupIds(self):
+	def get_UserGroupIds(self): # String
 		return self.get_query_params().get('UserGroupIds')
 
-	def set_UserGroupIds(self,UserGroupIds):
-		self.add_query_param('UserGroupIds',UserGroupIds)
-
-	def get_UserId(self):
+	def set_UserGroupIds(self, UserGroupIds):  # String
+		self.add_query_param('UserGroupIds', UserGroupIds)
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)

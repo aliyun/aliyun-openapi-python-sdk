@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class QueryShareListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryShareList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryShareList','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReportId(self):
+	def get_ReportId(self): # String
 		return self.get_query_params().get('ReportId')
 
-	def set_ReportId(self,ReportId):
-		self.add_query_param('ReportId',ReportId)
+	def set_ReportId(self, ReportId):  # String
+		self.add_query_param('ReportId', ReportId)

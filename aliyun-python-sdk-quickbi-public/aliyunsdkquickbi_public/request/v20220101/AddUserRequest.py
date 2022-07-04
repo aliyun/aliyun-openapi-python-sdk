@@ -18,45 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class AddUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUser','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUser','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AdminUser(self):
+	def get_AdminUser(self): # Boolean
 		return self.get_query_params().get('AdminUser')
 
-	def set_AdminUser(self,AdminUser):
-		self.add_query_param('AdminUser',AdminUser)
-
-	def get_UserType(self):
+	def set_AdminUser(self, AdminUser):  # Boolean
+		self.add_query_param('AdminUser', AdminUser)
+	def get_UserType(self): # Integer
 		return self.get_query_params().get('UserType')
 
-	def set_UserType(self,UserType):
-		self.add_query_param('UserType',UserType)
-
-	def get_AccountName(self):
+	def set_UserType(self, UserType):  # Integer
+		self.add_query_param('UserType', UserType)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_NickName(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_NickName(self): # String
 		return self.get_query_params().get('NickName')
 
-	def set_NickName(self,NickName):
-		self.add_query_param('NickName',NickName)
-
-	def get_AuthAdminUser(self):
+	def set_NickName(self, NickName):  # String
+		self.add_query_param('NickName', NickName)
+	def get_AuthAdminUser(self): # Boolean
 		return self.get_query_params().get('AuthAdminUser')
 
-	def set_AuthAdminUser(self,AuthAdminUser):
-		self.add_query_param('AuthAdminUser',AuthAdminUser)
+	def set_AuthAdminUser(self, AuthAdminUser):  # Boolean
+		self.add_query_param('AuthAdminUser', AuthAdminUser)

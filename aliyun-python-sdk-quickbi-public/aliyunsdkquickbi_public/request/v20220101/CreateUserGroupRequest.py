@@ -18,39 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class CreateUserGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CreateUserGroup','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CreateUserGroup','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserGroupId(self):
+	def get_UserGroupId(self): # String
 		return self.get_query_params().get('UserGroupId')
 
-	def set_UserGroupId(self,UserGroupId):
-		self.add_query_param('UserGroupId',UserGroupId)
-
-	def get_UserGroupName(self):
+	def set_UserGroupId(self, UserGroupId):  # String
+		self.add_query_param('UserGroupId', UserGroupId)
+	def get_UserGroupName(self): # String
 		return self.get_query_params().get('UserGroupName')
 
-	def set_UserGroupName(self,UserGroupName):
-		self.add_query_param('UserGroupName',UserGroupName)
-
-	def get_UserGroupDescription(self):
+	def set_UserGroupName(self, UserGroupName):  # String
+		self.add_query_param('UserGroupName', UserGroupName)
+	def get_UserGroupDescription(self): # String
 		return self.get_query_params().get('UserGroupDescription')
 
-	def set_UserGroupDescription(self,UserGroupDescription):
-		self.add_query_param('UserGroupDescription',UserGroupDescription)
-
-	def get_ParentUserGroupId(self):
+	def set_UserGroupDescription(self, UserGroupDescription):  # String
+		self.add_query_param('UserGroupDescription', UserGroupDescription)
+	def get_ParentUserGroupId(self): # String
 		return self.get_query_params().get('ParentUserGroupId')
 
-	def set_ParentUserGroupId(self,ParentUserGroupId):
-		self.add_query_param('ParentUserGroupId',ParentUserGroupId)
+	def set_ParentUserGroupId(self, ParentUserGroupId):  # String
+		self.add_query_param('ParentUserGroupId', ParentUserGroupId)

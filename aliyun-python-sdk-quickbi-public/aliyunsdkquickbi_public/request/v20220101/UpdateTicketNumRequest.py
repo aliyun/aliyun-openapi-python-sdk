@@ -18,27 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class UpdateTicketNumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateTicketNum','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateTicketNum','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ticket(self):
+	def get_Ticket(self): # String
 		return self.get_query_params().get('Ticket')
 
-	def set_Ticket(self,Ticket):
-		self.add_query_param('Ticket',Ticket)
-
-	def get_TicketNum(self):
+	def set_Ticket(self, Ticket):  # String
+		self.add_query_param('Ticket', Ticket)
+	def get_TicketNum(self): # Integer
 		return self.get_query_params().get('TicketNum')
 
-	def set_TicketNum(self,TicketNum):
-		self.add_query_param('TicketNum',TicketNum)
+	def set_TicketNum(self, TicketNum):  # Integer
+		self.add_query_param('TicketNum', TicketNum)

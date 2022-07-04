@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class ListPortalMenuAuthorizationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListPortalMenuAuthorization','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListPortalMenuAuthorization','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataPortalId(self):
+	def get_DataPortalId(self): # String
 		return self.get_query_params().get('DataPortalId')
 
-	def set_DataPortalId(self,DataPortalId):
-		self.add_query_param('DataPortalId',DataPortalId)
+	def set_DataPortalId(self, DataPortalId):  # String
+		self.add_query_param('DataPortalId', DataPortalId)

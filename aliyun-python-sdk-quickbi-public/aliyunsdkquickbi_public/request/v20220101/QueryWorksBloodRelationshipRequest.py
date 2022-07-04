@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class QueryWorksBloodRelationshipRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorksBloodRelationship','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorksBloodRelationship','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WorksId(self):
+	def get_WorksId(self): # String
 		return self.get_query_params().get('WorksId')
 
-	def set_WorksId(self,WorksId):
-		self.add_query_param('WorksId',WorksId)
+	def set_WorksId(self, WorksId):  # String
+		self.add_query_param('WorksId', WorksId)

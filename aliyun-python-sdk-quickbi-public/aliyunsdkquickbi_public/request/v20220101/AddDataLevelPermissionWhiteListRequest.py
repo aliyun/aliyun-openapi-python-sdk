@@ -18,45 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkquickbi_public.endpoint import endpoint_data
 
 class AddDataLevelPermissionWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionWhiteList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionWhiteList','quick')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetType(self):
+	def get_TargetType(self): # String
 		return self.get_query_params().get('TargetType')
 
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
-	def get_TargetIds(self):
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_TargetIds(self): # String
 		return self.get_query_params().get('TargetIds')
 
-	def set_TargetIds(self,TargetIds):
-		self.add_query_param('TargetIds',TargetIds)
-
-	def get_RuleType(self):
+	def set_TargetIds(self, TargetIds):  # String
+		self.add_query_param('TargetIds', TargetIds)
+	def get_RuleType(self): # String
 		return self.get_query_params().get('RuleType')
 
-	def set_RuleType(self,RuleType):
-		self.add_query_param('RuleType',RuleType)
-
-	def get_OperateType(self):
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)
+	def get_OperateType(self): # String
 		return self.get_query_params().get('OperateType')
 
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
-
-	def get_CubeId(self):
+	def set_OperateType(self, OperateType):  # String
+		self.add_query_param('OperateType', OperateType)
+	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
-	def set_CubeId(self,CubeId):
-		self.add_query_param('CubeId',CubeId)
+	def set_CubeId(self, CubeId):  # String
+		self.add_query_param('CubeId', CubeId)
