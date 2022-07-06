@@ -1,3 +1,6 @@
+2022-07-06 Version: 1.0.4
+- Add EnablePolicy APIs.
+
 2022-06-30 Version: 1.0.3
 - Add Policy APIs.
 
