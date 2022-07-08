@@ -23,16 +23,16 @@ from aliyunsdkactiontrail.endpoint import endpoint_data
 class DeleteDeliveryHistoryJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'DeleteDeliveryHistoryJob','actiontrail')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'DeleteDeliveryHistoryJob')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobId(self):
+	def get_JobId(self): # Integer
 		return self.get_query_params().get('JobId')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+	def set_JobId(self, JobId):  # Integer
+		self.add_query_param('JobId', JobId)

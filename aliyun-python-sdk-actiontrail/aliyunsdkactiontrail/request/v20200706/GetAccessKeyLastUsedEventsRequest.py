@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class CreateDeliveryHistoryJobRequest(RpcRequest):
+class GetAccessKeyLastUsedEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'CreateDeliveryHistoryJob')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'GetAccessKeyLastUsedEvents')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class CreateDeliveryHistoryJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_AccessKey(self): # String
+		return self.get_query_params().get('AccessKey')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_TrailName(self): # String
-		return self.get_query_params().get('TrailName')
+	def set_AccessKey(self, AccessKey):  # String
+		self.add_query_param('AccessKey', AccessKey)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_TrailName(self, TrailName):  # String
-		self.add_query_param('TrailName', TrailName)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

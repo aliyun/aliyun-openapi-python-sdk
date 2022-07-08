@@ -23,22 +23,21 @@ from aliyunsdkactiontrail.endpoint import endpoint_data
 class GetTrailStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'GetTrailStatus','actiontrail')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'GetTrailStatus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_IsOrganizationTrail(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_IsOrganizationTrail(self): # Boolean
 		return self.get_query_params().get('IsOrganizationTrail')
 
-	def set_IsOrganizationTrail(self,IsOrganizationTrail):
-		self.add_query_param('IsOrganizationTrail',IsOrganizationTrail)
+	def set_IsOrganizationTrail(self, IsOrganizationTrail):  # Boolean
+		self.add_query_param('IsOrganizationTrail', IsOrganizationTrail)

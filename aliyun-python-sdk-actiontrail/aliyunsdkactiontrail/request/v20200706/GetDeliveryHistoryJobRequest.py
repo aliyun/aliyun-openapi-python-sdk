@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class CreateDeliveryHistoryJobRequest(RpcRequest):
+class GetDeliveryHistoryJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'CreateDeliveryHistoryJob')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'GetDeliveryHistoryJob')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,8 @@ class CreateDeliveryHistoryJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_TrailName(self): # String
-		return self.get_query_params().get('TrailName')
-
-	def set_TrailName(self, TrailName):  # String
-		self.add_query_param('TrailName', TrailName)
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)
