@@ -90,6 +90,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_SystemDiskAutoSnapshotPolicyId(self): # String
+		return self.get_query_params().get('SystemDisk.AutoSnapshotPolicyId')
+
+	def set_SystemDiskAutoSnapshotPolicyId(self, SystemDiskAutoSnapshotPolicyId):  # String
+		self.add_query_param('SystemDisk.AutoSnapshotPolicyId', SystemDiskAutoSnapshotPolicyId)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -125,6 +130,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_SystemDiskBurstingEnabled(self): # Boolean
+		return self.get_query_params().get('SystemDisk.BurstingEnabled')
+
+	def set_SystemDiskBurstingEnabled(self, SystemDiskBurstingEnabled):  # Boolean
+		self.add_query_param('SystemDisk.BurstingEnabled', SystemDiskBurstingEnabled)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
@@ -238,6 +248,10 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
 					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds')[depth2])
+			if NetworkInterface[depth1].get('InstanceType') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.InstanceType', NetworkInterface[depth1].get('InstanceType'))
+			if NetworkInterface[depth1].get('NetworkInterfaceTrafficMode') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterface[depth1].get('NetworkInterfaceTrafficMode'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -297,6 +311,17 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisk[depth1].get('DeleteWithInstance'))
 			if DataDisk[depth1].get('Encrypted') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisk[depth1].get('Encrypted'))
+			if DataDisk[depth1].get('ProvisionedIops') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', DataDisk[depth1].get('ProvisionedIops'))
+			if DataDisk[depth1].get('BurstingEnabled') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', DataDisk[depth1].get('BurstingEnabled'))
+			if DataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisk[depth1].get('AutoSnapshotPolicyId'))
+	def get_SystemDiskProvisionedIops(self): # Long
+		return self.get_query_params().get('SystemDisk.ProvisionedIops')
+
+	def set_SystemDiskProvisionedIops(self, SystemDiskProvisionedIops):  # Long
+		self.add_query_param('SystemDisk.ProvisionedIops', SystemDiskProvisionedIops)
 	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDisk.Size')
 

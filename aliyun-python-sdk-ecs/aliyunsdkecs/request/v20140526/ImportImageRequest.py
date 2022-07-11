@@ -97,6 +97,11 @@ class ImportImageRequest(RpcRequest):
 
 	def set_LicenseType(self, LicenseType):  # String
 		self.add_query_param('LicenseType', LicenseType)
+	def get_DetectionStrategy(self): # String
+		return self.get_query_params().get('DetectionStrategy')
+
+	def set_DetectionStrategy(self, DetectionStrategy):  # String
+		self.add_query_param('DetectionStrategy', DetectionStrategy)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

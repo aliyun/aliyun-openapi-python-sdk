@@ -61,6 +61,11 @@ class CreateCommandRequest(RpcRequest):
 
 	def set_Timeout(self, Timeout):  # Long
 		self.add_query_param('Timeout', Timeout)
+	def get_ContentEncoding(self): # String
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self, ContentEncoding):  # String
+		self.add_query_param('ContentEncoding', ContentEncoding)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

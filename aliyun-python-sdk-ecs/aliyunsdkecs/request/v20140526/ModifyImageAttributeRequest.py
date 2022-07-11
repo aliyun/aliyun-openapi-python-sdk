@@ -46,6 +46,12 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Features(self): # Struct
+		return self.get_query_params().get('Features')
+
+	def set_Features(self, Features):  # Struct
+		if Features.get('NvmeSupport') is not None:
+			self.add_query_param('Features.NvmeSupport', Features.get('NvmeSupport'))
 	def get_BootMode(self): # String
 		return self.get_query_params().get('BootMode')
 
