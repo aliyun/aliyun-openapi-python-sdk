@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateDataSourceItemRequest(RpcRequest):
+class ListDestinationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateDataSourceItem')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListDestination')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class CreateDataSourceItemRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ScopeType(self):
-		return self.get_query_params().get('ScopeType')
+	def get_SearchName(self):
+		return self.get_query_params().get('SearchName')
 
-	def set_ScopeType(self,ScopeType):
-		self.add_query_param('ScopeType',ScopeType)
+	def set_SearchName(self,SearchName):
+		self.add_query_param('SearchName',SearchName)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -43,26 +43,22 @@ class CreateDataSourceItemRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_DataSourceId(self):
-		return self.get_query_params().get('DataSourceId')
+	def get_Typess(self):
+		return self.get_query_params().get('Types')
 
-	def set_DataSourceId(self,DataSourceId):
-		self.add_query_param('DataSourceId',DataSourceId)
+	def set_Typess(self, Typess):
+		for depth1 in range(len(Typess)):
+			if Typess[depth1] is not None:
+				self.add_query_param('Types.' + str(depth1 + 1) , Typess[depth1])
 
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)

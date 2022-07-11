@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateDataSourceItemRequest(RpcRequest):
+class UpdateDestinationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateDataSourceItem')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateDestination')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class CreateDataSourceItemRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ScopeType(self):
-		return self.get_query_params().get('ScopeType')
+	def get_Configuration(self):
+		return self.get_query_params().get('Configuration')
 
-	def set_ScopeType(self,ScopeType):
-		self.add_query_param('ScopeType',ScopeType)
+	def set_Configuration(self,Configuration):
+		self.add_query_param('Configuration',Configuration)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -43,26 +55,14 @@ class CreateDataSourceItemRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_DestinationId(self):
+		return self.get_query_params().get('DestinationId')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_DestinationId(self,DestinationId):
+		self.add_query_param('DestinationId',DestinationId)
 
-	def get_DataSourceId(self):
-		return self.get_query_params().get('DataSourceId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_DataSourceId(self,DataSourceId):
-		self.add_query_param('DataSourceId',DataSourceId)
-
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
-
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
