@@ -31,6 +31,11 @@ class DescribeAlarmEventListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TimeEnd(self): # String
+		return self.get_query_params().get('TimeEnd')
+
+	def set_TimeEnd(self, TimeEnd):  # String
+		self.add_query_param('TimeEnd', TimeEnd)
 	def get_AlarmEventType(self): # String
 		return self.get_query_params().get('AlarmEventType')
 
@@ -96,14 +101,34 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_OperateTimeEnd(self): # String
+		return self.get_query_params().get('OperateTimeEnd')
+
+	def set_OperateTimeEnd(self, OperateTimeEnd):  # String
+		self.add_query_param('OperateTimeEnd', OperateTimeEnd)
 	def get_OperateErrorCodeLists(self): # RepeatList
 		return self.get_query_params().get('OperateErrorCodeList')
 
 	def set_OperateErrorCodeLists(self, OperateErrorCodeList):  # RepeatList
 		for depth1 in range(len(OperateErrorCodeList)):
 			self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1), OperateErrorCodeList[depth1])
+	def get_OperateTimeStart(self): # String
+		return self.get_query_params().get('OperateTimeStart')
+
+	def set_OperateTimeStart(self, OperateTimeStart):  # String
+		self.add_query_param('OperateTimeStart', OperateTimeStart)
+	def get_TimeStart(self): # String
+		return self.get_query_params().get('TimeStart')
+
+	def set_TimeStart(self, TimeStart):  # String
+		self.add_query_param('TimeStart', TimeStart)
 	def get_Levels(self): # String
 		return self.get_query_params().get('Levels')
 
 	def set_Levels(self, Levels):  # String
 		self.add_query_param('Levels', Levels)
+	def get_Uuids(self): # String
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self, Uuids):  # String
+		self.add_query_param('Uuids', Uuids)

@@ -31,16 +31,6 @@ class DescribeSuspEventsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TargetType(self): # String
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self, TargetType):  # String
-		self.add_query_param('TargetType', TargetType)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
-
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -56,21 +46,11 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_ContainerFieldValue(self): # String
-		return self.get_query_params().get('ContainerFieldValue')
-
-	def set_ContainerFieldValue(self, ContainerFieldValue):  # String
-		self.add_query_param('ContainerFieldValue', ContainerFieldValue)
 	def get_EventNames(self): # String
 		return self.get_query_params().get('EventNames')
 
 	def set_EventNames(self, EventNames):  # String
 		self.add_query_param('EventNames', EventNames)
-	def get_PageSize(self): # String
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
 	def get_From(self): # String
 		return self.get_query_params().get('From')
 
@@ -86,11 +66,6 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_TacticId(self, TacticId):  # String
 		self.add_body_params('TacticId', TacticId)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
 	def get_AlarmUniqueInfo(self): # String
 		return self.get_query_params().get('AlarmUniqueInfo')
 
@@ -106,6 +81,56 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)
+	def get_OperateTimeEnd(self): # String
+		return self.get_query_params().get('OperateTimeEnd')
+
+	def set_OperateTimeEnd(self, OperateTimeEnd):  # String
+		self.add_query_param('OperateTimeEnd', OperateTimeEnd)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_Uuids(self): # String
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self, Uuids):  # String
+		self.add_query_param('Uuids', Uuids)
+	def get_TimeEnd(self): # String
+		return self.get_query_params().get('TimeEnd')
+
+	def set_TimeEnd(self, TimeEnd):  # String
+		self.add_query_param('TimeEnd', TimeEnd)
+	def get_TargetType(self): # String
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_ContainerFieldValue(self): # String
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self, ContainerFieldValue):  # String
+		self.add_query_param('ContainerFieldValue', ContainerFieldValue)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_Dealed(self): # String
 		return self.get_query_params().get('Dealed')
 
@@ -127,11 +152,16 @@ class DescribeSuspEventsRequest(RpcRequest):
 	def set_OperateErrorCodeLists(self, OperateErrorCodeList):  # RepeatList
 		for depth1 in range(len(OperateErrorCodeList)):
 			self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1), OperateErrorCodeList[depth1])
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def get_OperateTimeStart(self): # String
+		return self.get_query_params().get('OperateTimeStart')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_OperateTimeStart(self, OperateTimeStart):  # String
+		self.add_query_param('OperateTimeStart', OperateTimeStart)
+	def get_TimeStart(self): # String
+		return self.get_query_params().get('TimeStart')
+
+	def set_TimeStart(self, TimeStart):  # String
+		self.add_query_param('TimeStart', TimeStart)
 	def get_Levels(self): # String
 		return self.get_query_params().get('Levels')
 
@@ -142,13 +172,3 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_ParentEventTypes(self, ParentEventTypes):  # String
 		self.add_query_param('ParentEventTypes', ParentEventTypes)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
-	def get_Uuids(self): # String
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self, Uuids):  # String
-		self.add_query_param('Uuids', Uuids)
