@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class DeleteAutoScaleInstancePolicyRequest(RpcRequest):
+class UpdateAutoSqlOptimizeStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DeleteAutoScaleInstancePolicy')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'UpdateAutoSqlOptimizeStatus')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,13 @@ class DeleteAutoScaleInstancePolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyUuid(self): # String
-		return self.get_query_params().get('PolicyUuid')
+	def get_Instances(self): # String
+		return self.get_query_params().get('Instances')
 
-	def set_PolicyUuid(self, PolicyUuid):  # String
-		self.add_query_param('PolicyUuid', PolicyUuid)
-	def get_ConsoleContext(self): # String
-		return self.get_query_params().get('ConsoleContext')
+	def set_Instances(self, Instances):  # String
+		self.add_query_param('Instances', Instances)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
 
-	def set_ConsoleContext(self, ConsoleContext):  # String
-		self.add_query_param('ConsoleContext', ConsoleContext)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)
