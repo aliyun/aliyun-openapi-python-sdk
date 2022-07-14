@@ -629,6 +629,18 @@ class CreateContainerGroupRequest(RpcRequest):
 	def set_Ipv6AddressCount(self, Ipv6AddressCount):
 		self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
 
+	def get_Ipv6GatewayBandwidthEnable(self):
+		return self.get_query_params().get("Ipv6GatewayBandwidthEnable")
+
+	def set_Ipv6GatewayBandwidthEnable(self, Ipv6GatewayBandwidthEnable):
+		self.add_query_param("Ipv6GatewayBandwidthEnable", Ipv6GatewayBandwidthEnable)
+
+	def get_Ipv6GatewayBandwidth(self):
+		return self.get_query_params().get("Ipv6GatewayBandwidth")
+
+	def set_Ipv6GatewayBandwidth(self, Ipv6GatewayBandwidth):
+		self.add_query_param("Ipv6GatewayBandwidth", Ipv6GatewayBandwidth)
+
 	def get_ActiveDeadlineSeconds(self):
 		return self.get_query_params().get('ActiveDeadlineSeconds')
 
