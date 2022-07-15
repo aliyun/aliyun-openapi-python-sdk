@@ -76,6 +76,46 @@ class AuthorizeSecurityGroupRequest(RpcRequest):
 
 	def set_SourceGroupOwnerAccount(self, SourceGroupOwnerAccount):  # String
 		self.add_query_param('SourceGroupOwnerAccount', SourceGroupOwnerAccount)
+	def get_Permissions(self): # Array
+		return self.get_query_params().get('Permissions')
+
+	def set_Permissions(self, Permissions):  # Array
+		for index1, value1 in enumerate(Permissions):
+			if value1.get('Policy') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.Policy', value1.get('Policy'))
+			if value1.get('Priority') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.Priority', value1.get('Priority'))
+			if value1.get('IpProtocol') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.IpProtocol', value1.get('IpProtocol'))
+			if value1.get('SourceCidrIp') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourceCidrIp', value1.get('SourceCidrIp'))
+			if value1.get('Ipv6SourceCidrIp') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.Ipv6SourceCidrIp', value1.get('Ipv6SourceCidrIp'))
+			if value1.get('SourceGroupId') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourceGroupId', value1.get('SourceGroupId'))
+			if value1.get('SourcePrefixListId') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourcePrefixListId', value1.get('SourcePrefixListId'))
+			if value1.get('PortRange') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.PortRange', value1.get('PortRange'))
+			if value1.get('DestCidrIp') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.DestCidrIp', value1.get('DestCidrIp'))
+			if value1.get('Ipv6DestCidrIp') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.Ipv6DestCidrIp', value1.get('Ipv6DestCidrIp'))
+			if value1.get('SourcePortRange') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourcePortRange', value1.get('SourcePortRange'))
+			if value1.get('SourceGroupOwnerAccount') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourceGroupOwnerAccount', value1.get('SourceGroupOwnerAccount'))
+			if value1.get('SourceGroupOwnerId') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.SourceGroupOwnerId', value1.get('SourceGroupOwnerId'))
+			if value1.get('NicType') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.NicType', value1.get('NicType'))
+			if value1.get('Description') is not None:
+				self.add_query_param('Permissions.' + str(index1 + 1) + '.Description', value1.get('Description'))
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
 	def get_Ipv6SourceCidrIp(self): # String
 		return self.get_query_params().get('Ipv6SourceCidrIp')
 
@@ -86,11 +126,6 @@ class AuthorizeSecurityGroupRequest(RpcRequest):
 
 	def set_Ipv6DestCidrIp(self, Ipv6DestCidrIp):  # String
 		self.add_query_param('Ipv6DestCidrIp', Ipv6DestCidrIp)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)
 	def get_PortRange(self): # String
 		return self.get_query_params().get('PortRange')
 
