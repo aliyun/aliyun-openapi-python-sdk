@@ -36,6 +36,11 @@ class DescribeCheckWarningsRequest(RpcRequest):
 
 	def set_Uuid(self, Uuid):  # String
 		self.add_query_param('Uuid', Uuid)
+	def get_CheckType(self): # String
+		return self.get_query_params().get('CheckType')
+
+	def set_CheckType(self, CheckType):  # String
+		self.add_query_param('CheckType', CheckType)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
