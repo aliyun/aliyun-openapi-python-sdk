@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CancelDataFlowTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CancelDataFlowTask','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CancelDataFlowTask','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

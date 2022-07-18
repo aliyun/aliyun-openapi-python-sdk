@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateRecycleBinDeleteJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateRecycleBinDeleteJob','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateRecycleBinDeleteJob','NAS')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

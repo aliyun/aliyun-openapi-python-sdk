@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DeleteFilesetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteFileset','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteFileset','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

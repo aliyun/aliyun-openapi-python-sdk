@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DeleteLDAPConfigRequest(RpcRequest):
+class CreateFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteLDAPConfig','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateFile','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,28 @@ class DeleteLDAPConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OwnerAccessInheritable(self): # Boolean
+		return self.get_query_params().get('OwnerAccessInheritable')
+
+	def set_OwnerAccessInheritable(self, OwnerAccessInheritable):  # Boolean
+		self.add_query_param('OwnerAccessInheritable', OwnerAccessInheritable)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Path(self): # String
+		return self.get_query_params().get('Path')
+
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_Owner(self): # String
+		return self.get_query_params().get('Owner')
+
+	def set_Owner(self, Owner):  # String
+		self.add_query_param('Owner', Owner)

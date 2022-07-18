@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateSnapshot','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateSnapshot','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

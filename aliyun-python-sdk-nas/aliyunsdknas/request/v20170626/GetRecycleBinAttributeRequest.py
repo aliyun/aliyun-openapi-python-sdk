@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class GetRecycleBinAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'GetRecycleBinAttribute','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'GetRecycleBinAttribute','NAS')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

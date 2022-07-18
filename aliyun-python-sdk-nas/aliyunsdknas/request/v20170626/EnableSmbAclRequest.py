@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class EnableSmbAclRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'EnableSmbAcl','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'EnableSmbAcl','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,3 +46,13 @@ class EnableSmbAclRequest(RpcRequest):
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_AuthCenter(self): # String
+		return self.get_query_params().get('AuthCenter')
+
+	def set_AuthCenter(self, AuthCenter):  # String
+		self.add_query_param('AuthCenter', AuthCenter)
+	def get_AuthMethod(self): # String
+		return self.get_query_params().get('AuthMethod')
+
+	def set_AuthMethod(self, AuthMethod):  # String
+		self.add_query_param('AuthMethod', AuthMethod)

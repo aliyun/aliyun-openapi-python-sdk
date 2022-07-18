@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DeleteProtocolMountTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteProtocolMountTarget','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteProtocolMountTarget','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

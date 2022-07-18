@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DescribeProtocolServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeProtocolService','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeProtocolService','NAS')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
