@@ -31,12 +31,6 @@ class ListCheckResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceSubTypess(self): # RepeatList
-		return self.get_query_params().get('InstanceSubTypes')
-
-	def set_InstanceSubTypess(self, InstanceSubTypes):  # RepeatList
-		for depth1 in range(len(InstanceSubTypes)):
-			self.add_query_param('InstanceSubTypes.' + str(depth1 + 1), InstanceSubTypes[depth1])
 	def get_StandardIdss(self): # RepeatList
 		return self.get_query_params().get('StandardIds')
 
