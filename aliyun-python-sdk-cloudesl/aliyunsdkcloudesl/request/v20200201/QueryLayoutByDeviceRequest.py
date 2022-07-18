@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UnbindEslDeviceRequest(RpcRequest):
+class QueryLayoutByDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UnbindEslDevice')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'QueryLayoutByDevice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,23 @@ class UnbindEslDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
-	def get_ContainerName(self):
-		return self.get_body_params().get('ContainerName')
-
-	def set_ContainerName(self,ContainerName):
-		self.add_body_params('ContainerName', ContainerName)
-
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_Layer(self):
-		return self.get_body_params().get('Layer')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_Layer(self,Layer):
-		self.add_body_params('Layer', Layer)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_TemplateVersion(self):
+		return self.get_body_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_body_params('TemplateVersion', TemplateVersion)
 
 	def get_EslBarCode(self):
 		return self.get_body_params().get('EslBarCode')
@@ -61,20 +55,14 @@ class UnbindEslDeviceRequest(RpcRequest):
 	def set_EslBarCode(self,EslBarCode):
 		self.add_body_params('EslBarCode', EslBarCode)
 
-	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
-	def get_Column(self):
-		return self.get_body_params().get('Column')
+	def get_EslModelId(self):
+		return self.get_body_params().get('EslModelId')
 
-	def set_Column(self,Column):
-		self.add_body_params('Column', Column)
-
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
+	def set_EslModelId(self,EslModelId):
+		self.add_body_params('EslModelId', EslModelId)

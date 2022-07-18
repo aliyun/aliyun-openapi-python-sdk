@@ -37,11 +37,23 @@ class BindEslDeviceRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
+	def get_ContainerName(self):
+		return self.get_body_params().get('ContainerName')
+
+	def set_ContainerName(self,ContainerName):
+		self.add_body_params('ContainerName', ContainerName)
+
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_LayoutId(self):
+		return self.get_body_params().get('LayoutId')
+
+	def set_LayoutId(self,LayoutId):
+		self.add_body_params('LayoutId', LayoutId)
 
 	def get_Layer(self):
 		return self.get_body_params().get('Layer')
@@ -54,6 +66,12 @@ class BindEslDeviceRequest(RpcRequest):
 
 	def set_EslBarCode(self,EslBarCode):
 		self.add_body_params('EslBarCode', EslBarCode)
+
+	def get_LayoutName(self):
+		return self.get_body_params().get('LayoutName')
+
+	def set_LayoutName(self,LayoutName):
+		self.add_body_params('LayoutName', LayoutName)
 
 	def get_ItemBarCode(self):
 		return self.get_body_params().get('ItemBarCode')
@@ -72,3 +90,9 @@ class BindEslDeviceRequest(RpcRequest):
 
 	def set_Shelf(self,Shelf):
 		self.add_body_params('Shelf', Shelf)
+
+	def get_ContainerId(self):
+		return self.get_body_params().get('ContainerId')
+
+	def set_ContainerId(self,ContainerId):
+		self.add_body_params('ContainerId', ContainerId)

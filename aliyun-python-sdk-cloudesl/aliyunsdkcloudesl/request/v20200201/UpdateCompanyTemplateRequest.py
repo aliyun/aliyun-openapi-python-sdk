@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UnbindEslDeviceRequest(RpcRequest):
+class UpdateCompanyTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UnbindEslDevice')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateCompanyTemplate')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,44 +37,26 @@ class UnbindEslDeviceRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_ContainerName(self):
-		return self.get_body_params().get('ContainerName')
+	def get_Scene(self):
+		return self.get_body_params().get('Scene')
 
-	def set_ContainerName(self,ContainerName):
-		self.add_body_params('ContainerName', ContainerName)
+	def set_Scene(self,Scene):
+		self.add_body_params('Scene', Scene)
 
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+	def get_TemplateVersion(self):
+		return self.get_body_params().get('TemplateVersion')
 
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_body_params('TemplateVersion', TemplateVersion)
 
-	def get_Layer(self):
-		return self.get_body_params().get('Layer')
+	def get_TemplateName(self):
+		return self.get_body_params().get('TemplateName')
 
-	def set_Layer(self,Layer):
-		self.add_body_params('Layer', Layer)
+	def set_TemplateName(self,TemplateName):
+		self.add_body_params('TemplateName', TemplateName)
 
-	def get_EslBarCode(self):
-		return self.get_body_params().get('EslBarCode')
+	def get_TemplateId(self):
+		return self.get_body_params().get('TemplateId')
 
-	def set_EslBarCode(self,EslBarCode):
-		self.add_body_params('EslBarCode', EslBarCode)
-
-	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
-
-	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
-
-	def get_Column(self):
-		return self.get_body_params().get('Column')
-
-	def set_Column(self,Column):
-		self.add_body_params('Column', Column)
-
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
+	def set_TemplateId(self,TemplateId):
+		self.add_body_params('TemplateId', TemplateId)

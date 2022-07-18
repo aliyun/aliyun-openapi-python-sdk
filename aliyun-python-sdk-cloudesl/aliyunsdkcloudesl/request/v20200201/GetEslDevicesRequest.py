@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UnbindEslDeviceRequest(RpcRequest):
+class GetEslDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UnbindEslDevice')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'GetEslDevices')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,50 +31,14 @@ class UnbindEslDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
-	def get_ContainerName(self):
-		return self.get_body_params().get('ContainerName')
-
-	def set_ContainerName(self,ContainerName):
-		self.add_body_params('ContainerName', ContainerName)
-
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_Layer(self):
-		return self.get_body_params().get('Layer')
-
-	def set_Layer(self,Layer):
-		self.add_body_params('Layer', Layer)
-
 	def get_EslBarCode(self):
 		return self.get_body_params().get('EslBarCode')
 
 	def set_EslBarCode(self,EslBarCode):
 		self.add_body_params('EslBarCode', EslBarCode)
-
-	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
-
-	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
-
-	def get_Column(self):
-		return self.get_body_params().get('Column')
-
-	def set_Column(self,Column):
-		self.add_body_params('Column', Column)
-
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)

@@ -91,11 +91,23 @@ class AddCompanyTemplateRequest(RpcRequest):
 	def set_TemplateName(self,TemplateName):
 		self.add_body_params('TemplateName', TemplateName)
 
+	def get_TemplateSceneId(self):
+		return self.get_body_params().get('TemplateSceneId')
+
+	def set_TemplateSceneId(self,TemplateSceneId):
+		self.add_body_params('TemplateSceneId', TemplateSceneId)
+
 	def get_IfSourceCode(self):
 		return self.get_body_params().get('IfSourceCode')
 
 	def set_IfSourceCode(self,IfSourceCode):
 		self.add_body_params('IfSourceCode', IfSourceCode)
+
+	def get_GroupId(self):
+		return self.get_body_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_body_params('GroupId', GroupId)
 
 	def get_IfMember(self):
 		return self.get_body_params().get('IfMember')

@@ -164,6 +164,8 @@ class BatchInsertItemsRequest(RpcRequest):
 				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ForestSecondId', ItemInfos[depth1].get('ForestSecondId'))
 			if ItemInfos[depth1].get('SupplierName') is not None:
 				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SupplierName', ItemInfos[depth1].get('SupplierName'))
+			if ItemInfos[depth1].get('BeClearance') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.BeClearance', ItemInfos[depth1].get('BeClearance'))
 			if ItemInfos[depth1].get('Material') is not None:
 				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.Material', ItemInfos[depth1].get('Material'))
 			if ItemInfos[depth1].get('ModelNumber') is not None:

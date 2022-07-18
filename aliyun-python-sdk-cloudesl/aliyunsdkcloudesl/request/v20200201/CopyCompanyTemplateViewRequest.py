@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UnbindEslDeviceRequest(RpcRequest):
+class CopyCompanyTemplateViewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UnbindEslDevice')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'CopyCompanyTemplateView')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,44 +37,32 @@ class UnbindEslDeviceRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_ContainerName(self):
-		return self.get_body_params().get('ContainerName')
+	def get_TargetName(self):
+		return self.get_body_params().get('TargetName')
 
-	def set_ContainerName(self,ContainerName):
-		self.add_body_params('ContainerName', ContainerName)
+	def set_TargetName(self,TargetName):
+		self.add_body_params('TargetName', TargetName)
 
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+	def get_ModelId(self):
+		return self.get_body_params().get('ModelId')
 
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+	def set_ModelId(self,ModelId):
+		self.add_body_params('ModelId', ModelId)
 
-	def get_Layer(self):
-		return self.get_body_params().get('Layer')
+	def get_TargetVersion(self):
+		return self.get_body_params().get('TargetVersion')
 
-	def set_Layer(self,Layer):
-		self.add_body_params('Layer', Layer)
+	def set_TargetVersion(self,TargetVersion):
+		self.add_body_params('TargetVersion', TargetVersion)
 
-	def get_EslBarCode(self):
-		return self.get_body_params().get('EslBarCode')
+	def get_TemplateId(self):
+		return self.get_body_params().get('TemplateId')
 
-	def set_EslBarCode(self,EslBarCode):
-		self.add_body_params('EslBarCode', EslBarCode)
+	def set_TemplateId(self,TemplateId):
+		self.add_body_params('TemplateId', TemplateId)
 
-	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
+	def get_TargetGroupId(self):
+		return self.get_body_params().get('TargetGroupId')
 
-	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
-
-	def get_Column(self):
-		return self.get_body_params().get('Column')
-
-	def set_Column(self,Column):
-		self.add_body_params('Column', Column)
-
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
+	def set_TargetGroupId(self,TargetGroupId):
+		self.add_body_params('TargetGroupId', TargetGroupId)
