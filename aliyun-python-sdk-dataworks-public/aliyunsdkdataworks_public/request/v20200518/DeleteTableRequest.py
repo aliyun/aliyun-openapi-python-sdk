@@ -31,6 +31,11 @@ class DeleteTableRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Schema(self): # String
+		return self.get_query_params().get('Schema')
+
+	def set_Schema(self, Schema):  # String
+		self.add_query_param('Schema', Schema)
 	def get_EnvType(self): # Integer
 		return self.get_query_params().get('EnvType')
 

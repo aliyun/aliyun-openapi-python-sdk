@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetDutyRosterRequest(RpcRequest):
+class ListShiftSchedulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetDutyRoster')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListShiftSchedules')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class GetDutyRosterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DutyRosterIdentifier(self): # String
-		return self.get_body_params().get('DutyRosterIdentifier')
+	def get_Owner(self): # String
+		return self.get_body_params().get('Owner')
 
-	def set_DutyRosterIdentifier(self, DutyRosterIdentifier):  # String
-		self.add_body_params('DutyRosterIdentifier', DutyRosterIdentifier)
-	def get_Watchkeeper(self): # String
-		return self.get_body_params().get('Watchkeeper')
+	def set_Owner(self, Owner):  # String
+		self.add_body_params('Owner', Owner)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
 
-	def set_Watchkeeper(self, Watchkeeper):  # String
-		self.add_body_params('Watchkeeper', Watchkeeper)
-	def get_UserType(self): # String
-		return self.get_body_params().get('UserType')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
+	def get_ShiftScheduleName(self): # String
+		return self.get_body_params().get('ShiftScheduleName')
 
-	def set_UserType(self, UserType):  # String
-		self.add_body_params('UserType', UserType)
-	def get_EndTime(self): # Long
-		return self.get_body_params().get('EndTime')
+	def set_ShiftScheduleName(self, ShiftScheduleName):  # String
+		self.add_body_params('ShiftScheduleName', ShiftScheduleName)
+	def get_PageNumber(self): # Integer
+		return self.get_body_params().get('PageNumber')
 
-	def set_EndTime(self, EndTime):  # Long
-		self.add_body_params('EndTime', EndTime)
-	def get_BeginTime(self): # Long
-		return self.get_body_params().get('BeginTime')
-
-	def set_BeginTime(self, BeginTime):  # Long
-		self.add_body_params('BeginTime', BeginTime)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_body_params('PageNumber', PageNumber)

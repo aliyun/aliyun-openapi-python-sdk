@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListDutyRostersRequest(RpcRequest):
+class ListShiftPersonnelsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDutyRosters')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListShiftPersonnels')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,28 @@ class ListDutyRostersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DutyRosterOwner(self): # String
-		return self.get_body_params().get('DutyRosterOwner')
+	def get_ShiftPersonUID(self): # String
+		return self.get_body_params().get('ShiftPersonUID')
 
-	def set_DutyRosterOwner(self, DutyRosterOwner):  # String
-		self.add_body_params('DutyRosterOwner', DutyRosterOwner)
-	def get_DutyRosterName(self): # String
-		return self.get_body_params().get('DutyRosterName')
+	def set_ShiftPersonUID(self, ShiftPersonUID):  # String
+		self.add_body_params('ShiftPersonUID', ShiftPersonUID)
+	def get_UserType(self): # String
+		return self.get_body_params().get('UserType')
 
-	def set_DutyRosterName(self, DutyRosterName):  # String
-		self.add_body_params('DutyRosterName', DutyRosterName)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
+	def set_UserType(self, UserType):  # String
+		self.add_body_params('UserType', UserType)
+	def get_EndTime(self): # Long
+		return self.get_body_params().get('EndTime')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
+	def set_EndTime(self, EndTime):  # Long
+		self.add_body_params('EndTime', EndTime)
+	def get_BeginTime(self): # Long
+		return self.get_body_params().get('BeginTime')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)
+	def set_BeginTime(self, BeginTime):  # Long
+		self.add_body_params('BeginTime', BeginTime)
+	def get_ShiftScheduleIdentifier(self): # String
+		return self.get_body_params().get('ShiftScheduleIdentifier')
+
+	def set_ShiftScheduleIdentifier(self, ShiftScheduleIdentifier):  # String
+		self.add_body_params('ShiftScheduleIdentifier', ShiftScheduleIdentifier)

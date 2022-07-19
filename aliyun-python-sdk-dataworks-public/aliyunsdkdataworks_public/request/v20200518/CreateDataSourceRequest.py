@@ -51,11 +51,6 @@ class CreateDataSourceRequest(RpcRequest):
 
 	def set_SubType(self, SubType):  # String
 		self.add_query_param('SubType', SubType)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_EnvType(self): # Integer
 		return self.get_query_params().get('EnvType')
 
@@ -66,3 +61,8 @@ class CreateDataSourceRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_query_param('ProjectId', ProjectId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

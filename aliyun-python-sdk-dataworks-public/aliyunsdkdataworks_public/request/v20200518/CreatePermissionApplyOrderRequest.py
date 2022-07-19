@@ -49,7 +49,7 @@ class CreatePermissionApplyOrderRequest(RpcRequest):
 			if ApplyObject[depth1].get('ColumnMetaList') is not None:
 				for depth2 in range(len(ApplyObject[depth1].get('ColumnMetaList'))):
 					if ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name') is not None:
-						self.add_query_param('ApplyObject.' + str(depth1 + 1) + str(depth2 + 1) + '.Name', ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name'))
+						self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.ColumnMetaList.'  + str(depth2 + 1) + '.Name', ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name'))
 			if ApplyObject[depth1].get('Name') is not None:
 				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Name', ApplyObject[depth1].get('Name'))
 			if ApplyObject[depth1].get('Actions') is not None:
