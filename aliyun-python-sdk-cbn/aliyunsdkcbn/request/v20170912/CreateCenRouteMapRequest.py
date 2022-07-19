@@ -130,6 +130,11 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def set_RouteTypess(self, RouteTypes):  # RepeatList
 		for depth1 in range(len(RouteTypes)):
 			self.add_query_param('RouteTypes.' + str(depth1 + 1), RouteTypes[depth1])
+	def get_MatchAddressType(self): # String
+		return self.get_query_params().get('MatchAddressType')
+
+	def set_MatchAddressType(self, MatchAddressType):  # String
+		self.add_query_param('MatchAddressType', MatchAddressType)
 	def get_CidrMatchMode(self): # String
 		return self.get_query_params().get('CidrMatchMode')
 
