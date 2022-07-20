@@ -31,6 +31,11 @@ class SubmitFileRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SkipAllDeployFileExtensions(self): # Boolean
+		return self.get_body_params().get('SkipAllDeployFileExtensions')
+
+	def set_SkipAllDeployFileExtensions(self, SkipAllDeployFileExtensions):  # Boolean
+		self.add_body_params('SkipAllDeployFileExtensions', SkipAllDeployFileExtensions)
 	def get_Comment(self): # String
 		return self.get_body_params().get('Comment')
 
