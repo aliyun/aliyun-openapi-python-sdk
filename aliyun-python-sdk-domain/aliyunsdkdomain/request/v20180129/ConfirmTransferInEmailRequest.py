@@ -25,34 +25,30 @@ class ConfirmTransferInEmailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ConfirmTransferInEmail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DomainNames(self):
+	def get_DomainNames(self): # RepeatList
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainNames(self, DomainNames):
-		for depth1 in range(len(DomainNames)):
-			if DomainNames[depth1] is not None:
-				self.add_query_param('DomainName.' + str(depth1 + 1) , DomainNames[depth1])
-
-	def get_UserClientIp(self):
+	def set_DomainNames(self, DomainName):  # RepeatList
+		for depth1 in range(len(DomainName)):
+			self.add_query_param('DomainName.' + str(depth1 + 1), DomainName[depth1])
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Email(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

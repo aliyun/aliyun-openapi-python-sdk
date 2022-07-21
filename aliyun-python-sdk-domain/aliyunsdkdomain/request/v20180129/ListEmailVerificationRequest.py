@@ -25,56 +25,49 @@ class ListEmailVerificationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ListEmailVerification')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndCreateTime(self):
+	def get_EndCreateTime(self): # Long
 		return self.get_query_params().get('EndCreateTime')
 
-	def set_EndCreateTime(self,EndCreateTime):
-		self.add_query_param('EndCreateTime',EndCreateTime)
-
-	def get_PageNum(self):
+	def set_EndCreateTime(self, EndCreateTime):  # Long
+		self.add_query_param('EndCreateTime', EndCreateTime)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_VerificationStatus(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_VerificationStatus(self): # Integer
 		return self.get_query_params().get('VerificationStatus')
 
-	def set_VerificationStatus(self,VerificationStatus):
-		self.add_query_param('VerificationStatus',VerificationStatus)
-
-	def get_BeginCreateTime(self):
+	def set_VerificationStatus(self, VerificationStatus):  # Integer
+		self.add_query_param('VerificationStatus', VerificationStatus)
+	def get_BeginCreateTime(self): # Long
 		return self.get_query_params().get('BeginCreateTime')
 
-	def set_BeginCreateTime(self,BeginCreateTime):
-		self.add_query_param('BeginCreateTime',BeginCreateTime)
-
-	def get_PageSize(self):
+	def set_BeginCreateTime(self, BeginCreateTime):  # Long
+		self.add_query_param('BeginCreateTime', BeginCreateTime)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_UserClientIp(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Email(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

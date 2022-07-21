@@ -25,58 +25,52 @@ class SaveBatchTaskForCreatingOrderTransferRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderTransfer')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OrderTransferParams(self):
+	def get_OrderTransferParams(self): # RepeatList
 		return self.get_query_params().get('OrderTransferParam')
 
-	def set_OrderTransferParams(self, OrderTransferParams):
-		for depth1 in range(len(OrderTransferParams)):
-			if OrderTransferParams[depth1].get('PermitPremiumTransfer') is not None:
-				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.PermitPremiumTransfer', OrderTransferParams[depth1].get('PermitPremiumTransfer'))
-			if OrderTransferParams[depth1].get('AuthorizationCode') is not None:
-				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.AuthorizationCode', OrderTransferParams[depth1].get('AuthorizationCode'))
-			if OrderTransferParams[depth1].get('DomainName') is not None:
-				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.DomainName', OrderTransferParams[depth1].get('DomainName'))
-			if OrderTransferParams[depth1].get('RegistrantProfileId') is not None:
-				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.RegistrantProfileId', OrderTransferParams[depth1].get('RegistrantProfileId'))
-
-	def get_CouponNo(self):
+	def set_OrderTransferParams(self, OrderTransferParam):  # RepeatList
+		for depth1 in range(len(OrderTransferParam)):
+			if OrderTransferParam[depth1].get('PermitPremiumTransfer') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.PermitPremiumTransfer', OrderTransferParam[depth1].get('PermitPremiumTransfer'))
+			if OrderTransferParam[depth1].get('AuthorizationCode') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.AuthorizationCode', OrderTransferParam[depth1].get('AuthorizationCode'))
+			if OrderTransferParam[depth1].get('RegistrantProfileId') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.RegistrantProfileId', OrderTransferParam[depth1].get('RegistrantProfileId'))
+			if OrderTransferParam[depth1].get('DomainName') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.DomainName', OrderTransferParam[depth1].get('DomainName'))
+	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
-	def set_CouponNo(self,CouponNo):
-		self.add_query_param('CouponNo',CouponNo)
-
-	def get_UseCoupon(self):
+	def set_CouponNo(self, CouponNo):  # String
+		self.add_query_param('CouponNo', CouponNo)
+	def get_UseCoupon(self): # Boolean
 		return self.get_query_params().get('UseCoupon')
 
-	def set_UseCoupon(self,UseCoupon):
-		self.add_query_param('UseCoupon',UseCoupon)
-
-	def get_PromotionNo(self):
+	def set_UseCoupon(self, UseCoupon):  # Boolean
+		self.add_query_param('UseCoupon', UseCoupon)
+	def get_PromotionNo(self): # String
 		return self.get_query_params().get('PromotionNo')
 
-	def set_PromotionNo(self,PromotionNo):
-		self.add_query_param('PromotionNo',PromotionNo)
-
-	def get_UserClientIp(self):
+	def set_PromotionNo(self, PromotionNo):  # String
+		self.add_query_param('PromotionNo', PromotionNo)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_UsePromotion(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_UsePromotion(self): # Boolean
 		return self.get_query_params().get('UsePromotion')
 
-	def set_UsePromotion(self,UsePromotion):
-		self.add_query_param('UsePromotion',UsePromotion)
+	def set_UsePromotion(self, UsePromotion):  # Boolean
+		self.add_query_param('UsePromotion', UsePromotion)

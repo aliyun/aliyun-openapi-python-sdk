@@ -25,38 +25,34 @@ class SubmitOperationAuditInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SubmitOperationAuditInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DomainName(self):
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_AuditInfo(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_AuditInfo(self): # String
 		return self.get_query_params().get('AuditInfo')
 
-	def set_AuditInfo(self,AuditInfo):
-		self.add_query_param('AuditInfo',AuditInfo)
-
-	def get_AuditType(self):
+	def set_AuditInfo(self, AuditInfo):  # String
+		self.add_query_param('AuditInfo', AuditInfo)
+	def get_AuditType(self): # Integer
 		return self.get_query_params().get('AuditType')
 
-	def set_AuditType(self,AuditType):
-		self.add_query_param('AuditType',AuditType)
-
-	def get_Id(self):
+	def set_AuditType(self, AuditType):  # Integer
+		self.add_query_param('AuditType', AuditType)
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Lang(self):
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

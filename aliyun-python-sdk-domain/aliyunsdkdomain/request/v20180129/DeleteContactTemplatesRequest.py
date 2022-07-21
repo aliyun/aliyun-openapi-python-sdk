@@ -25,20 +25,19 @@ class DeleteContactTemplatesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'DeleteContactTemplates')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserClientIp(self):
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_RegistrantProfileIds(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_RegistrantProfileIds(self): # String
 		return self.get_query_params().get('RegistrantProfileIds')
 
-	def set_RegistrantProfileIds(self,RegistrantProfileIds):
-		self.add_query_param('RegistrantProfileIds',RegistrantProfileIds)
+	def set_RegistrantProfileIds(self, RegistrantProfileIds):  # String
+		self.add_query_param('RegistrantProfileIds', RegistrantProfileIds)

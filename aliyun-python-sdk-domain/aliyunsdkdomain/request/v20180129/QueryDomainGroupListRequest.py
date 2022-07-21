@@ -25,32 +25,29 @@ class QueryDomainGroupListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainGroupList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ShowDeletingGroup(self):
+	def get_ShowDeletingGroup(self): # Boolean
 		return self.get_query_params().get('ShowDeletingGroup')
 
-	def set_ShowDeletingGroup(self,ShowDeletingGroup):
-		self.add_query_param('ShowDeletingGroup',ShowDeletingGroup)
-
-	def get_UserClientIp(self):
+	def set_ShowDeletingGroup(self, ShowDeletingGroup):  # Boolean
+		self.add_query_param('ShowDeletingGroup', ShowDeletingGroup)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_DomainGroupName(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_DomainGroupName(self): # String
 		return self.get_query_params().get('DomainGroupName')
 
-	def set_DomainGroupName(self,DomainGroupName):
-		self.add_query_param('DomainGroupName',DomainGroupName)
-
-	def get_Lang(self):
+	def set_DomainGroupName(self, DomainGroupName):  # String
+		self.add_query_param('DomainGroupName', DomainGroupName)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

@@ -25,38 +25,34 @@ class CheckDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'CheckDomain')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DomainName(self):
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_FeeCurrency(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_FeeCurrency(self): # String
 		return self.get_query_params().get('FeeCurrency')
 
-	def set_FeeCurrency(self,FeeCurrency):
-		self.add_query_param('FeeCurrency',FeeCurrency)
-
-	def get_FeePeriod(self):
+	def set_FeeCurrency(self, FeeCurrency):  # String
+		self.add_query_param('FeeCurrency', FeeCurrency)
+	def get_FeePeriod(self): # Integer
 		return self.get_query_params().get('FeePeriod')
 
-	def set_FeePeriod(self,FeePeriod):
-		self.add_query_param('FeePeriod',FeePeriod)
-
-	def get_FeeCommand(self):
+	def set_FeePeriod(self, FeePeriod):  # Integer
+		self.add_query_param('FeePeriod', FeePeriod)
+	def get_FeeCommand(self): # String
 		return self.get_query_params().get('FeeCommand')
 
-	def set_FeeCommand(self,FeeCommand):
-		self.add_query_param('FeeCommand',FeeCommand)
-
-	def get_Lang(self):
+	def set_FeeCommand(self, FeeCommand):  # String
+		self.add_query_param('FeeCommand', FeeCommand)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

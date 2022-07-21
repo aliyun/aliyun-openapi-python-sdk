@@ -25,38 +25,34 @@ class SubmitOperationCredentialsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SubmitOperationCredentials')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Credentials(self):
+	def get_Credentials(self): # String
 		return self.get_query_params().get('Credentials')
 
-	def set_Credentials(self,Credentials):
-		self.add_query_param('Credentials',Credentials)
-
-	def get_AuditRecordId(self):
+	def set_Credentials(self, Credentials):  # String
+		self.add_query_param('Credentials', Credentials)
+	def get_AuditRecordId(self): # Long
 		return self.get_query_params().get('AuditRecordId')
 
-	def set_AuditRecordId(self,AuditRecordId):
-		self.add_query_param('AuditRecordId',AuditRecordId)
-
-	def get_RegType(self):
+	def set_AuditRecordId(self, AuditRecordId):  # Long
+		self.add_query_param('AuditRecordId', AuditRecordId)
+	def get_RegType(self): # Integer
 		return self.get_query_params().get('RegType')
 
-	def set_RegType(self,RegType):
-		self.add_query_param('RegType',RegType)
-
-	def get_AuditType(self):
+	def set_RegType(self, RegType):  # Integer
+		self.add_query_param('RegType', RegType)
+	def get_AuditType(self): # Integer
 		return self.get_query_params().get('AuditType')
 
-	def set_AuditType(self,AuditType):
-		self.add_query_param('AuditType',AuditType)
-
-	def get_Lang(self):
+	def set_AuditType(self, AuditType):  # Integer
+		self.add_query_param('AuditType', AuditType)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

@@ -25,22 +25,21 @@ class SaveBatchTaskForReserveDropListDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForReserveDropListDomain')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Domainss(self):
+	def get_Domainss(self): # RepeatList
 		return self.get_query_params().get('Domains')
 
-	def set_Domainss(self, Domainss):
-		for depth1 in range(len(Domainss)):
-			if Domainss[depth1].get('DomainName') is not None:
-				self.add_query_param('Domains.' + str(depth1 + 1) + '.DomainName', Domainss[depth1].get('DomainName'))
-
-	def get_ContactTemplateId(self):
+	def set_Domainss(self, Domains):  # RepeatList
+		for depth1 in range(len(Domains)):
+			if Domains[depth1].get('DomainName') is not None:
+				self.add_query_param('Domains.' + str(depth1 + 1) + '.DomainName', Domains[depth1].get('DomainName'))
+	def get_ContactTemplateId(self): # String
 		return self.get_query_params().get('ContactTemplateId')
 
-	def set_ContactTemplateId(self,ContactTemplateId):
-		self.add_query_param('ContactTemplateId',ContactTemplateId)
+	def set_ContactTemplateId(self, ContactTemplateId):  # String
+		self.add_query_param('ContactTemplateId', ContactTemplateId)

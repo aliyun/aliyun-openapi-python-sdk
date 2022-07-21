@@ -25,52 +25,45 @@ class UpdateDomainToDomainGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'UpdateDomainToDomainGroup')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileToUpload(self):
+	def get_FileToUpload(self): # String
 		return self.get_body_params().get('FileToUpload')
 
-	def set_FileToUpload(self,FileToUpload):
+	def set_FileToUpload(self, FileToUpload):  # String
 		self.add_body_params('FileToUpload', FileToUpload)
-
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainNames(self, DomainNames):
-		for depth1 in range(len(DomainNames)):
-			if DomainNames[depth1] is not None:
-				self.add_query_param('DomainName.' + str(depth1 + 1) , DomainNames[depth1])
-
-	def get_Replace(self):
+	def get_Replace(self): # Boolean
 		return self.get_query_params().get('Replace')
 
-	def set_Replace(self,Replace):
-		self.add_query_param('Replace',Replace)
+	def set_Replace(self, Replace):  # Boolean
+		self.add_query_param('Replace', Replace)
+	def get_DomainNames(self): # RepeatList
+		return self.get_query_params().get('DomainName')
 
-	def get_DomainGroupId(self):
+	def set_DomainNames(self, DomainName):  # RepeatList
+		for depth1 in range(len(DomainName)):
+			self.add_query_param('DomainName.' + str(depth1 + 1), DomainName[depth1])
+	def get_DomainGroupId(self): # Long
 		return self.get_query_params().get('DomainGroupId')
 
-	def set_DomainGroupId(self,DomainGroupId):
-		self.add_query_param('DomainGroupId',DomainGroupId)
-
-	def get_DataSource(self):
+	def set_DomainGroupId(self, DomainGroupId):  # Long
+		self.add_query_param('DomainGroupId', DomainGroupId)
+	def get_DataSource(self): # Integer
 		return self.get_query_params().get('DataSource')
 
-	def set_DataSource(self,DataSource):
-		self.add_query_param('DataSource',DataSource)
-
-	def get_UserClientIp(self):
+	def set_DataSource(self, DataSource):  # Integer
+		self.add_query_param('DataSource', DataSource)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

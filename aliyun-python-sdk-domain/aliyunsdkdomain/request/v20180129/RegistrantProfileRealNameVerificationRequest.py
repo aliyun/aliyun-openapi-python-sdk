@@ -25,44 +25,39 @@ class RegistrantProfileRealNameVerificationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'RegistrantProfileRealNameVerification')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IdentityCredentialType(self):
+	def get_IdentityCredentialType(self): # String
 		return self.get_query_params().get('IdentityCredentialType')
 
-	def set_IdentityCredentialType(self,IdentityCredentialType):
-		self.add_query_param('IdentityCredentialType',IdentityCredentialType)
-
-	def get_RegistrantProfileID(self):
+	def set_IdentityCredentialType(self, IdentityCredentialType):  # String
+		self.add_query_param('IdentityCredentialType', IdentityCredentialType)
+	def get_RegistrantProfileID(self): # Long
 		return self.get_query_params().get('RegistrantProfileID')
 
-	def set_RegistrantProfileID(self,RegistrantProfileID):
-		self.add_query_param('RegistrantProfileID',RegistrantProfileID)
-
-	def get_IdentityCredential(self):
+	def set_RegistrantProfileID(self, RegistrantProfileID):  # Long
+		self.add_query_param('RegistrantProfileID', RegistrantProfileID)
+	def get_IdentityCredential(self): # String
 		return self.get_body_params().get('IdentityCredential')
 
-	def set_IdentityCredential(self,IdentityCredential):
+	def set_IdentityCredential(self, IdentityCredential):  # String
 		self.add_body_params('IdentityCredential', IdentityCredential)
-
-	def get_UserClientIp(self):
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_IdentityCredentialNo(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_IdentityCredentialNo(self): # String
 		return self.get_query_params().get('IdentityCredentialNo')
 
-	def set_IdentityCredentialNo(self,IdentityCredentialNo):
-		self.add_query_param('IdentityCredentialNo',IdentityCredentialNo)
+	def set_IdentityCredentialNo(self, IdentityCredentialNo):  # String
+		self.add_query_param('IdentityCredentialNo', IdentityCredentialNo)

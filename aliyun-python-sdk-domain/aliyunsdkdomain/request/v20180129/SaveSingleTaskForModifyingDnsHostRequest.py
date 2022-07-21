@@ -25,40 +25,35 @@ class SaveSingleTaskForModifyingDnsHostRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForModifyingDnsHost')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ips(self):
+	def get_Ips(self): # RepeatList
 		return self.get_query_params().get('Ip')
 
-	def set_Ips(self, Ips):
-		for depth1 in range(len(Ips)):
-			if Ips[depth1] is not None:
-				self.add_query_param('Ip.' + str(depth1 + 1) , Ips[depth1])
-
-	def get_InstanceId(self):
+	def set_Ips(self, Ip):  # RepeatList
+		for depth1 in range(len(Ip)):
+			self.add_query_param('Ip.' + str(depth1 + 1), Ip[depth1])
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DnsName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DnsName(self): # String
 		return self.get_query_params().get('DnsName')
 
-	def set_DnsName(self,DnsName):
-		self.add_query_param('DnsName',DnsName)
-
-	def get_UserClientIp(self):
+	def set_DnsName(self, DnsName):  # String
+		self.add_query_param('DnsName', DnsName)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

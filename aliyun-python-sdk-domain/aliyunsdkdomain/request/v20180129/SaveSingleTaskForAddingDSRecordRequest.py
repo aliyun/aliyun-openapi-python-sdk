@@ -25,50 +25,44 @@ class SaveSingleTaskForAddingDSRecordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForAddingDSRecord')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_KeyTag(self):
+	def get_KeyTag(self): # Integer
 		return self.get_query_params().get('KeyTag')
 
-	def set_KeyTag(self,KeyTag):
-		self.add_query_param('KeyTag',KeyTag)
-
-	def get_DomainName(self):
+	def set_KeyTag(self, KeyTag):  # Integer
+		self.add_query_param('KeyTag', KeyTag)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_UserClientIp(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_DigestType(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_DigestType(self): # Integer
 		return self.get_query_params().get('DigestType')
 
-	def set_DigestType(self,DigestType):
-		self.add_query_param('DigestType',DigestType)
-
-	def get_Digest(self):
+	def set_DigestType(self, DigestType):  # Integer
+		self.add_query_param('DigestType', DigestType)
+	def get_Digest(self): # String
 		return self.get_query_params().get('Digest')
 
-	def set_Digest(self,Digest):
-		self.add_query_param('Digest',Digest)
-
-	def get_Lang(self):
+	def set_Digest(self, Digest):  # String
+		self.add_query_param('Digest', Digest)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Algorithm(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Algorithm(self): # Integer
 		return self.get_query_params().get('Algorithm')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_Algorithm(self, Algorithm):  # Integer
+		self.add_query_param('Algorithm', Algorithm)
