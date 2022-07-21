@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
+import json
 
-class CreateMediaComplexTaskRequest(RpcRequest):
+class BatchGetFileMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMediaComplexTask','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'BatchGetFileMeta','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,18 @@ class CreateMediaComplexTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_URIs(self): # Array
+		return self.get_query_params().get('URIs')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
+	def set_URIs(self, URIs):  # Array
+		self.add_query_param("URIs", json.dumps(URIs))
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
 
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_Parameters(self): # String
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self, Parameters):  # String
-		self.add_query_param('Parameters', Parameters)
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)

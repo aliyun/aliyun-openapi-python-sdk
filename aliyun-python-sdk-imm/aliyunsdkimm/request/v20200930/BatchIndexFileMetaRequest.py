@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
+import json
 
-class GetContentKeyRequest(RpcRequest):
+class BatchIndexFileMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetContentKey','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'BatchIndexFileMeta','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,28 @@ class GetContentKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_VersionId(self): # String
-		return self.get_query_params().get('VersionId')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_NotifyTopicName(self): # String
+		return self.get_query_params().get('NotifyTopicName')
 
-	def set_VersionId(self, VersionId):  # String
-		self.add_query_param('VersionId', VersionId)
-	def get_DRMServerId(self): # String
-		return self.get_query_params().get('DRMServerId')
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_NotifyEndpoint(self): # String
+		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_DRMServerId(self, DRMServerId):  # String
-		self.add_query_param('DRMServerId', DRMServerId)
-	def get_KeyIds(self): # String
-		return self.get_query_params().get('KeyIds')
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
 
-	def set_KeyIds(self, KeyIds):  # String
-		self.add_query_param('KeyIds', KeyIds)
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)
+	def get_Files(self): # Array
+		return self.get_query_params().get('Files')
+
+	def set_Files(self, Files):  # Array
+		self.add_query_param("Files", json.dumps(Files))

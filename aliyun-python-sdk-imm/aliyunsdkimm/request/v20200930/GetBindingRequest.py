@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class RefreshOfficeEditTokenRequest(RpcRequest):
+class GetBindingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshOfficeEditToken','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'GetBinding','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class RefreshOfficeEditTokenRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_AccessToken(self): # String
-		return self.get_query_params().get('AccessToken')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
 
-	def set_AccessToken(self, AccessToken):  # String
-		self.add_query_param('AccessToken', AccessToken)
-	def get_RefreshToken(self): # String
-		return self.get_query_params().get('RefreshToken')
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)
+	def get_URI(self): # String
+		return self.get_query_params().get('URI')
 
-	def set_RefreshToken(self, RefreshToken):  # String
-		self.add_query_param('RefreshToken', RefreshToken)
+	def set_URI(self, URI):  # String
+		self.add_query_param('URI', URI)

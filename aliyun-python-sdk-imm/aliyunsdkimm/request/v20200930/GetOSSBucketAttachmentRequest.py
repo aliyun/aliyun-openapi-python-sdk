@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class GetOSSBucketAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DescribeRegions','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'GetOSSBucketAttachment','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class DescribeRegionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OSSBucket(self): # String
+		return self.get_query_params().get('OSSBucket')
+
+	def set_OSSBucket(self, OSSBucket):  # String
+		self.add_query_param('OSSBucket', OSSBucket)

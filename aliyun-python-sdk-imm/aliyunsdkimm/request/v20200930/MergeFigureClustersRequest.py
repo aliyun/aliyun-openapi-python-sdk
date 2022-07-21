@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class CreateVideoProduceTaskRequest(RpcRequest):
+class MergeFigureClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoProduceTask','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'MergeFigureClusters','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,53 +31,43 @@ class CreateVideoProduceTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
-
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_Music(self): # String
-		return self.get_query_params().get('Music')
-
-	def set_Music(self, Music):  # String
-		self.add_query_param('Music', Music)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_TargetUri(self): # String
-		return self.get_query_params().get('TargetUri')
-
-	def set_TargetUri(self, TargetUri):  # String
-		self.add_query_param('TargetUri', TargetUri)
-	def get_TemplateName(self): # String
-		return self.get_query_params().get('TemplateName')
-
-	def set_TemplateName(self, TemplateName):  # String
-		self.add_query_param('TemplateName', TemplateName)
-	def get_Height(self): # Integer
-		return self.get_query_params().get('Height')
-
-	def set_Height(self, Height):  # Integer
-		self.add_query_param('Height', Height)
 	def get_CustomMessage(self): # String
 		return self.get_query_params().get('CustomMessage')
 
 	def set_CustomMessage(self, CustomMessage):  # String
 		self.add_query_param('CustomMessage', CustomMessage)
-	def get_Images(self): # String
-		return self.get_query_params().get('Images')
+	def get_ClusterIdFrom(self): # String
+		return self.get_query_params().get('ClusterIdFrom')
 
-	def set_Images(self, Images):  # String
-		self.add_query_param('Images', Images)
+	def set_ClusterIdFrom(self, ClusterIdFrom):  # String
+		self.add_query_param('ClusterIdFrom', ClusterIdFrom)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
 	def set_NotifyTopicName(self, NotifyTopicName):  # String
 		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_Width(self): # Integer
-		return self.get_query_params().get('Width')
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
 
-	def set_Width(self, Width):  # Integer
-		self.add_query_param('Width', Width)
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)
+	def get_FigureType(self): # String
+		return self.get_query_params().get('FigureType')
+
+	def set_FigureType(self, FigureType):  # String
+		self.add_query_param('FigureType', FigureType)
+	def get_ClusterIdTo(self): # String
+		return self.get_query_params().get('ClusterIdTo')
+
+	def set_ClusterIdTo(self, ClusterIdTo):  # String
+		self.add_query_param('ClusterIdTo', ClusterIdTo)
+	def get_NotifyTopicEndpoint(self): # String
+		return self.get_query_params().get('NotifyTopicEndpoint')
+
+	def set_NotifyTopicEndpoint(self, NotifyTopicEndpoint):  # String
+		self.add_query_param('NotifyTopicEndpoint', NotifyTopicEndpoint)

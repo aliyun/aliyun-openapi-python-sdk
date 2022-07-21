@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class DeleteImageJobRequest(RpcRequest):
+class GetTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteImageJob','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'GetTask','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class DeleteImageJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
-	def get_JobType(self): # String
-		return self.get_query_params().get('JobType')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def set_JobType(self, JobType):  # String
-		self.add_query_param('JobType', JobType)
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)

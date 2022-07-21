@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class CreateImageProcessTaskRequest(RpcRequest):
+class ResumeBindingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateImageProcessTask','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'ResumeBinding','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,18 @@ class CreateImageProcessTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
 
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)
+	def get_URI(self): # String
+		return self.get_query_params().get('URI')
 
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_TargetList(self): # String
-		return self.get_query_params().get('TargetList')
-
-	def set_TargetList(self, TargetList):  # String
-		self.add_query_param('TargetList', TargetList)
-	def get_ImageUri(self): # String
-		return self.get_query_params().get('ImageUri')
-
-	def set_ImageUri(self, ImageUri):  # String
-		self.add_query_param('ImageUri', ImageUri)
+	def set_URI(self, URI):  # String
+		self.add_query_param('URI', URI)

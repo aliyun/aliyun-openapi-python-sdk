@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class GetDRMLicenseRequest(RpcRequest):
+class GetProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetDRMLicense','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'GetProject','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,13 @@ class GetDRMLicenseRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_DRMType(self): # String
-		return self.get_query_params().get('DRMType')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_WithStatistics(self): # Boolean
+		return self.get_query_params().get('WithStatistics')
 
-	def set_DRMType(self, DRMType):  # String
-		self.add_query_param('DRMType', DRMType)
-	def get_DRMLicense(self): # String
-		return self.get_query_params().get('DRMLicense')
-
-	def set_DRMLicense(self, DRMLicense):  # String
-		self.add_query_param('DRMLicense', DRMLicense)
+	def set_WithStatistics(self, WithStatistics):  # Boolean
+		self.add_query_param('WithStatistics', WithStatistics)

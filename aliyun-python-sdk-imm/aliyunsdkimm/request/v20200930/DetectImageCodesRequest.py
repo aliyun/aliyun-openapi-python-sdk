@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
+import json
 
-class CreateVideoAnalyseTaskRequest(RpcRequest):
+class DetectImageCodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAnalyseTask','imm')
+		RpcRequest.__init__(self, 'imm', '2020-09-30', 'DetectImageCodes','imm')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +32,18 @@ class CreateVideoAnalyseTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
 
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_SourceURI(self): # String
+		return self.get_query_params().get('SourceURI')
 
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
+	def set_SourceURI(self, SourceURI):  # String
+		self.add_query_param('SourceURI', SourceURI)
+	def get_CredentialConfig(self): # Struct
+		return self.get_query_params().get('CredentialConfig')
 
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_VideoUri(self): # String
-		return self.get_query_params().get('VideoUri')
-
-	def set_VideoUri(self, VideoUri):  # String
-		self.add_query_param('VideoUri', VideoUri)
-	def get_TgtUri(self): # String
-		return self.get_query_params().get('TgtUri')
-
-	def set_TgtUri(self, TgtUri):  # String
-		self.add_query_param('TgtUri', TgtUri)
+	def set_CredentialConfig(self, CredentialConfig):  # Struct
+		self.add_query_param("CredentialConfig", json.dumps(CredentialConfig))
