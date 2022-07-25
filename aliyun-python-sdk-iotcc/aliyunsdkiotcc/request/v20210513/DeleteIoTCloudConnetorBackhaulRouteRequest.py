@@ -19,34 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateIoTCloudConnectorGroupRequest(RpcRequest):
+class DeleteIoTCloudConnetorBackhaulRouteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateIoTCloudConnectorGroup','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'DeleteIoTCloudConnetorBackhaulRoute','IoTCC')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_IoTCloudConnectorId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorId')
+
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)

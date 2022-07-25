@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateGroupAuthorizationRuleRequest(RpcRequest):
+class CreateGroupDNSServiceRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateGroupAuthorizationRule','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'CreateGroupDNSServiceRule','IoTCC')
 		self.set_method('POST')
 
 	def get_ClientToken(self): # String
@@ -30,31 +30,21 @@ class CreateGroupAuthorizationRuleRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_DestinationType(self): # String
-		return self.get_query_params().get('DestinationType')
-
-	def set_DestinationType(self, DestinationType):  # String
-		self.add_query_param('DestinationType', DestinationType)
 	def get_Destination(self): # String
 		return self.get_query_params().get('Destination')
 
 	def set_Destination(self, Destination):  # String
 		self.add_query_param('Destination', Destination)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
-	def get_AuthorizationRuleDescription(self): # String
-		return self.get_query_params().get('AuthorizationRuleDescription')
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_DNSServiceRuleDescription(self): # String
+		return self.get_query_params().get('DNSServiceRuleDescription')
 
-	def set_AuthorizationRuleDescription(self, AuthorizationRuleDescription):  # String
-		self.add_query_param('AuthorizationRuleDescription', AuthorizationRuleDescription)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)
+	def set_DNSServiceRuleDescription(self, DNSServiceRuleDescription):  # String
+		self.add_query_param('DNSServiceRuleDescription', DNSServiceRuleDescription)
 	def get_IoTCloudConnectorGroupId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorGroupId')
 
@@ -65,14 +55,13 @@ class CreateGroupAuthorizationRuleRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_SourceCidrss(self): # RepeatList
-		return self.get_query_params().get('SourceCidrs')
+	def get_ServiceType(self): # String
+		return self.get_query_params().get('ServiceType')
 
-	def set_SourceCidrss(self, SourceCidrs):  # RepeatList
-		for depth1 in range(len(SourceCidrs)):
-			self.add_query_param('SourceCidrs.' + str(depth1 + 1), SourceCidrs[depth1])
-	def get_AuthorizationRuleName(self): # String
-		return self.get_query_params().get('AuthorizationRuleName')
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
+	def get_DNSServiceRuleName(self): # String
+		return self.get_query_params().get('DNSServiceRuleName')
 
-	def set_AuthorizationRuleName(self, AuthorizationRuleName):  # String
-		self.add_query_param('AuthorizationRuleName', AuthorizationRuleName)
+	def set_DNSServiceRuleName(self, DNSServiceRuleName):  # String
+		self.add_query_param('DNSServiceRuleName', DNSServiceRuleName)

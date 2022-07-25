@@ -25,6 +25,11 @@ class ListIoTCloudConnectorGroupsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectorGroups','IoTCC')
 		self.set_method('POST')
 
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

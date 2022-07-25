@@ -19,32 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListAPNsRequest(RpcRequest):
+class ListIoTCloudConnectorEIPsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListAPNs','IoTCC')
+		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListIoTCloudConnectorEIPs','IoTCC')
 		self.set_method('POST')
 
-	def get_ISP(self): # String
-		return self.get_query_params().get('ISP')
-
-	def set_ISP(self, ISP):  # String
-		self.add_query_param('ISP', ISP)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_APN(self): # String
-		return self.get_query_params().get('APN')
+	def get_IoTCloudConnectorId(self): # String
+		return self.get_query_params().get('IoTCloudConnectorId')
 
-	def set_APN(self, APN):  # String
-		self.add_query_param('APN', APN)
+	def set_IoTCloudConnectorId(self, IoTCloudConnectorId):  # String
+		self.add_query_param('IoTCloudConnectorId', IoTCloudConnectorId)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

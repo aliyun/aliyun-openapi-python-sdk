@@ -48,6 +48,11 @@ class ListAuthorizationRulesRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_AuthorizationRuleType(self): # String
+		return self.get_query_params().get('AuthorizationRuleType')
+
+	def set_AuthorizationRuleType(self, AuthorizationRuleType):  # String
+		self.add_query_param('AuthorizationRuleType', AuthorizationRuleType)
 	def get_Policys(self): # RepeatList
 		return self.get_query_params().get('Policy')
 

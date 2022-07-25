@@ -37,6 +37,11 @@ class ListGroupAuthorizationRulesRequest(RpcRequest):
 	def set_Destinations(self, Destination):  # RepeatList
 		for depth1 in range(len(Destination)):
 			self.add_query_param('Destination.' + str(depth1 + 1), Destination[depth1])
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_AuthorizationRuleIdss(self): # RepeatList
 		return self.get_query_params().get('AuthorizationRuleIds')
 

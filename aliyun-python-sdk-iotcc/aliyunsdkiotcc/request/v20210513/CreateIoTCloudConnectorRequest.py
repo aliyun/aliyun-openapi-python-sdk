@@ -35,6 +35,11 @@ class CreateIoTCloudConnectorRequest(RpcRequest):
 
 	def set_ISP(self, ISP):  # String
 		self.add_query_param('ISP', ISP)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_IoTCloudConnectorDescription(self): # String
 		return self.get_query_params().get('IoTCloudConnectorDescription')
 
