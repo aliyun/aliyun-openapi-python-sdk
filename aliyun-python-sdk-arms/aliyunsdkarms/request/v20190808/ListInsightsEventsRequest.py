@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetClusterInfoRequest(RpcRequest):
+class ListInsightsEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetClusterInfo','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListInsightsEvents','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class GetClusterInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_QueryUserId(self): # String
-		return self.get_query_params().get('QueryUserId')
+	def get_InsightsTypes(self): # String
+		return self.get_query_params().get('InsightsTypes')
 
-	def set_QueryUserId(self, QueryUserId):  # String
-		self.add_query_param('QueryUserId', QueryUserId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_InsightsTypes(self, InsightsTypes):  # String
+		self.add_query_param('InsightsTypes', InsightsTypes)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Pid(self): # String
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self, Pid):  # String
+		self.add_query_param('Pid', Pid)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)

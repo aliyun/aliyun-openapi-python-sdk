@@ -61,3 +61,18 @@ class CreateOrUpdateIMRobotRequest(RpcRequest):
 
 	def set_DailyNocTime(self, DailyNocTime):  # String
 		self.add_body_params('DailyNocTime', DailyNocTime)
+	def get_Token(self): # String
+		return self.get_body_params().get('Token')
+
+	def set_Token(self, Token):  # String
+		self.add_body_params('Token', Token)
+	def get_CardTemplate(self): # String
+		return self.get_body_params().get('CardTemplate')
+
+	def set_CardTemplate(self, CardTemplate):  # String
+		self.add_body_params('CardTemplate', CardTemplate)
+	def get_EnableOutgoing(self): # Boolean
+		return self.get_body_params().get('EnableOutgoing')
+
+	def set_EnableOutgoing(self, EnableOutgoing):  # Boolean
+		self.add_body_params('EnableOutgoing', EnableOutgoing)

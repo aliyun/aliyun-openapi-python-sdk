@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetUserCommercialStatusRequest(RpcRequest):
+class ListPrometheusInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetUserCommercialStatus','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusInstances','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,8 @@ class GetUserCommercialStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def get_ShowGlobalView(self): # Boolean
+		return self.get_query_params().get('ShowGlobalView')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_ParentId(self): # String
-		return self.get_query_params().get('ParentId')
-
-	def set_ParentId(self, ParentId):  # String
-		self.add_query_param('ParentId', ParentId)
-	def get_TargetUserId(self): # String
-		return self.get_query_params().get('TargetUserId')
-
-	def set_TargetUserId(self, TargetUserId):  # String
-		self.add_query_param('TargetUserId', TargetUserId)
+	def set_ShowGlobalView(self, ShowGlobalView):  # Boolean
+		self.add_query_param('ShowGlobalView', ShowGlobalView)

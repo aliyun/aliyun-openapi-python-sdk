@@ -20,29 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetEstimateFeeInfoRequest(RpcRequest):
+class DeleteGrafanaResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetEstimateFeeInfo','arms')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteGrafanaResource','arms')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UsageCn(self): # Long
-		return self.get_query_params().get('UsageCn')
+	def get_ClusterName(self): # String
+		return self.get_body_params().get('ClusterName')
 
-	def set_UsageCn(self, UsageCn):  # Long
-		self.add_query_param('UsageCn', UsageCn)
-	def get_UsageFn(self): # Long
-		return self.get_query_params().get('UsageFn')
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_body_params('ClusterName', ClusterName)
+	def get_ClusterId(self): # String
+		return self.get_body_params().get('ClusterId')
 
-	def set_UsageFn(self, UsageFn):  # Long
-		self.add_query_param('UsageFn', UsageFn)
-	def get_TargetUserId(self): # String
-		return self.get_query_params().get('TargetUserId')
-
-	def set_TargetUserId(self, TargetUserId):  # String
-		self.add_query_param('TargetUserId', TargetUserId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_body_params('ClusterId', ClusterId)

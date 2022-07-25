@@ -20,24 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetClusterStateRequest(RpcRequest):
+class ListIntegrationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetClusterState','arms')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListIntegration','arms')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PuserId(self): # String
-		return self.get_query_params().get('PuserId')
+	def get_Size(self): # Long
+		return self.get_query_params().get('Size')
 
-	def set_PuserId(self, PuserId):  # String
-		self.add_query_param('PuserId', PuserId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_Size(self, Size):  # Long
+		self.add_query_param('Size', Size)
+	def get_IntegrationName(self): # String
+		return self.get_query_params().get('IntegrationName')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_IntegrationName(self, IntegrationName):  # String
+		self.add_query_param('IntegrationName', IntegrationName)
+	def get_IsDetail(self): # Boolean
+		return self.get_query_params().get('IsDetail')
+
+	def set_IsDetail(self, IsDetail):  # Boolean
+		self.add_query_param('IsDetail', IsDetail)
+	def get_Page(self): # Long
+		return self.get_query_params().get('Page')
+
+	def set_Page(self, Page):  # Long
+		self.add_query_param('Page', Page)
+	def get_IntegrationProductType(self): # String
+		return self.get_query_params().get('IntegrationProductType')
+
+	def set_IntegrationProductType(self, IntegrationProductType):  # String
+		self.add_query_param('IntegrationProductType', IntegrationProductType)

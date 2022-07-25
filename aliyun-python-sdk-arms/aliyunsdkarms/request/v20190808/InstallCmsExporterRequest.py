@@ -36,6 +36,11 @@ class InstallCmsExporterRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_DirectArgs(self): # String
+		return self.get_query_params().get('DirectArgs')
+
+	def set_DirectArgs(self, DirectArgs):  # String
+		self.add_query_param('DirectArgs', DirectArgs)
 	def get_CmsArgs(self): # String
 		return self.get_query_params().get('CmsArgs')
 

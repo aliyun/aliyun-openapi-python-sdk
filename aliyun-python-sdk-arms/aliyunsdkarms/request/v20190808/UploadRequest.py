@@ -37,10 +37,15 @@ class UploadRequest(RpcRequest):
 	def set_FileName(self, FileName):  # String
 		self.add_query_param('FileName', FileName)
 	def get_File(self): # String
-		return self.get_query_params().get('File')
+		return self.get_body_params().get('File')
 
 	def set_File(self, File):  # String
-		self.add_query_param('File', File)
+		self.add_body_params('File', File)
+	def get_Edition(self): # String
+		return self.get_query_params().get('Edition')
+
+	def set_Edition(self, Edition):  # String
+		self.add_query_param('Edition', Edition)
 	def get_Pid(self): # String
 		return self.get_query_params().get('Pid')
 

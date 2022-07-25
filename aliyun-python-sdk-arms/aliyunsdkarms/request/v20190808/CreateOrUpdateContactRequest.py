@@ -31,16 +31,21 @@ class CreateOrUpdateContactRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ContactName(self): # String
-		return self.get_body_params().get('ContactName')
-
-	def set_ContactName(self, ContactName):  # String
-		self.add_body_params('ContactName', ContactName)
 	def get_ContactId(self): # Long
 		return self.get_body_params().get('ContactId')
 
 	def set_ContactId(self, ContactId):  # Long
 		self.add_body_params('ContactId', ContactId)
+	def get_ReissueSendNotice(self): # Long
+		return self.get_body_params().get('ReissueSendNotice')
+
+	def set_ReissueSendNotice(self, ReissueSendNotice):  # Long
+		self.add_body_params('ReissueSendNotice', ReissueSendNotice)
+	def get_ContactName(self): # String
+		return self.get_body_params().get('ContactName')
+
+	def set_ContactName(self, ContactName):  # String
+		self.add_body_params('ContactName', ContactName)
 	def get_Phone(self): # String
 		return self.get_body_params().get('Phone')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class AddASMIntegrationRequest(RpcRequest):
+class GetClusterAllUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'AddASMIntegration','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetClusterAllUrl','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
