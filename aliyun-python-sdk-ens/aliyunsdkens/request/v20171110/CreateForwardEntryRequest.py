@@ -40,6 +40,11 @@ class CreateForwardEntryRequest(RpcRequest):
 
 	def set_IpProtocol(self, IpProtocol):  # String
 		self.add_query_param('IpProtocol', IpProtocol)
+	def get_HealthCheckPort(self): # Integer
+		return self.get_query_params().get('HealthCheckPort')
+
+	def set_HealthCheckPort(self, HealthCheckPort):  # Integer
+		self.add_query_param('HealthCheckPort', HealthCheckPort)
 	def get_ExternalPort(self): # String
 		return self.get_query_params().get('ExternalPort')
 
