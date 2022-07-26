@@ -23,34 +23,31 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListTemplateVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTemplateVersions')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTemplateVersions','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_TemplateName(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
-
-	def get_ShareType(self):
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
+	def get_ShareType(self): # String
 		return self.get_query_params().get('ShareType')
 
-	def set_ShareType(self,ShareType):
-		self.add_query_param('ShareType',ShareType)
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)

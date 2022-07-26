@@ -23,34 +23,31 @@ from aliyunsdkoos.endpoint import endpoint_data
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UntagResources')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UntagResources','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_All(self):
+	def get_All(self): # Boolean
 		return self.get_query_params().get('All')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
-
-	def get_ResourceType(self):
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TagKeys(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # Json
 		return self.get_query_params().get('TagKeys')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
-
-	def get_ResourceIds(self):
+	def set_TagKeys(self, TagKeys):  # Json
+		self.add_query_param('TagKeys', TagKeys)
+	def get_ResourceIds(self): # Json
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_ResourceIds(self, ResourceIds):  # Json
+		self.add_query_param('ResourceIds', ResourceIds)

@@ -23,22 +23,21 @@ from aliyunsdkoos.endpoint import endpoint_data
 class DeleteStateConfigurationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteStateConfigurations')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteStateConfigurations','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StateConfigurationIds(self):
+	def get_StateConfigurationIds(self): # String
 		return self.get_query_params().get('StateConfigurationIds')
 
-	def set_StateConfigurationIds(self,StateConfigurationIds):
-		self.add_query_param('StateConfigurationIds',StateConfigurationIds)
-
-	def get_ClientToken(self):
+	def set_StateConfigurationIds(self, StateConfigurationIds):  # String
+		self.add_query_param('StateConfigurationIds', StateConfigurationIds)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)

@@ -23,44 +23,39 @@ from aliyunsdkoos.endpoint import endpoint_data
 class SearchInventoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'SearchInventory')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'SearchInventory','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Aggregators(self):
+	def get_Aggregators(self): # RepeatList
 		return self.get_query_params().get('Aggregator')
 
-	def set_Aggregators(self, Aggregators):
-		for depth1 in range(len(Aggregators)):
-			if Aggregators[depth1] is not None:
-				self.add_query_param('Aggregator.' + str(depth1 + 1) , Aggregators[depth1])
-
-	def get_Filters(self):
+	def set_Aggregators(self, Aggregator):  # RepeatList
+		for depth1 in range(len(Aggregator)):
+			self.add_query_param('Aggregator.' + str(depth1 + 1), Aggregator[depth1])
+	def get_Filters(self): # RepeatList
 		return self.get_query_params().get('Filter')
 
-	def set_Filters(self, Filters):
-		for depth1 in range(len(Filters)):
-			if Filters[depth1].get('Name') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Name', Filters[depth1].get('Name'))
-			if Filters[depth1].get('Value') is not None:
-				for depth2 in range(len(Filters[depth1].get('Value'))):
-					if Filters[depth1].get('Value')[depth2] is not None:
-						self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1) , Filters[depth1].get('Value')[depth2])
-			if Filters[depth1].get('Operator') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Operator', Filters[depth1].get('Operator'))
-
-	def get_NextToken(self):
+	def set_Filters(self, Filter):  # RepeatList
+		for depth1 in range(len(Filter)):
+			if Filter[depth1].get('Name') is not None:
+				self.add_query_param('Filter.' + str(depth1 + 1) + '.Name', Filter[depth1].get('Name'))
+			if Filter[depth1].get('Value') is not None:
+				for depth2 in range(len(Filter[depth1].get('Value'))):
+					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), Filter[depth1].get('Value')[depth2])
+			if Filter[depth1].get('Operator') is not None:
+				self.add_query_param('Filter.' + str(depth1 + 1) + '.Operator', Filter[depth1].get('Operator'))
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

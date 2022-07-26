@@ -23,22 +23,21 @@ from aliyunsdkoos.endpoint import endpoint_data
 class DeleteTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteTemplate')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteTemplate','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AutoDeleteExecutions(self):
+	def get_AutoDeleteExecutions(self): # Boolean
 		return self.get_query_params().get('AutoDeleteExecutions')
 
-	def set_AutoDeleteExecutions(self,AutoDeleteExecutions):
-		self.add_query_param('AutoDeleteExecutions',AutoDeleteExecutions)
-
-	def get_TemplateName(self):
+	def set_AutoDeleteExecutions(self, AutoDeleteExecutions):  # Boolean
+		self.add_query_param('AutoDeleteExecutions', AutoDeleteExecutions)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)

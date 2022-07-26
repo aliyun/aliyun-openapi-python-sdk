@@ -23,64 +23,61 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameters')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameters','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Recursive(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Recursive(self): # Boolean
 		return self.get_query_params().get('Recursive')
 
-	def set_Recursive(self,Recursive):
-		self.add_query_param('Recursive',Recursive)
-
-	def get_Path(self):
+	def set_Recursive(self, Recursive):  # Boolean
+		self.add_query_param('Recursive', Recursive)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_NextToken(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_SortOrder(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_SortOrder(self): # String
 		return self.get_query_params().get('SortOrder')
 
-	def set_SortOrder(self,SortOrder):
-		self.add_query_param('SortOrder',SortOrder)
-
-	def get_Tags(self):
+	def set_SortOrder(self, SortOrder):  # String
+		self.add_query_param('SortOrder', SortOrder)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_Name(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_MaxResults(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_SortField(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_SortField(self): # String
 		return self.get_query_params().get('SortField')
 
-	def set_SortField(self,SortField):
-		self.add_query_param('SortField',SortField)
+	def set_SortField(self, SortField):  # String
+		self.add_query_param('SortField', SortField)

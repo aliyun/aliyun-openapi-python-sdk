@@ -23,58 +23,56 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CreateSecretParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateSecretParameter')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateSecretParameter','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Constraints(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Constraints(self): # String
 		return self.get_query_params().get('Constraints')
 
-	def set_Constraints(self,Constraints):
-		self.add_query_param('Constraints',Constraints)
+	def set_Constraints(self, Constraints):  # String
+		self.add_query_param('Constraints', Constraints)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_Value(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
-	def get_KeyId(self):
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_Tags(self):
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_Name(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

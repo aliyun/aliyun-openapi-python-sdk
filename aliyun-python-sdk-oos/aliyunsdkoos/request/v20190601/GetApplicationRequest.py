@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class ListTagValuesRequest(RpcRequest):
+class GetApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTagValues','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetApplication','oos')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,8 @@ class ListTagValuesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

@@ -23,16 +23,16 @@ from aliyunsdkoos.endpoint import endpoint_data
 class DeleteExecutionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteExecutions')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteExecutions','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExecutionIds(self):
+	def get_ExecutionIds(self): # String
 		return self.get_query_params().get('ExecutionIds')
 
-	def set_ExecutionIds(self,ExecutionIds):
-		self.add_query_param('ExecutionIds',ExecutionIds)
+	def set_ExecutionIds(self, ExecutionIds):  # String
+		self.add_query_param('ExecutionIds', ExecutionIds)

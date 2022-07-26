@@ -23,16 +23,16 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListExecutionRiskyTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutionRiskyTasks')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutionRiskyTasks','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TemplateName(self):
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)

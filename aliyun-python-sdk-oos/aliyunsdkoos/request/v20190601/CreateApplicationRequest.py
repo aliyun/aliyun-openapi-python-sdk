@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class ListTagValuesRequest(RpcRequest):
+class CreateApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTagValues','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateApplication','oos')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,28 @@ class ListTagValuesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

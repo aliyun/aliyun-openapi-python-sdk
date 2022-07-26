@@ -23,28 +23,26 @@ from aliyunsdkoos.endpoint import endpoint_data
 class GetSecretParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetSecretParameter')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetSecretParameter','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_WithDecryption(self):
+	def get_WithDecryption(self): # Boolean
 		return self.get_query_params().get('WithDecryption')
 
-	def set_WithDecryption(self,WithDecryption):
-		self.add_query_param('WithDecryption',WithDecryption)
-
-	def get_ParameterVersion(self):
+	def set_WithDecryption(self, WithDecryption):  # Boolean
+		self.add_query_param('WithDecryption', WithDecryption)
+	def get_ParameterVersion(self): # Integer
 		return self.get_query_params().get('ParameterVersion')
 
-	def set_ParameterVersion(self,ParameterVersion):
-		self.add_query_param('ParameterVersion',ParameterVersion)
-
-	def get_Name(self):
+	def set_ParameterVersion(self, ParameterVersion):  # Integer
+		self.add_query_param('ParameterVersion', ParameterVersion)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

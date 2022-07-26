@@ -23,16 +23,16 @@ from aliyunsdkoos.endpoint import endpoint_data
 class GetParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetParameters')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetParameters','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Names(self):
+	def get_Names(self): # String
 		return self.get_query_params().get('Names')
 
-	def set_Names(self,Names):
-		self.add_query_param('Names',Names)
+	def set_Names(self, Names):  # String
+		self.add_query_param('Names', Names)

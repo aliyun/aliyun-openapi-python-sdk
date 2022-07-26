@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class UpdateParameterRequest(RpcRequest):
+class CreateApplicationGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateParameter','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateApplicationGroup','oos')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,43 @@ class UpdateParameterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def get_CmsGroupId(self): # String
+		return self.get_query_params().get('CmsGroupId')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_CmsGroupId(self, CmsGroupId):  # String
+		self.add_query_param('CmsGroupId', CmsGroupId)
+	def get_DeployRegionId(self): # String
+		return self.get_query_params().get('DeployRegionId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_DeployRegionId(self, DeployRegionId):  # String
+		self.add_query_param('DeployRegionId', DeployRegionId)
+	def get_ApplicationName(self): # String
+		return self.get_query_params().get('ApplicationName')
+
+	def set_ApplicationName(self, ApplicationName):  # String
+		self.add_query_param('ApplicationName', ApplicationName)
+	def get_ImportTagValue(self): # String
+		return self.get_query_params().get('ImportTagValue')
+
+	def set_ImportTagValue(self, ImportTagValue):  # String
+		self.add_query_param('ImportTagValue', ImportTagValue)
+	def get_ImportTagKey(self): # String
+		return self.get_query_params().get('ImportTagKey')
+
+	def set_ImportTagKey(self, ImportTagKey):  # String
+		self.add_query_param('ImportTagKey', ImportTagKey)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Value(self): # String
-		return self.get_query_params().get('Value')
-
-	def set_Value(self, Value):  # String
-		self.add_query_param('Value', Value)

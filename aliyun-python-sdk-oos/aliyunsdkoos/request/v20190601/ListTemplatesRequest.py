@@ -23,94 +23,86 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTemplates')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTemplates','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_CreatedDateBefore(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_CreatedDateBefore(self): # String
 		return self.get_query_params().get('CreatedDateBefore')
 
-	def set_CreatedDateBefore(self,CreatedDateBefore):
-		self.add_query_param('CreatedDateBefore',CreatedDateBefore)
-
-	def get_CreatedBy(self):
+	def set_CreatedDateBefore(self, CreatedDateBefore):  # String
+		self.add_query_param('CreatedDateBefore', CreatedDateBefore)
+	def get_CreatedBy(self): # String
 		return self.get_query_params().get('CreatedBy')
 
-	def set_CreatedBy(self,CreatedBy):
-		self.add_query_param('CreatedBy',CreatedBy)
-
-	def get_NextToken(self):
+	def set_CreatedBy(self, CreatedBy):  # String
+		self.add_query_param('CreatedBy', CreatedBy)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_TemplateType(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_TemplateType(self): # String
 		return self.get_query_params().get('TemplateType')
 
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
-
-	def get_TemplateName(self):
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
-
-	def get_SortOrder(self):
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
+	def get_SortOrder(self): # String
 		return self.get_query_params().get('SortOrder')
 
-	def set_SortOrder(self,SortOrder):
-		self.add_query_param('SortOrder',SortOrder)
-
-	def get_ShareType(self):
+	def set_SortOrder(self, SortOrder):  # String
+		self.add_query_param('SortOrder', SortOrder)
+	def get_ShareType(self): # String
 		return self.get_query_params().get('ShareType')
 
-	def set_ShareType(self,ShareType):
-		self.add_query_param('ShareType',ShareType)
-
-	def get_HasTrigger(self):
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)
+	def get_HasTrigger(self): # Boolean
 		return self.get_query_params().get('HasTrigger')
 
-	def set_HasTrigger(self,HasTrigger):
-		self.add_query_param('HasTrigger',HasTrigger)
-
-	def get_CreatedDateAfter(self):
+	def set_HasTrigger(self, HasTrigger):  # Boolean
+		self.add_query_param('HasTrigger', HasTrigger)
+	def get_CreatedDateAfter(self): # String
 		return self.get_query_params().get('CreatedDateAfter')
 
-	def set_CreatedDateAfter(self,CreatedDateAfter):
-		self.add_query_param('CreatedDateAfter',CreatedDateAfter)
-
-	def get_Tags(self):
+	def set_CreatedDateAfter(self, CreatedDateAfter):  # String
+		self.add_query_param('CreatedDateAfter', CreatedDateAfter)
+	def get_Tags(self): # Json
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_MaxResults(self):
+	def set_Tags(self, Tags):  # Json
+		self.add_query_param('Tags', Tags)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_TemplateFormat(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_TemplateFormat(self): # String
 		return self.get_query_params().get('TemplateFormat')
 
-	def set_TemplateFormat(self,TemplateFormat):
-		self.add_query_param('TemplateFormat',TemplateFormat)
-
-	def get_SortField(self):
+	def set_TemplateFormat(self, TemplateFormat):  # String
+		self.add_query_param('TemplateFormat', TemplateFormat)
+	def get_SortField(self): # String
 		return self.get_query_params().get('SortField')
 
-	def set_SortField(self,SortField):
-		self.add_query_param('SortField',SortField)
-
-	def get_Category(self):
+	def set_SortField(self, SortField):  # String
+		self.add_query_param('SortField', SortField)
+	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)

@@ -23,46 +23,46 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListStateConfigurationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListStateConfigurations')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListStateConfigurations','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StateConfigurationIds(self):
+	def get_StateConfigurationIds(self): # String
 		return self.get_query_params().get('StateConfigurationIds')
 
-	def set_StateConfigurationIds(self,StateConfigurationIds):
-		self.add_query_param('StateConfigurationIds',StateConfigurationIds)
-
-	def get_Tags(self):
+	def set_StateConfigurationIds(self, StateConfigurationIds):  # String
+		self.add_query_param('StateConfigurationIds', StateConfigurationIds)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_TemplateVersion(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_TemplateVersion(self): # String
 		return self.get_query_params().get('TemplateVersion')
 
-	def set_TemplateVersion(self,TemplateVersion):
-		self.add_query_param('TemplateVersion',TemplateVersion)
-
-	def get_NextToken(self):
+	def set_TemplateVersion(self, TemplateVersion):  # String
+		self.add_query_param('TemplateVersion', TemplateVersion)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_TemplateName(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)

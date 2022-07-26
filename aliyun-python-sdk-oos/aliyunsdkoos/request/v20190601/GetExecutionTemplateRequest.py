@@ -23,16 +23,16 @@ from aliyunsdkoos.endpoint import endpoint_data
 class GetExecutionTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetExecutionTemplate')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetExecutionTemplate','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExecutionId(self):
+	def get_ExecutionId(self): # String
 		return self.get_query_params().get('ExecutionId')
 
-	def set_ExecutionId(self,ExecutionId):
-		self.add_query_param('ExecutionId',ExecutionId)
+	def set_ExecutionId(self, ExecutionId):  # String
+		self.add_query_param('ExecutionId', ExecutionId)

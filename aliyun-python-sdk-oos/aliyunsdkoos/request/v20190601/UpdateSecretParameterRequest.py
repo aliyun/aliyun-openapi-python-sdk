@@ -23,34 +23,36 @@ from aliyunsdkoos.endpoint import endpoint_data
 class UpdateSecretParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateSecretParameter')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateSecretParameter','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Tags(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_Name(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Value(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)

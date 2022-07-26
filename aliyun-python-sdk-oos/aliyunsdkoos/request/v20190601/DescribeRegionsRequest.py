@@ -23,16 +23,16 @@ from aliyunsdkoos.endpoint import endpoint_data
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DescribeRegions')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DescribeRegions','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AcceptLanguage(self):
+	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

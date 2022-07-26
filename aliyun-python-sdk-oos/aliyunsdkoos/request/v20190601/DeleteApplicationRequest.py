@@ -20,37 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class ListInstanceStateReportsRequest(RpcRequest):
+class DeleteApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListInstanceStateReports')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteApplication','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_StateConfigurationId(self):
-		return self.get_query_params().get('StateConfigurationId')
-
-	def set_StateConfigurationId(self,StateConfigurationId):
-		self.add_query_param('StateConfigurationId',StateConfigurationId)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

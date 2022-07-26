@@ -23,70 +23,66 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CreateStateConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateStateConfiguration')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateStateConfiguration','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScheduleType(self):
+	def get_ScheduleType(self): # String
 		return self.get_query_params().get('ScheduleType')
 
-	def set_ScheduleType(self,ScheduleType):
-		self.add_query_param('ScheduleType',ScheduleType)
-
-	def get_ClientToken(self):
+	def set_ScheduleType(self, ScheduleType):  # String
+		self.add_query_param('ScheduleType', ScheduleType)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Targets(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Targets(self): # String
 		return self.get_query_params().get('Targets')
 
-	def set_Targets(self,Targets):
-		self.add_query_param('Targets',Targets)
+	def set_Targets(self, Targets):  # String
+		self.add_query_param('Targets', Targets)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_TemplateVersion(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_TemplateVersion(self): # String
 		return self.get_query_params().get('TemplateVersion')
 
-	def set_TemplateVersion(self,TemplateVersion):
-		self.add_query_param('TemplateVersion',TemplateVersion)
-
-	def get_ScheduleExpression(self):
+	def set_TemplateVersion(self, TemplateVersion):  # String
+		self.add_query_param('TemplateVersion', TemplateVersion)
+	def get_ScheduleExpression(self): # String
 		return self.get_query_params().get('ScheduleExpression')
 
-	def set_ScheduleExpression(self,ScheduleExpression):
-		self.add_query_param('ScheduleExpression',ScheduleExpression)
-
-	def get_TemplateName(self):
+	def set_ScheduleExpression(self, ScheduleExpression):  # String
+		self.add_query_param('ScheduleExpression', ScheduleExpression)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
-
-	def get_ConfigureMode(self):
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
+	def get_ConfigureMode(self): # String
 		return self.get_query_params().get('ConfigureMode')
 
-	def set_ConfigureMode(self,ConfigureMode):
-		self.add_query_param('ConfigureMode',ConfigureMode)
-
-	def get_Tags(self):
+	def set_ConfigureMode(self, ConfigureMode):  # String
+		self.add_query_param('ConfigureMode', ConfigureMode)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_Parameters(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

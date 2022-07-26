@@ -23,40 +23,36 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CreatePatchBaselineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreatePatchBaseline')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreatePatchBaseline','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ApprovalRules(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ApprovalRules(self): # String
 		return self.get_query_params().get('ApprovalRules')
 
-	def set_ApprovalRules(self,ApprovalRules):
-		self.add_query_param('ApprovalRules',ApprovalRules)
-
-	def get_Description(self):
+	def set_ApprovalRules(self, ApprovalRules):  # String
+		self.add_query_param('ApprovalRules', ApprovalRules)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_OperationSystem(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_OperationSystem(self): # String
 		return self.get_query_params().get('OperationSystem')
 
-	def set_OperationSystem(self,OperationSystem):
-		self.add_query_param('OperationSystem',OperationSystem)
-
-	def get_Name(self):
+	def set_OperationSystem(self, OperationSystem):  # String
+		self.add_query_param('OperationSystem', OperationSystem)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

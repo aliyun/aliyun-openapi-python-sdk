@@ -1,3 +1,6 @@
+2022-07-26 Version: 1.5.5
+- Add cmsGroupId parameter to CreateApplicationGroupRequest.
+
 2021-03-19 Version: 1.5.0
 - StateConfiguration in CreateStateConfigurationResponse changes from list to single object.
 

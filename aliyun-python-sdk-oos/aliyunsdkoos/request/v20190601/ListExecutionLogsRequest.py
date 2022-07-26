@@ -23,40 +23,36 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListExecutionLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutionLogs')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutionLogs','oos')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExecutionId(self):
+	def get_ExecutionId(self): # String
 		return self.get_query_params().get('ExecutionId')
 
-	def set_ExecutionId(self,ExecutionId):
-		self.add_query_param('ExecutionId',ExecutionId)
-
-	def get_LogType(self):
+	def set_ExecutionId(self, ExecutionId):  # String
+		self.add_query_param('ExecutionId', ExecutionId)
+	def get_LogType(self): # String
 		return self.get_query_params().get('LogType')
 
-	def set_LogType(self,LogType):
-		self.add_query_param('LogType',LogType)
-
-	def get_NextToken(self):
+	def set_LogType(self, LogType):  # String
+		self.add_query_param('LogType', LogType)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_TaskExecutionId(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_TaskExecutionId(self): # String
 		return self.get_query_params().get('TaskExecutionId')
 
-	def set_TaskExecutionId(self,TaskExecutionId):
-		self.add_query_param('TaskExecutionId',TaskExecutionId)
+	def set_TaskExecutionId(self, TaskExecutionId):  # String
+		self.add_query_param('TaskExecutionId', TaskExecutionId)
