@@ -31,11 +31,26 @@ class DescribeWarningMachinesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TargetType(self): # String
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_ContainerFieldName(self): # String
+		return self.get_query_params().get('ContainerFieldName')
+
+	def set_ContainerFieldName(self, ContainerFieldName):  # String
+		self.add_query_param('ContainerFieldName', ContainerFieldName)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_ContainerFieldValue(self): # String
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self, ContainerFieldValue):  # String
+		self.add_query_param('ContainerFieldValue', ContainerFieldValue)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -56,6 +71,11 @@ class DescribeWarningMachinesRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
 	def get_RiskId(self): # Long
 		return self.get_query_params().get('RiskId')
 
