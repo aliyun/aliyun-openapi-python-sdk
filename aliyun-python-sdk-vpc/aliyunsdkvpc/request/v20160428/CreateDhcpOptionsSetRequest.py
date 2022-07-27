@@ -51,6 +51,11 @@ class CreateDhcpOptionsSetRequest(RpcRequest):
 
 	def set_TFTPServerName(self, TFTPServerName):  # String
 		self.add_query_param('TFTPServerName', TFTPServerName)
+	def get_LeaseTime(self): # String
+		return self.get_query_params().get('LeaseTime')
+
+	def set_LeaseTime(self, LeaseTime):  # String
+		self.add_query_param('LeaseTime', LeaseTime)
 	def get_DomainNameServers(self): # String
 		return self.get_query_params().get('DomainNameServers')
 
@@ -91,3 +96,8 @@ class CreateDhcpOptionsSetRequest(RpcRequest):
 
 	def set_DhcpOptionsSetName(self, DhcpOptionsSetName):  # String
 		self.add_query_param('DhcpOptionsSetName', DhcpOptionsSetName)
+	def get_Ipv6LeaseTime(self): # String
+		return self.get_query_params().get('Ipv6LeaseTime')
+
+	def set_Ipv6LeaseTime(self, Ipv6LeaseTime):  # String
+		self.add_query_param('Ipv6LeaseTime', Ipv6LeaseTime)

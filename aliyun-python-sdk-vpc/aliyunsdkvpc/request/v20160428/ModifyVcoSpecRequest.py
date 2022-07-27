@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ListPrefixListsRequest(RpcRequest):
+class ModifyVcoSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListPrefixLists','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVcoSpec','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,16 @@ class ListPrefixListsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Spec(self): # String
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,29 +56,8 @@ class ListPrefixListsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_PrefixListIdss(self): # RepeatList
-		return self.get_query_params().get('PrefixListIds')
+	def get_VpnConnectionId(self): # String
+		return self.get_query_params().get('VpnConnectionId')
 
-	def set_PrefixListIdss(self, PrefixListIds):  # RepeatList
-		for depth1 in range(len(PrefixListIds)):
-			self.add_query_param('PrefixListIds.' + str(depth1 + 1), PrefixListIds[depth1])
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PrefixListName(self): # String
-		return self.get_query_params().get('PrefixListName')
-
-	def set_PrefixListName(self, PrefixListName):  # String
-		self.add_query_param('PrefixListName', PrefixListName)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
+	def set_VpnConnectionId(self, VpnConnectionId):  # String
+		self.add_query_param('VpnConnectionId', VpnConnectionId)

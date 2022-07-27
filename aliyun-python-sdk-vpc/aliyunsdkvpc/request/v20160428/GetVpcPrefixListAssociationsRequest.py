@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ListPrefixListsRequest(RpcRequest):
+class GetVpcPrefixListAssociationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListPrefixLists','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'GetVpcPrefixListAssociations','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,22 +46,16 @@ class ListPrefixListsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_PrefixListIdss(self): # RepeatList
-		return self.get_query_params().get('PrefixListIds')
-
-	def set_PrefixListIdss(self, PrefixListIds):  # RepeatList
-		for depth1 in range(len(PrefixListIds)):
-			self.add_query_param('PrefixListIds.' + str(depth1 + 1), PrefixListIds[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PrefixListName(self): # String
-		return self.get_query_params().get('PrefixListName')
+	def get_PrefixListId(self): # String
+		return self.get_query_params().get('PrefixListId')
 
-	def set_PrefixListName(self, PrefixListName):  # String
-		self.add_query_param('PrefixListName', PrefixListName)
+	def set_PrefixListId(self, PrefixListId):  # String
+		self.add_query_param('PrefixListId', PrefixListId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

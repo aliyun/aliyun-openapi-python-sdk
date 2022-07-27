@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeExpressCloudConnectionsRequest(RpcRequest):
+class DescribeVpnAttachmentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeExpressCloudConnections','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnAttachments','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DescribeExpressCloudConnectionsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AttachType(self): # String
+		return self.get_query_params().get('AttachType')
+
+	def set_AttachType(self, AttachType):  # String
+		self.add_query_param('AttachType', AttachType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -61,13 +66,8 @@ class DescribeExpressCloudConnectionsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Filters(self): # RepeatList
-		return self.get_query_params().get('Filter')
+	def get_VpnConnectionId(self): # String
+		return self.get_query_params().get('VpnConnectionId')
 
-	def set_Filters(self, Filter):  # RepeatList
-		for depth1 in range(len(Filter)):
-			if Filter[depth1].get('Value') is not None:
-				for depth2 in range(len(Filter[depth1].get('Value'))):
-					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value' + str(depth2 + 1), Filter[depth1].get('Value')[depth2])
-			if Filter[depth1].get('Key') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))
+	def set_VpnConnectionId(self, VpnConnectionId):  # String
+		self.add_query_param('VpnConnectionId', VpnConnectionId)

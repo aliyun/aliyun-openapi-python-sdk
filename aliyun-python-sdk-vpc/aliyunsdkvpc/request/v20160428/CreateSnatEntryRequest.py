@@ -56,6 +56,11 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_SourceVSwitchId(self, SourceVSwitchId):  # String
 		self.add_query_param('SourceVSwitchId', SourceVSwitchId)
+	def get_EipAffinity(self): # Integer
+		return self.get_query_params().get('EipAffinity')
+
+	def set_EipAffinity(self, EipAffinity):  # Integer
+		self.add_query_param('EipAffinity', EipAffinity)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

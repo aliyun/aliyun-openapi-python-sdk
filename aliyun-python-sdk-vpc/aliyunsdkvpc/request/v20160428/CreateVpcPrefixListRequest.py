@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ListPrefixListsRequest(RpcRequest):
+class CreateVpcPrefixListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListPrefixLists','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpcPrefixList','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,40 @@ class ListPrefixListsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PrefixListEntryss(self): # RepeatList
+		return self.get_query_params().get('PrefixListEntrys')
+
+	def set_PrefixListEntryss(self, PrefixListEntrys):  # RepeatList
+		for depth1 in range(len(PrefixListEntrys)):
+			if PrefixListEntrys[depth1].get('Cidr') is not None:
+				self.add_query_param('PrefixListEntrys.' + str(depth1 + 1) + '.Cidr', PrefixListEntrys[depth1].get('Cidr'))
+			if PrefixListEntrys[depth1].get('Description') is not None:
+				self.add_query_param('PrefixListEntrys.' + str(depth1 + 1) + '.Description', PrefixListEntrys[depth1].get('Description'))
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_MaxEntries(self): # Integer
+		return self.get_query_params().get('MaxEntries')
+
+	def set_MaxEntries(self, MaxEntries):  # Integer
+		self.add_query_param('MaxEntries', MaxEntries)
+	def get_IpVersion(self): # String
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self, IpVersion):  # String
+		self.add_query_param('IpVersion', IpVersion)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,12 +75,6 @@ class ListPrefixListsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_PrefixListIdss(self): # RepeatList
-		return self.get_query_params().get('PrefixListIds')
-
-	def set_PrefixListIdss(self, PrefixListIds):  # RepeatList
-		for depth1 in range(len(PrefixListIds)):
-			self.add_query_param('PrefixListIds.' + str(depth1 + 1), PrefixListIds[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -62,13 +85,8 @@ class ListPrefixListsRequest(RpcRequest):
 
 	def set_PrefixListName(self, PrefixListName):  # String
 		self.add_query_param('PrefixListName', PrefixListName)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
+	def get_PrefixListDescription(self): # String
+		return self.get_query_params().get('PrefixListDescription')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
+	def set_PrefixListDescription(self, PrefixListDescription):  # String
+		self.add_query_param('PrefixListDescription', PrefixListDescription)

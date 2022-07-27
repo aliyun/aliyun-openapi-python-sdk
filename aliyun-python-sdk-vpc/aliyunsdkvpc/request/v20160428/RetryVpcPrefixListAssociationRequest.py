@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class UpdateCrossBoarderStatusRequest(RpcRequest):
+class RetryVpcPrefixListAssociationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateCrossBoarderStatus','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'RetryVpcPrefixListAssociation','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,26 @@ class UpdateCrossBoarderStatusRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Enable(self): # Boolean
-		return self.get_query_params().get('Enable')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_Enable(self, Enable):  # Boolean
-		self.add_query_param('Enable', Enable)
-	def get_ResourceUid(self): # Long
-		return self.get_query_params().get('ResourceUid')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_PrefixListId(self): # String
+		return self.get_query_params().get('PrefixListId')
 
-	def set_ResourceUid(self, ResourceUid):  # Long
-		self.add_query_param('ResourceUid', ResourceUid)
+	def set_PrefixListId(self, PrefixListId):  # String
+		self.add_query_param('PrefixListId', PrefixListId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,3 +71,8 @@ class UpdateCrossBoarderStatusRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
