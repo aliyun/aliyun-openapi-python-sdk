@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class DecryptKMSDataKeyRequest(RpcRequest):
+class GetImageInfosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DecryptKMSDataKey','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetImageInfos','vod')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,18 @@ class DecryptKMSDataKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # String
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_OutputType(self): # String
+		return self.get_query_params().get('OutputType')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # String
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CipherText(self): # String
-		return self.get_query_params().get('CipherText')
+	def set_OutputType(self, OutputType):  # String
+		self.add_query_param('OutputType', OutputType)
+	def get_AuthTimeout(self): # Long
+		return self.get_query_params().get('AuthTimeout')
 
-	def set_CipherText(self, CipherText):  # String
-		self.add_query_param('CipherText', CipherText)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def set_AuthTimeout(self, AuthTimeout):  # Long
+		self.add_query_param('AuthTimeout', AuthTimeout)
+	def get_ImageIds(self): # String
+		return self.get_query_params().get('ImageIds')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
+	def set_ImageIds(self, ImageIds):  # String
+		self.add_query_param('ImageIds', ImageIds)

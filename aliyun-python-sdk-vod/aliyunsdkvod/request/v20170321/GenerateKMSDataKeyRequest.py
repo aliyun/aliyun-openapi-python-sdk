@@ -36,16 +36,6 @@ class GenerateKMSDataKeyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # String
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceRealOwnerId(self): # Long
-		return self.get_query_params().get('ResourceRealOwnerId')
-
-	def set_ResourceRealOwnerId(self, ResourceRealOwnerId):  # Long
-		self.add_query_param('ResourceRealOwnerId', ResourceRealOwnerId)
-	def get_KmsRegionId(self): # String
-		return self.get_query_params().get('KmsRegionId')
-
-	def set_KmsRegionId(self, KmsRegionId):  # String
-		self.add_query_param('KmsRegionId', KmsRegionId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
