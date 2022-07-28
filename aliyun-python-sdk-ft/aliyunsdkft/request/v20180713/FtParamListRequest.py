@@ -25,28 +25,25 @@ class FtParamListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtParamList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Disks(self):
+	def get_Disks(self): # RepeatList
 		return self.get_query_params().get('Disk')
 
-	def set_Disks(self, Disks):
-		for depth1 in range(len(Disks)):
-			if Disks[depth1].get('Size') is not None:
-				for depth2 in range(len(Disks[depth1].get('Size'))):
-					if Disks[depth1].get('Size')[depth2] is not None:
-						self.add_query_param('Disk.' + str(depth1 + 1) + '.Size.' + str(depth2 + 1) , Disks[depth1].get('Size')[depth2])
-			if Disks[depth1].get('Type') is not None:
-				for depth2 in range(len(Disks[depth1].get('Type'))):
-					if Disks[depth1].get('Type')[depth2] is not None:
-						self.add_query_param('Disk.' + str(depth1 + 1) + '.Type.' + str(depth2 + 1) , Disks[depth1].get('Type')[depth2])
-
-	def get_Name(self):
+	def set_Disks(self, Disk):  # RepeatList
+		for depth1 in range(len(Disk)):
+			if Disk[depth1].get('Size') is not None:
+				for depth2 in range(len(Disk[depth1].get('Size'))):
+					self.add_query_param('Disk.' + str(depth1 + 1) + '.Size.' + str(depth2 + 1), Disk[depth1].get('Size')[depth2])
+			if Disk[depth1].get('Type') is not None:
+				for depth2 in range(len(Disk[depth1].get('Type'))):
+					self.add_query_param('Disk.' + str(depth1 + 1) + '.Type.' + str(depth2 + 1), Disk[depth1].get('Type')[depth2])
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
