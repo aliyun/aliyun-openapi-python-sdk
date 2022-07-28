@@ -26,32 +26,34 @@ class ListResourceInstancesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'ListResourceInstances','eas')
 		self.set_uri_pattern('/api/v2/resources/[ClusterId]/[ResourceId]/instances')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # string
 		return self.get_path_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_path_param('ResourceId',ResourceId)
-
-	def get_PageSize(self):
+	def set_ResourceId(self, ResourceId):  # string
+		self.add_path_param('ResourceId', ResourceId)
+	def get_PageSize(self): # integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ClusterId(self):
+	def set_PageSize(self, PageSize):  # integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)
+	def get_ChargeType(self): # string
+		return self.get_query_params().get('ChargeType')
 
-	def get_PageNumber(self):
+	def set_ChargeType(self, ChargeType):  # string
+		self.add_query_param('ChargeType', ChargeType)
+	def get_PageNumber(self): # integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # integer
+		self.add_query_param('PageNumber', PageNumber)

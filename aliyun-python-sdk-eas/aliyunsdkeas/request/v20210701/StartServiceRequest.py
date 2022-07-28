@@ -26,20 +26,19 @@ class StartServiceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'StartService','eas')
 		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/start')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ServiceName(self):
+	def get_ServiceName(self): # string
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_path_param('ServiceName',ServiceName)
-
-	def get_ClusterId(self):
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_path_param('ServiceName', ServiceName)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)

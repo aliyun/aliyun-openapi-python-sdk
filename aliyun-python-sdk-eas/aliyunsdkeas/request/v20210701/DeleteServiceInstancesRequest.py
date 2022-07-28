@@ -26,26 +26,24 @@ class DeleteServiceInstancesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DeleteServiceInstances','eas')
 		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/instances')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceList(self):
+	def get_InstanceList(self): # string
 		return self.get_query_params().get('InstanceList')
 
-	def set_InstanceList(self,InstanceList):
-		self.add_query_param('InstanceList',InstanceList)
-
-	def get_ServiceName(self):
+	def set_InstanceList(self, InstanceList):  # string
+		self.add_query_param('InstanceList', InstanceList)
+	def get_ServiceName(self): # string
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_path_param('ServiceName',ServiceName)
-
-	def get_ClusterId(self):
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_path_param('ServiceName', ServiceName)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)

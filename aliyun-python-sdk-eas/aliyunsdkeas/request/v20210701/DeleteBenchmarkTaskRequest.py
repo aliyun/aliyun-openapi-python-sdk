@@ -20,40 +20,25 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class ListServicesRequest(RoaRequest):
+class DeleteBenchmarkTaskRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'ListServices','eas')
-		self.set_uri_pattern('/api/v2/services')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DeleteBenchmarkTask','eas')
+		self.set_uri_pattern('/api/v2/benchmark-tasks/[ClusterId]/[TaskName]')
+		self.set_method('DELETE')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Filter(self): # string
-		return self.get_query_params().get('Filter')
+	def get_TaskName(self): # string
+		return self.get_path_params().get('TaskName')
 
-	def set_Filter(self, Filter):  # string
-		self.add_query_param('Filter', Filter)
-	def get_PageSize(self): # integer
-		return self.get_query_params().get('PageSize')
+	def set_TaskName(self, TaskName):  # string
+		self.add_path_param('TaskName', TaskName)
+	def get_ClusterId(self): # string
+		return self.get_path_params().get('ClusterId')
 
-	def set_PageSize(self, PageSize):  # integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Sort(self): # string
-		return self.get_query_params().get('Sort')
-
-	def set_Sort(self, Sort):  # string
-		self.add_query_param('Sort', Sort)
-	def get_PageNumber(self): # integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_Order(self): # string
-		return self.get_query_params().get('Order')
-
-	def set_Order(self, Order):  # string
-		self.add_query_param('Order', Order)
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)

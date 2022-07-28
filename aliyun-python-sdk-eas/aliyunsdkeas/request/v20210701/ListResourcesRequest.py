@@ -26,20 +26,19 @@ class ListResourcesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'ListResources','eas')
 		self.set_uri_pattern('/api/v2/resources')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
+	def get_PageSize(self): # integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
+	def set_PageSize(self, PageSize):  # integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNumber(self): # integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # integer
+		self.add_query_param('PageNumber', PageNumber)

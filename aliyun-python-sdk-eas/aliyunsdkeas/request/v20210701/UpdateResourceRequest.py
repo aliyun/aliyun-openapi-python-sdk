@@ -26,26 +26,24 @@ class UpdateResourceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'UpdateResource','eas')
 		self.set_uri_pattern('/api/v2/resources/[ClusterId]/[ResourceId]')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # string
 		return self.get_path_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_path_param('ResourceId',ResourceId)
-
-	def get_ClusterId(self):
+	def set_ResourceId(self, ResourceId):  # string
+		self.add_path_param('ResourceId', ResourceId)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
-
-	def get_body(self):
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)
+	def get_body(self): # String
 		return self.get_body_params().get('body')
 
-	def set_body(self,body):
+	def set_body(self, body):  # String
 		self.add_body_params('body', body)

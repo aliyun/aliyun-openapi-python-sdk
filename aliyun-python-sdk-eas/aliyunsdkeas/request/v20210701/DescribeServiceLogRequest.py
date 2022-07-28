@@ -26,56 +26,49 @@ class DescribeServiceLogRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeServiceLog','eas')
 		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/logs')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ip(self):
+	def get_Ip(self): # string
 		return self.get_query_params().get('Ip')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
-
-	def get_PageSize(self):
+	def set_Ip(self, Ip):  # string
+		self.add_query_param('Ip', Ip)
+	def get_PageSize(self): # integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
+	def set_PageSize(self, PageSize):  # integer
+		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # string
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_ServiceName(self):
+	def set_EndTime(self, EndTime):  # string
+		self.add_query_param('EndTime', EndTime)
+	def get_ServiceName(self): # string
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_path_param('ServiceName',ServiceName)
-
-	def get_StartTime(self):
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_path_param('ServiceName', ServiceName)
+	def get_StartTime(self): # string
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_ClusterId(self):
+	def set_StartTime(self, StartTime):  # string
+		self.add_query_param('StartTime', StartTime)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
-
-	def get_PageNum(self):
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)
+	def get_PageNum(self): # integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_Keyword(self):
+	def set_PageNum(self, PageNum):  # integer
+		self.add_query_param('PageNum', PageNum)
+	def get_Keyword(self): # string
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # string
+		self.add_query_param('Keyword', Keyword)

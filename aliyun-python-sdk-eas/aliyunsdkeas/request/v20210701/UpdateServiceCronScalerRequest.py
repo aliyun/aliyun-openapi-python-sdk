@@ -20,13 +20,30 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class CreateRoleRequest(RoaRequest):
+class UpdateServiceCronScalerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'CreateRole','eas')
-		self.set_uri_pattern('/api/v2/role')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'UpdateServiceCronScaler','eas')
+		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/cronscaler')
+		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+	def get_ServiceName(self): # string
+		return self.get_path_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_path_param('ServiceName', ServiceName)
+	def get_ClusterId(self): # string
+		return self.get_path_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

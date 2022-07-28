@@ -26,20 +26,19 @@ class DescribeResourceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeResource','eas')
 		self.set_uri_pattern('/api/v2/resources/[ClusterId]/[ResourceId]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # string
 		return self.get_path_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_path_param('ResourceId',ResourceId)
-
-	def get_ClusterId(self):
+	def set_ResourceId(self, ResourceId):  # string
+		self.add_path_param('ResourceId', ResourceId)
+	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_path_param('ClusterId', ClusterId)
