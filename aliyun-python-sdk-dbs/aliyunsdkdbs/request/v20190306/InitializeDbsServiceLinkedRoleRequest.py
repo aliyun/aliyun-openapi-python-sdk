@@ -23,9 +23,11 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class InitializeDbsServiceLinkedRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'InitializeDbsServiceLinkedRole','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'InitializeDbsServiceLinkedRole')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

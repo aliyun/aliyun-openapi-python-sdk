@@ -23,46 +23,41 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class DescribeRestoreRangeInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeRestoreRangeInfo','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeRestoreRangeInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BeginTimestampForRestore(self):
+	def get_BeginTimestampForRestore(self): # Long
 		return self.get_query_params().get('BeginTimestampForRestore')
 
-	def set_BeginTimestampForRestore(self,BeginTimestampForRestore):
-		self.add_query_param('BeginTimestampForRestore',BeginTimestampForRestore)
-
-	def get_EndTimestampForRestore(self):
+	def set_BeginTimestampForRestore(self, BeginTimestampForRestore):  # Long
+		self.add_query_param('BeginTimestampForRestore', BeginTimestampForRestore)
+	def get_EndTimestampForRestore(self): # Long
 		return self.get_query_params().get('EndTimestampForRestore')
 
-	def set_EndTimestampForRestore(self,EndTimestampForRestore):
-		self.add_query_param('EndTimestampForRestore',EndTimestampForRestore)
-
-	def get_ClientToken(self):
+	def set_EndTimestampForRestore(self, EndTimestampForRestore):  # Long
+		self.add_query_param('EndTimestampForRestore', EndTimestampForRestore)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_OwnerId(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RecentlyRestore(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RecentlyRestore(self): # Boolean
 		return self.get_query_params().get('RecentlyRestore')
 
-	def set_RecentlyRestore(self,RecentlyRestore):
-		self.add_query_param('RecentlyRestore',RecentlyRestore)
+	def set_RecentlyRestore(self, RecentlyRestore):  # Boolean
+		self.add_query_param('RecentlyRestore', RecentlyRestore)

@@ -23,28 +23,26 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class StartRestoreTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartRestoreTask','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartRestoreTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RestoreTaskId(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RestoreTaskId(self): # String
 		return self.get_query_params().get('RestoreTaskId')
 
-	def set_RestoreTaskId(self,RestoreTaskId):
-		self.add_query_param('RestoreTaskId',RestoreTaskId)
+	def set_RestoreTaskId(self, RestoreTaskId):  # String
+		self.add_query_param('RestoreTaskId', RestoreTaskId)

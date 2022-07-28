@@ -23,52 +23,46 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ModifyBackupStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackupLogIntervalSeconds(self):
+	def get_BackupLogIntervalSeconds(self): # Integer
 		return self.get_query_params().get('BackupLogIntervalSeconds')
 
-	def set_BackupLogIntervalSeconds(self,BackupLogIntervalSeconds):
-		self.add_query_param('BackupLogIntervalSeconds',BackupLogIntervalSeconds)
-
-	def get_ClientToken(self):
+	def set_BackupLogIntervalSeconds(self, BackupLogIntervalSeconds):  # Integer
+		self.add_query_param('BackupLogIntervalSeconds', BackupLogIntervalSeconds)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_OwnerId(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BackupPeriod(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BackupPeriod(self): # String
 		return self.get_query_params().get('BackupPeriod')
 
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
-
-	def get_BackupStartTime(self):
+	def set_BackupPeriod(self, BackupPeriod):  # String
+		self.add_query_param('BackupPeriod', BackupPeriod)
+	def get_BackupStartTime(self): # String
 		return self.get_query_params().get('BackupStartTime')
 
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
-	def get_BackupStrategyType(self):
+	def set_BackupStartTime(self, BackupStartTime):  # String
+		self.add_query_param('BackupStartTime', BackupStartTime)
+	def get_BackupStrategyType(self): # String
 		return self.get_query_params().get('BackupStrategyType')
 
-	def set_BackupStrategyType(self,BackupStrategyType):
-		self.add_query_param('BackupStrategyType',BackupStrategyType)
+	def set_BackupStrategyType(self, BackupStrategyType):  # String
+		self.add_query_param('BackupStrategyType', BackupStrategyType)

@@ -23,58 +23,51 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class DescribeIncrementBackupListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeIncrementBackupList','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeIncrementBackupList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_PageNum(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_OwnerId(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_StartTimestamp(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_StartTimestamp(self): # Long
 		return self.get_query_params().get('StartTimestamp')
 
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_query_param('StartTimestamp',StartTimestamp)
-
-	def get_EndTimestamp(self):
+	def set_StartTimestamp(self, StartTimestamp):  # Long
+		self.add_query_param('StartTimestamp', StartTimestamp)
+	def get_EndTimestamp(self): # Long
 		return self.get_query_params().get('EndTimestamp')
 
-	def set_EndTimestamp(self,EndTimestamp):
-		self.add_query_param('EndTimestamp',EndTimestamp)
-
-	def get_ShowStorageType(self):
+	def set_EndTimestamp(self, EndTimestamp):  # Long
+		self.add_query_param('EndTimestamp', EndTimestamp)
+	def get_ShowStorageType(self): # Boolean
 		return self.get_query_params().get('ShowStorageType')
 
-	def set_ShowStorageType(self,ShowStorageType):
-		self.add_query_param('ShowStorageType',ShowStorageType)
-
-	def get_PageSize(self):
+	def set_ShowStorageType(self, ShowStorageType):  # Boolean
+		self.add_query_param('ShowStorageType', ShowStorageType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

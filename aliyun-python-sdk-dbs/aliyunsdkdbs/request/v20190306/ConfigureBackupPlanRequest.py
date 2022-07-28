@@ -23,190 +23,166 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ConfigureBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceEndpointRegion(self):
+	def get_SourceEndpointRegion(self): # String
 		return self.get_query_params().get('SourceEndpointRegion')
 
-	def set_SourceEndpointRegion(self,SourceEndpointRegion):
-		self.add_query_param('SourceEndpointRegion',SourceEndpointRegion)
-
-	def get_BackupGatewayId(self):
+	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
+		self.add_query_param('SourceEndpointRegion', SourceEndpointRegion)
+	def get_BackupGatewayId(self): # Long
 		return self.get_query_params().get('BackupGatewayId')
 
-	def set_BackupGatewayId(self,BackupGatewayId):
-		self.add_query_param('BackupGatewayId',BackupGatewayId)
-
-	def get_SourceEndpointInstanceID(self):
+	def set_BackupGatewayId(self, BackupGatewayId):  # Long
+		self.add_query_param('BackupGatewayId', BackupGatewayId)
+	def get_SourceEndpointInstanceID(self): # String
 		return self.get_query_params().get('SourceEndpointInstanceID')
 
-	def set_SourceEndpointInstanceID(self,SourceEndpointInstanceID):
-		self.add_query_param('SourceEndpointInstanceID',SourceEndpointInstanceID)
-
-	def get_SourceEndpointUserName(self):
+	def set_SourceEndpointInstanceID(self, SourceEndpointInstanceID):  # String
+		self.add_query_param('SourceEndpointInstanceID', SourceEndpointInstanceID)
+	def get_SourceEndpointUserName(self): # String
 		return self.get_query_params().get('SourceEndpointUserName')
 
-	def set_SourceEndpointUserName(self,SourceEndpointUserName):
-		self.add_query_param('SourceEndpointUserName',SourceEndpointUserName)
-
-	def get_ClientToken(self):
+	def set_SourceEndpointUserName(self, SourceEndpointUserName):  # String
+		self.add_query_param('SourceEndpointUserName', SourceEndpointUserName)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_SourceEndpointDatabaseName(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_SourceEndpointDatabaseName(self): # String
 		return self.get_query_params().get('SourceEndpointDatabaseName')
 
-	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
-		self.add_query_param('SourceEndpointDatabaseName',SourceEndpointDatabaseName)
-
-	def get_DuplicationInfrequentAccessPeriod(self):
+	def set_SourceEndpointDatabaseName(self, SourceEndpointDatabaseName):  # String
+		self.add_query_param('SourceEndpointDatabaseName', SourceEndpointDatabaseName)
+	def get_DuplicationInfrequentAccessPeriod(self): # Integer
 		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
 
-	def set_DuplicationInfrequentAccessPeriod(self,DuplicationInfrequentAccessPeriod):
-		self.add_query_param('DuplicationInfrequentAccessPeriod',DuplicationInfrequentAccessPeriod)
+	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
+		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_BackupStartTime(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_BackupStartTime(self): # String
 		return self.get_query_params().get('BackupStartTime')
 
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
-	def get_SourceEndpointIP(self):
+	def set_BackupStartTime(self, BackupStartTime):  # String
+		self.add_query_param('BackupStartTime', BackupStartTime)
+	def get_SourceEndpointIP(self): # String
 		return self.get_query_params().get('SourceEndpointIP')
 
-	def set_SourceEndpointIP(self,SourceEndpointIP):
-		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
-
-	def get_CrossRoleName(self):
+	def set_SourceEndpointIP(self, SourceEndpointIP):  # String
+		self.add_query_param('SourceEndpointIP', SourceEndpointIP)
+	def get_CrossRoleName(self): # String
 		return self.get_query_params().get('CrossRoleName')
 
-	def set_CrossRoleName(self,CrossRoleName):
-		self.add_query_param('CrossRoleName',CrossRoleName)
-
-	def get_EnableBackupLog(self):
+	def set_CrossRoleName(self, CrossRoleName):  # String
+		self.add_query_param('CrossRoleName', CrossRoleName)
+	def get_EnableBackupLog(self): # Boolean
 		return self.get_query_params().get('EnableBackupLog')
 
-	def set_EnableBackupLog(self,EnableBackupLog):
-		self.add_query_param('EnableBackupLog',EnableBackupLog)
-
-	def get_BackupStorageType(self):
+	def set_EnableBackupLog(self, EnableBackupLog):  # Boolean
+		self.add_query_param('EnableBackupLog', EnableBackupLog)
+	def get_BackupStorageType(self): # String
 		return self.get_query_params().get('BackupStorageType')
 
-	def set_BackupStorageType(self,BackupStorageType):
-		self.add_query_param('BackupStorageType',BackupStorageType)
-
-	def get_DuplicationArchivePeriod(self):
+	def set_BackupStorageType(self, BackupStorageType):  # String
+		self.add_query_param('BackupStorageType', BackupStorageType)
+	def get_DuplicationArchivePeriod(self): # Integer
 		return self.get_query_params().get('DuplicationArchivePeriod')
 
-	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
-		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
-
-	def get_BackupLogIntervalSeconds(self):
+	def set_DuplicationArchivePeriod(self, DuplicationArchivePeriod):  # Integer
+		self.add_query_param('DuplicationArchivePeriod', DuplicationArchivePeriod)
+	def get_BackupLogIntervalSeconds(self): # Integer
 		return self.get_query_params().get('BackupLogIntervalSeconds')
 
-	def set_BackupLogIntervalSeconds(self,BackupLogIntervalSeconds):
-		self.add_query_param('BackupLogIntervalSeconds',BackupLogIntervalSeconds)
-
-	def get_CrossAliyunId(self):
+	def set_BackupLogIntervalSeconds(self, BackupLogIntervalSeconds):  # Integer
+		self.add_query_param('BackupLogIntervalSeconds', BackupLogIntervalSeconds)
+	def get_CrossAliyunId(self): # String
 		return self.get_query_params().get('CrossAliyunId')
 
-	def set_CrossAliyunId(self,CrossAliyunId):
-		self.add_query_param('CrossAliyunId',CrossAliyunId)
-
-	def get_AutoStartBackup(self):
+	def set_CrossAliyunId(self, CrossAliyunId):  # String
+		self.add_query_param('CrossAliyunId', CrossAliyunId)
+	def get_AutoStartBackup(self): # Boolean
 		return self.get_query_params().get('AutoStartBackup')
 
-	def set_AutoStartBackup(self,AutoStartBackup):
-		self.add_query_param('AutoStartBackup',AutoStartBackup)
-
-	def get_SourceEndpointPassword(self):
+	def set_AutoStartBackup(self, AutoStartBackup):  # Boolean
+		self.add_query_param('AutoStartBackup', AutoStartBackup)
+	def get_SourceEndpointPassword(self): # String
 		return self.get_query_params().get('SourceEndpointPassword')
 
-	def set_SourceEndpointPassword(self,SourceEndpointPassword):
-		self.add_query_param('SourceEndpointPassword',SourceEndpointPassword)
-
-	def get_BackupObjects(self):
+	def set_SourceEndpointPassword(self, SourceEndpointPassword):  # String
+		self.add_query_param('SourceEndpointPassword', SourceEndpointPassword)
+	def get_BackupObjects(self): # String
 		return self.get_query_params().get('BackupObjects')
 
-	def set_BackupObjects(self,BackupObjects):
-		self.add_query_param('BackupObjects',BackupObjects)
-
-	def get_BackupRateLimit(self):
+	def set_BackupObjects(self, BackupObjects):  # String
+		self.add_query_param('BackupObjects', BackupObjects)
+	def get_BackupRateLimit(self): # Long
 		return self.get_query_params().get('BackupRateLimit')
 
-	def set_BackupRateLimit(self,BackupRateLimit):
-		self.add_query_param('BackupRateLimit',BackupRateLimit)
-
-	def get_OwnerId(self):
+	def set_BackupRateLimit(self, BackupRateLimit):  # Long
+		self.add_query_param('BackupRateLimit', BackupRateLimit)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SourceEndpointPort(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SourceEndpointPort(self): # Integer
 		return self.get_query_params().get('SourceEndpointPort')
 
-	def set_SourceEndpointPort(self,SourceEndpointPort):
-		self.add_query_param('SourceEndpointPort',SourceEndpointPort)
-
-	def get_BackupRetentionPeriod(self):
+	def set_SourceEndpointPort(self, SourceEndpointPort):  # Integer
+		self.add_query_param('SourceEndpointPort', SourceEndpointPort)
+	def get_BackupRetentionPeriod(self): # Integer
 		return self.get_query_params().get('BackupRetentionPeriod')
 
-	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
-		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
-
-	def get_BackupPeriod(self):
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Integer
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
+	def get_BackupPeriod(self): # String
 		return self.get_query_params().get('BackupPeriod')
 
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
-
-	def get_BackupSpeedLimit(self):
+	def set_BackupPeriod(self, BackupPeriod):  # String
+		self.add_query_param('BackupPeriod', BackupPeriod)
+	def get_BackupSpeedLimit(self): # Long
 		return self.get_query_params().get('BackupSpeedLimit')
 
-	def set_BackupSpeedLimit(self,BackupSpeedLimit):
-		self.add_query_param('BackupSpeedLimit',BackupSpeedLimit)
-
-	def get_SourceEndpointInstanceType(self):
+	def set_BackupSpeedLimit(self, BackupSpeedLimit):  # Long
+		self.add_query_param('BackupSpeedLimit', BackupSpeedLimit)
+	def get_SourceEndpointInstanceType(self): # String
 		return self.get_query_params().get('SourceEndpointInstanceType')
 
-	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
-		self.add_query_param('SourceEndpointInstanceType',SourceEndpointInstanceType)
-
-	def get_BackupPlanName(self):
+	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
+		self.add_query_param('SourceEndpointInstanceType', SourceEndpointInstanceType)
+	def get_BackupPlanName(self): # String
 		return self.get_query_params().get('BackupPlanName')
 
-	def set_BackupPlanName(self,BackupPlanName):
-		self.add_query_param('BackupPlanName',BackupPlanName)
-
-	def get_SourceEndpointOracleSID(self):
+	def set_BackupPlanName(self, BackupPlanName):  # String
+		self.add_query_param('BackupPlanName', BackupPlanName)
+	def get_SourceEndpointOracleSID(self): # String
 		return self.get_query_params().get('SourceEndpointOracleSID')
 
-	def set_SourceEndpointOracleSID(self,SourceEndpointOracleSID):
-		self.add_query_param('SourceEndpointOracleSID',SourceEndpointOracleSID)
-
-	def get_OSSBucketName(self):
+	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
+		self.add_query_param('SourceEndpointOracleSID', SourceEndpointOracleSID)
+	def get_OSSBucketName(self): # String
 		return self.get_query_params().get('OSSBucketName')
 
-	def set_OSSBucketName(self,OSSBucketName):
-		self.add_query_param('OSSBucketName',OSSBucketName)
-
-	def get_BackupStrategyType(self):
+	def set_OSSBucketName(self, OSSBucketName):  # String
+		self.add_query_param('OSSBucketName', OSSBucketName)
+	def get_BackupStrategyType(self): # String
 		return self.get_query_params().get('BackupStrategyType')
 
-	def set_BackupStrategyType(self,BackupStrategyType):
-		self.add_query_param('BackupStrategyType',BackupStrategyType)
+	def set_BackupStrategyType(self, BackupStrategyType):  # String
+		self.add_query_param('BackupStrategyType', BackupStrategyType)

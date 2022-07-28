@@ -23,106 +23,91 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ModifyBackupSourceEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSourceEndpoint','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSourceEndpoint')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceEndpointRegion(self):
+	def get_SourceEndpointRegion(self): # String
 		return self.get_query_params().get('SourceEndpointRegion')
 
-	def set_SourceEndpointRegion(self,SourceEndpointRegion):
-		self.add_query_param('SourceEndpointRegion',SourceEndpointRegion)
-
-	def get_BackupGatewayId(self):
+	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
+		self.add_query_param('SourceEndpointRegion', SourceEndpointRegion)
+	def get_BackupGatewayId(self): # Long
 		return self.get_query_params().get('BackupGatewayId')
 
-	def set_BackupGatewayId(self,BackupGatewayId):
-		self.add_query_param('BackupGatewayId',BackupGatewayId)
-
-	def get_SourceEndpointInstanceID(self):
+	def set_BackupGatewayId(self, BackupGatewayId):  # Long
+		self.add_query_param('BackupGatewayId', BackupGatewayId)
+	def get_SourceEndpointInstanceID(self): # String
 		return self.get_query_params().get('SourceEndpointInstanceID')
 
-	def set_SourceEndpointInstanceID(self,SourceEndpointInstanceID):
-		self.add_query_param('SourceEndpointInstanceID',SourceEndpointInstanceID)
-
-	def get_SourceEndpointUserName(self):
+	def set_SourceEndpointInstanceID(self, SourceEndpointInstanceID):  # String
+		self.add_query_param('SourceEndpointInstanceID', SourceEndpointInstanceID)
+	def get_SourceEndpointUserName(self): # String
 		return self.get_query_params().get('SourceEndpointUserName')
 
-	def set_SourceEndpointUserName(self,SourceEndpointUserName):
-		self.add_query_param('SourceEndpointUserName',SourceEndpointUserName)
-
-	def get_ClientToken(self):
+	def set_SourceEndpointUserName(self, SourceEndpointUserName):  # String
+		self.add_query_param('SourceEndpointUserName', SourceEndpointUserName)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_SourceEndpointDatabaseName(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_SourceEndpointDatabaseName(self): # String
 		return self.get_query_params().get('SourceEndpointDatabaseName')
 
-	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
-		self.add_query_param('SourceEndpointDatabaseName',SourceEndpointDatabaseName)
-
-	def get_SourceEndpointIP(self):
+	def set_SourceEndpointDatabaseName(self, SourceEndpointDatabaseName):  # String
+		self.add_query_param('SourceEndpointDatabaseName', SourceEndpointDatabaseName)
+	def get_SourceEndpointIP(self): # String
 		return self.get_query_params().get('SourceEndpointIP')
 
-	def set_SourceEndpointIP(self,SourceEndpointIP):
-		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
-
-	def get_CrossRoleName(self):
+	def set_SourceEndpointIP(self, SourceEndpointIP):  # String
+		self.add_query_param('SourceEndpointIP', SourceEndpointIP)
+	def get_CrossRoleName(self): # String
 		return self.get_query_params().get('CrossRoleName')
 
-	def set_CrossRoleName(self,CrossRoleName):
-		self.add_query_param('CrossRoleName',CrossRoleName)
-
-	def get_CrossAliyunId(self):
+	def set_CrossRoleName(self, CrossRoleName):  # String
+		self.add_query_param('CrossRoleName', CrossRoleName)
+	def get_CrossAliyunId(self): # String
 		return self.get_query_params().get('CrossAliyunId')
 
-	def set_CrossAliyunId(self,CrossAliyunId):
-		self.add_query_param('CrossAliyunId',CrossAliyunId)
-
-	def get_SourceEndpointPassword(self):
+	def set_CrossAliyunId(self, CrossAliyunId):  # String
+		self.add_query_param('CrossAliyunId', CrossAliyunId)
+	def get_SourceEndpointPassword(self): # String
 		return self.get_query_params().get('SourceEndpointPassword')
 
-	def set_SourceEndpointPassword(self,SourceEndpointPassword):
-		self.add_query_param('SourceEndpointPassword',SourceEndpointPassword)
-
-	def get_BackupObjects(self):
+	def set_SourceEndpointPassword(self, SourceEndpointPassword):  # String
+		self.add_query_param('SourceEndpointPassword', SourceEndpointPassword)
+	def get_BackupObjects(self): # String
 		return self.get_query_params().get('BackupObjects')
 
-	def set_BackupObjects(self,BackupObjects):
-		self.add_query_param('BackupObjects',BackupObjects)
-
-	def get_OwnerId(self):
+	def set_BackupObjects(self, BackupObjects):  # String
+		self.add_query_param('BackupObjects', BackupObjects)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SourceEndpointPort(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SourceEndpointPort(self): # Integer
 		return self.get_query_params().get('SourceEndpointPort')
 
-	def set_SourceEndpointPort(self,SourceEndpointPort):
-		self.add_query_param('SourceEndpointPort',SourceEndpointPort)
-
-	def get_SourceEndpointInstanceType(self):
+	def set_SourceEndpointPort(self, SourceEndpointPort):  # Integer
+		self.add_query_param('SourceEndpointPort', SourceEndpointPort)
+	def get_SourceEndpointInstanceType(self): # String
 		return self.get_query_params().get('SourceEndpointInstanceType')
 
-	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
-		self.add_query_param('SourceEndpointInstanceType',SourceEndpointInstanceType)
-
-	def get_SourceEndpointOracleSID(self):
+	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
+		self.add_query_param('SourceEndpointInstanceType', SourceEndpointInstanceType)
+	def get_SourceEndpointOracleSID(self): # String
 		return self.get_query_params().get('SourceEndpointOracleSID')
 
-	def set_SourceEndpointOracleSID(self,SourceEndpointOracleSID):
-		self.add_query_param('SourceEndpointOracleSID',SourceEndpointOracleSID)
+	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
+		self.add_query_param('SourceEndpointOracleSID', SourceEndpointOracleSID)

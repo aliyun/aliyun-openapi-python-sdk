@@ -23,46 +23,41 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ModifyStorageStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyStorageStrategy','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyStorageStrategy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DuplicationArchivePeriod(self):
+	def get_DuplicationArchivePeriod(self): # Integer
 		return self.get_query_params().get('DuplicationArchivePeriod')
 
-	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
-		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
-
-	def get_ClientToken(self):
+	def set_DuplicationArchivePeriod(self, DuplicationArchivePeriod):  # Integer
+		self.add_query_param('DuplicationArchivePeriod', DuplicationArchivePeriod)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupPlanId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
-	def set_BackupPlanId(self,BackupPlanId):
-		self.add_query_param('BackupPlanId',BackupPlanId)
-
-	def get_OwnerId(self):
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BackupRetentionPeriod(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BackupRetentionPeriod(self): # Integer
 		return self.get_query_params().get('BackupRetentionPeriod')
 
-	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
-		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
-
-	def get_DuplicationInfrequentAccessPeriod(self):
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Integer
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
+	def get_DuplicationInfrequentAccessPeriod(self): # Integer
 		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
 
-	def set_DuplicationInfrequentAccessPeriod(self,DuplicationInfrequentAccessPeriod):
-		self.add_query_param('DuplicationInfrequentAccessPeriod',DuplicationInfrequentAccessPeriod)
+	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
+		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)

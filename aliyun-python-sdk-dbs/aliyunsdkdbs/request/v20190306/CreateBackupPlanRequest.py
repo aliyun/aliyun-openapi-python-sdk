@@ -23,94 +23,86 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class CreateBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateBackupPlan','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateBackupPlan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DatabaseType(self):
+	def get_DatabaseType(self): # String
 		return self.get_query_params().get('DatabaseType')
 
-	def set_DatabaseType(self,DatabaseType):
-		self.add_query_param('DatabaseType',DatabaseType)
-
-	def get_ClientToken(self):
+	def set_DatabaseType(self, DatabaseType):  # String
+		self.add_query_param('DatabaseType', DatabaseType)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_InstanceClass(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
-	def set_InstanceClass(self,InstanceClass):
-		self.add_query_param('InstanceClass',InstanceClass)
-
-	def get_StorageType(self):
+	def set_InstanceClass(self, InstanceClass):  # String
+		self.add_query_param('InstanceClass', InstanceClass)
+	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_DatabaseRegion(self):
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_DatabaseRegion(self): # String
 		return self.get_query_params().get('DatabaseRegion')
 
-	def set_DatabaseRegion(self,DatabaseRegion):
-		self.add_query_param('DatabaseRegion',DatabaseRegion)
+	def set_DatabaseRegion(self, DatabaseRegion):  # String
+		self.add_query_param('DatabaseRegion', DatabaseRegion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_InstanceType(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_Period(self):
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_FromApp(self):
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_FromApp(self): # String
 		return self.get_query_params().get('FromApp')
 
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
-
-	def get_OwnerId(self):
+	def set_FromApp(self, FromApp):  # String
+		self.add_query_param('FromApp', FromApp)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UsedTime(self): # Integer
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
-	def get_BackupMethod(self):
+	def set_UsedTime(self, UsedTime):  # Integer
+		self.add_query_param('UsedTime', UsedTime)
+	def get_BackupMethod(self): # String
 		return self.get_query_params().get('BackupMethod')
 
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
-
-	def get_StorageRegion(self):
+	def set_BackupMethod(self, BackupMethod):  # String
+		self.add_query_param('BackupMethod', BackupMethod)
+	def get_StorageRegion(self): # String
 		return self.get_query_params().get('StorageRegion')
 
-	def set_StorageRegion(self,StorageRegion):
-		self.add_query_param('StorageRegion',StorageRegion)
-
-	def get_Region(self):
+	def set_StorageRegion(self, StorageRegion):  # String
+		self.add_query_param('StorageRegion', StorageRegion)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
-	def get_PayType(self):
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
+	def set_PayType(self, PayType):  # String
+		self.add_query_param('PayType', PayType)

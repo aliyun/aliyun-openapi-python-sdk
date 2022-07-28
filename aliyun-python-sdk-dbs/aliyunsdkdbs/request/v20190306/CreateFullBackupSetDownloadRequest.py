@@ -23,34 +23,31 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class CreateFullBackupSetDownloadRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateFullBackupSetDownload','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateFullBackupSetDownload')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BackupSetId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupSetId(self): # String
 		return self.get_query_params().get('BackupSetId')
 
-	def set_BackupSetId(self,BackupSetId):
-		self.add_query_param('BackupSetId',BackupSetId)
-
-	def get_OwnerId(self):
+	def set_BackupSetId(self, BackupSetId):  # String
+		self.add_query_param('BackupSetId', BackupSetId)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BackupSetDataFormat(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BackupSetDataFormat(self): # String
 		return self.get_query_params().get('BackupSetDataFormat')
 
-	def set_BackupSetDataFormat(self,BackupSetDataFormat):
-		self.add_query_param('BackupSetDataFormat',BackupSetDataFormat)
+	def set_BackupSetDataFormat(self, BackupSetDataFormat):  # String
+		self.add_query_param('BackupSetDataFormat', BackupSetDataFormat)
