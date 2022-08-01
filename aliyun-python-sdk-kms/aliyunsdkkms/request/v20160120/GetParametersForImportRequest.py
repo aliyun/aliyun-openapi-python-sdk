@@ -26,26 +26,24 @@ class GetParametersForImportRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GetParametersForImport','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_KeyId(self):
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_WrappingAlgorithm(self):
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)
+	def get_WrappingAlgorithm(self): # String
 		return self.get_query_params().get('WrappingAlgorithm')
 
-	def set_WrappingAlgorithm(self,WrappingAlgorithm):
-		self.add_query_param('WrappingAlgorithm',WrappingAlgorithm)
-
-	def get_WrappingKeySpec(self):
+	def set_WrappingAlgorithm(self, WrappingAlgorithm):  # String
+		self.add_query_param('WrappingAlgorithm', WrappingAlgorithm)
+	def get_WrappingKeySpec(self): # String
 		return self.get_query_params().get('WrappingKeySpec')
 
-	def set_WrappingKeySpec(self,WrappingKeySpec):
-		self.add_query_param('WrappingKeySpec',WrappingKeySpec)
+	def set_WrappingKeySpec(self, WrappingKeySpec):  # String
+		self.add_query_param('WrappingKeySpec', WrappingKeySpec)

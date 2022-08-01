@@ -26,32 +26,29 @@ class ListSecretVersionIdsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListSecretVersionIds','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IncludeDeprecated(self):
+	def get_IncludeDeprecated(self): # String
 		return self.get_query_params().get('IncludeDeprecated')
 
-	def set_IncludeDeprecated(self,IncludeDeprecated):
-		self.add_query_param('IncludeDeprecated',IncludeDeprecated)
-
-	def get_PageSize(self):
+	def set_IncludeDeprecated(self, IncludeDeprecated):  # String
+		self.add_query_param('IncludeDeprecated', IncludeDeprecated)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SecretName(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
-
-	def get_PageNumber(self):
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)

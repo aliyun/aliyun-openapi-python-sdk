@@ -26,38 +26,34 @@ class ExportDataKeyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ExportDataKey','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EncryptionContext(self):
+	def get_EncryptionContext(self): # String
 		return self.get_query_params().get('EncryptionContext')
 
-	def set_EncryptionContext(self,EncryptionContext):
-		self.add_query_param('EncryptionContext',EncryptionContext)
-
-	def get_WrappingAlgorithm(self):
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)
+	def get_WrappingAlgorithm(self): # String
 		return self.get_query_params().get('WrappingAlgorithm')
 
-	def set_WrappingAlgorithm(self,WrappingAlgorithm):
-		self.add_query_param('WrappingAlgorithm',WrappingAlgorithm)
-
-	def get_CiphertextBlob(self):
+	def set_WrappingAlgorithm(self, WrappingAlgorithm):  # String
+		self.add_query_param('WrappingAlgorithm', WrappingAlgorithm)
+	def get_CiphertextBlob(self): # String
 		return self.get_query_params().get('CiphertextBlob')
 
-	def set_CiphertextBlob(self,CiphertextBlob):
-		self.add_query_param('CiphertextBlob',CiphertextBlob)
-
-	def get_PublicKeyBlob(self):
+	def set_CiphertextBlob(self, CiphertextBlob):  # String
+		self.add_query_param('CiphertextBlob', CiphertextBlob)
+	def get_PublicKeyBlob(self): # String
 		return self.get_query_params().get('PublicKeyBlob')
 
-	def set_PublicKeyBlob(self,PublicKeyBlob):
-		self.add_query_param('PublicKeyBlob',PublicKeyBlob)
-
-	def get_WrappingKeySpec(self):
+	def set_PublicKeyBlob(self, PublicKeyBlob):  # String
+		self.add_query_param('PublicKeyBlob', PublicKeyBlob)
+	def get_WrappingKeySpec(self): # String
 		return self.get_query_params().get('WrappingKeySpec')
 
-	def set_WrappingKeySpec(self,WrappingKeySpec):
-		self.add_query_param('WrappingKeySpec',WrappingKeySpec)
+	def set_WrappingKeySpec(self, WrappingKeySpec):  # String
+		self.add_query_param('WrappingKeySpec', WrappingKeySpec)

@@ -26,26 +26,24 @@ class EncryptRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Encrypt','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EncryptionContext(self):
+	def get_EncryptionContext(self): # String
 		return self.get_query_params().get('EncryptionContext')
 
-	def set_EncryptionContext(self,EncryptionContext):
-		self.add_query_param('EncryptionContext',EncryptionContext)
-
-	def get_KeyId(self):
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_Plaintext(self):
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)
+	def get_Plaintext(self): # String
 		return self.get_query_params().get('Plaintext')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
+	def set_Plaintext(self, Plaintext):  # String
+		self.add_query_param('Plaintext', Plaintext)

@@ -26,26 +26,24 @@ class UpdateSecretRotationPolicyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UpdateSecretRotationPolicy','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RotationInterval(self):
+	def get_RotationInterval(self): # String
 		return self.get_query_params().get('RotationInterval')
 
-	def set_RotationInterval(self,RotationInterval):
-		self.add_query_param('RotationInterval',RotationInterval)
-
-	def get_SecretName(self):
+	def set_RotationInterval(self, RotationInterval):  # String
+		self.add_query_param('RotationInterval', RotationInterval)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
-
-	def get_EnableAutomaticRotation(self):
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)
+	def get_EnableAutomaticRotation(self): # Boolean
 		return self.get_query_params().get('EnableAutomaticRotation')
 
-	def set_EnableAutomaticRotation(self,EnableAutomaticRotation):
-		self.add_query_param('EnableAutomaticRotation',EnableAutomaticRotation)
+	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # Boolean
+		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)

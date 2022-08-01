@@ -26,32 +26,29 @@ class AsymmetricSignRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricSign','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_KeyVersionId(self):
+	def get_KeyVersionId(self): # String
 		return self.get_query_params().get('KeyVersionId')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
-
-	def get_Digest(self):
+	def set_KeyVersionId(self, KeyVersionId):  # String
+		self.add_query_param('KeyVersionId', KeyVersionId)
+	def get_Digest(self): # String
 		return self.get_query_params().get('Digest')
 
-	def set_Digest(self,Digest):
-		self.add_query_param('Digest',Digest)
-
-	def get_KeyId(self):
+	def set_Digest(self, Digest):  # String
+		self.add_query_param('Digest', Digest)
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_Algorithm(self):
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)
+	def get_Algorithm(self): # String
 		return self.get_query_params().get('Algorithm')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)

@@ -26,32 +26,29 @@ class ImportKeyMaterialRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ImportKeyMaterial','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImportToken(self):
+	def get_ImportToken(self): # String
 		return self.get_query_params().get('ImportToken')
 
-	def set_ImportToken(self,ImportToken):
-		self.add_query_param('ImportToken',ImportToken)
-
-	def get_EncryptedKeyMaterial(self):
+	def set_ImportToken(self, ImportToken):  # String
+		self.add_query_param('ImportToken', ImportToken)
+	def get_EncryptedKeyMaterial(self): # String
 		return self.get_query_params().get('EncryptedKeyMaterial')
 
-	def set_EncryptedKeyMaterial(self,EncryptedKeyMaterial):
-		self.add_query_param('EncryptedKeyMaterial',EncryptedKeyMaterial)
-
-	def get_KeyMaterialExpireUnix(self):
+	def set_EncryptedKeyMaterial(self, EncryptedKeyMaterial):  # String
+		self.add_query_param('EncryptedKeyMaterial', EncryptedKeyMaterial)
+	def get_KeyMaterialExpireUnix(self): # Long
 		return self.get_query_params().get('KeyMaterialExpireUnix')
 
-	def set_KeyMaterialExpireUnix(self,KeyMaterialExpireUnix):
-		self.add_query_param('KeyMaterialExpireUnix',KeyMaterialExpireUnix)
-
-	def get_KeyId(self):
+	def set_KeyMaterialExpireUnix(self, KeyMaterialExpireUnix):  # Long
+		self.add_query_param('KeyMaterialExpireUnix', KeyMaterialExpireUnix)
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)

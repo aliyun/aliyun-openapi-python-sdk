@@ -26,14 +26,14 @@ class EnableKeyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'EnableKey','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_KeyId(self):
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)

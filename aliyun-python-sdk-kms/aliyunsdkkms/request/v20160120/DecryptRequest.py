@@ -26,20 +26,19 @@ class DecryptRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Decrypt','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EncryptionContext(self):
+	def get_EncryptionContext(self): # String
 		return self.get_query_params().get('EncryptionContext')
 
-	def set_EncryptionContext(self,EncryptionContext):
-		self.add_query_param('EncryptionContext',EncryptionContext)
-
-	def get_CiphertextBlob(self):
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)
+	def get_CiphertextBlob(self): # String
 		return self.get_query_params().get('CiphertextBlob')
 
-	def set_CiphertextBlob(self,CiphertextBlob):
-		self.add_query_param('CiphertextBlob',CiphertextBlob)
+	def set_CiphertextBlob(self, CiphertextBlob):  # String
+		self.add_query_param('CiphertextBlob', CiphertextBlob)

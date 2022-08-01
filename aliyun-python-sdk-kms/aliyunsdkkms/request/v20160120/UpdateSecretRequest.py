@@ -26,26 +26,24 @@ class UpdateSecretRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UpdateSecret','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SecretName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
-
-	def get_ExtendedConfigCustomData(self):
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)
+	def get_ExtendedConfigCustomData(self): # String
 		return self.get_query_params().get('ExtendedConfig.CustomData')
 
-	def set_ExtendedConfigCustomData(self,ExtendedConfigCustomData):
-		self.add_query_param('ExtendedConfig.CustomData',ExtendedConfigCustomData)
+	def set_ExtendedConfigCustomData(self, ExtendedConfigCustomData):  # String
+		self.add_query_param('ExtendedConfig.CustomData', ExtendedConfigCustomData)

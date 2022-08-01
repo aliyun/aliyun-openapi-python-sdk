@@ -26,32 +26,29 @@ class CertificatePrivateKeySignRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CertificatePrivateKeySign','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MessageType(self):
+	def get_MessageType(self): # String
 		return self.get_query_params().get('MessageType')
 
-	def set_MessageType(self,MessageType):
-		self.add_query_param('MessageType',MessageType)
-
-	def get_CertificateId(self):
+	def set_MessageType(self, MessageType):  # String
+		self.add_query_param('MessageType', MessageType)
+	def get_CertificateId(self): # String
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_Message(self):
+	def set_CertificateId(self, CertificateId):  # String
+		self.add_query_param('CertificateId', CertificateId)
+	def get_Message(self): # String
 		return self.get_query_params().get('Message')
 
-	def set_Message(self,Message):
-		self.add_query_param('Message',Message)
-
-	def get_Algorithm(self):
+	def set_Message(self, Message):  # String
+		self.add_query_param('Message', Message)
+	def get_Algorithm(self): # String
 		return self.get_query_params().get('Algorithm')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)

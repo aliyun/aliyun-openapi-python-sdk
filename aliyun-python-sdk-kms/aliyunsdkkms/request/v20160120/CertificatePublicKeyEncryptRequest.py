@@ -26,26 +26,24 @@ class CertificatePublicKeyEncryptRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CertificatePublicKeyEncrypt','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CertificateId(self):
+	def get_CertificateId(self): # String
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_Plaintext(self):
+	def set_CertificateId(self, CertificateId):  # String
+		self.add_query_param('CertificateId', CertificateId)
+	def get_Plaintext(self): # String
 		return self.get_query_params().get('Plaintext')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
-
-	def get_Algorithm(self):
+	def set_Plaintext(self, Plaintext):  # String
+		self.add_query_param('Plaintext', Plaintext)
+	def get_Algorithm(self): # String
 		return self.get_query_params().get('Algorithm')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)

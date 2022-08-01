@@ -26,32 +26,29 @@ class TagResourceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'TagResource','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CertificateId(self):
+	def get_CertificateId(self): # String
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_KeyId(self):
+	def set_CertificateId(self, CertificateId):  # String
+		self.add_query_param('CertificateId', CertificateId)
+	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_SecretName(self):
+	def set_KeyId(self, KeyId):  # String
+		self.add_query_param('KeyId', KeyId)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
-
-	def get_Tags(self):
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)

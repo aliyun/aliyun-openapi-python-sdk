@@ -26,26 +26,24 @@ class DeleteSecretRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DeleteSecret','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ForceDeleteWithoutRecovery(self):
+	def get_ForceDeleteWithoutRecovery(self): # String
 		return self.get_query_params().get('ForceDeleteWithoutRecovery')
 
-	def set_ForceDeleteWithoutRecovery(self,ForceDeleteWithoutRecovery):
-		self.add_query_param('ForceDeleteWithoutRecovery',ForceDeleteWithoutRecovery)
-
-	def get_RecoveryWindowInDays(self):
+	def set_ForceDeleteWithoutRecovery(self, ForceDeleteWithoutRecovery):  # String
+		self.add_query_param('ForceDeleteWithoutRecovery', ForceDeleteWithoutRecovery)
+	def get_RecoveryWindowInDays(self): # String
 		return self.get_query_params().get('RecoveryWindowInDays')
 
-	def set_RecoveryWindowInDays(self,RecoveryWindowInDays):
-		self.add_query_param('RecoveryWindowInDays',RecoveryWindowInDays)
-
-	def get_SecretName(self):
+	def set_RecoveryWindowInDays(self, RecoveryWindowInDays):  # String
+		self.add_query_param('RecoveryWindowInDays', RecoveryWindowInDays)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)

@@ -26,50 +26,44 @@ class GetRandomPasswordRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GetRandomPassword','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExcludeLowercase(self):
+	def get_ExcludeLowercase(self): # String
 		return self.get_query_params().get('ExcludeLowercase')
 
-	def set_ExcludeLowercase(self,ExcludeLowercase):
-		self.add_query_param('ExcludeLowercase',ExcludeLowercase)
-
-	def get_ExcludeCharacters(self):
+	def set_ExcludeLowercase(self, ExcludeLowercase):  # String
+		self.add_query_param('ExcludeLowercase', ExcludeLowercase)
+	def get_ExcludeCharacters(self): # String
 		return self.get_query_params().get('ExcludeCharacters')
 
-	def set_ExcludeCharacters(self,ExcludeCharacters):
-		self.add_query_param('ExcludeCharacters',ExcludeCharacters)
-
-	def get_PasswordLength(self):
+	def set_ExcludeCharacters(self, ExcludeCharacters):  # String
+		self.add_query_param('ExcludeCharacters', ExcludeCharacters)
+	def get_PasswordLength(self): # String
 		return self.get_query_params().get('PasswordLength')
 
-	def set_PasswordLength(self,PasswordLength):
-		self.add_query_param('PasswordLength',PasswordLength)
-
-	def get_ExcludePunctuation(self):
+	def set_PasswordLength(self, PasswordLength):  # String
+		self.add_query_param('PasswordLength', PasswordLength)
+	def get_ExcludePunctuation(self): # String
 		return self.get_query_params().get('ExcludePunctuation')
 
-	def set_ExcludePunctuation(self,ExcludePunctuation):
-		self.add_query_param('ExcludePunctuation',ExcludePunctuation)
-
-	def get_ExcludeUppercase(self):
+	def set_ExcludePunctuation(self, ExcludePunctuation):  # String
+		self.add_query_param('ExcludePunctuation', ExcludePunctuation)
+	def get_ExcludeUppercase(self): # String
 		return self.get_query_params().get('ExcludeUppercase')
 
-	def set_ExcludeUppercase(self,ExcludeUppercase):
-		self.add_query_param('ExcludeUppercase',ExcludeUppercase)
-
-	def get_RequireEachIncludedType(self):
+	def set_ExcludeUppercase(self, ExcludeUppercase):  # String
+		self.add_query_param('ExcludeUppercase', ExcludeUppercase)
+	def get_RequireEachIncludedType(self): # String
 		return self.get_query_params().get('RequireEachIncludedType')
 
-	def set_RequireEachIncludedType(self,RequireEachIncludedType):
-		self.add_query_param('RequireEachIncludedType',RequireEachIncludedType)
-
-	def get_ExcludeNumbers(self):
+	def set_RequireEachIncludedType(self, RequireEachIncludedType):  # String
+		self.add_query_param('RequireEachIncludedType', RequireEachIncludedType)
+	def get_ExcludeNumbers(self): # String
 		return self.get_query_params().get('ExcludeNumbers')
 
-	def set_ExcludeNumbers(self,ExcludeNumbers):
-		self.add_query_param('ExcludeNumbers',ExcludeNumbers)
+	def set_ExcludeNumbers(self, ExcludeNumbers):  # String
+		self.add_query_param('ExcludeNumbers', ExcludeNumbers)

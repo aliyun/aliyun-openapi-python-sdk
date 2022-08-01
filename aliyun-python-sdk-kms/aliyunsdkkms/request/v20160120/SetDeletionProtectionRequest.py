@@ -26,26 +26,24 @@ class SetDeletionProtectionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'SetDeletionProtection','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EnableDeletionProtection(self):
+	def get_EnableDeletionProtection(self): # Boolean
 		return self.get_query_params().get('EnableDeletionProtection')
 
-	def set_EnableDeletionProtection(self,EnableDeletionProtection):
-		self.add_query_param('EnableDeletionProtection',EnableDeletionProtection)
-
-	def get_ProtectedResourceArn(self):
+	def set_EnableDeletionProtection(self, EnableDeletionProtection):  # Boolean
+		self.add_query_param('EnableDeletionProtection', EnableDeletionProtection)
+	def get_ProtectedResourceArn(self): # String
 		return self.get_query_params().get('ProtectedResourceArn')
 
-	def set_ProtectedResourceArn(self,ProtectedResourceArn):
-		self.add_query_param('ProtectedResourceArn',ProtectedResourceArn)
-
-	def get_DeletionProtectionDescription(self):
+	def set_ProtectedResourceArn(self, ProtectedResourceArn):  # String
+		self.add_query_param('ProtectedResourceArn', ProtectedResourceArn)
+	def get_DeletionProtectionDescription(self): # String
 		return self.get_query_params().get('DeletionProtectionDescription')
 
-	def set_DeletionProtectionDescription(self,DeletionProtectionDescription):
-		self.add_query_param('DeletionProtectionDescription',DeletionProtectionDescription)
+	def set_DeletionProtectionDescription(self, DeletionProtectionDescription):  # String
+		self.add_query_param('DeletionProtectionDescription', DeletionProtectionDescription)

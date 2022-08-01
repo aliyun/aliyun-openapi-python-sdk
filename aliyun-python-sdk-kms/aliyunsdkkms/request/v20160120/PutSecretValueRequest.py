@@ -26,38 +26,34 @@ class PutSecretValueRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'PutSecretValue','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VersionId(self):
+	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
-
-	def get_VersionStages(self):
+	def set_VersionId(self, VersionId):  # String
+		self.add_query_param('VersionId', VersionId)
+	def get_VersionStages(self): # String
 		return self.get_query_params().get('VersionStages')
 
-	def set_VersionStages(self,VersionStages):
-		self.add_query_param('VersionStages',VersionStages)
-
-	def get_SecretData(self):
+	def set_VersionStages(self, VersionStages):  # String
+		self.add_query_param('VersionStages', VersionStages)
+	def get_SecretData(self): # String
 		return self.get_query_params().get('SecretData')
 
-	def set_SecretData(self,SecretData):
-		self.add_query_param('SecretData',SecretData)
-
-	def get_SecretName(self):
+	def set_SecretData(self, SecretData):  # String
+		self.add_query_param('SecretData', SecretData)
+	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
-	def set_SecretName(self,SecretName):
-		self.add_query_param('SecretName',SecretName)
-
-	def get_SecretDataType(self):
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)
+	def get_SecretDataType(self): # String
 		return self.get_query_params().get('SecretDataType')
 
-	def set_SecretDataType(self,SecretDataType):
-		self.add_query_param('SecretDataType',SecretDataType)
+	def set_SecretDataType(self, SecretDataType):  # String
+		self.add_query_param('SecretDataType', SecretDataType)

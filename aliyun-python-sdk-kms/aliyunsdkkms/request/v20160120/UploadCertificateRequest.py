@@ -26,26 +26,24 @@ class UploadCertificateRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UploadCertificate','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CertificateId(self):
+	def get_CertificateId(self): # String
 		return self.get_query_params().get('CertificateId')
 
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_Certificate(self):
+	def set_CertificateId(self, CertificateId):  # String
+		self.add_query_param('CertificateId', CertificateId)
+	def get_Certificate(self): # String
 		return self.get_query_params().get('Certificate')
 
-	def set_Certificate(self,Certificate):
-		self.add_query_param('Certificate',Certificate)
-
-	def get_CertificateChain(self):
+	def set_Certificate(self, Certificate):  # String
+		self.add_query_param('Certificate', Certificate)
+	def get_CertificateChain(self): # String
 		return self.get_query_params().get('CertificateChain')
 
-	def set_CertificateChain(self,CertificateChain):
-		self.add_query_param('CertificateChain',CertificateChain)
+	def set_CertificateChain(self, CertificateChain):  # String
+		self.add_query_param('CertificateChain', CertificateChain)
