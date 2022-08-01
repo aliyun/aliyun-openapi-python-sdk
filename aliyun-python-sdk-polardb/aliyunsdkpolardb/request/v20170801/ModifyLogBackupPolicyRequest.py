@@ -36,6 +36,11 @@ class ModifyLogBackupPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_LogBackupAnotherRegionRegion(self): # String
+		return self.get_query_params().get('LogBackupAnotherRegionRegion')
+
+	def set_LogBackupAnotherRegionRegion(self, LogBackupAnotherRegionRegion):  # String
+		self.add_query_param('LogBackupAnotherRegionRegion', LogBackupAnotherRegionRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,6 +61,11 @@ class ModifyLogBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_LogBackupAnotherRegionRetentionPeriod(self): # String
+		return self.get_query_params().get('LogBackupAnotherRegionRetentionPeriod')
+
+	def set_LogBackupAnotherRegionRetentionPeriod(self, LogBackupAnotherRegionRetentionPeriod):  # String
+		self.add_query_param('LogBackupAnotherRegionRetentionPeriod', LogBackupAnotherRegionRetentionPeriod)
 	def get_LogBackupRetentionPeriod(self): # String
 		return self.get_query_params().get('LogBackupRetentionPeriod')
 

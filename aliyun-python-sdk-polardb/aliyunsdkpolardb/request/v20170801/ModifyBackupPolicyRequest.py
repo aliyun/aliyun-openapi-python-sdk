@@ -81,6 +81,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DataLevel2BackupAnotherRegionRetentionPeriod(self): # String
+		return self.get_query_params().get('DataLevel2BackupAnotherRegionRetentionPeriod')
+
+	def set_DataLevel2BackupAnotherRegionRetentionPeriod(self, DataLevel2BackupAnotherRegionRetentionPeriod):  # String
+		self.add_query_param('DataLevel2BackupAnotherRegionRetentionPeriod', DataLevel2BackupAnotherRegionRetentionPeriod)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -101,6 +106,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_DataLevel1BackupFrequency(self, DataLevel1BackupFrequency):  # String
 		self.add_query_param('DataLevel1BackupFrequency', DataLevel1BackupFrequency)
+	def get_DataLevel2BackupAnotherRegionRegion(self): # String
+		return self.get_query_params().get('DataLevel2BackupAnotherRegionRegion')
+
+	def set_DataLevel2BackupAnotherRegionRegion(self, DataLevel2BackupAnotherRegionRegion):  # String
+		self.add_query_param('DataLevel2BackupAnotherRegionRegion', DataLevel2BackupAnotherRegionRegion)
 	def get_DataLevel1BackupTime(self): # String
 		return self.get_query_params().get('DataLevel1BackupTime')
 

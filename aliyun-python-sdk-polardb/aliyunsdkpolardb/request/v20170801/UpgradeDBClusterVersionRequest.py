@@ -56,6 +56,11 @@ class UpgradeDBClusterVersionRequest(RpcRequest):
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
+	def get_UpgradeLabel(self): # String
+		return self.get_query_params().get('UpgradeLabel')
+
+	def set_UpgradeLabel(self, UpgradeLabel):  # String
+		self.add_query_param('UpgradeLabel', UpgradeLabel)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
@@ -71,6 +76,11 @@ class UpgradeDBClusterVersionRequest(RpcRequest):
 
 	def set_PlannedStartTime(self, PlannedStartTime):  # String
 		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_UpgradePolicy(self): # String
+		return self.get_query_params().get('UpgradePolicy')
+
+	def set_UpgradePolicy(self, UpgradePolicy):  # String
+		self.add_query_param('UpgradePolicy', UpgradePolicy)
 	def get_FromTimeService(self): # Boolean
 		return self.get_query_params().get('FromTimeService')
 

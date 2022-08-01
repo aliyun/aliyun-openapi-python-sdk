@@ -41,6 +41,11 @@ class DescribeScheduleTasksRequest(RpcRequest):
 
 	def set_DBClusterDescription(self, DBClusterDescription):  # String
 		self.add_query_param('DBClusterDescription', DBClusterDescription)
+	def get_PlannedEndTime(self): # String
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self, PlannedEndTime):  # String
+		self.add_query_param('PlannedEndTime', PlannedEndTime)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -76,6 +81,11 @@ class DescribeScheduleTasksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PlannedStartTime(self): # String
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self, PlannedStartTime):  # String
+		self.add_query_param('PlannedStartTime', PlannedStartTime)
 	def get_TaskAction(self): # String
 		return self.get_query_params().get('TaskAction')
 

@@ -36,6 +36,11 @@ class ModifyDBClusterAndNodesParametersRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PlannedEndTime(self): # String
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self, PlannedEndTime):  # String
+		self.add_query_param('PlannedEndTime', PlannedEndTime)
 	def get_DBNodeIds(self): # String
 		return self.get_query_params().get('DBNodeIds')
 
@@ -66,8 +71,18 @@ class ModifyDBClusterAndNodesParametersRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PlannedStartTime(self): # String
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self, PlannedStartTime):  # String
+		self.add_query_param('PlannedStartTime', PlannedStartTime)
 	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
 	def set_Parameters(self, Parameters):  # String
 		self.add_query_param('Parameters', Parameters)
+	def get_FromTimeService(self): # Boolean
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self, FromTimeService):  # Boolean
+		self.add_query_param('FromTimeService', FromTimeService)

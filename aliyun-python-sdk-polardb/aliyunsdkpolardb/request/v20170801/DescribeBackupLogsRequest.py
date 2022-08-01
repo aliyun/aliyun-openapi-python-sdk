@@ -51,6 +51,11 @@ class DescribeBackupLogsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_BackupRegion(self): # String
+		return self.get_query_params().get('BackupRegion')
+
+	def set_BackupRegion(self, BackupRegion):  # String
+		self.add_query_param('BackupRegion', BackupRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

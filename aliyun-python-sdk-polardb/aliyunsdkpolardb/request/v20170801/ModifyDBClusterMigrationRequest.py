@@ -36,6 +36,11 @@ class ModifyDBClusterMigrationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ConnectionStrings(self): # String
+		return self.get_query_params().get('ConnectionStrings')
+
+	def set_ConnectionStrings(self, ConnectionStrings):  # String
+		self.add_query_param('ConnectionStrings', ConnectionStrings)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 

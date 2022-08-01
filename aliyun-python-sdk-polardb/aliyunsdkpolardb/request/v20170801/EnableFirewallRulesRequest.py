@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
+class EnableFirewallRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeGlobalDatabaseNetworks')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'EnableFirewallRules')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,31 +36,11 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_Enable(self): # Boolean
+		return self.get_query_params().get('Enable')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_GDNId(self): # String
-		return self.get_query_params().get('GDNId')
-
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_GDNDescription(self): # String
-		return self.get_query_params().get('GDNDescription')
-
-	def set_GDNDescription(self, GDNDescription):  # String
-		self.add_query_param('GDNDescription', GDNDescription)
+	def set_Enable(self, Enable):  # Boolean
+		self.add_query_param('Enable', Enable)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -81,3 +61,8 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_RuleNameList(self): # String
+		return self.get_query_params().get('RuleNameList')
+
+	def set_RuleNameList(self, RuleNameList):  # String
+		self.add_query_param('RuleNameList', RuleNameList)
