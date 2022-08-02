@@ -76,6 +76,11 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 
 	def set_SourceGroupOwnerAccount(self, SourceGroupOwnerAccount):  # String
 		self.add_query_param('SourceGroupOwnerAccount', SourceGroupOwnerAccount)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
 	def get_Ipv6SourceCidrIp(self): # String
 		return self.get_query_params().get('Ipv6SourceCidrIp')
 
@@ -86,11 +91,6 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 
 	def set_Ipv6DestCidrIp(self, Ipv6DestCidrIp):  # String
 		self.add_query_param('Ipv6DestCidrIp', Ipv6DestCidrIp)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)
 	def get_PortRange(self): # String
 		return self.get_query_params().get('PortRange')
 

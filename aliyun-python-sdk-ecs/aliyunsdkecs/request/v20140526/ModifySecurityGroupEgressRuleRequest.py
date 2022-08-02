@@ -66,6 +66,11 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
 	def get_Ipv6DestCidrIp(self): # String
 		return self.get_query_params().get('Ipv6DestCidrIp')
 
@@ -76,11 +81,6 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 
 	def set_Ipv6SourceCidrIp(self, Ipv6SourceCidrIp):  # String
 		self.add_query_param('Ipv6SourceCidrIp', Ipv6SourceCidrIp)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)
 	def get_PortRange(self): # String
 		return self.get_query_params().get('PortRange')
 
@@ -116,16 +116,16 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DestGroupOwnerAccount(self): # String
-		return self.get_query_params().get('DestGroupOwnerAccount')
-
-	def set_DestGroupOwnerAccount(self, DestGroupOwnerAccount):  # String
-		self.add_query_param('DestGroupOwnerAccount', DestGroupOwnerAccount)
 	def get_Priority(self): # String
 		return self.get_query_params().get('Priority')
 
 	def set_Priority(self, Priority):  # String
 		self.add_query_param('Priority', Priority)
+	def get_DestGroupOwnerAccount(self): # String
+		return self.get_query_params().get('DestGroupOwnerAccount')
+
+	def set_DestGroupOwnerAccount(self, DestGroupOwnerAccount):  # String
+		self.add_query_param('DestGroupOwnerAccount', DestGroupOwnerAccount)
 	def get_DestCidrIp(self): # String
 		return self.get_query_params().get('DestCidrIp')
 
