@@ -106,6 +106,11 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 
 	def set_HealthCheckInterval(self, HealthCheckInterval):  # Integer
 		self.add_query_param('HealthCheckInterval', HealthCheckInterval)
+	def get_ProxyProtocolV2Enabled(self): # Boolean
+		return self.get_query_params().get('ProxyProtocolV2Enabled')
+
+	def set_ProxyProtocolV2Enabled(self, ProxyProtocolV2Enabled):  # Boolean
+		self.add_query_param('ProxyProtocolV2Enabled', ProxyProtocolV2Enabled)
 	def get_ConnectionDrain(self): # String
 		return self.get_query_params().get('ConnectionDrain')
 

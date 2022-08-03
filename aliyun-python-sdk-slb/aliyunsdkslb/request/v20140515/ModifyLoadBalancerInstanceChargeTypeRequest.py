@@ -41,11 +41,21 @@ class ModifyLoadBalancerInstanceChargeTypeRequest(RpcRequest):
 
 	def set_InstanceChargeType(self, InstanceChargeType):  # String
 		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_LoadBalancerSpec(self): # String
+		return self.get_query_params().get('LoadBalancerSpec')
+
+	def set_LoadBalancerSpec(self, LoadBalancerSpec):  # String
+		self.add_query_param('LoadBalancerSpec', LoadBalancerSpec)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Bandwidth(self): # Integer
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self, Bandwidth):  # Integer
+		self.add_query_param('Bandwidth', Bandwidth)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
