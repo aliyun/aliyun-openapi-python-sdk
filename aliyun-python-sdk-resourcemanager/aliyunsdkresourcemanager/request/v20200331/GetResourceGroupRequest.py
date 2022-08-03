@@ -37,3 +37,8 @@ class GetResourceGroupRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_IncludeTags(self): # Boolean
+		return self.get_query_params().get('IncludeTags')
+
+	def set_IncludeTags(self, IncludeTags):  # Boolean
+		self.add_query_param('IncludeTags', IncludeTags)

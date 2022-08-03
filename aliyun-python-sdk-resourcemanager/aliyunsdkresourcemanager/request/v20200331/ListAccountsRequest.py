@@ -37,8 +37,22 @@ class ListAccountsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_IncludeTags(self): # Boolean
+		return self.get_query_params().get('IncludeTags')
+
+	def set_IncludeTags(self, IncludeTags):  # Boolean
+		self.add_query_param('IncludeTags', IncludeTags)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))

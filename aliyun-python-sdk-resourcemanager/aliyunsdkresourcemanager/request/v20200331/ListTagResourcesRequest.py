@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkresourcemanager.endpoint import endpoint_data
 
-class ListAccountsForParentRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListAccountsForParent')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListTagResources')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,31 +32,27 @@ class ListAccountsForParentRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_QueryKeyword(self): # String
-		return self.get_query_params().get('QueryKeyword')
+	def get_ResourceId(self): # Array
+		return self.get_query_params().get('ResourceId')
 
-	def set_QueryKeyword(self, QueryKeyword):  # String
-		self.add_query_param('QueryKeyword', QueryKeyword)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def set_ResourceId(self, ResourceId):  # Array
+		for index1, value1 in enumerate(ResourceId):
+			self.add_query_param('ResourceId.' + str(index1 + 1), value1)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_ParentFolderId(self): # String
-		return self.get_query_params().get('ParentFolderId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_ParentFolderId(self, ParentFolderId):  # String
-		self.add_query_param('ParentFolderId', ParentFolderId)
-	def get_IncludeTags(self): # Boolean
-		return self.get_query_params().get('IncludeTags')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_IncludeTags(self, IncludeTags):  # Boolean
-		self.add_query_param('IncludeTags', IncludeTags)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_Tag(self): # Array
 		return self.get_query_params().get('Tag')
 

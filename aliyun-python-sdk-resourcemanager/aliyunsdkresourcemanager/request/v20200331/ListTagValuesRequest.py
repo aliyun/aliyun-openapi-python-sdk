@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkresourcemanager.endpoint import endpoint_data
 
-class GetAccountRequest(RpcRequest):
+class ListTagValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetAccount')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListTagValues')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,13 +32,28 @@ class GetAccountRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AccountId(self): # String
-		return self.get_query_params().get('AccountId')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_AccountId(self, AccountId):  # String
-		self.add_query_param('AccountId', AccountId)
-	def get_IncludeTags(self): # Boolean
-		return self.get_query_params().get('IncludeTags')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ValueFilter(self): # String
+		return self.get_query_params().get('ValueFilter')
 
-	def set_IncludeTags(self, IncludeTags):  # Boolean
-		self.add_query_param('IncludeTags', IncludeTags)
+	def set_ValueFilter(self, ValueFilter):  # String
+		self.add_query_param('ValueFilter', ValueFilter)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_TagKey(self): # String
+		return self.get_query_params().get('TagKey')
+
+	def set_TagKey(self, TagKey):  # String
+		self.add_query_param('TagKey', TagKey)
