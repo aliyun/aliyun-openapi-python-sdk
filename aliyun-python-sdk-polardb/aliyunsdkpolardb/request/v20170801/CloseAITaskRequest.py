@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class RefreshDBClusterStorageUsageRequest(RpcRequest):
+class CloseAITaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'RefreshDBClusterStorageUsage')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CloseAITask')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class RefreshDBClusterStorageUsageRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
@@ -51,8 +56,3 @@ class RefreshDBClusterStorageUsageRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SyncRealTime(self): # Boolean
-		return self.get_query_params().get('SyncRealTime')
-
-	def set_SyncRealTime(self, SyncRealTime):  # Boolean
-		self.add_query_param('SyncRealTime', SyncRealTime)
