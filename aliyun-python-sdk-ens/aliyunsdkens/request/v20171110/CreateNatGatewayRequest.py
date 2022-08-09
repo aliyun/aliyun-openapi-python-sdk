@@ -30,6 +30,11 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 

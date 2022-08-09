@@ -40,6 +40,11 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_SourceVSwitchId(self, SourceVSwitchId):  # String
 		self.add_query_param('SourceVSwitchId', SourceVSwitchId)
+	def get_SourceNetworkId(self): # String
+		return self.get_query_params().get('SourceNetworkId')
+
+	def set_SourceNetworkId(self, SourceNetworkId):  # String
+		self.add_query_param('SourceNetworkId', SourceNetworkId)
 	def get_NatGatewayId(self): # String
 		return self.get_query_params().get('NatGatewayId')
 
