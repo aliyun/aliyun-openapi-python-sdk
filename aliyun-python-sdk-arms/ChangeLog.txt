@@ -1,3 +1,6 @@
+2022-08-11 Version: 2.7.25
+- Fix UpdateIntegration api.
+
 2022-07-25 Version: 2.7.24
 - Update version No.
 
