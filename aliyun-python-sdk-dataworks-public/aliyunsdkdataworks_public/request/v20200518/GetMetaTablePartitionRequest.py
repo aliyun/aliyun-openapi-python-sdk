@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
+import json
 
 class GetMetaTablePartitionRequest(RpcRequest):
 
@@ -31,6 +32,11 @@ class GetMetaTablePartitionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SortCriterion(self): # Struct
+		return self.get_query_params().get('SortCriterion')
+
+	def set_SortCriterion(self, SortCriterion):  # Struct
+		self.add_query_param("SortCriterion", json.dumps(SortCriterion))
 	def get_DataSourceType(self): # String
 		return self.get_query_params().get('DataSourceType')
 
