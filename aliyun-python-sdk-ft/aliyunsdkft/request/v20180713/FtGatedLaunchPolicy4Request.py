@@ -25,14 +25,14 @@ class FtGatedLaunchPolicy4Request(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtGatedLaunchPolicy4')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsGatedLaunch(self): # String
+
+	def get_IsGatedLaunch(self):
 		return self.get_query_params().get('IsGatedLaunch')
 
-	def set_IsGatedLaunch(self, IsGatedLaunch):  # String
-		self.add_query_param('IsGatedLaunch', IsGatedLaunch)
+	def set_IsGatedLaunch(self,IsGatedLaunch):
+		self.add_query_param('IsGatedLaunch',IsGatedLaunch)

@@ -25,29 +25,32 @@ class TestHttpApiRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'TestHttpApi')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StringValue(self): # String
+
+	def get_StringValue(self):
 		return self.get_query_params().get('StringValue')
 
-	def set_StringValue(self, StringValue):  # String
-		self.add_query_param('StringValue', StringValue)
-	def get_OtherParam(self): # String
+	def set_StringValue(self,StringValue):
+		self.add_query_param('StringValue',StringValue)
+
+	def get_OtherParam(self):
 		return self.get_query_params().get('OtherParam')
 
-	def set_OtherParam(self, OtherParam):  # String
-		self.add_query_param('OtherParam', OtherParam)
-	def get_BooleanParam(self): # Boolean
+	def set_OtherParam(self,OtherParam):
+		self.add_query_param('OtherParam',OtherParam)
+
+	def get_BooleanParam(self):
 		return self.get_query_params().get('BooleanParam')
 
-	def set_BooleanParam(self, BooleanParam):  # Boolean
-		self.add_query_param('BooleanParam', BooleanParam)
-	def get_DefaultValue(self): # String
+	def set_BooleanParam(self,BooleanParam):
+		self.add_query_param('BooleanParam',BooleanParam)
+
+	def get_DefaultValue(self):
 		return self.get_query_params().get('DefaultValue')
 
-	def set_DefaultValue(self, DefaultValue):  # String
-		self.add_query_param('DefaultValue', DefaultValue)
+	def set_DefaultValue(self,DefaultValue):
+		self.add_query_param('DefaultValue',DefaultValue)

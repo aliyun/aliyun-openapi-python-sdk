@@ -25,19 +25,20 @@ class FtDynamicAddressDubboRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IntValue(self): # Integer
+
+	def get_IntValue(self):
 		return self.get_query_params().get('IntValue')
 
-	def set_IntValue(self, IntValue):  # Integer
-		self.add_query_param('IntValue', IntValue)
-	def get_StringValue(self): # String
+	def set_IntValue(self,IntValue):
+		self.add_query_param('IntValue',IntValue)
+
+	def get_StringValue(self):
 		return self.get_query_params().get('StringValue')
 
-	def set_StringValue(self, StringValue):  # String
-		self.add_query_param('StringValue', StringValue)
+	def set_StringValue(self,StringValue):
+		self.add_query_param('StringValue',StringValue)
