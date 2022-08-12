@@ -31,26 +31,31 @@ class ListAggregateResourceEvaluationResultsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
 	def get_AggregatorId(self): # String
 		return self.get_query_params().get('AggregatorId')
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ComplianceType(self): # String
+		return self.get_query_params().get('ComplianceType')
+
+	def set_ComplianceType(self, ComplianceType):  # String
+		self.add_query_param('ComplianceType', ComplianceType)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
@@ -61,8 +66,3 @@ class ListAggregateResourceEvaluationResultsRequest(RpcRequest):
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
-	def get_ComplianceType(self): # String
-		return self.get_query_params().get('ComplianceType')
-
-	def set_ComplianceType(self, ComplianceType):  # String
-		self.add_query_param('ComplianceType', ComplianceType)
