@@ -121,6 +121,11 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_EipBindMode(self): # String
+		return self.get_query_params().get('EipBindMode')
+
+	def set_EipBindMode(self, EipBindMode):  # String
+		self.add_query_param('EipBindMode', EipBindMode)
 	def get_PricingCycle(self): # String
 		return self.get_query_params().get('PricingCycle')
 

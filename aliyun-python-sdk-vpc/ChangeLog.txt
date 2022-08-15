@@ -1,3 +1,6 @@
+2022-08-15 Version: 3.0.19
+- Natgateway add param eipBindMode.
+
 2022-07-27 Version: 3.0.18
 - Generated 2016-04-28 for `Vpc`.
 

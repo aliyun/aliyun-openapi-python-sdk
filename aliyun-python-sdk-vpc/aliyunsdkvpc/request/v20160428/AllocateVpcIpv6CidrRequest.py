@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ModifyVcoSpecRequest(RpcRequest):
+class AllocateVpcIpv6CidrRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVcoSpec','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AllocateVpcIpv6Cidr','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,11 @@ class ModifyVcoSpecRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_Spec(self): # String
-		return self.get_query_params().get('Spec')
+	def get_Ipv6Isp(self): # String
+		return self.get_query_params().get('Ipv6Isp')
 
-	def set_Spec(self, Spec):  # String
-		self.add_query_param('Spec', Spec)
+	def set_Ipv6Isp(self, Ipv6Isp):  # String
+		self.add_query_param('Ipv6Isp', Ipv6Isp)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,8 +56,18 @@ class ModifyVcoSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_VpnConnectionId(self): # String
-		return self.get_query_params().get('VpnConnectionId')
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_VpnConnectionId(self, VpnConnectionId):  # String
-		self.add_query_param('VpnConnectionId', VpnConnectionId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Ipv6CidrBlock(self): # String
+		return self.get_query_params().get('Ipv6CidrBlock')
+
+	def set_Ipv6CidrBlock(self, Ipv6CidrBlock):  # String
+		self.add_query_param('Ipv6CidrBlock', Ipv6CidrBlock)
+	def get_AddressPoolType(self): # String
+		return self.get_query_params().get('AddressPoolType')
+
+	def set_AddressPoolType(self, AddressPoolType):  # String
+		self.add_query_param('AddressPoolType', AddressPoolType)

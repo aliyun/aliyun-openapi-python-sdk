@@ -46,16 +46,6 @@ class CreateVpnAttachmentRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CenId(self): # String
-		return self.get_query_params().get('CenId')
-
-	def set_CenId(self, CenId):  # String
-		self.add_query_param('CenId', CenId)
-	def get_AttachType(self): # String
-		return self.get_query_params().get('AttachType')
-
-	def set_AttachType(self, AttachType):  # String
-		self.add_query_param('AttachType', AttachType)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -126,11 +116,6 @@ class CreateVpnAttachmentRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
 	def get_EnableNatTraversal(self): # Boolean
 		return self.get_query_params().get('EnableNatTraversal')
 
