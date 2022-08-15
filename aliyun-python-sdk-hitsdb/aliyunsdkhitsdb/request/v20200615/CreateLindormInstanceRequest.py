@@ -51,6 +51,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_Duration(self, Duration):  # String
 		self.add_query_param('Duration', Duration)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
