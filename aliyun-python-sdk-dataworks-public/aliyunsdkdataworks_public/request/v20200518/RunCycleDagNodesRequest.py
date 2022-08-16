@@ -61,6 +61,11 @@ class RunCycleDagNodesRequest(RpcRequest):
 
 	def set_EndBizDate(self, EndBizDate):  # String
 		self.add_body_params('EndBizDate', EndBizDate)
+	def get_StartFutureInstanceImmediately(self): # Boolean
+		return self.get_body_params().get('StartFutureInstanceImmediately')
+
+	def set_StartFutureInstanceImmediately(self, StartFutureInstanceImmediately):  # Boolean
+		self.add_body_params('StartFutureInstanceImmediately', StartFutureInstanceImmediately)
 	def get_IncludeNodeIds(self): # String
 		return self.get_body_params().get('IncludeNodeIds')
 

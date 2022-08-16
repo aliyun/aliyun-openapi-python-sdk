@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetInstanceLogRequest(RpcRequest):
+class ListInstanceHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetInstanceLog')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListInstanceHistory')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,8 +41,3 @@ class GetInstanceLogRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # Long
 		self.add_body_params('InstanceId', InstanceId)
-	def get_InstanceHistoryId(self): # Long
-		return self.get_body_params().get('InstanceHistoryId')
-
-	def set_InstanceHistoryId(self, InstanceHistoryId):  # Long
-		self.add_body_params('InstanceHistoryId', InstanceHistoryId)
