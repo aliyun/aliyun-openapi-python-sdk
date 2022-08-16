@@ -66,6 +66,11 @@ class DescribeWarningMachinesRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_HaveRisk(self): # Integer
+		return self.get_query_params().get('HaveRisk')
+
+	def set_HaveRisk(self, HaveRisk):  # Integer
+		self.add_query_param('HaveRisk', HaveRisk)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

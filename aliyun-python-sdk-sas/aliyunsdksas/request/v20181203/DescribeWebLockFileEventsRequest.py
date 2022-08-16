@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCheckWarningsRequest(RpcRequest):
+class DescribeWebLockFileEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockFileEvents')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,48 +31,38 @@ class DescribeCheckWarningsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Uuid(self): # String
-		return self.get_query_params().get('Uuid')
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
 
-	def set_Uuid(self, Uuid):  # String
-		self.add_query_param('Uuid', Uuid)
-	def get_CheckType(self): # String
-		return self.get_query_params().get('CheckType')
-
-	def set_CheckType(self, CheckType):  # String
-		self.add_query_param('CheckType', CheckType)
-	def get_SourceIp(self): # String
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self, SourceIp):  # String
-		self.add_query_param('SourceIp', SourceIp)
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
+	def get_TsEnd(self): # Long
+		return self.get_query_params().get('TsEnd')
 
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
-	def get_CheckId(self): # Long
-		return self.get_query_params().get('CheckId')
+	def set_TsEnd(self, TsEnd):  # Long
+		self.add_query_param('TsEnd', TsEnd)
+	def get_ProcessName(self): # String
+		return self.get_query_params().get('ProcessName')
 
-	def set_CheckId(self, CheckId):  # Long
-		self.add_query_param('CheckId', CheckId)
+	def set_ProcessName(self, ProcessName):  # String
+		self.add_query_param('ProcessName', ProcessName)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_RiskId(self): # Long
-		return self.get_query_params().get('RiskId')
+	def get_Dealed(self): # String
+		return self.get_query_params().get('Dealed')
 
-	def set_RiskId(self, RiskId):  # Long
-		self.add_query_param('RiskId', RiskId)
-	def get_RiskStatus(self): # Integer
-		return self.get_query_params().get('RiskStatus')
+	def set_Dealed(self, Dealed):  # String
+		self.add_query_param('Dealed', Dealed)
+	def get_TsBegin(self): # Long
+		return self.get_query_params().get('TsBegin')
 
-	def set_RiskStatus(self, RiskStatus):  # Integer
-		self.add_query_param('RiskStatus', RiskStatus)
+	def set_TsBegin(self, TsBegin):  # Long
+		self.add_query_param('TsBegin', TsBegin)
