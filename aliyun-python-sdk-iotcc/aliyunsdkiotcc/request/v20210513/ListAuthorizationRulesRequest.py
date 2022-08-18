@@ -37,6 +37,12 @@ class ListAuthorizationRulesRequest(RpcRequest):
 	def set_Destinations(self, Destination):  # RepeatList
 		for depth1 in range(len(Destination)):
 			self.add_query_param('Destination.' + str(depth1 + 1), Destination[depth1])
+	def get_Protocols(self): # RepeatList
+		return self.get_query_params().get('Protocol')
+
+	def set_Protocols(self, Protocol):  # RepeatList
+		for depth1 in range(len(Protocol)):
+			self.add_query_param('Protocol.' + str(depth1 + 1), Protocol[depth1])
 	def get_AuthorizationRuleIdss(self): # RepeatList
 		return self.get_query_params().get('AuthorizationRuleIds')
 
@@ -71,6 +77,12 @@ class ListAuthorizationRulesRequest(RpcRequest):
 	def set_AuthorizationRuleNames(self, AuthorizationRuleName):  # RepeatList
 		for depth1 in range(len(AuthorizationRuleName)):
 			self.add_query_param('AuthorizationRuleName.' + str(depth1 + 1), AuthorizationRuleName[depth1])
+	def get_DestinationPorts(self): # RepeatList
+		return self.get_query_params().get('DestinationPort')
+
+	def set_DestinationPorts(self, DestinationPort):  # RepeatList
+		for depth1 in range(len(DestinationPort)):
+			self.add_query_param('DestinationPort.' + str(depth1 + 1), DestinationPort[depth1])
 	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 

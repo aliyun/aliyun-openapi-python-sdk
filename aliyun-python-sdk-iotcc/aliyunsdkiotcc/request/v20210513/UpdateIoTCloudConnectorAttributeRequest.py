@@ -35,6 +35,11 @@ class UpdateIoTCloudConnectorAttributeRequest(RpcRequest):
 
 	def set_IoTCloudConnectorDescription(self, IoTCloudConnectorDescription):  # String
 		self.add_query_param('IoTCloudConnectorDescription', IoTCloudConnectorDescription)
+	def get_Mode(self): # String
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self, Mode):  # String
+		self.add_query_param('Mode', Mode)
 	def get_WildcardDomainEnabled(self): # Boolean
 		return self.get_query_params().get('WildcardDomainEnabled')
 

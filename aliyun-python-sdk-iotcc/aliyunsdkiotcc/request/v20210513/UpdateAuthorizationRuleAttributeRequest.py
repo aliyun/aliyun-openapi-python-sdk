@@ -40,6 +40,11 @@ class UpdateAuthorizationRuleAttributeRequest(RpcRequest):
 
 	def set_Destination(self, Destination):  # String
 		self.add_query_param('Destination', Destination)
+	def get_Protocol(self): # String
+		return self.get_query_params().get('Protocol')
+
+	def set_Protocol(self, Protocol):  # String
+		self.add_query_param('Protocol', Protocol)
 	def get_AuthorizationRuleDescription(self): # String
 		return self.get_query_params().get('AuthorizationRuleDescription')
 
@@ -71,6 +76,11 @@ class UpdateAuthorizationRuleAttributeRequest(RpcRequest):
 
 	def set_AuthorizationRuleName(self, AuthorizationRuleName):  # String
 		self.add_query_param('AuthorizationRuleName', AuthorizationRuleName)
+	def get_DestinationPort(self): # String
+		return self.get_query_params().get('DestinationPort')
+
+	def set_DestinationPort(self, DestinationPort):  # String
+		self.add_query_param('DestinationPort', DestinationPort)
 	def get_IoTCloudConnectorId(self): # String
 		return self.get_query_params().get('IoTCloudConnectorId')
 

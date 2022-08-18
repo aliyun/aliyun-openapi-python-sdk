@@ -40,6 +40,11 @@ class UpdateGroupAuthorizationRuleAttributeRequest(RpcRequest):
 
 	def set_Destination(self, Destination):  # String
 		self.add_query_param('Destination', Destination)
+	def get_Protocol(self): # String
+		return self.get_query_params().get('Protocol')
+
+	def set_Protocol(self, Protocol):  # String
+		self.add_query_param('Protocol', Protocol)
 	def get_AuthorizationRuleDescription(self): # String
 		return self.get_query_params().get('AuthorizationRuleDescription')
 
@@ -76,3 +81,8 @@ class UpdateGroupAuthorizationRuleAttributeRequest(RpcRequest):
 
 	def set_AuthorizationRuleId(self, AuthorizationRuleId):  # String
 		self.add_query_param('AuthorizationRuleId', AuthorizationRuleId)
+	def get_DestinationPort(self): # String
+		return self.get_query_params().get('DestinationPort')
+
+	def set_DestinationPort(self, DestinationPort):  # String
+		self.add_query_param('DestinationPort', DestinationPort)
