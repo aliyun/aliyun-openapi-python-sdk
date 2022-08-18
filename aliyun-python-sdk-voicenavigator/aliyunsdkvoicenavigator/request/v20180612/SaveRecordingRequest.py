@@ -31,6 +31,11 @@ class SaveRecordingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_VoiceSliceRecordingList(self): # String
+		return self.get_query_params().get('VoiceSliceRecordingList')
+
+	def set_VoiceSliceRecordingList(self, VoiceSliceRecordingList):  # String
+		self.add_query_param('VoiceSliceRecordingList', VoiceSliceRecordingList)
 	def get_ConversationId(self): # String
 		return self.get_query_params().get('ConversationId')
 
