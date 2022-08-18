@@ -62,6 +62,11 @@ class CreateScriptRequest(RpcRequest):
 
 	def set_AsrConfig(self, AsrConfig):  # String
 		self.add_query_param('AsrConfig', AsrConfig)
+	def get_MiniPlaybackConfigListJsonString(self): # String
+		return self.get_query_params().get('MiniPlaybackConfigListJsonString')
+
+	def set_MiniPlaybackConfigListJsonString(self, MiniPlaybackConfigListJsonString):  # String
+		self.add_query_param('MiniPlaybackConfigListJsonString', MiniPlaybackConfigListJsonString)
 	def get_NewBargeInEnable(self): # Boolean
 		return self.get_query_params().get('NewBargeInEnable')
 

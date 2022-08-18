@@ -31,6 +31,11 @@ class DownloadRecordingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_NeedVoiceSliceRecording(self): # Boolean
+		return self.get_query_params().get('NeedVoiceSliceRecording')
+
+	def set_NeedVoiceSliceRecording(self, NeedVoiceSliceRecording):  # Boolean
+		self.add_query_param('NeedVoiceSliceRecording', NeedVoiceSliceRecording)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
