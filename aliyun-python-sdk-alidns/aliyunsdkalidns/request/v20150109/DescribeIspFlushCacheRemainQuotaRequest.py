@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class RollbackGtmRecoveryPlanRequest(RpcRequest):
+class DescribeIspFlushCacheRemainQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'RollbackGtmRecoveryPlan','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeIspFlushCacheRemainQuota','alidns')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class RollbackGtmRecoveryPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RecoveryPlanId(self): # Long
-		return self.get_query_params().get('RecoveryPlanId')
-
-	def set_RecoveryPlanId(self, RecoveryPlanId):  # Long
-		self.add_query_param('RecoveryPlanId', RecoveryPlanId)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

@@ -25,62 +25,54 @@ class UpdateDomainRecordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDomainRecord','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RR(self):
+	def get_RR(self): # String
 		return self.get_query_params().get('RR')
 
-	def set_RR(self,RR):
-		self.add_query_param('RR',RR)
-
-	def get_Line(self):
+	def set_RR(self, RR):  # String
+		self.add_query_param('RR', RR)
+	def get_Line(self): # String
 		return self.get_query_params().get('Line')
 
-	def set_Line(self,Line):
-		self.add_query_param('Line',Line)
-
-	def get_Type(self):
+	def set_Line(self, Line):  # String
+		self.add_query_param('Line', Line)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Lang(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Value(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
-	def get_Priority(self):
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)
+	def get_Priority(self): # Long
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_TTL(self):
+	def set_Priority(self, Priority):  # Long
+		self.add_query_param('Priority', Priority)
+	def get_TTL(self): # Long
 		return self.get_query_params().get('TTL')
 
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
-
-	def get_RecordId(self):
+	def set_TTL(self, TTL):  # Long
+		self.add_query_param('TTL', TTL)
+	def get_RecordId(self): # String
 		return self.get_query_params().get('RecordId')
 
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
-
-	def get_UserClientIp(self):
+	def set_RecordId(self, RecordId):  # String
+		self.add_query_param('RecordId', RecordId)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)

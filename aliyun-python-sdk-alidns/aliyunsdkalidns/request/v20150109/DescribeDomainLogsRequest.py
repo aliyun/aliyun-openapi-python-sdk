@@ -25,56 +25,49 @@ class DescribeDomainLogsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainLogs','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_StartDate(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_Type(self):
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_endDate(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_endDate(self): # String
 		return self.get_query_params().get('endDate')
 
-	def set_endDate(self,endDate):
-		self.add_query_param('endDate',endDate)
-
-	def get_PageSize(self):
+	def set_endDate(self, endDate):  # String
+		self.add_query_param('endDate', endDate)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_KeyWord(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_KeyWord(self): # String
 		return self.get_query_params().get('KeyWord')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)

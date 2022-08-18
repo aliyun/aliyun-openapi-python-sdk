@@ -25,50 +25,44 @@ class DescribeTransferDomainsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeTransferDomains','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FromUserId(self):
+	def get_FromUserId(self): # Long
 		return self.get_query_params().get('FromUserId')
 
-	def set_FromUserId(self,FromUserId):
-		self.add_query_param('FromUserId',FromUserId)
-
-	def get_PageNumber(self):
+	def set_FromUserId(self, FromUserId):  # Long
+		self.add_query_param('FromUserId', FromUserId)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_TargetUserId(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_TargetUserId(self): # Long
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self,TargetUserId):
-		self.add_query_param('TargetUserId',TargetUserId)
-
-	def get_PageSize(self):
+	def set_TargetUserId(self, TargetUserId):  # Long
+		self.add_query_param('TargetUserId', TargetUserId)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_DomainName(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_TransferType(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_TransferType(self): # String
 		return self.get_query_params().get('TransferType')
 
-	def set_TransferType(self,TransferType):
-		self.add_query_param('TransferType',TransferType)
+	def set_TransferType(self, TransferType):  # String
+		self.add_query_param('TransferType', TransferType)

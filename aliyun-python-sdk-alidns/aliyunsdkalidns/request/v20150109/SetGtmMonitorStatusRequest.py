@@ -25,26 +25,24 @@ class SetGtmMonitorStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetGtmMonitorStatus','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MonitorConfigId(self):
+	def get_MonitorConfigId(self): # String
 		return self.get_query_params().get('MonitorConfigId')
 
-	def set_MonitorConfigId(self,MonitorConfigId):
-		self.add_query_param('MonitorConfigId',MonitorConfigId)
-
-	def get_Lang(self):
+	def set_MonitorConfigId(self, MonitorConfigId):  # String
+		self.add_query_param('MonitorConfigId', MonitorConfigId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

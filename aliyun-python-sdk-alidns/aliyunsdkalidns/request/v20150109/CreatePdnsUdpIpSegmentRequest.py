@@ -25,26 +25,24 @@ class CreatePdnsUdpIpSegmentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'CreatePdnsUdpIpSegment','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ip(self):
+	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
-
-	def get_Name(self):
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Lang(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

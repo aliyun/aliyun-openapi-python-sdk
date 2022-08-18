@@ -25,118 +25,102 @@ class UpdateDnsGtmAccessStrategyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDnsGtmAccessStrategy','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DefaultLbaStrategy(self):
+	def get_DefaultLbaStrategy(self): # String
 		return self.get_query_params().get('DefaultLbaStrategy')
 
-	def set_DefaultLbaStrategy(self,DefaultLbaStrategy):
-		self.add_query_param('DefaultLbaStrategy',DefaultLbaStrategy)
-
-	def get_FailoverAddrPoolType(self):
+	def set_DefaultLbaStrategy(self, DefaultLbaStrategy):  # String
+		self.add_query_param('DefaultLbaStrategy', DefaultLbaStrategy)
+	def get_FailoverAddrPoolType(self): # String
 		return self.get_query_params().get('FailoverAddrPoolType')
 
-	def set_FailoverAddrPoolType(self,FailoverAddrPoolType):
-		self.add_query_param('FailoverAddrPoolType',FailoverAddrPoolType)
-
-	def get_DefaultAddrPoolType(self):
+	def set_FailoverAddrPoolType(self, FailoverAddrPoolType):  # String
+		self.add_query_param('FailoverAddrPoolType', FailoverAddrPoolType)
+	def get_DefaultAddrPoolType(self): # String
 		return self.get_query_params().get('DefaultAddrPoolType')
 
-	def set_DefaultAddrPoolType(self,DefaultAddrPoolType):
-		self.add_query_param('DefaultAddrPoolType',DefaultAddrPoolType)
-
-	def get_FailoverMaxReturnAddrNum(self):
+	def set_DefaultAddrPoolType(self, DefaultAddrPoolType):  # String
+		self.add_query_param('DefaultAddrPoolType', DefaultAddrPoolType)
+	def get_FailoverMaxReturnAddrNum(self): # Integer
 		return self.get_query_params().get('FailoverMaxReturnAddrNum')
 
-	def set_FailoverMaxReturnAddrNum(self,FailoverMaxReturnAddrNum):
-		self.add_query_param('FailoverMaxReturnAddrNum',FailoverMaxReturnAddrNum)
-
-	def get_FailoverLbaStrategy(self):
+	def set_FailoverMaxReturnAddrNum(self, FailoverMaxReturnAddrNum):  # Integer
+		self.add_query_param('FailoverMaxReturnAddrNum', FailoverMaxReturnAddrNum)
+	def get_FailoverLbaStrategy(self): # String
 		return self.get_query_params().get('FailoverLbaStrategy')
 
-	def set_FailoverLbaStrategy(self,FailoverLbaStrategy):
-		self.add_query_param('FailoverLbaStrategy',FailoverLbaStrategy)
-
-	def get_DefaultAddrPools(self):
+	def set_FailoverLbaStrategy(self, FailoverLbaStrategy):  # String
+		self.add_query_param('FailoverLbaStrategy', FailoverLbaStrategy)
+	def get_DefaultAddrPools(self): # RepeatList
 		return self.get_query_params().get('DefaultAddrPool')
 
-	def set_DefaultAddrPools(self, DefaultAddrPools):
-		for depth1 in range(len(DefaultAddrPools)):
-			if DefaultAddrPools[depth1].get('Id') is not None:
-				self.add_query_param('DefaultAddrPool.' + str(depth1 + 1) + '.Id', DefaultAddrPools[depth1].get('Id'))
-			if DefaultAddrPools[depth1].get('LbaWeight') is not None:
-				self.add_query_param('DefaultAddrPool.' + str(depth1 + 1) + '.LbaWeight', DefaultAddrPools[depth1].get('LbaWeight'))
-
-	def get_FailoverMinAvailableAddrNum(self):
+	def set_DefaultAddrPools(self, DefaultAddrPool):  # RepeatList
+		for depth1 in range(len(DefaultAddrPool)):
+			if DefaultAddrPool[depth1].get('Id') is not None:
+				self.add_query_param('DefaultAddrPool.' + str(depth1 + 1) + '.Id', DefaultAddrPool[depth1].get('Id'))
+			if DefaultAddrPool[depth1].get('LbaWeight') is not None:
+				self.add_query_param('DefaultAddrPool.' + str(depth1 + 1) + '.LbaWeight', DefaultAddrPool[depth1].get('LbaWeight'))
+	def get_FailoverMinAvailableAddrNum(self): # Integer
 		return self.get_query_params().get('FailoverMinAvailableAddrNum')
 
-	def set_FailoverMinAvailableAddrNum(self,FailoverMinAvailableAddrNum):
-		self.add_query_param('FailoverMinAvailableAddrNum',FailoverMinAvailableAddrNum)
-
-	def get_DefaultMaxReturnAddrNum(self):
+	def set_FailoverMinAvailableAddrNum(self, FailoverMinAvailableAddrNum):  # Integer
+		self.add_query_param('FailoverMinAvailableAddrNum', FailoverMinAvailableAddrNum)
+	def get_DefaultMaxReturnAddrNum(self): # Integer
 		return self.get_query_params().get('DefaultMaxReturnAddrNum')
 
-	def set_DefaultMaxReturnAddrNum(self,DefaultMaxReturnAddrNum):
-		self.add_query_param('DefaultMaxReturnAddrNum',DefaultMaxReturnAddrNum)
-
-	def get_DefaultMinAvailableAddrNum(self):
+	def set_DefaultMaxReturnAddrNum(self, DefaultMaxReturnAddrNum):  # Integer
+		self.add_query_param('DefaultMaxReturnAddrNum', DefaultMaxReturnAddrNum)
+	def get_DefaultMinAvailableAddrNum(self): # Integer
 		return self.get_query_params().get('DefaultMinAvailableAddrNum')
 
-	def set_DefaultMinAvailableAddrNum(self,DefaultMinAvailableAddrNum):
-		self.add_query_param('DefaultMinAvailableAddrNum',DefaultMinAvailableAddrNum)
-
-	def get_Lang(self):
+	def set_DefaultMinAvailableAddrNum(self, DefaultMinAvailableAddrNum):  # Integer
+		self.add_query_param('DefaultMinAvailableAddrNum', DefaultMinAvailableAddrNum)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Lines(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Lines(self): # String
 		return self.get_query_params().get('Lines')
 
-	def set_Lines(self,Lines):
-		self.add_query_param('Lines',Lines)
-
-	def get_StrategyName(self):
+	def set_Lines(self, Lines):  # String
+		self.add_query_param('Lines', Lines)
+	def get_StrategyName(self): # String
 		return self.get_query_params().get('StrategyName')
 
-	def set_StrategyName(self,StrategyName):
-		self.add_query_param('StrategyName',StrategyName)
-
-	def get_DefaultLatencyOptimization(self):
+	def set_StrategyName(self, StrategyName):  # String
+		self.add_query_param('StrategyName', StrategyName)
+	def get_DefaultLatencyOptimization(self): # String
 		return self.get_query_params().get('DefaultLatencyOptimization')
 
-	def set_DefaultLatencyOptimization(self,DefaultLatencyOptimization):
-		self.add_query_param('DefaultLatencyOptimization',DefaultLatencyOptimization)
-
-	def get_FailoverLatencyOptimization(self):
+	def set_DefaultLatencyOptimization(self, DefaultLatencyOptimization):  # String
+		self.add_query_param('DefaultLatencyOptimization', DefaultLatencyOptimization)
+	def get_FailoverLatencyOptimization(self): # String
 		return self.get_query_params().get('FailoverLatencyOptimization')
 
-	def set_FailoverLatencyOptimization(self,FailoverLatencyOptimization):
-		self.add_query_param('FailoverLatencyOptimization',FailoverLatencyOptimization)
-
-	def get_StrategyId(self):
+	def set_FailoverLatencyOptimization(self, FailoverLatencyOptimization):  # String
+		self.add_query_param('FailoverLatencyOptimization', FailoverLatencyOptimization)
+	def get_StrategyId(self): # String
 		return self.get_query_params().get('StrategyId')
 
-	def set_StrategyId(self,StrategyId):
-		self.add_query_param('StrategyId',StrategyId)
-
-	def get_FailoverAddrPools(self):
+	def set_StrategyId(self, StrategyId):  # String
+		self.add_query_param('StrategyId', StrategyId)
+	def get_FailoverAddrPools(self): # RepeatList
 		return self.get_query_params().get('FailoverAddrPool')
 
-	def set_FailoverAddrPools(self, FailoverAddrPools):
-		for depth1 in range(len(FailoverAddrPools)):
-			if FailoverAddrPools[depth1].get('Id') is not None:
-				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.Id', FailoverAddrPools[depth1].get('Id'))
-			if FailoverAddrPools[depth1].get('LbaWeight') is not None:
-				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.LbaWeight', FailoverAddrPools[depth1].get('LbaWeight'))
-
-	def get_AccessMode(self):
+	def set_FailoverAddrPools(self, FailoverAddrPool):  # RepeatList
+		for depth1 in range(len(FailoverAddrPool)):
+			if FailoverAddrPool[depth1].get('Id') is not None:
+				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.Id', FailoverAddrPool[depth1].get('Id'))
+			if FailoverAddrPool[depth1].get('LbaWeight') is not None:
+				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.LbaWeight', FailoverAddrPool[depth1].get('LbaWeight'))
+	def get_AccessMode(self): # String
 		return self.get_query_params().get('AccessMode')
 
-	def set_AccessMode(self,AccessMode):
-		self.add_query_param('AccessMode',AccessMode)
+	def set_AccessMode(self, AccessMode):  # String
+		self.add_query_param('AccessMode', AccessMode)

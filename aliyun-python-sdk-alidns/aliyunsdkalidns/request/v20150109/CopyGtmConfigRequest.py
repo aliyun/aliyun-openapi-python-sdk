@@ -25,32 +25,29 @@ class CopyGtmConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'CopyGtmConfig','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceId(self):
+	def get_SourceId(self): # String
 		return self.get_query_params().get('SourceId')
 
-	def set_SourceId(self,SourceId):
-		self.add_query_param('SourceId',SourceId)
-
-	def get_TargetId(self):
+	def set_SourceId(self, SourceId):  # String
+		self.add_query_param('SourceId', SourceId)
+	def get_TargetId(self): # String
 		return self.get_query_params().get('TargetId')
 
-	def set_TargetId(self,TargetId):
-		self.add_query_param('TargetId',TargetId)
-
-	def get_CopyType(self):
+	def set_TargetId(self, TargetId):  # String
+		self.add_query_param('TargetId', TargetId)
+	def get_CopyType(self): # String
 		return self.get_query_params().get('CopyType')
 
-	def set_CopyType(self,CopyType):
-		self.add_query_param('CopyType',CopyType)
-
-	def get_Lang(self):
+	def set_CopyType(self, CopyType):  # String
+		self.add_query_param('CopyType', CopyType)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

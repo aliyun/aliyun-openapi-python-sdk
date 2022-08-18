@@ -25,44 +25,39 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_DomainType(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_DomainType(self): # String
 		return self.get_query_params().get('DomainType')
 
-	def set_DomainType(self,DomainType):
-		self.add_query_param('DomainType',DomainType)
-
-	def get_UserClientIp(self):
+	def set_DomainType(self, DomainType):  # String
+		self.add_query_param('DomainType', DomainType)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_PageSize(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_VersionCode(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_VersionCode(self): # String
 		return self.get_query_params().get('VersionCode')
 
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
+	def set_VersionCode(self, VersionCode):  # String
+		self.add_query_param('VersionCode', VersionCode)

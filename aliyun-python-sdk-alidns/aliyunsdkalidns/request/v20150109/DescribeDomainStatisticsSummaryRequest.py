@@ -25,56 +25,49 @@ class DescribeDomainStatisticsSummaryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainStatisticsSummary','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Threshold(self):
+	def get_Threshold(self): # Long
 		return self.get_query_params().get('Threshold')
 
-	def set_Threshold(self,Threshold):
-		self.add_query_param('Threshold',Threshold)
-
-	def get_StartDate(self):
+	def set_Threshold(self, Threshold):  # Long
+		self.add_query_param('Threshold', Threshold)
+	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_PageNumber(self):
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Keyword(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_EndDate(self):
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
-	def get_SearchMode(self):
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)
+	def get_SearchMode(self): # String
 		return self.get_query_params().get('SearchMode')
 
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
+	def set_SearchMode(self, SearchMode):  # String
+		self.add_query_param('SearchMode', SearchMode)

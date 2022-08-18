@@ -25,44 +25,39 @@ class DescribeDNSSLBSubDomainsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDNSSLBSubDomains','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Rr(self):
+	def get_Rr(self): # String
 		return self.get_query_params().get('Rr')
 
-	def set_Rr(self,Rr):
-		self.add_query_param('Rr',Rr)
-
-	def get_DomainName(self):
+	def set_Rr(self, Rr):  # String
+		self.add_query_param('Rr', Rr)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_PageNumber(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_UserClientIp(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_PageSize(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

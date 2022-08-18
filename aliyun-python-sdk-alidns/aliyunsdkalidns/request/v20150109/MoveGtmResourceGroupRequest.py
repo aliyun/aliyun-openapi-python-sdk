@@ -25,26 +25,24 @@ class MoveGtmResourceGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'MoveGtmResourceGroup','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_NewResourceGroupId(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_NewResourceGroupId(self): # String
 		return self.get_query_params().get('NewResourceGroupId')
 
-	def set_NewResourceGroupId(self,NewResourceGroupId):
-		self.add_query_param('NewResourceGroupId',NewResourceGroupId)
-
-	def get_Lang(self):
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

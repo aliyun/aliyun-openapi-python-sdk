@@ -25,66 +25,58 @@ class AddDnsCacheDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDnsCacheDomain','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Remark(self):
+	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
-
-	def get_SourceProtocol(self):
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_SourceProtocol(self): # String
 		return self.get_query_params().get('SourceProtocol')
 
-	def set_SourceProtocol(self,SourceProtocol):
-		self.add_query_param('SourceProtocol',SourceProtocol)
-
-	def get_Lang(self):
+	def set_SourceProtocol(self, SourceProtocol):  # String
+		self.add_query_param('SourceProtocol', SourceProtocol)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_DomainName(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_CacheTtlMax(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_CacheTtlMax(self): # Integer
 		return self.get_query_params().get('CacheTtlMax')
 
-	def set_CacheTtlMax(self,CacheTtlMax):
-		self.add_query_param('CacheTtlMax',CacheTtlMax)
-
-	def get_InstanceId(self):
+	def set_CacheTtlMax(self, CacheTtlMax):  # Integer
+		self.add_query_param('CacheTtlMax', CacheTtlMax)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SourceEdns(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SourceEdns(self): # String
 		return self.get_query_params().get('SourceEdns')
 
-	def set_SourceEdns(self,SourceEdns):
-		self.add_query_param('SourceEdns',SourceEdns)
-
-	def get_CacheTtlMin(self):
+	def set_SourceEdns(self, SourceEdns):  # String
+		self.add_query_param('SourceEdns', SourceEdns)
+	def get_CacheTtlMin(self): # Integer
 		return self.get_query_params().get('CacheTtlMin')
 
-	def set_CacheTtlMin(self,CacheTtlMin):
-		self.add_query_param('CacheTtlMin',CacheTtlMin)
-
-	def get_SourceDnsServers(self):
+	def set_CacheTtlMin(self, CacheTtlMin):  # Integer
+		self.add_query_param('CacheTtlMin', CacheTtlMin)
+	def get_SourceDnsServers(self): # RepeatList
 		return self.get_query_params().get('SourceDnsServer')
 
-	def set_SourceDnsServers(self, SourceDnsServers):
-		for depth1 in range(len(SourceDnsServers)):
-			if SourceDnsServers[depth1].get('Port') is not None:
-				self.add_query_param('SourceDnsServer.' + str(depth1 + 1) + '.Port', SourceDnsServers[depth1].get('Port'))
-			if SourceDnsServers[depth1].get('Host') is not None:
-				self.add_query_param('SourceDnsServer.' + str(depth1 + 1) + '.Host', SourceDnsServers[depth1].get('Host'))
+	def set_SourceDnsServers(self, SourceDnsServer):  # RepeatList
+		for depth1 in range(len(SourceDnsServer)):
+			if SourceDnsServer[depth1].get('Port') is not None:
+				self.add_query_param('SourceDnsServer.' + str(depth1 + 1) + '.Port', SourceDnsServer[depth1].get('Port'))
+			if SourceDnsServer[depth1].get('Host') is not None:
+				self.add_query_param('SourceDnsServer.' + str(depth1 + 1) + '.Host', SourceDnsServer[depth1].get('Host'))

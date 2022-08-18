@@ -25,62 +25,54 @@ class UpdateGtmInstanceGlobalConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmInstanceGlobalConfig','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlertGroup(self):
+	def get_AlertGroup(self): # String
 		return self.get_query_params().get('AlertGroup')
 
-	def set_AlertGroup(self,AlertGroup):
-		self.add_query_param('AlertGroup',AlertGroup)
-
-	def get_CnameMode(self):
+	def set_AlertGroup(self, AlertGroup):  # String
+		self.add_query_param('AlertGroup', AlertGroup)
+	def get_CnameMode(self): # String
 		return self.get_query_params().get('CnameMode')
 
-	def set_CnameMode(self,CnameMode):
-		self.add_query_param('CnameMode',CnameMode)
-
-	def get_LbaStrategy(self):
+	def set_CnameMode(self, CnameMode):  # String
+		self.add_query_param('CnameMode', CnameMode)
+	def get_LbaStrategy(self): # String
 		return self.get_query_params().get('LbaStrategy')
 
-	def set_LbaStrategy(self,LbaStrategy):
-		self.add_query_param('LbaStrategy',LbaStrategy)
-
-	def get_Ttl(self):
+	def set_LbaStrategy(self, LbaStrategy):  # String
+		self.add_query_param('LbaStrategy', LbaStrategy)
+	def get_Ttl(self): # Integer
 		return self.get_query_params().get('Ttl')
 
-	def set_Ttl(self,Ttl):
-		self.add_query_param('Ttl',Ttl)
-
-	def get_CnameCustomDomainName(self):
+	def set_Ttl(self, Ttl):  # Integer
+		self.add_query_param('Ttl', Ttl)
+	def get_CnameCustomDomainName(self): # String
 		return self.get_query_params().get('CnameCustomDomainName')
 
-	def set_CnameCustomDomainName(self,CnameCustomDomainName):
-		self.add_query_param('CnameCustomDomainName',CnameCustomDomainName)
-
-	def get_InstanceId(self):
+	def set_CnameCustomDomainName(self, CnameCustomDomainName):  # String
+		self.add_query_param('CnameCustomDomainName', CnameCustomDomainName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_UserDomainName(self):
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_UserDomainName(self): # String
 		return self.get_query_params().get('UserDomainName')
 
-	def set_UserDomainName(self,UserDomainName):
-		self.add_query_param('UserDomainName',UserDomainName)
-
-	def get_Lang(self):
+	def set_UserDomainName(self, UserDomainName):  # String
+		self.add_query_param('UserDomainName', UserDomainName)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

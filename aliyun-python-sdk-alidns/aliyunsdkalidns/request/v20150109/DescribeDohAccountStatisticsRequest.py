@@ -25,26 +25,24 @@ class DescribeDohAccountStatisticsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDohAccountStatistics','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartDate(self):
+	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_EndDate(self):
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
-	def get_Lang(self):
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

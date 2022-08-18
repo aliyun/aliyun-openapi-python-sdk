@@ -25,20 +25,19 @@ class RemovePdnsAppKeyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'RemovePdnsAppKey','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppKeyId(self):
+	def get_AppKeyId(self): # String
 		return self.get_query_params().get('AppKeyId')
 
-	def set_AppKeyId(self,AppKeyId):
-		self.add_query_param('AppKeyId',AppKeyId)
-
-	def get_Lang(self):
+	def set_AppKeyId(self, AppKeyId):  # String
+		self.add_query_param('AppKeyId', AppKeyId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

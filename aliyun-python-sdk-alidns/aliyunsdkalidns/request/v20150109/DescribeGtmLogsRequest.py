@@ -25,50 +25,44 @@ class DescribeGtmLogsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmLogs','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTimestamp(self):
+	def get_StartTimestamp(self): # Long
 		return self.get_query_params().get('StartTimestamp')
 
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_query_param('StartTimestamp',StartTimestamp)
-
-	def get_PageNumber(self):
+	def set_StartTimestamp(self, StartTimestamp):  # Long
+		self.add_query_param('StartTimestamp', StartTimestamp)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_EndTimestamp(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_EndTimestamp(self): # Long
 		return self.get_query_params().get('EndTimestamp')
 
-	def set_EndTimestamp(self,EndTimestamp):
-		self.add_query_param('EndTimestamp',EndTimestamp)
-
-	def get_InstanceId(self):
+	def set_EndTimestamp(self, EndTimestamp):  # Long
+		self.add_query_param('EndTimestamp', EndTimestamp)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PageSize(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Keyword(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

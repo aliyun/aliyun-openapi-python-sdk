@@ -25,46 +25,44 @@ class OperateBatchDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'OperateBatchDomain','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DomainRecordInfos(self):
+	def get_DomainRecordInfos(self): # RepeatList
 		return self.get_query_params().get('DomainRecordInfo')
 
-	def set_DomainRecordInfos(self, DomainRecordInfos):
-		for depth1 in range(len(DomainRecordInfos)):
-			if DomainRecordInfos[depth1].get('Rr') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Rr', DomainRecordInfos[depth1].get('Rr'))
-			if DomainRecordInfos[depth1].get('NewType') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewType', DomainRecordInfos[depth1].get('NewType'))
-			if DomainRecordInfos[depth1].get('NewValue') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewValue', DomainRecordInfos[depth1].get('NewValue'))
-			if DomainRecordInfos[depth1].get('Line') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Line', DomainRecordInfos[depth1].get('Line'))
-			if DomainRecordInfos[depth1].get('Domain') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Domain', DomainRecordInfos[depth1].get('Domain'))
-			if DomainRecordInfos[depth1].get('Type') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Type', DomainRecordInfos[depth1].get('Type'))
-			if DomainRecordInfos[depth1].get('Priority') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Priority', DomainRecordInfos[depth1].get('Priority'))
-			if DomainRecordInfos[depth1].get('Value') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Value', DomainRecordInfos[depth1].get('Value'))
-			if DomainRecordInfos[depth1].get('Ttl') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Ttl', DomainRecordInfos[depth1].get('Ttl'))
-			if DomainRecordInfos[depth1].get('NewRr') is not None:
-				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewRr', DomainRecordInfos[depth1].get('NewRr'))
-
-	def get_Type(self):
+	def set_DomainRecordInfos(self, DomainRecordInfo):  # RepeatList
+		for depth1 in range(len(DomainRecordInfo)):
+			if DomainRecordInfo[depth1].get('Rr') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Rr', DomainRecordInfo[depth1].get('Rr'))
+			if DomainRecordInfo[depth1].get('NewType') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewType', DomainRecordInfo[depth1].get('NewType'))
+			if DomainRecordInfo[depth1].get('NewValue') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewValue', DomainRecordInfo[depth1].get('NewValue'))
+			if DomainRecordInfo[depth1].get('Line') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Line', DomainRecordInfo[depth1].get('Line'))
+			if DomainRecordInfo[depth1].get('Domain') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Domain', DomainRecordInfo[depth1].get('Domain'))
+			if DomainRecordInfo[depth1].get('Type') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Type', DomainRecordInfo[depth1].get('Type'))
+			if DomainRecordInfo[depth1].get('Priority') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Priority', DomainRecordInfo[depth1].get('Priority'))
+			if DomainRecordInfo[depth1].get('Value') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Value', DomainRecordInfo[depth1].get('Value'))
+			if DomainRecordInfo[depth1].get('Ttl') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.Ttl', DomainRecordInfo[depth1].get('Ttl'))
+			if DomainRecordInfo[depth1].get('NewRr') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(depth1 + 1) + '.NewRr', DomainRecordInfo[depth1].get('NewRr'))
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Lang(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

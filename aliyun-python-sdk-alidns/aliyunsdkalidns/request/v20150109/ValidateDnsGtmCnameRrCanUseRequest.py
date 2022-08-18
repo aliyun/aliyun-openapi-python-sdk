@@ -25,44 +25,39 @@ class ValidateDnsGtmCnameRrCanUseRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ValidateDnsGtmCnameRrCanUse','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CnameMode(self):
+	def get_CnameMode(self): # String
 		return self.get_query_params().get('CnameMode')
 
-	def set_CnameMode(self,CnameMode):
-		self.add_query_param('CnameMode',CnameMode)
-
-	def get_CnameZone(self):
+	def set_CnameMode(self, CnameMode):  # String
+		self.add_query_param('CnameMode', CnameMode)
+	def get_CnameZone(self): # String
 		return self.get_query_params().get('CnameZone')
 
-	def set_CnameZone(self,CnameZone):
-		self.add_query_param('CnameZone',CnameZone)
-
-	def get_CnameRr(self):
+	def set_CnameZone(self, CnameZone):  # String
+		self.add_query_param('CnameZone', CnameZone)
+	def get_CnameRr(self): # String
 		return self.get_query_params().get('CnameRr')
 
-	def set_CnameRr(self,CnameRr):
-		self.add_query_param('CnameRr',CnameRr)
-
-	def get_CnameType(self):
+	def set_CnameRr(self, CnameRr):  # String
+		self.add_query_param('CnameRr', CnameRr)
+	def get_CnameType(self): # String
 		return self.get_query_params().get('CnameType')
 
-	def set_CnameType(self,CnameType):
-		self.add_query_param('CnameType',CnameType)
-
-	def get_InstanceId(self):
+	def set_CnameType(self, CnameType):  # String
+		self.add_query_param('CnameType', CnameType)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Lang(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

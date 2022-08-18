@@ -25,44 +25,39 @@ class AddGtmAccessStrategyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAccessStrategy','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DefaultAddrPoolId(self):
+	def get_DefaultAddrPoolId(self): # String
 		return self.get_query_params().get('DefaultAddrPoolId')
 
-	def set_DefaultAddrPoolId(self,DefaultAddrPoolId):
-		self.add_query_param('DefaultAddrPoolId',DefaultAddrPoolId)
-
-	def get_FailoverAddrPoolId(self):
+	def set_DefaultAddrPoolId(self, DefaultAddrPoolId):  # String
+		self.add_query_param('DefaultAddrPoolId', DefaultAddrPoolId)
+	def get_FailoverAddrPoolId(self): # String
 		return self.get_query_params().get('FailoverAddrPoolId')
 
-	def set_FailoverAddrPoolId(self,FailoverAddrPoolId):
-		self.add_query_param('FailoverAddrPoolId',FailoverAddrPoolId)
-
-	def get_StrategyName(self):
+	def set_FailoverAddrPoolId(self, FailoverAddrPoolId):  # String
+		self.add_query_param('FailoverAddrPoolId', FailoverAddrPoolId)
+	def get_StrategyName(self): # String
 		return self.get_query_params().get('StrategyName')
 
-	def set_StrategyName(self,StrategyName):
-		self.add_query_param('StrategyName',StrategyName)
-
-	def get_AccessLines(self):
+	def set_StrategyName(self, StrategyName):  # String
+		self.add_query_param('StrategyName', StrategyName)
+	def get_AccessLines(self): # String
 		return self.get_query_params().get('AccessLines')
 
-	def set_AccessLines(self,AccessLines):
-		self.add_query_param('AccessLines',AccessLines)
-
-	def get_InstanceId(self):
+	def set_AccessLines(self, AccessLines):  # String
+		self.add_query_param('AccessLines', AccessLines)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Lang(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

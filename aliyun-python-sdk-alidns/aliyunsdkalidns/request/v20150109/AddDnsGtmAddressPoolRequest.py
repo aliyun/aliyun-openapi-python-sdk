@@ -25,100 +25,88 @@ class AddDnsGtmAddressPoolRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDnsGtmAddressPool','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MonitorExtendInfo(self):
+	def get_MonitorExtendInfo(self): # String
 		return self.get_query_params().get('MonitorExtendInfo')
 
-	def set_MonitorExtendInfo(self,MonitorExtendInfo):
-		self.add_query_param('MonitorExtendInfo',MonitorExtendInfo)
-
-	def get_LbaStrategy(self):
+	def set_MonitorExtendInfo(self, MonitorExtendInfo):  # String
+		self.add_query_param('MonitorExtendInfo', MonitorExtendInfo)
+	def get_LbaStrategy(self): # String
 		return self.get_query_params().get('LbaStrategy')
 
-	def set_LbaStrategy(self,LbaStrategy):
-		self.add_query_param('LbaStrategy',LbaStrategy)
-
-	def get_Type(self):
+	def set_LbaStrategy(self, LbaStrategy):  # String
+		self.add_query_param('LbaStrategy', LbaStrategy)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Timeout(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
-
-	def get_EvaluationCount(self):
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_query_param('Timeout', Timeout)
+	def get_EvaluationCount(self): # Integer
 		return self.get_query_params().get('EvaluationCount')
 
-	def set_EvaluationCount(self,EvaluationCount):
-		self.add_query_param('EvaluationCount',EvaluationCount)
-
-	def get_Lang(self):
+	def set_EvaluationCount(self, EvaluationCount):  # Integer
+		self.add_query_param('EvaluationCount', EvaluationCount)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Addrs(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Addrs(self): # RepeatList
 		return self.get_query_params().get('Addr')
 
-	def set_Addrs(self, Addrs):
-		for depth1 in range(len(Addrs)):
-			if Addrs[depth1].get('Mode') is not None:
-				self.add_query_param('Addr.' + str(depth1 + 1) + '.Mode', Addrs[depth1].get('Mode'))
-			if Addrs[depth1].get('AttributeInfo') is not None:
-				self.add_query_param('Addr.' + str(depth1 + 1) + '.AttributeInfo', Addrs[depth1].get('AttributeInfo'))
-			if Addrs[depth1].get('Remark') is not None:
-				self.add_query_param('Addr.' + str(depth1 + 1) + '.Remark', Addrs[depth1].get('Remark'))
-			if Addrs[depth1].get('Addr') is not None:
-				self.add_query_param('Addr.' + str(depth1 + 1) + '.Addr', Addrs[depth1].get('Addr'))
-			if Addrs[depth1].get('LbaWeight') is not None:
-				self.add_query_param('Addr.' + str(depth1 + 1) + '.LbaWeight', Addrs[depth1].get('LbaWeight'))
-
-	def get_MonitorStatus(self):
+	def set_Addrs(self, Addr):  # RepeatList
+		for depth1 in range(len(Addr)):
+			if Addr[depth1].get('AttributeInfo') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.AttributeInfo', Addr[depth1].get('AttributeInfo'))
+			if Addr[depth1].get('Mode') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.Mode', Addr[depth1].get('Mode'))
+			if Addr[depth1].get('Remark') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.Remark', Addr[depth1].get('Remark'))
+			if Addr[depth1].get('LbaWeight') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.LbaWeight', Addr[depth1].get('LbaWeight'))
+			if Addr[depth1].get('Addr') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.Addr', Addr[depth1].get('Addr'))
+	def get_MonitorStatus(self): # String
 		return self.get_query_params().get('MonitorStatus')
 
-	def set_MonitorStatus(self,MonitorStatus):
-		self.add_query_param('MonitorStatus',MonitorStatus)
-
-	def get_InstanceId(self):
+	def set_MonitorStatus(self, MonitorStatus):  # String
+		self.add_query_param('MonitorStatus', MonitorStatus)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Name(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_ProtocolType(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_ProtocolType(self): # String
 		return self.get_query_params().get('ProtocolType')
 
-	def set_ProtocolType(self,ProtocolType):
-		self.add_query_param('ProtocolType',ProtocolType)
-
-	def get_Interval(self):
+	def set_ProtocolType(self, ProtocolType):  # String
+		self.add_query_param('ProtocolType', ProtocolType)
+	def get_Interval(self): # Integer
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
-
-	def get_IspCityNodes(self):
+	def set_Interval(self, Interval):  # Integer
+		self.add_query_param('Interval', Interval)
+	def get_IspCityNodes(self): # RepeatList
 		return self.get_query_params().get('IspCityNode')
 
-	def set_IspCityNodes(self, IspCityNodes):
-		for depth1 in range(len(IspCityNodes)):
-			if IspCityNodes[depth1].get('CityCode') is not None:
-				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.CityCode', IspCityNodes[depth1].get('CityCode'))
-			if IspCityNodes[depth1].get('IspCode') is not None:
-				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.IspCode', IspCityNodes[depth1].get('IspCode'))
+	def set_IspCityNodes(self, IspCityNode):  # RepeatList
+		for depth1 in range(len(IspCityNode)):
+			if IspCityNode[depth1].get('CityCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.CityCode', IspCityNode[depth1].get('CityCode'))
+			if IspCityNode[depth1].get('IspCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.IspCode', IspCityNode[depth1].get('IspCode'))

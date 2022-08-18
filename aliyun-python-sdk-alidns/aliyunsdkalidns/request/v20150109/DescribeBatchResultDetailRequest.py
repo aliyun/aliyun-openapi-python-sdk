@@ -25,44 +25,39 @@ class DescribeBatchResultDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeBatchResultDetail','alidns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BatchType(self):
+	def get_BatchType(self): # String
 		return self.get_query_params().get('BatchType')
 
-	def set_BatchType(self,BatchType):
-		self.add_query_param('BatchType',BatchType)
-
-	def get_PageNumber(self):
+	def set_BatchType(self, BatchType):  # String
+		self.add_query_param('BatchType', BatchType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_TaskId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
+	def set_TaskId(self, TaskId):  # Long
+		self.add_query_param('TaskId', TaskId)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

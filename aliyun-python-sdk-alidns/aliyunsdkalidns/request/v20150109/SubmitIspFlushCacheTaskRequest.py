@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class RollbackGtmRecoveryPlanRequest(RpcRequest):
+class SubmitIspFlushCacheTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'RollbackGtmRecoveryPlan','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SubmitIspFlushCacheTask','alidns')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,22 @@ class RollbackGtmRecoveryPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RecoveryPlanId(self): # Long
-		return self.get_query_params().get('RecoveryPlanId')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_RecoveryPlanId(self, RecoveryPlanId):  # Long
-		self.add_query_param('RecoveryPlanId', RecoveryPlanId)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Isps(self): # RepeatList
+		return self.get_query_params().get('Isp')
+
+	def set_Isps(self, Isp):  # RepeatList
+		for depth1 in range(len(Isp)):
+			self.add_query_param('Isp.' + str(depth1 + 1), Isp[depth1])
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
