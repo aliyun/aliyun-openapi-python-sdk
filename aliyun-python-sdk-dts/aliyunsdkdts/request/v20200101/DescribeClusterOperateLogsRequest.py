@@ -36,11 +36,6 @@ class DescribeClusterOperateLogsRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-	def get_EndTime(self): # Long
-		return self.get_body_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_body_params('EndTime', EndTime)
 	def get_DedicatedClusterId(self): # String
 		return self.get_body_params().get('DedicatedClusterId')
 
@@ -51,11 +46,6 @@ class DescribeClusterOperateLogsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # Long
 		self.add_body_params('StartTime', StartTime)
-	def get_OwnerID(self): # String
-		return self.get_body_params().get('OwnerID')
-
-	def set_OwnerID(self, OwnerID):  # String
-		self.add_body_params('OwnerID', OwnerID)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
@@ -76,3 +66,13 @@ class DescribeClusterOperateLogsRequest(RpcRequest):
 
 	def set_DtsJobId(self, DtsJobId):  # String
 		self.add_body_params('DtsJobId', DtsJobId)
+	def get_EndTime(self): # Long
+		return self.get_body_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_body_params('EndTime', EndTime)
+	def get_OwnerID(self): # String
+		return self.get_body_params().get('OwnerID')
+
+	def set_OwnerID(self, OwnerID):  # String
+		self.add_body_params('OwnerID', OwnerID)

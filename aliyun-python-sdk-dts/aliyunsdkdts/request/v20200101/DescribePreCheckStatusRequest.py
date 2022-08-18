@@ -36,16 +36,21 @@ class DescribePreCheckStatusRequest(RpcRequest):
 
 	def set_StructType(self, StructType):  # String
 		self.add_query_param('StructType', StructType)
-	def get_PageNo(self): # String
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self, PageNo):  # String
-		self.add_query_param('PageNo', PageNo)
 	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_DtsJobId(self): # String
+		return self.get_query_params().get('DtsJobId')
+
+	def set_DtsJobId(self, DtsJobId):  # String
+		self.add_query_param('DtsJobId', DtsJobId)
+	def get_PageNo(self): # String
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self, PageNo):  # String
+		self.add_query_param('PageNo', PageNo)
 	def get_JobCode(self): # String
 		return self.get_query_params().get('JobCode')
 
@@ -56,11 +61,6 @@ class DescribePreCheckStatusRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_DtsJobId(self): # String
-		return self.get_query_params().get('DtsJobId')
-
-	def set_DtsJobId(self, DtsJobId):  # String
-		self.add_query_param('DtsJobId', DtsJobId)
 	def get_StructPhase(self): # String
 		return self.get_query_params().get('StructPhase')
 

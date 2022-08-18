@@ -36,16 +36,16 @@ class CreateJobMonitorRuleRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_DelayRuleTime(self): # Long
-		return self.get_query_params().get('DelayRuleTime')
+	def get_NoticeValue(self): # Integer
+		return self.get_query_params().get('NoticeValue')
 
-	def set_DelayRuleTime(self, DelayRuleTime):  # Long
-		self.add_query_param('DelayRuleTime', DelayRuleTime)
-	def get_Phone(self): # String
-		return self.get_query_params().get('Phone')
+	def set_NoticeValue(self, NoticeValue):  # Integer
+		self.add_query_param('NoticeValue', NoticeValue)
+	def get_Times(self): # Integer
+		return self.get_query_params().get('Times')
 
-	def set_Phone(self, Phone):  # String
-		self.add_query_param('Phone', Phone)
+	def set_Times(self, Times):  # Integer
+		self.add_query_param('Times', Times)
 	def get_DtsJobId(self): # String
 		return self.get_query_params().get('DtsJobId')
 
@@ -56,3 +56,18 @@ class CreateJobMonitorRuleRequest(RpcRequest):
 
 	def set_State(self, State):  # String
 		self.add_query_param('State', State)
+	def get_Period(self): # Integer
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_DelayRuleTime(self): # Long
+		return self.get_query_params().get('DelayRuleTime')
+
+	def set_DelayRuleTime(self, DelayRuleTime):  # Long
+		self.add_query_param('DelayRuleTime', DelayRuleTime)
+	def get_Phone(self): # String
+		return self.get_query_params().get('Phone')
+
+	def set_Phone(self, Phone):  # String
+		self.add_query_param('Phone', Phone)

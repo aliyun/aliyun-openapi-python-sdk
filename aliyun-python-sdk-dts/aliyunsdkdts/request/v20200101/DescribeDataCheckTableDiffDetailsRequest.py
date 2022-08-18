@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class SummaryJobDetailRequest(RpcRequest):
+class DescribeDataCheckTableDiffDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SummaryJobDetail','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDataCheckTableDiffDetails','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class SummaryJobDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StructType(self): # String
-		return self.get_query_params().get('StructType')
+	def get_JobStepId(self): # String
+		return self.get_query_params().get('JobStepId')
 
-	def set_StructType(self, StructType):  # String
-		self.add_query_param('StructType', StructType)
-	def get_DtsJobId(self): # String
-		return self.get_query_params().get('DtsJobId')
+	def set_JobStepId(self, JobStepId):  # String
+		self.add_query_param('JobStepId', JobStepId)
+	def get_PageNumber(self): # Long
+		return self.get_query_params().get('PageNumber')
 
-	def set_DtsJobId(self, DtsJobId):  # String
-		self.add_query_param('DtsJobId', DtsJobId)
-	def get_JobCode(self): # String
-		return self.get_query_params().get('JobCode')
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
 
-	def set_JobCode(self, JobCode):  # String
-		self.add_query_param('JobCode', JobCode)
-	def get_DtsInstanceId(self): # String
-		return self.get_query_params().get('DtsInstanceId')
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_TbName(self): # String
+		return self.get_query_params().get('TbName')
 
-	def set_DtsInstanceId(self, DtsInstanceId):  # String
-		self.add_query_param('DtsInstanceId', DtsInstanceId)
-	def get_SynchronizationDirection(self): # String
-		return self.get_query_params().get('SynchronizationDirection')
+	def set_TbName(self, TbName):  # String
+		self.add_query_param('TbName', TbName)
+	def get_DbName(self): # String
+		return self.get_query_params().get('DbName')
 
-	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
-		self.add_query_param('SynchronizationDirection', SynchronizationDirection)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

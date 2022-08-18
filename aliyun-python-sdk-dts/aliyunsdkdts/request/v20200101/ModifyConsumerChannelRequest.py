@@ -31,11 +31,6 @@ class ModifyConsumerChannelRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsumerGroupName(self): # String
-		return self.get_query_params().get('ConsumerGroupName')
-
-	def set_ConsumerGroupName(self, ConsumerGroupName):  # String
-		self.add_query_param('ConsumerGroupName', ConsumerGroupName)
 	def get_ConsumerGroupId(self): # String
 		return self.get_query_params().get('ConsumerGroupId')
 
@@ -56,6 +51,11 @@ class ModifyConsumerChannelRequest(RpcRequest):
 
 	def set_DtsJobId(self, DtsJobId):  # String
 		self.add_query_param('DtsJobId', DtsJobId)
+	def get_ConsumerGroupName(self): # String
+		return self.get_query_params().get('ConsumerGroupName')
+
+	def set_ConsumerGroupName(self, ConsumerGroupName):  # String
+		self.add_query_param('ConsumerGroupName', ConsumerGroupName)
 	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 

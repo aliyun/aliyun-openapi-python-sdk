@@ -31,21 +31,6 @@ class CreateConsumerGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsumerGroupName(self): # String
-		return self.get_query_params().get('ConsumerGroupName')
-
-	def set_ConsumerGroupName(self, ConsumerGroupName):  # String
-		self.add_query_param('ConsumerGroupName', ConsumerGroupName)
-	def get_SubscriptionInstanceId(self): # String
-		return self.get_query_params().get('SubscriptionInstanceId')
-
-	def set_SubscriptionInstanceId(self, SubscriptionInstanceId):  # String
-		self.add_query_param('SubscriptionInstanceId', SubscriptionInstanceId)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ConsumerGroupPassword(self): # String
 		return self.get_query_params().get('ConsumerGroupPassword')
 
@@ -61,3 +46,18 @@ class CreateConsumerGroupRequest(RpcRequest):
 
 	def set_ConsumerGroupUserName(self, ConsumerGroupUserName):  # String
 		self.add_query_param('ConsumerGroupUserName', ConsumerGroupUserName)
+	def get_ConsumerGroupName(self): # String
+		return self.get_query_params().get('ConsumerGroupName')
+
+	def set_ConsumerGroupName(self, ConsumerGroupName):  # String
+		self.add_query_param('ConsumerGroupName', ConsumerGroupName)
+	def get_SubscriptionInstanceId(self): # String
+		return self.get_query_params().get('SubscriptionInstanceId')
+
+	def set_SubscriptionInstanceId(self, SubscriptionInstanceId):  # String
+		self.add_query_param('SubscriptionInstanceId', SubscriptionInstanceId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

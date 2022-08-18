@@ -31,26 +31,11 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Period(self): # String
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
-	def get_UsedTime(self): # Integer
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self, UsedTime):  # Integer
-		self.add_query_param('UsedTime', UsedTime)
 	def get_SourceEndpointInstanceType(self): # String
 		return self.get_query_params().get('SourceEndpoint.InstanceType')
 
@@ -61,6 +46,21 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 
 	def set_AccountId(self, AccountId):  # String
 		self.add_query_param('AccountId', AccountId)
+	def get_Period(self): # String
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UsedTime(self): # Integer
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self, UsedTime):  # Integer
+		self.add_query_param('UsedTime', UsedTime)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 

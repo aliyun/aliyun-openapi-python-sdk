@@ -31,6 +31,16 @@ class ModifyDtsJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_EtlOperatorColumnReference(self): # String
+		return self.get_body_params().get('EtlOperatorColumnReference')
+
+	def set_EtlOperatorColumnReference(self, EtlOperatorColumnReference):  # String
+		self.add_body_params('EtlOperatorColumnReference', EtlOperatorColumnReference)
 	def get_DbList(self): # String
 		return self.get_body_params().get('DbList')
 
@@ -41,26 +51,21 @@ class ModifyDtsJobRequest(RpcRequest):
 
 	def set_FileOssUrl(self, FileOssUrl):  # String
 		self.add_query_param('FileOssUrl', FileOssUrl)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_ModifyTypeEnum(self): # String
 		return self.get_body_params().get('ModifyTypeEnum')
 
 	def set_ModifyTypeEnum(self, ModifyTypeEnum):  # String
 		self.add_body_params('ModifyTypeEnum', ModifyTypeEnum)
-	def get_EtlOperatorColumnReference(self): # String
-		return self.get_body_params().get('EtlOperatorColumnReference')
-
-	def set_EtlOperatorColumnReference(self, EtlOperatorColumnReference):  # String
-		self.add_body_params('EtlOperatorColumnReference', EtlOperatorColumnReference)
 	def get_Reserved(self): # String
 		return self.get_body_params().get('Reserved')
 
 	def set_Reserved(self, Reserved):  # String
 		self.add_body_params('Reserved', Reserved)
+	def get_FilterTableName(self): # String
+		return self.get_body_params().get('FilterTableName')
+
+	def set_FilterTableName(self, FilterTableName):  # String
+		self.add_body_params('FilterTableName', FilterTableName)
 	def get_DtsInstanceId(self): # String
 		return self.get_query_params().get('DtsInstanceId')
 

@@ -31,6 +31,21 @@ class ConfigureMigrationJobAlertRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MigrationJobId(self): # String
+		return self.get_query_params().get('MigrationJobId')
+
+	def set_MigrationJobId(self, MigrationJobId):  # String
+		self.add_query_param('MigrationJobId', MigrationJobId)
+	def get_AccountId(self): # String
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_DelayAlertPhone(self): # String
+		return self.get_query_params().get('DelayAlertPhone')
+
+	def set_DelayAlertPhone(self, DelayAlertPhone):  # String
+		self.add_query_param('DelayAlertPhone', DelayAlertPhone)
 	def get_DelayOverSeconds(self): # String
 		return self.get_query_params().get('DelayOverSeconds')
 
@@ -41,31 +56,16 @@ class ConfigureMigrationJobAlertRequest(RpcRequest):
 
 	def set_DelayAlertStatus(self, DelayAlertStatus):  # String
 		self.add_query_param('DelayAlertStatus', DelayAlertStatus)
-	def get_MigrationJobId(self): # String
-		return self.get_query_params().get('MigrationJobId')
-
-	def set_MigrationJobId(self, MigrationJobId):  # String
-		self.add_query_param('MigrationJobId', MigrationJobId)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
-	def get_AccountId(self): # String
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self, AccountId):  # String
-		self.add_query_param('AccountId', AccountId)
 	def get_ErrorAlertPhone(self): # String
 		return self.get_query_params().get('ErrorAlertPhone')
 
 	def set_ErrorAlertPhone(self, ErrorAlertPhone):  # String
 		self.add_query_param('ErrorAlertPhone', ErrorAlertPhone)
-	def get_DelayAlertPhone(self): # String
-		return self.get_query_params().get('DelayAlertPhone')
-
-	def set_DelayAlertPhone(self, DelayAlertPhone):  # String
-		self.add_query_param('DelayAlertPhone', DelayAlertPhone)
 	def get_ErrorAlertStatus(self): # String
 		return self.get_query_params().get('ErrorAlertStatus')
 

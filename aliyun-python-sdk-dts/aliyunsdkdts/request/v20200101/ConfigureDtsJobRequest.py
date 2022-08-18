@@ -176,6 +176,11 @@ class ConfigureDtsJobRequest(RpcRequest):
 
 	def set_DestinationEndpointRegion(self, DestinationEndpointRegion):  # String
 		self.add_query_param('DestinationEndpointRegion', DestinationEndpointRegion)
+	def get_DataCheckConfigure(self): # String
+		return self.get_query_params().get('DataCheckConfigure')
+
+	def set_DataCheckConfigure(self, DataCheckConfigure):  # String
+		self.add_query_param('DataCheckConfigure', DataCheckConfigure)
 	def get_Reserve(self): # String
 		return self.get_body_params().get('Reserve')
 

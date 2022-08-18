@@ -31,16 +31,6 @@ class DescribeTagValuesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -51,13 +41,23 @@ class DescribeTagValuesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_Category(self): # String
-		return self.get_query_params().get('Category')
-
-	def set_Category(self, Category):  # String
-		self.add_query_param('Category', Category)
 	def get_Key(self): # String
 		return self.get_query_params().get('Key')
 
 	def set_Key(self, Key):  # String
 		self.add_query_param('Key', Key)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
+
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)

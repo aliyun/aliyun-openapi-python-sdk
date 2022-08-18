@@ -96,6 +96,11 @@ class DescribeDtsJobsRequest(RpcRequest):
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
+	def get_DtsInstanceId(self): # String
+		return self.get_query_params().get('DtsInstanceId')
+
+	def set_DtsInstanceId(self, DtsInstanceId):  # String
+		self.add_query_param('DtsInstanceId', DtsInstanceId)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

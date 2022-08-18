@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class SummaryJobDetailRequest(RpcRequest):
+class DescribeCheckJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SummaryJobDetail','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeCheckJobs','dts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class SummaryJobDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StructType(self): # String
-		return self.get_query_params().get('StructType')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_StructType(self, StructType):  # String
-		self.add_query_param('StructType', StructType)
-	def get_DtsJobId(self): # String
-		return self.get_query_params().get('DtsJobId')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_CheckType(self): # Integer
+		return self.get_query_params().get('CheckType')
 
-	def set_DtsJobId(self, DtsJobId):  # String
-		self.add_query_param('DtsJobId', DtsJobId)
-	def get_JobCode(self): # String
-		return self.get_query_params().get('JobCode')
+	def set_CheckType(self, CheckType):  # Integer
+		self.add_query_param('CheckType', CheckType)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_JobCode(self, JobCode):  # String
-		self.add_query_param('JobCode', JobCode)
-	def get_DtsInstanceId(self): # String
-		return self.get_query_params().get('DtsInstanceId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_DtsInstanceId(self, DtsInstanceId):  # String
-		self.add_query_param('DtsInstanceId', DtsInstanceId)
-	def get_SynchronizationDirection(self): # String
-		return self.get_query_params().get('SynchronizationDirection')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_JobName(self): # String
+		return self.get_query_params().get('JobName')
 
-	def set_SynchronizationDirection(self, SynchronizationDirection):  # String
-		self.add_query_param('SynchronizationDirection', SynchronizationDirection)
+	def set_JobName(self, JobName):  # String
+		self.add_query_param('JobName', JobName)

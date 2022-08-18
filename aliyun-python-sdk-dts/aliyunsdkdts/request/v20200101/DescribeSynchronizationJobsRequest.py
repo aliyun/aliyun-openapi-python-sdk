@@ -41,11 +41,6 @@ class DescribeSynchronizationJobsRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SynchronizationJobName(self): # String
 		return self.get_query_params().get('SynchronizationJobName')
 
@@ -70,3 +65,8 @@ class DescribeSynchronizationJobsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

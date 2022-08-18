@@ -36,11 +36,6 @@ class ConfigureSynchronizationJobReplicatorCompareRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SynchronizationJobId(self): # String
 		return self.get_query_params().get('SynchronizationJobId')
 
@@ -51,6 +46,11 @@ class ConfigureSynchronizationJobReplicatorCompareRequest(RpcRequest):
 
 	def set_AccountId(self, AccountId):  # String
 		self.add_query_param('AccountId', AccountId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
 	def get_SynchronizationReplicatorCompareEnable(self): # Boolean
 		return self.get_query_params().get('SynchronizationReplicatorCompareEnable')
 

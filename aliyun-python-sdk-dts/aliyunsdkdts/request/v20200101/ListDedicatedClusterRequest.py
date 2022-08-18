@@ -36,21 +36,11 @@ class ListDedicatedClusterRequest(RpcRequest):
 
 	def set_OrderDirection(self, OrderDirection):  # String
 		self.add_query_param('OrderDirection', OrderDirection)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_Params(self): # String
-		return self.get_query_params().get('Params')
-
-	def set_Params(self, Params):  # String
-		self.add_query_param('Params', Params)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -71,3 +61,13 @@ class ListDedicatedClusterRequest(RpcRequest):
 
 	def set_State(self, State):  # String
 		self.add_query_param('State', State)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
+
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)

@@ -31,11 +31,6 @@ class SkipPreCheckRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SkipPreCheckItems(self): # String
-		return self.get_query_params().get('SkipPreCheckItems')
-
-	def set_SkipPreCheckItems(self, SkipPreCheckItems):  # String
-		self.add_query_param('SkipPreCheckItems', SkipPreCheckItems)
 	def get_Skip(self): # Boolean
 		return self.get_query_params().get('Skip')
 
@@ -56,3 +51,8 @@ class SkipPreCheckRequest(RpcRequest):
 
 	def set_DtsJobId(self, DtsJobId):  # String
 		self.add_query_param('DtsJobId', DtsJobId)
+	def get_SkipPreCheckItems(self): # String
+		return self.get_query_params().get('SkipPreCheckItems')
+
+	def set_SkipPreCheckItems(self, SkipPreCheckItems):  # String
+		self.add_query_param('SkipPreCheckItems', SkipPreCheckItems)

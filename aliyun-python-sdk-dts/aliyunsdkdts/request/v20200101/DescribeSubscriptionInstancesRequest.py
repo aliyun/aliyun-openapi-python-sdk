@@ -41,11 +41,6 @@ class DescribeSubscriptionInstancesRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
@@ -56,11 +51,6 @@ class DescribeSubscriptionInstancesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_SubscriptionInstanceName(self): # String
-		return self.get_query_params().get('SubscriptionInstanceName')
-
-	def set_SubscriptionInstanceName(self, SubscriptionInstanceName):  # String
-		self.add_query_param('SubscriptionInstanceName', SubscriptionInstanceName)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -70,3 +60,13 @@ class DescribeSubscriptionInstancesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SubscriptionInstanceName(self): # String
+		return self.get_query_params().get('SubscriptionInstanceName')
+
+	def set_SubscriptionInstanceName(self, SubscriptionInstanceName):  # String
+		self.add_query_param('SubscriptionInstanceName', SubscriptionInstanceName)

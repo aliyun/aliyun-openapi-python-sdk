@@ -41,16 +41,6 @@ class ConfigureMigrationJobRequest(RpcRequest):
 
 	def set_Checkpoint(self, Checkpoint):  # String
 		self.add_query_param('Checkpoint', Checkpoint)
-	def get_SourceEndpointEngineName(self): # String
-		return self.get_query_params().get('SourceEndpoint.EngineName')
-
-	def set_SourceEndpointEngineName(self, SourceEndpointEngineName):  # String
-		self.add_query_param('SourceEndpoint.EngineName', SourceEndpointEngineName)
-	def get_SourceEndpointOracleSID(self): # String
-		return self.get_query_params().get('SourceEndpoint.OracleSID')
-
-	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
-		self.add_query_param('SourceEndpoint.OracleSID', SourceEndpointOracleSID)
 	def get_DestinationEndpointInstanceID(self): # String
 		return self.get_query_params().get('DestinationEndpoint.InstanceID')
 
@@ -66,31 +56,11 @@ class ConfigureMigrationJobRequest(RpcRequest):
 
 	def set_DestinationEndpointPassword(self, DestinationEndpointPassword):  # String
 		self.add_query_param('DestinationEndpoint.Password', DestinationEndpointPassword)
-	def get_MigrationObject(self): # String
-		return self.get_body_params().get('MigrationObject')
-
-	def set_MigrationObject(self, MigrationObject):  # String
-		self.add_body_params('MigrationObject', MigrationObject)
 	def get_MigrationModeDataIntialization(self): # Boolean
 		return self.get_query_params().get('MigrationMode.DataIntialization')
 
 	def set_MigrationModeDataIntialization(self, MigrationModeDataIntialization):  # Boolean
 		self.add_query_param('MigrationMode.DataIntialization', MigrationModeDataIntialization)
-	def get_MigrationJobId(self): # String
-		return self.get_query_params().get('MigrationJobId')
-
-	def set_MigrationJobId(self, MigrationJobId):  # String
-		self.add_query_param('MigrationJobId', MigrationJobId)
-	def get_SourceEndpointInstanceType(self): # String
-		return self.get_query_params().get('SourceEndpoint.InstanceType')
-
-	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
-		self.add_query_param('SourceEndpoint.InstanceType', SourceEndpointInstanceType)
-	def get_DestinationEndpointEngineName(self): # String
-		return self.get_query_params().get('DestinationEndpoint.EngineName')
-
-	def set_DestinationEndpointEngineName(self, DestinationEndpointEngineName):  # String
-		self.add_query_param('DestinationEndpoint.EngineName', DestinationEndpointEngineName)
 	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
@@ -131,26 +101,11 @@ class ConfigureMigrationJobRequest(RpcRequest):
 
 	def set_SourceEndpointOwnerID(self, SourceEndpointOwnerID):  # String
 		self.add_query_param('SourceEndpoint.OwnerID', SourceEndpointOwnerID)
-	def get_DestinationEndpointUserName(self): # String
-		return self.get_query_params().get('DestinationEndpoint.UserName')
-
-	def set_DestinationEndpointUserName(self, DestinationEndpointUserName):  # String
-		self.add_query_param('DestinationEndpoint.UserName', DestinationEndpointUserName)
-	def get_DestinationEndpointOracleSID(self): # String
-		return self.get_query_params().get('DestinationEndpoint.OracleSID')
-
-	def set_DestinationEndpointOracleSID(self, DestinationEndpointOracleSID):  # String
-		self.add_query_param('DestinationEndpoint.OracleSID', DestinationEndpointOracleSID)
 	def get_DestinationEndpointPort(self): # String
 		return self.get_query_params().get('DestinationEndpoint.Port')
 
 	def set_DestinationEndpointPort(self, DestinationEndpointPort):  # String
 		self.add_query_param('DestinationEndpoint.Port', DestinationEndpointPort)
-	def get_SourceEndpointRegion(self): # String
-		return self.get_query_params().get('SourceEndpoint.Region')
-
-	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
-		self.add_query_param('SourceEndpoint.Region', SourceEndpointRegion)
 	def get_SourceEndpointRole(self): # String
 		return self.get_query_params().get('SourceEndpoint.Role')
 
@@ -161,21 +116,11 @@ class ConfigureMigrationJobRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DestinationEndpointDataBaseName(self): # String
-		return self.get_query_params().get('DestinationEndpoint.DataBaseName')
-
-	def set_DestinationEndpointDataBaseName(self, DestinationEndpointDataBaseName):  # String
-		self.add_query_param('DestinationEndpoint.DataBaseName', DestinationEndpointDataBaseName)
 	def get_SourceEndpointPassword(self): # String
 		return self.get_query_params().get('SourceEndpoint.Password')
 
 	def set_SourceEndpointPassword(self, SourceEndpointPassword):  # String
 		self.add_query_param('SourceEndpoint.Password', SourceEndpointPassword)
-	def get_MigrationReserved(self): # String
-		return self.get_query_params().get('MigrationReserved')
-
-	def set_MigrationReserved(self, MigrationReserved):  # String
-		self.add_query_param('MigrationReserved', MigrationReserved)
 	def get_DestinationEndpointIP(self): # String
 		return self.get_query_params().get('DestinationEndpoint.IP')
 
@@ -191,3 +136,58 @@ class ConfigureMigrationJobRequest(RpcRequest):
 
 	def set_DestinationEndpointInstanceType(self, DestinationEndpointInstanceType):  # String
 		self.add_query_param('DestinationEndpoint.InstanceType', DestinationEndpointInstanceType)
+	def get_SourceEndpointEngineName(self): # String
+		return self.get_query_params().get('SourceEndpoint.EngineName')
+
+	def set_SourceEndpointEngineName(self, SourceEndpointEngineName):  # String
+		self.add_query_param('SourceEndpoint.EngineName', SourceEndpointEngineName)
+	def get_SourceEndpointOracleSID(self): # String
+		return self.get_query_params().get('SourceEndpoint.OracleSID')
+
+	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
+		self.add_query_param('SourceEndpoint.OracleSID', SourceEndpointOracleSID)
+	def get_MigrationObject(self): # String
+		return self.get_body_params().get('MigrationObject')
+
+	def set_MigrationObject(self, MigrationObject):  # String
+		self.add_body_params('MigrationObject', MigrationObject)
+	def get_MigrationJobId(self): # String
+		return self.get_query_params().get('MigrationJobId')
+
+	def set_MigrationJobId(self, MigrationJobId):  # String
+		self.add_query_param('MigrationJobId', MigrationJobId)
+	def get_SourceEndpointInstanceType(self): # String
+		return self.get_query_params().get('SourceEndpoint.InstanceType')
+
+	def set_SourceEndpointInstanceType(self, SourceEndpointInstanceType):  # String
+		self.add_query_param('SourceEndpoint.InstanceType', SourceEndpointInstanceType)
+	def get_DestinationEndpointEngineName(self): # String
+		return self.get_query_params().get('DestinationEndpoint.EngineName')
+
+	def set_DestinationEndpointEngineName(self, DestinationEndpointEngineName):  # String
+		self.add_query_param('DestinationEndpoint.EngineName', DestinationEndpointEngineName)
+	def get_DestinationEndpointUserName(self): # String
+		return self.get_query_params().get('DestinationEndpoint.UserName')
+
+	def set_DestinationEndpointUserName(self, DestinationEndpointUserName):  # String
+		self.add_query_param('DestinationEndpoint.UserName', DestinationEndpointUserName)
+	def get_DestinationEndpointOracleSID(self): # String
+		return self.get_query_params().get('DestinationEndpoint.OracleSID')
+
+	def set_DestinationEndpointOracleSID(self, DestinationEndpointOracleSID):  # String
+		self.add_query_param('DestinationEndpoint.OracleSID', DestinationEndpointOracleSID)
+	def get_SourceEndpointRegion(self): # String
+		return self.get_query_params().get('SourceEndpoint.Region')
+
+	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
+		self.add_query_param('SourceEndpoint.Region', SourceEndpointRegion)
+	def get_DestinationEndpointDataBaseName(self): # String
+		return self.get_query_params().get('DestinationEndpoint.DataBaseName')
+
+	def set_DestinationEndpointDataBaseName(self, DestinationEndpointDataBaseName):  # String
+		self.add_query_param('DestinationEndpoint.DataBaseName', DestinationEndpointDataBaseName)
+	def get_MigrationReserved(self): # String
+		return self.get_query_params().get('MigrationReserved')
+
+	def set_MigrationReserved(self, MigrationReserved):  # String
+		self.add_query_param('MigrationReserved', MigrationReserved)
