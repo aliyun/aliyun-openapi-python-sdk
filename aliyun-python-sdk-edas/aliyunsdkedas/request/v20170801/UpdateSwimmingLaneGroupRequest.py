@@ -20,25 +20,35 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class DeleteK8sApplicationRequest(RoaRequest):
+class UpdateSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteK8sApplication','Edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
-		self.set_method('DELETE')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateSwimmingLaneGroup','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
+		self.set_method('PUT')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # string
-		return self.get_query_params().get('AppId')
+	def get_AppIds(self): # string
+		return self.get_query_params().get('AppIds')
 
-	def set_AppId(self, AppId):  # string
-		self.add_query_param('AppId', AppId)
-	def get_Force(self): # boolean
-		return self.get_query_params().get('Force')
+	def set_AppIds(self, AppIds):  # string
+		self.add_query_param('AppIds', AppIds)
+	def get_GroupId(self): # integer
+		return self.get_query_params().get('GroupId')
 
-	def set_Force(self, Force):  # boolean
-		self.add_query_param('Force', Force)
+	def set_GroupId(self, GroupId):  # integer
+		self.add_query_param('GroupId', GroupId)
+	def get_Name(self): # string
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # string
+		self.add_query_param('Name', Name)
+	def get_EntryApp(self): # string
+		return self.get_query_params().get('EntryApp')
+
+	def set_EntryApp(self, EntryApp):  # string
+		self.add_query_param('EntryApp', EntryApp)

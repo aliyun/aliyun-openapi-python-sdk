@@ -20,20 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class DisableMockRuleRequest(RoaRequest):
+class DeleteSwimmingLaneRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DisableMockRule','Edas')
-		self.set_uri_pattern('/pop/sp/api/mock/disableMockRule')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteSwimmingLane','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lanes')
+		self.set_method('DELETE')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Id(self): # integer
-		return self.get_query_params().get('Id')
+	def get_LaneId(self): # integer
+		return self.get_query_params().get('LaneId')
 
-	def set_Id(self, Id):  # integer
-		self.add_query_param('Id', Id)
+	def set_LaneId(self, LaneId):  # integer
+		self.add_query_param('LaneId', LaneId)

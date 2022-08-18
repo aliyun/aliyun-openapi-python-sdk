@@ -32,6 +32,11 @@ class InsertOrUpdateRegionRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RegistryType(self): # string
+		return self.get_query_params().get('RegistryType')
+
+	def set_RegistryType(self, RegistryType):  # string
+		self.add_query_param('RegistryType', RegistryType)
 	def get_DebugEnable(self): # boolean
 		return self.get_query_params().get('DebugEnable')
 
@@ -52,6 +57,11 @@ class InsertOrUpdateRegionRequest(RoaRequest):
 
 	def set_Description(self, Description):  # string
 		self.add_query_param('Description', Description)
+	def get_MseInstanceId(self): # string
+		return self.get_query_params().get('MseInstanceId')
+
+	def set_MseInstanceId(self, MseInstanceId):  # string
+		self.add_query_param('MseInstanceId', MseInstanceId)
 	def get_Id(self): # integer
 		return self.get_query_params().get('Id')
 

@@ -222,6 +222,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_CsClusterId(self, CsClusterId):  # string
 		self.add_query_param('CsClusterId', CsClusterId)
+	def get_AppConfig(self): # string
+		return self.get_query_params().get('AppConfig')
+
+	def set_AppConfig(self, AppConfig):  # string
+		self.add_query_param('AppConfig', AppConfig)
 	def get_InternetSlbPort(self): # integer
 		return self.get_query_params().get('InternetSlbPort')
 
@@ -317,6 +322,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_ClusterId(self, ClusterId):  # string
 		self.add_query_param('ClusterId', ClusterId)
+	def get_ServiceConfigs(self): # string
+		return self.get_query_params().get('ServiceConfigs')
+
+	def set_ServiceConfigs(self, ServiceConfigs):  # string
+		self.add_query_param('ServiceConfigs', ServiceConfigs)
 	def get_IntranetTargetPort(self): # integer
 		return self.get_query_params().get('IntranetTargetPort')
 
@@ -357,6 +367,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_Namespace(self, Namespace):  # string
 		self.add_query_param('Namespace', Namespace)
+	def get_AppTemplateName(self): # string
+		return self.get_query_params().get('AppTemplateName')
+
+	def set_AppTemplateName(self, AppTemplateName):  # string
+		self.add_query_param('AppTemplateName', AppTemplateName)
 	def get_ApplicationDescription(self): # string
 		return self.get_query_params().get('ApplicationDescription')
 

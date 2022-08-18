@@ -20,20 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class RemoveMockRuleRequest(RoaRequest):
+class ListSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'RemoveMockRule','Edas')
-		self.set_uri_pattern('/pop/sp/api/mock/removeMockRule')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListSwimmingLaneGroup','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Id(self): # integer
-		return self.get_query_params().get('Id')
+	def get_LogicalRegionId(self): # string
+		return self.get_query_params().get('LogicalRegionId')
 
-	def set_Id(self, Id):  # integer
-		self.add_query_param('Id', Id)
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
+		self.add_query_param('LogicalRegionId', LogicalRegionId)

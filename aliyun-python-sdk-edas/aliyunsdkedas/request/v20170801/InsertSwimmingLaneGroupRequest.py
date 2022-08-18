@@ -20,25 +20,35 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListRootStacksRequest(RoaRequest):
+class InsertSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListRootStacks','Edas')
-		self.set_uri_pattern('/pop/v5/s2i/list_root_stack')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertSwimmingLaneGroup','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # integer
-		return self.get_query_params().get('PageSize')
+	def get_AppIds(self): # string
+		return self.get_query_params().get('AppIds')
 
-	def set_PageSize(self, PageSize):  # integer
-		self.add_query_param('PageSize', PageSize)
-	def get_CurrentPage(self): # integer
-		return self.get_query_params().get('CurrentPage')
+	def set_AppIds(self, AppIds):  # string
+		self.add_query_param('AppIds', AppIds)
+	def get_LogicalRegionId(self): # string
+		return self.get_query_params().get('LogicalRegionId')
 
-	def set_CurrentPage(self, CurrentPage):  # integer
-		self.add_query_param('CurrentPage', CurrentPage)
+	def set_LogicalRegionId(self, LogicalRegionId):  # string
+		self.add_query_param('LogicalRegionId', LogicalRegionId)
+	def get_Name(self): # string
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # string
+		self.add_query_param('Name', Name)
+	def get_EntryApp(self): # string
+		return self.get_query_params().get('EntryApp')
+
+	def set_EntryApp(self, EntryApp):  # string
+		self.add_query_param('EntryApp', EntryApp)

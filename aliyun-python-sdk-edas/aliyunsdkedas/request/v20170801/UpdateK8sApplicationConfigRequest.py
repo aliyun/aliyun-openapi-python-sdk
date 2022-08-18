@@ -42,6 +42,11 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def set_AppId(self, AppId):  # string
 		self.add_query_param('AppId', AppId)
+	def get_EphemeralStorageRequest(self): # string
+		return self.get_query_params().get('EphemeralStorageRequest')
+
+	def set_EphemeralStorageRequest(self, EphemeralStorageRequest):  # string
+		self.add_query_param('EphemeralStorageRequest', EphemeralStorageRequest)
 	def get_CpuRequest(self): # string
 		return self.get_query_params().get('CpuRequest')
 
@@ -77,3 +82,8 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def set_Timeout(self, Timeout):  # integer
 		self.add_query_param('Timeout', Timeout)
+	def get_EphemeralStorageLimit(self): # string
+		return self.get_query_params().get('EphemeralStorageLimit')
+
+	def set_EphemeralStorageLimit(self, EphemeralStorageLimit):  # string
+		self.add_query_param('EphemeralStorageLimit', EphemeralStorageLimit)

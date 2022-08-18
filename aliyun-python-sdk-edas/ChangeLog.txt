@@ -1,3 +1,6 @@
+2022-08-18 Version: 3.26.6
+- Support swimming lane sdk.
+
 2022-06-16 Version: 3.26.5
 - Supported ExternalTrafficPolicy for CreateK8sService.
 - Supported ExternalTrafficPolicy for UpdateK8sService.

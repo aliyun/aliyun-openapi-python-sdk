@@ -20,25 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class GetMockRuleByProviderAppIdRequest(RoaRequest):
+class ListSwimmingLaneRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetMockRuleByProviderAppId','Edas')
-		self.set_uri_pattern('/pop/sp/api/mock/getMockRuleByProviderAppId')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListSwimmingLane','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lanes')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProviderAppId(self): # string
-		return self.get_query_params().get('ProviderAppId')
+	def get_GroupId(self): # integer
+		return self.get_query_params().get('GroupId')
 
-	def set_ProviderAppId(self, ProviderAppId):  # string
-		self.add_query_param('ProviderAppId', ProviderAppId)
-	def get_Region(self): # string
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # string
-		self.add_query_param('Region', Region)
+	def set_GroupId(self, GroupId):  # integer
+		self.add_query_param('GroupId', GroupId)

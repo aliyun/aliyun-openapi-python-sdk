@@ -20,25 +20,40 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class GetMockRuleByConsumerAppIdRequest(RoaRequest):
+class UpdateSwimmingLaneRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetMockRuleByConsumerAppId','Edas')
-		self.set_uri_pattern('/pop/sp/api/mock/getMockRuleByConsumerAppId')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateSwimmingLane','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lanes')
+		self.set_method('PUT')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsumerAppId(self): # string
-		return self.get_query_params().get('ConsumerAppId')
+	def get_AppInfos(self): # string
+		return self.get_query_params().get('AppInfos')
 
-	def set_ConsumerAppId(self, ConsumerAppId):  # string
-		self.add_query_param('ConsumerAppId', ConsumerAppId)
-	def get_Region(self): # string
-		return self.get_query_params().get('Region')
+	def set_AppInfos(self, AppInfos):  # string
+		self.add_query_param('AppInfos', AppInfos)
+	def get_LaneId(self): # integer
+		return self.get_query_params().get('LaneId')
 
-	def set_Region(self, Region):  # string
-		self.add_query_param('Region', Region)
+	def set_LaneId(self, LaneId):  # integer
+		self.add_query_param('LaneId', LaneId)
+	def get_EntryRules(self): # string
+		return self.get_query_params().get('EntryRules')
+
+	def set_EntryRules(self, EntryRules):  # string
+		self.add_query_param('EntryRules', EntryRules)
+	def get_EnableRules(self): # boolean
+		return self.get_query_params().get('EnableRules')
+
+	def set_EnableRules(self, EnableRules):  # boolean
+		self.add_query_param('EnableRules', EnableRules)
+	def get_Name(self): # string
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # string
+		self.add_query_param('Name', Name)

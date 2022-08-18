@@ -20,20 +20,30 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class EnableMockRuleRequest(RoaRequest):
+class GetK8sAppPrecheckResultRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'EnableMockRule','Edas')
-		self.set_uri_pattern('/pop/sp/api/mock/enableMockRule')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetK8sAppPrecheckResult','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/app_precheck')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Id(self): # integer
-		return self.get_query_params().get('Id')
+	def get_AppName(self): # string
+		return self.get_query_params().get('AppName')
 
-	def set_Id(self, Id):  # integer
-		self.add_query_param('Id', Id)
+	def set_AppName(self, AppName):  # string
+		self.add_query_param('AppName', AppName)
+	def get_Namespace(self): # string
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # string
+		self.add_query_param('Namespace', Namespace)
+	def get_ClusterId(self): # string
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # string
+		self.add_query_param('ClusterId', ClusterId)
