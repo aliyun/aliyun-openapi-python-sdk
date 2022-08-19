@@ -1,3 +1,6 @@
+2022-08-19 Version: 3.0.20
+- Add DescribePublicIpAddress Interface.
+
 2022-08-15 Version: 3.0.19
 - Natgateway add param eipBindMode.
 
