@@ -20,31 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbfs.endpoint import endpoint_data
 
-class StopUpgradeTaskRequest(RpcRequest):
+class UpdateDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'StopUpgradeTask')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'UpdateDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UsedScene(self): # String
+		return self.get_query_params().get('UsedScene')
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def set_UsedScene(self, UsedScene):  # String
+		self.add_query_param('UsedScene', UsedScene)
+	def get_FsId(self): # String
+		return self.get_query_params().get('FsId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
 
-	def get_BatchStrategyList(self):
-		return self.get_query_params().get('BatchStrategyList')
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_AdvancedFeatures(self): # String
+		return self.get_query_params().get('AdvancedFeatures')
 
-	def set_BatchStrategyList(self,BatchStrategyList):
-		self.add_query_param('BatchStrategyList',BatchStrategyList)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_AdvancedFeatures(self, AdvancedFeatures):  # String
+		self.add_query_param('AdvancedFeatures', AdvancedFeatures)

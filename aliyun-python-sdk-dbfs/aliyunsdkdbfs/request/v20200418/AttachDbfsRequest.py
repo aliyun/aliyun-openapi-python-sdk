@@ -23,28 +23,36 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class AttachDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'AttachDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'AttachDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ECSInstanceId(self):
+	def get_ECSInstanceId(self): # String
 		return self.get_query_params().get('ECSInstanceId')
 
-	def set_ECSInstanceId(self,ECSInstanceId):
-		self.add_query_param('ECSInstanceId',ECSInstanceId)
+	def set_ECSInstanceId(self, ECSInstanceId):  # String
+		self.add_query_param('ECSInstanceId', ECSInstanceId)
+	def get_AttachPoint(self): # String
+		return self.get_query_params().get('AttachPoint')
 
-	def get_ServerUrl(self):
+	def set_AttachPoint(self, AttachPoint):  # String
+		self.add_query_param('AttachPoint', AttachPoint)
+	def get_ServerUrl(self): # String
 		return self.get_query_params().get('ServerUrl')
 
-	def set_ServerUrl(self,ServerUrl):
-		self.add_query_param('ServerUrl',ServerUrl)
-
-	def get_FsId(self):
+	def set_ServerUrl(self, ServerUrl):  # String
+		self.add_query_param('ServerUrl', ServerUrl)
+	def get_FsId(self): # String
 		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)
+	def get_AttachMode(self): # String
+		return self.get_query_params().get('AttachMode')
+
+	def set_AttachMode(self, AttachMode):  # String
+		self.add_query_param('AttachMode', AttachMode)

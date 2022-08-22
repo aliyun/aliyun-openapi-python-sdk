@@ -20,31 +20,14 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbfs.endpoint import endpoint_data
 
-class PublishUpgradeTaskRequest(RpcRequest):
+class DescribeInstanceTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'PublishUpgradeTask')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DescribeInstanceTypes','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_BatchStrategyList(self):
-		return self.get_query_params().get('BatchStrategyList')
-
-	def set_BatchStrategyList(self,BatchStrategyList):
-		self.add_query_param('BatchStrategyList',BatchStrategyList)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)

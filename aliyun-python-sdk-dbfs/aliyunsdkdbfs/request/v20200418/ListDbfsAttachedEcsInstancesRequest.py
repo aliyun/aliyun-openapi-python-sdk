@@ -20,25 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbfs.endpoint import endpoint_data
 
-class UpdateTaskRequest(RpcRequest):
+class ListDbfsAttachedEcsInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'UpdateTask')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListDbfsAttachedEcsInstances','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_FsId(self): # String
+		return self.get_query_params().get('FsId')
 
-	def get_TaskProgress(self):
-		return self.get_query_params().get('TaskProgress')
-
-	def set_TaskProgress(self,TaskProgress):
-		self.add_query_param('TaskProgress',TaskProgress)
-
-	def get_TaskIds(self):
-		return self.get_query_params().get('TaskIds')
-
-	def set_TaskIds(self,TaskIds):
-		self.add_query_param('TaskIds',TaskIds)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)

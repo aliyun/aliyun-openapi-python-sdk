@@ -23,22 +23,21 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class DescribeDbfsSpecificationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DescribeDbfsSpecifications')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DescribeDbfsSpecifications','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EcsInstanceType(self):
+	def get_EcsInstanceType(self): # String
 		return self.get_query_params().get('EcsInstanceType')
 
-	def set_EcsInstanceType(self,EcsInstanceType):
-		self.add_query_param('EcsInstanceType',EcsInstanceType)
-
-	def get_Category(self):
+	def set_EcsInstanceType(self, EcsInstanceType):  # String
+		self.add_query_param('EcsInstanceType', EcsInstanceType)
+	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)

@@ -23,22 +23,21 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class DetachDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DetachDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DetachDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ECSInstanceId(self):
+	def get_ECSInstanceId(self): # String
 		return self.get_query_params().get('ECSInstanceId')
 
-	def set_ECSInstanceId(self,ECSInstanceId):
-		self.add_query_param('ECSInstanceId',ECSInstanceId)
-
-	def get_FsId(self):
+	def set_ECSInstanceId(self, ECSInstanceId):  # String
+		self.add_query_param('ECSInstanceId', ECSInstanceId)
+	def get_FsId(self): # String
 		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)

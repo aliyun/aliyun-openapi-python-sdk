@@ -23,22 +23,21 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class RenameDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'RenameDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'RenameDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FsName(self):
+	def get_FsName(self): # String
 		return self.get_query_params().get('FsName')
 
-	def set_FsName(self,FsName):
-		self.add_query_param('FsName',FsName)
-
-	def get_FsId(self):
+	def set_FsName(self, FsName):  # String
+		self.add_query_param('FsName', FsName)
+	def get_FsId(self): # String
 		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)

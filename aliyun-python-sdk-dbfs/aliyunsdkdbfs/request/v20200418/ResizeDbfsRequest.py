@@ -23,22 +23,21 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class ResizeDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ResizeDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ResizeDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NewSizeG(self):
+	def get_NewSizeG(self): # Integer
 		return self.get_query_params().get('NewSizeG')
 
-	def set_NewSizeG(self,NewSizeG):
-		self.add_query_param('NewSizeG',NewSizeG)
-
-	def get_FsId(self):
+	def set_NewSizeG(self, NewSizeG):  # Integer
+		self.add_query_param('NewSizeG', NewSizeG)
+	def get_FsId(self): # String
 		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)

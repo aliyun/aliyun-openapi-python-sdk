@@ -23,22 +23,21 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class DeleteTagsBatchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DeleteTagsBatch')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DeleteTagsBatch','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DbfsList(self):
+	def get_DbfsList(self): # String
 		return self.get_query_params().get('DbfsList')
 
-	def set_DbfsList(self,DbfsList):
-		self.add_query_param('DbfsList',DbfsList)
-
-	def get_Tags(self):
+	def set_DbfsList(self, DbfsList):  # String
+		self.add_query_param('DbfsList', DbfsList)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)

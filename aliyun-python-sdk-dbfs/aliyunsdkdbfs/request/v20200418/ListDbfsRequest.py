@@ -23,52 +23,46 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class ListDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListDbfs','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SortType(self):
+	def get_SortType(self): # String
 		return self.get_query_params().get('SortType')
 
-	def set_SortType(self,SortType):
-		self.add_query_param('SortType',SortType)
-
-	def get_FilterValue(self):
+	def set_SortType(self, SortType):  # String
+		self.add_query_param('SortType', SortType)
+	def get_FilterValue(self): # String
 		return self.get_query_params().get('FilterValue')
 
-	def set_FilterValue(self,FilterValue):
-		self.add_query_param('FilterValue',FilterValue)
-
-	def get_PageNumber(self):
+	def set_FilterValue(self, FilterValue):  # String
+		self.add_query_param('FilterValue', FilterValue)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Tags(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_FilterKey(self):
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_FilterKey(self): # String
 		return self.get_query_params().get('FilterKey')
 
-	def set_FilterKey(self,FilterKey):
-		self.add_query_param('FilterKey',FilterKey)
-
-	def get_SortKey(self):
+	def set_FilterKey(self, FilterKey):  # String
+		self.add_query_param('FilterKey', FilterKey)
+	def get_SortKey(self): # String
 		return self.get_query_params().get('SortKey')
 
-	def set_SortKey(self,SortKey):
-		self.add_query_param('SortKey',SortKey)
-
-	def get_PageSize(self):
+	def set_SortKey(self, SortKey):  # String
+		self.add_query_param('SortKey', SortKey)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

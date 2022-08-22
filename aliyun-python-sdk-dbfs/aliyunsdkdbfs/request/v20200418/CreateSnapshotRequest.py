@@ -23,40 +23,36 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class CreateSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'CreateSnapshot')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'CreateSnapshot','dbfs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SnapshotName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SnapshotName(self): # String
 		return self.get_query_params().get('SnapshotName')
 
-	def set_SnapshotName(self,SnapshotName):
-		self.add_query_param('SnapshotName',SnapshotName)
-
-	def get_FsId(self):
+	def set_SnapshotName(self, SnapshotName):  # String
+		self.add_query_param('SnapshotName', SnapshotName)
+	def get_FsId(self): # String
 		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
-
-	def get_RetentionDays(self):
+	def set_FsId(self, FsId):  # String
+		self.add_query_param('FsId', FsId)
+	def get_RetentionDays(self): # Integer
 		return self.get_query_params().get('RetentionDays')
 
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
+	def set_RetentionDays(self, RetentionDays):  # Integer
+		self.add_query_param('RetentionDays', RetentionDays)
