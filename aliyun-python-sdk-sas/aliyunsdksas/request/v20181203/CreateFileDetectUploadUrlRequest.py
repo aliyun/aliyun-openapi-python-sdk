@@ -42,3 +42,12 @@ class CreateFileDetectUploadUrlRequest(RpcRequest):
 
 	def set_Type(self, Type):  # Integer
 		self.add_query_param('Type', Type)
+	def get_HashKeyContextLists(self): # RepeatList
+		return self.get_query_params().get('HashKeyContextList')
+
+	def set_HashKeyContextLists(self, HashKeyContextList):  # RepeatList
+		for depth1 in range(len(HashKeyContextList)):
+			if HashKeyContextList[depth1].get('HashKey') is not None:
+				self.add_query_param('HashKeyContextList.' + str(depth1 + 1) + '.HashKey', HashKeyContextList[depth1].get('HashKey'))
+			if HashKeyContextList[depth1].get('FileSize') is not None:
+				self.add_query_param('HashKeyContextList.' + str(depth1 + 1) + '.FileSize', HashKeyContextList[depth1].get('FileSize'))
