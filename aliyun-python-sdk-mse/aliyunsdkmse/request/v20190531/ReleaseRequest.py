@@ -20,27 +20,32 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class GetDashBoardUrlRequest(RpcRequest):
+class ReleaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetDashBoardUrl','mse')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'Release','mse')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_Uid(self): # String
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

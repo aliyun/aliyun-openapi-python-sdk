@@ -20,24 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class DeleteSeataServerRequest(RpcRequest):
+class GetCanaryStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteSeataServer','mse')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetCanaryStatus','mse')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_SeataServerUniqueId(self): # String
-		return self.get_query_params().get('SeataServerUniqueId')
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
 
-	def set_SeataServerUniqueId(self, SeataServerUniqueId):  # String
-		self.add_query_param('SeataServerUniqueId', SeataServerUniqueId)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

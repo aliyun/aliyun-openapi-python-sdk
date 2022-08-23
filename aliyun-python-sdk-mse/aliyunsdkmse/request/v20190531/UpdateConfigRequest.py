@@ -36,6 +36,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_OpenSuperAcl(self, OpenSuperAcl):  # String
 		self.add_body_params('OpenSuperAcl', OpenSuperAcl)
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_ConfigAuthEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigAuthEnabled')
 
@@ -46,6 +51,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_PassWord(self, PassWord):  # String
 		self.add_query_param('PassWord', PassWord)
+	def get_SnapshotCount(self): # String
+		return self.get_query_params().get('SnapshotCount')
+
+	def set_SnapshotCount(self, SnapshotCount):  # String
+		self.add_query_param('SnapshotCount', SnapshotCount)
 	def get_MinSessionTimeout(self): # String
 		return self.get_query_params().get('MinSessionTimeout')
 

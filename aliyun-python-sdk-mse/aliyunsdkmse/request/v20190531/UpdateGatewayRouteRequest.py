@@ -32,6 +32,11 @@ class UpdateGatewayRouteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -97,3 +102,13 @@ class UpdateGatewayRouteRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_FallbackServices(self): # Array
+		return self.get_query_params().get('FallbackServices')
+
+	def set_FallbackServices(self, FallbackServices):  # Array
+		self.add_query_param("FallbackServices", json.dumps(FallbackServices))
+	def get_Fallback(self): # Boolean
+		return self.get_query_params().get('Fallback')
+
+	def set_Fallback(self, Fallback):  # Boolean
+		self.add_query_param('Fallback', Fallback)

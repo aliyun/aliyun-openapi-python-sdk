@@ -32,11 +32,11 @@ class ImportServicesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceId(self): # String
-		return self.get_query_params().get('SourceId')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_SourceId(self, SourceId):  # String
-		self.add_query_param('SourceId', SourceId)
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -47,13 +47,18 @@ class ImportServicesRequest(RpcRequest):
 
 	def set_ServiceList(self, ServiceList):  # Array
 		self.add_query_param("ServiceList", json.dumps(ServiceList))
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
+	def get_TlsSetting(self): # String
+		return self.get_query_params().get('TlsSetting')
 
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def set_TlsSetting(self, TlsSetting):  # String
+		self.add_query_param('TlsSetting', TlsSetting)
 	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
 	def set_SourceType(self, SourceType):  # String
 		self.add_query_param('SourceType', SourceType)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

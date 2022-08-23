@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class ListNacosHistoryConfigsRequest(RpcRequest):
+class GetServiceListenersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListNacosHistoryConfigs','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetServiceListeners','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,43 +36,58 @@ class ListNacosHistoryConfigsRequest(RpcRequest):
 
 	def set_MseSessionId(self, MseSessionId):  # String
 		self.add_query_param('MseSessionId', MseSessionId)
+	def get_ClusterName(self): # String
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_DataId(self): # String
-		return self.get_query_params().get('DataId')
-
-	def set_DataId(self, DataId):  # String
-		self.add_query_param('DataId', DataId)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_GroupName(self): # String
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_HasIpCount(self): # String
+		return self.get_query_params().get('HasIpCount')
+
+	def set_HasIpCount(self, HasIpCount):  # String
+		self.add_query_param('HasIpCount', HasIpCount)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Group(self): # String
-		return self.get_query_params().get('Group')
-
-	def set_Group(self, Group):  # String
-		self.add_query_param('Group', Group)

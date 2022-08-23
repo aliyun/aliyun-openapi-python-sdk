@@ -31,6 +31,11 @@ class CreateNacosConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -41,6 +46,21 @@ class CreateNacosConfigRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Group(self): # String
+		return self.get_query_params().get('Group')
+
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)
 	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
@@ -61,26 +81,11 @@ class CreateNacosConfigRequest(RpcRequest):
 
 	def set_DataId(self, DataId):  # String
 		self.add_query_param('DataId', DataId)
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Group(self): # String
-		return self.get_query_params().get('Group')
-
-	def set_Group(self, Group):  # String
-		self.add_query_param('Group', Group)
 	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 

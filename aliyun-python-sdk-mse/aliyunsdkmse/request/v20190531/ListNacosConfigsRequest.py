@@ -31,26 +31,16 @@ class ListNacosConfigsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_DataId(self): # String
-		return self.get_query_params().get('DataId')
-
-	def set_DataId(self, DataId):  # String
-		self.add_query_param('DataId', DataId)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -71,13 +61,28 @@ class ListNacosConfigsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Group(self): # String
 		return self.get_query_params().get('Group')
 
 	def set_Group(self, Group):  # String
 		self.add_query_param('Group', Group)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DataId(self): # String
+		return self.get_query_params().get('DataId')
+
+	def set_DataId(self, DataId):  # String
+		self.add_query_param('DataId', DataId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

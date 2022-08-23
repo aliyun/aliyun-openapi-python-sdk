@@ -36,6 +36,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ClusterSpecification(self, ClusterSpecification):  # String
 		self.add_query_param('ClusterSpecification', ClusterSpecification)
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_PubSlbSpecification(self): # String
 		return self.get_query_params().get('PubSlbSpecification')
 
@@ -46,6 +51,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_PrivateSlbSpecification(self, PrivateSlbSpecification):  # String
 		self.add_query_param('PrivateSlbSpecification', PrivateSlbSpecification)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceCount(self): # Integer
 		return self.get_query_params().get('InstanceCount')
 
@@ -71,6 +81,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_DiskType(self, DiskType):  # String
 		self.add_query_param('DiskType', DiskType)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -81,6 +96,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ClusterType(self, ClusterType):  # String
 		self.add_query_param('ClusterType', ClusterType)
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
 	def get_PubNetworkFlow(self): # String
 		return self.get_query_params().get('PubNetworkFlow')
 

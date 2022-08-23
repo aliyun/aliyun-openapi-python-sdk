@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
-class PullServicesRequest(RpcRequest):
+class UpdateServiceSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'PullServices','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateServiceSource','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +32,11 @@ class PullServicesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IngressOptionsRequest(self): # Struct
+		return self.get_query_params().get('IngressOptionsRequest')
+
+	def set_IngressOptionsRequest(self, IngressOptionsRequest):  # Struct
+		self.add_query_param("IngressOptionsRequest", json.dumps(IngressOptionsRequest))
 	def get_MseSessionId(self): # String
 		return self.get_query_params().get('MseSessionId')
 
@@ -41,18 +47,38 @@ class PullServicesRequest(RpcRequest):
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
+	def get_GatewayId(self): # Long
+		return self.get_query_params().get('GatewayId')
+
+	def set_GatewayId(self, GatewayId):  # Long
+		self.add_query_param('GatewayId', GatewayId)
+	def get_Address(self): # String
+		return self.get_query_params().get('Address')
+
+	def set_Address(self, Address):  # String
+		self.add_query_param('Address', Address)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_SourceType(self): # String
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self, SourceType):  # String
-		self.add_query_param('SourceType', SourceType)

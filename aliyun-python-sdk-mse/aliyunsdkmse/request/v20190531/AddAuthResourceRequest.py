@@ -31,16 +31,16 @@ class AddAuthResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
-	def get_AuthId(self): # Long
-		return self.get_query_params().get('AuthId')
-
-	def set_AuthId(self, AuthId):  # Long
-		self.add_query_param('AuthId', AuthId)
 	def get_DomainId(self): # Long
 		return self.get_query_params().get('DomainId')
 
@@ -51,6 +51,11 @@ class AddAuthResourceRequest(RpcRequest):
 
 	def set_Path(self, Path):  # String
 		self.add_query_param('Path', Path)
+	def get_AuthId(self): # Long
+		return self.get_query_params().get('AuthId')
+
+	def set_AuthId(self, AuthId):  # Long
+		self.add_query_param('AuthId', AuthId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

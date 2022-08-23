@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
+class CreateMseServiceApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateOrUpdateSwimmingLaneGroup','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateMseServiceApplication','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,68 +36,48 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 
 	def set_MseSessionId(self, MseSessionId):  # String
 		self.add_query_param('MseSessionId', MseSessionId)
+	def get_Language(self): # String
+		return self.get_query_params().get('Language')
+
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
 	def set_Source(self, Source):  # String
 		self.add_query_param('Source', Source)
-	def get_GmtModified(self): # String
-		return self.get_query_params().get('GmtModified')
+	def get_ExtraInfo(self): # String
+		return self.get_query_params().get('ExtraInfo')
 
-	def set_GmtModified(self, GmtModified):  # String
-		self.add_query_param('GmtModified', GmtModified)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def set_ExtraInfo(self, ExtraInfo):  # String
+		self.add_query_param('ExtraInfo', ExtraInfo)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_LicenseKey(self): # String
-		return self.get_query_params().get('LicenseKey')
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_SwitchEnable(self): # String
+		return self.get_query_params().get('SwitchEnable')
 
-	def set_LicenseKey(self, LicenseKey):  # String
-		self.add_query_param('LicenseKey', LicenseKey)
-	def get_AppIds(self): # String
-		return self.get_query_params().get('AppIds')
+	def set_SwitchEnable(self, SwitchEnable):  # String
+		self.add_query_param('SwitchEnable', SwitchEnable)
+	def get_MseVersion(self): # String
+		return self.get_query_params().get('MseVersion')
 
-	def set_AppIds(self, AppIds):  # String
-		self.add_query_param('AppIds', AppIds)
-	def get_Enable(self): # Boolean
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self, Enable):  # Boolean
-		self.add_query_param('Enable', Enable)
-	def get_EntryApp(self): # String
-		return self.get_query_params().get('EntryApp')
-
-	def set_EntryApp(self, EntryApp):  # String
-		self.add_query_param('EntryApp', EntryApp)
-	def get_Id(self): # Long
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # Long
-		self.add_query_param('Id', Id)
-	def get_GmtCreate(self): # String
-		return self.get_query_params().get('GmtCreate')
-
-	def set_GmtCreate(self, GmtCreate):  # String
-		self.add_query_param('GmtCreate', GmtCreate)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_MseVersion(self, MseVersion):  # String
+		self.add_query_param('MseVersion', MseVersion)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_SentinelEnable(self): # String
+		return self.get_query_params().get('SentinelEnable')
+
+	def set_SentinelEnable(self, SentinelEnable):  # String
+		self.add_query_param('SentinelEnable', SentinelEnable)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
-	def get_Status(self): # Integer
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # Integer
-		self.add_query_param('Status', Status)

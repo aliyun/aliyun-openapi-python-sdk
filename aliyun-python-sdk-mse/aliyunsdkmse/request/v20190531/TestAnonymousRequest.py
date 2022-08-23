@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class DeleteVGroupRequest(RpcRequest):
+class TestAnonymousRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteVGroup','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'TestAnonymous','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,16 @@ class DeleteVGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_AgentInfoJson(self): # String
+		return self.get_query_params().get('AgentInfoJson')
+
+	def set_AgentInfoJson(self, AgentInfoJson):  # String
+		self.add_query_param('AgentInfoJson', AgentInfoJson)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class GetGovernanceKubernetesClusterListRequest(RpcRequest):
+class UpdateGatewaySpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetGovernanceKubernetesClusterList','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateGatewaySpec','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,26 @@ class GetGovernanceKubernetesClusterListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterName(self): # String
-		return self.get_query_params().get('ClusterName')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_ClusterName(self, ClusterName):  # String
-		self.add_query_param('ClusterName', ClusterName)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_GatewayUniqueId(self): # String
+		return self.get_query_params().get('GatewayUniqueId')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
+		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_Replica(self): # Integer
+		return self.get_query_params().get('Replica')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_Replica(self, Replica):  # Integer
+		self.add_query_param('Replica', Replica)
+	def get_Spec(self): # String
+		return self.get_query_params().get('Spec')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

@@ -31,11 +31,26 @@ class AddGatewayRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_InternetSlbSpec(self): # String
 		return self.get_query_params().get('InternetSlbSpec')
 
 	def set_InternetSlbSpec(self, InternetSlbSpec):  # String
 		self.add_query_param('InternetSlbSpec', InternetSlbSpec)
+	def get_EnableXtrace(self): # Boolean
+		return self.get_query_params().get('EnableXtrace')
+
+	def set_EnableXtrace(self, EnableXtrace):  # Boolean
+		self.add_query_param('EnableXtrace', EnableXtrace)
+	def get_XtraceRatio(self): # String
+		return self.get_query_params().get('XtraceRatio')
+
+	def set_XtraceRatio(self, XtraceRatio):  # String
+		self.add_query_param('XtraceRatio', XtraceRatio)
 	def get_Replica(self): # Integer
 		return self.get_query_params().get('Replica')
 
@@ -46,6 +61,16 @@ class AddGatewayRequest(RpcRequest):
 
 	def set_VSwitchId2(self, VSwitchId2):  # String
 		self.add_query_param('VSwitchId2', VSwitchId2)
+	def get_EnableHardwareAcceleration(self): # Boolean
+		return self.get_query_params().get('EnableHardwareAcceleration')
+
+	def set_EnableHardwareAcceleration(self, EnableHardwareAcceleration):  # Boolean
+		self.add_query_param('EnableHardwareAcceleration', EnableHardwareAcceleration)
+	def get_EnableSls(self): # Boolean
+		return self.get_query_params().get('EnableSls')
+
+	def set_EnableSls(self, EnableSls):  # Boolean
+		self.add_query_param('EnableSls', EnableSls)
 	def get_Spec(self): # String
 		return self.get_query_params().get('Spec')
 

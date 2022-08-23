@@ -20,39 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class AddTestRequest(RpcRequest):
+class ListVgroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'AddTest','mse')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListVgroups','mse')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_OrderItem(self): # String
-		return self.get_query_params().get('OrderItem')
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
 
-	def set_OrderItem(self, OrderItem):  # String
-		self.add_query_param('OrderItem', OrderItem)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_DescSort(self): # Boolean
-		return self.get_query_params().get('DescSort')
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
 
-	def set_DescSort(self, DescSort):  # Boolean
-		self.add_query_param('DescSort', DescSort)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

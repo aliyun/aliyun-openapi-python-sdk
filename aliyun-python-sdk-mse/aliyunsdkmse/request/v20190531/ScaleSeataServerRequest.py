@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class CreateVGroupRequest(RpcRequest):
+class ScaleSeataServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateVGroup','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ScaleSeataServer','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class CreateVGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PrimaryUser(self): # String
-		return self.get_query_params().get('PrimaryUser')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_PrimaryUser(self, PrimaryUser):  # String
-		self.add_query_param('PrimaryUser', PrimaryUser)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
+	def get_Replica(self): # Integer
+		return self.get_query_params().get('Replica')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_Replica(self, Replica):  # Integer
+		self.add_query_param('Replica', Replica)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
@@ -51,8 +51,3 @@ class CreateVGroupRequest(RpcRequest):
 
 	def set_SeataServerUniqueId(self, SeataServerUniqueId):  # String
 		self.add_query_param('SeataServerUniqueId', SeataServerUniqueId)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)

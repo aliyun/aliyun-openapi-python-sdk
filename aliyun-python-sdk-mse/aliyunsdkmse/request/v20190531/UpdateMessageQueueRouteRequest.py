@@ -32,16 +32,21 @@ class UpdateMessageQueueRouteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Tags(self): # Array
-		return self.get_query_params().get('Tags')
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
 
-	def set_Tags(self, Tags):  # Array
-		self.add_query_param("Tags", json.dumps(Tags))
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_Enable(self): # Boolean
 		return self.get_query_params().get('Enable')
 
 	def set_Enable(self, Enable):  # Boolean
 		self.add_query_param('Enable', Enable)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 

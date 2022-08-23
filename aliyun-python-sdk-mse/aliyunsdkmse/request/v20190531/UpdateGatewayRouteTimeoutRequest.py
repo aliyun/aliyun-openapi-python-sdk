@@ -37,16 +37,16 @@ class UpdateGatewayRouteTimeoutRequest(RpcRequest):
 
 	def set_TimeoutJSON(self, TimeoutJSON):  # Struct
 		self.add_query_param("TimeoutJSON", json.dumps(TimeoutJSON))
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
@@ -57,3 +57,8 @@ class UpdateGatewayRouteTimeoutRequest(RpcRequest):
 
 	def set_GatewayId(self, GatewayId):  # Long
 		self.add_query_param('GatewayId', GatewayId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

@@ -36,6 +36,11 @@ class DeleteGatewayRequest(RpcRequest):
 
 	def set_DeleteSlb(self, DeleteSlb):  # Boolean
 		self.add_query_param('DeleteSlb', DeleteSlb)
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 

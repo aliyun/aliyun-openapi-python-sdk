@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class QueryUserVpcRequest(RpcRequest):
+class ListUserInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryUserVpc','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListUserInstances','mse')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class QueryUserVpcRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 

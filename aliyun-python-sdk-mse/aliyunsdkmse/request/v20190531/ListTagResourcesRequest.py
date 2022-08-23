@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
 
-class CloneNacosConfigRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CloneNacosConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListTagResources','mse')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,38 +36,33 @@ class CloneNacosConfigRequest(RpcRequest):
 
 	def set_MseSessionId(self, MseSessionId):  # String
 		self.add_query_param('MseSessionId', MseSessionId)
-	def get_TargetNamespaceId(self): # String
-		return self.get_query_params().get('TargetNamespaceId')
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_TargetNamespaceId(self, TargetNamespaceId):  # String
-		self.add_query_param('TargetNamespaceId', TargetNamespaceId)
-	def get_ConfigInfoJson(self): # String
-		return self.get_query_params().get('ConfigInfoJson')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_ConfigInfoJson(self, ConfigInfoJson):  # String
-		self.add_query_param('ConfigInfoJson', ConfigInfoJson)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Ids(self): # String
-		return self.get_query_params().get('Ids')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_Ids(self, Ids):  # String
-		self.add_query_param('Ids', Ids)
-	def get_OriginNamespaceId(self): # String
-		return self.get_query_params().get('OriginNamespaceId')
-
-	def set_OriginNamespaceId(self, OriginNamespaceId):  # String
-		self.add_query_param('OriginNamespaceId', OriginNamespaceId)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

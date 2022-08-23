@@ -37,6 +37,11 @@ class AddServiceSourceRequest(RpcRequest):
 
 	def set_IngressOptionsRequest(self, IngressOptionsRequest):  # Struct
 		self.add_query_param("IngressOptionsRequest", json.dumps(IngressOptionsRequest))
+	def get_MseSessionId(self): # String
+		return self.get_query_params().get('MseSessionId')
+
+	def set_MseSessionId(self, MseSessionId):  # String
+		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -67,3 +72,8 @@ class AddServiceSourceRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_GroupList(self): # Array
+		return self.get_query_params().get('GroupList')
+
+	def set_GroupList(self, GroupList):  # Array
+		self.add_query_param("GroupList", json.dumps(GroupList))
