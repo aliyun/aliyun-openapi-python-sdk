@@ -87,7 +87,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
         "<access-key-id>",
         "<access-key-secret>",
         "<region-id>"
-    );
+    )
     ```
 
 	where:
@@ -127,7 +127,7 @@ client = AcsClient(
   "<your-access-key-id>",
   "<your-access-key-secret>",
   "<your-region-id>"
-);
+)
 
 # Initialize a request and set parameters
 request = DescribeInstancesRequest.DescribeInstancesRequest()
