@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class DeleteTransitRouterPrefixListAssociationRequest(RpcRequest):
+class UpdateTransitRouterVpcAttachmentZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteTransitRouterPrefixListAssociation')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterVpcAttachmentZones')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,24 @@ class DeleteTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_PrefixListId(self): # String
-		return self.get_query_params().get('PrefixListId')
+	def get_RemoveZoneMappingss(self): # RepeatList
+		return self.get_query_params().get('RemoveZoneMappings')
 
-	def set_PrefixListId(self, PrefixListId):  # String
-		self.add_query_param('PrefixListId', PrefixListId)
+	def set_RemoveZoneMappingss(self, RemoveZoneMappings):  # RepeatList
+		for depth1 in range(len(RemoveZoneMappings)):
+			if RemoveZoneMappings[depth1].get('VSwitchId') is not None:
+				self.add_query_param('RemoveZoneMappings.' + str(depth1 + 1) + '.VSwitchId', RemoveZoneMappings[depth1].get('VSwitchId'))
+			if RemoveZoneMappings[depth1].get('ZoneId') is not None:
+				self.add_query_param('RemoveZoneMappings.' + str(depth1 + 1) + '.ZoneId', RemoveZoneMappings[depth1].get('ZoneId'))
+	def get_AddZoneMappingss(self): # RepeatList
+		return self.get_query_params().get('AddZoneMappings')
+
+	def set_AddZoneMappingss(self, AddZoneMappings):  # RepeatList
+		for depth1 in range(len(AddZoneMappings)):
+			if AddZoneMappings[depth1].get('VSwitchId') is not None:
+				self.add_query_param('AddZoneMappings.' + str(depth1 + 1) + '.VSwitchId', AddZoneMappings[depth1].get('VSwitchId'))
+			if AddZoneMappings[depth1].get('ZoneId') is not None:
+				self.add_query_param('AddZoneMappings.' + str(depth1 + 1) + '.ZoneId', AddZoneMappings[depth1].get('ZoneId'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
@@ -66,18 +79,8 @@ class DeleteTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TransitRouterId(self): # String
-		return self.get_query_params().get('TransitRouterId')
+	def get_TransitRouterAttachmentId(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentId')
 
-	def set_TransitRouterId(self, TransitRouterId):  # String
-		self.add_query_param('TransitRouterId', TransitRouterId)
-	def get_TransitRouterTableId(self): # String
-		return self.get_query_params().get('TransitRouterTableId')
-
-	def set_TransitRouterTableId(self, TransitRouterTableId):  # String
-		self.add_query_param('TransitRouterTableId', TransitRouterTableId)
-	def get_NextHop(self): # String
-		return self.get_query_params().get('NextHop')
-
-	def set_NextHop(self, NextHop):  # String
-		self.add_query_param('NextHop', NextHop)
+	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
+		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
