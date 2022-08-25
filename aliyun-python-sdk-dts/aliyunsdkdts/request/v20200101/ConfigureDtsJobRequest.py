@@ -101,6 +101,11 @@ class ConfigureDtsJobRequest(RpcRequest):
 
 	def set_DelayRuleTime(self, DelayRuleTime):  # Long
 		self.add_query_param('DelayRuleTime', DelayRuleTime)
+	def get_DisasterRecoveryJob(self): # Boolean
+		return self.get_query_params().get('DisasterRecoveryJob')
+
+	def set_DisasterRecoveryJob(self, DisasterRecoveryJob):  # Boolean
+		self.add_query_param('DisasterRecoveryJob', DisasterRecoveryJob)
 	def get_DestinationEndpointIP(self): # String
 		return self.get_query_params().get('DestinationEndpointIP')
 
