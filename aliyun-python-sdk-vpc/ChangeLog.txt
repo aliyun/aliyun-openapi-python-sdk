@@ -1,3 +1,9 @@
+2022-08-25 Version: 3.0.22
+- Supported SecurityProtectionTypes for AllocateEipAddress.
+- Supported SecurityProtectionTypes for AllocateEipAddressPro.
+- Supported PublicIpAddressPoolId for AllocateEipAddress.
+- Supported PublicIpAddressPoolId for AllocateEipAddressPro.
+
 2022-08-19 Version: 3.0.21
 - Optimize DescribePublicIpAddress API.
 
