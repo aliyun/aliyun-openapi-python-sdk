@@ -51,28 +51,8 @@ class AddGatewaySlbRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_HttpPort(self): # Integer
-		return self.get_query_params().get('HttpPort')
-
-	def set_HttpPort(self, HttpPort):  # Integer
-		self.add_query_param('HttpPort', HttpPort)
-	def get_ServiceWeight(self): # Integer
-		return self.get_query_params().get('ServiceWeight')
-
-	def set_ServiceWeight(self, ServiceWeight):  # Integer
-		self.add_query_param('ServiceWeight', ServiceWeight)
-	def get_VServerGroupId(self): # String
-		return self.get_query_params().get('VServerGroupId')
-
-	def set_VServerGroupId(self, VServerGroupId):  # String
-		self.add_query_param('VServerGroupId', VServerGroupId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_HttpsPort(self): # Integer
-		return self.get_query_params().get('HttpsPort')
-
-	def set_HttpsPort(self, HttpsPort):  # Integer
-		self.add_query_param('HttpsPort', HttpsPort)

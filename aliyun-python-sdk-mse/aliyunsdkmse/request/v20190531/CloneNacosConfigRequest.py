@@ -41,11 +41,6 @@ class CloneNacosConfigRequest(RpcRequest):
 
 	def set_TargetNamespaceId(self, TargetNamespaceId):  # String
 		self.add_query_param('TargetNamespaceId', TargetNamespaceId)
-	def get_ConfigInfoJson(self): # String
-		return self.get_query_params().get('ConfigInfoJson')
-
-	def set_ConfigInfoJson(self, ConfigInfoJson):  # String
-		self.add_query_param('ConfigInfoJson', ConfigInfoJson)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

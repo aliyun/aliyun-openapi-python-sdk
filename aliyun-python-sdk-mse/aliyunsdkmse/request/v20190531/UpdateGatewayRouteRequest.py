@@ -102,13 +102,3 @@ class UpdateGatewayRouteRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_FallbackServices(self): # Array
-		return self.get_query_params().get('FallbackServices')
-
-	def set_FallbackServices(self, FallbackServices):  # Array
-		self.add_query_param("FallbackServices", json.dumps(FallbackServices))
-	def get_Fallback(self): # Boolean
-		return self.get_query_params().get('Fallback')
-
-	def set_Fallback(self, Fallback):  # Boolean
-		self.add_query_param('Fallback', Fallback)

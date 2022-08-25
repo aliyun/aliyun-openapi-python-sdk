@@ -19,7 +19,6 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
-import json
 
 class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 
@@ -57,6 +56,11 @@ class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 
 	def set_LicenseKey(self, LicenseKey):  # String
 		self.add_query_param('LicenseKey', LicenseKey)
+	def get_EntryRule(self): # String
+		return self.get_query_params().get('EntryRule')
+
+	def set_EntryRule(self, EntryRule):  # String
+		self.add_query_param('EntryRule', EntryRule)
 	def get_Enable(self): # Boolean
 		return self.get_query_params().get('Enable')
 
@@ -72,11 +76,42 @@ class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 
 	def set_Tag(self, Tag):  # String
 		self.add_query_param('Tag', Tag)
-	def get_EntryRules(self): # Array
+	def get_EntryRuless(self): # RepeatList
 		return self.get_query_params().get('EntryRules')
 
-	def set_EntryRules(self, EntryRules):  # Array
-		self.add_query_param("EntryRules", json.dumps(EntryRules))
+	def set_EntryRuless(self, EntryRules):  # RepeatList
+		for depth1 in range(len(EntryRules)):
+			if EntryRules[depth1].get('RestItems') is not None:
+				for depth2 in range(len(EntryRules[depth1].get('RestItems'))):
+					if EntryRules[depth1].get('RestItems')[depth2].get('Datum') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Datum', EntryRules[depth1].get('RestItems')[depth2].get('Datum'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Divisor') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Divisor', EntryRules[depth1].get('RestItems')[depth2].get('Divisor'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Rate') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Rate', EntryRules[depth1].get('RestItems')[depth2].get('Rate'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('NameList') is not None:
+						for depth3 in range(len(EntryRules[depth1].get('RestItems')[depth2].get('NameList'))):
+							self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.NameList.' + str(depth3 + 1), EntryRules[depth1].get('RestItems')[depth2].get('NameList')[depth3])
+					if EntryRules[depth1].get('RestItems')[depth2].get('Name') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Name', EntryRules[depth1].get('RestItems')[depth2].get('Name'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Type') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Type', EntryRules[depth1].get('RestItems')[depth2].get('Type'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Cond') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Cond', EntryRules[depth1].get('RestItems')[depth2].get('Cond'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Remainder') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Remainder', EntryRules[depth1].get('RestItems')[depth2].get('Remainder'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Value') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Value', EntryRules[depth1].get('RestItems')[depth2].get('Value'))
+					if EntryRules[depth1].get('RestItems')[depth2].get('Operator') is not None:
+						self.add_query_param('EntryRules.' + str(depth1 + 1) + '.RestItems.'  + str(depth2 + 1) + '.Operator', EntryRules[depth1].get('RestItems')[depth2].get('Operator'))
+			if EntryRules[depth1].get('Path') is not None:
+				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Path', EntryRules[depth1].get('Path'))
+			if EntryRules[depth1].get('Condition') is not None:
+				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Condition', EntryRules[depth1].get('Condition'))
+			if EntryRules[depth1].get('Enable') is not None:
+				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Enable', EntryRules[depth1].get('Enable'))
+			if EntryRules[depth1].get('Priority') is not None:
+				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Priority', EntryRules[depth1].get('Priority'))
 	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
