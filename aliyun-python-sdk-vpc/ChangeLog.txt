@@ -1,3 +1,6 @@
+2022-08-26 Version: 3.0.23
+- Support DescribeNatGateways return Tags.
+
 2022-08-25 Version: 3.0.22
 - Supported SecurityProtectionTypes for AllocateEipAddress.
 - Supported SecurityProtectionTypes for AllocateEipAddressPro.
