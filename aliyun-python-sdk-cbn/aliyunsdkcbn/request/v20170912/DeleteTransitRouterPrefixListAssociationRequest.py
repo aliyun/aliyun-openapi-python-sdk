@@ -46,6 +46,11 @@ class DeleteTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_PrefixListId(self, PrefixListId):  # String
 		self.add_query_param('PrefixListId', PrefixListId)
+	def get_NextHopType(self): # String
+		return self.get_query_params().get('NextHopType')
+
+	def set_NextHopType(self, NextHopType):  # String
+		self.add_query_param('NextHopType', NextHopType)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
