@@ -25,56 +25,49 @@ class UpdateDcdnSLSRealtimeLogDeliveryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnSLSRealtimeLogDelivery')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SLSLogStore(self):
+	def get_SLSLogStore(self): # String
 		return self.get_body_params().get('SLSLogStore')
 
-	def set_SLSLogStore(self,SLSLogStore):
+	def set_SLSLogStore(self, SLSLogStore):  # String
 		self.add_body_params('SLSLogStore', SLSLogStore)
-
-	def get_SLSProject(self):
+	def get_SLSProject(self): # String
 		return self.get_body_params().get('SLSProject')
 
-	def set_SLSProject(self,SLSProject):
+	def set_SLSProject(self, SLSProject):  # String
 		self.add_body_params('SLSProject', SLSProject)
-
-	def get_SLSRegion(self):
+	def get_SLSRegion(self): # String
 		return self.get_body_params().get('SLSRegion')
 
-	def set_SLSRegion(self,SLSRegion):
+	def set_SLSRegion(self, SLSRegion):  # String
 		self.add_body_params('SLSRegion', SLSRegion)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_DomainName(self):
+	def get_DomainName(self): # String
 		return self.get_body_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
+	def set_DomainName(self, DomainName):  # String
 		self.add_body_params('DomainName', DomainName)
-
-	def get_SamplingRate(self):
+	def get_SamplingRate(self): # String
 		return self.get_body_params().get('SamplingRate')
 
-	def set_SamplingRate(self,SamplingRate):
+	def set_SamplingRate(self, SamplingRate):  # String
 		self.add_body_params('SamplingRate', SamplingRate)
-
-	def get_DataCenter(self):
+	def get_DataCenter(self): # String
 		return self.get_body_params().get('DataCenter')
 
-	def set_DataCenter(self,DataCenter):
+	def set_DataCenter(self, DataCenter):  # String
 		self.add_body_params('DataCenter', DataCenter)
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

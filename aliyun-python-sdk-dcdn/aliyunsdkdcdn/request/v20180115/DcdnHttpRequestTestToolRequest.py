@@ -25,62 +25,54 @@ class DcdnHttpRequestTestToolRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DcdnHttpRequestTestTool')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProxyIp(self):
+	def get_ProxyIp(self): # String
 		return self.get_body_params().get('ProxyIp')
 
-	def set_ProxyIp(self,ProxyIp):
+	def set_ProxyIp(self, ProxyIp):  # String
 		self.add_body_params('ProxyIp', ProxyIp)
-
-	def get_Scheme(self):
+	def get_Scheme(self): # String
 		return self.get_body_params().get('Scheme')
 
-	def set_Scheme(self,Scheme):
+	def set_Scheme(self, Scheme):  # String
 		self.add_body_params('Scheme', Scheme)
-
-	def get_Body(self):
+	def get_Body(self): # String
 		return self.get_body_params().get('Body')
 
-	def set_Body(self,Body):
+	def set_Body(self, Body):  # String
 		self.add_body_params('Body', Body)
-
-	def get_Host(self):
+	def get_Host(self): # String
 		return self.get_body_params().get('Host')
 
-	def set_Host(self,Host):
+	def set_Host(self, Host):  # String
 		self.add_body_params('Host', Host)
-
-	def get_Method(self):
+	def get_Method(self): # String
 		return self.get_body_params().get('Method')
 
-	def set_Method(self,Method):
+	def set_Method(self, Method):  # String
 		self.add_body_params('Method', Method)
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Uri(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Uri(self): # String
 		return self.get_body_params().get('Uri')
 
-	def set_Uri(self,Uri):
+	def set_Uri(self, Uri):  # String
 		self.add_body_params('Uri', Uri)
-
-	def get_Args(self):
+	def get_Args(self): # String
 		return self.get_body_params().get('Args')
 
-	def set_Args(self,Args):
+	def set_Args(self, Args):  # String
 		self.add_body_params('Args', Args)
-
-	def get_Header(self):
+	def get_Header(self): # String
 		return self.get_body_params().get('Header')
 
-	def set_Header(self,Header):
+	def set_Header(self, Header):  # String
 		self.add_body_params('Header', Header)

@@ -25,32 +25,29 @@ class DescribeDcdnUserSecDropRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserSecDrop')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_query_params().get('Data')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
-
-	def get_OwnerId(self):
+	def set_Data(self, Data):  # String
+		self.add_query_param('Data', Data)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Metric(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Metric(self): # String
 		return self.get_query_params().get('Metric')
 
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
-
-	def get_SecFunc(self):
+	def set_Metric(self, Metric):  # String
+		self.add_query_param('Metric', Metric)
+	def get_SecFunc(self): # String
 		return self.get_query_params().get('SecFunc')
 
-	def set_SecFunc(self,SecFunc):
-		self.add_query_param('SecFunc',SecFunc)
+	def set_SecFunc(self, SecFunc):  # String
+		self.add_query_param('SecFunc', SecFunc)

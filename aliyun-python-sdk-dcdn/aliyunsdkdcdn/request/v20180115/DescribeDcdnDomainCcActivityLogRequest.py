@@ -25,62 +25,54 @@ class DescribeDcdnDomainCcActivityLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainCcActivityLog')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RuleName(self):
+	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
-
-	def get_StartTime(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_TriggerObject(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_TriggerObject(self): # String
 		return self.get_query_params().get('TriggerObject')
 
-	def set_TriggerObject(self,TriggerObject):
-		self.add_query_param('TriggerObject',TriggerObject)
-
-	def get_PageNumber(self):
+	def set_TriggerObject(self, TriggerObject):  # String
+		self.add_query_param('TriggerObject', TriggerObject)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Value(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
-	def get_DomainName(self):
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

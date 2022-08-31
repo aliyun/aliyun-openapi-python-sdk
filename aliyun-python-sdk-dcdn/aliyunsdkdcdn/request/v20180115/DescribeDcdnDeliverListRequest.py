@@ -25,20 +25,19 @@ class DescribeDcdnDeliverListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDeliverList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeliverId(self):
+	def get_DeliverId(self): # Long
 		return self.get_query_params().get('DeliverId')
 
-	def set_DeliverId(self,DeliverId):
-		self.add_query_param('DeliverId',DeliverId)
-
-	def get_OwnerId(self):
+	def set_DeliverId(self, DeliverId):  # Long
+		self.add_query_param('DeliverId', DeliverId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

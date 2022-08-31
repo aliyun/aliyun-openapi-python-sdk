@@ -25,32 +25,34 @@ class PreloadDcdnObjectCachesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'PreloadDcdnObjectCaches')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Area(self):
-		return self.get_query_params().get('Area')
-
-	def set_Area(self,Area):
-		self.add_query_param('Area',Area)
-
-	def get_ObjectPath(self):
+	def get_ObjectPath(self): # String
 		return self.get_query_params().get('ObjectPath')
 
-	def set_ObjectPath(self,ObjectPath):
-		self.add_query_param('ObjectPath',ObjectPath)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
+	def set_ObjectPath(self, ObjectPath):  # String
+		self.add_query_param('ObjectPath', ObjectPath)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_L2Preload(self): # Boolean
+		return self.get_query_params().get('L2Preload')
+
+	def set_L2Preload(self, L2Preload):  # Boolean
+		self.add_query_param('L2Preload', L2Preload)
+	def get_Area(self): # String
+		return self.get_query_params().get('Area')
+
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

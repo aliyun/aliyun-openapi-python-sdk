@@ -20,31 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class SetDcdnDomainCSRCertificateRequest(RpcRequest):
+class ModifyDcdnWafPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'SetDcdnDomainCSRCertificate')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'ModifyDcdnWafPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PolicyStatus(self): # String
+		return self.get_body_params().get('PolicyStatus')
 
-	def get_ServerCertificate(self):
-		return self.get_query_params().get('ServerCertificate')
+	def set_PolicyStatus(self, PolicyStatus):  # String
+		self.add_body_params('PolicyStatus', PolicyStatus)
+	def get_PolicyId(self): # Long
+		return self.get_body_params().get('PolicyId')
 
-	def set_ServerCertificate(self,ServerCertificate):
-		self.add_query_param('ServerCertificate',ServerCertificate)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_PolicyId(self, PolicyId):  # Long
+		self.add_body_params('PolicyId', PolicyId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PolicyName(self): # String
+		return self.get_body_params().get('PolicyName')
+
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_body_params('PolicyName', PolicyName)

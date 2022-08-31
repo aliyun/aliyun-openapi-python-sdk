@@ -25,26 +25,24 @@ class DescribeDcdnSMCertificateDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnSMCertificateDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def get_CertIdentifier(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_CertIdentifier(self): # String
 		return self.get_query_params().get('CertIdentifier')
 
-	def set_CertIdentifier(self,CertIdentifier):
-		self.add_query_param('CertIdentifier',CertIdentifier)
+	def set_CertIdentifier(self, CertIdentifier):  # String
+		self.add_query_param('CertIdentifier', CertIdentifier)

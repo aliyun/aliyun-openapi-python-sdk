@@ -20,31 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnConfigGroupDetailRequest(RpcRequest):
+class DeleteDcdnWafPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnConfigGroupDetail')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DeleteDcdnWafPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PolicyId(self): # Long
+		return self.get_body_params().get('PolicyId')
 
-	def get_ConfigGroupName(self):
-		return self.get_query_params().get('ConfigGroupName')
-
-	def set_ConfigGroupName(self,ConfigGroupName):
-		self.add_query_param('ConfigGroupName',ConfigGroupName)
-
-	def get_OwnerId(self):
+	def set_PolicyId(self, PolicyId):  # Long
+		self.add_body_params('PolicyId', PolicyId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ConfigGroupId(self):
-		return self.get_query_params().get('ConfigGroupId')
-
-	def set_ConfigGroupId(self,ConfigGroupId):
-		self.add_query_param('ConfigGroupId',ConfigGroupId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

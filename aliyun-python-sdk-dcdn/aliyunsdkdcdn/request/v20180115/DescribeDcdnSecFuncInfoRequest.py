@@ -25,26 +25,24 @@ class DescribeDcdnSecFuncInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnSecFuncInfo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Lang(self):
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_OwnerId(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecFuncType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SecFuncType(self): # String
 		return self.get_query_params().get('SecFuncType')
 
-	def set_SecFuncType(self,SecFuncType):
-		self.add_query_param('SecFuncType',SecFuncType)
+	def set_SecFuncType(self, SecFuncType):  # String
+		self.add_query_param('SecFuncType', SecFuncType)

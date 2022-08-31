@@ -25,32 +25,29 @@ class CreateRoutineRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'CreateRoutine')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_EnvConf(self):
+	def get_EnvConf(self): # String
 		return self.get_body_params().get('EnvConf')
 
-	def set_EnvConf(self,EnvConf):
+	def set_EnvConf(self, EnvConf):  # String
 		self.add_body_params('EnvConf', EnvConf)
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)

@@ -25,20 +25,19 @@ class CheckDcdnProjectExistRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'CheckDcdnProjectExist')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_query_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
-		self.add_query_param('ProjectName',ProjectName)
-
-	def get_OwnerId(self):
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

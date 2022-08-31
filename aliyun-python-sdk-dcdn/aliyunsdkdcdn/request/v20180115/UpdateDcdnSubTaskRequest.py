@@ -25,38 +25,34 @@ class UpdateDcdnSubTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnSubTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_body_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
+	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
-
-	def get_DomainName(self):
+	def get_DomainName(self): # String
 		return self.get_body_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
+	def set_DomainName(self, DomainName):  # String
 		self.add_body_params('DomainName', DomainName)
-
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ReportIds(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ReportIds(self): # String
 		return self.get_body_params().get('ReportIds')
 
-	def set_ReportIds(self,ReportIds):
+	def set_ReportIds(self, ReportIds):  # String
 		self.add_body_params('ReportIds', ReportIds)

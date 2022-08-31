@@ -25,56 +25,49 @@ class DescribeDcdnReportRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnReport')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReportId(self):
+	def get_ReportId(self): # Long
 		return self.get_query_params().get('ReportId')
 
-	def set_ReportId(self,ReportId):
-		self.add_query_param('ReportId',ReportId)
-
-	def get_StartTime(self):
+	def set_ReportId(self, ReportId):  # Long
+		self.add_query_param('ReportId', ReportId)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Area(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Area(self): # String
 		return self.get_query_params().get('Area')
 
-	def set_Area(self,Area):
-		self.add_query_param('Area',Area)
-
-	def get_DomainName(self):
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_HttpCode(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_HttpCode(self): # String
 		return self.get_query_params().get('HttpCode')
 
-	def set_HttpCode(self,HttpCode):
-		self.add_query_param('HttpCode',HttpCode)
-
-	def get_IsOverseas(self):
+	def set_HttpCode(self, HttpCode):  # String
+		self.add_query_param('HttpCode', HttpCode)
+	def get_IsOverseas(self): # String
 		return self.get_query_params().get('IsOverseas')
 
-	def set_IsOverseas(self,IsOverseas):
-		self.add_query_param('IsOverseas',IsOverseas)
+	def set_IsOverseas(self, IsOverseas):  # String
+		self.add_query_param('IsOverseas', IsOverseas)

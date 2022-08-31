@@ -25,56 +25,49 @@ class DescribeDcdnDomainUsageDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainUsageData')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_DataProtocol(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DataProtocol(self): # String
 		return self.get_query_params().get('DataProtocol')
 
-	def set_DataProtocol(self,DataProtocol):
-		self.add_query_param('DataProtocol',DataProtocol)
-
-	def get_Area(self):
+	def set_DataProtocol(self, DataProtocol):  # String
+		self.add_query_param('DataProtocol', DataProtocol)
+	def get_Area(self): # String
 		return self.get_query_params().get('Area')
 
-	def set_Area(self,Area):
-		self.add_query_param('Area',Area)
-
-	def get_DomainName(self):
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Field(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Field(self): # String
 		return self.get_query_params().get('Field')
 
-	def set_Field(self,Field):
-		self.add_query_param('Field',Field)
-
-	def get_Interval(self):
+	def set_Field(self, Field):  # String
+		self.add_query_param('Field', Field)
+	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
