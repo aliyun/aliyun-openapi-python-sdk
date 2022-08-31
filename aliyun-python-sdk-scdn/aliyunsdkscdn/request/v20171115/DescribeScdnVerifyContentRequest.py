@@ -20,31 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkscdn.endpoint import endpoint_data
 
-class SetScdnDomainBizInfoRequest(RpcRequest):
+class DescribeScdnVerifyContentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnDomainBizInfo')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnVerifyContent')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BizName(self):
-		return self.get_query_params().get('BizName')
-
-	def set_BizName(self,BizName):
-		self.add_query_param('BizName',BizName)
-
-	def get_DomainName(self):
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)

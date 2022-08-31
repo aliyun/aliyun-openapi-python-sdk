@@ -25,20 +25,14 @@ class SetScdnCcInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnCcInfo')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Status(self):
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
