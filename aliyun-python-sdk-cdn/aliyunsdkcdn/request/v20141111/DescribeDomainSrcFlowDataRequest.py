@@ -25,50 +25,44 @@ class DescribeDomainSrcFlowDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainSrcFlowData')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_FixTimeGap(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_FixTimeGap(self): # String
 		return self.get_query_params().get('FixTimeGap')
 
-	def set_FixTimeGap(self,FixTimeGap):
-		self.add_query_param('FixTimeGap',FixTimeGap)
-
-	def get_TimeMerge(self):
+	def set_FixTimeGap(self, FixTimeGap):  # String
+		self.add_query_param('FixTimeGap', FixTimeGap)
+	def get_TimeMerge(self): # String
 		return self.get_query_params().get('TimeMerge')
 
-	def set_TimeMerge(self,TimeMerge):
-		self.add_query_param('TimeMerge',TimeMerge)
-
-	def get_DomainName(self):
+	def set_TimeMerge(self, TimeMerge):  # String
+		self.add_query_param('TimeMerge', TimeMerge)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Interval(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)

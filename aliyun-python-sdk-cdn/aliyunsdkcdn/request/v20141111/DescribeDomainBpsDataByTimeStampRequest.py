@@ -25,38 +25,34 @@ class DescribeDomainBpsDataByTimeStampRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainBpsDataByTimeStamp')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LocationNames(self):
+	def get_LocationNames(self): # String
 		return self.get_query_params().get('LocationNames')
 
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
-
-	def get_IspNames(self):
+	def set_LocationNames(self, LocationNames):  # String
+		self.add_query_param('LocationNames', LocationNames)
+	def get_IspNames(self): # String
 		return self.get_query_params().get('IspNames')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
-
-	def get_DomainName(self):
+	def set_IspNames(self, IspNames):  # String
+		self.add_query_param('IspNames', IspNames)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TimePoint(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_TimePoint(self): # String
 		return self.get_query_params().get('TimePoint')
 
-	def set_TimePoint(self,TimePoint):
-		self.add_query_param('TimePoint',TimePoint)
+	def set_TimePoint(self, TimePoint):  # String
+		self.add_query_param('TimePoint', TimePoint)

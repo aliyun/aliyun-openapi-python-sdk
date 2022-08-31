@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeDomainUvDataRequest(RpcRequest):
+class TestDescribeDomainBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainUvData')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'TestDescribeDomainBpsData')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class DescribeDomainUvDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_DomainType(self): # String
+		return self.get_query_params().get('DomainType')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_DomainType(self, DomainType):  # String
+		self.add_query_param('DomainType', DomainType)
+	def get_TimeMerge(self): # String
+		return self.get_query_params().get('TimeMerge')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
+	def set_TimeMerge(self, TimeMerge):  # String
+		self.add_query_param('TimeMerge', TimeMerge)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -51,8 +51,23 @@ class DescribeDomainUvDataRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
+	def get_LocationNameEn(self): # String
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self, LocationNameEn):  # String
+		self.add_query_param('LocationNameEn', LocationNameEn)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_IspNameEn(self): # String
+		return self.get_query_params().get('IspNameEn')
+
+	def set_IspNameEn(self, IspNameEn):  # String
+		self.add_query_param('IspNameEn', IspNameEn)
