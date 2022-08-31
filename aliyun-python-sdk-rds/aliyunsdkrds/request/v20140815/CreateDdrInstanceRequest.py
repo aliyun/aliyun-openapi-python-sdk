@@ -46,11 +46,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_SystemDBCharset(self, SystemDBCharset):  # String
 		self.add_query_param('SystemDBCharset', SystemDBCharset)
-	def get_BinlogRole(self): # String
-		return self.get_query_params().get('BinlogRole')
-
-	def set_BinlogRole(self, BinlogRole):  # String
-		self.add_query_param('BinlogRole', BinlogRole)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -101,11 +96,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-	def get_BinlogName(self): # String
-		return self.get_query_params().get('BinlogName')
-
-	def set_BinlogName(self, BinlogName):  # String
-		self.add_query_param('BinlogName', BinlogName)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -166,11 +156,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # String
 		self.add_query_param('UsedTime', UsedTime)
-	def get_BinlogPosition(self): # String
-		return self.get_query_params().get('BinlogPosition')
-
-	def set_BinlogPosition(self, BinlogPosition):  # String
-		self.add_query_param('BinlogPosition', BinlogPosition)
 	def get_RestoreType(self): # String
 		return self.get_query_params().get('RestoreType')
 

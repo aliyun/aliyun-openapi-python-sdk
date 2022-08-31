@@ -46,6 +46,11 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -56,6 +61,11 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_BackupType(self): # String
+		return self.get_query_params().get('BackupType')
+
+	def set_BackupType(self, BackupType):  # String
+		self.add_query_param('BackupType', BackupType)
 	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 

@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class CloneDBInstanceRequest(RpcRequest):
 
@@ -111,6 +112,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_RestoreTime(self, RestoreTime):  # String
 		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ServerlessConfig(self): # Struct
+		return self.get_query_params().get('ServerlessConfig')
+
+	def set_ServerlessConfig(self, ServerlessConfig):  # Struct
+		self.add_query_param("ServerlessConfig", json.dumps(ServerlessConfig))
 	def get_RestoreTable(self): # String
 		return self.get_query_params().get('RestoreTable')
 

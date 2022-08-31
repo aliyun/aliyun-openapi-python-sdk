@@ -61,6 +61,11 @@ class DescribeDBProxyPerformanceRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

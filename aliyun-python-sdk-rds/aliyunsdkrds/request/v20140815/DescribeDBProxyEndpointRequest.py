@@ -51,6 +51,11 @@ class DescribeDBProxyEndpointRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

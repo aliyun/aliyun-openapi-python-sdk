@@ -31,21 +31,6 @@ class CreateGADInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBList(self): # String
-		return self.get_query_params().get('DBList')
-
-	def set_DBList(self, DBList):  # String
-		self.add_query_param('DBList', DBList)
-	def get_CentralDBInstanceId(self): # String
-		return self.get_query_params().get('CentralDBInstanceId')
-
-	def set_CentralDBInstanceId(self, CentralDBInstanceId):  # String
-		self.add_query_param('CentralDBInstanceId', CentralDBInstanceId)
-	def get_CentralRdsDtsAdminPassword(self): # String
-		return self.get_query_params().get('CentralRdsDtsAdminPassword')
-
-	def set_CentralRdsDtsAdminPassword(self, CentralRdsDtsAdminPassword):  # String
-		self.add_query_param('CentralRdsDtsAdminPassword', CentralRdsDtsAdminPassword)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -61,6 +46,20 @@ class CreateGADInstanceRequest(RpcRequest):
 
 	def set_CentralRegionId(self, CentralRegionId):  # String
 		self.add_query_param('CentralRegionId', CentralRegionId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_UnitNodes(self): # RepeatList
 		return self.get_query_params().get('UnitNode')
 
@@ -96,3 +95,18 @@ class CreateGADInstanceRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.PayType', UnitNode[depth1].get('PayType'))
 			if UnitNode[depth1].get('DtsConflict') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsConflict', UnitNode[depth1].get('DtsConflict'))
+	def get_DBList(self): # String
+		return self.get_query_params().get('DBList')
+
+	def set_DBList(self, DBList):  # String
+		self.add_query_param('DBList', DBList)
+	def get_CentralDBInstanceId(self): # String
+		return self.get_query_params().get('CentralDBInstanceId')
+
+	def set_CentralDBInstanceId(self, CentralDBInstanceId):  # String
+		self.add_query_param('CentralDBInstanceId', CentralDBInstanceId)
+	def get_CentralRdsDtsAdminPassword(self): # String
+		return self.get_query_params().get('CentralRdsDtsAdminPassword')
+
+	def set_CentralRdsDtsAdminPassword(self, CentralRdsDtsAdminPassword):  # String
+		self.add_query_param('CentralRdsDtsAdminPassword', CentralRdsDtsAdminPassword)

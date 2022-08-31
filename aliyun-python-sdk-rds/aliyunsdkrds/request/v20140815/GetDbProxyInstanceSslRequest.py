@@ -31,6 +31,11 @@ class GetDbProxyInstanceSslRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_DbInstanceId(self): # String
 		return self.get_query_params().get('DbInstanceId')
 

@@ -36,21 +36,6 @@ class UpgradeDBProxyInstanceKernelVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_UpgradeTime(self): # String
-		return self.get_query_params().get('UpgradeTime')
-
-	def set_UpgradeTime(self, UpgradeTime):  # String
-		self.add_query_param('UpgradeTime', UpgradeTime)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -61,3 +46,23 @@ class UpgradeDBProxyInstanceKernelVersionRequest(RpcRequest):
 
 	def set_SwitchTime(self, SwitchTime):  # String
 		self.add_query_param('SwitchTime', SwitchTime)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_UpgradeTime(self): # String
+		return self.get_query_params().get('UpgradeTime')
+
+	def set_UpgradeTime(self, UpgradeTime):  # String
+		self.add_query_param('UpgradeTime', UpgradeTime)

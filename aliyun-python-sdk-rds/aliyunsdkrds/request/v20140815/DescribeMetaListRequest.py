@@ -46,6 +46,11 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_Pattern(self, Pattern):  # String
 		self.add_query_param('Pattern', Pattern)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

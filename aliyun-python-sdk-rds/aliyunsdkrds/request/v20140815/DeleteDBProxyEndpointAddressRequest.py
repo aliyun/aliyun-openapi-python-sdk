@@ -36,13 +36,18 @@ class DeleteDBProxyEndpointAddressRequest(RpcRequest):
 
 	def set_DBProxyConnectStringNetType(self, DBProxyConnectStringNetType):  # String
 		self.add_query_param('DBProxyConnectStringNetType', DBProxyConnectStringNetType)
-	def get_DBProxyEndpointId(self): # String
-		return self.get_query_params().get('DBProxyEndpointId')
-
-	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
-		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
+	def get_DBProxyEndpointId(self): # String
+		return self.get_query_params().get('DBProxyEndpointId')
+
+	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
+		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)

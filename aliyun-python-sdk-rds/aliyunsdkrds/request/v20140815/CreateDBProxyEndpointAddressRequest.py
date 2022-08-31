@@ -41,6 +41,11 @@ class CreateDBProxyEndpointAddressRequest(RpcRequest):
 
 	def set_DBProxyConnectStringNetType(self, DBProxyConnectStringNetType):  # String
 		self.add_query_param('DBProxyConnectStringNetType', DBProxyConnectStringNetType)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -51,6 +56,11 @@ class CreateDBProxyEndpointAddressRequest(RpcRequest):
 
 	def set_DBProxyNewConnectStringPort(self, DBProxyNewConnectStringPort):  # String
 		self.add_query_param('DBProxyNewConnectStringPort', DBProxyNewConnectStringPort)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 

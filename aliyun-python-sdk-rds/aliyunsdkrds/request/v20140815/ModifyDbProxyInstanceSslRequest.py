@@ -46,6 +46,11 @@ class ModifyDbProxyInstanceSslRequest(RpcRequest):
 
 	def set_DbInstanceId(self, DbInstanceId):  # String
 		self.add_query_param('DbInstanceId', DbInstanceId)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_DbProxyEndpointId(self): # String
 		return self.get_query_params().get('DbProxyEndpointId')
 

@@ -66,6 +66,11 @@ class DescribeDBInstancesByPerformanceRequest(RpcRequest):
 
 	def set_Tag1value(self, Tag1value):  # String
 		self.add_query_param('Tag.1.value', Tag1value)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_SortKey(self): # String
 		return self.get_query_params().get('SortKey')
 

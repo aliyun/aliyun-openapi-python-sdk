@@ -66,6 +66,11 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def set_DbEndpointAliases(self, DbEndpointAliases):  # String
 		self.add_query_param('DbEndpointAliases', DbEndpointAliases)
+	def get_DBProxyEngineType(self): # String
+		return self.get_query_params().get('DBProxyEngineType')
+
+	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
+		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
 	def get_DbEndpointOperator(self): # String
 		return self.get_query_params().get('DbEndpointOperator')
 
