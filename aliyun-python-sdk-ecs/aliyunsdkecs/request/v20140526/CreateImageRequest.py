@@ -74,6 +74,11 @@ class CreateImageRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_BootMode(self): # String
+		return self.get_query_params().get('BootMode')
+
+	def set_BootMode(self, BootMode):  # String
+		self.add_query_param('BootMode', BootMode)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 

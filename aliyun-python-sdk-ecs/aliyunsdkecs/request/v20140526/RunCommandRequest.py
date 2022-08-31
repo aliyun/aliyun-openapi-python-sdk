@@ -126,6 +126,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ContainerId(self): # String
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self, ContainerId):  # String
+		self.add_query_param('ContainerId', ContainerId)
 	def get_Parameters(self): # Json
 		return self.get_query_params().get('Parameters')
 

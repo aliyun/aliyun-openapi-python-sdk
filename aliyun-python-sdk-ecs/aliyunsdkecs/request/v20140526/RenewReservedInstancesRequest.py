@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteImageComponentRequest(RpcRequest):
+class RenewReservedInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteImageComponent','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewReservedInstances','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,16 @@ class DeleteImageComponentRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ImageComponentId(self): # String
-		return self.get_query_params().get('ImageComponentId')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ImageComponentId(self, ImageComponentId):  # String
-		self.add_query_param('ImageComponentId', ImageComponentId)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Period(self): # Integer
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,3 +61,14 @@ class DeleteImageComponentRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
+	def get_ReservedInstanceIds(self): # RepeatList
+		return self.get_query_params().get('ReservedInstanceId')
+
+	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
+		for depth1 in range(len(ReservedInstanceId)):
+			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])

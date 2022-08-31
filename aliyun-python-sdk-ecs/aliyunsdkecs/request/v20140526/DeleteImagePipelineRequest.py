@@ -41,15 +41,6 @@ class DeleteImagePipelineRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_TemplateTags(self): # RepeatList
-		return self.get_query_params().get('TemplateTag')
-
-	def set_TemplateTags(self, TemplateTag):  # RepeatList
-		for depth1 in range(len(TemplateTag)):
-			if TemplateTag[depth1].get('Key') is not None:
-				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTag[depth1].get('Key'))
-			if TemplateTag[depth1].get('Value') is not None:
-				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTag[depth1].get('Value'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

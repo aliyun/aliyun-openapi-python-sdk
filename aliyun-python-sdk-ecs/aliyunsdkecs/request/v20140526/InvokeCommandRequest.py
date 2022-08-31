@@ -82,6 +82,11 @@ class InvokeCommandRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def get_ContainerId(self): # String
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self, ContainerId):  # String
+		self.add_query_param('ContainerId', ContainerId)
 	def get_Parameters(self): # Json
 		return self.get_query_params().get('Parameters')
 
