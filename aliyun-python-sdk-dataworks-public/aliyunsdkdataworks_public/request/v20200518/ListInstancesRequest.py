@@ -96,3 +96,8 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
+	def get_Status(self): # String
+		return self.get_body_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_body_params('Status', Status)

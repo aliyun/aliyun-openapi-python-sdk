@@ -56,6 +56,11 @@ class ListAlertMessagesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_BaselineId(self): # Long
+		return self.get_body_params().get('BaselineId')
+
+	def set_BaselineId(self, BaselineId):  # Long
+		self.add_body_params('BaselineId', BaselineId)
 	def get_RemindId(self): # Long
 		return self.get_body_params().get('RemindId')
 
