@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListCmsInstancesRequest(RpcRequest):
+class GetSyntheticTaskDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListCmsInstances','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetSyntheticTaskDetail','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,8 @@ class ListCmsInstancesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TypeFilter(self): # String
-		return self.get_query_params().get('TypeFilter')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_TypeFilter(self, TypeFilter):  # String
-		self.add_query_param('TypeFilter', TypeFilter)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

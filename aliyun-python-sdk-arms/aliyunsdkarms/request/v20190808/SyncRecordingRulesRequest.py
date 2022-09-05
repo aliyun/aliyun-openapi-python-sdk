@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetAlertRulesRequest(RpcRequest):
+class SyncRecordingRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetAlertRules','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SyncRecordingRules','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,13 @@ class GetAlertRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlertStatus(self): # String
-		return self.get_query_params().get('AlertStatus')
-
-	def set_AlertStatus(self, AlertStatus):  # String
-		self.add_query_param('AlertStatus', AlertStatus)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_AlertNames(self): # String
-		return self.get_query_params().get('AlertNames')
+	def get_TargetClusters(self): # String
+		return self.get_query_params().get('TargetClusters')
 
-	def set_AlertNames(self, AlertNames):  # String
-		self.add_query_param('AlertNames', AlertNames)
-	def get_AlertType(self): # String
-		return self.get_query_params().get('AlertType')
-
-	def set_AlertType(self, AlertType):  # String
-		self.add_query_param('AlertType', AlertType)
-	def get_Size(self): # Long
-		return self.get_query_params().get('Size')
-
-	def set_Size(self, Size):  # Long
-		self.add_query_param('Size', Size)
-	def get_AlertIds(self): # String
-		return self.get_query_params().get('AlertIds')
-
-	def set_AlertIds(self, AlertIds):  # String
-		self.add_query_param('AlertIds', AlertIds)
-	def get_Page(self): # Long
-		return self.get_query_params().get('Page')
-
-	def set_Page(self, Page):  # Long
-		self.add_query_param('Page', Page)
+	def set_TargetClusters(self, TargetClusters):  # String
+		self.add_query_param('TargetClusters', TargetClusters)

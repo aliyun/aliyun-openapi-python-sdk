@@ -42,6 +42,11 @@ class CreateSyntheticTaskRequest(RpcRequest):
 
 	def set_IntervalType(self, IntervalType):  # String
 		self.add_query_param('IntervalType', IntervalType)
+	def get_UpdateTask(self): # Boolean
+		return self.get_query_params().get('UpdateTask')
+
+	def set_UpdateTask(self, UpdateTask):  # Boolean
+		self.add_query_param('UpdateTask', UpdateTask)
 	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
@@ -77,6 +82,21 @@ class CreateSyntheticTaskRequest(RpcRequest):
 
 	def set_ExtendInterval(self, ExtendInterval):  # Struct
 		self.add_query_param("ExtendInterval", json.dumps(ExtendInterval))
+	def get_Navigation(self): # Struct
+		return self.get_query_params().get('Navigation')
+
+	def set_Navigation(self, Navigation):  # Struct
+		self.add_query_param("Navigation", json.dumps(Navigation))
+	def get_Download(self): # Struct
+		return self.get_query_params().get('Download')
+
+	def set_Download(self, Download):  # Struct
+		self.add_query_param("Download", json.dumps(Download))
+	def get_Protocol(self): # Struct
+		return self.get_query_params().get('Protocol')
+
+	def set_Protocol(self, Protocol):  # Struct
+		self.add_query_param("Protocol", json.dumps(Protocol))
 	def get_Net(self): # Struct
 		return self.get_query_params().get('Net')
 

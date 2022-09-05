@@ -46,6 +46,11 @@ class UpdateIntegrationRequest(RpcRequest):
 
 	def set_Stat(self, Stat):  # String
 		self.add_body_params('Stat', Stat)
+	def get_InitiativeRecoverValue(self): # String
+		return self.get_body_params().get('InitiativeRecoverValue')
+
+	def set_InitiativeRecoverValue(self, InitiativeRecoverValue):  # String
+		self.add_body_params('InitiativeRecoverValue', InitiativeRecoverValue)
 	def get_Liveness(self): # String
 		return self.get_body_params().get('Liveness')
 
@@ -96,6 +101,11 @@ class UpdateIntegrationRequest(RpcRequest):
 
 	def set_ExtendedFieldRedefineRules(self, ExtendedFieldRedefineRules):  # String
 		self.add_body_params('ExtendedFieldRedefineRules', ExtendedFieldRedefineRules)
+	def get_InitiativeRecoverField(self): # String
+		return self.get_body_params().get('InitiativeRecoverField')
+
+	def set_InitiativeRecoverField(self, InitiativeRecoverField):  # String
+		self.add_body_params('InitiativeRecoverField', InitiativeRecoverField)
 	def get_IntegrationProductType(self): # String
 		return self.get_body_params().get('IntegrationProductType')
 

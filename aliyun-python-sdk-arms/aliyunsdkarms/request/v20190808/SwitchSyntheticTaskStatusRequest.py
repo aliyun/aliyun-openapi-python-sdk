@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListCmsInstancesRequest(RpcRequest):
+class SwitchSyntheticTaskStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListCmsInstances','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SwitchSyntheticTaskStatus','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,14 @@ class ListCmsInstancesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TypeFilter(self): # String
-		return self.get_query_params().get('TypeFilter')
+	def get_TaskIdss(self): # RepeatList
+		return self.get_query_params().get('TaskIds')
 
-	def set_TypeFilter(self, TypeFilter):  # String
-		self.add_query_param('TypeFilter', TypeFilter)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_TaskIdss(self, TaskIds):  # RepeatList
+		for depth1 in range(len(TaskIds)):
+			self.add_query_param('TaskIds.' + str(depth1 + 1), TaskIds[depth1])
+	def get_SwitchStatus(self): # Long
+		return self.get_query_params().get('SwitchStatus')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_SwitchStatus(self, SwitchStatus):  # Long
+		self.add_query_param('SwitchStatus', SwitchStatus)
