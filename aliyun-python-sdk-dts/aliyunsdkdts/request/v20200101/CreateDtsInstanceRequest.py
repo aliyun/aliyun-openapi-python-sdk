@@ -61,6 +61,11 @@ class CreateDtsInstanceRequest(RpcRequest):
 
 	def set_Du(self, Du):  # Integer
 		self.add_query_param('Du', Du)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ComputeUnit(self): # Integer
 		return self.get_query_params().get('ComputeUnit')
 
