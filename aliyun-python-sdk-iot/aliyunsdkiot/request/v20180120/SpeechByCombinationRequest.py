@@ -63,6 +63,12 @@ class SpeechByCombinationRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
 
+	def get_EnforceFlag(self):
+		return self.get_body_params().get('EnforceFlag')
+
+	def set_EnforceFlag(self,EnforceFlag):
+		self.add_body_params('EnforceFlag', EnforceFlag)
+
 	def get_ProductKey(self):
 		return self.get_body_params().get('ProductKey')
 

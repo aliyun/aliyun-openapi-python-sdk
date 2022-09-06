@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SyncSpeechByCombinationRequest(RpcRequest):
+class QueryProjectShareDeviceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SyncSpeechByCombination')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryProjectShareDeviceList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,31 +31,11 @@ class SyncSpeechByCombinationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SpeechId(self):
-		return self.get_body_params().get('SpeechId')
+	def get_PageId(self):
+		return self.get_body_params().get('PageId')
 
-	def set_SpeechId(self,SpeechId):
-		self.add_body_params('SpeechId', SpeechId)
-
-	def get_AudioFormat(self):
-		return self.get_body_params().get('AudioFormat')
-
-	def set_AudioFormat(self,AudioFormat):
-		self.add_body_params('AudioFormat', AudioFormat)
-
-	def get_IotId(self):
-		return self.get_body_params().get('IotId')
-
-	def set_IotId(self,IotId):
-		self.add_body_params('IotId', IotId)
-
-	def get_CombinationLists(self):
-		return self.get_body_params().get('CombinationList')
-
-	def set_CombinationLists(self, CombinationLists):
-		for depth1 in range(len(CombinationLists)):
-			if CombinationLists[depth1] is not None:
-				self.add_body_params('CombinationList.' + str(depth1 + 1) , CombinationLists[depth1])
+	def set_PageId(self,PageId):
+		self.add_body_params('PageId', PageId)
 
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')
@@ -63,11 +43,11 @@ class SyncSpeechByCombinationRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_EnforceFlag(self):
-		return self.get_body_params().get('EnforceFlag')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_EnforceFlag(self,EnforceFlag):
-		self.add_body_params('EnforceFlag', EnforceFlag)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
 	def get_ProductKey(self):
 		return self.get_body_params().get('ProductKey')

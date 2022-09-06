@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SyncSpeechByCombinationRequest(RpcRequest):
+class ShareSpeechByCombinationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SyncSpeechByCombination')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ShareSpeechByCombination')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -62,12 +62,6 @@ class SyncSpeechByCombinationRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
-
-	def get_EnforceFlag(self):
-		return self.get_body_params().get('EnforceFlag')
-
-	def set_EnforceFlag(self,EnforceFlag):
-		self.add_body_params('EnforceFlag', EnforceFlag)
 
 	def get_ProductKey(self):
 		return self.get_body_params().get('ProductKey')
