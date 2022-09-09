@@ -56,6 +56,11 @@ class CreateDBLinkRequest(RpcRequest):
 
 	def set_TargetIp(self, TargetIp):  # String
 		self.add_query_param('TargetIp', TargetIp)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DBLinkName(self): # String
 		return self.get_query_params().get('DBLinkName')
 

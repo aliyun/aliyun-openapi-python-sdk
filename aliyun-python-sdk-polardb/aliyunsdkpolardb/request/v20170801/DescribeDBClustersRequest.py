@@ -46,6 +46,11 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_DBClusterStatus(self, DBClusterStatus):  # String
 		self.add_query_param('DBClusterStatus', DBClusterStatus)
+	def get_RecentExpirationInterval(self): # Integer
+		return self.get_query_params().get('RecentExpirationInterval')
+
+	def set_RecentExpirationInterval(self, RecentExpirationInterval):  # Integer
+		self.add_query_param('RecentExpirationInterval', RecentExpirationInterval)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -61,6 +66,16 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_RecentCreationInterval(self): # Integer
+		return self.get_query_params().get('RecentCreationInterval')
+
+	def set_RecentCreationInterval(self, RecentCreationInterval):  # Integer
+		self.add_query_param('RecentCreationInterval', RecentCreationInterval)
+	def get_Expired(self): # Boolean
+		return self.get_query_params().get('Expired')
+
+	def set_Expired(self, Expired):  # Boolean
+		self.add_query_param('Expired', Expired)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

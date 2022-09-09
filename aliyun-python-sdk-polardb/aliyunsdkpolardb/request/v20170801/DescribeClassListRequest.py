@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
+class DescribeClassListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeGlobalDatabaseNetworks')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeClassList')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,53 +36,33 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_GDNId(self): # String
-		return self.get_query_params().get('GDNId')
-
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_GDNDescription(self): # String
-		return self.get_query_params().get('GDNDescription')
-
-	def set_GDNDescription(self, GDNDescription):  # String
-		self.add_query_param('GDNDescription', GDNDescription)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_CommodityCode(self): # String
+		return self.get_query_params().get('CommodityCode')
+
+	def set_CommodityCode(self, CommodityCode):  # String
+		self.add_query_param('CommodityCode', CommodityCode)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_OrderType(self): # String
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)

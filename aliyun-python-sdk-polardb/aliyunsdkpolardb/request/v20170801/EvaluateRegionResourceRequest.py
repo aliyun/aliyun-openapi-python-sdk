@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
+class EvaluateRegionResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeGlobalDatabaseNetworks')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'EvaluateRegionResource')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,46 +36,31 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_DBInstanceConnType(self): # String
+		return self.get_query_params().get('DBInstanceConnType')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_DBInstanceConnType(self, DBInstanceConnType):  # String
+		self.add_query_param('DBInstanceConnType', DBInstanceConnType)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def get_DBNodeClass(self): # String
+		return self.get_query_params().get('DBNodeClass')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_GDNId(self): # String
-		return self.get_query_params().get('GDNId')
+	def set_DBNodeClass(self, DBNodeClass):  # String
+		self.add_query_param('DBNodeClass', DBNodeClass)
+	def get_DispenseMode(self): # String
+		return self.get_query_params().get('DispenseMode')
 
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_GDNDescription(self): # String
-		return self.get_query_params().get('GDNDescription')
-
-	def set_GDNDescription(self, GDNDescription):  # String
-		self.add_query_param('GDNDescription', GDNDescription)
+	def set_DispenseMode(self, DispenseMode):  # String
+		self.add_query_param('DispenseMode', DispenseMode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
@@ -86,3 +71,28 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_NeedMaxScaleLink(self): # String
+		return self.get_query_params().get('NeedMaxScaleLink')
+
+	def set_NeedMaxScaleLink(self, NeedMaxScaleLink):  # String
+		self.add_query_param('NeedMaxScaleLink', NeedMaxScaleLink)
+	def get_DBType(self): # String
+		return self.get_query_params().get('DBType')
+
+	def set_DBType(self, DBType):  # String
+		self.add_query_param('DBType', DBType)
+	def get_DBVersion(self): # String
+		return self.get_query_params().get('DBVersion')
+
+	def set_DBVersion(self, DBVersion):  # String
+		self.add_query_param('DBVersion', DBVersion)
+	def get_SubDomain(self): # String
+		return self.get_query_params().get('SubDomain')
+
+	def set_SubDomain(self, SubDomain):  # String
+		self.add_query_param('SubDomain', SubDomain)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)

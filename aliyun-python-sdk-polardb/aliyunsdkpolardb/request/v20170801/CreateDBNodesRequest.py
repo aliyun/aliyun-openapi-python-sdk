@@ -51,6 +51,11 @@ class CreateDBNodesRequest(RpcRequest):
 
 	def set_PlannedEndTime(self, PlannedEndTime):  # String
 		self.add_query_param('PlannedEndTime', PlannedEndTime)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
