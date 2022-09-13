@@ -1,3 +1,6 @@
+2022-09-13 Version: 2.2.4
+- Update DescribeDcdnL2Vips.
+
 2022-09-01 Version: 2.2.3
 - Add DescribeDcdnL2Vips.
 
