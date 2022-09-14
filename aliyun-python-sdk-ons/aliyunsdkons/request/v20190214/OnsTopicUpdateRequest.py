@@ -25,26 +25,24 @@ class OnsTopicUpdateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsTopicUpdate','ons')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Perm(self):
+	def get_Perm(self): # Integer
 		return self.get_query_params().get('Perm')
 
-	def set_Perm(self,Perm):
-		self.add_query_param('Perm',Perm)
-
-	def get_InstanceId(self):
+	def set_Perm(self, Perm):  # Integer
+		self.add_query_param('Perm', Perm)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Topic(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Topic(self): # String
 		return self.get_query_params().get('Topic')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
+	def set_Topic(self, Topic):  # String
+		self.add_query_param('Topic', Topic)

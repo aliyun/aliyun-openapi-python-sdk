@@ -25,38 +25,34 @@ class OnsTraceQueryByMsgIdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsTraceQueryByMsgId','ons')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MsgId(self):
+	def get_MsgId(self): # String
 		return self.get_query_params().get('MsgId')
 
-	def set_MsgId(self,MsgId):
-		self.add_query_param('MsgId',MsgId)
-
-	def get_EndTime(self):
+	def set_MsgId(self, MsgId):  # String
+		self.add_query_param('MsgId', MsgId)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_BeginTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_BeginTime(self): # Long
 		return self.get_query_params().get('BeginTime')
 
-	def set_BeginTime(self,BeginTime):
-		self.add_query_param('BeginTime',BeginTime)
-
-	def get_InstanceId(self):
+	def set_BeginTime(self, BeginTime):  # Long
+		self.add_query_param('BeginTime', BeginTime)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Topic(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Topic(self): # String
 		return self.get_query_params().get('Topic')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
+	def set_Topic(self, Topic):  # String
+		self.add_query_param('Topic', Topic)

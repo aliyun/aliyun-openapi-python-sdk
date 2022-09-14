@@ -25,14 +25,14 @@ class OnsTraceGetResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsTraceGetResult','ons')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QueryId(self):
+	def get_QueryId(self): # String
 		return self.get_query_params().get('QueryId')
 
-	def set_QueryId(self,QueryId):
-		self.add_query_param('QueryId',QueryId)
+	def set_QueryId(self, QueryId):  # String
+		self.add_query_param('QueryId', QueryId)
