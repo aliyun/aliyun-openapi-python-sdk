@@ -25,50 +25,44 @@ class OpenLiveShiftRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'OpenLiveShift','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Duration(self):
+	def get_Duration(self): # Integer
 		return self.get_query_params().get('Duration')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_AppName(self):
+	def set_Duration(self, Duration):  # Integer
+		self.add_query_param('Duration', Duration)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_IgnoreTranscode(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_IgnoreTranscode(self): # Boolean
 		return self.get_query_params().get('IgnoreTranscode')
 
-	def set_IgnoreTranscode(self,IgnoreTranscode):
-		self.add_query_param('IgnoreTranscode',IgnoreTranscode)
-
-	def get_DomainName(self):
+	def set_IgnoreTranscode(self, IgnoreTranscode):  # Boolean
+		self.add_query_param('IgnoreTranscode', IgnoreTranscode)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Vision(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Vision(self): # Integer
 		return self.get_query_params().get('Vision')
 
-	def set_Vision(self,Vision):
-		self.add_query_param('Vision',Vision)
+	def set_Vision(self, Vision):  # Integer
+		self.add_query_param('Vision', Vision)

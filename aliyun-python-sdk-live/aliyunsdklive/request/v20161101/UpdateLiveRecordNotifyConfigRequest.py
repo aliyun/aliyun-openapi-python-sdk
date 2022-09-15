@@ -25,44 +25,39 @@ class UpdateLiveRecordNotifyConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveRecordNotifyConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OnDemandUrl(self):
+	def get_OnDemandUrl(self): # String
 		return self.get_query_params().get('OnDemandUrl')
 
-	def set_OnDemandUrl(self,OnDemandUrl):
-		self.add_query_param('OnDemandUrl',OnDemandUrl)
-
-	def get_SecurityToken(self):
+	def set_OnDemandUrl(self, OnDemandUrl):  # String
+		self.add_query_param('OnDemandUrl', OnDemandUrl)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_NotifyUrl(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_NotifyUrl(self): # String
 		return self.get_query_params().get('NotifyUrl')
 
-	def set_NotifyUrl(self,NotifyUrl):
-		self.add_query_param('NotifyUrl',NotifyUrl)
-
-	def get_NeedStatusNotify(self):
+	def set_NotifyUrl(self, NotifyUrl):  # String
+		self.add_query_param('NotifyUrl', NotifyUrl)
+	def get_NeedStatusNotify(self): # Boolean
 		return self.get_query_params().get('NeedStatusNotify')
 
-	def set_NeedStatusNotify(self,NeedStatusNotify):
-		self.add_query_param('NeedStatusNotify',NeedStatusNotify)
-
-	def get_DomainName(self):
+	def set_NeedStatusNotify(self, NeedStatusNotify):  # Boolean
+		self.add_query_param('NeedStatusNotify', NeedStatusNotify)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

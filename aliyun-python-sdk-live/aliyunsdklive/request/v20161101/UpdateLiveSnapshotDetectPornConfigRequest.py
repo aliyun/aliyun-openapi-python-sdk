@@ -25,64 +25,55 @@ class UpdateLiveSnapshotDetectPornConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveSnapshotDetectPornConfig','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OssEndpoint(self):
+	def get_OssEndpoint(self): # String
 		return self.get_query_params().get('OssEndpoint')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_OssObject(self):
+	def set_OssEndpoint(self, OssEndpoint):  # String
+		self.add_query_param('OssEndpoint', OssEndpoint)
+	def get_OssObject(self): # String
 		return self.get_query_params().get('OssObject')
 
-	def set_OssObject(self,OssObject):
-		self.add_query_param('OssObject',OssObject)
-
-	def get_Scenes(self):
+	def set_OssObject(self, OssObject):  # String
+		self.add_query_param('OssObject', OssObject)
+	def get_Scenes(self): # RepeatList
 		return self.get_query_params().get('Scene')
 
-	def set_Scenes(self, Scenes):
-		for depth1 in range(len(Scenes)):
-			if Scenes[depth1] is not None:
-				self.add_query_param('Scene.' + str(depth1 + 1) , Scenes[depth1])
-
-	def get_AppName(self):
+	def set_Scenes(self, Scene):  # RepeatList
+		for depth1 in range(len(Scene)):
+			self.add_query_param('Scene.' + str(depth1 + 1), Scene[depth1])
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OssBucket(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_OssBucket(self): # String
 		return self.get_query_params().get('OssBucket')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_DomainName(self):
+	def set_OssBucket(self, OssBucket):  # String
+		self.add_query_param('OssBucket', OssBucket)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Interval(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Interval(self): # Integer
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # Integer
+		self.add_query_param('Interval', Interval)

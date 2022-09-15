@@ -25,62 +25,54 @@ class HotLiveRtcStreamRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'HotLiveRtcStream','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VideoMsid(self):
+	def get_VideoMsid(self): # String
 		return self.get_query_params().get('VideoMsid')
 
-	def set_VideoMsid(self,VideoMsid):
-		self.add_query_param('VideoMsid',VideoMsid)
-
-	def get_RegionCode(self):
+	def set_VideoMsid(self, VideoMsid):  # String
+		self.add_query_param('VideoMsid', VideoMsid)
+	def get_RegionCode(self): # String
 		return self.get_query_params().get('RegionCode')
 
-	def set_RegionCode(self,RegionCode):
-		self.add_query_param('RegionCode',RegionCode)
-
-	def get_ConnectionTimeout(self):
+	def set_RegionCode(self, RegionCode):  # String
+		self.add_query_param('RegionCode', RegionCode)
+	def get_ConnectionTimeout(self): # String
 		return self.get_query_params().get('ConnectionTimeout')
 
-	def set_ConnectionTimeout(self,ConnectionTimeout):
-		self.add_query_param('ConnectionTimeout',ConnectionTimeout)
-
-	def get_AppName(self):
+	def set_ConnectionTimeout(self, ConnectionTimeout):  # String
+		self.add_query_param('ConnectionTimeout', ConnectionTimeout)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_AudioMsid(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_AudioMsid(self): # String
 		return self.get_query_params().get('AudioMsid')
 
-	def set_AudioMsid(self,AudioMsid):
-		self.add_query_param('AudioMsid',AudioMsid)
-
-	def get_MediaTimeout(self):
+	def set_AudioMsid(self, AudioMsid):  # String
+		self.add_query_param('AudioMsid', AudioMsid)
+	def get_MediaTimeout(self): # String
 		return self.get_query_params().get('MediaTimeout')
 
-	def set_MediaTimeout(self,MediaTimeout):
-		self.add_query_param('MediaTimeout',MediaTimeout)
-
-	def get_StreamName(self):
+	def set_MediaTimeout(self, MediaTimeout):  # String
+		self.add_query_param('MediaTimeout', MediaTimeout)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_DomainName(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

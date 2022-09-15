@@ -20,25 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveUserQuotaRequest(RpcRequest):
+class JoinMessageGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserQuota','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'JoinMessageGroup','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
+	def get_UserId(self): # String
+		return self.get_body_params().get('UserId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_UserId(self, UserId):  # String
+		self.add_body_params('UserId', UserId)
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)

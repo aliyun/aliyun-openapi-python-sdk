@@ -25,50 +25,49 @@ class RealTimeSnapshotCommandRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'RealTimeSnapshotCommand','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Source(self): # Integer
+		return self.get_query_params().get('Source')
 
-	def get_Mode(self):
+	def set_Source(self, Source):  # Integer
+		self.add_query_param('Source', Source)
+	def get_Mode(self): # Integer
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
-
-	def get_AppName(self):
+	def set_Mode(self, Mode):  # Integer
+		self.add_query_param('Mode', Mode)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_DomainName(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Command(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Command(self): # String
 		return self.get_query_params().get('Command')
 
-	def set_Command(self,Command):
-		self.add_query_param('Command',Command)
-
-	def get_Interval(self):
+	def set_Command(self, Command):  # String
+		self.add_query_param('Command', Command)
+	def get_Interval(self): # Integer
 		return self.get_query_params().get('Interval')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_Interval(self, Interval):  # Integer
+		self.add_query_param('Interval', Interval)

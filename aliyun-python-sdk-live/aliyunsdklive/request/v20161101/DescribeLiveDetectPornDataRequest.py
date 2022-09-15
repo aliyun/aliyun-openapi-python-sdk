@@ -25,68 +25,59 @@ class DescribeLiveDetectPornDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDetectPornData','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Fee(self):
+	def get_Fee(self): # String
 		return self.get_query_params().get('Fee')
 
-	def set_Fee(self,Fee):
-		self.add_query_param('Fee',Fee)
-
-	def get_StartTime(self):
+	def set_Fee(self, Fee):  # String
+		self.add_query_param('Fee', Fee)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Scene(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Scene(self): # String
 		return self.get_query_params().get('Scene')
 
-	def set_Scene(self,Scene):
-		self.add_query_param('Scene',Scene)
-
-	def get_Stream(self):
+	def set_Scene(self, Scene):  # String
+		self.add_query_param('Scene', Scene)
+	def get_Stream(self): # String
 		return self.get_query_params().get('Stream')
 
-	def set_Stream(self,Stream):
-		self.add_query_param('Stream',Stream)
-
-	def get_SplitBy(self):
+	def set_Stream(self, Stream):  # String
+		self.add_query_param('Stream', Stream)
+	def get_SplitBy(self): # String
 		return self.get_query_params().get('SplitBy')
 
-	def set_SplitBy(self,SplitBy):
-		self.add_query_param('SplitBy',SplitBy)
-
-	def get_App(self):
+	def set_SplitBy(self, SplitBy):  # String
+		self.add_query_param('SplitBy', SplitBy)
+	def get_App(self): # String
 		return self.get_query_params().get('App')
 
-	def set_App(self,App):
-		self.add_query_param('App',App)
-
-	def get_DomainName(self):
+	def set_App(self, App):  # String
+		self.add_query_param('App', App)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Region(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

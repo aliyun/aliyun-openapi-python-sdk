@@ -25,46 +25,40 @@ class DeleteSnapshotFilesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteSnapshotFiles','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RemoveFile(self):
+	def get_RemoveFile(self): # Boolean
 		return self.get_query_params().get('RemoveFile')
 
-	def set_RemoveFile(self,RemoveFile):
-		self.add_query_param('RemoveFile',RemoveFile)
-
-	def get_AppName(self):
+	def set_RemoveFile(self, RemoveFile):  # Boolean
+		self.add_query_param('RemoveFile', RemoveFile)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_DomainName(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_CreateTimestampLists(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_CreateTimestampLists(self): # RepeatList
 		return self.get_query_params().get('CreateTimestampList')
 
-	def set_CreateTimestampLists(self, CreateTimestampLists):
-		for depth1 in range(len(CreateTimestampLists)):
-			if CreateTimestampLists[depth1] is not None:
-				self.add_query_param('CreateTimestampList.' + str(depth1 + 1) , CreateTimestampLists[depth1])
+	def set_CreateTimestampLists(self, CreateTimestampList):  # RepeatList
+		for depth1 in range(len(CreateTimestampList)):
+			self.add_query_param('CreateTimestampList.' + str(depth1 + 1), CreateTimestampList[depth1])

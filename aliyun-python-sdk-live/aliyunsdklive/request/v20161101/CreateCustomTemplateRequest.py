@@ -25,26 +25,24 @@ class CreateCustomTemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCustomTemplate','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Template(self):
+	def get_Template(self): # String
 		return self.get_query_params().get('Template')
 
-	def set_Template(self,Template):
-		self.add_query_param('Template',Template)
-
-	def get_CustomTemplate(self):
+	def set_Template(self, Template):  # String
+		self.add_query_param('Template', Template)
+	def get_CustomTemplate(self): # String
 		return self.get_query_params().get('CustomTemplate')
 
-	def set_CustomTemplate(self,CustomTemplate):
-		self.add_query_param('CustomTemplate',CustomTemplate)
-
-	def get_OwnerId(self):
+	def set_CustomTemplate(self, CustomTemplate):  # String
+		self.add_query_param('CustomTemplate', CustomTemplate)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

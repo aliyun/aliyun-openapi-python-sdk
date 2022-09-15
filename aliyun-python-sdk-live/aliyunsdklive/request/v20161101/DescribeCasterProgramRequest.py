@@ -25,62 +25,54 @@ class DescribeCasterProgramRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasterProgram','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNum(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_PageSize(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_CasterId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_CasterId(self): # String
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
-
-	def get_EpisodeType(self):
+	def set_CasterId(self, CasterId):  # String
+		self.add_query_param('CasterId', CasterId)
+	def get_EpisodeType(self): # String
 		return self.get_query_params().get('EpisodeType')
 
-	def set_EpisodeType(self,EpisodeType):
-		self.add_query_param('EpisodeType',EpisodeType)
-
-	def get_EndTime(self):
+	def set_EpisodeType(self, EpisodeType):  # String
+		self.add_query_param('EpisodeType', EpisodeType)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_EpisodeId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_EpisodeId(self): # String
 		return self.get_query_params().get('EpisodeId')
 
-	def set_EpisodeId(self,EpisodeId):
-		self.add_query_param('EpisodeId',EpisodeId)
-
-	def get_Status(self):
+	def set_EpisodeId(self, EpisodeId):  # String
+		self.add_query_param('EpisodeId', EpisodeId)
+	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

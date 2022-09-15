@@ -25,46 +25,40 @@ class DeleteLiveStreamRecordIndexFilesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveStreamRecordIndexFiles','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RemoveFile(self):
+	def get_RemoveFile(self): # String
 		return self.get_query_params().get('RemoveFile')
 
-	def set_RemoveFile(self,RemoveFile):
-		self.add_query_param('RemoveFile',RemoveFile)
-
-	def get_AppName(self):
+	def set_RemoveFile(self, RemoveFile):  # String
+		self.add_query_param('RemoveFile', RemoveFile)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_DomainName(self):
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RecordIds(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RecordIds(self): # RepeatList
 		return self.get_query_params().get('RecordId')
 
-	def set_RecordIds(self, RecordIds):
-		for depth1 in range(len(RecordIds)):
-			if RecordIds[depth1] is not None:
-				self.add_query_param('RecordId.' + str(depth1 + 1) , RecordIds[depth1])
+	def set_RecordIds(self, RecordId):  # RepeatList
+		for depth1 in range(len(RecordId)):
+			self.add_query_param('RecordId.' + str(depth1 + 1), RecordId[depth1])

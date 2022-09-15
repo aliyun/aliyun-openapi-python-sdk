@@ -25,32 +25,29 @@ class DeleteLiveDomainMappingRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveDomainMapping','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SecurityToken(self):
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PushDomain(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PushDomain(self): # String
 		return self.get_query_params().get('PushDomain')
 
-	def set_PushDomain(self,PushDomain):
-		self.add_query_param('PushDomain',PushDomain)
-
-	def get_OwnerId(self):
+	def set_PushDomain(self, PushDomain):  # String
+		self.add_query_param('PushDomain', PushDomain)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PullDomain(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PullDomain(self): # String
 		return self.get_query_params().get('PullDomain')
 
-	def set_PullDomain(self,PullDomain):
-		self.add_query_param('PullDomain',PullDomain)
+	def set_PullDomain(self, PullDomain):  # String
+		self.add_query_param('PullDomain', PullDomain)

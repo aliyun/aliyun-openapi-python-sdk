@@ -25,32 +25,29 @@ class EditPlaylistRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'EditPlaylist','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProgramItems(self):
+	def get_ProgramItems(self): # String
 		return self.get_query_params().get('ProgramItems')
 
-	def set_ProgramItems(self,ProgramItems):
-		self.add_query_param('ProgramItems',ProgramItems)
-
-	def get_ProgramId(self):
+	def set_ProgramItems(self, ProgramItems):  # String
+		self.add_query_param('ProgramItems', ProgramItems)
+	def get_ProgramId(self): # String
 		return self.get_query_params().get('ProgramId')
 
-	def set_ProgramId(self,ProgramId):
-		self.add_query_param('ProgramId',ProgramId)
-
-	def get_OwnerId(self):
+	def set_ProgramId(self, ProgramId):  # String
+		self.add_query_param('ProgramId', ProgramId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ProgramConfig(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ProgramConfig(self): # String
 		return self.get_query_params().get('ProgramConfig')
 
-	def set_ProgramConfig(self,ProgramConfig):
-		self.add_query_param('ProgramConfig',ProgramConfig)
+	def set_ProgramConfig(self, ProgramConfig):  # String
+		self.add_query_param('ProgramConfig', ProgramConfig)

@@ -19,32 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
+import json
 
-class DescribeLiveDomainSpecialConfigRequest(RpcRequest):
+class CreateMessageAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainSpecialConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateMessageApp','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Extension(self): # Map
+		return self.get_body_params().get('Extension')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def set_Extension(self, Extension):  # Map
+		self.add_body_params("Extension", json.dumps(Extension))
+	def get_AppConfig(self): # Map
+		return self.get_body_params().get('AppConfig')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_AppConfig(self, AppConfig):  # Map
+		self.add_body_params("AppConfig", json.dumps(AppConfig))

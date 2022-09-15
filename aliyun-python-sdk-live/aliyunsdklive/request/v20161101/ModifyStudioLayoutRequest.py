@@ -25,62 +25,54 @@ class ModifyStudioLayoutRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyStudioLayout','live')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScreenInputConfigList(self):
+	def get_ScreenInputConfigList(self): # String
 		return self.get_query_params().get('ScreenInputConfigList')
 
-	def set_ScreenInputConfigList(self,ScreenInputConfigList):
-		self.add_query_param('ScreenInputConfigList',ScreenInputConfigList)
-
-	def get_LayoutId(self):
+	def set_ScreenInputConfigList(self, ScreenInputConfigList):  # String
+		self.add_query_param('ScreenInputConfigList', ScreenInputConfigList)
+	def get_LayoutId(self): # String
 		return self.get_query_params().get('LayoutId')
 
-	def set_LayoutId(self,LayoutId):
-		self.add_query_param('LayoutId',LayoutId)
-
-	def get_LayoutName(self):
+	def set_LayoutId(self, LayoutId):  # String
+		self.add_query_param('LayoutId', LayoutId)
+	def get_LayoutName(self): # String
 		return self.get_query_params().get('LayoutName')
 
-	def set_LayoutName(self,LayoutName):
-		self.add_query_param('LayoutName',LayoutName)
-
-	def get_LayerOrderConfigList(self):
+	def set_LayoutName(self, LayoutName):  # String
+		self.add_query_param('LayoutName', LayoutName)
+	def get_LayerOrderConfigList(self): # String
 		return self.get_query_params().get('LayerOrderConfigList')
 
-	def set_LayerOrderConfigList(self,LayerOrderConfigList):
-		self.add_query_param('LayerOrderConfigList',LayerOrderConfigList)
-
-	def get_MediaInputConfigList(self):
+	def set_LayerOrderConfigList(self, LayerOrderConfigList):  # String
+		self.add_query_param('LayerOrderConfigList', LayerOrderConfigList)
+	def get_MediaInputConfigList(self): # String
 		return self.get_query_params().get('MediaInputConfigList')
 
-	def set_MediaInputConfigList(self,MediaInputConfigList):
-		self.add_query_param('MediaInputConfigList',MediaInputConfigList)
-
-	def get_CasterId(self):
+	def set_MediaInputConfigList(self, MediaInputConfigList):  # String
+		self.add_query_param('MediaInputConfigList', MediaInputConfigList)
+	def get_CasterId(self): # String
 		return self.get_query_params().get('CasterId')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
-
-	def get_BgImageConfig(self):
+	def set_CasterId(self, CasterId):  # String
+		self.add_query_param('CasterId', CasterId)
+	def get_BgImageConfig(self): # String
 		return self.get_query_params().get('BgImageConfig')
 
-	def set_BgImageConfig(self,BgImageConfig):
-		self.add_query_param('BgImageConfig',BgImageConfig)
-
-	def get_OwnerId(self):
+	def set_BgImageConfig(self, BgImageConfig):  # String
+		self.add_query_param('BgImageConfig', BgImageConfig)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_CommonConfig(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_CommonConfig(self): # String
 		return self.get_query_params().get('CommonConfig')
 
-	def set_CommonConfig(self,CommonConfig):
-		self.add_query_param('CommonConfig',CommonConfig)
+	def set_CommonConfig(self, CommonConfig):  # String
+		self.add_query_param('CommonConfig', CommonConfig)
