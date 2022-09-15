@@ -31,6 +31,17 @@ class RemoveShowFromShowListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_isBatchMode(self): # Boolean
+		return self.get_query_params().get('isBatchMode')
+
+	def set_isBatchMode(self, isBatchMode):  # Boolean
+		self.add_query_param('isBatchMode', isBatchMode)
+	def get_showIdLists(self): # RepeatList
+		return self.get_query_params().get('showIdList')
+
+	def set_showIdLists(self, showIdList):  # RepeatList
+		for depth1 in range(len(showIdList)):
+			self.add_query_param('showIdList.' + str(depth1 + 1), showIdList[depth1])
 	def get_CasterId(self): # String
 		return self.get_query_params().get('CasterId')
 

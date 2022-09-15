@@ -31,11 +31,35 @@ class AddShowIntoShowListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_showLists(self): # RepeatList
+		return self.get_query_params().get('showList')
+
+	def set_showLists(self, showList):  # RepeatList
+		for depth1 in range(len(showList)):
+			if showList[depth1].get('showName') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.showName', showList[depth1].get('showName'))
+			if showList[depth1].get('repeatTimes') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.repeatTimes', showList[depth1].get('repeatTimes'))
+			if showList[depth1].get('resourceType') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceType', showList[depth1].get('resourceType'))
+			if showList[depth1].get('resourceUrl') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceUrl', showList[depth1].get('resourceUrl'))
+			if showList[depth1].get('liveInputType') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.liveInputType', showList[depth1].get('liveInputType'))
+			if showList[depth1].get('duration') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.duration', showList[depth1].get('duration'))
+			if showList[depth1].get('resourceId') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceId', showList[depth1].get('resourceId'))
 	def get_LiveInputType(self): # Integer
 		return self.get_query_params().get('LiveInputType')
 
 	def set_LiveInputType(self, LiveInputType):  # Integer
 		self.add_query_param('LiveInputType', LiveInputType)
+	def get_isBatchMode(self): # Boolean
+		return self.get_query_params().get('isBatchMode')
+
+	def set_isBatchMode(self, isBatchMode):  # Boolean
+		self.add_query_param('isBatchMode', isBatchMode)
 	def get_Duration(self): # Long
 		return self.get_query_params().get('Duration')
 
