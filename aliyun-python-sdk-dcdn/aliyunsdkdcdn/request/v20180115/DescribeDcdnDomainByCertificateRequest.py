@@ -36,6 +36,11 @@ class DescribeDcdnDomainByCertificateRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SSLStatus(self): # Boolean
+		return self.get_query_params().get('SSLStatus')
+
+	def set_SSLStatus(self, SSLStatus):  # Boolean
+		self.add_query_param('SSLStatus', SSLStatus)
 	def get_SSLPub(self): # String
 		return self.get_query_params().get('SSLPub')
 
