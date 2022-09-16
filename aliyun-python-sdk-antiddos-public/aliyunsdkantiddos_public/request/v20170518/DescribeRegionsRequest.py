@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkantiddos_public.endpoint import endpoint_data
 
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'antiddos-public', '2017-05-18', 'DescribeRegions','ddosbasic')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
