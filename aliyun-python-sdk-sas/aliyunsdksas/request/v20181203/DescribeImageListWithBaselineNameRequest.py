@@ -31,6 +31,16 @@ class DescribeImageListWithBaselineNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Pod(self): # String
+		return self.get_query_params().get('Pod')
+
+	def set_Pod(self, Pod):  # String
+		self.add_query_param('Pod', Pod)
+	def get_ClusterName(self): # String
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
 	def get_Criteria(self): # String
 		return self.get_query_params().get('Criteria')
 
@@ -46,6 +56,12 @@ class DescribeImageListWithBaselineNameRequest(RpcRequest):
 
 	def set_ImageDigest(self, ImageDigest):  # String
 		self.add_query_param('ImageDigest', ImageDigest)
+	def get_ScanRanges(self): # RepeatList
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRanges(self, ScanRange):  # RepeatList
+		for depth1 in range(len(ScanRange)):
+			self.add_query_param('ScanRange.' + str(depth1 + 1), ScanRange[depth1])
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +77,11 @@ class DescribeImageListWithBaselineNameRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_Image(self): # String
+		return self.get_query_params().get('Image')
+
+	def set_Image(self, Image):  # String
+		self.add_query_param('Image', Image)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
@@ -76,6 +97,11 @@ class DescribeImageListWithBaselineNameRequest(RpcRequest):
 
 	def set_RepoName(self, RepoName):  # String
 		self.add_query_param('RepoName', RepoName)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_BaselineNameKey(self): # String
 		return self.get_query_params().get('BaselineNameKey')
 
@@ -86,3 +112,8 @@ class DescribeImageListWithBaselineNameRequest(RpcRequest):
 
 	def set_RepoInstanceId(self, RepoInstanceId):  # String
 		self.add_query_param('RepoInstanceId', RepoInstanceId)
+	def get_ContainerId(self): # String
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self, ContainerId):  # String
+		self.add_query_param('ContainerId', ContainerId)

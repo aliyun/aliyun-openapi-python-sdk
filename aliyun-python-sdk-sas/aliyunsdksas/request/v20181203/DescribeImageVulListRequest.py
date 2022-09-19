@@ -31,6 +31,11 @@ class DescribeImageVulListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClusterName(self): # String
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -41,6 +46,11 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_Tag(self, Tag):  # String
 		self.add_query_param('Tag', Tag)
+	def get_Image(self): # String
+		return self.get_query_params().get('Image')
+
+	def set_Image(self, Image):  # String
+		self.add_query_param('Image', Image)
 	def get_AliasName(self): # String
 		return self.get_query_params().get('AliasName')
 
@@ -56,6 +66,11 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ContainerId(self): # String
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self, ContainerId):  # String
+		self.add_query_param('ContainerId', ContainerId)
 	def get_Necessity(self): # String
 		return self.get_query_params().get('Necessity')
 
@@ -76,11 +91,22 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_StatusList(self, StatusList):  # String
 		self.add_query_param('StatusList', StatusList)
+	def get_Pod(self): # String
+		return self.get_query_params().get('Pod')
+
+	def set_Pod(self, Pod):  # String
+		self.add_query_param('Pod', Pod)
 	def get_RepoNamespace(self): # String
 		return self.get_query_params().get('RepoNamespace')
 
 	def set_RepoNamespace(self, RepoNamespace):  # String
 		self.add_query_param('RepoNamespace', RepoNamespace)
+	def get_ScanRanges(self): # RepeatList
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRanges(self, ScanRange):  # RepeatList
+		for depth1 in range(len(ScanRange)):
+			self.add_query_param('ScanRange.' + str(depth1 + 1), ScanRange[depth1])
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -116,6 +142,11 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_RepoName(self, RepoName):  # String
 		self.add_query_param('RepoName', RepoName)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_RepoInstanceId(self): # String
 		return self.get_query_params().get('RepoInstanceId')
 

@@ -51,6 +51,12 @@ class DescribeGroupedMaliciousFilesRequest(RpcRequest):
 
 	def set_ImageDigest(self, ImageDigest):  # String
 		self.add_query_param('ImageDigest', ImageDigest)
+	def get_ScanRanges(self): # RepeatList
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRanges(self, ScanRange):  # RepeatList
+		for depth1 in range(len(ScanRange)):
+			self.add_query_param('ScanRange.' + str(depth1 + 1), ScanRange[depth1])
 	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 

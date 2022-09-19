@@ -36,6 +36,16 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_RepoId(self, RepoId):  # String
 		self.add_query_param('RepoId', RepoId)
+	def get_Pod(self): # String
+		return self.get_query_params().get('Pod')
+
+	def set_Pod(self, Pod):  # String
+		self.add_query_param('Pod', Pod)
+	def get_ClusterName(self): # String
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
 	def get_RepoNamespace(self): # String
 		return self.get_query_params().get('RepoNamespace')
 
@@ -46,6 +56,12 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_ImageDigest(self, ImageDigest):  # String
 		self.add_query_param('ImageDigest', ImageDigest)
+	def get_ScanRanges(self): # RepeatList
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRanges(self, ScanRange):  # RepeatList
+		for depth1 in range(len(ScanRange)):
+			self.add_query_param('ScanRange.' + str(depth1 + 1), ScanRange[depth1])
 	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +77,11 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_ImageTag(self, ImageTag):  # String
 		self.add_query_param('ImageTag', ImageTag)
+	def get_Image(self): # String
+		return self.get_query_params().get('Image')
+
+	def set_Image(self, Image):  # String
+		self.add_query_param('Image', Image)
 	def get_MaliciousMd5(self): # String
 		return self.get_query_params().get('MaliciousMd5')
 
@@ -81,6 +102,11 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_RepoName(self, RepoName):  # String
 		self.add_query_param('RepoName', RepoName)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_RepoInstanceId(self): # String
 		return self.get_query_params().get('RepoInstanceId')
 
@@ -91,6 +117,16 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_ImageLayer(self, ImageLayer):  # String
 		self.add_query_param('ImageLayer', ImageLayer)
+	def get_ContainerId(self): # String
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self, ContainerId):  # String
+		self.add_query_param('ContainerId', ContainerId)
+	def get_Levels(self): # String
+		return self.get_query_params().get('Levels')
+
+	def set_Levels(self, Levels):  # String
+		self.add_query_param('Levels', Levels)
 	def get_RepoRegionId(self): # String
 		return self.get_query_params().get('RepoRegionId')
 
