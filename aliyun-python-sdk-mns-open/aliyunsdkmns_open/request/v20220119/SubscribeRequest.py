@@ -1,0 +1,68 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+from aliyunsdkmns_open.endpoint import endpoint_data
+
+class SubscribeRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'Mns-open', '2022-01-19', 'Subscribe','mns')
+		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+	def get_TopicName(self): # String
+		return self.get_query_params().get('TopicName')
+
+	def set_TopicName(self, TopicName):  # String
+		self.add_query_param('TopicName', TopicName)
+	def get_MessageTag(self): # String
+		return self.get_query_params().get('MessageTag')
+
+	def set_MessageTag(self, MessageTag):  # String
+		self.add_query_param('MessageTag', MessageTag)
+	def get_Endpoint(self): # String
+		return self.get_query_params().get('Endpoint')
+
+	def set_Endpoint(self, Endpoint):  # String
+		self.add_query_param('Endpoint', Endpoint)
+	def get_SubscriptionName(self): # String
+		return self.get_query_params().get('SubscriptionName')
+
+	def set_SubscriptionName(self, SubscriptionName):  # String
+		self.add_query_param('SubscriptionName', SubscriptionName)
+	def get_NotifyStrategy(self): # String
+		return self.get_query_params().get('NotifyStrategy')
+
+	def set_NotifyStrategy(self, NotifyStrategy):  # String
+		self.add_query_param('NotifyStrategy', NotifyStrategy)
+	def get_NotifyContentFormat(self): # String
+		return self.get_query_params().get('NotifyContentFormat')
+
+	def set_NotifyContentFormat(self, NotifyContentFormat):  # String
+		self.add_query_param('NotifyContentFormat', NotifyContentFormat)
+	def get_PushType(self): # String
+		return self.get_query_params().get('PushType')
+
+	def set_PushType(self, PushType):  # String
+		self.add_query_param('PushType', PushType)
