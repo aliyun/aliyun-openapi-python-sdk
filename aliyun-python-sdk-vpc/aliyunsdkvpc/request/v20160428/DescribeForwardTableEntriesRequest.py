@@ -61,6 +61,11 @@ class DescribeForwardTableEntriesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_NatGatewayId(self): # String
+		return self.get_query_params().get('NatGatewayId')
+
+	def set_NatGatewayId(self, NatGatewayId):  # String
+		self.add_query_param('NatGatewayId', NatGatewayId)
 	def get_ExternalIp(self): # String
 		return self.get_query_params().get('ExternalIp')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ListFullNatEntriesRequest(RpcRequest):
+class ListTagResourcesForExpressConnectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListFullNatEntries','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListTagResourcesForExpressConnect','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,53 +36,31 @@ class ListFullNatEntriesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_NetworkInterfaceIdss(self): # RepeatList
-		return self.get_query_params().get('NetworkInterfaceIds')
-
-	def set_NetworkInterfaceIdss(self, NetworkInterfaceIds):  # RepeatList
-		for depth1 in range(len(NetworkInterfaceIds)):
-			self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1), NetworkInterfaceIds[depth1])
-	def get_FullNatEntryId(self): # String
-		return self.get_query_params().get('FullNatEntryId')
-
-	def set_FullNatEntryId(self, FullNatEntryId):  # String
-		self.add_query_param('FullNatEntryId', FullNatEntryId)
-	def get_FullNatTableId(self): # String
-		return self.get_query_params().get('FullNatTableId')
-
-	def set_FullNatTableId(self, FullNatTableId):  # String
-		self.add_query_param('FullNatTableId', FullNatTableId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_FullNatEntryNamess(self): # RepeatList
-		return self.get_query_params().get('FullNatEntryNames')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_FullNatEntryNamess(self, FullNatEntryNames):  # RepeatList
-		for depth1 in range(len(FullNatEntryNames)):
-			self.add_query_param('FullNatEntryNames.' + str(depth1 + 1), FullNatEntryNames[depth1])
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_IpProtocol(self): # String
-		return self.get_query_params().get('IpProtocol')
-
-	def set_IpProtocol(self, IpProtocol):  # String
-		self.add_query_param('IpProtocol', IpProtocol)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
@@ -93,8 +71,13 @@ class ListFullNatEntriesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_MaxResults(self): # Long
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # Long
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)

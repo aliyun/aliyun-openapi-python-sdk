@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeSnatTableEntriesRequest(RpcRequest):
+class UntagResourcesForExpressConnectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeSnatTableEntries','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UntagResourcesForExpressConnect','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,41 +36,17 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SourceCIDR(self): # String
-		return self.get_query_params().get('SourceCIDR')
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
 
-	def set_SourceCIDR(self, SourceCIDR):  # String
-		self.add_query_param('SourceCIDR', SourceCIDR)
-	def get_SnatIp(self): # String
-		return self.get_query_params().get('SnatIp')
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_SnatIp(self, SnatIp):  # String
-		self.add_query_param('SnatIp', SnatIp)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_SourceVSwitchId(self): # String
-		return self.get_query_params().get('SourceVSwitchId')
-
-	def set_SourceVSwitchId(self, SourceVSwitchId):  # String
-		self.add_query_param('SourceVSwitchId', SourceVSwitchId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_SnatEntryId(self): # String
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self, SnatEntryId):  # String
-		self.add_query_param('SnatEntryId', SnatEntryId)
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
-
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -81,18 +57,19 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_SnatTableId(self): # String
-		return self.get_query_params().get('SnatTableId')
-
-	def set_SnatTableId(self, SnatTableId):  # String
-		self.add_query_param('SnatTableId', SnatTableId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SnatEntryName(self): # String
-		return self.get_query_params().get('SnatEntryName')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_SnatEntryName(self, SnatEntryName):  # String
-		self.add_query_param('SnatEntryName', SnatEntryName)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
+
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])
