@@ -25,50 +25,44 @@ class ListEndpointGroupsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'ListEndpointGroups','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ListenerId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
 
-	def set_ListenerId(self,ListenerId):
-		self.add_query_param('ListenerId',ListenerId)
-
-	def get_EndpointGroupType(self):
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_query_param('ListenerId', ListenerId)
+	def get_EndpointGroupType(self): # String
 		return self.get_query_params().get('EndpointGroupType')
 
-	def set_EndpointGroupType(self,EndpointGroupType):
-		self.add_query_param('EndpointGroupType',EndpointGroupType)
-
-	def get_AccessLogSwitch(self):
+	def set_EndpointGroupType(self, EndpointGroupType):  # String
+		self.add_query_param('EndpointGroupType', EndpointGroupType)
+	def get_AccessLogSwitch(self): # String
 		return self.get_query_params().get('AccessLogSwitch')
 
-	def set_AccessLogSwitch(self,AccessLogSwitch):
-		self.add_query_param('AccessLogSwitch',AccessLogSwitch)
-
-	def get_PageSize(self):
+	def set_AccessLogSwitch(self, AccessLogSwitch):  # String
+		self.add_query_param('AccessLogSwitch', AccessLogSwitch)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AcceleratorId(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
 
-	def set_AcceleratorId(self,AcceleratorId):
-		self.add_query_param('AcceleratorId',AcceleratorId)
-
-	def get_EndpointGroupId(self):
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)
+	def get_EndpointGroupId(self): # String
 		return self.get_query_params().get('EndpointGroupId')
 
-	def set_EndpointGroupId(self,EndpointGroupId):
-		self.add_query_param('EndpointGroupId',EndpointGroupId)
+	def set_EndpointGroupId(self, EndpointGroupId):  # String
+		self.add_query_param('EndpointGroupId', EndpointGroupId)

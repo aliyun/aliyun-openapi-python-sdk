@@ -25,16 +25,15 @@ class DeleteIpSetsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'DeleteIpSets','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IpSetIdss(self):
+	def get_IpSetIdss(self): # RepeatList
 		return self.get_query_params().get('IpSetIds')
 
-	def set_IpSetIdss(self, IpSetIdss):
-		for depth1 in range(len(IpSetIdss)):
-			if IpSetIdss[depth1] is not None:
-				self.add_query_param('IpSetIds.' + str(depth1 + 1) , IpSetIdss[depth1])
+	def set_IpSetIdss(self, IpSetIds):  # RepeatList
+		for depth1 in range(len(IpSetIds)):
+			self.add_query_param('IpSetIds.' + str(depth1 + 1), IpSetIds[depth1])

@@ -25,26 +25,24 @@ class AttachDdosToAcceleratorRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'AttachDdosToAccelerator','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DdosId(self):
+	def get_DdosId(self): # String
 		return self.get_query_params().get('DdosId')
 
-	def set_DdosId(self,DdosId):
-		self.add_query_param('DdosId',DdosId)
-
-	def get_DdosRegionId(self):
+	def set_DdosId(self, DdosId):  # String
+		self.add_query_param('DdosId', DdosId)
+	def get_DdosRegionId(self): # String
 		return self.get_query_params().get('DdosRegionId')
 
-	def set_DdosRegionId(self,DdosRegionId):
-		self.add_query_param('DdosRegionId',DdosRegionId)
-
-	def get_AcceleratorId(self):
+	def set_DdosRegionId(self, DdosRegionId):  # String
+		self.add_query_param('DdosRegionId', DdosRegionId)
+	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
 
-	def set_AcceleratorId(self,AcceleratorId):
-		self.add_query_param('AcceleratorId',AcceleratorId)
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)

@@ -25,18 +25,18 @@ class UpdateIpSetsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'UpdateIpSets','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IpSetss(self):
+	def get_IpSetss(self): # RepeatList
 		return self.get_query_params().get('IpSets')
 
-	def set_IpSetss(self, IpSetss):
-		for depth1 in range(len(IpSetss)):
-			if IpSetss[depth1].get('Bandwidth') is not None:
-				self.add_query_param('IpSets.' + str(depth1 + 1) + '.Bandwidth', IpSetss[depth1].get('Bandwidth'))
-			if IpSetss[depth1].get('IpSetId') is not None:
-				self.add_query_param('IpSets.' + str(depth1 + 1) + '.IpSetId', IpSetss[depth1].get('IpSetId'))
+	def set_IpSetss(self, IpSets):  # RepeatList
+		for depth1 in range(len(IpSets)):
+			if IpSets[depth1].get('Bandwidth') is not None:
+				self.add_query_param('IpSets.' + str(depth1 + 1) + '.Bandwidth', IpSets[depth1].get('Bandwidth'))
+			if IpSets[depth1].get('IpSetId') is not None:
+				self.add_query_param('IpSets.' + str(depth1 + 1) + '.IpSetId', IpSets[depth1].get('IpSetId'))

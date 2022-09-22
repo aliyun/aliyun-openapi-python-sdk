@@ -25,26 +25,24 @@ class DeleteListenerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'DeleteListener','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ListenerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
 
-	def set_ListenerId(self,ListenerId):
-		self.add_query_param('ListenerId',ListenerId)
-
-	def get_AcceleratorId(self):
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_query_param('ListenerId', ListenerId)
+	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
 
-	def set_AcceleratorId(self,AcceleratorId):
-		self.add_query_param('AcceleratorId',AcceleratorId)
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)

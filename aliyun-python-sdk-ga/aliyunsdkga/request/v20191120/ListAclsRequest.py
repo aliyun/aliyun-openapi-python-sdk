@@ -25,38 +25,35 @@ class ListAclsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'ListAcls','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AclName(self):
+	def get_AclName(self): # String
 		return self.get_query_params().get('AclName')
 
-	def set_AclName(self,AclName):
-		self.add_query_param('AclName',AclName)
-
-	def get_ClientToken(self):
+	def set_AclName(self, AclName):  # String
+		self.add_query_param('AclName', AclName)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_AclIds(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AclIds(self): # Array
 		return self.get_query_params().get('AclIds')
 
-	def set_AclIds(self,AclIds):
-		self.add_query_param('AclIds',AclIds)
-
-	def get_NextToken(self):
+	def set_AclIds(self, AclIds):  # Array
+		for index1, value1 in enumerate(AclIds):
+			self.add_query_param('AclIds.' + str(index1 + 1), value1)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

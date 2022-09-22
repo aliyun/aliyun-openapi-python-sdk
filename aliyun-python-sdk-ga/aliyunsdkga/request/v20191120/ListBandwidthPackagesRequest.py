@@ -25,38 +25,34 @@ class ListBandwidthPackagesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'ListBandwidthPackages','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BandwidthPackageId(self):
+	def get_BandwidthPackageId(self): # String
 		return self.get_query_params().get('BandwidthPackageId')
 
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
-
-	def get_Type(self):
+	def set_BandwidthPackageId(self, BandwidthPackageId):  # String
+		self.add_query_param('BandwidthPackageId', BandwidthPackageId)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_State(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_State(self): # String
 		return self.get_query_params().get('State')
 
-	def set_State(self,State):
-		self.add_query_param('State',State)
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)

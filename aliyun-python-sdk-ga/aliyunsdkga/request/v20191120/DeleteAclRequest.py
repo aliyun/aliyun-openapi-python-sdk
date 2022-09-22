@@ -25,26 +25,24 @@ class DeleteAclRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'DeleteAcl','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AclId(self):
+	def get_AclId(self): # String
 		return self.get_query_params().get('AclId')
 
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
-
-	def get_DryRun(self):
+	def set_AclId(self, AclId):  # String
+		self.add_query_param('AclId', AclId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ClientToken(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)

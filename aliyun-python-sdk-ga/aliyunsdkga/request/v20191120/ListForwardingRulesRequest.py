@@ -25,44 +25,39 @@ class ListForwardingRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'ListForwardingRules','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ListenerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
 
-	def set_ListenerId(self,ListenerId):
-		self.add_query_param('ListenerId',ListenerId)
-
-	def get_ForwardingRuleId(self):
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_query_param('ListenerId', ListenerId)
+	def get_ForwardingRuleId(self): # String
 		return self.get_query_params().get('ForwardingRuleId')
 
-	def set_ForwardingRuleId(self,ForwardingRuleId):
-		self.add_query_param('ForwardingRuleId',ForwardingRuleId)
-
-	def get_NextToken(self):
+	def set_ForwardingRuleId(self, ForwardingRuleId):  # String
+		self.add_query_param('ForwardingRuleId', ForwardingRuleId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_AcceleratorId(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
 
-	def set_AcceleratorId(self,AcceleratorId):
-		self.add_query_param('AcceleratorId',AcceleratorId)
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)

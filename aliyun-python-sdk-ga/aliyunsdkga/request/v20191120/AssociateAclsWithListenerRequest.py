@@ -25,40 +25,35 @@ class AssociateAclsWithListenerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'AssociateAclsWithListener','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DryRun(self):
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_ClientToken(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_AclIdss(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AclIdss(self): # RepeatList
 		return self.get_query_params().get('AclIds')
 
-	def set_AclIdss(self, AclIdss):
-		for depth1 in range(len(AclIdss)):
-			if AclIdss[depth1] is not None:
-				self.add_query_param('AclIds.' + str(depth1 + 1) , AclIdss[depth1])
-
-	def get_AclType(self):
+	def set_AclIdss(self, AclIds):  # RepeatList
+		for depth1 in range(len(AclIds)):
+			self.add_query_param('AclIds.' + str(depth1 + 1), AclIds[depth1])
+	def get_AclType(self): # String
 		return self.get_query_params().get('AclType')
 
-	def set_AclType(self,AclType):
-		self.add_query_param('AclType',AclType)
-
-	def get_ListenerId(self):
+	def set_AclType(self, AclType):  # String
+		self.add_query_param('AclType', AclType)
+	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
 
-	def set_ListenerId(self,ListenerId):
-		self.add_query_param('ListenerId',ListenerId)
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_query_param('ListenerId', ListenerId)

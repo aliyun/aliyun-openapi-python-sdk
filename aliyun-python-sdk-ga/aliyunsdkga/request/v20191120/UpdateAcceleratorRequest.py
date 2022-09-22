@@ -25,50 +25,44 @@ class UpdateAcceleratorRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'UpdateAccelerator','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AutoPay(self):
+	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_ClientToken(self):
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AutoUseCoupon(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AutoUseCoupon(self): # Boolean
 		return self.get_query_params().get('AutoUseCoupon')
 
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
-	def get_Spec(self):
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_Spec(self): # String
 		return self.get_query_params().get('Spec')
 
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
-
-	def get_Name(self):
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_AcceleratorId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
 
-	def set_AcceleratorId(self,AcceleratorId):
-		self.add_query_param('AcceleratorId',AcceleratorId)
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)

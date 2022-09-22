@@ -25,50 +25,44 @@ class ConfigEndpointProbeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'ConfigEndpointProbe','gaplus')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Endpoint(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Endpoint(self): # String
 		return self.get_query_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
-		self.add_query_param('Endpoint',Endpoint)
-
-	def get_EndpointType(self):
+	def set_Endpoint(self, Endpoint):  # String
+		self.add_query_param('Endpoint', Endpoint)
+	def get_EndpointType(self): # String
 		return self.get_query_params().get('EndpointType')
 
-	def set_EndpointType(self,EndpointType):
-		self.add_query_param('EndpointType',EndpointType)
-
-	def get_Enable(self):
+	def set_EndpointType(self, EndpointType):  # String
+		self.add_query_param('EndpointType', EndpointType)
+	def get_Enable(self): # String
 		return self.get_query_params().get('Enable')
 
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_ProbeProtocol(self):
+	def set_Enable(self, Enable):  # String
+		self.add_query_param('Enable', Enable)
+	def get_ProbeProtocol(self): # String
 		return self.get_query_params().get('ProbeProtocol')
 
-	def set_ProbeProtocol(self,ProbeProtocol):
-		self.add_query_param('ProbeProtocol',ProbeProtocol)
-
-	def get_ProbePort(self):
+	def set_ProbeProtocol(self, ProbeProtocol):  # String
+		self.add_query_param('ProbeProtocol', ProbeProtocol)
+	def get_ProbePort(self): # String
 		return self.get_query_params().get('ProbePort')
 
-	def set_ProbePort(self,ProbePort):
-		self.add_query_param('ProbePort',ProbePort)
-
-	def get_EndpointGroupId(self):
+	def set_ProbePort(self, ProbePort):  # String
+		self.add_query_param('ProbePort', ProbePort)
+	def get_EndpointGroupId(self): # String
 		return self.get_query_params().get('EndpointGroupId')
 
-	def set_EndpointGroupId(self,EndpointGroupId):
-		self.add_query_param('EndpointGroupId',EndpointGroupId)
+	def set_EndpointGroupId(self, EndpointGroupId):  # String
+		self.add_query_param('EndpointGroupId', EndpointGroupId)
