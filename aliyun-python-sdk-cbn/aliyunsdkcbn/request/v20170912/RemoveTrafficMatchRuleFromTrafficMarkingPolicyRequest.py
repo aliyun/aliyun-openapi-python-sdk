@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ListTransitRouterMulticastDomainAssociationsRequest(RpcRequest):
+class RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterMulticastDomainAssociations')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'RemoveTrafficMatchRuleFromTrafficMarkingPolicy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,27 +41,16 @@ class ListTransitRouterMulticastDomainAssociationsRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_VSwitchIdss(self): # RepeatList
-		return self.get_query_params().get('VSwitchIds')
+	def get_TrafficMarkingPolicyId(self): # String
+		return self.get_query_params().get('TrafficMarkingPolicyId')
 
-	def set_VSwitchIdss(self, VSwitchIds):  # RepeatList
-		for depth1 in range(len(VSwitchIds)):
-			self.add_query_param('VSwitchIds.' + str(depth1 + 1), VSwitchIds[depth1])
-	def get_TransitRouterMulticastDomainId(self): # String
-		return self.get_query_params().get('TransitRouterMulticastDomainId')
+	def set_TrafficMarkingPolicyId(self, TrafficMarkingPolicyId):  # String
+		self.add_query_param('TrafficMarkingPolicyId', TrafficMarkingPolicyId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
 
-	def set_TransitRouterMulticastDomainId(self, TransitRouterMulticastDomainId):  # String
-		self.add_query_param('TransitRouterMulticastDomainId', TransitRouterMulticastDomainId)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -72,23 +61,14 @@ class ListTransitRouterMulticastDomainAssociationsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TrafficMarkRuleIdss(self): # RepeatList
+		return self.get_query_params().get('TrafficMarkRuleIds')
+
+	def set_TrafficMarkRuleIdss(self, TrafficMarkRuleIds):  # RepeatList
+		for depth1 in range(len(TrafficMarkRuleIds)):
+			self.add_query_param('TrafficMarkRuleIds.' + str(depth1 + 1), TrafficMarkRuleIds[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_TransitRouterAttachmentId(self): # String
-		return self.get_query_params().get('TransitRouterAttachmentId')
-
-	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
-		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)

@@ -46,6 +46,11 @@ class DescribeGrantRulesToCenRequest(RpcRequest):
 
 	def set_ProductType(self, ProductType):  # String
 		self.add_query_param('ProductType', ProductType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,3 +66,8 @@ class DescribeGrantRulesToCenRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)
