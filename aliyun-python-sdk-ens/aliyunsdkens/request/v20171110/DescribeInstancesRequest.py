@@ -75,6 +75,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_Status(self, Status):  # String
 		self.add_query_param('Status', Status)
+	def get_IntranetIp(self): # String
+		return self.get_query_params().get('IntranetIp')
+
+	def set_IntranetIp(self, IntranetIp):  # String
+		self.add_query_param('IntranetIp', IntranetIp)
 	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
