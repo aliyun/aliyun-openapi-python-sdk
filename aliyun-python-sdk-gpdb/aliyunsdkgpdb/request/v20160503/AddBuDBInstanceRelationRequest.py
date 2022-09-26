@@ -23,28 +23,26 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class AddBuDBInstanceRelationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'AddBuDBInstanceRelation','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'AddBuDBInstanceRelation')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceId(self):
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_OwnerId(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BusinessUnit(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BusinessUnit(self): # String
 		return self.get_query_params().get('BusinessUnit')
 
-	def set_BusinessUnit(self,BusinessUnit):
-		self.add_query_param('BusinessUnit',BusinessUnit)
+	def set_BusinessUnit(self, BusinessUnit):  # String
+		self.add_query_param('BusinessUnit', BusinessUnit)

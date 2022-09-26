@@ -19,32 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
+import json
 
 class SetDataShareInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'SetDataShareInstance','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'SetDataShareInstance')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceList(self):
+	def get_InstanceList(self): # Array
 		return self.get_query_params().get('InstanceList')
 
-	def set_InstanceList(self,InstanceList):
-		self.add_query_param('InstanceList',InstanceList)
-
-	def get_OperationType(self):
+	def set_InstanceList(self, InstanceList):  # Array
+		self.add_query_param("InstanceList", json.dumps(InstanceList))
+	def get_OperationType(self): # String
 		return self.get_query_params().get('OperationType')
 
-	def set_OperationType(self,OperationType):
-		self.add_query_param('OperationType',OperationType)
-
-	def get_OwnerId(self):
+	def set_OperationType(self, OperationType):  # String
+		self.add_query_param('OperationType', OperationType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

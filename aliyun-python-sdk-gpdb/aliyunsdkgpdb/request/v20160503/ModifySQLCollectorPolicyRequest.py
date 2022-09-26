@@ -23,22 +23,21 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifySQLCollectorPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifySQLCollectorPolicy','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifySQLCollectorPolicy')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SQLCollectorStatus(self):
+	def get_SQLCollectorStatus(self): # String
 		return self.get_query_params().get('SQLCollectorStatus')
 
-	def set_SQLCollectorStatus(self,SQLCollectorStatus):
-		self.add_query_param('SQLCollectorStatus',SQLCollectorStatus)
-
-	def get_DBInstanceId(self):
+	def set_SQLCollectorStatus(self, SQLCollectorStatus):  # String
+		self.add_query_param('SQLCollectorStatus', SQLCollectorStatus)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
