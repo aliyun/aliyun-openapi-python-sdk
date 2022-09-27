@@ -31,41 +31,11 @@ class CreateJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NamespaceSource(self): # String
-		return self.get_body_params().get('NamespaceSource')
-
-	def set_NamespaceSource(self, NamespaceSource):  # String
-		self.add_body_params('NamespaceSource', NamespaceSource)
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_AttemptInterval(self): # Integer
 		return self.get_body_params().get('AttemptInterval')
 
 	def set_AttemptInterval(self, AttemptInterval):  # Integer
 		self.add_body_params('AttemptInterval', AttemptInterval)
-	def get_Content(self): # String
-		return self.get_body_params().get('Content')
-
-	def set_Content(self, Content):  # String
-		self.add_body_params('Content', Content)
-	def get_Timeout(self): # Long
-		return self.get_body_params().get('Timeout')
-
-	def set_Timeout(self, Timeout):  # Long
-		self.add_body_params('Timeout', Timeout)
-	def get_TimeoutKillEnable(self): # Boolean
-		return self.get_body_params().get('TimeoutKillEnable')
-
-	def set_TimeoutKillEnable(self, TimeoutKillEnable):  # Boolean
-		self.add_body_params('TimeoutKillEnable', TimeoutKillEnable)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
 	def get_ConsumerSize(self): # Integer
 		return self.get_body_params().get('ConsumerSize')
 
@@ -76,21 +46,6 @@ class CreateJobRequest(RpcRequest):
 
 	def set_JarUrl(self, JarUrl):  # String
 		self.add_body_params('JarUrl', JarUrl)
-	def get_Calendar(self): # String
-		return self.get_body_params().get('Calendar')
-
-	def set_Calendar(self, Calendar):  # String
-		self.add_body_params('Calendar', Calendar)
-	def get_FailEnable(self): # Boolean
-		return self.get_body_params().get('FailEnable')
-
-	def set_FailEnable(self, FailEnable):  # Boolean
-		self.add_body_params('FailEnable', FailEnable)
-	def get_SendChannel(self): # String
-		return self.get_body_params().get('SendChannel')
-
-	def set_SendChannel(self, SendChannel):  # String
-		self.add_body_params('SendChannel', SendChannel)
 	def get_DataOffset(self): # Integer
 		return self.get_body_params().get('DataOffset')
 
@@ -106,16 +61,6 @@ class CreateJobRequest(RpcRequest):
 
 	def set_TaskMaxAttempt(self, TaskMaxAttempt):  # Integer
 		self.add_body_params('TaskMaxAttempt', TaskMaxAttempt)
-	def get_MaxAttempt(self): # Integer
-		return self.get_body_params().get('MaxAttempt')
-
-	def set_MaxAttempt(self, MaxAttempt):  # Integer
-		self.add_body_params('MaxAttempt', MaxAttempt)
-	def get_MissWorkerEnable(self): # Boolean
-		return self.get_body_params().get('MissWorkerEnable')
-
-	def set_MissWorkerEnable(self, MissWorkerEnable):  # Boolean
-		self.add_body_params('MissWorkerEnable', MissWorkerEnable)
 	def get_DispatcherSize(self): # Integer
 		return self.get_body_params().get('DispatcherSize')
 
@@ -136,21 +81,11 @@ class CreateJobRequest(RpcRequest):
 
 	def set_ExecuteMode(self, ExecuteMode):  # String
 		self.add_body_params('ExecuteMode', ExecuteMode)
-	def get_QueueSize(self): # Integer
-		return self.get_body_params().get('QueueSize')
-
-	def set_QueueSize(self, QueueSize):  # Integer
-		self.add_body_params('QueueSize', QueueSize)
 	def get_TimeExpression(self): # String
 		return self.get_body_params().get('TimeExpression')
 
 	def set_TimeExpression(self, TimeExpression):  # String
 		self.add_body_params('TimeExpression', TimeExpression)
-	def get_ClassName(self): # String
-		return self.get_body_params().get('ClassName')
-
-	def set_ClassName(self, ClassName):  # String
-		self.add_body_params('ClassName', ClassName)
 	def get_TimeoutEnable(self): # Boolean
 		return self.get_body_params().get('TimeoutEnable')
 
@@ -174,16 +109,6 @@ class CreateJobRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_Namespace(self): # String
-		return self.get_body_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_body_params('Namespace', Namespace)
-	def get_MaxConcurrency(self): # Integer
-		return self.get_body_params().get('MaxConcurrency')
-
-	def set_MaxConcurrency(self, MaxConcurrency):  # Integer
-		self.add_body_params('MaxConcurrency', MaxConcurrency)
 	def get_TimeType(self): # Integer
 		return self.get_body_params().get('TimeType')
 
@@ -199,3 +124,83 @@ class CreateJobRequest(RpcRequest):
 
 	def set_Status(self, Status):  # Integer
 		self.add_body_params('Status', Status)
+	def get_NamespaceSource(self): # String
+		return self.get_body_params().get('NamespaceSource')
+
+	def set_NamespaceSource(self, NamespaceSource):  # String
+		self.add_body_params('NamespaceSource', NamespaceSource)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_Content(self): # String
+		return self.get_body_params().get('Content')
+
+	def set_Content(self, Content):  # String
+		self.add_body_params('Content', Content)
+	def get_Timeout(self): # Long
+		return self.get_body_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Long
+		self.add_body_params('Timeout', Timeout)
+	def get_TimeoutKillEnable(self): # Boolean
+		return self.get_body_params().get('TimeoutKillEnable')
+
+	def set_TimeoutKillEnable(self, TimeoutKillEnable):  # Boolean
+		self.add_body_params('TimeoutKillEnable', TimeoutKillEnable)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
+	def get_Calendar(self): # String
+		return self.get_body_params().get('Calendar')
+
+	def set_Calendar(self, Calendar):  # String
+		self.add_body_params('Calendar', Calendar)
+	def get_FailEnable(self): # Boolean
+		return self.get_body_params().get('FailEnable')
+
+	def set_FailEnable(self, FailEnable):  # Boolean
+		self.add_body_params('FailEnable', FailEnable)
+	def get_SendChannel(self): # String
+		return self.get_body_params().get('SendChannel')
+
+	def set_SendChannel(self, SendChannel):  # String
+		self.add_body_params('SendChannel', SendChannel)
+	def get_MaxAttempt(self): # Integer
+		return self.get_body_params().get('MaxAttempt')
+
+	def set_MaxAttempt(self, MaxAttempt):  # Integer
+		self.add_body_params('MaxAttempt', MaxAttempt)
+	def get_MissWorkerEnable(self): # Boolean
+		return self.get_body_params().get('MissWorkerEnable')
+
+	def set_MissWorkerEnable(self, MissWorkerEnable):  # Boolean
+		self.add_body_params('MissWorkerEnable', MissWorkerEnable)
+	def get_QueueSize(self): # Integer
+		return self.get_body_params().get('QueueSize')
+
+	def set_QueueSize(self, QueueSize):  # Integer
+		self.add_body_params('QueueSize', QueueSize)
+	def get_ClassName(self): # String
+		return self.get_body_params().get('ClassName')
+
+	def set_ClassName(self, ClassName):  # String
+		self.add_body_params('ClassName', ClassName)
+	def get_Namespace(self): # String
+		return self.get_body_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_body_params('Namespace', Namespace)
+	def get_XAttrs(self): # String
+		return self.get_body_params().get('XAttrs')
+
+	def set_XAttrs(self, XAttrs):  # String
+		self.add_body_params('XAttrs', XAttrs)
+	def get_MaxConcurrency(self): # Integer
+		return self.get_body_params().get('MaxConcurrency')
+
+	def set_MaxConcurrency(self, MaxConcurrency):  # Integer
+		self.add_body_params('MaxConcurrency', MaxConcurrency)

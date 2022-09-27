@@ -36,21 +36,11 @@ class DesignateWorkersRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_Transferable(self): # Boolean
 		return self.get_query_params().get('Transferable')
 
 	def set_Transferable(self, Transferable):  # Boolean
 		self.add_query_param('Transferable', Transferable)
-	def get_Labels(self): # String
-		return self.get_query_params().get('Labels')
-
-	def set_Labels(self, Labels):  # String
-		self.add_query_param('Labels', Labels)
 	def get_DesignateType(self): # Integer
 		return self.get_query_params().get('DesignateType')
 
@@ -61,13 +51,23 @@ class DesignateWorkersRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
 	def get_Workers(self): # String
 		return self.get_query_params().get('Workers')
 
 	def set_Workers(self, Workers):  # String
 		self.add_query_param('Workers', Workers)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Labels(self): # String
+		return self.get_query_params().get('Labels')
+
+	def set_Labels(self, Labels):  # String
+		self.add_query_param('Labels', Labels)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

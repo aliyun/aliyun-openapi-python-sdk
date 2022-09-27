@@ -41,16 +41,6 @@ class ExecuteJobRequest(RpcRequest):
 
 	def set_CheckJobStatus(self, CheckJobStatus):  # Boolean
 		self.add_query_param('CheckJobStatus', CheckJobStatus)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_Label(self): # String
-		return self.get_query_params().get('Label')
-
-	def set_Label(self, Label):  # String
-		self.add_query_param('Label', Label)
 	def get_DesignateType(self): # Integer
 		return self.get_query_params().get('DesignateType')
 
@@ -61,11 +51,6 @@ class ExecuteJobRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
 	def get_Worker(self): # String
 		return self.get_query_params().get('Worker')
 
@@ -76,3 +61,18 @@ class ExecuteJobRequest(RpcRequest):
 
 	def set_InstanceParameters(self, InstanceParameters):  # String
 		self.add_query_param('InstanceParameters', InstanceParameters)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Label(self): # String
+		return self.get_query_params().get('Label')
+
+	def set_Label(self, Label):  # String
+		self.add_query_param('Label', Label)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

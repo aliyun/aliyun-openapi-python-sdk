@@ -72,6 +72,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_AppType(self): # Integer
+		return self.get_query_params().get('AppType')
+
+	def set_AppType(self, AppType):  # Integer
+		self.add_query_param('AppType', AppType)
 	def get_MonitorConfigJson(self): # String
 		return self.get_query_params().get('MonitorConfigJson')
 
