@@ -30,6 +30,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_BackupInterval(self): # String
+		return self.get_query_params().get('BackupInterval')
+
+	def set_BackupInterval(self, BackupInterval):  # String
+		self.add_query_param('BackupInterval', BackupInterval)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -65,6 +70,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SnapshotBackupType(self): # String
+		return self.get_query_params().get('SnapshotBackupType')
+
+	def set_SnapshotBackupType(self, SnapshotBackupType):  # String
+		self.add_query_param('SnapshotBackupType', SnapshotBackupType)
 	def get_PreferredBackupTime(self): # String
 		return self.get_query_params().get('PreferredBackupTime')
 

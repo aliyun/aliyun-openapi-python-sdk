@@ -30,11 +30,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_SecondaryZoneId(self): # String
+		return self.get_query_params().get('SecondaryZoneId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -56,11 +56,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Storage', ReplicaSet[depth1].get('Storage'))
 			if ReplicaSet[depth1].get('Class') is not None:
 				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Class', ReplicaSet[depth1].get('Class'))
-	def get_StorageEngine(self): # String
-		return self.get_query_params().get('StorageEngine')
-
-	def set_StorageEngine(self, StorageEngine):  # String
-		self.add_query_param('StorageEngine', StorageEngine)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -71,11 +66,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_Engine(self): # String
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self, Engine):  # String
-		self.add_query_param('Engine', Engine)
 	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
@@ -86,26 +76,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
-	def get_RestoreTime(self): # String
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self, RestoreTime):  # String
-		self.add_query_param('RestoreTime', RestoreTime)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_SrcDBInstanceId(self): # String
-		return self.get_query_params().get('SrcDBInstanceId')
-
-	def set_SrcDBInstanceId(self, SrcDBInstanceId):  # String
-		self.add_query_param('SrcDBInstanceId', SrcDBInstanceId)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_ConfigServers(self): # RepeatList
 		return self.get_query_params().get('ConfigServer')
 
@@ -137,26 +107,66 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 		for depth1 in range(len(Mongos)):
 			if Mongos[depth1].get('Class') is not None:
 				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongos[depth1].get('Class'))
-	def get_AccountPassword(self): # String
-		return self.get_query_params().get('AccountPassword')
-
-	def set_AccountPassword(self, AccountPassword):  # String
-		self.add_query_param('AccountPassword', AccountPassword)
 	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
-	def get_VpcId(self): # String
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self, VpcId):  # String
-		self.add_query_param('VpcId', VpcId)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_StorageEngine(self): # String
+		return self.get_query_params().get('StorageEngine')
+
+	def set_StorageEngine(self, StorageEngine):  # String
+		self.add_query_param('StorageEngine', StorageEngine)
+	def get_Engine(self): # String
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
+	def get_HiddenZoneId(self): # String
+		return self.get_query_params().get('HiddenZoneId')
+
+	def set_HiddenZoneId(self, HiddenZoneId):  # String
+		self.add_query_param('HiddenZoneId', HiddenZoneId)
+	def get_RestoreTime(self): # String
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SrcDBInstanceId(self): # String
+		return self.get_query_params().get('SrcDBInstanceId')
+
+	def set_SrcDBInstanceId(self, SrcDBInstanceId):  # String
+		self.add_query_param('SrcDBInstanceId', SrcDBInstanceId)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_AccountPassword(self): # String
+		return self.get_query_params().get('AccountPassword')
+
+	def set_AccountPassword(self, AccountPassword):  # String
+		self.add_query_param('AccountPassword', AccountPassword)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
 	def get_ProtocolType(self): # String
 		return self.get_query_params().get('ProtocolType')
 

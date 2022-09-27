@@ -35,6 +35,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_SecondaryZoneId(self): # String
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
@@ -145,6 +150,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_Engine(self, Engine):  # String
 		self.add_query_param('Engine', Engine)
+	def get_HiddenZoneId(self): # String
+		return self.get_query_params().get('HiddenZoneId')
+
+	def set_HiddenZoneId(self, HiddenZoneId):  # String
+		self.add_query_param('HiddenZoneId', HiddenZoneId)
 	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 

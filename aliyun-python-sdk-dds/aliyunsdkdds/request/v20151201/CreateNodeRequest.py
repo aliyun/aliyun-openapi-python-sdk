@@ -55,6 +55,16 @@ class CreateNodeRequest(RpcRequest):
 
 	def set_NodeClass(self, NodeClass):  # String
 		self.add_query_param('NodeClass', NodeClass)
+	def get_ShardDirect(self): # Boolean
+		return self.get_query_params().get('ShardDirect')
+
+	def set_ShardDirect(self, ShardDirect):  # Boolean
+		self.add_query_param('ShardDirect', ShardDirect)
+	def get_AccountName(self): # String
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -95,3 +105,8 @@ class CreateNodeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AccountPassword(self): # String
+		return self.get_query_params().get('AccountPassword')
+
+	def set_AccountPassword(self, AccountPassword):  # String
+		self.add_query_param('AccountPassword', AccountPassword)
