@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class ListQueuesRequest(RpcRequest):
+class ListUsersAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListQueues')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListUsersAsync')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class ListQueuesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AsyncId(self): # String
+		return self.get_query_params().get('AsyncId')
+
+	def set_AsyncId(self, AsyncId):  # String
+		self.add_query_param('AsyncId', AsyncId)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_Async(self): # Boolean
-		return self.get_query_params().get('Async')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_Async(self, _Async):  # Boolean
-		self.add_query_param('Async', _Async)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
