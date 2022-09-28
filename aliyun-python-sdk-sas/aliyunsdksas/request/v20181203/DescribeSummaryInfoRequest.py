@@ -41,8 +41,3 @@ class DescribeSummaryInfoRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_ResourceDirectoryAccountId(self): # String
-		return self.get_query_params().get('ResourceDirectoryAccountId')
-
-	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # String
-		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
