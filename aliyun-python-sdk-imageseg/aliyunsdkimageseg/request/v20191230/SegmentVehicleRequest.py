@@ -23,16 +23,16 @@ from aliyunsdkimageseg.endpoint import endpoint_data
 class SegmentVehicleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentVehicle','imageseg')
+		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentVehicle')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

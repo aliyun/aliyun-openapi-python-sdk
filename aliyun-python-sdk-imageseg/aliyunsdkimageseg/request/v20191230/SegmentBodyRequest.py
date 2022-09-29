@@ -23,28 +23,26 @@ from aliyunsdkimageseg.endpoint import endpoint_data
 class SegmentBodyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentBody','imageseg')
+		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentBody')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReturnForm(self):
+	def get_ReturnForm(self): # String
 		return self.get_query_params().get('ReturnForm')
 
-	def set_ReturnForm(self,ReturnForm):
-		self.add_query_param('ReturnForm',ReturnForm)
-
-	def get_Async(self):
+	def set_ReturnForm(self, ReturnForm):  # String
+		self.add_query_param('ReturnForm', ReturnForm)
+	def get_Async(self): # Boolean
 		return self.get_body_params().get('Async')
 
-	def set_Async(self,Async):
-		self.add_body_params('Async', Async)
-
-	def get_ImageURL(self):
+	def set_Async(self, _Async):  # Boolean
+		self.add_body_params('Async', _Async)
+	def get_ImageURL(self): # String
 		return self.get_query_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_query_param('ImageURL',ImageURL)
+	def set_ImageURL(self, ImageURL):  # String
+		self.add_query_param('ImageURL', ImageURL)

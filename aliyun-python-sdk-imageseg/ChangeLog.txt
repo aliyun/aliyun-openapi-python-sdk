@@ -1,3 +1,6 @@
+2022-09-29 Version: 1.1.9
+- Update RefineMask.
+
 2021-02-19 Version: 1.1.8
 - Update SegmentAnimal SegmentCommonImage.
 
