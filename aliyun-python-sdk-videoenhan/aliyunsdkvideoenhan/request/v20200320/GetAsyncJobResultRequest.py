@@ -25,14 +25,14 @@ class GetAsyncJobResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'GetAsyncJobResult','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobId(self):
+	def get_JobId(self): # String
 		return self.get_body_params().get('JobId')
 
-	def set_JobId(self,JobId):
+	def set_JobId(self, JobId):  # String
 		self.add_body_params('JobId', JobId)

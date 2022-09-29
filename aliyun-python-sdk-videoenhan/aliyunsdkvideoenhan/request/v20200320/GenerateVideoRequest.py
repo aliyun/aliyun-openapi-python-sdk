@@ -25,80 +25,70 @@ class GenerateVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'GenerateVideo','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TransitionStyle(self):
+	def get_TransitionStyle(self): # String
 		return self.get_body_params().get('TransitionStyle')
 
-	def set_TransitionStyle(self,TransitionStyle):
+	def set_TransitionStyle(self, TransitionStyle):  # String
 		self.add_body_params('TransitionStyle', TransitionStyle)
-
-	def get_Scene(self):
+	def get_Scene(self): # String
 		return self.get_body_params().get('Scene')
 
-	def set_Scene(self,Scene):
+	def set_Scene(self, Scene):  # String
 		self.add_body_params('Scene', Scene)
-
-	def get_Duration(self):
+	def get_Duration(self): # Float
 		return self.get_body_params().get('Duration')
 
-	def set_Duration(self,Duration):
+	def set_Duration(self, Duration):  # Float
 		self.add_body_params('Duration', Duration)
-
-	def get_PuzzleEffect(self):
+	def get_PuzzleEffect(self): # Boolean
 		return self.get_body_params().get('PuzzleEffect')
 
-	def set_PuzzleEffect(self,PuzzleEffect):
+	def set_PuzzleEffect(self, PuzzleEffect):  # Boolean
 		self.add_body_params('PuzzleEffect', PuzzleEffect)
-
-	def get_Height(self):
+	def get_Height(self): # Integer
 		return self.get_body_params().get('Height')
 
-	def set_Height(self,Height):
+	def set_Height(self, Height):  # Integer
 		self.add_body_params('Height', Height)
-
-	def get_DurationAdaption(self):
+	def get_DurationAdaption(self): # Boolean
 		return self.get_body_params().get('DurationAdaption')
 
-	def set_DurationAdaption(self,DurationAdaption):
+	def set_DurationAdaption(self, DurationAdaption):  # Boolean
 		self.add_body_params('DurationAdaption', DurationAdaption)
-
-	def get_FileLists(self):
+	def get_FileLists(self): # RepeatList
 		return self.get_body_params().get('FileList')
 
-	def set_FileLists(self, FileLists):
-		for depth1 in range(len(FileLists)):
-			if FileLists[depth1].get('FileName') is not None:
-				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileName', FileLists[depth1].get('FileName'))
-			if FileLists[depth1].get('FileUrl') is not None:
-				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileUrl', FileLists[depth1].get('FileUrl'))
-			if FileLists[depth1].get('Type') is not None:
-				self.add_body_params('FileList.' + str(depth1 + 1) + '.Type', FileLists[depth1].get('Type'))
-
-	def get_Mute(self):
+	def set_FileLists(self, FileList):  # RepeatList
+		for depth1 in range(len(FileList)):
+			if FileList[depth1].get('FileName') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileName', FileList[depth1].get('FileName'))
+			if FileList[depth1].get('FileUrl') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileUrl', FileList[depth1].get('FileUrl'))
+			if FileList[depth1].get('Type') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.Type', FileList[depth1].get('Type'))
+	def get_Mute(self): # Boolean
 		return self.get_body_params().get('Mute')
 
-	def set_Mute(self,Mute):
+	def set_Mute(self, Mute):  # Boolean
 		self.add_body_params('Mute', Mute)
-
-	def get_SmartEffect(self):
+	def get_SmartEffect(self): # Boolean
 		return self.get_body_params().get('SmartEffect')
 
-	def set_SmartEffect(self,SmartEffect):
+	def set_SmartEffect(self, SmartEffect):  # Boolean
 		self.add_body_params('SmartEffect', SmartEffect)
-
-	def get_Width(self):
+	def get_Width(self): # Integer
 		return self.get_body_params().get('Width')
 
-	def set_Width(self,Width):
+	def set_Width(self, Width):  # Integer
 		self.add_body_params('Width', Width)
-
-	def get_Style(self):
+	def get_Style(self): # String
 		return self.get_body_params().get('Style')
 
-	def set_Style(self,Style):
+	def set_Style(self, Style):  # String
 		self.add_body_params('Style', Style)

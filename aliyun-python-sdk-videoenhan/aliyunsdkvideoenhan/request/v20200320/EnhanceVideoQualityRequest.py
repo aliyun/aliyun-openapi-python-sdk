@@ -25,50 +25,44 @@ class EnhanceVideoQualityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'EnhanceVideoQuality','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HDRFormat(self):
+	def get_HDRFormat(self): # String
 		return self.get_body_params().get('HDRFormat')
 
-	def set_HDRFormat(self,HDRFormat):
+	def set_HDRFormat(self, HDRFormat):  # String
 		self.add_body_params('HDRFormat', HDRFormat)
-
-	def get_FrameRate(self):
+	def get_FrameRate(self): # Integer
 		return self.get_body_params().get('FrameRate')
 
-	def set_FrameRate(self,FrameRate):
+	def set_FrameRate(self, FrameRate):  # Integer
 		self.add_body_params('FrameRate', FrameRate)
-
-	def get_MaxIlluminance(self):
+	def get_MaxIlluminance(self): # Integer
 		return self.get_body_params().get('MaxIlluminance')
 
-	def set_MaxIlluminance(self,MaxIlluminance):
+	def set_MaxIlluminance(self, MaxIlluminance):  # Integer
 		self.add_body_params('MaxIlluminance', MaxIlluminance)
-
-	def get_Bitrate(self):
+	def get_Bitrate(self): # Integer
 		return self.get_body_params().get('Bitrate')
 
-	def set_Bitrate(self,Bitrate):
+	def set_Bitrate(self, Bitrate):  # Integer
 		self.add_body_params('Bitrate', Bitrate)
-
-	def get_OutPutWidth(self):
+	def get_OutPutWidth(self): # Integer
 		return self.get_body_params().get('OutPutWidth')
 
-	def set_OutPutWidth(self,OutPutWidth):
+	def set_OutPutWidth(self, OutPutWidth):  # Integer
 		self.add_body_params('OutPutWidth', OutPutWidth)
-
-	def get_OutPutHeight(self):
+	def get_OutPutHeight(self): # Integer
 		return self.get_body_params().get('OutPutHeight')
 
-	def set_OutPutHeight(self,OutPutHeight):
+	def set_OutPutHeight(self, OutPutHeight):  # Integer
 		self.add_body_params('OutPutHeight', OutPutHeight)
-
-	def get_VideoURL(self):
+	def get_VideoURL(self): # String
 		return self.get_body_params().get('VideoURL')
 
-	def set_VideoURL(self,VideoURL):
+	def set_VideoURL(self, VideoURL):  # String
 		self.add_body_params('VideoURL', VideoURL)

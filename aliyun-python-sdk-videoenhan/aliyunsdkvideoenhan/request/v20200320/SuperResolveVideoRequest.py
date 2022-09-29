@@ -25,20 +25,19 @@ class SuperResolveVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'SuperResolveVideo','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BitRate(self):
+	def get_BitRate(self): # Integer
 		return self.get_body_params().get('BitRate')
 
-	def set_BitRate(self,BitRate):
+	def set_BitRate(self, BitRate):  # Integer
 		self.add_body_params('BitRate', BitRate)
-
-	def get_VideoUrl(self):
+	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
-	def set_VideoUrl(self,VideoUrl):
+	def set_VideoUrl(self, VideoUrl):  # String
 		self.add_body_params('VideoUrl', VideoUrl)

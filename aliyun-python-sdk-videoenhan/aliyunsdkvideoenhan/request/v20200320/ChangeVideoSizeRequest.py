@@ -25,62 +25,54 @@ class ChangeVideoSizeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'ChangeVideoSize','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Height(self):
+	def get_Height(self): # Integer
 		return self.get_body_params().get('Height')
 
-	def set_Height(self,Height):
+	def set_Height(self, Height):  # Integer
 		self.add_body_params('Height', Height)
-
-	def get_B(self):
+	def get_B(self): # Integer
 		return self.get_body_params().get('B')
 
-	def set_B(self,B):
+	def set_B(self, B):  # Integer
 		self.add_body_params('B', B)
-
-	def get_FillType(self):
+	def get_FillType(self): # String
 		return self.get_body_params().get('FillType')
 
-	def set_FillType(self,FillType):
+	def set_FillType(self, FillType):  # String
 		self.add_body_params('FillType', FillType)
-
-	def get_G(self):
+	def get_G(self): # Integer
 		return self.get_body_params().get('G')
 
-	def set_G(self,G):
+	def set_G(self, G):  # Integer
 		self.add_body_params('G', G)
-
-	def get_CropType(self):
+	def get_CropType(self): # String
 		return self.get_body_params().get('CropType')
 
-	def set_CropType(self,CropType):
+	def set_CropType(self, CropType):  # String
 		self.add_body_params('CropType', CropType)
-
-	def get_R(self):
+	def get_R(self): # Integer
 		return self.get_body_params().get('R')
 
-	def set_R(self,R):
+	def set_R(self, R):  # Integer
 		self.add_body_params('R', R)
-
-	def get_VideoUrl(self):
+	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
-	def set_VideoUrl(self,VideoUrl):
+	def set_VideoUrl(self, VideoUrl):  # String
 		self.add_body_params('VideoUrl', VideoUrl)
-
-	def get_Width(self):
+	def get_Width(self): # Integer
 		return self.get_body_params().get('Width')
 
-	def set_Width(self,Width):
+	def set_Width(self, Width):  # Integer
 		self.add_body_params('Width', Width)
-
-	def get_Tightness(self):
+	def get_Tightness(self): # Float
 		return self.get_body_params().get('Tightness')
 
-	def set_Tightness(self,Tightness):
+	def set_Tightness(self, Tightness):  # Float
 		self.add_body_params('Tightness', Tightness)

@@ -25,32 +25,29 @@ class AbstractEcommerceVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'AbstractEcommerceVideo','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Duration(self):
+	def get_Duration(self): # Float
 		return self.get_body_params().get('Duration')
 
-	def set_Duration(self,Duration):
+	def set_Duration(self, Duration):  # Float
 		self.add_body_params('Duration', Duration)
-
-	def get_VideoUrl(self):
-		return self.get_body_params().get('VideoUrl')
-
-	def set_VideoUrl(self,VideoUrl):
-		self.add_body_params('VideoUrl', VideoUrl)
-
-	def get_Width(self):
-		return self.get_body_params().get('Width')
-
-	def set_Width(self,Width):
-		self.add_body_params('Width', Width)
-
-	def get_Height(self):
+	def get_Height(self): # Integer
 		return self.get_body_params().get('Height')
 
-	def set_Height(self,Height):
+	def set_Height(self, Height):  # Integer
 		self.add_body_params('Height', Height)
+	def get_VideoUrl(self): # String
+		return self.get_body_params().get('VideoUrl')
+
+	def set_VideoUrl(self, VideoUrl):  # String
+		self.add_body_params('VideoUrl', VideoUrl)
+	def get_Width(self): # Integer
+		return self.get_body_params().get('Width')
+
+	def set_Width(self, Width):  # Integer
+		self.add_body_params('Width', Width)

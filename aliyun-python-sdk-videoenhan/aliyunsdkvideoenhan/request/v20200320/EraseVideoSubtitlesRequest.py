@@ -25,38 +25,34 @@ class EraseVideoSubtitlesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'EraseVideoSubtitles','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BH(self):
+	def get_BH(self): # Float
 		return self.get_body_params().get('BH')
 
-	def set_BH(self,BH):
+	def set_BH(self, BH):  # Float
 		self.add_body_params('BH', BH)
-
-	def get_VideoUrl(self):
-		return self.get_body_params().get('VideoUrl')
-
-	def set_VideoUrl(self,VideoUrl):
-		self.add_body_params('VideoUrl', VideoUrl)
-
-	def get_BW(self):
+	def get_BW(self): # Float
 		return self.get_body_params().get('BW')
 
-	def set_BW(self,BW):
+	def set_BW(self, BW):  # Float
 		self.add_body_params('BW', BW)
-
-	def get_BX(self):
+	def get_BX(self): # Float
 		return self.get_body_params().get('BX')
 
-	def set_BX(self,BX):
+	def set_BX(self, BX):  # Float
 		self.add_body_params('BX', BX)
-
-	def get_BY(self):
+	def get_BY(self): # Float
 		return self.get_body_params().get('BY')
 
-	def set_BY(self,BY):
+	def set_BY(self, BY):  # Float
 		self.add_body_params('BY', BY)
+	def get_VideoUrl(self): # String
+		return self.get_body_params().get('VideoUrl')
+
+	def set_VideoUrl(self, VideoUrl):  # String
+		self.add_body_params('VideoUrl', VideoUrl)

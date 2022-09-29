@@ -25,28 +25,27 @@ class EraseVideoLogoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'EraseVideoLogo','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Boxess(self):
+	def get_Boxess(self): # RepeatList
 		return self.get_body_params().get('Boxes')
 
-	def set_Boxess(self, Boxess):
-		for depth1 in range(len(Boxess)):
-			if Boxess[depth1].get('W') is not None:
-				self.add_body_params('Boxes.' + str(depth1 + 1) + '.W', Boxess[depth1].get('W'))
-			if Boxess[depth1].get('H') is not None:
-				self.add_body_params('Boxes.' + str(depth1 + 1) + '.H', Boxess[depth1].get('H'))
-			if Boxess[depth1].get('X') is not None:
-				self.add_body_params('Boxes.' + str(depth1 + 1) + '.X', Boxess[depth1].get('X'))
-			if Boxess[depth1].get('Y') is not None:
-				self.add_body_params('Boxes.' + str(depth1 + 1) + '.Y', Boxess[depth1].get('Y'))
-
-	def get_VideoUrl(self):
+	def set_Boxess(self, Boxes):  # RepeatList
+		for depth1 in range(len(Boxes)):
+			if Boxes[depth1].get('W') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.W', Boxes[depth1].get('W'))
+			if Boxes[depth1].get('H') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.H', Boxes[depth1].get('H'))
+			if Boxes[depth1].get('X') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.X', Boxes[depth1].get('X'))
+			if Boxes[depth1].get('Y') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.Y', Boxes[depth1].get('Y'))
+	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
-	def set_VideoUrl(self,VideoUrl):
+	def set_VideoUrl(self, VideoUrl):  # String
 		self.add_body_params('VideoUrl', VideoUrl)

@@ -25,32 +25,29 @@ class ConvertHdrVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'ConvertHdrVideo','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HDRFormat(self):
+	def get_HDRFormat(self): # String
 		return self.get_body_params().get('HDRFormat')
 
-	def set_HDRFormat(self,HDRFormat):
+	def set_HDRFormat(self, HDRFormat):  # String
 		self.add_body_params('HDRFormat', HDRFormat)
-
-	def get_MaxIlluminance(self):
+	def get_MaxIlluminance(self): # Integer
 		return self.get_body_params().get('MaxIlluminance')
 
-	def set_MaxIlluminance(self,MaxIlluminance):
+	def set_MaxIlluminance(self, MaxIlluminance):  # Integer
 		self.add_body_params('MaxIlluminance', MaxIlluminance)
-
-	def get_Bitrate(self):
+	def get_Bitrate(self): # Integer
 		return self.get_body_params().get('Bitrate')
 
-	def set_Bitrate(self,Bitrate):
+	def set_Bitrate(self, Bitrate):  # Integer
 		self.add_body_params('Bitrate', Bitrate)
-
-	def get_VideoURL(self):
+	def get_VideoURL(self): # String
 		return self.get_body_params().get('VideoURL')
 
-	def set_VideoURL(self,VideoURL):
+	def set_VideoURL(self, VideoURL):  # String
 		self.add_body_params('VideoURL', VideoURL)

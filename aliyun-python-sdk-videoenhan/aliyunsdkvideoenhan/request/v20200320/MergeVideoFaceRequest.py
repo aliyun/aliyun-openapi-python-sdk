@@ -25,26 +25,24 @@ class MergeVideoFaceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'MergeVideoFace','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PostURL(self):
-		return self.get_body_params().get('PostURL')
-
-	def set_PostURL(self,PostURL):
-		self.add_body_params('PostURL', PostURL)
-
-	def get_ReferenceURL(self):
+	def get_ReferenceURL(self): # String
 		return self.get_body_params().get('ReferenceURL')
 
-	def set_ReferenceURL(self,ReferenceURL):
+	def set_ReferenceURL(self, ReferenceURL):  # String
 		self.add_body_params('ReferenceURL', ReferenceURL)
+	def get_PostURL(self): # String
+		return self.get_body_params().get('PostURL')
 
-	def get_VideoURL(self):
+	def set_PostURL(self, PostURL):  # String
+		self.add_body_params('PostURL', PostURL)
+	def get_VideoURL(self): # String
 		return self.get_body_params().get('VideoURL')
 
-	def set_VideoURL(self,VideoURL):
+	def set_VideoURL(self, VideoURL):  # String
 		self.add_body_params('VideoURL', VideoURL)

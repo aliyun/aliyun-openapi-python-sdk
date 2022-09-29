@@ -25,38 +25,34 @@ class AdjustVideoColorRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'videoenhan', '2020-03-20', 'AdjustVideoColor','videoenhan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mode(self):
+	def get_Mode(self): # String
 		return self.get_body_params().get('Mode')
 
-	def set_Mode(self,Mode):
+	def set_Mode(self, Mode):  # String
 		self.add_body_params('Mode', Mode)
-
-	def get_VideoUrl(self):
+	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
-	def set_VideoUrl(self,VideoUrl):
+	def set_VideoUrl(self, VideoUrl):  # String
 		self.add_body_params('VideoUrl', VideoUrl)
-
-	def get_VideoBitrate(self):
+	def get_VideoBitrate(self): # Long
 		return self.get_body_params().get('VideoBitrate')
 
-	def set_VideoBitrate(self,VideoBitrate):
+	def set_VideoBitrate(self, VideoBitrate):  # Long
 		self.add_body_params('VideoBitrate', VideoBitrate)
-
-	def get_VideoCodec(self):
+	def get_VideoCodec(self): # String
 		return self.get_body_params().get('VideoCodec')
 
-	def set_VideoCodec(self,VideoCodec):
+	def set_VideoCodec(self, VideoCodec):  # String
 		self.add_body_params('VideoCodec', VideoCodec)
-
-	def get_VideoFormat(self):
+	def get_VideoFormat(self): # String
 		return self.get_body_params().get('VideoFormat')
 
-	def set_VideoFormat(self,VideoFormat):
+	def set_VideoFormat(self, VideoFormat):  # String
 		self.add_body_params('VideoFormat', VideoFormat)
