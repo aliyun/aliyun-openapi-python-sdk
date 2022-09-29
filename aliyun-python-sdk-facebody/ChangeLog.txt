@@ -1,3 +1,6 @@
+2022-09-29 Version: 1.2.33
+- Update CompareFace.
+
 2022-07-25 Version: 1.2.32
 - Update MonitorExamination.
 
