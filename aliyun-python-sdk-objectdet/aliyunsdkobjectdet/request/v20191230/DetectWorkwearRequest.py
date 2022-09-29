@@ -19,34 +19,32 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
+import json
 
 class DetectWorkwearRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectWorkwear','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectWorkwear')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Clothes(self):
+	def get_Clothes(self): # Struct
 		return self.get_body_params().get('Clothes')
 
-	def set_Clothes(self,Clothes):
-		self.add_body_params('Clothes', Clothes)
-
-	def get_Labelss(self):
+	def set_Clothes(self, Clothes):  # Struct
+		self.add_body_params("Clothes", json.dumps(Clothes))
+	def get_Labelss(self): # RepeatList
 		return self.get_body_params().get('Labels')
 
-	def set_Labelss(self, Labelss):
-		for depth1 in range(len(Labelss)):
-			if Labelss[depth1] is not None:
-				self.add_body_params('Labels.' + str(depth1 + 1) , Labelss[depth1])
-
-	def get_ImageUrl(self):
+	def set_Labelss(self, Labels):  # RepeatList
+		for depth1 in range(len(Labels)):
+			self.add_body_params('Labels.' + str(depth1 + 1), Labels[depth1])
+	def get_ImageUrl(self): # String
 		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
+	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_body_params('ImageUrl', ImageUrl)

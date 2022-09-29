@@ -23,28 +23,26 @@ from aliyunsdkobjectdet.endpoint import endpoint_data
 class GetVehicleRepairPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'GetVehicleRepairPlan','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'GetVehicleRepairPlan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VinCodeImage(self):
+	def get_VinCodeImage(self): # String
 		return self.get_body_params().get('VinCodeImage')
 
-	def set_VinCodeImage(self,VinCodeImage):
+	def set_VinCodeImage(self, VinCodeImage):  # String
 		self.add_body_params('VinCodeImage', VinCodeImage)
-
-	def get_CarNumberImage(self):
+	def get_CarNumberImage(self): # String
 		return self.get_body_params().get('CarNumberImage')
 
-	def set_CarNumberImage(self,CarNumberImage):
+	def set_CarNumberImage(self, CarNumberImage):  # String
 		self.add_body_params('CarNumberImage', CarNumberImage)
-
-	def get_TaskId(self):
+	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
+	def set_TaskId(self, TaskId):  # String
 		self.add_body_params('TaskId', TaskId)

@@ -23,20 +23,20 @@ from aliyunsdkobjectdet.endpoint import endpoint_data
 class GenerateVehicleRepairPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'GenerateVehicleRepairPlan','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'GenerateVehicleRepairPlan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DamageImageLists(self):
+	def get_DamageImageLists(self): # RepeatList
 		return self.get_body_params().get('DamageImageList')
 
-	def set_DamageImageLists(self, DamageImageLists):
-		for depth1 in range(len(DamageImageLists)):
-			if DamageImageLists[depth1].get('ImageUrl') is not None:
-				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.ImageUrl', DamageImageLists[depth1].get('ImageUrl'))
-			if DamageImageLists[depth1].get('CreateTimeStamp') is not None:
-				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.CreateTimeStamp', DamageImageLists[depth1].get('CreateTimeStamp'))
+	def set_DamageImageLists(self, DamageImageList):  # RepeatList
+		for depth1 in range(len(DamageImageList)):
+			if DamageImageList[depth1].get('ImageUrl') is not None:
+				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.ImageUrl', DamageImageList[depth1].get('ImageUrl'))
+			if DamageImageList[depth1].get('CreateTimeStamp') is not None:
+				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.CreateTimeStamp', DamageImageList[depth1].get('CreateTimeStamp'))

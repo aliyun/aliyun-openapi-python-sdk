@@ -19,26 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
+import json
 
 class DetectVehicleIllegalParkingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVehicleIllegalParking','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVehicleIllegalParking')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RoadRegions(self):
+	def get_RoadRegions(self): # Array
 		return self.get_body_params().get('RoadRegions')
 
-	def set_RoadRegions(self,RoadRegions):
-		self.add_body_params('RoadRegions', RoadRegions)
-
-	def get_ImageURL(self):
+	def set_RoadRegions(self, RoadRegions):  # Array
+		self.add_body_params("RoadRegions", json.dumps(RoadRegions))
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)

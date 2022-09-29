@@ -23,22 +23,21 @@ from aliyunsdkobjectdet.endpoint import endpoint_data
 class DetectKitchenAnimalsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectKitchenAnimals','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectKitchenAnimals')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageURLB(self):
+	def get_ImageURLB(self): # String
 		return self.get_body_params().get('ImageURLB')
 
-	def set_ImageURLB(self,ImageURLB):
+	def set_ImageURLB(self, ImageURLB):  # String
 		self.add_body_params('ImageURLB', ImageURLB)
-
-	def get_ImageURLA(self):
+	def get_ImageURLA(self): # String
 		return self.get_body_params().get('ImageURLA')
 
-	def set_ImageURLA(self,ImageURLA):
+	def set_ImageURLA(self, ImageURLA):  # String
 		self.add_body_params('ImageURLA', ImageURLA)
