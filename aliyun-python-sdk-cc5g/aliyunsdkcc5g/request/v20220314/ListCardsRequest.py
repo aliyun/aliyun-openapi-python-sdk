@@ -51,6 +51,11 @@ class ListCardsRequest(RpcRequest):
 
 	def set_Lock(self, Lock):  # Boolean
 		self.add_query_param('Lock', Lock)
+	def get_Msisdn(self): # String
+		return self.get_query_params().get('Msisdn')
+
+	def set_Msisdn(self, Msisdn):  # String
+		self.add_query_param('Msisdn', Msisdn)
 	def get_Apn(self): # String
 		return self.get_query_params().get('Apn')
 
