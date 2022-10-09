@@ -52,3 +52,5 @@ class CreateIpSetsRequest(RpcRequest):
 				self.add_query_param('AccelerateRegion.' + str(depth1 + 1) + '.IpVersion', AccelerateRegion[depth1].get('IpVersion'))
 			if AccelerateRegion[depth1].get('Bandwidth') is not None:
 				self.add_query_param('AccelerateRegion.' + str(depth1 + 1) + '.Bandwidth', AccelerateRegion[depth1].get('Bandwidth'))
+			if AccelerateRegion[depth1].get('IspType') is not None:
+				self.add_query_param('AccelerateRegion.' + str(depth1 + 1) + '.IspType', AccelerateRegion[depth1].get('IspType'))

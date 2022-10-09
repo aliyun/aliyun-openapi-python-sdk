@@ -56,6 +56,11 @@ class UpdateBasicEndpointGroupRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_EndpointSubAddress(self): # String
+		return self.get_query_params().get('EndpointSubAddress')
+
+	def set_EndpointSubAddress(self, EndpointSubAddress):  # String
+		self.add_query_param('EndpointSubAddress', EndpointSubAddress)
 	def get_EndpointGroupId(self): # String
 		return self.get_query_params().get('EndpointGroupId')
 

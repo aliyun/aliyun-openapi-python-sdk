@@ -56,6 +56,11 @@ class CreateBasicAcceleratorRequest(RpcRequest):
 
 	def set_Duration(self, Duration):  # Integer
 		self.add_query_param('Duration', Duration)
+	def get_BandwidthBillingType(self): # String
+		return self.get_query_params().get('BandwidthBillingType')
+
+	def set_BandwidthBillingType(self, BandwidthBillingType):  # String
+		self.add_query_param('BandwidthBillingType', BandwidthBillingType)
 	def get_AutoRenew(self): # Boolean
 		return self.get_query_params().get('AutoRenew')
 

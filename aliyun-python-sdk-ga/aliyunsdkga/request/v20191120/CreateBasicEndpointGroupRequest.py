@@ -66,3 +66,8 @@ class CreateBasicEndpointGroupRequest(RpcRequest):
 
 	def set_AcceleratorId(self, AcceleratorId):  # String
 		self.add_query_param('AcceleratorId', AcceleratorId)
+	def get_EndpointSubAddress(self): # String
+		return self.get_query_params().get('EndpointSubAddress')
+
+	def set_EndpointSubAddress(self, EndpointSubAddress):  # String
+		self.add_query_param('EndpointSubAddress', EndpointSubAddress)

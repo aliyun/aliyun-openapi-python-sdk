@@ -36,6 +36,11 @@ class CreateBasicIpSetRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_Bandwidth(self): # Long
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self, Bandwidth):  # Long
+		self.add_query_param('Bandwidth', Bandwidth)
 	def get_IspType(self): # String
 		return self.get_query_params().get('IspType')
 
