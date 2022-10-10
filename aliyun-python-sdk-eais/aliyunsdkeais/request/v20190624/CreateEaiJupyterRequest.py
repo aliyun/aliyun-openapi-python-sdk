@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeais.endpoint import endpoint_data
 
-class DeleteEaiRequest(RpcRequest):
+class CreateEaiJupyterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eais', '2019-06-24', 'DeleteEai','eais')
+		RpcRequest.__init__(self, 'eais', '2019-06-24', 'CreateEaiJupyter','eais')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class DeleteEaiRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ElasticAcceleratedInstanceId(self): # String
-		return self.get_query_params().get('ElasticAcceleratedInstanceId')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ElasticAcceleratedInstanceId(self, ElasticAcceleratedInstanceId):  # String
-		self.add_query_param('ElasticAcceleratedInstanceId', ElasticAcceleratedInstanceId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
 
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_EaisType(self): # String
+		return self.get_query_params().get('EaisType')
+
+	def set_EaisType(self, EaisType):  # String
+		self.add_query_param('EaisType', EaisType)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)

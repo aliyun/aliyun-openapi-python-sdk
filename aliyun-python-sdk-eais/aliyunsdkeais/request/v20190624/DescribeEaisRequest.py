@@ -25,44 +25,39 @@ class DescribeEaisRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'eais', '2019-06-24', 'DescribeEais','eais')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ElasticAcceleratedInstanceIds(self):
+	def get_ElasticAcceleratedInstanceIds(self): # String
 		return self.get_query_params().get('ElasticAcceleratedInstanceIds')
 
-	def set_ElasticAcceleratedInstanceIds(self,ElasticAcceleratedInstanceIds):
-		self.add_query_param('ElasticAcceleratedInstanceIds',ElasticAcceleratedInstanceIds)
-
-	def get_PageNumber(self):
+	def set_ElasticAcceleratedInstanceIds(self, ElasticAcceleratedInstanceIds):  # String
+		self.add_query_param('ElasticAcceleratedInstanceIds', ElasticAcceleratedInstanceIds)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_PageSize(self):
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_Status(self):
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

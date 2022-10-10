@@ -25,14 +25,14 @@ class DetachEaiRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'eais', '2019-06-24', 'DetachEai','eais')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ElasticAcceleratedInstanceId(self):
+	def get_ElasticAcceleratedInstanceId(self): # String
 		return self.get_query_params().get('ElasticAcceleratedInstanceId')
 
-	def set_ElasticAcceleratedInstanceId(self,ElasticAcceleratedInstanceId):
-		self.add_query_param('ElasticAcceleratedInstanceId',ElasticAcceleratedInstanceId)
+	def set_ElasticAcceleratedInstanceId(self, ElasticAcceleratedInstanceId):  # String
+		self.add_query_param('ElasticAcceleratedInstanceId', ElasticAcceleratedInstanceId)

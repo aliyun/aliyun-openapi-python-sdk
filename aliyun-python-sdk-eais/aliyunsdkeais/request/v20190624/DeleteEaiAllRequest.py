@@ -25,20 +25,19 @@ class DeleteEaiAllRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'eais', '2019-06-24', 'DeleteEaiAll','eais')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientInstanceId(self):
+	def get_ClientInstanceId(self): # String
 		return self.get_query_params().get('ClientInstanceId')
 
-	def set_ClientInstanceId(self,ClientInstanceId):
-		self.add_query_param('ClientInstanceId',ClientInstanceId)
-
-	def get_ElasticAcceleratedInstanceId(self):
+	def set_ClientInstanceId(self, ClientInstanceId):  # String
+		self.add_query_param('ClientInstanceId', ClientInstanceId)
+	def get_ElasticAcceleratedInstanceId(self): # String
 		return self.get_query_params().get('ElasticAcceleratedInstanceId')
 
-	def set_ElasticAcceleratedInstanceId(self,ElasticAcceleratedInstanceId):
-		self.add_query_param('ElasticAcceleratedInstanceId',ElasticAcceleratedInstanceId)
+	def set_ElasticAcceleratedInstanceId(self, ElasticAcceleratedInstanceId):  # String
+		self.add_query_param('ElasticAcceleratedInstanceId', ElasticAcceleratedInstanceId)
