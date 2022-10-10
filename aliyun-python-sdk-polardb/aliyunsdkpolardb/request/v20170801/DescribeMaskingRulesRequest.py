@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DescribeMaskingRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeMaskingRules')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeMaskingRules','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

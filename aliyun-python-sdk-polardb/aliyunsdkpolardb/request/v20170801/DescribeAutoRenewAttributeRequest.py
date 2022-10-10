@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DescribeAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeAutoRenewAttribute')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeAutoRenewAttribute','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

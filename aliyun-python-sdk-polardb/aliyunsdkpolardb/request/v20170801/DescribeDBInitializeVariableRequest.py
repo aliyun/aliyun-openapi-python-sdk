@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DescribeDBInitializeVariableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBInitializeVariable')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBInitializeVariable','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

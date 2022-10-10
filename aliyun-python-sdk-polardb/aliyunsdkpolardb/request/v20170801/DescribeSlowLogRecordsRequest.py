@@ -23,7 +23,7 @@ from aliyunsdkpolardb.endpoint import endpoint_data
 class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeSlowLogRecords')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeSlowLogRecords','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
