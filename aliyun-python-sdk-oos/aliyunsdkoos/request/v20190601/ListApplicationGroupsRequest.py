@@ -36,11 +36,26 @@ class ListApplicationGroupsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_Product(self): # String
+		return self.get_query_params().get('Product')
+
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)
 	def get_DeployRegionId(self): # String
 		return self.get_query_params().get('DeployRegionId')
 
 	def set_DeployRegionId(self, DeployRegionId):  # String
 		self.add_query_param('DeployRegionId', DeployRegionId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_ApplicationName(self): # String
 		return self.get_query_params().get('ApplicationName')
 

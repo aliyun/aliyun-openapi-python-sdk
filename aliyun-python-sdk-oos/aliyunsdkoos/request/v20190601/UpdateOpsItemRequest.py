@@ -51,11 +51,6 @@ class UpdateOpsItemRequest(RpcRequest):
 
 	def set_Title(self, Title):  # String
 		self.add_query_param('Title', Title)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -76,10 +71,10 @@ class UpdateOpsItemRequest(RpcRequest):
 
 	def set_Resources(self, Resources):  # String
 		self.add_query_param('Resources', Resources)
-	def get_Priority(self): # String
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self, Priority):  # String
+	def set_Priority(self, Priority):  # Integer
 		self.add_query_param('Priority', Priority)
 	def get_DedupString(self): # String
 		return self.get_query_params().get('DedupString')

@@ -36,3 +36,8 @@ class DeleteApplicationRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
