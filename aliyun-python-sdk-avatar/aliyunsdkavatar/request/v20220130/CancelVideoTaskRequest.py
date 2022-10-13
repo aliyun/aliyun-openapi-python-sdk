@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class QueryRunningInstanceRequest(RpcRequest):
+class CancelVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'QueryRunningInstance')
+		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'CancelVideoTask')
 		self.set_method('POST')
 
 	def get_App(self): # Struct
@@ -36,8 +36,8 @@ class QueryRunningInstanceRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_query_param('TenantId', TenantId)
-	def get_SessionId(self): # String
-		return self.get_query_params().get('SessionId')
+	def get_TaskUuid(self): # String
+		return self.get_query_params().get('TaskUuid')
 
-	def set_SessionId(self, SessionId):  # String
-		self.add_query_param('SessionId', SessionId)
+	def set_TaskUuid(self, TaskUuid):  # String
+		self.add_query_param('TaskUuid', TaskUuid)

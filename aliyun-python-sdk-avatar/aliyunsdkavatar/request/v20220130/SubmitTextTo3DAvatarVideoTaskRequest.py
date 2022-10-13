@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class QueryRunningInstanceRequest(RpcRequest):
+class SubmitTextTo3DAvatarVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'QueryRunningInstance')
+		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'SubmitTextTo3DAvatarVideoTask')
 		self.set_method('POST')
 
 	def get_App(self): # Struct
@@ -31,13 +31,23 @@ class QueryRunningInstanceRequest(RpcRequest):
 
 	def set_App(self, App):  # Struct
 		self.add_query_param("App", json.dumps(App))
+	def get_VideoInfo(self): # Struct
+		return self.get_query_params().get('VideoInfo')
+
+	def set_VideoInfo(self, VideoInfo):  # Struct
+		self.add_query_param("VideoInfo", json.dumps(VideoInfo))
 	def get_TenantId(self): # Long
 		return self.get_query_params().get('TenantId')
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_query_param('TenantId', TenantId)
-	def get_SessionId(self): # String
-		return self.get_query_params().get('SessionId')
+	def get_Text(self): # String
+		return self.get_query_params().get('Text')
 
-	def set_SessionId(self, SessionId):  # String
-		self.add_query_param('SessionId', SessionId)
+	def set_Text(self, Text):  # String
+		self.add_query_param('Text', Text)
+	def get_Title(self): # String
+		return self.get_query_params().get('Title')
+
+	def set_Title(self, Title):  # String
+		self.add_query_param('Title', Title)

@@ -41,6 +41,11 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_Channel(self, Channel):  # Struct
 		self.add_query_param("Channel", json.dumps(Channel))
+	def get_CommandRequest(self): # Struct
+		return self.get_query_params().get('CommandRequest')
+
+	def set_CommandRequest(self, CommandRequest):  # Struct
+		self.add_query_param("CommandRequest", json.dumps(CommandRequest))
 	def get_User(self): # String
 		return self.get_query_params().get('User')
 
