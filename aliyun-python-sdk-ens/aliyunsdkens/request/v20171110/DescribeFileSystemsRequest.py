@@ -19,39 +19,34 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeUserBandWidthDataRequest(RpcRequest):
+class DescribeFileSystemsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeUserBandWidthData','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeFileSystems','ens')
+		self.set_method('GET')
 
-	def get_Isp(self): # String
-		return self.get_query_params().get('Isp')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_Isp(self, Isp):  # String
-		self.add_query_param('Isp', Isp)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_FileSystemName(self): # String
+		return self.get_query_params().get('FileSystemName')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
+	def set_FileSystemName(self, FileSystemName):  # String
+		self.add_query_param('FileSystemName', FileSystemName)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_Period(self): # String
-		return self.get_query_params().get('Period')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_FileSystemId(self): # String
+		return self.get_query_params().get('FileSystemId')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)
