@@ -31,16 +31,6 @@ class UpdateDataSourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EnvType(self): # Integer
-		return self.get_query_params().get('EnvType')
-
-	def set_EnvType(self, EnvType):  # Integer
-		self.add_query_param('EnvType', EnvType)
-	def get_DataSourceId(self): # Long
-		return self.get_query_params().get('DataSourceId')
-
-	def set_DataSourceId(self, DataSourceId):  # Long
-		self.add_query_param('DataSourceId', DataSourceId)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -51,6 +41,16 @@ class UpdateDataSourceRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_EnvType(self): # Integer
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self, EnvType):  # Integer
+		self.add_query_param('EnvType', EnvType)
+	def get_DataSourceId(self): # Long
+		return self.get_query_params().get('DataSourceId')
+
+	def set_DataSourceId(self, DataSourceId):  # Long
+		self.add_query_param('DataSourceId', DataSourceId)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

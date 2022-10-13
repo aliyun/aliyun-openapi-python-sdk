@@ -41,13 +41,13 @@ class AddProjectMemberToRoleRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ProjectId(self): # Long
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

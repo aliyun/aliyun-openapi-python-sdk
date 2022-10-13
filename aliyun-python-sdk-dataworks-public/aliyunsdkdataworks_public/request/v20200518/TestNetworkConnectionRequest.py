@@ -36,16 +36,16 @@ class TestNetworkConnectionRequest(RpcRequest):
 
 	def set_ResourceGroup(self, ResourceGroup):  # String
 		self.add_query_param('ResourceGroup', ResourceGroup)
-	def get_EnvType(self): # String
-		return self.get_query_params().get('EnvType')
-
-	def set_EnvType(self, EnvType):  # String
-		self.add_query_param('EnvType', EnvType)
 	def get_DatasourceName(self): # String
 		return self.get_query_params().get('DatasourceName')
 
 	def set_DatasourceName(self, DatasourceName):  # String
 		self.add_query_param('DatasourceName', DatasourceName)
+	def get_EnvType(self): # String
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self, EnvType):  # String
+		self.add_query_param('EnvType', EnvType)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

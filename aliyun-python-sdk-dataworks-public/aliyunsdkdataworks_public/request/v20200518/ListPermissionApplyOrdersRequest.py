@@ -31,16 +31,6 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MaxComputeProjectName(self): # String
-		return self.get_query_params().get('MaxComputeProjectName')
-
-	def set_MaxComputeProjectName(self, MaxComputeProjectName):  # String
-		self.add_query_param('MaxComputeProjectName', MaxComputeProjectName)
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
@@ -51,11 +41,6 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_FlowStatus(self): # Integer
-		return self.get_query_params().get('FlowStatus')
-
-	def set_FlowStatus(self, FlowStatus):  # Integer
-		self.add_query_param('FlowStatus', FlowStatus)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -71,6 +56,26 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 
 	def set_QueryType(self, QueryType):  # Integer
 		self.add_query_param('QueryType', QueryType)
+	def get_EngineType(self): # String
+		return self.get_query_params().get('EngineType')
+
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
+	def get_MaxComputeProjectName(self): # String
+		return self.get_query_params().get('MaxComputeProjectName')
+
+	def set_MaxComputeProjectName(self, MaxComputeProjectName):  # String
+		self.add_query_param('MaxComputeProjectName', MaxComputeProjectName)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_FlowStatus(self): # Integer
+		return self.get_query_params().get('FlowStatus')
+
+	def set_FlowStatus(self, FlowStatus):  # Integer
+		self.add_query_param('FlowStatus', FlowStatus)
 	def get_WorkspaceId(self): # Integer
 		return self.get_query_params().get('WorkspaceId')
 
@@ -81,8 +86,3 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 
 	def set_OrderType(self, OrderType):  # Integer
 		self.add_query_param('OrderType', OrderType)
-	def get_EngineType(self): # String
-		return self.get_query_params().get('EngineType')
-
-	def set_EngineType(self, EngineType):  # String
-		self.add_query_param('EngineType', EngineType)

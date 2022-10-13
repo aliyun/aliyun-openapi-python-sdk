@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class CreateProjectMemberRequest(RpcRequest):
+class OfflineNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateProjectMember')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'OfflineNode')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,13 @@ class CreateProjectMemberRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RoleCode(self): # String
-		return self.get_query_params().get('RoleCode')
+	def get_NodeId(self): # Long
+		return self.get_body_params().get('NodeId')
 
-	def set_RoleCode(self, RoleCode):  # String
-		self.add_query_param('RoleCode', RoleCode)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
+	def set_NodeId(self, NodeId):  # Long
+		self.add_body_params('NodeId', NodeId)
 	def get_ProjectId(self): # Long
-		return self.get_query_params().get('ProjectId')
+		return self.get_body_params().get('ProjectId')
 
 	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
+		self.add_body_params('ProjectId', ProjectId)
