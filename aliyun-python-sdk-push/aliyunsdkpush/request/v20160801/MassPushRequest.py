@@ -126,6 +126,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidRenderStyle', PushTask[depth1].get('AndroidRenderStyle'))
 			if PushTask[depth1].get('iOSExtParameters') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSExtParameters', PushTask[depth1].get('iOSExtParameters'))
+			if PushTask[depth1].get('AndroidNotificationHonorChannel') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationHonorChannel', PushTask[depth1].get('AndroidNotificationHonorChannel'))
 			if PushTask[depth1].get('AndroidXiaomiImageUrl') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaomiImageUrl', PushTask[depth1].get('AndroidXiaomiImageUrl'))
 			if PushTask[depth1].get('AndroidPopupBody') is not None:
@@ -134,6 +136,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBigPictureUrl', PushTask[depth1].get('AndroidBigPictureUrl'))
 			if PushTask[depth1].get('iOSSilentNotification') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSilentNotification', PushTask[depth1].get('iOSSilentNotification'))
+			if PushTask[depth1].get('AndroidNotificationGroup') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationGroup', PushTask[depth1].get('AndroidNotificationGroup'))
 			if PushTask[depth1].get('SendChannels') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.SendChannels', PushTask[depth1].get('SendChannels'))
 			if PushTask[depth1].get('Target') is not None:

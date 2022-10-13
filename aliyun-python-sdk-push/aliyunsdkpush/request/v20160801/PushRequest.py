@@ -146,16 +146,16 @@ class PushRequest(RpcRequest):
 
 	def set_StoreOffline(self, StoreOffline):  # Boolean
 		self.add_query_param('StoreOffline', StoreOffline)
-	def get_SmsParams(self): # String
-		return self.get_query_params().get('SmsParams')
-
-	def set_SmsParams(self, SmsParams):  # String
-		self.add_query_param('SmsParams', SmsParams)
 	def get_iOSRelevanceScore(self): # Double
 		return self.get_query_params().get('iOSRelevanceScore')
 
 	def set_iOSRelevanceScore(self, iOSRelevanceScore):  # Double
 		self.add_query_param('iOSRelevanceScore', iOSRelevanceScore)
+	def get_SmsParams(self): # String
+		return self.get_query_params().get('SmsParams')
+
+	def set_SmsParams(self, SmsParams):  # String
+		self.add_query_param('SmsParams', SmsParams)
 	def get_AndroidVivoPushMode(self): # Integer
 		return self.get_query_params().get('AndroidVivoPushMode')
 
@@ -271,6 +271,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSExtParameters(self, iOSExtParameters):  # String
 		self.add_query_param('iOSExtParameters', iOSExtParameters)
+	def get_AndroidNotificationHonorChannel(self): # String
+		return self.get_query_params().get('AndroidNotificationHonorChannel')
+
+	def set_AndroidNotificationHonorChannel(self, AndroidNotificationHonorChannel):  # String
+		self.add_query_param('AndroidNotificationHonorChannel', AndroidNotificationHonorChannel)
 	def get_AndroidXiaomiImageUrl(self): # String
 		return self.get_query_params().get('AndroidXiaomiImageUrl')
 
@@ -296,6 +301,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSSilentNotification(self, iOSSilentNotification):  # Boolean
 		self.add_query_param('iOSSilentNotification', iOSSilentNotification)
+	def get_AndroidNotificationGroup(self): # String
+		return self.get_query_params().get('AndroidNotificationGroup')
+
+	def set_AndroidNotificationGroup(self, AndroidNotificationGroup):  # String
+		self.add_query_param('AndroidNotificationGroup', AndroidNotificationGroup)
 	def get_SendChannels(self): # String
 		return self.get_query_params().get('SendChannels')
 
@@ -346,13 +356,13 @@ class PushRequest(RpcRequest):
 
 	def set_TargetValue(self, TargetValue):  # String
 		self.add_query_param('TargetValue', TargetValue)
-	def get_AndroidXiaoMiActivity(self): # String
-		return self.get_query_params().get('AndroidXiaoMiActivity')
-
-	def set_AndroidXiaoMiActivity(self, AndroidXiaoMiActivity):  # String
-		self.add_query_param('AndroidXiaoMiActivity', AndroidXiaoMiActivity)
 	def get_AndroidXiaoMiNotifyTitle(self): # String
 		return self.get_query_params().get('AndroidXiaoMiNotifyTitle')
 
 	def set_AndroidXiaoMiNotifyTitle(self, AndroidXiaoMiNotifyTitle):  # String
 		self.add_query_param('AndroidXiaoMiNotifyTitle', AndroidXiaoMiNotifyTitle)
+	def get_AndroidXiaoMiActivity(self): # String
+		return self.get_query_params().get('AndroidXiaoMiActivity')
+
+	def set_AndroidXiaoMiActivity(self, AndroidXiaoMiActivity):  # String
+		self.add_query_param('AndroidXiaoMiActivity', AndroidXiaoMiActivity)
