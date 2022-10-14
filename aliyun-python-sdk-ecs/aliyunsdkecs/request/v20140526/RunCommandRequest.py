@@ -36,6 +36,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ContainerName(self): # String
+		return self.get_query_params().get('ContainerName')
+
+	def set_ContainerName(self, ContainerName):  # String
+		self.add_query_param('ContainerName', ContainerName)
 	def get_WorkingDir(self): # String
 		return self.get_query_params().get('WorkingDir')
 

@@ -86,3 +86,8 @@ class DescribeResourcesModificationRequest(RpcRequest):
 
 	def set_DestinationResource(self, DestinationResource):  # String
 		self.add_query_param('DestinationResource', DestinationResource)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)

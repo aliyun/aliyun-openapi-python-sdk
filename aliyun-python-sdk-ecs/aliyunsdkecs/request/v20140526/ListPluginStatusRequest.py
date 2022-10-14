@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class InvokeCommandRequest(RpcRequest):
+class ListPluginStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ListPluginStatus','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,36 +36,16 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ContainerName(self): # String
-		return self.get_query_params().get('ContainerName')
+	def get_PageNumber(self): # Long
+		return self.get_query_params().get('PageNumber')
 
-	def set_ContainerName(self, ContainerName):  # String
-		self.add_query_param('ContainerName', ContainerName)
-	def get_CommandId(self): # String
-		return self.get_query_params().get('CommandId')
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
 
-	def set_CommandId(self, CommandId):  # String
-		self.add_query_param('CommandId', CommandId)
-	def get_Frequency(self): # String
-		return self.get_query_params().get('Frequency')
-
-	def set_Frequency(self, Frequency):  # String
-		self.add_query_param('Frequency', Frequency)
-	def get_RepeatMode(self): # String
-		return self.get_query_params().get('RepeatMode')
-
-	def set_RepeatMode(self, RepeatMode):  # String
-		self.add_query_param('RepeatMode', RepeatMode)
-	def get_WindowsPasswordName(self): # String
-		return self.get_query_params().get('WindowsPasswordName')
-
-	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
-		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
-	def get_Timed(self): # Boolean
-		return self.get_query_params().get('Timed')
-
-	def set_Timed(self, Timed):  # Boolean
-		self.add_query_param('Timed', Timed)
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -87,18 +67,8 @@ class InvokeCommandRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_ContainerId(self): # String
-		return self.get_query_params().get('ContainerId')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_ContainerId(self, ContainerId):  # String
-		self.add_query_param('ContainerId', ContainerId)
-	def get_Parameters(self): # Json
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self, Parameters):  # Json
-		self.add_query_param('Parameters', Parameters)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
-
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

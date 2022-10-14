@@ -352,6 +352,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_PayAsYouGoTargetCapacity(self, PayAsYouGoTargetCapacity):  # String
 		self.add_query_param('PayAsYouGoTargetCapacity', PayAsYouGoTargetCapacity)
+	def get_HibernationOptionsConfigured(self): # Boolean
+		return self.get_query_params().get('HibernationOptionsConfigured')
+
+	def set_HibernationOptionsConfigured(self, HibernationOptionsConfigured):  # Boolean
+		self.add_query_param('HibernationOptionsConfigured', HibernationOptionsConfigured)
 	def get_TotalTargetCapacity(self): # String
 		return self.get_query_params().get('TotalTargetCapacity')
 

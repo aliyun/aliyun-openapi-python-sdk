@@ -222,6 +222,17 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
+	def get_DataDisks(self): # RepeatList
+		return self.get_query_params().get('DataDisk')
+
+	def set_DataDisks(self, DataDisk):  # RepeatList
+		for depth1 in range(len(DataDisk)):
+			if DataDisk[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
+			if DataDisk[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisk[depth1].get('PerformanceLevel'))
+			if DataDisk[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
 	def get_DataDisk1Category(self): # String
 		return self.get_query_params().get('DataDisk.1.Category')
 
