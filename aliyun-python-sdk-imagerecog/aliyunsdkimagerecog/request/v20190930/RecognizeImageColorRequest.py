@@ -23,22 +23,21 @@ from aliyunsdkimagerecog.endpoint import endpoint_data
 class RecognizeImageColorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'RecognizeImageColor','imagerecog')
+		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'RecognizeImageColor')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
-
-	def get_ColorCount(self):
+	def get_ColorCount(self): # Integer
 		return self.get_body_params().get('ColorCount')
 
-	def set_ColorCount(self,ColorCount):
+	def set_ColorCount(self, ColorCount):  # Integer
 		self.add_body_params('ColorCount', ColorCount)
+	def get_Url(self): # String
+		return self.get_body_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_body_params('Url', Url)

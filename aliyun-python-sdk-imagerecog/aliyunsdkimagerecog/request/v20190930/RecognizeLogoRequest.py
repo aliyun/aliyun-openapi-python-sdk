@@ -23,18 +23,18 @@ from aliyunsdkimagerecog.endpoint import endpoint_data
 class RecognizeLogoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'RecognizeLogo','imagerecog')
+		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'RecognizeLogo')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Taskss(self):
+	def get_Taskss(self): # RepeatList
 		return self.get_body_params().get('Tasks')
 
-	def set_Taskss(self, Taskss):
-		for depth1 in range(len(Taskss)):
-			if Taskss[depth1].get('ImageURL') is not None:
-				self.add_body_params('Tasks.' + str(depth1 + 1) + '.ImageURL', Taskss[depth1].get('ImageURL'))
+	def set_Taskss(self, Tasks):  # RepeatList
+		for depth1 in range(len(Tasks)):
+			if Tasks[depth1].get('ImageURL') is not None:
+				self.add_body_params('Tasks.' + str(depth1 + 1) + '.ImageURL', Tasks[depth1].get('ImageURL'))

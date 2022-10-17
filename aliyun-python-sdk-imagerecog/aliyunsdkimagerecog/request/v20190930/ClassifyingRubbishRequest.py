@@ -23,16 +23,16 @@ from aliyunsdkimagerecog.endpoint import endpoint_data
 class ClassifyingRubbishRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'ClassifyingRubbish','imagerecog')
+		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'ClassifyingRubbish')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageURL(self):
+	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
-	def set_ImageURL(self,ImageURL):
+	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)
