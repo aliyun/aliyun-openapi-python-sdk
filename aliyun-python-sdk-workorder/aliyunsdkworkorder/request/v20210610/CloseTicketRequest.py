@@ -25,14 +25,14 @@ class CloseTicketRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'CloseTicket')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TicketId(self):
+	def get_TicketId(self): # String
 		return self.get_body_params().get('TicketId')
 
-	def set_TicketId(self,TicketId):
+	def set_TicketId(self, TicketId):  # String
 		self.add_body_params('TicketId', TicketId)

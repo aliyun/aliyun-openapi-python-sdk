@@ -25,20 +25,24 @@ class ListCategoriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'ListCategories')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductId(self):
+	def get_ProductId(self): # Long
 		return self.get_body_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
+	def set_ProductId(self, ProductId):  # Long
 		self.add_body_params('ProductId', ProductId)
+	def get_Language(self): # String
+		return self.get_query_params().get('Language')
 
-	def get_Name(self):
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)

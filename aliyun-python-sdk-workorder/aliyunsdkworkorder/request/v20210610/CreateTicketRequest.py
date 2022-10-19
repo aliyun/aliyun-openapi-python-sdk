@@ -19,32 +19,57 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkworkorder.endpoint import endpoint_data
+import json
 
 class CreateTicketRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'CreateTicket')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Severity(self):
+	def get_Severity(self): # Integer
 		return self.get_body_params().get('Severity')
 
-	def set_Severity(self,Severity):
+	def set_Severity(self, Severity):  # Integer
 		self.add_body_params('Severity', Severity)
+	def get_CreatorId(self): # String
+		return self.get_body_params().get('CreatorId')
 
-	def get_Description(self):
+	def set_CreatorId(self, CreatorId):  # String
+		self.add_body_params('CreatorId', CreatorId)
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_Title(self): # String
+		return self.get_body_params().get('Title')
 
-	def get_CategoryId(self):
+	def set_Title(self, Title):  # String
+		self.add_body_params('Title', Title)
+	def get_FileNameList(self): # Array
+		return self.get_body_params().get('FileNameList')
+
+	def set_FileNameList(self, FileNameList):  # Array
+		for index1, value1 in enumerate(FileNameList):
+			self.add_body_params('FileNameList.' + str(index1 + 1), value1)
+	def get_SecretInfo(self): # Struct
+		return self.get_query_params().get('SecretInfo')
+
+	def set_SecretInfo(self, SecretInfo):  # Struct
+		self.add_query_param("SecretInfo", json.dumps(SecretInfo))
+	def get_CategoryId(self): # String
 		return self.get_body_params().get('CategoryId')
 
-	def set_CategoryId(self,CategoryId):
+	def set_CategoryId(self, CategoryId):  # String
 		self.add_body_params('CategoryId', CategoryId)
+	def get_Email(self): # String
+		return self.get_body_params().get('Email')
+
+	def set_Email(self, Email):  # String
+		self.add_body_params('Email', Email)
