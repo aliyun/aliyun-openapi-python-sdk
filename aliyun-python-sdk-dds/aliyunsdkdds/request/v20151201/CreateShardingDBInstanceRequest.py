@@ -56,6 +56,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Storage', ReplicaSet[depth1].get('Storage'))
 			if ReplicaSet[depth1].get('Class') is not None:
 				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Class', ReplicaSet[depth1].get('Class'))
+	def get_StorageType(self): # String
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
