@@ -61,6 +61,11 @@ class UpgradeLindormInstanceRequest(RpcRequest):
 
 	def set_FilestoreSpec(self, FilestoreSpec):  # String
 		self.add_query_param('FilestoreSpec', FilestoreSpec)
+	def get_LogSpec(self): # String
+		return self.get_query_params().get('LogSpec')
+
+	def set_LogSpec(self, LogSpec):  # String
+		self.add_query_param('LogSpec', LogSpec)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -86,11 +91,21 @@ class UpgradeLindormInstanceRequest(RpcRequest):
 
 	def set_ColdStorage(self, ColdStorage):  # Integer
 		self.add_query_param('ColdStorage', ColdStorage)
+	def get_LogNum(self): # Integer
+		return self.get_query_params().get('LogNum')
+
+	def set_LogNum(self, LogNum):  # Integer
+		self.add_query_param('LogNum', LogNum)
 	def get_SolrSpec(self): # String
 		return self.get_query_params().get('SolrSpec')
 
 	def set_SolrSpec(self, SolrSpec):  # String
 		self.add_query_param('SolrSpec', SolrSpec)
+	def get_CoreSingleStorage(self): # Integer
+		return self.get_query_params().get('CoreSingleStorage')
+
+	def set_CoreSingleStorage(self, CoreSingleStorage):  # Integer
+		self.add_query_param('CoreSingleStorage', CoreSingleStorage)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -116,16 +131,6 @@ class UpgradeLindormInstanceRequest(RpcRequest):
 
 	def set_LindormNum(self, LindormNum):  # Integer
 		self.add_query_param('LindormNum', LindormNum)
-	def get_CoreSpec(self): # String
-		return self.get_query_params().get('CoreSpec')
-
-	def set_CoreSpec(self, CoreSpec):  # String
-		self.add_query_param('CoreSpec', CoreSpec)
-	def get_CoreNum(self): # Integer
-		return self.get_query_params().get('CoreNum')
-
-	def set_CoreNum(self, CoreNum):  # Integer
-		self.add_query_param('CoreNum', CoreNum)
 	def get_LtsCoreNum(self): # Integer
 		return self.get_query_params().get('LtsCoreNum')
 
@@ -146,6 +151,11 @@ class UpgradeLindormInstanceRequest(RpcRequest):
 
 	def set_ClusterStorage(self, ClusterStorage):  # Integer
 		self.add_query_param('ClusterStorage', ClusterStorage)
+	def get_LogSingleStorage(self): # Integer
+		return self.get_query_params().get('LogSingleStorage')
+
+	def set_LogSingleStorage(self, LogSingleStorage):  # Integer
+		self.add_query_param('LogSingleStorage', LogSingleStorage)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
