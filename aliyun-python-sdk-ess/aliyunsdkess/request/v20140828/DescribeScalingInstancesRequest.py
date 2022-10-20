@@ -25,88 +25,75 @@ class DescribeScalingInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingInstances','ess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ScalingGroupId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_LifecycleState(self):
+	def set_ScalingGroupId(self, ScalingGroupId):  # String
+		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_LifecycleState(self): # String
 		return self.get_query_params().get('LifecycleState')
 
-	def set_LifecycleState(self,LifecycleState):
-		self.add_query_param('LifecycleState',LifecycleState)
-
-	def get_CreationType(self):
+	def set_LifecycleState(self, LifecycleState):  # String
+		self.add_query_param('LifecycleState', LifecycleState)
+	def get_CreationType(self): # String
 		return self.get_query_params().get('CreationType')
 
-	def set_CreationType(self,CreationType):
-		self.add_query_param('CreationType',CreationType)
-
-	def get_PageNumber(self):
+	def set_CreationType(self, CreationType):  # String
+		self.add_query_param('CreationType', CreationType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ResourceOwnerAccount(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ScalingActivityId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ScalingActivityId(self): # String
 		return self.get_query_params().get('ScalingActivityId')
 
-	def set_ScalingActivityId(self,ScalingActivityId):
-		self.add_query_param('ScalingActivityId',ScalingActivityId)
-
-	def get_ScalingConfigurationId(self):
+	def set_ScalingActivityId(self, ScalingActivityId):  # String
+		self.add_query_param('ScalingActivityId', ScalingActivityId)
+	def get_ScalingConfigurationId(self): # String
 		return self.get_query_params().get('ScalingConfigurationId')
 
-	def set_ScalingConfigurationId(self,ScalingConfigurationId):
-		self.add_query_param('ScalingConfigurationId',ScalingConfigurationId)
-
-	def get_InstanceIds(self):
+	def set_ScalingConfigurationId(self, ScalingConfigurationId):  # String
+		self.add_query_param('ScalingConfigurationId', ScalingConfigurationId)
+	def get_InstanceIds(self): # RepeatList
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceIds):
-		for depth1 in range(len(InstanceIds)):
-			if InstanceIds[depth1] is not None:
-				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
-
-	def get_HealthStatus(self):
+	def set_InstanceIds(self, InstanceId):  # RepeatList
+		for depth1 in range(len(InstanceId)):
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def get_HealthStatus(self): # String
 		return self.get_query_params().get('HealthStatus')
 
-	def set_HealthStatus(self,HealthStatus):
-		self.add_query_param('HealthStatus',HealthStatus)
+	def set_HealthStatus(self, HealthStatus):  # String
+		self.add_query_param('HealthStatus', HealthStatus)

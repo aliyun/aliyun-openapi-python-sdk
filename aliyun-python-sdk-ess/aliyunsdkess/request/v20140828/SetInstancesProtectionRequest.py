@@ -25,40 +25,35 @@ class SetInstancesProtectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'SetInstancesProtection','ess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScalingGroupId(self):
+	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ScalingGroupId(self, ScalingGroupId):  # String
+		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceIds(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceIds(self): # RepeatList
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceIds):
-		for depth1 in range(len(InstanceIds)):
-			if InstanceIds[depth1] is not None:
-				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
-
-	def get_ProtectedFromScaleIn(self):
+	def set_InstanceIds(self, InstanceId):  # RepeatList
+		for depth1 in range(len(InstanceId)):
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def get_ProtectedFromScaleIn(self): # Boolean
 		return self.get_query_params().get('ProtectedFromScaleIn')
 
-	def set_ProtectedFromScaleIn(self,ProtectedFromScaleIn):
-		self.add_query_param('ProtectedFromScaleIn',ProtectedFromScaleIn)
+	def set_ProtectedFromScaleIn(self, ProtectedFromScaleIn):  # Boolean
+		self.add_query_param('ProtectedFromScaleIn', ProtectedFromScaleIn)

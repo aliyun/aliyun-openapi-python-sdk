@@ -25,50 +25,49 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ScaleWithAdjustment','ess')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AdjustmentValue(self):
+	def get_AdjustmentValue(self): # Integer
 		return self.get_query_params().get('AdjustmentValue')
 
-	def set_AdjustmentValue(self,AdjustmentValue):
-		self.add_query_param('AdjustmentValue',AdjustmentValue)
-
-	def get_ClientToken(self):
+	def set_AdjustmentValue(self, AdjustmentValue):  # Integer
+		self.add_query_param('AdjustmentValue', AdjustmentValue)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ScalingGroupId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_AdjustmentType(self):
+	def set_ScalingGroupId(self, ScalingGroupId):  # String
+		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_AdjustmentType(self): # String
 		return self.get_query_params().get('AdjustmentType')
 
-	def set_AdjustmentType(self,AdjustmentType):
-		self.add_query_param('AdjustmentType',AdjustmentType)
-
-	def get_OwnerId(self):
+	def set_AdjustmentType(self, AdjustmentType):  # String
+		self.add_query_param('AdjustmentType', AdjustmentType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MinAdjustmentMagnitude(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_MinAdjustmentMagnitude(self): # Integer
 		return self.get_query_params().get('MinAdjustmentMagnitude')
 
-	def set_MinAdjustmentMagnitude(self,MinAdjustmentMagnitude):
-		self.add_query_param('MinAdjustmentMagnitude',MinAdjustmentMagnitude)
+	def set_MinAdjustmentMagnitude(self, MinAdjustmentMagnitude):  # Integer
+		self.add_query_param('MinAdjustmentMagnitude', MinAdjustmentMagnitude)
+	def get_SyncActivity(self): # Boolean
+		return self.get_query_params().get('SyncActivity')
+
+	def set_SyncActivity(self, SyncActivity):  # Boolean
+		self.add_query_param('SyncActivity', SyncActivity)
