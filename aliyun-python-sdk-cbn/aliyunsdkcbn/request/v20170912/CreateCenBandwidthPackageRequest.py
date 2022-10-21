@@ -96,6 +96,11 @@ class CreateCenBandwidthPackageRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ServiceType(self): # String
+		return self.get_query_params().get('ServiceType')
+
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
 	def get_AutoRenew(self): # Boolean
 		return self.get_query_params().get('AutoRenew')
 
