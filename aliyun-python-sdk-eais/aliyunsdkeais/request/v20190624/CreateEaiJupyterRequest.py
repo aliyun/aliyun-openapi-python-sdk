@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeais.endpoint import endpoint_data
+import json
 
 class CreateEaiJupyterRequest(RpcRequest):
 
@@ -51,3 +52,8 @@ class CreateEaiJupyterRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_EnvironmentVar(self): # Array
+		return self.get_query_params().get('EnvironmentVar')
+
+	def set_EnvironmentVar(self, EnvironmentVar):  # Array
+		self.add_query_param("EnvironmentVar", json.dumps(EnvironmentVar))
