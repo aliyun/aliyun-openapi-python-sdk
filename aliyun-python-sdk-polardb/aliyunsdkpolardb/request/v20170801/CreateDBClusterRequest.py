@@ -25,168 +25,198 @@ class CreateDBClusterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBCluster','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DBClusterDescription(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DBClusterDescription(self):
 		return self.get_query_params().get('DBClusterDescription')
 
-	def set_DBClusterDescription(self, DBClusterDescription):  # String
-		self.add_query_param('DBClusterDescription', DBClusterDescription)
-	def get_CreationCategory(self): # String
+	def set_DBClusterDescription(self,DBClusterDescription):
+		self.add_query_param('DBClusterDescription',DBClusterDescription)
+
+	def get_CreationCategory(self):
 		return self.get_query_params().get('CreationCategory')
 
-	def set_CreationCategory(self, CreationCategory):  # String
-		self.add_query_param('CreationCategory', CreationCategory)
-	def get_ResourceGroupId(self): # String
+	def set_CreationCategory(self,CreationCategory):
+		self.add_query_param('CreationCategory',CreationCategory)
+
+	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_DBNodeClass(self): # String
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_DBNodeClass(self):
 		return self.get_query_params().get('DBNodeClass')
 
-	def set_DBNodeClass(self, DBNodeClass):  # String
-		self.add_query_param('DBNodeClass', DBNodeClass)
-	def get_CreationOption(self): # String
+	def set_DBNodeClass(self,DBNodeClass):
+		self.add_query_param('DBNodeClass',DBNodeClass)
+
+	def get_CreationOption(self):
 		return self.get_query_params().get('CreationOption')
 
-	def set_CreationOption(self, CreationOption):  # String
-		self.add_query_param('CreationOption', CreationOption)
-	def get_Tags(self): # RepeatList
+	def set_CreationOption(self,CreationOption):
+		self.add_query_param('CreationOption',CreationOption)
+
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_SourceResourceId(self): # String
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_SourceResourceId(self):
 		return self.get_query_params().get('SourceResourceId')
 
-	def set_SourceResourceId(self, SourceResourceId):  # String
-		self.add_query_param('SourceResourceId', SourceResourceId)
-	def get_BackupRetentionPolicyOnClusterDeletion(self): # String
+	def set_SourceResourceId(self,SourceResourceId):
+		self.add_query_param('SourceResourceId',SourceResourceId)
+
+	def get_BackupRetentionPolicyOnClusterDeletion(self):
 		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
 
-	def set_BackupRetentionPolicyOnClusterDeletion(self, BackupRetentionPolicyOnClusterDeletion):  # String
-		self.add_query_param('BackupRetentionPolicyOnClusterDeletion', BackupRetentionPolicyOnClusterDeletion)
-	def get_Period(self): # String
+	def set_BackupRetentionPolicyOnClusterDeletion(self,BackupRetentionPolicyOnClusterDeletion):
+		self.add_query_param('BackupRetentionPolicyOnClusterDeletion',BackupRetentionPolicyOnClusterDeletion)
+
+	def get_Period(self):
 		return self.get_query_params().get('Period')
 
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
-	def get_OwnerId(self): # Long
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_VSwitchId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_SecurityIPList(self): # String
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
 
-	def set_SecurityIPList(self, SecurityIPList):  # String
-		self.add_query_param('SecurityIPList', SecurityIPList)
-	def get_DBMinorVersion(self): # String
+	def set_SecurityIPList(self,SecurityIPList):
+		self.add_query_param('SecurityIPList',SecurityIPList)
+
+	def get_DBMinorVersion(self):
 		return self.get_query_params().get('DBMinorVersion')
 
-	def set_DBMinorVersion(self, DBMinorVersion):  # String
-		self.add_query_param('DBMinorVersion', DBMinorVersion)
-	def get_AutoRenew(self): # Boolean
+	def set_DBMinorVersion(self,DBMinorVersion):
+		self.add_query_param('DBMinorVersion',DBMinorVersion)
+
+	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
-	def get_ZoneId(self): # String
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
+	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_TDEStatus(self): # Boolean
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_TDEStatus(self):
 		return self.get_query_params().get('TDEStatus')
 
-	def set_TDEStatus(self, TDEStatus):  # Boolean
-		self.add_query_param('TDEStatus', TDEStatus)
-	def get_LowerCaseTableNames(self): # String
+	def set_TDEStatus(self,TDEStatus):
+		self.add_query_param('TDEStatus',TDEStatus)
+
+	def get_LowerCaseTableNames(self):
 		return self.get_query_params().get('LowerCaseTableNames')
 
-	def set_LowerCaseTableNames(self, LowerCaseTableNames):  # String
-		self.add_query_param('LowerCaseTableNames', LowerCaseTableNames)
-	def get_ClientToken(self): # String
+	def set_LowerCaseTableNames(self,LowerCaseTableNames):
+		self.add_query_param('LowerCaseTableNames',LowerCaseTableNames)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_DefaultTimeZone(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_DefaultTimeZone(self):
 		return self.get_query_params().get('DefaultTimeZone')
 
-	def set_DefaultTimeZone(self, DefaultTimeZone):  # String
-		self.add_query_param('DefaultTimeZone', DefaultTimeZone)
-	def get_ClusterNetworkType(self): # String
+	def set_DefaultTimeZone(self,DefaultTimeZone):
+		self.add_query_param('DefaultTimeZone',DefaultTimeZone)
+
+	def get_ClusterNetworkType(self):
 		return self.get_query_params().get('ClusterNetworkType')
 
-	def set_ClusterNetworkType(self, ClusterNetworkType):  # String
-		self.add_query_param('ClusterNetworkType', ClusterNetworkType)
-	def get_ParameterGroupId(self): # String
+	def set_ClusterNetworkType(self,ClusterNetworkType):
+		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
+
+	def get_ParameterGroupId(self):
 		return self.get_query_params().get('ParameterGroupId')
 
-	def set_ParameterGroupId(self, ParameterGroupId):  # String
-		self.add_query_param('ParameterGroupId', ParameterGroupId)
-	def get_GDNId(self): # String
+	def set_ParameterGroupId(self,ParameterGroupId):
+		self.add_query_param('ParameterGroupId',ParameterGroupId)
+
+	def get_GDNId(self):
 		return self.get_query_params().get('GDNId')
 
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_GDNId(self,GDNId):
+		self.add_query_param('GDNId',GDNId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_UsedTime(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
 
-	def set_UsedTime(self, UsedTime):  # String
-		self.add_query_param('UsedTime', UsedTime)
-	def get_VPCId(self): # String
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
-	def set_VPCId(self, VPCId):  # String
-		self.add_query_param('VPCId', VPCId)
-	def get_DBType(self): # String
+	def set_VPCId(self,VPCId):
+		self.add_query_param('VPCId',VPCId)
+
+	def get_DBType(self):
 		return self.get_query_params().get('DBType')
 
-	def set_DBType(self, DBType):  # String
-		self.add_query_param('DBType', DBType)
-	def get_DBVersion(self): # String
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
+
+	def get_DBVersion(self):
 		return self.get_query_params().get('DBVersion')
 
-	def set_DBVersion(self, DBVersion):  # String
-		self.add_query_param('DBVersion', DBVersion)
-	def get_CloneDataPoint(self): # String
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
+
+	def get_CloneDataPoint(self):
 		return self.get_query_params().get('CloneDataPoint')
 
-	def set_CloneDataPoint(self, CloneDataPoint):  # String
-		self.add_query_param('CloneDataPoint', CloneDataPoint)
-	def get_PayType(self): # String
+	def set_CloneDataPoint(self,CloneDataPoint):
+		self.add_query_param('CloneDataPoint',CloneDataPoint)
+
+	def get_PayType(self):
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self, PayType):  # String
-		self.add_query_param('PayType', PayType)
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

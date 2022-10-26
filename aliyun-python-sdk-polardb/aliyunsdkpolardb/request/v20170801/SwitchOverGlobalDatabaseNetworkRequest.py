@@ -25,49 +25,56 @@ class SwitchOverGlobalDatabaseNetworkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'SwitchOverGlobalDatabaseNetwork','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_GDNId(self): # String
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_GDNId(self):
 		return self.get_query_params().get('GDNId')
 
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_ResourceOwnerAccount(self): # String
+	def set_GDNId(self,GDNId):
+		self.add_query_param('GDNId',GDNId)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_OwnerAccount(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

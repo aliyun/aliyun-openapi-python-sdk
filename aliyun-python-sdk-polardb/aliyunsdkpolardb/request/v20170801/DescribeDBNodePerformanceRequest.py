@@ -25,34 +25,38 @@ class DescribeDBNodePerformanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBNodePerformance','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBNodeId(self): # String
+
+	def get_DBNodeId(self):
 		return self.get_query_params().get('DBNodeId')
 
-	def set_DBNodeId(self, DBNodeId):  # String
-		self.add_query_param('DBNodeId', DBNodeId)
-	def get_StartTime(self): # String
+	def set_DBNodeId(self,DBNodeId):
+		self.add_query_param('DBNodeId',DBNodeId)
+
+	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Key(self): # String
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Key(self):
 		return self.get_query_params().get('Key')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
-	def get_DBClusterId(self): # String
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_EndTime(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)

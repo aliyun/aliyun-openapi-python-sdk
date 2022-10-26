@@ -25,69 +25,80 @@ class DescribeDBClustersWithBackupsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClustersWithBackups','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DBClusterDescription(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DBClusterDescription(self):
 		return self.get_query_params().get('DBClusterDescription')
 
-	def set_DBClusterDescription(self, DBClusterDescription):  # String
-		self.add_query_param('DBClusterDescription', DBClusterDescription)
-	def get_IsDeleted(self): # Integer
+	def set_DBClusterDescription(self,DBClusterDescription):
+		self.add_query_param('DBClusterDescription',DBClusterDescription)
+
+	def get_IsDeleted(self):
 		return self.get_query_params().get('IsDeleted')
 
-	def set_IsDeleted(self, IsDeleted):  # Integer
-		self.add_query_param('IsDeleted', IsDeleted)
-	def get_PageNumber(self): # Integer
+	def set_IsDeleted(self,IsDeleted):
+		self.add_query_param('IsDeleted',IsDeleted)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_ResourceGroupId(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_PageSize(self): # Integer
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ResourceOwnerAccount(self): # String
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_DBType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBType(self):
 		return self.get_query_params().get('DBType')
 
-	def set_DBType(self, DBType):  # String
-		self.add_query_param('DBType', DBType)
-	def get_DBVersion(self): # String
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
+
+	def get_DBVersion(self):
 		return self.get_query_params().get('DBVersion')
 
-	def set_DBVersion(self, DBVersion):  # String
-		self.add_query_param('DBVersion', DBVersion)
-	def get_DBClusterIds(self): # String
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
+
+	def get_DBClusterIds(self):
 		return self.get_query_params().get('DBClusterIds')
 
-	def set_DBClusterIds(self, DBClusterIds):  # String
-		self.add_query_param('DBClusterIds', DBClusterIds)
+	def set_DBClusterIds(self,DBClusterIds):
+		self.add_query_param('DBClusterIds',DBClusterIds)

@@ -25,69 +25,80 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBClusterEndpoint','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AutoAddNewNodes(self): # String
+
+	def get_AutoAddNewNodes(self):
 		return self.get_query_params().get('AutoAddNewNodes')
 
-	def set_AutoAddNewNodes(self, AutoAddNewNodes):  # String
-		self.add_query_param('AutoAddNewNodes', AutoAddNewNodes)
-	def get_ResourceOwnerId(self): # Long
+	def set_AutoAddNewNodes(self,AutoAddNewNodes):
+		self.add_query_param('AutoAddNewNodes',AutoAddNewNodes)
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ReadWriteMode(self): # String
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ReadWriteMode(self):
 		return self.get_query_params().get('ReadWriteMode')
 
-	def set_ReadWriteMode(self, ReadWriteMode):  # String
-		self.add_query_param('ReadWriteMode', ReadWriteMode)
-	def get_EndpointType(self): # String
+	def set_ReadWriteMode(self,ReadWriteMode):
+		self.add_query_param('ReadWriteMode',ReadWriteMode)
+
+	def get_EndpointType(self):
 		return self.get_query_params().get('EndpointType')
 
-	def set_EndpointType(self, EndpointType):  # String
-		self.add_query_param('EndpointType', EndpointType)
-	def get_ResourceOwnerAccount(self): # String
+	def set_EndpointType(self,EndpointType):
+		self.add_query_param('EndpointType',EndpointType)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_OwnerAccount(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EndpointConfig(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_EndpointConfig(self):
 		return self.get_query_params().get('EndpointConfig')
 
-	def set_EndpointConfig(self, EndpointConfig):  # String
-		self.add_query_param('EndpointConfig', EndpointConfig)
-	def get_DBEndpointDescription(self): # String
+	def set_EndpointConfig(self,EndpointConfig):
+		self.add_query_param('EndpointConfig',EndpointConfig)
+
+	def get_DBEndpointDescription(self):
 		return self.get_query_params().get('DBEndpointDescription')
 
-	def set_DBEndpointDescription(self, DBEndpointDescription):  # String
-		self.add_query_param('DBEndpointDescription', DBEndpointDescription)
-	def get_OwnerId(self): # Long
+	def set_DBEndpointDescription(self,DBEndpointDescription):
+		self.add_query_param('DBEndpointDescription',DBEndpointDescription)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Nodes(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Nodes(self):
 		return self.get_query_params().get('Nodes')
 
-	def set_Nodes(self, Nodes):  # String
-		self.add_query_param('Nodes', Nodes)
+	def set_Nodes(self,Nodes):
+		self.add_query_param('Nodes',Nodes)

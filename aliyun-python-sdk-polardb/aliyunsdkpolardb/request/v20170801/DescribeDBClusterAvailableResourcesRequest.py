@@ -25,54 +25,62 @@ class DescribeDBClusterAvailableResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterAvailableResources','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DBNodeClass(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DBNodeClass(self):
 		return self.get_query_params().get('DBNodeClass')
 
-	def set_DBNodeClass(self, DBNodeClass):  # String
-		self.add_query_param('DBNodeClass', DBNodeClass)
-	def get_ResourceOwnerAccount(self): # String
+	def set_DBNodeClass(self,DBNodeClass):
+		self.add_query_param('DBNodeClass',DBNodeClass)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_DBType(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBType(self):
 		return self.get_query_params().get('DBType')
 
-	def set_DBType(self, DBType):  # String
-		self.add_query_param('DBType', DBType)
-	def get_DBVersion(self): # String
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
+
+	def get_DBVersion(self):
 		return self.get_query_params().get('DBVersion')
 
-	def set_DBVersion(self, DBVersion):  # String
-		self.add_query_param('DBVersion', DBVersion)
-	def get_ZoneId(self): # String
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
+
+	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_PayType(self): # String
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_PayType(self):
 		return self.get_query_params().get('PayType')
 
-	def set_PayType(self, PayType):  # String
-		self.add_query_param('PayType', PayType)
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

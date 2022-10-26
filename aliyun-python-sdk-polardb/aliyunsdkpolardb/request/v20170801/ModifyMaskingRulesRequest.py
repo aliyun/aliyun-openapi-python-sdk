@@ -25,34 +25,38 @@ class ModifyMaskingRulesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyMaskingRules','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBClusterId(self): # String
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_RuleName(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')
 
-	def set_RuleName(self, RuleName):  # String
-		self.add_query_param('RuleName', RuleName)
-	def get_RuleConfig(self): # String
+	def set_RuleName(self,RuleName):
+		self.add_query_param('RuleName',RuleName)
+
+	def get_RuleConfig(self):
 		return self.get_query_params().get('RuleConfig')
 
-	def set_RuleConfig(self, RuleConfig):  # String
-		self.add_query_param('RuleConfig', RuleConfig)
-	def get_Enable(self): # String
+	def set_RuleConfig(self,RuleConfig):
+		self.add_query_param('RuleConfig',RuleConfig)
+
+	def get_Enable(self):
 		return self.get_query_params().get('Enable')
 
-	def set_Enable(self, Enable):  # String
-		self.add_query_param('Enable', Enable)
-	def get_RuleNameList(self): # String
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
+
+	def get_RuleNameList(self):
 		return self.get_query_params().get('RuleNameList')
 
-	def set_RuleNameList(self, RuleNameList):  # String
-		self.add_query_param('RuleNameList', RuleNameList)
+	def set_RuleNameList(self,RuleNameList):
+		self.add_query_param('RuleNameList',RuleNameList)

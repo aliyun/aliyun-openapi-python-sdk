@@ -25,54 +25,62 @@ class RestoreTableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'RestoreTable','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SecurityToken(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_TableMeta(self): # String
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TableMeta(self):
 		return self.get_query_params().get('TableMeta')
 
-	def set_TableMeta(self, TableMeta):  # String
-		self.add_query_param('TableMeta', TableMeta)
-	def get_RestoreTime(self): # String
+	def set_TableMeta(self,TableMeta):
+		self.add_query_param('TableMeta',TableMeta)
+
+	def get_RestoreTime(self):
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self, RestoreTime):  # String
-		self.add_query_param('RestoreTime', RestoreTime)
-	def get_ResourceOwnerAccount(self): # String
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_OwnerAccount(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_BackupId(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self, BackupId):  # String
-		self.add_query_param('BackupId', BackupId)
-	def get_OwnerId(self): # Long
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

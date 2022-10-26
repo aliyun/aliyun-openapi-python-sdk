@@ -25,59 +25,68 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterPrimaryZone','polardb')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PlannedEndTime(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_PlannedEndTime(self):
 		return self.get_query_params().get('PlannedEndTime')
 
-	def set_PlannedEndTime(self, PlannedEndTime):  # String
-		self.add_query_param('PlannedEndTime', PlannedEndTime)
-	def get_ResourceOwnerAccount(self): # String
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
-	def get_OwnerAccount(self): # String
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_VSwitchId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_PlannedStartTime(self): # String
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PlannedStartTime(self):
 		return self.get_query_params().get('PlannedStartTime')
 
-	def set_PlannedStartTime(self, PlannedStartTime):  # String
-		self.add_query_param('PlannedStartTime', PlannedStartTime)
-	def get_ZoneId(self): # String
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
+
+	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_FromTimeService(self): # Boolean
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_FromTimeService(self):
 		return self.get_query_params().get('FromTimeService')
 
-	def set_FromTimeService(self, FromTimeService):  # Boolean
-		self.add_query_param('FromTimeService', FromTimeService)
+	def set_FromTimeService(self,FromTimeService):
+		self.add_query_param('FromTimeService',FromTimeService)
