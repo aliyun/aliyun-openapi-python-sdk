@@ -46,6 +46,11 @@ class ListNodesByQueueRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

@@ -82,6 +82,11 @@ class ListJobsWithFiltersRequest(RpcRequest):
 
 	def set_CreateTimeEnd(self, CreateTimeEnd):  # String
 		self.add_query_param('CreateTimeEnd', CreateTimeEnd)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)
 	def get_Nodes(self): # Array
 		return self.get_query_params().get('Nodes')
 
