@@ -71,6 +71,11 @@ class CreateUploadImageRequest(RpcRequest):
 
 	def set_Tags(self, Tags):  # String
 		self.add_query_param('Tags', Tags)
+	def get_OriginalFileName(self): # String
+		return self.get_query_params().get('OriginalFileName')
+
+	def set_OriginalFileName(self, OriginalFileName):  # String
+		self.add_query_param('OriginalFileName', OriginalFileName)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 

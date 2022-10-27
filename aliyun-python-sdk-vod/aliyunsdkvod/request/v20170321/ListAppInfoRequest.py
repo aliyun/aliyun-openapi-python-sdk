@@ -31,16 +31,16 @@ class ListAppInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNo(self): # Integer
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self, PageNo):  # Integer
-		self.add_query_param('PageNo', PageNo)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_PageNo(self): # Integer
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self, PageNo):  # Integer
+		self.add_query_param('PageNo', PageNo)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
