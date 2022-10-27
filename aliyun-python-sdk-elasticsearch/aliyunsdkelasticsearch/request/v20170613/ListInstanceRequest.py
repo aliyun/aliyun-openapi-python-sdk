@@ -26,74 +26,64 @@ class ListInstanceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListInstance','elasticsearch')
 		self.set_uri_pattern('/openapi/instances')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_description(self):
+	def get_description(self): # string
 		return self.get_query_params().get('description')
 
-	def set_description(self,description):
-		self.add_query_param('description',description)
-
-	def get_instanceCategory(self):
+	def set_description(self, description):  # string
+		self.add_query_param('description', description)
+	def get_instanceCategory(self): # string
 		return self.get_query_params().get('instanceCategory')
 
-	def set_instanceCategory(self,instanceCategory):
-		self.add_query_param('instanceCategory',instanceCategory)
-
-	def get_tags(self):
+	def set_instanceCategory(self, instanceCategory):  # string
+		self.add_query_param('instanceCategory', instanceCategory)
+	def get_tags(self): # string
 		return self.get_query_params().get('tags')
 
-	def set_tags(self,tags):
-		self.add_query_param('tags',tags)
-
-	def get_resourceGroupId(self):
+	def set_tags(self, tags):  # string
+		self.add_query_param('tags', tags)
+	def get_resourceGroupId(self): # string
 		return self.get_query_params().get('resourceGroupId')
 
-	def set_resourceGroupId(self,resourceGroupId):
-		self.add_query_param('resourceGroupId',resourceGroupId)
-
-	def get_instanceId(self):
+	def set_resourceGroupId(self, resourceGroupId):  # string
+		self.add_query_param('resourceGroupId', resourceGroupId)
+	def get_instanceId(self): # string
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_query_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # string
+		self.add_query_param('instanceId', instanceId)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_esVersion(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_esVersion(self): # string
 		return self.get_query_params().get('esVersion')
 
-	def set_esVersion(self,esVersion):
-		self.add_query_param('esVersion',esVersion)
-
-	def get_vpcId(self):
+	def set_esVersion(self, esVersion):  # string
+		self.add_query_param('esVersion', esVersion)
+	def get_vpcId(self): # string
 		return self.get_query_params().get('vpcId')
 
-	def set_vpcId(self,vpcId):
-		self.add_query_param('vpcId',vpcId)
-
-	def get_zoneId(self):
+	def set_vpcId(self, vpcId):  # string
+		self.add_query_param('vpcId', vpcId)
+	def get_zoneId(self): # string
 		return self.get_query_params().get('zoneId')
 
-	def set_zoneId(self,zoneId):
-		self.add_query_param('zoneId',zoneId)
-
-	def get_page(self):
+	def set_zoneId(self, zoneId):  # string
+		self.add_query_param('zoneId', zoneId)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_paymentType(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_paymentType(self): # string
 		return self.get_query_params().get('paymentType')
 
-	def set_paymentType(self,paymentType):
-		self.add_query_param('paymentType',paymentType)
+	def set_paymentType(self, paymentType):  # string
+		self.add_query_param('paymentType', paymentType)

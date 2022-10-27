@@ -26,50 +26,44 @@ class ListInstanceIndicesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListInstanceIndices','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/indices')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_all(self):
+	def get_all(self): # boolean
 		return self.get_query_params().get('all')
 
-	def set_all(self,all):
-		self.add_query_param('all',all)
-
-	def get_InstanceId(self):
+	def set_all(self, all):  # boolean
+		self.add_query_param('all', all)
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_isManaged(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_isManaged(self): # boolean
 		return self.get_query_params().get('isManaged')
 
-	def set_isManaged(self,isManaged):
-		self.add_query_param('isManaged',isManaged)
-
-	def get_size(self):
+	def set_isManaged(self, isManaged):  # boolean
+		self.add_query_param('isManaged', isManaged)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_name(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_name(self): # string
 		return self.get_query_params().get('name')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
-
-	def get_page(self):
+	def set_name(self, name):  # string
+		self.add_query_param('name', name)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_isOpenstore(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_isOpenstore(self): # boolean
 		return self.get_query_params().get('isOpenstore')
 
-	def set_isOpenstore(self,isOpenstore):
-		self.add_query_param('isOpenstore',isOpenstore)
+	def set_isOpenstore(self, isOpenstore):  # boolean
+		self.add_query_param('isOpenstore', isOpenstore)

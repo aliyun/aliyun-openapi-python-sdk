@@ -26,26 +26,24 @@ class ListAckClustersRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListAckClusters','elasticsearch')
 		self.set_uri_pattern('/openapi/ack-clusters')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_size(self):
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_vpcId(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_vpcId(self): # string
 		return self.get_query_params().get('vpcId')
 
-	def set_vpcId(self,vpcId):
-		self.add_query_param('vpcId',vpcId)
-
-	def get_page(self):
+	def set_vpcId(self, vpcId):  # string
+		self.add_query_param('vpcId', vpcId)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)

@@ -26,20 +26,19 @@ class ListShardRecoveriesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListShardRecoveries','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/cat-recovery')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_activeOnly(self):
+	def get_activeOnly(self): # boolean
 		return self.get_query_params().get('activeOnly')
 
-	def set_activeOnly(self,activeOnly):
-		self.add_query_param('activeOnly',activeOnly)
-
-	def get_InstanceId(self):
+	def set_activeOnly(self, activeOnly):  # boolean
+		self.add_query_param('activeOnly', activeOnly)
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)

@@ -26,38 +26,29 @@ class UpgradeEngineVersionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpgradeEngineVersion','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/upgrade-version')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_dryRun(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_dryRun(self): # boolean
 		return self.get_query_params().get('dryRun')
 
-	def set_dryRun(self,dryRun):
-		self.add_query_param('dryRun',dryRun)
-
-	def get_clientToken(self):
+	def set_dryRun(self, dryRun):  # boolean
+		self.add_query_param('dryRun', dryRun)
+	def get_clientToken(self): # string
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_clientToken(self, clientToken):  # string
+		self.add_query_param('clientToken', clientToken)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
 
-	def get_type(self):
-		return self.get_body_params().get('type')
-
-	def set_type(self,type):
-		self.add_body_params('type', type)
-
-	def get_version(self):
-		return self.get_body_params().get('version')
-
-	def set_version(self,version):
-		self.add_body_params('version', version)
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

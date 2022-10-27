@@ -26,26 +26,24 @@ class DescribeDiagnoseReportRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribeDiagnoseReport','elasticsearch')
 		self.set_uri_pattern('/openapi/diagnosis/instances/[InstanceId]/reports/[ReportId]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_ReportId(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_ReportId(self): # string
 		return self.get_path_params().get('ReportId')
 
-	def set_ReportId(self,ReportId):
-		self.add_path_param('ReportId',ReportId)
-
-	def get_lang(self):
+	def set_ReportId(self, ReportId):  # string
+		self.add_path_param('ReportId', ReportId)
+	def get_lang(self): # string
 		return self.get_query_params().get('lang')
 
-	def set_lang(self,lang):
-		self.add_query_param('lang',lang)
+	def set_lang(self, lang):  # string
+		self.add_query_param('lang', lang)

@@ -26,32 +26,34 @@ class UpdateInstanceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateInstance','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ignoreStatus(self):
-		return self.get_query_params().get('ignoreStatus')
-
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_clientToken(self): # string
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_clientToken(self, clientToken):  # string
+		self.add_query_param('clientToken', clientToken)
+	def get_force(self): # boolean
+		return self.get_query_params().get('force')
 
-	def get_orderActionType(self):
+	def set_force(self, force):  # boolean
+		self.add_query_param('force', force)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)
+	def get_orderActionType(self): # string
 		return self.get_query_params().get('orderActionType')
 
-	def set_orderActionType(self,orderActionType):
-		self.add_query_param('orderActionType',orderActionType)
+	def set_orderActionType(self, orderActionType):  # string
+		self.add_query_param('orderActionType', orderActionType)

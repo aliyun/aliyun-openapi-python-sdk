@@ -26,38 +26,34 @@ class ListApmRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListApm','elasticsearch')
 		self.set_uri_pattern('/openapi/apm')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_output(self):
+	def get_output(self): # string
 		return self.get_query_params().get('output')
 
-	def set_output(self,output):
-		self.add_query_param('output',output)
-
-	def get_instanceId(self):
+	def set_output(self, output):  # string
+		self.add_query_param('output', output)
+	def get_instanceId(self): # string
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_query_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # string
+		self.add_query_param('instanceId', instanceId)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_description(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_description(self): # string
 		return self.get_query_params().get('description')
 
-	def set_description(self,description):
-		self.add_query_param('description',description)
-
-	def get_page(self):
+	def set_description(self, description):  # string
+		self.add_query_param('description', description)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)

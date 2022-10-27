@@ -26,20 +26,19 @@ class ListTagsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListTags','elasticsearch')
 		self.set_uri_pattern('/openapi/tags/all-tags')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_pageSize(self):
+	def get_pageSize(self): # integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_resourceType(self):
+	def set_pageSize(self, pageSize):  # integer
+		self.add_query_param('pageSize', pageSize)
+	def get_resourceType(self): # string
 		return self.get_query_params().get('resourceType')
 
-	def set_resourceType(self,resourceType):
-		self.add_query_param('resourceType',resourceType)
+	def set_resourceType(self, resourceType):  # string
+		self.add_query_param('resourceType', resourceType)

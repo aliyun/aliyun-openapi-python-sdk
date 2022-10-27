@@ -26,26 +26,24 @@ class ListDataStreamsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListDataStreams','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/data-streams')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_isManaged(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_isManaged(self): # boolean
 		return self.get_query_params().get('isManaged')
 
-	def set_isManaged(self,isManaged):
-		self.add_query_param('isManaged',isManaged)
-
-	def get_name(self):
+	def set_isManaged(self, isManaged):  # boolean
+		self.add_query_param('isManaged', isManaged)
+	def get_name(self): # string
 		return self.get_query_params().get('name')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
+	def set_name(self, name):  # string
+		self.add_query_param('name', name)

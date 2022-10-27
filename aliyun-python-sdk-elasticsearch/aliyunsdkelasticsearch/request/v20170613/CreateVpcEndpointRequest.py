@@ -26,26 +26,29 @@ class CreateVpcEndpointRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreateVpcEndpoint','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/vpc-endpoints')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_dryRun(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_dryRun(self): # boolean
 		return self.get_query_params().get('dryRun')
 
-	def set_dryRun(self,dryRun):
-		self.add_query_param('dryRun',dryRun)
-
-	def get_ClientToken(self):
+	def set_dryRun(self, dryRun):  # boolean
+		self.add_query_param('dryRun', dryRun)
+	def get_ClientToken(self): # string
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ClientToken(self, ClientToken):  # string
+		self.add_query_param('ClientToken', ClientToken)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

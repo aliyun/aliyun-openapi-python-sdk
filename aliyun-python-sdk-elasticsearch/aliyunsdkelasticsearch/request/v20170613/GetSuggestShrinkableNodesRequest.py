@@ -26,32 +26,29 @@ class GetSuggestShrinkableNodesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetSuggestShrinkableNodes','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/suggest-shrinkable-nodes')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ignoreStatus(self):
+	def get_ignoreStatus(self): # boolean
 		return self.get_query_params().get('ignoreStatus')
 
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
-	def get_InstanceId(self):
+	def set_ignoreStatus(self, ignoreStatus):  # boolean
+		self.add_query_param('ignoreStatus', ignoreStatus)
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_nodeType(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_nodeType(self): # string
 		return self.get_query_params().get('nodeType')
 
-	def set_nodeType(self,nodeType):
-		self.add_query_param('nodeType',nodeType)
-
-	def get_count(self):
+	def set_nodeType(self, nodeType):  # string
+		self.add_query_param('nodeType', nodeType)
+	def get_count(self): # integer
 		return self.get_query_params().get('count')
 
-	def set_count(self,count):
-		self.add_query_param('count',count)
+	def set_count(self, count):  # integer
+		self.add_query_param('count', count)

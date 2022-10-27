@@ -26,50 +26,44 @@ class ListSearchLogRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListSearchLog','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/search-log')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_size(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_query(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_query(self): # string
 		return self.get_query_params().get('query')
 
-	def set_query(self,query):
-		self.add_query_param('query',query)
-
-	def get_endTime(self):
+	def set_query(self, query):  # string
+		self.add_query_param('query', query)
+	def get_endTime(self): # integer
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_beginTime(self):
+	def set_endTime(self, endTime):  # integer
+		self.add_query_param('endTime', endTime)
+	def get_beginTime(self): # integer
 		return self.get_query_params().get('beginTime')
 
-	def set_beginTime(self,beginTime):
-		self.add_query_param('beginTime',beginTime)
-
-	def get_page(self):
+	def set_beginTime(self, beginTime):  # integer
+		self.add_query_param('beginTime', beginTime)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_type(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_type(self): # string
 		return self.get_query_params().get('type')
 
-	def set_type(self,type):
-		self.add_query_param('type',type)
+	def set_type(self, type):  # string
+		self.add_query_param('type', type)

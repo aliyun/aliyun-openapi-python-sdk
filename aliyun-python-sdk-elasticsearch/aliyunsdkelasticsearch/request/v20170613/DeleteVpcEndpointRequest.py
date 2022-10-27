@@ -26,26 +26,24 @@ class DeleteVpcEndpointRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DeleteVpcEndpoint','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/vpc-endpoints/[EndpointId]')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_ClientToken(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_ClientToken(self): # string
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EndpointId(self):
+	def set_ClientToken(self, ClientToken):  # string
+		self.add_query_param('ClientToken', ClientToken)
+	def get_EndpointId(self): # string
 		return self.get_path_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_path_param('EndpointId',EndpointId)
+	def set_EndpointId(self, EndpointId):  # string
+		self.add_path_param('EndpointId', EndpointId)

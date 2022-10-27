@@ -26,26 +26,24 @@ class ListDefaultCollectorConfigurationsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListDefaultCollectorConfigurations','elasticsearch')
 		self.set_uri_pattern('/openapi/beats/default-configurations')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_resType(self):
+	def get_resType(self): # string
 		return self.get_query_params().get('resType')
 
-	def set_resType(self,resType):
-		self.add_query_param('resType',resType)
-
-	def get_resVersion(self):
+	def set_resType(self, resType):  # string
+		self.add_query_param('resType', resType)
+	def get_resVersion(self): # string
 		return self.get_query_params().get('resVersion')
 
-	def set_resVersion(self,resVersion):
-		self.add_query_param('resVersion',resVersion)
-
-	def get_sourceType(self):
+	def set_resVersion(self, resVersion):  # string
+		self.add_query_param('resVersion', resVersion)
+	def get_sourceType(self): # string
 		return self.get_query_params().get('sourceType')
 
-	def set_sourceType(self,sourceType):
-		self.add_query_param('sourceType',sourceType)
+	def set_sourceType(self, sourceType):  # string
+		self.add_query_param('sourceType', sourceType)

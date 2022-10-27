@@ -26,14 +26,14 @@ class RemoveApmRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RemoveApm','elasticsearch')
 		self.set_uri_pattern('/openapi/apm/[instanceId]')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # string
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
+	def set_instanceId(self, instanceId):  # string
+		self.add_path_param('instanceId', instanceId)

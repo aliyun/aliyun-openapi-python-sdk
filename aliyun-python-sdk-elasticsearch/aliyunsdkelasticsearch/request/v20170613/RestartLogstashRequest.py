@@ -26,26 +26,29 @@ class RestartLogstashRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RestartLogstash','elasticsearch')
 		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/actions/restart')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_clientToken(self): # string
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
-
-	def get_force(self):
+	def set_clientToken(self, clientToken):  # string
+		self.add_query_param('clientToken', clientToken)
+	def get_force(self): # boolean
 		return self.get_query_params().get('force')
 
-	def set_force(self,force):
-		self.add_query_param('force',force)
+	def set_force(self, force):  # boolean
+		self.add_query_param('force', force)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

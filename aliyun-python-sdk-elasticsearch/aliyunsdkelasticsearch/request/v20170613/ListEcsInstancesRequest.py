@@ -26,44 +26,39 @@ class ListEcsInstancesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListEcsInstances','elasticsearch')
 		self.set_uri_pattern('/openapi/ecs')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ecsInstanceName(self):
+	def get_ecsInstanceName(self): # string
 		return self.get_query_params().get('ecsInstanceName')
 
-	def set_ecsInstanceName(self,ecsInstanceName):
-		self.add_query_param('ecsInstanceName',ecsInstanceName)
-
-	def get_ecsInstanceIds(self):
+	def set_ecsInstanceName(self, ecsInstanceName):  # string
+		self.add_query_param('ecsInstanceName', ecsInstanceName)
+	def get_ecsInstanceIds(self): # string
 		return self.get_query_params().get('ecsInstanceIds')
 
-	def set_ecsInstanceIds(self,ecsInstanceIds):
-		self.add_query_param('ecsInstanceIds',ecsInstanceIds)
-
-	def get_size(self):
+	def set_ecsInstanceIds(self, ecsInstanceIds):  # string
+		self.add_query_param('ecsInstanceIds', ecsInstanceIds)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_vpcId(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_vpcId(self): # string
 		return self.get_query_params().get('vpcId')
 
-	def set_vpcId(self,vpcId):
-		self.add_query_param('vpcId',vpcId)
-
-	def get_page(self):
+	def set_vpcId(self, vpcId):  # string
+		self.add_query_param('vpcId', vpcId)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_tags(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_tags(self): # string
 		return self.get_query_params().get('tags')
 
-	def set_tags(self,tags):
-		self.add_query_param('tags',tags)
+	def set_tags(self, tags):  # string
+		self.add_query_param('tags', tags)

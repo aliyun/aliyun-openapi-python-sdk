@@ -26,14 +26,14 @@ class DescribeCollectorRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribeCollector','elasticsearch')
 		self.set_uri_pattern('/openapi/collectors/[ResId]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResId(self):
+	def get_ResId(self): # string
 		return self.get_path_params().get('ResId')
 
-	def set_ResId(self,ResId):
-		self.add_path_param('ResId',ResId)
+	def set_ResId(self, ResId):  # string
+		self.add_path_param('ResId', ResId)

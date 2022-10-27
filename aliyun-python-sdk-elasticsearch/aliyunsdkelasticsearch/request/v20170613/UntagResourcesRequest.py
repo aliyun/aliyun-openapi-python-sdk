@@ -26,32 +26,34 @@ class UntagResourcesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UntagResources','elasticsearch')
 		self.set_uri_pattern('/openapi/tags')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_All(self):
+	def get_All(self): # boolean
 		return self.get_query_params().get('All')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
-
-	def get_TagKeys(self):
+	def set_All(self, All):  # boolean
+		self.add_query_param('All', All)
+	def get_TagKeys(self): # string
 		return self.get_query_params().get('TagKeys')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
+	def set_TagKeys(self, TagKeys):  # string
+		self.add_query_param('TagKeys', TagKeys)
+	def get_body(self): # string
+		return self.get_body_params().get('body')
 
-	def get_ResourceType(self):
+	def set_body(self, body):  # string
+		self.add_body_params('body', body)
+	def get_ResourceType(self): # string
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_ResourceIds(self):
+	def set_ResourceType(self, ResourceType):  # string
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceIds(self): # string
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_ResourceIds(self, ResourceIds):  # string
+		self.add_query_param('ResourceIds', ResourceIds)

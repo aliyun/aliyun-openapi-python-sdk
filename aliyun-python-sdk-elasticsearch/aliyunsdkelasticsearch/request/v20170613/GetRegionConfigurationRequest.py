@@ -26,14 +26,14 @@ class GetRegionConfigurationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetRegionConfiguration','elasticsearch')
 		self.set_uri_pattern('/openapi/region')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_zoneId(self):
+	def get_zoneId(self): # string
 		return self.get_query_params().get('zoneId')
 
-	def set_zoneId(self,zoneId):
-		self.add_query_param('zoneId',zoneId)
+	def set_zoneId(self, zoneId):  # string
+		self.add_query_param('zoneId', zoneId)

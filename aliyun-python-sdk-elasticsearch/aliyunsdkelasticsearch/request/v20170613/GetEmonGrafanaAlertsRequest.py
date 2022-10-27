@@ -26,14 +26,19 @@ class GetEmonGrafanaAlertsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetEmonGrafanaAlerts','elasticsearch')
 		self.set_uri_pattern('/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_body(self): # string
+		return self.get_body_params().get('body')
 
-	def get_ProjectId(self):
+	def set_body(self, body):  # string
+		self.add_body_params('body', body)
+	def get_ProjectId(self): # string
 		return self.get_path_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_path_param('ProjectId',ProjectId)
+	def set_ProjectId(self, ProjectId):  # string
+		self.add_path_param('ProjectId', ProjectId)

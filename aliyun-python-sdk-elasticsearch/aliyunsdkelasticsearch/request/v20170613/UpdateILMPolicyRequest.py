@@ -26,26 +26,29 @@ class UpdateILMPolicyRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateILMPolicy','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_ClientToken(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_ClientToken(self): # string
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_PolicyName(self):
+	def set_ClientToken(self, ClientToken):  # string
+		self.add_query_param('ClientToken', ClientToken)
+	def get_PolicyName(self): # string
 		return self.get_path_params().get('PolicyName')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_path_param('PolicyName',PolicyName)
+	def set_PolicyName(self, PolicyName):  # string
+		self.add_path_param('PolicyName', PolicyName)
+	def get_body(self): # string
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # string
+		self.add_body_params('body', body)

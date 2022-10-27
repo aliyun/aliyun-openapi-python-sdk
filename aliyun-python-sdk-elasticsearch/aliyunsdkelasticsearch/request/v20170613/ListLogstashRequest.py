@@ -26,50 +26,49 @@ class ListLogstashRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListLogstash','elasticsearch')
 		self.set_uri_pattern('/openapi/logstashes')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_resourceGroupId(self):
+	def get_resourceGroupId(self): # string
 		return self.get_query_params().get('resourceGroupId')
 
-	def set_resourceGroupId(self,resourceGroupId):
-		self.add_query_param('resourceGroupId',resourceGroupId)
-
-	def get_instanceId(self):
+	def set_resourceGroupId(self, resourceGroupId):  # string
+		self.add_query_param('resourceGroupId', resourceGroupId)
+	def get_instanceId(self): # string
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_query_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # string
+		self.add_query_param('instanceId', instanceId)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_description(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_description(self): # string
 		return self.get_query_params().get('description')
 
-	def set_description(self,description):
-		self.add_query_param('description',description)
-
-	def get_page(self):
+	def set_description(self, description):  # string
+		self.add_query_param('description', description)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_ownerId(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_ownerId(self): # string
 		return self.get_query_params().get('ownerId')
 
-	def set_ownerId(self,ownerId):
-		self.add_query_param('ownerId',ownerId)
-
-	def get_version(self):
+	def set_ownerId(self, ownerId):  # string
+		self.add_query_param('ownerId', ownerId)
+	def get_version(self): # string
 		return self.get_query_params().get('version')
 
-	def set_version(self,version):
-		self.add_query_param('version',version)
+	def set_version(self, version):  # string
+		self.add_query_param('version', version)
+	def get_tags(self): # string
+		return self.get_query_params().get('tags')
+
+	def set_tags(self, tags):  # string
+		self.add_query_param('tags', tags)

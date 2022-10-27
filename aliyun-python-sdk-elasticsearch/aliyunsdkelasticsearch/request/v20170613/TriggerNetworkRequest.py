@@ -26,38 +26,24 @@ class TriggerNetworkRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'TriggerNetwork','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/network-trigger')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_actionType(self):
-		return self.get_body_params().get('actionType')
-
-	def set_actionType(self,actionType):
-		self.add_body_params('actionType', actionType)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_nodeType(self):
-		return self.get_body_params().get('nodeType')
-
-	def set_nodeType(self,nodeType):
-		self.add_body_params('nodeType', nodeType)
-
-	def get_clientToken(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_clientToken(self): # string
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_clientToken(self, clientToken):  # string
+		self.add_query_param('clientToken', clientToken)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
 
-	def get_networkType(self):
-		return self.get_body_params().get('networkType')
-
-	def set_networkType(self,networkType):
-		self.add_body_params('networkType', networkType)
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

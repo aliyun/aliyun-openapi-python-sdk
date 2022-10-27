@@ -26,14 +26,19 @@ class CreateLogstashRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreateLogstash','elasticsearch')
 		self.set_uri_pattern('/openapi/logstashes')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_clientToken(self):
+	def get_clientToken(self): # string
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_clientToken(self, clientToken):  # string
+		self.add_query_param('clientToken', clientToken)
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)

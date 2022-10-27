@@ -26,32 +26,29 @@ class ListPipelineRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListPipeline','elasticsearch')
 		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipelines')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_size(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_size(self): # integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_page(self):
+	def set_size(self, size):  # integer
+		self.add_query_param('size', size)
+	def get_page(self): # integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_pipelineId(self):
+	def set_page(self, page):  # integer
+		self.add_query_param('page', page)
+	def get_pipelineId(self): # string
 		return self.get_query_params().get('pipelineId')
 
-	def set_pipelineId(self,pipelineId):
-		self.add_query_param('pipelineId',pipelineId)
+	def set_pipelineId(self, pipelineId):  # string
+		self.add_query_param('pipelineId', pipelineId)

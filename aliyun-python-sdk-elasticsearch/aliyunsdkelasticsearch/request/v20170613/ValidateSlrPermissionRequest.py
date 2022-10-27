@@ -26,20 +26,19 @@ class ValidateSlrPermissionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ValidateSlrPermission','elasticsearch')
 		self.set_uri_pattern('/openapi/user/servicerolepermission')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # string
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_rolename(self):
+	def set_ClientToken(self, ClientToken):  # string
+		self.add_query_param('ClientToken', ClientToken)
+	def get_rolename(self): # string
 		return self.get_query_params().get('rolename')
 
-	def set_rolename(self,rolename):
-		self.add_query_param('rolename',rolename)
+	def set_rolename(self, rolename):  # string
+		self.add_query_param('rolename', rolename)

@@ -26,20 +26,19 @@ class RecommendTemplatesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RecommendTemplates','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/recommended-templates')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # string
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_usageScenario(self):
+	def set_InstanceId(self, InstanceId):  # string
+		self.add_path_param('InstanceId', InstanceId)
+	def get_usageScenario(self): # string
 		return self.get_query_params().get('usageScenario')
 
-	def set_usageScenario(self,usageScenario):
-		self.add_query_param('usageScenario',usageScenario)
+	def set_usageScenario(self, usageScenario):  # string
+		self.add_query_param('usageScenario', usageScenario)
