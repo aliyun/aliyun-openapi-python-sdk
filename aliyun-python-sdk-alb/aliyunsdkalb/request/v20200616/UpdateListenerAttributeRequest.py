@@ -92,8 +92,12 @@ class UpdateListenerAttributeRequest(RpcRequest):
 		return self.get_query_params().get('XForwardedForConfig')
 
 	def set_XForwardedForConfig(self, XForwardedForConfig):  # Struct
+		if XForwardedForConfig.get('XForwardedForClientSourceIpsTrusted') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientSourceIpsTrusted', XForwardedForConfig.get('XForwardedForClientSourceIpsTrusted'))
 		if XForwardedForConfig.get('XForwardedForClientCertSubjectDNAlias') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertSubjectDNAlias', XForwardedForConfig.get('XForwardedForClientCertSubjectDNAlias'))
+		if XForwardedForConfig.get('XForwardedForClientSourceIpsEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientSourceIpsEnabled', XForwardedForConfig.get('XForwardedForClientSourceIpsEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled', XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled') is not None:

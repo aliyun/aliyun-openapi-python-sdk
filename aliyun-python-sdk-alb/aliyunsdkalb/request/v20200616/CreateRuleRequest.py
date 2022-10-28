@@ -93,6 +93,8 @@ class CreateRuleRequest(RpcRequest):
 			if value1.get('TrafficLimitConfig') is not None:
 				if value1.get('TrafficLimitConfig').get('QPS') is not None:
 					self.add_query_param('RuleActions.' + str(index1 + 1) + '.TrafficLimitConfig.QPS', value1.get('TrafficLimitConfig').get('QPS'))
+				if value1.get('TrafficLimitConfig').get('PerIpQps') is not None:
+					self.add_query_param('RuleActions.' + str(index1 + 1) + '.TrafficLimitConfig.PerIpQps', value1.get('TrafficLimitConfig').get('PerIpQps'))
 			if value1.get('CorsConfig') is not None:
 				if value1.get('CorsConfig').get('AllowCredentials') is not None:
 					self.add_query_param('RuleActions.' + str(index1 + 1) + '.CorsConfig.AllowCredentials', value1.get('CorsConfig').get('AllowCredentials'))
