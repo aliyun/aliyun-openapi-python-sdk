@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class DeleteUserRequest(RpcRequest):
+class UpdateTaskTimeVariablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'DeleteUser','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateTaskTimeVariables','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,18 @@ class DeleteUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TimeVariables(self): # String
+		return self.get_query_params().get('TimeVariables')
+
+	def set_TimeVariables(self, TimeVariables):  # String
+		self.add_query_param('TimeVariables', TimeVariables)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_Uid(self): # String
-		return self.get_query_params().get('Uid')
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
 
-	def set_Uid(self, Uid):  # String
-		self.add_query_param('Uid', Uid)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)

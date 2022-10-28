@@ -61,11 +61,21 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_Sid(self, Sid):  # String
 		self.add_query_param('Sid', Sid)
+	def get_EnableSellSitd(self): # String
+		return self.get_query_params().get('EnableSellSitd')
+
+	def set_EnableSellSitd(self, EnableSellSitd):  # String
+		self.add_query_param('EnableSellSitd', EnableSellSitd)
 	def get_DataLinkName(self): # String
 		return self.get_query_params().get('DataLinkName')
 
 	def set_DataLinkName(self, DataLinkName):  # String
 		self.add_query_param('DataLinkName', DataLinkName)
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
 	def get_InstanceSource(self): # String
 		return self.get_query_params().get('InstanceSource')
 
@@ -111,6 +121,11 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_InstanceAlias(self, InstanceAlias):  # String
 		self.add_query_param('InstanceAlias', InstanceAlias)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
 	def get_DatabaseUser(self): # String
 		return self.get_query_params().get('DatabaseUser')
 

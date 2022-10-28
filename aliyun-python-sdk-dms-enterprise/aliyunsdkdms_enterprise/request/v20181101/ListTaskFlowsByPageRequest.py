@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class DeleteUserRequest(RpcRequest):
+class ListTaskFlowsByPageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'DeleteUser','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListTaskFlowsByPage','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class DeleteUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SearchKey(self): # String
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_query_param('SearchKey', SearchKey)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_Uid(self): # String
-		return self.get_query_params().get('Uid')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_Uid(self, Uid):  # String
-		self.add_query_param('Uid', Uid)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PageIndex(self): # Integer
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self, PageIndex):  # Integer
+		self.add_query_param('PageIndex', PageIndex)

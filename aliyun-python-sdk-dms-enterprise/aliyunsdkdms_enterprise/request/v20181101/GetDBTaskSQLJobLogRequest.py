@@ -31,13 +31,13 @@ class GetDBTaskSQLJobLogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobId(self): # Long
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self, JobId):  # Long
-		self.add_query_param('JobId', JobId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)

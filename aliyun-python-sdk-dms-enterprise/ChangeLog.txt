@@ -1,3 +1,7 @@
+2022-10-28 Version: 1.40.0
+- Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
+- Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.
+
 2022-07-27 Version: 1.38.0
 - Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.
 - Support GetProxy API to return protocolType, protocolPort and remove mysqlPort.
