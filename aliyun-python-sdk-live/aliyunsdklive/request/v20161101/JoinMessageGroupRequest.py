@@ -31,6 +31,11 @@ class JoinMessageGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BroadCastStatistics(self): # Boolean
+		return self.get_body_params().get('BroadCastStatistics')
+
+	def set_BroadCastStatistics(self, BroadCastStatistics):  # Boolean
+		self.add_body_params('BroadCastStatistics', BroadCastStatistics)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
@@ -46,3 +51,8 @@ class JoinMessageGroupRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_body_params('AppId', AppId)
+	def get_BroadCastType(self): # Integer
+		return self.get_body_params().get('BroadCastType')
+
+	def set_BroadCastType(self, BroadCastType):  # Integer
+		self.add_body_params('BroadCastType', BroadCastType)

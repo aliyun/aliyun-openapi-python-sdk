@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class LeaveMessageGroupRequest(RpcRequest):
+class GetMessageUserInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'LeaveMessageGroup','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMessageUserInfo','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,8 @@ class LeaveMessageGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BroadCastStatistics(self): # Boolean
-		return self.get_body_params().get('BroadCastStatistics')
+	def get_CloudUid(self): # String
+		return self.get_body_params().get('CloudUid')
 
-	def set_BroadCastStatistics(self, BroadCastStatistics):  # Boolean
-		self.add_body_params('BroadCastStatistics', BroadCastStatistics)
-	def get_GroupId(self): # String
-		return self.get_body_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_body_params('GroupId', GroupId)
-	def get_UserId(self): # String
-		return self.get_body_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_body_params('UserId', UserId)
-	def get_AppId(self): # String
-		return self.get_body_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_body_params('AppId', AppId)
-	def get_BroadCastType(self): # Integer
-		return self.get_body_params().get('BroadCastType')
-
-	def set_BroadCastType(self, BroadCastType):  # Integer
-		self.add_body_params('BroadCastType', BroadCastType)
+	def set_CloudUid(self, CloudUid):  # String
+		self.add_body_params('CloudUid', CloudUid)

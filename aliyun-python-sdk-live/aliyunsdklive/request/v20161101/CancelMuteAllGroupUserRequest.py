@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
-import json
 
-class SendMessageToGroupUsersRequest(RpcRequest):
+class CancelMuteAllGroupUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SendMessageToGroupUsers','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CancelMuteAllGroupUser','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,23 +31,18 @@ class SendMessageToGroupUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReceiverIdList(self): # Array
-		return self.get_body_params().get('ReceiverIdList')
-
-	def set_ReceiverIdList(self, ReceiverIdList):  # Array
-		self.add_body_params("ReceiverIdList", json.dumps(ReceiverIdList))
-	def get_GroupIdcopy(self): # String
-		return self.get_body_params().get('GroupId-copy')
-
-	def set_GroupIdcopy(self, GroupIdcopy):  # String
-		self.add_body_params('GroupId-copy', GroupIdcopy)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_body_params('GroupId', GroupId)
-	def get_Type(self): # Integer
-		return self.get_body_params().get('Type')
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
 
-	def set_Type(self, Type):  # Integer
-		self.add_body_params('Type', Type)
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)
+	def get_OperatorUserId(self): # String
+		return self.get_body_params().get('OperatorUserId')
+
+	def set_OperatorUserId(self, OperatorUserId):  # String
+		self.add_body_params('OperatorUserId', OperatorUserId)

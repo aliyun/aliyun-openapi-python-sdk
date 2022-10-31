@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
+import json
 
-class GetMessageAppRequest(RpcRequest):
+class DescribeRTSNativeSDKFirstFrameCostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMessageApp','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeRTSNativeSDKFirstFrameCost','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +32,23 @@ class GetMessageAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # String
-		return self.get_body_params().get('AppId')
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_AppId(self, AppId):  # String
-		self.add_body_params('AppId', AppId)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_DomainNameList(self): # Array
+		return self.get_query_params().get('DomainNameList')
+
+	def set_DomainNameList(self, DomainNameList):  # Array
+		self.add_query_param("DomainNameList", json.dumps(DomainNameList))
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DataInterval(self): # String
+		return self.get_query_params().get('DataInterval')
+
+	def set_DataInterval(self, DataInterval):  # String
+		self.add_query_param('DataInterval', DataInterval)
