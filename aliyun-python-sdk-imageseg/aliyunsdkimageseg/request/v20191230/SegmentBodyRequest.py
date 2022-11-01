@@ -36,11 +36,6 @@ class SegmentBodyRequest(RpcRequest):
 
 	def set_ReturnForm(self, ReturnForm):  # String
 		self.add_query_param('ReturnForm', ReturnForm)
-	def get_Async(self): # Boolean
-		return self.get_body_params().get('Async')
-
-	def set_Async(self, _Async):  # Boolean
-		self.add_body_params('Async', _Async)
 	def get_ImageURL(self): # String
 		return self.get_query_params().get('ImageURL')
 
