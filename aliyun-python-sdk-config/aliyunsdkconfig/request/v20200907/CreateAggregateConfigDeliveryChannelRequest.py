@@ -76,6 +76,11 @@ class CreateAggregateConfigDeliveryChannelRequest(RpcRequest):
 
 	def set_DeliveryChannelName(self, DeliveryChannelName):  # String
 		self.add_query_param('DeliveryChannelName', DeliveryChannelName)
+	def get_DeliverySnapshotTime(self): # String
+		return self.get_query_params().get('DeliverySnapshotTime')
+
+	def set_DeliverySnapshotTime(self, DeliverySnapshotTime):  # String
+		self.add_query_param('DeliverySnapshotTime', DeliverySnapshotTime)
 	def get_OversizedDataOSSTargetArn(self): # String
 		return self.get_query_params().get('OversizedDataOSSTargetArn')
 

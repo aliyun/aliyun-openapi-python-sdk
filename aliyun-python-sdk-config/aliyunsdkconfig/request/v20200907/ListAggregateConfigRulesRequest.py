@@ -51,6 +51,11 @@ class ListAggregateConfigRulesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
 	def get_ComplianceType(self): # String
 		return self.get_query_params().get('ComplianceType')
 
