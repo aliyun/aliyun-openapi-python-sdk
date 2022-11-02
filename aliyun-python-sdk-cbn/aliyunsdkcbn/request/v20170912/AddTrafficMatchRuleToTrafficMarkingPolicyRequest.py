@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class AddTrafficMatchRuleToTrafficMarkingPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'AddTrafficMatchRuleToTrafficMarkingPolicy')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'AddTrafficMatchRuleToTrafficMarkingPolicy','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

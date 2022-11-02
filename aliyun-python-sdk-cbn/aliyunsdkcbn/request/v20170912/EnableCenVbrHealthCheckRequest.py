@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class EnableCenVbrHealthCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

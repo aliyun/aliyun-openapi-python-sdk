@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ModifyFlowLogAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyFlowLogAttribute')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyFlowLogAttribute','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

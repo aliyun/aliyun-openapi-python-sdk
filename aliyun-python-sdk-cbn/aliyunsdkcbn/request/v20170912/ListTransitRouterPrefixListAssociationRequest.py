@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterPrefixListAssociation')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterPrefixListAssociation','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,6 +56,11 @@ class ListTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_OwnerUid(self, OwnerUid):  # Long
 		self.add_query_param('OwnerUid', OwnerUid)
+	def get_NextHopType(self): # String
+		return self.get_query_params().get('NextHopType')
+
+	def set_NextHopType(self, NextHopType):  # String
+		self.add_query_param('NextHopType', NextHopType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -81,3 +86,8 @@ class ListTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_TransitRouterTableId(self, TransitRouterTableId):  # String
 		self.add_query_param('TransitRouterTableId', TransitRouterTableId)
+	def get_NextHop(self): # String
+		return self.get_query_params().get('NextHop')
+
+	def set_NextHop(self, NextHop):  # String
+		self.add_query_param('NextHop', NextHop)
