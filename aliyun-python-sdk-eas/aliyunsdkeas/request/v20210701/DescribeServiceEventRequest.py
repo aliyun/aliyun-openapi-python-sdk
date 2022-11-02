@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class DescribeBenchmarkTaskReportRequest(RoaRequest):
+class DescribeServiceEventRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeBenchmarkTaskReport','eas')
-		self.set_uri_pattern('/api/v2/benchmark-tasks/[ClusterId]/[TaskName]/report')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeServiceEvent','eas')
+		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/events')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,18 +32,33 @@ class DescribeBenchmarkTaskReportRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportType(self): # string
-		return self.get_query_params().get('ReportType')
+	def get_PageSize(self): # string
+		return self.get_query_params().get('PageSize')
 
-	def set_ReportType(self, ReportType):  # string
-		self.add_query_param('ReportType', ReportType)
-	def get_TaskName(self): # string
-		return self.get_path_params().get('TaskName')
+	def set_PageSize(self, PageSize):  # string
+		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # string
+		return self.get_query_params().get('EndTime')
 
-	def set_TaskName(self, TaskName):  # string
-		self.add_path_param('TaskName', TaskName)
+	def set_EndTime(self, EndTime):  # string
+		self.add_query_param('EndTime', EndTime)
+	def get_ServiceName(self): # string
+		return self.get_path_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_path_param('ServiceName', ServiceName)
 	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # string
 		self.add_path_param('ClusterId', ClusterId)
+	def get_StartTime(self): # string
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # string
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNum(self): # string
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # string
+		self.add_query_param('PageNum', PageNum)

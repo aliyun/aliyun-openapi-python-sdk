@@ -47,6 +47,11 @@ class ListServicesRequest(RoaRequest):
 
 	def set_Sort(self, Sort):  # string
 		self.add_query_param('Sort', Sort)
+	def get_GroupName(self): # string
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # string
+		self.add_query_param('GroupName', GroupName)
 	def get_PageNumber(self): # integer
 		return self.get_query_params().get('PageNumber')
 

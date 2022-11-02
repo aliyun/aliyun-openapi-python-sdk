@@ -32,3 +32,23 @@ class ListBenchmarkTaskRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PageSize(self): # string
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # string
+		self.add_query_param('PageSize', PageSize)
+	def get_ServiceName(self): # string
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # string
+		self.add_query_param('ServiceName', ServiceName)
+	def get_PageNumber(self): # string
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # string
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Fileter(self): # string
+		return self.get_query_params().get('Fileter')
+
+	def set_Fileter(self, Fileter):  # string
+		self.add_query_param('Fileter', Fileter)

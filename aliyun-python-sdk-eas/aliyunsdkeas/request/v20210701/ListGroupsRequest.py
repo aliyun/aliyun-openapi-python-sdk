@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class DescribeBenchmarkTaskReportRequest(RoaRequest):
+class ListGroupsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeBenchmarkTaskReport','eas')
-		self.set_uri_pattern('/api/v2/benchmark-tasks/[ClusterId]/[TaskName]/report')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'ListGroups','eas')
+		self.set_uri_pattern('/api/v2/groups')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,18 +32,18 @@ class DescribeBenchmarkTaskReportRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportType(self): # string
-		return self.get_query_params().get('ReportType')
+	def get_Filter(self): # string
+		return self.get_query_params().get('Filter')
 
-	def set_ReportType(self, ReportType):  # string
-		self.add_query_param('ReportType', ReportType)
-	def get_TaskName(self): # string
-		return self.get_path_params().get('TaskName')
+	def set_Filter(self, Filter):  # string
+		self.add_query_param('Filter', Filter)
+	def get_PageSize(self): # string
+		return self.get_query_params().get('PageSize')
 
-	def set_TaskName(self, TaskName):  # string
-		self.add_path_param('TaskName', TaskName)
-	def get_ClusterId(self): # string
-		return self.get_path_params().get('ClusterId')
+	def set_PageSize(self, PageSize):  # string
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNumber(self): # string
+		return self.get_query_params().get('PageNumber')
 
-	def set_ClusterId(self, ClusterId):  # string
-		self.add_path_param('ClusterId', ClusterId)
+	def set_PageNumber(self, PageNumber):  # string
+		self.add_query_param('PageNumber', PageNumber)

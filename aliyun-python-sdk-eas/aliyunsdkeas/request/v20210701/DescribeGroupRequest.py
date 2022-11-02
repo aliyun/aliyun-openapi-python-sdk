@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class DescribeBenchmarkTaskReportRequest(RoaRequest):
+class DescribeGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeBenchmarkTaskReport','eas')
-		self.set_uri_pattern('/api/v2/benchmark-tasks/[ClusterId]/[TaskName]/report')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeGroup','eas')
+		self.set_uri_pattern('/api/v2/groups/[ClusterId]/[GroupName]')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,18 +32,13 @@ class DescribeBenchmarkTaskReportRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportType(self): # string
-		return self.get_query_params().get('ReportType')
-
-	def set_ReportType(self, ReportType):  # string
-		self.add_query_param('ReportType', ReportType)
-	def get_TaskName(self): # string
-		return self.get_path_params().get('TaskName')
-
-	def set_TaskName(self, TaskName):  # string
-		self.add_path_param('TaskName', TaskName)
 	def get_ClusterId(self): # string
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # string
 		self.add_path_param('ClusterId', ClusterId)
+	def get_GroupName(self): # string
+		return self.get_path_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # string
+		self.add_path_param('GroupName', GroupName)
