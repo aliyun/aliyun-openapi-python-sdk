@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeCertificateStateRequest(RpcRequest):
+class UploadPCACertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribeCertificateState')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'UploadPCACert')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,23 @@ class DescribeCertificateStateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
+	def get_Cert(self): # String
+		return self.get_query_params().get('Cert')
 
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
+	def set_Cert(self, Cert):  # String
+		self.add_query_param('Cert', Cert)
+	def get_PrivateKey(self): # String
+		return self.get_query_params().get('PrivateKey')
+
+	def set_PrivateKey(self, PrivateKey):  # String
+		self.add_query_param('PrivateKey', PrivateKey)
+	def get_WarehouseId(self): # Long
+		return self.get_query_params().get('WarehouseId')
+
+	def set_WarehouseId(self, WarehouseId):  # Long
+		self.add_query_param('WarehouseId', WarehouseId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

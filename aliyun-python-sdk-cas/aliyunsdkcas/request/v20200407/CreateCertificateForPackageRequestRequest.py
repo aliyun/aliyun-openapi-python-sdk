@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class CreateCertificateRequestRequest(RpcRequest):
+class CreateCertificateForPackageRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateCertificateRequest')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateCertificateForPackageRequest')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +36,38 @@ class CreateCertificateRequestRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_query_param('ProductCode', ProductCode)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
+	def get_Csr(self): # String
+		return self.get_query_params().get('Csr')
 
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
-	def get_Phone(self): # String
-		return self.get_query_params().get('Phone')
-
-	def set_Phone(self, Phone):  # String
-		self.add_query_param('Phone', Phone)
-	def get_Email(self): # String
-		return self.get_query_params().get('Email')
-
-	def set_Email(self, Email):  # String
-		self.add_query_param('Email', Email)
-	def get_Domain(self): # String
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
+	def set_Csr(self, Csr):  # String
+		self.add_query_param('Csr', Csr)
 	def get_ValidateType(self): # String
 		return self.get_query_params().get('ValidateType')
 
 	def set_ValidateType(self, ValidateType):  # String
 		self.add_query_param('ValidateType', ValidateType)
+	def get_Email(self): # String
+		return self.get_query_params().get('Email')
+
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)
+	def get_Phone(self): # String
+		return self.get_query_params().get('Phone')
+
+	def set_Phone(self, Phone):  # String
+		self.add_query_param('Phone', Phone)
+	def get_CompanyName(self): # String
+		return self.get_query_params().get('CompanyName')
+
+	def set_CompanyName(self, CompanyName):  # String
+		self.add_query_param('CompanyName', CompanyName)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
+	def get_Username(self): # String
+		return self.get_query_params().get('Username')
+
+	def set_Username(self, Username):  # String
+		self.add_query_param('Username', Username)

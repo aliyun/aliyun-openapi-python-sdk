@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeCertificateStateRequest(RpcRequest):
+class RenewCertificateOrderForPackageRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribeCertificateState')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'RenewCertificateOrderForPackageRequest')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeCertificateStateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Csr(self): # String
+		return self.get_query_params().get('Csr')
+
+	def set_Csr(self, Csr):  # String
+		self.add_query_param('Csr', Csr)
 	def get_OrderId(self): # Long
 		return self.get_query_params().get('OrderId')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeCertificateStateRequest(RpcRequest):
+class SignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribeCertificateState')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'Sign')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,23 @@ class DescribeCertificateStateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
+	def get_MessageType(self): # String
+		return self.get_query_params().get('MessageType')
 
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
+	def set_MessageType(self, MessageType):  # String
+		self.add_query_param('MessageType', MessageType)
+	def get_SigningAlgorithm(self): # String
+		return self.get_query_params().get('SigningAlgorithm')
+
+	def set_SigningAlgorithm(self, SigningAlgorithm):  # String
+		self.add_query_param('SigningAlgorithm', SigningAlgorithm)
+	def get_Message(self): # String
+		return self.get_query_params().get('Message')
+
+	def set_Message(self, Message):  # String
+		self.add_query_param('Message', Message)
+	def get_CertIdentifier(self): # String
+		return self.get_query_params().get('CertIdentifier')
+
+	def set_CertIdentifier(self, CertIdentifier):  # String
+		self.add_query_param('CertIdentifier', CertIdentifier)

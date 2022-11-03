@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class CreateCertificateRequestRequest(RpcRequest):
+class CreateCertificateWithCsrRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateCertificateRequest')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateCertificateWithCsrRequest')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class CreateCertificateRequestRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Csr(self): # String
+		return self.get_query_params().get('Csr')
+
+	def set_Csr(self, Csr):  # String
+		self.add_query_param('Csr', Csr)
 	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
@@ -51,11 +56,6 @@ class CreateCertificateRequestRequest(RpcRequest):
 
 	def set_Email(self, Email):  # String
 		self.add_query_param('Email', Email)
-	def get_Domain(self): # String
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
 	def get_ValidateType(self): # String
 		return self.get_query_params().get('ValidateType')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeCertificateStateRequest(RpcRequest):
+class CancelOrderRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribeCertificateState')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CancelOrderRequest')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
