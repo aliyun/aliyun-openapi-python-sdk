@@ -36,3 +36,8 @@ class ValidateTemplateContentRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_TemplateURL(self): # String
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self, TemplateURL):  # String
+		self.add_query_param('TemplateURL', TemplateURL)

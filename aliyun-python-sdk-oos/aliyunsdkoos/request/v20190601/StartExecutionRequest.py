@@ -41,6 +41,11 @@ class StartExecutionRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_TemplateURL(self): # String
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self, TemplateURL):  # String
+		self.add_query_param('TemplateURL', TemplateURL)
 	def get_Mode(self): # String
 		return self.get_query_params().get('Mode')
 

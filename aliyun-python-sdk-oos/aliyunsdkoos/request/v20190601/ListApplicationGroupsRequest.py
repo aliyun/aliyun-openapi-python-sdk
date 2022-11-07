@@ -31,6 +31,11 @@ class ListApplicationGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceProduct(self): # String
+		return self.get_query_params().get('ResourceProduct')
+
+	def set_ResourceProduct(self, ResourceProduct):  # String
+		self.add_query_param('ResourceProduct', ResourceProduct)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
