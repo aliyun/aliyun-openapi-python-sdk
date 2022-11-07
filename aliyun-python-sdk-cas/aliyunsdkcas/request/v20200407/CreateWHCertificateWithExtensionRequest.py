@@ -41,6 +41,11 @@ class CreateWHCertificateWithExtensionRequest(RpcRequest):
 
 	def set_CountryCode(self, CountryCode):  # String
 		self.add_query_param('CountryCode', CountryCode)
+	def get_Immediately(self): # Long
+		return self.get_query_params().get('Immediately')
+
+	def set_Immediately(self, Immediately):  # Long
+		self.add_query_param('Immediately', Immediately)
 	def get_CommonName(self): # String
 		return self.get_query_params().get('CommonName')
 
