@@ -41,6 +41,11 @@ class CreateTrainTaskRequest(RpcRequest):
 
 	def set_TrainMode(self, TrainMode):  # String
 		self.add_body_params('TrainMode', TrainMode)
+	def get_DatasetIds(self): # String
+		return self.get_body_params().get('DatasetIds')
+
+	def set_DatasetIds(self, DatasetIds):  # String
+		self.add_body_params('DatasetIds', DatasetIds)
 	def get_PreTrainTaskId(self): # Long
 		return self.get_body_params().get('PreTrainTaskId')
 
@@ -51,21 +56,16 @@ class CreateTrainTaskRequest(RpcRequest):
 
 	def set_AdvancedParameters(self, AdvancedParameters):  # String
 		self.add_body_params('AdvancedParameters', AdvancedParameters)
-	def get_LabelId(self): # Long
-		return self.get_body_params().get('LabelId')
-
-	def set_LabelId(self, LabelId):  # Long
-		self.add_body_params('LabelId', LabelId)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_DatasetId(self): # Long
-		return self.get_body_params().get('DatasetId')
+	def get_LabelIds(self): # String
+		return self.get_body_params().get('LabelIds')
 
-	def set_DatasetId(self, DatasetId):  # Long
-		self.add_body_params('DatasetId', DatasetId)
+	def set_LabelIds(self, LabelIds):  # String
+		self.add_body_params('LabelIds', LabelIds)
 	def get_WorkspaceId(self): # Long
 		return self.get_body_params().get('WorkspaceId')
 

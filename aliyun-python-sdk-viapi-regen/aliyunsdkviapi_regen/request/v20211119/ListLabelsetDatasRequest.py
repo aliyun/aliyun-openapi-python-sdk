@@ -46,6 +46,11 @@ class ListLabelsetDatasRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Long
 		self.add_body_params('CurrentPage', CurrentPage)
+	def get_IsAbandon(self): # Boolean
+		return self.get_body_params().get('IsAbandon')
+
+	def set_IsAbandon(self, IsAbandon):  # Boolean
+		self.add_body_params('IsAbandon', IsAbandon)
 	def get_LabelId(self): # Long
 		return self.get_body_params().get('LabelId')
 
