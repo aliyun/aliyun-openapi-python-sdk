@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpvtz.endpoint import endpoint_data
 
-class CheckZoneNameRequest(RpcRequest):
+class UpdateResolverEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'CheckZoneName','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'UpdateResolverEndpoint','pvtz')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,31 @@ class CheckZoneNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ZoneName(self): # String
-		return self.get_query_params().get('ZoneName')
+	def get_EndpointId(self): # String
+		return self.get_query_params().get('EndpointId')
 
-	def set_ZoneName(self, ZoneName):  # String
-		self.add_query_param('ZoneName', ZoneName)
-	def get_UserClientIp(self): # String
-		return self.get_query_params().get('UserClientIp')
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_UserClientIp(self, UserClientIp):  # String
-		self.add_query_param('UserClientIp', UserClientIp)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_IpConfigs(self): # RepeatList
+		return self.get_query_params().get('IpConfig')
+
+	def set_IpConfigs(self, IpConfig):  # RepeatList
+		for depth1 in range(len(IpConfig)):
+			if IpConfig[depth1].get('VSwitchId') is not None:
+				self.add_query_param('IpConfig.' + str(depth1 + 1) + '.VSwitchId', IpConfig[depth1].get('VSwitchId'))
+			if IpConfig[depth1].get('Ip') is not None:
+				self.add_query_param('IpConfig.' + str(depth1 + 1) + '.Ip', IpConfig[depth1].get('Ip'))
+			if IpConfig[depth1].get('CidrBlock') is not None:
+				self.add_query_param('IpConfig.' + str(depth1 + 1) + '.CidrBlock', IpConfig[depth1].get('CidrBlock'))
+			if IpConfig[depth1].get('AzId') is not None:
+				self.add_query_param('IpConfig.' + str(depth1 + 1) + '.AzId', IpConfig[depth1].get('AzId'))

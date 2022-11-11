@@ -25,32 +25,29 @@ class SetZoneRecordStatusRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'SetZoneRecordStatus','pvtz')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RecordId(self):
+	def get_RecordId(self): # Long
 		return self.get_query_params().get('RecordId')
 
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
-
-	def get_UserClientIp(self):
+	def set_RecordId(self, RecordId):  # Long
+		self.add_query_param('RecordId', RecordId)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

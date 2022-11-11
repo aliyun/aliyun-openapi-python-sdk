@@ -25,62 +25,54 @@ class DescribeChangeLogsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeChangeLogs','pvtz')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTimestamp(self):
+	def get_StartTimestamp(self): # Long
 		return self.get_query_params().get('StartTimestamp')
 
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_query_param('StartTimestamp',StartTimestamp)
-
-	def get_PageNumber(self):
+	def set_StartTimestamp(self, StartTimestamp):  # Long
+		self.add_query_param('StartTimestamp', StartTimestamp)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_EndTimestamp(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_EndTimestamp(self): # Long
 		return self.get_query_params().get('EndTimestamp')
 
-	def set_EndTimestamp(self,EndTimestamp):
-		self.add_query_param('EndTimestamp',EndTimestamp)
-
-	def get_EntityType(self):
+	def set_EndTimestamp(self, EndTimestamp):  # Long
+		self.add_query_param('EndTimestamp', EndTimestamp)
+	def get_EntityType(self): # String
 		return self.get_query_params().get('EntityType')
 
-	def set_EntityType(self,EntityType):
-		self.add_query_param('EntityType',EntityType)
-
-	def get_PageSize(self):
+	def set_EntityType(self, EntityType):  # String
+		self.add_query_param('EntityType', EntityType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_UserClientIp(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_ZoneId(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Keyword(self):
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_Lang(self):
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

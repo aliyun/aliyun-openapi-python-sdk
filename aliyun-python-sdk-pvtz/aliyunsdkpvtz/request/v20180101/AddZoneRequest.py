@@ -25,38 +25,39 @@ class AddZoneRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'AddZone','pvtz')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProxyPattern(self):
+	def get_ProxyPattern(self): # String
 		return self.get_query_params().get('ProxyPattern')
 
-	def set_ProxyPattern(self,ProxyPattern):
-		self.add_query_param('ProxyPattern',ProxyPattern)
-
-	def get_ZoneName(self):
+	def set_ProxyPattern(self, ProxyPattern):  # String
+		self.add_query_param('ProxyPattern', ProxyPattern)
+	def get_ZoneName(self): # String
 		return self.get_query_params().get('ZoneName')
 
-	def set_ZoneName(self,ZoneName):
-		self.add_query_param('ZoneName',ZoneName)
-
-	def get_ResourceGroupId(self):
+	def set_ZoneName(self, ZoneName):  # String
+		self.add_query_param('ZoneName', ZoneName)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ZoneTag(self): # String
+		return self.get_query_params().get('ZoneTag')
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def set_ZoneTag(self, ZoneTag):  # String
+		self.add_query_param('ZoneTag', ZoneTag)
+	def get_ZoneType(self): # String
+		return self.get_query_params().get('ZoneType')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_ZoneType(self, ZoneType):  # String
+		self.add_query_param('ZoneType', ZoneType)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

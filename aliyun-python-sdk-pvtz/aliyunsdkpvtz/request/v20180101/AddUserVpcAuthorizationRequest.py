@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpvtz.endpoint import endpoint_data
 
-class CheckZoneNameRequest(RpcRequest):
+class AddUserVpcAuthorizationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'CheckZoneName','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'AddUserVpcAuthorization','pvtz')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,23 @@ class CheckZoneNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ZoneName(self): # String
-		return self.get_query_params().get('ZoneName')
+	def get_AuthType(self): # String
+		return self.get_query_params().get('AuthType')
 
-	def set_ZoneName(self, ZoneName):  # String
-		self.add_query_param('ZoneName', ZoneName)
-	def get_UserClientIp(self): # String
-		return self.get_query_params().get('UserClientIp')
+	def set_AuthType(self, AuthType):  # String
+		self.add_query_param('AuthType', AuthType)
+	def get_AuthCode(self): # String
+		return self.get_query_params().get('AuthCode')
 
-	def set_UserClientIp(self, UserClientIp):  # String
-		self.add_query_param('UserClientIp', UserClientIp)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
+	def set_AuthCode(self, AuthCode):  # String
+		self.add_query_param('AuthCode', AuthCode)
+	def get_AuthorizedUserId(self): # Long
+		return self.get_query_params().get('AuthorizedUserId')
 
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
+	def set_AuthorizedUserId(self, AuthorizedUserId):  # Long
+		self.add_query_param('AuthorizedUserId', AuthorizedUserId)
+	def get_AuthChannel(self): # String
+		return self.get_query_params().get('AuthChannel')
+
+	def set_AuthChannel(self, AuthChannel):  # String
+		self.add_query_param('AuthChannel', AuthChannel)

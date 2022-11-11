@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpvtz.endpoint import endpoint_data
 
-class CheckZoneNameRequest(RpcRequest):
+class BindResolverRuleVpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'CheckZoneName','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'BindResolverRuleVpc','pvtz')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,22 @@ class CheckZoneNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ZoneName(self): # String
-		return self.get_query_params().get('ZoneName')
+	def get_Vpcs(self): # RepeatList
+		return self.get_query_params().get('Vpc')
 
-	def set_ZoneName(self, ZoneName):  # String
-		self.add_query_param('ZoneName', ZoneName)
-	def get_UserClientIp(self): # String
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self, UserClientIp):  # String
-		self.add_query_param('UserClientIp', UserClientIp)
+	def set_Vpcs(self, Vpc):  # RepeatList
+		for depth1 in range(len(Vpc)):
+			if Vpc[depth1].get('RegionId') is not None:
+				self.add_query_param('Vpc.' + str(depth1 + 1) + '.RegionId', Vpc[depth1].get('RegionId'))
+			if Vpc[depth1].get('VpcId') is not None:
+				self.add_query_param('Vpc.' + str(depth1 + 1) + '.VpcId', Vpc[depth1].get('VpcId'))
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_RuleId(self): # String
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

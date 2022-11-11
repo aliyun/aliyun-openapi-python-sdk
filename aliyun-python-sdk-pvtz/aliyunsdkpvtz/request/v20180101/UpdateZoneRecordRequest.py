@@ -25,56 +25,49 @@ class UpdateZoneRecordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'UpdateZoneRecord','pvtz')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Rr(self):
+	def get_Rr(self): # String
 		return self.get_query_params().get('Rr')
 
-	def set_Rr(self,Rr):
-		self.add_query_param('Rr',Rr)
-
-	def get_Type(self):
+	def set_Rr(self, Rr):  # String
+		self.add_query_param('Rr', Rr)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Priority(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_Ttl(self):
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_Ttl(self): # Integer
 		return self.get_query_params().get('Ttl')
 
-	def set_Ttl(self,Ttl):
-		self.add_query_param('Ttl',Ttl)
-
-	def get_RecordId(self):
+	def set_Ttl(self, Ttl):  # Integer
+		self.add_query_param('Ttl', Ttl)
+	def get_RecordId(self): # Long
 		return self.get_query_params().get('RecordId')
 
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
-
-	def get_UserClientIp(self):
+	def set_RecordId(self, RecordId):  # Long
+		self.add_query_param('RecordId', RecordId)
+	def get_UserClientIp(self): # String
 		return self.get_query_params().get('UserClientIp')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
+	def set_UserClientIp(self, UserClientIp):  # String
+		self.add_query_param('UserClientIp', UserClientIp)
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Value(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)

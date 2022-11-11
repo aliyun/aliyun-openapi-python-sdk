@@ -25,56 +25,69 @@ class DescribeZonesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeZones','pvtz')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QueryVpcId(self):
+	def get_QueryVpcId(self): # String
 		return self.get_query_params().get('QueryVpcId')
 
-	def set_QueryVpcId(self,QueryVpcId):
-		self.add_query_param('QueryVpcId',QueryVpcId)
-
-	def get_PageNumber(self):
+	def set_QueryVpcId(self, QueryVpcId):  # String
+		self.add_query_param('QueryVpcId', QueryVpcId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PageSize(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ResourceTags(self): # RepeatList
+		return self.get_query_params().get('ResourceTag')
 
-	def get_Lang(self):
+	def set_ResourceTags(self, ResourceTag):  # RepeatList
+		for depth1 in range(len(ResourceTag)):
+			if ResourceTag[depth1].get('Value') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Value', ResourceTag[depth1].get('Value'))
+			if ResourceTag[depth1].get('Key') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
+	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Keyword(self):
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_ZoneTags(self): # RepeatList
+		return self.get_query_params().get('ZoneTag')
 
-	def get_SearchMode(self):
+	def set_ZoneTags(self, ZoneTag):  # RepeatList
+		for depth1 in range(len(ZoneTag)):
+			self.add_query_param('ZoneTag.' + str(depth1 + 1), ZoneTag[depth1])
+	def get_SearchMode(self): # String
 		return self.get_query_params().get('SearchMode')
 
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
+	def set_SearchMode(self, SearchMode):  # String
+		self.add_query_param('SearchMode', SearchMode)
+	def get_ZoneType(self): # String
+		return self.get_query_params().get('ZoneType')
 
-	def get_QueryRegionId(self):
+	def set_ZoneType(self, ZoneType):  # String
+		self.add_query_param('ZoneType', ZoneType)
+	def get_QueryRegionId(self): # String
 		return self.get_query_params().get('QueryRegionId')
 
-	def set_QueryRegionId(self,QueryRegionId):
-		self.add_query_param('QueryRegionId',QueryRegionId)
+	def set_QueryRegionId(self, QueryRegionId):  # String
+		self.add_query_param('QueryRegionId', QueryRegionId)

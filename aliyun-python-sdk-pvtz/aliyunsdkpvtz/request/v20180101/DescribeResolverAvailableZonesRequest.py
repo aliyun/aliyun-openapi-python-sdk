@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpvtz.endpoint import endpoint_data
 
-class CheckZoneNameRequest(RpcRequest):
+class DescribeResolverAvailableZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'CheckZoneName','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeResolverAvailableZones','pvtz')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class CheckZoneNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ZoneName(self): # String
-		return self.get_query_params().get('ZoneName')
+	def get_ResolverRegionId(self): # String
+		return self.get_query_params().get('ResolverRegionId')
 
-	def set_ZoneName(self, ZoneName):  # String
-		self.add_query_param('ZoneName', ZoneName)
-	def get_UserClientIp(self): # String
-		return self.get_query_params().get('UserClientIp')
+	def set_ResolverRegionId(self, ResolverRegionId):  # String
+		self.add_query_param('ResolverRegionId', ResolverRegionId)
+	def get_AzId(self): # String
+		return self.get_query_params().get('AzId')
 
-	def set_UserClientIp(self, UserClientIp):  # String
-		self.add_query_param('UserClientIp', UserClientIp)
+	def set_AzId(self, AzId):  # String
+		self.add_query_param('AzId', AzId)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

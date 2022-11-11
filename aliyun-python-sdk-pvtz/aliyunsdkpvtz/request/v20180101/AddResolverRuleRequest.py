@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpvtz.endpoint import endpoint_data
 
-class AddZoneRecordRequest(RpcRequest):
+class AddResolverRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'AddZoneRecord','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'AddResolverRule','pvtz')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,48 +31,37 @@ class AddZoneRecordRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Rr(self): # String
-		return self.get_query_params().get('Rr')
+	def get_EndpointId(self): # String
+		return self.get_query_params().get('EndpointId')
 
-	def set_Rr(self, Rr):  # String
-		self.add_query_param('Rr', Rr)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_ForwardIps(self): # RepeatList
+		return self.get_query_params().get('ForwardIp')
 
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)
+	def set_ForwardIps(self, ForwardIp):  # RepeatList
+		for depth1 in range(len(ForwardIp)):
+			if ForwardIp[depth1].get('Port') is not None:
+				self.add_query_param('ForwardIp.' + str(depth1 + 1) + '.Port', ForwardIp[depth1].get('Port'))
+			if ForwardIp[depth1].get('Ip') is not None:
+				self.add_query_param('ForwardIp.' + str(depth1 + 1) + '.Ip', ForwardIp[depth1].get('Ip'))
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_Priority(self): # Integer
-		return self.get_query_params().get('Priority')
+	def get_ZoneName(self): # String
+		return self.get_query_params().get('ZoneName')
 
-	def set_Priority(self, Priority):  # Integer
-		self.add_query_param('Priority', Priority)
-	def get_Ttl(self): # Integer
-		return self.get_query_params().get('Ttl')
+	def set_ZoneName(self, ZoneName):  # String
+		self.add_query_param('ZoneName', ZoneName)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_Ttl(self, Ttl):  # Integer
-		self.add_query_param('Ttl', Ttl)
-	def get_UserClientIp(self): # String
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self, UserClientIp):  # String
-		self.add_query_param('UserClientIp', UserClientIp)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_Value(self): # String
-		return self.get_query_params().get('Value')
-
-	def set_Value(self, Value):  # String
-		self.add_query_param('Value', Value)
