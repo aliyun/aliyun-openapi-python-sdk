@@ -61,6 +61,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_TsdbNum(self, TsdbNum):  # Integer
 		self.add_query_param('TsdbNum', TsdbNum)
+	def get_PrimaryVSwitchId(self): # String
+		return self.get_query_params().get('PrimaryVSwitchId')
+
+	def set_PrimaryVSwitchId(self, PrimaryVSwitchId):  # String
+		self.add_query_param('PrimaryVSwitchId', PrimaryVSwitchId)
 	def get_SolrNum(self): # Integer
 		return self.get_query_params().get('SolrNum')
 
@@ -116,6 +121,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_TsdbSpec(self, TsdbSpec):  # String
 		self.add_query_param('TsdbSpec', TsdbSpec)
+	def get_PrimaryZoneId(self): # String
+		return self.get_query_params().get('PrimaryZoneId')
+
+	def set_PrimaryZoneId(self, PrimaryZoneId):  # String
+		self.add_query_param('PrimaryZoneId', PrimaryZoneId)
 	def get_FilestoreSpec(self): # String
 		return self.get_query_params().get('FilestoreSpec')
 
