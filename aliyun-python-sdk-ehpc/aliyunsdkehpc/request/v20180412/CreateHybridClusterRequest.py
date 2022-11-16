@@ -71,6 +71,18 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_Password(self, Password):  # String
 		self.add_query_param('Password', Password)
+	def get_WinAdPar(self): # Struct
+		return self.get_query_params().get('WinAdPar')
+
+	def set_WinAdPar(self, WinAdPar):  # Struct
+		if WinAdPar.get('AdUser') is not None:
+			self.add_query_param('WinAdPar.AdUser', WinAdPar.get('AdUser'))
+		if WinAdPar.get('AdUserPasswd') is not None:
+			self.add_query_param('WinAdPar.AdUserPasswd', WinAdPar.get('AdUserPasswd'))
+		if WinAdPar.get('AdIp') is not None:
+			self.add_query_param('WinAdPar.AdIp', WinAdPar.get('AdIp'))
+		if WinAdPar.get('AdDc') is not None:
+			self.add_query_param('WinAdPar.AdDc', WinAdPar.get('AdDc'))
 	def get_ComputeSpotPriceLimit(self): # Float
 		return self.get_query_params().get('ComputeSpotPriceLimit')
 
@@ -155,6 +167,14 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_EcsOrderComputeInstanceType(self, EcsOrderComputeInstanceType):  # String
 		self.add_query_param('EcsOrder.Compute.InstanceType', EcsOrderComputeInstanceType)
+	def get_OpenldapPar(self): # Struct
+		return self.get_query_params().get('OpenldapPar')
+
+	def set_OpenldapPar(self, OpenldapPar):  # Struct
+		if OpenldapPar.get('BaseDn') is not None:
+			self.add_query_param('OpenldapPar.BaseDn', OpenldapPar.get('BaseDn'))
+		if OpenldapPar.get('LdapServerIp') is not None:
+			self.add_query_param('OpenldapPar.LdapServerIp', OpenldapPar.get('LdapServerIp'))
 	def get_JobQueue(self): # String
 		return self.get_query_params().get('JobQueue')
 
@@ -207,6 +227,11 @@ class CreateHybridClusterRequest(RpcRequest):
 				self.add_query_param('Nodes.' + str(depth1 + 1) + '.AccountType', Nodes[depth1].get('AccountType'))
 			if Nodes[depth1].get('Dir') is not None:
 				self.add_query_param('Nodes.' + str(depth1 + 1) + '.Dir', Nodes[depth1].get('Dir'))
+	def get_Plugin(self): # String
+		return self.get_query_params().get('Plugin')
+
+	def set_Plugin(self, Plugin):  # String
+		self.add_query_param('Plugin', Plugin)
 	def get_Applications(self): # RepeatList
 		return self.get_query_params().get('Application')
 
