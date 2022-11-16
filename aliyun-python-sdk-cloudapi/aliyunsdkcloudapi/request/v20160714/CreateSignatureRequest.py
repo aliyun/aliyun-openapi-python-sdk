@@ -24,32 +24,30 @@ class CreateSignatureRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateSignature','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SignatureName(self):
+	def get_SignatureName(self): # String
 		return self.get_query_params().get('SignatureName')
 
-	def set_SignatureName(self,SignatureName):
-		self.add_query_param('SignatureName',SignatureName)
-
-	def get_SignatureSecret(self):
+	def set_SignatureName(self, SignatureName):  # String
+		self.add_query_param('SignatureName', SignatureName)
+	def get_SignatureSecret(self): # String
 		return self.get_query_params().get('SignatureSecret')
 
-	def set_SignatureSecret(self,SignatureSecret):
-		self.add_query_param('SignatureSecret',SignatureSecret)
-
-	def get_SecurityToken(self):
+	def set_SignatureSecret(self, SignatureSecret):  # String
+		self.add_query_param('SignatureSecret', SignatureSecret)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SignatureKey(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_SignatureKey(self): # String
 		return self.get_query_params().get('SignatureKey')
 
-	def set_SignatureKey(self,SignatureKey):
-		self.add_query_param('SignatureKey',SignatureKey)
+	def set_SignatureKey(self, SignatureKey):  # String
+		self.add_query_param('SignatureKey', SignatureKey)

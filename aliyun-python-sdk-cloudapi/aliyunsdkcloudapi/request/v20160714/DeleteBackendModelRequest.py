@@ -20,30 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class DescribeDomainsResolutionRequest(RpcRequest):
+class DeleteBackendModelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeDomainsResolution','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteBackendModel','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StageName(self): # String
+		return self.get_query_params().get('StageName')
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
+	def get_BackendId(self): # String
+		return self.get_query_params().get('BackendId')
 
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_SecurityToken(self):
+	def set_BackendId(self, BackendId):  # String
+		self.add_query_param('BackendId', BackendId)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_BackendModelId(self): # String
+		return self.get_query_params().get('BackendModelId')
+
+	def set_BackendModelId(self, BackendModelId):  # String
+		self.add_query_param('BackendModelId', BackendModelId)

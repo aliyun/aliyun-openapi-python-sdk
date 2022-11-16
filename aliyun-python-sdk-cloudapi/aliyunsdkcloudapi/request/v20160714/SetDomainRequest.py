@@ -24,26 +24,40 @@ class SetDomainRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetDomain','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_DomainName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_IsHttpRedirectToHttps(self): # Boolean
+		return self.get_query_params().get('IsHttpRedirectToHttps')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def set_IsHttpRedirectToHttps(self, IsHttpRedirectToHttps):  # Boolean
+		self.add_query_param('IsHttpRedirectToHttps', IsHttpRedirectToHttps)
+	def get_CustomDomainType(self): # String
+		return self.get_query_params().get('CustomDomainType')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_CustomDomainType(self, CustomDomainType):  # String
+		self.add_query_param('CustomDomainType', CustomDomainType)
+	def get_BindStageName(self): # String
+		return self.get_query_params().get('BindStageName')
+
+	def set_BindStageName(self, BindStageName):  # String
+		self.add_query_param('BindStageName', BindStageName)
+	def get_IsForce(self): # Boolean
+		return self.get_query_params().get('IsForce')
+
+	def set_IsForce(self, IsForce):  # Boolean
+		self.add_query_param('IsForce', IsForce)

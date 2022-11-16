@@ -24,43 +24,39 @@ class CreateIpControlRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateIpControl','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IpControlName(self):
+	def get_IpControlName(self): # String
 		return self.get_query_params().get('IpControlName')
 
-	def set_IpControlName(self,IpControlName):
-		self.add_query_param('IpControlName',IpControlName)
+	def set_IpControlName(self, IpControlName):  # String
+		self.add_query_param('IpControlName', IpControlName)
+	def get_IpControlPolicyss(self): # RepeatList
+		return self.get_query_params().get('IpControlPolicys')
 
-	def get_IpControlPolicyss(self):
-		return self.get_query_params().get('IpControlPolicyss')
-
-	def set_IpControlPolicyss(self,IpControlPolicyss):
-		for i in range(len(IpControlPolicyss)):	
-			if IpControlPolicyss[i].get('AppId') is not None:
-				self.add_query_param('IpControlPolicys.' + str(i + 1) + '.AppId' , IpControlPolicyss[i].get('AppId'))
-			if IpControlPolicyss[i].get('CidrIp') is not None:
-				self.add_query_param('IpControlPolicys.' + str(i + 1) + '.CidrIp' , IpControlPolicyss[i].get('CidrIp'))
-
-
-	def get_Description(self):
+	def set_IpControlPolicyss(self, IpControlPolicys):  # RepeatList
+		for depth1 in range(len(IpControlPolicys)):
+			if IpControlPolicys[depth1].get('AppId') is not None:
+				self.add_query_param('IpControlPolicys.' + str(depth1 + 1) + '.AppId', IpControlPolicys[depth1].get('AppId'))
+			if IpControlPolicys[depth1].get('CidrIp') is not None:
+				self.add_query_param('IpControlPolicys.' + str(depth1 + 1) + '.CidrIp', IpControlPolicys[depth1].get('CidrIp'))
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SecurityToken(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_IpControlType(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_IpControlType(self): # String
 		return self.get_query_params().get('IpControlType')
 
-	def set_IpControlType(self,IpControlType):
-		self.add_query_param('IpControlType',IpControlType)
+	def set_IpControlType(self, IpControlType):  # String
+		self.add_query_param('IpControlType', IpControlType)

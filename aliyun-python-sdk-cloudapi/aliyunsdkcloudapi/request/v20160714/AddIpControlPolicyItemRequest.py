@@ -24,32 +24,30 @@ class AddIpControlPolicyItemRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'AddIpControlPolicyItem','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IpControlId(self):
+	def get_IpControlId(self): # String
 		return self.get_query_params().get('IpControlId')
 
-	def set_IpControlId(self,IpControlId):
-		self.add_query_param('IpControlId',IpControlId)
-
-	def get_SecurityToken(self):
+	def set_IpControlId(self, IpControlId):  # String
+		self.add_query_param('IpControlId', IpControlId)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_AppId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CidrIp(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_CidrIp(self): # String
 		return self.get_query_params().get('CidrIp')
 
-	def set_CidrIp(self,CidrIp):
-		self.add_query_param('CidrIp',CidrIp)
+	def set_CidrIp(self, CidrIp):  # String
+		self.add_query_param('CidrIp', CidrIp)

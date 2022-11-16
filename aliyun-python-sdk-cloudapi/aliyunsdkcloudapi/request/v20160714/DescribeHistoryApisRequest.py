@@ -24,50 +24,45 @@ class DescribeHistoryApisRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeHistoryApis','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StageName(self):
+	def get_StageName(self): # String
 		return self.get_query_params().get('StageName')
 
-	def set_StageName(self,StageName):
-		self.add_query_param('StageName',StageName)
-
-	def get_GroupId(self):
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_PageNumber(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ApiName(self):
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ApiName(self): # String
 		return self.get_query_params().get('ApiName')
 
-	def set_ApiName(self,ApiName):
-		self.add_query_param('ApiName',ApiName)
-
-	def get_SecurityToken(self):
+	def set_ApiName(self, ApiName):  # String
+		self.add_query_param('ApiName', ApiName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ApiId(self):
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
+	def get_ApiId(self): # String
 		return self.get_query_params().get('ApiId')
 
-	def set_ApiId(self,ApiId):
-		self.add_query_param('ApiId',ApiId)
+	def set_ApiId(self, ApiId):  # String
+		self.add_query_param('ApiId', ApiId)

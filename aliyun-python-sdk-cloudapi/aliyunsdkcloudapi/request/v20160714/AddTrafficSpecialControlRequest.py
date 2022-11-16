@@ -24,38 +24,35 @@ class AddTrafficSpecialControlRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'AddTrafficSpecialControl','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TrafficControlId(self):
+	def get_TrafficControlId(self): # String
 		return self.get_query_params().get('TrafficControlId')
 
-	def set_TrafficControlId(self,TrafficControlId):
-		self.add_query_param('TrafficControlId',TrafficControlId)
-
-	def get_SpecialKey(self):
+	def set_TrafficControlId(self, TrafficControlId):  # String
+		self.add_query_param('TrafficControlId', TrafficControlId)
+	def get_SpecialKey(self): # String
 		return self.get_query_params().get('SpecialKey')
 
-	def set_SpecialKey(self,SpecialKey):
-		self.add_query_param('SpecialKey',SpecialKey)
-
-	def get_TrafficValue(self):
+	def set_SpecialKey(self, SpecialKey):  # String
+		self.add_query_param('SpecialKey', SpecialKey)
+	def get_TrafficValue(self): # Integer
 		return self.get_query_params().get('TrafficValue')
 
-	def set_TrafficValue(self,TrafficValue):
-		self.add_query_param('TrafficValue',TrafficValue)
-
-	def get_SecurityToken(self):
+	def set_TrafficValue(self, TrafficValue):  # Integer
+		self.add_query_param('TrafficValue', TrafficValue)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SpecialType(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_SpecialType(self): # String
 		return self.get_query_params().get('SpecialType')
 
-	def set_SpecialType(self,SpecialType):
-		self.add_query_param('SpecialType',SpecialType)
+	def set_SpecialType(self, SpecialType):  # String
+		self.add_query_param('SpecialType', SpecialType)

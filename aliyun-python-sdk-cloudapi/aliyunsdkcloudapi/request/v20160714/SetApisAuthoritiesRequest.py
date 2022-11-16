@@ -24,56 +24,45 @@ class SetApisAuthoritiesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetApisAuthorities','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthVaildTime(self):
-		return self.get_query_params().get('AuthVaildTime')
-
-	def set_AuthVaildTime(self,AuthVaildTime):
-		self.add_query_param('AuthVaildTime',AuthVaildTime)
-
-	def get_StageName(self):
+	def get_StageName(self): # String
 		return self.get_query_params().get('StageName')
 
-	def set_StageName(self,StageName):
-		self.add_query_param('StageName',StageName)
-
-	def get_GroupId(self):
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Description(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AuthValidTime(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AuthValidTime(self): # String
 		return self.get_query_params().get('AuthValidTime')
 
-	def set_AuthValidTime(self,AuthValidTime):
-		self.add_query_param('AuthValidTime',AuthValidTime)
-
-	def get_SecurityToken(self):
+	def set_AuthValidTime(self, AuthValidTime):  # String
+		self.add_query_param('AuthValidTime', AuthValidTime)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_AppId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ApiIds(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_ApiIds(self): # String
 		return self.get_query_params().get('ApiIds')
 
-	def set_ApiIds(self,ApiIds):
-		self.add_query_param('ApiIds',ApiIds)
+	def set_ApiIds(self, ApiIds):  # String
+		self.add_query_param('ApiIds', ApiIds)

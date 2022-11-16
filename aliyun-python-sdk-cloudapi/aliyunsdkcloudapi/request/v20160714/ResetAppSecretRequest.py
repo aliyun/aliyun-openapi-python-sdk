@@ -24,20 +24,25 @@ class ResetAppSecretRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ResetAppSecret','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_NewAppSecret(self): # String
+		return self.get_query_params().get('NewAppSecret')
 
-	def get_SecurityToken(self):
+	def set_NewAppSecret(self, NewAppSecret):  # String
+		self.add_query_param('NewAppSecret', NewAppSecret)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_AppKey(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AppKey(self): # String
 		return self.get_query_params().get('AppKey')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_AppKey(self, AppKey):  # String
+		self.add_query_param('AppKey', AppKey)

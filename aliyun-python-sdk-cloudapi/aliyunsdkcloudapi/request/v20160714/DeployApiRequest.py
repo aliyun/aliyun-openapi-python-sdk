@@ -24,38 +24,35 @@ class DeployApiRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeployApi','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StageName(self):
+	def get_StageName(self): # String
 		return self.get_query_params().get('StageName')
 
-	def set_StageName(self,StageName):
-		self.add_query_param('StageName',StageName)
-
-	def get_GroupId(self):
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Description(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SecurityToken(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ApiId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ApiId(self): # String
 		return self.get_query_params().get('ApiId')
 
-	def set_ApiId(self,ApiId):
-		self.add_query_param('ApiId',ApiId)
+	def set_ApiId(self, ApiId):  # String
+		self.add_query_param('ApiId', ApiId)

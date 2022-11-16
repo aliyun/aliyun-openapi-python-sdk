@@ -24,50 +24,45 @@ class CreateTrafficControlRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateTrafficControl','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TrafficControlName(self):
+	def get_TrafficControlName(self): # String
 		return self.get_query_params().get('TrafficControlName')
 
-	def set_TrafficControlName(self,TrafficControlName):
-		self.add_query_param('TrafficControlName',TrafficControlName)
-
-	def get_Description(self):
+	def set_TrafficControlName(self, TrafficControlName):  # String
+		self.add_query_param('TrafficControlName', TrafficControlName)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_UserDefault(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_UserDefault(self): # Integer
 		return self.get_query_params().get('UserDefault')
 
-	def set_UserDefault(self,UserDefault):
-		self.add_query_param('UserDefault',UserDefault)
-
-	def get_ApiDefault(self):
+	def set_UserDefault(self, UserDefault):  # Integer
+		self.add_query_param('UserDefault', UserDefault)
+	def get_ApiDefault(self): # Integer
 		return self.get_query_params().get('ApiDefault')
 
-	def set_ApiDefault(self,ApiDefault):
-		self.add_query_param('ApiDefault',ApiDefault)
-
-	def get_SecurityToken(self):
+	def set_ApiDefault(self, ApiDefault):  # Integer
+		self.add_query_param('ApiDefault', ApiDefault)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_TrafficControlUnit(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_TrafficControlUnit(self): # String
 		return self.get_query_params().get('TrafficControlUnit')
 
-	def set_TrafficControlUnit(self,TrafficControlUnit):
-		self.add_query_param('TrafficControlUnit',TrafficControlUnit)
-
-	def get_AppDefault(self):
+	def set_TrafficControlUnit(self, TrafficControlUnit):  # String
+		self.add_query_param('TrafficControlUnit', TrafficControlUnit)
+	def get_AppDefault(self): # Integer
 		return self.get_query_params().get('AppDefault')
 
-	def set_AppDefault(self,AppDefault):
-		self.add_query_param('AppDefault',AppDefault)
+	def set_AppDefault(self, AppDefault):  # Integer
+		self.add_query_param('AppDefault', AppDefault)

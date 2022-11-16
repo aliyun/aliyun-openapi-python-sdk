@@ -24,42 +24,37 @@ class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'UntagResources','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_All(self):
+	def get_All(self): # Boolean
 		return self.get_query_params().get('All')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
-
-	def set_ResourceIds(self,ResourceIds):
-		for i in range(len(ResourceIds)):	
-			if ResourceIds[i] is not None:
-				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
-
-	def get_ResourceType(self):
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_SecurityToken(self):
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
-
-	def set_TagKeys(self,TagKeys):
-		for i in range(len(TagKeys)):	
-			if TagKeys[i] is not None:
-				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])

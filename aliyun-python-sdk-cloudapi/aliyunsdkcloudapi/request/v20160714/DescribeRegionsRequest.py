@@ -24,20 +24,20 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeRegions','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Language(self):
+	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)
-
-	def get_SecurityToken(self):
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)

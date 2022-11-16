@@ -20,30 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class DescribeApiStageRequest(RpcRequest):
+class RemoveVpcAccessAndAbolishApisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeApiStage','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveVpcAccessAndAbolishApis','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NeedBatchWork(self): # Boolean
+		return self.get_query_params().get('NeedBatchWork')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_SecurityToken(self):
+	def set_NeedBatchWork(self, NeedBatchWork):  # Boolean
+		self.add_query_param('NeedBatchWork', NeedBatchWork)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
 
-	def get_StageId(self):
-		return self.get_query_params().get('StageId')
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-	def set_StageId(self,StageId):
-		self.add_query_param('StageId',StageId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

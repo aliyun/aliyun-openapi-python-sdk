@@ -24,32 +24,30 @@ class DeleteApiStageVariableRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteApiStageVariable','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupId(self):
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_SecurityToken(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_VariableName(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_VariableName(self): # String
 		return self.get_query_params().get('VariableName')
 
-	def set_VariableName(self,VariableName):
-		self.add_query_param('VariableName',VariableName)
-
-	def get_StageId(self):
+	def set_VariableName(self, VariableName):  # String
+		self.add_query_param('VariableName', VariableName)
+	def get_StageId(self): # String
 		return self.get_query_params().get('StageId')
 
-	def set_StageId(self,StageId):
-		self.add_query_param('StageId',StageId)
+	def set_StageId(self, StageId):  # String
+		self.add_query_param('StageId', StageId)

@@ -24,20 +24,25 @@ class ResetAppCodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ResetAppCode','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_NewAppCode(self): # String
+		return self.get_query_params().get('NewAppCode')
 
-	def get_SecurityToken(self):
+	def set_NewAppCode(self, NewAppCode):  # String
+		self.add_query_param('NewAppCode', NewAppCode)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_AppCode(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AppCode(self): # String
 		return self.get_query_params().get('AppCode')
 
-	def set_AppCode(self,AppCode):
-		self.add_query_param('AppCode',AppCode)
+	def set_AppCode(self, AppCode):  # String
+		self.add_query_param('AppCode', AppCode)

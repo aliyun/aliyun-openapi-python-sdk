@@ -24,32 +24,35 @@ class SetDomainWebSocketStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetDomainWebSocketStatus','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_WSSEnable(self): # String
+		return self.get_query_params().get('WSSEnable')
 
-	def get_GroupId(self):
+	def set_WSSEnable(self, WSSEnable):  # String
+		self.add_query_param('WSSEnable', WSSEnable)
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_DomainName(self):
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_SecurityToken(self):
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ActionValue(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ActionValue(self): # String
 		return self.get_query_params().get('ActionValue')
 
-	def set_ActionValue(self,ActionValue):
-		self.add_query_param('ActionValue',ActionValue)
+	def set_ActionValue(self, ActionValue):  # String
+		self.add_query_param('ActionValue', ActionValue)

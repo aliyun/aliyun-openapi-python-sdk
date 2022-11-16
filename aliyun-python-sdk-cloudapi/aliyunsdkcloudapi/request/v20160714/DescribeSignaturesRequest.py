@@ -24,38 +24,35 @@ class DescribeSignaturesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeSignatures','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SignatureName(self):
+	def get_SignatureName(self): # String
 		return self.get_query_params().get('SignatureName')
 
-	def set_SignatureName(self,SignatureName):
-		self.add_query_param('SignatureName',SignatureName)
-
-	def get_SignatureId(self):
+	def set_SignatureName(self, SignatureName):  # String
+		self.add_query_param('SignatureName', SignatureName)
+	def get_SignatureId(self): # String
 		return self.get_query_params().get('SignatureId')
 
-	def set_SignatureId(self,SignatureId):
-		self.add_query_param('SignatureId',SignatureId)
-
-	def get_PageNumber(self):
+	def set_SignatureId(self, SignatureId):  # String
+		self.add_query_param('SignatureId', SignatureId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_SecurityToken(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

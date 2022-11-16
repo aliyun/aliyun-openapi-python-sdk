@@ -20,42 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class DescribeApiErrorDataRequest(RpcRequest):
+class DescribeAccessControlListsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeApiErrorData','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAccessControlLists','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AclName(self): # String
+		return self.get_query_params().get('AclName')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def set_AclName(self, AclName):  # String
+		self.add_query_param('AclName', AclName)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_SecurityToken(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def get_ApiId(self):
-		return self.get_query_params().get('ApiId')
-
-	def set_ApiId(self,ApiId):
-		self.add_query_param('ApiId',ApiId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

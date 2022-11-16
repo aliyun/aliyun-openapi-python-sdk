@@ -24,36 +24,54 @@ class CreateAppRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApp','apigateway')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def get_AppName(self):
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AppSecret(self): # String
+		return self.get_query_params().get('AppSecret')
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def set_AppSecret(self, AppSecret):  # String
+		self.add_query_param('AppSecret', AppSecret)
+	def get_AppKey(self): # String
+		return self.get_query_params().get('AppKey')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_AppKey(self, AppKey):  # String
+		self.add_query_param('AppKey', AppKey)
+	def get_AppCode(self): # String
+		return self.get_query_params().get('AppCode')
+
+	def set_AppCode(self, AppCode):  # String
+		self.add_query_param('AppCode', AppCode)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
