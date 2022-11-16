@@ -31,26 +31,26 @@ class UpdateTableLevelRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LevelId(self): # Long
-		return self.get_query_params().get('LevelId')
-
-	def set_LevelId(self, LevelId):  # Long
-		self.add_query_param('LevelId', LevelId)
 	def get_LevelType(self): # Integer
 		return self.get_query_params().get('LevelType')
 
 	def set_LevelType(self, LevelType):  # Integer
 		self.add_query_param('LevelType', LevelType)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_LevelId(self): # Long
+		return self.get_query_params().get('LevelId')
+
+	def set_LevelId(self, LevelId):  # Long
+		self.add_query_param('LevelId', LevelId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

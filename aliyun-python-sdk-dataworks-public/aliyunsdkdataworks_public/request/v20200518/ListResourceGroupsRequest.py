@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
+import json
 
 class ListResourceGroupsRequest(RpcRequest):
 
@@ -36,6 +37,16 @@ class ListResourceGroupsRequest(RpcRequest):
 
 	def set_BizExtKey(self, BizExtKey):  # String
 		self.add_query_param('BizExtKey', BizExtKey)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
+	def get_ResourceManagerResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceManagerResourceGroupId')
+
+	def set_ResourceManagerResourceGroupId(self, ResourceManagerResourceGroupId):  # String
+		self.add_query_param('ResourceManagerResourceGroupId', ResourceManagerResourceGroupId)
 	def get_ResourceGroupType(self): # Integer
 		return self.get_query_params().get('ResourceGroupType')
 

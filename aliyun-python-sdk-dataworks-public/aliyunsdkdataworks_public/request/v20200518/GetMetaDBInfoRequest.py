@@ -36,16 +36,16 @@ class GetMetaDBInfoRequest(RpcRequest):
 
 	def set_DataSourceType(self, DataSourceType):  # String
 		self.add_query_param('DataSourceType', DataSourceType)
-	def get_DatabaseName(self): # String
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_query_param('DatabaseName', DatabaseName)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_DatabaseName(self): # String
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)
 	def get_AppGuid(self): # String
 		return self.get_query_params().get('AppGuid')
 

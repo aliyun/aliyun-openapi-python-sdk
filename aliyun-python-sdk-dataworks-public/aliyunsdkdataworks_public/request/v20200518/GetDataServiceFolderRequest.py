@@ -31,6 +31,11 @@ class GetDataServiceFolderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_FolderId(self): # Long
+		return self.get_body_params().get('FolderId')
+
+	def set_FolderId(self, FolderId):  # Long
+		self.add_body_params('FolderId', FolderId)
 	def get_TenantId(self): # Long
 		return self.get_body_params().get('TenantId')
 
@@ -41,8 +46,3 @@ class GetDataServiceFolderRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_FolderId(self): # Long
-		return self.get_body_params().get('FolderId')
-
-	def set_FolderId(self, FolderId):  # Long
-		self.add_body_params('FolderId', FolderId)

@@ -31,6 +31,16 @@ class ListDataServiceGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_GroupNameKeyword(self): # String
+		return self.get_body_params().get('GroupNameKeyword')
+
+	def set_GroupNameKeyword(self, GroupNameKeyword):  # String
+		self.add_body_params('GroupNameKeyword', GroupNameKeyword)
+	def get_PageNumber(self): # Integer
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_body_params('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -46,13 +56,3 @@ class ListDataServiceGroupsRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_GroupNameKeyword(self): # String
-		return self.get_body_params().get('GroupNameKeyword')
-
-	def set_GroupNameKeyword(self, GroupNameKeyword):  # String
-		self.add_body_params('GroupNameKeyword', GroupNameKeyword)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)

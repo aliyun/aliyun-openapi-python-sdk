@@ -40,20 +40,6 @@ class TestDataServiceApiRequest(RpcRequest):
 				self.add_body_params('PathParams.' + str(depth1 + 1) + '.ParamKey', PathParams[depth1].get('ParamKey'))
 			if PathParams[depth1].get('ParamValue') is not None:
 				self.add_body_params('PathParams.' + str(depth1 + 1) + '.ParamValue', PathParams[depth1].get('ParamValue'))
-	def get_BodyContent(self): # String
-		return self.get_body_params().get('BodyContent')
-
-	def set_BodyContent(self, BodyContent):  # String
-		self.add_body_params('BodyContent', BodyContent)
-	def get_BodyParamss(self): # RepeatList
-		return self.get_body_params().get('BodyParams')
-
-	def set_BodyParamss(self, BodyParams):  # RepeatList
-		for depth1 in range(len(BodyParams)):
-			if BodyParams[depth1].get('ParamKey') is not None:
-				self.add_body_params('BodyParams.' + str(depth1 + 1) + '.ParamKey', BodyParams[depth1].get('ParamKey'))
-			if BodyParams[depth1].get('ParamValue') is not None:
-				self.add_body_params('BodyParams.' + str(depth1 + 1) + '.ParamValue', BodyParams[depth1].get('ParamValue'))
 	def get_QueryParams(self): # RepeatList
 		return self.get_body_params().get('QueryParam')
 
@@ -72,6 +58,20 @@ class TestDataServiceApiRequest(RpcRequest):
 				self.add_body_params('HeadParams.' + str(depth1 + 1) + '.ParamKey', HeadParams[depth1].get('ParamKey'))
 			if HeadParams[depth1].get('ParamValue') is not None:
 				self.add_body_params('HeadParams.' + str(depth1 + 1) + '.ParamValue', HeadParams[depth1].get('ParamValue'))
+	def get_BodyContent(self): # String
+		return self.get_body_params().get('BodyContent')
+
+	def set_BodyContent(self, BodyContent):  # String
+		self.add_body_params('BodyContent', BodyContent)
+	def get_BodyParamss(self): # RepeatList
+		return self.get_body_params().get('BodyParams')
+
+	def set_BodyParamss(self, BodyParams):  # RepeatList
+		for depth1 in range(len(BodyParams)):
+			if BodyParams[depth1].get('ParamKey') is not None:
+				self.add_body_params('BodyParams.' + str(depth1 + 1) + '.ParamKey', BodyParams[depth1].get('ParamKey'))
+			if BodyParams[depth1].get('ParamValue') is not None:
+				self.add_body_params('BodyParams.' + str(depth1 + 1) + '.ParamValue', BodyParams[depth1].get('ParamValue'))
 	def get_ApiId(self): # Long
 		return self.get_query_params().get('ApiId')
 

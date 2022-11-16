@@ -31,11 +31,6 @@ class UpdateTableAddColumnRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TableGuid(self): # String
-		return self.get_query_params().get('TableGuid')
-
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_query_param('TableGuid', TableGuid)
 	def get_Columns(self): # RepeatList
 		return self.get_body_params().get('Column')
 
@@ -49,3 +44,8 @@ class UpdateTableAddColumnRequest(RpcRequest):
 				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnName', Column[depth1].get('ColumnName'))
 			if Column[depth1].get('ColumnType') is not None:
 				self.add_body_params('Column.' + str(depth1 + 1) + '.ColumnType', Column[depth1].get('ColumnType'))
+	def get_TableGuid(self): # String
+		return self.get_query_params().get('TableGuid')
+
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)

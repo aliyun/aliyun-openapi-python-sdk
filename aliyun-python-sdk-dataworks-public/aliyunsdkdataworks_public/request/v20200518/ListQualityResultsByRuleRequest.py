@@ -36,6 +36,16 @@ class ListQualityResultsByRuleRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
+	def get_StartDate(self): # String
+		return self.get_body_params().get('StartDate')
+
+	def set_StartDate(self, StartDate):  # String
+		self.add_body_params('StartDate', StartDate)
+	def get_PageNumber(self): # Integer
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_body_params('PageNumber', PageNumber)
 	def get_EndDate(self): # String
 		return self.get_body_params().get('EndDate')
 
@@ -51,13 +61,3 @@ class ListQualityResultsByRuleRequest(RpcRequest):
 
 	def set_RuleId(self, RuleId):  # Integer
 		self.add_body_params('RuleId', RuleId)
-	def get_StartDate(self): # String
-		return self.get_body_params().get('StartDate')
-
-	def set_StartDate(self, StartDate):  # String
-		self.add_body_params('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)

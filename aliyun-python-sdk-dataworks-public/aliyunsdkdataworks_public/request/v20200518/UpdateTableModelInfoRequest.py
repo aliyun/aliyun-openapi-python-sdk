@@ -31,6 +31,11 @@ class UpdateTableModelInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_LevelType(self): # Integer
+		return self.get_query_params().get('LevelType')
+
+	def set_LevelType(self, LevelType):  # Integer
+		self.add_query_param('LevelType', LevelType)
 	def get_SecondLevelThemeId(self): # Long
 		return self.get_query_params().get('SecondLevelThemeId')
 
@@ -46,11 +51,6 @@ class UpdateTableModelInfoRequest(RpcRequest):
 
 	def set_LevelId(self, LevelId):  # Long
 		self.add_query_param('LevelId', LevelId)
-	def get_LevelType(self): # Integer
-		return self.get_query_params().get('LevelType')
-
-	def set_LevelType(self, LevelType):  # Integer
-		self.add_query_param('LevelType', LevelType)
 	def get_FirstLevelThemeId(self): # Long
 		return self.get_query_params().get('FirstLevelThemeId')
 

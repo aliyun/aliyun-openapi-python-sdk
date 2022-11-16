@@ -31,6 +31,16 @@ class CreateDataServiceGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_GroupName(self): # String
+		return self.get_body_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_body_params('GroupName', GroupName)
 	def get_ApiGatewayGroupId(self): # String
 		return self.get_body_params().get('ApiGatewayGroupId')
 
@@ -41,18 +51,8 @@ class CreateDataServiceGroupRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_body_params('TenantId', TenantId)
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_GroupName(self): # String
-		return self.get_body_params().get('GroupName')
-
-	def set_GroupName(self, GroupName):  # String
-		self.add_body_params('GroupName', GroupName)

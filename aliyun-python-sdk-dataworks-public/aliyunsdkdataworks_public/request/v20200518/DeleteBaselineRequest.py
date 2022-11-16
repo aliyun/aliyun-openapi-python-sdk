@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListCurrentUsageForResourceGroupRequest(RpcRequest):
+class DeleteBaselineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListCurrentUsageForResourceGroup')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteBaseline')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,13 @@ class ListCurrentUsageForResourceGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectEnv(self): # String
-		return self.get_body_params().get('ProjectEnv')
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectEnv(self, ProjectEnv):  # String
-		self.add_body_params('ProjectEnv', ProjectEnv)
-	def get_ResourceGroupIdentifier(self): # String
-		return self.get_body_params().get('ResourceGroupIdentifier')
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)
+	def get_BaselineId(self): # Long
+		return self.get_body_params().get('BaselineId')
 
-	def set_ResourceGroupIdentifier(self, ResourceGroupIdentifier):  # String
-		self.add_body_params('ResourceGroupIdentifier', ResourceGroupIdentifier)
+	def set_BaselineId(self, BaselineId):  # Long
+		self.add_body_params('BaselineId', BaselineId)

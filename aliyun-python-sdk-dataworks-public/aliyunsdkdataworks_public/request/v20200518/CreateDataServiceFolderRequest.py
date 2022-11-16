@@ -36,23 +36,23 @@ class CreateDataServiceFolderRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_body_params('GroupId', GroupId)
-	def get_TenantId(self): # Long
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # Long
-		self.add_body_params('TenantId', TenantId)
 	def get_FolderName(self): # String
 		return self.get_body_params().get('FolderName')
 
 	def set_FolderName(self, FolderName):  # String
 		self.add_body_params('FolderName', FolderName)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
 	def get_ParentId(self): # Long
 		return self.get_body_params().get('ParentId')
 
 	def set_ParentId(self, ParentId):  # Long
 		self.add_body_params('ParentId', ParentId)
+	def get_TenantId(self): # Long
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # Long
+		self.add_body_params('TenantId', TenantId)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

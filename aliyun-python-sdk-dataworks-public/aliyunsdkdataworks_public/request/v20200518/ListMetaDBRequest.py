@@ -36,11 +36,6 @@ class ListMetaDBRequest(RpcRequest):
 
 	def set_DataSourceType(self, DataSourceType):  # String
 		self.add_query_param('DataSourceType', DataSourceType)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -51,6 +46,11 @@ class ListMetaDBRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

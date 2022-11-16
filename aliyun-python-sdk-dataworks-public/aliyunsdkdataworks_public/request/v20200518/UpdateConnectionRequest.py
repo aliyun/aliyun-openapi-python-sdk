@@ -31,26 +31,26 @@ class UpdateConnectionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EnvType(self): # Integer
-		return self.get_query_params().get('EnvType')
-
-	def set_EnvType(self, EnvType):  # Integer
-		self.add_query_param('EnvType', EnvType)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_ConnectionId(self): # Long
-		return self.get_query_params().get('ConnectionId')
-
-	def set_ConnectionId(self, ConnectionId):  # Long
-		self.add_query_param('ConnectionId', ConnectionId)
 	def get_Content(self): # String
 		return self.get_query_params().get('Content')
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_EnvType(self): # Integer
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self, EnvType):  # Integer
+		self.add_query_param('EnvType', EnvType)
+	def get_ConnectionId(self): # Long
+		return self.get_query_params().get('ConnectionId')
+
+	def set_ConnectionId(self, ConnectionId):  # Long
+		self.add_query_param('ConnectionId', ConnectionId)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

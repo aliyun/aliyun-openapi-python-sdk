@@ -31,11 +31,6 @@ class UpdateWorkbenchEventResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CheckResultTip(self): # String
-		return self.get_query_params().get('CheckResultTip')
-
-	def set_CheckResultTip(self, CheckResultTip):  # String
-		self.add_query_param('CheckResultTip', CheckResultTip)
 	def get_CheckResult(self): # String
 		return self.get_query_params().get('CheckResult')
 
@@ -46,6 +41,11 @@ class UpdateWorkbenchEventResultRequest(RpcRequest):
 
 	def set_MessageId(self, MessageId):  # String
 		self.add_query_param('MessageId', MessageId)
+	def get_CheckResultTip(self): # String
+		return self.get_query_params().get('CheckResultTip')
+
+	def set_CheckResultTip(self, CheckResultTip):  # String
+		self.add_query_param('CheckResultTip', CheckResultTip)
 	def get_ExtensionCode(self): # String
 		return self.get_query_params().get('ExtensionCode')
 

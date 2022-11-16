@@ -31,6 +31,11 @@ class CreateMetaCategoryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ParentId(self): # Long
+		return self.get_body_params().get('ParentId')
+
+	def set_ParentId(self, ParentId):  # Long
+		self.add_body_params('ParentId', ParentId)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
@@ -41,8 +46,3 @@ class CreateMetaCategoryRequest(RpcRequest):
 
 	def set_Comment(self, Comment):  # String
 		self.add_body_params('Comment', Comment)
-	def get_ParentId(self): # Long
-		return self.get_body_params().get('ParentId')
-
-	def set_ParentId(self, ParentId):  # Long
-		self.add_body_params('ParentId', ParentId)

@@ -31,6 +31,16 @@ class GetMetaTableOutputRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StartDate(self): # String
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 
@@ -46,13 +56,3 @@ class GetMetaTableOutputRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_StartDate(self): # String
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self, StartDate):  # String
-		self.add_query_param('StartDate', StartDate)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)

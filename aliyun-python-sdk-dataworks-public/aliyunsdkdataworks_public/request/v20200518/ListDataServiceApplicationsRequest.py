@@ -31,6 +31,11 @@ class ListDataServiceApplicationsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PageNumber(self): # Integer
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_body_params('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -46,8 +51,3 @@ class ListDataServiceApplicationsRequest(RpcRequest):
 
 	def set_ProjectIdList(self, ProjectIdList):  # String
 		self.add_body_params('ProjectIdList', ProjectIdList)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)

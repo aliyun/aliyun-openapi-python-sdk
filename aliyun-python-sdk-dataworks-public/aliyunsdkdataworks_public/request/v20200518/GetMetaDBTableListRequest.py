@@ -36,6 +36,16 @@ class GetMetaDBTableListRequest(RpcRequest):
 
 	def set_DataSourceType(self, DataSourceType):  # String
 		self.add_query_param('DataSourceType', DataSourceType)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_DatabaseName(self): # String
 		return self.get_query_params().get('DatabaseName')
 
@@ -46,18 +56,8 @@ class GetMetaDBTableListRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_AppGuid(self): # String
 		return self.get_query_params().get('AppGuid')
 
 	def set_AppGuid(self, AppGuid):  # String
 		self.add_query_param('AppGuid', AppGuid)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)

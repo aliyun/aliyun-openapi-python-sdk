@@ -36,6 +36,11 @@ class ListDataServiceApiAuthoritiesRequest(RpcRequest):
 
 	def set_ApiNameKeyword(self, ApiNameKeyword):  # String
 		self.add_body_params('ApiNameKeyword', ApiNameKeyword)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -51,8 +56,3 @@ class ListDataServiceApiAuthoritiesRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)

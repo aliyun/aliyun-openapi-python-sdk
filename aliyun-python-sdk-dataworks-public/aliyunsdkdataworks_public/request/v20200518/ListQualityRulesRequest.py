@@ -36,11 +36,6 @@ class ListQualityRulesRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
 	def get_EntityId(self): # Long
 		return self.get_body_params().get('EntityId')
 
@@ -51,3 +46,8 @@ class ListQualityRulesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)

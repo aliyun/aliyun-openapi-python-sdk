@@ -31,23 +31,23 @@ class ListTableThemeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_ProjectId(self): # Long
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
 	def get_ParentId(self): # Long
 		return self.get_query_params().get('ParentId')
 
 	def set_ParentId(self, ParentId):  # Long
 		self.add_query_param('ParentId', ParentId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

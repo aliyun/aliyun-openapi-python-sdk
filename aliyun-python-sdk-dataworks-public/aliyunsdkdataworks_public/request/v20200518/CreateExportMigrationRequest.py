@@ -31,6 +31,16 @@ class CreateExportMigrationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IncrementalSince(self): # Long
+		return self.get_body_params().get('IncrementalSince')
+
+	def set_IncrementalSince(self, IncrementalSince):  # Long
+		self.add_body_params('IncrementalSince', IncrementalSince)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
 	def get_ExportObjectStatus(self): # String
 		return self.get_body_params().get('ExportObjectStatus')
 
@@ -41,21 +51,11 @@ class CreateExportMigrationRequest(RpcRequest):
 
 	def set_ExportMode(self, ExportMode):  # String
 		self.add_body_params('ExportMode', ExportMode)
-	def get_IncrementalSince(self): # Long
-		return self.get_body_params().get('IncrementalSince')
-
-	def set_IncrementalSince(self, IncrementalSince):  # Long
-		self.add_body_params('IncrementalSince', IncrementalSince)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 

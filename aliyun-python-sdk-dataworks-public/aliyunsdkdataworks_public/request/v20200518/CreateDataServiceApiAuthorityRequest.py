@@ -36,16 +36,16 @@ class CreateDataServiceApiAuthorityRequest(RpcRequest):
 
 	def set_AuthorizedProjectId(self, AuthorizedProjectId):  # Long
 		self.add_body_params('AuthorizedProjectId', AuthorizedProjectId)
-	def get_TenantId(self): # Long
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # Long
-		self.add_body_params('TenantId', TenantId)
 	def get_EndTime(self): # Long
 		return self.get_body_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # Long
 		self.add_body_params('EndTime', EndTime)
+	def get_TenantId(self): # Long
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # Long
+		self.add_body_params('TenantId', TenantId)
 	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 

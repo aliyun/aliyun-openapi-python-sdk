@@ -36,6 +36,11 @@ class ListMigrationsRequest(RpcRequest):
 
 	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
+	def get_PageNumber(self): # Integer
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_body_params('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -51,8 +56,3 @@ class ListMigrationsRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)

@@ -31,13 +31,13 @@ class UpdateMetaTableIntroWikiRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TableGuid(self): # String
-		return self.get_query_params().get('TableGuid')
-
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_query_param('TableGuid', TableGuid)
 	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
 	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)
+	def get_TableGuid(self): # String
+		return self.get_query_params().get('TableGuid')
+
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_query_param('TableGuid', TableGuid)

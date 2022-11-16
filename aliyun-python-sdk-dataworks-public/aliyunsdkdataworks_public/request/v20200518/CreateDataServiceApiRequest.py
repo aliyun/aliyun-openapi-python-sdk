@@ -41,6 +41,41 @@ class CreateDataServiceApiRequest(RpcRequest):
 
 	def set_RequestMethod(self, RequestMethod):  # Integer
 		self.add_body_params('RequestMethod', RequestMethod)
+	def get_ApiDescription(self): # String
+		return self.get_body_params().get('ApiDescription')
+
+	def set_ApiDescription(self, ApiDescription):  # String
+		self.add_body_params('ApiDescription', ApiDescription)
+	def get_Timeout(self): # Integer
+		return self.get_body_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_body_params('Timeout', Timeout)
+	def get_FolderId(self): # Long
+		return self.get_body_params().get('FolderId')
+
+	def set_FolderId(self, FolderId):  # Long
+		self.add_body_params('FolderId', FolderId)
+	def get_TenantId(self): # Long
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # Long
+		self.add_body_params('TenantId', TenantId)
+	def get_Protocols(self): # String
+		return self.get_body_params().get('Protocols')
+
+	def set_Protocols(self, Protocols):  # String
+		self.add_body_params('Protocols', Protocols)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)
+	def get_ResponseContentType(self): # Integer
+		return self.get_body_params().get('ResponseContentType')
+
+	def set_ResponseContentType(self, ResponseContentType):  # Integer
+		self.add_body_params('ResponseContentType', ResponseContentType)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
@@ -66,21 +101,6 @@ class CreateDataServiceApiRequest(RpcRequest):
 
 	def set_VisibleRange(self, VisibleRange):  # Integer
 		self.add_body_params('VisibleRange', VisibleRange)
-	def get_ApiDescription(self): # String
-		return self.get_body_params().get('ApiDescription')
-
-	def set_ApiDescription(self, ApiDescription):  # String
-		self.add_body_params('ApiDescription', ApiDescription)
-	def get_Timeout(self): # Integer
-		return self.get_body_params().get('Timeout')
-
-	def set_Timeout(self, Timeout):  # Integer
-		self.add_body_params('Timeout', Timeout)
-	def get_FolderId(self): # Long
-		return self.get_body_params().get('FolderId')
-
-	def set_FolderId(self, FolderId):  # Long
-		self.add_body_params('FolderId', FolderId)
 	def get_RegistrationDetails(self): # String
 		return self.get_body_params().get('RegistrationDetails')
 
@@ -91,23 +111,3 @@ class CreateDataServiceApiRequest(RpcRequest):
 
 	def set_ApiName(self, ApiName):  # String
 		self.add_body_params('ApiName', ApiName)
-	def get_TenantId(self): # Long
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # Long
-		self.add_body_params('TenantId', TenantId)
-	def get_Protocols(self): # String
-		return self.get_body_params().get('Protocols')
-
-	def set_Protocols(self, Protocols):  # String
-		self.add_body_params('Protocols', Protocols)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
-	def get_ResponseContentType(self): # Integer
-		return self.get_body_params().get('ResponseContentType')
-
-	def set_ResponseContentType(self, ResponseContentType):  # Integer
-		self.add_body_params('ResponseContentType', ResponseContentType)

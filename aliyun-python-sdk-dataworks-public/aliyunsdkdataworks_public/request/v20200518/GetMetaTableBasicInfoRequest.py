@@ -41,6 +41,11 @@ class GetMetaTableBasicInfoRequest(RpcRequest):
 
 	def set_Extension(self, Extension):  # Boolean
 		self.add_query_param('Extension', Extension)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
 	def get_TableGuid(self): # String
 		return self.get_query_params().get('TableGuid')
 
@@ -51,11 +56,6 @@ class GetMetaTableBasicInfoRequest(RpcRequest):
 
 	def set_DatabaseName(self, DatabaseName):  # String
 		self.add_query_param('DatabaseName', DatabaseName)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 

@@ -36,16 +36,16 @@ class CreateTableLevelRequest(RpcRequest):
 
 	def set_LevelType(self, LevelType):  # Integer
 		self.add_query_param('LevelType', LevelType)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

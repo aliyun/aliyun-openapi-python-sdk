@@ -24,7 +24,7 @@ class ListExtensionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListExtensions')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

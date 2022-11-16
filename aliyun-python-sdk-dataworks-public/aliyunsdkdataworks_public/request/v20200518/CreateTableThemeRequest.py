@@ -36,6 +36,11 @@ class CreateTableThemeRequest(RpcRequest):
 
 	def set_Level(self, Level):  # Integer
 		self.add_query_param('Level', Level)
+	def get_ParentId(self): # Long
+		return self.get_query_params().get('ParentId')
+
+	def set_ParentId(self, ParentId):  # Long
+		self.add_query_param('ParentId', ParentId)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
@@ -46,8 +51,3 @@ class CreateTableThemeRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_query_param('ProjectId', ProjectId)
-	def get_ParentId(self): # Long
-		return self.get_query_params().get('ParentId')
-
-	def set_ParentId(self, ParentId):  # Long
-		self.add_query_param('ParentId', ParentId)

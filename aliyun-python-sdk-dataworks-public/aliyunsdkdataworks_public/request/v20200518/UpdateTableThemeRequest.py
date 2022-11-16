@@ -31,16 +31,16 @@ class UpdateTableThemeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_ThemeId(self): # Long
 		return self.get_query_params().get('ThemeId')
 
 	def set_ThemeId(self, ThemeId):  # Long
 		self.add_query_param('ThemeId', ThemeId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
