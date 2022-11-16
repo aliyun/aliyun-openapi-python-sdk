@@ -31,11 +31,6 @@ class GetRealPersonVerificationResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MaterialHash(self): # String
-		return self.get_body_params().get('MaterialHash')
-
-	def set_MaterialHash(self, MaterialHash):  # String
-		self.add_body_params('MaterialHash', MaterialHash)
 	def get_VerificationToken(self): # String
 		return self.get_body_params().get('VerificationToken')
 
