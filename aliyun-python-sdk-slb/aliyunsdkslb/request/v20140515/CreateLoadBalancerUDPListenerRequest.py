@@ -96,6 +96,11 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 
 	def set_ProxyProtocolV2Enabled(self, ProxyProtocolV2Enabled):  # Boolean
 		self.add_query_param('ProxyProtocolV2Enabled', ProxyProtocolV2Enabled)
+	def get_HealthCheckSwitch(self): # String
+		return self.get_query_params().get('HealthCheckSwitch')
+
+	def set_HealthCheckSwitch(self, HealthCheckSwitch):  # String
+		self.add_query_param('HealthCheckSwitch', HealthCheckSwitch)
 	def get_HealthCheckConnectTimeout(self): # Integer
 		return self.get_query_params().get('HealthCheckConnectTimeout')
 

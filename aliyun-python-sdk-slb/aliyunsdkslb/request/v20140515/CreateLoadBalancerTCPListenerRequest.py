@@ -111,6 +111,11 @@ class CreateLoadBalancerTCPListenerRequest(RpcRequest):
 
 	def set_ConnectionDrain(self, ConnectionDrain):  # String
 		self.add_query_param('ConnectionDrain', ConnectionDrain)
+	def get_HealthCheckSwitch(self): # String
+		return self.get_query_params().get('HealthCheckSwitch')
+
+	def set_HealthCheckSwitch(self, HealthCheckSwitch):  # String
+		self.add_query_param('HealthCheckSwitch', HealthCheckSwitch)
 	def get_HealthCheckConnectTimeout(self): # Integer
 		return self.get_query_params().get('HealthCheckConnectTimeout')
 
