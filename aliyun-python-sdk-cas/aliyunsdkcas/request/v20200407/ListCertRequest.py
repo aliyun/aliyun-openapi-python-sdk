@@ -31,6 +31,21 @@ class ListCertRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_WarehouseId(self): # Long
+		return self.get_query_params().get('WarehouseId')
+
+	def set_WarehouseId(self, WarehouseId):  # Long
+		self.add_query_param('WarehouseId', WarehouseId)
+	def get_SourceType(self): # String
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
+	def get_KeyWord(self): # String
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)
 	def get_ShowSize(self): # Long
 		return self.get_query_params().get('ShowSize')
 
@@ -41,16 +56,6 @@ class ListCertRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Long
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_WarehouseId(self): # Long
-		return self.get_query_params().get('WarehouseId')
-
-	def set_WarehouseId(self, WarehouseId):  # Long
-		self.add_query_param('WarehouseId', WarehouseId)
-	def get_KeyWord(self): # String
-		return self.get_query_params().get('KeyWord')
-
-	def set_KeyWord(self, KeyWord):  # String
-		self.add_query_param('KeyWord', KeyWord)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

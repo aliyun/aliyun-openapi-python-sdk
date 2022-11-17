@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class ListUserCertificateOrderRequest(RpcRequest):
+class GetCertWarehouseQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListUserCertificateOrder')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetCertWarehouseQuota')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,3 @@ class ListUserCertificateOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ShowSize(self): # Long
-		return self.get_query_params().get('ShowSize')
-
-	def set_ShowSize(self, ShowSize):  # Long
-		self.add_query_param('ShowSize', ShowSize)
-	def get_CurrentPage(self): # Long
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Long
-		self.add_query_param('CurrentPage', CurrentPage)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)
