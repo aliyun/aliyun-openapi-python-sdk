@@ -86,8 +86,3 @@ class AddShardingNodeRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_ShardClass(self): # String
-		return self.get_query_params().get('ShardClass')
-
-	def set_ShardClass(self, ShardClass):  # String
-		self.add_query_param('ShardClass', ShardClass)

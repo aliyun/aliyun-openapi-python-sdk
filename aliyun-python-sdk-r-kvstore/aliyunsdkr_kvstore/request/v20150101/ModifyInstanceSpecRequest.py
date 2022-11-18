@@ -71,6 +71,11 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_ShardCount(self): # Integer
+		return self.get_query_params().get('ShardCount')
+
+	def set_ShardCount(self, ShardCount):  # Integer
+		self.add_query_param('ShardCount', ShardCount)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
@@ -101,6 +106,11 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_ReadOnlyCount(self): # Integer
+		return self.get_query_params().get('ReadOnlyCount')
+
+	def set_ReadOnlyCount(self, ReadOnlyCount):  # Integer
+		self.add_query_param('ReadOnlyCount', ReadOnlyCount)
 	def get_ForceUpgrade(self): # Boolean
 		return self.get_query_params().get('ForceUpgrade')
 

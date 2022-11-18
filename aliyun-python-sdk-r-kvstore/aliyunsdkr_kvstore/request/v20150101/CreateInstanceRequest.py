@@ -210,6 +210,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_ReadOnlyCount(self): # Integer
+		return self.get_query_params().get('ReadOnlyCount')
+
+	def set_ReadOnlyCount(self, ReadOnlyCount):  # Integer
+		self.add_query_param('ReadOnlyCount', ReadOnlyCount)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 

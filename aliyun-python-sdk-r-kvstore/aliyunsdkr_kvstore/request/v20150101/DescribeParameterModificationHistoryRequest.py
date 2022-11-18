@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class ModifyNodeSpecRequest(RpcRequest):
+class DescribeParameterModificationHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyNodeSpec','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeParameterModificationHistory','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,41 +36,26 @@ class ModifyNodeSpecRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CouponNo(self): # String
-		return self.get_query_params().get('CouponNo')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_CouponNo(self, CouponNo):  # String
-		self.add_query_param('CouponNo', CouponNo)
-	def get_InstanceClass(self): # String
-		return self.get_query_params().get('InstanceClass')
-
-	def set_InstanceClass(self, InstanceClass):  # String
-		self.add_query_param('InstanceClass', InstanceClass)
-	def get_SwitchTimeMode(self): # String
-		return self.get_query_params().get('SwitchTimeMode')
-
-	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
-		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ParameterName(self): # String
+		return self.get_query_params().get('ParameterName')
+
+	def set_ParameterName(self, ParameterName):  # String
+		self.add_query_param('ParameterName', ParameterName)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_query_param('NodeId', NodeId)
-	def get_BusinessInfo(self): # String
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self, BusinessInfo):  # String
-		self.add_query_param('BusinessInfo', BusinessInfo)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -81,6 +66,11 @@ class ModifyNodeSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -91,8 +81,3 @@ class ModifyNodeSpecRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)
