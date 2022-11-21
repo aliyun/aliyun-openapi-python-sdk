@@ -31,15 +31,6 @@ class CreateVpcPrefixListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PrefixListEntryss(self): # RepeatList
-		return self.get_query_params().get('PrefixListEntrys')
-
-	def set_PrefixListEntryss(self, PrefixListEntrys):  # RepeatList
-		for depth1 in range(len(PrefixListEntrys)):
-			if PrefixListEntrys[depth1].get('Cidr') is not None:
-				self.add_query_param('PrefixListEntrys.' + str(depth1 + 1) + '.Cidr', PrefixListEntrys[depth1].get('Cidr'))
-			if PrefixListEntrys[depth1].get('Description') is not None:
-				self.add_query_param('PrefixListEntrys.' + str(depth1 + 1) + '.Description', PrefixListEntrys[depth1].get('Description'))
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -60,6 +51,15 @@ class CreateVpcPrefixListRequest(RpcRequest):
 
 	def set_IpVersion(self, IpVersion):  # String
 		self.add_query_param('IpVersion', IpVersion)
+	def get_PrefixListEntriess(self): # RepeatList
+		return self.get_query_params().get('PrefixListEntries')
+
+	def set_PrefixListEntriess(self, PrefixListEntries):  # RepeatList
+		for depth1 in range(len(PrefixListEntries)):
+			if PrefixListEntries[depth1].get('Cidr') is not None:
+				self.add_query_param('PrefixListEntries.' + str(depth1 + 1) + '.Cidr', PrefixListEntries[depth1].get('Cidr'))
+			if PrefixListEntries[depth1].get('Description') is not None:
+				self.add_query_param('PrefixListEntries.' + str(depth1 + 1) + '.Description', PrefixListEntries[depth1].get('Description'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

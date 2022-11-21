@@ -66,6 +66,11 @@ class ModifyBgpGroupAttributeRequest(RpcRequest):
 
 	def set_IsFakeAsn(self, IsFakeAsn):  # Boolean
 		self.add_query_param('IsFakeAsn', IsFakeAsn)
+	def get_ClearAuthKey(self): # Boolean
+		return self.get_query_params().get('ClearAuthKey')
+
+	def set_ClearAuthKey(self, ClearAuthKey):  # Boolean
+		self.add_query_param('ClearAuthKey', ClearAuthKey)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

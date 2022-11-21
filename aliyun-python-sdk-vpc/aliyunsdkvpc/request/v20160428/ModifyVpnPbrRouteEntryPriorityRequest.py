@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
+class ModifyVpnPbrRouteEntryPriorityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateDhcpOptionsSetAttribute','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpnPbrRouteEntryPriority','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RouteSource(self): # String
+		return self.get_query_params().get('RouteSource')
+
+	def set_RouteSource(self, RouteSource):  # String
+		self.add_query_param('RouteSource', RouteSource)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -41,31 +46,11 @@ class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_LeaseTime(self): # String
-		return self.get_query_params().get('LeaseTime')
+	def get_NewPriority(self): # Integer
+		return self.get_query_params().get('NewPriority')
 
-	def set_LeaseTime(self, LeaseTime):  # String
-		self.add_query_param('LeaseTime', LeaseTime)
-	def get_DomainNameServers(self): # String
-		return self.get_query_params().get('DomainNameServers')
-
-	def set_DomainNameServers(self, DomainNameServers):  # String
-		self.add_query_param('DomainNameServers', DomainNameServers)
-	def get_DhcpOptionsSetDescription(self): # String
-		return self.get_query_params().get('DhcpOptionsSetDescription')
-
-	def set_DhcpOptionsSetDescription(self, DhcpOptionsSetDescription):  # String
-		self.add_query_param('DhcpOptionsSetDescription', DhcpOptionsSetDescription)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_DhcpOptionsSetId(self): # String
-		return self.get_query_params().get('DhcpOptionsSetId')
-
-	def set_DhcpOptionsSetId(self, DhcpOptionsSetId):  # String
-		self.add_query_param('DhcpOptionsSetId', DhcpOptionsSetId)
+	def set_NewPriority(self, NewPriority):  # Integer
+		self.add_query_param('NewPriority', NewPriority)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,23 +61,33 @@ class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def get_Weight(self): # Integer
+		return self.get_query_params().get('Weight')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
+	def set_Weight(self, Weight):  # Integer
+		self.add_query_param('Weight', Weight)
+	def get_VpnGatewayId(self): # String
+		return self.get_query_params().get('VpnGatewayId')
+
+	def set_VpnGatewayId(self, VpnGatewayId):  # String
+		self.add_query_param('VpnGatewayId', VpnGatewayId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DhcpOptionsSetName(self): # String
-		return self.get_query_params().get('DhcpOptionsSetName')
+	def get_Priority(self): # Integer
+		return self.get_query_params().get('Priority')
 
-	def set_DhcpOptionsSetName(self, DhcpOptionsSetName):  # String
-		self.add_query_param('DhcpOptionsSetName', DhcpOptionsSetName)
-	def get_Ipv6LeaseTime(self): # String
-		return self.get_query_params().get('Ipv6LeaseTime')
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_RouteDest(self): # String
+		return self.get_query_params().get('RouteDest')
 
-	def set_Ipv6LeaseTime(self, Ipv6LeaseTime):  # String
-		self.add_query_param('Ipv6LeaseTime', Ipv6LeaseTime)
+	def set_RouteDest(self, RouteDest):  # String
+		self.add_query_param('RouteDest', RouteDest)
+	def get_NextHop(self): # String
+		return self.get_query_params().get('NextHop')
+
+	def set_NextHop(self, NextHop):  # String
+		self.add_query_param('NextHop', NextHop)

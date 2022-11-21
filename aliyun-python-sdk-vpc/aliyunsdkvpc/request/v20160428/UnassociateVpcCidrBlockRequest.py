@@ -51,6 +51,11 @@ class UnassociateVpcCidrBlockRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_IPv6CidrBlock(self): # String
+		return self.get_query_params().get('IPv6CidrBlock')
+
+	def set_IPv6CidrBlock(self, IPv6CidrBlock):  # String
+		self.add_query_param('IPv6CidrBlock', IPv6CidrBlock)
 	def get_SecondaryCidrBlock(self): # String
 		return self.get_query_params().get('SecondaryCidrBlock')
 

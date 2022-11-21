@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeVirtualBorderRoutersRequest(RpcRequest):
+class DeleteRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVirtualBorderRouters','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteRouteEntries','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,38 +36,31 @@ class DescribeVirtualBorderRoutersRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_IncludeCrossAccountVbr(self): # Boolean
-		return self.get_query_params().get('IncludeCrossAccountVbr')
-
-	def set_IncludeCrossAccountVbr(self, IncludeCrossAccountVbr):  # Boolean
-		self.add_query_param('IncludeCrossAccountVbr', IncludeCrossAccountVbr)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Filters(self): # RepeatList
-		return self.get_query_params().get('Filter')
+	def get_RouteEntriess(self): # RepeatList
+		return self.get_query_params().get('RouteEntries')
 
-	def set_Filters(self, Filter):  # RepeatList
-		for depth1 in range(len(Filter)):
-			if Filter[depth1].get('Value') is not None:
-				for depth2 in range(len(Filter[depth1].get('Value'))):
-					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), Filter[depth1].get('Value')[depth2])
-			if Filter[depth1].get('Key') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))
+	def set_RouteEntriess(self, RouteEntries):  # RepeatList
+		for depth1 in range(len(RouteEntries)):
+			if RouteEntries[depth1].get('RouteTableId') is not None:
+				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.RouteTableId', RouteEntries[depth1].get('RouteTableId'))
+			if RouteEntries[depth1].get('RouteEntryId') is not None:
+				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.RouteEntryId', RouteEntries[depth1].get('RouteEntryId'))
+			if RouteEntries[depth1].get('DstCidrBlock') is not None:
+				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.DstCidrBlock', RouteEntries[depth1].get('DstCidrBlock'))
+			if RouteEntries[depth1].get('NextHop') is not None:
+				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.NextHop', RouteEntries[depth1].get('NextHop'))

@@ -31,6 +31,12 @@ class DescribeRouteEntryListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DestCidrBlockLists(self): # RepeatList
+		return self.get_query_params().get('DestCidrBlockList')
+
+	def set_DestCidrBlockLists(self, DestCidrBlockList):  # RepeatList
+		for depth1 in range(len(DestCidrBlockList)):
+			self.add_query_param('DestCidrBlockList.' + str(depth1 + 1), DestCidrBlockList[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -96,6 +102,11 @@ class DescribeRouteEntryListRequest(RpcRequest):
 
 	def set_MaxResult(self, MaxResult):  # Integer
 		self.add_query_param('MaxResult', MaxResult)
+	def get_ServiceType(self): # String
+		return self.get_query_params().get('ServiceType')
+
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
 	def get_RouteEntryId(self): # String
 		return self.get_query_params().get('RouteEntryId')
 

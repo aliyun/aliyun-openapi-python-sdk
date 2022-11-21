@@ -66,6 +66,12 @@ class CreateFlowLogRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TrafficPaths(self): # RepeatList
+		return self.get_query_params().get('TrafficPath')
+
+	def set_TrafficPaths(self, TrafficPath):  # RepeatList
+		for depth1 in range(len(TrafficPath)):
+			self.add_query_param('TrafficPath.' + str(depth1 + 1), TrafficPath[depth1])
 	def get_AggregationInterval(self): # Integer
 		return self.get_query_params().get('AggregationInterval')
 

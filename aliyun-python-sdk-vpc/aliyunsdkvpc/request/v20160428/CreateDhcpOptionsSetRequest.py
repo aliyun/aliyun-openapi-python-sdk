@@ -31,11 +31,6 @@ class CreateDhcpOptionsSetRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BootFileName(self): # String
-		return self.get_query_params().get('BootFileName')
-
-	def set_BootFileName(self, BootFileName):  # String
-		self.add_query_param('BootFileName', BootFileName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,11 +41,6 @@ class CreateDhcpOptionsSetRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_TFTPServerName(self): # String
-		return self.get_query_params().get('TFTPServerName')
-
-	def set_TFTPServerName(self, TFTPServerName):  # String
-		self.add_query_param('TFTPServerName', TFTPServerName)
 	def get_LeaseTime(self): # String
 		return self.get_query_params().get('LeaseTime')
 

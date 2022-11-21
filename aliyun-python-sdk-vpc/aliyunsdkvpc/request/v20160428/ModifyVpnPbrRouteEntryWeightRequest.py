@@ -76,6 +76,11 @@ class ModifyVpnPbrRouteEntryWeightRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Priority(self): # Integer
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
 	def get_RouteDest(self): # String
 		return self.get_query_params().get('RouteDest')
 
