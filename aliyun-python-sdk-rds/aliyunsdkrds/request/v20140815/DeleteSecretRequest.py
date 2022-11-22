@@ -51,6 +51,11 @@ class DeleteSecretRequest(RpcRequest):
 
 	def set_Engine(self, Engine):  # String
 		self.add_query_param('Engine', Engine)
+	def get_DbInstanceId(self): # String
+		return self.get_query_params().get('DbInstanceId')
+
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeDBInstancePerformanceRequest(RpcRequest):
+class CreateDBInstanceEndpointAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancePerformance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstanceEndpointAddress','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,38 @@ class DescribeDBInstancePerformanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ConnectionStringPrefix(self): # String
+		return self.get_query_params().get('ConnectionStringPrefix')
+
+	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
+		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
+	def get_IpType(self): # String
+		return self.get_query_params().get('IpType')
 
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
+	def set_IpType(self, IpType):  # String
+		self.add_query_param('IpType', IpType)
+	def get_DBInstanceEndpointId(self): # String
+		return self.get_query_params().get('DBInstanceEndpointId')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_DBInstanceEndpointId(self, DBInstanceEndpointId):  # String
+		self.add_query_param('DBInstanceEndpointId', DBInstanceEndpointId)
+	def get_Port(self): # String
+		return self.get_query_params().get('Port')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)

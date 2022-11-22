@@ -57,6 +57,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_SystemDBCharset(self, SystemDBCharset):  # String
 		self.add_query_param('SystemDBCharset', SystemDBCharset)
+	def get_ConnectionString(self): # String
+		return self.get_query_params().get('ConnectionString')
+
+	def set_ConnectionString(self, ConnectionString):  # String
+		self.add_query_param('ConnectionString', ConnectionString)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 

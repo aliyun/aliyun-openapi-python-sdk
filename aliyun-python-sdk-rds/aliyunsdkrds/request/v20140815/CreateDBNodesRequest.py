@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeDBInstancePerformanceRequest(RpcRequest):
+class CreateDBNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancePerformance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBNodes','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +36,38 @@ class DescribeDBInstancePerformanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
+	def get_SourceBiz(self): # String
+		return self.get_query_params().get('SourceBiz')
 
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
+	def set_SourceBiz(self, SourceBiz):  # String
+		self.add_query_param('SourceBiz', SourceBiz)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBNode(self): # String
+		return self.get_query_params().get('DBNode')
+
+	def set_DBNode(self, DBNode):  # String
+		self.add_query_param('DBNode', DBNode)

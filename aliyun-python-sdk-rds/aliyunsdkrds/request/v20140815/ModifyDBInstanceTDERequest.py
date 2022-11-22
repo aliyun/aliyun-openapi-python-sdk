@@ -66,6 +66,11 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_IsRotate(self): # Boolean
+		return self.get_query_params().get('IsRotate')
+
+	def set_IsRotate(self, IsRotate):  # Boolean
+		self.add_query_param('IsRotate', IsRotate)
 	def get_EncryptionKey(self): # String
 		return self.get_query_params().get('EncryptionKey')
 

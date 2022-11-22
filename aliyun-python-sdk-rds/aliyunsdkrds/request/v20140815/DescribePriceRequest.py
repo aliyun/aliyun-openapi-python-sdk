@@ -121,6 +121,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_PayType(self, PayType):  # String
 		self.add_query_param('PayType', PayType)
+	def get_DBNode(self): # String
+		return self.get_query_params().get('DBNode')
+
+	def set_DBNode(self, DBNode):  # String
+		self.add_query_param('DBNode', DBNode)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

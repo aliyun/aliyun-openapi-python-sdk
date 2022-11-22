@@ -91,6 +91,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupPeriod(self, PreferredBackupPeriod):  # String
 		self.add_query_param('PreferredBackupPeriod', PreferredBackupPeriod)
+	def get_EnableIncrementDataBackup(self): # Boolean
+		return self.get_query_params().get('EnableIncrementDataBackup')
+
+	def set_EnableIncrementDataBackup(self, EnableIncrementDataBackup):  # Boolean
+		self.add_query_param('EnableIncrementDataBackup', EnableIncrementDataBackup)
 	def get_ReleasedKeepPolicy(self): # String
 		return self.get_query_params().get('ReleasedKeepPolicy')
 

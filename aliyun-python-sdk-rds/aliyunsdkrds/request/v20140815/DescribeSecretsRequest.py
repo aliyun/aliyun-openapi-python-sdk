@@ -56,6 +56,11 @@ class DescribeSecretsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
+	def get_DbInstanceId(self): # String
+		return self.get_query_params().get('DbInstanceId')
+
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
