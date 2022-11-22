@@ -56,11 +56,6 @@ class ModifyCenBandwidthPackageSpecRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ServiceType(self): # String
-		return self.get_query_params().get('ServiceType')
-
-	def set_ServiceType(self, ServiceType):  # String
-		self.add_query_param('ServiceType', ServiceType)
 	def get_CenBandwidthPackageId(self): # String
 		return self.get_query_params().get('CenBandwidthPackageId')
 

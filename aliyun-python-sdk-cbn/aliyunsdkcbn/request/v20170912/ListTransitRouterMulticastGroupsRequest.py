@@ -52,12 +52,6 @@ class ListTransitRouterMulticastGroupsRequest(RpcRequest):
 
 	def set_TransitRouterMulticastDomainId(self, TransitRouterMulticastDomainId):  # String
 		self.add_query_param('TransitRouterMulticastDomainId', TransitRouterMulticastDomainId)
-	def get_ConnectPeerIdss(self): # RepeatList
-		return self.get_query_params().get('ConnectPeerIds')
-
-	def set_ConnectPeerIdss(self, ConnectPeerIds):  # RepeatList
-		for depth1 in range(len(ConnectPeerIds)):
-			self.add_query_param('ConnectPeerIds.' + str(depth1 + 1), ConnectPeerIds[depth1])
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
