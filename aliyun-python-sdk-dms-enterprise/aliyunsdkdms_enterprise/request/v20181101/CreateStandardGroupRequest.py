@@ -36,16 +36,16 @@ class CreateStandardGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_GroupName(self): # String
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self, GroupName):  # String
-		self.add_query_param('GroupName', GroupName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_GroupName(self): # String
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
 	def get_DbType(self): # String
 		return self.get_query_params().get('DbType')
 

@@ -56,16 +56,6 @@ class UpdateTaskFlowScheduleRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_ScheduleSwitch(self): # Boolean
-		return self.get_query_params().get('ScheduleSwitch')
-
-	def set_ScheduleSwitch(self, ScheduleSwitch):  # Boolean
-		self.add_query_param('ScheduleSwitch', ScheduleSwitch)
-	def get_CronEndDate(self): # String
-		return self.get_query_params().get('CronEndDate')
-
-	def set_CronEndDate(self, CronEndDate):  # String
-		self.add_query_param('CronEndDate', CronEndDate)
 	def get_TimeZoneId(self): # String
 		return self.get_query_params().get('TimeZoneId')
 
@@ -76,6 +66,16 @@ class UpdateTaskFlowScheduleRequest(RpcRequest):
 
 	def set_CronBeginDate(self, CronBeginDate):  # String
 		self.add_query_param('CronBeginDate', CronBeginDate)
+	def get_ScheduleSwitch(self): # Boolean
+		return self.get_query_params().get('ScheduleSwitch')
+
+	def set_ScheduleSwitch(self, ScheduleSwitch):  # Boolean
+		self.add_query_param('ScheduleSwitch', ScheduleSwitch)
+	def get_CronEndDate(self): # String
+		return self.get_query_params().get('CronEndDate')
+
+	def set_CronEndDate(self, CronEndDate):  # String
+		self.add_query_param('CronEndDate', CronEndDate)
 	def get_ScheduleParam(self): # String
 		return self.get_query_params().get('ScheduleParam')
 

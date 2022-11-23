@@ -31,16 +31,6 @@ class GetStructSyncJobAnalyzeResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
-	def get_CompareType(self): # String
-		return self.get_query_params().get('CompareType')
-
-	def set_CompareType(self, CompareType):  # String
-		self.add_query_param('CompareType', CompareType)
 	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
@@ -56,3 +46,13 @@ class GetStructSyncJobAnalyzeResultRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
+
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)
+	def get_CompareType(self): # String
+		return self.get_query_params().get('CompareType')
+
+	def set_CompareType(self, CompareType):  # String
+		self.add_query_param('CompareType', CompareType)

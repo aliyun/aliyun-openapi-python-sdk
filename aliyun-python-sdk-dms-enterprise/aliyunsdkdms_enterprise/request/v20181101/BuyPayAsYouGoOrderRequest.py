@@ -31,23 +31,23 @@ class BuyPayAsYouGoOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InsNum(self): # Integer
-		return self.get_query_params().get('InsNum')
-
-	def set_InsNum(self, InsNum):  # Integer
-		self.add_query_param('InsNum', InsNum)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_VersionType(self): # String
-		return self.get_query_params().get('VersionType')
-
-	def set_VersionType(self, VersionType):  # String
-		self.add_query_param('VersionType', VersionType)
 	def get_CommodityType(self): # String
 		return self.get_query_params().get('CommodityType')
 
 	def set_CommodityType(self, CommodityType):  # String
 		self.add_query_param('CommodityType', CommodityType)
+	def get_InsNum(self): # Integer
+		return self.get_query_params().get('InsNum')
+
+	def set_InsNum(self, InsNum):  # Integer
+		self.add_query_param('InsNum', InsNum)
+	def get_VersionType(self): # String
+		return self.get_query_params().get('VersionType')
+
+	def set_VersionType(self, VersionType):  # String
+		self.add_query_param('VersionType', VersionType)

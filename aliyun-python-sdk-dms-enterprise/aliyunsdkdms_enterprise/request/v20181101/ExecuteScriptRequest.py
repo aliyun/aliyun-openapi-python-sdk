@@ -31,16 +31,16 @@ class ExecuteScriptRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Script(self): # String
-		return self.get_query_params().get('Script')
-
-	def set_Script(self, Script):  # String
-		self.add_query_param('Script', Script)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_Script(self): # String
+		return self.get_query_params().get('Script')
+
+	def set_Script(self, Script):  # String
+		self.add_query_param('Script', Script)
 	def get_DbId(self): # Integer
 		return self.get_query_params().get('DbId')
 

@@ -31,6 +31,11 @@ class CloseOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Tid(self): # Long
+		return self.get_query_params().get('Tid')
+
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
 	def get_OrderId(self): # Long
 		return self.get_query_params().get('OrderId')
 
@@ -41,8 +46,3 @@ class CloseOrderRequest(RpcRequest):
 
 	def set_CloseReason(self, CloseReason):  # String
 		self.add_query_param('CloseReason', CloseReason)
-	def get_Tid(self): # Long
-		return self.get_query_params().get('Tid')
-
-	def set_Tid(self, Tid):  # Long
-		self.add_query_param('Tid', Tid)

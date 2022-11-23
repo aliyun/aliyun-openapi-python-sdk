@@ -41,13 +41,13 @@ class UpdateScenarioRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_ScenarioName(self): # String
-		return self.get_query_params().get('ScenarioName')
-
-	def set_ScenarioName(self, ScenarioName):  # String
-		self.add_query_param('ScenarioName', ScenarioName)
 	def get_ScenarioId(self): # String
 		return self.get_query_params().get('ScenarioId')
 
 	def set_ScenarioId(self, ScenarioId):  # String
 		self.add_query_param('ScenarioId', ScenarioId)
+	def get_ScenarioName(self): # String
+		return self.get_query_params().get('ScenarioName')
+
+	def set_ScenarioName(self, ScenarioName):  # String
+		self.add_query_param('ScenarioName', ScenarioName)

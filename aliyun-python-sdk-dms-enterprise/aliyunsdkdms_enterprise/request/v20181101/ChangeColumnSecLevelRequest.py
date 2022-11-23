@@ -31,6 +31,16 @@ class ChangeColumnSecLevelRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Tid(self): # Long
+		return self.get_query_params().get('Tid')
+
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_TableName(self): # String
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
 	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 
@@ -51,18 +61,8 @@ class ChangeColumnSecLevelRequest(RpcRequest):
 
 	def set_ColumnName(self, ColumnName):  # String
 		self.add_query_param('ColumnName', ColumnName)
-	def get_Tid(self): # Long
-		return self.get_query_params().get('Tid')
-
-	def set_Tid(self, Tid):  # Long
-		self.add_query_param('Tid', Tid)
 	def get_DbId(self): # Long
 		return self.get_query_params().get('DbId')
 
 	def set_DbId(self, DbId):  # Long
 		self.add_query_param('DbId', DbId)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)

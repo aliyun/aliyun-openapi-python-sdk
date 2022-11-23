@@ -36,11 +36,6 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_RoleNames(self, RoleNames):  # String
 		self.add_query_param('RoleNames', RoleNames)
-	def get_MaxResultCount(self): # Long
-		return self.get_query_params().get('MaxResultCount')
-
-	def set_MaxResultCount(self, MaxResultCount):  # Long
-		self.add_query_param('MaxResultCount', MaxResultCount)
 	def get_MaxExecuteCount(self): # Long
 		return self.get_query_params().get('MaxExecuteCount')
 
@@ -51,11 +46,6 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_UserNick(self, UserNick):  # String
 		self.add_query_param('UserNick', UserNick)
-	def get_Mobile(self): # String
-		return self.get_query_params().get('Mobile')
-
-	def set_Mobile(self, Mobile):  # String
-		self.add_query_param('Mobile', Mobile)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -66,3 +56,13 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_Uid(self, Uid):  # Long
 		self.add_query_param('Uid', Uid)
+	def get_MaxResultCount(self): # Long
+		return self.get_query_params().get('MaxResultCount')
+
+	def set_MaxResultCount(self, MaxResultCount):  # Long
+		self.add_query_param('MaxResultCount', MaxResultCount)
+	def get_Mobile(self): # String
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)

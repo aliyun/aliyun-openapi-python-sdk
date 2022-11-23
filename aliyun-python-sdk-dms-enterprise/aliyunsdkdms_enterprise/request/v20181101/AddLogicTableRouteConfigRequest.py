@@ -31,23 +31,23 @@ class AddLogicTableRouteConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RouteKey(self): # String
-		return self.get_query_params().get('RouteKey')
-
-	def set_RouteKey(self, RouteKey):  # String
-		self.add_query_param('RouteKey', RouteKey)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_RouteExpr(self): # String
-		return self.get_query_params().get('RouteExpr')
-
-	def set_RouteExpr(self, RouteExpr):  # String
-		self.add_query_param('RouteExpr', RouteExpr)
 	def get_TableId(self): # Long
 		return self.get_query_params().get('TableId')
 
 	def set_TableId(self, TableId):  # Long
 		self.add_query_param('TableId', TableId)
+	def get_RouteKey(self): # String
+		return self.get_query_params().get('RouteKey')
+
+	def set_RouteKey(self, RouteKey):  # String
+		self.add_query_param('RouteKey', RouteKey)
+	def get_RouteExpr(self): # String
+		return self.get_query_params().get('RouteExpr')
+
+	def set_RouteExpr(self, RouteExpr):  # String
+		self.add_query_param('RouteExpr', RouteExpr)

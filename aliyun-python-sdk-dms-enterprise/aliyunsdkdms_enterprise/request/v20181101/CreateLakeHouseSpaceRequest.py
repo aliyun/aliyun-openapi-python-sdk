@@ -31,11 +31,6 @@ class CreateLakeHouseSpaceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SpaceName(self): # String
-		return self.get_query_params().get('SpaceName')
-
-	def set_SpaceName(self, SpaceName):  # String
-		self.add_query_param('SpaceName', SpaceName)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -51,11 +46,6 @@ class CreateLakeHouseSpaceRequest(RpcRequest):
 
 	def set_Mode(self, Mode):  # String
 		self.add_query_param('Mode', Mode)
-	def get_DwDbType(self): # String
-		return self.get_query_params().get('DwDbType')
-
-	def set_DwDbType(self, DwDbType):  # String
-		self.add_query_param('DwDbType', DwDbType)
 	def get_ProdDbId(self): # String
 		return self.get_query_params().get('ProdDbId')
 
@@ -66,6 +56,16 @@ class CreateLakeHouseSpaceRequest(RpcRequest):
 
 	def set_DevDbId(self, DevDbId):  # String
 		self.add_query_param('DevDbId', DevDbId)
+	def get_SpaceName(self): # String
+		return self.get_query_params().get('SpaceName')
+
+	def set_SpaceName(self, SpaceName):  # String
+		self.add_query_param('SpaceName', SpaceName)
+	def get_DwDbType(self): # String
+		return self.get_query_params().get('DwDbType')
+
+	def set_DwDbType(self, DwDbType):  # String
+		self.add_query_param('DwDbType', DwDbType)
 	def get_SpaceConfig(self): # String
 		return self.get_query_params().get('SpaceConfig')
 

@@ -31,11 +31,6 @@ class ListProxySQLExecAuditLogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SQLType(self): # String
-		return self.get_query_params().get('SQLType')
-
-	def set_SQLType(self, SQLType):  # String
-		self.add_query_param('SQLType', SQLType)
 	def get_SearchName(self): # String
 		return self.get_query_params().get('SearchName')
 
@@ -46,11 +41,6 @@ class ListProxySQLExecAuditLogRequest(RpcRequest):
 
 	def set_OpUserName(self, OpUserName):  # String
 		self.add_query_param('OpUserName', OpUserName)
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
@@ -71,6 +61,16 @@ class ListProxySQLExecAuditLogRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_SQLType(self): # String
+		return self.get_query_params().get('SQLType')
+
+	def set_SQLType(self, SQLType):  # String
+		self.add_query_param('SQLType', SQLType)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
 	def get_ExecState(self): # String
 		return self.get_query_params().get('ExecState')
 

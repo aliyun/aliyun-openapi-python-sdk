@@ -31,13 +31,13 @@ class GetLhSpaceByNameRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SpaceName(self): # String
-		return self.get_query_params().get('SpaceName')
-
-	def set_SpaceName(self, SpaceName):  # String
-		self.add_query_param('SpaceName', SpaceName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_SpaceName(self): # String
+		return self.get_query_params().get('SpaceName')
+
+	def set_SpaceName(self, SpaceName):  # String
+		self.add_query_param('SpaceName', SpaceName)

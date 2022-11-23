@@ -37,13 +37,13 @@ class UpdateTaskFlowCooperatorsRequest(RpcRequest):
 
 	def set_DagId(self, DagId):  # Long
 		self.add_query_param('DagId', DagId)
-	def get_CooperatorIds(self): # Array
-		return self.get_query_params().get('CooperatorIds')
-
-	def set_CooperatorIds(self, CooperatorIds):  # Array
-		self.add_query_param("CooperatorIds", json.dumps(CooperatorIds))
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_CooperatorIds(self): # Array
+		return self.get_query_params().get('CooperatorIds')
+
+	def set_CooperatorIds(self, CooperatorIds):  # Array
+		self.add_query_param("CooperatorIds", json.dumps(CooperatorIds))

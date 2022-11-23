@@ -37,13 +37,13 @@ class CreateLogicDatabaseRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_DatabaseIds(self): # Array
-		return self.get_query_params().get('DatabaseIds')
-
-	def set_DatabaseIds(self, DatabaseIds):  # Array
-		self.add_query_param("DatabaseIds", json.dumps(DatabaseIds))
 	def get_Alias(self): # String
 		return self.get_query_params().get('Alias')
 
 	def set_Alias(self, Alias):  # String
 		self.add_query_param('Alias', Alias)
+	def get_DatabaseIds(self): # Array
+		return self.get_query_params().get('DatabaseIds')
+
+	def set_DatabaseIds(self, DatabaseIds):  # Array
+		self.add_query_param("DatabaseIds", json.dumps(DatabaseIds))

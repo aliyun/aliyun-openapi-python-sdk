@@ -31,13 +31,13 @@ class GetDataExportOrderDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_body_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # Long
-		self.add_body_params('OrderId', OrderId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_OrderId(self): # Long
+		return self.get_body_params().get('OrderId')
+
+	def set_OrderId(self, OrderId):  # Long
+		self.add_body_params('OrderId', OrderId)

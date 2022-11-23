@@ -31,11 +31,6 @@ class RestartDataCorrectSQLJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -51,3 +46,8 @@ class RestartDataCorrectSQLJobRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
+
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)

@@ -31,16 +31,6 @@ class ListSensitiveColumnsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SchemaName(self): # String
-		return self.get_query_params().get('SchemaName')
-
-	def set_SchemaName(self, SchemaName):  # String
-		self.add_query_param('SchemaName', SchemaName)
-	def get_ColumnName(self): # String
-		return self.get_query_params().get('ColumnName')
-
-	def set_ColumnName(self, ColumnName):  # String
-		self.add_query_param('ColumnName', ColumnName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -51,6 +41,26 @@ class ListSensitiveColumnsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_TableName(self): # String
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
+	def get_SchemaName(self): # String
+		return self.get_query_params().get('SchemaName')
+
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_ColumnName(self): # String
+		return self.get_query_params().get('ColumnName')
+
+	def set_ColumnName(self, ColumnName):  # String
+		self.add_query_param('ColumnName', ColumnName)
 	def get_SecurityLevel(self): # String
 		return self.get_query_params().get('SecurityLevel')
 
@@ -61,18 +71,8 @@ class ListSensitiveColumnsRequest(RpcRequest):
 
 	def set_DbId(self, DbId):  # Long
 		self.add_query_param('DbId', DbId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_Logic(self): # Boolean
 		return self.get_query_params().get('Logic')
 
 	def set_Logic(self, Logic):  # Boolean
 		self.add_query_param('Logic', Logic)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)

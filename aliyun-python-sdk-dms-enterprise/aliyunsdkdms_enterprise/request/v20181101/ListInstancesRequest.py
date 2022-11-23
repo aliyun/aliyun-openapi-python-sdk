@@ -41,26 +41,11 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_InstanceState(self): # String
-		return self.get_query_params().get('InstanceState')
-
-	def set_InstanceState(self, InstanceState):  # String
-		self.add_query_param('InstanceState', InstanceState)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_NetType(self): # String
-		return self.get_query_params().get('NetType')
-
-	def set_NetType(self, NetType):  # String
-		self.add_query_param('NetType', NetType)
-	def get_DbType(self): # String
-		return self.get_query_params().get('DbType')
-
-	def set_DbType(self, DbType):  # String
-		self.add_query_param('DbType', DbType)
 	def get_EnvType(self): # String
 		return self.get_query_params().get('EnvType')
 
@@ -76,3 +61,18 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_InstanceState(self): # String
+		return self.get_query_params().get('InstanceState')
+
+	def set_InstanceState(self, InstanceState):  # String
+		self.add_query_param('InstanceState', InstanceState)
+	def get_NetType(self): # String
+		return self.get_query_params().get('NetType')
+
+	def set_NetType(self, NetType):  # String
+		self.add_query_param('NetType', NetType)
+	def get_DbType(self): # String
+		return self.get_query_params().get('DbType')
+
+	def set_DbType(self, DbType):  # String
+		self.add_query_param('DbType', DbType)

@@ -31,11 +31,6 @@ class PublishAndDeployTaskFlowRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VersionComments(self): # String
-		return self.get_query_params().get('VersionComments')
-
-	def set_VersionComments(self, VersionComments):  # String
-		self.add_query_param('VersionComments', VersionComments)
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -46,3 +41,8 @@ class PublishAndDeployTaskFlowRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_VersionComments(self): # String
+		return self.get_query_params().get('VersionComments')
+
+	def set_VersionComments(self, VersionComments):  # String
+		self.add_query_param('VersionComments', VersionComments)

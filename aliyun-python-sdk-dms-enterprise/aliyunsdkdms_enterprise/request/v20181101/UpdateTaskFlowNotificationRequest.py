@@ -46,13 +46,13 @@ class UpdateTaskFlowNotificationRequest(RpcRequest):
 
 	def set_DagNotificationFail(self, DagNotificationFail):  # Boolean
 		self.add_query_param('DagNotificationFail', DagNotificationFail)
-	def get_DagNotificationSuccess(self): # Boolean
-		return self.get_query_params().get('DagNotificationSuccess')
-
-	def set_DagNotificationSuccess(self, DagNotificationSuccess):  # Boolean
-		self.add_query_param('DagNotificationSuccess', DagNotificationSuccess)
 	def get_DagNotificationSla(self): # Boolean
 		return self.get_query_params().get('DagNotificationSla')
 
 	def set_DagNotificationSla(self, DagNotificationSla):  # Boolean
 		self.add_query_param('DagNotificationSla', DagNotificationSla)
+	def get_DagNotificationSuccess(self): # Boolean
+		return self.get_query_params().get('DagNotificationSuccess')
+
+	def set_DagNotificationSuccess(self, DagNotificationSuccess):  # Boolean
+		self.add_query_param('DagNotificationSuccess', DagNotificationSuccess)

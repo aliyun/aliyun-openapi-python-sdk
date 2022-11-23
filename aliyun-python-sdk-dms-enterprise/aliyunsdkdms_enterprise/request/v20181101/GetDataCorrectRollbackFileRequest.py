@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class GetProxyRequest(RpcRequest):
+class GetDataCorrectRollbackFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetProxy','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetDataCorrectRollbackFile','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,8 @@ class GetProxyRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_ProxyId(self): # Long
-		return self.get_query_params().get('ProxyId')
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
 
-	def set_ProxyId(self, ProxyId):  # Long
-		self.add_query_param('ProxyId', ProxyId)
-	def get_InstanceId(self): # Long
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # Long
-		self.add_query_param('InstanceId', InstanceId)
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)

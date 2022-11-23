@@ -31,11 +31,6 @@ class CreateTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TimeVariables(self): # String
-		return self.get_query_params().get('TimeVariables')
-
-	def set_TimeVariables(self, TimeVariables):  # String
-		self.add_query_param('TimeVariables', TimeVariables)
 	def get_NodeType(self): # String
 		return self.get_query_params().get('NodeType')
 
@@ -51,11 +46,6 @@ class CreateTaskRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_NodeName(self): # String
-		return self.get_query_params().get('NodeName')
-
-	def set_NodeName(self, NodeName):  # String
-		self.add_query_param('NodeName', NodeName)
 	def get_NodeContent(self): # String
 		return self.get_query_params().get('NodeContent')
 
@@ -71,3 +61,13 @@ class CreateTaskRequest(RpcRequest):
 
 	def set_GraphParam(self, GraphParam):  # String
 		self.add_query_param('GraphParam', GraphParam)
+	def get_TimeVariables(self): # String
+		return self.get_query_params().get('TimeVariables')
+
+	def set_TimeVariables(self, TimeVariables):  # String
+		self.add_query_param('TimeVariables', TimeVariables)
+	def get_NodeName(self): # String
+		return self.get_query_params().get('NodeName')
+
+	def set_NodeName(self, NodeName):  # String
+		self.add_query_param('NodeName', NodeName)

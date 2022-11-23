@@ -42,13 +42,13 @@ class DeleteLhMembersRequest(RpcRequest):
 
 	def set_ObjectType(self, ObjectType):  # Integer
 		self.add_query_param('ObjectType', ObjectType)
-	def get_ObjectId(self): # Long
-		return self.get_query_params().get('ObjectId')
-
-	def set_ObjectId(self, ObjectId):  # Long
-		self.add_query_param('ObjectId', ObjectId)
 	def get_MemberIds(self): # Array
 		return self.get_query_params().get('MemberIds')
 
 	def set_MemberIds(self, MemberIds):  # Array
 		self.add_query_param("MemberIds", json.dumps(MemberIds))
+	def get_ObjectId(self): # Long
+		return self.get_query_params().get('ObjectId')
+
+	def set_ObjectId(self, ObjectId):  # Long
+		self.add_query_param('ObjectId', ObjectId)

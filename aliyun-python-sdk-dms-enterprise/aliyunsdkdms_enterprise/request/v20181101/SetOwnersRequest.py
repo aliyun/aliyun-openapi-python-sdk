@@ -31,11 +31,6 @@ class SetOwnersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
 	def get_OwnerIds(self): # String
 		return self.get_query_params().get('OwnerIds')
 
@@ -46,6 +41,11 @@ class SetOwnersRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
 	def get_OwnerType(self): # String
 		return self.get_query_params().get('OwnerType')
 

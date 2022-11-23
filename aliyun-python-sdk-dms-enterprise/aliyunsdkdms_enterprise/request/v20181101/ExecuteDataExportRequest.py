@@ -31,11 +31,6 @@ class ExecuteDataExportRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -46,3 +41,8 @@ class ExecuteDataExportRequest(RpcRequest):
 
 	def set_ActionDetail(self, ActionDetail):  # Json
 		self.add_query_param('ActionDetail', ActionDetail)
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
+
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)

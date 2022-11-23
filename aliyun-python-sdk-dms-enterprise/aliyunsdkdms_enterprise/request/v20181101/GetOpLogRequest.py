@@ -31,16 +31,6 @@ class GetOpLogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Module(self): # String
-		return self.get_query_params().get('Module')
-
-	def set_Module(self, Module):  # String
-		self.add_query_param('Module', Module)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -61,3 +51,13 @@ class GetOpLogRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Module(self): # String
+		return self.get_query_params().get('Module')
+
+	def set_Module(self, Module):  # String
+		self.add_query_param('Module', Module)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

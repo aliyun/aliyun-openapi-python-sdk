@@ -31,11 +31,6 @@ class ResumeTaskFlowInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DagVersion(self): # String
-		return self.get_query_params().get('DagVersion')
-
-	def set_DagVersion(self, DagVersion):  # String
-		self.add_query_param('DagVersion', DagVersion)
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -46,6 +41,11 @@ class ResumeTaskFlowInstanceRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_DagVersion(self): # String
+		return self.get_query_params().get('DagVersion')
+
+	def set_DagVersion(self, DagVersion):  # String
+		self.add_query_param('DagVersion', DagVersion)
 	def get_DagInstanceId(self): # Long
 		return self.get_query_params().get('DagInstanceId')
 

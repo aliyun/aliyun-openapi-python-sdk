@@ -31,6 +31,26 @@ class RevokeUserPermissionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Tid(self): # Long
+		return self.get_query_params().get('Tid')
+
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_TableId(self): # String
+		return self.get_query_params().get('TableId')
+
+	def set_TableId(self, TableId):  # String
+		self.add_query_param('TableId', TableId)
+	def get_TableName(self): # String
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
 	def get_PermTypes(self): # String
 		return self.get_query_params().get('PermTypes')
 
@@ -46,16 +66,6 @@ class RevokeUserPermissionRequest(RpcRequest):
 
 	def set_DsType(self, DsType):  # String
 		self.add_query_param('DsType', DsType)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_Tid(self): # Long
-		return self.get_query_params().get('Tid')
-
-	def set_Tid(self, Tid):  # Long
-		self.add_query_param('Tid', Tid)
 	def get_InstanceId(self): # Long
 		return self.get_query_params().get('InstanceId')
 
@@ -66,18 +76,8 @@ class RevokeUserPermissionRequest(RpcRequest):
 
 	def set_DbId(self, DbId):  # String
 		self.add_query_param('DbId', DbId)
-	def get_TableId(self): # String
-		return self.get_query_params().get('TableId')
-
-	def set_TableId(self, TableId):  # String
-		self.add_query_param('TableId', TableId)
 	def get_Logic(self): # Boolean
 		return self.get_query_params().get('Logic')
 
 	def set_Logic(self, Logic):  # Boolean
 		self.add_query_param('Logic', Logic)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)

@@ -46,13 +46,13 @@ class CreateProxyAccessRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_IndepPassword(self): # String
-		return self.get_query_params().get('IndepPassword')
-
-	def set_IndepPassword(self, IndepPassword):  # String
-		self.add_query_param('IndepPassword', IndepPassword)
 	def get_ProxyId(self): # Long
 		return self.get_query_params().get('ProxyId')
 
 	def set_ProxyId(self, ProxyId):  # Long
 		self.add_query_param('ProxyId', ProxyId)
+	def get_IndepPassword(self): # String
+		return self.get_query_params().get('IndepPassword')
+
+	def set_IndepPassword(self, IndepPassword):  # String
+		self.add_query_param('IndepPassword', IndepPassword)

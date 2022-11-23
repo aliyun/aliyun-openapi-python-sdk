@@ -41,11 +41,6 @@ class ListInstanceLoginAuditLogRequest(RpcRequest):
 
 	def set_OpUserName(self, OpUserName):  # String
 		self.add_query_param('OpUserName', OpUserName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -66,3 +61,8 @@ class ListInstanceLoginAuditLogRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

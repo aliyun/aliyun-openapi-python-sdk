@@ -51,13 +51,13 @@ class ListUsersRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_UserState(self): # String
-		return self.get_query_params().get('UserState')
-
-	def set_UserState(self, UserState):  # String
-		self.add_query_param('UserState', UserState)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_UserState(self): # String
+		return self.get_query_params().get('UserState')
+
+	def set_UserState(self, UserState):  # String
+		self.add_query_param('UserState', UserState)

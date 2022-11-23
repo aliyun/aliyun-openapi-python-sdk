@@ -32,11 +32,6 @@ class UpdateTaskFlowRelationsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Edges(self): # Array
-		return self.get_query_params().get('Edges')
-
-	def set_Edges(self, Edges):  # Array
-		self.add_query_param("Edges", json.dumps(Edges))
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -47,3 +42,8 @@ class UpdateTaskFlowRelationsRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_Edges(self): # Array
+		return self.get_query_params().get('Edges')
+
+	def set_Edges(self, Edges):  # Array
+		self.add_query_param("Edges", json.dumps(Edges))

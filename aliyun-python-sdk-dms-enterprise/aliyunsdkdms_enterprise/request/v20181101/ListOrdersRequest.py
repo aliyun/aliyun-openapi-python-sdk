@@ -36,21 +36,11 @@ class ListOrdersRequest(RpcRequest):
 
 	def set_OrderStatus(self, OrderStatus):  # String
 		self.add_query_param('OrderStatus', OrderStatus)
-	def get_SearchContent(self): # String
-		return self.get_query_params().get('SearchContent')
-
-	def set_SearchContent(self, SearchContent):  # String
-		self.add_query_param('SearchContent', SearchContent)
 	def get_SearchDateType(self): # String
 		return self.get_query_params().get('SearchDateType')
 
 	def set_SearchDateType(self, SearchDateType):  # String
 		self.add_query_param('SearchDateType', SearchDateType)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -81,3 +71,13 @@ class ListOrdersRequest(RpcRequest):
 
 	def set_OrderResultType(self, OrderResultType):  # String
 		self.add_query_param('OrderResultType', OrderResultType)
+	def get_SearchContent(self): # String
+		return self.get_query_params().get('SearchContent')
+
+	def set_SearchContent(self, SearchContent):  # String
+		self.add_query_param('SearchContent', SearchContent)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

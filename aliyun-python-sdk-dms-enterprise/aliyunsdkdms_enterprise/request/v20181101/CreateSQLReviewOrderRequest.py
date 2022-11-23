@@ -42,13 +42,13 @@ class CreateSQLReviewOrderRequest(RpcRequest):
 
 	def set_Param(self, Param):  # Struct
 		self.add_query_param("Param", json.dumps(Param))
-	def get_Comment(self): # String
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self, Comment):  # String
-		self.add_query_param('Comment', Comment)
 	def get_RelatedUserList(self): # Array
 		return self.get_query_params().get('RelatedUserList')
 
 	def set_RelatedUserList(self, RelatedUserList):  # Array
 		self.add_query_param("RelatedUserList", json.dumps(RelatedUserList))
+	def get_Comment(self): # String
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)

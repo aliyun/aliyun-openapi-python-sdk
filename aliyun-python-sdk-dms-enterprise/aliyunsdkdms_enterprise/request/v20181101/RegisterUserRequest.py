@@ -41,11 +41,6 @@ class RegisterUserRequest(RpcRequest):
 
 	def set_UserNick(self, UserNick):  # String
 		self.add_query_param('UserNick', UserNick)
-	def get_Mobile(self): # String
-		return self.get_query_params().get('Mobile')
-
-	def set_Mobile(self, Mobile):  # String
-		self.add_query_param('Mobile', Mobile)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -56,3 +51,8 @@ class RegisterUserRequest(RpcRequest):
 
 	def set_Uid(self, Uid):  # String
 		self.add_query_param('Uid', Uid)
+	def get_Mobile(self): # String
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)

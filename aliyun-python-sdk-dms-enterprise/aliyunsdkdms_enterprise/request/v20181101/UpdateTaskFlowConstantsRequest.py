@@ -32,11 +32,6 @@ class UpdateTaskFlowConstantsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DagConstants(self): # Array
-		return self.get_query_params().get('DagConstants')
-
-	def set_DagConstants(self, DagConstants):  # Array
-		self.add_query_param("DagConstants", json.dumps(DagConstants))
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -47,3 +42,8 @@ class UpdateTaskFlowConstantsRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_DagConstants(self): # Array
+		return self.get_query_params().get('DagConstants')
+
+	def set_DagConstants(self, DagConstants):  # Array
+		self.add_query_param("DagConstants", json.dumps(DagConstants))

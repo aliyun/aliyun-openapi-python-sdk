@@ -32,16 +32,16 @@ class CreateUploadOSSFileJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FileSource(self): # String
-		return self.get_query_params().get('FileSource')
-
-	def set_FileSource(self, FileSource):  # String
-		self.add_query_param('FileSource', FileSource)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_FileSource(self): # String
+		return self.get_query_params().get('FileSource')
+
+	def set_FileSource(self, FileSource):  # String
+		self.add_query_param('FileSource', FileSource)
 	def get_FileName(self): # String
 		return self.get_query_params().get('FileName')
 

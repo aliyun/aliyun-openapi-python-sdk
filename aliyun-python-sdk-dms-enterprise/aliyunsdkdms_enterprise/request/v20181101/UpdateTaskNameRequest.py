@@ -36,13 +36,13 @@ class UpdateTaskNameRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_NodeName(self): # String
-		return self.get_query_params().get('NodeName')
-
-	def set_NodeName(self, NodeName):  # String
-		self.add_query_param('NodeName', NodeName)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_query_param('NodeId', NodeId)
+	def get_NodeName(self): # String
+		return self.get_query_params().get('NodeName')
+
+	def set_NodeName(self, NodeName):  # String
+		self.add_query_param('NodeName', NodeName)

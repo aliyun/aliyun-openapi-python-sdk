@@ -41,16 +41,6 @@ class CreateOrderRequest(RpcRequest):
 
 	def set_PluginType(self, PluginType):  # String
 		self.add_query_param('PluginType', PluginType)
-	def get_AttachmentKey(self): # String
-		return self.get_query_params().get('AttachmentKey')
-
-	def set_AttachmentKey(self, AttachmentKey):  # String
-		self.add_query_param('AttachmentKey', AttachmentKey)
-	def get_Comment(self): # String
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self, Comment):  # String
-		self.add_query_param('Comment', Comment)
 	def get_PluginParam(self): # Json
 		return self.get_body_params().get('PluginParam')
 
@@ -61,3 +51,13 @@ class CreateOrderRequest(RpcRequest):
 
 	def set_RelatedUserList(self, RelatedUserList):  # String
 		self.add_query_param('RelatedUserList', RelatedUserList)
+	def get_AttachmentKey(self): # String
+		return self.get_query_params().get('AttachmentKey')
+
+	def set_AttachmentKey(self, AttachmentKey):  # String
+		self.add_query_param('AttachmentKey', AttachmentKey)
+	def get_Comment(self): # String
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)

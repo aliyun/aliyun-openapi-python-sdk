@@ -32,16 +32,6 @@ class BackFillRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BackFillDateBegin(self): # String
-		return self.get_query_params().get('BackFillDateBegin')
-
-	def set_BackFillDateBegin(self, BackFillDateBegin):  # String
-		self.add_query_param('BackFillDateBegin', BackFillDateBegin)
-	def get_BackFillDate(self): # String
-		return self.get_query_params().get('BackFillDate')
-
-	def set_BackFillDate(self, BackFillDate):  # String
-		self.add_query_param('BackFillDate', BackFillDate)
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -57,21 +47,11 @@ class BackFillRequest(RpcRequest):
 
 	def set_IsTriggerSubTree(self, IsTriggerSubTree):  # Boolean
 		self.add_query_param('IsTriggerSubTree', IsTriggerSubTree)
-	def get_Asc(self): # Boolean
-		return self.get_query_params().get('Asc')
-
-	def set_Asc(self, Asc):  # Boolean
-		self.add_query_param('Asc', Asc)
 	def get_BackFillDateEnd(self): # String
 		return self.get_query_params().get('BackFillDateEnd')
 
 	def set_BackFillDateEnd(self, BackFillDateEnd):  # String
 		self.add_query_param('BackFillDateEnd', BackFillDateEnd)
-	def get_Interval(self): # Integer
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # Integer
-		self.add_query_param('Interval', Interval)
 	def get_HistoryDagId(self): # Long
 		return self.get_query_params().get('HistoryDagId')
 
@@ -82,3 +62,23 @@ class BackFillRequest(RpcRequest):
 
 	def set_StartNodeIds(self, StartNodeIds):  # Array
 		self.add_query_param("StartNodeIds", json.dumps(StartNodeIds))
+	def get_BackFillDateBegin(self): # String
+		return self.get_query_params().get('BackFillDateBegin')
+
+	def set_BackFillDateBegin(self, BackFillDateBegin):  # String
+		self.add_query_param('BackFillDateBegin', BackFillDateBegin)
+	def get_BackFillDate(self): # String
+		return self.get_query_params().get('BackFillDate')
+
+	def set_BackFillDate(self, BackFillDate):  # String
+		self.add_query_param('BackFillDate', BackFillDate)
+	def get_Asc(self): # Boolean
+		return self.get_query_params().get('Asc')
+
+	def set_Asc(self, Asc):  # Boolean
+		self.add_query_param('Asc', Asc)
+	def get_Interval(self): # Integer
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # Integer
+		self.add_query_param('Interval', Interval)

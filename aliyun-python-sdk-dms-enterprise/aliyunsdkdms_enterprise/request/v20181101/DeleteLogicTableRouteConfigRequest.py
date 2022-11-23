@@ -31,11 +31,6 @@ class DeleteLogicTableRouteConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RouteKey(self): # String
-		return self.get_query_params().get('RouteKey')
-
-	def set_RouteKey(self, RouteKey):  # String
-		self.add_query_param('RouteKey', RouteKey)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -46,3 +41,8 @@ class DeleteLogicTableRouteConfigRequest(RpcRequest):
 
 	def set_TableId(self, TableId):  # Long
 		self.add_query_param('TableId', TableId)
+	def get_RouteKey(self): # String
+		return self.get_query_params().get('RouteKey')
+
+	def set_RouteKey(self, RouteKey):  # String
+		self.add_query_param('RouteKey', RouteKey)

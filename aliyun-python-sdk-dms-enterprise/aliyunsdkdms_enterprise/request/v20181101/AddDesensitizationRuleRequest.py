@@ -31,11 +31,6 @@ class AddDesensitizationRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RuleDescription(self): # String
-		return self.get_query_params().get('RuleDescription')
-
-	def set_RuleDescription(self, RuleDescription):  # String
-		self.add_query_param('RuleDescription', RuleDescription)
 	def get_FunctionParams(self): # Array
 		return self.get_body_params().get('FunctionParams')
 
@@ -43,23 +38,28 @@ class AddDesensitizationRuleRequest(RpcRequest):
 		for index1, value1 in enumerate(FunctionParams):
 			for key2, value2 in value1.items():
 				self.add_body_params('FunctionParams.' + str(index1 + 1) , value2)
-	def get_RuleType(self): # String
-		return self.get_query_params().get('RuleType')
-
-	def set_RuleType(self, RuleType):  # String
-		self.add_query_param('RuleType', RuleType)
 	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
 	def set_RuleName(self, RuleName):  # String
 		self.add_query_param('RuleName', RuleName)
-	def get_FunctionType(self): # String
-		return self.get_query_params().get('FunctionType')
-
-	def set_FunctionType(self, FunctionType):  # String
-		self.add_query_param('FunctionType', FunctionType)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_RuleDescription(self): # String
+		return self.get_query_params().get('RuleDescription')
+
+	def set_RuleDescription(self, RuleDescription):  # String
+		self.add_query_param('RuleDescription', RuleDescription)
+	def get_RuleType(self): # String
+		return self.get_query_params().get('RuleType')
+
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)
+	def get_FunctionType(self): # String
+		return self.get_query_params().get('FunctionType')
+
+	def set_FunctionType(self, FunctionType):  # String
+		self.add_query_param('FunctionType', FunctionType)

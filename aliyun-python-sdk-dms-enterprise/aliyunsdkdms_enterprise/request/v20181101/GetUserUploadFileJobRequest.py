@@ -31,13 +31,13 @@ class GetUserUploadFileJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobKey(self): # String
-		return self.get_query_params().get('JobKey')
-
-	def set_JobKey(self, JobKey):  # String
-		self.add_query_param('JobKey', JobKey)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_JobKey(self): # String
+		return self.get_query_params().get('JobKey')
+
+	def set_JobKey(self, JobKey):  # String
+		self.add_query_param('JobKey', JobKey)

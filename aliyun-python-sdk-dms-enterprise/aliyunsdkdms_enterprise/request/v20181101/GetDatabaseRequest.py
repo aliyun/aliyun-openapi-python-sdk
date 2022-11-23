@@ -31,11 +31,6 @@ class GetDatabaseRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SchemaName(self): # String
-		return self.get_query_params().get('SchemaName')
-
-	def set_SchemaName(self, SchemaName):  # String
-		self.add_query_param('SchemaName', SchemaName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
@@ -46,13 +41,18 @@ class GetDatabaseRequest(RpcRequest):
 
 	def set_Sid(self, Sid):  # String
 		self.add_query_param('Sid', Sid)
-	def get_Port(self): # Integer
-		return self.get_query_params().get('Port')
-
-	def set_Port(self, Port):  # Integer
-		self.add_query_param('Port', Port)
 	def get_Host(self): # String
 		return self.get_query_params().get('Host')
 
 	def set_Host(self, Host):  # String
 		self.add_query_param('Host', Host)
+	def get_SchemaName(self): # String
+		return self.get_query_params().get('SchemaName')
+
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)

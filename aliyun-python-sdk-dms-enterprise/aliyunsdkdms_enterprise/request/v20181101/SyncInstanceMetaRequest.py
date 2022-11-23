@@ -31,16 +31,16 @@ class SyncInstanceMetaRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IgnoreTable(self): # Boolean
-		return self.get_query_params().get('IgnoreTable')
-
-	def set_IgnoreTable(self, IgnoreTable):  # Boolean
-		self.add_query_param('IgnoreTable', IgnoreTable)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_IgnoreTable(self): # Boolean
+		return self.get_query_params().get('IgnoreTable')
+
+	def set_IgnoreTable(self, IgnoreTable):  # Boolean
+		self.add_query_param('IgnoreTable', IgnoreTable)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

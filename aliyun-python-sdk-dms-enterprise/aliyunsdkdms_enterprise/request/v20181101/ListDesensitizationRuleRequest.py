@@ -31,11 +31,6 @@ class ListDesensitizationRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RuleType(self): # String
-		return self.get_query_params().get('RuleType')
-
-	def set_RuleType(self, RuleType):  # String
-		self.add_query_param('RuleType', RuleType)
 	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
@@ -51,16 +46,21 @@ class ListDesensitizationRuleRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_FuncType(self): # String
-		return self.get_query_params().get('FuncType')
-
-	def set_FuncType(self, FuncType):  # String
-		self.add_query_param('FuncType', FuncType)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_RuleType(self): # String
+		return self.get_query_params().get('RuleType')
+
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)
+	def get_FuncType(self): # String
+		return self.get_query_params().get('FuncType')
+
+	def set_FuncType(self, FuncType):  # String
+		self.add_query_param('FuncType', FuncType)
 	def get_RuleId(self): # Integer
 		return self.get_query_params().get('RuleId')
 

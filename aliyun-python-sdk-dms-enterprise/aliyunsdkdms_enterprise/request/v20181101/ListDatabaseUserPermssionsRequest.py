@@ -41,6 +41,11 @@ class ListDatabaseUserPermssionsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_PermType(self): # String
 		return self.get_query_params().get('PermType')
 
@@ -51,11 +56,6 @@ class ListDatabaseUserPermssionsRequest(RpcRequest):
 
 	def set_DbId(self, DbId):  # String
 		self.add_query_param('DbId', DbId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_Logic(self): # Boolean
 		return self.get_query_params().get('Logic')
 

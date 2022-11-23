@@ -31,11 +31,6 @@ class UpdateTaskFlowTimeVariablesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TimeVariables(self): # String
-		return self.get_query_params().get('TimeVariables')
-
-	def set_TimeVariables(self, TimeVariables):  # String
-		self.add_query_param('TimeVariables', TimeVariables)
 	def get_DagId(self): # Long
 		return self.get_query_params().get('DagId')
 
@@ -46,3 +41,8 @@ class UpdateTaskFlowTimeVariablesRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_TimeVariables(self): # String
+		return self.get_query_params().get('TimeVariables')
+
+	def set_TimeVariables(self, TimeVariables):  # String
+		self.add_query_param('TimeVariables', TimeVariables)
