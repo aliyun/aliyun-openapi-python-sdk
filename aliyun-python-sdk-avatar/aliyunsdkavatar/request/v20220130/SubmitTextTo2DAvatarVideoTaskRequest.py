@@ -36,6 +36,16 @@ class SubmitTextTo2DAvatarVideoTaskRequest(RpcRequest):
 
 	def set_VideoInfo(self, VideoInfo):  # Struct
 		self.add_query_param("VideoInfo", json.dumps(VideoInfo))
+	def get_AudioInfo(self): # Struct
+		return self.get_query_params().get('AudioInfo')
+
+	def set_AudioInfo(self, AudioInfo):  # Struct
+		self.add_query_param("AudioInfo", json.dumps(AudioInfo))
+	def get_AvatarInfo(self): # Struct
+		return self.get_query_params().get('AvatarInfo')
+
+	def set_AvatarInfo(self, AvatarInfo):  # Struct
+		self.add_query_param("AvatarInfo", json.dumps(AvatarInfo))
 	def get_TenantId(self): # Long
 		return self.get_query_params().get('TenantId')
 
