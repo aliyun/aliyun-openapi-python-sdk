@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ListTransitRouterMulticastDomainsRequest(RpcRequest):
+class ListTransitRouterCidrAllocationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterMulticastDomains','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterCidrAllocation','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,30 +41,31 @@ class ListTransitRouterMulticastDomainsRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_CenId(self): # String
-		return self.get_query_params().get('CenId')
+	def get_TransitRouterCidrId(self): # String
+		return self.get_query_params().get('TransitRouterCidrId')
 
-	def set_CenId(self, CenId):  # String
-		self.add_query_param('CenId', CenId)
-	def get_TransitRouterMulticastDomainId(self): # String
-		return self.get_query_params().get('TransitRouterMulticastDomainId')
-
-	def set_TransitRouterMulticastDomainId(self, TransitRouterMulticastDomainId):  # String
-		self.add_query_param('TransitRouterMulticastDomainId', TransitRouterMulticastDomainId)
+	def set_TransitRouterCidrId(self, TransitRouterCidrId):  # String
+		self.add_query_param('TransitRouterCidrId', TransitRouterCidrId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def get_Cidr(self): # String
+		return self.get_query_params().get('Cidr')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_Cidr(self, Cidr):  # String
+		self.add_query_param('Cidr', Cidr)
+	def get_DedicatedOwnerId(self): # String
+		return self.get_query_params().get('DedicatedOwnerId')
+
+	def set_DedicatedOwnerId(self, DedicatedOwnerId):  # String
+		self.add_query_param('DedicatedOwnerId', DedicatedOwnerId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -85,8 +86,23 @@ class ListTransitRouterMulticastDomainsRequest(RpcRequest):
 
 	def set_TransitRouterId(self, TransitRouterId):  # String
 		self.add_query_param('TransitRouterId', TransitRouterId)
-	def get_MaxResults(self): # Long
+	def get_AttachmentName(self): # String
+		return self.get_query_params().get('AttachmentName')
+
+	def set_AttachmentName(self, AttachmentName):  # String
+		self.add_query_param('AttachmentName', AttachmentName)
+	def get_CidrBlock(self): # String
+		return self.get_query_params().get('CidrBlock')
+
+	def set_CidrBlock(self, CidrBlock):  # String
+		self.add_query_param('CidrBlock', CidrBlock)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # Long
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_AttachmentId(self): # String
+		return self.get_query_params().get('AttachmentId')
+
+	def set_AttachmentId(self, AttachmentId):  # String
+		self.add_query_param('AttachmentId', AttachmentId)
