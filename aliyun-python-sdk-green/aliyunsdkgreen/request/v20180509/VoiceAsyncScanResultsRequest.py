@@ -23,17 +23,17 @@ from aliyunsdkgreen.endpoint import endpoint_data
 class VoiceAsyncScanResultsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'VoiceAsyncScanResults','green')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'VoiceAsyncScanResults')
 		self.set_uri_pattern('/green/voice/results')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientInfo(self):
+	def get_ClientInfo(self): # String
 		return self.get_query_params().get('ClientInfo')
 
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)
+	def set_ClientInfo(self, ClientInfo):  # String
+		self.add_query_param('ClientInfo', ClientInfo)

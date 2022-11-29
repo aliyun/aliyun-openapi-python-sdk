@@ -23,17 +23,17 @@ from aliyunsdkgreen.endpoint import endpoint_data
 class AddPersonRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddPerson','green')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddPerson')
 		self.set_uri_pattern('/green/sface/person/add')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientInfo(self):
+	def get_ClientInfo(self): # String
 		return self.get_query_params().get('ClientInfo')
 
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)
+	def set_ClientInfo(self, ClientInfo):  # String
+		self.add_query_param('ClientInfo', ClientInfo)
