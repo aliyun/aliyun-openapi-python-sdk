@@ -36,6 +36,11 @@ class EnableInstanceAccessControlRequest(RpcRequest):
 
 	def set_AclId(self, AclId):  # String
 		self.add_query_param('AclId', AclId)
+	def get_AddressIPVersion(self): # String
+		return self.get_query_params().get('AddressIPVersion')
+
+	def set_AddressIPVersion(self, AddressIPVersion):  # String
+		self.add_query_param('AddressIPVersion', AddressIPVersion)
 	def get_AclType(self): # String
 		return self.get_query_params().get('AclType')
 

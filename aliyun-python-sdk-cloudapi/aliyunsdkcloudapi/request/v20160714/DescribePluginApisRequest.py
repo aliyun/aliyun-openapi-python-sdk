@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class DescribeAccessControlListsRequest(RpcRequest):
+class DescribePluginApisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAccessControlLists','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribePluginApis','apigateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,41 @@ class DescribeAccessControlListsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclName(self): # String
-		return self.get_query_params().get('AclName')
+	def get_Method(self): # String
+		return self.get_query_params().get('Method')
 
-	def set_AclName(self, AclName):  # String
-		self.add_query_param('AclName', AclName)
-	def get_AddressIPVersion(self): # String
-		return self.get_query_params().get('AddressIPVersion')
+	def set_Method(self, Method):  # String
+		self.add_query_param('Method', Method)
+	def get_PluginId(self): # String
+		return self.get_query_params().get('PluginId')
 
-	def set_AddressIPVersion(self, AddressIPVersion):  # String
-		self.add_query_param('AddressIPVersion', AddressIPVersion)
+	def set_PluginId(self, PluginId):  # String
+		self.add_query_param('PluginId', PluginId)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_Path(self): # String
+		return self.get_query_params().get('Path')
+
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_ApiName(self): # String
+		return self.get_query_params().get('ApiName')
+
+	def set_ApiName(self, ApiName):  # String
+		self.add_query_param('ApiName', ApiName)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -56,3 +76,8 @@ class DescribeAccessControlListsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_ApiId(self): # String
+		return self.get_query_params().get('ApiId')
+
+	def set_ApiId(self, ApiId):  # String
+		self.add_query_param('ApiId', ApiId)

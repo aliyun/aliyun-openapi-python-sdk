@@ -36,6 +36,11 @@ class CreateAccessControlListRequest(RpcRequest):
 
 	def set_AclName(self, AclName):  # String
 		self.add_query_param('AclName', AclName)
+	def get_AddressIPVersion(self): # String
+		return self.get_query_params().get('AddressIPVersion')
+
+	def set_AddressIPVersion(self, AddressIPVersion):  # String
+		self.add_query_param('AddressIPVersion', AddressIPVersion)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
