@@ -24,7 +24,7 @@ class GetDiscoveredResourceCountsGroupByResourceTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetDiscoveredResourceCountsGroupByResourceType')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

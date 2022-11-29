@@ -52,6 +52,11 @@ class CreateCompliancePackRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_DefaultEnable(self): # Boolean
+		return self.get_body_params().get('DefaultEnable')
+
+	def set_DefaultEnable(self, DefaultEnable):  # Boolean
+		self.add_body_params('DefaultEnable', DefaultEnable)
 	def get_ConfigRules(self): # Array
 		return self.get_body_params().get('ConfigRules')
 
