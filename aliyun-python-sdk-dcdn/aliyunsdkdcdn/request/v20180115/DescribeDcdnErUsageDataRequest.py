@@ -31,33 +31,28 @@ class DescribeDcdnErUsageDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Spec(self): # String
-		return self.get_query_params().get('Spec')
-
-	def set_Spec(self, Spec):  # String
-		self.add_query_param('Spec', Spec)
-	def get_RoutineID(self): # String
-		return self.get_query_params().get('RoutineID')
-
-	def set_RoutineID(self, RoutineID):  # String
-		self.add_query_param('RoutineID', RoutineID)
-	def get_SplitBy(self): # String
-		return self.get_query_params().get('SplitBy')
-
-	def set_SplitBy(self, SplitBy):  # String
-		self.add_query_param('SplitBy', SplitBy)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_RoutineID(self): # String
+		return self.get_query_params().get('RoutineID')
+
+	def set_RoutineID(self, RoutineID):  # String
+		self.add_query_param('RoutineID', RoutineID)
+	def get_Spec(self): # String
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
+	def get_SplitBy(self): # String
+		return self.get_query_params().get('SplitBy')
+
+	def set_SplitBy(self, SplitBy):  # String
+		self.add_query_param('SplitBy', SplitBy)
