@@ -41,6 +41,11 @@ class UploadUserCertificateRequest(RpcRequest):
 
 	def set_Cert(self, Cert):  # String
 		self.add_query_param('Cert', Cert)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Key(self): # String
 		return self.get_query_params().get('Key')
 

@@ -31,6 +31,16 @@ class ListUserCertificateOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
 	def get_ShowSize(self): # Long
 		return self.get_query_params().get('ShowSize')
 
@@ -41,11 +51,6 @@ class ListUserCertificateOrderRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Long
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

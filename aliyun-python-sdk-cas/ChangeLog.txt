@@ -1,3 +1,6 @@
+2022-11-30 Version: 1.0.13
+- Support resourceGroup.
+
 2022-11-24 Version: 1.0.12
 - Support deleteCertificate.
 
