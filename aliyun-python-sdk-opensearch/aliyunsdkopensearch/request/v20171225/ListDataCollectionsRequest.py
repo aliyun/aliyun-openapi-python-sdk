@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListDataCollectionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListDataCollections','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListDataCollections')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/data-collections')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_pageSize(self):
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_appGroupIdentity(self):
+	def set_pageSize(self, pageSize):  # Integer
+		self.add_query_param('pageSize', pageSize)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
-
-	def get_pageNumber(self):
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)
+	def get_pageNumber(self): # Integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self,pageNumber):
-		self.add_query_param('pageNumber',pageNumber)
+	def set_pageNumber(self, pageNumber):  # Integer
+		self.add_query_param('pageNumber', pageNumber)

@@ -23,35 +23,32 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListUserAnalyzerEntriesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListUserAnalyzerEntries','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListUserAnalyzerEntries')
 		self.set_uri_pattern('/v4/openapi/user-analyzers/[name]/entries')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_name(self):
+	def get_name(self): # String
 		return self.get_path_params().get('name')
 
-	def set_name(self,name):
-		self.add_path_param('name',name)
-
-	def get_pageSize(self):
+	def set_name(self, name):  # String
+		self.add_path_param('name', name)
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_word(self):
+	def set_pageSize(self, pageSize):  # Integer
+		self.add_query_param('pageSize', pageSize)
+	def get_word(self): # String
 		return self.get_query_params().get('word')
 
-	def set_word(self,word):
-		self.add_query_param('word',word)
-
-	def get_pageNumber(self):
+	def set_word(self, word):  # String
+		self.add_query_param('word', word)
+	def get_pageNumber(self): # Integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self,pageNumber):
-		self.add_query_param('pageNumber',pageNumber)
+	def set_pageNumber(self, pageNumber):  # Integer
+		self.add_query_param('pageNumber', pageNumber)

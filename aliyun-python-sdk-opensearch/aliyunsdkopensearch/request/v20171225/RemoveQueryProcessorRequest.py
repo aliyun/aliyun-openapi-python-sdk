@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class RemoveQueryProcessorRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'RemoveQueryProcessor','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'RemoveQueryProcessor')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_appId(self):
+	def get_appId(self): # Integer
 		return self.get_path_params().get('appId')
 
-	def set_appId(self,appId):
-		self.add_path_param('appId',appId)
-
-	def get_name(self):
+	def set_appId(self, appId):  # Integer
+		self.add_path_param('appId', appId)
+	def get_name(self): # String
 		return self.get_path_params().get('name')
 
-	def set_name(self,name):
-		self.add_path_param('name',name)
-
-	def get_appGroupIdentity(self):
+	def set_name(self, name):  # String
+		self.add_path_param('name', name)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

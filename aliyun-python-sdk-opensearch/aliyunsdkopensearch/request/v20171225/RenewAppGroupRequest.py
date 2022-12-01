@@ -23,17 +23,22 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class RenewAppGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'RenewAppGroup','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'RenewAppGroup')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/actions/renew')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_clientToken(self): # String
+		return self.get_query_params().get('clientToken')
 
-	def get_appGroupIdentity(self):
+	def set_clientToken(self, clientToken):  # String
+		self.add_query_param('clientToken', clientToken)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

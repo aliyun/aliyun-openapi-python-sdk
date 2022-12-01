@@ -23,10 +23,12 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListRamRolesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListRamRoles','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListRamRoles')
 		self.set_uri_pattern('/v4/openapi/assist/ram/roles')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

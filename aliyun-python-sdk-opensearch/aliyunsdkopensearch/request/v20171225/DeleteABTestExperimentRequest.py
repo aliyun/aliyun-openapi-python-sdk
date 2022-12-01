@@ -23,35 +23,32 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class DeleteABTestExperimentRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DeleteABTestExperiment','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DeleteABTestExperiment')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]')
 		self.set_method('DELETE')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_groupId(self):
+	def get_groupId(self): # Integer
 		return self.get_path_params().get('groupId')
 
-	def set_groupId(self,groupId):
-		self.add_path_param('groupId',groupId)
-
-	def get_sceneId(self):
+	def set_groupId(self, groupId):  # Integer
+		self.add_path_param('groupId', groupId)
+	def get_sceneId(self): # Integer
 		return self.get_path_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_path_param('sceneId',sceneId)
-
-	def get_experimentId(self):
+	def set_sceneId(self, sceneId):  # Integer
+		self.add_path_param('sceneId', sceneId)
+	def get_experimentId(self): # Integer
 		return self.get_path_params().get('experimentId')
 
-	def set_experimentId(self,experimentId):
-		self.add_path_param('experimentId',experimentId)
-
-	def get_appGroupIdentity(self):
+	def set_experimentId(self, experimentId):  # Integer
+		self.add_path_param('experimentId', experimentId)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

@@ -23,23 +23,22 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class GetDomainRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetDomain','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetDomain')
 		self.set_uri_pattern('/v4/openapi/domains/[domainName]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_domainName(self):
+	def get_domainName(self): # String
 		return self.get_path_params().get('domainName')
 
-	def set_domainName(self,domainName):
-		self.add_path_param('domainName',domainName)
-
-	def get_appGroupIdentity(self):
+	def set_domainName(self, domainName):  # String
+		self.add_path_param('domainName', domainName)
+	def get_appGroupIdentity(self): # String
 		return self.get_query_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_query_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_query_param('appGroupIdentity', appGroupIdentity)

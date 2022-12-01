@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListDeployedAlgorithmModelsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListDeployedAlgorithmModels','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListDeployedAlgorithmModels')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_algorithmType(self):
+	def get_algorithmType(self): # String
 		return self.get_query_params().get('algorithmType')
 
-	def set_algorithmType(self,algorithmType):
-		self.add_query_param('algorithmType',algorithmType)
-
-	def get_inServiceOnly(self):
+	def set_algorithmType(self, algorithmType):  # String
+		self.add_query_param('algorithmType', algorithmType)
+	def get_inServiceOnly(self): # Boolean
 		return self.get_query_params().get('inServiceOnly')
 
-	def set_inServiceOnly(self,inServiceOnly):
-		self.add_query_param('inServiceOnly',inServiceOnly)
-
-	def get_appGroupIdentity(self):
+	def set_inServiceOnly(self, inServiceOnly):  # Boolean
+		self.add_query_param('inServiceOnly', inServiceOnly)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

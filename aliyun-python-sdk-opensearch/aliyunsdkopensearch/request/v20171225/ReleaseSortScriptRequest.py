@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ReleaseSortScriptRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ReleaseSortScript','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ReleaseSortScript')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/actions/release')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_appVersionId(self):
+	def get_appVersionId(self): # String
 		return self.get_path_params().get('appVersionId')
 
-	def set_appVersionId(self,appVersionId):
-		self.add_path_param('appVersionId',appVersionId)
-
-	def get_scriptName(self):
+	def set_appVersionId(self, appVersionId):  # String
+		self.add_path_param('appVersionId', appVersionId)
+	def get_scriptName(self): # String
 		return self.get_path_params().get('scriptName')
 
-	def set_scriptName(self,scriptName):
-		self.add_path_param('scriptName',scriptName)
-
-	def get_appGroupIdentity(self):
+	def set_scriptName(self, scriptName):  # String
+		self.add_path_param('scriptName', scriptName)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

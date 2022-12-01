@@ -23,10 +23,12 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class CreateAppGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'CreateAppGroup','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'CreateAppGroup')
 		self.set_uri_pattern('/v4/openapi/app-groups')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

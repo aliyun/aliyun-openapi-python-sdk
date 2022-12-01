@@ -23,17 +23,17 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class PushUserAnalyzerEntriesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'PushUserAnalyzerEntries','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'PushUserAnalyzerEntries')
 		self.set_uri_pattern('/v4/openapi/user-analyzers/[name]/entries/actions/bulk')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_name(self):
+	def get_name(self): # String
 		return self.get_path_params().get('name')
 
-	def set_name(self,name):
-		self.add_path_param('name',name)
+	def set_name(self, name):  # String
+		self.add_path_param('name', name)

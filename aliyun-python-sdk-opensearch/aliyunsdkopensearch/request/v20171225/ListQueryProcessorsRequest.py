@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListQueryProcessorsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListQueryProcessors','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListQueryProcessors')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_appId(self):
+	def get_appId(self): # Integer
 		return self.get_path_params().get('appId')
 
-	def set_appId(self,appId):
-		self.add_path_param('appId',appId)
-
-	def get_isActive(self):
+	def set_appId(self, appId):  # Integer
+		self.add_path_param('appId', appId)
+	def get_isActive(self): # Integer
 		return self.get_query_params().get('isActive')
 
-	def set_isActive(self,isActive):
-		self.add_query_param('isActive',isActive)
-
-	def get_appGroupIdentity(self):
+	def set_isActive(self, isActive):  # Integer
+		self.add_query_param('isActive', isActive)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)

@@ -23,47 +23,42 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListAppGroupErrorsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListAppGroupErrors','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListAppGroupErrors')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/errors')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_appId(self):
+	def get_appId(self): # String
 		return self.get_query_params().get('appId')
 
-	def set_appId(self,appId):
-		self.add_query_param('appId',appId)
-
-	def get_pageSize(self):
+	def set_appId(self, appId):  # String
+		self.add_query_param('appId', appId)
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_startTime(self):
+	def set_pageSize(self, pageSize):  # Integer
+		self.add_query_param('pageSize', pageSize)
+	def get_startTime(self): # Integer
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
-
-	def get_stopTime(self):
+	def set_startTime(self, startTime):  # Integer
+		self.add_query_param('startTime', startTime)
+	def get_stopTime(self): # Integer
 		return self.get_query_params().get('stopTime')
 
-	def set_stopTime(self,stopTime):
-		self.add_query_param('stopTime',stopTime)
-
-	def get_appGroupIdentity(self):
+	def set_stopTime(self, stopTime):  # Integer
+		self.add_query_param('stopTime', stopTime)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
-
-	def get_pageNumber(self):
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)
+	def get_pageNumber(self): # Integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self,pageNumber):
-		self.add_query_param('pageNumber',pageNumber)
+	def set_pageNumber(self, pageNumber):  # Integer
+		self.add_query_param('pageNumber', pageNumber)

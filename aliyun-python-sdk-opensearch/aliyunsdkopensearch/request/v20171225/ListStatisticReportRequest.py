@@ -23,59 +23,52 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class ListStatisticReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListStatisticReport','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListStatisticReport')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/statistic-report/[moduleName]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_columns(self):
+	def get_columns(self): # String
 		return self.get_query_params().get('columns')
 
-	def set_columns(self,columns):
-		self.add_query_param('columns',columns)
-
-	def get_query(self):
+	def set_columns(self, columns):  # String
+		self.add_query_param('columns', columns)
+	def get_query(self): # String
 		return self.get_query_params().get('query')
 
-	def set_query(self,query):
-		self.add_query_param('query',query)
-
-	def get_pageSize(self):
+	def set_query(self, query):  # String
+		self.add_query_param('query', query)
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self,pageSize):
-		self.add_query_param('pageSize',pageSize)
-
-	def get_moduleName(self):
+	def set_pageSize(self, pageSize):  # Integer
+		self.add_query_param('pageSize', pageSize)
+	def get_moduleName(self): # String
 		return self.get_path_params().get('moduleName')
 
-	def set_moduleName(self,moduleName):
-		self.add_path_param('moduleName',moduleName)
-
-	def get_endTime(self):
+	def set_moduleName(self, moduleName):  # String
+		self.add_path_param('moduleName', moduleName)
+	def get_endTime(self): # Integer
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_startTime(self):
+	def set_endTime(self, endTime):  # Integer
+		self.add_query_param('endTime', endTime)
+	def get_startTime(self): # Integer
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
-
-	def get_appGroupIdentity(self):
+	def set_startTime(self, startTime):  # Integer
+		self.add_query_param('startTime', startTime)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
-
-	def get_pageNumber(self):
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)
+	def get_pageNumber(self): # Integer
 		return self.get_query_params().get('pageNumber')
 
-	def set_pageNumber(self,pageNumber):
-		self.add_query_param('pageNumber',pageNumber)
+	def set_pageNumber(self, pageNumber):  # Integer
+		self.add_query_param('pageNumber', pageNumber)

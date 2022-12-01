@@ -23,29 +23,27 @@ from aliyunsdkopensearch.endpoint import endpoint_data
 class DescribeAppGroupDataReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeAppGroupDataReport','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeAppGroupDataReport')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/data-report')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_endTime(self):
+	def get_endTime(self): # String
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_startTime(self):
+	def set_endTime(self, endTime):  # String
+		self.add_query_param('endTime', endTime)
+	def get_startTime(self): # String
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
-
-	def get_appGroupIdentity(self):
+	def set_startTime(self, startTime):  # String
+		self.add_query_param('startTime', startTime)
+	def get_appGroupIdentity(self): # String
 		return self.get_path_params().get('appGroupIdentity')
 
-	def set_appGroupIdentity(self,appGroupIdentity):
-		self.add_path_param('appGroupIdentity',appGroupIdentity)
+	def set_appGroupIdentity(self, appGroupIdentity):  # String
+		self.add_path_param('appGroupIdentity', appGroupIdentity)
