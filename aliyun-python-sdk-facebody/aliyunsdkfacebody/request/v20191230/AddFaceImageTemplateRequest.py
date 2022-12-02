@@ -31,11 +31,6 @@ class AddFaceImageTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_body_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_body_params('UserId', UserId)
 	def get_ImageURL(self): # String
 		return self.get_body_params().get('ImageURL')
 
