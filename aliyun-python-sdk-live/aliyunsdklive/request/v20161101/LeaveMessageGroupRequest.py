@@ -31,6 +31,16 @@ class LeaveMessageGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UserId(self): # String
+		return self.get_body_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_body_params('UserId', UserId)
+	def get_BroadCastType(self): # Integer
+		return self.get_body_params().get('BroadCastType')
+
+	def set_BroadCastType(self, BroadCastType):  # Integer
+		self.add_body_params('BroadCastType', BroadCastType)
 	def get_BroadCastStatistics(self): # Boolean
 		return self.get_body_params().get('BroadCastStatistics')
 
@@ -41,18 +51,8 @@ class LeaveMessageGroupRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_body_params('GroupId', GroupId)
-	def get_UserId(self): # String
-		return self.get_body_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_body_params('UserId', UserId)
 	def get_AppId(self): # String
 		return self.get_body_params().get('AppId')
 
 	def set_AppId(self, AppId):  # String
 		self.add_body_params('AppId', AppId)
-	def get_BroadCastType(self): # Integer
-		return self.get_body_params().get('BroadCastType')
-
-	def set_BroadCastType(self, BroadCastType):  # Integer
-		self.add_body_params('BroadCastType', BroadCastType)

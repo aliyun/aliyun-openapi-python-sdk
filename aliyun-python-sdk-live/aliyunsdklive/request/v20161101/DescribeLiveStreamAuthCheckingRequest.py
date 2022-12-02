@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class CloseMessageGroupRequest(RpcRequest):
+class DescribeLiveStreamAuthCheckingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CloseMessageGroup','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamAuthChecking','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,18 @@ class CloseMessageGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # String
-		return self.get_body_params().get('GroupId')
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
 
-	def set_GroupId(self, GroupId):  # String
-		self.add_body_params('GroupId', GroupId)
-	def get_AppId(self): # String
-		return self.get_body_params().get('AppId')
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_AppId(self, AppId):  # String
-		self.add_body_params('AppId', AppId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Url(self): # String
+		return self.get_query_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)

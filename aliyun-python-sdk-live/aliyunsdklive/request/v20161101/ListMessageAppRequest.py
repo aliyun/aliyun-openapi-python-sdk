@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class GetMessageUserInfoRequest(RpcRequest):
+class ListMessageAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMessageUserInfo','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListMessageApp','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,18 @@ class GetMessageUserInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CloudUid(self): # String
-		return self.get_body_params().get('CloudUid')
+	def get_SortType(self): # Integer
+		return self.get_body_params().get('SortType')
 
-	def set_CloudUid(self, CloudUid):  # String
-		self.add_body_params('CloudUid', CloudUid)
+	def set_SortType(self, SortType):  # Integer
+		self.add_body_params('SortType', SortType)
+	def get_PageNum(self): # Integer
+		return self.get_body_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_body_params('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)

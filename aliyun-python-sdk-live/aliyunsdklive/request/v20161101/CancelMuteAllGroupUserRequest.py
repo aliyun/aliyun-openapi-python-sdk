@@ -31,6 +31,11 @@ class CancelMuteAllGroupUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OperatorUserId(self): # String
+		return self.get_body_params().get('OperatorUserId')
+
+	def set_OperatorUserId(self, OperatorUserId):  # String
+		self.add_body_params('OperatorUserId', OperatorUserId)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
@@ -41,8 +46,3 @@ class CancelMuteAllGroupUserRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_body_params('AppId', AppId)
-	def get_OperatorUserId(self): # String
-		return self.get_body_params().get('OperatorUserId')
-
-	def set_OperatorUserId(self, OperatorUserId):  # String
-		self.add_body_params('OperatorUserId', OperatorUserId)

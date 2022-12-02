@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class GetMessageTokenRequest(RpcRequest):
+class ListMessageGroupUserByIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMessageToken','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListMessageGroupUserById','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,17 @@ class GetMessageTokenRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_body_params().get('UserId')
+	def get_UserIdList(self): # Array
+		return self.get_body_params().get('UserIdList')
 
-	def set_UserId(self, UserId):  # String
-		self.add_body_params('UserId', UserId)
-	def get_DeviceType(self): # String
-		return self.get_body_params().get('DeviceType')
+	def set_UserIdList(self, UserIdList):  # Array
+		for index1, value1 in enumerate(UserIdList):
+			self.add_body_params('UserIdList.' + str(index1 + 1), value1)
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
 
-	def set_DeviceType(self, DeviceType):  # String
-		self.add_body_params('DeviceType', DeviceType)
-	def get_DeviceId(self): # String
-		return self.get_body_params().get('DeviceId')
-
-	def set_DeviceId(self, DeviceId):  # String
-		self.add_body_params('DeviceId', DeviceId)
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
 	def get_AppId(self): # String
 		return self.get_body_params().get('AppId')
 

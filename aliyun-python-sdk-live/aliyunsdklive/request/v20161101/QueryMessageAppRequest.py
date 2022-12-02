@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class GetMessageTokenRequest(RpcRequest):
+class QueryMessageAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMessageToken','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'QueryMessageApp','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,26 @@ class GetMessageTokenRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_body_params().get('UserId')
+	def get_SortType(self): # Integer
+		return self.get_body_params().get('SortType')
 
-	def set_UserId(self, UserId):  # String
-		self.add_body_params('UserId', UserId)
-	def get_DeviceType(self): # String
-		return self.get_body_params().get('DeviceType')
+	def set_SortType(self, SortType):  # Integer
+		self.add_body_params('SortType', SortType)
+	def get_PageNum(self): # Integer
+		return self.get_body_params().get('PageNum')
 
-	def set_DeviceType(self, DeviceType):  # String
-		self.add_body_params('DeviceType', DeviceType)
-	def get_DeviceId(self): # String
-		return self.get_body_params().get('DeviceId')
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_body_params('PageNum', PageNum)
+	def get_AppName(self): # String
+		return self.get_body_params().get('AppName')
 
-	def set_DeviceId(self, DeviceId):  # String
-		self.add_body_params('DeviceId', DeviceId)
+	def set_AppName(self, AppName):  # String
+		self.add_body_params('AppName', AppName)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
 	def get_AppId(self): # String
 		return self.get_body_params().get('AppId')
 

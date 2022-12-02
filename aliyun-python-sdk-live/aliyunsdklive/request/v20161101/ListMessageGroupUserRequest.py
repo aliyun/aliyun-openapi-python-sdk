@@ -36,28 +36,23 @@ class ListMessageGroupUserRequest(RpcRequest):
 
 	def set_SortType(self, SortType):  # Integer
 		self.add_body_params('SortType', SortType)
-	def get_GroupId(self): # String
-		return self.get_body_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_body_params('GroupId', GroupId)
-	def get_Type(self): # Integer
-		return self.get_body_params().get('Type')
-
-	def set_Type(self, Type):  # Integer
-		self.add_body_params('Type', Type)
 	def get_PageNum(self): # Integer
 		return self.get_body_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_body_params('PageNum', PageNum)
-	def get_AppId(self): # String
-		return self.get_body_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_body_params('AppId', AppId)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)

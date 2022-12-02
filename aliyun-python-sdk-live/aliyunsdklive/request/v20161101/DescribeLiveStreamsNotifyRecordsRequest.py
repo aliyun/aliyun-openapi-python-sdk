@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeDomainUsageDataRequest(RpcRequest):
+class DescribeLiveStreamsNotifyRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeDomainUsageData','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyRecords','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,26 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
-	def get_DataProtocol(self): # String
-		return self.get_query_params().get('DataProtocol')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_DataProtocol(self, DataProtocol):  # String
-		self.add_query_param('DataProtocol', DataProtocol)
-	def get_Area(self): # String
-		return self.get_query_params().get('Area')
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_Area(self, Area):  # String
-		self.add_query_param('Area', Area)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_StreamName(self): # String
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -66,13 +71,8 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Field(self): # String
-		return self.get_query_params().get('Field')
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-	def set_Field(self, Field):  # String
-		self.add_query_param('Field', Field)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
