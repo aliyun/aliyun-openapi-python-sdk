@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
-import json
 
-class ListResourceGroupsRequest(RpcRequest):
+class ChangeResourceManagerResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ChangeResourceManagerResourceGroup')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,33 +31,18 @@ class ListResourceGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BizExtKey(self): # String
-		return self.get_query_params().get('BizExtKey')
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_BizExtKey(self, BizExtKey):  # String
-		self.add_query_param('BizExtKey', BizExtKey)
-	def get_Tags(self): # Array
-		return self.get_query_params().get('Tags')
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_Tags(self, Tags):  # Array
-		self.add_query_param("Tags", json.dumps(Tags))
-	def get_TypeNames(self): # String
-		return self.get_query_params().get('TypeNames')
-
-	def set_TypeNames(self, TypeNames):  # String
-		self.add_query_param('TypeNames', TypeNames)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_ResourceManagerResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceManagerResourceGroupId')
 
 	def set_ResourceManagerResourceGroupId(self, ResourceManagerResourceGroupId):  # String
 		self.add_query_param('ResourceManagerResourceGroupId', ResourceManagerResourceGroupId)
-	def get_ResourceGroupType(self): # Integer
-		return self.get_query_params().get('ResourceGroupType')
-
-	def set_ResourceGroupType(self, ResourceGroupType):  # Integer
-		self.add_query_param('ResourceGroupType', ResourceGroupType)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)

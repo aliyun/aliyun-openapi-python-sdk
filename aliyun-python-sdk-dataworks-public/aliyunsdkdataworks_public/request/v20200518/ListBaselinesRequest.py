@@ -41,11 +41,6 @@ class ListBaselinesRequest(RpcRequest):
 
 	def set_SearchText(self, SearchText):  # String
 		self.add_body_params('SearchText', SearchText)
-	def get_ProjectEnv(self): # String
-		return self.get_body_params().get('ProjectEnv')
-
-	def set_ProjectEnv(self, ProjectEnv):  # String
-		self.add_body_params('ProjectEnv', ProjectEnv)
 	def get_Priority(self): # String
 		return self.get_body_params().get('Priority')
 
