@@ -31,11 +31,6 @@ class QueryFaceVideoTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
 	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
