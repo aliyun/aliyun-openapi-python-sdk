@@ -77,11 +77,23 @@ class PubRequest(RpcRequest):
 	def set_TopicFullName(self,TopicFullName):
 		self.add_query_param('TopicFullName',TopicFullName)
 
+	def get_PayloadFormatIndicator(self):
+		return self.get_query_params().get('PayloadFormatIndicator')
+
+	def set_PayloadFormatIndicator(self,PayloadFormatIndicator):
+		self.add_query_param('PayloadFormatIndicator',PayloadFormatIndicator)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_ContentType(self):
+		return self.get_query_params().get('ContentType')
+
+	def set_ContentType(self,ContentType):
+		self.add_query_param('ContentType',ContentType)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
