@@ -111,6 +111,11 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_TargetType(self, TargetType):  # String
 		self.add_query_param('TargetType', TargetType)
+	def get_SortType(self): # String
+		return self.get_query_params().get('SortType')
+
+	def set_SortType(self, SortType):  # String
+		self.add_query_param('SortType', SortType)
 	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
@@ -152,6 +157,17 @@ class DescribeSuspEventsRequest(RpcRequest):
 	def set_OperateErrorCodeLists(self, OperateErrorCodeList):  # RepeatList
 		for depth1 in range(len(OperateErrorCodeList)):
 			self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1), OperateErrorCodeList[depth1])
+	def get_SortColumn(self): # String
+		return self.get_query_params().get('SortColumn')
+
+	def set_SortColumn(self, SortColumn):  # String
+		self.add_query_param('SortColumn', SortColumn)
+	def get_AssetsTypeLists(self): # RepeatList
+		return self.get_query_params().get('AssetsTypeList')
+
+	def set_AssetsTypeLists(self, AssetsTypeList):  # RepeatList
+		for depth1 in range(len(AssetsTypeList)):
+			self.add_query_param('AssetsTypeList.' + str(depth1 + 1), AssetsTypeList[depth1])
 	def get_OperateTimeStart(self): # String
 		return self.get_query_params().get('OperateTimeStart')
 

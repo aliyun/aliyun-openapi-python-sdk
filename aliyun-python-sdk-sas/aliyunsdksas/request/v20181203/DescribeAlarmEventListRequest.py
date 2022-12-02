@@ -36,6 +36,11 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def set_TimeEnd(self, TimeEnd):  # String
 		self.add_query_param('TimeEnd', TimeEnd)
+	def get_SortType(self): # String
+		return self.get_query_params().get('SortType')
+
+	def set_SortType(self, SortType):  # String
+		self.add_query_param('SortType', SortType)
 	def get_AlarmEventType(self): # String
 		return self.get_query_params().get('AlarmEventType')
 
@@ -112,6 +117,11 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_OperateErrorCodeLists(self, OperateErrorCodeList):  # RepeatList
 		for depth1 in range(len(OperateErrorCodeList)):
 			self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1), OperateErrorCodeList[depth1])
+	def get_SortColumn(self): # String
+		return self.get_query_params().get('SortColumn')
+
+	def set_SortColumn(self, SortColumn):  # String
+		self.add_query_param('SortColumn', SortColumn)
 	def get_OperateTimeStart(self): # String
 		return self.get_query_params().get('OperateTimeStart')
 

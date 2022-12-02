@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
+import json
 
-class DescribeGroupedMaliciousFilesRequest(RpcRequest):
+class DescribeImageListBySensitiveFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedMaliciousFiles')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageListBySensitiveFile')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +32,11 @@ class DescribeGroupedMaliciousFilesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RepoId(self): # String
-		return self.get_query_params().get('RepoId')
+	def get_SensitiveFileKey(self): # String
+		return self.get_query_params().get('SensitiveFileKey')
 
-	def set_RepoId(self, RepoId):  # String
-		self.add_query_param('RepoId', RepoId)
-	def get_FuzzyMaliciousName(self): # String
-		return self.get_query_params().get('FuzzyMaliciousName')
-
-	def set_FuzzyMaliciousName(self, FuzzyMaliciousName):  # String
-		self.add_query_param('FuzzyMaliciousName', FuzzyMaliciousName)
+	def set_SensitiveFileKey(self, SensitiveFileKey):  # String
+		self.add_query_param('SensitiveFileKey', SensitiveFileKey)
 	def get_RepoNamespace(self): # String
 		return self.get_query_params().get('RepoNamespace')
 
@@ -51,42 +47,31 @@ class DescribeGroupedMaliciousFilesRequest(RpcRequest):
 
 	def set_ImageDigest(self, ImageDigest):  # String
 		self.add_query_param('ImageDigest', ImageDigest)
-	def get_ScanRanges(self): # RepeatList
+	def get_ScanRange(self): # Array
 		return self.get_query_params().get('ScanRange')
 
-	def set_ScanRanges(self, ScanRange):  # RepeatList
-		for depth1 in range(len(ScanRange)):
-			self.add_query_param('ScanRange.' + str(depth1 + 1), ScanRange[depth1])
-	def get_PageSize(self): # String
+	def set_ScanRange(self, ScanRange):  # Array
+		self.add_query_param("ScanRange", json.dumps(ScanRange))
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_ImageTag(self): # String
-		return self.get_query_params().get('ImageTag')
-
-	def set_ImageTag(self, ImageTag):  # String
-		self.add_query_param('ImageTag', ImageTag)
-	def get_MaliciousMd5(self): # String
-		return self.get_query_params().get('MaliciousMd5')
-
-	def set_MaliciousMd5(self, MaliciousMd5):  # String
-		self.add_query_param('MaliciousMd5', MaliciousMd5)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def get_RiskLevel(self): # String
+		return self.get_query_params().get('RiskLevel')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_RiskLevel(self, RiskLevel):  # String
+		self.add_query_param('RiskLevel', RiskLevel)
 	def get_RepoName(self): # String
 		return self.get_query_params().get('RepoName')
 
@@ -97,18 +82,3 @@ class DescribeGroupedMaliciousFilesRequest(RpcRequest):
 
 	def set_RepoInstanceId(self, RepoInstanceId):  # String
 		self.add_query_param('RepoInstanceId', RepoInstanceId)
-	def get_ImageLayer(self): # String
-		return self.get_query_params().get('ImageLayer')
-
-	def set_ImageLayer(self, ImageLayer):  # String
-		self.add_query_param('ImageLayer', ImageLayer)
-	def get_Levels(self): # String
-		return self.get_query_params().get('Levels')
-
-	def set_Levels(self, Levels):  # String
-		self.add_query_param('Levels', Levels)
-	def get_RepoRegionId(self): # String
-		return self.get_query_params().get('RepoRegionId')
-
-	def set_RepoRegionId(self, RepoRegionId):  # String
-		self.add_query_param('RepoRegionId', RepoRegionId)

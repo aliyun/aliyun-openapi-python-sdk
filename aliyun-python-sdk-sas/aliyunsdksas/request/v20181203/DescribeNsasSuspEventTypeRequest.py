@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class OperateAgentClientInstallRequest(RpcRequest):
+class DescribeNsasSuspEventTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeNsasSuspEventType')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,41 @@ class OperateAgentClientInstallRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_ContainerFieldName(self): # String
+		return self.get_query_params().get('ContainerFieldName')
+
+	def set_ContainerFieldName(self, ContainerFieldName):  # String
+		self.add_query_param('ContainerFieldName', ContainerFieldName)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_ContainerFieldValue(self): # String
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self, ContainerFieldValue):  # String
+		self.add_query_param('ContainerFieldValue', ContainerFieldValue)
+	def get_From(self): # String
+		return self.get_query_params().get('From')
+
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

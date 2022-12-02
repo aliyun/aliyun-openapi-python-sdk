@@ -31,11 +31,21 @@ class ModifyStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TargetType(self): # String
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
 	def get_CycleDays(self): # String
 		return self.get_query_params().get('CycleDays')
 
 	def set_CycleDays(self, CycleDays):  # String
 		self.add_query_param('CycleDays', CycleDays)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_RiskSubTypeName(self): # String
 		return self.get_query_params().get('RiskSubTypeName')
 
@@ -56,6 +66,11 @@ class ModifyStrategyRequest(RpcRequest):
 
 	def set_RiskCustomParams(self, RiskCustomParams):  # String
 		self.add_query_param('RiskCustomParams', RiskCustomParams)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_CustomType(self): # String
 		return self.get_query_params().get('CustomType')
 

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
+import json
 
-class DescribeGroupedVulRequest(RpcRequest):
+class DescribeImageSensitiveFileListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedVul')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageSensitiveFileList')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,58 +32,43 @@ class DescribeGroupedVulRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AttachTypes(self): # String
-		return self.get_query_params().get('AttachTypes')
+	def get_Criteria(self): # String
+		return self.get_query_params().get('Criteria')
 
-	def set_AttachTypes(self, AttachTypes):  # String
-		self.add_query_param('AttachTypes', AttachTypes)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
+	def set_Criteria(self, Criteria):  # String
+		self.add_query_param('Criteria', Criteria)
+	def get_ScanRange(self): # Array
+		return self.get_query_params().get('ScanRange')
 
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_AliasName(self): # String
-		return self.get_query_params().get('AliasName')
-
-	def set_AliasName(self, AliasName):  # String
-		self.add_query_param('AliasName', AliasName)
-	def get_Necessity(self): # String
-		return self.get_query_params().get('Necessity')
-
-	def set_Necessity(self, Necessity):  # String
-		self.add_query_param('Necessity', Necessity)
-	def get_Uuids(self): # String
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self, Uuids):  # String
-		self.add_query_param('Uuids', Uuids)
+	def set_ScanRange(self, ScanRange):  # Array
+		self.add_query_param("ScanRange", json.dumps(ScanRange))
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_CriteriaType(self): # String
+		return self.get_query_params().get('CriteriaType')
+
+	def set_CriteriaType(self, CriteriaType):  # String
+		self.add_query_param('CriteriaType', CriteriaType)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_Dealed(self): # String
-		return self.get_query_params().get('Dealed')
+	def get_ImageUuid(self): # String
+		return self.get_query_params().get('ImageUuid')
 
-	def set_Dealed(self, Dealed):  # String
-		self.add_query_param('Dealed', Dealed)
+	def set_ImageUuid(self, ImageUuid):  # String
+		self.add_query_param('ImageUuid', ImageUuid)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_SearchTags(self): # String
-		return self.get_query_params().get('SearchTags')
+	def get_RiskLevel(self): # String
+		return self.get_query_params().get('RiskLevel')
 
-	def set_SearchTags(self, SearchTags):  # String
-		self.add_query_param('SearchTags', SearchTags)
+	def set_RiskLevel(self, RiskLevel):  # String
+		self.add_query_param('RiskLevel', RiskLevel)

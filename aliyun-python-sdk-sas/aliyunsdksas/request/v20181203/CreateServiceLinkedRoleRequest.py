@@ -31,3 +31,8 @@ class CreateServiceLinkedRoleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ServiceLinkedRole(self): # String
+		return self.get_query_params().get('ServiceLinkedRole')
+
+	def set_ServiceLinkedRole(self, ServiceLinkedRole):  # String
+		self.add_query_param('ServiceLinkedRole', ServiceLinkedRole)

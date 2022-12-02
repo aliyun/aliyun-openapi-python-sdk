@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
+import json
 
-class OperateAgentClientInstallRequest(RpcRequest):
+class DescribeImageSensitiveFileByKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageSensitiveFileByKey')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +32,33 @@ class OperateAgentClientInstallRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SensitiveFileKey(self): # String
+		return self.get_query_params().get('SensitiveFileKey')
+
+	def set_SensitiveFileKey(self, SensitiveFileKey):  # String
+		self.add_query_param('SensitiveFileKey', SensitiveFileKey)
+	def get_ScanRange(self): # Array
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRange(self, ScanRange):  # Array
+		self.add_query_param("ScanRange", json.dumps(ScanRange))
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
+	def get_ImageUuid(self): # String
+		return self.get_query_params().get('ImageUuid')
 
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
-	def get_Uuids(self): # String
-		return self.get_query_params().get('Uuids')
+	def set_ImageUuid(self, ImageUuid):  # String
+		self.add_query_param('ImageUuid', ImageUuid)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
 
-	def set_Uuids(self, Uuids):  # String
-		self.add_query_param('Uuids', Uuids)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

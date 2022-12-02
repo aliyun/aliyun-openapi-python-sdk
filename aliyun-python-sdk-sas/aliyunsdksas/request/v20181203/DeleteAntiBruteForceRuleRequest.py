@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class OperateAgentClientInstallRequest(RpcRequest):
+class DeleteAntiBruteForceRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteAntiBruteForceRule')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,9 @@ class OperateAgentClientInstallRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
+	def get_Idss(self): # RepeatList
+		return self.get_query_params().get('Ids')
 
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
-	def get_Uuids(self): # String
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self, Uuids):  # String
-		self.add_query_param('Uuids', Uuids)
+	def set_Idss(self, Ids):  # RepeatList
+		for depth1 in range(len(Ids)):
+			self.add_query_param('Ids.' + str(depth1 + 1), Ids[depth1])

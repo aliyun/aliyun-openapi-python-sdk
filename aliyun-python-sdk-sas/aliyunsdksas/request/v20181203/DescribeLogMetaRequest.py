@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class OperateAgentClientInstallRequest(RpcRequest):
+class DescribeLogMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeLogMeta')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class OperateAgentClientInstallRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_From(self): # String
+		return self.get_query_params().get('From')
+
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
-	def get_Uuids(self): # String
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self, Uuids):  # String
-		self.add_query_param('Uuids', Uuids)
