@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
+import json
 
 class SendMessageToGroupUsersRequest(RpcRequest):
 
@@ -31,3 +32,33 @@ class SendMessageToGroupUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Data(self): # String
+		return self.get_body_params().get('Data')
+
+	def set_Data(self, Data):  # String
+		self.add_body_params('Data', Data)
+	def get_Type(self): # Integer
+		return self.get_body_params().get('Type')
+
+	def set_Type(self, Type):  # Integer
+		self.add_body_params('Type', Type)
+	def get_OperatorUserId(self): # String
+		return self.get_body_params().get('OperatorUserId')
+
+	def set_OperatorUserId(self, OperatorUserId):  # String
+		self.add_body_params('OperatorUserId', OperatorUserId)
+	def get_ReceiverIdList(self): # Array
+		return self.get_body_params().get('ReceiverIdList')
+
+	def set_ReceiverIdList(self, ReceiverIdList):  # Array
+		self.add_body_params("ReceiverIdList", json.dumps(ReceiverIdList))
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)
