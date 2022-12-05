@@ -19,7 +19,6 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
-import json
 
 class SendMessageToGroupUsersRequest(RpcRequest):
 
@@ -51,7 +50,8 @@ class SendMessageToGroupUsersRequest(RpcRequest):
 		return self.get_body_params().get('ReceiverIdList')
 
 	def set_ReceiverIdList(self, ReceiverIdList):  # Array
-		self.add_body_params("ReceiverIdList", json.dumps(ReceiverIdList))
+		for index1, value1 in enumerate(ReceiverIdList):
+			self.add_body_params('ReceiverIdList.' + str(index1 + 1), value1)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
