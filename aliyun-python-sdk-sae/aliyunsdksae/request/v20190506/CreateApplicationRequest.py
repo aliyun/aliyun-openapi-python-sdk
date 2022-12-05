@@ -47,6 +47,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_OssAkSecret(self, OssAkSecret):  # String
 		self.add_body_params('OssAkSecret', OssAkSecret)
+	def get_NasConfigs(self): # String
+		return self.get_query_params().get('NasConfigs')
+
+	def set_NasConfigs(self, NasConfigs):  # String
+		self.add_query_param('NasConfigs', NasConfigs)
 	def get_MountHost(self): # String
 		return self.get_query_params().get('MountHost')
 
@@ -62,11 +67,6 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_Envs(self, Envs):  # String
 		self.add_query_param('Envs', Envs)
-	def get_KafkaInstanceId(self): # String
-		return self.get_query_params().get('KafkaInstanceId')
-
-	def set_KafkaInstanceId(self, KafkaInstanceId):  # String
-		self.add_query_param('KafkaInstanceId', KafkaInstanceId)
 	def get_PhpArmsConfigLocation(self): # String
 		return self.get_query_params().get('PhpArmsConfigLocation')
 
@@ -102,6 +102,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_PvtzDiscoverySvc(self): # String
+		return self.get_query_params().get('PvtzDiscoverySvc')
+
+	def set_PvtzDiscoverySvc(self, PvtzDiscoverySvc):  # String
+		self.add_query_param('PvtzDiscoverySvc', PvtzDiscoverySvc)
 	def get_ConfigMapMountDesc(self): # String
 		return self.get_body_params().get('ConfigMapMountDesc')
 
@@ -112,16 +117,21 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_OssMountDescs(self, OssMountDescs):  # String
 		self.add_body_params('OssMountDescs', OssMountDescs)
-	def get_KafkaEndpoint(self): # String
-		return self.get_query_params().get('KafkaEndpoint')
+	def get_ImagePullSecrets(self): # String
+		return self.get_query_params().get('ImagePullSecrets')
 
-	def set_KafkaEndpoint(self, KafkaEndpoint):  # String
-		self.add_query_param('KafkaEndpoint', KafkaEndpoint)
+	def set_ImagePullSecrets(self, ImagePullSecrets):  # String
+		self.add_query_param('ImagePullSecrets', ImagePullSecrets)
 	def get_PreStop(self): # String
 		return self.get_query_params().get('PreStop')
 
 	def set_PreStop(self, PreStop):  # String
 		self.add_query_param('PreStop', PreStop)
+	def get_Python(self): # String
+		return self.get_query_params().get('Python')
+
+	def set_Python(self, Python):  # String
+		self.add_query_param('Python', Python)
 	def get_Cpu(self): # Integer
 		return self.get_query_params().get('Cpu')
 
@@ -167,11 +177,6 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_KafkaConfigs(self, KafkaConfigs):  # String
 		self.add_query_param('KafkaConfigs', KafkaConfigs)
-	def get_OpenCollectToKafka(self): # Boolean
-		return self.get_query_params().get('OpenCollectToKafka')
-
-	def set_OpenCollectToKafka(self, OpenCollectToKafka):  # Boolean
-		self.add_query_param('OpenCollectToKafka', OpenCollectToKafka)
 	def get_CommandArgs(self): # String
 		return self.get_query_params().get('CommandArgs')
 
@@ -242,6 +247,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_PhpConfig(self, PhpConfig):  # String
 		self.add_body_params('PhpConfig', PhpConfig)
+	def get_MicroRegistration(self): # String
+		return self.get_query_params().get('MicroRegistration')
+
+	def set_MicroRegistration(self, MicroRegistration):  # String
+		self.add_query_param('MicroRegistration', MicroRegistration)
 	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 
@@ -267,11 +277,6 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_AppDescription(self, AppDescription):  # String
 		self.add_query_param('AppDescription', AppDescription)
-	def get_KafkaLogfileConfig(self): # String
-		return self.get_query_params().get('KafkaLogfileConfig')
-
-	def set_KafkaLogfileConfig(self, KafkaLogfileConfig):  # String
-		self.add_query_param('KafkaLogfileConfig', KafkaLogfileConfig)
 	def get_AcrInstanceId(self): # String
 		return self.get_body_params().get('AcrInstanceId')
 
@@ -287,6 +292,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_query_param('ImageUrl', ImageUrl)
+	def get_PythonModules(self): # String
+		return self.get_query_params().get('PythonModules')
+
+	def set_PythonModules(self, PythonModules):  # String
+		self.add_query_param('PythonModules', PythonModules)
 	def get_PhpConfigLocation(self): # String
 		return self.get_query_params().get('PhpConfigLocation')
 

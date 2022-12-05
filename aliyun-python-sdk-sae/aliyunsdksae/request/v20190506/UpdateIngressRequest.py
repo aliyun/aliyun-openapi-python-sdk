@@ -62,6 +62,11 @@ class UpdateIngressRequest(RoaRequest):
 
 	def set_CertId(self, CertId):  # String
 		self.add_query_param('CertId', CertId)
+	def get_CertIds(self): # String
+		return self.get_query_params().get('CertIds')
+
+	def set_CertIds(self, CertIds):  # String
+		self.add_query_param('CertIds', CertIds)
 	def get_ListenerProtocol(self): # String
 		return self.get_query_params().get('ListenerProtocol')
 

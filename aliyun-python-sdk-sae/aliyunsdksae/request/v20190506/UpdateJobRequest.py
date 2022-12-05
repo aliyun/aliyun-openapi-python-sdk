@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DeployApplicationRequest(RoaRequest):
+class UpdateJobRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeployApplication','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/deployApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateJob','serverless')
+		self.set_uri_pattern('/pop/v1/sam/job/updateJob')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -42,56 +42,51 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_JarStartArgs(self, JarStartArgs):  # String
 		self.add_query_param('JarStartArgs', JarStartArgs)
+	def get_ConcurrencyPolicy(self): # String
+		return self.get_query_params().get('ConcurrencyPolicy')
+
+	def set_ConcurrencyPolicy(self, ConcurrencyPolicy):  # String
+		self.add_query_param('ConcurrencyPolicy', ConcurrencyPolicy)
+	def get_TriggerConfig(self): # String
+		return self.get_query_params().get('TriggerConfig')
+
+	def set_TriggerConfig(self, TriggerConfig):  # String
+		self.add_query_param('TriggerConfig', TriggerConfig)
 	def get_OssAkSecret(self): # String
 		return self.get_body_params().get('OssAkSecret')
 
 	def set_OssAkSecret(self, OssAkSecret):  # String
 		self.add_body_params('OssAkSecret', OssAkSecret)
-	def get_NasConfigs(self): # String
-		return self.get_query_params().get('NasConfigs')
-
-	def set_NasConfigs(self, NasConfigs):  # String
-		self.add_query_param('NasConfigs', NasConfigs)
 	def get_MountHost(self): # String
 		return self.get_query_params().get('MountHost')
 
 	def set_MountHost(self, MountHost):  # String
 		self.add_query_param('MountHost', MountHost)
-	def get_BatchWaitTime(self): # Integer
-		return self.get_query_params().get('BatchWaitTime')
-
-	def set_BatchWaitTime(self, BatchWaitTime):  # Integer
-		self.add_query_param('BatchWaitTime', BatchWaitTime)
 	def get_Envs(self): # String
 		return self.get_query_params().get('Envs')
 
 	def set_Envs(self, Envs):  # String
 		self.add_query_param('Envs', Envs)
-	def get_PhpArmsConfigLocation(self): # String
-		return self.get_query_params().get('PhpArmsConfigLocation')
+	def get_ProgrammingLanguage(self): # String
+		return self.get_query_params().get('ProgrammingLanguage')
 
-	def set_PhpArmsConfigLocation(self, PhpArmsConfigLocation):  # String
-		self.add_query_param('PhpArmsConfigLocation', PhpArmsConfigLocation)
+	def set_ProgrammingLanguage(self, ProgrammingLanguage):  # String
+		self.add_query_param('ProgrammingLanguage', ProgrammingLanguage)
 	def get_CustomHostAlias(self): # String
 		return self.get_query_params().get('CustomHostAlias')
 
 	def set_CustomHostAlias(self, CustomHostAlias):  # String
 		self.add_query_param('CustomHostAlias', CustomHostAlias)
-	def get_Deploy(self): # String
-		return self.get_query_params().get('Deploy')
-
-	def set_Deploy(self, Deploy):  # String
-		self.add_query_param('Deploy', Deploy)
 	def get_JarStartOptions(self): # String
 		return self.get_query_params().get('JarStartOptions')
 
 	def set_JarStartOptions(self, JarStartOptions):  # String
 		self.add_query_param('JarStartOptions', JarStartOptions)
-	def get_PvtzDiscoverySvc(self): # String
-		return self.get_query_params().get('PvtzDiscoverySvc')
+	def get_Slice(self): # Boolean
+		return self.get_query_params().get('Slice')
 
-	def set_PvtzDiscoverySvc(self, PvtzDiscoverySvc):  # String
-		self.add_query_param('PvtzDiscoverySvc', PvtzDiscoverySvc)
+	def set_Slice(self, Slice):  # Boolean
+		self.add_query_param('Slice', Slice)
 	def get_ConfigMapMountDesc(self): # String
 		return self.get_body_params().get('ConfigMapMountDesc')
 
@@ -117,56 +112,26 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Python(self, Python):  # String
 		self.add_query_param('Python', Python)
-	def get_UpdateStrategy(self): # String
-		return self.get_query_params().get('UpdateStrategy')
+	def get_BackoffLimit(self): # Long
+		return self.get_query_params().get('BackoffLimit')
 
-	def set_UpdateStrategy(self, UpdateStrategy):  # String
-		self.add_query_param('UpdateStrategy', UpdateStrategy)
-	def get_ChangeOrderDesc(self): # String
-		return self.get_query_params().get('ChangeOrderDesc')
-
-	def set_ChangeOrderDesc(self, ChangeOrderDesc):  # String
-		self.add_query_param('ChangeOrderDesc', ChangeOrderDesc)
-	def get_MinReadyInstanceRatio(self): # Integer
-		return self.get_query_params().get('MinReadyInstanceRatio')
-
-	def set_MinReadyInstanceRatio(self, MinReadyInstanceRatio):  # Integer
-		self.add_query_param('MinReadyInstanceRatio', MinReadyInstanceRatio)
-	def get_AutoEnableApplicationScalingRule(self): # Boolean
-		return self.get_query_params().get('AutoEnableApplicationScalingRule')
-
-	def set_AutoEnableApplicationScalingRule(self, AutoEnableApplicationScalingRule):  # Boolean
-		self.add_query_param('AutoEnableApplicationScalingRule', AutoEnableApplicationScalingRule)
+	def set_BackoffLimit(self, BackoffLimit):  # Long
+		self.add_query_param('BackoffLimit', BackoffLimit)
 	def get_PostStart(self): # String
 		return self.get_query_params().get('PostStart')
 
 	def set_PostStart(self, PostStart):  # String
 		self.add_query_param('PostStart', PostStart)
-	def get_AssociateEip(self): # Boolean
-		return self.get_body_params().get('AssociateEip')
-
-	def set_AssociateEip(self, AssociateEip):  # Boolean
-		self.add_body_params('AssociateEip', AssociateEip)
 	def get_WebContainer(self): # String
 		return self.get_query_params().get('WebContainer')
 
 	def set_WebContainer(self, WebContainer):  # String
 		self.add_query_param('WebContainer', WebContainer)
-	def get_EnableAhas(self): # String
-		return self.get_query_params().get('EnableAhas')
-
-	def set_EnableAhas(self, EnableAhas):  # String
-		self.add_query_param('EnableAhas', EnableAhas)
 	def get_SlsConfigs(self): # String
 		return self.get_query_params().get('SlsConfigs')
 
 	def set_SlsConfigs(self, SlsConfigs):  # String
 		self.add_query_param('SlsConfigs', SlsConfigs)
-	def get_KafkaConfigs(self): # String
-		return self.get_query_params().get('KafkaConfigs')
-
-	def set_KafkaConfigs(self, KafkaConfigs):  # String
-		self.add_query_param('KafkaConfigs', KafkaConfigs)
 	def get_CommandArgs(self): # String
 		return self.get_query_params().get('CommandArgs')
 
@@ -177,11 +142,6 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_AcrAssumeRoleArn(self, AcrAssumeRoleArn):  # String
 		self.add_query_param('AcrAssumeRoleArn', AcrAssumeRoleArn)
-	def get_Readiness(self): # String
-		return self.get_query_params().get('Readiness')
-
-	def set_Readiness(self, Readiness):  # String
-		self.add_query_param('Readiness', Readiness)
 	def get_Timezone(self): # String
 		return self.get_query_params().get('Timezone')
 
@@ -192,11 +152,6 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_OssAkId(self, OssAkId):  # String
 		self.add_body_params('OssAkId', OssAkId)
-	def get_Liveness(self): # String
-		return self.get_query_params().get('Liveness')
-
-	def set_Liveness(self, Liveness):  # String
-		self.add_query_param('Liveness', Liveness)
 	def get_PackageVersion(self): # String
 		return self.get_query_params().get('PackageVersion')
 
@@ -207,6 +162,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_TomcatConfig(self, TomcatConfig):  # String
 		self.add_query_param('TomcatConfig', TomcatConfig)
+	def get_Timeout(self): # Long
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Long
+		self.add_query_param('Timeout', Timeout)
 	def get_WarStartOptions(self): # String
 		return self.get_query_params().get('WarStartOptions')
 
@@ -232,16 +192,16 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_PhpConfig(self, PhpConfig):  # String
 		self.add_body_params('PhpConfig', PhpConfig)
-	def get_MicroRegistration(self): # String
-		return self.get_query_params().get('MicroRegistration')
+	def get_SliceEnvs(self): # String
+		return self.get_query_params().get('SliceEnvs')
 
-	def set_MicroRegistration(self, MicroRegistration):  # String
-		self.add_query_param('MicroRegistration', MicroRegistration)
-	def get_EnableGreyTagRoute(self): # Boolean
-		return self.get_query_params().get('EnableGreyTagRoute')
+	def set_SliceEnvs(self, SliceEnvs):  # String
+		self.add_query_param('SliceEnvs', SliceEnvs)
+	def get_Replicas(self): # String
+		return self.get_query_params().get('Replicas')
 
-	def set_EnableGreyTagRoute(self, EnableGreyTagRoute):  # Boolean
-		self.add_query_param('EnableGreyTagRoute', EnableGreyTagRoute)
+	def set_Replicas(self, Replicas):  # String
+		self.add_query_param('Replicas', Replicas)
 	def get_Command(self): # String
 		return self.get_query_params().get('Command')
 
@@ -257,11 +217,6 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Jdk(self, Jdk):  # String
 		self.add_query_param('Jdk', Jdk)
-	def get_MinReadyInstances(self): # Integer
-		return self.get_query_params().get('MinReadyInstances')
-
-	def set_MinReadyInstances(self, MinReadyInstances):  # Integer
-		self.add_query_param('MinReadyInstances', MinReadyInstances)
 	def get_AcrInstanceId(self): # String
 		return self.get_body_params().get('AcrInstanceId')
 
@@ -277,6 +232,16 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_query_param('ImageUrl', ImageUrl)
+	def get_Php(self): # String
+		return self.get_body_params().get('Php')
+
+	def set_Php(self, Php):  # String
+		self.add_body_params('Php', Php)
+	def get_RefAppId(self): # String
+		return self.get_query_params().get('RefAppId')
+
+	def set_RefAppId(self, RefAppId):  # String
+		self.add_query_param('RefAppId', RefAppId)
 	def get_PythonModules(self): # String
 		return self.get_query_params().get('PythonModules')
 

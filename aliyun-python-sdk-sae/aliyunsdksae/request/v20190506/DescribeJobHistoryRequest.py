@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeConfigurationPriceRequest(RoaRequest):
+class DescribeJobHistoryRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeConfigurationPrice','serverless')
-		self.set_uri_pattern('/pop/v1/paas/configurationPrice')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeJobHistory','serverless')
+		self.set_uri_pattern('/pop/v1/sam/job/describeJobHistory')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,18 +32,23 @@ class DescribeConfigurationPriceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Memory(self): # Integer
-		return self.get_query_params().get('Memory')
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_Memory(self, Memory):  # Integer
-		self.add_query_param('Memory', Memory)
-	def get_Cpu(self): # Integer
-		return self.get_query_params().get('Cpu')
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
 
-	def set_Cpu(self, Cpu):  # Integer
-		self.add_query_param('Cpu', Cpu)
-	def get_Workload(self): # String
-		return self.get_query_params().get('Workload')
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_CurrentPage(self): # Long
+		return self.get_query_params().get('CurrentPage')
 
-	def set_Workload(self, Workload):  # String
-		self.add_query_param('Workload', Workload)
+	def set_CurrentPage(self, CurrentPage):  # Long
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_State(self): # String
+		return self.get_query_params().get('State')
+
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
