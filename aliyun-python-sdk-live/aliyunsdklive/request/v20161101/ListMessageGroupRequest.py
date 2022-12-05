@@ -51,3 +51,8 @@ class ListMessageGroupRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)
