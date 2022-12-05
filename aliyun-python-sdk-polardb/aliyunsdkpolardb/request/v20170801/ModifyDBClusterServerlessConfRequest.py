@@ -25,74 +25,64 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterServerlessConf','polardb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScaleRoNumMax(self):
+	def get_ScaleRoNumMax(self): # String
 		return self.get_query_params().get('ScaleRoNumMax')
 
-	def set_ScaleRoNumMax(self,ScaleRoNumMax):
-		self.add_query_param('ScaleRoNumMax',ScaleRoNumMax)
-
-	def get_ResourceOwnerId(self):
+	def set_ScaleRoNumMax(self, ScaleRoNumMax):  # String
+		self.add_query_param('ScaleRoNumMax', ScaleRoNumMax)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ScaleMax(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ScaleMax(self): # String
 		return self.get_query_params().get('ScaleMax')
 
-	def set_ScaleMax(self,ScaleMax):
-		self.add_query_param('ScaleMax',ScaleMax)
-
-	def get_SecondsUntilAutoPause(self):
+	def set_ScaleMax(self, ScaleMax):  # String
+		self.add_query_param('ScaleMax', ScaleMax)
+	def get_SecondsUntilAutoPause(self): # String
 		return self.get_query_params().get('SecondsUntilAutoPause')
 
-	def set_SecondsUntilAutoPause(self,SecondsUntilAutoPause):
-		self.add_query_param('SecondsUntilAutoPause',SecondsUntilAutoPause)
-
-	def get_ScaleMin(self):
+	def set_SecondsUntilAutoPause(self, SecondsUntilAutoPause):  # String
+		self.add_query_param('SecondsUntilAutoPause', SecondsUntilAutoPause)
+	def get_ScaleMin(self): # String
 		return self.get_query_params().get('ScaleMin')
 
-	def set_ScaleMin(self,ScaleMin):
-		self.add_query_param('ScaleMin',ScaleMin)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ScaleMin(self, ScaleMin):  # String
+		self.add_query_param('ScaleMin', ScaleMin)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
-
-	def get_OwnerAccount(self):
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ScaleRoNumMin(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ScaleRoNumMin(self): # String
 		return self.get_query_params().get('ScaleRoNumMin')
 
-	def set_ScaleRoNumMin(self,ScaleRoNumMin):
-		self.add_query_param('ScaleRoNumMin',ScaleRoNumMin)
-
-	def get_AllowShutDown(self):
+	def set_ScaleRoNumMin(self, ScaleRoNumMin):  # String
+		self.add_query_param('ScaleRoNumMin', ScaleRoNumMin)
+	def get_AllowShutDown(self): # String
 		return self.get_query_params().get('AllowShutDown')
 
-	def set_AllowShutDown(self,AllowShutDown):
-		self.add_query_param('AllowShutDown',AllowShutDown)
+	def set_AllowShutDown(self, AllowShutDown):  # String
+		self.add_query_param('AllowShutDown', AllowShutDown)

@@ -25,62 +25,54 @@ class ModifyDBClusterSSLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterSSL','polardb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBEndpointId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBEndpointId(self): # String
 		return self.get_query_params().get('DBEndpointId')
 
-	def set_DBEndpointId(self,DBEndpointId):
-		self.add_query_param('DBEndpointId',DBEndpointId)
-
-	def get_SSLAutoRotate(self):
+	def set_DBEndpointId(self, DBEndpointId):  # String
+		self.add_query_param('DBEndpointId', DBEndpointId)
+	def get_SSLAutoRotate(self): # String
 		return self.get_query_params().get('SSLAutoRotate')
 
-	def set_SSLAutoRotate(self,SSLAutoRotate):
-		self.add_query_param('SSLAutoRotate',SSLAutoRotate)
-
-	def get_ResourceOwnerAccount(self):
+	def set_SSLAutoRotate(self, SSLAutoRotate):  # String
+		self.add_query_param('SSLAutoRotate', SSLAutoRotate)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
-
-	def get_OwnerAccount(self):
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_NetType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NetType(self): # String
 		return self.get_query_params().get('NetType')
 
-	def set_NetType(self,NetType):
-		self.add_query_param('NetType',NetType)
-
-	def get_SSLEnabled(self):
+	def set_NetType(self, NetType):  # String
+		self.add_query_param('NetType', NetType)
+	def get_SSLEnabled(self): # String
 		return self.get_query_params().get('SSLEnabled')
 
-	def set_SSLEnabled(self,SSLEnabled):
-		self.add_query_param('SSLEnabled',SSLEnabled)
+	def set_SSLEnabled(self, SSLEnabled):  # String
+		self.add_query_param('SSLEnabled', SSLEnabled)

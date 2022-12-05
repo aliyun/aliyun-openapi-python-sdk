@@ -25,86 +25,74 @@ class EvaluateRegionResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'EvaluateRegionResource','polardb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceConnType(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceConnType(self): # String
 		return self.get_query_params().get('DBInstanceConnType')
 
-	def set_DBInstanceConnType(self,DBInstanceConnType):
-		self.add_query_param('DBInstanceConnType',DBInstanceConnType)
-
-	def get_ResourceGroupId(self):
+	def set_DBInstanceConnType(self, DBInstanceConnType):  # String
+		self.add_query_param('DBInstanceConnType', DBInstanceConnType)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_DBNodeClass(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DBNodeClass(self): # String
 		return self.get_query_params().get('DBNodeClass')
 
-	def set_DBNodeClass(self,DBNodeClass):
-		self.add_query_param('DBNodeClass',DBNodeClass)
-
-	def get_DispenseMode(self):
+	def set_DBNodeClass(self, DBNodeClass):  # String
+		self.add_query_param('DBNodeClass', DBNodeClass)
+	def get_DispenseMode(self): # String
 		return self.get_query_params().get('DispenseMode')
 
-	def set_DispenseMode(self,DispenseMode):
-		self.add_query_param('DispenseMode',DispenseMode)
-
-	def get_ResourceOwnerAccount(self):
+	def set_DispenseMode(self, DispenseMode):  # String
+		self.add_query_param('DispenseMode', DispenseMode)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_NeedMaxScaleLink(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NeedMaxScaleLink(self): # String
 		return self.get_query_params().get('NeedMaxScaleLink')
 
-	def set_NeedMaxScaleLink(self,NeedMaxScaleLink):
-		self.add_query_param('NeedMaxScaleLink',NeedMaxScaleLink)
-
-	def get_DBType(self):
+	def set_NeedMaxScaleLink(self, NeedMaxScaleLink):  # String
+		self.add_query_param('NeedMaxScaleLink', NeedMaxScaleLink)
+	def get_DBType(self): # String
 		return self.get_query_params().get('DBType')
 
-	def set_DBType(self,DBType):
-		self.add_query_param('DBType',DBType)
-
-	def get_DBVersion(self):
+	def set_DBType(self, DBType):  # String
+		self.add_query_param('DBType', DBType)
+	def get_DBVersion(self): # String
 		return self.get_query_params().get('DBVersion')
 
-	def set_DBVersion(self,DBVersion):
-		self.add_query_param('DBVersion',DBVersion)
-
-	def get_SubDomain(self):
+	def set_DBVersion(self, DBVersion):  # String
+		self.add_query_param('DBVersion', DBVersion)
+	def get_SubDomain(self): # String
 		return self.get_query_params().get('SubDomain')
 
-	def set_SubDomain(self,SubDomain):
-		self.add_query_param('SubDomain',SubDomain)
-
-	def get_ZoneId(self):
+	def set_SubDomain(self, SubDomain):  # String
+		self.add_query_param('SubDomain', SubDomain)
+	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)

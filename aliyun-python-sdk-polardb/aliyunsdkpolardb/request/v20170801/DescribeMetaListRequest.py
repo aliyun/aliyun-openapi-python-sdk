@@ -25,74 +25,64 @@ class DescribeMetaListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeMetaList','polardb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PageNumber(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_SecurityToken(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_RestoreTime(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
-
-	def get_OwnerAccount(self):
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_BackupId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_OwnerId(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_GetDbName(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_GetDbName(self): # String
 		return self.get_query_params().get('GetDbName')
 
-	def set_GetDbName(self,GetDbName):
-		self.add_query_param('GetDbName',GetDbName)
+	def set_GetDbName(self, GetDbName):  # String
+		self.add_query_param('GetDbName', GetDbName)
