@@ -1,3 +1,7 @@
+2022-12-05 Version: 2.16.12
+- Add API DescribeVodDomainSrcBpsData.
+- Add API DescribeVodDomainSrcTrafficData.
+
 2022-10-27 Version: 2.16.11
 - Modify DescribeVodUserDomains api.
 - Modify CreateUploadImage api.
