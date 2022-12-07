@@ -56,3 +56,8 @@ class CreateJobFileRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)

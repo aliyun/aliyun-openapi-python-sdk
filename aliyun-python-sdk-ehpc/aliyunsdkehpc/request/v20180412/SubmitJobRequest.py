@@ -96,6 +96,11 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_RunasUser(self, RunasUser):  # String
 		self.add_query_param('RunasUser', RunasUser)
+	def get_Cpu(self): # Integer
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self, Cpu):  # Integer
+		self.add_query_param('Cpu', Cpu)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -126,6 +131,11 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_Node(self, Node):  # Integer
 		self.add_query_param('Node', Node)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)
 	def get_Task(self): # Integer
 		return self.get_query_params().get('Task')
 
