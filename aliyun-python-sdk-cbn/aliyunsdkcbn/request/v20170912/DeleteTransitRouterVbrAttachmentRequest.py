@@ -66,3 +66,8 @@ class DeleteTransitRouterVbrAttachmentRequest(RpcRequest):
 
 	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
 		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)

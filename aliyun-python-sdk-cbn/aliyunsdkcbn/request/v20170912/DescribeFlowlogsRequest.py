@@ -95,6 +95,11 @@ class DescribeFlowlogsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TransitRouterAttachmentId(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentId')
+
+	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
+		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
 	def get_FlowLogId(self): # String
 		return self.get_query_params().get('FlowLogId')
 

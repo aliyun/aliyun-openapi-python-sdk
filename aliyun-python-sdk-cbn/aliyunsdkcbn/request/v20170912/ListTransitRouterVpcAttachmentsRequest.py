@@ -80,6 +80,11 @@ class ListTransitRouterVpcAttachmentsRequest(RpcRequest):
 
 	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
 		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

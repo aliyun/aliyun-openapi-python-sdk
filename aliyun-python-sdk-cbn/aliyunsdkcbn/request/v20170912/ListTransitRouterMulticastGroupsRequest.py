@@ -41,6 +41,12 @@ class ListTransitRouterMulticastGroupsRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_NetworkInterfaceIdss(self): # RepeatList
+		return self.get_query_params().get('NetworkInterfaceIds')
+
+	def set_NetworkInterfaceIdss(self, NetworkInterfaceIds):  # RepeatList
+		for depth1 in range(len(NetworkInterfaceIds)):
+			self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1), NetworkInterfaceIds[depth1])
 	def get_VSwitchIdss(self): # RepeatList
 		return self.get_query_params().get('VSwitchIds')
 
@@ -52,6 +58,11 @@ class ListTransitRouterMulticastGroupsRequest(RpcRequest):
 
 	def set_TransitRouterMulticastDomainId(self, TransitRouterMulticastDomainId):  # String
 		self.add_query_param('TransitRouterMulticastDomainId', TransitRouterMulticastDomainId)
+	def get_IsGroupSource(self): # Boolean
+		return self.get_query_params().get('IsGroupSource')
+
+	def set_IsGroupSource(self, IsGroupSource):  # Boolean
+		self.add_query_param('IsGroupSource', IsGroupSource)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -103,3 +114,8 @@ class ListTransitRouterMulticastGroupsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
+	def get_IsGroupMember(self): # Boolean
+		return self.get_query_params().get('IsGroupMember')
+
+	def set_IsGroupMember(self, IsGroupMember):  # Boolean
+		self.add_query_param('IsGroupMember', IsGroupMember)
