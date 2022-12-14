@@ -1,3 +1,6 @@
+2022-12-14 Version: 1.0.4
+- Add GetMetaProductList api.
+
 2022-12-07 Version: 1.0.3
 - Update Endpoint.
 
