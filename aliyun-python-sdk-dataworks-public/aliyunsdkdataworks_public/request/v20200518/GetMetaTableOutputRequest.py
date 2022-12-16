@@ -56,3 +56,8 @@ class GetMetaTableOutputRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

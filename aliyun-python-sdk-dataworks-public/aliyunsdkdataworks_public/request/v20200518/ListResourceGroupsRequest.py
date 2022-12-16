@@ -42,11 +42,6 @@ class ListResourceGroupsRequest(RpcRequest):
 
 	def set_Tags(self, Tags):  # Array
 		self.add_query_param("Tags", json.dumps(Tags))
-	def get_TypeNames(self): # String
-		return self.get_query_params().get('TypeNames')
-
-	def set_TypeNames(self, TypeNames):  # String
-		self.add_query_param('TypeNames', TypeNames)
 	def get_ResourceManagerResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceManagerResourceGroupId')
 
