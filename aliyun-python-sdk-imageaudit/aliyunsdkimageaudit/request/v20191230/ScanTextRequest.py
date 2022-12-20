@@ -25,24 +25,23 @@ class ScanTextRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageaudit', '2019-12-30', 'ScanText','imageaudit')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Labelss(self):
+	def get_Labelss(self): # RepeatList
 		return self.get_body_params().get('Labels')
 
-	def set_Labelss(self, Labelss):
-		for depth1 in range(len(Labelss)):
-			if Labelss[depth1].get('Label') is not None:
-				self.add_body_params('Labels.' + str(depth1 + 1) + '.Label', Labelss[depth1].get('Label'))
-
-	def get_Taskss(self):
+	def set_Labelss(self, Labels):  # RepeatList
+		for depth1 in range(len(Labels)):
+			if Labels[depth1].get('Label') is not None:
+				self.add_body_params('Labels.' + str(depth1 + 1) + '.Label', Labels[depth1].get('Label'))
+	def get_Taskss(self): # RepeatList
 		return self.get_body_params().get('Tasks')
 
-	def set_Taskss(self, Taskss):
-		for depth1 in range(len(Taskss)):
-			if Taskss[depth1].get('Content') is not None:
-				self.add_body_params('Tasks.' + str(depth1 + 1) + '.Content', Taskss[depth1].get('Content'))
+	def set_Taskss(self, Tasks):  # RepeatList
+		for depth1 in range(len(Tasks)):
+			if Tasks[depth1].get('Content') is not None:
+				self.add_body_params('Tasks.' + str(depth1 + 1) + '.Content', Tasks[depth1].get('Content'))
