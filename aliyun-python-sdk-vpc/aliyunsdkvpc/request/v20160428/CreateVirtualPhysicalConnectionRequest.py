@@ -46,11 +46,6 @@ class CreateVirtualPhysicalConnectionRequest(RpcRequest):
 
 	def set_VlanId(self, VlanId):  # Long
 		self.add_query_param('VlanId', VlanId)
-	def get_VpconnUidResourceGroupId(self): # String
-		return self.get_query_params().get('VpconnUidResourceGroupId')
-
-	def set_VpconnUidResourceGroupId(self, VpconnUidResourceGroupId):  # String
-		self.add_query_param('VpconnUidResourceGroupId', VpconnUidResourceGroupId)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
