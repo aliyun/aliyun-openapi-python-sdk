@@ -46,6 +46,11 @@ class CreateVirtualPhysicalConnectionRequest(RpcRequest):
 
 	def set_VlanId(self, VlanId):  # Long
 		self.add_query_param('VlanId', VlanId)
+	def get_VpconnUidResourceGroupId(self): # String
+		return self.get_query_params().get('VpconnUidResourceGroupId')
+
+	def set_VpconnUidResourceGroupId(self, VpconnUidResourceGroupId):  # String
+		self.add_query_param('VpconnUidResourceGroupId', VpconnUidResourceGroupId)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -56,6 +61,11 @@ class CreateVirtualPhysicalConnectionRequest(RpcRequest):
 
 	def set_Spec(self, Spec):  # String
 		self.add_query_param('Spec', Spec)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

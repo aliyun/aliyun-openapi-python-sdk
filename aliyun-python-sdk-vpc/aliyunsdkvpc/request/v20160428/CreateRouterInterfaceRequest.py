@@ -76,6 +76,11 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_Spec(self, Spec):  # String
 		self.add_query_param('Spec', Spec)
+	def get_FastLinkMode(self): # Boolean
+		return self.get_query_params().get('FastLinkMode')
+
+	def set_FastLinkMode(self, FastLinkMode):  # Boolean
+		self.add_query_param('FastLinkMode', FastLinkMode)
 	def get_OppositeInterfaceId(self): # String
 		return self.get_query_params().get('OppositeInterfaceId')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class DescribeTagKeysForExpressConnectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRegions','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeTagKeysForExpressConnect','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,22 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ProductType(self): # String
-		return self.get_query_params().get('ProductType')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_ProductType(self, ProductType):  # String
-		self.add_query_param('ProductType', ProductType)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,8 +67,13 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_MaxResult(self): # Integer
+		return self.get_query_params().get('MaxResult')
+
+	def set_MaxResult(self, MaxResult):  # Integer
+		self.add_query_param('MaxResult', MaxResult)

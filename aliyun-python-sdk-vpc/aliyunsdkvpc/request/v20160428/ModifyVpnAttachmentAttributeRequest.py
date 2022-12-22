@@ -71,6 +71,11 @@ class ModifyVpnAttachmentAttributeRequest(RpcRequest):
 
 	def set_HealthCheckConfig(self, HealthCheckConfig):  # String
 		self.add_query_param('HealthCheckConfig', HealthCheckConfig)
+	def get_CustomerGatewayId(self): # String
+		return self.get_query_params().get('CustomerGatewayId')
+
+	def set_CustomerGatewayId(self, CustomerGatewayId):  # String
+		self.add_query_param('CustomerGatewayId', CustomerGatewayId)
 	def get_LocalSubnet(self): # String
 		return self.get_query_params().get('LocalSubnet')
 

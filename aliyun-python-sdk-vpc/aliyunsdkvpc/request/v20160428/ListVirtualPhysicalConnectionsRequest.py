@@ -42,6 +42,11 @@ class ListVirtualPhysicalConnectionsRequest(RpcRequest):
 
 	def set_VirtualPhysicalConnectionBusinessStatus(self, VirtualPhysicalConnectionBusinessStatus):  # String
 		self.add_query_param('VirtualPhysicalConnectionBusinessStatus', VirtualPhysicalConnectionBusinessStatus)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_VirtualPhysicalConnectionAliUidss(self): # RepeatList
 		return self.get_query_params().get('VirtualPhysicalConnectionAliUids')
 
