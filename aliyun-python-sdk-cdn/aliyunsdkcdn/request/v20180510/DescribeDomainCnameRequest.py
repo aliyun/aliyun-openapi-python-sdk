@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeDomainFileSizeProportionDataRequest(RpcRequest):
+class DescribeDomainCnameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainFileSizeProportionData')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainCname')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,11 @@ class DescribeDomainFileSizeProportionDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
