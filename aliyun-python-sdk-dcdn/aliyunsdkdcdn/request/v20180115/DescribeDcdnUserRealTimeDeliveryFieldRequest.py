@@ -36,8 +36,3 @@ class DescribeDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
 
 	def set_BusinessType(self, BusinessType):  # String
 		self.add_query_param('BusinessType', BusinessType)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

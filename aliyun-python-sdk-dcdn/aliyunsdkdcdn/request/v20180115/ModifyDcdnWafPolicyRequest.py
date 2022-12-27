@@ -31,21 +31,16 @@ class ModifyDcdnWafPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyStatus(self): # String
-		return self.get_body_params().get('PolicyStatus')
-
-	def set_PolicyStatus(self, PolicyStatus):  # String
-		self.add_body_params('PolicyStatus', PolicyStatus)
 	def get_PolicyId(self): # Long
 		return self.get_body_params().get('PolicyId')
 
 	def set_PolicyId(self, PolicyId):  # Long
 		self.add_body_params('PolicyId', PolicyId)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_PolicyStatus(self): # String
+		return self.get_body_params().get('PolicyStatus')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_PolicyStatus(self, PolicyStatus):  # String
+		self.add_body_params('PolicyStatus', PolicyStatus)
 	def get_PolicyName(self): # String
 		return self.get_body_params().get('PolicyName')
 

@@ -31,11 +31,6 @@ class DescribeDcdnDomainMultiUsageDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -46,8 +41,8 @@ class DescribeDcdnDomainMultiUsageDataRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)

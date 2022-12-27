@@ -1,3 +1,6 @@
+2022-12-27 Version: 2.2.10
+- Add DescribeDcdnWafLogs.
+
 2022-11-29 Version: 2.2.9
 - Update DescribeDcdnDeletedDomains.
 

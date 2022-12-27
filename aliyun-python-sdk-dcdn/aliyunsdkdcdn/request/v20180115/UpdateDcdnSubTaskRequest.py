@@ -31,11 +31,11 @@ class UpdateDcdnSubTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
+	def get_ReportIds(self): # String
+		return self.get_body_params().get('ReportIds')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
+	def set_ReportIds(self, ReportIds):  # String
+		self.add_body_params('ReportIds', ReportIds)
 	def get_DomainName(self): # String
 		return self.get_body_params().get('DomainName')
 
@@ -46,13 +46,8 @@ class UpdateDcdnSubTaskRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_body_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ReportIds(self): # String
-		return self.get_body_params().get('ReportIds')
-
-	def set_ReportIds(self, ReportIds):  # String
-		self.add_body_params('ReportIds', ReportIds)
+	def set_StartTime(self, StartTime):  # String
+		self.add_body_params('StartTime', StartTime)

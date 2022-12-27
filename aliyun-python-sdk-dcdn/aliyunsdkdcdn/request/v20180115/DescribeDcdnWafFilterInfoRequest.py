@@ -41,8 +41,3 @@ class DescribeDcdnWafFilterInfoRequest(RpcRequest):
 
 	def set_Language(self, Language):  # String
 		self.add_query_param('Language', Language)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

@@ -31,18 +31,13 @@ class DescribeDcdnDomainByCertificateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SSLStatus(self): # Boolean
-		return self.get_query_params().get('SSLStatus')
-
-	def set_SSLStatus(self, SSLStatus):  # Boolean
-		self.add_query_param('SSLStatus', SSLStatus)
 	def get_SSLPub(self): # String
 		return self.get_query_params().get('SSLPub')
 
 	def set_SSLPub(self, SSLPub):  # String
 		self.add_query_param('SSLPub', SSLPub)
+	def get_SSLStatus(self): # Boolean
+		return self.get_query_params().get('SSLStatus')
+
+	def set_SSLStatus(self, SSLStatus):  # Boolean
+		self.add_query_param('SSLStatus', SSLStatus)

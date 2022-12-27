@@ -31,23 +31,18 @@ class CreateRoutineRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_EnvConf(self): # String
 		return self.get_body_params().get('EnvConf')
 
 	def set_EnvConf(self, EnvConf):  # String
 		self.add_body_params('EnvConf', EnvConf)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)

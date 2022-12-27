@@ -36,8 +36,3 @@ class SetRoutineSubdomainRequest(RpcRequest):
 
 	def set_Subdomains(self, Subdomains):  # String
 		self.add_body_params('Subdomains', Subdomains)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

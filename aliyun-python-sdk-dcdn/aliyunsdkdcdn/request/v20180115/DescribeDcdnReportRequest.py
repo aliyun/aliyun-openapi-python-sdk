@@ -31,21 +31,21 @@ class DescribeDcdnReportRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportId(self): # Long
-		return self.get_query_params().get('ReportId')
-
-	def set_ReportId(self, ReportId):  # Long
-		self.add_query_param('ReportId', ReportId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_Area(self): # String
 		return self.get_query_params().get('Area')
 
 	def set_Area(self, Area):  # String
 		self.add_query_param('Area', Area)
+	def get_ReportId(self): # Long
+		return self.get_query_params().get('ReportId')
+
+	def set_ReportId(self, ReportId):  # Long
+		self.add_query_param('ReportId', ReportId)
+	def get_IsOverseas(self): # String
+		return self.get_query_params().get('IsOverseas')
+
+	def set_IsOverseas(self, IsOverseas):  # String
+		self.add_query_param('IsOverseas', IsOverseas)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -56,18 +56,13 @@ class DescribeDcdnReportRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_HttpCode(self): # String
 		return self.get_query_params().get('HttpCode')
 
 	def set_HttpCode(self, HttpCode):  # String
 		self.add_query_param('HttpCode', HttpCode)
-	def get_IsOverseas(self): # String
-		return self.get_query_params().get('IsOverseas')
-
-	def set_IsOverseas(self, IsOverseas):  # String
-		self.add_query_param('IsOverseas', IsOverseas)

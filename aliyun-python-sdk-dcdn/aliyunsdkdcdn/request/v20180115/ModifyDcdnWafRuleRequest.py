@@ -31,16 +31,6 @@ class ModifyDcdnWafRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RuleName(self): # String
-		return self.get_body_params().get('RuleName')
-
-	def set_RuleName(self, RuleName):  # String
-		self.add_body_params('RuleName', RuleName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_RuleConfig(self): # String
 		return self.get_body_params().get('RuleConfig')
 
@@ -51,6 +41,11 @@ class ModifyDcdnWafRuleRequest(RpcRequest):
 
 	def set_RuleStatus(self, RuleStatus):  # String
 		self.add_body_params('RuleStatus', RuleStatus)
+	def get_RuleName(self): # String
+		return self.get_body_params().get('RuleName')
+
+	def set_RuleName(self, RuleName):  # String
+		self.add_body_params('RuleName', RuleName)
 	def get_RuleId(self): # Long
 		return self.get_body_params().get('RuleId')
 

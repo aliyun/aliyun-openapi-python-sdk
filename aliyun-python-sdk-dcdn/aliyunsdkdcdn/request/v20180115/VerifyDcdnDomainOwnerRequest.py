@@ -31,18 +31,13 @@ class VerifyDcdnDomainOwnerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VerifyType(self): # String
-		return self.get_query_params().get('VerifyType')
-
-	def set_VerifyType(self, VerifyType):  # String
-		self.add_query_param('VerifyType', VerifyType)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_VerifyType(self): # String
+		return self.get_query_params().get('VerifyType')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_VerifyType(self, VerifyType):  # String
+		self.add_query_param('VerifyType', VerifyType)

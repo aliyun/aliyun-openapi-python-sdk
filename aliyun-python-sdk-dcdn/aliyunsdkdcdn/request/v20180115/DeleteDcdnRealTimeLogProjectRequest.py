@@ -36,8 +36,3 @@ class DeleteDcdnRealTimeLogProjectRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_query_param('ProjectName', ProjectName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

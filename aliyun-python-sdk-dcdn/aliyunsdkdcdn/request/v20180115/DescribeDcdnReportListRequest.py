@@ -36,8 +36,3 @@ class DescribeDcdnReportListRequest(RpcRequest):
 
 	def set_ReportId(self, ReportId):  # Long
 		self.add_query_param('ReportId', ReportId)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

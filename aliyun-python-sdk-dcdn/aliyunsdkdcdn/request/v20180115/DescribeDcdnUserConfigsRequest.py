@@ -36,8 +36,3 @@ class DescribeDcdnUserConfigsRequest(RpcRequest):
 
 	def set_FunctionName(self, FunctionName):  # String
 		self.add_query_param('FunctionName', FunctionName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

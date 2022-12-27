@@ -41,11 +41,6 @@ class BatchSetDcdnWafDomainConfigsRequest(RpcRequest):
 
 	def set_ClientIpTag(self, ClientIpTag):  # String
 		self.add_body_params('ClientIpTag', ClientIpTag)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_DefenseStatus(self): # String
 		return self.get_body_params().get('DefenseStatus')
 

@@ -36,8 +36,3 @@ class DescribeDcdnDeliverListRequest(RpcRequest):
 
 	def set_DeliverId(self, DeliverId):  # Long
 		self.add_query_param('DeliverId', DeliverId)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

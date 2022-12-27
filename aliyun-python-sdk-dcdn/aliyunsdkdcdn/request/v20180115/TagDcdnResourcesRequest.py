@@ -31,6 +31,12 @@ class TagDcdnResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -40,17 +46,6 @@ class TagDcdnResourcesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-	def get_ResourceIds(self): # RepeatList
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceIds(self, ResourceId):  # RepeatList
-		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 

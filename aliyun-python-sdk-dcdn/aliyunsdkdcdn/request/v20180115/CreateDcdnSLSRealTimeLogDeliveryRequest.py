@@ -36,21 +36,6 @@ class CreateDcdnSLSRealTimeLogDeliveryRequest(RpcRequest):
 
 	def set_SLSLogStore(self, SLSLogStore):  # String
 		self.add_body_params('SLSLogStore', SLSLogStore)
-	def get_SLSProject(self): # String
-		return self.get_body_params().get('SLSProject')
-
-	def set_SLSProject(self, SLSProject):  # String
-		self.add_body_params('SLSProject', SLSProject)
-	def get_BusinessType(self): # String
-		return self.get_body_params().get('BusinessType')
-
-	def set_BusinessType(self, BusinessType):  # String
-		self.add_body_params('BusinessType', BusinessType)
-	def get_SLSRegion(self): # String
-		return self.get_body_params().get('SLSRegion')
-
-	def set_SLSRegion(self, SLSRegion):  # String
-		self.add_body_params('SLSRegion', SLSRegion)
 	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
@@ -71,8 +56,18 @@ class CreateDcdnSLSRealTimeLogDeliveryRequest(RpcRequest):
 
 	def set_DataCenter(self, DataCenter):  # String
 		self.add_body_params('DataCenter', DataCenter)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_SLSProject(self): # String
+		return self.get_body_params().get('SLSProject')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_SLSProject(self, SLSProject):  # String
+		self.add_body_params('SLSProject', SLSProject)
+	def get_SLSRegion(self): # String
+		return self.get_body_params().get('SLSRegion')
+
+	def set_SLSRegion(self, SLSRegion):  # String
+		self.add_body_params('SLSRegion', SLSRegion)
+	def get_BusinessType(self): # String
+		return self.get_body_params().get('BusinessType')
+
+	def set_BusinessType(self, BusinessType):  # String
+		self.add_body_params('BusinessType', BusinessType)
