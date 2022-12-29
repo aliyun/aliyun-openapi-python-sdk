@@ -75,6 +75,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_DBNodeType(self): # String
+		return self.get_query_params().get('DBNodeType')
+
+	def set_DBNodeType(self, DBNodeType):  # String
+		self.add_query_param('DBNodeType', DBNodeType)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
