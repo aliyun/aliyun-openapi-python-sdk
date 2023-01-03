@@ -290,6 +290,11 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 				self.add_query_param('DnsConfigOption.' + str(depth1 + 1) + '.Name', DnsConfigOption[depth1].get('Name'))
 			if DnsConfigOption[depth1].get('Value') is not None:
 				self.add_query_param('DnsConfigOption.' + str(depth1 + 1) + '.Value', DnsConfigOption[depth1].get('Value'))
+	def get_ContainersUpdateType(self): # String
+		return self.get_query_params().get('ContainersUpdateType')
+
+	def set_ContainersUpdateType(self, ContainersUpdateType):  # String
+		self.add_query_param('ContainersUpdateType', ContainersUpdateType)
 	def get_EphemeralStorage(self): # Integer
 		return self.get_query_params().get('EphemeralStorage')
 

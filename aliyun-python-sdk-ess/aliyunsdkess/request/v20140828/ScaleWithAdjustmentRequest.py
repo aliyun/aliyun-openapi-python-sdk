@@ -31,26 +31,36 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AdjustmentValue(self): # Integer
-		return self.get_query_params().get('AdjustmentValue')
-
-	def set_AdjustmentValue(self, AdjustmentValue):  # Integer
-		self.add_query_param('AdjustmentValue', AdjustmentValue)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_SyncActivity(self): # Boolean
+		return self.get_query_params().get('SyncActivity')
+
+	def set_SyncActivity(self, SyncActivity):  # Boolean
+		self.add_query_param('SyncActivity', SyncActivity)
+	def get_deploymentSetId(self): # String
+		return self.get_query_params().get('deploymentSetId')
+
+	def set_deploymentSetId(self, deploymentSetId):  # String
+		self.add_query_param('deploymentSetId', deploymentSetId)
+	def get_AdjustmentValue(self): # Integer
+		return self.get_query_params().get('AdjustmentValue')
+
+	def set_AdjustmentValue(self, AdjustmentValue):  # Integer
+		self.add_query_param('AdjustmentValue', AdjustmentValue)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_AdjustmentType(self): # String
 		return self.get_query_params().get('AdjustmentType')
 
@@ -66,8 +76,3 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 
 	def set_MinAdjustmentMagnitude(self, MinAdjustmentMagnitude):  # Integer
 		self.add_query_param('MinAdjustmentMagnitude', MinAdjustmentMagnitude)
-	def get_SyncActivity(self): # Boolean
-		return self.get_query_params().get('SyncActivity')
-
-	def set_SyncActivity(self, SyncActivity):  # Boolean
-		self.add_query_param('SyncActivity', SyncActivity)

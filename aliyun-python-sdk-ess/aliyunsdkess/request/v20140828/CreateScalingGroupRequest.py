@@ -52,6 +52,11 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_SpotInstanceRemedy(self, SpotInstanceRemedy):  # Boolean
 		self.add_query_param('SpotInstanceRemedy', SpotInstanceRemedy)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_GroupType(self): # String
 		return self.get_query_params().get('GroupType')
 
@@ -112,6 +117,8 @@ class CreateScalingGroupRequest(RpcRequest):
 				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateOverride[depth1].get('WeightedCapacity'))
 			if LaunchTemplateOverride[depth1].get('InstanceType') is not None:
 				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateOverride[depth1].get('InstanceType'))
+			if LaunchTemplateOverride[depth1].get('SpotPriceLimit') is not None:
+				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.SpotPriceLimit', LaunchTemplateOverride[depth1].get('SpotPriceLimit'))
 	def get_CompensateWithOnDemand(self): # Boolean
 		return self.get_query_params().get('CompensateWithOnDemand')
 
