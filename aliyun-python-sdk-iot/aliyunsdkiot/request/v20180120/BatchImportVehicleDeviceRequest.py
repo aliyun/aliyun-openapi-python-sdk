@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class RRpcRequest(RpcRequest):
+class BatchImportVehicleDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RRpc')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchImportVehicleDevice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class RRpcRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Timeout(self):
-		return self.get_query_params().get('Timeout')
-
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_RequestBase64Byte(self):
-		return self.get_query_params().get('RequestBase64Byte')
-
-	def set_RequestBase64Byte(self,RequestBase64Byte):
-		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -55,20 +43,14 @@ class RRpcRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_ContentType(self):
-		return self.get_query_params().get('ContentType')
+	def get_DeviceLists(self):
+		return self.get_query_params().get('DeviceList')
 
-	def set_ContentType(self,ContentType):
-		self.add_query_param('ContentType',ContentType)
-
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
-
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
+	def set_DeviceLists(self, DeviceLists):
+		for depth1 in range(len(DeviceLists)):
+			if DeviceLists[depth1].get('DeviceId') is not None:
+				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceId', DeviceLists[depth1].get('DeviceId'))
+			if DeviceLists[depth1].get('Manufacturer') is not None:
+				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.Manufacturer', DeviceLists[depth1].get('Manufacturer'))
+			if DeviceLists[depth1].get('DeviceModel') is not None:
+				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceModel', DeviceLists[depth1].get('DeviceModel'))

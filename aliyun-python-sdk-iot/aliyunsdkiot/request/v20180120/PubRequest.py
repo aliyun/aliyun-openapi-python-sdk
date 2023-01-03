@@ -65,6 +65,12 @@ class PubRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_MessageExpiryInterval(self):
+		return self.get_query_params().get('MessageExpiryInterval')
+
+	def set_MessageExpiryInterval(self,MessageExpiryInterval):
+		self.add_query_param('MessageExpiryInterval',MessageExpiryInterval)
+
 	def get_ResponseTopic(self):
 		return self.get_query_params().get('ResponseTopic')
 
@@ -94,6 +100,12 @@ class PubRequest(RpcRequest):
 
 	def set_ContentType(self,ContentType):
 		self.add_query_param('ContentType',ContentType)
+
+	def get_Retained(self):
+		return self.get_query_params().get('Retained')
+
+	def set_Retained(self,Retained):
+		self.add_query_param('Retained',Retained)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
