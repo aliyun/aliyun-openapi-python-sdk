@@ -108,6 +108,11 @@ class AddNodesRequest(RpcRequest):
 
 	def set_HostNamePrefix(self, HostNamePrefix):  # String
 		self.add_query_param('HostNamePrefix', HostNamePrefix)
+	def get_ComputeSpotInterruptionBehavior(self): # String
+		return self.get_query_params().get('ComputeSpotInterruptionBehavior')
+
+	def set_ComputeSpotInterruptionBehavior(self, ComputeSpotInterruptionBehavior):  # String
+		self.add_query_param('ComputeSpotInterruptionBehavior', ComputeSpotInterruptionBehavior)
 	def get_ComputeSpotPriceLimit(self): # String
 		return self.get_query_params().get('ComputeSpotPriceLimit')
 
@@ -153,6 +158,11 @@ class AddNodesRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ComputeSpotDuration(self): # Integer
+		return self.get_query_params().get('ComputeSpotDuration')
+
+	def set_ComputeSpotDuration(self, ComputeSpotDuration):  # Integer
+		self.add_query_param('ComputeSpotDuration', ComputeSpotDuration)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 

@@ -106,12 +106,16 @@ class SetAutoScaleConfigRequest(RpcRequest):
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.VSwitchId', Queues[depth1].get('InstanceTypes')[depth2].get('VSwitchId'))
 					if Queues[depth1].get('InstanceTypes')[depth2].get('SpotStrategy') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.SpotStrategy', Queues[depth1].get('InstanceTypes')[depth2].get('SpotStrategy'))
+					if Queues[depth1].get('InstanceTypes')[depth2].get('SpotInterruptionBehavior') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.SpotInterruptionBehavior', Queues[depth1].get('InstanceTypes')[depth2].get('SpotInterruptionBehavior'))
 					if Queues[depth1].get('InstanceTypes')[depth2].get('ZoneId') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.ZoneId', Queues[depth1].get('InstanceTypes')[depth2].get('ZoneId'))
 					if Queues[depth1].get('InstanceTypes')[depth2].get('InstanceType') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.InstanceType', Queues[depth1].get('InstanceTypes')[depth2].get('InstanceType'))
 					if Queues[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.SpotPriceLimit', Queues[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit'))
+					if Queues[depth1].get('InstanceTypes')[depth2].get('SpotDuration') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.'  + str(depth2 + 1) + '.SpotDuration', Queues[depth1].get('InstanceTypes')[depth2].get('SpotDuration'))
 			if Queues[depth1].get('EnableAutoGrow') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoGrow', Queues[depth1].get('EnableAutoGrow'))
 			if Queues[depth1].get('HostNameSuffix') is not None:

@@ -41,6 +41,11 @@ class ModifyClusterAttributesRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_RamRoleName(self): # String
+		return self.get_query_params().get('RamRoleName')
+
+	def set_RamRoleName(self, RamRoleName):  # String
+		self.add_query_param('RamRoleName', RamRoleName)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -51,6 +56,12 @@ class ModifyClusterAttributesRequest(RpcRequest):
 
 	def set_ImageOwnerAlias(self, ImageOwnerAlias):  # String
 		self.add_query_param('ImageOwnerAlias', ImageOwnerAlias)
+	def get_RamNodeTypess(self): # RepeatList
+		return self.get_query_params().get('RamNodeTypes')
+
+	def set_RamNodeTypess(self, RamNodeTypes):  # RepeatList
+		for depth1 in range(len(RamNodeTypes)):
+			self.add_query_param('RamNodeTypes.' + str(depth1 + 1), RamNodeTypes[depth1])
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
