@@ -37,3 +37,8 @@ class DescribeNamespaceResourcesRequest(RoaRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_NameSpaceShortId(self): # String
+		return self.get_query_params().get('NameSpaceShortId')
+
+	def set_NameSpaceShortId(self, NameSpaceShortId):  # String
+		self.add_query_param('NameSpaceShortId', NameSpaceShortId)

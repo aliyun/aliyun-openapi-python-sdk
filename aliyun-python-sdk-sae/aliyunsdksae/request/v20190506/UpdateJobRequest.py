@@ -197,6 +197,11 @@ class UpdateJobRequest(RoaRequest):
 
 	def set_SliceEnvs(self, SliceEnvs):  # String
 		self.add_query_param('SliceEnvs', SliceEnvs)
+	def get_EnableImageAccl(self): # Boolean
+		return self.get_body_params().get('EnableImageAccl')
+
+	def set_EnableImageAccl(self, EnableImageAccl):  # Boolean
+		self.add_body_params('EnableImageAccl', EnableImageAccl)
 	def get_Replicas(self): # String
 		return self.get_query_params().get('Replicas')
 

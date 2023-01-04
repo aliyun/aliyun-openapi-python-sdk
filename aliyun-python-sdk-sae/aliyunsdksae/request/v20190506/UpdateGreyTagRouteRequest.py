@@ -47,6 +47,11 @@ class UpdateGreyTagRouteRequest(RoaRequest):
 
 	def set_DubboRules(self, DubboRules):  # String
 		self.add_query_param('DubboRules', DubboRules)
+	def get_AlbRules(self): # String
+		return self.get_query_params().get('AlbRules')
+
+	def set_AlbRules(self, AlbRules):  # String
+		self.add_query_param('AlbRules', AlbRules)
 	def get_ScRules(self): # String
 		return self.get_query_params().get('ScRules')
 

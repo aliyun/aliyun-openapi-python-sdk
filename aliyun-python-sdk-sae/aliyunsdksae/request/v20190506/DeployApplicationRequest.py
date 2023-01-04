@@ -137,6 +137,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_AutoEnableApplicationScalingRule(self, AutoEnableApplicationScalingRule):  # Boolean
 		self.add_query_param('AutoEnableApplicationScalingRule', AutoEnableApplicationScalingRule)
+	def get_PackageType(self): # String
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self, PackageType):  # String
+		self.add_query_param('PackageType', PackageType)
 	def get_PostStart(self): # String
 		return self.get_query_params().get('PostStart')
 

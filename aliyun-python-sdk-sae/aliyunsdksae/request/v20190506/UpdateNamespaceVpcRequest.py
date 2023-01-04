@@ -42,3 +42,8 @@ class UpdateNamespaceVpcRequest(RoaRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_NameSpaceShortId(self): # String
+		return self.get_query_params().get('NameSpaceShortId')
+
+	def set_NameSpaceShortId(self, NameSpaceShortId):  # String
+		self.add_query_param('NameSpaceShortId', NameSpaceShortId)
