@@ -1,0 +1,3 @@
+2023-01-04 Version: 1.0.0
+- Public ListServiceInstances and GetServiceInstance OpenApi.
+
