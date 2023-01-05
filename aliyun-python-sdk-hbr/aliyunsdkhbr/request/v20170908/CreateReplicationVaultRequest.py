@@ -23,52 +23,46 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class CreateReplicationVaultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateReplicationVault','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateReplicationVault')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReplicationSourceVaultId(self):
+	def get_ReplicationSourceVaultId(self): # String
 		return self.get_query_params().get('ReplicationSourceVaultId')
 
-	def set_ReplicationSourceVaultId(self,ReplicationSourceVaultId):
-		self.add_query_param('ReplicationSourceVaultId',ReplicationSourceVaultId)
-
-	def get_Description(self):
+	def set_ReplicationSourceVaultId(self, ReplicationSourceVaultId):  # String
+		self.add_query_param('ReplicationSourceVaultId', ReplicationSourceVaultId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_VaultName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_VaultName(self): # String
 		return self.get_query_params().get('VaultName')
 
-	def set_VaultName(self,VaultName):
-		self.add_query_param('VaultName',VaultName)
+	def set_VaultName(self, VaultName):  # String
+		self.add_query_param('VaultName', VaultName)
+	def get_RedundancyType(self): # String
+		return self.get_query_params().get('RedundancyType')
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
-	def get_ReplicationSourceRegionId(self):
+	def set_RedundancyType(self, RedundancyType):  # String
+		self.add_query_param('RedundancyType', RedundancyType)
+	def get_ReplicationSourceRegionId(self): # String
 		return self.get_query_params().get('ReplicationSourceRegionId')
 
-	def set_ReplicationSourceRegionId(self,ReplicationSourceRegionId):
-		self.add_query_param('ReplicationSourceRegionId',ReplicationSourceRegionId)
-
-	def get_VaultRegionId(self):
+	def set_ReplicationSourceRegionId(self, ReplicationSourceRegionId):  # String
+		self.add_query_param('ReplicationSourceRegionId', ReplicationSourceRegionId)
+	def get_VaultRegionId(self): # String
 		return self.get_query_params().get('VaultRegionId')
 
-	def set_VaultRegionId(self,VaultRegionId):
-		self.add_query_param('VaultRegionId',VaultRegionId)
-
-	def get_VaultStorageClass(self):
+	def set_VaultRegionId(self, VaultRegionId):  # String
+		self.add_query_param('VaultRegionId', VaultRegionId)
+	def get_VaultStorageClass(self): # String
 		return self.get_query_params().get('VaultStorageClass')
 
-	def set_VaultStorageClass(self,VaultStorageClass):
-		self.add_query_param('VaultStorageClass',VaultStorageClass)
+	def set_VaultStorageClass(self, VaultStorageClass):  # String
+		self.add_query_param('VaultStorageClass', VaultStorageClass)

@@ -23,35 +23,32 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateVaultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateVault','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateVault')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VaultId(self):
+	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
-	def set_VaultId(self,VaultId):
-		self.add_query_param('VaultId',VaultId)
-
-	def get_Description(self):
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_VaultName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_VaultName(self): # String
 		return self.get_query_params().get('VaultName')
 
-	def set_VaultName(self,VaultName):
-		self.add_query_param('VaultName',VaultName)
+	def set_VaultName(self, VaultName):  # String
+		self.add_query_param('VaultName', VaultName)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_SearchEnabled(self):
-		return self.get_query_params().get('SearchEnabled')
-
-	def set_SearchEnabled(self,SearchEnabled):
-		self.add_query_param('SearchEnabled',SearchEnabled)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

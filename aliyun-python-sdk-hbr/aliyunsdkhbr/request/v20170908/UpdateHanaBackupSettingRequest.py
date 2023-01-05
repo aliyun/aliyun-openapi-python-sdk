@@ -23,77 +23,62 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateHanaBackupSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaBackupSetting','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaBackupSetting')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LogBackupParameterFile(self):
+	def get_LogBackupParameterFile(self): # String
 		return self.get_query_params().get('LogBackupParameterFile')
 
-	def set_LogBackupParameterFile(self,LogBackupParameterFile):
-		self.add_query_param('LogBackupParameterFile',LogBackupParameterFile)
-
-	def get_VaultId(self):
+	def set_LogBackupParameterFile(self, LogBackupParameterFile):  # String
+		self.add_query_param('LogBackupParameterFile', LogBackupParameterFile)
+	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
-	def set_VaultId(self,VaultId):
-		self.add_query_param('VaultId',VaultId)
-
-	def get_LogBackupTimeout(self):
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
+	def get_LogBackupTimeout(self): # Long
 		return self.get_query_params().get('LogBackupTimeout')
 
-	def set_LogBackupTimeout(self,LogBackupTimeout):
-		self.add_query_param('LogBackupTimeout',LogBackupTimeout)
-
-	def get_DataBackupParameterFile(self):
+	def set_LogBackupTimeout(self, LogBackupTimeout):  # Long
+		self.add_query_param('LogBackupTimeout', LogBackupTimeout)
+	def get_DataBackupParameterFile(self): # String
 		return self.get_query_params().get('DataBackupParameterFile')
 
-	def set_DataBackupParameterFile(self,DataBackupParameterFile):
-		self.add_query_param('DataBackupParameterFile',DataBackupParameterFile)
-
-	def get_ClusterId(self):
+	def set_DataBackupParameterFile(self, DataBackupParameterFile):  # String
+		self.add_query_param('DataBackupParameterFile', DataBackupParameterFile)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_EnableAutoLogBackup(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_EnableAutoLogBackup(self): # Boolean
 		return self.get_query_params().get('EnableAutoLogBackup')
 
-	def set_EnableAutoLogBackup(self,EnableAutoLogBackup):
-		self.add_query_param('EnableAutoLogBackup',EnableAutoLogBackup)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
-	def get_LogBackupUsingBackint(self):
+	def set_EnableAutoLogBackup(self, EnableAutoLogBackup):  # Boolean
+		self.add_query_param('EnableAutoLogBackup', EnableAutoLogBackup)
+	def get_LogBackupUsingBackint(self): # Boolean
 		return self.get_query_params().get('LogBackupUsingBackint')
 
-	def set_LogBackupUsingBackint(self,LogBackupUsingBackint):
-		self.add_query_param('LogBackupUsingBackint',LogBackupUsingBackint)
-
-	def get_CatalogBackupUsingBackint(self):
+	def set_LogBackupUsingBackint(self, LogBackupUsingBackint):  # Boolean
+		self.add_query_param('LogBackupUsingBackint', LogBackupUsingBackint)
+	def get_CatalogBackupUsingBackint(self): # Boolean
 		return self.get_query_params().get('CatalogBackupUsingBackint')
 
-	def set_CatalogBackupUsingBackint(self,CatalogBackupUsingBackint):
-		self.add_query_param('CatalogBackupUsingBackint',CatalogBackupUsingBackint)
-
-	def get_DatabaseName(self):
+	def set_CatalogBackupUsingBackint(self, CatalogBackupUsingBackint):  # Boolean
+		self.add_query_param('CatalogBackupUsingBackint', CatalogBackupUsingBackint)
+	def get_DatabaseName(self): # String
 		return self.get_query_params().get('DatabaseName')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_CatalogBackupParameterFile(self):
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)
+	def get_CatalogBackupParameterFile(self): # String
 		return self.get_query_params().get('CatalogBackupParameterFile')
 
-	def set_CatalogBackupParameterFile(self,CatalogBackupParameterFile):
-		self.add_query_param('CatalogBackupParameterFile',CatalogBackupParameterFile)
+	def set_CatalogBackupParameterFile(self, CatalogBackupParameterFile):  # String
+		self.add_query_param('CatalogBackupParameterFile', CatalogBackupParameterFile)

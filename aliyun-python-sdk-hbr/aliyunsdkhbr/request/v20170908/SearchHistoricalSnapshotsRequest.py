@@ -23,34 +23,31 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class SearchHistoricalSnapshotsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'SearchHistoricalSnapshots','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'SearchHistoricalSnapshots')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Query(self):
+	def get_Query(self): # String
 		return self.get_query_params().get('Query')
 
-	def set_Query(self,Query):
-		self.add_query_param('Query',Query)
-
-	def get_NextToken(self):
+	def set_Query(self, Query):  # String
+		self.add_query_param('Query', Query)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_Limit(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_SourceType(self):
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)

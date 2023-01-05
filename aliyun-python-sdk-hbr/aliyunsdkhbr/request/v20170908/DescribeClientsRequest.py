@@ -23,89 +23,52 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeClients','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeClients')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientType(self):
+	def get_ClientType(self): # String
 		return self.get_query_params().get('ClientType')
 
-	def set_ClientType(self,ClientType):
-		self.add_query_param('ClientType',ClientType)
-
-	def get_InnerIpAddresses(self):
-		return self.get_query_params().get('InnerIpAddresses')
-
-	def set_InnerIpAddresses(self,InnerIpAddresses):
-		self.add_query_param('InnerIpAddresses',InnerIpAddresses)
-
-	def get_ClientId(self):
+	def set_ClientType(self, ClientType):  # String
+		self.add_query_param('ClientType', ClientType)
+	def get_ClientId(self): # String
 		return self.get_query_params().get('ClientId')
 
-	def set_ClientId(self,ClientId):
-		self.add_query_param('ClientId',ClientId)
-
-	def get_PrivateIpAddresses(self):
-		return self.get_query_params().get('PrivateIpAddresses')
-
-	def set_PrivateIpAddresses(self,PrivateIpAddresses):
-		self.add_query_param('PrivateIpAddresses',PrivateIpAddresses)
-
-	def get_VaultId(self):
+	def set_ClientId(self, ClientId):  # String
+		self.add_query_param('ClientId', ClientId)
+	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
-	def set_VaultId(self,VaultId):
-		self.add_query_param('VaultId',VaultId)
-
-	def get_PageNumber(self):
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_VaultRegionId(self):
-		return self.get_query_params().get('VaultRegionId')
-
-	def set_VaultRegionId(self,VaultRegionId):
-		self.add_query_param('VaultRegionId',VaultRegionId)
-
-	def get_PageSize(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SourceType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
-
-	def get_ClusterId(self):
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

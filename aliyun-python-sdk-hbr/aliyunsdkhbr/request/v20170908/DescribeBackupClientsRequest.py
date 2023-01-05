@@ -23,40 +23,60 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeBackupClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupClients','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupClients')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientType(self):
+	def get_ClientType(self): # String
 		return self.get_query_params().get('ClientType')
 
-	def set_ClientType(self,ClientType):
-		self.add_query_param('ClientType',ClientType)
+	def set_ClientType(self, ClientType):  # String
+		self.add_query_param('ClientType', ClientType)
+	def get_CrossAccountType(self): # String
+		return self.get_query_params().get('CrossAccountType')
 
-	def get_Appliance(self):
-		return self.get_query_params().get('Appliance')
+	def set_CrossAccountType(self, CrossAccountType):  # String
+		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
 
-	def set_Appliance(self,Appliance):
-		self.add_query_param('Appliance',Appliance)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_PageNumber(self):
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ClientIds(self): # Json
+		return self.get_body_params().get('ClientIds')
 
-	def get_PageSize(self):
+	def set_ClientIds(self, ClientIds):  # Json
+		self.add_body_params('ClientIds', ClientIds)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_InstanceIds(self): # Json
+		return self.get_body_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Json
+		self.add_body_params('InstanceIds', InstanceIds)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
+
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)

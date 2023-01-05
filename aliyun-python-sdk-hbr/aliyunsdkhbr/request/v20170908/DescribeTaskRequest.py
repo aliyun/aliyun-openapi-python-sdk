@@ -23,23 +23,27 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeTask','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeTask')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Token(self):
+	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_TaskId(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

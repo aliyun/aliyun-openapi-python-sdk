@@ -23,22 +23,36 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DetachNasFileSystemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DetachNasFileSystem','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DetachNasFileSystem')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CreateTime(self):
+	def get_CreateTime(self): # String
 		return self.get_query_params().get('CreateTime')
 
-	def set_CreateTime(self,CreateTime):
-		self.add_query_param('CreateTime',CreateTime)
+	def set_CreateTime(self, CreateTime):  # String
+		self.add_query_param('CreateTime', CreateTime)
+	def get_CrossAccountType(self): # String
+		return self.get_query_params().get('CrossAccountType')
 
-	def get_FileSystemId(self):
+	def set_CrossAccountType(self, CrossAccountType):  # String
+		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
+
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
+
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)
+	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
+	def set_FileSystemId(self, FileSystemId):  # String
+		self.add_query_param('FileSystemId', FileSystemId)

@@ -23,16 +23,16 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DeleteBackupClientRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteBackupClient','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteBackupClient')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientId(self):
+	def get_ClientId(self): # String
 		return self.get_query_params().get('ClientId')
 
-	def set_ClientId(self,ClientId):
-		self.add_query_param('ClientId',ClientId)
+	def set_ClientId(self, ClientId):  # String
+		self.add_query_param('ClientId', ClientId)

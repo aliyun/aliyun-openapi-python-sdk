@@ -23,40 +23,36 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeBackupPlansRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupPlans','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupPlans')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Filterss(self):
+	def get_Filterss(self): # RepeatList
 		return self.get_query_params().get('Filters')
 
-	def set_Filterss(self, Filterss):
-		for depth1 in range(len(Filterss)):
-			if Filterss[depth1].get('Values') is not None:
-				for depth2 in range(len(Filterss[depth1].get('Values'))):
-					if Filterss[depth1].get('Values')[depth2] is not None:
-						self.add_query_param('Filters.' + str(depth1 + 1) + '.Values.' + str(depth2 + 1) , Filterss[depth1].get('Values')[depth2])
-			if Filterss[depth1].get('Key') is not None:
-				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filterss[depth1].get('Key'))
-
-	def get_PageNumber(self):
+	def set_Filterss(self, Filters):  # RepeatList
+		for depth1 in range(len(Filters)):
+			if Filters[depth1].get('Values') is not None:
+				for depth2 in range(len(Filters[depth1].get('Values'))):
+					self.add_query_param('Filters.' + str(depth1 + 1) + '.Values.' + str(depth2 + 1), Filters[depth1].get('Values')[depth2])
+			if Filters[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filters[depth1].get('Key'))
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SourceType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)

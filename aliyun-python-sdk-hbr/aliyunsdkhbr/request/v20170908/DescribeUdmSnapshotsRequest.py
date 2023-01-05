@@ -23,40 +23,51 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeUdmSnapshotsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeUdmSnapshots','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeUdmSnapshots')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SnapshotIds(self): # Json
+		return self.get_body_params().get('SnapshotIds')
 
-	def get_EndTime(self):
+	def set_SnapshotIds(self, SnapshotIds):  # Json
+		self.add_body_params('SnapshotIds', SnapshotIds)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_JobId(self): # String
+		return self.get_query_params().get('JobId')
 
-	def get_InstanceId(self):
+	def set_JobId(self, JobId):  # String
+		self.add_query_param('JobId', JobId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SourceType(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
+	def get_DiskId(self): # String
+		return self.get_query_params().get('DiskId')
 
-	def get_UdmRegionId(self):
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)
+	def get_UdmRegionId(self): # String
 		return self.get_query_params().get('UdmRegionId')
 
-	def set_UdmRegionId(self,UdmRegionId):
-		self.add_query_param('UdmRegionId',UdmRegionId)
+	def set_UdmRegionId(self, UdmRegionId):  # String
+		self.add_query_param('UdmRegionId', UdmRegionId)

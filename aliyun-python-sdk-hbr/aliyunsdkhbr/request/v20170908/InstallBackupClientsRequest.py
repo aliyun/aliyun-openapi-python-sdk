@@ -23,16 +23,31 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class InstallBackupClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'InstallBackupClients','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'InstallBackupClients')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CrossAccountType(self): # String
+		return self.get_query_params().get('CrossAccountType')
 
-	def get_InstanceIds(self):
+	def set_CrossAccountType(self, CrossAccountType):  # String
+		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
+
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
+
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)

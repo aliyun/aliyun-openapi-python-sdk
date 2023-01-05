@@ -23,9 +23,11 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class OpenHbrServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'OpenHbrService','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'OpenHbrService')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

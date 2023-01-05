@@ -23,47 +23,42 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateHanaRetentionSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaRetentionSetting','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaRetentionSetting')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VaultId(self):
+	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
-	def set_VaultId(self,VaultId):
-		self.add_query_param('VaultId',VaultId)
-
-	def get_ClusterId(self):
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Schedule(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Schedule(self): # String
 		return self.get_query_params().get('Schedule')
 
-	def set_Schedule(self,Schedule):
-		self.add_query_param('Schedule',Schedule)
-
-	def get_DatabaseName(self):
+	def set_Schedule(self, Schedule):  # String
+		self.add_query_param('Schedule', Schedule)
+	def get_DatabaseName(self): # String
 		return self.get_query_params().get('DatabaseName')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_RetentionDays(self):
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)
+	def get_RetentionDays(self): # Long
 		return self.get_query_params().get('RetentionDays')
 
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
-
-	def get_Disabled(self):
+	def set_RetentionDays(self, RetentionDays):  # Long
+		self.add_query_param('RetentionDays', RetentionDays)
+	def get_Disabled(self): # Boolean
 		return self.get_query_params().get('Disabled')
 
-	def set_Disabled(self,Disabled):
-		self.add_query_param('Disabled',Disabled)
+	def set_Disabled(self, Disabled):  # Boolean
+		self.add_query_param('Disabled', Disabled)

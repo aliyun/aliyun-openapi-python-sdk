@@ -23,28 +23,31 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class ExecuteBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'ExecuteBackupPlan','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'ExecuteBackupPlan')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VaultId(self):
+	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
-	def set_VaultId(self,VaultId):
-		self.add_query_param('VaultId',VaultId)
-
-	def get_PlanId(self):
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
+	def get_PlanId(self): # String
 		return self.get_query_params().get('PlanId')
 
-	def set_PlanId(self,PlanId):
-		self.add_query_param('PlanId',PlanId)
-
-	def get_SourceType(self):
+	def set_PlanId(self, PlanId):  # String
+		self.add_query_param('PlanId', PlanId)
+	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
+	def get_RuleId(self): # String
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)
