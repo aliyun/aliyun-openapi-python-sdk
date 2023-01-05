@@ -36,3 +36,8 @@ class DeleteDbfsRequest(RpcRequest):
 
 	def set_FsId(self, FsId):  # String
 		self.add_query_param('FsId', FsId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
