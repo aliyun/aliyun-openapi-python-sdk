@@ -36,16 +36,21 @@ class CreateBusinessRequest(RpcRequest):
 
 	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
-	def get_BusinessName(self): # String
-		return self.get_body_params().get('BusinessName')
-
-	def set_BusinessName(self, BusinessName):  # String
-		self.add_body_params('BusinessName', BusinessName)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_ProjectIdentifier(self): # String
+		return self.get_body_params().get('ProjectIdentifier')
+
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+	def get_BusinessName(self): # String
+		return self.get_body_params().get('BusinessName')
+
+	def set_BusinessName(self, BusinessName):  # String
+		self.add_body_params('BusinessName', BusinessName)
 	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 
@@ -56,8 +61,3 @@ class CreateBusinessRequest(RpcRequest):
 
 	def set_UseType(self, UseType):  # String
 		self.add_body_params('UseType', UseType)
-	def get_ProjectIdentifier(self): # String
-		return self.get_body_params().get('ProjectIdentifier')
-
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
-		self.add_body_params('ProjectIdentifier', ProjectIdentifier)

@@ -55,11 +55,6 @@ class CreateBaselineRequest(RpcRequest):
 
 	def set_Priority(self, Priority):  # Integer
 		self.add_body_params('Priority', Priority)
-	def get_TaskIds(self): # String
-		return self.get_body_params().get('TaskIds')
-
-	def set_TaskIds(self, TaskIds):  # String
-		self.add_body_params('TaskIds', TaskIds)
 	def get_BaselineType(self): # String
 		return self.get_body_params().get('BaselineType')
 
@@ -75,3 +70,8 @@ class CreateBaselineRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
+	def get_NodeIds(self): # String
+		return self.get_body_params().get('NodeIds')
+
+	def set_NodeIds(self, NodeIds):  # String
+		self.add_body_params('NodeIds', NodeIds)

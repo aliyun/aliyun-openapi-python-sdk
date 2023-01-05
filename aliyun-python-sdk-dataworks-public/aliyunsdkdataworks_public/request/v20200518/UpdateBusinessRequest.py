@@ -41,23 +41,23 @@ class UpdateBusinessRequest(RpcRequest):
 
 	def set_BusinessId(self, BusinessId):  # Long
 		self.add_body_params('BusinessId', BusinessId)
-	def get_BusinessName(self): # String
-		return self.get_body_params().get('BusinessName')
-
-	def set_BusinessName(self, BusinessName):  # String
-		self.add_body_params('BusinessName', BusinessName)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
 	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
 	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+	def get_BusinessName(self): # String
+		return self.get_body_params().get('BusinessName')
+
+	def set_BusinessName(self, BusinessName):  # String
+		self.add_body_params('BusinessName', BusinessName)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

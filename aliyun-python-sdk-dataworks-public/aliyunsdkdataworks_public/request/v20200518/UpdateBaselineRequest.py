@@ -37,16 +37,16 @@ class UpdateBaselineRequest(RpcRequest):
 
 	def set_Owner(self, Owner):  # String
 		self.add_body_params('Owner', Owner)
+	def get_RemoveNodeIds(self): # String
+		return self.get_body_params().get('RemoveNodeIds')
+
+	def set_RemoveNodeIds(self, RemoveNodeIds):  # String
+		self.add_body_params('RemoveNodeIds', RemoveNodeIds)
 	def get_AlertMarginThreshold(self): # Integer
 		return self.get_body_params().get('AlertMarginThreshold')
 
 	def set_AlertMarginThreshold(self, AlertMarginThreshold):  # Integer
 		self.add_body_params('AlertMarginThreshold', AlertMarginThreshold)
-	def get_RemoveTaskIds(self): # String
-		return self.get_body_params().get('RemoveTaskIds')
-
-	def set_RemoveTaskIds(self, RemoveTaskIds):  # String
-		self.add_body_params('RemoveTaskIds', RemoveTaskIds)
 	def get_OvertimeSettings(self): # Array
 		return self.get_body_params().get('OvertimeSettings')
 
@@ -57,11 +57,6 @@ class UpdateBaselineRequest(RpcRequest):
 
 	def set_Priority(self, Priority):  # Integer
 		self.add_body_params('Priority', Priority)
-	def get_TaskIds(self): # String
-		return self.get_body_params().get('TaskIds')
-
-	def set_TaskIds(self, TaskIds):  # String
-		self.add_body_params('TaskIds', TaskIds)
 	def get_BaselineId(self): # Long
 		return self.get_body_params().get('BaselineId')
 
@@ -97,3 +92,8 @@ class UpdateBaselineRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
+	def get_NodeIds(self): # String
+		return self.get_body_params().get('NodeIds')
+
+	def set_NodeIds(self, NodeIds):  # String
+		self.add_body_params('NodeIds', NodeIds)
