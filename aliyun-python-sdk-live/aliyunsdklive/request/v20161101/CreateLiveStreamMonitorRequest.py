@@ -31,6 +31,11 @@ class CreateLiveStreamMonitorRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MonitorConfig(self): # String
+		return self.get_query_params().get('MonitorConfig')
+
+	def set_MonitorConfig(self, MonitorConfig):  # String
+		self.add_query_param('MonitorConfig', MonitorConfig)
 	def get_MonitorName(self): # String
 		return self.get_query_params().get('MonitorName')
 
