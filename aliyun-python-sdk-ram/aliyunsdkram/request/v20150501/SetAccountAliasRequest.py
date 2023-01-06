@@ -25,14 +25,15 @@ class SetAccountAliasRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetAccountAlias','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AccountAlias(self):
+	def get_AccountAlias(self): # String
 		return self.get_query_params().get('AccountAlias')
 
-	def set_AccountAlias(self,AccountAlias):
-		self.add_query_param('AccountAlias',AccountAlias)
+	def set_AccountAlias(self, AccountAlias):  # String
+		self.add_query_param('AccountAlias', AccountAlias)

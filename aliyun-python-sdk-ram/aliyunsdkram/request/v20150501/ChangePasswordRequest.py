@@ -25,20 +25,20 @@ class ChangePasswordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ChangePassword','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OldPassword(self):
+	def get_OldPassword(self): # String
 		return self.get_query_params().get('OldPassword')
 
-	def set_OldPassword(self,OldPassword):
-		self.add_query_param('OldPassword',OldPassword)
-
-	def get_NewPassword(self):
+	def set_OldPassword(self, OldPassword):  # String
+		self.add_query_param('OldPassword', OldPassword)
+	def get_NewPassword(self): # String
 		return self.get_query_params().get('NewPassword')
 
-	def set_NewPassword(self,NewPassword):
-		self.add_query_param('NewPassword',NewPassword)
+	def set_NewPassword(self, NewPassword):  # String
+		self.add_query_param('NewPassword', NewPassword)

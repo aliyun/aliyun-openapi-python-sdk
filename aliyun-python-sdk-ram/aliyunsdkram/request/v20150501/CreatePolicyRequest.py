@@ -25,26 +25,25 @@ class CreatePolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreatePolicy','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_PolicyName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
-	def get_PolicyDocument(self):
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_query_param('PolicyName', PolicyName)
+	def get_PolicyDocument(self): # String
 		return self.get_query_params().get('PolicyDocument')
 
-	def set_PolicyDocument(self,PolicyDocument):
-		self.add_query_param('PolicyDocument',PolicyDocument)
+	def set_PolicyDocument(self, PolicyDocument):  # String
+		self.add_query_param('PolicyDocument', PolicyDocument)

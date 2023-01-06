@@ -25,26 +25,25 @@ class UpdateAccessKeyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateAccessKey','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserAccessKeyId(self):
+	def get_UserAccessKeyId(self): # String
 		return self.get_query_params().get('UserAccessKeyId')
 
-	def set_UserAccessKeyId(self,UserAccessKeyId):
-		self.add_query_param('UserAccessKeyId',UserAccessKeyId)
-
-	def get_UserName(self):
+	def set_UserAccessKeyId(self, UserAccessKeyId):  # String
+		self.add_query_param('UserAccessKeyId', UserAccessKeyId)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
-
-	def get_Status(self):
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

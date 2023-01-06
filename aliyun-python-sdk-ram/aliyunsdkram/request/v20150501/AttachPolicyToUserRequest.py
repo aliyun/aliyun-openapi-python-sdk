@@ -25,26 +25,25 @@ class AttachPolicyToUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'AttachPolicyToUser','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PolicyType(self):
+	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
-
-	def get_PolicyName(self):
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_query_param('PolicyType', PolicyType)
+	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
-	def get_UserName(self):
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_query_param('PolicyName', PolicyName)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

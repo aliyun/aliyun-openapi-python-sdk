@@ -25,32 +25,30 @@ class BindMFADeviceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'BindMFADevice','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
-
-	def get_AuthenticationCode2(self):
+	def get_AuthenticationCode2(self): # String
 		return self.get_query_params().get('AuthenticationCode2')
 
-	def set_AuthenticationCode2(self,AuthenticationCode2):
-		self.add_query_param('AuthenticationCode2',AuthenticationCode2)
-
-	def get_AuthenticationCode1(self):
+	def set_AuthenticationCode2(self, AuthenticationCode2):  # String
+		self.add_query_param('AuthenticationCode2', AuthenticationCode2)
+	def get_AuthenticationCode1(self): # String
 		return self.get_query_params().get('AuthenticationCode1')
 
-	def set_AuthenticationCode1(self,AuthenticationCode1):
-		self.add_query_param('AuthenticationCode1',AuthenticationCode1)
+	def set_AuthenticationCode1(self, AuthenticationCode1):  # String
+		self.add_query_param('AuthenticationCode1', AuthenticationCode1)
+	def get_SerialNumber(self): # String
+		return self.get_query_params().get('SerialNumber')
 
-	def get_UserName(self):
+	def set_SerialNumber(self, SerialNumber):  # String
+		self.add_query_param('SerialNumber', SerialNumber)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

@@ -25,14 +25,15 @@ class DeleteVirtualMFADeviceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeleteVirtualMFADevice','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SerialNumber(self):
+	def get_SerialNumber(self): # String
 		return self.get_query_params().get('SerialNumber')
 
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
+	def set_SerialNumber(self, SerialNumber):  # String
+		self.add_query_param('SerialNumber', SerialNumber)

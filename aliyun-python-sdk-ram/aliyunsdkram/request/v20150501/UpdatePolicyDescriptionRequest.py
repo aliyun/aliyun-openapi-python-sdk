@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
 
-class CreatePolicyVersionRequest(RpcRequest):
+class UpdatePolicyDescriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreatePolicyVersion','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdatePolicyDescription','Ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,13 @@ class CreatePolicyVersionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SetAsDefault(self): # Boolean
-		return self.get_query_params().get('SetAsDefault')
-
-	def set_SetAsDefault(self, SetAsDefault):  # Boolean
-		self.add_query_param('SetAsDefault', SetAsDefault)
-	def get_RotateStrategy(self): # String
-		return self.get_query_params().get('RotateStrategy')
-
-	def set_RotateStrategy(self, RotateStrategy):  # String
-		self.add_query_param('RotateStrategy', RotateStrategy)
 	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
 	def set_PolicyName(self, PolicyName):  # String
 		self.add_query_param('PolicyName', PolicyName)
-	def get_PolicyDocument(self): # String
-		return self.get_query_params().get('PolicyDocument')
+	def get_NewDescription(self): # String
+		return self.get_query_params().get('NewDescription')
 
-	def set_PolicyDocument(self, PolicyDocument):  # String
-		self.add_query_param('PolicyDocument', PolicyDocument)
+	def set_NewDescription(self, NewDescription):  # String
+		self.add_query_param('NewDescription', NewDescription)

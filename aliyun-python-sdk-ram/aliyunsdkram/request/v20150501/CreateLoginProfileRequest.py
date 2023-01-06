@@ -25,32 +25,30 @@ class CreateLoginProfileRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateLoginProfile','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PasswordResetRequired(self):
-		return self.get_query_params().get('PasswordResetRequired')
-
-	def set_PasswordResetRequired(self,PasswordResetRequired):
-		self.add_query_param('PasswordResetRequired',PasswordResetRequired)
-
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_MFABindRequired(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_MFABindRequired(self): # Boolean
 		return self.get_query_params().get('MFABindRequired')
 
-	def set_MFABindRequired(self,MFABindRequired):
-		self.add_query_param('MFABindRequired',MFABindRequired)
+	def set_MFABindRequired(self, MFABindRequired):  # Boolean
+		self.add_query_param('MFABindRequired', MFABindRequired)
+	def get_PasswordResetRequired(self): # Boolean
+		return self.get_query_params().get('PasswordResetRequired')
 
-	def get_UserName(self):
+	def set_PasswordResetRequired(self, PasswordResetRequired):  # Boolean
+		self.add_query_param('PasswordResetRequired', PasswordResetRequired)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

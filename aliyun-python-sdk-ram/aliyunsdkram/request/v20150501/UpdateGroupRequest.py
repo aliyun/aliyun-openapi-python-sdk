@@ -25,26 +25,25 @@ class UpdateGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateGroup','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupName(self):
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_NewGroupName(self):
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_NewGroupName(self): # String
 		return self.get_query_params().get('NewGroupName')
 
-	def set_NewGroupName(self,NewGroupName):
-		self.add_query_param('NewGroupName',NewGroupName)
-
-	def get_NewComments(self):
+	def set_NewGroupName(self, NewGroupName):  # String
+		self.add_query_param('NewGroupName', NewGroupName)
+	def get_NewComments(self): # String
 		return self.get_query_params().get('NewComments')
 
-	def set_NewComments(self,NewComments):
-		self.add_query_param('NewComments',NewComments)
+	def set_NewComments(self, NewComments):  # String
+		self.add_query_param('NewComments', NewComments)

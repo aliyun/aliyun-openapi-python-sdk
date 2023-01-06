@@ -25,38 +25,35 @@ class CreateUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateUser','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MobilePhone(self):
+	def get_MobilePhone(self): # String
 		return self.get_query_params().get('MobilePhone')
 
-	def set_MobilePhone(self,MobilePhone):
-		self.add_query_param('MobilePhone',MobilePhone)
-
-	def get_Email(self):
+	def set_MobilePhone(self, MobilePhone):  # String
+		self.add_query_param('MobilePhone', MobilePhone)
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
-
-	def get_Comments(self):
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)
+	def get_Comments(self): # String
 		return self.get_query_params().get('Comments')
 
-	def set_Comments(self,Comments):
-		self.add_query_param('Comments',Comments)
-
-	def get_DisplayName(self):
+	def set_Comments(self, Comments):  # String
+		self.add_query_param('Comments', Comments)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
-	def get_UserName(self):
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

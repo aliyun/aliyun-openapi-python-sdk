@@ -25,50 +25,45 @@ class SetSecurityPreferenceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetSecurityPreference','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EnableSaveMFATicket(self):
+	def get_EnableSaveMFATicket(self): # Boolean
 		return self.get_query_params().get('EnableSaveMFATicket')
 
-	def set_EnableSaveMFATicket(self,EnableSaveMFATicket):
-		self.add_query_param('EnableSaveMFATicket',EnableSaveMFATicket)
-
-	def get_LoginNetworkMasks(self):
+	def set_EnableSaveMFATicket(self, EnableSaveMFATicket):  # Boolean
+		self.add_query_param('EnableSaveMFATicket', EnableSaveMFATicket)
+	def get_LoginNetworkMasks(self): # String
 		return self.get_query_params().get('LoginNetworkMasks')
 
-	def set_LoginNetworkMasks(self,LoginNetworkMasks):
-		self.add_query_param('LoginNetworkMasks',LoginNetworkMasks)
-
-	def get_AllowUserToChangePassword(self):
+	def set_LoginNetworkMasks(self, LoginNetworkMasks):  # String
+		self.add_query_param('LoginNetworkMasks', LoginNetworkMasks)
+	def get_AllowUserToChangePassword(self): # Boolean
 		return self.get_query_params().get('AllowUserToChangePassword')
 
-	def set_AllowUserToChangePassword(self,AllowUserToChangePassword):
-		self.add_query_param('AllowUserToChangePassword',AllowUserToChangePassword)
-
-	def get_AllowUserToManagePublicKeys(self):
+	def set_AllowUserToChangePassword(self, AllowUserToChangePassword):  # Boolean
+		self.add_query_param('AllowUserToChangePassword', AllowUserToChangePassword)
+	def get_AllowUserToManagePublicKeys(self): # Boolean
 		return self.get_query_params().get('AllowUserToManagePublicKeys')
 
-	def set_AllowUserToManagePublicKeys(self,AllowUserToManagePublicKeys):
-		self.add_query_param('AllowUserToManagePublicKeys',AllowUserToManagePublicKeys)
-
-	def get_LoginSessionDuration(self):
+	def set_AllowUserToManagePublicKeys(self, AllowUserToManagePublicKeys):  # Boolean
+		self.add_query_param('AllowUserToManagePublicKeys', AllowUserToManagePublicKeys)
+	def get_LoginSessionDuration(self): # Integer
 		return self.get_query_params().get('LoginSessionDuration')
 
-	def set_LoginSessionDuration(self,LoginSessionDuration):
-		self.add_query_param('LoginSessionDuration',LoginSessionDuration)
-
-	def get_AllowUserToManageAccessKeys(self):
+	def set_LoginSessionDuration(self, LoginSessionDuration):  # Integer
+		self.add_query_param('LoginSessionDuration', LoginSessionDuration)
+	def get_AllowUserToManageAccessKeys(self): # Boolean
 		return self.get_query_params().get('AllowUserToManageAccessKeys')
 
-	def set_AllowUserToManageAccessKeys(self,AllowUserToManageAccessKeys):
-		self.add_query_param('AllowUserToManageAccessKeys',AllowUserToManageAccessKeys)
-
-	def get_AllowUserToManageMFADevices(self):
+	def set_AllowUserToManageAccessKeys(self, AllowUserToManageAccessKeys):  # Boolean
+		self.add_query_param('AllowUserToManageAccessKeys', AllowUserToManageAccessKeys)
+	def get_AllowUserToManageMFADevices(self): # Boolean
 		return self.get_query_params().get('AllowUserToManageMFADevices')
 
-	def set_AllowUserToManageMFADevices(self,AllowUserToManageMFADevices):
-		self.add_query_param('AllowUserToManageMFADevices',AllowUserToManageMFADevices)
+	def set_AllowUserToManageMFADevices(self, AllowUserToManageMFADevices):  # Boolean
+		self.add_query_param('AllowUserToManageMFADevices', AllowUserToManageMFADevices)

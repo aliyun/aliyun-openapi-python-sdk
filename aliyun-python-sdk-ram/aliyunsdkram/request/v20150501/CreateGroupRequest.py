@@ -25,20 +25,20 @@ class CreateGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateGroup','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Comments(self):
+	def get_Comments(self): # String
 		return self.get_query_params().get('Comments')
 
-	def set_Comments(self,Comments):
-		self.add_query_param('Comments',Comments)
-
-	def get_GroupName(self):
+	def set_Comments(self, Comments):  # String
+		self.add_query_param('Comments', Comments)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)

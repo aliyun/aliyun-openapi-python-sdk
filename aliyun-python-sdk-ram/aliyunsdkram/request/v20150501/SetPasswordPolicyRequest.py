@@ -25,62 +25,55 @@ class SetPasswordPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetPasswordPolicy','Ram')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PasswordReusePrevention(self):
+	def get_PasswordReusePrevention(self): # Integer
 		return self.get_query_params().get('PasswordReusePrevention')
 
-	def set_PasswordReusePrevention(self,PasswordReusePrevention):
-		self.add_query_param('PasswordReusePrevention',PasswordReusePrevention)
-
-	def get_RequireUppercaseCharacters(self):
+	def set_PasswordReusePrevention(self, PasswordReusePrevention):  # Integer
+		self.add_query_param('PasswordReusePrevention', PasswordReusePrevention)
+	def get_RequireUppercaseCharacters(self): # Boolean
 		return self.get_query_params().get('RequireUppercaseCharacters')
 
-	def set_RequireUppercaseCharacters(self,RequireUppercaseCharacters):
-		self.add_query_param('RequireUppercaseCharacters',RequireUppercaseCharacters)
-
-	def get_MinimumPasswordLength(self):
+	def set_RequireUppercaseCharacters(self, RequireUppercaseCharacters):  # Boolean
+		self.add_query_param('RequireUppercaseCharacters', RequireUppercaseCharacters)
+	def get_MinimumPasswordLength(self): # Integer
 		return self.get_query_params().get('MinimumPasswordLength')
 
-	def set_MinimumPasswordLength(self,MinimumPasswordLength):
-		self.add_query_param('MinimumPasswordLength',MinimumPasswordLength)
-
-	def get_RequireNumbers(self):
+	def set_MinimumPasswordLength(self, MinimumPasswordLength):  # Integer
+		self.add_query_param('MinimumPasswordLength', MinimumPasswordLength)
+	def get_RequireNumbers(self): # Boolean
 		return self.get_query_params().get('RequireNumbers')
 
-	def set_RequireNumbers(self,RequireNumbers):
-		self.add_query_param('RequireNumbers',RequireNumbers)
-
-	def get_RequireLowercaseCharacters(self):
+	def set_RequireNumbers(self, RequireNumbers):  # Boolean
+		self.add_query_param('RequireNumbers', RequireNumbers)
+	def get_RequireLowercaseCharacters(self): # Boolean
 		return self.get_query_params().get('RequireLowercaseCharacters')
 
-	def set_RequireLowercaseCharacters(self,RequireLowercaseCharacters):
-		self.add_query_param('RequireLowercaseCharacters',RequireLowercaseCharacters)
-
-	def get_MaxPasswordAge(self):
+	def set_RequireLowercaseCharacters(self, RequireLowercaseCharacters):  # Boolean
+		self.add_query_param('RequireLowercaseCharacters', RequireLowercaseCharacters)
+	def get_MaxPasswordAge(self): # Integer
 		return self.get_query_params().get('MaxPasswordAge')
 
-	def set_MaxPasswordAge(self,MaxPasswordAge):
-		self.add_query_param('MaxPasswordAge',MaxPasswordAge)
-
-	def get_MaxLoginAttemps(self):
+	def set_MaxPasswordAge(self, MaxPasswordAge):  # Integer
+		self.add_query_param('MaxPasswordAge', MaxPasswordAge)
+	def get_MaxLoginAttemps(self): # Integer
 		return self.get_query_params().get('MaxLoginAttemps')
 
-	def set_MaxLoginAttemps(self,MaxLoginAttemps):
-		self.add_query_param('MaxLoginAttemps',MaxLoginAttemps)
-
-	def get_HardExpiry(self):
+	def set_MaxLoginAttemps(self, MaxLoginAttemps):  # Integer
+		self.add_query_param('MaxLoginAttemps', MaxLoginAttemps)
+	def get_HardExpiry(self): # Boolean
 		return self.get_query_params().get('HardExpiry')
 
-	def set_HardExpiry(self,HardExpiry):
-		self.add_query_param('HardExpiry',HardExpiry)
-
-	def get_RequireSymbols(self):
+	def set_HardExpiry(self, HardExpiry):  # Boolean
+		self.add_query_param('HardExpiry', HardExpiry)
+	def get_RequireSymbols(self): # Boolean
 		return self.get_query_params().get('RequireSymbols')
 
-	def set_RequireSymbols(self,RequireSymbols):
-		self.add_query_param('RequireSymbols',RequireSymbols)
+	def set_RequireSymbols(self, RequireSymbols):  # Boolean
+		self.add_query_param('RequireSymbols', RequireSymbols)
