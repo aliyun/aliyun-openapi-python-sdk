@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CreateSnapshotGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSnapshotGroup','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSnapshotGroup')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,6 +62,11 @@ class CreateSnapshotGroupRequest(RpcRequest):
 
 	def set_InstantAccessRetentionDays(self, InstantAccessRetentionDays):  # Integer
 		self.add_query_param('InstantAccessRetentionDays', InstantAccessRetentionDays)
+	def get_StorageLocationArn(self): # String
+		return self.get_query_params().get('StorageLocationArn')
+
+	def set_StorageLocationArn(self, StorageLocationArn):  # String
+		self.add_query_param('StorageLocationArn', StorageLocationArn)
 	def get_DiskIds(self): # RepeatList
 		return self.get_query_params().get('DiskId')
 

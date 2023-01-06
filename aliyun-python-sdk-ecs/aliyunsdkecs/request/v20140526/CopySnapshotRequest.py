@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CopySnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopySnapshot','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopySnapshot')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -60,6 +60,17 @@ class CopySnapshotRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_Arns(self): # RepeatList
+		return self.get_query_params().get('Arn')
+
+	def set_Arns(self, Arn):  # RepeatList
+		for depth1 in range(len(Arn)):
+			if Arn[depth1].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arn[depth1].get('RoleType'))
+			if Arn[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arn[depth1].get('Rolearn'))
+			if Arn[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arn[depth1].get('AssumeRoleFor'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -80,8 +91,18 @@ class CopySnapshotRequest(RpcRequest):
 
 	def set_DestinationSnapshotDescription(self, DestinationSnapshotDescription):  # String
 		self.add_query_param('DestinationSnapshotDescription', DestinationSnapshotDescription)
+	def get_Encrypted(self): # Boolean
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self, Encrypted):  # Boolean
+		self.add_query_param('Encrypted', Encrypted)
 	def get_RetentionDays(self): # Integer
 		return self.get_query_params().get('RetentionDays')
 
 	def set_RetentionDays(self, RetentionDays):  # Integer
 		self.add_query_param('RetentionDays', RetentionDays)
+	def get_KMSKeyId(self): # String
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self, KMSKeyId):  # String
+		self.add_query_param('KMSKeyId', KMSKeyId)

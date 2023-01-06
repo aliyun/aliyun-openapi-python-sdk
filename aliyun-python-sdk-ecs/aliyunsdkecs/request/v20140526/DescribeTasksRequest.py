@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeTasks','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeTasks')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -86,3 +86,9 @@ class DescribeTasksRequest(RpcRequest):
 
 	def set_TaskAction(self, TaskAction):  # String
 		self.add_query_param('TaskAction', TaskAction)
+	def get_ResourceIdss(self): # RepeatList
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIdss(self, ResourceIds):  # RepeatList
+		for depth1 in range(len(ResourceIds)):
+			self.add_query_param('ResourceIds.' + str(depth1 + 1), ResourceIds[depth1])

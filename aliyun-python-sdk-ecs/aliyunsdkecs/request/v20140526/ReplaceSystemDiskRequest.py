@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class ReplaceSystemDiskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReplaceSystemDisk','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReplaceSystemDisk')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class ReplaceSystemDiskRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_EncryptAlgorithm(self): # String
+		return self.get_query_params().get('EncryptAlgorithm')
+
+	def set_EncryptAlgorithm(self, EncryptAlgorithm):  # String
+		self.add_query_param('EncryptAlgorithm', EncryptAlgorithm)
 	def get_SecurityEnhancementStrategy(self): # String
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -76,6 +81,17 @@ class ReplaceSystemDiskRequest(RpcRequest):
 
 	def set_DiskId(self, DiskId):  # String
 		self.add_query_param('DiskId', DiskId)
+	def get_Arns(self): # RepeatList
+		return self.get_query_params().get('Arn')
+
+	def set_Arns(self, Arn):  # RepeatList
+		for depth1 in range(len(Arn)):
+			if Arn[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arn[depth1].get('Rolearn'))
+			if Arn[depth1].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arn[depth1].get('RoleType'))
+			if Arn[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arn[depth1].get('AssumeRoleFor'))
 	def get_Architecture(self): # String
 		return self.get_query_params().get('Architecture')
 
@@ -106,6 +122,16 @@ class ReplaceSystemDiskRequest(RpcRequest):
 
 	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
 		self.add_query_param('SystemDisk.Size', SystemDiskSize)
+	def get_Encrypted(self): # Boolean
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self, Encrypted):  # Boolean
+		self.add_query_param('Encrypted', Encrypted)
+	def get_KMSKeyId(self): # String
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self, KMSKeyId):  # String
+		self.add_query_param('KMSKeyId', KMSKeyId)
 	def get_UseAdditionalService(self): # Boolean
 		return self.get_query_params().get('UseAdditionalService')
 

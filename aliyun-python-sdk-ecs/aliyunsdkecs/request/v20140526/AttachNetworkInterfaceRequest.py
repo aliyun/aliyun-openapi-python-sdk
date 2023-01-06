@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class AttachNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AttachNetworkInterface','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AttachNetworkInterface')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,6 +61,11 @@ class AttachNetworkInterfaceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_NetworkCardIndex(self): # Integer
+		return self.get_query_params().get('NetworkCardIndex')
+
+	def set_NetworkCardIndex(self, NetworkCardIndex):  # Integer
+		self.add_query_param('NetworkCardIndex', NetworkCardIndex)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

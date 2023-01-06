@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeResourcesModificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeResourcesModification','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeResourcesModification')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

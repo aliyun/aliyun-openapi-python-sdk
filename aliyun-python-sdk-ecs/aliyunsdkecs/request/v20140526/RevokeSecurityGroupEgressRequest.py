@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RevokeSecurityGroupEgressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroupEgress','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroupEgress')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -171,3 +171,9 @@ class RevokeSecurityGroupEgressRequest(RpcRequest):
 
 	def set_DestGroupOwnerId(self, DestGroupOwnerId):  # Long
 		self.add_query_param('DestGroupOwnerId', DestGroupOwnerId)
+	def get_SecurityGroupRuleIds(self): # RepeatList
+		return self.get_query_params().get('SecurityGroupRuleId')
+
+	def set_SecurityGroupRuleIds(self, SecurityGroupRuleId):  # RepeatList
+		for depth1 in range(len(SecurityGroupRuleId)):
+			self.add_query_param('SecurityGroupRuleId.' + str(depth1 + 1), SecurityGroupRuleId[depth1])

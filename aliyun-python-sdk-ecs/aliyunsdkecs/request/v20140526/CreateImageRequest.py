@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CreateImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImage','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImage')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -98,6 +98,11 @@ class CreateImageRequest(RpcRequest):
 
 	def set_Architecture(self, Architecture):  # String
 		self.add_query_param('Architecture', Architecture)
+	def get_DetectionStrategy(self): # String
+		return self.get_query_params().get('DetectionStrategy')
+
+	def set_DetectionStrategy(self, DetectionStrategy):  # String
+		self.add_query_param('DetectionStrategy', DetectionStrategy)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

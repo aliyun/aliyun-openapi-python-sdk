@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class SendFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'SendFile','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'SendFile')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class SendFileRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_FileOwner(self): # String
 		return self.get_query_params().get('FileOwner')
 

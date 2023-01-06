@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class UnassignIpv6AddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'UnassignIpv6Addresses','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'UnassignIpv6Addresses')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,12 @@ class UnassignIpv6AddressesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Ipv6Prefixs(self): # RepeatList
+		return self.get_query_params().get('Ipv6Prefix')
+
+	def set_Ipv6Prefixs(self, Ipv6Prefix):  # RepeatList
+		for depth1 in range(len(Ipv6Prefix)):
+			self.add_query_param('Ipv6Prefix.' + str(depth1 + 1), Ipv6Prefix[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

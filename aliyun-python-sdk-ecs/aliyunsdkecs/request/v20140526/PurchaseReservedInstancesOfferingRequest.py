@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class PurchaseReservedInstancesOfferingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'PurchaseReservedInstancesOffering','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'PurchaseReservedInstancesOffering')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -75,6 +75,11 @@ class PurchaseReservedInstancesOfferingRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -105,6 +110,11 @@ class PurchaseReservedInstancesOfferingRequest(RpcRequest):
 
 	def set_OfferingType(self, OfferingType):  # String
 		self.add_query_param('OfferingType', OfferingType)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 

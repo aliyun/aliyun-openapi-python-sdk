@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class InvokeCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,11 +46,21 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_CommandId(self, CommandId):  # String
 		self.add_query_param('CommandId', CommandId)
+	def get_Timeout(self): # Long
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Long
+		self.add_query_param('Timeout', Timeout)
 	def get_Frequency(self): # String
 		return self.get_query_params().get('Frequency')
 
 	def set_Frequency(self, Frequency):  # String
 		self.add_query_param('Frequency', Frequency)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_RepeatMode(self): # String
 		return self.get_query_params().get('RepeatMode')
 
@@ -61,6 +71,15 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
 		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_Timed(self): # Boolean
 		return self.get_query_params().get('Timed')
 

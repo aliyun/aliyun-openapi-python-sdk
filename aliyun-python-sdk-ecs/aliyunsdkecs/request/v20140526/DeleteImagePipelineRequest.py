@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DeleteImagePipelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteImagePipeline','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteImagePipeline')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

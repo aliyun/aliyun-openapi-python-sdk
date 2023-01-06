@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CreateAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoSnapshotPolicy','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoSnapshotPolicy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,6 +56,11 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_StorageLocationArn(self): # String
+		return self.get_query_params().get('StorageLocationArn')
+
+	def set_StorageLocationArn(self, StorageLocationArn):  # String
+		self.add_query_param('StorageLocationArn', StorageLocationArn)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

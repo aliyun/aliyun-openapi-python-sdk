@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RunCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunCommand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunCommand')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -71,6 +71,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Frequency(self, Frequency):  # String
 		self.add_query_param('Frequency', Frequency)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ContentEncoding(self): # String
 		return self.get_query_params().get('ContentEncoding')
 

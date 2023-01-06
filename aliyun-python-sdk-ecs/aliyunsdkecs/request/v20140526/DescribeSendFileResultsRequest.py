@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeSendFileResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSendFileResults','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSendFileResults')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class DescribeSendFileResultsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 

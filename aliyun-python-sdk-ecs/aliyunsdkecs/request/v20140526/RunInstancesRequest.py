@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RunInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -436,6 +436,8 @@ class RunInstancesRequest(RpcRequest):
 			if NetworkInterface[depth1].get('Ipv6Address') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('Ipv6Address'))):
 					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Ipv6Address.' + str(depth2 + 1), NetworkInterface[depth1].get('Ipv6Address')[depth2])
+			if NetworkInterface[depth1].get('NetworkCardIndex') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkCardIndex', NetworkInterface[depth1].get('NetworkCardIndex'))
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

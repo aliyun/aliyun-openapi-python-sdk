@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateLaunchTemplateVersion','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateLaunchTemplateVersion')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -337,3 +337,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_SystemDiskDescription(self, SystemDiskDescription):  # String
 		self.add_query_param('SystemDisk.Description', SystemDiskDescription)
+	def get_SystemDiskEncrypted(self): # String
+		return self.get_query_params().get('SystemDisk.Encrypted')
+
+	def set_SystemDiskEncrypted(self, SystemDiskEncrypted):  # String
+		self.add_query_param('SystemDisk.Encrypted', SystemDiskEncrypted)

@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RenewReservedInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewReservedInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewReservedInstances')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class RenewReservedInstancesRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -72,3 +77,8 @@ class RenewReservedInstancesRequest(RpcRequest):
 	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
 		for depth1 in range(len(ReservedInstanceId)):
 			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)

@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeDiskMonitorDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDiskMonitorData','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDiskMonitorData')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
