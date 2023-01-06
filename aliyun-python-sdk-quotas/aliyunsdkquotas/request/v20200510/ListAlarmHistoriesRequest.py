@@ -25,44 +25,39 @@ class ListAlarmHistoriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListAlarmHistories','quotas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_body_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
+	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-
-	def get_StartTime(self):
+	def get_StartTime(self): # Long
 		return self.get_body_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
+	def set_StartTime(self, StartTime):  # Long
 		self.add_body_params('StartTime', StartTime)
-
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
+	def set_NextToken(self, NextToken):  # String
 		self.add_body_params('NextToken', NextToken)
-
-	def get_Keyword(self):
+	def get_Keyword(self): # String
 		return self.get_body_params().get('Keyword')
 
-	def set_Keyword(self,Keyword):
+	def set_Keyword(self, Keyword):  # String
 		self.add_body_params('Keyword', Keyword)
-
-	def get_EndTime(self):
+	def get_EndTime(self): # Long
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # Long
 		self.add_body_params('EndTime', EndTime)
-
-	def get_MaxResults(self):
+	def get_MaxResults(self): # Integer
 		return self.get_body_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_body_params('MaxResults', MaxResults)

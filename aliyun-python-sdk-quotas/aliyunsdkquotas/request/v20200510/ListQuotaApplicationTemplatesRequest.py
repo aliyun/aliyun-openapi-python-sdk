@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquotas.endpoint import endpoint_data
 
-class ListQuotaApplicationsRequest(RpcRequest):
+class ListQuotaApplicationTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListQuotaApplications','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListQuotaApplicationTemplates','quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -42,15 +42,15 @@ class ListQuotaApplicationsRequest(RpcRequest):
 	def set_QuotaActionCode(self, QuotaActionCode):  # String
 		self.add_body_params('QuotaActionCode', QuotaActionCode)
 	def get_NextToken(self): # String
-		return self.get_body_params().get('NextToken')
+		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
-		self.add_body_params('NextToken', NextToken)
-	def get_KeyWord(self): # String
-		return self.get_body_params().get('KeyWord')
+		self.add_query_param('NextToken', NextToken)
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
 
-	def set_KeyWord(self, KeyWord):  # String
-		self.add_body_params('KeyWord', KeyWord)
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)
 	def get_QuotaCategory(self): # String
 		return self.get_body_params().get('QuotaCategory')
 
@@ -61,11 +61,6 @@ class ListQuotaApplicationsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_body_params('MaxResults', MaxResults)
-	def get_Status(self): # String
-		return self.get_body_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_body_params('Status', Status)
 	def get_Dimensionss(self): # RepeatList
 		return self.get_body_params().get('Dimensions')
 

@@ -25,30 +25,28 @@ class GetProductQuotaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuota','quotas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_body_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
+	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-
-	def get_QuotaActionCode(self):
+	def get_QuotaActionCode(self): # String
 		return self.get_body_params().get('QuotaActionCode')
 
-	def set_QuotaActionCode(self,QuotaActionCode):
+	def set_QuotaActionCode(self, QuotaActionCode):  # String
 		self.add_body_params('QuotaActionCode', QuotaActionCode)
-
-	def get_Dimensionss(self):
+	def get_Dimensionss(self): # RepeatList
 		return self.get_body_params().get('Dimensions')
 
-	def set_Dimensionss(self, Dimensionss):
-		for depth1 in range(len(Dimensionss)):
-			if Dimensionss[depth1].get('Key') is not None:
-				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Key', Dimensionss[depth1].get('Key'))
-			if Dimensionss[depth1].get('Value') is not None:
-				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Value', Dimensionss[depth1].get('Value'))
+	def set_Dimensionss(self, Dimensions):  # RepeatList
+		for depth1 in range(len(Dimensions)):
+			if Dimensions[depth1].get('Key') is not None:
+				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Key', Dimensions[depth1].get('Key'))
+			if Dimensions[depth1].get('Value') is not None:
+				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Value', Dimensions[depth1].get('Value'))

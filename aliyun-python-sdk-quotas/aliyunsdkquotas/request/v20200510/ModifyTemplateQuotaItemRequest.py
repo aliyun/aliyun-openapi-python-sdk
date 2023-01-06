@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquotas.endpoint import endpoint_data
 
-class ListQuotaApplicationsRequest(RpcRequest):
+class ModifyTemplateQuotaItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListQuotaApplications','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ModifyTemplateQuotaItem','quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,31 +41,41 @@ class ListQuotaApplicationsRequest(RpcRequest):
 
 	def set_QuotaActionCode(self, QuotaActionCode):  # String
 		self.add_body_params('QuotaActionCode', QuotaActionCode)
-	def get_NextToken(self): # String
-		return self.get_body_params().get('NextToken')
+	def get_DesireValue(self): # Float
+		return self.get_body_params().get('DesireValue')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_body_params('NextToken', NextToken)
-	def get_KeyWord(self): # String
-		return self.get_body_params().get('KeyWord')
+	def set_DesireValue(self, DesireValue):  # Float
+		self.add_body_params('DesireValue', DesireValue)
+	def get_EffectiveTime(self): # String
+		return self.get_body_params().get('EffectiveTime')
 
-	def set_KeyWord(self, KeyWord):  # String
-		self.add_body_params('KeyWord', KeyWord)
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_body_params('EffectiveTime', EffectiveTime)
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)
 	def get_QuotaCategory(self): # String
-		return self.get_body_params().get('QuotaCategory')
+		return self.get_query_params().get('QuotaCategory')
 
 	def set_QuotaCategory(self, QuotaCategory):  # String
-		self.add_body_params('QuotaCategory', QuotaCategory)
-	def get_MaxResults(self): # Integer
-		return self.get_body_params().get('MaxResults')
+		self.add_query_param('QuotaCategory', QuotaCategory)
+	def get_ExpireTime(self): # String
+		return self.get_body_params().get('ExpireTime')
 
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_body_params('MaxResults', MaxResults)
-	def get_Status(self): # String
-		return self.get_body_params().get('Status')
+	def set_ExpireTime(self, ExpireTime):  # String
+		self.add_body_params('ExpireTime', ExpireTime)
+	def get_EnvLanguage(self): # String
+		return self.get_body_params().get('EnvLanguage')
 
-	def set_Status(self, Status):  # String
-		self.add_body_params('Status', Status)
+	def set_EnvLanguage(self, EnvLanguage):  # String
+		self.add_body_params('EnvLanguage', EnvLanguage)
+	def get_NoticeType(self): # Long
+		return self.get_body_params().get('NoticeType')
+
+	def set_NoticeType(self, NoticeType):  # Long
+		self.add_body_params('NoticeType', NoticeType)
 	def get_Dimensionss(self): # RepeatList
 		return self.get_body_params().get('Dimensions')
 

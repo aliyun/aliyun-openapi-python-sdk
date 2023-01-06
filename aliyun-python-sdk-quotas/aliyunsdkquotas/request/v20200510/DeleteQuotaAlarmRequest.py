@@ -25,14 +25,14 @@ class DeleteQuotaAlarmRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'DeleteQuotaAlarm','quotas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlarmId(self):
+	def get_AlarmId(self): # String
 		return self.get_body_params().get('AlarmId')
 
-	def set_AlarmId(self,AlarmId):
+	def set_AlarmId(self, AlarmId):  # String
 		self.add_body_params('AlarmId', AlarmId)

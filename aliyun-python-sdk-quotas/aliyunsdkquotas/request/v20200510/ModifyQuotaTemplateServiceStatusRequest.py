@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquotas.endpoint import endpoint_data
 
-class ListProductsRequest(RpcRequest):
+class ModifyQuotaTemplateServiceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListProducts','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ModifyQuotaTemplateServiceStatus','quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,8 @@ class ListProductsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NextToken(self): # String
-		return self.get_body_params().get('NextToken')
+	def get_ServiceStatus(self): # Integer
+		return self.get_body_params().get('ServiceStatus')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_body_params('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_body_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_body_params('MaxResults', MaxResults)
+	def set_ServiceStatus(self, ServiceStatus):  # Integer
+		self.add_body_params('ServiceStatus', ServiceStatus)

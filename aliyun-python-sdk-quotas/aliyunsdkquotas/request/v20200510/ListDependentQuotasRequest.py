@@ -25,20 +25,19 @@ class ListDependentQuotasRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListDependentQuotas','quotas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_body_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
+	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-
-	def get_QuotaActionCode(self):
+	def get_QuotaActionCode(self): # String
 		return self.get_body_params().get('QuotaActionCode')
 
-	def set_QuotaActionCode(self,QuotaActionCode):
+	def set_QuotaActionCode(self, QuotaActionCode):  # String
 		self.add_body_params('QuotaActionCode', QuotaActionCode)

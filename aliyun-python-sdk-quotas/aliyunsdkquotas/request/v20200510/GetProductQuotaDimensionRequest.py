@@ -25,30 +25,28 @@ class GetProductQuotaDimensionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuotaDimension','quotas')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_body_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
+	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-
-	def get_DependentDimensionss(self):
+	def get_DependentDimensionss(self): # RepeatList
 		return self.get_body_params().get('DependentDimensions')
 
-	def set_DependentDimensionss(self, DependentDimensionss):
-		for depth1 in range(len(DependentDimensionss)):
-			if DependentDimensionss[depth1].get('Key') is not None:
-				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Key', DependentDimensionss[depth1].get('Key'))
-			if DependentDimensionss[depth1].get('Value') is not None:
-				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Value', DependentDimensionss[depth1].get('Value'))
-
-	def get_DimensionKey(self):
+	def set_DependentDimensionss(self, DependentDimensions):  # RepeatList
+		for depth1 in range(len(DependentDimensions)):
+			if DependentDimensions[depth1].get('Key') is not None:
+				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Key', DependentDimensions[depth1].get('Key'))
+			if DependentDimensions[depth1].get('Value') is not None:
+				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Value', DependentDimensions[depth1].get('Value'))
+	def get_DimensionKey(self): # String
 		return self.get_body_params().get('DimensionKey')
 
-	def set_DimensionKey(self,DimensionKey):
+	def set_DimensionKey(self, DimensionKey):  # String
 		self.add_body_params('DimensionKey', DimensionKey)

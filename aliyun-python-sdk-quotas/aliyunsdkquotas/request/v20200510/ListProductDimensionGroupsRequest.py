@@ -24,27 +24,25 @@ class ListProductDimensionGroupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListProductDimensionGroups','quotas')
-		self.set_method('GET')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_NextToken(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
