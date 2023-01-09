@@ -32,13 +32,13 @@ class DeleteClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Mode(self): # integer
+	def get_Mode(self): # Integer
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self, Mode):  # integer
+	def set_Mode(self, Mode):  # Integer
 		self.add_query_param('Mode', Mode)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

@@ -32,13 +32,13 @@ class UpdateRoleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RoleId(self): # integer
+	def get_RoleId(self): # Integer
 		return self.get_query_params().get('RoleId')
 
-	def set_RoleId(self, RoleId):  # integer
+	def set_RoleId(self, RoleId):  # Integer
 		self.add_query_param('RoleId', RoleId)
-	def get_ActionData(self): # string
+	def get_ActionData(self): # String
 		return self.get_query_params().get('ActionData')
 
-	def set_ActionData(self, ActionData):  # string
+	def set_ActionData(self, ActionData):  # String
 		self.add_query_param('ActionData', ActionData)

@@ -32,13 +32,13 @@ class DeleteDeployGroupRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_GroupName(self): # string
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self, GroupName):  # string
+	def set_GroupName(self, GroupName):  # String
 		self.add_query_param('GroupName', GroupName)

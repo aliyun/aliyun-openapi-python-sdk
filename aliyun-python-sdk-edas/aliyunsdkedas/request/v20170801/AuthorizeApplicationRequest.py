@@ -32,13 +32,13 @@ class AuthorizeApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppIds(self): # string
+	def get_AppIds(self): # String
 		return self.get_query_params().get('AppIds')
 
-	def set_AppIds(self, AppIds):  # string
+	def set_AppIds(self, AppIds):  # String
 		self.add_query_param('AppIds', AppIds)
-	def get_TargetUserId(self): # string
+	def get_TargetUserId(self): # String
 		return self.get_query_params().get('TargetUserId')
 
-	def set_TargetUserId(self, TargetUserId):  # string
+	def set_TargetUserId(self, TargetUserId):  # String
 		self.add_query_param('TargetUserId', TargetUserId)

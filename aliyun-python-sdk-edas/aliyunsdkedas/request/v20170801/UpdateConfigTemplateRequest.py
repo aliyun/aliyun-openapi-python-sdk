@@ -32,28 +32,28 @@ class UpdateConfigTemplateRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_Format(self): # string
+	def get_Format(self): # String
 		return self.get_body_params().get('Format')
 
-	def set_Format(self, Format):  # string
+	def set_Format(self, Format):  # String
 		self.add_body_params('Format', Format)
-	def get_Description(self): # string
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self, Description):  # string
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-	def get_Id(self): # integer
+	def get_Id(self): # Long
 		return self.get_body_params().get('Id')
 
-	def set_Id(self, Id):  # integer
+	def set_Id(self, Id):  # Long
 		self.add_body_params('Id', Id)
-	def get_Content(self): # string
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self, Content):  # string
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)

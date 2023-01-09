@@ -32,28 +32,28 @@ class UpdateK8sApplicationBaseInfoRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Owner(self): # string
+	def get_Owner(self): # String
 		return self.get_query_params().get('Owner')
 
-	def set_Owner(self, Owner):  # string
+	def set_Owner(self, Owner):  # String
 		self.add_query_param('Owner', Owner)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_PhoneNumber(self): # string
+	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self, PhoneNumber):  # string
+	def set_PhoneNumber(self, PhoneNumber):  # String
 		self.add_query_param('PhoneNumber', PhoneNumber)
-	def get_Description(self): # string
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # string
+	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_Email(self): # string
+	def get_Email(self): # String
 		return self.get_query_params().get('Email')
 
-	def set_Email(self, Email):  # string
+	def set_Email(self, Email):  # String
 		self.add_query_param('Email', Email)

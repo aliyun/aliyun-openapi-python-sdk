@@ -32,38 +32,38 @@ class InsertSwimmingLaneRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppInfos(self): # string
+	def get_AppInfos(self): # String
 		return self.get_query_params().get('AppInfos')
 
-	def set_AppInfos(self, AppInfos):  # string
+	def set_AppInfos(self, AppInfos):  # String
 		self.add_query_param('AppInfos', AppInfos)
-	def get_EntryRules(self): # string
+	def get_EntryRules(self): # String
 		return self.get_query_params().get('EntryRules')
 
-	def set_EntryRules(self, EntryRules):  # string
+	def set_EntryRules(self, EntryRules):  # String
 		self.add_query_param('EntryRules', EntryRules)
-	def get_LogicalRegionId(self): # string
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # string
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
 		self.add_query_param('LogicalRegionId', LogicalRegionId)
-	def get_EnableRules(self): # boolean
+	def get_EnableRules(self): # Boolean
 		return self.get_query_params().get('EnableRules')
 
-	def set_EnableRules(self, EnableRules):  # boolean
+	def set_EnableRules(self, EnableRules):  # Boolean
 		self.add_query_param('EnableRules', EnableRules)
-	def get_GroupId(self): # integer
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # integer
+	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Tag(self): # string
+	def get_Tag(self): # String
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tag):  # string
+	def set_Tag(self, Tag):  # String
 		self.add_query_param('Tag', Tag)

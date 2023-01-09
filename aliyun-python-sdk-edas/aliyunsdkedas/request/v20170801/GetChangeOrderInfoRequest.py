@@ -32,8 +32,8 @@ class GetChangeOrderInfoRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ChangeOrderId(self): # string
+	def get_ChangeOrderId(self): # String
 		return self.get_query_params().get('ChangeOrderId')
 
-	def set_ChangeOrderId(self, ChangeOrderId):  # string
+	def set_ChangeOrderId(self, ChangeOrderId):  # String
 		self.add_query_param('ChangeOrderId', ChangeOrderId)

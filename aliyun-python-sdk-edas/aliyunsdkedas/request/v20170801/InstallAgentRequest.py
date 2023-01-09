@@ -32,18 +32,18 @@ class InstallAgentRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceIds(self): # string
+	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self, InstanceIds):  # string
+	def set_InstanceIds(self, InstanceIds):  # String
 		self.add_query_param('InstanceIds', InstanceIds)
-	def get_DoAsync(self): # boolean
+	def get_DoAsync(self): # Boolean
 		return self.get_query_params().get('DoAsync')
 
-	def set_DoAsync(self, DoAsync):  # boolean
+	def set_DoAsync(self, DoAsync):  # Boolean
 		self.add_query_param('DoAsync', DoAsync)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

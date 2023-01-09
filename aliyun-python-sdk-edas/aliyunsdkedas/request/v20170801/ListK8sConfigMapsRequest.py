@@ -37,28 +37,28 @@ class ListK8sConfigMapsRequest(RoaRequest):
 
 	def set_Condition(self, Condition):  # string
 		self.add_query_param('Condition', Condition)
-	def get_PageNo(self): # integer
+	def get_PageNo(self): # Integer
 		return self.get_query_params().get('PageNo')
 
-	def set_PageNo(self, PageNo):  # integer
+	def set_PageNo(self, PageNo):  # Integer
 		self.add_query_param('PageNo', PageNo)
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_PageSize(self): # integer
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # integer
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ShowRelatedApps(self): # boolean
+	def get_ShowRelatedApps(self): # Boolean
 		return self.get_query_params().get('ShowRelatedApps')
 
-	def set_ShowRelatedApps(self, ShowRelatedApps):  # boolean
+	def set_ShowRelatedApps(self, ShowRelatedApps):  # Boolean
 		self.add_query_param('ShowRelatedApps', ShowRelatedApps)

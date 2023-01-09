@@ -32,13 +32,13 @@ class ContinuePipelineRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Confirm(self): # boolean
+	def get_Confirm(self): # Boolean
 		return self.get_query_params().get('Confirm')
 
-	def set_Confirm(self, Confirm):  # boolean
+	def set_Confirm(self, Confirm):  # Boolean
 		self.add_query_param('Confirm', Confirm)
-	def get_PipelineId(self): # string
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self, PipelineId):  # string
+	def set_PipelineId(self, PipelineId):  # String
 		self.add_query_param('PipelineId', PipelineId)

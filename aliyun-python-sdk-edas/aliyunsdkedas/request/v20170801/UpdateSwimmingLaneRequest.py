@@ -32,28 +32,28 @@ class UpdateSwimmingLaneRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppInfos(self): # string
+	def get_AppInfos(self): # String
 		return self.get_query_params().get('AppInfos')
 
-	def set_AppInfos(self, AppInfos):  # string
+	def set_AppInfos(self, AppInfos):  # String
 		self.add_query_param('AppInfos', AppInfos)
-	def get_LaneId(self): # integer
+	def get_LaneId(self): # Long
 		return self.get_query_params().get('LaneId')
 
-	def set_LaneId(self, LaneId):  # integer
+	def set_LaneId(self, LaneId):  # Long
 		self.add_query_param('LaneId', LaneId)
-	def get_EntryRules(self): # string
+	def get_EntryRules(self): # String
 		return self.get_query_params().get('EntryRules')
 
-	def set_EntryRules(self, EntryRules):  # string
+	def set_EntryRules(self, EntryRules):  # String
 		self.add_query_param('EntryRules', EntryRules)
-	def get_EnableRules(self): # boolean
+	def get_EnableRules(self): # Boolean
 		return self.get_query_params().get('EnableRules')
 
-	def set_EnableRules(self, EnableRules):  # boolean
+	def set_EnableRules(self, EnableRules):  # Boolean
 		self.add_query_param('EnableRules', EnableRules)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)

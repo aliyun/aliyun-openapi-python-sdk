@@ -32,8 +32,8 @@ class DeleteRoleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RoleId(self): # integer
+	def get_RoleId(self): # Integer
 		return self.get_query_params().get('RoleId')
 
-	def set_RoleId(self, RoleId):  # integer
+	def set_RoleId(self, RoleId):  # Integer
 		self.add_query_param('RoleId', RoleId)

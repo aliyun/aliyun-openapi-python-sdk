@@ -32,13 +32,13 @@ class SwitchAdvancedMonitoringRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EnableAdvancedMonitoring(self): # boolean
+	def get_EnableAdvancedMonitoring(self): # Boolean
 		return self.get_query_params().get('EnableAdvancedMonitoring')
 
-	def set_EnableAdvancedMonitoring(self, EnableAdvancedMonitoring):  # boolean
+	def set_EnableAdvancedMonitoring(self, EnableAdvancedMonitoring):  # Boolean
 		self.add_query_param('EnableAdvancedMonitoring', EnableAdvancedMonitoring)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)

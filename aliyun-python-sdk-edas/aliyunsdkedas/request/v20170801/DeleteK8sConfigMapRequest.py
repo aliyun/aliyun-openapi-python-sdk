@@ -32,18 +32,18 @@ class DeleteK8sConfigMapRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

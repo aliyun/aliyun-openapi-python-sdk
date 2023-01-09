@@ -32,23 +32,23 @@ class UpdateSwimmingLaneGroupRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppIds(self): # string
+	def get_AppIds(self): # String
 		return self.get_query_params().get('AppIds')
 
-	def set_AppIds(self, AppIds):  # string
+	def set_AppIds(self, AppIds):  # String
 		self.add_query_param('AppIds', AppIds)
-	def get_GroupId(self): # integer
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # integer
+	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_EntryApp(self): # string
+	def get_EntryApp(self): # String
 		return self.get_query_params().get('EntryApp')
 
-	def set_EntryApp(self, EntryApp):  # string
+	def set_EntryApp(self, EntryApp):  # String
 		self.add_query_param('EntryApp', EntryApp)

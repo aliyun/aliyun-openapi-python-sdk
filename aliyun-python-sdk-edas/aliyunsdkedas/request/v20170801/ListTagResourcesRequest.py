@@ -32,15 +32,15 @@ class ListTagResourcesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceType(self): # string
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self, ResourceType):  # string
+	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
-	def get_ResourceRegionId(self): # string
+	def get_ResourceRegionId(self): # String
 		return self.get_query_params().get('ResourceRegionId')
 
-	def set_ResourceRegionId(self, ResourceRegionId):  # string
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
 		self.add_query_param('ResourceRegionId', ResourceRegionId)
 	def get_ResourceIds(self): # string
 		return self.get_query_params().get('ResourceIds')

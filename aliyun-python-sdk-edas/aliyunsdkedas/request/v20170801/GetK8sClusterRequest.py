@@ -32,23 +32,28 @@ class GetK8sClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterType(self): # integer
+	def get_ClusterType(self): # Integer
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self, ClusterType):  # integer
+	def set_ClusterType(self, ClusterType):  # Integer
 		self.add_query_param('ClusterType', ClusterType)
-	def get_RegionTag(self): # string
+	def get_RegionTag(self): # String
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self, RegionTag):  # string
+	def set_RegionTag(self, RegionTag):  # String
 		self.add_query_param('RegionTag', RegionTag)
-	def get_PageSize(self): # integer
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # integer
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_CurrentPage(self): # integer
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # integer
+	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_SubClusterType(self): # String
+		return self.get_query_params().get('SubClusterType')
+
+	def set_SubClusterType(self, SubClusterType):  # String
+		self.add_query_param('SubClusterType', SubClusterType)

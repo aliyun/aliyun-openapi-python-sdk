@@ -37,18 +37,18 @@ class CreateK8sConfigMapRequest(RoaRequest):
 
 	def set_Data(self, Data):  # string
 		self.add_body_params('Data', Data)
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)

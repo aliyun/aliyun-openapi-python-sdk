@@ -32,23 +32,23 @@ class UpdateApplicationBaseInfoRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Owner(self): # string
+	def get_Owner(self): # String
 		return self.get_query_params().get('Owner')
 
-	def set_Owner(self, Owner):  # string
+	def set_Owner(self, Owner):  # String
 		self.add_query_param('Owner', Owner)
-	def get_AppName(self): # string
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self, AppName):  # string
+	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_Desc(self): # string
+	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 
-	def set_Desc(self, Desc):  # string
+	def set_Desc(self, Desc):  # String
 		self.add_query_param('Desc', Desc)

@@ -32,23 +32,23 @@ class ListConfigTemplatesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # integer
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # integer
+	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_CurrentPage(self): # integer
+	def get_CurrentPage(self): # Long
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # integer
+	def set_CurrentPage(self, CurrentPage):  # Long
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_Id(self): # integer
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self, Id):  # integer
+	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)

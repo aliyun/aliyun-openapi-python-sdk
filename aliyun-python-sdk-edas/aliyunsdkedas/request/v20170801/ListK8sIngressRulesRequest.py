@@ -37,13 +37,13 @@ class ListK8sIngressRulesRequest(RoaRequest):
 
 	def set_Condition(self, Condition):  # string
 		self.add_query_param('Condition', Condition)
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

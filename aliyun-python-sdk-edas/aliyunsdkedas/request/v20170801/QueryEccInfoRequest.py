@@ -32,8 +32,8 @@ class QueryEccInfoRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EccId(self): # string
+	def get_EccId(self): # String
 		return self.get_query_params().get('EccId')
 
-	def set_EccId(self, EccId):  # string
+	def set_EccId(self, EccId):  # String
 		self.add_query_param('EccId', EccId)

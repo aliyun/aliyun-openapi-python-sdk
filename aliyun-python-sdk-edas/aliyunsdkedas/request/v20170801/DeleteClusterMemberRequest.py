@@ -32,13 +32,13 @@ class DeleteClusterMemberRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterMemberId(self): # string
+	def get_ClusterMemberId(self): # String
 		return self.get_query_params().get('ClusterMemberId')
 
-	def set_ClusterMemberId(self, ClusterMemberId):  # string
+	def set_ClusterMemberId(self, ClusterMemberId):  # String
 		self.add_query_param('ClusterMemberId', ClusterMemberId)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

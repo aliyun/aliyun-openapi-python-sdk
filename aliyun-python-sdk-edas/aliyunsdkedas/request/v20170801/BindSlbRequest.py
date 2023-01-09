@@ -32,33 +32,33 @@ class BindSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VServerGroupId(self): # string
+	def get_VServerGroupId(self): # String
 		return self.get_query_params().get('VServerGroupId')
 
-	def set_VServerGroupId(self, VServerGroupId):  # string
+	def set_VServerGroupId(self, VServerGroupId):  # String
 		self.add_query_param('VServerGroupId', VServerGroupId)
-	def get_ListenerPort(self): # integer
+	def get_ListenerPort(self): # Integer
 		return self.get_query_params().get('ListenerPort')
 
-	def set_ListenerPort(self, ListenerPort):  # integer
+	def set_ListenerPort(self, ListenerPort):  # Integer
 		self.add_query_param('ListenerPort', ListenerPort)
-	def get_SlbId(self): # string
+	def get_SlbId(self): # String
 		return self.get_query_params().get('SlbId')
 
-	def set_SlbId(self, SlbId):  # string
+	def set_SlbId(self, SlbId):  # String
 		self.add_query_param('SlbId', SlbId)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_SlbIp(self): # string
+	def get_SlbIp(self): # String
 		return self.get_query_params().get('SlbIp')
 
-	def set_SlbIp(self, SlbIp):  # string
+	def set_SlbIp(self, SlbIp):  # String
 		self.add_query_param('SlbIp', SlbIp)
-	def get_Type(self): # string
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # string
+	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)

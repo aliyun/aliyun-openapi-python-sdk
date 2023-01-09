@@ -32,8 +32,8 @@ class ListSwimmingLaneRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # integer
+	def get_GroupId(self): # Long
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # integer
+	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)

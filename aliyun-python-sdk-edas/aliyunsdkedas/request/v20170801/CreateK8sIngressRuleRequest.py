@@ -32,23 +32,33 @@ class CreateK8sIngressRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
 	def get_IngressConf(self): # string
 		return self.get_query_params().get('IngressConf')
 
 	def set_IngressConf(self, IngressConf):  # string
 		self.add_query_param('IngressConf', IngressConf)
-	def get_ClusterId(self): # string
+	def get_Annotations(self): # String
+		return self.get_query_params().get('Annotations')
+
+	def set_Annotations(self, Annotations):  # String
+		self.add_query_param('Annotations', Annotations)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_Labels(self): # String
+		return self.get_query_params().get('Labels')
+
+	def set_Labels(self, Labels):  # String
+		self.add_query_param('Labels', Labels)

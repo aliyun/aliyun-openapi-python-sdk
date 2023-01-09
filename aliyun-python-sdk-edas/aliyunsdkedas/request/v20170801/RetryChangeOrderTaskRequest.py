@@ -32,13 +32,13 @@ class RetryChangeOrderTaskRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RetryStatus(self): # boolean
+	def get_RetryStatus(self): # Boolean
 		return self.get_query_params().get('RetryStatus')
 
-	def set_RetryStatus(self, RetryStatus):  # boolean
+	def set_RetryStatus(self, RetryStatus):  # Boolean
 		self.add_query_param('RetryStatus', RetryStatus)
-	def get_TaskId(self): # string
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self, TaskId):  # string
+	def set_TaskId(self, TaskId):  # String
 		self.add_query_param('TaskId', TaskId)

@@ -32,18 +32,18 @@ class UpdateK8sResourceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
-	def get_ResourceContent(self): # string
+	def get_ResourceContent(self): # String
 		return self.get_body_params().get('ResourceContent')
 
-	def set_ResourceContent(self, ResourceContent):  # string
+	def set_ResourceContent(self, ResourceContent):  # String
 		self.add_body_params('ResourceContent', ResourceContent)

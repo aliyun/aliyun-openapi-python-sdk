@@ -32,58 +32,58 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MemoryRequest(self): # string
+	def get_MemoryRequest(self): # String
 		return self.get_query_params().get('MemoryRequest')
 
-	def set_MemoryRequest(self, MemoryRequest):  # string
+	def set_MemoryRequest(self, MemoryRequest):  # String
 		self.add_query_param('MemoryRequest', MemoryRequest)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_EphemeralStorageRequest(self): # string
+	def get_EphemeralStorageRequest(self): # String
 		return self.get_query_params().get('EphemeralStorageRequest')
 
-	def set_EphemeralStorageRequest(self, EphemeralStorageRequest):  # string
+	def set_EphemeralStorageRequest(self, EphemeralStorageRequest):  # String
 		self.add_query_param('EphemeralStorageRequest', EphemeralStorageRequest)
-	def get_CpuRequest(self): # string
+	def get_CpuRequest(self): # String
 		return self.get_query_params().get('CpuRequest')
 
-	def set_CpuRequest(self, CpuRequest):  # string
+	def set_CpuRequest(self, CpuRequest):  # String
 		self.add_query_param('CpuRequest', CpuRequest)
-	def get_MemoryLimit(self): # string
+	def get_MemoryLimit(self): # String
 		return self.get_query_params().get('MemoryLimit')
 
-	def set_MemoryLimit(self, MemoryLimit):  # string
+	def set_MemoryLimit(self, MemoryLimit):  # String
 		self.add_query_param('MemoryLimit', MemoryLimit)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_CpuLimit(self): # string
+	def get_CpuLimit(self): # String
 		return self.get_query_params().get('CpuLimit')
 
-	def set_CpuLimit(self, CpuLimit):  # string
+	def set_CpuLimit(self, CpuLimit):  # String
 		self.add_query_param('CpuLimit', CpuLimit)
-	def get_McpuLimit(self): # string
+	def get_McpuLimit(self): # String
 		return self.get_query_params().get('McpuLimit')
 
-	def set_McpuLimit(self, McpuLimit):  # string
+	def set_McpuLimit(self, McpuLimit):  # String
 		self.add_query_param('McpuLimit', McpuLimit)
-	def get_McpuRequest(self): # string
+	def get_McpuRequest(self): # String
 		return self.get_query_params().get('McpuRequest')
 
-	def set_McpuRequest(self, McpuRequest):  # string
+	def set_McpuRequest(self, McpuRequest):  # String
 		self.add_query_param('McpuRequest', McpuRequest)
-	def get_Timeout(self): # integer
+	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
-	def set_Timeout(self, Timeout):  # integer
+	def set_Timeout(self, Timeout):  # Integer
 		self.add_query_param('Timeout', Timeout)
-	def get_EphemeralStorageLimit(self): # string
+	def get_EphemeralStorageLimit(self): # String
 		return self.get_query_params().get('EphemeralStorageLimit')
 
-	def set_EphemeralStorageLimit(self, EphemeralStorageLimit):  # string
+	def set_EphemeralStorageLimit(self, EphemeralStorageLimit):  # String
 		self.add_query_param('EphemeralStorageLimit', EphemeralStorageLimit)

@@ -32,18 +32,18 @@ class ScaleOutApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EcuInfo(self): # string
+	def get_EcuInfo(self): # String
 		return self.get_query_params().get('EcuInfo')
 
-	def set_EcuInfo(self, EcuInfo):  # string
+	def set_EcuInfo(self, EcuInfo):  # String
 		self.add_query_param('EcuInfo', EcuInfo)
-	def get_DeployGroup(self): # string
+	def get_DeployGroup(self): # String
 		return self.get_query_params().get('DeployGroup')
 
-	def set_DeployGroup(self, DeployGroup):  # string
+	def set_DeployGroup(self, DeployGroup):  # String
 		self.add_query_param('DeployGroup', DeployGroup)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)

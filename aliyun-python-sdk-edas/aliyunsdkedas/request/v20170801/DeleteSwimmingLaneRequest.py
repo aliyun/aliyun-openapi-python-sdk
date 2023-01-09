@@ -32,8 +32,8 @@ class DeleteSwimmingLaneRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LaneId(self): # integer
+	def get_LaneId(self): # Long
 		return self.get_query_params().get('LaneId')
 
-	def set_LaneId(self, LaneId):  # integer
+	def set_LaneId(self, LaneId):  # Long
 		self.add_query_param('LaneId', LaneId)

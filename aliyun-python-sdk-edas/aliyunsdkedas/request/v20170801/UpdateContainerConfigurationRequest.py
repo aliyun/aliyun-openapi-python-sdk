@@ -32,38 +32,38 @@ class UpdateContainerConfigurationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UseBodyEncoding(self): # boolean
+	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
-	def set_UseBodyEncoding(self, UseBodyEncoding):  # boolean
+	def set_UseBodyEncoding(self, UseBodyEncoding):  # Boolean
 		self.add_query_param('UseBodyEncoding', UseBodyEncoding)
-	def get_MaxThreads(self): # integer
+	def get_MaxThreads(self): # Integer
 		return self.get_query_params().get('MaxThreads')
 
-	def set_MaxThreads(self, MaxThreads):  # integer
+	def set_MaxThreads(self, MaxThreads):  # Integer
 		self.add_query_param('MaxThreads', MaxThreads)
-	def get_URIEncoding(self): # string
+	def get_URIEncoding(self): # String
 		return self.get_query_params().get('URIEncoding')
 
-	def set_URIEncoding(self, URIEncoding):  # string
+	def set_URIEncoding(self, URIEncoding):  # String
 		self.add_query_param('URIEncoding', URIEncoding)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_GroupId(self): # string
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # string
+	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_HttpPort(self): # integer
+	def get_HttpPort(self): # Integer
 		return self.get_query_params().get('HttpPort')
 
-	def set_HttpPort(self, HttpPort):  # integer
+	def set_HttpPort(self, HttpPort):  # Integer
 		self.add_query_param('HttpPort', HttpPort)
-	def get_ContextPath(self): # string
+	def get_ContextPath(self): # String
 		return self.get_query_params().get('ContextPath')
 
-	def set_ContextPath(self, ContextPath):  # string
+	def set_ContextPath(self, ContextPath):  # String
 		self.add_query_param('ContextPath', ContextPath)

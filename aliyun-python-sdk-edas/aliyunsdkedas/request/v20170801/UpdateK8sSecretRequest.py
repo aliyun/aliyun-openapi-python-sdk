@@ -32,43 +32,43 @@ class UpdateK8sSecretRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Base64Encoded(self): # boolean
+	def get_Base64Encoded(self): # Boolean
 		return self.get_body_params().get('Base64Encoded')
 
-	def set_Base64Encoded(self, Base64Encoded):  # boolean
+	def set_Base64Encoded(self, Base64Encoded):  # Boolean
 		self.add_body_params('Base64Encoded', Base64Encoded)
 	def get_Data(self): # string
 		return self.get_body_params().get('Data')
 
 	def set_Data(self, Data):  # string
 		self.add_body_params('Data', Data)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-	def get_Namespace(self): # string
+	def get_Namespace(self): # String
 		return self.get_body_params().get('Namespace')
 
-	def set_Namespace(self, Namespace):  # string
+	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_body_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
-	def get_CertId(self): # string
+	def get_CertId(self): # String
 		return self.get_body_params().get('CertId')
 
-	def set_CertId(self, CertId):  # string
+	def set_CertId(self, CertId):  # String
 		self.add_body_params('CertId', CertId)
-	def get_Type(self): # string
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self, Type):  # string
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-	def get_CertRegionId(self): # string
+	def get_CertRegionId(self): # String
 		return self.get_body_params().get('CertRegionId')
 
-	def set_CertRegionId(self, CertRegionId):  # string
+	def set_CertRegionId(self, CertRegionId):  # String
 		self.add_body_params('CertRegionId', CertRegionId)

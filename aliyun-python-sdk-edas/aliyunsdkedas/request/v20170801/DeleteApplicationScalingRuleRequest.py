@@ -32,13 +32,13 @@ class DeleteApplicationScalingRuleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScalingRuleName(self): # string
+	def get_ScalingRuleName(self): # String
 		return self.get_query_params().get('ScalingRuleName')
 
-	def set_ScalingRuleName(self, ScalingRuleName):  # string
+	def set_ScalingRuleName(self, ScalingRuleName):  # String
 		self.add_query_param('ScalingRuleName', ScalingRuleName)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)

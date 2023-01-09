@@ -32,3 +32,18 @@ class ListSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SlbType(self): # String
+		return self.get_query_params().get('SlbType')
+
+	def set_SlbType(self, SlbType):  # String
+		self.add_query_param('SlbType', SlbType)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_AddressType(self): # String
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self, AddressType):  # String
+		self.add_query_param('AddressType', AddressType)

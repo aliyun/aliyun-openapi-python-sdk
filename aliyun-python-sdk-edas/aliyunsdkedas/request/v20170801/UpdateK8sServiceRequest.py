@@ -32,25 +32,25 @@ class UpdateK8sServiceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_Name(self): # string
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # string
+	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Type(self): # string
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # string
+	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_ExternalTrafficPolicy(self): # string
+	def get_ExternalTrafficPolicy(self): # String
 		return self.get_query_params().get('ExternalTrafficPolicy')
 
-	def set_ExternalTrafficPolicy(self, ExternalTrafficPolicy):  # string
+	def set_ExternalTrafficPolicy(self, ExternalTrafficPolicy):  # String
 		self.add_query_param('ExternalTrafficPolicy', ExternalTrafficPolicy)
 	def get_ServicePorts(self): # string
 		return self.get_query_params().get('ServicePorts')

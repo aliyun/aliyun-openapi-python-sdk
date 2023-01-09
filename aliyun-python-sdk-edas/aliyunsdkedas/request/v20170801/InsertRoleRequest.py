@@ -32,13 +32,13 @@ class InsertRoleRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RoleName(self): # string
+	def get_RoleName(self): # String
 		return self.get_query_params().get('RoleName')
 
-	def set_RoleName(self, RoleName):  # string
+	def set_RoleName(self, RoleName):  # String
 		self.add_query_param('RoleName', RoleName)
-	def get_ActionData(self): # string
+	def get_ActionData(self): # String
 		return self.get_query_params().get('ActionData')
 
-	def set_ActionData(self, ActionData):  # string
+	def set_ActionData(self, ActionData):  # String
 		self.add_query_param('ActionData', ActionData)

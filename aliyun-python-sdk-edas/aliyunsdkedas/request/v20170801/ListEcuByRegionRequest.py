@@ -32,13 +32,13 @@ class ListEcuByRegionRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Act(self): # string
+	def get_Act(self): # String
 		return self.get_query_params().get('Act')
 
-	def set_Act(self, Act):  # string
+	def set_Act(self, Act):  # String
 		self.add_query_param('Act', Act)
-	def get_LogicalRegionId(self): # string
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # string
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
 		self.add_query_param('LogicalRegionId', LogicalRegionId)

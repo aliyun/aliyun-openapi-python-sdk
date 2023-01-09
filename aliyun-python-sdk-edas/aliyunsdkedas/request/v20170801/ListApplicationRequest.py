@@ -32,28 +32,33 @@ class ListApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # string
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # string
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_AppName(self): # string
+	def get_AppIds(self): # String
+		return self.get_query_params().get('AppIds')
+
+	def set_AppIds(self, AppIds):  # String
+		self.add_query_param('AppIds', AppIds)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self, AppName):  # string
+	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
-	def get_LogicalRegionId(self): # string
+	def get_LogicalRegionId(self): # String
 		return self.get_query_params().get('LogicalRegionId')
 
-	def set_LogicalRegionId(self, LogicalRegionId):  # string
+	def set_LogicalRegionId(self, LogicalRegionId):  # String
 		self.add_query_param('LogicalRegionId', LogicalRegionId)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_LogicalRegionIdFilter(self): # string
+	def get_LogicalRegionIdFilter(self): # String
 		return self.get_query_params().get('LogicalRegionIdFilter')
 
-	def set_LogicalRegionIdFilter(self, LogicalRegionIdFilter):  # string
+	def set_LogicalRegionIdFilter(self, LogicalRegionIdFilter):  # String
 		self.add_query_param('LogicalRegionIdFilter', LogicalRegionIdFilter)

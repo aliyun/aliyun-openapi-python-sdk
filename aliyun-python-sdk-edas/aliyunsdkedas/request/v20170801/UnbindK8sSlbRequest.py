@@ -32,23 +32,23 @@ class UnbindK8sSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SlbName(self): # string
+	def get_SlbName(self): # String
 		return self.get_query_params().get('SlbName')
 
-	def set_SlbName(self, SlbName):  # string
+	def set_SlbName(self, SlbName):  # String
 		self.add_query_param('SlbName', SlbName)
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_Type(self): # string
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self, Type):  # string
+	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)

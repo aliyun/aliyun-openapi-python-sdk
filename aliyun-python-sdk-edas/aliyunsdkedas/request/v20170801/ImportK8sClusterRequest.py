@@ -32,23 +32,23 @@ class ImportK8sClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Mode(self): # integer
+	def get_Mode(self): # Integer
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self, Mode):  # integer
+	def set_Mode(self, Mode):  # Integer
 		self.add_query_param('Mode', Mode)
-	def get_EnableAsm(self): # boolean
+	def get_EnableAsm(self): # Boolean
 		return self.get_query_params().get('EnableAsm')
 
-	def set_EnableAsm(self, EnableAsm):  # boolean
+	def set_EnableAsm(self, EnableAsm):  # Boolean
 		self.add_query_param('EnableAsm', EnableAsm)
-	def get_NamespaceId(self): # string
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self, NamespaceId):  # string
+	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)

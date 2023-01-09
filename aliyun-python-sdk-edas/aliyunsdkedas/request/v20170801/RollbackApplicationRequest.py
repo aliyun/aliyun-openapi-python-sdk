@@ -32,28 +32,28 @@ class RollbackApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppId(self): # string
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self, AppId):  # string
+	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_GroupId(self): # string
+	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
-	def set_GroupId(self, GroupId):  # string
+	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_BatchWaitTime(self): # integer
+	def get_BatchWaitTime(self): # Integer
 		return self.get_query_params().get('BatchWaitTime')
 
-	def set_BatchWaitTime(self, BatchWaitTime):  # integer
+	def set_BatchWaitTime(self, BatchWaitTime):  # Integer
 		self.add_query_param('BatchWaitTime', BatchWaitTime)
-	def get_Batch(self): # integer
+	def get_Batch(self): # Integer
 		return self.get_query_params().get('Batch')
 
-	def set_Batch(self, Batch):  # integer
+	def set_Batch(self, Batch):  # Integer
 		self.add_query_param('Batch', Batch)
-	def get_HistoryVersion(self): # string
+	def get_HistoryVersion(self): # String
 		return self.get_query_params().get('HistoryVersion')
 
-	def set_HistoryVersion(self, HistoryVersion):  # string
+	def set_HistoryVersion(self, HistoryVersion):  # String
 		self.add_query_param('HistoryVersion', HistoryVersion)

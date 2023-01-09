@@ -32,38 +32,38 @@ class InsertOrUpdateRegionRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RegistryType(self): # string
+	def get_RegistryType(self): # String
 		return self.get_query_params().get('RegistryType')
 
-	def set_RegistryType(self, RegistryType):  # string
+	def set_RegistryType(self, RegistryType):  # String
 		self.add_query_param('RegistryType', RegistryType)
-	def get_DebugEnable(self): # boolean
+	def get_DebugEnable(self): # Boolean
 		return self.get_query_params().get('DebugEnable')
 
-	def set_DebugEnable(self, DebugEnable):  # boolean
+	def set_DebugEnable(self, DebugEnable):  # Boolean
 		self.add_query_param('DebugEnable', DebugEnable)
-	def get_RegionTag(self): # string
+	def get_RegionTag(self): # String
 		return self.get_query_params().get('RegionTag')
 
-	def set_RegionTag(self, RegionTag):  # string
+	def set_RegionTag(self, RegionTag):  # String
 		self.add_query_param('RegionTag', RegionTag)
-	def get_RegionName(self): # string
+	def get_RegionName(self): # String
 		return self.get_query_params().get('RegionName')
 
-	def set_RegionName(self, RegionName):  # string
+	def set_RegionName(self, RegionName):  # String
 		self.add_query_param('RegionName', RegionName)
-	def get_Description(self): # string
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # string
+	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_MseInstanceId(self): # string
+	def get_MseInstanceId(self): # String
 		return self.get_query_params().get('MseInstanceId')
 
-	def set_MseInstanceId(self, MseInstanceId):  # string
+	def set_MseInstanceId(self, MseInstanceId):  # String
 		self.add_query_param('MseInstanceId', MseInstanceId)
-	def get_Id(self): # integer
+	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
-	def set_Id(self, Id):  # integer
+	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)
