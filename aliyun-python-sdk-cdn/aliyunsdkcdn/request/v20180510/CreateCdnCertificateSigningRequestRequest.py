@@ -36,43 +36,38 @@ class CreateCdnCertificateSigningRequestRequest(RpcRequest):
 
 	def set_Country(self, Country):  # String
 		self.add_query_param('Country', Country)
-	def get_City(self): # String
-		return self.get_query_params().get('City')
-
-	def set_City(self, City):  # String
-		self.add_query_param('City', City)
 	def get_CommonName(self): # String
 		return self.get_query_params().get('CommonName')
 
 	def set_CommonName(self, CommonName):  # String
 		self.add_query_param('CommonName', CommonName)
-	def get_State(self): # String
-		return self.get_query_params().get('State')
+	def get_City(self): # String
+		return self.get_query_params().get('City')
 
-	def set_State(self, State):  # String
-		self.add_query_param('State', State)
-	def get_Email(self): # String
-		return self.get_query_params().get('Email')
-
-	def set_Email(self, Email):  # String
-		self.add_query_param('Email', Email)
+	def set_City(self, City):  # String
+		self.add_query_param('City', City)
 	def get_SANs(self): # String
 		return self.get_query_params().get('SANs')
 
 	def set_SANs(self, SANs):  # String
 		self.add_query_param('SANs', SANs)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_Organization(self): # String
 		return self.get_query_params().get('Organization')
 
 	def set_Organization(self, Organization):  # String
 		self.add_query_param('Organization', Organization)
+	def get_State(self): # String
+		return self.get_query_params().get('State')
+
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
 	def get_OrganizationUnit(self): # String
 		return self.get_query_params().get('OrganizationUnit')
 
 	def set_OrganizationUnit(self, OrganizationUnit):  # String
 		self.add_query_param('OrganizationUnit', OrganizationUnit)
+	def get_Email(self): # String
+		return self.get_query_params().get('Email')
+
+	def set_Email(self, Email):  # String
+		self.add_query_param('Email', Email)

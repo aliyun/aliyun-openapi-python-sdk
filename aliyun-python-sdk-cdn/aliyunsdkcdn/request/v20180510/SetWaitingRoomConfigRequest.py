@@ -31,21 +31,16 @@ class SetWaitingRoomConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WaitUrl(self): # String
-		return self.get_query_params().get('WaitUrl')
-
-	def set_WaitUrl(self, WaitUrl):  # String
-		self.add_query_param('WaitUrl', WaitUrl)
-	def get_WaitUri(self): # String
-		return self.get_query_params().get('WaitUri')
-
-	def set_WaitUri(self, WaitUri):  # String
-		self.add_query_param('WaitUri', WaitUri)
 	def get_MaxTimeWait(self): # Integer
 		return self.get_query_params().get('MaxTimeWait')
 
 	def set_MaxTimeWait(self, MaxTimeWait):  # Integer
 		self.add_query_param('MaxTimeWait', MaxTimeWait)
+	def get_WaitUrl(self): # String
+		return self.get_query_params().get('WaitUrl')
+
+	def set_WaitUrl(self, WaitUrl):  # String
+		self.add_query_param('WaitUrl', WaitUrl)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -61,8 +56,8 @@ class SetWaitingRoomConfigRequest(RpcRequest):
 
 	def set_GapTime(self, GapTime):  # Integer
 		self.add_query_param('GapTime', GapTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_WaitUri(self): # String
+		return self.get_query_params().get('WaitUri')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_WaitUri(self, WaitUri):  # String
+		self.add_query_param('WaitUri', WaitUri)

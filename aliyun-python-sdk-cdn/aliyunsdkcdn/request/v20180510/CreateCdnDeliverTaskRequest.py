@@ -36,21 +36,6 @@ class CreateCdnDeliverTaskRequest(RpcRequest):
 
 	def set_Reports(self, Reports):  # String
 		self.add_body_params('Reports', Reports)
-	def get_Deliver(self): # String
-		return self.get_body_params().get('Deliver')
-
-	def set_Deliver(self, Deliver):  # String
-		self.add_body_params('Deliver', Deliver)
-	def get_DomainName(self): # String
-		return self.get_body_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_body_params('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_Schedule(self): # String
 		return self.get_body_params().get('Schedule')
 
@@ -61,3 +46,13 @@ class CreateCdnDeliverTaskRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
+	def get_DomainName(self): # String
+		return self.get_body_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_body_params('DomainName', DomainName)
+	def get_Deliver(self): # String
+		return self.get_body_params().get('Deliver')
+
+	def set_Deliver(self, Deliver):  # String
+		self.add_body_params('Deliver', Deliver)
