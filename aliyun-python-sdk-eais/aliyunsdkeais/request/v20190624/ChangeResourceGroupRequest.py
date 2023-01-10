@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeais.endpoint import endpoint_data
-import json
 
-class CreateEaiJupyterRequest(RpcRequest):
+class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eais', '2019-06-24', 'CreateEaiJupyter','eais')
+		RpcRequest.__init__(self, 'eais', '2019-06-24', 'ChangeResourceGroup','eais')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,33 +31,18 @@ class CreateEaiJupyterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_EaisType(self): # String
-		return self.get_query_params().get('EaisType')
-
-	def set_EaisType(self, EaisType):  # String
-		self.add_query_param('EaisType', EaisType)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_EnvironmentVar(self): # Array
-		return self.get_query_params().get('EnvironmentVar')
+	def get_ResourceRegionId(self): # String
+		return self.get_query_params().get('ResourceRegionId')
 
-	def set_EnvironmentVar(self, EnvironmentVar):  # Array
-		self.add_query_param("EnvironmentVar", json.dumps(EnvironmentVar))
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
+		self.add_query_param('ResourceRegionId', ResourceRegionId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)

@@ -21,10 +21,10 @@ from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeais.endpoint import endpoint_data
 import json
 
-class CreateEaiJupyterRequest(RpcRequest):
+class CreateEaiEciRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eais', '2019-06-24', 'CreateEaiJupyter','eais')
+		RpcRequest.__init__(self, 'eais', '2019-06-24', 'CreateEaiEci','eais')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -42,6 +42,11 @@ class CreateEaiJupyterRequest(RpcRequest):
 
 	def set_SecurityGroupId(self, SecurityGroupId):  # String
 		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_Eci(self): # Struct
+		return self.get_query_params().get('Eci')
+
+	def set_Eci(self, Eci):  # Struct
+		self.add_query_param("Eci", json.dumps(Eci))
 	def get_EaisType(self): # String
 		return self.get_query_params().get('EaisType')
 
@@ -57,8 +62,8 @@ class CreateEaiJupyterRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_EnvironmentVar(self): # Array
-		return self.get_query_params().get('EnvironmentVar')
+	def get_EaisName(self): # String
+		return self.get_query_params().get('EaisName')
 
-	def set_EnvironmentVar(self, EnvironmentVar):  # Array
-		self.add_query_param("EnvironmentVar", json.dumps(EnvironmentVar))
+	def set_EaisName(self, EaisName):  # String
+		self.add_query_param('EaisName', EaisName)

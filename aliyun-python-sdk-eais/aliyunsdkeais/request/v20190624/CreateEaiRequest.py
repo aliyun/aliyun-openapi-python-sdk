@@ -46,6 +46,11 @@ class CreateEaiRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 

@@ -1,3 +1,6 @@
+2023-01-10 Version: 2.1.2
+- Support ResourceGroup.
+
 2022-12-13 Version: 2.1.1
 - Add OpenAPI GetInstanceMetrics.
 
