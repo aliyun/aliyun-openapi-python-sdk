@@ -1,3 +1,10 @@
+2023-01-11 Version: 4.24.28
+- Add error code for ModifyInstanceNetworkSpec.
+- Add invalid account buying spot error code.
+- Support ip prefix for eni.
+- Update the StorageLocationArn to private.
+- Security Group Rule support rule id.
+
 2023-01-06 Version: 4.24.27
 - Add error code for ModifyInstanceNetworkSpec.
 - Add invalid account buying spot error code.
