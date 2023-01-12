@@ -36,3 +36,8 @@ class DescribeCustomRoutingEndpointGroupDestinationsRequest(RpcRequest):
 
 	def set_DestinationId(self, DestinationId):  # String
 		self.add_query_param('DestinationId', DestinationId)
+	def get_EndpointGroupId(self): # String
+		return self.get_query_params().get('EndpointGroupId')
+
+	def set_EndpointGroupId(self, EndpointGroupId):  # String
+		self.add_query_param('EndpointGroupId', EndpointGroupId)

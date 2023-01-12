@@ -31,6 +31,11 @@ class DescribeCustomRoutingEndPointTrafficPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_EndpointId(self): # String
+		return self.get_query_params().get('EndpointId')
+
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
 	def get_PolicyId(self): # String
 		return self.get_query_params().get('PolicyId')
 

@@ -61,6 +61,16 @@ class CreateBasicAcceleratorRequest(RpcRequest):
 
 	def set_AutoPay(self, AutoPay):  # Boolean
 		self.add_query_param('AutoPay', AutoPay)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_PromotionOptionNo(self): # String
+		return self.get_query_params().get('PromotionOptionNo')
+
+	def set_PromotionOptionNo(self, PromotionOptionNo):  # String
+		self.add_query_param('PromotionOptionNo', PromotionOptionNo)
 	def get_BandwidthBillingType(self): # String
 		return self.get_query_params().get('BandwidthBillingType')
 
@@ -71,6 +81,11 @@ class CreateBasicAcceleratorRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # Boolean
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
 	def get_PricingCycle(self): # String
 		return self.get_query_params().get('PricingCycle')
 

@@ -72,6 +72,11 @@ class CreateAcceleratorRequest(RpcRequest):
 
 	def set_AutoPay(self, AutoPay):  # Boolean
 		self.add_query_param('AutoPay', AutoPay)
+	def get_PromotionOptionNo(self): # String
+		return self.get_query_params().get('PromotionOptionNo')
+
+	def set_PromotionOptionNo(self, PromotionOptionNo):  # String
+		self.add_query_param('PromotionOptionNo', PromotionOptionNo)
 	def get_BandwidthBillingType(self): # String
 		return self.get_query_params().get('BandwidthBillingType')
 
