@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ChangeResourceGroup','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ChangeResourceGroup')
 		self.set_method('POST')
 
 	def get_ResourceGroupId(self): # String

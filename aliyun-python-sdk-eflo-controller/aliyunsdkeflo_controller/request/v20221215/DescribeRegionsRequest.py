@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'DescribeRegions','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'DescribeRegions')
 		self.set_method('POST')
 
 	def get_AcceptLanguage(self): # String

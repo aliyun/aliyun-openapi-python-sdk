@@ -23,7 +23,7 @@ import json
 class RebootNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'RebootNodes','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'RebootNodes')
 		self.set_method('POST')
 
 	def get_IgnoreFailedNodeTasks(self): # Boolean

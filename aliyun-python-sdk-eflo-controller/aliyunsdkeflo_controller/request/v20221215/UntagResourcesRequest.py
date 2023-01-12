@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'UntagResources','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'UntagResources')
 		self.set_method('POST')
 
 	def get_All(self): # Boolean

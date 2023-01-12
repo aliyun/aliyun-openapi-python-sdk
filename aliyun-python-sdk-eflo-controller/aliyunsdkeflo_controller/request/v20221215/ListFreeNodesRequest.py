@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFreeNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ListFreeNodes','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ListFreeNodes')
 		self.set_method('POST')
 
 	def get_MachineType(self): # String

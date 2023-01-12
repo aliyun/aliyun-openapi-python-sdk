@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'DescribeNode','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'DescribeNode')
 		self.set_method('POST')
 
 	def get_NodeId(self): # String

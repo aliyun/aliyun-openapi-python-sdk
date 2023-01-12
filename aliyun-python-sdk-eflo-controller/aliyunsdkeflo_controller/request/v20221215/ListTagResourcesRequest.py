@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ListTagResources','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'ListTagResources')
 		self.set_method('POST')
 
 	def get_NextToken(self): # String

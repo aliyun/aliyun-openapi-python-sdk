@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'TagResources','eflo')
+		RpcRequest.__init__(self, 'eflo-controller', '2022-12-15', 'TagResources')
 		self.set_method('POST')
 
 	def get_Tags(self): # RepeatList
