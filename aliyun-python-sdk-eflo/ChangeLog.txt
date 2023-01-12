@@ -1,3 +1,6 @@
+2023-01-12 Version: 1.0.1
+- First publish.
+
 2022-12-30 Version: 1.0.0
 - First publish.
 

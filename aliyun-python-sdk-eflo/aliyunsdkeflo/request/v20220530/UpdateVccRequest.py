@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVcc','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVcc')
 		self.set_method('POST')
 
 	def get_Bandwidth(self): # Integer

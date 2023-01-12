@@ -22,6 +22,6 @@ from aliyunsdkcore.request import RpcRequest
 class InitializeVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'InitializeVcc','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'InitializeVcc')
 		self.set_method('POST')
 

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetSubnetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetSubnet','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetSubnet')
 		self.set_method('POST')
 
 	def get_SubnetId(self): # String

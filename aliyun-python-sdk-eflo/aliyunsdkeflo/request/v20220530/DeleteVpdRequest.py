@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteVpdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteVpd')
 		self.set_method('POST')
 
 	def get_VpdId(self): # String

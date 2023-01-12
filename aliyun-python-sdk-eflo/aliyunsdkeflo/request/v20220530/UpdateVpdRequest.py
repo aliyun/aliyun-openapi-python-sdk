@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateVpdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVpd')
 		self.set_method('POST')
 
 	def get_Description(self): # String

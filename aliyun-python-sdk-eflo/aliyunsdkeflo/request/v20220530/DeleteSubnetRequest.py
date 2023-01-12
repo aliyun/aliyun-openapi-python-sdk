@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteSubnetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteSubnet','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteSubnet')
 		self.set_method('POST')
 
 	def get_SubnetId(self): # String

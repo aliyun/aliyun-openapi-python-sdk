@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListVpdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpds','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpds')
 		self.set_method('POST')
 
 	def get_PageNumber(self): # Integer

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVcc','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVcc')
 		self.set_method('POST')
 
 	def get_VccId(self): # String
