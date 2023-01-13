@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UpdateTrafficMarkingPolicyAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTrafficMarkingPolicyAttribute','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTrafficMarkingPolicyAttribute')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,29 @@ class UpdateTrafficMarkingPolicyAttributeRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_AddTrafficMatchRuless(self): # RepeatList
+		return self.get_query_params().get('AddTrafficMatchRules')
+
+	def set_AddTrafficMatchRuless(self, AddTrafficMatchRules):  # RepeatList
+		for depth1 in range(len(AddTrafficMatchRules)):
+			if AddTrafficMatchRules[depth1].get('DstPortRange') is not None:
+				for depth2 in range(len(AddTrafficMatchRules[depth1].get('DstPortRange'))):
+					self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.DstPortRange.' + str(depth2 + 1), AddTrafficMatchRules[depth1].get('DstPortRange')[depth2])
+			if AddTrafficMatchRules[depth1].get('MatchDscp') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.MatchDscp', AddTrafficMatchRules[depth1].get('MatchDscp'))
+			if AddTrafficMatchRules[depth1].get('Protocol') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.Protocol', AddTrafficMatchRules[depth1].get('Protocol'))
+			if AddTrafficMatchRules[depth1].get('TrafficMatchRuleDescription') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.TrafficMatchRuleDescription', AddTrafficMatchRules[depth1].get('TrafficMatchRuleDescription'))
+			if AddTrafficMatchRules[depth1].get('SrcPortRange') is not None:
+				for depth2 in range(len(AddTrafficMatchRules[depth1].get('SrcPortRange'))):
+					self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.SrcPortRange.' + str(depth2 + 1), AddTrafficMatchRules[depth1].get('SrcPortRange')[depth2])
+			if AddTrafficMatchRules[depth1].get('DstCidr') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.DstCidr', AddTrafficMatchRules[depth1].get('DstCidr'))
+			if AddTrafficMatchRules[depth1].get('TrafficMatchRuleName') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.TrafficMatchRuleName', AddTrafficMatchRules[depth1].get('TrafficMatchRuleName'))
+			if AddTrafficMatchRules[depth1].get('SrcCidr') is not None:
+				self.add_query_param('AddTrafficMatchRules.' + str(depth1 + 1) + '.SrcCidr', AddTrafficMatchRules[depth1].get('SrcCidr'))
 	def get_TrafficMarkingPolicyDescription(self): # String
 		return self.get_query_params().get('TrafficMarkingPolicyDescription')
 
@@ -76,3 +99,26 @@ class UpdateTrafficMarkingPolicyAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DeleteTrafficMatchRuless(self): # RepeatList
+		return self.get_query_params().get('DeleteTrafficMatchRules')
+
+	def set_DeleteTrafficMatchRuless(self, DeleteTrafficMatchRules):  # RepeatList
+		for depth1 in range(len(DeleteTrafficMatchRules)):
+			if DeleteTrafficMatchRules[depth1].get('DstPortRange') is not None:
+				for depth2 in range(len(DeleteTrafficMatchRules[depth1].get('DstPortRange'))):
+					self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.DstPortRange.' + str(depth2 + 1), DeleteTrafficMatchRules[depth1].get('DstPortRange')[depth2])
+			if DeleteTrafficMatchRules[depth1].get('MatchDscp') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.MatchDscp', DeleteTrafficMatchRules[depth1].get('MatchDscp'))
+			if DeleteTrafficMatchRules[depth1].get('Protocol') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.Protocol', DeleteTrafficMatchRules[depth1].get('Protocol'))
+			if DeleteTrafficMatchRules[depth1].get('TrafficMatchRuleDescription') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.TrafficMatchRuleDescription', DeleteTrafficMatchRules[depth1].get('TrafficMatchRuleDescription'))
+			if DeleteTrafficMatchRules[depth1].get('SrcPortRange') is not None:
+				for depth2 in range(len(DeleteTrafficMatchRules[depth1].get('SrcPortRange'))):
+					self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.SrcPortRange.' + str(depth2 + 1), DeleteTrafficMatchRules[depth1].get('SrcPortRange')[depth2])
+			if DeleteTrafficMatchRules[depth1].get('DstCidr') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.DstCidr', DeleteTrafficMatchRules[depth1].get('DstCidr'))
+			if DeleteTrafficMatchRules[depth1].get('TrafficMatchRuleName') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.TrafficMatchRuleName', DeleteTrafficMatchRules[depth1].get('TrafficMatchRuleName'))
+			if DeleteTrafficMatchRules[depth1].get('SrcCidr') is not None:
+				self.add_query_param('DeleteTrafficMatchRules.' + str(depth1 + 1) + '.SrcCidr', DeleteTrafficMatchRules[depth1].get('SrcCidr'))

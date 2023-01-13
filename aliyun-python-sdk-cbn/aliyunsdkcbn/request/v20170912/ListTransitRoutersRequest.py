@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRoutersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouters','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouters')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ListTransitRoutersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TransitRouterName(self): # String
+		return self.get_query_params().get('TransitRouterName')
+
+	def set_TransitRouterName(self, TransitRouterName):  # String
+		self.add_query_param('TransitRouterName', TransitRouterName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -41,6 +46,21 @@ class ListTransitRoutersRequest(RpcRequest):
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
+	def get_FeatureFilters(self): # RepeatList
+		return self.get_query_params().get('FeatureFilter')
+
+	def set_FeatureFilters(self, FeatureFilter):  # RepeatList
+		for depth1 in range(len(FeatureFilter)):
+			if FeatureFilter[depth1].get('Value') is not None:
+				for depth2 in range(len(FeatureFilter[depth1].get('Value'))):
+					self.add_query_param('FeatureFilter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), FeatureFilter[depth1].get('Value')[depth2])
+			if FeatureFilter[depth1].get('Key') is not None:
+				self.add_query_param('FeatureFilter.' + str(depth1 + 1) + '.Key', FeatureFilter[depth1].get('Key'))
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -80,3 +100,8 @@ class ListTransitRoutersRequest(RpcRequest):
 
 	def set_TransitRouterId(self, TransitRouterId):  # String
 		self.add_query_param('TransitRouterId', TransitRouterId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

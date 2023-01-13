@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRouterVpcAttachmentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterVpcAttachments','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterVpcAttachments')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -90,3 +90,13 @@ class ListTransitRouterVpcAttachmentsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_OrderType(self): # String
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

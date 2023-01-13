@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UpdateTransitRouterRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterRouteTable','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterRouteTable')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,12 @@ class UpdateTransitRouterRouteTableRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_RouteTableOptions(self): # Struct
+		return self.get_query_params().get('RouteTableOptions')
+
+	def set_RouteTableOptions(self, RouteTableOptions):  # Struct
+		if RouteTableOptions.get('MultiRegionECMP') is not None:
+			self.add_query_param('RouteTableOptions.MultiRegionECMP', RouteTableOptions.get('MultiRegionECMP'))
 	def get_TransitRouterRouteTableId(self): # String
 		return self.get_query_params().get('TransitRouterRouteTableId')
 

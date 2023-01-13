@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
+class DescribeTransitRouteTableAggregationDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'AssociateTransitRouterAttachmentWithRouteTable')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeTransitRouteTableAggregationDetail')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,16 +41,6 @@ class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_TransitRouterRouteTableId(self): # String
-		return self.get_query_params().get('TransitRouterRouteTableId')
-
-	def set_TransitRouterRouteTableId(self, TransitRouterRouteTableId):  # String
-		self.add_query_param('TransitRouterRouteTableId', TransitRouterRouteTableId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +56,13 @@ class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TransitRouterAttachmentId(self): # String
-		return self.get_query_params().get('TransitRouterAttachmentId')
+	def get_TransitRouteTableId(self): # String
+		return self.get_query_params().get('TransitRouteTableId')
 
-	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
-		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
+	def set_TransitRouteTableId(self, TransitRouteTableId):  # String
+		self.add_query_param('TransitRouteTableId', TransitRouteTableId)
+	def get_TransitRouteTableAggregationCidr(self): # String
+		return self.get_query_params().get('TransitRouteTableAggregationCidr')
+
+	def set_TransitRouteTableAggregationCidr(self, TransitRouteTableAggregationCidr):  # String
+		self.add_query_param('TransitRouteTableAggregationCidr', TransitRouteTableAggregationCidr)

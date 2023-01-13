@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class OpenTransitRouterServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'OpenTransitRouterService','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'OpenTransitRouterService')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class OpenTransitRouterServiceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

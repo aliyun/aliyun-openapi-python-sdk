@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DeleteCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteCen','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteCen')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class DeleteCenRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_CenId(self): # String
 		return self.get_query_params().get('CenId')
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

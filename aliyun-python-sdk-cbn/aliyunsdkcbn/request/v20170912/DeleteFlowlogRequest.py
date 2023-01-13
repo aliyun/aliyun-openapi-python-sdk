@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DeleteFlowlogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteFlowlog','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteFlowlog')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

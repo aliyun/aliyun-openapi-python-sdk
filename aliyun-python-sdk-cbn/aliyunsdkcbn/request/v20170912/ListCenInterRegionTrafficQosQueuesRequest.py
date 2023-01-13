@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
+class ListCenInterRegionTrafficQosQueuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'AssociateTransitRouterAttachmentWithRouteTable')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListCenInterRegionTrafficQosQueues')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,36 @@ class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TrafficQosQueueName(self): # String
+		return self.get_query_params().get('TrafficQosQueueName')
+
+	def set_TrafficQosQueueName(self, TrafficQosQueueName):  # String
+		self.add_query_param('TrafficQosQueueName', TrafficQosQueueName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_TrafficQosQueueId(self): # String
+		return self.get_query_params().get('TrafficQosQueueId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_TransitRouterRouteTableId(self): # String
-		return self.get_query_params().get('TransitRouterRouteTableId')
+	def set_TrafficQosQueueId(self, TrafficQosQueueId):  # String
+		self.add_query_param('TrafficQosQueueId', TrafficQosQueueId)
+	def get_TrafficQosQueueDescription(self): # String
+		return self.get_query_params().get('TrafficQosQueueDescription')
 
-	def set_TransitRouterRouteTableId(self, TransitRouterRouteTableId):  # String
-		self.add_query_param('TransitRouterRouteTableId', TransitRouterRouteTableId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def set_TrafficQosQueueDescription(self, TrafficQosQueueDescription):  # String
+		self.add_query_param('TrafficQosQueueDescription', TrafficQosQueueDescription)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_TrafficQosPolicyId(self): # String
+		return self.get_query_params().get('TrafficQosPolicyId')
+
+	def set_TrafficQosPolicyId(self, TrafficQosPolicyId):  # String
+		self.add_query_param('TrafficQosPolicyId', TrafficQosPolicyId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +76,18 @@ class AssociateTransitRouterAttachmentWithRouteTableRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TransitRouterId(self): # String
+		return self.get_query_params().get('TransitRouterId')
+
+	def set_TransitRouterId(self, TransitRouterId):  # String
+		self.add_query_param('TransitRouterId', TransitRouterId)
 	def get_TransitRouterAttachmentId(self): # String
 		return self.get_query_params().get('TransitRouterAttachmentId')
 
 	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
 		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

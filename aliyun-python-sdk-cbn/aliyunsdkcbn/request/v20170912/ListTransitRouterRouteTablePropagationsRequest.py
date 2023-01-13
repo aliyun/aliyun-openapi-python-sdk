@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRouterRouteTablePropagationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterRouteTablePropagations','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterRouteTablePropagations')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,16 @@ class ListTransitRouterRouteTablePropagationsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_TransitRouterAttachmentResourceId(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentResourceId')
+
+	def set_TransitRouterAttachmentResourceId(self, TransitRouterAttachmentResourceId):  # String
+		self.add_query_param('TransitRouterAttachmentResourceId', TransitRouterAttachmentResourceId)
+	def get_TransitRouterAttachmentResourceType(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentResourceType')
+
+	def set_TransitRouterAttachmentResourceType(self, TransitRouterAttachmentResourceType):  # String
+		self.add_query_param('TransitRouterAttachmentResourceType', TransitRouterAttachmentResourceType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,3 +81,8 @@ class ListTransitRouterRouteTablePropagationsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

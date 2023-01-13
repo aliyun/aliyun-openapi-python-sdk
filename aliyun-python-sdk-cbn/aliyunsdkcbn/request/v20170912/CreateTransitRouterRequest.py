@@ -24,7 +24,7 @@ import json
 class CreateTransitRouterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouter','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateTransitRouter')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
