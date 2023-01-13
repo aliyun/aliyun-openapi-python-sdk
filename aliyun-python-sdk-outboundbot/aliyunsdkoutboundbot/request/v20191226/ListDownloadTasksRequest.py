@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class ListDownloadTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListDownloadTasks','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListDownloadTasks')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

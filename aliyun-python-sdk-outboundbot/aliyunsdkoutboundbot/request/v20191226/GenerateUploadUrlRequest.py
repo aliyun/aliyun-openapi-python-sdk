@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class GenerateUploadUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GenerateUploadUrl','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GenerateUploadUrl')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class ModifyGlobalQuestionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyGlobalQuestion','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyGlobalQuestion')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

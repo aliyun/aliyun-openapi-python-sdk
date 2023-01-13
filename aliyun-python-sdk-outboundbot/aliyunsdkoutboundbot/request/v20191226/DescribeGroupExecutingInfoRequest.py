@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class DescribeGroupExecutingInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeGroupExecutingInfo','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeGroupExecutingInfo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

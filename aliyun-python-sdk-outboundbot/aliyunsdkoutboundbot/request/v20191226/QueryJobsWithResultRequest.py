@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class QueryJobsWithResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'QueryJobsWithResult','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'QueryJobsWithResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class QueryJobsWithResultRequest(RpcRequest):
 
 	def set_HasAnsweredFilter(self, HasAnsweredFilter):  # Boolean
 		self.add_query_param('HasAnsweredFilter', HasAnsweredFilter)
+	def get_TaskStatusFilter(self): # String
+		return self.get_query_params().get('TaskStatusFilter')
+
+	def set_TaskStatusFilter(self, TaskStatusFilter):  # String
+		self.add_query_param('TaskStatusFilter', TaskStatusFilter)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

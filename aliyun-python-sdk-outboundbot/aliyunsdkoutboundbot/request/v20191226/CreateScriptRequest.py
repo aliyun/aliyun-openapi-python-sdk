@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class CreateScriptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateScript','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateScript')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,11 +62,11 @@ class CreateScriptRequest(RpcRequest):
 
 	def set_AsrConfig(self, AsrConfig):  # String
 		self.add_query_param('AsrConfig', AsrConfig)
-	def get_MiniPlaybackConfigListJsonString(self): # String
-		return self.get_query_params().get('MiniPlaybackConfigListJsonString')
+	def get_EmotionEnable(self): # Boolean
+		return self.get_query_params().get('EmotionEnable')
 
-	def set_MiniPlaybackConfigListJsonString(self, MiniPlaybackConfigListJsonString):  # String
-		self.add_query_param('MiniPlaybackConfigListJsonString', MiniPlaybackConfigListJsonString)
+	def set_EmotionEnable(self, EmotionEnable):  # Boolean
+		self.add_query_param('EmotionEnable', EmotionEnable)
 	def get_NewBargeInEnable(self): # Boolean
 		return self.get_query_params().get('NewBargeInEnable')
 

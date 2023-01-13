@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class CreateInstanceBindNumberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateInstanceBindNumber','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateInstanceBindNumber')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

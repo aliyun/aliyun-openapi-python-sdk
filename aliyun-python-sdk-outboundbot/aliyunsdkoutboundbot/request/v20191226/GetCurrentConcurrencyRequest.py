@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class GetCurrentConcurrencyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GetCurrentConcurrency','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GetCurrentConcurrency')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateInstance','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class DismissNumberDistrictInfoParsingResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DismissNumberDistrictInfoParsingResult','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DismissNumberDistrictInfoParsingResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

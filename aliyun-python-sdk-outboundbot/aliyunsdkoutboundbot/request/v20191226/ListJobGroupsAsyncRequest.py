@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class ListJobGroupsAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobGroupsAsync','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobGroupsAsync')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

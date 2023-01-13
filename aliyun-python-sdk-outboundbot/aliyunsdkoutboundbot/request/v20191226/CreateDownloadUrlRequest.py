@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class CreateDownloadUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateDownloadUrl','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateDownloadUrl')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

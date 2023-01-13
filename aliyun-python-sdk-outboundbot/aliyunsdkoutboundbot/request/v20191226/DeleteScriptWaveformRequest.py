@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class DeleteScriptWaveformRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DeleteScriptWaveform','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DeleteScriptWaveform')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

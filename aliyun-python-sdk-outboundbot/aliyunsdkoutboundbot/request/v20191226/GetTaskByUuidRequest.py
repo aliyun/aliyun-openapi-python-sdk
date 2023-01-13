@@ -23,7 +23,7 @@ from aliyunsdkoutboundbot.endpoint import endpoint_data
 class GetTaskByUuidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GetTaskByUuid','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'GetTaskByUuid')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ResumeJobsRequest(RpcRequest):
+class UploadScriptRecordingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ResumeJobs')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'UploadScriptRecording')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,35 +31,28 @@ class ResumeJobsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_All(self): # Boolean
-		return self.get_query_params().get('All')
+	def get_Content(self): # String
+		return self.get_query_params().get('Content')
 
-	def set_All(self, All):  # Boolean
-		self.add_query_param('All', All)
-	def get_JobReferenceIds(self): # RepeatList
-		return self.get_query_params().get('JobReferenceId')
+	def set_Content(self, Content):  # String
+		self.add_query_param('Content', Content)
+	def get_ScriptId(self): # String
+		return self.get_query_params().get('ScriptId')
 
-	def set_JobReferenceIds(self, JobReferenceId):  # RepeatList
-		for depth1 in range(len(JobReferenceId)):
-			self.add_query_param('JobReferenceId.' + str(depth1 + 1), JobReferenceId[depth1])
-	def get_JobIds(self): # RepeatList
-		return self.get_query_params().get('JobId')
-
-	def set_JobIds(self, JobId):  # RepeatList
-		for depth1 in range(len(JobId)):
-			self.add_query_param('JobId.' + str(depth1 + 1), JobId[depth1])
+	def set_ScriptId(self, ScriptId):  # String
+		self.add_query_param('ScriptId', ScriptId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_JobGroupId(self): # String
-		return self.get_query_params().get('JobGroupId')
+	def get_FileName(self): # String
+		return self.get_query_params().get('FileName')
 
-	def set_JobGroupId(self, JobGroupId):  # String
-		self.add_query_param('JobGroupId', JobGroupId)
-	def get_ScenarioId(self): # String
-		return self.get_query_params().get('ScenarioId')
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
+	def get_FileId(self): # String
+		return self.get_query_params().get('FileId')
 
-	def set_ScenarioId(self, ScenarioId):  # String
-		self.add_query_param('ScenarioId', ScenarioId)
+	def set_FileId(self, FileId):  # String
+		self.add_query_param('FileId', FileId)
