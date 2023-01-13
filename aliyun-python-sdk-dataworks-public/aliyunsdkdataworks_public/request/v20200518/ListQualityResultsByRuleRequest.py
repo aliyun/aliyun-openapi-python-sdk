@@ -56,8 +56,8 @@ class ListQualityResultsByRuleRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_RuleId(self): # Integer
+	def get_RuleId(self): # Long
 		return self.get_body_params().get('RuleId')
 
-	def set_RuleId(self, RuleId):  # Integer
+	def set_RuleId(self, RuleId):  # Long
 		self.add_body_params('RuleId', RuleId)
