@@ -111,6 +111,12 @@ class UpdateSubscribeRelationRequest(RpcRequest):
 	def set_OtaJobFlag(self,OtaJobFlag):
 		self.add_query_param('OtaJobFlag',OtaJobFlag)
 
+	def get_SubscribeFlags(self):
+		return self.get_query_params().get('SubscribeFlags')
+
+	def set_SubscribeFlags(self,SubscribeFlags):
+		self.add_query_param('SubscribeFlags',SubscribeFlags)
+
 	def get_DeviceDataFlag(self):
 		return self.get_query_params().get('DeviceDataFlag')
 

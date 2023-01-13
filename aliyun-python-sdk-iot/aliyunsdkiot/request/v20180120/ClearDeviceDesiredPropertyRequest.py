@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class GetThingScriptRequest(RpcRequest):
+class ClearDeviceDesiredPropertyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetThingScript')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ClearDeviceDesiredProperty')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,34 @@ class GetThingScriptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
+
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_Identifiess(self):
+		return self.get_body_params().get('Identifies')
+
+	def set_Identifiess(self, Identifiess):
+		for depth1 in range(len(Identifiess)):
+			if Identifiess[depth1] is not None:
+				self.add_body_params('Identifies.' + str(depth1 + 1) , Identifiess[depth1])
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
