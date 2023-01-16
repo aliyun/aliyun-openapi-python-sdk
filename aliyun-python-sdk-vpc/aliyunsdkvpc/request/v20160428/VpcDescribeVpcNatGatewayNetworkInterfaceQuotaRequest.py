@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class AddPublicIpAddressPoolCidrBlockRequest(RpcRequest):
+class VpcDescribeVpcNatGatewayNetworkInterfaceQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AddPublicIpAddressPoolCidrBlock','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'VpcDescribeVpcNatGatewayNetworkInterfaceQuota','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class AddPublicIpAddressPoolCidrBlockRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CidrMask(self): # Integer
-		return self.get_query_params().get('CidrMask')
-
-	def set_CidrMask(self, CidrMask):  # Integer
-		self.add_query_param('CidrMask', CidrMask)
-	def get_PublicIpAddressPoolId(self): # String
-		return self.get_query_params().get('PublicIpAddressPoolId')
-
-	def set_PublicIpAddressPoolId(self, PublicIpAddressPoolId):  # String
-		self.add_query_param('PublicIpAddressPoolId', PublicIpAddressPoolId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -51,11 +41,16 @@ class AddPublicIpAddressPoolCidrBlockRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def get_ResourceUid(self): # Long
+		return self.get_query_params().get('ResourceUid')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_ResourceUid(self, ResourceUid):  # Long
+		self.add_query_param('ResourceUid', ResourceUid)
+	def get_NatGatewayId(self): # String
+		return self.get_query_params().get('NatGatewayId')
+
+	def set_NatGatewayId(self, NatGatewayId):  # String
+		self.add_query_param('NatGatewayId', NatGatewayId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,8 +66,3 @@ class AddPublicIpAddressPoolCidrBlockRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_CidrBlock(self): # String
-		return self.get_query_params().get('CidrBlock')
-
-	def set_CidrBlock(self, CidrBlock):  # String
-		self.add_query_param('CidrBlock', CidrBlock)
