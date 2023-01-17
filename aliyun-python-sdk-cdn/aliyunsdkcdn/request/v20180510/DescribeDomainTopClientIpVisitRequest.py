@@ -31,38 +31,33 @@ class DescribeDomainTopClientIpVisitRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LocationNameEn(self): # String
-		return self.get_query_params().get('LocationNameEn')
-
-	def set_LocationNameEn(self, LocationNameEn):  # String
-		self.add_query_param('LocationNameEn', LocationNameEn)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Limit(self): # String
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self, Limit):  # String
-		self.add_query_param('Limit', Limit)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
+	def get_Limit(self): # String
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self, Limit):  # String
+		self.add_query_param('Limit', Limit)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_LocationNameEn(self): # String
+		return self.get_query_params().get('LocationNameEn')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_LocationNameEn(self, LocationNameEn):  # String
+		self.add_query_param('LocationNameEn', LocationNameEn)
 	def get_SortBy(self): # String
 		return self.get_query_params().get('SortBy')
 
 	def set_SortBy(self, SortBy):  # String
 		self.add_query_param('SortBy', SortBy)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)

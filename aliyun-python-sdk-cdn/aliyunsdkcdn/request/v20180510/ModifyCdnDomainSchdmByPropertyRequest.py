@@ -31,18 +31,13 @@ class ModifyCdnDomainSchdmByPropertyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Property(self): # String
-		return self.get_query_params().get('Property')
-
-	def set_Property(self, Property):  # String
-		self.add_query_param('Property', Property)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_Property(self): # String
+		return self.get_query_params().get('Property')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_Property(self, Property):  # String
+		self.add_query_param('Property', Property)

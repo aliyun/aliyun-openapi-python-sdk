@@ -51,6 +51,11 @@ class PushObjectCacheRequest(RpcRequest):
 
 	def set_Area(self, Area):  # String
 		self.add_query_param('Area', Area)
+	def get_WithHeader(self): # String
+		return self.get_query_params().get('WithHeader')
+
+	def set_WithHeader(self, WithHeader):  # String
+		self.add_query_param('WithHeader', WithHeader)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

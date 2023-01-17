@@ -31,31 +31,26 @@ class DescribeRealtimeDeliveryAccRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Project(self): # String
-		return self.get_query_params().get('Project')
-
-	def set_Project(self, Project):  # String
-		self.add_query_param('Project', Project)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_Project(self): # String
+		return self.get_query_params().get('Project')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
 	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 
 	def set_Interval(self, Interval):  # String
 		self.add_query_param('Interval', Interval)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_LogStore(self): # String
 		return self.get_query_params().get('LogStore')
 

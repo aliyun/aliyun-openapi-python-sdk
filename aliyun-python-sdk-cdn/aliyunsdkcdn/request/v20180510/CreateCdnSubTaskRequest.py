@@ -31,18 +31,13 @@ class CreateCdnSubTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DomainName(self): # String
-		return self.get_body_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_body_params('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ReportIds(self): # String
 		return self.get_body_params().get('ReportIds')
 
 	def set_ReportIds(self, ReportIds):  # String
 		self.add_body_params('ReportIds', ReportIds)
+	def get_DomainName(self): # String
+		return self.get_body_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_body_params('DomainName', DomainName)

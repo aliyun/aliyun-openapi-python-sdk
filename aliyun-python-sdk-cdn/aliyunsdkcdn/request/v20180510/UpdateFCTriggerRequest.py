@@ -31,26 +31,21 @@ class UpdateFCTriggerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Notes(self): # String
-		return self.get_body_params().get('Notes')
-
-	def set_Notes(self, Notes):  # String
-		self.add_body_params('Notes', Notes)
 	def get_TriggerARN(self): # String
 		return self.get_query_params().get('TriggerARN')
 
 	def set_TriggerARN(self, TriggerARN):  # String
 		self.add_query_param('TriggerARN', TriggerARN)
+	def get_Notes(self): # String
+		return self.get_body_params().get('Notes')
+
+	def set_Notes(self, Notes):  # String
+		self.add_body_params('Notes', Notes)
 	def get_SourceARN(self): # String
 		return self.get_body_params().get('SourceARN')
 
 	def set_SourceARN(self, SourceARN):  # String
 		self.add_body_params('SourceARN', SourceARN)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_RoleARN(self): # String
 		return self.get_body_params().get('RoleARN')
 

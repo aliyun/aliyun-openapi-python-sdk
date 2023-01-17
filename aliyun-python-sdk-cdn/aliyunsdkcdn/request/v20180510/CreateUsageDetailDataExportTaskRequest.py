@@ -36,6 +36,11 @@ class CreateUsageDetailDataExportTaskRequest(RpcRequest):
 
 	def set_DomainNames(self, DomainNames):  # String
 		self.add_query_param('DomainNames', DomainNames)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
@@ -61,13 +66,3 @@ class CreateUsageDetailDataExportTaskRequest(RpcRequest):
 
 	def set_Group(self, Group):  # String
 		self.add_query_param('Group', Group)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

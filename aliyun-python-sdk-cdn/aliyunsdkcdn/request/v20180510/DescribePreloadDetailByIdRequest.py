@@ -20,19 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeCertificateInfoByIDRequest(RpcRequest):
+class DescribePreloadDetailByIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCertificateInfoByID')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribePreloadDetailById')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CertId(self): # String
-		return self.get_query_params().get('CertId')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_CertId(self, CertId):  # String
-		self.add_query_param('CertId', CertId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
