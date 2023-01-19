@@ -71,6 +71,11 @@ class DescribeWarningMachinesRequest(RpcRequest):
 
 	def set_HaveRisk(self, HaveRisk):  # Integer
 		self.add_query_param('HaveRisk', HaveRisk)
+	def get_GroupId(self): # Long
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

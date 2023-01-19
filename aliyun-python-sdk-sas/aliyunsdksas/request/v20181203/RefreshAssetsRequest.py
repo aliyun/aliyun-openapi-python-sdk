@@ -31,6 +31,11 @@ class RefreshAssetsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CloudAssetType(self): # Integer
+		return self.get_query_params().get('CloudAssetType')
+
+	def set_CloudAssetType(self, CloudAssetType):  # Integer
+		self.add_query_param('CloudAssetType', CloudAssetType)
 	def get_CloudAssetSubType(self): # Integer
 		return self.get_query_params().get('CloudAssetSubType')
 
@@ -41,8 +46,3 @@ class RefreshAssetsRequest(RpcRequest):
 
 	def set_AssetType(self, AssetType):  # String
 		self.add_query_param('AssetType', AssetType)
-	def get_CloudAssetType(self): # Integer
-		return self.get_query_params().get('CloudAssetType')
-
-	def set_CloudAssetType(self, CloudAssetType):  # Integer
-		self.add_query_param('CloudAssetType', CloudAssetType)

@@ -36,13 +36,13 @@ class DescribeCriteriaRequest(RpcRequest):
 
 	def set_SupportAutoTag(self, SupportAutoTag):  # Boolean
 		self.add_query_param('SupportAutoTag', SupportAutoTag)
-	def get_Value(self): # String
-		return self.get_query_params().get('Value')
-
-	def set_Value(self, Value):  # String
-		self.add_query_param('Value', Value)
 	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 
 	def set_MachineTypes(self, MachineTypes):  # String
 		self.add_query_param('MachineTypes', MachineTypes)
+	def get_Value(self): # String
+		return self.get_query_params().get('Value')
+
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)

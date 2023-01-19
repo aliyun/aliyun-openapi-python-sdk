@@ -41,6 +41,11 @@ class DescribeGroupedInstancesRequest(RpcRequest):
 
 	def set_NoPage(self, NoPage):  # Boolean
 		self.add_query_param('NoPage', NoPage)
+	def get_Vendor(self): # Integer
+		return self.get_query_params().get('Vendor')
+
+	def set_Vendor(self, Vendor):  # Integer
+		self.add_query_param('Vendor', Vendor)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -51,6 +56,11 @@ class DescribeGroupedInstancesRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_Vendors(self): # String
+		return self.get_query_params().get('Vendors')
+
+	def set_Vendors(self, Vendors):  # String
+		self.add_query_param('Vendors', Vendors)
 	def get_FieldValue(self): # String
 		return self.get_query_params().get('FieldValue')
 

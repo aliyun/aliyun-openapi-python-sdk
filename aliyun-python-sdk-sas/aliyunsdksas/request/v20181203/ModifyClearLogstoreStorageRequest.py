@@ -31,16 +31,6 @@ class ModifyClearLogstoreStorageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_From(self): # String
-		return self.get_query_params().get('From')
-
-	def set_From(self, _From):  # String
-		self.add_query_param('From', _From)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
 	def get_UserLogStore(self): # String
 		return self.get_query_params().get('UserLogStore')
 
@@ -51,3 +41,13 @@ class ModifyClearLogstoreStorageRequest(RpcRequest):
 
 	def set_UserProject(self, UserProject):  # String
 		self.add_query_param('UserProject', UserProject)
+	def get_From(self): # String
+		return self.get_query_params().get('From')
+
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

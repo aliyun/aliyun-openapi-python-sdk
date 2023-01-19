@@ -31,11 +31,6 @@ class AddInstallCodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpiredDate(self): # Long
-		return self.get_query_params().get('ExpiredDate')
-
-	def set_ExpiredDate(self, ExpiredDate):  # Long
-		self.add_query_param('ExpiredDate', ExpiredDate)
 	def get_Os(self): # String
 		return self.get_query_params().get('Os')
 
@@ -51,6 +46,11 @@ class AddInstallCodeRequest(RpcRequest):
 
 	def set_OnlyImage(self, OnlyImage):  # Boolean
 		self.add_query_param('OnlyImage', OnlyImage)
+	def get_ExpiredDate(self): # Long
+		return self.get_query_params().get('ExpiredDate')
+
+	def set_ExpiredDate(self, ExpiredDate):  # Long
+		self.add_query_param('ExpiredDate', ExpiredDate)
 	def get_VendorName(self): # String
 		return self.get_query_params().get('VendorName')
 

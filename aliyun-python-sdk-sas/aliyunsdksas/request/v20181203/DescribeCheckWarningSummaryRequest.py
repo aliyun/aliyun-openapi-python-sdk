@@ -66,6 +66,11 @@ class DescribeCheckWarningSummaryRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_GroupId(self): # Long
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

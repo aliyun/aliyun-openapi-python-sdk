@@ -41,3 +41,8 @@ class DescribeAntiBruteForceRulesRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
