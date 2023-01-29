@@ -1,3 +1,6 @@
+2023-01-29 Version: 1.2.8
+- Update HBR OpenAPI.
+
 2023-01-05 Version: 0.1.0
 - Update HBR OpenAPI.
 
