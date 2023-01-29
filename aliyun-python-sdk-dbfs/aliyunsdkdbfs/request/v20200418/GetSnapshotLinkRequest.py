@@ -20,24 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbfs.endpoint import endpoint_data
 
-class DeleteSnapshotRequest(RpcRequest):
+class GetSnapshotLinkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DeleteSnapshot')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'GetSnapshotLink')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SnapshotId(self): # String
-		return self.get_query_params().get('SnapshotId')
+	def get_LinkId(self): # String
+		return self.get_query_params().get('LinkId')
 
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
-
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)
+	def set_LinkId(self, LinkId):  # String
+		self.add_query_param('LinkId', LinkId)
