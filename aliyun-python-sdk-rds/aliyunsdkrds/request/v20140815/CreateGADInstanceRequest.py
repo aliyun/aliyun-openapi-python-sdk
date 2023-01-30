@@ -91,6 +91,8 @@ class CreateGADInstanceRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.ZoneID', UnitNode[depth1].get('ZoneID'))
 			if UnitNode[depth1].get('DBInstanceDescription') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DBInstanceDescription', UnitNode[depth1].get('DBInstanceDescription'))
+			if UnitNode[depth1].get('DBInstanceStorageType') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DBInstanceStorageType', UnitNode[depth1].get('DBInstanceStorageType'))
 			if UnitNode[depth1].get('PayType') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.PayType', UnitNode[depth1].get('PayType'))
 			if UnitNode[depth1].get('DtsConflict') is not None:
