@@ -31,6 +31,11 @@ class DescribeApisRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StageName(self): # String
+		return self.get_query_params().get('StageName')
+
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

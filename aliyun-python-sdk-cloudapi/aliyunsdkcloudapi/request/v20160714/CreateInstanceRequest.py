@@ -31,11 +31,6 @@ class CreateInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
 	def get_InstanceSpec(self): # String
 		return self.get_query_params().get('InstanceSpec')
 
@@ -46,16 +41,30 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_HttpsPolicy(self, HttpsPolicy):  # String
 		self.add_query_param('HttpsPolicy', HttpsPolicy)
-	def get_Token(self): # String
-		return self.get_query_params().get('Token')
-
-	def set_Token(self, Token):  # String
-		self.add_query_param('Token', Token)
 	def get_Duration(self): # Integer
 		return self.get_query_params().get('Duration')
 
 	def set_Duration(self, Duration):  # Integer
 		self.add_query_param('Duration', Duration)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_Token(self): # String
+		return self.get_query_params().get('Token')
+
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
