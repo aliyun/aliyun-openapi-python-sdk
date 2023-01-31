@@ -23,16 +23,16 @@ from aliyunsdknlp_automl.endpoint import endpoint_data
 class GetAsyncPredictRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'GetAsyncPredict','nlpautoml')
+		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'GetAsyncPredict')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AsyncPredictId(self):
+	def get_AsyncPredictId(self): # Integer
 		return self.get_query_params().get('AsyncPredictId')
 
-	def set_AsyncPredictId(self,AsyncPredictId):
-		self.add_query_param('AsyncPredictId',AsyncPredictId)
+	def set_AsyncPredictId(self, AsyncPredictId):  # Integer
+		self.add_query_param('AsyncPredictId', AsyncPredictId)

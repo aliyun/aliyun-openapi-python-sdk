@@ -23,64 +23,66 @@ from aliyunsdknlp_automl.endpoint import endpoint_data
 class CreateAsyncPredictRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'CreateAsyncPredict','nlpautoml')
+		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'CreateAsyncPredict')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TopK(self):
+	def get_TopK(self): # Integer
 		return self.get_body_params().get('TopK')
 
-	def set_TopK(self,TopK):
+	def set_TopK(self, TopK):  # Integer
 		self.add_body_params('TopK', TopK)
-
-	def get_FileType(self):
+	def get_FileType(self): # String
 		return self.get_body_params().get('FileType')
 
-	def set_FileType(self,FileType):
+	def set_FileType(self, FileType):  # String
 		self.add_body_params('FileType', FileType)
-
-	def get_DetailTag(self):
+	def get_DetailTag(self): # String
 		return self.get_body_params().get('DetailTag')
 
-	def set_DetailTag(self,DetailTag):
+	def set_DetailTag(self, DetailTag):  # String
 		self.add_body_params('DetailTag', DetailTag)
-
-	def get_FetchContent(self):
+	def get_FetchContent(self): # String
 		return self.get_body_params().get('FetchContent')
 
-	def set_FetchContent(self,FetchContent):
+	def set_FetchContent(self, FetchContent):  # String
 		self.add_body_params('FetchContent', FetchContent)
-
-	def get_Content(self):
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)
-
-	def get_FileContent(self):
+	def get_FileContent(self): # String
 		return self.get_body_params().get('FileContent')
 
-	def set_FileContent(self,FileContent):
+	def set_FileContent(self, FileContent):  # String
 		self.add_body_params('FileContent', FileContent)
+	def get_ServiceName(self): # String
+		return self.get_body_params().get('ServiceName')
 
-	def get_ModelId(self):
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_body_params('ServiceName', ServiceName)
+	def get_ModelId(self): # Integer
 		return self.get_body_params().get('ModelId')
 
-	def set_ModelId(self,ModelId):
+	def set_ModelId(self, ModelId):  # Integer
 		self.add_body_params('ModelId', ModelId)
+	def get_ServiceVersion(self): # String
+		return self.get_body_params().get('ServiceVersion')
 
-	def get_FileUrl(self):
+	def set_ServiceVersion(self, ServiceVersion):  # String
+		self.add_body_params('ServiceVersion', ServiceVersion)
+	def get_FileUrl(self): # String
 		return self.get_body_params().get('FileUrl')
 
-	def set_FileUrl(self,FileUrl):
+	def set_FileUrl(self, FileUrl):  # String
 		self.add_body_params('FileUrl', FileUrl)
-
-	def get_ModelVersion(self):
+	def get_ModelVersion(self): # String
 		return self.get_body_params().get('ModelVersion')
 
-	def set_ModelVersion(self,ModelVersion):
+	def set_ModelVersion(self, ModelVersion):  # String
 		self.add_body_params('ModelVersion', ModelVersion)

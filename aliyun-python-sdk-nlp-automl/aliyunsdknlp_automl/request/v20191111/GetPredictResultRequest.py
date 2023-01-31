@@ -23,40 +23,36 @@ from aliyunsdknlp_automl.endpoint import endpoint_data
 class GetPredictResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'GetPredictResult','nlpautoml')
+		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'GetPredictResult')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TopK(self):
+	def get_TopK(self): # Integer
 		return self.get_body_params().get('TopK')
 
-	def set_TopK(self,TopK):
+	def set_TopK(self, TopK):  # Integer
 		self.add_body_params('TopK', TopK)
-
-	def get_ModelId(self):
+	def get_ModelId(self): # Integer
 		return self.get_body_params().get('ModelId')
 
-	def set_ModelId(self,ModelId):
+	def set_ModelId(self, ModelId):  # Integer
 		self.add_body_params('ModelId', ModelId)
-
-	def get_DetailTag(self):
+	def get_DetailTag(self): # String
 		return self.get_body_params().get('DetailTag')
 
-	def set_DetailTag(self,DetailTag):
+	def set_DetailTag(self, DetailTag):  # String
 		self.add_body_params('DetailTag', DetailTag)
-
-	def get_Content(self):
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)
-
-	def get_ModelVersion(self):
+	def get_ModelVersion(self): # String
 		return self.get_body_params().get('ModelVersion')
 
-	def set_ModelVersion(self,ModelVersion):
+	def set_ModelVersion(self, ModelVersion):  # String
 		self.add_body_params('ModelVersion', ModelVersion)
