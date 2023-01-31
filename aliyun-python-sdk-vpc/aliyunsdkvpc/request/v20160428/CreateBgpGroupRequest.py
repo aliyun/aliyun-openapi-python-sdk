@@ -76,6 +76,11 @@ class CreateBgpGroupRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RouteQuota(self): # Integer
+		return self.get_query_params().get('RouteQuota')
+
+	def set_RouteQuota(self, RouteQuota):  # Integer
+		self.add_query_param('RouteQuota', RouteQuota)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -91,3 +96,8 @@ class CreateBgpGroupRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_LocalAsn(self): # Long
+		return self.get_query_params().get('LocalAsn')
+
+	def set_LocalAsn(self, LocalAsn):  # Long
+		self.add_query_param('LocalAsn', LocalAsn)

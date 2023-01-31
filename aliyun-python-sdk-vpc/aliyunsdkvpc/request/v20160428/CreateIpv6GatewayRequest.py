@@ -46,11 +46,6 @@ class CreateIpv6GatewayRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_Spec(self): # String
-		return self.get_query_params().get('Spec')
-
-	def set_Spec(self, Spec):  # String
-		self.add_query_param('Spec', Spec)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
