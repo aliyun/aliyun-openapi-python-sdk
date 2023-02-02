@@ -40,6 +40,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_ReadonlyReplicas(self, ReadonlyReplicas):  # String
 		self.add_query_param('ReadonlyReplicas', ReadonlyReplicas)
+	def get_ExtraParam(self): # String
+		return self.get_query_params().get('ExtraParam')
+
+	def set_ExtraParam(self, ExtraParam):  # String
+		self.add_query_param('ExtraParam', ExtraParam)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 

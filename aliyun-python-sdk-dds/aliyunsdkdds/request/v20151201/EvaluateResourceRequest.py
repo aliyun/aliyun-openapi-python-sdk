@@ -40,6 +40,11 @@ class EvaluateResourceRequest(RpcRequest):
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
+	def get_Storage(self): # String
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self, Storage):  # String
+		self.add_query_param('Storage', Storage)
 	def get_ShardsInfo(self): # String
 		return self.get_query_params().get('ShardsInfo')
 
