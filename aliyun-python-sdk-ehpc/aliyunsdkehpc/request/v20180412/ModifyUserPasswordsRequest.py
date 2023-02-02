@@ -36,6 +36,11 @@ class ModifyUserPasswordsRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)
 	def get_Users(self): # RepeatList
 		return self.get_query_params().get('User')
 

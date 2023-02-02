@@ -41,3 +41,8 @@ class DescribeJobRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
+	def get_Async(self): # Boolean
+		return self.get_query_params().get('Async')
+
+	def set_Async(self, _Async):  # Boolean
+		self.add_query_param('Async', _Async)
