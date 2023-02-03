@@ -31,11 +31,6 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -61,6 +56,16 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 
 	def set_AppIds(self, AppIds):  # String
 		self.add_query_param('AppIds', AppIds)
+	def get_MessageQueueGrayEnable(self): # Boolean
+		return self.get_query_params().get('MessageQueueGrayEnable')
+
+	def set_MessageQueueGrayEnable(self, MessageQueueGrayEnable):  # Boolean
+		self.add_query_param('MessageQueueGrayEnable', MessageQueueGrayEnable)
+	def get_DbGrayEnable(self): # Boolean
+		return self.get_query_params().get('DbGrayEnable')
+
+	def set_DbGrayEnable(self, DbGrayEnable):  # Boolean
+		self.add_query_param('DbGrayEnable', DbGrayEnable)
 	def get_Enable(self): # Boolean
 		return self.get_query_params().get('Enable')
 
@@ -86,6 +91,16 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_MessageQueueFilterSide(self): # String
+		return self.get_query_params().get('MessageQueueFilterSide')
+
+	def set_MessageQueueFilterSide(self, MessageQueueFilterSide):  # String
+		self.add_query_param('MessageQueueFilterSide', MessageQueueFilterSide)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

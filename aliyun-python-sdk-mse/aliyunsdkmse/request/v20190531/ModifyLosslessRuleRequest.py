@@ -31,11 +31,6 @@ class ModifyLosslessRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_DelayTime(self): # Long
 		return self.get_query_params().get('DelayTime')
 
@@ -76,6 +71,16 @@ class ModifyLosslessRuleRequest(RpcRequest):
 
 	def set_ShutdownWaitSeconds(self, ShutdownWaitSeconds):  # Integer
 		self.add_query_param('ShutdownWaitSeconds', ShutdownWaitSeconds)
+	def get_Notice(self): # Boolean
+		return self.get_query_params().get('Notice')
+
+	def set_Notice(self, Notice):  # Boolean
+		self.add_query_param('Notice', Notice)
+	def get_LossLessDetail(self): # Boolean
+		return self.get_query_params().get('LossLessDetail')
+
+	def set_LossLessDetail(self, LossLessDetail):  # Boolean
+		self.add_query_param('LossLessDetail', LossLessDetail)
 	def get_FuncType(self): # Long
 		return self.get_query_params().get('FuncType')
 
@@ -86,6 +91,11 @@ class ModifyLosslessRuleRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

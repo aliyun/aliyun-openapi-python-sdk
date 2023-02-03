@@ -31,21 +31,16 @@ class UpdateGatewayRouteWafStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
-	def get_EnableWaf(self): # Boolean
-		return self.get_query_params().get('EnableWaf')
-
-	def set_EnableWaf(self, EnableWaf):  # Boolean
-		self.add_query_param('EnableWaf', EnableWaf)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_EnableWaf(self): # Boolean
+		return self.get_query_params().get('EnableWaf')
+
+	def set_EnableWaf(self, EnableWaf):  # Boolean
+		self.add_query_param('EnableWaf', EnableWaf)
 	def get_RouteId(self): # Long
 		return self.get_query_params().get('RouteId')
 

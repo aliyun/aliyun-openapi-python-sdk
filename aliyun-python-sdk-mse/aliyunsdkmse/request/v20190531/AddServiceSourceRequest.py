@@ -37,11 +37,6 @@ class AddServiceSourceRequest(RpcRequest):
 
 	def set_IngressOptionsRequest(self, IngressOptionsRequest):  # Struct
 		self.add_query_param("IngressOptionsRequest", json.dumps(IngressOptionsRequest))
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -57,6 +52,11 @@ class AddServiceSourceRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_PathList(self): # Array
+		return self.get_query_params().get('PathList')
+
+	def set_PathList(self, PathList):  # Array
+		self.add_query_param("PathList", json.dumps(PathList))
 	def get_Address(self): # String
 		return self.get_query_params().get('Address')
 

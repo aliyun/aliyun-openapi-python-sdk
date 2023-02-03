@@ -31,11 +31,6 @@ class AddGatewayRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_InternetSlbSpec(self): # String
 		return self.get_query_params().get('InternetSlbSpec')
 
@@ -76,11 +71,25 @@ class AddGatewayRequest(RpcRequest):
 
 	def set_Spec(self, Spec):  # String
 		self.add_query_param('Spec', Spec)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_EnterpriseSecurityGroup(self): # Boolean
 		return self.get_query_params().get('EnterpriseSecurityGroup')
 
 	def set_EnterpriseSecurityGroup(self, EnterpriseSecurityGroup):  # Boolean
 		self.add_query_param('EnterpriseSecurityGroup', EnterpriseSecurityGroup)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Vpc(self): # String
 		return self.get_query_params().get('Vpc')
 

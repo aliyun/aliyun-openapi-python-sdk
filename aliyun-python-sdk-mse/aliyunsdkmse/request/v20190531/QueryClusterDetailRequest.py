@@ -36,11 +36,6 @@ class QueryClusterDetailRequest(RpcRequest):
 
 	def set_AclSwitch(self, AclSwitch):  # Boolean
 		self.add_query_param('AclSwitch', AclSwitch)
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_OrderId(self): # String
 		return self.get_query_params().get('OrderId')
 

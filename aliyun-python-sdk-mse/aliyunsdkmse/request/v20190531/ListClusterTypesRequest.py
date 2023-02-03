@@ -31,16 +31,16 @@ class ListClusterTypesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_ConnectType(self): # String
 		return self.get_query_params().get('ConnectType')
 
 	def set_ConnectType(self, ConnectType):  # String
 		self.add_query_param('ConnectType', ConnectType)
+	def get_MseVersion(self): # String
+		return self.get_query_params().get('MseVersion')
+
+	def set_MseVersion(self, MseVersion):  # String
+		self.add_query_param('MseVersion', MseVersion)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

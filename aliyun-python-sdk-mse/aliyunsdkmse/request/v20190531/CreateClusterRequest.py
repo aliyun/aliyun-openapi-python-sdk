@@ -36,11 +36,6 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ClusterSpecification(self, ClusterSpecification):  # String
 		self.add_query_param('ClusterSpecification', ClusterSpecification)
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_PubSlbSpecification(self): # String
 		return self.get_query_params().get('PubSlbSpecification')
 
@@ -51,6 +46,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_PrivateSlbSpecification(self, PrivateSlbSpecification):  # String
 		self.add_query_param('PrivateSlbSpecification', PrivateSlbSpecification)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceCount(self): # Integer
 		return self.get_query_params().get('InstanceCount')
 
@@ -61,6 +61,15 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_ConnectionType(self): # String
 		return self.get_query_params().get('ConnectionType')
 

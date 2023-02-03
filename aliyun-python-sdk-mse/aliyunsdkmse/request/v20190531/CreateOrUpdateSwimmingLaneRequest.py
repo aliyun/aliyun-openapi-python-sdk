@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
 class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 
@@ -31,11 +32,6 @@ class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -56,6 +52,11 @@ class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 
 	def set_LicenseKey(self, LicenseKey):  # String
 		self.add_query_param('LicenseKey', LicenseKey)
+	def get_GatewaySwimmingLaneRouteJson(self): # Struct
+		return self.get_query_params().get('GatewaySwimmingLaneRouteJson')
+
+	def set_GatewaySwimmingLaneRouteJson(self, GatewaySwimmingLaneRouteJson):  # Struct
+		self.add_query_param("GatewaySwimmingLaneRouteJson", json.dumps(GatewaySwimmingLaneRouteJson))
 	def get_EntryRule(self): # String
 		return self.get_query_params().get('EntryRule')
 
@@ -110,6 +111,9 @@ class CreateOrUpdateSwimmingLaneRequest(RpcRequest):
 				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Condition', EntryRules[depth1].get('Condition'))
 			if EntryRules[depth1].get('Enable') is not None:
 				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Enable', EntryRules[depth1].get('Enable'))
+			if EntryRules[depth1].get('Paths') is not None:
+				for depth2 in range(len(EntryRules[depth1].get('Paths'))):
+					self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Paths.' + str(depth2 + 1), EntryRules[depth1].get('Paths')[depth2])
 			if EntryRules[depth1].get('Priority') is not None:
 				self.add_query_param('EntryRules.' + str(depth1 + 1) + '.Priority', EntryRules[depth1].get('Priority'))
 	def get_GroupId(self): # Long

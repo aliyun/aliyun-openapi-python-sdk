@@ -31,11 +31,11 @@ class AddBlackWhiteListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
+	def get_Note(self): # String
+		return self.get_query_params().get('Note')
 
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
+	def set_Note(self, Note):  # String
+		self.add_query_param('Note', Note)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -56,11 +56,21 @@ class AddBlackWhiteListRequest(RpcRequest):
 
 	def set_IsWhite(self, IsWhite):  # Boolean
 		self.add_query_param('IsWhite', IsWhite)
+	def get_ResourceIdJsonList(self): # String
+		return self.get_query_params().get('ResourceIdJsonList')
+
+	def set_ResourceIdJsonList(self, ResourceIdJsonList):  # String
+		self.add_query_param('ResourceIdJsonList', ResourceIdJsonList)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

@@ -31,11 +31,6 @@ class CreateApplicationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 
@@ -46,11 +41,6 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Source(self, Source):  # String
 		self.add_query_param('Source', Source)
-	def get_ExtraInfo(self): # String
-		return self.get_query_params().get('ExtraInfo')
-
-	def set_ExtraInfo(self, ExtraInfo):  # String
-		self.add_query_param('ExtraInfo', ExtraInfo)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -61,6 +51,11 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_SwitchEnable(self, SwitchEnable):  # String
 		self.add_query_param('SwitchEnable', SwitchEnable)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

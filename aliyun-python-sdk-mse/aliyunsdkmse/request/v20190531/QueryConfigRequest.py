@@ -31,11 +31,11 @@ class QueryConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
+	def get_NeedRunningConf(self): # Boolean
+		return self.get_query_params().get('NeedRunningConf')
 
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
+	def set_NeedRunningConf(self, NeedRunningConf):  # Boolean
+		self.add_query_param('NeedRunningConf', NeedRunningConf)
 	def get_ConfigType(self): # String
 		return self.get_query_params().get('ConfigType')
 

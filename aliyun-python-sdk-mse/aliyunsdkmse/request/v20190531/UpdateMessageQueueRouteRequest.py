@@ -32,11 +32,11 @@ class UpdateMessageQueueRouteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
 	def get_Enable(self): # Boolean
 		return self.get_query_params().get('Enable')
 
@@ -47,11 +47,21 @@ class UpdateMessageQueueRouteRequest(RpcRequest):
 
 	def set_Tags(self, Tags):  # Array
 		self.add_query_param("Tags", json.dumps(Tags))
+	def get_FilterSide(self): # String
+		return self.get_query_params().get('FilterSide')
+
+	def set_FilterSide(self, FilterSide):  # String
+		self.add_query_param('FilterSide', FilterSide)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

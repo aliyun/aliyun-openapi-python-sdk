@@ -36,11 +36,6 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_OpenSuperAcl(self, OpenSuperAcl):  # String
 		self.add_body_params('OpenSuperAcl', OpenSuperAcl)
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
-
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
 	def get_ConfigAuthEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigAuthEnabled')
 
@@ -76,11 +71,21 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_JuteMaxbuffer(self, JuteMaxbuffer):  # String
 		self.add_query_param('JuteMaxbuffer', JuteMaxbuffer)
+	def get_NamingAuthEnabled(self): # Boolean
+		return self.get_query_params().get('NamingAuthEnabled')
+
+	def set_NamingAuthEnabled(self, NamingAuthEnabled):  # Boolean
+		self.add_query_param('NamingAuthEnabled', NamingAuthEnabled)
 	def get_ConfigType(self): # String
 		return self.get_query_params().get('ConfigType')
 
 	def set_ConfigType(self, ConfigType):  # String
 		self.add_query_param('ConfigType', ConfigType)
+	def get_ExtendedTypesEnable(self): # String
+		return self.get_query_params().get('ExtendedTypesEnable')
+
+	def set_ExtendedTypesEnable(self, ExtendedTypesEnable):  # String
+		self.add_query_param('ExtendedTypesEnable', ExtendedTypesEnable)
 	def get_AutopurgeSnapRetainCount(self): # String
 		return self.get_query_params().get('AutopurgeSnapRetainCount')
 

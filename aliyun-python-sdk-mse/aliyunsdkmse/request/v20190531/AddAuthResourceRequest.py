@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
 class AddAuthResourceRequest(RpcRequest):
 
@@ -31,11 +32,11 @@ class AddAuthResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MseSessionId(self): # String
-		return self.get_query_params().get('MseSessionId')
+	def get_IgnoreCase(self): # Boolean
+		return self.get_query_params().get('IgnoreCase')
 
-	def set_MseSessionId(self, MseSessionId):  # String
-		self.add_query_param('MseSessionId', MseSessionId)
+	def set_IgnoreCase(self, IgnoreCase):  # Boolean
+		self.add_query_param('IgnoreCase', IgnoreCase)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
@@ -51,11 +52,21 @@ class AddAuthResourceRequest(RpcRequest):
 
 	def set_Path(self, Path):  # String
 		self.add_query_param('Path', Path)
+	def get_MatchType(self): # String
+		return self.get_query_params().get('MatchType')
+
+	def set_MatchType(self, MatchType):  # String
+		self.add_query_param('MatchType', MatchType)
 	def get_AuthId(self): # Long
 		return self.get_query_params().get('AuthId')
 
 	def set_AuthId(self, AuthId):  # Long
 		self.add_query_param('AuthId', AuthId)
+	def get_AuthResourceHeaderList(self): # Array
+		return self.get_query_params().get('AuthResourceHeaderList')
+
+	def set_AuthResourceHeaderList(self, AuthResourceHeaderList):  # Array
+		self.add_query_param("AuthResourceHeaderList", json.dumps(AuthResourceHeaderList))
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
