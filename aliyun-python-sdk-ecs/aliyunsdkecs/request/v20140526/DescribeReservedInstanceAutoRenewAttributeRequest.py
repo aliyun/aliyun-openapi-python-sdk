@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteNetworkInterfacePermissionRequest(RpcRequest):
+class DescribeReservedInstanceAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteNetworkInterfacePermission','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeReservedInstanceAutoRenewAttribute','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class DeleteNetworkInterfacePermissionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_NetworkInterfacePermissionId(self): # String
-		return self.get_query_params().get('NetworkInterfacePermissionId')
-
-	def set_NetworkInterfacePermissionId(self, NetworkInterfacePermissionId):  # String
-		self.add_query_param('NetworkInterfacePermissionId', NetworkInterfacePermissionId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,8 +51,9 @@ class DeleteNetworkInterfacePermissionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
+	def get_ReservedInstanceIds(self): # RepeatList
+		return self.get_query_params().get('ReservedInstanceId')
 
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)
+	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
+		for depth1 in range(len(ReservedInstanceId)):
+			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])

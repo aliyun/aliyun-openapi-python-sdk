@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeDedicatedHostClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDedicatedHostClusters')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDedicatedHostClusters','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

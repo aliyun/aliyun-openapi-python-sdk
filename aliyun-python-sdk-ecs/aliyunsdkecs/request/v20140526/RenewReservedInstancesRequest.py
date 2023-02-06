@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RenewReservedInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewReservedInstances')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewReservedInstances','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

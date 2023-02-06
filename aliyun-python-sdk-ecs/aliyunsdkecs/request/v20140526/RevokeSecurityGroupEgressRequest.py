@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RevokeSecurityGroupEgressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroupEgress')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroupEgress','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

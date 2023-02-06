@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoProvisioningGroup')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoProvisioningGroup','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -283,6 +283,24 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfig[depth1].get('InstanceType'))
 			if LaunchTemplateConfig[depth1].get('WeightedCapacity') is not None:
 				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateConfig[depth1].get('WeightedCapacity'))
+			if LaunchTemplateConfig[depth1].get('MaxQuantity') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.MaxQuantity', LaunchTemplateConfig[depth1].get('MaxQuantity'))
+			if LaunchTemplateConfig[depth1].get('Cores') is not None:
+				for depth2 in range(len(LaunchTemplateConfig[depth1].get('Cores'))):
+					self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Cores.' + str(depth2 + 1), LaunchTemplateConfig[depth1].get('Cores')[depth2])
+			if LaunchTemplateConfig[depth1].get('Memories') is not None:
+				for depth2 in range(len(LaunchTemplateConfig[depth1].get('Memories'))):
+					self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Memories.' + str(depth2 + 1), LaunchTemplateConfig[depth1].get('Memories')[depth2])
+			if LaunchTemplateConfig[depth1].get('InstanceFamilyLevel') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceFamilyLevel', LaunchTemplateConfig[depth1].get('InstanceFamilyLevel'))
+			if LaunchTemplateConfig[depth1].get('ExcludedInstanceTypes') is not None:
+				for depth2 in range(len(LaunchTemplateConfig[depth1].get('ExcludedInstanceTypes'))):
+					self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.ExcludedInstanceTypes.' + str(depth2 + 1), LaunchTemplateConfig[depth1].get('ExcludedInstanceTypes')[depth2])
+			if LaunchTemplateConfig[depth1].get('Architectures') is not None:
+				for depth2 in range(len(LaunchTemplateConfig[depth1].get('Architectures'))):
+					self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Architectures.' + str(depth2 + 1), LaunchTemplateConfig[depth1].get('Architectures')[depth2])
+			if LaunchTemplateConfig[depth1].get('BurstablePerformance') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.BurstablePerformance', LaunchTemplateConfig[depth1].get('BurstablePerformance'))
 	def get_LaunchConfigurationRamRoleName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.RamRoleName')
 
