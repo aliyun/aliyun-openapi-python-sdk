@@ -46,11 +46,6 @@ class ListApplicationGroupsRequest(RpcRequest):
 
 	def set_ResourceId(self, ResourceId):  # String
 		self.add_query_param('ResourceId', ResourceId)
-	def get_Product(self): # String
-		return self.get_query_params().get('Product')
-
-	def set_Product(self, Product):  # String
-		self.add_query_param('Product', Product)
 	def get_DeployRegionId(self): # String
 		return self.get_query_params().get('DeployRegionId')
 
