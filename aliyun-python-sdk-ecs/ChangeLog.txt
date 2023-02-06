@@ -1,3 +1,6 @@
+2023-02-06 Version: 4.24.29
+- Add OpenAPI DescribeReservedInstanceAutoRenewAttribute, ModifyReservedInstanceAutoRenewAttribute.
+
 2023-02-06 Version: 3.0.3
 - Add OpenAPI DescribeReservedInstanceAutoRenewAttribute, ModifyReservedInstanceAutoRenewAttribute.
 
