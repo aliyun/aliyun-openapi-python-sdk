@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class SaveUserCreditRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SaveUserCredit')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SaveUserCredit','bssopenapi')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryAccountTransactionDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountTransactionDetails')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountTransactionDetails','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

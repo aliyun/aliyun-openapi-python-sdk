@@ -20,25 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class CreateCostUnitRequest(RpcRequest):
+class QueryPriceEntityListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateCostUnit','bssopenapi')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryPriceEntityList','bssopenapi')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UnitEntityLists(self): # RepeatList
-		return self.get_query_params().get('UnitEntityList')
+	def get_CommodityCode(self): # String
+		return self.get_query_params().get('CommodityCode')
 
-	def set_UnitEntityLists(self, UnitEntityList):  # RepeatList
-		for depth1 in range(len(UnitEntityList)):
-			if UnitEntityList[depth1].get('UnitName') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitName', UnitEntityList[depth1].get('UnitName'))
-			if UnitEntityList[depth1].get('ParentUnitId') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.ParentUnitId', UnitEntityList[depth1].get('ParentUnitId'))
-			if UnitEntityList[depth1].get('OwnerUid') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.OwnerUid', UnitEntityList[depth1].get('OwnerUid'))
+	def set_CommodityCode(self, CommodityCode):  # String
+		self.add_query_param('CommodityCode', CommodityCode)

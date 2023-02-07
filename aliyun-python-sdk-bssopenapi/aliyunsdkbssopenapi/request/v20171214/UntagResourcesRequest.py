@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UntagResources')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UntagResources','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -42,14 +42,14 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
 			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_TagKeys(self): # RepeatList
 		return self.get_query_params().get('TagKey')
 
 	def set_TagKeys(self, TagKey):  # RepeatList
 		for depth1 in range(len(TagKey)):
 			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)

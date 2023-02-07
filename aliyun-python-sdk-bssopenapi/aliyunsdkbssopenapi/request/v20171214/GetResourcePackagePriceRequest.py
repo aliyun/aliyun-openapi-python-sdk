@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class GetResourcePackagePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetResourcePackagePrice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetResourcePackagePrice','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QueryMonthlyBillRequest(RpcRequest):
+class DescribeCostBudgetsSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryMonthlyBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeCostBudgetsSummary','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,28 @@ class QueryMonthlyBillRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BillingCycle(self): # String
-		return self.get_query_params().get('BillingCycle')
+	def get_BudgetStatus(self): # String
+		return self.get_query_params().get('BudgetStatus')
 
-	def set_BillingCycle(self, BillingCycle):  # String
-		self.add_query_param('BillingCycle', BillingCycle)
+	def set_BudgetStatus(self, BudgetStatus):  # String
+		self.add_query_param('BudgetStatus', BudgetStatus)
+	def get_BudgetType(self): # String
+		return self.get_query_params().get('BudgetType')
+
+	def set_BudgetType(self, BudgetType):  # String
+		self.add_query_param('BudgetType', BudgetType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_BudgetName(self): # String
+		return self.get_query_params().get('BudgetName')
+
+	def set_BudgetName(self, BudgetName):  # String
+		self.add_query_param('BudgetName', BudgetName)

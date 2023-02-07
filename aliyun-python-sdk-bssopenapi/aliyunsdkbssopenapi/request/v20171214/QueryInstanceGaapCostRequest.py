@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryInstanceGaapCostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInstanceGaapCost')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInstanceGaapCost','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

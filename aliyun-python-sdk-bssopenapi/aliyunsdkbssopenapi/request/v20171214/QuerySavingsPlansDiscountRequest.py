@@ -20,27 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QuerySavingsPlansDeductLogRequest(RpcRequest):
+class QuerySavingsPlansDiscountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySavingsPlansDeductLog','bssopenapi')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySavingsPlansDiscount','bssopenapi')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def get_CommodityCode(self): # String
+		return self.get_query_params().get('CommodityCode')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
+	def set_CommodityCode(self, CommodityCode):  # String
+		self.add_query_param('CommodityCode', CommodityCode)
 	def get_Locale(self): # String
 		return self.get_query_params().get('Locale')
 
@@ -51,18 +46,38 @@ class QuerySavingsPlansDeductLogRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_Cycle(self): # String
+		return self.get_query_params().get('Cycle')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_Cycle(self, Cycle):  # String
+		self.add_query_param('Cycle', Cycle)
+	def get_Spec(self): # String
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
+	def get_ModuleCode(self): # String
+		return self.get_query_params().get('ModuleCode')
+
+	def set_ModuleCode(self, ModuleCode):  # String
+		self.add_query_param('ModuleCode', ModuleCode)
+	def get_PayMode(self): # String
+		return self.get_query_params().get('PayMode')
+
+	def set_PayMode(self, PayMode):  # String
+		self.add_query_param('PayMode', PayMode)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
+	def get_SpnType(self): # String
+		return self.get_query_params().get('SpnType')
 
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
+	def set_SpnType(self, SpnType):  # String
+		self.add_query_param('SpnType', SpnType)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

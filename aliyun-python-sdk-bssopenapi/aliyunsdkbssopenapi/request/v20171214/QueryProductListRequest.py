@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryProductListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryProductList')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryProductList','bssopenapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

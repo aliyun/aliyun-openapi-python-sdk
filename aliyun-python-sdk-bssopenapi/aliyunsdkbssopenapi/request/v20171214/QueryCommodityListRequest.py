@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
+class QueryCommodityListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryMonthlyInstanceConsumption')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryCommodityList','bssopenapi')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,33 +36,3 @@ class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_query_param('ProductCode', ProductCode)
-	def get_SubscriptionType(self): # String
-		return self.get_query_params().get('SubscriptionType')
-
-	def set_SubscriptionType(self, SubscriptionType):  # String
-		self.add_query_param('SubscriptionType', SubscriptionType)
-	def get_BillingCycle(self): # String
-		return self.get_query_params().get('BillingCycle')
-
-	def set_BillingCycle(self, BillingCycle):  # String
-		self.add_query_param('BillingCycle', BillingCycle)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
-	def get_ProductType(self): # String
-		return self.get_query_params().get('ProductType')
-
-	def set_ProductType(self, ProductType):  # String
-		self.add_query_param('ProductType', ProductType)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)

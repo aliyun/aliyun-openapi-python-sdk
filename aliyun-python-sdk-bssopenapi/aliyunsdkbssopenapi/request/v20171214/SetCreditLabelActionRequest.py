@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class SetCreditLabelActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetCreditLabelAction')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetCreditLabelAction','bssopenapi')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
+import json
 
-class QueryRedeemRequest(RpcRequest):
+class QuerySkuPriceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryRedeem','bssopenapi')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySkuPriceList','bssopenapi')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +32,26 @@ class QueryRedeemRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpiryTimeEnd(self): # String
-		return self.get_query_params().get('ExpiryTimeEnd')
+	def get_NextPageToken(self): # String
+		return self.get_query_params().get('NextPageToken')
 
-	def set_ExpiryTimeEnd(self, ExpiryTimeEnd):  # String
-		self.add_query_param('ExpiryTimeEnd', ExpiryTimeEnd)
-	def get_ExpiryTimeStart(self): # String
-		return self.get_query_params().get('ExpiryTimeStart')
+	def set_NextPageToken(self, NextPageToken):  # String
+		self.add_query_param('NextPageToken', NextPageToken)
+	def get_CommodityCode(self): # String
+		return self.get_query_params().get('CommodityCode')
 
-	def set_ExpiryTimeStart(self, ExpiryTimeStart):  # String
-		self.add_query_param('ExpiryTimeStart', ExpiryTimeStart)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def set_CommodityCode(self, CommodityCode):  # String
+		self.add_query_param('CommodityCode', CommodityCode)
+	def get_PriceFactorConditionMap(self): # Map
+		return self.get_query_params().get('PriceFactorConditionMap')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
-	def get_EffectiveOrNot(self): # Boolean
-		return self.get_query_params().get('EffectiveOrNot')
+	def set_PriceFactorConditionMap(self, PriceFactorConditionMap):  # Map
+		self.add_query_param("PriceFactorConditionMap", json.dumps(PriceFactorConditionMap))
+	def get_PriceEntityCode(self): # String
+		return self.get_query_params().get('PriceEntityCode')
 
-	def set_EffectiveOrNot(self, EffectiveOrNot):  # Boolean
-		self.add_query_param('EffectiveOrNot', EffectiveOrNot)
+	def set_PriceEntityCode(self, PriceEntityCode):  # String
+		self.add_query_param('PriceEntityCode', PriceEntityCode)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
