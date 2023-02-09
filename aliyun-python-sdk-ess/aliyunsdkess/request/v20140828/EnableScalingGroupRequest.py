@@ -65,8 +65,6 @@ class EnableScalingGroupRequest(RpcRequest):
 				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateOverride[depth1].get('WeightedCapacity'))
 			if LaunchTemplateOverride[depth1].get('InstanceType') is not None:
 				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateOverride[depth1].get('InstanceType'))
-			if LaunchTemplateOverride[depth1].get('SpotPriceLimit') is not None:
-				self.add_query_param('LaunchTemplateOverride.' + str(depth1 + 1) + '.SpotPriceLimit', LaunchTemplateOverride[depth1].get('SpotPriceLimit'))
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

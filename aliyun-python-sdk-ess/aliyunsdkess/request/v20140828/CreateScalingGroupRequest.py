@@ -108,6 +108,19 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_DesiredCapacity(self, DesiredCapacity):  # Integer
 		self.add_query_param('DesiredCapacity', DesiredCapacity)
+	def get_ServerGroups(self): # RepeatList
+		return self.get_query_params().get('ServerGroup')
+
+	def set_ServerGroups(self, ServerGroup):  # RepeatList
+		for depth1 in range(len(ServerGroup)):
+			if ServerGroup[depth1].get('ServerGroupId') is not None:
+				self.add_query_param('ServerGroup.' + str(depth1 + 1) + '.ServerGroupId', ServerGroup[depth1].get('ServerGroupId'))
+			if ServerGroup[depth1].get('Port') is not None:
+				self.add_query_param('ServerGroup.' + str(depth1 + 1) + '.Port', ServerGroup[depth1].get('Port'))
+			if ServerGroup[depth1].get('Weight') is not None:
+				self.add_query_param('ServerGroup.' + str(depth1 + 1) + '.Weight', ServerGroup[depth1].get('Weight'))
+			if ServerGroup[depth1].get('Type') is not None:
+				self.add_query_param('ServerGroup.' + str(depth1 + 1) + '.Type', ServerGroup[depth1].get('Type'))
 	def get_LaunchTemplateOverrides(self): # RepeatList
 		return self.get_query_params().get('LaunchTemplateOverride')
 

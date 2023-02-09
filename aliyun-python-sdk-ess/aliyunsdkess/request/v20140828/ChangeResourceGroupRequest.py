@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
 
-class ScaleWithAdjustmentRequest(RpcRequest):
+class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ScaleWithAdjustment','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ChangeResourceGroup','ess')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,43 +31,28 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AdjustmentValue(self): # Integer
-		return self.get_query_params().get('AdjustmentValue')
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_AdjustmentValue(self, AdjustmentValue):  # Integer
-		self.add_query_param('AdjustmentValue', AdjustmentValue)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_ScalingGroupId(self): # String
-		return self.get_query_params().get('ScalingGroupId')
-
-	def set_ScalingGroupId(self, ScalingGroupId):  # String
-		self.add_query_param('ScalingGroupId', ScalingGroupId)
-	def get_AdjustmentType(self): # String
-		return self.get_query_params().get('AdjustmentType')
-
-	def set_AdjustmentType(self, AdjustmentType):  # String
-		self.add_query_param('AdjustmentType', AdjustmentType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_MinAdjustmentMagnitude(self): # Integer
-		return self.get_query_params().get('MinAdjustmentMagnitude')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_MinAdjustmentMagnitude(self, MinAdjustmentMagnitude):  # Integer
-		self.add_query_param('MinAdjustmentMagnitude', MinAdjustmentMagnitude)
-	def get_SyncActivity(self): # Boolean
-		return self.get_query_params().get('SyncActivity')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_query_params().get('NewResourceGroupId')
 
-	def set_SyncActivity(self, SyncActivity):  # Boolean
-		self.add_query_param('SyncActivity', SyncActivity)
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)
