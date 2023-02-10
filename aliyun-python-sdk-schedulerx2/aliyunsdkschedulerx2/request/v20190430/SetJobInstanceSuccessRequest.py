@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GetJobInstanceListRequest(RpcRequest):
+class SetJobInstanceSuccessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetJobInstanceList')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'SetJobInstanceSuccess')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -41,16 +41,6 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_StartTimestamp(self): # Long
-		return self.get_query_params().get('StartTimestamp')
-
-	def set_StartTimestamp(self, StartTimestamp):  # Long
-		self.add_query_param('StartTimestamp', StartTimestamp)
-	def get_EndTimestamp(self): # Long
-		return self.get_query_params().get('EndTimestamp')
-
-	def set_EndTimestamp(self, EndTimestamp):  # Long
-		self.add_query_param('EndTimestamp', EndTimestamp)
 	def get_JobId(self): # Long
 		return self.get_query_params().get('JobId')
 
@@ -61,8 +51,8 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_Status(self): # Integer
-		return self.get_query_params().get('Status')
+	def get_JobInstanceId(self): # Long
+		return self.get_query_params().get('JobInstanceId')
 
-	def set_Status(self, Status):  # Integer
-		self.add_query_param('Status', Status)
+	def set_JobInstanceId(self, JobInstanceId):  # Long
+		self.add_query_param('JobInstanceId', JobInstanceId)

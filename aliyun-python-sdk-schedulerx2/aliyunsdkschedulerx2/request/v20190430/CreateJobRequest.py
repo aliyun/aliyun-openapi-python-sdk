@@ -36,26 +36,26 @@ class CreateJobRequest(RpcRequest):
 
 	def set_AttemptInterval(self, AttemptInterval):  # Integer
 		self.add_body_params('AttemptInterval', AttemptInterval)
+	def get_FailTimes(self): # Integer
+		return self.get_body_params().get('FailTimes')
+
+	def set_FailTimes(self, FailTimes):  # Integer
+		self.add_body_params('FailTimes', FailTimes)
 	def get_ConsumerSize(self): # Integer
 		return self.get_body_params().get('ConsumerSize')
 
 	def set_ConsumerSize(self, ConsumerSize):  # Integer
 		self.add_body_params('ConsumerSize', ConsumerSize)
-	def get_JarUrl(self): # String
-		return self.get_body_params().get('JarUrl')
-
-	def set_JarUrl(self, JarUrl):  # String
-		self.add_body_params('JarUrl', JarUrl)
-	def get_DataOffset(self): # Integer
-		return self.get_body_params().get('DataOffset')
-
-	def set_DataOffset(self, DataOffset):  # Integer
-		self.add_body_params('DataOffset', DataOffset)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_body_params('GroupId', GroupId)
+	def get_DataOffset(self): # Integer
+		return self.get_body_params().get('DataOffset')
+
+	def set_DataOffset(self, DataOffset):  # Integer
+		self.add_body_params('DataOffset', DataOffset)
 	def get_TaskMaxAttempt(self): # Integer
 		return self.get_body_params().get('TaskMaxAttempt')
 
@@ -179,6 +179,11 @@ class CreateJobRequest(RpcRequest):
 
 	def set_MissWorkerEnable(self, MissWorkerEnable):  # Boolean
 		self.add_body_params('MissWorkerEnable', MissWorkerEnable)
+	def get_SuccessNoticeEnable(self): # Boolean
+		return self.get_body_params().get('SuccessNoticeEnable')
+
+	def set_SuccessNoticeEnable(self, SuccessNoticeEnable):  # Boolean
+		self.add_body_params('SuccessNoticeEnable', SuccessNoticeEnable)
 	def get_QueueSize(self): # Integer
 		return self.get_body_params().get('QueueSize')
 

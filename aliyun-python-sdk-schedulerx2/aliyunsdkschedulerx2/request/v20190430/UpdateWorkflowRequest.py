@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GetJobInstanceListRequest(RpcRequest):
+class UpdateWorkflowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetJobInstanceList')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateWorkflow')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,37 +32,42 @@ class GetJobInstanceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_NamespaceSource(self): # String
-		return self.get_query_params().get('NamespaceSource')
+		return self.get_body_params().get('NamespaceSource')
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
-		self.add_query_param('NamespaceSource', NamespaceSource)
+		self.add_body_params('NamespaceSource', NamespaceSource)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_WorkflowId(self): # String
+		return self.get_body_params().get('WorkflowId')
+
+	def set_WorkflowId(self, WorkflowId):  # String
+		self.add_body_params('WorkflowId', WorkflowId)
 	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
+		return self.get_body_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_StartTimestamp(self): # Long
-		return self.get_query_params().get('StartTimestamp')
+		self.add_body_params('GroupId', GroupId)
+	def get_TimeExpression(self): # String
+		return self.get_body_params().get('TimeExpression')
 
-	def set_StartTimestamp(self, StartTimestamp):  # Long
-		self.add_query_param('StartTimestamp', StartTimestamp)
-	def get_EndTimestamp(self): # Long
-		return self.get_query_params().get('EndTimestamp')
-
-	def set_EndTimestamp(self, EndTimestamp):  # Long
-		self.add_query_param('EndTimestamp', EndTimestamp)
-	def get_JobId(self): # Long
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self, JobId):  # Long
-		self.add_query_param('JobId', JobId)
+	def set_TimeExpression(self, TimeExpression):  # String
+		self.add_body_params('TimeExpression', TimeExpression)
 	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
+		return self.get_body_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_Status(self): # Integer
-		return self.get_query_params().get('Status')
+		self.add_body_params('Namespace', Namespace)
+	def get_Name(self): # String
+		return self.get_body_params().get('Name')
 
-	def set_Status(self, Status):  # Integer
-		self.add_query_param('Status', Status)
+	def set_Name(self, Name):  # String
+		self.add_body_params('Name', Name)
+	def get_TimeType(self): # Integer
+		return self.get_body_params().get('TimeType')
+
+	def set_TimeType(self, TimeType):  # Integer
+		self.add_body_params('TimeType', TimeType)

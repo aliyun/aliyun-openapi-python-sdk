@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GetJobInstanceListRequest(RpcRequest):
+class GetLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetJobInstanceList')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetLog')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,11 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
+	def get_Line(self): # Integer
+		return self.get_query_params().get('Line')
 
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
+	def set_Line(self, Line):  # Integer
+		self.add_query_param('Line', Line)
 	def get_StartTimestamp(self): # Long
 		return self.get_query_params().get('StartTimestamp')
 
@@ -51,18 +51,38 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_EndTimestamp(self, EndTimestamp):  # Long
 		self.add_query_param('EndTimestamp', EndTimestamp)
-	def get_JobId(self): # Long
+	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 
-	def set_JobId(self, JobId):  # Long
+	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_Offset(self): # Integer
+		return self.get_query_params().get('Offset')
+
+	def set_Offset(self, Offset):  # Integer
+		self.add_query_param('Offset', Offset)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Reverse(self): # Boolean
+		return self.get_query_params().get('Reverse')
+
+	def set_Reverse(self, Reverse):  # Boolean
+		self.add_query_param('Reverse', Reverse)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_Status(self): # Integer
-		return self.get_query_params().get('Status')
+	def get_JobInstanceId(self): # String
+		return self.get_query_params().get('JobInstanceId')
 
-	def set_Status(self, Status):  # Integer
-		self.add_query_param('Status', Status)
+	def set_JobInstanceId(self, JobInstanceId):  # String
+		self.add_query_param('JobInstanceId', JobInstanceId)
