@@ -76,6 +76,11 @@ class AddLiveStreamWatermarkRequest(RpcRequest):
 
 	def set_Transparency(self, Transparency):  # Integer
 		self.add_query_param('Transparency', Transparency)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

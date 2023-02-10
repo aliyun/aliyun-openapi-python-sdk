@@ -56,6 +56,11 @@ class CreateLiveStreamRecordIndexFilesRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_EndTimeIncluded(self): # Boolean
+		return self.get_query_params().get('EndTimeIncluded')
+
+	def set_EndTimeIncluded(self, EndTimeIncluded):  # Boolean
+		self.add_query_param('EndTimeIncluded', EndTimeIncluded)
 	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 

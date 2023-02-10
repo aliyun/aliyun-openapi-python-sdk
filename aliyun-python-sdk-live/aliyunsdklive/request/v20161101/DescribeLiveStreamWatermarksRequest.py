@@ -41,8 +41,18 @@ class DescribeLiveStreamWatermarksRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_KeyWord(self): # String
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

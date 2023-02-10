@@ -46,3 +46,8 @@ class DescribeLiveStreamWatermarkRulesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

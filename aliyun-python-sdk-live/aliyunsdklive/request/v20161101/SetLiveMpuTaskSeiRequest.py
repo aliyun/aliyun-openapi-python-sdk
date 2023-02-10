@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveUserBillPredictionRequest(RpcRequest):
+class SetLiveMpuTaskSeiRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserBillPrediction','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveMpuTaskSei','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class DescribeLiveUserBillPredictionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_CustomSei(self): # String
+		return self.get_query_params().get('CustomSei')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_CustomSei(self, CustomSei):  # String
+		self.add_query_param('CustomSei', CustomSei)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

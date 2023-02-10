@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveUserBillPredictionRequest(RpcRequest):
+class DescribeLiveDelayedStreamingUsageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserBillPrediction','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDelayedStreamingUsage','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,21 @@ class DescribeLiveUserBillPredictionRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
+	def get_StreamName(self): # String
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_SplitBy(self): # String
+		return self.get_query_params().get('SplitBy')
+
+	def set_SplitBy(self, SplitBy):  # String
+		self.add_query_param('SplitBy', SplitBy)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
@@ -46,3 +61,8 @@ class DescribeLiveUserBillPredictionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

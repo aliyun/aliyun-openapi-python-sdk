@@ -56,3 +56,8 @@ class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
