@@ -32,23 +32,23 @@ class ListServiceInstancesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # integer
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # integer
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_ServiceName(self): # string
+	def get_ServiceName(self): # String
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self, ServiceName):  # string
+	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
-	def get_PageNumber(self): # integer
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # integer
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)

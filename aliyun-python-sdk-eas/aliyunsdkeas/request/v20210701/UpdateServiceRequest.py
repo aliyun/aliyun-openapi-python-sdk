@@ -32,18 +32,18 @@ class UpdateServiceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ServiceName(self): # string
+	def get_ServiceName(self): # String
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self, ServiceName):  # string
+	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
-	def get_body(self): # string
+	def get_body(self): # String
 		return self.get_body_params().get('body')
 
-	def set_body(self, body):  # string
+	def set_body(self, body):  # String
 		self.add_body_params('body', body)

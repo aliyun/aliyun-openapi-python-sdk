@@ -32,33 +32,33 @@ class DescribeServiceEventRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # string
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # string
+	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
-	def get_EndTime(self): # string
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # string
+	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_ServiceName(self): # string
+	def get_ServiceName(self): # String
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self, ServiceName):  # string
+	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
-	def get_StartTime(self): # string
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # string
+	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_PageNum(self): # string
+	def get_PageNum(self): # String
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # string
+	def set_PageNum(self, PageNum):  # String
 		self.add_query_param('PageNum', PageNum)

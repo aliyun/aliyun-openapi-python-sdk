@@ -20,23 +20,28 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class DescribeResourceLogRequest(RoaRequest):
+class DevelopServiceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DescribeResourceLog','eas')
-		self.set_uri_pattern('/api/v2/resources/[ClusterId]/[ResourceId]/log')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'DevelopService','eas')
+		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/develop')
+		self.set_method('PUT')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_path_params().get('ResourceId')
+	def get_Exit(self): # String
+		return self.get_query_params().get('Exit')
 
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_path_param('ResourceId', ResourceId)
+	def set_Exit(self, Exit):  # String
+		self.add_query_param('Exit', Exit)
+	def get_ServiceName(self): # String
+		return self.get_path_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_path_param('ServiceName', ServiceName)
 	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 

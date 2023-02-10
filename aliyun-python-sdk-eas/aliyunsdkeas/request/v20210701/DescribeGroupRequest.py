@@ -32,13 +32,13 @@ class DescribeGroupRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
-	def get_GroupName(self): # string
+	def get_GroupName(self): # String
 		return self.get_path_params().get('GroupName')
 
-	def set_GroupName(self, GroupName):  # string
+	def set_GroupName(self, GroupName):  # String
 		self.add_path_param('GroupName', GroupName)

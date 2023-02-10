@@ -32,18 +32,18 @@ class DescribeBenchmarkTaskReportRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReportType(self): # string
+	def get_ReportType(self): # String
 		return self.get_query_params().get('ReportType')
 
-	def set_ReportType(self, ReportType):  # string
+	def set_ReportType(self, ReportType):  # String
 		self.add_query_param('ReportType', ReportType)
-	def get_TaskName(self): # string
+	def get_TaskName(self): # String
 		return self.get_path_params().get('TaskName')
 
-	def set_TaskName(self, TaskName):  # string
+	def set_TaskName(self, TaskName):  # String
 		self.add_path_param('TaskName', TaskName)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)

@@ -32,23 +32,23 @@ class DeleteResourceInstancesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceList(self): # string
+	def get_InstanceList(self): # String
 		return self.get_query_params().get('InstanceList')
 
-	def set_InstanceList(self, InstanceList):  # string
+	def set_InstanceList(self, InstanceList):  # String
 		self.add_query_param('InstanceList', InstanceList)
-	def get_ResourceId(self): # string
+	def get_ResourceId(self): # String
 		return self.get_path_params().get('ResourceId')
 
-	def set_ResourceId(self, ResourceId):  # string
+	def set_ResourceId(self, ResourceId):  # String
 		self.add_path_param('ResourceId', ResourceId)
-	def get_AllFailed(self): # boolean
+	def get_AllFailed(self): # Boolean
 		return self.get_query_params().get('AllFailed')
 
-	def set_AllFailed(self, AllFailed):  # boolean
+	def set_AllFailed(self, AllFailed):  # Boolean
 		self.add_query_param('AllFailed', AllFailed)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)

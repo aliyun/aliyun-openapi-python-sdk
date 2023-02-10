@@ -32,43 +32,43 @@ class DescribeServiceLogRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Ip(self): # string
+	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 
-	def set_Ip(self, Ip):  # string
+	def set_Ip(self, Ip):  # String
 		self.add_query_param('Ip', Ip)
-	def get_PageSize(self): # integer
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # integer
+	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
-	def get_EndTime(self): # string
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self, EndTime):  # string
+	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_ServiceName(self): # string
+	def get_ServiceName(self): # String
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self, ServiceName):  # string
+	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
-	def get_StartTime(self): # string
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # string
+	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
-	def get_PageNum(self): # integer
+	def get_PageNum(self): # Long
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self, PageNum):  # integer
+	def set_PageNum(self, PageNum):  # Long
 		self.add_query_param('PageNum', PageNum)
-	def get_Keyword(self): # string
+	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
-	def set_Keyword(self, Keyword):  # string
+	def set_Keyword(self, Keyword):  # String
 		self.add_query_param('Keyword', Keyword)

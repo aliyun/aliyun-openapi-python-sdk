@@ -32,18 +32,18 @@ class DeleteServiceInstancesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceList(self): # string
+	def get_InstanceList(self): # String
 		return self.get_query_params().get('InstanceList')
 
-	def set_InstanceList(self, InstanceList):  # string
+	def set_InstanceList(self, InstanceList):  # String
 		self.add_query_param('InstanceList', InstanceList)
-	def get_ServiceName(self): # string
+	def get_ServiceName(self): # String
 		return self.get_path_params().get('ServiceName')
 
-	def set_ServiceName(self, ServiceName):  # string
+	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
