@@ -36,16 +36,16 @@ class ModifyStrategyTargetRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_SourceIp(self): # String
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self, SourceIp):  # String
-		self.add_query_param('SourceIp', SourceIp)
 	def get_Target(self): # String
 		return self.get_query_params().get('Target')
 
 	def set_Target(self, Target):  # String
 		self.add_query_param('Target', Target)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_Config(self): # String
 		return self.get_query_params().get('Config')
 

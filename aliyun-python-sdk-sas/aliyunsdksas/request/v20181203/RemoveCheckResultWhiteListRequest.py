@@ -31,17 +31,17 @@ class RemoveCheckResultWhiteListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
 	def get_CheckIdss(self): # RepeatList
 		return self.get_query_params().get('CheckIds')
 
 	def set_CheckIdss(self, CheckIds):  # RepeatList
 		for depth1 in range(len(CheckIds)):
 			self.add_query_param('CheckIds.' + str(depth1 + 1), CheckIds[depth1])
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_CheckGroupId(self): # String
 		return self.get_query_params().get('CheckGroupId')
 

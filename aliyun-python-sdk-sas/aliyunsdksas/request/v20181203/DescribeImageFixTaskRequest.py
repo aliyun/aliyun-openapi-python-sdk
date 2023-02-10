@@ -31,16 +31,6 @@ class DescribeImageFixTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
@@ -51,6 +41,16 @@ class DescribeImageFixTaskRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

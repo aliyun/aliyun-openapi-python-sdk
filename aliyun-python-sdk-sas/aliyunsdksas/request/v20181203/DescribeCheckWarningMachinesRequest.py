@@ -31,6 +31,11 @@ class DescribeCheckWarningMachinesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RiskId(self): # Long
+		return self.get_query_params().get('RiskId')
+
+	def set_RiskId(self, RiskId):  # Long
+		self.add_query_param('RiskId', RiskId)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -41,11 +46,6 @@ class DescribeCheckWarningMachinesRequest(RpcRequest):
 
 	def set_CheckId(self, CheckId):  # Long
 		self.add_query_param('CheckId', CheckId)
-	def get_RiskId(self): # Long
-		return self.get_query_params().get('RiskId')
-
-	def set_RiskId(self, RiskId):  # Long
-		self.add_query_param('RiskId', RiskId)
 	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 

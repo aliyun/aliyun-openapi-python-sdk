@@ -36,6 +36,15 @@ class IgnoreCheckItemsRequest(RpcRequest):
 
 	def set_Reason(self, Reason):  # String
 		self.add_query_param('Reason', Reason)
+	def get_CheckAndRiskTypeLists(self): # RepeatList
+		return self.get_query_params().get('CheckAndRiskTypeList')
+
+	def set_CheckAndRiskTypeLists(self, CheckAndRiskTypeList):  # RepeatList
+		for depth1 in range(len(CheckAndRiskTypeList)):
+			if CheckAndRiskTypeList[depth1].get('RiskType') is not None:
+				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.RiskType', CheckAndRiskTypeList[depth1].get('RiskType'))
+			if CheckAndRiskTypeList[depth1].get('CheckId') is not None:
+				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.CheckId', CheckAndRiskTypeList[depth1].get('CheckId'))
 	def get_Type(self): # Integer
 		return self.get_query_params().get('Type')
 
@@ -52,12 +61,3 @@ class IgnoreCheckItemsRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_CheckAndRiskTypeLists(self): # RepeatList
-		return self.get_query_params().get('CheckAndRiskTypeList')
-
-	def set_CheckAndRiskTypeLists(self, CheckAndRiskTypeList):  # RepeatList
-		for depth1 in range(len(CheckAndRiskTypeList)):
-			if CheckAndRiskTypeList[depth1].get('RiskType') is not None:
-				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.RiskType', CheckAndRiskTypeList[depth1].get('RiskType'))
-			if CheckAndRiskTypeList[depth1].get('CheckId') is not None:
-				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.CheckId', CheckAndRiskTypeList[depth1].get('CheckId'))

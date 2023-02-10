@@ -31,8 +31,3 @@ class GetCheckConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)

@@ -41,13 +41,13 @@ class ModifyOperateVulRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_Info(self): # String
-		return self.get_query_params().get('Info')
-
-	def set_Info(self, Info):  # String
-		self.add_query_param('Info', Info)
 	def get_OperateType(self): # String
 		return self.get_query_params().get('OperateType')
 
 	def set_OperateType(self, OperateType):  # String
 		self.add_query_param('OperateType', OperateType)
+	def get_Info(self): # String
+		return self.get_query_params().get('Info')
+
+	def set_Info(self, Info):  # String
+		self.add_query_param('Info', Info)

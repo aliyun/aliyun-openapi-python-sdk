@@ -31,11 +31,6 @@ class DescribeRestorePlansRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
@@ -46,6 +41,11 @@ class DescribeRestorePlansRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

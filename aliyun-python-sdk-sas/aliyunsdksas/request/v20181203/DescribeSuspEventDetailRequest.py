@@ -31,6 +31,11 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SuspiciousEventId(self): # Integer
+		return self.get_query_params().get('SuspiciousEventId')
+
+	def set_SuspiciousEventId(self, SuspiciousEventId):  # Integer
+		self.add_query_param('SuspiciousEventId', SuspiciousEventId)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
@@ -46,8 +51,3 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_SuspiciousEventId(self): # Integer
-		return self.get_query_params().get('SuspiciousEventId')
-
-	def set_SuspiciousEventId(self, SuspiciousEventId):  # Integer
-		self.add_query_param('SuspiciousEventId', SuspiciousEventId)

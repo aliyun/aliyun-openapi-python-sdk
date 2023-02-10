@@ -31,11 +31,6 @@ class AddCheckInstanceResultWhiteListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CheckId(self): # Long
-		return self.get_query_params().get('CheckId')
-
-	def set_CheckId(self, CheckId):  # Long
-		self.add_query_param('CheckId', CheckId)
 	def get_CheckGroupId(self): # String
 		return self.get_query_params().get('CheckGroupId')
 
@@ -47,3 +42,8 @@ class AddCheckInstanceResultWhiteListRequest(RpcRequest):
 	def set_InstanceIdss(self, InstanceIds):  # RepeatList
 		for depth1 in range(len(InstanceIds)):
 			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
+	def get_CheckId(self): # Long
+		return self.get_query_params().get('CheckId')
+
+	def set_CheckId(self, CheckId):  # Long
+		self.add_query_param('CheckId', CheckId)

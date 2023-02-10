@@ -31,13 +31,13 @@ class GetModuleConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # String
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
 	def get_CurrentPage(self): # String
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # String
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)

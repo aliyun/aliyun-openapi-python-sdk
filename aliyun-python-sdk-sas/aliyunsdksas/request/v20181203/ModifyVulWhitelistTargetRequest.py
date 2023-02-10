@@ -41,13 +41,13 @@ class ModifyVulWhitelistTargetRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_Id(self): # Long
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # Long
-		self.add_query_param('Id', Id)
 	def get_TargetInfo(self): # String
 		return self.get_query_params().get('TargetInfo')
 
 	def set_TargetInfo(self, TargetInfo):  # String
 		self.add_query_param('TargetInfo', TargetInfo)
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

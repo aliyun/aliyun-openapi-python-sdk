@@ -41,6 +41,11 @@ class ModifySecurityEventMarkMissIndividuallyRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_DeleteMarkMissParam(self): # String
+		return self.get_body_params().get('DeleteMarkMissParam')
+
+	def set_DeleteMarkMissParam(self, DeleteMarkMissParam):  # String
+		self.add_body_params('DeleteMarkMissParam', DeleteMarkMissParam)
 	def get_From(self): # String
 		return self.get_body_params().get('From')
 
@@ -51,8 +56,3 @@ class ModifySecurityEventMarkMissIndividuallyRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_body_params('Lang', Lang)
-	def get_DeleteMarkMissParam(self): # String
-		return self.get_body_params().get('DeleteMarkMissParam')
-
-	def set_DeleteMarkMissParam(self, DeleteMarkMissParam):  # String
-		self.add_body_params('DeleteMarkMissParam', DeleteMarkMissParam)

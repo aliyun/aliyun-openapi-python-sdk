@@ -31,6 +31,11 @@ class GetCheckRiskStatisticsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -41,8 +46,3 @@ class GetCheckRiskStatisticsRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)

@@ -31,6 +31,11 @@ class DeleteBackupPolicyMachineRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PolicyVersion(self): # String
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)
 	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
@@ -47,8 +52,3 @@ class DeleteBackupPolicyMachineRequest(RpcRequest):
 	def set_UuidLists(self, UuidList):  # RepeatList
 		for depth1 in range(len(UuidList)):
 			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
-	def get_PolicyVersion(self): # String
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self, PolicyVersion):  # String
-		self.add_query_param('PolicyVersion', PolicyVersion)

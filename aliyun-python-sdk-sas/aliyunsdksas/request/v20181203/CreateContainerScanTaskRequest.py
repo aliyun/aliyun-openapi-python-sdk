@@ -31,11 +31,6 @@ class CreateContainerScanTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -46,3 +41,8 @@ class CreateContainerScanTaskRequest(RpcRequest):
 
 	def set_ContainerIds(self, ContainerIds):  # String
 		self.add_query_param('ContainerIds', ContainerIds)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

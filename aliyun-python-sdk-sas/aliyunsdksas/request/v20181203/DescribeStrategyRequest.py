@@ -31,23 +31,23 @@ class DescribeStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceIp(self): # String
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self, SourceIp):  # String
-		self.add_query_param('SourceIp', SourceIp)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
 	def get_CustomType(self): # String
 		return self.get_query_params().get('CustomType')
 
 	def set_CustomType(self, CustomType):  # String
 		self.add_query_param('CustomType', CustomType)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_StrategyIds(self): # String
 		return self.get_query_params().get('StrategyIds')
 
 	def set_StrategyIds(self, StrategyIds):  # String
 		self.add_query_param('StrategyIds', StrategyIds)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

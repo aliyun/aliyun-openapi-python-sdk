@@ -31,13 +31,13 @@ class DescribeClientConfStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Tag(self): # String
-		return self.get_query_params().get('Tag')
-
-	def set_Tag(self, Tag):  # String
-		self.add_query_param('Tag', Tag)
 	def get_TagValue(self): # String
 		return self.get_query_params().get('TagValue')
 
 	def set_TagValue(self, TagValue):  # String
 		self.add_query_param('TagValue', TagValue)
+	def get_Tag(self): # String
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # String
+		self.add_query_param('Tag', Tag)

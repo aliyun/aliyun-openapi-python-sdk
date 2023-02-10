@@ -31,6 +31,11 @@ class DescribeRisksRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RiskId(self): # Long
+		return self.get_query_params().get('RiskId')
+
+	def set_RiskId(self, RiskId):  # Long
+		self.add_query_param('RiskId', RiskId)
 	def get_RiskName(self): # String
 		return self.get_query_params().get('RiskName')
 
@@ -46,8 +51,3 @@ class DescribeRisksRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
-	def get_RiskId(self): # Long
-		return self.get_query_params().get('RiskId')
-
-	def set_RiskId(self, RiskId):  # Long
-		self.add_query_param('RiskId', RiskId)

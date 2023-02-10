@@ -31,6 +31,11 @@ class DescribeRestoreJobsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
 	def get_MachineRemark(self): # String
 		return self.get_query_params().get('MachineRemark')
 
@@ -41,11 +46,6 @@ class DescribeRestoreJobsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
