@@ -31,16 +31,6 @@ class DescribeDomainMax95BpsDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Cycle(self): # String
-		return self.get_query_params().get('Cycle')
-
-	def set_Cycle(self, Cycle):  # String
-		self.add_query_param('Cycle', Cycle)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -51,11 +41,16 @@ class DescribeDomainMax95BpsDataRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Cycle(self): # String
+		return self.get_query_params().get('Cycle')
+
+	def set_Cycle(self, Cycle):  # String
+		self.add_query_param('Cycle', Cycle)
 	def get_TimePoint(self): # String
 		return self.get_query_params().get('TimePoint')
 

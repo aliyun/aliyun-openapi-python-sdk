@@ -31,6 +31,16 @@ class DescribeDomainRealTimeHttpCodeDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_LocationNameEn(self): # String
 		return self.get_query_params().get('LocationNameEn')
 
@@ -46,18 +56,3 @@ class DescribeDomainRealTimeHttpCodeDataRequest(RpcRequest):
 
 	def set_IspNameEn(self, IspNameEn):  # String
 		self.add_query_param('IspNameEn', IspNameEn)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

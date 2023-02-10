@@ -31,6 +31,21 @@ class DescribeDomainDetailDataByLayerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Field(self): # String
+		return self.get_query_params().get('Field')
+
+	def set_Field(self, Field):  # String
+		self.add_query_param('Field', Field)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_LocationNameEn(self): # String
 		return self.get_query_params().get('LocationNameEn')
 
@@ -51,23 +66,3 @@ class DescribeDomainDetailDataByLayerRequest(RpcRequest):
 
 	def set_Layer(self, Layer):  # String
 		self.add_query_param('Layer', Layer)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Field(self): # String
-		return self.get_query_params().get('Field')
-
-	def set_Field(self, Field):  # String
-		self.add_query_param('Field', Field)

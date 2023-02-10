@@ -31,21 +31,11 @@ class DescribeDomainRealTimeDetailDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LocationNameEn(self): # String
-		return self.get_query_params().get('LocationNameEn')
+	def get_Field(self): # String
+		return self.get_query_params().get('Field')
 
-	def set_LocationNameEn(self, LocationNameEn):  # String
-		self.add_query_param('LocationNameEn', LocationNameEn)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_IspNameEn(self): # String
-		return self.get_query_params().get('IspNameEn')
-
-	def set_IspNameEn(self, IspNameEn):  # String
-		self.add_query_param('IspNameEn', IspNameEn)
+	def set_Field(self, Field):  # String
+		self.add_query_param('Field', Field)
 	def get_Merge(self): # String
 		return self.get_query_params().get('Merge')
 
@@ -66,13 +56,18 @@ class DescribeDomainRealTimeDetailDataRequest(RpcRequest):
 
 	def set_MergeLocIsp(self, MergeLocIsp):  # String
 		self.add_query_param('MergeLocIsp', MergeLocIsp)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_LocationNameEn(self): # String
+		return self.get_query_params().get('LocationNameEn')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Field(self): # String
-		return self.get_query_params().get('Field')
+	def set_LocationNameEn(self, LocationNameEn):  # String
+		self.add_query_param('LocationNameEn', LocationNameEn)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_Field(self, Field):  # String
-		self.add_query_param('Field', Field)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_IspNameEn(self): # String
+		return self.get_query_params().get('IspNameEn')
+
+	def set_IspNameEn(self, IspNameEn):  # String
+		self.add_query_param('IspNameEn', IspNameEn)

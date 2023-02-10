@@ -31,11 +31,6 @@ class DescribeCdnUserDomainsByFuncRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -46,13 +41,13 @@ class DescribeCdnUserDomainsByFuncRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_FuncId(self): # Integer
 		return self.get_query_params().get('FuncId')
 
 	def set_FuncId(self, FuncId):  # Integer
 		self.add_query_param('FuncId', FuncId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)

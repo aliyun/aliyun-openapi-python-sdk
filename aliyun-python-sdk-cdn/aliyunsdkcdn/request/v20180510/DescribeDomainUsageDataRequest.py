@@ -31,6 +31,31 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Area(self): # String
+		return self.get_query_params().get('Area')
+
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_Field(self): # String
+		return self.get_query_params().get('Field')
+
+	def set_Field(self, Field):  # String
+		self.add_query_param('Field', Field)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -46,33 +71,3 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 
 	def set_DataProtocol(self, DataProtocol):  # String
 		self.add_query_param('DataProtocol', DataProtocol)
-	def get_Area(self): # String
-		return self.get_query_params().get('Area')
-
-	def set_Area(self, Area):  # String
-		self.add_query_param('Area', Area)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Field(self): # String
-		return self.get_query_params().get('Field')
-
-	def set_Field(self, Field):  # String
-		self.add_query_param('Field', Field)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)

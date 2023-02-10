@@ -31,26 +31,21 @@ class DescribeDomainBpsDataByTimeStampRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LocationNames(self): # String
-		return self.get_query_params().get('LocationNames')
-
-	def set_LocationNames(self, LocationNames):  # String
-		self.add_query_param('LocationNames', LocationNames)
 	def get_IspNames(self): # String
 		return self.get_query_params().get('IspNames')
 
 	def set_IspNames(self, IspNames):  # String
 		self.add_query_param('IspNames', IspNames)
+	def get_LocationNames(self): # String
+		return self.get_query_params().get('LocationNames')
+
+	def set_LocationNames(self, LocationNames):  # String
+		self.add_query_param('LocationNames', LocationNames)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_TimePoint(self): # String
 		return self.get_query_params().get('TimePoint')
 

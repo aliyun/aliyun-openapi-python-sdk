@@ -31,6 +31,11 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IspNames(self): # String
+		return self.get_query_params().get('IspNames')
+
+	def set_IspNames(self, IspNames):  # String
+		self.add_query_param('IspNames', IspNames)
 	def get_DomainNames(self): # String
 		return self.get_query_params().get('DomainNames')
 
@@ -41,23 +46,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 
 	def set_LocationNames(self, LocationNames):  # String
 		self.add_query_param('LocationNames', LocationNames)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_IspNames(self): # String
-		return self.get_query_params().get('IspNames')
-
-	def set_IspNames(self, IspNames):  # String
-		self.add_query_param('IspNames', IspNames)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
