@@ -172,6 +172,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Scope(self, Scope):  # String
 		self.add_query_param('Scope', Scope)
+	def get_SchedulerOptionsDedicatedHostId(self): # String
+		return self.get_query_params().get('SchedulerOptions.DedicatedHostId')
+
+	def set_SchedulerOptionsDedicatedHostId(self, SchedulerOptionsDedicatedHostId):  # String
+		self.add_query_param('SchedulerOptions.DedicatedHostId', SchedulerOptionsDedicatedHostId)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 

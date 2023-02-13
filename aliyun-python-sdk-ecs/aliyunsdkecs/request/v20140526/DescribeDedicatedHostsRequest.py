@@ -41,6 +41,11 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SocketDetails(self): # String
+		return self.get_query_params().get('SocketDetails')
+
+	def set_SocketDetails(self, SocketDetails):  # String
+		self.add_query_param('SocketDetails', SocketDetails)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
