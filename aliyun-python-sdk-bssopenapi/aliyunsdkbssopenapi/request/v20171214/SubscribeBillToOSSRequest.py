@@ -56,6 +56,11 @@ class SubscribeBillToOSSRequest(RpcRequest):
 
 	def set_BeginBillingCycle(self, BeginBillingCycle):  # String
 		self.add_query_param('BeginBillingCycle', BeginBillingCycle)
+	def get_RowLimitPerFile(self): # Integer
+		return self.get_query_params().get('RowLimitPerFile')
+
+	def set_RowLimitPerFile(self, RowLimitPerFile):  # Integer
+		self.add_query_param('RowLimitPerFile', RowLimitPerFile)
 	def get_MultAccountRelSubscribe(self): # String
 		return self.get_query_params().get('MultAccountRelSubscribe')
 
