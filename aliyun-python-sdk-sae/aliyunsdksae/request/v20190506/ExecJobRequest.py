@@ -52,6 +52,11 @@ class ExecJobRequest(RoaRequest):
 
 	def set_CommandArgs(self, CommandArgs):  # String
 		self.add_query_param('CommandArgs', CommandArgs)
+	def get_Replicas(self): # String
+		return self.get_query_params().get('Replicas')
+
+	def set_Replicas(self, Replicas):  # String
+		self.add_query_param('Replicas', Replicas)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
