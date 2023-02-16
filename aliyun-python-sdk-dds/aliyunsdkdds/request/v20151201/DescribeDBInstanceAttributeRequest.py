@@ -65,3 +65,8 @@ class DescribeDBInstanceAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_IsDelete(self): # Boolean
+		return self.get_query_params().get('IsDelete')
+
+	def set_IsDelete(self, IsDelete):  # Boolean
+		self.add_query_param('IsDelete', IsDelete)
