@@ -30,6 +30,11 @@ class ListClusterNodesRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
+	def get_NodeGroupId(self): # String
+		return self.get_body_params().get('NodeGroupId')
+
+	def set_NodeGroupId(self, NodeGroupId):  # String
+		self.add_body_params('NodeGroupId', NodeGroupId)
 	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
 
