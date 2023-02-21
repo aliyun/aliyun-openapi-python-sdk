@@ -149,6 +149,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_TaskDispatchMode(self): # String
+		return self.get_body_params().get('TaskDispatchMode')
+
+	def set_TaskDispatchMode(self, TaskDispatchMode):  # String
+		self.add_body_params('TaskDispatchMode', TaskDispatchMode)
 	def get_Calendar(self): # String
 		return self.get_body_params().get('Calendar')
 
