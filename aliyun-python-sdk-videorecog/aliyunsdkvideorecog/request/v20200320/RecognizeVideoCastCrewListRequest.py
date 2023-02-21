@@ -37,11 +37,6 @@ class RecognizeVideoCastCrewListRequest(RpcRequest):
 
 	def set_Params(self, Params):  # Array
 		self.add_body_params("Params", json.dumps(Params))
-	def get_RegisterUrl(self): # String
-		return self.get_body_params().get('RegisterUrl')
-
-	def set_RegisterUrl(self, RegisterUrl):  # String
-		self.add_body_params('RegisterUrl', RegisterUrl)
 	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 

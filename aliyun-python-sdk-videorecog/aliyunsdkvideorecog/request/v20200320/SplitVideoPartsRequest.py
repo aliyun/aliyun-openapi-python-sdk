@@ -31,6 +31,11 @@ class SplitVideoPartsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Template(self): # String
+		return self.get_body_params().get('Template')
+
+	def set_Template(self, Template):  # String
+		self.add_body_params('Template', Template)
 	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
