@@ -31,16 +31,16 @@ class GetAppNetworkRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
 	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # Long
 		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 

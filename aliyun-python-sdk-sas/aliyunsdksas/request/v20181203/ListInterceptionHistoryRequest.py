@@ -46,6 +46,11 @@ class ListInterceptionHistoryRequest(RpcRequest):
 
 	def set_HistoryName(self, HistoryName):  # String
 		self.add_query_param('HistoryName', HistoryName)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_InterceptionTypess(self): # RepeatList
 		return self.get_query_params().get('InterceptionTypes')
 

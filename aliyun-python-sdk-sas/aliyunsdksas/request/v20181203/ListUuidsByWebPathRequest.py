@@ -36,6 +36,11 @@ class ListUuidsByWebPathRequest(RpcRequest):
 
 	def set_WebPath(self, WebPath):  # String
 		self.add_query_param('WebPath', WebPath)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -46,8 +51,3 @@ class ListUuidsByWebPathRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)

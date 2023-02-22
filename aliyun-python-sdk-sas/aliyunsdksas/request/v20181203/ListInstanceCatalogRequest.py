@@ -31,6 +31,24 @@ class ListInstanceCatalogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Typess(self): # RepeatList
+		return self.get_query_params().get('Types')
+
+	def set_Typess(self, Types):  # RepeatList
+		for depth1 in range(len(Types)):
+			self.add_query_param('Types.' + str(depth1 + 1), Types[depth1])
+	def get_StandardIdss(self): # RepeatList
+		return self.get_query_params().get('StandardIds')
+
+	def set_StandardIdss(self, StandardIds):  # RepeatList
+		for depth1 in range(len(StandardIds)):
+			self.add_query_param('StandardIds.' + str(depth1 + 1), StandardIds[depth1])
+	def get_RequirementIdss(self): # RepeatList
+		return self.get_query_params().get('RequirementIds')
+
+	def set_RequirementIdss(self, RequirementIds):  # RepeatList
+		for depth1 in range(len(RequirementIds)):
+			self.add_query_param('RequirementIds.' + str(depth1 + 1), RequirementIds[depth1])
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

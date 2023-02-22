@@ -70,6 +70,12 @@ class ListCheckResultRequest(RpcRequest):
 	def set_Vendorss(self, Vendors):  # RepeatList
 		for depth1 in range(len(Vendors)):
 			self.add_query_param('Vendors.' + str(depth1 + 1), Vendors[depth1])
+	def get_Typess(self): # RepeatList
+		return self.get_query_params().get('Types')
+
+	def set_Typess(self, Types):  # RepeatList
+		for depth1 in range(len(Types)):
+			self.add_query_param('Types.' + str(depth1 + 1), Types[depth1])
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
