@@ -32,11 +32,25 @@ class CreateResourceAccountRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_AccountNamePrefix(self): # String
 		return self.get_query_params().get('AccountNamePrefix')
 
 	def set_AccountNamePrefix(self, AccountNamePrefix):  # String
 		self.add_query_param('AccountNamePrefix', AccountNamePrefix)
+	def get_ResellAccountType(self): # String
+		return self.get_query_params().get('ResellAccountType')
+
+	def set_ResellAccountType(self, ResellAccountType):  # String
+		self.add_query_param('ResellAccountType', ResellAccountType)
 	def get_ParentFolderId(self): # String
 		return self.get_query_params().get('ParentFolderId')
 
@@ -47,15 +61,6 @@ class CreateResourceAccountRequest(RpcRequest):
 
 	def set_DisplayName(self, DisplayName):  # String
 		self.add_query_param('DisplayName', DisplayName)
-	def get_Tag(self): # Array
-		return self.get_query_params().get('Tag')
-
-	def set_Tag(self, Tag):  # Array
-		for index1, value1 in enumerate(Tag):
-			if value1.get('Value') is not None:
-				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
-			if value1.get('Key') is not None:
-				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_PayerAccountId(self): # String
 		return self.get_query_params().get('PayerAccountId')
 
