@@ -23,22 +23,21 @@ from aliyunsdkimgsearch.endpoint import endpoint_data
 class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'DeleteImage','imgsearch')
+		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'DeleteImage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EntityId(self):
+	def get_EntityId(self): # String
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self,EntityId):
+	def set_EntityId(self, EntityId):  # String
 		self.add_body_params('EntityId', EntityId)
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)

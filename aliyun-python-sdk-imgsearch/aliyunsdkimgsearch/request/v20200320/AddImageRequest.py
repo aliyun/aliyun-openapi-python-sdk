@@ -23,34 +23,31 @@ from aliyunsdkimgsearch.endpoint import endpoint_data
 class AddImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'AddImage','imgsearch')
+		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'AddImage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EntityId(self):
+	def get_EntityId(self): # String
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self,EntityId):
+	def set_EntityId(self, EntityId):  # String
 		self.add_body_params('EntityId', EntityId)
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
-
-	def get_ImageUrl(self):
+	def get_ImageUrl(self): # String
 		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
+	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_body_params('ImageUrl', ImageUrl)
-
-	def get_ExtraData(self):
+	def get_ExtraData(self): # String
 		return self.get_body_params().get('ExtraData')
 
-	def set_ExtraData(self,ExtraData):
+	def set_ExtraData(self, ExtraData):  # String
 		self.add_body_params('ExtraData', ExtraData)

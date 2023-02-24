@@ -23,46 +23,41 @@ from aliyunsdkimgsearch.endpoint import endpoint_data
 class ListImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'ListImages','imgsearch')
+		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'ListImages')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EntityIdPrefix(self):
+	def get_EntityIdPrefix(self): # String
 		return self.get_body_params().get('EntityIdPrefix')
 
-	def set_EntityIdPrefix(self,EntityIdPrefix):
+	def set_EntityIdPrefix(self, EntityIdPrefix):  # String
 		self.add_body_params('EntityIdPrefix', EntityIdPrefix)
-
-	def get_Limit(self):
+	def get_Limit(self): # Integer
 		return self.get_body_params().get('Limit')
 
-	def set_Limit(self,Limit):
+	def set_Limit(self, Limit):  # Integer
 		self.add_body_params('Limit', Limit)
-
-	def get_Order(self):
+	def get_Order(self): # String
 		return self.get_body_params().get('Order')
 
-	def set_Order(self,Order):
+	def set_Order(self, Order):  # String
 		self.add_body_params('Order', Order)
-
-	def get_Offset(self):
+	def get_Offset(self): # Integer
 		return self.get_body_params().get('Offset')
 
-	def set_Offset(self,Offset):
+	def set_Offset(self, Offset):  # Integer
 		self.add_body_params('Offset', Offset)
-
-	def get_Token(self):
+	def get_Token(self): # String
 		return self.get_body_params().get('Token')
 
-	def set_Token(self,Token):
+	def set_Token(self, Token):  # String
 		self.add_body_params('Token', Token)
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
