@@ -41,6 +41,11 @@ class ThreeElementsVerificationRequest(RpcRequest):
 
 	def set_CertCode(self, CertCode):  # String
 		self.add_query_param('CertCode', CertCode)
+	def get_RouteName(self): # String
+		return self.get_query_params().get('RouteName')
+
+	def set_RouteName(self, RouteName):  # String
+		self.add_query_param('RouteName', RouteName)
 	def get_Mask(self): # String
 		return self.get_query_params().get('Mask')
 
