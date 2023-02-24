@@ -57,6 +57,16 @@ class CreatePickUpWaybillRequest(RpcRequest):
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_AppointGotStartTime(self): # String
+		return self.get_query_params().get('AppointGotStartTime')
+
+	def set_AppointGotStartTime(self, AppointGotStartTime):  # String
+		self.add_query_param('AppointGotStartTime', AppointGotStartTime)
+	def get_AppointGotEndTime(self): # String
+		return self.get_query_params().get('AppointGotEndTime')
+
+	def set_AppointGotEndTime(self, AppointGotEndTime):  # String
+		self.add_query_param('AppointGotEndTime', AppointGotEndTime)
 	def get_CpCode(self): # String
 		return self.get_query_params().get('CpCode')
 
@@ -92,6 +102,11 @@ class CreatePickUpWaybillRequest(RpcRequest):
 
 	def set_GoodsInfos(self, GoodsInfos):  # Array
 		self.add_query_param("GoodsInfos", json.dumps(GoodsInfos))
+	def get_BizType(self): # Integer
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self, BizType):  # Integer
+		self.add_query_param('BizType', BizType)
 	def get_SendName(self): # String
 		return self.get_query_params().get('SendName')
 

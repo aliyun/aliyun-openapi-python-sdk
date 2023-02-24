@@ -81,6 +81,11 @@ class BindAxbRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DtmfConfig(self): # String
+		return self.get_query_params().get('DtmfConfig')
+
+	def set_DtmfConfig(self, DtmfConfig):  # String
+		self.add_query_param('DtmfConfig', DtmfConfig)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
