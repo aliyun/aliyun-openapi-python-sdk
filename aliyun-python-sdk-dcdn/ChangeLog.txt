@@ -1,3 +1,6 @@
+2023-02-25 Version: 2.2.11
+- Update DescribeDcdnDomainUsageData.
+
 2022-12-27 Version: 2.2.10
 - Add DescribeDcdnWafLogs.
 

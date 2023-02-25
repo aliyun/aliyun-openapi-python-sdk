@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class ModifyDcdnWafPolicyDomainsRequest(RpcRequest):
+class DeleteDcdnKvRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'ModifyDcdnWafPolicyDomains')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DeleteDcdnKv')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,13 @@ class ModifyDcdnWafPolicyDomainsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyId(self): # Long
-		return self.get_body_params().get('PolicyId')
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
 
-	def set_PolicyId(self, PolicyId):  # Long
-		self.add_body_params('PolicyId', PolicyId)
-	def get_Method(self): # Integer
-		return self.get_body_params().get('Method')
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
 
-	def set_Method(self, Method):  # Integer
-		self.add_body_params('Method', Method)
-	def get_BindDomains(self): # String
-		return self.get_body_params().get('BindDomains')
-
-	def set_BindDomains(self, BindDomains):  # String
-		self.add_body_params('BindDomains', BindDomains)
-	def get_UnbindDomains(self): # String
-		return self.get_body_params().get('UnbindDomains')
-
-	def set_UnbindDomains(self, UnbindDomains):  # String
-		self.add_body_params('UnbindDomains', UnbindDomains)
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)
