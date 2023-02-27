@@ -124,6 +124,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_body_params('NamespaceSource', NamespaceSource)
+	def get_Timezone(self): # String
+		return self.get_body_params().get('Timezone')
+
+	def set_Timezone(self, Timezone):  # String
+		self.add_body_params('Timezone', Timezone)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
