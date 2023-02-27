@@ -46,11 +46,6 @@ class QueryFpShotJobListRequest(RpcRequest):
 
 	def set_StartOfJobCreatedTimeRange(self, StartOfJobCreatedTimeRange):  # String
 		self.add_query_param('StartOfJobCreatedTimeRange', StartOfJobCreatedTimeRange)
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
 	def get_State(self): # String
 		return self.get_query_params().get('State')
 
@@ -86,11 +81,6 @@ class QueryFpShotJobListRequest(RpcRequest):
 
 	def set_PipelineId(self, PipelineId):  # String
 		self.add_query_param('PipelineId', PipelineId)
-	def get_PrimaryKeyList(self): # String
-		return self.get_query_params().get('PrimaryKeyList')
-
-	def set_PrimaryKeyList(self, PrimaryKeyList):  # String
-		self.add_query_param('PrimaryKeyList', PrimaryKeyList)
 	def get_JobIds(self): # String
 		return self.get_query_params().get('JobIds')
 

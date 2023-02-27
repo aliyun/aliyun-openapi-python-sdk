@@ -46,6 +46,11 @@ class ListFpShotFilesRequest(RpcRequest):
 
 	def set_NextPageToken(self, NextPageToken):  # String
 		self.add_query_param('NextPageToken', NextPageToken)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +66,11 @@ class ListFpShotFilesRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

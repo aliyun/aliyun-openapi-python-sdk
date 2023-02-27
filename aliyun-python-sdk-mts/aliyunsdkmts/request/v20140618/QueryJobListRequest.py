@@ -36,6 +36,11 @@ class QueryJobListRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_IncludePipelineInfo(self): # Boolean
+		return self.get_query_params().get('IncludePipelineInfo')
+
+	def set_IncludePipelineInfo(self, IncludePipelineInfo):  # Boolean
+		self.add_query_param('IncludePipelineInfo', IncludePipelineInfo)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

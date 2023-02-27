@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class SubmitFpFileDeleteJobRequest(RpcRequest):
+class ListCustomGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitFpFileDeleteJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListCustomGroups','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,21 @@ class SubmitFpFileDeleteJobRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_FpDBId(self): # String
-		return self.get_query_params().get('FpDBId')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_FpDBId(self, FpDBId):  # String
-		self.add_query_param('FpDBId', FpDBId)
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_PrimaryKeys(self): # String
-		return self.get_query_params().get('PrimaryKeys')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Algorithm(self): # String
+		return self.get_query_params().get('Algorithm')
 
-	def set_PrimaryKeys(self, PrimaryKeys):  # String
-		self.add_query_param('PrimaryKeys', PrimaryKeys)
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,13 +66,3 @@ class SubmitFpFileDeleteJobRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PipelineId(self): # String
-		return self.get_query_params().get('PipelineId')
-
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
-	def get_FileIds(self): # String
-		return self.get_query_params().get('FileIds')
-
-	def set_FileIds(self, FileIds):  # String
-		self.add_query_param('FileIds', FileIds)

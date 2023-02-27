@@ -31,6 +31,11 @@ class BindInputBucketRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Referer(self): # String
+		return self.get_query_params().get('Referer')
+
+	def set_Referer(self, Referer):  # String
+		self.add_query_param('Referer', Referer)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -56,8 +61,3 @@ class BindInputBucketRequest(RpcRequest):
 
 	def set_Bucket(self, Bucket):  # String
 		self.add_query_param('Bucket', Bucket)
-	def get_RoleArn(self): # String
-		return self.get_query_params().get('RoleArn')
-
-	def set_RoleArn(self, RoleArn):  # String
-		self.add_query_param('RoleArn', RoleArn)

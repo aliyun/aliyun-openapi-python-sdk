@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class SubmitFpFileDeleteJobRequest(RpcRequest):
+class QuerySnapshotJobListV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitFpFileDeleteJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QuerySnapshotJobListV2','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,31 +36,46 @@ class SubmitFpFileDeleteJobRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_FpDBId(self): # String
-		return self.get_query_params().get('FpDBId')
+	def get_NextPageToken(self): # String
+		return self.get_query_params().get('NextPageToken')
 
-	def set_FpDBId(self, FpDBId):  # String
-		self.add_query_param('FpDBId', FpDBId)
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
+	def set_NextPageToken(self, NextPageToken):  # String
+		self.add_query_param('NextPageToken', NextPageToken)
+	def get_StartOfJobCreatedTimeRange(self): # String
+		return self.get_query_params().get('StartOfJobCreatedTimeRange')
 
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_PrimaryKeys(self): # String
-		return self.get_query_params().get('PrimaryKeys')
+	def set_StartOfJobCreatedTimeRange(self, StartOfJobCreatedTimeRange):  # String
+		self.add_query_param('StartOfJobCreatedTimeRange', StartOfJobCreatedTimeRange)
+	def get_State(self): # String
+		return self.get_query_params().get('State')
 
-	def set_PrimaryKeys(self, PrimaryKeys):  # String
-		self.add_query_param('PrimaryKeys', PrimaryKeys)
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
+	def get_EndOfJobCreatedTimeRange(self): # String
+		return self.get_query_params().get('EndOfJobCreatedTimeRange')
+
+	def set_EndOfJobCreatedTimeRange(self, EndOfJobCreatedTimeRange):  # String
+		self.add_query_param('EndOfJobCreatedTimeRange', EndOfJobCreatedTimeRange)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SnapshotJobIds(self): # String
+		return self.get_query_params().get('SnapshotJobIds')
+
+	def set_SnapshotJobIds(self, SnapshotJobIds):  # String
+		self.add_query_param('SnapshotJobIds', SnapshotJobIds)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_MaximumPageSize(self): # String
+		return self.get_query_params().get('MaximumPageSize')
+
+	def set_MaximumPageSize(self, MaximumPageSize):  # String
+		self.add_query_param('MaximumPageSize', MaximumPageSize)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -71,8 +86,3 @@ class SubmitFpFileDeleteJobRequest(RpcRequest):
 
 	def set_PipelineId(self, PipelineId):  # String
 		self.add_query_param('PipelineId', PipelineId)
-	def get_FileIds(self): # String
-		return self.get_query_params().get('FileIds')
-
-	def set_FileIds(self, FileIds):  # String
-		self.add_query_param('FileIds', FileIds)

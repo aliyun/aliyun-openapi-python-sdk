@@ -46,6 +46,11 @@ class UpdatePipelineRequest(RpcRequest):
 
 	def set_State(self, State):  # String
 		self.add_query_param('State', State)
+	def get_ExtendConfig(self): # String
+		return self.get_query_params().get('ExtendConfig')
+
+	def set_ExtendConfig(self, ExtendConfig):  # String
+		self.add_query_param('ExtendConfig', ExtendConfig)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

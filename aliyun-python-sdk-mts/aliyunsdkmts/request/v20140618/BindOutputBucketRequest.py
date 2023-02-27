@@ -56,8 +56,3 @@ class BindOutputBucketRequest(RpcRequest):
 
 	def set_Bucket(self, Bucket):  # String
 		self.add_query_param('Bucket', Bucket)
-	def get_RoleArn(self): # String
-		return self.get_query_params().get('RoleArn')
-
-	def set_RoleArn(self, RoleArn):  # String
-		self.add_query_param('RoleArn', RoleArn)

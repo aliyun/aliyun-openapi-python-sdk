@@ -46,11 +46,6 @@ class QueryMediaCensorJobListRequest(RpcRequest):
 
 	def set_StartOfJobCreatedTimeRange(self, StartOfJobCreatedTimeRange):  # String
 		self.add_query_param('StartOfJobCreatedTimeRange', StartOfJobCreatedTimeRange)
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
 	def get_State(self): # String
 		return self.get_query_params().get('State')
 
@@ -86,3 +81,8 @@ class QueryMediaCensorJobListRequest(RpcRequest):
 
 	def set_PipelineId(self, PipelineId):  # String
 		self.add_query_param('PipelineId', PipelineId)
+	def get_JobIds(self): # String
+		return self.get_query_params().get('JobIds')
+
+	def set_JobIds(self, JobIds):  # String
+		self.add_query_param('JobIds', JobIds)

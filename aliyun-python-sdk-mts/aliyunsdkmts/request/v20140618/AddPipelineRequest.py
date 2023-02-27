@@ -46,6 +46,11 @@ class AddPipelineRequest(RpcRequest):
 
 	def set_Speed(self, Speed):  # String
 		self.add_query_param('Speed', Speed)
+	def get_ExtendConfig(self): # String
+		return self.get_query_params().get('ExtendConfig')
+
+	def set_ExtendConfig(self, ExtendConfig):  # String
+		self.add_query_param('ExtendConfig', ExtendConfig)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

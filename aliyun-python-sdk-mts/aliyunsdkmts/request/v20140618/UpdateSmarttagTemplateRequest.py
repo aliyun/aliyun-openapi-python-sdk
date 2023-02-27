@@ -81,6 +81,11 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_KeywordConfig(self, KeywordConfig):  # String
 		self.add_query_param('KeywordConfig', KeywordConfig)
+	def get_LandmarkGroupIds(self): # String
+		return self.get_query_params().get('LandmarkGroupIds')
+
+	def set_LandmarkGroupIds(self, LandmarkGroupIds):  # String
+		self.add_query_param('LandmarkGroupIds', LandmarkGroupIds)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -91,6 +96,11 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ObjectGroupIds(self): # String
+		return self.get_query_params().get('ObjectGroupIds')
+
+	def set_ObjectGroupIds(self, ObjectGroupIds):  # String
+		self.add_query_param('ObjectGroupIds', ObjectGroupIds)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
