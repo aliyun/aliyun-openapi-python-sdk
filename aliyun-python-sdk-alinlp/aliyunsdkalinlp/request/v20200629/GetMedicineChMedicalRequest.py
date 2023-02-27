@@ -23,40 +23,36 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetMedicineChMedicalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetMedicineChMedical','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetMedicineChMedical')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Factory(self):
+	def get_Factory(self): # String
 		return self.get_body_params().get('Factory')
 
-	def set_Factory(self,Factory):
+	def set_Factory(self, Factory):  # String
 		self.add_body_params('Factory', Factory)
-
-	def get_Specification(self):
+	def get_Specification(self): # String
 		return self.get_body_params().get('Specification')
 
-	def set_Specification(self,Specification):
+	def set_Specification(self, Specification):  # String
 		self.add_body_params('Specification', Specification)
-
-	def get_Unit(self):
+	def get_Unit(self): # String
 		return self.get_body_params().get('Unit')
 
-	def set_Unit(self,Unit):
+	def set_Unit(self, Unit):  # String
 		self.add_body_params('Unit', Unit)
-
-	def get_ServiceCode(self):
+	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 
-	def set_ServiceCode(self,ServiceCode):
+	def set_ServiceCode(self, ServiceCode):  # String
 		self.add_body_params('ServiceCode', ServiceCode)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)

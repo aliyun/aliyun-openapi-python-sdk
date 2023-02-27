@@ -23,22 +23,21 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetSummaryChEcomRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetSummaryChEcom','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetSummaryChEcom')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ServiceCode(self):
+	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 
-	def set_ServiceCode(self,ServiceCode):
+	def set_ServiceCode(self, ServiceCode):  # String
 		self.add_body_params('ServiceCode', ServiceCode)
-
-	def get_Text(self):
+	def get_Text(self): # String
 		return self.get_body_params().get('Text')
 
-	def set_Text(self,Text):
+	def set_Text(self, Text):  # String
 		self.add_body_params('Text', Text)

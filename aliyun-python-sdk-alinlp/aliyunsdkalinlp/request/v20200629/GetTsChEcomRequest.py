@@ -23,34 +23,31 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetTsChEcomRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetTsChEcom','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetTsChEcom')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-
-	def get_ServiceCode(self):
+	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 
-	def set_ServiceCode(self,ServiceCode):
+	def set_ServiceCode(self, ServiceCode):  # String
 		self.add_body_params('ServiceCode', ServiceCode)
-
-	def get_OriginT(self):
+	def get_OriginT(self): # String
 		return self.get_body_params().get('OriginT')
 
-	def set_OriginT(self,OriginT):
+	def set_OriginT(self, OriginT):  # String
 		self.add_body_params('OriginT', OriginT)
-
-	def get_OriginQ(self):
+	def get_OriginQ(self): # String
 		return self.get_body_params().get('OriginQ')
 
-	def set_OriginQ(self,OriginQ):
+	def set_OriginQ(self, OriginQ):  # String
 		self.add_body_params('OriginQ', OriginQ)

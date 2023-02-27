@@ -23,34 +23,31 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetWsCustomizedChEcomCommentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWsCustomizedChEcomComment','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWsCustomizedChEcomComment')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ServiceCode(self):
+	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 
-	def set_ServiceCode(self,ServiceCode):
+	def set_ServiceCode(self, ServiceCode):  # String
 		self.add_body_params('ServiceCode', ServiceCode)
-
-	def get_TokenizerId(self):
+	def get_TokenizerId(self): # String
 		return self.get_body_params().get('TokenizerId')
 
-	def set_TokenizerId(self,TokenizerId):
+	def set_TokenizerId(self, TokenizerId):  # String
 		self.add_body_params('TokenizerId', TokenizerId)
-
-	def get_Text(self):
+	def get_Text(self): # String
 		return self.get_body_params().get('Text')
 
-	def set_Text(self,Text):
+	def set_Text(self, Text):  # String
 		self.add_body_params('Text', Text)
-
-	def get_OutType(self):
+	def get_OutType(self): # String
 		return self.get_body_params().get('OutType')
 
-	def set_OutType(self,OutType):
+	def set_OutType(self, OutType):  # String
 		self.add_body_params('OutType', OutType)
