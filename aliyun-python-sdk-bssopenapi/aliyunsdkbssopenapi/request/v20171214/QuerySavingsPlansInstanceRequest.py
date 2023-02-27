@@ -70,3 +70,8 @@ class QuerySavingsPlansInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
