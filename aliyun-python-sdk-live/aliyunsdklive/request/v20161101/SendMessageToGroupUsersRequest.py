@@ -36,6 +36,11 @@ class SendMessageToGroupUsersRequest(RpcRequest):
 
 	def set_Data(self, Data):  # String
 		self.add_body_params('Data', Data)
+	def get_SkipAudit(self): # Boolean
+		return self.get_query_params().get('SkipAudit')
+
+	def set_SkipAudit(self, SkipAudit):  # Boolean
+		self.add_query_param('SkipAudit', SkipAudit)
 	def get_Type(self): # Integer
 		return self.get_body_params().get('Type')
 

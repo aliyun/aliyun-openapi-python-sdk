@@ -31,6 +31,11 @@ class ModifyCasterVideoResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InputType(self): # Integer
+		return self.get_query_params().get('InputType')
+
+	def set_InputType(self, InputType):  # Integer
+		self.add_query_param('InputType', InputType)
 	def get_EndOffset(self): # Integer
 		return self.get_query_params().get('EndOffset')
 
