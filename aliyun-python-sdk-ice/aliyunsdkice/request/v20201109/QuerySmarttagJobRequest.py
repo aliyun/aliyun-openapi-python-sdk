@@ -31,13 +31,13 @@ class QuerySmarttagJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Params(self): # String
-		return self.get_query_params().get('Params')
-
-	def set_Params(self, Params):  # String
-		self.add_query_param('Params', Params)
 	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 
 	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
+
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
