@@ -33,22 +33,22 @@ class GetArmsTopNMetricRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_Limit(self): # Long
-		return self.get_path_params().get('Limit')
+		return self.get_query_params().get('Limit')
 
 	def set_Limit(self, Limit):  # Long
-		self.add_path_param('Limit', Limit)
+		self.add_query_param('Limit', Limit)
 	def get_OrderBy(self): # String
-		return self.get_path_params().get('OrderBy')
+		return self.get_query_params().get('OrderBy')
 
 	def set_OrderBy(self, OrderBy):  # String
-		self.add_path_param('OrderBy', OrderBy)
+		self.add_query_param('OrderBy', OrderBy)
 	def get_EndTime(self): # Long
-		return self.get_path_params().get('EndTime')
+		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # Long
-		self.add_path_param('EndTime', EndTime)
+		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
-		return self.get_path_params().get('StartTime')
+		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # Long
-		self.add_path_param('StartTime', StartTime)
+		self.add_query_param('StartTime', StartTime)

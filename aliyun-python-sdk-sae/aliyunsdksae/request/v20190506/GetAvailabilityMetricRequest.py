@@ -33,7 +33,7 @@ class GetAvailabilityMetricRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_Limit(self): # Long
-		return self.get_path_params().get('Limit')
+		return self.get_query_params().get('Limit')
 
 	def set_Limit(self, Limit):  # Long
-		self.add_path_param('Limit', Limit)
+		self.add_query_param('Limit', Limit)
