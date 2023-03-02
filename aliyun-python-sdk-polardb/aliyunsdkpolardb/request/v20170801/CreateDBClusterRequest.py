@@ -125,6 +125,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # Boolean
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_HotStandbyCluster(self): # String
+		return self.get_query_params().get('HotStandbyCluster')
+
+	def set_HotStandbyCluster(self, HotStandbyCluster):  # String
+		self.add_query_param('HotStandbyCluster', HotStandbyCluster)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -220,6 +225,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_PayType(self, PayType):  # String
 		self.add_query_param('PayType', PayType)
+	def get_StorageSpace(self): # Long
+		return self.get_query_params().get('StorageSpace')
+
+	def set_StorageSpace(self, StorageSpace):  # Long
+		self.add_query_param('StorageSpace', StorageSpace)
 	def get_ServerlessType(self): # String
 		return self.get_query_params().get('ServerlessType')
 

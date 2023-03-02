@@ -46,6 +46,11 @@ class DescribeGlobalDatabaseNetworksRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_FilterRegion(self): # String
+		return self.get_query_params().get('FilterRegion')
+
+	def set_FilterRegion(self, FilterRegion):  # String
+		self.add_query_param('FilterRegion', FilterRegion)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
