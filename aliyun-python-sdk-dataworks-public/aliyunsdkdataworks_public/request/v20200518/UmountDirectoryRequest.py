@@ -41,3 +41,8 @@ class UmountDirectoryRequest(RpcRequest):
 
 	def set_TargetId(self, TargetId):  # String
 		self.add_body_params('TargetId', TargetId)
+	def get_TargetUserId(self): # String
+		return self.get_body_params().get('TargetUserId')
+
+	def set_TargetUserId(self, TargetUserId):  # String
+		self.add_body_params('TargetUserId', TargetUserId)
