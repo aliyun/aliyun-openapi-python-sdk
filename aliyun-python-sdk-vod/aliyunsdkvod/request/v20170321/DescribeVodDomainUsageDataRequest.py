@@ -66,3 +66,8 @@ class DescribeVodDomainUsageDataRequest(RpcRequest):
 
 	def set_Field(self, Field):  # String
 		self.add_query_param('Field', Field)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
