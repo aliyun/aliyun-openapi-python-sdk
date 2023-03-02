@@ -1,0 +1,62 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+
+class ListBizChainDataRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'lto', '2021-07-07', 'ListBizChainData')
+		self.set_method('POST')
+
+	def get_Num(self): # Integer
+		return self.get_query_params().get('Num')
+
+	def set_Num(self, Num):  # Integer
+		self.add_query_param('Num', Num)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_BizChainId(self): # String
+		return self.get_query_params().get('BizChainId')
+
+	def set_BizChainId(self, BizChainId):  # String
+		self.add_query_param('BizChainId', BizChainId)
+	def get_Size(self): # Integer
+		return self.get_query_params().get('Size')
+
+	def set_Size(self, Size):  # Integer
+		self.add_query_param('Size', Size)
+	def get_IoTDataDID(self): # String
+		return self.get_query_params().get('IoTDataDID')
+
+	def set_IoTDataDID(self, IoTDataDID):  # String
+		self.add_query_param('IoTDataDID', IoTDataDID)
+	def get_MemberId(self): # String
+		return self.get_query_params().get('MemberId')
+
+	def set_MemberId(self, MemberId):  # String
+		self.add_query_param('MemberId', MemberId)
