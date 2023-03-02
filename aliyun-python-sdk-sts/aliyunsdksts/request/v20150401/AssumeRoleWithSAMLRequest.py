@@ -26,38 +26,34 @@ class AssumeRoleWithSAMLRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithSAML')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SAMLAssertion(self):
+	def get_SAMLAssertion(self): # String
 		return self.get_query_params().get('SAMLAssertion')
 
-	def set_SAMLAssertion(self,SAMLAssertion):
-		self.add_query_param('SAMLAssertion',SAMLAssertion)
-
-	def get_RoleArn(self):
+	def set_SAMLAssertion(self, SAMLAssertion):  # String
+		self.add_query_param('SAMLAssertion', SAMLAssertion)
+	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_SAMLProviderArn(self):
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_SAMLProviderArn(self): # String
 		return self.get_query_params().get('SAMLProviderArn')
 
-	def set_SAMLProviderArn(self,SAMLProviderArn):
-		self.add_query_param('SAMLProviderArn',SAMLProviderArn)
-
-	def get_DurationSeconds(self):
+	def set_SAMLProviderArn(self, SAMLProviderArn):  # String
+		self.add_query_param('SAMLProviderArn', SAMLProviderArn)
+	def get_DurationSeconds(self): # Long
 		return self.get_query_params().get('DurationSeconds')
 
-	def set_DurationSeconds(self,DurationSeconds):
-		self.add_query_param('DurationSeconds',DurationSeconds)
-
-	def get_Policy(self):
+	def set_DurationSeconds(self, DurationSeconds):  # Long
+		self.add_query_param('DurationSeconds', DurationSeconds)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)

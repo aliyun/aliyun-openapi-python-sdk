@@ -26,44 +26,39 @@ class AssumeRoleWithOIDCRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithOIDC')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RoleArn(self):
+	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_RoleSessionName(self):
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_RoleSessionName(self): # String
 		return self.get_query_params().get('RoleSessionName')
 
-	def set_RoleSessionName(self,RoleSessionName):
-		self.add_query_param('RoleSessionName',RoleSessionName)
-
-	def get_OIDCToken(self):
+	def set_RoleSessionName(self, RoleSessionName):  # String
+		self.add_query_param('RoleSessionName', RoleSessionName)
+	def get_OIDCToken(self): # String
 		return self.get_query_params().get('OIDCToken')
 
-	def set_OIDCToken(self,OIDCToken):
-		self.add_query_param('OIDCToken',OIDCToken)
-
-	def get_DurationSeconds(self):
+	def set_OIDCToken(self, OIDCToken):  # String
+		self.add_query_param('OIDCToken', OIDCToken)
+	def get_DurationSeconds(self): # Long
 		return self.get_query_params().get('DurationSeconds')
 
-	def set_DurationSeconds(self,DurationSeconds):
-		self.add_query_param('DurationSeconds',DurationSeconds)
-
-	def get_OIDCProviderArn(self):
+	def set_DurationSeconds(self, DurationSeconds):  # Long
+		self.add_query_param('DurationSeconds', DurationSeconds)
+	def get_OIDCProviderArn(self): # String
 		return self.get_query_params().get('OIDCProviderArn')
 
-	def set_OIDCProviderArn(self,OIDCProviderArn):
-		self.add_query_param('OIDCProviderArn',OIDCProviderArn)
-
-	def get_Policy(self):
+	def set_OIDCProviderArn(self, OIDCProviderArn):  # String
+		self.add_query_param('OIDCProviderArn', OIDCProviderArn)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)

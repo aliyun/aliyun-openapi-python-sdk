@@ -26,32 +26,34 @@ class AssumeRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ExternalId(self): # String
+		return self.get_query_params().get('ExternalId')
 
-	def get_RoleSessionName(self):
+	def set_ExternalId(self, ExternalId):  # String
+		self.add_query_param('ExternalId', ExternalId)
+	def get_RoleSessionName(self): # String
 		return self.get_query_params().get('RoleSessionName')
 
-	def set_RoleSessionName(self,RoleSessionName):
-		self.add_query_param('RoleSessionName',RoleSessionName)
-
-	def get_Policy(self):
+	def set_RoleSessionName(self, RoleSessionName):  # String
+		self.add_query_param('RoleSessionName', RoleSessionName)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_RoleArn(self):
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
+	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_DurationSeconds(self):
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_DurationSeconds(self): # Long
 		return self.get_query_params().get('DurationSeconds')
 
-	def set_DurationSeconds(self,DurationSeconds):
-		self.add_query_param('DurationSeconds',DurationSeconds)
+	def set_DurationSeconds(self, DurationSeconds):  # Long
+		self.add_query_param('DurationSeconds', DurationSeconds)
