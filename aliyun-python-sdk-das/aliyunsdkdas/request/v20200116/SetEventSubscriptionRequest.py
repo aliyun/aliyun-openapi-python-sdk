@@ -41,6 +41,11 @@ class SetEventSubscriptionRequest(RpcRequest):
 
 	def set_ContactName(self, ContactName):  # String
 		self.add_query_param('ContactName', ContactName)
+	def get_DispatchRule(self): # String
+		return self.get_query_params().get('DispatchRule')
+
+	def set_DispatchRule(self, DispatchRule):  # String
+		self.add_query_param('DispatchRule', DispatchRule)
 	def get_ChannelType(self): # String
 		return self.get_query_params().get('ChannelType')
 
@@ -51,6 +56,11 @@ class SetEventSubscriptionRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_Severity(self): # String
+		return self.get_query_params().get('Severity')
+
+	def set_Severity(self, Severity):  # String
+		self.add_query_param('Severity', Severity)
 	def get_Level(self): # String
 		return self.get_query_params().get('Level')
 

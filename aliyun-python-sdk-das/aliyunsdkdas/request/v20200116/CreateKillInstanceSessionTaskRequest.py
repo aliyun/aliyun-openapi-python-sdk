@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetRequestDiagnosisResultRequest(RpcRequest):
+class CreateKillInstanceSessionTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetRequestDiagnosisResult')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateKillInstanceSessionTask')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,36 @@ class GetRequestDiagnosisResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SqlId(self): # String
-		return self.get_query_params().get('SqlId')
+	def get_KillAllSessions(self): # String
+		return self.get_query_params().get('KillAllSessions')
 
-	def set_SqlId(self, SqlId):  # String
-		self.add_query_param('SqlId', SqlId)
-	def get_MessageId(self): # String
-		return self.get_query_params().get('MessageId')
+	def set_KillAllSessions(self, KillAllSessions):  # String
+		self.add_query_param('KillAllSessions', KillAllSessions)
+	def get_DbUser(self): # String
+		return self.get_query_params().get('DbUser')
 
-	def set_MessageId(self, MessageId):  # String
-		self.add_query_param('MessageId', MessageId)
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
+	def set_DbUser(self, DbUser):  # String
+		self.add_query_param('DbUser', DbUser)
+	def get_SessionIds(self): # String
+		return self.get_query_params().get('SessionIds')
 
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
+	def set_SessionIds(self, SessionIds):  # String
+		self.add_query_param('SessionIds', SessionIds)
+	def get_DbUserPassword(self): # String
+		return self.get_query_params().get('DbUserPassword')
+
+	def set_DbUserPassword(self, DbUserPassword):  # String
+		self.add_query_param('DbUserPassword', DbUserPassword)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_IgnoredUsers(self): # String
+		return self.get_query_params().get('IgnoredUsers')
+
+	def set_IgnoredUsers(self, IgnoredUsers):  # String
+		self.add_query_param('IgnoredUsers', IgnoredUsers)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 

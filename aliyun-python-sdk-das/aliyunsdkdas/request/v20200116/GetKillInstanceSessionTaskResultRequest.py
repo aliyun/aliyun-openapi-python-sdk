@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetRequestDiagnosisResultRequest(RpcRequest):
+class GetKillInstanceSessionTaskResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetRequestDiagnosisResult')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetKillInstanceSessionTaskResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,6 @@ class GetRequestDiagnosisResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SqlId(self): # String
-		return self.get_query_params().get('SqlId')
-
-	def set_SqlId(self, SqlId):  # String
-		self.add_query_param('SqlId', SqlId)
-	def get_MessageId(self): # String
-		return self.get_query_params().get('MessageId')
-
-	def set_MessageId(self, MessageId):  # String
-		self.add_query_param('MessageId', MessageId)
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
-
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -56,3 +41,8 @@ class GetRequestDiagnosisResultRequest(RpcRequest):
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_query_param('NodeId', NodeId)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

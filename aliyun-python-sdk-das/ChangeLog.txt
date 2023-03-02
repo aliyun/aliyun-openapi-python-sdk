@@ -1,3 +1,6 @@
+2023-03-02 Version: 2.0.33
+- Public CreateKillInstanceSessionTask and GetKillInstanceSessionTaskResult API.
+
 2023-01-12 Version: 2.0.32
 - Public GetEventSubscription API.
 
