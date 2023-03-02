@@ -41,21 +41,6 @@ class UpdateDataServiceApiRequest(RpcRequest):
 
 	def set_RequestMethod(self, RequestMethod):  # Integer
 		self.add_body_params('RequestMethod', RequestMethod)
-	def get_ApiPath(self): # String
-		return self.get_body_params().get('ApiPath')
-
-	def set_ApiPath(self, ApiPath):  # String
-		self.add_body_params('ApiPath', ApiPath)
-	def get_WizardDetails(self): # String
-		return self.get_body_params().get('WizardDetails')
-
-	def set_WizardDetails(self, WizardDetails):  # String
-		self.add_body_params('WizardDetails', WizardDetails)
-	def get_VisibleRange(self): # Integer
-		return self.get_body_params().get('VisibleRange')
-
-	def set_VisibleRange(self, VisibleRange):  # Integer
-		self.add_body_params('VisibleRange', VisibleRange)
 	def get_ApiDescription(self): # String
 		return self.get_body_params().get('ApiDescription')
 
@@ -66,11 +51,11 @@ class UpdateDataServiceApiRequest(RpcRequest):
 
 	def set_Timeout(self, Timeout):  # Integer
 		self.add_body_params('Timeout', Timeout)
-	def get_RegistrationDetails(self): # String
-		return self.get_body_params().get('RegistrationDetails')
+	def get_ResourceGroupId(self): # Long
+		return self.get_body_params().get('ResourceGroupId')
 
-	def set_RegistrationDetails(self, RegistrationDetails):  # String
-		self.add_body_params('RegistrationDetails', RegistrationDetails)
+	def set_ResourceGroupId(self, ResourceGroupId):  # Long
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_TenantId(self): # Long
 		return self.get_body_params().get('TenantId')
 
@@ -86,13 +71,33 @@ class UpdateDataServiceApiRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
-	def get_ApiId(self): # Long
-		return self.get_body_params().get('ApiId')
-
-	def set_ApiId(self, ApiId):  # Long
-		self.add_body_params('ApiId', ApiId)
 	def get_ResponseContentType(self): # Integer
 		return self.get_body_params().get('ResponseContentType')
 
 	def set_ResponseContentType(self, ResponseContentType):  # Integer
 		self.add_body_params('ResponseContentType', ResponseContentType)
+	def get_ApiPath(self): # String
+		return self.get_body_params().get('ApiPath')
+
+	def set_ApiPath(self, ApiPath):  # String
+		self.add_body_params('ApiPath', ApiPath)
+	def get_WizardDetails(self): # String
+		return self.get_body_params().get('WizardDetails')
+
+	def set_WizardDetails(self, WizardDetails):  # String
+		self.add_body_params('WizardDetails', WizardDetails)
+	def get_VisibleRange(self): # Integer
+		return self.get_body_params().get('VisibleRange')
+
+	def set_VisibleRange(self, VisibleRange):  # Integer
+		self.add_body_params('VisibleRange', VisibleRange)
+	def get_RegistrationDetails(self): # String
+		return self.get_body_params().get('RegistrationDetails')
+
+	def set_RegistrationDetails(self, RegistrationDetails):  # String
+		self.add_body_params('RegistrationDetails', RegistrationDetails)
+	def get_ApiId(self): # Long
+		return self.get_body_params().get('ApiId')
+
+	def set_ApiId(self, ApiId):  # Long
+		self.add_body_params('ApiId', ApiId)

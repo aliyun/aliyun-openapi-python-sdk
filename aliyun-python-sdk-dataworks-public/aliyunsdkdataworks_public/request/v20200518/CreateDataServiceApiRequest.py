@@ -56,6 +56,16 @@ class CreateDataServiceApiRequest(RpcRequest):
 
 	def set_FolderId(self, FolderId):  # Long
 		self.add_body_params('FolderId', FolderId)
+	def get_ResourceGroupId(self): # Long
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # Long
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def get_SqlMode(self): # Long
+		return self.get_body_params().get('SqlMode')
+
+	def set_SqlMode(self, SqlMode):  # Long
+		self.add_body_params('SqlMode', SqlMode)
 	def get_TenantId(self): # Long
 		return self.get_body_params().get('TenantId')
 
