@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class CreateDownloadDataJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateDownloadDataJob')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateDownloadDataJob','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,12 +48,6 @@ class CreateDownloadDataJobRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
-
-	def get_Context(self):
-		return self.get_body_params().get('Context')
-
-	def set_Context(self,Context):
-		self.add_body_params('Context', Context)
 
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')

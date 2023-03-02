@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class DeleteEdgeDriverVersionRequest(RpcRequest):
+class QueryDeviceProvisioningRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteEdgeDriverVersion','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceProvisioning','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class DeleteEdgeDriverVersionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DriverId(self):
-		return self.get_query_params().get('DriverId')
+	def get_ProductKey(self):
+		return self.get_body_params().get('ProductKey')
 
-	def set_DriverId(self,DriverId):
-		self.add_query_param('DriverId',DriverId)
+	def set_ProductKey(self,ProductKey):
+		self.add_body_params('ProductKey', ProductKey)
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_DriverVersion(self):
-		return self.get_query_params().get('DriverVersion')
-
-	def set_DriverVersion(self,DriverVersion):
-		self.add_query_param('DriverVersion',DriverVersion)
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
