@@ -31,10 +31,10 @@ class CreateKillInstanceSessionTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_KillAllSessions(self): # String
+	def get_KillAllSessions(self): # Boolean
 		return self.get_query_params().get('KillAllSessions')
 
-	def set_KillAllSessions(self, KillAllSessions):  # String
+	def set_KillAllSessions(self, KillAllSessions):  # Boolean
 		self.add_query_param('KillAllSessions', KillAllSessions)
 	def get_DbUser(self): # String
 		return self.get_query_params().get('DbUser')

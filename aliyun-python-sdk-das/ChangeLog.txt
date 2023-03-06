@@ -1,3 +1,6 @@
+2023-03-06 Version: 2.0.34
+- Change CreateKillInstanceSessionTask parameter type.
+
 2023-03-02 Version: 2.0.33
 - Public CreateKillInstanceSessionTask and GetKillInstanceSessionTaskResult API.
 
