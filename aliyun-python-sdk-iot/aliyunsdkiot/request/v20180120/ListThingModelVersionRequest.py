@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class ListThingModelVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListThingModelVersion','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListThingModelVersion')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchRegisterDeviceRequest(RpcRequest):
+class QuerySpeechLicenseAvailableQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchRegisterDevice')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QuerySpeechLicenseAvailableQuota')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,19 +32,7 @@ class BatchRegisterDeviceRequest(RpcRequest):
 
 
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_Count(self):
-		return self.get_query_params().get('Count')
-
-	def set_Count(self,Count):
-		self.add_query_param('Count',Count)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+		self.add_body_params('IotInstanceId', IotInstanceId)

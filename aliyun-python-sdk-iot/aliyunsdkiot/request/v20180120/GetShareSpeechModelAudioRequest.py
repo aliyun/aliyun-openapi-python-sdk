@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchRegisterDeviceRequest(RpcRequest):
+class GetShareSpeechModelAudioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchRegisterDevice')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetShareSpeechModelAudio')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,19 +32,21 @@ class BatchRegisterDeviceRequest(RpcRequest):
 
 
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_Count(self):
-		return self.get_query_params().get('Count')
+	def get_ShareTaskId(self):
+		return self.get_body_params().get('ShareTaskId')
 
-	def set_Count(self,Count):
-		self.add_query_param('Count',Count)
+	def set_ShareTaskId(self,ShareTaskId):
+		self.add_body_params('ShareTaskId', ShareTaskId)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_SpeechModelCodeLists(self):
+		return self.get_body_params().get('SpeechModelCodeList')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_SpeechModelCodeLists(self, SpeechModelCodeLists):
+		for depth1 in range(len(SpeechModelCodeLists)):
+			if SpeechModelCodeLists[depth1] is not None:
+				self.add_body_params('SpeechModelCodeList.' + str(depth1 + 1) , SpeechModelCodeLists[depth1])
