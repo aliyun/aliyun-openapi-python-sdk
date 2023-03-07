@@ -307,6 +307,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_RamRoleName(self, RamRoleName):  # String
 		self.add_query_param('RamRoleName', RamRoleName)
+	def get_NetworkInterfaceTrafficMode(self): # String
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
+		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
 	def get_Plugin(self): # String
 		return self.get_query_params().get('Plugin')
 

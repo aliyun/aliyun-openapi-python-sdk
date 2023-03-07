@@ -46,6 +46,11 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_ClockTime(self, ClockTime):  # String
 		self.add_query_param('ClockTime', ClockTime)
+	def get_JobRetryPriority(self): # Integer
+		return self.get_query_params().get('JobRetry.Priority')
+
+	def set_JobRetryPriority(self, JobRetryPriority):  # Integer
+		self.add_query_param('JobRetry.Priority', JobRetryPriority)
 	def get_CommandLine(self): # String
 		return self.get_query_params().get('CommandLine')
 
@@ -76,6 +81,11 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_Mem(self, Mem):  # String
 		self.add_query_param('Mem', Mem)
+	def get_JobRetryCount(self): # Integer
+		return self.get_query_params().get('JobRetry.Count')
+
+	def set_JobRetryCount(self, JobRetryCount):  # Integer
+		self.add_query_param('JobRetry.Count', JobRetryCount)
 	def get_StdoutRedirectPath(self): # String
 		return self.get_query_params().get('StdoutRedirectPath')
 
@@ -126,6 +136,11 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_Gpu(self, Gpu):  # Integer
 		self.add_query_param('Gpu', Gpu)
+	def get_JobRetryOnExitCode(self): # Integer
+		return self.get_query_params().get('JobRetry.OnExitCode')
+
+	def set_JobRetryOnExitCode(self, JobRetryOnExitCode):  # Integer
+		self.add_query_param('JobRetry.OnExitCode', JobRetryOnExitCode)
 	def get_Node(self): # Integer
 		return self.get_query_params().get('Node')
 
