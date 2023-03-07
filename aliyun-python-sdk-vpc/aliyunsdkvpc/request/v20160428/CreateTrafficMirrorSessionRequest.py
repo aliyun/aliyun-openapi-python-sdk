@@ -51,6 +51,11 @@ class CreateTrafficMirrorSessionRequest(RpcRequest):
 
 	def set_Enabled(self, Enabled):  # Boolean
 		self.add_query_param('Enabled', Enabled)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_TrafficMirrorSessionName(self): # String
 		return self.get_query_params().get('TrafficMirrorSessionName')
 

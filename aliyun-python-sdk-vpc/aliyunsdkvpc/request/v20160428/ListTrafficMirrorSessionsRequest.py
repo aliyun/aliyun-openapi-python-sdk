@@ -46,6 +46,11 @@ class ListTrafficMirrorSessionsRequest(RpcRequest):
 
 	def set_Enabled(self, Enabled):  # Boolean
 		self.add_query_param('Enabled', Enabled)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_TrafficMirrorSessionName(self): # String
 		return self.get_query_params().get('TrafficMirrorSessionName')
 
@@ -92,6 +97,15 @@ class ListTrafficMirrorSessionsRequest(RpcRequest):
 
 	def set_TrafficMirrorFilterId(self, TrafficMirrorFilterId):  # String
 		self.add_query_param('TrafficMirrorFilterId', TrafficMirrorFilterId)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
+
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

@@ -36,6 +36,16 @@ class DeleteVpcRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ForceDelete(self): # Boolean
+		return self.get_query_params().get('ForceDelete')
+
+	def set_ForceDelete(self, ForceDelete):  # Boolean
+		self.add_query_param('ForceDelete', ForceDelete)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

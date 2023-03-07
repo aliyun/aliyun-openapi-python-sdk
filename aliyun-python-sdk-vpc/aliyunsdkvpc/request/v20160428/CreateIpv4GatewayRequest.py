@@ -51,6 +51,11 @@ class CreateIpv4GatewayRequest(RpcRequest):
 
 	def set_Ipv4GatewayName(self, Ipv4GatewayName):  # String
 		self.add_query_param('Ipv4GatewayName', Ipv4GatewayName)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
