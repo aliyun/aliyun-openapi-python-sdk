@@ -36,6 +36,11 @@ class DescribeIMRobotsRequest(RpcRequest):
 
 	def set_Size(self, Size):  # Long
 		self.add_query_param('Size', Size)
+	def get_RobotIds(self): # String
+		return self.get_query_params().get('RobotIds')
+
+	def set_RobotIds(self, RobotIds):  # String
+		self.add_query_param('RobotIds', RobotIds)
 	def get_RobotName(self): # String
 		return self.get_query_params().get('RobotName')
 

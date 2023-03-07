@@ -41,6 +41,11 @@ class CreateAlertContactRequest(RpcRequest):
 
 	def set_ContactName(self, ContactName):  # String
 		self.add_query_param('ContactName', ContactName)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DingRobotWebhookUrl(self): # String
 		return self.get_query_params().get('DingRobotWebhookUrl')
 

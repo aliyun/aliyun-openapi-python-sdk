@@ -41,6 +41,11 @@ class CreateOrUpdateIMRobotRequest(RpcRequest):
 
 	def set_RobotAddress(self, RobotAddress):  # String
 		self.add_body_params('RobotAddress', RobotAddress)
+	def get_DingSignKey(self): # String
+		return self.get_body_params().get('DingSignKey')
+
+	def set_DingSignKey(self, DingSignKey):  # String
+		self.add_body_params('DingSignKey', DingSignKey)
 	def get_RobotName(self): # String
 		return self.get_body_params().get('RobotName')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class DeleteRetcodeAppRequest(RpcRequest):
+class GetRetcodeLogstoreRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteRetcodeApp','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetRetcodeLogstore','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class DeleteRetcodeAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
 	def get_Pid(self): # String
 		return self.get_query_params().get('Pid')
 

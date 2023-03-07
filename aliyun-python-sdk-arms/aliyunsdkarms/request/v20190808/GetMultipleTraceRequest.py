@@ -37,3 +37,13 @@ class GetMultipleTraceRequest(RpcRequest):
 	def set_TraceIDss(self, TraceIDs):  # RepeatList
 		for depth1 in range(len(TraceIDs)):
 			self.add_query_param('TraceIDs.' + str(depth1 + 1), TraceIDs[depth1])
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)

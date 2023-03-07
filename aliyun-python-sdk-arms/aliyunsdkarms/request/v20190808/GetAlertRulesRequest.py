@@ -31,6 +31,11 @@ class GetAlertRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProductCode(self): # String
+		return self.get_query_params().get('ProductCode')
+
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
 	def get_AlertStatus(self): # String
 		return self.get_query_params().get('AlertStatus')
 

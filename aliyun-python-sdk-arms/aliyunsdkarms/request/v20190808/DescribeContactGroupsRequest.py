@@ -36,6 +36,11 @@ class DescribeContactGroupsRequest(RpcRequest):
 
 	def set_Size(self, Size):  # Long
 		self.add_query_param('Size', Size)
+	def get_GroupIds(self): # String
+		return self.get_query_params().get('GroupIds')
+
+	def set_GroupIds(self, GroupIds):  # String
+		self.add_query_param('GroupIds', GroupIds)
 	def get_IsDetail(self): # Boolean
 		return self.get_query_params().get('IsDetail')
 

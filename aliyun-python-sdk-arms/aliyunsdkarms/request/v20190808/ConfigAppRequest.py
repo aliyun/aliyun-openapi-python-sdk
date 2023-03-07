@@ -41,3 +41,8 @@ class ConfigAppRequest(RpcRequest):
 
 	def set_Enable(self, Enable):  # String
 		self.add_query_param('Enable', Enable)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)

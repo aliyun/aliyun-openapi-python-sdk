@@ -31,6 +31,16 @@ class InstallManagedPrometheusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_GrafanaInstanceId(self): # String
+		return self.get_query_params().get('GrafanaInstanceId')
+
+	def set_GrafanaInstanceId(self, GrafanaInstanceId):  # String
+		self.add_query_param('GrafanaInstanceId', GrafanaInstanceId)
+	def get_ClusterName(self): # String
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self, ClusterName):  # String
+		self.add_query_param('ClusterName', ClusterName)
 	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
@@ -56,6 +66,11 @@ class InstallManagedPrometheusRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

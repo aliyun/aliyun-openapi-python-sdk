@@ -20,29 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class TurnOnSecondSwitchRequest(RpcRequest):
+class ListPrometheusIntegrationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'TurnOnSecondSwitch','arms')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusIntegration','arms')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Pid(self): # String
-		return self.get_query_params().get('Pid')
+	def get_IntegrationType(self): # String
+		return self.get_query_params().get('IntegrationType')
 
-	def set_Pid(self, Pid):  # String
-		self.add_query_param('Pid', Pid)
-	def get_ReleaseStartTime(self): # Long
-		return self.get_query_params().get('ReleaseStartTime')
+	def set_IntegrationType(self, IntegrationType):  # String
+		self.add_query_param('IntegrationType', IntegrationType)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
 
-	def set_ReleaseStartTime(self, ReleaseStartTime):  # Long
-		self.add_query_param('ReleaseStartTime', ReleaseStartTime)
-	def get_ProxyUserId(self): # String
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self, ProxyUserId):  # String
-		self.add_query_param('ProxyUserId', ProxyUserId)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

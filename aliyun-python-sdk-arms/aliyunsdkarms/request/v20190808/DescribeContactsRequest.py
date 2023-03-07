@@ -31,6 +31,16 @@ class DescribeContactsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ContactIds(self): # String
+		return self.get_query_params().get('ContactIds')
+
+	def set_ContactIds(self, ContactIds):  # String
+		self.add_query_param('ContactIds', ContactIds)
+	def get_Verbose(self): # String
+		return self.get_query_params().get('Verbose')
+
+	def set_Verbose(self, Verbose):  # String
+		self.add_query_param('Verbose', Verbose)
 	def get_ContactName(self): # String
 		return self.get_query_params().get('ContactName')
 

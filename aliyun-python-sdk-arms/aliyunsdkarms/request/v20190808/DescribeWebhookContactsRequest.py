@@ -46,3 +46,8 @@ class DescribeWebhookContactsRequest(RpcRequest):
 
 	def set_Page(self, Page):  # Long
 		self.add_query_param('Page', Page)
+	def get_ContactIds(self): # String
+		return self.get_query_params().get('ContactIds')
+
+	def set_ContactIds(self, ContactIds):  # String
+		self.add_query_param('ContactIds', ContactIds)

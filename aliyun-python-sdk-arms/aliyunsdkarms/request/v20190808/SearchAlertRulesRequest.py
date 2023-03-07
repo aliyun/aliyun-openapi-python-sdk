@@ -61,6 +61,16 @@ class SearchAlertRulesRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_AlertRuleId(self): # String
+		return self.get_query_params().get('AlertRuleId')
+
+	def set_AlertRuleId(self, AlertRuleId):  # String
+		self.add_query_param('AlertRuleId', AlertRuleId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

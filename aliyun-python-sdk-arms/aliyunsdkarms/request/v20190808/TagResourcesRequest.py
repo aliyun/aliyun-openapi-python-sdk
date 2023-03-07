@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class DeleteRetcodeAppRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteRetcodeApp','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'TagResources','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,23 @@ class DeleteRetcodeAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
-	def get_Pid(self): # String
-		return self.get_query_params().get('Pid')
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_Pid(self, Pid):  # String
-		self.add_query_param('Pid', Pid)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)

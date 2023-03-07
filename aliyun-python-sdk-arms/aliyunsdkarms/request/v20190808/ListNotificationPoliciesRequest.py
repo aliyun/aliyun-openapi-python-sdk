@@ -46,6 +46,11 @@ class ListNotificationPoliciesRequest(RpcRequest):
 
 	def set_IsDetail(self, IsDetail):  # Boolean
 		self.add_query_param('IsDetail', IsDetail)
+	def get_Ids(self): # String
+		return self.get_query_params().get('Ids')
+
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
 	def get_Page(self): # Long
 		return self.get_query_params().get('Page')
 

@@ -31,13 +31,23 @@ class GetManagedPrometheusStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterType(self): # String
-		return self.get_query_params().get('ClusterType')
-
-	def set_ClusterType(self, ClusterType):  # String
-		self.add_query_param('ClusterType', ClusterType)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_ClusterType(self): # String
+		return self.get_query_params().get('ClusterType')
+
+	def set_ClusterType(self, ClusterType):  # String
+		self.add_query_param('ClusterType', ClusterType)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

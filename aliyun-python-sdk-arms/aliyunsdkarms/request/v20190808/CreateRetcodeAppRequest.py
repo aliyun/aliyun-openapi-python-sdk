@@ -31,6 +31,11 @@ class CreateRetcodeAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_RetcodeAppName(self): # String
 		return self.get_query_params().get('RetcodeAppName')
 
@@ -41,3 +46,12 @@ class CreateRetcodeAppRequest(RpcRequest):
 
 	def set_RetcodeAppType(self, RetcodeAppType):  # String
 		self.add_query_param('RetcodeAppType', RetcodeAppType)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
+
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))

@@ -31,6 +31,11 @@ class SetRetcodeShareStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
 	def get_Pid(self): # String
 		return self.get_query_params().get('Pid')
 

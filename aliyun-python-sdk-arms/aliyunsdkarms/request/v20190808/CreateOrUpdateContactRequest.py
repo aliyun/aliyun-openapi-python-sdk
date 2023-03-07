@@ -46,6 +46,16 @@ class CreateOrUpdateContactRequest(RpcRequest):
 
 	def set_ContactName(self, ContactName):  # String
 		self.add_body_params('ContactName', ContactName)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DingRobotUrl(self): # String
+		return self.get_query_params().get('DingRobotUrl')
+
+	def set_DingRobotUrl(self, DingRobotUrl):  # String
+		self.add_query_param('DingRobotUrl', DingRobotUrl)
 	def get_Phone(self): # String
 		return self.get_body_params().get('Phone')
 
@@ -56,3 +66,8 @@ class CreateOrUpdateContactRequest(RpcRequest):
 
 	def set_Email(self, Email):  # String
 		self.add_body_params('Email', Email)
+	def get_IsEmailVerify(self): # Boolean
+		return self.get_body_params().get('IsEmailVerify')
+
+	def set_IsEmailVerify(self, IsEmailVerify):  # Boolean
+		self.add_body_params('IsEmailVerify', IsEmailVerify)
