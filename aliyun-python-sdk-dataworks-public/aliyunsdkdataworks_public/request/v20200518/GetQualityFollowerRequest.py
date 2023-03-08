@@ -41,3 +41,8 @@ class GetQualityFollowerRequest(RpcRequest):
 
 	def set_EntityId(self, EntityId):  # Long
 		self.add_body_params('EntityId', EntityId)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

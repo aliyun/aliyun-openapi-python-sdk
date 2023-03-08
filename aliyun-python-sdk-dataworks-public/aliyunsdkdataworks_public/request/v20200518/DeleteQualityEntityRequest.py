@@ -36,13 +36,18 @@ class DeleteQualityEntityRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-	def get_EnvType(self): # String
-		return self.get_body_params().get('EnvType')
-
-	def set_EnvType(self, EnvType):  # String
-		self.add_body_params('EnvType', EnvType)
 	def get_EntityId(self): # Long
 		return self.get_body_params().get('EntityId')
 
 	def set_EntityId(self, EntityId):  # Long
 		self.add_body_params('EntityId', EntityId)
+	def get_EnvType(self): # String
+		return self.get_body_params().get('EnvType')
+
+	def set_EnvType(self, EnvType):  # String
+		self.add_body_params('EnvType', EnvType)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

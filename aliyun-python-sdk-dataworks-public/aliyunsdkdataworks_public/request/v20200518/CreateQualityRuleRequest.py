@@ -76,6 +76,11 @@ class CreateQualityRuleRequest(RpcRequest):
 
 	def set_WarningThreshold(self, WarningThreshold):  # String
 		self.add_body_params('WarningThreshold', WarningThreshold)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)
 	def get_MethodName(self): # String
 		return self.get_body_params().get('MethodName')
 

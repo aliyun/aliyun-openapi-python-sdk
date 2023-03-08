@@ -41,3 +41,8 @@ class DeleteQualityFollowerRequest(RpcRequest):
 
 	def set_FollowerId(self, FollowerId):  # Long
 		self.add_body_params('FollowerId', FollowerId)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

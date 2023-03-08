@@ -41,3 +41,8 @@ class DeleteQualityRuleRequest(RpcRequest):
 
 	def set_RuleId(self, RuleId):  # Long
 		self.add_body_params('RuleId', RuleId)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

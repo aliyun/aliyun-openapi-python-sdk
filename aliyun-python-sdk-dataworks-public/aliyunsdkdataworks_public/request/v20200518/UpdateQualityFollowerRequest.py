@@ -31,11 +31,6 @@ class UpdateQualityFollowerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlarmMode(self): # Integer
-		return self.get_body_params().get('AlarmMode')
-
-	def set_AlarmMode(self, AlarmMode):  # Integer
-		self.add_body_params('AlarmMode', AlarmMode)
 	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
@@ -51,3 +46,13 @@ class UpdateQualityFollowerRequest(RpcRequest):
 
 	def set_FollowerId(self, FollowerId):  # Long
 		self.add_body_params('FollowerId', FollowerId)
+	def get_AlarmMode(self): # Integer
+		return self.get_body_params().get('AlarmMode')
+
+	def set_AlarmMode(self, AlarmMode):  # Integer
+		self.add_body_params('AlarmMode', AlarmMode)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)
