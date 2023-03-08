@@ -41,6 +41,11 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ScaleApRoNumMax(self): # String
+		return self.get_query_params().get('ScaleApRoNumMax')
+
+	def set_ScaleApRoNumMax(self, ScaleApRoNumMax):  # String
+		self.add_query_param('ScaleApRoNumMax', ScaleApRoNumMax)
 	def get_ScaleMax(self): # String
 		return self.get_query_params().get('ScaleMax')
 
@@ -51,6 +56,11 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_SecondsUntilAutoPause(self, SecondsUntilAutoPause):  # String
 		self.add_query_param('SecondsUntilAutoPause', SecondsUntilAutoPause)
+	def get_ScaleApRoNumMin(self): # String
+		return self.get_query_params().get('ScaleApRoNumMin')
+
+	def set_ScaleApRoNumMin(self, ScaleApRoNumMin):  # String
+		self.add_query_param('ScaleApRoNumMin', ScaleApRoNumMin)
 	def get_ScaleMin(self): # String
 		return self.get_query_params().get('ScaleMin')
 
