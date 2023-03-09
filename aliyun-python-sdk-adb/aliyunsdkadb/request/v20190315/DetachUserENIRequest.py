@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeAvailableResourceRequest(RpcRequest):
+class DetachUserENIRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeAvailableResource','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DetachUserENI','ads')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,33 +41,18 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_DBClusterVersion(self): # String
-		return self.get_query_params().get('DBClusterVersion')
-
-	def set_DBClusterVersion(self, DBClusterVersion):  # String
-		self.add_query_param('DBClusterVersion', DBClusterVersion)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_ChargeType(self): # String
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self, ChargeType):  # String
-		self.add_query_param('ChargeType', ChargeType)

@@ -91,10 +91,10 @@ class DescribeDiagnosisRecordsRequest(RpcRequest):
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
-	def get_PatternId(self): # Long
+	def get_PatternId(self): # String
 		return self.get_query_params().get('PatternId')
 
-	def set_PatternId(self, PatternId):  # Long
+	def set_PatternId(self, PatternId):  # String
 		self.add_query_param('PatternId', PatternId)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')

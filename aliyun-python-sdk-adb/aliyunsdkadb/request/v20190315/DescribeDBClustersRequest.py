@@ -85,6 +85,11 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBVersion(self): # String
+		return self.get_query_params().get('DBVersion')
+
+	def set_DBVersion(self, DBVersion):  # String
+		self.add_query_param('DBVersion', DBVersion)
 	def get_DBClusterIds(self): # String
 		return self.get_query_params().get('DBClusterIds')
 

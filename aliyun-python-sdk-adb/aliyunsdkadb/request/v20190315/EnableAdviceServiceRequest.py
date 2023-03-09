@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeDBClusterForecastRequest(RpcRequest):
+class EnableAdviceServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeDBClusterForecast','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'EnableAdviceService','ads')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,8 @@ class DescribeDBClusterForecastRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MetricType(self): # String
-		return self.get_query_params().get('MetricType')
-
-	def set_MetricType(self, MetricType):  # String
-		self.add_query_param('MetricType', MetricType)
 	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)

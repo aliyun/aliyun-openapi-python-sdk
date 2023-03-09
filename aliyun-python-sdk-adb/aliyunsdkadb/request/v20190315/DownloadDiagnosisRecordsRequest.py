@@ -31,6 +31,36 @@ class DownloadDiagnosisRecordsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_QueryCondition(self): # String
+		return self.get_query_params().get('QueryCondition')
+
+	def set_QueryCondition(self, QueryCondition):  # String
+		self.add_query_param('QueryCondition', QueryCondition)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Database(self): # String
+		return self.get_query_params().get('Database')
+
+	def set_Database(self, Database):  # String
+		self.add_query_param('Database', Database)
+	def get_ClientIp(self): # String
+		return self.get_query_params().get('ClientIp')
+
+	def set_ClientIp(self, ClientIp):  # String
+		self.add_query_param('ClientIp', ClientIp)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_MaxScanSize(self): # Long
 		return self.get_query_params().get('MaxScanSize')
 
@@ -46,21 +76,11 @@ class DownloadDiagnosisRecordsRequest(RpcRequest):
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
-	def get_QueryCondition(self): # String
-		return self.get_query_params().get('QueryCondition')
-
-	def set_QueryCondition(self, QueryCondition):  # String
-		self.add_query_param('QueryCondition', QueryCondition)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_MinPeakMemory(self): # Long
 		return self.get_query_params().get('MinPeakMemory')
 
@@ -71,31 +91,11 @@ class DownloadDiagnosisRecordsRequest(RpcRequest):
 
 	def set_MinScanSize(self, MinScanSize):  # Long
 		self.add_query_param('MinScanSize', MinScanSize)
-	def get_Database(self): # String
-		return self.get_query_params().get('Database')
-
-	def set_Database(self, Database):  # String
-		self.add_query_param('Database', Database)
-	def get_ClientIp(self): # String
-		return self.get_query_params().get('ClientIp')
-
-	def set_ClientIp(self, ClientIp):  # String
-		self.add_query_param('ClientIp', ClientIp)
 	def get_MaxPeakMemory(self): # Long
 		return self.get_query_params().get('MaxPeakMemory')
 
 	def set_MaxPeakMemory(self, MaxPeakMemory):  # Long
 		self.add_query_param('MaxPeakMemory', MaxPeakMemory)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
 	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 

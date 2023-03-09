@@ -36,6 +36,11 @@ class ModifyElasticPlanRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ElasticPlanType(self): # String
+		return self.get_query_params().get('ElasticPlanType')
+
+	def set_ElasticPlanType(self, ElasticPlanType):  # String
+		self.add_query_param('ElasticPlanType', ElasticPlanType)
 	def get_ElasticPlanTimeStart(self): # String
 		return self.get_query_params().get('ElasticPlanTimeStart')
 
@@ -51,6 +56,11 @@ class ModifyElasticPlanRequest(RpcRequest):
 
 	def set_ElasticPlanWeeklyRepeat(self, ElasticPlanWeeklyRepeat):  # String
 		self.add_query_param('ElasticPlanWeeklyRepeat', ElasticPlanWeeklyRepeat)
+	def get_ElasticPlanWorkerSpec(self): # String
+		return self.get_query_params().get('ElasticPlanWorkerSpec')
+
+	def set_ElasticPlanWorkerSpec(self, ElasticPlanWorkerSpec):  # String
+		self.add_query_param('ElasticPlanWorkerSpec', ElasticPlanWorkerSpec)
 	def get_ElasticPlanEnable(self): # Boolean
 		return self.get_query_params().get('ElasticPlanEnable')
 

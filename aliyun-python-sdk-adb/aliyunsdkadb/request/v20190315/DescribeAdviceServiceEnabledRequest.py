@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeDBClusterHealthReportRequest(RpcRequest):
+class DescribeAdviceServiceEnabledRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeDBClusterHealthReport','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeAdviceServiceEnabled','ads')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,8 +36,3 @@ class DescribeDBClusterHealthReportRequest(RpcRequest):
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)

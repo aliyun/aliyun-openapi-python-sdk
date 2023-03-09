@@ -31,6 +31,11 @@ class ModifyDBClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ElasticIOResourceSize(self): # String
+		return self.get_query_params().get('ElasticIOResourceSize')
+
+	def set_ElasticIOResourceSize(self, ElasticIOResourceSize):  # String
+		self.add_query_param('ElasticIOResourceSize', ElasticIOResourceSize)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -56,6 +61,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_DBClusterCategory(self, DBClusterCategory):  # String
 		self.add_query_param('DBClusterCategory', DBClusterCategory)
+	def get_DiskPerformanceLevel(self): # String
+		return self.get_query_params().get('DiskPerformanceLevel')
+
+	def set_DiskPerformanceLevel(self, DiskPerformanceLevel):  # String
+		self.add_query_param('DiskPerformanceLevel', DiskPerformanceLevel)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
