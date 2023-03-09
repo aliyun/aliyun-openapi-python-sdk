@@ -1,3 +1,6 @@
+2023-03-09 Version: 2.0.35
+- Public GetMySQLAllSessionAsync.
+
 2023-03-06 Version: 2.0.34
 - Change CreateKillInstanceSessionTask parameter type.
 
