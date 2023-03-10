@@ -42,6 +42,11 @@ class CreateNamespaceRequest(RoaRequest):
 
 	def set_NamespaceDescription(self, NamespaceDescription):  # String
 		self.add_query_param('NamespaceDescription', NamespaceDescription)
+	def get_EnableMicroRegistration(self): # Boolean
+		return self.get_query_params().get('EnableMicroRegistration')
+
+	def set_EnableMicroRegistration(self, EnableMicroRegistration):  # Boolean
+		self.add_query_param('EnableMicroRegistration', EnableMicroRegistration)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
