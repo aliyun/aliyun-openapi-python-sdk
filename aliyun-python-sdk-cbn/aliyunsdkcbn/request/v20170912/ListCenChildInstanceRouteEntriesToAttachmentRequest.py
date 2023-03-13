@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class DescribeCenChildInstanceRouteEntriesRequest(RpcRequest):
+class ListCenChildInstanceRouteEntriesToAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenChildInstanceRouteEntries')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListCenChildInstanceRouteEntriesToAttachment')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,21 +41,21 @@ class DescribeCenChildInstanceRouteEntriesRequest(RpcRequest):
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_RouteFilters(self): # RepeatList
+		return self.get_query_params().get('RouteFilter')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_ChildInstanceRegionId(self): # String
-		return self.get_query_params().get('ChildInstanceRegionId')
-
-	def set_ChildInstanceRegionId(self, ChildInstanceRegionId):  # String
-		self.add_query_param('ChildInstanceRegionId', ChildInstanceRegionId)
+	def set_RouteFilters(self, RouteFilter):  # RepeatList
+		for depth1 in range(len(RouteFilter)):
+			if RouteFilter[depth1].get('Value') is not None:
+				for depth2 in range(len(RouteFilter[depth1].get('Value'))):
+					self.add_query_param('RouteFilter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), RouteFilter[depth1].get('Value')[depth2])
+			if RouteFilter[depth1].get('Key') is not None:
+				self.add_query_param('RouteFilter.' + str(depth1 + 1) + '.Key', RouteFilter[depth1].get('Key'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,23 +71,23 @@ class DescribeCenChildInstanceRouteEntriesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ChildInstanceType(self): # String
-		return self.get_query_params().get('ChildInstanceType')
+	def get_TransitRouterAttachmentId(self): # String
+		return self.get_query_params().get('TransitRouterAttachmentId')
 
-	def set_ChildInstanceType(self, ChildInstanceType):  # String
-		self.add_query_param('ChildInstanceType', ChildInstanceType)
-	def get_ChildInstanceId(self): # String
-		return self.get_query_params().get('ChildInstanceId')
+	def set_TransitRouterAttachmentId(self, TransitRouterAttachmentId):  # String
+		self.add_query_param('TransitRouterAttachmentId', TransitRouterAttachmentId)
+	def get_ServiceType(self): # String
+		return self.get_query_params().get('ServiceType')
 
-	def set_ChildInstanceId(self, ChildInstanceId):  # String
-		self.add_query_param('ChildInstanceId', ChildInstanceId)
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_query_param('ServiceType', ServiceType)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_ChildInstanceRouteTableId(self): # String
 		return self.get_query_params().get('ChildInstanceRouteTableId')
 
 	def set_ChildInstanceRouteTableId(self, ChildInstanceRouteTableId):  # String
 		self.add_query_param('ChildInstanceRouteTableId', ChildInstanceRouteTableId)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)

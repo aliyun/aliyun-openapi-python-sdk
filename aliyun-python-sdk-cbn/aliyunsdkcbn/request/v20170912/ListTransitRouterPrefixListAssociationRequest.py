@@ -41,6 +41,11 @@ class ListTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_NextHopInstanceId(self): # String
+		return self.get_query_params().get('NextHopInstanceId')
+
+	def set_NextHopInstanceId(self, NextHopInstanceId):  # String
+		self.add_query_param('NextHopInstanceId', NextHopInstanceId)
 	def get_PrefixListId(self): # String
 		return self.get_query_params().get('PrefixListId')
 
@@ -91,3 +96,8 @@ class ListTransitRouterPrefixListAssociationRequest(RpcRequest):
 
 	def set_NextHop(self, NextHop):  # String
 		self.add_query_param('NextHop', NextHop)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
