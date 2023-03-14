@@ -36,6 +36,16 @@ class SplitVideoPartsRequest(RpcRequest):
 
 	def set_Template(self, Template):  # String
 		self.add_body_params('Template', Template)
+	def get_MinTime(self): # Integer
+		return self.get_body_params().get('MinTime')
+
+	def set_MinTime(self, MinTime):  # Integer
+		self.add_body_params('MinTime', MinTime)
+	def get_MaxTime(self): # Integer
+		return self.get_body_params().get('MaxTime')
+
+	def set_MaxTime(self, MaxTime):  # Integer
+		self.add_body_params('MaxTime', MaxTime)
 	def get_VideoUrl(self): # String
 		return self.get_body_params().get('VideoUrl')
 
