@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'GetTemplate')
+		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'GetTemplate','bpstudio')
 		self.set_method('POST')
 
 	def get_TemplateId(self): # String

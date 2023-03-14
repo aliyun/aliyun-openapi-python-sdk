@@ -23,7 +23,7 @@ import json
 class CreateApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'CreateApplication')
+		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'CreateApplication','bpstudio')
 		self.set_method('POST')
 
 	def get_Variables(self): # Map
