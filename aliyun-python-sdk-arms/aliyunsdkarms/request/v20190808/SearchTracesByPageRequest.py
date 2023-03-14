@@ -61,6 +61,11 @@ class SearchTracesByPageRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_IsError(self): # Boolean
+		return self.get_query_params().get('IsError')
+
+	def set_IsError(self, IsError):  # Boolean
+		self.add_query_param('IsError', IsError)
 	def get_Tagss(self): # RepeatList
 		return self.get_query_params().get('Tags')
 
