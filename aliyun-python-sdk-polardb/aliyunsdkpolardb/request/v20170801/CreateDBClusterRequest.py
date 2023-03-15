@@ -41,6 +41,16 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBClusterDescription(self, DBClusterDescription):  # String
 		self.add_query_param('DBClusterDescription', DBClusterDescription)
+	def get_ProxyClass(self): # String
+		return self.get_query_params().get('ProxyClass')
+
+	def set_ProxyClass(self, ProxyClass):  # String
+		self.add_query_param('ProxyClass', ProxyClass)
+	def get_ProxyType(self): # String
+		return self.get_query_params().get('ProxyType')
+
+	def set_ProxyType(self, ProxyType):  # String
+		self.add_query_param('ProxyType', ProxyType)
 	def get_ScaleMax(self): # String
 		return self.get_query_params().get('ScaleMax')
 
@@ -195,6 +205,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # String
 		self.add_query_param('UsedTime', UsedTime)
+	def get_DBNodeNum(self): # Integer
+		return self.get_query_params().get('DBNodeNum')
+
+	def set_DBNodeNum(self, DBNodeNum):  # Integer
+		self.add_query_param('DBNodeNum', DBNodeNum)
 	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
