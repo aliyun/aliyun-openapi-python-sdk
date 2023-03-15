@@ -81,6 +81,11 @@ class PushRequest(RpcRequest):
 
 	def set_Trim(self, Trim):  # Boolean
 		self.add_query_param('Trim', Trim)
+	def get_AndroidMessageVivoCategory(self): # String
+		return self.get_query_params().get('AndroidMessageVivoCategory')
+
+	def set_AndroidMessageVivoCategory(self, AndroidMessageVivoCategory):  # String
+		self.add_query_param('AndroidMessageVivoCategory', AndroidMessageVivoCategory)
 	def get_AndroidNotifyType(self): # String
 		return self.get_query_params().get('AndroidNotifyType')
 
@@ -201,6 +206,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSNotificationThreadId(self, iOSNotificationThreadId):  # String
 		self.add_query_param('iOSNotificationThreadId', iOSNotificationThreadId)
+	def get_AndroidHuaweiTargetUserType(self): # Integer
+		return self.get_query_params().get('AndroidHuaweiTargetUserType')
+
+	def set_AndroidHuaweiTargetUserType(self, AndroidHuaweiTargetUserType):  # Integer
+		self.add_query_param('AndroidHuaweiTargetUserType', AndroidHuaweiTargetUserType)
 	def get_AndroidMusic(self): # String
 		return self.get_query_params().get('AndroidMusic')
 
@@ -271,6 +281,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSExtParameters(self, iOSExtParameters):  # String
 		self.add_query_param('iOSExtParameters', iOSExtParameters)
+	def get_AndroidHuaweiReceiptId(self): # String
+		return self.get_query_params().get('AndroidHuaweiReceiptId')
+
+	def set_AndroidHuaweiReceiptId(self, AndroidHuaweiReceiptId):  # String
+		self.add_query_param('AndroidHuaweiReceiptId', AndroidHuaweiReceiptId)
 	def get_AndroidNotificationHonorChannel(self): # String
 		return self.get_query_params().get('AndroidNotificationHonorChannel')
 

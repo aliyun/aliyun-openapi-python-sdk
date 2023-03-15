@@ -54,6 +54,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemindBody', PushTask[depth1].get('iOSRemindBody'))
 			if PushTask[depth1].get('Trim') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Trim', PushTask[depth1].get('Trim'))
+			if PushTask[depth1].get('AndroidMessageVivoCategory') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMessageVivoCategory', PushTask[depth1].get('AndroidMessageVivoCategory'))
 			if PushTask[depth1].get('AndroidNotifyType') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotifyType', PushTask[depth1].get('AndroidNotifyType'))
 			if PushTask[depth1].get('AndroidPopupTitle') is not None:
@@ -100,6 +102,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemind', PushTask[depth1].get('iOSRemind'))
 			if PushTask[depth1].get('iOSNotificationThreadId') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationThreadId', PushTask[depth1].get('iOSNotificationThreadId'))
+			if PushTask[depth1].get('AndroidHuaweiTargetUserType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidHuaweiTargetUserType', PushTask[depth1].get('AndroidHuaweiTargetUserType'))
 			if PushTask[depth1].get('AndroidMusic') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMusic', PushTask[depth1].get('AndroidMusic'))
 			if PushTask[depth1].get('iOSNotificationCollapseId') is not None:
@@ -126,6 +130,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidRenderStyle', PushTask[depth1].get('AndroidRenderStyle'))
 			if PushTask[depth1].get('iOSExtParameters') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSExtParameters', PushTask[depth1].get('iOSExtParameters'))
+			if PushTask[depth1].get('AndroidHuaweiReceiptId') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidHuaweiReceiptId', PushTask[depth1].get('AndroidHuaweiReceiptId'))
 			if PushTask[depth1].get('AndroidNotificationHonorChannel') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationHonorChannel', PushTask[depth1].get('AndroidNotificationHonorChannel'))
 			if PushTask[depth1].get('AndroidXiaomiImageUrl') is not None:
