@@ -24,7 +24,7 @@ import json
 class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ModifyAutoSnapshotPolicy')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ModifyAutoSnapshotPolicy','dbfs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

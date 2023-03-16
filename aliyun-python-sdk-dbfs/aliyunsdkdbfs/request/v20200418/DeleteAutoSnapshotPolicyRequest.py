@@ -23,7 +23,7 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class DeleteAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DeleteAutoSnapshotPolicy')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DeleteAutoSnapshotPolicy','dbfs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

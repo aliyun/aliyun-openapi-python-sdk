@@ -23,7 +23,7 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class ListSnapshotLinksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListSnapshotLinks')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListSnapshotLinks','dbfs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,8 +46,18 @@ class ListSnapshotLinksRequest(RpcRequest):
 
 	def set_FilterKey(self, FilterKey):  # String
 		self.add_query_param('FilterKey', FilterKey)
+	def get_LinkIds(self): # String
+		return self.get_query_params().get('LinkIds')
+
+	def set_LinkIds(self, LinkIds):  # String
+		self.add_query_param('LinkIds', LinkIds)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_FsIds(self): # String
+		return self.get_query_params().get('FsIds')
+
+	def set_FsIds(self, FsIds):  # String
+		self.add_query_param('FsIds', FsIds)

@@ -23,7 +23,7 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class GetSnapshotLinkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'GetSnapshotLink')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'GetSnapshotLink','dbfs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

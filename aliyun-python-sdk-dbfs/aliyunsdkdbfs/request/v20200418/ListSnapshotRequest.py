@@ -23,7 +23,7 @@ from aliyunsdkdbfs.endpoint import endpoint_data
 class ListSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListSnapshot')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'ListSnapshot','dbfs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
