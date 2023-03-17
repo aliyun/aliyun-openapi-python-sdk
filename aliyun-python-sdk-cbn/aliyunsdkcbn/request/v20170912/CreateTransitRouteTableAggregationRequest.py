@@ -61,16 +61,16 @@ class CreateTransitRouteTableAggregationRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_TransitRouteTableAggregationScope(self): # String
+		return self.get_query_params().get('TransitRouteTableAggregationScope')
+
+	def set_TransitRouteTableAggregationScope(self, TransitRouteTableAggregationScope):  # String
+		self.add_query_param('TransitRouteTableAggregationScope', TransitRouteTableAggregationScope)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_TransitRouteTableAggregationScop(self): # String
-		return self.get_query_params().get('TransitRouteTableAggregationScop')
-
-	def set_TransitRouteTableAggregationScop(self, TransitRouteTableAggregationScop):  # String
-		self.add_query_param('TransitRouteTableAggregationScop', TransitRouteTableAggregationScop)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
