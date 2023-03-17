@@ -50,11 +50,21 @@ class DescribeDisksRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
 	def set_Status(self, Status):  # String
 		self.add_query_param('Status', Status)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
+
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
 	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 

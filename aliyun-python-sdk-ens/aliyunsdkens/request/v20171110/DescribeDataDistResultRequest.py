@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class DescribeDataDistResultRequest(RpcRequest):
 
@@ -50,6 +51,11 @@ class DescribeDataDistResultRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		self.add_query_param("EnsRegionIds", json.dumps(EnsRegionIds))
 	def get_MinDate(self): # String
 		return self.get_query_params().get('MinDate')
 

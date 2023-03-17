@@ -40,6 +40,11 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_ImageId(self, ImageId):  # String
 		self.add_query_param('ImageId', ImageId)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
+
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
 	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
@@ -55,8 +60,3 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
-	def get_product(self): # String
-		return self.get_query_params().get('product')
-
-	def set_product(self, product):  # String
-		self.add_query_param('product', product)

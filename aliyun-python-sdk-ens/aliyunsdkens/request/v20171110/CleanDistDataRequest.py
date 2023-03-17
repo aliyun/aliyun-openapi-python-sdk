@@ -19,34 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateDiskRequest(RpcRequest):
+class CleanDistDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateDisk','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CleanDistData','ens')
 		self.set_method('POST')
 
-	def get_SnapshotId(self): # String
-		return self.get_query_params().get('SnapshotId')
-
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
+	def get_DataName(self): # String
+		return self.get_query_params().get('DataName')
 
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_Size(self): # String
-		return self.get_query_params().get('Size')
+	def set_DataName(self, DataName):  # String
+		self.add_query_param('DataName', DataName)
+	def get_DataVersion(self): # String
+		return self.get_query_params().get('DataVersion')
 
-	def set_Size(self, Size):  # String
-		self.add_query_param('Size', Size)
-	def get_Category(self): # String
-		return self.get_query_params().get('Category')
+	def set_DataVersion(self, DataVersion):  # String
+		self.add_query_param('DataVersion', DataVersion)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_Category(self, Category):  # String
-		self.add_query_param('Category', Category)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

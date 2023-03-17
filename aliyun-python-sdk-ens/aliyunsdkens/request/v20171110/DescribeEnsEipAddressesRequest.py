@@ -25,6 +25,11 @@ class DescribeEnsEipAddressesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsEipAddresses','ens')
 		self.set_method('POST')
 
+	def get_EipName(self): # String
+		return self.get_query_params().get('EipName')
+
+	def set_EipName(self, EipName):  # String
+		self.add_query_param('EipName', EipName)
 	def get_EipAddress(self): # String
 		return self.get_query_params().get('EipAddress')
 

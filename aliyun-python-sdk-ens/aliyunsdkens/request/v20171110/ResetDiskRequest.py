@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateImageRequest(RpcRequest):
+class ResetDiskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateImage','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ResetDisk','ens')
 		self.set_method('POST')
 
 	def get_SnapshotId(self): # String
@@ -30,18 +30,8 @@ class CreateImageRequest(RpcRequest):
 
 	def set_SnapshotId(self, SnapshotId):  # String
 		self.add_query_param('SnapshotId', SnapshotId)
-	def get_DeleteAfterImageUpload(self): # String
-		return self.get_query_params().get('DeleteAfterImageUpload')
+	def get_DiskId(self): # String
+		return self.get_query_params().get('DiskId')
 
-	def set_DeleteAfterImageUpload(self, DeleteAfterImageUpload):  # String
-		self.add_query_param('DeleteAfterImageUpload', DeleteAfterImageUpload)
-	def get_ImageName(self): # String
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self, ImageName):  # String
-		self.add_query_param('ImageName', ImageName)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)
