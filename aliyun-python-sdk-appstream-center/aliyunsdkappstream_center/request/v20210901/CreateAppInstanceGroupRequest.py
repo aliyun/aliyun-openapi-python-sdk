@@ -26,6 +26,11 @@ class CreateAppInstanceGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'appstream-center', '2021-09-01', 'CreateAppInstanceGroup')
 		self.set_method('POST')
 
+	def get_RuntimePolicy(self): # Struct
+		return self.get_body_params().get('RuntimePolicy')
+
+	def set_RuntimePolicy(self, RuntimePolicy):  # Struct
+		self.add_body_params("RuntimePolicy", json.dumps(RuntimePolicy))
 	def get_BizRegionId(self): # String
 		return self.get_body_params().get('BizRegionId')
 
@@ -36,6 +41,11 @@ class CreateAppInstanceGroupRequest(RpcRequest):
 
 	def set_ProductType(self, ProductType):  # String
 		self.add_body_params('ProductType', ProductType)
+	def get_Network(self): # Struct
+		return self.get_body_params().get('Network')
+
+	def set_Network(self, Network):  # Struct
+		self.add_body_params("Network", json.dumps(Network))
 	def get_SessionTimeout(self): # Integer
 		return self.get_body_params().get('SessionTimeout')
 
@@ -56,6 +66,11 @@ class CreateAppInstanceGroupRequest(RpcRequest):
 
 	def set_UserInfo(self, UserInfo):  # Struct
 		self.add_body_params("UserInfo", json.dumps(UserInfo))
+	def get_PreOpenAppId(self): # String
+		return self.get_body_params().get('PreOpenAppId')
+
+	def set_PreOpenAppId(self, PreOpenAppId):  # String
+		self.add_body_params('PreOpenAppId', PreOpenAppId)
 	def get_Period(self): # Integer
 		return self.get_body_params().get('Period')
 

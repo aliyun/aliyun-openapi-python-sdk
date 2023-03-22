@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListAppInstanceGroupRequest(RpcRequest):
+class ListAppInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'appstream-center', '2021-09-01', 'ListAppInstanceGroup')
+		RpcRequest.__init__(self, 'appstream-center', '2021-09-01', 'ListAppInstances')
 		self.set_method('POST')
 
 	def get_PageNumber(self): # Integer
@@ -30,36 +30,21 @@ class ListAppInstanceGroupRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_ProductType(self): # String
-		return self.get_query_params().get('ProductType')
-
-	def set_ProductType(self, ProductType):  # String
-		self.add_query_param('ProductType', ProductType)
-	def get_AppCenterImageId(self): # String
-		return self.get_query_params().get('AppCenterImageId')
-
-	def set_AppCenterImageId(self, AppCenterImageId):  # String
-		self.add_query_param('AppCenterImageId', AppCenterImageId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_NodeInstanceType(self): # String
-		return self.get_query_params().get('NodeInstanceType')
-
-	def set_NodeInstanceType(self, NodeInstanceType):  # String
-		self.add_query_param('NodeInstanceType', NodeInstanceType)
-	def get_AppInstanceGroupName(self): # String
-		return self.get_query_params().get('AppInstanceGroupName')
-
-	def set_AppInstanceGroupName(self, AppInstanceGroupName):  # String
-		self.add_query_param('AppInstanceGroupName', AppInstanceGroupName)
 	def get_AppInstanceGroupId(self): # String
 		return self.get_query_params().get('AppInstanceGroupId')
 
 	def set_AppInstanceGroupId(self, AppInstanceGroupId):  # String
 		self.add_query_param('AppInstanceGroupId', AppInstanceGroupId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_AppInstanceId(self): # String
+		return self.get_query_params().get('AppInstanceId')
+
+	def set_AppInstanceId(self, AppInstanceId):  # String
+		self.add_query_param('AppInstanceId', AppInstanceId)
 	def get_Statuss(self): # RepeatList
 		return self.get_body_params().get('Status')
 
