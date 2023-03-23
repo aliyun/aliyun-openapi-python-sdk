@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
+class DescribeLiveRecordNotifyRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainRecordUsageData','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRecordNotifyRecords','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,26 @@ class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_SplitBy(self): # String
-		return self.get_query_params().get('SplitBy')
+	def get_PageNumber(self): # Long
+		return self.get_query_params().get('PageNumber')
 
-	def set_SplitBy(self, SplitBy):  # String
-		self.add_query_param('SplitBy', SplitBy)
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_StreamName(self): # String
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -56,13 +71,8 @@ class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

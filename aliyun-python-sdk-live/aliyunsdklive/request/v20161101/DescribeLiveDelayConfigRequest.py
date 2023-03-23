@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
+class DescribeLiveDelayConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainRecordUsageData','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDelayConfig','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,23 @@ class DescribeLiveDomainRecordUsageDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_Stream(self): # String
+		return self.get_query_params().get('Stream')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_SplitBy(self): # String
-		return self.get_query_params().get('SplitBy')
+	def set_Stream(self, Stream):  # String
+		self.add_query_param('Stream', Stream)
+	def get_App(self): # String
+		return self.get_query_params().get('App')
 
-	def set_SplitBy(self, SplitBy):  # String
-		self.add_query_param('SplitBy', SplitBy)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_App(self, App):  # String
+		self.add_query_param('App', App)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
 
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
