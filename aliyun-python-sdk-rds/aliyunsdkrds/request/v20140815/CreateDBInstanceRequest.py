@@ -146,6 +146,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_Port(self): # String
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)
 	def get_RoleARN(self): # String
 		return self.get_query_params().get('RoleARN')
 
