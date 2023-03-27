@@ -32,6 +32,11 @@ class StartK8sAppPrecheckRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ComponentIds(self): # String
+		return self.get_query_params().get('ComponentIds')
+
+	def set_ComponentIds(self, ComponentIds):  # String
+		self.add_query_param('ComponentIds', ComponentIds)
 	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 

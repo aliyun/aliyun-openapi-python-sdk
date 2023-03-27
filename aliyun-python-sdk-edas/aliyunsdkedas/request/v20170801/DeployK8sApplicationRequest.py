@@ -37,6 +37,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_NasId(self, NasId):  # String
 		self.add_query_param('NasId', NasId)
+	def get_Sidecars(self): # String
+		return self.get_query_params().get('Sidecars')
+
+	def set_Sidecars(self, Sidecars):  # String
+		self.add_query_param('Sidecars', Sidecars)
 	def get_PackageVersionId(self): # String
 		return self.get_query_params().get('PackageVersionId')
 
@@ -137,6 +142,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_Labels(self, Labels):  # String
 		self.add_query_param('Labels', Labels)
+	def get_UserBaseImageUrl(self): # String
+		return self.get_query_params().get('UserBaseImageUrl')
+
+	def set_UserBaseImageUrl(self, UserBaseImageUrl):  # String
+		self.add_query_param('UserBaseImageUrl', UserBaseImageUrl)
 	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
@@ -227,6 +237,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_Liveness(self, Liveness):  # String
 		self.add_query_param('Liveness', Liveness)
+	def get_InitContainers(self): # String
+		return self.get_query_params().get('InitContainers')
+
+	def set_InitContainers(self, InitContainers):  # String
+		self.add_query_param('InitContainers', InitContainers)
 	def get_PackageVersion(self): # String
 		return self.get_query_params().get('PackageVersion')
 

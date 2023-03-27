@@ -37,6 +37,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_NasId(self, NasId):  # String
 		self.add_query_param('NasId', NasId)
+	def get_Sidecars(self): # String
+		return self.get_query_params().get('Sidecars')
+
+	def set_Sidecars(self, Sidecars):  # String
+		self.add_query_param('Sidecars', Sidecars)
 	def get_IntranetSlbId(self): # String
 		return self.get_query_params().get('IntranetSlbId')
 
@@ -122,11 +127,21 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_LocalVolume(self, LocalVolume):  # String
 		self.add_query_param('LocalVolume', LocalVolume)
+	def get_WorkloadType(self): # String
+		return self.get_query_params().get('WorkloadType')
+
+	def set_WorkloadType(self, WorkloadType):  # String
+		self.add_query_param('WorkloadType', WorkloadType)
 	def get_Labels(self): # String
 		return self.get_query_params().get('Labels')
 
 	def set_Labels(self, Labels):  # String
 		self.add_query_param('Labels', Labels)
+	def get_UserBaseImageUrl(self): # String
+		return self.get_query_params().get('UserBaseImageUrl')
+
+	def set_UserBaseImageUrl(self, UserBaseImageUrl):  # String
+		self.add_query_param('UserBaseImageUrl', UserBaseImageUrl)
 	def get_UseBodyEncoding(self): # Boolean
 		return self.get_query_params().get('UseBodyEncoding')
 
@@ -242,6 +257,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_AppConfig(self, AppConfig):  # String
 		self.add_query_param('AppConfig', AppConfig)
+	def get_InitContainers(self): # String
+		return self.get_query_params().get('InitContainers')
+
+	def set_InitContainers(self, InitContainers):  # String
+		self.add_query_param('InitContainers', InitContainers)
 	def get_InternetSlbPort(self): # Integer
 		return self.get_query_params().get('InternetSlbPort')
 
