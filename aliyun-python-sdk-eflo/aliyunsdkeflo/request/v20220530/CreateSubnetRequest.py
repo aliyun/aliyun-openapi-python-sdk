@@ -22,31 +22,45 @@ from aliyunsdkcore.request import RpcRequest
 class CreateSubnetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateSubnet')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateSubnet','eflo')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
-
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)
-	def get_ZoneId(self): # String
-		return self.get_body_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_body_params('ZoneId', ZoneId)
 	def get_Cidr(self): # String
 		return self.get_body_params().get('Cidr')
 
 	def set_Cidr(self, Cidr):  # String
 		self.add_body_params('Cidr', Cidr)
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_VpdId(self): # String
+		return self.get_body_params().get('VpdId')
+
+	def set_VpdId(self, VpdId):  # String
+		self.add_body_params('VpdId', VpdId)
+	def get_ZoneId(self): # String
+		return self.get_body_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_body_params('ZoneId', ZoneId)
+	def get_SubnetName(self): # String
+		return self.get_body_params().get('SubnetName')
+
+	def set_SubnetName(self, SubnetName):  # String
+		self.add_body_params('SubnetName', SubnetName)

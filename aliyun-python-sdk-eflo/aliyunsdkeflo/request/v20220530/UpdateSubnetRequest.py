@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateSubnetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateSubnet')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateSubnet','eflo')
 		self.set_method('POST')
 
 	def get_SubnetId(self): # String
@@ -40,13 +40,13 @@ class UpdateSubnetRequest(RpcRequest):
 
 	def set_VpdId(self, VpdId):  # String
 		self.add_body_params('VpdId', VpdId)
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)
 	def get_ZoneId(self): # String
 		return self.get_body_params().get('ZoneId')
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_body_params('ZoneId', ZoneId)
+	def get_SubnetName(self): # String
+		return self.get_body_params().get('SubnetName')
+
+	def set_SubnetName(self, SubnetName):  # String
+		self.add_body_params('SubnetName', SubnetName)

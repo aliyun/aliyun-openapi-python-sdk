@@ -22,9 +22,19 @@ from aliyunsdkcore.request import RpcRequest
 class ListVpdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpds')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpds','eflo')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
+	def get_VpdName(self): # String
+		return self.get_body_params().get('VpdName')
+
+	def set_VpdName(self, VpdName):  # String
+		self.add_body_params('VpdName', VpdName)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
@@ -35,6 +45,11 @@ class ListVpdsRequest(RpcRequest):
 
 	def set_WithDependence(self, WithDependence):  # Boolean
 		self.add_body_params('WithDependence', WithDependence)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_WithoutVcc(self): # Boolean
 		return self.get_body_params().get('WithoutVcc')
 
@@ -45,6 +60,15 @@ class ListVpdsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_ForSelect(self): # Boolean
 		return self.get_body_params().get('ForSelect')
 
@@ -65,11 +89,6 @@ class ListVpdsRequest(RpcRequest):
 
 	def set_EnablePage(self, EnablePage):  # Boolean
 		self.add_body_params('EnablePage', EnablePage)
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)
 	def get_Status(self): # String
 		return self.get_body_params().get('Status')
 

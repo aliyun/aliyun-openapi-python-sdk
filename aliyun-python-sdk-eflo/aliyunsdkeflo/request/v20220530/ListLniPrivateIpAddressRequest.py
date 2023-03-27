@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVccRequest(RpcRequest):
+class ListLniPrivateIpAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVcc','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListLniPrivateIpAddress','eflo')
 		self.set_method('POST')
 
 	def get_PageNumber(self): # Integer
@@ -30,18 +30,28 @@ class GetVccRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_EnablePage(self): # Boolean
-		return self.get_body_params().get('EnablePage')
-
-	def set_EnablePage(self, EnablePage):  # Boolean
-		self.add_body_params('EnablePage', EnablePage)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_VccId(self): # String
-		return self.get_body_params().get('VccId')
+	def get_Ip(self): # String
+		return self.get_body_params().get('Ip')
 
-	def set_VccId(self, VccId):  # String
-		self.add_body_params('VccId', VccId)
+	def set_Ip(self, Ip):  # String
+		self.add_body_params('Ip', Ip)
+	def get_EnablePage(self): # Boolean
+		return self.get_body_params().get('EnablePage')
+
+	def set_EnablePage(self, EnablePage):  # Boolean
+		self.add_body_params('EnablePage', EnablePage)
+	def get_IpName(self): # String
+		return self.get_body_params().get('IpName')
+
+	def set_IpName(self, IpName):  # String
+		self.add_body_params('IpName', IpName)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_body_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)

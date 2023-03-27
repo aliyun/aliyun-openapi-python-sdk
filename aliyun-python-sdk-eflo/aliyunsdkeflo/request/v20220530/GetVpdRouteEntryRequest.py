@@ -19,17 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class GetVpdRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpdRouteEntry','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_VpdRouteEntryId(self): # String
+		return self.get_body_params().get('VpdRouteEntryId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
+	def set_VpdRouteEntryId(self, VpdRouteEntryId):  # String
+		self.add_body_params('VpdRouteEntryId', VpdRouteEntryId)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 

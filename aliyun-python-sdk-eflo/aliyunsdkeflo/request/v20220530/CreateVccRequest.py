@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateVcc')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateVcc','eflo')
 		self.set_method('POST')
 
 	def get_BgpCidr(self): # String
@@ -45,11 +45,35 @@ class CreateVccRequest(RpcRequest):
 
 	def set_AccessCouldService(self, AccessCouldService):  # Boolean
 		self.add_body_params('AccessCouldService', AccessCouldService)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def get_VccName(self): # String
+		return self.get_body_params().get('VccName')
+
+	def set_VccName(self, VccName):  # String
+		self.add_body_params('VccName', VccName)
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_VccId(self): # String
 		return self.get_body_params().get('VccId')
 
 	def set_VccId(self, VccId):  # String
 		self.add_body_params('VccId', VccId)
+	def get_ConnectionType(self): # String
+		return self.get_body_params().get('ConnectionType')
+
+	def set_ConnectionType(self, ConnectionType):  # String
+		self.add_body_params('ConnectionType', ConnectionType)
 	def get_VSwitchId(self): # String
 		return self.get_body_params().get('VSwitchId')
 
@@ -65,3 +89,8 @@ class CreateVccRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_body_params('VpcId', VpcId)
+	def get_ZoneId(self): # String
+		return self.get_body_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_body_params('ZoneId', ZoneId)

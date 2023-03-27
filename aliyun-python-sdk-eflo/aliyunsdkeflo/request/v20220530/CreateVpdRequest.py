@@ -22,14 +22,24 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVpdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateVpd')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateVpd','eflo')
 		self.set_method('POST')
 
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
 
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
+	def get_VpdName(self): # String
+		return self.get_body_params().get('VpdName')
+
+	def set_VpdName(self, VpdName):  # String
+		self.add_body_params('VpdName', VpdName)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_Cidr(self): # String
 		return self.get_body_params().get('Cidr')
 
@@ -42,11 +52,22 @@ class CreateVpdRequest(RpcRequest):
 		for depth1 in range(len(Subnets)):
 			if Subnets[depth1].get('RegionId') is not None:
 				self.add_body_params('Subnets.' + str(depth1 + 1) + '.RegionId', Subnets[depth1].get('RegionId'))
-			if Subnets[depth1].get('Name') is not None:
-				self.add_body_params('Subnets.' + str(depth1 + 1) + '.Name', Subnets[depth1].get('Name'))
+			if Subnets[depth1].get('ClientToken') is not None:
+				self.add_body_params('Subnets.' + str(depth1 + 1) + '.ClientToken', Subnets[depth1].get('ClientToken'))
 			if Subnets[depth1].get('ZoneId') is not None:
 				self.add_body_params('Subnets.' + str(depth1 + 1) + '.ZoneId', Subnets[depth1].get('ZoneId'))
 			if Subnets[depth1].get('Cidr') is not None:
 				self.add_body_params('Subnets.' + str(depth1 + 1) + '.Cidr', Subnets[depth1].get('Cidr'))
+			if Subnets[depth1].get('SubnetName') is not None:
+				self.add_body_params('Subnets.' + str(depth1 + 1) + '.SubnetName', Subnets[depth1].get('SubnetName'))
 			if Subnets[depth1].get('Type') is not None:
 				self.add_body_params('Subnets.' + str(depth1 + 1) + '.Type', Subnets[depth1].get('Type'))
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

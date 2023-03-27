@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class UpdateErRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateEr','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_ErName(self): # String
+		return self.get_body_params().get('ErName')
+
+	def set_ErName(self, ErName):  # String
+		self.add_body_params('ErName', ErName)

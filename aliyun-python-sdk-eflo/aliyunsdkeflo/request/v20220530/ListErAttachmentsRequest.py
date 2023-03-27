@@ -19,66 +19,62 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListSubnetsRequest(RpcRequest):
+class ListErAttachmentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListSubnets','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListErAttachments','eflo')
 		self.set_method('POST')
 
-	def get_Type(self): # String
-		return self.get_body_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_body_params('Type', Type)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
+	def get_ResourceTenantId(self): # String
+		return self.get_body_params().get('ResourceTenantId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def set_ResourceTenantId(self, ResourceTenantId):  # String
+		self.add_body_params('ResourceTenantId', ResourceTenantId)
+	def get_AutoReceiveAllRoute(self): # Boolean
+		return self.get_body_params().get('AutoReceiveAllRoute')
+
+	def set_AutoReceiveAllRoute(self, AutoReceiveAllRoute):  # Boolean
+		self.add_body_params('AutoReceiveAllRoute', AutoReceiveAllRoute)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_Tags(self): # RepeatList
-		return self.get_body_params().get('Tag')
+	def get_InstanceType(self): # String
+		return self.get_body_params().get('InstanceType')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_SubnetId(self): # String
-		return self.get_body_params().get('SubnetId')
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_body_params('InstanceType', InstanceType)
+	def get_ErAttachmentName(self): # String
+		return self.get_body_params().get('ErAttachmentName')
 
-	def set_SubnetId(self, SubnetId):  # String
-		self.add_body_params('SubnetId', SubnetId)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def set_ErAttachmentName(self, ErAttachmentName):  # String
+		self.add_body_params('ErAttachmentName', ErAttachmentName)
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_ErAttachmentId(self): # String
+		return self.get_body_params().get('ErAttachmentId')
+
+	def set_ErAttachmentId(self, ErAttachmentId):  # String
+		self.add_body_params('ErAttachmentId', ErAttachmentId)
 	def get_EnablePage(self): # Boolean
 		return self.get_body_params().get('EnablePage')
 
 	def set_EnablePage(self, EnablePage):  # Boolean
 		self.add_body_params('EnablePage', EnablePage)
-	def get_ZoneId(self): # String
-		return self.get_body_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_body_params('ZoneId', ZoneId)
-	def get_SubnetName(self): # String
-		return self.get_body_params().get('SubnetName')
-
-	def set_SubnetName(self, SubnetName):  # String
-		self.add_body_params('SubnetName', SubnetName)
 	def get_Status(self): # String
 		return self.get_body_params().get('Status')
 

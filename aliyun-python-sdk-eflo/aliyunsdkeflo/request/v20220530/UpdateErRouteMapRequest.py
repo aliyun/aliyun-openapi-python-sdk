@@ -19,19 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class UpdateErRouteMapRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateErRouteMap','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_ErRouteMapId(self): # String
+		return self.get_body_params().get('ErRouteMapId')
+
+	def set_ErRouteMapId(self, ErRouteMapId):  # String
+		self.add_body_params('ErRouteMapId', ErRouteMapId)
+	def get_ErRouteMapName(self): # String
+		return self.get_body_params().get('ErRouteMapName')
+
+	def set_ErRouteMapName(self, ErRouteMapName):  # String
+		self.add_body_params('ErRouteMapName', ErRouteMapName)

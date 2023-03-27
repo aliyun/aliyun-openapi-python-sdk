@@ -22,21 +22,21 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateVpdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVpd')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateVpd','eflo')
 		self.set_method('POST')
 
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
 
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
+	def get_VpdName(self): # String
+		return self.get_body_params().get('VpdName')
+
+	def set_VpdName(self, VpdName):  # String
+		self.add_body_params('VpdName', VpdName)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 
 	def set_VpdId(self, VpdId):  # String
 		self.add_body_params('VpdId', VpdId)
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)

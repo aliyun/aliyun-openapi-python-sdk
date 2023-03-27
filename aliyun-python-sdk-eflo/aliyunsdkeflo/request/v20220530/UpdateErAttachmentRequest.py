@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class UpdateErAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateErAttachment','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_ErAttachmentId(self): # String
+		return self.get_body_params().get('ErAttachmentId')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_ErAttachmentId(self, ErAttachmentId):  # String
+		self.add_body_params('ErAttachmentId', ErAttachmentId)
+	def get_ErAttachmentName(self): # String
+		return self.get_body_params().get('ErAttachmentName')
+
+	def set_ErAttachmentName(self, ErAttachmentName):  # String
+		self.add_body_params('ErAttachmentName', ErAttachmentName)

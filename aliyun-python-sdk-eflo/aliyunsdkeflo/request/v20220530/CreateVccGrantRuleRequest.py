@@ -19,19 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class CreateVccGrantRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateVccGrantRule','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_GrantTenantId(self): # String
+		return self.get_body_params().get('GrantTenantId')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_GrantTenantId(self, GrantTenantId):  # String
+		self.add_body_params('GrantTenantId', GrantTenantId)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
+		return self.get_body_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_body_params('InstanceName', InstanceName)

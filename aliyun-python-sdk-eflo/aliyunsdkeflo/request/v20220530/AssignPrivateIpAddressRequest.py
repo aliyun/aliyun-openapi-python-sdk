@@ -19,19 +19,34 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVpdRequest(RpcRequest):
+class AssignPrivateIpAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpd','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'AssignPrivateIpAddress','eflo')
 		self.set_method('POST')
 
+	def get_SubnetId(self): # String
+		return self.get_body_params().get('SubnetId')
+
+	def set_SubnetId(self, SubnetId):  # String
+		self.add_body_params('SubnetId', SubnetId)
 	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-	def get_VpdId(self): # String
-		return self.get_body_params().get('VpdId')
+	def get_AssignMac(self): # Boolean
+		return self.get_body_params().get('AssignMac')
 
-	def set_VpdId(self, VpdId):  # String
-		self.add_body_params('VpdId', VpdId)
+	def set_AssignMac(self, AssignMac):  # Boolean
+		self.add_body_params('AssignMac', AssignMac)
+	def get_PrivateIpAddress(self): # String
+		return self.get_body_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_body_params('PrivateIpAddress', PrivateIpAddress)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_body_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)

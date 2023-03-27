@@ -19,71 +19,52 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListVccsRequest(RpcRequest):
+class ListVpdRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVccs','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpdRouteEntries','eflo')
 		self.set_method('POST')
 
-	def get_CenId(self): # String
-		return self.get_body_params().get('CenId')
-
-	def set_CenId(self, CenId):  # String
-		self.add_body_params('CenId', CenId)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
+	def get_RouteType(self): # String
+		return self.get_body_params().get('RouteType')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def set_RouteType(self, RouteType):  # String
+		self.add_body_params('RouteType', RouteType)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_Tags(self): # RepeatList
-		return self.get_body_params().get('Tag')
+	def get_NextHopId(self): # String
+		return self.get_body_params().get('NextHopId')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_VccId(self): # String
-		return self.get_body_params().get('VccId')
+	def set_NextHopId(self, NextHopId):  # String
+		self.add_body_params('NextHopId', NextHopId)
+	def get_NextHopType(self): # String
+		return self.get_body_params().get('NextHopType')
 
-	def set_VccId(self, VccId):  # String
-		self.add_body_params('VccId', VccId)
-	def get_Bandwidth(self): # Integer
-		return self.get_body_params().get('Bandwidth')
+	def set_NextHopType(self, NextHopType):  # String
+		self.add_body_params('NextHopType', NextHopType)
+	def get_VpdRouteEntryId(self): # String
+		return self.get_body_params().get('VpdRouteEntryId')
 
-	def set_Bandwidth(self, Bandwidth):  # Integer
-		self.add_body_params('Bandwidth', Bandwidth)
-	def get_ExStatus(self): # String
-		return self.get_body_params().get('ExStatus')
+	def set_VpdRouteEntryId(self, VpdRouteEntryId):  # String
+		self.add_body_params('VpdRouteEntryId', VpdRouteEntryId)
+	def get_DestinationCidrBlock(self): # String
+		return self.get_body_params().get('DestinationCidrBlock')
 
-	def set_ExStatus(self, ExStatus):  # String
-		self.add_body_params('ExStatus', ExStatus)
-	def get_FilterErId(self): # String
-		return self.get_body_params().get('FilterErId')
-
-	def set_FilterErId(self, FilterErId):  # String
-		self.add_body_params('FilterErId', FilterErId)
+	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
+		self.add_body_params('DestinationCidrBlock', DestinationCidrBlock)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 
 	def set_VpdId(self, VpdId):  # String
 		self.add_body_params('VpdId', VpdId)
-	def get_VpcId(self): # String
-		return self.get_body_params().get('VpcId')
-
-	def set_VpcId(self, VpcId):  # String
-		self.add_body_params('VpcId', VpcId)
 	def get_EnablePage(self): # Boolean
 		return self.get_body_params().get('EnablePage')
 

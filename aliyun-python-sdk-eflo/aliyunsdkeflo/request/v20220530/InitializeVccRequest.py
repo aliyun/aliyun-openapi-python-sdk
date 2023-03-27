@@ -22,6 +22,11 @@ from aliyunsdkcore.request import RpcRequest
 class InitializeVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'InitializeVcc')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'InitializeVcc','eflo')
 		self.set_method('POST')
 
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
