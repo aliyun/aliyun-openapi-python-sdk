@@ -108,6 +108,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationPassword(self, LaunchConfigurationPassword):  # String
 		self.add_query_param('LaunchConfiguration.Password', LaunchConfigurationPassword)
+	def get_LaunchConfigurationAutoReleaseTime(self): # String
+		return self.get_query_params().get('LaunchConfiguration.AutoReleaseTime')
+
+	def set_LaunchConfigurationAutoReleaseTime(self, LaunchConfigurationAutoReleaseTime):  # String
+		self.add_query_param('LaunchConfiguration.AutoReleaseTime', LaunchConfigurationAutoReleaseTime)
 	def get_PayAsYouGoAllocationStrategy(self): # String
 		return self.get_query_params().get('PayAsYouGoAllocationStrategy')
 

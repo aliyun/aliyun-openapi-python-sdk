@@ -36,11 +36,6 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SourceRegionId(self): # String
-		return self.get_query_params().get('SourceRegionId')
-
-	def set_SourceRegionId(self, SourceRegionId):  # String
-		self.add_query_param('SourceRegionId', SourceRegionId)
 	def get_InitLocalDisk(self): # Boolean
 		return self.get_query_params().get('InitLocalDisk')
 

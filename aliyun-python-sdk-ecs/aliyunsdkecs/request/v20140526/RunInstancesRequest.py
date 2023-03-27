@@ -244,6 +244,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
 			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
+	def get_NetworkOptions(self): # Struct
+		return self.get_query_params().get('NetworkOptions')
+
+	def set_NetworkOptions(self, NetworkOptions):  # Struct
+		if NetworkOptions.get('EnableJumboFrame') is not None:
+			self.add_query_param('NetworkOptions.EnableJumboFrame', NetworkOptions.get('EnableJumboFrame'))
 	def get_SystemDiskSize(self): # String
 		return self.get_query_params().get('SystemDisk.Size')
 

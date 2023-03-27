@@ -71,6 +71,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_EnableJumboFrame(self): # Boolean
+		return self.get_query_params().get('EnableJumboFrame')
+
+	def set_EnableJumboFrame(self, EnableJumboFrame):  # Boolean
+		self.add_query_param('EnableJumboFrame', EnableJumboFrame)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

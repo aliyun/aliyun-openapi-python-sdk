@@ -1,3 +1,7 @@
+2023-03-27 Version: 4.24.31
+- Add dedicated block stroage cluster ModifyDiskSpec.
+- Support jumbo frame.
+
 2023-02-13 Version: 4.24.30
 - Support TagPolicy Verify NoTag.
 - Fixed bugs for DescribeDemands error code.
