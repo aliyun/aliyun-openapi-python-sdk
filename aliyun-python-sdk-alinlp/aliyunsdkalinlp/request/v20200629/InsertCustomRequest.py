@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalinlp.endpoint import endpoint_data
 
-class GetWsCustomizedChEcomContentRequest(RpcRequest):
+class InsertCustomRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWsCustomizedChEcomContent','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'InsertCustom','alinlp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,33 @@ class GetWsCustomizedChEcomContentRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CustomUrl(self): # String
+		return self.get_body_params().get('CustomUrl')
+
+	def set_CustomUrl(self, CustomUrl):  # String
+		self.add_body_params('CustomUrl', CustomUrl)
+	def get_RegUrl(self): # String
+		return self.get_body_params().get('RegUrl')
+
+	def set_RegUrl(self, RegUrl):  # String
+		self.add_body_params('RegUrl', RegUrl)
 	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 
 	def set_ServiceCode(self, ServiceCode):  # String
 		self.add_body_params('ServiceCode', ServiceCode)
-	def get_TokenizerId(self): # String
-		return self.get_body_params().get('TokenizerId')
+	def get_RegFileName(self): # String
+		return self.get_body_params().get('RegFileName')
 
-	def set_TokenizerId(self, TokenizerId):  # String
-		self.add_body_params('TokenizerId', TokenizerId)
-	def get_Text(self): # String
-		return self.get_body_params().get('Text')
+	def set_RegFileName(self, RegFileName):  # String
+		self.add_body_params('RegFileName', RegFileName)
+	def get_CustomFileName(self): # String
+		return self.get_body_params().get('CustomFileName')
 
-	def set_Text(self, Text):  # String
-		self.add_body_params('Text', Text)
-	def get_OutType(self): # String
-		return self.get_body_params().get('OutType')
+	def set_CustomFileName(self, CustomFileName):  # String
+		self.add_body_params('CustomFileName', CustomFileName)
+	def get_ApiId(self): # Integer
+		return self.get_body_params().get('ApiId')
 
-	def set_OutType(self, OutType):  # String
-		self.add_body_params('OutType', OutType)
+	def set_ApiId(self, ApiId):  # Integer
+		self.add_body_params('ApiId', ApiId)

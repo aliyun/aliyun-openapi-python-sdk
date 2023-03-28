@@ -23,7 +23,7 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetPosChGeneralRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetPosChGeneral')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetPosChGeneral','alinlp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

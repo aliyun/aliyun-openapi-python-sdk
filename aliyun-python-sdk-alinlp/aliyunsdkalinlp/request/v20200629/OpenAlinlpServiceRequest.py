@@ -23,7 +23,7 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class OpenAlinlpServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'OpenAlinlpService')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'OpenAlinlpService','alinlp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkalinlp.endpoint import endpoint_data
 class GetWeChEntertainmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWeChEntertainment')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWeChEntertainment','alinlp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
