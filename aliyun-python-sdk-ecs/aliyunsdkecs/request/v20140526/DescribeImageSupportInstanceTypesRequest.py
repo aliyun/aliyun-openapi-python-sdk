@@ -31,6 +31,11 @@ class DescribeImageSupportInstanceTypesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ActionType(self): # String
+		return self.get_query_params().get('ActionType')
+
+	def set_ActionType(self, ActionType):  # String
+		self.add_query_param('ActionType', ActionType)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 

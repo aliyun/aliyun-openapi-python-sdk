@@ -87,6 +87,12 @@ class RunInstancesRequest(RpcRequest):
 			self.add_query_param('SystemDisk.KMSKeyId', SystemDisk.get('KMSKeyId'))
 		if SystemDisk.get('EncryptAlgorithm') is not None:
 			self.add_query_param('SystemDisk.EncryptAlgorithm', SystemDisk.get('EncryptAlgorithm'))
+	def get_ImageOptions(self): # Struct
+		return self.get_query_params().get('ImageOptions')
+
+	def set_ImageOptions(self, ImageOptions):  # Struct
+		if ImageOptions.get('LoginAsNonRoot') is not None:
+			self.add_query_param('ImageOptions.LoginAsNonRoot', ImageOptions.get('LoginAsNonRoot'))
 	def get_DeploymentSetGroupNo(self): # Integer
 		return self.get_query_params().get('DeploymentSetGroupNo')
 
