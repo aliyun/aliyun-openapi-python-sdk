@@ -40,11 +40,6 @@ class DeleteVpdGrantRuleRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-	def get_InstanceName(self): # String
-		return self.get_body_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_body_params('InstanceName', InstanceName)
 	def get_GrantRuleId(self): # String
 		return self.get_body_params().get('GrantRuleId')
 

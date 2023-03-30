@@ -1,3 +1,6 @@
+2023-03-30 Version: 1.0.3
+- Supported Vpd,subnet,networkInterface add parameter require limit.
+
 2023-03-27 Version: 1.0.2
 - Second publish.
 
