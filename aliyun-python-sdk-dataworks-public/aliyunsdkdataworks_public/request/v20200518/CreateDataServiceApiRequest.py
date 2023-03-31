@@ -71,6 +71,11 @@ class CreateDataServiceApiRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_body_params('TenantId', TenantId)
+	def get_RequestContentType(self): # Integer
+		return self.get_body_params().get('RequestContentType')
+
+	def set_RequestContentType(self, RequestContentType):  # Integer
+		self.add_body_params('RequestContentType', RequestContentType)
 	def get_Protocols(self): # String
 		return self.get_body_params().get('Protocols')
 
