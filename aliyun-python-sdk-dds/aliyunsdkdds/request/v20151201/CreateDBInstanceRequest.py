@@ -75,6 +75,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
 		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_GlobalSecurityGroupIds(self): # String
+		return self.get_query_params().get('GlobalSecurityGroupIds')
+
+	def set_GlobalSecurityGroupIds(self, GlobalSecurityGroupIds):  # String
+		self.add_query_param('GlobalSecurityGroupIds', GlobalSecurityGroupIds)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 

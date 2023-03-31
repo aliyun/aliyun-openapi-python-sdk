@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ModifyDBInstanceConnectionStringRequest(RpcRequest):
+class ModifyGlobalSecurityIPGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceConnectionString','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyGlobalSecurityIPGroup','dds')
 		self.set_method('POST')
 
 	def get_ResourceOwnerId(self): # Long
@@ -30,21 +30,21 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_GIpList(self): # String
+		return self.get_query_params().get('GIpList')
+
+	def set_GIpList(self, GIpList):  # String
+		self.add_query_param('GIpList', GIpList)
+	def get_GlobalSecurityGroupId(self): # String
+		return self.get_query_params().get('GlobalSecurityGroupId')
+
+	def set_GlobalSecurityGroupId(self, GlobalSecurityGroupId):  # String
+		self.add_query_param('GlobalSecurityGroupId', GlobalSecurityGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -55,23 +55,13 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_NewPort(self): # Integer
-		return self.get_query_params().get('NewPort')
-
-	def set_NewPort(self, NewPort):  # Integer
-		self.add_query_param('NewPort', NewPort)
-	def get_NewConnectionString(self): # String
-		return self.get_query_params().get('NewConnectionString')
-
-	def set_NewConnectionString(self, NewConnectionString):  # String
-		self.add_query_param('NewConnectionString', NewConnectionString)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_CurrentConnectionString(self): # String
-		return self.get_query_params().get('CurrentConnectionString')
+	def get_GlobalIgName(self): # String
+		return self.get_query_params().get('GlobalIgName')
 
-	def set_CurrentConnectionString(self, CurrentConnectionString):  # String
-		self.add_query_param('CurrentConnectionString', CurrentConnectionString)
+	def set_GlobalIgName(self, GlobalIgName):  # String
+		self.add_query_param('GlobalIgName', GlobalIgName)
