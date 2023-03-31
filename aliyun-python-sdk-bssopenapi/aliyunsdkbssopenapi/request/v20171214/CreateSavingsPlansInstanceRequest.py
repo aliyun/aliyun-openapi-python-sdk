@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
+import json
 
 class CreateSavingsPlansInstanceRequest(RpcRequest):
 
@@ -66,6 +67,11 @@ class CreateSavingsPlansInstanceRequest(RpcRequest):
 
 	def set_SpecType(self, SpecType):  # String
 		self.add_query_param('SpecType', SpecType)
+	def get_ExtendMap(self): # Map
+		return self.get_query_params().get('ExtendMap')
+
+	def set_ExtendMap(self, ExtendMap):  # Map
+		self.add_query_param("ExtendMap", json.dumps(ExtendMap))
 	def get_PayMode(self): # String
 		return self.get_query_params().get('PayMode')
 
