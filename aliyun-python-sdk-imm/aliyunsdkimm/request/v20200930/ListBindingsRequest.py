@@ -31,11 +31,6 @@ class ListBindingsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -46,6 +41,11 @@ class ListBindingsRequest(RpcRequest):
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

@@ -37,41 +37,21 @@ class CreateImageModerationTaskRequest(RpcRequest):
 
 	def set_UserData(self, UserData):  # String
 		self.add_query_param('UserData', UserData)
+	def get_Notification(self): # Struct
+		return self.get_query_params().get('Notification')
+
+	def set_Notification(self, Notification):  # Struct
+		self.add_query_param("Notification", json.dumps(Notification))
 	def get_ProjectName(self): # String
 		return self.get_query_params().get('ProjectName')
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_query_param('ProjectName', ProjectName)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_SourceURI(self): # String
-		return self.get_query_params().get('SourceURI')
-
-	def set_SourceURI(self, SourceURI):  # String
-		self.add_query_param('SourceURI', SourceURI)
-	def get_Scenes(self): # Array
-		return self.get_query_params().get('Scenes')
-
-	def set_Scenes(self, Scenes):  # Array
-		self.add_query_param("Scenes", json.dumps(Scenes))
 	def get_MaxFrames(self): # Long
 		return self.get_query_params().get('MaxFrames')
 
 	def set_MaxFrames(self, MaxFrames):  # Long
 		self.add_query_param('MaxFrames', MaxFrames)
-	def get_Interval(self): # Long
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # Long
-		self.add_query_param('Interval', Interval)
 	def get_CredentialConfig(self): # Struct
 		return self.get_query_params().get('CredentialConfig')
 
@@ -87,3 +67,18 @@ class CreateImageModerationTaskRequest(RpcRequest):
 
 	def set_Tags(self, Tags):  # Map
 		self.add_query_param("Tags", json.dumps(Tags))
+	def get_SourceURI(self): # String
+		return self.get_query_params().get('SourceURI')
+
+	def set_SourceURI(self, SourceURI):  # String
+		self.add_query_param('SourceURI', SourceURI)
+	def get_Scenes(self): # Array
+		return self.get_query_params().get('Scenes')
+
+	def set_Scenes(self, Scenes):  # Array
+		self.add_query_param("Scenes", json.dumps(Scenes))
+	def get_Interval(self): # Long
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # Long
+		self.add_query_param('Interval', Interval)

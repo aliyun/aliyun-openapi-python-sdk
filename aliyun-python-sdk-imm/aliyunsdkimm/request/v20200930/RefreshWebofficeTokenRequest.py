@@ -32,11 +32,6 @@ class RefreshWebofficeTokenRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_AccessToken(self): # String
 		return self.get_query_params().get('AccessToken')
 
@@ -47,6 +42,11 @@ class RefreshWebofficeTokenRequest(RpcRequest):
 
 	def set_RefreshToken(self, RefreshToken):  # String
 		self.add_query_param('RefreshToken', RefreshToken)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_CredentialConfig(self): # Struct
 		return self.get_query_params().get('CredentialConfig')
 

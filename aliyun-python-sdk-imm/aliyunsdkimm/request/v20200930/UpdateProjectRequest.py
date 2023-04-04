@@ -31,26 +31,46 @@ class UpdateProjectRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EngineConcurrency(self): # Long
-		return self.get_query_params().get('EngineConcurrency')
-
-	def set_EngineConcurrency(self, EngineConcurrency):  # Long
-		self.add_query_param('EngineConcurrency', EngineConcurrency)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_DatasetMaxBindCount(self): # Long
 		return self.get_query_params().get('DatasetMaxBindCount')
 
 	def set_DatasetMaxBindCount(self, DatasetMaxBindCount):  # Long
 		self.add_query_param('DatasetMaxBindCount', DatasetMaxBindCount)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_DatasetMaxRelationCount(self): # Long
+		return self.get_query_params().get('DatasetMaxRelationCount')
+
+	def set_DatasetMaxRelationCount(self, DatasetMaxRelationCount):  # Long
+		self.add_query_param('DatasetMaxRelationCount', DatasetMaxRelationCount)
+	def get_DatasetMaxFileCount(self): # Long
+		return self.get_query_params().get('DatasetMaxFileCount')
+
+	def set_DatasetMaxFileCount(self, DatasetMaxFileCount):  # Long
+		self.add_query_param('DatasetMaxFileCount', DatasetMaxFileCount)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_ProjectMaxDatasetCount(self): # Long
 		return self.get_query_params().get('ProjectMaxDatasetCount')
 
 	def set_ProjectMaxDatasetCount(self, ProjectMaxDatasetCount):  # Long
 		self.add_query_param('ProjectMaxDatasetCount', ProjectMaxDatasetCount)
+	def get_DatasetMaxEntityCount(self): # Long
+		return self.get_query_params().get('DatasetMaxEntityCount')
+
+	def set_DatasetMaxEntityCount(self, DatasetMaxEntityCount):  # Long
+		self.add_query_param('DatasetMaxEntityCount', DatasetMaxEntityCount)
+	def get_TemplateId(self): # String
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_query_param('TemplateId', TemplateId)
 	def get_DatasetMaxTotalFileSize(self): # Long
 		return self.get_query_params().get('DatasetMaxTotalFileSize')
 
@@ -61,33 +81,3 @@ class UpdateProjectRequest(RpcRequest):
 
 	def set_ServiceRole(self, ServiceRole):  # String
 		self.add_query_param('ServiceRole', ServiceRole)
-	def get_ProjectQueriesPerSecond(self): # Long
-		return self.get_query_params().get('ProjectQueriesPerSecond')
-
-	def set_ProjectQueriesPerSecond(self, ProjectQueriesPerSecond):  # Long
-		self.add_query_param('ProjectQueriesPerSecond', ProjectQueriesPerSecond)
-	def get_DatasetMaxRelationCount(self): # Long
-		return self.get_query_params().get('DatasetMaxRelationCount')
-
-	def set_DatasetMaxRelationCount(self, DatasetMaxRelationCount):  # Long
-		self.add_query_param('DatasetMaxRelationCount', DatasetMaxRelationCount)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_DatasetMaxEntityCount(self): # Long
-		return self.get_query_params().get('DatasetMaxEntityCount')
-
-	def set_DatasetMaxEntityCount(self, DatasetMaxEntityCount):  # Long
-		self.add_query_param('DatasetMaxEntityCount', DatasetMaxEntityCount)
-	def get_DatasetMaxFileCount(self): # Long
-		return self.get_query_params().get('DatasetMaxFileCount')
-
-	def set_DatasetMaxFileCount(self, DatasetMaxFileCount):  # Long
-		self.add_query_param('DatasetMaxFileCount', DatasetMaxFileCount)
-	def get_TemplateId(self): # String
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self, TemplateId):  # String
-		self.add_query_param('TemplateId', TemplateId)

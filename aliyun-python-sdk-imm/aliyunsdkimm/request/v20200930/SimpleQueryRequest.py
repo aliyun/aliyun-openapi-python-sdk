@@ -32,48 +32,48 @@ class SimpleQueryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_WithFields(self): # Array
-		return self.get_query_params().get('WithFields')
-
-	def set_WithFields(self, WithFields):  # Array
-		self.add_query_param("WithFields", json.dumps(WithFields))
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_Query(self): # Struct
-		return self.get_query_params().get('Query')
-
-	def set_Query(self, Query):  # Struct
-		self.add_query_param("Query", json.dumps(Query))
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
-	def get_Sort(self): # String
-		return self.get_query_params().get('Sort')
-
-	def set_Sort(self, Sort):  # String
-		self.add_query_param('Sort', Sort)
-	def get_Aggregations(self): # Array
-		return self.get_query_params().get('Aggregations')
-
-	def set_Aggregations(self, Aggregations):  # Array
-		self.add_query_param("Aggregations", json.dumps(Aggregations))
 	def get_Order(self): # String
 		return self.get_query_params().get('Order')
 
 	def set_Order(self, Order):  # String
 		self.add_query_param('Order', Order)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_Query(self): # Struct
+		return self.get_query_params().get('Query')
+
+	def set_Query(self, Query):  # Struct
+		self.add_query_param("Query", json.dumps(Query))
+	def get_Sort(self): # String
+		return self.get_query_params().get('Sort')
+
+	def set_Sort(self, Sort):  # String
+		self.add_query_param('Sort', Sort)
+	def get_WithFields(self): # Array
+		return self.get_query_params().get('WithFields')
+
+	def set_WithFields(self, WithFields):  # Array
+		self.add_query_param("WithFields", json.dumps(WithFields))
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_Aggregations(self): # Array
+		return self.get_query_params().get('Aggregations')
+
+	def set_Aggregations(self, Aggregations):  # Array
+		self.add_query_param("Aggregations", json.dumps(Aggregations))

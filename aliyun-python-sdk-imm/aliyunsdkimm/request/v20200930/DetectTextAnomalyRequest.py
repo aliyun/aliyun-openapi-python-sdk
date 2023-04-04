@@ -31,13 +31,13 @@ class DetectTextAnomalyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_Content(self): # String
 		return self.get_query_params().get('Content')
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)

@@ -37,21 +37,11 @@ class CreateFigureClustersMergingTaskRequest(RpcRequest):
 
 	def set_UserData(self, UserData):  # String
 		self.add_query_param('UserData', UserData)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
+	def get_Notification(self): # Struct
+		return self.get_query_params().get('Notification')
 
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def set_Notification(self, Notification):  # Struct
+		self.add_query_param("Notification", json.dumps(Notification))
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
@@ -62,13 +52,23 @@ class CreateFigureClustersMergingTaskRequest(RpcRequest):
 
 	def set_From(self, _From):  # String
 		self.add_query_param('From', _From)
-	def get_To(self): # String
-		return self.get_query_params().get('To')
+	def get_Froms(self): # Array
+		return self.get_query_params().get('Froms')
 
-	def set_To(self, To):  # String
-		self.add_query_param('To', To)
+	def set_Froms(self, Froms):  # Array
+		self.add_query_param("Froms", json.dumps(Froms))
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_Tags(self): # Map
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self, Tags):  # Map
 		self.add_query_param("Tags", json.dumps(Tags))
+	def get_To(self): # String
+		return self.get_query_params().get('To')
+
+	def set_To(self, To):  # String
+		self.add_query_param('To', To)

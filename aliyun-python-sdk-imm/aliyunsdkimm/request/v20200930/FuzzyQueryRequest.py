@@ -31,28 +31,38 @@ class FuzzyQueryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_Query(self): # String
-		return self.get_query_params().get('Query')
-
-	def set_Query(self, Query):  # String
-		self.add_query_param('Query', Query)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
+	def get_Order(self): # String
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_query_param('Order', Order)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_Query(self): # String
+		return self.get_query_params().get('Query')
+
+	def set_Query(self, Query):  # String
+		self.add_query_param('Query', Query)
+	def get_Sort(self): # String
+		return self.get_query_params().get('Sort')
+
+	def set_Sort(self, Sort):  # String
+		self.add_query_param('Sort', Sort)
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

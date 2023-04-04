@@ -32,16 +32,16 @@ class RemoveStoryFilesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_body_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_body_params('ProjectName', ProjectName)
 	def get_DatasetName(self): # String
 		return self.get_body_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_body_params('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_body_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_body_params('ProjectName', ProjectName)
 	def get_Files(self): # Array
 		return self.get_body_params().get('Files')
 

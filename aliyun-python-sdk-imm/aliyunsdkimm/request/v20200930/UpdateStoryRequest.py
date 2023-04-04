@@ -32,26 +32,26 @@ class UpdateStoryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Cover(self): # Struct
-		return self.get_body_params().get('Cover')
-
-	def set_Cover(self, Cover):  # Struct
-		self.add_body_params("Cover", json.dumps(Cover))
-	def get_ProjectName(self): # String
-		return self.get_body_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_body_params('ProjectName', ProjectName)
 	def get_CustomLabels(self): # String
 		return self.get_body_params().get('CustomLabels')
 
 	def set_CustomLabels(self, CustomLabels):  # String
 		self.add_body_params('CustomLabels', CustomLabels)
+	def get_Cover(self): # Struct
+		return self.get_body_params().get('Cover')
+
+	def set_Cover(self, Cover):  # Struct
+		self.add_body_params("Cover", json.dumps(Cover))
 	def get_DatasetName(self): # String
 		return self.get_body_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_body_params('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_body_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_body_params('ProjectName', ProjectName)
 	def get_CustomId(self): # String
 		return self.get_body_params().get('CustomId')
 

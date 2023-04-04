@@ -36,16 +36,16 @@ class StopBindingRequest(RpcRequest):
 
 	def set_Reason(self, Reason):  # String
 		self.add_query_param('Reason', Reason)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_URI(self): # String
 		return self.get_query_params().get('URI')
 

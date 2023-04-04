@@ -31,23 +31,23 @@ class DeleteBindingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_Cleanup(self): # Boolean
-		return self.get_query_params().get('Cleanup')
-
-	def set_Cleanup(self, Cleanup):  # Boolean
-		self.add_query_param('Cleanup', Cleanup)
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_URI(self): # String
 		return self.get_query_params().get('URI')
 
 	def set_URI(self, URI):  # String
 		self.add_query_param('URI', URI)
+	def get_Cleanup(self): # Boolean
+		return self.get_query_params().get('Cleanup')
+
+	def set_Cleanup(self, Cleanup):  # Boolean
+		self.add_query_param('Cleanup', Cleanup)

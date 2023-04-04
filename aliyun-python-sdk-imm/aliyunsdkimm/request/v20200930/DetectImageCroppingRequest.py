@@ -32,23 +32,23 @@ class DetectImageCroppingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_SourceURI(self): # String
-		return self.get_query_params().get('SourceURI')
-
-	def set_SourceURI(self, SourceURI):  # String
-		self.add_query_param('SourceURI', SourceURI)
 	def get_AspectRatios(self): # String
 		return self.get_query_params().get('AspectRatios')
 
 	def set_AspectRatios(self, AspectRatios):  # String
 		self.add_query_param('AspectRatios', AspectRatios)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_CredentialConfig(self): # Struct
 		return self.get_query_params().get('CredentialConfig')
 
 	def set_CredentialConfig(self, CredentialConfig):  # Struct
 		self.add_query_param("CredentialConfig", json.dumps(CredentialConfig))
+	def get_SourceURI(self): # String
+		return self.get_query_params().get('SourceURI')
+
+	def set_SourceURI(self, SourceURI):  # String
+		self.add_query_param('SourceURI', SourceURI)

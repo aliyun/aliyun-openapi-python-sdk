@@ -32,16 +32,26 @@ class ListTasksRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
+	def get_StartTimeRange(self): # Struct
+		return self.get_query_params().get('StartTimeRange')
 
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
+	def set_StartTimeRange(self, StartTimeRange):  # Struct
+		self.add_query_param("StartTimeRange", json.dumps(StartTimeRange))
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_Order(self): # String
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_query_param('Order', Order)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_TaskTypes(self): # Array
 		return self.get_query_params().get('TaskTypes')
 
@@ -52,6 +62,11 @@ class ListTasksRequest(RpcRequest):
 
 	def set_EndTimeRange(self, EndTimeRange):  # Struct
 		self.add_query_param("EndTimeRange", json.dumps(EndTimeRange))
+	def get_Sort(self): # String
+		return self.get_query_params().get('Sort')
+
+	def set_Sort(self, Sort):  # String
+		self.add_query_param('Sort', Sort)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
@@ -62,23 +77,8 @@ class ListTasksRequest(RpcRequest):
 
 	def set_TagSelector(self, TagSelector):  # String
 		self.add_query_param('TagSelector', TagSelector)
-	def get_Sort(self): # String
-		return self.get_query_params().get('Sort')
-
-	def set_Sort(self, Sort):  # String
-		self.add_query_param('Sort', Sort)
-	def get_Order(self): # String
-		return self.get_query_params().get('Order')
-
-	def set_Order(self, Order):  # String
-		self.add_query_param('Order', Order)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
 	def set_Status(self, Status):  # String
 		self.add_query_param('Status', Status)
-	def get_StartTimeRange(self): # Struct
-		return self.get_query_params().get('StartTimeRange')
-
-	def set_StartTimeRange(self, StartTimeRange):  # Struct
-		self.add_query_param("StartTimeRange", json.dumps(StartTimeRange))

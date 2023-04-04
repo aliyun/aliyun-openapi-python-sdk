@@ -31,21 +31,21 @@ class ListDatasetsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
 	def get_Prefix(self): # String
 		return self.get_query_params().get('Prefix')
 
 	def set_Prefix(self, Prefix):  # String
 		self.add_query_param('Prefix', Prefix)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

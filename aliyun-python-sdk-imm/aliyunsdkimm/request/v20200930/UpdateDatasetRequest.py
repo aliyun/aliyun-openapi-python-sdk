@@ -31,21 +31,16 @@ class UpdateDatasetRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_DatasetMaxBindCount(self): # Long
 		return self.get_query_params().get('DatasetMaxBindCount')
 
 	def set_DatasetMaxBindCount(self, DatasetMaxBindCount):  # Long
 		self.add_query_param('DatasetMaxBindCount', DatasetMaxBindCount)
-	def get_DatasetMaxTotalFileSize(self): # Long
-		return self.get_query_params().get('DatasetMaxTotalFileSize')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_DatasetMaxTotalFileSize(self, DatasetMaxTotalFileSize):  # Long
-		self.add_query_param('DatasetMaxTotalFileSize', DatasetMaxTotalFileSize)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_DatasetMaxRelationCount(self): # Long
 		return self.get_query_params().get('DatasetMaxRelationCount')
 
@@ -56,23 +51,28 @@ class UpdateDatasetRequest(RpcRequest):
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_DatasetMaxEntityCount(self): # Long
-		return self.get_query_params().get('DatasetMaxEntityCount')
-
-	def set_DatasetMaxEntityCount(self, DatasetMaxEntityCount):  # Long
-		self.add_query_param('DatasetMaxEntityCount', DatasetMaxEntityCount)
 	def get_DatasetMaxFileCount(self): # Long
 		return self.get_query_params().get('DatasetMaxFileCount')
 
 	def set_DatasetMaxFileCount(self, DatasetMaxFileCount):  # Long
 		self.add_query_param('DatasetMaxFileCount', DatasetMaxFileCount)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_DatasetMaxEntityCount(self): # Long
+		return self.get_query_params().get('DatasetMaxEntityCount')
+
+	def set_DatasetMaxEntityCount(self, DatasetMaxEntityCount):  # Long
+		self.add_query_param('DatasetMaxEntityCount', DatasetMaxEntityCount)
 	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
 	def set_TemplateId(self, TemplateId):  # String
 		self.add_query_param('TemplateId', TemplateId)
+	def get_DatasetMaxTotalFileSize(self): # Long
+		return self.get_query_params().get('DatasetMaxTotalFileSize')
+
+	def set_DatasetMaxTotalFileSize(self, DatasetMaxTotalFileSize):  # Long
+		self.add_query_param('DatasetMaxTotalFileSize', DatasetMaxTotalFileSize)

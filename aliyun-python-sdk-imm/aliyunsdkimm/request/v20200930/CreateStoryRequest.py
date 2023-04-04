@@ -32,26 +32,21 @@ class CreateStoryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MinFileCount(self): # Long
-		return self.get_body_params().get('MinFileCount')
-
-	def set_MinFileCount(self, MinFileCount):  # Long
-		self.add_body_params('MinFileCount', MinFileCount)
-	def get_ProjectName(self): # String
-		return self.get_body_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_body_params('ProjectName', ProjectName)
 	def get_CustomLabels(self): # String
 		return self.get_body_params().get('CustomLabels')
 
 	def set_CustomLabels(self, CustomLabels):  # String
 		self.add_body_params('CustomLabels', CustomLabels)
-	def get_StoryStartTime(self): # String
-		return self.get_body_params().get('StoryStartTime')
+	def get_Notification(self): # Struct
+		return self.get_query_params().get('Notification')
 
-	def set_StoryStartTime(self, StoryStartTime):  # String
-		self.add_body_params('StoryStartTime', StoryStartTime)
+	def set_Notification(self, Notification):  # Struct
+		self.add_query_param("Notification", json.dumps(Notification))
+	def get_ProjectName(self): # String
+		return self.get_body_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_body_params('ProjectName', ProjectName)
 	def get_NotifyTopicName(self): # String
 		return self.get_body_params().get('NotifyTopicName')
 
@@ -62,41 +57,51 @@ class CreateStoryRequest(RpcRequest):
 
 	def set_StoryType(self, StoryType):  # String
 		self.add_body_params('StoryType', StoryType)
-	def get_CustomId(self): # String
-		return self.get_body_params().get('CustomId')
-
-	def set_CustomId(self, CustomId):  # String
-		self.add_body_params('CustomId', CustomId)
 	def get_Tags(self): # Map
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self, Tags):  # Map
 		self.add_query_param("Tags", json.dumps(Tags))
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_NotifyEndpoint(self): # String
-		return self.get_body_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_body_params('NotifyEndpoint', NotifyEndpoint)
-	def get_MaxFileCount(self): # Long
-		return self.get_body_params().get('MaxFileCount')
-
-	def set_MaxFileCount(self, MaxFileCount):  # Long
-		self.add_body_params('MaxFileCount', MaxFileCount)
 	def get_StorySubType(self): # String
 		return self.get_body_params().get('StorySubType')
 
 	def set_StorySubType(self, StorySubType):  # String
 		self.add_body_params('StorySubType', StorySubType)
+	def get_MinFileCount(self): # Long
+		return self.get_body_params().get('MinFileCount')
+
+	def set_MinFileCount(self, MinFileCount):  # Long
+		self.add_body_params('MinFileCount', MinFileCount)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_MaxFileCount(self): # Long
+		return self.get_body_params().get('MaxFileCount')
+
+	def set_MaxFileCount(self, MaxFileCount):  # Long
+		self.add_body_params('MaxFileCount', MaxFileCount)
 	def get_DatasetName(self): # String
 		return self.get_body_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_body_params('DatasetName', DatasetName)
+	def get_StoryStartTime(self): # String
+		return self.get_body_params().get('StoryStartTime')
+
+	def set_StoryStartTime(self, StoryStartTime):  # String
+		self.add_body_params('StoryStartTime', StoryStartTime)
+	def get_Address(self): # Struct
+		return self.get_body_params().get('Address')
+
+	def set_Address(self, Address):  # Struct
+		self.add_body_params("Address", json.dumps(Address))
+	def get_CustomId(self): # String
+		return self.get_body_params().get('CustomId')
+
+	def set_CustomId(self, CustomId):  # String
+		self.add_body_params('CustomId', CustomId)
 	def get_StoryEndTime(self): # String
 		return self.get_body_params().get('StoryEndTime')
 

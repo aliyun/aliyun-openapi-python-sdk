@@ -32,41 +32,36 @@ class CreateMediaConvertTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
 	def get_Sources(self): # Array
 		return self.get_query_params().get('Sources')
 
 	def set_Sources(self, Sources):  # Array
 		self.add_query_param("Sources", json.dumps(Sources))
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
-	def get_CredentialConfig(self): # Struct
-		return self.get_query_params().get('CredentialConfig')
-
-	def set_CredentialConfig(self, CredentialConfig):  # Struct
-		self.add_query_param("CredentialConfig", json.dumps(CredentialConfig))
 	def get_Targets(self): # Array
 		return self.get_query_params().get('Targets')
 
 	def set_Targets(self, Targets):  # Array
 		self.add_query_param("Targets", json.dumps(Targets))
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_Notification(self): # Struct
+		return self.get_query_params().get('Notification')
+
+	def set_Notification(self, Notification):  # Struct
+		self.add_query_param("Notification", json.dumps(Notification))
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
+	def get_CredentialConfig(self): # Struct
+		return self.get_query_params().get('CredentialConfig')
+
+	def set_CredentialConfig(self, CredentialConfig):  # Struct
+		self.add_query_param("CredentialConfig", json.dumps(CredentialConfig))
 	def get_Tags(self): # Map
 		return self.get_query_params().get('Tags')
 

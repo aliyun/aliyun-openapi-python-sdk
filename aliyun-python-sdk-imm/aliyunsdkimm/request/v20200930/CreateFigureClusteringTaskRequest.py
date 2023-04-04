@@ -37,26 +37,21 @@ class CreateFigureClusteringTaskRequest(RpcRequest):
 
 	def set_UserData(self, UserData):  # String
 		self.add_query_param('UserData', UserData)
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
+	def get_Notification(self): # Struct
+		return self.get_query_params().get('Notification')
 
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
-	def get_NotifyTopicName(self): # String
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self, NotifyTopicName):  # String
-		self.add_query_param('NotifyTopicName', NotifyTopicName)
-	def get_NotifyEndpoint(self): # String
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
-		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def set_Notification(self, Notification):  # Struct
+		self.add_query_param("Notification", json.dumps(Notification))
 	def get_DatasetName(self): # String
 		return self.get_query_params().get('DatasetName')
 
 	def set_DatasetName(self, DatasetName):  # String
 		self.add_query_param('DatasetName', DatasetName)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_Tags(self): # Map
 		return self.get_query_params().get('Tags')
 

@@ -37,16 +37,26 @@ class QueryStoriesRequest(RpcRequest):
 
 	def set_FigureClusterIds(self, FigureClusterIds):  # Array
 		self.add_query_param("FigureClusterIds", json.dumps(FigureClusterIds))
-	def get_ProjectName(self): # String
-		return self.get_query_params().get('ProjectName')
-
-	def set_ProjectName(self, ProjectName):  # String
-		self.add_query_param('ProjectName', ProjectName)
 	def get_CustomLabels(self): # String
 		return self.get_query_params().get('CustomLabels')
 
 	def set_CustomLabels(self, CustomLabels):  # String
 		self.add_query_param('CustomLabels', CustomLabels)
+	def get_WithEmptyStories(self): # Boolean
+		return self.get_query_params().get('WithEmptyStories')
+
+	def set_WithEmptyStories(self, WithEmptyStories):  # Boolean
+		self.add_query_param('WithEmptyStories', WithEmptyStories)
+	def get_Order(self): # String
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_query_param('Order', Order)
+	def get_ProjectName(self): # String
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self, ProjectName):  # String
+		self.add_query_param('ProjectName', ProjectName)
 	def get_Sort(self): # String
 		return self.get_query_params().get('Sort')
 
@@ -57,46 +67,41 @@ class QueryStoriesRequest(RpcRequest):
 
 	def set_StoryType(self, StoryType):  # String
 		self.add_query_param('StoryType', StoryType)
-	def get_StoryEndTimeRange(self): # Struct
-		return self.get_query_params().get('StoryEndTimeRange')
-
-	def set_StoryEndTimeRange(self, StoryEndTimeRange):  # Struct
-		self.add_query_param("StoryEndTimeRange", json.dumps(StoryEndTimeRange))
-	def get_WithEmptyStories(self): # Boolean
-		return self.get_query_params().get('WithEmptyStories')
-
-	def set_WithEmptyStories(self, WithEmptyStories):  # Boolean
-		self.add_query_param('WithEmptyStories', WithEmptyStories)
 	def get_StoryStartTimeRange(self): # Struct
 		return self.get_query_params().get('StoryStartTimeRange')
 
 	def set_StoryStartTimeRange(self, StoryStartTimeRange):  # Struct
 		self.add_query_param("StoryStartTimeRange", json.dumps(StoryStartTimeRange))
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
 	def get_StorySubType(self): # String
 		return self.get_query_params().get('StorySubType')
 
 	def set_StorySubType(self, StorySubType):  # String
 		self.add_query_param('StorySubType', StorySubType)
-	def get_CreateTimeRange(self): # Struct
-		return self.get_query_params().get('CreateTimeRange')
-
-	def set_CreateTimeRange(self, CreateTimeRange):  # Struct
-		self.add_query_param("CreateTimeRange", json.dumps(CreateTimeRange))
-	def get_DatasetName(self): # String
-		return self.get_query_params().get('DatasetName')
-
-	def set_DatasetName(self, DatasetName):  # String
-		self.add_query_param('DatasetName', DatasetName)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
 	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_DatasetName(self): # String
+		return self.get_query_params().get('DatasetName')
+
+	def set_DatasetName(self, DatasetName):  # String
+		self.add_query_param('DatasetName', DatasetName)
+	def get_StoryEndTimeRange(self): # Struct
+		return self.get_query_params().get('StoryEndTimeRange')
+
+	def set_StoryEndTimeRange(self, StoryEndTimeRange):  # Struct
+		self.add_query_param("StoryEndTimeRange", json.dumps(StoryEndTimeRange))
+	def get_CreateTimeRange(self): # Struct
+		return self.get_query_params().get('CreateTimeRange')
+
+	def set_CreateTimeRange(self, CreateTimeRange):  # Struct
+		self.add_query_param("CreateTimeRange", json.dumps(CreateTimeRange))
 	def get_ObjectId(self): # String
 		return self.get_query_params().get('ObjectId')
 
@@ -107,8 +112,3 @@ class QueryStoriesRequest(RpcRequest):
 
 	def set_StoryName(self, StoryName):  # String
 		self.add_query_param('StoryName', StoryName)
-	def get_Order(self): # String
-		return self.get_query_params().get('Order')
-
-	def set_Order(self, Order):  # String
-		self.add_query_param('Order', Order)
