@@ -46,6 +46,11 @@ class SetCasterConfigRequest(RpcRequest):
 
 	def set_ProgramName(self, ProgramName):  # String
 		self.add_query_param('ProgramName', ProgramName)
+	def get_UrgentImageUrl(self): # String
+		return self.get_query_params().get('UrgentImageUrl')
+
+	def set_UrgentImageUrl(self, UrgentImageUrl):  # String
+		self.add_query_param('UrgentImageUrl', UrgentImageUrl)
 	def get_RecordConfig(self): # String
 		return self.get_query_params().get('RecordConfig')
 
@@ -106,6 +111,11 @@ class SetCasterConfigRequest(RpcRequest):
 
 	def set_Delay(self, Delay):  # Float
 		self.add_query_param('Delay', Delay)
+	def get_UrgentImageId(self): # String
+		return self.get_query_params().get('UrgentImageId')
+
+	def set_UrgentImageId(self, UrgentImageId):  # String
+		self.add_query_param('UrgentImageId', UrgentImageId)
 	def get_CallbackUrl(self): # String
 		return self.get_query_params().get('CallbackUrl')
 

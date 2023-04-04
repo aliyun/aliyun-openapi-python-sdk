@@ -31,6 +31,11 @@ class AddCasterVideoResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
 	def get_EndOffset(self): # Integer
 		return self.get_query_params().get('EndOffset')
 
@@ -81,6 +86,11 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def set_LocationId(self, LocationId):  # String
 		self.add_query_param('LocationId', LocationId)
+	def get_ImageUrl(self): # String
+		return self.get_query_params().get('ImageUrl')
+
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_query_param('ImageUrl', ImageUrl)
 	def get_PtsCallbackInterval(self): # Integer
 		return self.get_query_params().get('PtsCallbackInterval')
 

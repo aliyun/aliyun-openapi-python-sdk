@@ -36,6 +36,11 @@ class CancelMuteAllGroupUserRequest(RpcRequest):
 
 	def set_OperatorUserId(self, OperatorUserId):  # String
 		self.add_body_params('OperatorUserId', OperatorUserId)
+	def get_BroadCastType(self): # Integer
+		return self.get_body_params().get('BroadCastType')
+
+	def set_BroadCastType(self, BroadCastType):  # Integer
+		self.add_body_params('BroadCastType', BroadCastType)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
