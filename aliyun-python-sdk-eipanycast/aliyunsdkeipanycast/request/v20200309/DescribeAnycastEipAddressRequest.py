@@ -25,26 +25,24 @@ class DescribeAnycastEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'DescribeAnycastEipAddress','eipanycast')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Ip(self):
+	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
-
-	def get_AnycastId(self):
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
+	def get_AnycastId(self): # String
 		return self.get_query_params().get('AnycastId')
 
-	def set_AnycastId(self,AnycastId):
-		self.add_query_param('AnycastId',AnycastId)
-
-	def get_BindInstanceId(self):
+	def set_AnycastId(self, AnycastId):  # String
+		self.add_query_param('AnycastId', AnycastId)
+	def get_BindInstanceId(self): # String
 		return self.get_query_params().get('BindInstanceId')
 
-	def set_BindInstanceId(self,BindInstanceId):
-		self.add_query_param('BindInstanceId',BindInstanceId)
+	def set_BindInstanceId(self, BindInstanceId):  # String
+		self.add_query_param('BindInstanceId', BindInstanceId)

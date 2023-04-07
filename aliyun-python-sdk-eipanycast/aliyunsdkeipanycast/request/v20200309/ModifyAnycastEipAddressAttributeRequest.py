@@ -25,26 +25,24 @@ class ModifyAnycastEipAddressAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'ModifyAnycastEipAddressAttribute','eipanycast')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AnycastId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AnycastId(self): # String
 		return self.get_query_params().get('AnycastId')
 
-	def set_AnycastId(self,AnycastId):
-		self.add_query_param('AnycastId',AnycastId)
-
-	def get_Name(self):
+	def set_AnycastId(self, AnycastId):  # String
+		self.add_query_param('AnycastId', AnycastId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

@@ -25,20 +25,19 @@ class ReleaseAnycastEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'ReleaseAnycastEipAddress','eipanycast')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_AnycastId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AnycastId(self): # String
 		return self.get_query_params().get('AnycastId')
 
-	def set_AnycastId(self,AnycastId):
-		self.add_query_param('AnycastId',AnycastId)
+	def set_AnycastId(self, AnycastId):  # String
+		self.add_query_param('AnycastId', AnycastId)

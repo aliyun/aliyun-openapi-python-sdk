@@ -25,50 +25,44 @@ class AllocateAnycastEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'AllocateAnycastEipAddress','eipanycast')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Bandwidth(self):
+	def get_Bandwidth(self): # String
 		return self.get_query_params().get('Bandwidth')
 
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_ServiceLocation(self):
+	def set_Bandwidth(self, Bandwidth):  # String
+		self.add_query_param('Bandwidth', Bandwidth)
+	def get_ServiceLocation(self): # String
 		return self.get_query_params().get('ServiceLocation')
 
-	def set_ServiceLocation(self,ServiceLocation):
-		self.add_query_param('ServiceLocation',ServiceLocation)
-
-	def get_ClientToken(self):
+	def set_ServiceLocation(self, ServiceLocation):  # String
+		self.add_query_param('ServiceLocation', ServiceLocation)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_InternetChargeType(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
-	def get_Name(self):
+	def set_InternetChargeType(self, InternetChargeType):  # String
+		self.add_query_param('InternetChargeType', InternetChargeType)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_InstanceChargeType(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_InstanceChargeType(self): # String
 		return self.get_query_params().get('InstanceChargeType')
 
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
