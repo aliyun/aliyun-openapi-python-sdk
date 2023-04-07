@@ -25,21 +25,16 @@ class ListApiDestinationsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'ListApiDestinations')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ConnectionName(self): # String
+		return self.get_query_params().get('ConnectionName')
+
+	def set_ConnectionName(self, ConnectionName):  # String
+		self.add_query_param('ConnectionName', ConnectionName)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

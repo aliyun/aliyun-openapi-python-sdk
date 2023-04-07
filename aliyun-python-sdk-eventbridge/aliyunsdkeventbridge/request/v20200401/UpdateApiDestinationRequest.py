@@ -26,11 +26,6 @@ class UpdateApiDestinationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'UpdateApiDestination')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 

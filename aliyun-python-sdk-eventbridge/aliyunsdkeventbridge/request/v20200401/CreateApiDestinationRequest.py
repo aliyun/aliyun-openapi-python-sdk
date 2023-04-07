@@ -46,8 +46,3 @@ class CreateApiDestinationRequest(RpcRequest):
 
 	def set_ApiDestinationName(self, ApiDestinationName):  # String
 		self.add_query_param('ApiDestinationName', ApiDestinationName)
-	def get_InvocationRateLimitPerSecond(self): # Long
-		return self.get_query_params().get('InvocationRateLimitPerSecond')
-
-	def set_InvocationRateLimitPerSecond(self, InvocationRateLimitPerSecond):  # Long
-		self.add_query_param('InvocationRateLimitPerSecond', InvocationRateLimitPerSecond)
