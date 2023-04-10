@@ -47,3 +47,8 @@ class RestartApplicationRequest(RoaRequest):
 
 	def set_MinReadyInstanceRatio(self, MinReadyInstanceRatio):  # Integer
 		self.add_query_param('MinReadyInstanceRatio', MinReadyInstanceRatio)
+	def get_AutoEnableApplicationScalingRule(self): # Boolean
+		return self.get_query_params().get('AutoEnableApplicationScalingRule')
+
+	def set_AutoEnableApplicationScalingRule(self, AutoEnableApplicationScalingRule):  # Boolean
+		self.add_query_param('AutoEnableApplicationScalingRule', AutoEnableApplicationScalingRule)

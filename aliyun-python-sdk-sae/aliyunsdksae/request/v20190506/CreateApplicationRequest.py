@@ -142,6 +142,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_EnableEbpf(self): # String
+		return self.get_query_params().get('EnableEbpf')
+
+	def set_EnableEbpf(self, EnableEbpf):  # String
+		self.add_query_param('EnableEbpf', EnableEbpf)
 	def get_PackageType(self): # String
 		return self.get_query_params().get('PackageType')
 
