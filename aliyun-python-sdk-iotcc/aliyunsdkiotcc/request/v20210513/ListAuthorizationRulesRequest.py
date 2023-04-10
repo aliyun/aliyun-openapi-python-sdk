@@ -25,6 +25,16 @@ class ListAuthorizationRulesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'IoTCC', '2021-05-13', 'ListAuthorizationRules','IoTCC')
 		self.set_method('POST')
 
+	def get_FuzzyDestination(self): # String
+		return self.get_query_params().get('FuzzyDestination')
+
+	def set_FuzzyDestination(self, FuzzyDestination):  # String
+		self.add_query_param('FuzzyDestination', FuzzyDestination)
+	def get_FuzzyAuthorizationRuleName(self): # String
+		return self.get_query_params().get('FuzzyAuthorizationRuleName')
+
+	def set_FuzzyAuthorizationRuleName(self, FuzzyAuthorizationRuleName):  # String
+		self.add_query_param('FuzzyAuthorizationRuleName', FuzzyAuthorizationRuleName)
 	def get_DestinationTypes(self): # RepeatList
 		return self.get_query_params().get('DestinationType')
 
