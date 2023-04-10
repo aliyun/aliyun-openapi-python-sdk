@@ -61,6 +61,11 @@ class CreateTenantUserRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_EncryptionType(self): # String
+		return self.get_body_params().get('EncryptionType')
+
+	def set_EncryptionType(self, EncryptionType):  # String
+		self.add_body_params('EncryptionType', EncryptionType)
 	def get_UserName(self): # String
 		return self.get_body_params().get('UserName')
 

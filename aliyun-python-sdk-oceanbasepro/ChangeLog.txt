@@ -1,3 +1,6 @@
+2023-04-10 Version: 1.0.7
+- Update SDK.
+
 2023-03-03 Version: 1.0.6
 - Update SDK.
 
