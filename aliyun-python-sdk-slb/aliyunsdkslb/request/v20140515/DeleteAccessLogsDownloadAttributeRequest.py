@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkslb.endpoint import endpoint_data
 
-class DescribeAccessControlListAttributeRequest(RpcRequest):
+class DeleteAccessLogsDownloadAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeAccessControlListAttribute','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DeleteAccessLogsDownloadAttribute','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,11 @@ class DescribeAccessControlListAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_LogsDownloadAttributes(self): # String
+		return self.get_query_params().get('LogsDownloadAttributes')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_AclId(self): # String
-		return self.get_query_params().get('AclId')
-
-	def set_AclId(self, AclId):  # String
-		self.add_query_param('AclId', AclId)
+	def set_LogsDownloadAttributes(self, LogsDownloadAttributes):  # String
+		self.add_query_param('LogsDownloadAttributes', LogsDownloadAttributes)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,18 +51,18 @@ class DescribeAccessControlListAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_AclEntryComment(self): # String
-		return self.get_query_params().get('AclEntryComment')
-
-	def set_AclEntryComment(self, AclEntryComment):  # String
-		self.add_query_param('AclEntryComment', AclEntryComment)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Page(self): # Integer
-		return self.get_query_params().get('Page')
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
 
-	def set_Page(self, Page):  # Integer
-		self.add_query_param('Page', Page)
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_LoadBalancerId(self): # String
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)
