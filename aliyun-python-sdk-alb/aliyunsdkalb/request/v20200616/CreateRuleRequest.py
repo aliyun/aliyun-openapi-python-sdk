@@ -46,6 +46,11 @@ class CreateRuleRequest(RpcRequest):
 
 	def set_ListenerId(self, ListenerId):  # String
 		self.add_query_param('ListenerId', ListenerId)
+	def get_Direction(self): # String
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self, Direction):  # String
+		self.add_query_param('Direction', Direction)
 	def get_RuleActions(self): # Array
 		return self.get_query_params().get('RuleActions')
 

@@ -122,3 +122,11 @@ class CreateServerGroupRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_UchConfig(self): # Struct
+		return self.get_query_params().get('UchConfig')
+
+	def set_UchConfig(self, UchConfig):  # Struct
+		if UchConfig.get('Type') is not None:
+			self.add_query_param('UchConfig.Type', UchConfig.get('Type'))
+		if UchConfig.get('Value') is not None:
+			self.add_query_param('UchConfig.Value', UchConfig.get('Value'))

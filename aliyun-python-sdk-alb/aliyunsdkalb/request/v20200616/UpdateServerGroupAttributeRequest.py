@@ -107,3 +107,11 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_UchConfig(self): # Struct
+		return self.get_query_params().get('UchConfig')
+
+	def set_UchConfig(self, UchConfig):  # Struct
+		if UchConfig.get('Type') is not None:
+			self.add_query_param('UchConfig.Type', UchConfig.get('Type'))
+		if UchConfig.get('Value') is not None:
+			self.add_query_param('UchConfig.Value', UchConfig.get('Value'))

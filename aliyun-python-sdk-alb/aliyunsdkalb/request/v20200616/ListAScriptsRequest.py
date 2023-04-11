@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class ListRulesRequest(RpcRequest):
+class ListAScriptsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'ListRules','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'ListAScripts','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,34 +31,29 @@ class ListRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LoadBalancerIds(self): # Array
-		return self.get_query_params().get('LoadBalancerIds')
-
-	def set_LoadBalancerIds(self, LoadBalancerIds):  # Array
-		for index1, value1 in enumerate(LoadBalancerIds):
-			self.add_query_param('LoadBalancerIds.' + str(index1 + 1), value1)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_Direction(self): # String
-		return self.get_query_params().get('Direction')
+	def get_AScriptNames(self): # Array
+		return self.get_query_params().get('AScriptNames')
 
-	def set_Direction(self, Direction):  # String
-		self.add_query_param('Direction', Direction)
-	def get_RuleIds(self): # Array
-		return self.get_query_params().get('RuleIds')
-
-	def set_RuleIds(self, RuleIds):  # Array
-		for index1, value1 in enumerate(RuleIds):
-			self.add_query_param('RuleIds.' + str(index1 + 1), value1)
+	def set_AScriptNames(self, AScriptNames):  # Array
+		for index1, value1 in enumerate(AScriptNames):
+			self.add_query_param('AScriptNames.' + str(index1 + 1), value1)
 	def get_ListenerIds(self): # Array
 		return self.get_query_params().get('ListenerIds')
 
 	def set_ListenerIds(self, ListenerIds):  # Array
 		for index1, value1 in enumerate(ListenerIds):
 			self.add_query_param('ListenerIds.' + str(index1 + 1), value1)
+	def get_AScriptIds(self): # Array
+		return self.get_query_params().get('AScriptIds')
+
+	def set_AScriptIds(self, AScriptIds):  # Array
+		for index1, value1 in enumerate(AScriptIds):
+			self.add_query_param('AScriptIds.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class DescribeZonesRequest(RpcRequest):
+class EnableLoadBalancerIpv6InternetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'DescribeZones','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'EnableLoadBalancerIpv6Internet','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,18 @@ class DescribeZonesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_LoadBalancerId(self): # String
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)
