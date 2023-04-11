@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class GetUserRequest(RpcRequest):
+class GetTranslateImageBatchResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetUser')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTranslateImageBatchResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class GetUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TaskId(self): # String
+		return self.get_body_params().get('TaskId')
+
+	def set_TaskId(self, TaskId):  # String
+		self.add_body_params('TaskId', TaskId)

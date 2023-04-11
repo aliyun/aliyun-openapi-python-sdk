@@ -51,6 +51,11 @@ class TranslateRequest(RpcRequest):
 
 	def set_Scene(self, Scene):  # String
 		self.add_body_params('Scene', Scene)
+	def get_Context(self): # String
+		return self.get_query_params().get('Context')
+
+	def set_Context(self, Context):  # String
+		self.add_query_param('Context', Context)
 	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 

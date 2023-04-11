@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class TranslateGeneralRequest(RpcRequest):
+class TranslateImageBatchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateGeneral')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateImageBatch')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,31 +31,31 @@ class TranslateGeneralRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Ext(self): # String
+		return self.get_body_params().get('Ext')
+
+	def set_Ext(self, Ext):  # String
+		self.add_body_params('Ext', Ext)
 	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
 	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-	def get_SourceText(self): # String
-		return self.get_body_params().get('SourceText')
+	def get_ImageUrls(self): # String
+		return self.get_body_params().get('ImageUrls')
 
-	def set_SourceText(self, SourceText):  # String
-		self.add_body_params('SourceText', SourceText)
-	def get_FormatType(self): # String
-		return self.get_body_params().get('FormatType')
+	def set_ImageUrls(self, ImageUrls):  # String
+		self.add_body_params('ImageUrls', ImageUrls)
+	def get_CustomTaskId(self): # String
+		return self.get_body_params().get('CustomTaskId')
 
-	def set_FormatType(self, FormatType):  # String
-		self.add_body_params('FormatType', FormatType)
-	def get_Scene(self): # String
-		return self.get_body_params().get('Scene')
+	def set_CustomTaskId(self, CustomTaskId):  # String
+		self.add_body_params('CustomTaskId', CustomTaskId)
+	def get_Field(self): # String
+		return self.get_body_params().get('Field')
 
-	def set_Scene(self, Scene):  # String
-		self.add_body_params('Scene', Scene)
-	def get_Context(self): # String
-		return self.get_query_params().get('Context')
-
-	def set_Context(self, Context):  # String
-		self.add_query_param('Context', Context)
+	def set_Field(self, Field):  # String
+		self.add_body_params('Field', Field)
 	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
