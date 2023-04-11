@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class GetProxyRequest(RpcRequest):
+class GetDataImportSQLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetProxy','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetDataImportSQL','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,8 +36,13 @@ class GetProxyRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_ProxyId(self): # Long
-		return self.get_query_params().get('ProxyId')
+	def get_SqlId(self): # Long
+		return self.get_query_params().get('SqlId')
 
-	def set_ProxyId(self, ProxyId):  # Long
-		self.add_query_param('ProxyId', ProxyId)
+	def set_SqlId(self, SqlId):  # Long
+		self.add_query_param('SqlId', SqlId)
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
+
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)

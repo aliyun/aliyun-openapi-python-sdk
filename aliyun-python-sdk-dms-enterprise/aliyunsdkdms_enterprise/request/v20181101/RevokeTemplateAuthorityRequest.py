@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class GetProxyRequest(RpcRequest):
+class RevokeTemplateAuthorityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetProxy','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RevokeTemplateAuthority','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,8 +36,13 @@ class GetProxyRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_ProxyId(self): # Long
-		return self.get_query_params().get('ProxyId')
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
 
-	def set_ProxyId(self, ProxyId):  # Long
-		self.add_query_param('ProxyId', ProxyId)
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
+	def get_UserIds(self): # String
+		return self.get_query_params().get('UserIds')
+
+	def set_UserIds(self, UserIds):  # String
+		self.add_query_param('UserIds', UserIds)
