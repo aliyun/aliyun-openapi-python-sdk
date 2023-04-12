@@ -71,6 +71,20 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_GlobalSecurityGroupIds(self): # String
+		return self.get_query_params().get('GlobalSecurityGroupIds')
+
+	def set_GlobalSecurityGroupIds(self, GlobalSecurityGroupIds):  # String
+		self.add_query_param('GlobalSecurityGroupIds', GlobalSecurityGroupIds)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 
@@ -91,6 +105,11 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
@@ -126,6 +145,11 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 

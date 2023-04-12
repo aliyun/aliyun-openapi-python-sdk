@@ -80,6 +80,11 @@ class CreateInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_GlobalSecurityGroupIds(self): # String
+		return self.get_query_params().get('GlobalSecurityGroupIds')
+
+	def set_GlobalSecurityGroupIds(self, GlobalSecurityGroupIds):  # String
+		self.add_query_param('GlobalSecurityGroupIds', GlobalSecurityGroupIds)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 

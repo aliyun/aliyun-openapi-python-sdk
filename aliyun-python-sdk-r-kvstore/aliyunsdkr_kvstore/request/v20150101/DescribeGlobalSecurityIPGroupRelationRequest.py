@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class RestoreInstanceRequest(RpcRequest):
+class DescribeGlobalSecurityIPGroupRelationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RestoreInstance','redisa')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeGlobalSecurityIPGroupRelation','redisa')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,53 +36,33 @@ class RestoreInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_FilterKey(self): # String
-		return self.get_query_params().get('FilterKey')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_FilterKey(self, FilterKey):  # String
-		self.add_query_param('FilterKey', FilterKey)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_TimeShift(self): # String
-		return self.get_query_params().get('TimeShift')
-
-	def set_TimeShift(self, TimeShift):  # String
-		self.add_query_param('TimeShift', TimeShift)
-	def get_RestoreTime(self): # String
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self, RestoreTime):  # String
-		self.add_query_param('RestoreTime', RestoreTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DBClusterId(self): # String
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_BackupId(self): # String
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self, BackupId):  # String
-		self.add_query_param('BackupId', BackupId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_RestoreType(self): # String
-		return self.get_query_params().get('RestoreType')
-
-	def set_RestoreType(self, RestoreType):  # String
-		self.add_query_param('RestoreType', RestoreType)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
