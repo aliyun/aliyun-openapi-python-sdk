@@ -19,24 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListEventStreamingsRequest(RpcRequest):
+class TestEventPatternRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'ListEventStreamings')
+		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'TestEventPattern')
 		self.set_method('POST')
 
-	def get_NextToken(self): # String
-		return self.get_body_params().get('NextToken')
+	def get_EventPattern(self): # String
+		return self.get_body_params().get('EventPattern')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_body_params('NextToken', NextToken)
-	def get_Limit(self): # Integer
-		return self.get_body_params().get('Limit')
+	def set_EventPattern(self, EventPattern):  # String
+		self.add_body_params('EventPattern', EventPattern)
+	def get_Event(self): # String
+		return self.get_body_params().get('Event')
 
-	def set_Limit(self, Limit):  # Integer
-		self.add_body_params('Limit', Limit)
-	def get_NamePrefix(self): # String
-		return self.get_body_params().get('NamePrefix')
-
-	def set_NamePrefix(self, NamePrefix):  # String
-		self.add_body_params('NamePrefix', NamePrefix)
+	def set_Event(self, Event):  # String
+		self.add_body_params('Event', Event)
