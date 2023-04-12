@@ -51,6 +51,11 @@ class GetAggregateDiscoveredResourceRequest(RpcRequest):
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceAccountId(self): # Long
+		return self.get_query_params().get('ResourceAccountId')
+
+	def set_ResourceAccountId(self, ResourceAccountId):  # Long
+		self.add_query_param('ResourceAccountId', ResourceAccountId)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 

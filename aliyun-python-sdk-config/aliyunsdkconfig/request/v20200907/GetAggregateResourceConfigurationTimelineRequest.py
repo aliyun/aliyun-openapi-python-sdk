@@ -46,6 +46,11 @@ class GetAggregateResourceConfigurationTimelineRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # Long
 		self.add_query_param('StartTime', StartTime)
+	def get_ResourceAccountId(self): # Long
+		return self.get_query_params().get('ResourceAccountId')
+
+	def set_ResourceAccountId(self, ResourceAccountId):  # Long
+		self.add_query_param('ResourceAccountId', ResourceAccountId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

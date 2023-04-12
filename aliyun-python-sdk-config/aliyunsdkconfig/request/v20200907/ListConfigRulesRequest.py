@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkconfig.endpoint import endpoint_data
 
-class ListAggregateConfigRulesRequest(RpcRequest):
+class ListConfigRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListAggregateConfigRules')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListConfigRules')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class ListAggregateConfigRulesRequest(RpcRequest):
 
 	def set_ConfigRuleState(self, ConfigRuleState):  # String
 		self.add_query_param('ConfigRuleState', ConfigRuleState)
-	def get_AggregatorId(self): # String
-		return self.get_query_params().get('AggregatorId')
-
-	def set_AggregatorId(self, AggregatorId):  # String
-		self.add_query_param('AggregatorId', AggregatorId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

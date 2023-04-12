@@ -51,3 +51,8 @@ class GetAggregateResourceCountsGroupByRegionRequest(RpcRequest):
 
 	def set_FolderId(self, FolderId):  # String
 		self.add_query_param('FolderId', FolderId)
+	def get_ResourceAccountId(self): # Long
+		return self.get_query_params().get('ResourceAccountId')
+
+	def set_ResourceAccountId(self, ResourceAccountId):  # Long
+		self.add_query_param('ResourceAccountId', ResourceAccountId)

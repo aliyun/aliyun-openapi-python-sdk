@@ -31,6 +31,11 @@ class ListCompliancePackTemplatesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceTypes(self): # String
+		return self.get_query_params().get('ResourceTypes')
+
+	def set_ResourceTypes(self, ResourceTypes):  # String
+		self.add_query_param('ResourceTypes', ResourceTypes)
 	def get_CompliancePackTemplateId(self): # String
 		return self.get_query_params().get('CompliancePackTemplateId')
 

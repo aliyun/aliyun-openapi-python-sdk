@@ -36,16 +36,16 @@ class GetAggregateResourceComplianceByConfigRuleRequest(RpcRequest):
 
 	def set_ConfigRuleId(self, ConfigRuleId):  # String
 		self.add_query_param('ConfigRuleId', ConfigRuleId)
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_AggregatorId(self): # String
 		return self.get_query_params().get('AggregatorId')
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
+	def get_ResourceAccountId(self): # Long
+		return self.get_query_params().get('ResourceAccountId')
+
+	def set_ResourceAccountId(self, ResourceAccountId):  # Long
+		self.add_query_param('ResourceAccountId', ResourceAccountId)
 	def get_ComplianceType(self): # String
 		return self.get_query_params().get('ComplianceType')
 
