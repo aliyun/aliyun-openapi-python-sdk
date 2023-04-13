@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class UpdateErAttachmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UpdateErAttachment','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_body_params().get('NetworkInterfaceId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_ErAttachmentId(self): # String
+		return self.get_body_params().get('ErAttachmentId')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)
+	def set_ErAttachmentId(self, ErAttachmentId):  # String
+		self.add_body_params('ErAttachmentId', ErAttachmentId)
+	def get_ErAttachmentName(self): # String
+		return self.get_body_params().get('ErAttachmentName')
+
+	def set_ErAttachmentName(self, ErAttachmentName):  # String
+		self.add_body_params('ErAttachmentName', ErAttachmentName)

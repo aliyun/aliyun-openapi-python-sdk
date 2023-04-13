@@ -19,19 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class DeleteErRouteMapRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteErRouteMap','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_body_params().get('NetworkInterfaceId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_ErRouteMapIdss(self): # RepeatList
+		return self.get_body_params().get('ErRouteMapIds')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)
+	def set_ErRouteMapIdss(self, ErRouteMapIds):  # RepeatList
+		for depth1 in range(len(ErRouteMapIds)):
+			self.add_body_params('ErRouteMapIds.' + str(depth1 + 1), ErRouteMapIds[depth1])

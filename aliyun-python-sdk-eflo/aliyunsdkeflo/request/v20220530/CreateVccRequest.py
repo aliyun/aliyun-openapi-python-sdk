@@ -74,6 +74,11 @@ class CreateVccRequest(RpcRequest):
 
 	def set_ConnectionType(self, ConnectionType):  # String
 		self.add_body_params('ConnectionType', ConnectionType)
+	def get_Bandwidth(self): # Integer
+		return self.get_body_params().get('Bandwidth')
+
+	def set_Bandwidth(self, Bandwidth):  # Integer
+		self.add_body_params('Bandwidth', Bandwidth)
 	def get_VSwitchId(self): # String
 		return self.get_body_params().get('VSwitchId')
 

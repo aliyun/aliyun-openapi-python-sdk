@@ -19,19 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class GetVpdGrantRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpdGrantRule','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_ErId(self): # String
+		return self.get_body_params().get('ErId')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_body_params().get('NetworkInterfaceId')
+	def set_ErId(self, ErId):  # String
+		self.add_body_params('ErId', ErId)
+	def get_GrantTenantId(self): # String
+		return self.get_body_params().get('GrantTenantId')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)
+	def set_GrantTenantId(self, GrantTenantId):  # String
+		self.add_body_params('GrantTenantId', GrantTenantId)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_GrantRuleId(self): # String
+		return self.get_body_params().get('GrantRuleId')
+
+	def set_GrantRuleId(self, GrantRuleId):  # String
+		self.add_body_params('GrantRuleId', GrantRuleId)

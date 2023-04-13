@@ -19,61 +19,47 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListVpdsRequest(RpcRequest):
+class ListVpdRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpds','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVpdRouteEntries','eflo')
 		self.set_method('POST')
 
-	def get_VpdName(self): # String
-		return self.get_body_params().get('VpdName')
-
-	def set_VpdName(self, VpdName):  # String
-		self.add_body_params('VpdName', VpdName)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_WithDependence(self): # Boolean
-		return self.get_body_params().get('WithDependence')
+	def get_RouteType(self): # String
+		return self.get_body_params().get('RouteType')
 
-	def set_WithDependence(self, WithDependence):  # Boolean
-		self.add_body_params('WithDependence', WithDependence)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
-	def get_WithoutVcc(self): # Boolean
-		return self.get_body_params().get('WithoutVcc')
-
-	def set_WithoutVcc(self, WithoutVcc):  # Boolean
-		self.add_body_params('WithoutVcc', WithoutVcc)
+	def set_RouteType(self, RouteType):  # String
+		self.add_body_params('RouteType', RouteType)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_Tags(self): # RepeatList
-		return self.get_body_params().get('Tag')
+	def get_NextHopId(self): # String
+		return self.get_body_params().get('NextHopId')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_ForSelect(self): # Boolean
-		return self.get_body_params().get('ForSelect')
+	def set_NextHopId(self, NextHopId):  # String
+		self.add_body_params('NextHopId', NextHopId)
+	def get_NextHopType(self): # String
+		return self.get_body_params().get('NextHopType')
 
-	def set_ForSelect(self, ForSelect):  # Boolean
-		self.add_body_params('ForSelect', ForSelect)
-	def get_FilterErId(self): # String
-		return self.get_body_params().get('FilterErId')
+	def set_NextHopType(self, NextHopType):  # String
+		self.add_body_params('NextHopType', NextHopType)
+	def get_VpdRouteEntryId(self): # String
+		return self.get_body_params().get('VpdRouteEntryId')
 
-	def set_FilterErId(self, FilterErId):  # String
-		self.add_body_params('FilterErId', FilterErId)
+	def set_VpdRouteEntryId(self, VpdRouteEntryId):  # String
+		self.add_body_params('VpdRouteEntryId', VpdRouteEntryId)
+	def get_DestinationCidrBlock(self): # String
+		return self.get_body_params().get('DestinationCidrBlock')
+
+	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
+		self.add_body_params('DestinationCidrBlock', DestinationCidrBlock)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 

@@ -30,11 +30,6 @@ class UpdateSubnetRequest(RpcRequest):
 
 	def set_SubnetId(self, SubnetId):  # String
 		self.add_body_params('SubnetId', SubnetId)
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 

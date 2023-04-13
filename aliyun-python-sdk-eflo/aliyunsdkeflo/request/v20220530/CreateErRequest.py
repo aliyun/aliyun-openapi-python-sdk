@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class CreateErRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateEr','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_body_params().get('NetworkInterfaceId')
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_ErName(self): # String
+		return self.get_body_params().get('ErName')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)
+	def set_ErName(self, ErName):  # String
+		self.add_body_params('ErName', ErName)
+	def get_MasterZoneId(self): # String
+		return self.get_body_params().get('MasterZoneId')
+
+	def set_MasterZoneId(self, MasterZoneId):  # String
+		self.add_body_params('MasterZoneId', MasterZoneId)

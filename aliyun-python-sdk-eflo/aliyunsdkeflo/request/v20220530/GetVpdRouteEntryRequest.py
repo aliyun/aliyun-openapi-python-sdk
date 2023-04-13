@@ -19,19 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class GetVpdRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVpdRouteEntry','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_VpdRouteEntryId(self): # String
+		return self.get_body_params().get('VpdRouteEntryId')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_body_params().get('NetworkInterfaceId')
+	def set_VpdRouteEntryId(self, VpdRouteEntryId):  # String
+		self.add_body_params('VpdRouteEntryId', VpdRouteEntryId)
+	def get_VpdId(self): # String
+		return self.get_body_params().get('VpdId')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_body_params('NetworkInterfaceId', NetworkInterfaceId)
+	def set_VpdId(self, VpdId):  # String
+		self.add_body_params('VpdId', VpdId)

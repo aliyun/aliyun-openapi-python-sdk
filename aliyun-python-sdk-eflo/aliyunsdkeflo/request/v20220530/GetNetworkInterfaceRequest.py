@@ -19,17 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLniPrivateIpAddressRequest(RpcRequest):
+class GetNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetLniPrivateIpAddress','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetNetworkInterface','eflo')
 		self.set_method('POST')
 
-	def get_IpName(self): # String
-		return self.get_body_params().get('IpName')
+	def get_SubnetId(self): # String
+		return self.get_body_params().get('SubnetId')
 
-	def set_IpName(self, IpName):  # String
-		self.add_body_params('IpName', IpName)
+	def set_SubnetId(self, SubnetId):  # String
+		self.add_body_params('SubnetId', SubnetId)
 	def get_NetworkInterfaceId(self): # String
 		return self.get_body_params().get('NetworkInterfaceId')
 

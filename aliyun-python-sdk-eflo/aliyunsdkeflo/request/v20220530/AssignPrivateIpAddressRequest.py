@@ -30,11 +30,11 @@ class AssignPrivateIpAddressRequest(RpcRequest):
 
 	def set_SubnetId(self, SubnetId):  # String
 		self.add_body_params('SubnetId', SubnetId)
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_SkipConfig(self): # Boolean
+		return self.get_body_params().get('SkipConfig')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
+	def set_SkipConfig(self, SkipConfig):  # Boolean
+		self.add_body_params('SkipConfig', SkipConfig)
 	def get_AssignMac(self): # Boolean
 		return self.get_body_params().get('AssignMac')
 
