@@ -1,3 +1,8 @@
+2023-04-14 Version: 1.0.4
+- whatsapp 目录修改
+- 回落短信允许指定回执超时回落时间
+- 增加Whatsapp 模板中location消息类型
+
 2020-10-12 Version: 1.0.3
 - ChatApp third version.
 - Add contack check api.
