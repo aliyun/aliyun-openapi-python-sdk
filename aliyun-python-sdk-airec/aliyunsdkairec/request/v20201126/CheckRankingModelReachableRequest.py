@@ -26,20 +26,19 @@ class CheckRankingModelReachableRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'CheckRankingModelReachable','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/ranking-models/[rankingModelId]/actions/check-connectivity')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_rankingModelId(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_rankingModelId(self): # String
 		return self.get_path_params().get('rankingModelId')
 
-	def set_rankingModelId(self,rankingModelId):
-		self.add_path_param('rankingModelId',rankingModelId)
+	def set_rankingModelId(self, rankingModelId):  # String
+		self.add_path_param('rankingModelId', rankingModelId)

@@ -26,32 +26,29 @@ class PublishRuleRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'PublishRule','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/rules/[ruleId]/actions/publish')
 		self.set_method('PUT')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_ruleType(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_ruleType(self): # String
 		return self.get_query_params().get('ruleType')
 
-	def set_ruleType(self,ruleType):
-		self.add_query_param('ruleType',ruleType)
-
-	def get_sceneId(self):
+	def set_ruleType(self, ruleType):  # String
+		self.add_query_param('ruleType', ruleType)
+	def get_sceneId(self): # String
 		return self.get_query_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_query_param('sceneId',sceneId)
-
-	def get_ruleId(self):
+	def set_sceneId(self, sceneId):  # String
+		self.add_query_param('sceneId', sceneId)
+	def get_ruleId(self): # String
 		return self.get_path_params().get('ruleId')
 
-	def set_ruleId(self,ruleId):
-		self.add_path_param('ruleId',ruleId)
+	def set_ruleId(self, ruleId):  # String
+		self.add_path_param('ruleId', ruleId)

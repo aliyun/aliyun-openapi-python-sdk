@@ -26,7 +26,9 @@ class ListUmengAppkeysRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListUmengAppkeys','airec')
 		self.set_uri_pattern('/v2/openapi/umeng/appkeys')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+

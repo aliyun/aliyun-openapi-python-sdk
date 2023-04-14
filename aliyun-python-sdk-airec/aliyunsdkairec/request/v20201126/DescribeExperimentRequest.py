@@ -26,26 +26,24 @@ class DescribeExperimentRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'DescribeExperiment','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/scenes/[sceneId]/experiments/[experimentId]')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_sceneId(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_sceneId(self): # String
 		return self.get_path_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_path_param('sceneId',sceneId)
-
-	def get_experimentId(self):
+	def set_sceneId(self, sceneId):  # String
+		self.add_path_param('sceneId', sceneId)
+	def get_experimentId(self): # String
 		return self.get_path_params().get('experimentId')
 
-	def set_experimentId(self,experimentId):
-		self.add_path_param('experimentId',experimentId)
+	def set_experimentId(self, experimentId):  # String
+		self.add_path_param('experimentId', experimentId)

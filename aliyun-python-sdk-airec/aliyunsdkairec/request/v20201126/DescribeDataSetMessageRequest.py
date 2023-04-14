@@ -26,20 +26,19 @@ class DescribeDataSetMessageRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'DescribeDataSetMessage','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/dataSets/[versionId]/messages')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_versionId(self):
+	def get_versionId(self): # String
 		return self.get_path_params().get('versionId')
 
-	def set_versionId(self,versionId):
-		self.add_path_param('versionId',versionId)
-
-	def get_instanceId(self):
+	def set_versionId(self, versionId):  # String
+		self.add_path_param('versionId', versionId)
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)

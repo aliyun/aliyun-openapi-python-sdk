@@ -26,26 +26,24 @@ class QuerySyncReportAggregationRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'QuerySyncReportAggregation','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/sync-reports/aggregation')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_endTime(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_startTime(self):
+	def set_endTime(self, endTime):  # Long
+		self.add_query_param('endTime', endTime)
+	def get_startTime(self): # Long
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
+	def set_startTime(self, startTime):  # Long
+		self.add_query_param('startTime', startTime)

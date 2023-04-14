@@ -26,56 +26,49 @@ class ListSceneItemsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListSceneItems','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/scenes/[sceneId]/items')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_selectionRuleId(self):
+	def get_selectionRuleId(self): # String
 		return self.get_query_params().get('selectionRuleId')
 
-	def set_selectionRuleId(self,selectionRuleId):
-		self.add_query_param('selectionRuleId',selectionRuleId)
-
-	def get_instanceId(self):
+	def set_selectionRuleId(self, selectionRuleId):  # String
+		self.add_query_param('selectionRuleId', selectionRuleId)
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_queryCount(self):
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_queryCount(self): # Integer
 		return self.get_query_params().get('queryCount')
 
-	def set_queryCount(self,queryCount):
-		self.add_query_param('queryCount',queryCount)
-
-	def get_sceneId(self):
+	def set_queryCount(self, queryCount):  # Integer
+		self.add_query_param('queryCount', queryCount)
+	def get_sceneId(self): # String
 		return self.get_path_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_path_param('sceneId',sceneId)
-
-	def get_operationRuleId(self):
+	def set_sceneId(self, sceneId):  # String
+		self.add_path_param('sceneId', sceneId)
+	def get_operationRuleId(self): # String
 		return self.get_query_params().get('operationRuleId')
 
-	def set_operationRuleId(self,operationRuleId):
-		self.add_query_param('operationRuleId',operationRuleId)
-
-	def get_previewType(self):
+	def set_operationRuleId(self, operationRuleId):  # String
+		self.add_query_param('operationRuleId', operationRuleId)
+	def get_previewType(self): # String
 		return self.get_query_params().get('previewType')
 
-	def set_previewType(self,previewType):
-		self.add_query_param('previewType',previewType)
-
-	def get_page(self):
+	def set_previewType(self, previewType):  # String
+		self.add_query_param('previewType', previewType)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)

@@ -26,44 +26,44 @@ class QueryRawDataRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'QueryRawData','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/tables/[table]/raw-data')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_itemId(self):
+	def get_itemId(self): # String
 		return self.get_query_params().get('itemId')
 
-	def set_itemId(self,itemId):
-		self.add_query_param('itemId',itemId)
-
-	def get_instanceId(self):
+	def set_itemId(self, itemId):  # String
+		self.add_query_param('itemId', itemId)
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_itemType(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_itemType(self): # String
 		return self.get_query_params().get('itemType')
 
-	def set_itemType(self,itemType):
-		self.add_query_param('itemType',itemType)
-
-	def get_userType(self):
+	def set_itemType(self, itemType):  # String
+		self.add_query_param('itemType', itemType)
+	def get_userType(self): # String
 		return self.get_query_params().get('userType')
 
-	def set_userType(self,userType):
-		self.add_query_param('userType',userType)
+	def set_userType(self, userType):  # String
+		self.add_query_param('userType', userType)
+	def get_imei(self): # String
+		return self.get_query_params().get('imei')
 
-	def get_userId(self):
+	def set_imei(self, imei):  # String
+		self.add_query_param('imei', imei)
+	def get_userId(self): # String
 		return self.get_query_params().get('userId')
 
-	def set_userId(self,userId):
-		self.add_query_param('userId',userId)
-
-	def get_table(self):
+	def set_userId(self, userId):  # String
+		self.add_query_param('userId', userId)
+	def get_table(self): # String
 		return self.get_path_params().get('table')
 
-	def set_table(self,table):
-		self.add_path_param('table',table)
+	def set_table(self, table):  # String
+		self.add_path_param('table', table)

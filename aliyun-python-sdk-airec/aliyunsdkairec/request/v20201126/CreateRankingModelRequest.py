@@ -26,20 +26,19 @@ class CreateRankingModelRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'CreateRankingModel','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/ranking-models')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_dryRun(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_dryRun(self): # Boolean
 		return self.get_query_params().get('dryRun')
 
-	def set_dryRun(self,dryRun):
-		self.add_query_param('dryRun',dryRun)
+	def set_dryRun(self, dryRun):  # Boolean
+		self.add_query_param('dryRun', dryRun)

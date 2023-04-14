@@ -26,26 +26,34 @@ class ListItemsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListItems','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/items/actions/list')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_strategyUsed(self): # Boolean
+		return self.get_query_params().get('strategyUsed')
 
-	def get_instanceId(self):
+	def set_strategyUsed(self, strategyUsed):  # Boolean
+		self.add_query_param('strategyUsed', strategyUsed)
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_withInvalidDetail(self): # Boolean
+		return self.get_query_params().get('withInvalidDetail')
 
-	def get_page(self):
+	def set_withInvalidDetail(self, withInvalidDetail):  # Boolean
+		self.add_query_param('withInvalidDetail', withInvalidDetail)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)

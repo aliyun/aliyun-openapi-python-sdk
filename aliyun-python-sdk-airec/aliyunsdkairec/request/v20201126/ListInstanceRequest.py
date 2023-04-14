@@ -26,44 +26,39 @@ class ListInstanceRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListInstance','airec')
 		self.set_uri_pattern('/v2/openapi/instances')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_query_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_query_param('instanceId', instanceId)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_name(self):
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_name(self): # String
 		return self.get_query_params().get('name')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
-
-	def get_expiredTime(self):
+	def set_name(self, name):  # String
+		self.add_query_param('name', name)
+	def get_expiredTime(self): # String
 		return self.get_query_params().get('expiredTime')
 
-	def set_expiredTime(self,expiredTime):
-		self.add_query_param('expiredTime',expiredTime)
-
-	def get_page(self):
+	def set_expiredTime(self, expiredTime):  # String
+		self.add_query_param('expiredTime', expiredTime)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_status(self):
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)
+	def get_status(self): # String
 		return self.get_query_params().get('status')
 
-	def set_status(self,status):
-		self.add_query_param('status',status)
+	def set_status(self, status):  # String
+		self.add_query_param('status', status)

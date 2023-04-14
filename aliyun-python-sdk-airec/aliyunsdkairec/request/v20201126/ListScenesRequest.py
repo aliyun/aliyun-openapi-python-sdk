@@ -26,38 +26,34 @@ class ListScenesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListScenes','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/scenes')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_sceneId(self):
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_sceneId(self): # String
 		return self.get_query_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_query_param('sceneId',sceneId)
-
-	def get_page(self):
+	def set_sceneId(self, sceneId):  # String
+		self.add_query_param('sceneId', sceneId)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_status(self):
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)
+	def get_status(self): # String
 		return self.get_query_params().get('status')
 
-	def set_status(self,status):
-		self.add_query_param('status',status)
+	def set_status(self, status):  # String
+		self.add_query_param('status', status)

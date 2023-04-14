@@ -26,14 +26,14 @@ class DescribeRegionsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'DescribeRegions','airec')
 		self.set_uri_pattern('/v2/openapi/configurations/regions')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_acceptLanguage(self):
+	def get_acceptLanguage(self): # String
 		return self.get_query_params().get('acceptLanguage')
 
-	def set_acceptLanguage(self,acceptLanguage):
-		self.add_query_param('acceptLanguage',acceptLanguage)
+	def set_acceptLanguage(self, acceptLanguage):  # String
+		self.add_query_param('acceptLanguage', acceptLanguage)

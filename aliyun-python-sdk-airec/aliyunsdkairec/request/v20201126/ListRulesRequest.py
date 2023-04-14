@@ -26,56 +26,49 @@ class ListRulesRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListRules','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/rules')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_size(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self,size):
-		self.add_query_param('size',size)
-
-	def get_ruleType(self):
+	def set_size(self, size):  # Integer
+		self.add_query_param('size', size)
+	def get_ruleType(self): # String
 		return self.get_query_params().get('ruleType')
 
-	def set_ruleType(self,ruleType):
-		self.add_query_param('ruleType',ruleType)
-
-	def get_sceneId(self):
+	def set_ruleType(self, ruleType):  # String
+		self.add_query_param('ruleType', ruleType)
+	def get_sceneId(self): # String
 		return self.get_query_params().get('sceneId')
 
-	def set_sceneId(self,sceneId):
-		self.add_query_param('sceneId',sceneId)
-
-	def get_endTime(self):
+	def set_sceneId(self, sceneId):  # String
+		self.add_query_param('sceneId', sceneId)
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_page(self):
+	def set_endTime(self, endTime):  # Long
+		self.add_query_param('endTime', endTime)
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
-
-	def get_startTime(self):
+	def set_page(self, page):  # Integer
+		self.add_query_param('page', page)
+	def get_startTime(self): # Long
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
-
-	def get_status(self):
+	def set_startTime(self, startTime):  # Long
+		self.add_query_param('startTime', startTime)
+	def get_status(self): # String
 		return self.get_query_params().get('status')
 
-	def set_status(self,status):
-		self.add_query_param('status',status)
+	def set_status(self, status):  # String
+		self.add_query_param('status', status)

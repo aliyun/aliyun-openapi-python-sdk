@@ -26,20 +26,19 @@ class PushDocumentRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'PushDocument','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/tables/[tableName]/actions/bulk')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_instanceId(self):
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_tableName(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_tableName(self): # String
 		return self.get_path_params().get('tableName')
 
-	def set_tableName(self,tableName):
-		self.add_path_param('tableName',tableName)
+	def set_tableName(self, tableName):  # String
+		self.add_path_param('tableName', tableName)

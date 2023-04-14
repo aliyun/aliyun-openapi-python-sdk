@@ -26,50 +26,49 @@ class ListDashboardDetailsRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Airec', '2020-11-26', 'ListDashboardDetails','airec')
 		self.set_uri_pattern('/v2/openapi/instances/[instanceId]/dashboard/details')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_metricType(self):
+	def get_metricType(self): # String
 		return self.get_query_params().get('metricType')
 
-	def set_metricType(self,metricType):
-		self.add_query_param('metricType',metricType)
-
-	def get_instanceId(self):
+	def set_metricType(self, metricType):  # String
+		self.add_query_param('metricType', metricType)
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_experimentIds(self):
+	def set_instanceId(self, instanceId):  # String
+		self.add_path_param('instanceId', instanceId)
+	def get_experimentIds(self): # String
 		return self.get_query_params().get('experimentIds')
 
-	def set_experimentIds(self,experimentIds):
-		self.add_query_param('experimentIds',experimentIds)
+	def set_experimentIds(self, experimentIds):  # String
+		self.add_query_param('experimentIds', experimentIds)
+	def get_matchTypes(self): # String
+		return self.get_query_params().get('matchTypes')
 
-	def get_traceIds(self):
+	def set_matchTypes(self, matchTypes):  # String
+		self.add_query_param('matchTypes', matchTypes)
+	def get_traceIds(self): # String
 		return self.get_query_params().get('traceIds')
 
-	def set_traceIds(self,traceIds):
-		self.add_query_param('traceIds',traceIds)
-
-	def get_endTime(self):
+	def set_traceIds(self, traceIds):  # String
+		self.add_query_param('traceIds', traceIds)
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self,endTime):
-		self.add_query_param('endTime',endTime)
-
-	def get_startTime(self):
+	def set_endTime(self, endTime):  # Long
+		self.add_query_param('endTime', endTime)
+	def get_startTime(self): # Long
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self,startTime):
-		self.add_query_param('startTime',startTime)
-
-	def get_sceneIds(self):
+	def set_startTime(self, startTime):  # Long
+		self.add_query_param('startTime', startTime)
+	def get_sceneIds(self): # String
 		return self.get_query_params().get('sceneIds')
 
-	def set_sceneIds(self,sceneIds):
-		self.add_query_param('sceneIds',sceneIds)
+	def set_sceneIds(self, sceneIds):  # String
+		self.add_query_param('sceneIds', sceneIds)
