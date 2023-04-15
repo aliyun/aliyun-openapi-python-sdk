@@ -70,3 +70,5 @@ class CreateRouteEntriesRequest(RpcRequest):
 				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Name', RouteEntries[depth1].get('Name'))
 			if RouteEntries[depth1].get('Describption') is not None:
 				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Describption', RouteEntries[depth1].get('Describption'))
+			if RouteEntries[depth1].get('Description') is not None:
+				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Description', RouteEntries[depth1].get('Description'))

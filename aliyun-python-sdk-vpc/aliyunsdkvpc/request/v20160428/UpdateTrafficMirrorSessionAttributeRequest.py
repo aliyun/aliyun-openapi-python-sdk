@@ -101,6 +101,11 @@ class UpdateTrafficMirrorSessionAttributeRequest(RpcRequest):
 
 	def set_TrafficMirrorFilterId(self, TrafficMirrorFilterId):  # String
 		self.add_query_param('TrafficMirrorFilterId', TrafficMirrorFilterId)
+	def get_PacketLength(self): # Integer
+		return self.get_query_params().get('PacketLength')
+
+	def set_PacketLength(self, PacketLength):  # Integer
+		self.add_query_param('PacketLength', PacketLength)
 	def get_VirtualNetworkId(self): # Integer
 		return self.get_query_params().get('VirtualNetworkId')
 

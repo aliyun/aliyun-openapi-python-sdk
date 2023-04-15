@@ -36,6 +36,11 @@ class AssociateVpcCidrBlockRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_IpamPoolId(self): # String
+		return self.get_query_params().get('IpamPoolId')
+
+	def set_IpamPoolId(self, IpamPoolId):  # String
+		self.add_query_param('IpamPoolId', IpamPoolId)
 	def get_Ipv6Isp(self): # String
 		return self.get_query_params().get('Ipv6Isp')
 
