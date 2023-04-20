@@ -45,6 +45,11 @@ class ListServiceInstancesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_ShowDeleted(self): # Boolean
+		return self.get_query_params().get('ShowDeleted')
+
+	def set_ShowDeleted(self, ShowDeleted):  # Boolean
+		self.add_query_param('ShowDeleted', ShowDeleted)
 	def get_Filters(self): # RepeatList
 		return self.get_query_params().get('Filter')
 
