@@ -23,28 +23,26 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class DeleteQueueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteQueue','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteQueue')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_QueueName(self):
+	def get_QueueName(self): # String
 		return self.get_body_params().get('QueueName')
 
-	def set_QueueName(self,QueueName):
+	def set_QueueName(self, QueueName):  # String
 		self.add_body_params('QueueName', QueueName)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-
-	def get_VirtualHost(self):
+	def get_VirtualHost(self): # String
 		return self.get_body_params().get('VirtualHost')
 
-	def set_VirtualHost(self,VirtualHost):
+	def set_VirtualHost(self, VirtualHost):  # String
 		self.add_body_params('VirtualHost', VirtualHost)

@@ -23,28 +23,26 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class DeleteExchangeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteExchange','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteExchange')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExchangeName(self):
+	def get_ExchangeName(self): # String
 		return self.get_body_params().get('ExchangeName')
 
-	def set_ExchangeName(self,ExchangeName):
+	def set_ExchangeName(self, ExchangeName):  # String
 		self.add_body_params('ExchangeName', ExchangeName)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-
-	def get_VirtualHost(self):
+	def get_VirtualHost(self): # String
 		return self.get_body_params().get('VirtualHost')
 
-	def set_VirtualHost(self,VirtualHost):
+	def set_VirtualHost(self, VirtualHost):  # String
 		self.add_body_params('VirtualHost', VirtualHost)

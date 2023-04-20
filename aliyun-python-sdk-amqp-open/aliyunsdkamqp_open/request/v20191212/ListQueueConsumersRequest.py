@@ -23,40 +23,36 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class ListQueueConsumersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueueConsumers','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueueConsumers')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NextToken(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_QueryCount(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_QueryCount(self): # Integer
 		return self.get_query_params().get('QueryCount')
 
-	def set_QueryCount(self,QueryCount):
-		self.add_query_param('QueryCount',QueryCount)
-
-	def get_VirtualHost(self):
+	def set_QueryCount(self, QueryCount):  # Integer
+		self.add_query_param('QueryCount', QueryCount)
+	def get_VirtualHost(self): # String
 		return self.get_query_params().get('VirtualHost')
 
-	def set_VirtualHost(self,VirtualHost):
-		self.add_query_param('VirtualHost',VirtualHost)
-
-	def get_Queue(self):
+	def set_VirtualHost(self, VirtualHost):  # String
+		self.add_query_param('VirtualHost', VirtualHost)
+	def get_Queue(self): # String
 		return self.get_query_params().get('Queue')
 
-	def set_Queue(self,Queue):
-		self.add_query_param('Queue',Queue)
+	def set_Queue(self, Queue):  # String
+		self.add_query_param('Queue', Queue)

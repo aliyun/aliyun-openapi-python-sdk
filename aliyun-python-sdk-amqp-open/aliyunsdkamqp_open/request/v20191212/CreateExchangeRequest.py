@@ -23,52 +23,46 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class CreateExchangeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateExchange','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateExchange')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Internal(self):
+	def get_Internal(self): # Boolean
 		return self.get_body_params().get('Internal')
 
-	def set_Internal(self,Internal):
+	def set_Internal(self, Internal):  # Boolean
 		self.add_body_params('Internal', Internal)
-
-	def get_ExchangeName(self):
+	def get_ExchangeName(self): # String
 		return self.get_body_params().get('ExchangeName')
 
-	def set_ExchangeName(self,ExchangeName):
+	def set_ExchangeName(self, ExchangeName):  # String
 		self.add_body_params('ExchangeName', ExchangeName)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-
-	def get_AlternateExchange(self):
+	def get_AlternateExchange(self): # String
 		return self.get_body_params().get('AlternateExchange')
 
-	def set_AlternateExchange(self,AlternateExchange):
+	def set_AlternateExchange(self, AlternateExchange):  # String
 		self.add_body_params('AlternateExchange', AlternateExchange)
-
-	def get_AutoDeleteState(self):
+	def get_AutoDeleteState(self): # Boolean
 		return self.get_body_params().get('AutoDeleteState')
 
-	def set_AutoDeleteState(self,AutoDeleteState):
+	def set_AutoDeleteState(self, AutoDeleteState):  # Boolean
 		self.add_body_params('AutoDeleteState', AutoDeleteState)
-
-	def get_ExchangeType(self):
+	def get_ExchangeType(self): # String
 		return self.get_body_params().get('ExchangeType')
 
-	def set_ExchangeType(self,ExchangeType):
+	def set_ExchangeType(self, ExchangeType):  # String
 		self.add_body_params('ExchangeType', ExchangeType)
-
-	def get_VirtualHost(self):
+	def get_VirtualHost(self): # String
 		return self.get_body_params().get('VirtualHost')
 
-	def set_VirtualHost(self,VirtualHost):
+	def set_VirtualHost(self, VirtualHost):  # String
 		self.add_body_params('VirtualHost', VirtualHost)

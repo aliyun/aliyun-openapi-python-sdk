@@ -23,46 +23,41 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class DeleteBindingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteBinding','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteBinding')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DestinationName(self):
+	def get_DestinationName(self): # String
 		return self.get_body_params().get('DestinationName')
 
-	def set_DestinationName(self,DestinationName):
+	def set_DestinationName(self, DestinationName):  # String
 		self.add_body_params('DestinationName', DestinationName)
-
-	def get_SourceExchange(self):
+	def get_SourceExchange(self): # String
 		return self.get_body_params().get('SourceExchange')
 
-	def set_SourceExchange(self,SourceExchange):
+	def set_SourceExchange(self, SourceExchange):  # String
 		self.add_body_params('SourceExchange', SourceExchange)
-
-	def get_BindingKey(self):
+	def get_BindingKey(self): # String
 		return self.get_body_params().get('BindingKey')
 
-	def set_BindingKey(self,BindingKey):
+	def set_BindingKey(self, BindingKey):  # String
 		self.add_body_params('BindingKey', BindingKey)
-
-	def get_BindingType(self):
+	def get_BindingType(self): # String
 		return self.get_body_params().get('BindingType')
 
-	def set_BindingType(self,BindingType):
+	def set_BindingType(self, BindingType):  # String
 		self.add_body_params('BindingType', BindingType)
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-
-	def get_VirtualHost(self):
+	def get_VirtualHost(self): # String
 		return self.get_body_params().get('VirtualHost')
 
-	def set_VirtualHost(self,VirtualHost):
+	def set_VirtualHost(self, VirtualHost):  # String
 		self.add_body_params('VirtualHost', VirtualHost)
