@@ -65,6 +65,11 @@ class CreateTransitRouterVpcAttachmentRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_AutoPublishRouteEnabled(self): # Boolean
+		return self.get_query_params().get('AutoPublishRouteEnabled')
+
+	def set_AutoPublishRouteEnabled(self, AutoPublishRouteEnabled):  # Boolean
+		self.add_query_param('AutoPublishRouteEnabled', AutoPublishRouteEnabled)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
