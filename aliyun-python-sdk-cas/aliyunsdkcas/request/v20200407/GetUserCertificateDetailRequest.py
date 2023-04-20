@@ -36,3 +36,8 @@ class GetUserCertificateDetailRequest(RpcRequest):
 
 	def set_CertId(self, CertId):  # Long
 		self.add_query_param('CertId', CertId)
+	def get_CertFilter(self): # Boolean
+		return self.get_query_params().get('CertFilter')
+
+	def set_CertFilter(self, CertFilter):  # Boolean
+		self.add_query_param('CertFilter', CertFilter)
