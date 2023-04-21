@@ -56,6 +56,16 @@ class CreateEventSourceRequest(RpcRequest):
 
 	def set_SourceSLSParameters(self, SourceSLSParameters):  # Struct
 		self.add_body_params("SourceSLSParameters", json.dumps(SourceSLSParameters))
+	def get_SourceScheduledEventParameters(self): # Struct
+		return self.get_body_params().get('SourceScheduledEventParameters')
+
+	def set_SourceScheduledEventParameters(self, SourceScheduledEventParameters):  # Struct
+		self.add_body_params("SourceScheduledEventParameters", json.dumps(SourceScheduledEventParameters))
+	def get_SourceKafkaParameters(self): # Struct
+		return self.get_body_params().get('SourceKafkaParameters')
+
+	def set_SourceKafkaParameters(self, SourceKafkaParameters):  # Struct
+		self.add_body_params("SourceKafkaParameters", json.dumps(SourceKafkaParameters))
 	def get_SourceHttpEventParameters(self): # Struct
 		return self.get_body_params().get('SourceHttpEventParameters')
 
