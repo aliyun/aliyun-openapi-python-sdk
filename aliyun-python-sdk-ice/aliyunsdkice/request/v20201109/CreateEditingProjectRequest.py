@@ -56,6 +56,11 @@ class CreateEditingProjectRequest(RpcRequest):
 
 	def set_CoverURL(self, CoverURL):  # String
 		self.add_query_param('CoverURL', CoverURL)
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
 	def get_ProjectType(self): # String
 		return self.get_query_params().get('ProjectType')
 
