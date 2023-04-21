@@ -31,6 +31,15 @@ class MergeImageFaceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MergeInfoss(self): # RepeatList
+		return self.get_body_params().get('MergeInfos')
+
+	def set_MergeInfoss(self, MergeInfos):  # RepeatList
+		for depth1 in range(len(MergeInfos)):
+			if MergeInfos[depth1].get('ImageURL') is not None:
+				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.ImageURL', MergeInfos[depth1].get('ImageURL'))
+			if MergeInfos[depth1].get('TemplateFaceID') is not None:
+				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.TemplateFaceID', MergeInfos[depth1].get('TemplateFaceID'))
 	def get_TemplateId(self): # String
 		return self.get_body_params().get('TemplateId')
 
@@ -41,3 +50,13 @@ class MergeImageFaceRequest(RpcRequest):
 
 	def set_ImageURL(self, ImageURL):  # String
 		self.add_body_params('ImageURL', ImageURL)
+	def get_AddWatermark(self): # Boolean
+		return self.get_body_params().get('AddWatermark')
+
+	def set_AddWatermark(self, AddWatermark):  # Boolean
+		self.add_body_params('AddWatermark', AddWatermark)
+	def get_ModelVersion(self): # String
+		return self.get_body_params().get('ModelVersion')
+
+	def set_ModelVersion(self, ModelVersion):  # String
+		self.add_body_params('ModelVersion', ModelVersion)
