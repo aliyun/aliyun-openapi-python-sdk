@@ -66,6 +66,11 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_TemporaryEndTime(self, TemporaryEndTime):  # String
 		self.add_query_param('Temporary.EndTime', TemporaryEndTime)
+	def get_ModifyMode(self): # String
+		return self.get_query_params().get('ModifyMode')
+
+	def set_ModifyMode(self, ModifyMode):  # String
+		self.add_query_param('ModifyMode', ModifyMode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -96,6 +101,17 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_Async(self, _Async):  # Boolean
 		self.add_query_param('Async', _Async)
+	def get_Disks(self): # RepeatList
+		return self.get_query_params().get('Disk')
+
+	def set_Disks(self, Disk):  # RepeatList
+		for depth1 in range(len(Disk)):
+			if Disk[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.PerformanceLevel', Disk[depth1].get('PerformanceLevel'))
+			if Disk[depth1].get('DiskId') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.DiskId', Disk[depth1].get('DiskId'))
+			if Disk[depth1].get('Category') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.Category', Disk[depth1].get('Category'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

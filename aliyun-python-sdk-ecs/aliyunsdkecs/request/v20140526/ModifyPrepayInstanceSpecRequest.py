@@ -66,6 +66,11 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_ModifyMode(self): # String
+		return self.get_query_params().get('ModifyMode')
+
+	def set_ModifyMode(self, ModifyMode):  # String
+		self.add_query_param('ModifyMode', ModifyMode)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
@@ -96,6 +101,17 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Disks(self): # RepeatList
+		return self.get_query_params().get('Disk')
+
+	def set_Disks(self, Disk):  # RepeatList
+		for depth1 in range(len(Disk)):
+			if Disk[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.PerformanceLevel', Disk[depth1].get('PerformanceLevel'))
+			if Disk[depth1].get('DiskId') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.DiskId', Disk[depth1].get('DiskId'))
+			if Disk[depth1].get('Category') is not None:
+				self.add_query_param('Disk.' + str(depth1 + 1) + '.Category', Disk[depth1].get('Category'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

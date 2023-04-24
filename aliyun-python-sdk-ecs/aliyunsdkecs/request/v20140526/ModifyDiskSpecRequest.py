@@ -66,6 +66,16 @@ class ModifyDiskSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_PerformanceControlOptions(self): # Struct
+		return self.get_query_params().get('PerformanceControlOptions')
+
+	def set_PerformanceControlOptions(self, PerformanceControlOptions):  # Struct
+		if PerformanceControlOptions.get('IOPS') is not None:
+			self.add_query_param('PerformanceControlOptions.IOPS', PerformanceControlOptions.get('IOPS'))
+		if PerformanceControlOptions.get('Throughput') is not None:
+			self.add_query_param('PerformanceControlOptions.Throughput', PerformanceControlOptions.get('Throughput'))
+		if PerformanceControlOptions.get('Recover') is not None:
+			self.add_query_param('PerformanceControlOptions.Recover', PerformanceControlOptions.get('Recover'))
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
