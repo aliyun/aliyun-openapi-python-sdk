@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListAttemptsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListAttempts')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListAttempts','CCC')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class ListAttemptsRequest(RpcRequest):
 
 	def set_CampaignId(self, CampaignId):  # String
 		self.add_query_param('CampaignId', CampaignId)
+	def get_Criteria(self): # String
+		return self.get_query_params().get('Criteria')
+
+	def set_Criteria(self, Criteria):  # String
+		self.add_query_param('Criteria', Criteria)
 	def get_Callee(self): # String
 		return self.get_query_params().get('Callee')
 

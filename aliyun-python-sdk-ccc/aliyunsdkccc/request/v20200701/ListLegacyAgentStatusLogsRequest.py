@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ListSipCallRecordsRequest(RpcRequest):
+class ListLegacyAgentStatusLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListSipCallRecords')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListLegacyAgentStatusLogs','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,33 @@ class ListSipCallRecordsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ContactIdList(self): # String
-		return self.get_query_params().get('ContactIdList')
+	def get_AgentId(self): # String
+		return self.get_query_params().get('AgentId')
 
-	def set_ContactIdList(self, ContactIdList):  # String
-		self.add_query_param('ContactIdList', ContactIdList)
+	def set_AgentId(self, AgentId):  # String
+		self.add_query_param('AgentId', AgentId)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

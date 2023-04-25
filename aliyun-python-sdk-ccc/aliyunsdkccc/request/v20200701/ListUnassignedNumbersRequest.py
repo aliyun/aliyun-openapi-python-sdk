@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListUnassignedNumbersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListUnassignedNumbers')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListUnassignedNumbers','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,6 @@ class ListUnassignedNumbersRequest(RpcRequest):
 
 	def set_SearchPattern(self, SearchPattern):  # String
 		self.add_query_param('SearchPattern', SearchPattern)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

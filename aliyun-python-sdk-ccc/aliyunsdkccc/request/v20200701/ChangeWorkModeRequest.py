@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ChangeWorkModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ChangeWorkMode')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ChangeWorkMode','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,16 @@ class ChangeWorkModeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SignedSkillGroupIdList(self): # String
+		return self.get_query_params().get('SignedSkillGroupIdList')
+
+	def set_SignedSkillGroupIdList(self, SignedSkillGroupIdList):  # String
+		self.add_query_param('SignedSkillGroupIdList', SignedSkillGroupIdList)
+	def get_Mobile(self): # String
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)
 	def get_WorkMode(self): # String
 		return self.get_query_params().get('WorkMode')
 

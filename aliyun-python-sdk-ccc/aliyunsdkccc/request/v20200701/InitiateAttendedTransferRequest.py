@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class InitiateAttendedTransferRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'InitiateAttendedTransfer')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'InitiateAttendedTransfer','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class InitiateAttendedTransferRequest(RpcRequest):
 
 	def set_DeviceId(self, DeviceId):  # String
 		self.add_query_param('DeviceId', DeviceId)
+	def get_StrategyName(self): # String
+		return self.get_query_params().get('StrategyName')
+
+	def set_StrategyName(self, StrategyName):  # String
+		self.add_query_param('StrategyName', StrategyName)
 	def get_TimeoutSeconds(self): # Integer
 		return self.get_query_params().get('TimeoutSeconds')
 
@@ -66,3 +71,13 @@ class InitiateAttendedTransferRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_StrategyParams(self): # String
+		return self.get_query_params().get('StrategyParams')
+
+	def set_StrategyParams(self, StrategyParams):  # String
+		self.add_query_param('StrategyParams', StrategyParams)
+	def get_CallPriority(self): # Integer
+		return self.get_query_params().get('CallPriority')
+
+	def set_CallPriority(self, CallPriority):  # Integer
+		self.add_query_param('CallPriority', CallPriority)

@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class RemoveUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'RemoveUsers')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'RemoveUsers','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,3 +41,8 @@ class RemoveUsersRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)

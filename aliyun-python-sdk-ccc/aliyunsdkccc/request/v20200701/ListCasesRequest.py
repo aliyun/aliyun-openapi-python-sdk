@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListCasesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListCases')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListCases','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class ListCasesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
+	def get_State(self): # String
+		return self.get_query_params().get('State')
+
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
 	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 

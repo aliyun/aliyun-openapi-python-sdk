@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class GetLoginDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'GetLoginDetails')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'GetLoginDetails','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class CreateCampaignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CreateCampaign')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CreateCampaign','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class CreateCampaignRequest(RpcRequest):
 
 	def set_Simulation(self, Simulation):  # Boolean
 		self.add_query_param('Simulation', Simulation)
+	def get_ExecutingUntilTimeout(self): # Boolean
+		return self.get_query_params().get('ExecutingUntilTimeout')
+
+	def set_ExecutingUntilTimeout(self, ExecutingUntilTimeout):  # Boolean
+		self.add_query_param('ExecutingUntilTimeout', ExecutingUntilTimeout)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 

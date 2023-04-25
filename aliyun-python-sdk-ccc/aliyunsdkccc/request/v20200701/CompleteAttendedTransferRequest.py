@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class CompleteAttendedTransferRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CompleteAttendedTransfer')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'CompleteAttendedTransfer','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

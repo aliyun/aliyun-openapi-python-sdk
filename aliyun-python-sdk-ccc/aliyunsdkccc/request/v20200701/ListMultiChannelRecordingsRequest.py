@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListMultiChannelRecordingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListMultiChannelRecordings')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListMultiChannelRecordings','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

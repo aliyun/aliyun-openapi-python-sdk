@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListSkillGroupStatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListSkillGroupStates')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListSkillGroupStates','CCC')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

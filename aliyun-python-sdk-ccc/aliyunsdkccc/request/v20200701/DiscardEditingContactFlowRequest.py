@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ListSipTracesRequest(RpcRequest):
+class DiscardEditingContactFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListSipTraces')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'DiscardEditingContactFlow','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,16 @@ class ListSipTracesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CallId(self): # String
-		return self.get_query_params().get('CallId')
+	def get_ContactFlowId(self): # String
+		return self.get_query_params().get('ContactFlowId')
 
-	def set_CallId(self, CallId):  # String
-		self.add_query_param('CallId', CallId)
+	def set_ContactFlowId(self, ContactFlowId):  # String
+		self.add_query_param('ContactFlowId', ContactFlowId)
+	def get_DraftId(self): # String
+		return self.get_query_params().get('DraftId')
+
+	def set_DraftId(self, DraftId):  # String
+		self.add_query_param('DraftId', DraftId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ListRealtimeAgentStatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListRealtimeAgentStates')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListRealtimeAgentStates','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,21 @@ class ListRealtimeAgentStatesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CallTypeList(self): # String
+		return self.get_query_params().get('CallTypeList')
+
+	def set_CallTypeList(self, CallTypeList):  # String
+		self.add_query_param('CallTypeList', CallTypeList)
+	def get_Query(self): # String
+		return self.get_query_params().get('Query')
+
+	def set_Query(self, Query):  # String
+		self.add_query_param('Query', Query)
+	def get_OutboundScenario(self): # Boolean
+		return self.get_query_params().get('OutboundScenario')
+
+	def set_OutboundScenario(self, OutboundScenario):  # Boolean
+		self.add_query_param('OutboundScenario', OutboundScenario)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -41,6 +56,11 @@ class ListRealtimeAgentStatesRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_WorkModeList(self): # String
+		return self.get_query_params().get('WorkModeList')
+
+	def set_WorkModeList(self, WorkModeList):  # String
+		self.add_query_param('WorkModeList', WorkModeList)
 	def get_AgentIdList(self): # String
 		return self.get_body_params().get('AgentIdList')
 

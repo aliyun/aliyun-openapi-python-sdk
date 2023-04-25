@@ -23,7 +23,7 @@ from aliyunsdkccc.endpoint import endpoint_data
 class ReadyForServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ReadyForService')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ReadyForService','CCC')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
