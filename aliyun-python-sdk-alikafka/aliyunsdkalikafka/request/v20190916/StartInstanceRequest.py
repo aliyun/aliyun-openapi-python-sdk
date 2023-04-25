@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class StartInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'StartInstance','alikafka')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'StartInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class CreatePrePayOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'CreatePrePayOrder','alikafka')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'CreatePrePayOrder')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

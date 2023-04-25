@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalikafka.endpoint import endpoint_data
+import json
 
-class GetAllowedIpListRequest(RpcRequest):
+class UpdateConsumerOffsetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetAllowedIpList')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpdateConsumerOffset')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +32,33 @@ class GetAllowedIpListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ConsumerId(self): # String
+		return self.get_query_params().get('ConsumerId')
+
+	def set_ConsumerId(self, ConsumerId):  # String
+		self.add_query_param('ConsumerId', ConsumerId)
+	def get_ResetType(self): # String
+		return self.get_query_params().get('ResetType')
+
+	def set_ResetType(self, ResetType):  # String
+		self.add_query_param('ResetType', ResetType)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Offsets(self): # Array
+		return self.get_query_params().get('Offsets')
+
+	def set_Offsets(self, Offsets):  # Array
+		self.add_query_param("Offsets", json.dumps(Offsets))
+	def get_Topic(self): # String
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self, Topic):  # String
+		self.add_query_param('Topic', Topic)
+	def get_Time(self): # String
+		return self.get_query_params().get('Time')
+
+	def set_Time(self, Time):  # String
+		self.add_query_param('Time', Time)
