@@ -36,3 +36,13 @@ class ListRemediationsRequest(RpcRequest):
 
 	def set_ConfigRuleIds(self, ConfigRuleIds):  # String
 		self.add_query_param('ConfigRuleIds', ConfigRuleIds)
+	def get_PageNumber(self): # Long
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
