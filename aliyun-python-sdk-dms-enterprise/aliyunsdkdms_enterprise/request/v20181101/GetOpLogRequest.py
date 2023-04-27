@@ -31,6 +31,11 @@ class GetOpLogRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UserNick(self): # String
+		return self.get_query_params().get('UserNick')
+
+	def set_UserNick(self, UserNick):  # String
+		self.add_query_param('UserNick', UserNick)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -61,3 +66,8 @@ class GetOpLogRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
+	def get_DatabaseName(self): # String
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)
