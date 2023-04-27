@@ -1,3 +1,6 @@
+2023-04-27 Version: 2.1.13
+- Support return TotalCount for QueryFigureClusters.
+
 2023-04-23 Version: 2.1.12
 - Change parameter name to InputFile.
 

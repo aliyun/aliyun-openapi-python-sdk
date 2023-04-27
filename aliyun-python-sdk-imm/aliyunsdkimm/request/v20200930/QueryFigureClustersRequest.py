@@ -72,6 +72,11 @@ class QueryFigureClustersRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
+	def get_WithTotalCount(self): # Boolean
+		return self.get_query_params().get('WithTotalCount')
+
+	def set_WithTotalCount(self, WithTotalCount):  # Boolean
+		self.add_query_param('WithTotalCount', WithTotalCount)
 	def get_UpdateTimeRange(self): # Struct
 		return self.get_query_params().get('UpdateTimeRange')
 
