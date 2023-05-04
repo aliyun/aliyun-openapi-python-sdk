@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
+import json
 
-class QuerySubsIdRequest(RpcRequest):
+class BindBatchAxgRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QuerySubsId')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'BindBatchAxg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +37,11 @@ class QuerySubsIdRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PhoneNoX(self): # String
-		return self.get_query_params().get('PhoneNoX')
+	def get_AxgBindList(self): # Array
+		return self.get_query_params().get('AxgBindList')
 
-	def set_PhoneNoX(self, PhoneNoX):  # String
-		self.add_query_param('PhoneNoX', PhoneNoX)
+	def set_AxgBindList(self, AxgBindList):  # Array
+		self.add_query_param("AxgBindList", json.dumps(AxgBindList))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

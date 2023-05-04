@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class QuerySubsIdRequest(RpcRequest):
+class DeleteAxgGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QuerySubsId')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'DeleteAxgGroup')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class QuerySubsIdRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PhoneNoX(self): # String
-		return self.get_query_params().get('PhoneNoX')
-
-	def set_PhoneNoX(self, PhoneNoX):  # String
-		self.add_query_param('PhoneNoX', PhoneNoX)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_GroupId(self): # Long
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

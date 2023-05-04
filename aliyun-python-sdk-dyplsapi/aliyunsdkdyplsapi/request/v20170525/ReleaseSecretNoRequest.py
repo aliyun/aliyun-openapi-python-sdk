@@ -36,6 +36,11 @@ class ReleaseSecretNoRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecretNo(self): # String
+		return self.get_query_params().get('SecretNo')
+
+	def set_SecretNo(self, SecretNo):  # String
+		self.add_query_param('SecretNo', SecretNo)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,8 +56,3 @@ class ReleaseSecretNoRequest(RpcRequest):
 
 	def set_PoolKey(self, PoolKey):  # String
 		self.add_query_param('PoolKey', PoolKey)
-	def get_SecretNo(self): # String
-		return self.get_query_params().get('SecretNo')
-
-	def set_SecretNo(self, SecretNo):  # String
-		self.add_query_param('SecretNo', SecretNo)
