@@ -1,3 +1,6 @@
+2023-05-08 Version: 1.0.5
+- whatsapp 修改Authentication类型的模板
+
 2023-04-14 Version: 1.0.4
 - whatsapp 目录修改
 - 回落短信允许指定回执超时回落时间
