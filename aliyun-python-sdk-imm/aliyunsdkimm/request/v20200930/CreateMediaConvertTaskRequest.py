@@ -52,6 +52,11 @@ class CreateMediaConvertTaskRequest(RpcRequest):
 
 	def set_Notification(self, Notification):  # Struct
 		self.add_query_param("Notification", json.dumps(Notification))
+	def get_AlignmentIndex(self): # Integer
+		return self.get_query_params().get('AlignmentIndex')
+
+	def set_AlignmentIndex(self, AlignmentIndex):  # Integer
+		self.add_query_param('AlignmentIndex', AlignmentIndex)
 	def get_ProjectName(self): # String
 		return self.get_query_params().get('ProjectName')
 

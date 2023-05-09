@@ -42,11 +42,6 @@ class LiveTranscodingRequest(RpcRequest):
 
 	def set_CredentialConfig(self, CredentialConfig):  # Struct
 		self.add_query_param("CredentialConfig", json.dumps(CredentialConfig))
-	def get_Token(self): # String
-		return self.get_query_params().get('Token')
-
-	def set_Token(self, Token):  # String
-		self.add_query_param('Token', Token)
 	def get_SourceURI(self): # String
 		return self.get_query_params().get('SourceURI')
 

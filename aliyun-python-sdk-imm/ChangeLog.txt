@@ -1,3 +1,6 @@
+2023-05-09 Version: 2.1.14
+- Remove PresetReference struct.
+
 2023-04-27 Version: 2.1.13
 - Support return TotalCount for QueryFigureClusters.
 
