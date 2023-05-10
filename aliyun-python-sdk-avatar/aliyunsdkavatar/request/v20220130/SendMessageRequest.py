@@ -26,6 +26,11 @@ class SendMessageRequest(RpcRequest):
 		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'SendMessage')
 		self.set_method('POST')
 
+	def get_Feedback(self): # Boolean
+		return self.get_query_params().get('Feedback')
+
+	def set_Feedback(self, Feedback):  # Boolean
+		self.add_query_param('Feedback', Feedback)
 	def get_TextRequest(self): # String
 		return self.get_query_params().get('TextRequest')
 
