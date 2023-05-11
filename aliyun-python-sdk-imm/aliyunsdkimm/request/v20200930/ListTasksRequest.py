@@ -67,6 +67,11 @@ class ListTasksRequest(RpcRequest):
 
 	def set_Sort(self, Sort):  # String
 		self.add_query_param('Sort', Sort)
+	def get_RequestDefinition(self): # Boolean
+		return self.get_query_params().get('RequestDefinition')
+
+	def set_RequestDefinition(self, RequestDefinition):  # Boolean
+		self.add_query_param('RequestDefinition', RequestDefinition)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

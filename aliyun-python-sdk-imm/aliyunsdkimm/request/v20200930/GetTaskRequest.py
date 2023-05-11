@@ -46,3 +46,8 @@ class GetTaskRequest(RpcRequest):
 
 	def set_TaskType(self, TaskType):  # String
 		self.add_query_param('TaskType', TaskType)
+	def get_RequestDefinition(self): # Boolean
+		return self.get_query_params().get('RequestDefinition')
+
+	def set_RequestDefinition(self, RequestDefinition):  # Boolean
+		self.add_query_param('RequestDefinition', RequestDefinition)
