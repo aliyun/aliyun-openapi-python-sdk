@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUser','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUser','2.2.0')
 		self.set_method('POST')
 
 	def get_AdminUser(self): # Boolean

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDatasetListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDatasetList','2.2.0')
 		self.set_method('POST')
 
 	def get_PageNum(self): # Integer

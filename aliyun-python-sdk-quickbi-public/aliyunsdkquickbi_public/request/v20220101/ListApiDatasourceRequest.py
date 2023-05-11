@@ -19,14 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteUserTagMetaRequest(RpcRequest):
+class ListApiDatasourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserTagMeta','2.2.0')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListApiDatasource','2.2.0')
 		self.set_method('POST')
 
-	def get_TagId(self): # String
-		return self.get_query_params().get('TagId')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_TagId(self, TagId):  # String
-		self.add_query_param('TagId', TagId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_KeyWord(self): # String
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

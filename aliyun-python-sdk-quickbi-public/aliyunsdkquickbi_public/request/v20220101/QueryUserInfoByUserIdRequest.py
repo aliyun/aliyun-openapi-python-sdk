@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryUserInfoByUserIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserInfoByUserId','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserInfoByUserId','2.2.0')
 		self.set_method('POST')
 
 	def get_UserId(self): # String

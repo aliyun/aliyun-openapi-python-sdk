@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDataServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDataService','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDataService','2.2.0')
 		self.set_method('POST')
 
 	def get_ReturnFields(self): # String

@@ -19,14 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteUserTagMetaRequest(RpcRequest):
+class ModifyApiDatasourceParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUserTagMeta','2.2.0')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ModifyApiDatasourceParameters','2.2.0')
 		self.set_method('POST')
 
-	def get_TagId(self): # String
-		return self.get_query_params().get('TagId')
+	def get_Parameters(self): # String
+		return self.get_query_params().get('Parameters')
 
-	def set_TagId(self, TagId):  # String
-		self.add_query_param('TagId', TagId)
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)
+	def get_ApiId(self): # String
+		return self.get_query_params().get('ApiId')
+
+	def set_ApiId(self, ApiId):  # String
+		self.add_query_param('ApiId', ApiId)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

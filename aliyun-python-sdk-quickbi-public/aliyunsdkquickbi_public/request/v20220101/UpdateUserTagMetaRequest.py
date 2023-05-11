@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateUserTagMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUserTagMeta','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUserTagMeta','2.2.0')
 		self.set_method('POST')
 
 	def get_TagDescription(self): # String

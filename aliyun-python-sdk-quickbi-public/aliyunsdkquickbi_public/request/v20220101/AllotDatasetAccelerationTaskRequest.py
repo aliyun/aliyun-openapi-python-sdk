@@ -19,32 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class AddDataLevelPermissionWhiteListRequest(RpcRequest):
+class AllotDatasetAccelerationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddDataLevelPermissionWhiteList','2.2.0')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AllotDatasetAccelerationTask','2.2.0')
 		self.set_method('POST')
 
-	def get_TargetType(self): # String
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self, TargetType):  # String
-		self.add_query_param('TargetType', TargetType)
-	def get_TargetIds(self): # String
-		return self.get_query_params().get('TargetIds')
-
-	def set_TargetIds(self, TargetIds):  # String
-		self.add_query_param('TargetIds', TargetIds)
-	def get_RuleType(self): # String
-		return self.get_query_params().get('RuleType')
-
-	def set_RuleType(self, RuleType):  # String
-		self.add_query_param('RuleType', RuleType)
-	def get_OperateType(self): # String
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self, OperateType):  # String
-		self.add_query_param('OperateType', OperateType)
 	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
