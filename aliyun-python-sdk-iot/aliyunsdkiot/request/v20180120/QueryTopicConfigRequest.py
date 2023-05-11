@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class ImportDTDataRequest(RpcRequest):
+class QueryTopicConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ImportDTData')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryTopicConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,30 +31,14 @@ class ImportDTDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DTInstanceId(self):
-		return self.get_query_params().get('DTInstanceId')
-
-	def set_DTInstanceId(self,DTInstanceId):
-		self.add_query_param('DTInstanceId',DTInstanceId)
-
 	def get_IotInstanceId(self):
-		return self.get_body_params().get('IotInstanceId')
+		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_body_params('IotInstanceId', IotInstanceId)
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_ProductKey(self):
-		return self.get_body_params().get('ProductKey')
+		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
-		self.add_body_params('ProductKey', ProductKey)
-
-	def get_Itemss(self):
-		return self.get_body_params().get('Items')
-
-	def set_Itemss(self, Itemss):
-		for depth1 in range(len(Itemss)):
-			if Itemss[depth1].get('DeviceName') is not None:
-				self.add_body_params('Items.' + str(depth1 + 1) + '.DeviceName', Itemss[depth1].get('DeviceName'))
-			if Itemss[depth1].get('Params') is not None:
-				self.add_body_params('Items.' + str(depth1 + 1) + '.Params', Itemss[depth1].get('Params'))
+		self.add_query_param('ProductKey',ProductKey)

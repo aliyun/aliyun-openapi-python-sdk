@@ -43,11 +43,23 @@ class CreateProductTopicRequest(RpcRequest):
 	def set_TopicShortName(self,TopicShortName):
 		self.add_query_param('TopicShortName',TopicShortName)
 
+	def get_EnableProxySubscribe(self):
+		return self.get_query_params().get('EnableProxySubscribe')
+
+	def set_EnableProxySubscribe(self,EnableProxySubscribe):
+		self.add_query_param('EnableProxySubscribe',EnableProxySubscribe)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Codec(self):
+		return self.get_query_params().get('Codec')
+
+	def set_Codec(self,Codec):
+		self.add_query_param('Codec',Codec)
 
 	def get_Operation(self):
 		return self.get_query_params().get('Operation')

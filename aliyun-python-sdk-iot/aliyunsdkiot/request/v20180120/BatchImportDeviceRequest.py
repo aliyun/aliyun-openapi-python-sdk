@@ -44,13 +44,13 @@ class BatchImportDeviceRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_DeviceLists(self):
-		return self.get_query_params().get('DeviceList')
+		return self.get_body_params().get('DeviceList')
 
 	def set_DeviceLists(self, DeviceLists):
 		for depth1 in range(len(DeviceLists)):
 			if DeviceLists[depth1].get('DeviceSecret') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceSecret', DeviceLists[depth1].get('DeviceSecret'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceSecret', DeviceLists[depth1].get('DeviceSecret'))
 			if DeviceLists[depth1].get('DeviceName') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceName', DeviceLists[depth1].get('DeviceName'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceName', DeviceLists[depth1].get('DeviceName'))
 			if DeviceLists[depth1].get('Sn') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.Sn', DeviceLists[depth1].get('Sn'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.Sn', DeviceLists[depth1].get('Sn'))

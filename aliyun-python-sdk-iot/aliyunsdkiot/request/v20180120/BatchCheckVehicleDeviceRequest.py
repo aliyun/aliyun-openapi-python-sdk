@@ -44,13 +44,15 @@ class BatchCheckVehicleDeviceRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_DeviceLists(self):
-		return self.get_query_params().get('DeviceList')
+		return self.get_body_params().get('DeviceList')
 
 	def set_DeviceLists(self, DeviceLists):
 		for depth1 in range(len(DeviceLists)):
+			if DeviceLists[depth1].get('DeviceName') is not None:
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceName', DeviceLists[depth1].get('DeviceName'))
 			if DeviceLists[depth1].get('DeviceId') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceId', DeviceLists[depth1].get('DeviceId'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceId', DeviceLists[depth1].get('DeviceId'))
 			if DeviceLists[depth1].get('Manufacturer') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.Manufacturer', DeviceLists[depth1].get('Manufacturer'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.Manufacturer', DeviceLists[depth1].get('Manufacturer'))
 			if DeviceLists[depth1].get('DeviceModel') is not None:
-				self.add_query_param('DeviceList.' + str(depth1 + 1) + '.DeviceModel', DeviceLists[depth1].get('DeviceModel'))
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceModel', DeviceLists[depth1].get('DeviceModel'))

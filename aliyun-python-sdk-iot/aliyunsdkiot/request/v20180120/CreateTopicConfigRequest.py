@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchCheckDeviceNamesRequest(RpcRequest):
+class CreateTopicConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchCheckDeviceNames')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateTopicConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,15 +31,11 @@ class BatchCheckDeviceNamesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DeviceNameLists(self):
-		return self.get_body_params().get('DeviceNameList')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_DeviceNameLists(self, DeviceNameLists):
-		for depth1 in range(len(DeviceNameLists)):
-			if DeviceNameLists[depth1].get('DeviceNickname') is not None:
-				self.add_body_params('DeviceNameList.' + str(depth1 + 1) + '.DeviceNickname', DeviceNameLists[depth1].get('DeviceNickname'))
-			if DeviceNameLists[depth1].get('DeviceName') is not None:
-				self.add_body_params('DeviceNameList.' + str(depth1 + 1) + '.DeviceName', DeviceNameLists[depth1].get('DeviceName'))
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -47,16 +43,38 @@ class BatchCheckDeviceNamesRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_TopicFullName(self):
+		return self.get_query_params().get('TopicFullName')
+
+	def set_TopicFullName(self,TopicFullName):
+		self.add_query_param('TopicFullName',TopicFullName)
+
+	def get_EnableBroadcast(self):
+		return self.get_query_params().get('EnableBroadcast')
+
+	def set_EnableBroadcast(self,EnableBroadcast):
+		self.add_query_param('EnableBroadcast',EnableBroadcast)
+
+	def get_EnableProxySubscribe(self):
+		return self.get_query_params().get('EnableProxySubscribe')
+
+	def set_EnableProxySubscribe(self,EnableProxySubscribe):
+		self.add_query_param('EnableProxySubscribe',EnableProxySubscribe)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_DeviceNames(self):
-		return self.get_body_params().get('DeviceName')
+	def get_Codec(self):
+		return self.get_query_params().get('Codec')
 
-	def set_DeviceNames(self, DeviceNames):
-		for depth1 in range(len(DeviceNames)):
-			if DeviceNames[depth1] is not None:
-				self.add_body_params('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])
+	def set_Codec(self,Codec):
+		self.add_query_param('Codec',Codec)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)

@@ -31,6 +31,12 @@ class UpdateTopicConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -49,8 +55,26 @@ class UpdateTopicConfigRequest(RpcRequest):
 	def set_EnableBroadcast(self,EnableBroadcast):
 		self.add_query_param('EnableBroadcast',EnableBroadcast)
 
+	def get_EnableProxySubscribe(self):
+		return self.get_query_params().get('EnableProxySubscribe')
+
+	def set_EnableProxySubscribe(self,EnableProxySubscribe):
+		self.add_query_param('EnableProxySubscribe',EnableProxySubscribe)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Codec(self):
+		return self.get_query_params().get('Codec')
+
+	def set_Codec(self,Codec):
+		self.add_query_param('Codec',Codec)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)
