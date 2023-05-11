@@ -66,6 +66,16 @@ class DescribeGrantRulesToCenRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ChildInstanceOwnerId(self): # Long
+		return self.get_query_params().get('ChildInstanceOwnerId')
+
+	def set_ChildInstanceOwnerId(self, ChildInstanceOwnerId):  # Long
+		self.add_query_param('ChildInstanceOwnerId', ChildInstanceOwnerId)
+	def get_ChildInstanceId(self): # String
+		return self.get_query_params().get('ChildInstanceId')
+
+	def set_ChildInstanceId(self, ChildInstanceId):  # String
+		self.add_query_param('ChildInstanceId', ChildInstanceId)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
