@@ -31,6 +31,11 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)
 	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
@@ -61,3 +66,8 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 
 	def set_VersionCode(self, VersionCode):  # String
 		self.add_query_param('VersionCode', VersionCode)
+	def get_Direction(self): # String
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self, Direction):  # String
+		self.add_query_param('Direction', Direction)
