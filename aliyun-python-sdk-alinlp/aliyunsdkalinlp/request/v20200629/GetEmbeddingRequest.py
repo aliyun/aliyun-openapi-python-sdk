@@ -41,3 +41,8 @@ class GetEmbeddingRequest(RpcRequest):
 
 	def set_Text(self, Text):  # String
 		self.add_body_params('Text', Text)
+	def get_TextType(self): # String
+		return self.get_body_params().get('TextType')
+
+	def set_TextType(self, TextType):  # String
+		self.add_body_params('TextType', TextType)
