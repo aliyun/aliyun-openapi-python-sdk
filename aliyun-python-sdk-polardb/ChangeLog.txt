@@ -1,3 +1,6 @@
+2023-05-12 Version: 1.8.29
+- Update some parameters.
+
 2023-03-15 Version: 1.8.28
 - Support hot standby cluster and proxy for SENormal.
 

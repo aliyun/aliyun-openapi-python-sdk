@@ -165,6 +165,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ScaleRoNumMax(self, ScaleRoNumMax):  # String
 		self.add_query_param('ScaleRoNumMax', ScaleRoNumMax)
+	def get_StandbyAZ(self): # String
+		return self.get_query_params().get('StandbyAZ')
+
+	def set_StandbyAZ(self, StandbyAZ):  # String
+		self.add_query_param('StandbyAZ', StandbyAZ)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -230,6 +235,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBVersion(self, DBVersion):  # String
 		self.add_query_param('DBVersion', DBVersion)
+	def get_StrictConsistency(self): # String
+		return self.get_query_params().get('StrictConsistency')
+
+	def set_StrictConsistency(self, StrictConsistency):  # String
+		self.add_query_param('StrictConsistency', StrictConsistency)
 	def get_CloneDataPoint(self): # String
 		return self.get_query_params().get('CloneDataPoint')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class CreateDBEndpointAddressRequest(RpcRequest):
+class ResetGlobalDatabaseNetworkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBEndpointAddress','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ResetGlobalDatabaseNetwork','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,30 +36,16 @@ class CreateDBEndpointAddressRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ConnectionStringPrefix(self): # String
-		return self.get_query_params().get('ConnectionStringPrefix')
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
-		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
-	def get_ZoneInfos(self): # RepeatList
-		return self.get_query_params().get('ZoneInfo')
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_GDNId(self): # String
+		return self.get_query_params().get('GDNId')
 
-	def set_ZoneInfos(self, ZoneInfo):  # RepeatList
-		for depth1 in range(len(ZoneInfo)):
-			if ZoneInfo[depth1].get('VSwitchId') is not None:
-				self.add_query_param('ZoneInfo.' + str(depth1 + 1) + '.VSwitchId', ZoneInfo[depth1].get('VSwitchId'))
-			if ZoneInfo[depth1].get('ZoneId') is not None:
-				self.add_query_param('ZoneInfo.' + str(depth1 + 1) + '.ZoneId', ZoneInfo[depth1].get('ZoneId'))
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_DBEndpointId(self): # String
-		return self.get_query_params().get('DBEndpointId')
-
-	def set_DBEndpointId(self, DBEndpointId):  # String
-		self.add_query_param('DBEndpointId', DBEndpointId)
+	def set_GDNId(self, GDNId):  # String
+		self.add_query_param('GDNId', GDNId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -80,13 +66,3 @@ class CreateDBEndpointAddressRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_NetType(self): # String
-		return self.get_query_params().get('NetType')
-
-	def set_NetType(self, NetType):  # String
-		self.add_query_param('NetType', NetType)
-	def get_VPCId(self): # String
-		return self.get_query_params().get('VPCId')
-
-	def set_VPCId(self, VPCId):  # String
-		self.add_query_param('VPCId', VPCId)
