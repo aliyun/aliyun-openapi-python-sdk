@@ -41,11 +41,6 @@ class DescribePhoneTwiceTelVerifyRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_ExtendFunction(self): # String
-		return self.get_query_params().get('ExtendFunction')
-
-	def set_ExtendFunction(self, ExtendFunction):  # String
-		self.add_query_param('ExtendFunction', ExtendFunction)
 	def get_Mask(self): # String
 		return self.get_query_params().get('Mask')
 

@@ -36,11 +36,6 @@ class PhoneNumberStatusForSmsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ExtendFunction(self): # String
-		return self.get_query_params().get('ExtendFunction')
-
-	def set_ExtendFunction(self, ExtendFunction):  # String
-		self.add_query_param('ExtendFunction', ExtendFunction)
 	def get_Mask(self): # String
 		return self.get_query_params().get('Mask')
 
