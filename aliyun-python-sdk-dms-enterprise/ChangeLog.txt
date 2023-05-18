@@ -1,3 +1,6 @@
+2023-05-18 Version: 1.49.0
+- Support GetDatabase, GetPhysicalDatabase to return InstanceAlias information.
+
 2023-05-15 Version: 1.48.0
 - Support SkipDataCorrectRowCheck API.
 
