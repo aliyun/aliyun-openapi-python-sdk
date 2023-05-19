@@ -31,16 +31,16 @@ class ModifyInstanceSpecRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DiskSize(self): # Long
-		return self.get_body_params().get('DiskSize')
-
-	def set_DiskSize(self, DiskSize):  # Long
-		self.add_body_params('DiskSize', DiskSize)
 	def get_InstanceClass(self): # String
 		return self.get_body_params().get('InstanceClass')
 
 	def set_InstanceClass(self, InstanceClass):  # String
 		self.add_body_params('InstanceClass', InstanceClass)
+	def get_DiskSize(self): # Long
+		return self.get_body_params().get('DiskSize')
+
+	def set_DiskSize(self, DiskSize):  # Long
+		self.add_body_params('DiskSize', DiskSize)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class ModifyTenantUserPasswordRequest(RpcRequest):
+class KillProcessListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'ModifyTenantUserPassword','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'KillProcessList','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,11 @@ class ModifyTenantUserPasswordRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserPassword(self): # String
-		return self.get_body_params().get('UserPassword')
+	def get_SessionList(self): # String
+		return self.get_body_params().get('SessionList')
 
-	def set_UserPassword(self, UserPassword):  # String
-		self.add_body_params('UserPassword', UserPassword)
+	def set_SessionList(self, SessionList):  # String
+		self.add_body_params('SessionList', SessionList)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
@@ -46,13 +46,3 @@ class ModifyTenantUserPasswordRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
-	def get_EncryptionType(self): # String
-		return self.get_body_params().get('EncryptionType')
-
-	def set_EncryptionType(self, EncryptionType):  # String
-		self.add_body_params('EncryptionType', EncryptionType)
-	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
-
-	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
