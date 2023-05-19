@@ -31,6 +31,11 @@ class VerifyDomainOwnerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_GlobalResourcePlan(self): # String
+		return self.get_query_params().get('GlobalResourcePlan')
+
+	def set_GlobalResourcePlan(self, GlobalResourcePlan):  # String
+		self.add_query_param('GlobalResourcePlan', GlobalResourcePlan)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
