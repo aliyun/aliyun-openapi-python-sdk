@@ -131,6 +131,11 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_RouterType(self, RouterType):  # String
 		self.add_query_param('RouterType', RouterType)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_HealthCheckSourceIp(self): # String
 		return self.get_query_params().get('HealthCheckSourceIp')
 
