@@ -1,3 +1,6 @@
+2023-05-22 Version: 1.0.2
+- Add iotype for slot api.
+
 2023-05-22 Version: 1.0.1
 - Support CPFS slot.
 - Change Metric api user flow control to 20.
