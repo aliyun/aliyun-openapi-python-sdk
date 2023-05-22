@@ -31,6 +31,11 @@ class ListEndpointsRequest(RoaRequest):
 
 	def set_SlotIds(self, SlotIds):  # String
 		self.add_query_param('SlotIds', SlotIds)
+	def get_InstanceIds(self): # String
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

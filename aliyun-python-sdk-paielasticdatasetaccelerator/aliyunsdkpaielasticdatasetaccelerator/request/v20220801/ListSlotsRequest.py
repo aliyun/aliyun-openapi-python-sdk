@@ -26,16 +26,31 @@ class ListSlotsRequest(RoaRequest):
 		self.set_uri_pattern('/api/v1/slots')
 		self.set_method('GET')
 
-	def get_SlotIds(self): # String
-		return self.get_query_params().get('SlotIds')
-
-	def set_SlotIds(self, SlotIds):  # String
-		self.add_query_param('SlotIds', SlotIds)
 	def get_Phase(self): # String
 		return self.get_query_params().get('Phase')
 
 	def set_Phase(self, Phase):  # String
 		self.add_query_param('Phase', Phase)
+	def get_StorageType(self): # String
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_EndpointIds(self): # String
+		return self.get_query_params().get('EndpointIds')
+
+	def set_EndpointIds(self, EndpointIds):  # String
+		self.add_query_param('EndpointIds', EndpointIds)
+	def get_SlotIds(self): # String
+		return self.get_query_params().get('SlotIds')
+
+	def set_SlotIds(self, SlotIds):  # String
+		self.add_query_param('SlotIds', SlotIds)
 	def get_InstanceIds(self): # String
 		return self.get_query_params().get('InstanceIds')
 
@@ -56,16 +71,11 @@ class ListSlotsRequest(RoaRequest):
 
 	def set_SortBy(self, SortBy):  # String
 		self.add_query_param('SortBy', SortBy)
-	def get_StorageType(self): # String
-		return self.get_query_params().get('StorageType')
+	def get_StorageUri(self): # String
+		return self.get_query_params().get('StorageUri')
 
-	def set_StorageType(self, StorageType):  # String
-		self.add_query_param('StorageType', StorageType)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_StorageUri(self, StorageUri):  # String
+		self.add_query_param('StorageUri', StorageUri)
 	def get_Order(self): # String
 		return self.get_query_params().get('Order')
 
