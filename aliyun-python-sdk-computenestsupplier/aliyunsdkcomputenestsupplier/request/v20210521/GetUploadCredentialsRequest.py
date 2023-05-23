@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
 
-class GetArtifactRequest(RpcRequest):
+class GetUploadCredentialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetArtifact')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetUploadCredentials')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,8 @@ class GetArtifactRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ArtifactVersion(self): # String
-		return self.get_query_params().get('ArtifactVersion')
+	def get_FileName(self): # String
+		return self.get_query_params().get('FileName')
 
-	def set_ArtifactVersion(self, ArtifactVersion):  # String
-		self.add_query_param('ArtifactVersion', ArtifactVersion)
-	def get_ArtifactName(self): # String
-		return self.get_query_params().get('ArtifactName')
-
-	def set_ArtifactName(self, ArtifactName):  # String
-		self.add_query_param('ArtifactName', ArtifactName)
-	def get_ArtifactId(self): # String
-		return self.get_query_params().get('ArtifactId')
-
-	def set_ArtifactId(self, ArtifactId):  # String
-		self.add_query_param('ArtifactId', ArtifactId)
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
