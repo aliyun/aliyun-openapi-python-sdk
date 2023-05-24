@@ -41,6 +41,11 @@ class UpgradeDBInstanceRequest(RpcRequest):
 
 	def set_StorageSize(self, StorageSize):  # String
 		self.add_query_param('StorageSize', StorageSize)
+	def get_SegStorageType(self): # String
+		return self.get_query_params().get('SegStorageType')
+
+	def set_SegStorageType(self, SegStorageType):  # String
+		self.add_query_param('SegStorageType', SegStorageType)
 	def get_MasterNodeNum(self): # String
 		return self.get_query_params().get('MasterNodeNum')
 
@@ -76,6 +81,11 @@ class UpgradeDBInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SegDiskPerformanceLevel(self): # String
+		return self.get_query_params().get('SegDiskPerformanceLevel')
+
+	def set_SegDiskPerformanceLevel(self, SegDiskPerformanceLevel):  # String
+		self.add_query_param('SegDiskPerformanceLevel', SegDiskPerformanceLevel)
 	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 

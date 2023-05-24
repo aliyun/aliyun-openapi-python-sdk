@@ -51,11 +51,21 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_EncryptionType(self): # String
+		return self.get_query_params().get('EncryptionType')
+
+	def set_EncryptionType(self, EncryptionType):  # String
+		self.add_query_param('EncryptionType', EncryptionType)
 	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
 	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
 		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_ServerlessMode(self): # String
+		return self.get_query_params().get('ServerlessMode')
+
+	def set_ServerlessMode(self, ServerlessMode):  # String
+		self.add_query_param('ServerlessMode', ServerlessMode)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -70,11 +80,26 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # String
 		self.add_query_param('Period', Period)
+	def get_VectorConfigurationStatus(self): # String
+		return self.get_query_params().get('VectorConfigurationStatus')
+
+	def set_VectorConfigurationStatus(self, VectorConfigurationStatus):  # String
+		self.add_query_param('VectorConfigurationStatus', VectorConfigurationStatus)
+	def get_EncryptionKey(self): # String
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self, EncryptionKey):  # String
+		self.add_query_param('EncryptionKey', EncryptionKey)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SegDiskPerformanceLevel(self): # String
+		return self.get_query_params().get('SegDiskPerformanceLevel')
+
+	def set_SegDiskPerformanceLevel(self, SegDiskPerformanceLevel):  # String
+		self.add_query_param('SegDiskPerformanceLevel', SegDiskPerformanceLevel)
 	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
@@ -165,6 +190,16 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
+	def get_ServerlessResource(self): # Integer
+		return self.get_query_params().get('ServerlessResource')
+
+	def set_ServerlessResource(self, ServerlessResource):  # Integer
+		self.add_query_param('ServerlessResource', ServerlessResource)
+	def get_IdleTime(self): # Integer
+		return self.get_query_params().get('IdleTime')
+
+	def set_IdleTime(self, IdleTime):  # Integer
+		self.add_query_param('IdleTime', IdleTime)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ModifySecurityIpsRequest(RpcRequest):
+class DescribeSupportFeaturesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifySecurityIps')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSupportFeatures')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,13 @@ class ModifySecurityIpsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBInstanceIPArrayName(self): # String
-		return self.get_query_params().get('DBInstanceIPArrayName')
-
-	def set_DBInstanceIPArrayName(self, DBInstanceIPArrayName):  # String
-		self.add_query_param('DBInstanceIPArrayName', DBInstanceIPArrayName)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_ModifyMode(self): # String
-		return self.get_query_params().get('ModifyMode')
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_ModifyMode(self, ModifyMode):  # String
-		self.add_query_param('ModifyMode', ModifyMode)
-	def get_SecurityIPList(self): # String
-		return self.get_query_params().get('SecurityIPList')
-
-	def set_SecurityIPList(self, SecurityIPList):  # String
-		self.add_query_param('SecurityIPList', SecurityIPList)
-	def get_DBInstanceIPArrayAttribute(self): # String
-		return self.get_query_params().get('DBInstanceIPArrayAttribute')
-
-	def set_DBInstanceIPArrayAttribute(self, DBInstanceIPArrayAttribute):  # String
-		self.add_query_param('DBInstanceIPArrayAttribute', DBInstanceIPArrayAttribute)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
