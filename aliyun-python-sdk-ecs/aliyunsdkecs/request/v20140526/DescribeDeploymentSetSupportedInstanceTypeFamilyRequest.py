@@ -51,3 +51,8 @@ class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Strategy(self): # String
+		return self.get_query_params().get('Strategy')
+
+	def set_Strategy(self, Strategy):  # String
+		self.add_query_param('Strategy', Strategy)

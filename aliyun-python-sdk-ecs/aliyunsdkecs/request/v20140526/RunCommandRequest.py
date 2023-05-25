@@ -36,36 +36,16 @@ class RunCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ContainerName(self): # String
-		return self.get_query_params().get('ContainerName')
-
-	def set_ContainerName(self, ContainerName):  # String
-		self.add_query_param('ContainerName', ContainerName)
 	def get_WorkingDir(self): # String
 		return self.get_query_params().get('WorkingDir')
 
 	def set_WorkingDir(self, WorkingDir):  # String
 		self.add_query_param('WorkingDir', WorkingDir)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_CommandContent(self): # String
-		return self.get_query_params().get('CommandContent')
-
-	def set_CommandContent(self, CommandContent):  # String
-		self.add_query_param('CommandContent', CommandContent)
-	def get_Timeout(self): # Long
-		return self.get_query_params().get('Timeout')
-
-	def set_Timeout(self, Timeout):  # Long
-		self.add_query_param('Timeout', Timeout)
 	def get_Frequency(self): # String
 		return self.get_query_params().get('Frequency')
 
@@ -76,21 +56,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ContentEncoding(self): # String
-		return self.get_query_params().get('ContentEncoding')
-
-	def set_ContentEncoding(self, ContentEncoding):  # String
-		self.add_query_param('ContentEncoding', ContentEncoding)
 	def get_RepeatMode(self): # String
 		return self.get_query_params().get('RepeatMode')
 
 	def set_RepeatMode(self, RepeatMode):  # String
 		self.add_query_param('RepeatMode', RepeatMode)
-	def get_WindowsPasswordName(self): # String
-		return self.get_query_params().get('WindowsPasswordName')
-
-	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
-		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -110,16 +80,6 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Timed(self, Timed):  # Boolean
 		self.add_query_param('Timed', Timed)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -146,6 +106,51 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # Json
 		self.add_query_param('Parameters', Parameters)
+	def get_ContainerName(self): # String
+		return self.get_query_params().get('ContainerName')
+
+	def set_ContainerName(self, ContainerName):  # String
+		self.add_query_param('ContainerName', ContainerName)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_CommandContent(self): # String
+		return self.get_query_params().get('CommandContent')
+
+	def set_CommandContent(self, CommandContent):  # String
+		self.add_query_param('CommandContent', CommandContent)
+	def get_Timeout(self): # Long
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Long
+		self.add_query_param('Timeout', Timeout)
+	def get_ContentEncoding(self): # String
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self, ContentEncoding):  # String
+		self.add_query_param('ContentEncoding', ContentEncoding)
+	def get_WindowsPasswordName(self): # String
+		return self.get_query_params().get('WindowsPasswordName')
+
+	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
+		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_EnableParameter(self): # Boolean
 		return self.get_query_params().get('EnableParameter')
 
