@@ -195,6 +195,16 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_GDNId(self, GDNId):  # String
 		self.add_query_param('GDNId', GDNId)
+	def get_LooseXEngine(self): # String
+		return self.get_query_params().get('LooseXEngine')
+
+	def set_LooseXEngine(self, LooseXEngine):  # String
+		self.add_query_param('LooseXEngine', LooseXEngine)
+	def get_LoosePolarLogBin(self): # String
+		return self.get_query_params().get('LoosePolarLogBin')
+
+	def set_LoosePolarLogBin(self, LoosePolarLogBin):  # String
+		self.add_query_param('LoosePolarLogBin', LoosePolarLogBin)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -205,6 +215,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_LooseXEngineUseMemoryPct(self): # String
+		return self.get_query_params().get('LooseXEngineUseMemoryPct')
+
+	def set_LooseXEngineUseMemoryPct(self, LooseXEngineUseMemoryPct):  # String
+		self.add_query_param('LooseXEngineUseMemoryPct', LooseXEngineUseMemoryPct)
 	def get_UsedTime(self): # String
 		return self.get_query_params().get('UsedTime')
 
