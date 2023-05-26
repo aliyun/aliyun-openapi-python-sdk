@@ -41,3 +41,8 @@ class StartAggregateRemediationRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
+	def get_ResourceAccountId(self): # Long
+		return self.get_query_params().get('ResourceAccountId')
+
+	def set_ResourceAccountId(self, ResourceAccountId):  # Long
+		self.add_query_param('ResourceAccountId', ResourceAccountId)
