@@ -62,6 +62,11 @@ class BackFillRequest(RpcRequest):
 
 	def set_StartNodeIds(self, StartNodeIds):  # Array
 		self.add_query_param("StartNodeIds", json.dumps(StartNodeIds))
+	def get_FilterNodeIds(self): # Array
+		return self.get_query_params().get('FilterNodeIds')
+
+	def set_FilterNodeIds(self, FilterNodeIds):  # Array
+		self.add_query_param("FilterNodeIds", json.dumps(FilterNodeIds))
 	def get_BackFillDateBegin(self): # String
 		return self.get_query_params().get('BackFillDateBegin')
 

@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
-import json
 
-class ListTaskFlowsByPageRequest(RpcRequest):
+class GetDataArchiveOrderDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListTaskFlowsByPage','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetDataArchiveOrderDetail','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,33 +31,13 @@ class ListTaskFlowsByPageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SearchKey(self): # String
-		return self.get_query_params().get('SearchKey')
-
-	def set_SearchKey(self, SearchKey):  # String
-		self.add_query_param('SearchKey', SearchKey)
-	def get_DagIdList(self): # Array
-		return self.get_query_params().get('DagIdList')
-
-	def set_DagIdList(self, DagIdList):  # Array
-		self.add_query_param("DagIdList", json.dumps(DagIdList))
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_OrderId(self): # Long
+		return self.get_query_params().get('OrderId')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_PageIndex(self): # Integer
-		return self.get_query_params().get('PageIndex')
-
-	def set_PageIndex(self, PageIndex):  # Integer
-		self.add_query_param('PageIndex', PageIndex)
-	def get_ScenarioId(self): # Long
-		return self.get_query_params().get('ScenarioId')
-
-	def set_ScenarioId(self, ScenarioId):  # Long
-		self.add_query_param('ScenarioId', ScenarioId)
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)

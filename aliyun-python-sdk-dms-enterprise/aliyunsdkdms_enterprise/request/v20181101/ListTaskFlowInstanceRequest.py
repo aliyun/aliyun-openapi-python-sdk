@@ -31,6 +31,11 @@ class ListTaskFlowInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UseBizDate(self): # Boolean
+		return self.get_query_params().get('UseBizDate')
+
+	def set_UseBizDate(self, UseBizDate):  # Boolean
+		self.add_query_param('UseBizDate', UseBizDate)
 	def get_TriggerType(self): # Integer
 		return self.get_query_params().get('TriggerType')
 
@@ -66,3 +71,8 @@ class ListTaskFlowInstanceRequest(RpcRequest):
 
 	def set_StartTimeEnd(self, StartTimeEnd):  # String
 		self.add_query_param('StartTimeEnd', StartTimeEnd)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)
