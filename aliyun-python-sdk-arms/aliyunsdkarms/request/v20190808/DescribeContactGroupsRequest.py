@@ -31,6 +31,16 @@ class DescribeContactGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IsDetail(self): # Boolean
+		return self.get_query_params().get('IsDetail')
+
+	def set_IsDetail(self, IsDetail):  # Boolean
+		self.add_query_param('IsDetail', IsDetail)
+	def get_ContactGroupName(self): # String
+		return self.get_query_params().get('ContactGroupName')
+
+	def set_ContactGroupName(self, ContactGroupName):  # String
+		self.add_query_param('ContactGroupName', ContactGroupName)
 	def get_Size(self): # Long
 		return self.get_query_params().get('Size')
 
@@ -41,18 +51,8 @@ class DescribeContactGroupsRequest(RpcRequest):
 
 	def set_GroupIds(self, GroupIds):  # String
 		self.add_query_param('GroupIds', GroupIds)
-	def get_IsDetail(self): # Boolean
-		return self.get_query_params().get('IsDetail')
-
-	def set_IsDetail(self, IsDetail):  # Boolean
-		self.add_query_param('IsDetail', IsDetail)
 	def get_Page(self): # Long
 		return self.get_query_params().get('Page')
 
 	def set_Page(self, Page):  # Long
 		self.add_query_param('Page', Page)
-	def get_ContactGroupName(self): # String
-		return self.get_query_params().get('ContactGroupName')
-
-	def set_ContactGroupName(self, ContactGroupName):  # String
-		self.add_query_param('ContactGroupName', ContactGroupName)

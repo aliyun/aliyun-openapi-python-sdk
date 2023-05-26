@@ -71,6 +71,15 @@ class CreatePrometheusAlertRuleRequest(RpcRequest):
 
 	def set_Labels(self, Labels):  # String
 		self.add_query_param('Labels', Labels)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
+
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 	def get_Duration(self): # String
 		return self.get_query_params().get('Duration')
 

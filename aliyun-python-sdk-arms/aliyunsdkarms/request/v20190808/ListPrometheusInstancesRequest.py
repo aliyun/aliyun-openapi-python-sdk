@@ -31,6 +31,11 @@ class ListPrometheusInstancesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClusterType(self): # String
+		return self.get_query_params().get('ClusterType')
+
+	def set_ClusterType(self, ClusterType):  # String
+		self.add_query_param('ClusterType', ClusterType)
 	def get_ShowGlobalView(self): # Boolean
 		return self.get_query_params().get('ShowGlobalView')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListPrometheusInstanceByTagAndResourceGroupIdRequest(RpcRequest):
+class ListPrometheusMonitoringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusInstanceByTagAndResourceGroupId','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusMonitoring','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,22 +31,13 @@ class ListPrometheusInstanceByTagAndResourceGroupIdRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ListAsConsole(self): # Boolean
-		return self.get_query_params().get('ListAsConsole')
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
 
-	def set_ListAsConsole(self, ListAsConsole):  # Boolean
-		self.add_query_param('ListAsConsole', ListAsConsole)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)

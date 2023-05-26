@@ -36,6 +36,11 @@ class CreatePrometheusInstanceRequest(RpcRequest):
 
 	def set_GrafanaInstanceId(self, GrafanaInstanceId):  # String
 		self.add_query_param('GrafanaInstanceId', GrafanaInstanceId)
+	def get_AllSubClustersSuccess(self): # Boolean
+		return self.get_query_params().get('AllSubClustersSuccess')
+
+	def set_AllSubClustersSuccess(self, AllSubClustersSuccess):  # Boolean
+		self.add_query_param('AllSubClustersSuccess', AllSubClustersSuccess)
 	def get_ClusterName(self): # String
 		return self.get_query_params().get('ClusterName')
 
