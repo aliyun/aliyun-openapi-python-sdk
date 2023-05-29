@@ -20,18 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class QueryMarketImagesRequest(RpcRequest):
+class PauseProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'QueryMarketImages','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'PauseProject')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def get_Param(self):
-		return self.get_query_params().get('Param')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
 
-	def set_Param(self,Param):
-		self.add_query_param('Param',Param)
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_NodeId(self): # Long
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # Long
+		self.add_query_param('NodeId', NodeId)

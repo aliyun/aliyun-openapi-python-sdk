@@ -20,18 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class DeleteCommodityRequest(RpcRequest):
+class AutoRenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DeleteCommodity','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'AutoRenewInstance')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Type(self): # String
+		return self.get_body_params().get('Type')
 
-	def get_CommodityId(self):
-		return self.get_query_params().get('CommodityId')
+	def set_Type(self, Type):  # String
+		self.add_body_params('Type', Type)
+	def get_OwnerId(self): # Long
+		return self.get_body_params().get('OwnerId')
 
-	def set_CommodityId(self,CommodityId):
-		self.add_query_param('CommodityId',CommodityId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_body_params('OwnerId', OwnerId)
+	def get_AutoRenewDuration(self): # Integer
+		return self.get_body_params().get('AutoRenewDuration')
+
+	def set_AutoRenewDuration(self, AutoRenewDuration):  # Integer
+		self.add_body_params('AutoRenewDuration', AutoRenewDuration)
+	def get_AutoRenewCycle(self): # String
+		return self.get_body_params().get('AutoRenewCycle')
+
+	def set_AutoRenewCycle(self, AutoRenewCycle):  # String
+		self.add_body_params('AutoRenewCycle', AutoRenewCycle)
+	def get_OrderBizId(self): # Long
+		return self.get_body_params().get('OrderBizId')
+
+	def set_OrderBizId(self, OrderBizId):  # Long
+		self.add_body_params('OrderBizId', OrderBizId)

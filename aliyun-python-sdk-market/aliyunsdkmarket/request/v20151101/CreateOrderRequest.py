@@ -23,45 +23,41 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class CreateOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'CreateOrder','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'CreateOrder')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OrderSouce(self):
+	def get_OrderSouce(self): # String
 		return self.get_query_params().get('OrderSouce')
 
-	def set_OrderSouce(self,OrderSouce):
-		self.add_query_param('OrderSouce',OrderSouce)
-
-	def get_Commodity(self):
+	def set_OrderSouce(self, OrderSouce):  # String
+		self.add_query_param('OrderSouce', OrderSouce)
+	def get_Commodity(self): # String
 		return self.get_query_params().get('Commodity')
 
-	def set_Commodity(self,Commodity):
-		self.add_query_param('Commodity',Commodity)
-
-	def get_ClientToken(self):
+	def set_Commodity(self, Commodity):  # String
+		self.add_query_param('Commodity', Commodity)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PaymentType(self):
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PaymentType(self): # String
 		return self.get_query_params().get('PaymentType')
 
-	def set_PaymentType(self,PaymentType):
-		self.add_query_param('PaymentType',PaymentType)
-
-	def get_OrderType(self):
+	def set_PaymentType(self, PaymentType):  # String
+		self.add_query_param('PaymentType', PaymentType)
+	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)

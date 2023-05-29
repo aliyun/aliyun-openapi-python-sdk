@@ -23,27 +23,26 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeProduct','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeProduct')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Code(self):
+	def get_Code(self): # String
 		return self.get_query_params().get('Code')
 
-	def set_Code(self,Code):
-		self.add_query_param('Code',Code)
-
-	def get_QueryDraft(self):
+	def set_Code(self, Code):  # String
+		self.add_query_param('Code', Code)
+	def get_QueryDraft(self): # Boolean
 		return self.get_query_params().get('QueryDraft')
 
-	def set_QueryDraft(self,QueryDraft):
-		self.add_query_param('QueryDraft',QueryDraft)
-
-	def get_AliUid(self):
+	def set_QueryDraft(self, QueryDraft):  # Boolean
+		self.add_query_param('QueryDraft', QueryDraft)
+	def get_AliUid(self): # String
 		return self.get_query_params().get('AliUid')
 
-	def set_AliUid(self,AliUid):
-		self.add_query_param('AliUid',AliUid)
+	def set_AliUid(self, AliUid):  # String
+		self.add_query_param('AliUid', AliUid)

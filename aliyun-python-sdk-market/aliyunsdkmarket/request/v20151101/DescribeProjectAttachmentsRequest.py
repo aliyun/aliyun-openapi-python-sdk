@@ -20,31 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class UploadCommodityFileRequest(RpcRequest):
+class DescribeProjectAttachmentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'UploadCommodityFile','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeProjectAttachments')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def get_FileResourceType(self):
-		return self.get_query_params().get('FileResourceType')
-
-	def set_FileResourceType(self,FileResourceType):
-		self.add_query_param('FileResourceType',FileResourceType)
-
-	def get_FileResource(self):
-		return self.get_query_params().get('FileResource')
-
-	def set_FileResource(self,FileResource):
-		self.add_query_param('FileResource',FileResource)
-
-	def get_FileContentType(self):
-		return self.get_query_params().get('FileContentType')
-
-	def set_FileContentType(self,FileContentType):
-		self.add_query_param('FileContentType',FileContentType)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

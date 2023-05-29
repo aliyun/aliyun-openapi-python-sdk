@@ -20,24 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class BindImagePackageRequest(RpcRequest):
+class FinishCurrentProjectNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'BindImagePackage','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'FinishCurrentProjectNode')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TemplateForm(self): # String
+		return self.get_query_params().get('TemplateForm')
 
-	def get_EcsInstanceId(self):
-		return self.get_query_params().get('EcsInstanceId')
+	def set_TemplateForm(self, TemplateForm):  # String
+		self.add_query_param('TemplateForm', TemplateForm)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_EcsInstanceId(self,EcsInstanceId):
-		self.add_query_param('EcsInstanceId',EcsInstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
 
-	def get_ImagePackageInstanceId(self):
-		return self.get_query_params().get('ImagePackageInstanceId')
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_NodeId(self): # Long
+		return self.get_query_params().get('NodeId')
 
-	def set_ImagePackageInstanceId(self,ImagePackageInstanceId):
-		self.add_query_param('ImagePackageInstanceId',ImagePackageInstanceId)
+	def set_NodeId(self, NodeId):  # Long
+		self.add_query_param('NodeId', NodeId)

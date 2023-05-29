@@ -20,24 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class NotifyContractEventRequest(RpcRequest):
+class DescribeProjectNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'NotifyContractEvent','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeProjectNodes')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def get_EventMessage(self):
-		return self.get_query_params().get('EventMessage')
-
-	def set_EventMessage(self,EventMessage):
-		self.add_query_param('EventMessage',EventMessage)
-
-	def get_EventType(self):
-		return self.get_query_params().get('EventType')
-
-	def set_EventType(self,EventType):
-		self.add_query_param('EventType',EventType)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

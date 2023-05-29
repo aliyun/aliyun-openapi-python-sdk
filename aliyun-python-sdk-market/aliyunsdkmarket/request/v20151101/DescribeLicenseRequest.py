@@ -23,15 +23,16 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeLicenseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeLicense','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeLicense')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LicenseCode(self):
+	def get_LicenseCode(self): # String
 		return self.get_query_params().get('LicenseCode')
 
-	def set_LicenseCode(self,LicenseCode):
-		self.add_query_param('LicenseCode',LicenseCode)
+	def set_LicenseCode(self, LicenseCode):  # String
+		self.add_query_param('LicenseCode', LicenseCode)

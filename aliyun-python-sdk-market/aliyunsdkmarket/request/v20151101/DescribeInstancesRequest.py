@@ -23,27 +23,36 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeInstances','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeInstances')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Codes(self): # String
+		return self.get_query_params().get('Codes')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def set_Codes(self, Codes):  # String
+		self.add_query_param('Codes', Codes)
+	def get_ExceptCodes(self): # String
+		return self.get_query_params().get('ExceptCodes')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
+	def set_ExceptCodes(self, ExceptCodes):  # String
+		self.add_query_param('ExceptCodes', ExceptCodes)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ProductType(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ProductType(self): # String
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

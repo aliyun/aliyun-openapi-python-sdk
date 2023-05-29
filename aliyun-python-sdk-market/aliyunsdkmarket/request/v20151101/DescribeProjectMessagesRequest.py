@@ -20,11 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmarket.endpoint import endpoint_data
 
-class QueryMarketCategoriesRequest(RpcRequest):
+class DescribeProjectMessagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'QueryMarketCategories','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeProjectMessages')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageIndex(self): # Integer
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self, PageIndex):  # Integer
+		self.add_query_param('PageIndex', PageIndex)

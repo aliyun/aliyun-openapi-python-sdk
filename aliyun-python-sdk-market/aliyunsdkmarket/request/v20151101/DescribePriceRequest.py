@@ -23,21 +23,21 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribePrice','yunmarket')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribePrice')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Commodity(self):
+	def get_Commodity(self): # String
 		return self.get_query_params().get('Commodity')
 
-	def set_Commodity(self,Commodity):
-		self.add_query_param('Commodity',Commodity)
-
-	def get_OrderType(self):
+	def set_Commodity(self, Commodity):  # String
+		self.add_query_param('Commodity', Commodity)
+	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_OrderType(self, OrderType):  # String
+		self.add_query_param('OrderType', OrderType)
