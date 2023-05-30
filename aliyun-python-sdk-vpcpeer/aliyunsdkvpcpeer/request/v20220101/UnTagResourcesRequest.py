@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpcpeer.endpoint import endpoint_data
 
-class AcceptVpcPeerConnectionRequest(RpcRequest):
+class UnTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VpcPeer', '2022-01-01', 'AcceptVpcPeerConnection','vpcpeer')
+		RpcRequest.__init__(self, 'VpcPeer', '2022-01-01', 'UnTagResources','vpcpeer')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,27 +32,29 @@ class AcceptVpcPeerConnectionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
+		self.add_query_param('ClientToken', ClientToken)
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
-	def get_DryRun(self): # Boolean
-		return self.get_body_params().get('DryRun')
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_body_params('DryRun', DryRun)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_body_params().get('ResourceOwnerAccount')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_body_params('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_InstanceId(self): # String
-		return self.get_body_params().get('InstanceId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_body_params('InstanceId', InstanceId)
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])

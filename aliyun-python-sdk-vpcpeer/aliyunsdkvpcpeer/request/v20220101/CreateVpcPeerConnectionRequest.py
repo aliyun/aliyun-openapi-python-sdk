@@ -46,6 +46,11 @@ class CreateVpcPeerConnectionRequest(RpcRequest):
 
 	def set_AcceptingAliUid(self, AcceptingAliUid):  # Long
 		self.add_body_params('AcceptingAliUid', AcceptingAliUid)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_AcceptingRegionId(self): # String
 		return self.get_body_params().get('AcceptingRegionId')
 
