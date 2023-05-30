@@ -32,11 +32,6 @@ class CertificatePublicKeyVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SignatureValue(self): # String
-		return self.get_query_params().get('SignatureValue')
-
-	def set_SignatureValue(self, SignatureValue):  # String
-		self.add_query_param('SignatureValue', SignatureValue)
 	def get_MessageType(self): # String
 		return self.get_query_params().get('MessageType')
 
@@ -52,6 +47,11 @@ class CertificatePublicKeyVerifyRequest(RpcRequest):
 
 	def set_Message(self, Message):  # String
 		self.add_query_param('Message', Message)
+	def get_SignatureValue(self): # String
+		return self.get_query_params().get('SignatureValue')
+
+	def set_SignatureValue(self, SignatureValue):  # String
+		self.add_query_param('SignatureValue', SignatureValue)
 	def get_Algorithm(self): # String
 		return self.get_query_params().get('Algorithm')
 

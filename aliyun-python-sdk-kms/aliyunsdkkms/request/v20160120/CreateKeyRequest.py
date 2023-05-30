@@ -32,26 +32,11 @@ class CreateKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProtectionLevel(self): # String
-		return self.get_query_params().get('ProtectionLevel')
-
-	def set_ProtectionLevel(self, ProtectionLevel):  # String
-		self.add_query_param('ProtectionLevel', ProtectionLevel)
-	def get_KeyUsage(self): # String
-		return self.get_query_params().get('KeyUsage')
-
-	def set_KeyUsage(self, KeyUsage):  # String
-		self.add_query_param('KeyUsage', KeyUsage)
 	def get_Origin(self): # String
 		return self.get_query_params().get('Origin')
 
 	def set_Origin(self, Origin):  # String
 		self.add_query_param('Origin', Origin)
-	def get_DKMSInstanceId(self): # String
-		return self.get_query_params().get('DKMSInstanceId')
-
-	def set_DKMSInstanceId(self, DKMSInstanceId):  # String
-		self.add_query_param('DKMSInstanceId', DKMSInstanceId)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -72,3 +57,23 @@ class CreateKeyRequest(RpcRequest):
 
 	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # Boolean
 		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_ProtectionLevel(self): # String
+		return self.get_query_params().get('ProtectionLevel')
+
+	def set_ProtectionLevel(self, ProtectionLevel):  # String
+		self.add_query_param('ProtectionLevel', ProtectionLevel)
+	def get_KeyUsage(self): # String
+		return self.get_query_params().get('KeyUsage')
+
+	def set_KeyUsage(self, KeyUsage):  # String
+		self.add_query_param('KeyUsage', KeyUsage)
+	def get_DKMSInstanceId(self): # String
+		return self.get_query_params().get('DKMSInstanceId')
+
+	def set_DKMSInstanceId(self, DKMSInstanceId):  # String
+		self.add_query_param('DKMSInstanceId', DKMSInstanceId)

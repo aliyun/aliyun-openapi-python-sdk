@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class TagResourceRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'TagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UntagResources','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,25 @@ class TagResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CertificateId(self): # String
-		return self.get_query_params().get('CertificateId')
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
 
-	def set_CertificateId(self, CertificateId):  # String
-		self.add_query_param('CertificateId', CertificateId)
-	def get_KeyId(self): # String
-		return self.get_query_params().get('KeyId')
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_KeyId(self, KeyId):  # String
-		self.add_query_param('KeyId', KeyId)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_SecretName(self): # String
-		return self.get_query_params().get('SecretName')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
 
-	def set_SecretName(self, SecretName):  # String
-		self.add_query_param('SecretName', SecretName)
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])

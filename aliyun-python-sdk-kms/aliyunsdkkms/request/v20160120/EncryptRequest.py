@@ -32,11 +32,6 @@ class EncryptRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EncryptionContext(self): # String
-		return self.get_query_params().get('EncryptionContext')
-
-	def set_EncryptionContext(self, EncryptionContext):  # String
-		self.add_query_param('EncryptionContext', EncryptionContext)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
@@ -47,3 +42,8 @@ class EncryptRequest(RpcRequest):
 
 	def set_Plaintext(self, Plaintext):  # String
 		self.add_query_param('Plaintext', Plaintext)
+	def get_EncryptionContext(self): # String
+		return self.get_query_params().get('EncryptionContext')
+
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)

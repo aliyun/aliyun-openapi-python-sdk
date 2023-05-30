@@ -32,16 +32,16 @@ class UpdateSecretVersionStageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RemoveFromVersion(self): # String
-		return self.get_query_params().get('RemoveFromVersion')
-
-	def set_RemoveFromVersion(self, RemoveFromVersion):  # String
-		self.add_query_param('RemoveFromVersion', RemoveFromVersion)
 	def get_MoveToVersion(self): # String
 		return self.get_query_params().get('MoveToVersion')
 
 	def set_MoveToVersion(self, MoveToVersion):  # String
 		self.add_query_param('MoveToVersion', MoveToVersion)
+	def get_RemoveFromVersion(self): # String
+		return self.get_query_params().get('RemoveFromVersion')
+
+	def set_RemoveFromVersion(self, RemoveFromVersion):  # String
+		self.add_query_param('RemoveFromVersion', RemoveFromVersion)
 	def get_VersionStage(self): # String
 		return self.get_query_params().get('VersionStage')
 

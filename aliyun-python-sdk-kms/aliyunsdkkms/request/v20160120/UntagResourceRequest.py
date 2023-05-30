@@ -37,16 +37,16 @@ class UntagResourceRequest(RpcRequest):
 
 	def set_CertificateId(self, CertificateId):  # String
 		self.add_query_param('CertificateId', CertificateId)
-	def get_TagKeys(self): # String
-		return self.get_query_params().get('TagKeys')
-
-	def set_TagKeys(self, TagKeys):  # String
-		self.add_query_param('TagKeys', TagKeys)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
 	def set_KeyId(self, KeyId):  # String
 		self.add_query_param('KeyId', KeyId)
+	def get_TagKeys(self): # String
+		return self.get_query_params().get('TagKeys')
+
+	def set_TagKeys(self, TagKeys):  # String
+		self.add_query_param('TagKeys', TagKeys)
 	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 

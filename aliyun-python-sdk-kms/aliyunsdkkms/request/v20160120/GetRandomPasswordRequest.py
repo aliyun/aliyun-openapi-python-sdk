@@ -32,11 +32,6 @@ class GetRandomPasswordRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExcludeLowercase(self): # String
-		return self.get_query_params().get('ExcludeLowercase')
-
-	def set_ExcludeLowercase(self, ExcludeLowercase):  # String
-		self.add_query_param('ExcludeLowercase', ExcludeLowercase)
 	def get_ExcludeCharacters(self): # String
 		return self.get_query_params().get('ExcludeCharacters')
 
@@ -52,11 +47,6 @@ class GetRandomPasswordRequest(RpcRequest):
 
 	def set_ExcludePunctuation(self, ExcludePunctuation):  # String
 		self.add_query_param('ExcludePunctuation', ExcludePunctuation)
-	def get_ExcludeUppercase(self): # String
-		return self.get_query_params().get('ExcludeUppercase')
-
-	def set_ExcludeUppercase(self, ExcludeUppercase):  # String
-		self.add_query_param('ExcludeUppercase', ExcludeUppercase)
 	def get_RequireEachIncludedType(self): # String
 		return self.get_query_params().get('RequireEachIncludedType')
 
@@ -67,3 +57,13 @@ class GetRandomPasswordRequest(RpcRequest):
 
 	def set_ExcludeNumbers(self, ExcludeNumbers):  # String
 		self.add_query_param('ExcludeNumbers', ExcludeNumbers)
+	def get_ExcludeLowercase(self): # String
+		return self.get_query_params().get('ExcludeLowercase')
+
+	def set_ExcludeLowercase(self, ExcludeLowercase):  # String
+		self.add_query_param('ExcludeLowercase', ExcludeLowercase)
+	def get_ExcludeUppercase(self): # String
+		return self.get_query_params().get('ExcludeUppercase')
+
+	def set_ExcludeUppercase(self, ExcludeUppercase):  # String
+		self.add_query_param('ExcludeUppercase', ExcludeUppercase)

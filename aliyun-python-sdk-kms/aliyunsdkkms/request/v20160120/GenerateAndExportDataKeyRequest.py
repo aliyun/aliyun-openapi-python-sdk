@@ -32,11 +32,6 @@ class GenerateAndExportDataKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EncryptionContext(self): # String
-		return self.get_query_params().get('EncryptionContext')
-
-	def set_EncryptionContext(self, EncryptionContext):  # String
-		self.add_query_param('EncryptionContext', EncryptionContext)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
@@ -52,16 +47,21 @@ class GenerateAndExportDataKeyRequest(RpcRequest):
 
 	def set_NumberOfBytes(self, NumberOfBytes):  # Integer
 		self.add_query_param('NumberOfBytes', NumberOfBytes)
-	def get_WrappingAlgorithm(self): # String
-		return self.get_query_params().get('WrappingAlgorithm')
-
-	def set_WrappingAlgorithm(self, WrappingAlgorithm):  # String
-		self.add_query_param('WrappingAlgorithm', WrappingAlgorithm)
 	def get_PublicKeyBlob(self): # String
 		return self.get_query_params().get('PublicKeyBlob')
 
 	def set_PublicKeyBlob(self, PublicKeyBlob):  # String
 		self.add_query_param('PublicKeyBlob', PublicKeyBlob)
+	def get_EncryptionContext(self): # String
+		return self.get_query_params().get('EncryptionContext')
+
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)
+	def get_WrappingAlgorithm(self): # String
+		return self.get_query_params().get('WrappingAlgorithm')
+
+	def set_WrappingAlgorithm(self, WrappingAlgorithm):  # String
+		self.add_query_param('WrappingAlgorithm', WrappingAlgorithm)
 	def get_WrappingKeySpec(self): # String
 		return self.get_query_params().get('WrappingKeySpec')
 

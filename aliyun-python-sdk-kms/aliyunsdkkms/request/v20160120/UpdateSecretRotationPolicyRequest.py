@@ -37,13 +37,13 @@ class UpdateSecretRotationPolicyRequest(RpcRequest):
 
 	def set_RotationInterval(self, RotationInterval):  # String
 		self.add_query_param('RotationInterval', RotationInterval)
-	def get_SecretName(self): # String
-		return self.get_query_params().get('SecretName')
-
-	def set_SecretName(self, SecretName):  # String
-		self.add_query_param('SecretName', SecretName)
 	def get_EnableAutomaticRotation(self): # Boolean
 		return self.get_query_params().get('EnableAutomaticRotation')
 
 	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # Boolean
 		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)
+	def get_SecretName(self): # String
+		return self.get_query_params().get('SecretName')
+
+	def set_SecretName(self, SecretName):  # String
+		self.add_query_param('SecretName', SecretName)

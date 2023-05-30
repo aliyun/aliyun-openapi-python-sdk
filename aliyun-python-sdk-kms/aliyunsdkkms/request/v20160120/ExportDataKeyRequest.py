@@ -32,6 +32,11 @@ class ExportDataKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PublicKeyBlob(self): # String
+		return self.get_query_params().get('PublicKeyBlob')
+
+	def set_PublicKeyBlob(self, PublicKeyBlob):  # String
+		self.add_query_param('PublicKeyBlob', PublicKeyBlob)
 	def get_EncryptionContext(self): # String
 		return self.get_query_params().get('EncryptionContext')
 
@@ -47,11 +52,6 @@ class ExportDataKeyRequest(RpcRequest):
 
 	def set_CiphertextBlob(self, CiphertextBlob):  # String
 		self.add_query_param('CiphertextBlob', CiphertextBlob)
-	def get_PublicKeyBlob(self): # String
-		return self.get_query_params().get('PublicKeyBlob')
-
-	def set_PublicKeyBlob(self, PublicKeyBlob):  # String
-		self.add_query_param('PublicKeyBlob', PublicKeyBlob)
 	def get_WrappingKeySpec(self): # String
 		return self.get_query_params().get('WrappingKeySpec')
 

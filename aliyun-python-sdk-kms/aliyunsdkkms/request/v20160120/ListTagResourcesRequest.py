@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class TagResourceRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'TagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListTagResources','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,28 @@ class TagResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CertificateId(self): # String
-		return self.get_query_params().get('CertificateId')
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_CertificateId(self, CertificateId):  # String
-		self.add_query_param('CertificateId', CertificateId)
-	def get_KeyId(self): # String
-		return self.get_query_params().get('KeyId')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_KeyId(self, KeyId):  # String
-		self.add_query_param('KeyId', KeyId)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_SecretName(self): # String
-		return self.get_query_params().get('SecretName')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_SecretName(self, SecretName):  # String
-		self.add_query_param('SecretName', SecretName)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

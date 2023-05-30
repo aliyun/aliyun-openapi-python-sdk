@@ -32,11 +32,6 @@ class GenerateDataKeyWithoutPlaintextRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EncryptionContext(self): # String
-		return self.get_query_params().get('EncryptionContext')
-
-	def set_EncryptionContext(self, EncryptionContext):  # String
-		self.add_query_param('EncryptionContext', EncryptionContext)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
@@ -52,3 +47,8 @@ class GenerateDataKeyWithoutPlaintextRequest(RpcRequest):
 
 	def set_NumberOfBytes(self, NumberOfBytes):  # Integer
 		self.add_query_param('NumberOfBytes', NumberOfBytes)
+	def get_EncryptionContext(self): # String
+		return self.get_query_params().get('EncryptionContext')
+
+	def set_EncryptionContext(self, EncryptionContext):  # String
+		self.add_query_param('EncryptionContext', EncryptionContext)

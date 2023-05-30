@@ -37,6 +37,36 @@ class CreateSecretRequest(RpcRequest):
 
 	def set_SecretType(self, SecretType):  # String
 		self.add_query_param('SecretType', SecretType)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_RotationInterval(self): # String
+		return self.get_query_params().get('RotationInterval')
+
+	def set_RotationInterval(self, RotationInterval):  # String
+		self.add_query_param('RotationInterval', RotationInterval)
+	def get_EnableAutomaticRotation(self): # Boolean
+		return self.get_query_params().get('EnableAutomaticRotation')
+
+	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # Boolean
+		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)
+	def get_EncryptionKeyId(self): # String
+		return self.get_query_params().get('EncryptionKeyId')
+
+	def set_EncryptionKeyId(self, EncryptionKeyId):  # String
+		self.add_query_param('EncryptionKeyId', EncryptionKeyId)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_ExtendedConfig(self): # String
+		return self.get_query_params().get('ExtendedConfig')
+
+	def set_ExtendedConfig(self, ExtendedConfig):  # String
+		self.add_query_param('ExtendedConfig', ExtendedConfig)
 	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
@@ -52,43 +82,13 @@ class CreateSecretRequest(RpcRequest):
 
 	def set_SecretData(self, SecretData):  # String
 		self.add_query_param('SecretData', SecretData)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_RotationInterval(self): # String
-		return self.get_query_params().get('RotationInterval')
-
-	def set_RotationInterval(self, RotationInterval):  # String
-		self.add_query_param('RotationInterval', RotationInterval)
 	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 
 	def set_SecretName(self, SecretName):  # String
 		self.add_query_param('SecretName', SecretName)
-	def get_EnableAutomaticRotation(self): # Boolean
-		return self.get_query_params().get('EnableAutomaticRotation')
-
-	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # Boolean
-		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)
-	def get_EncryptionKeyId(self): # String
-		return self.get_query_params().get('EncryptionKeyId')
-
-	def set_EncryptionKeyId(self, EncryptionKeyId):  # String
-		self.add_query_param('EncryptionKeyId', EncryptionKeyId)
 	def get_SecretDataType(self): # String
 		return self.get_query_params().get('SecretDataType')
 
 	def set_SecretDataType(self, SecretDataType):  # String
 		self.add_query_param('SecretDataType', SecretDataType)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
-	def get_ExtendedConfig(self): # String
-		return self.get_query_params().get('ExtendedConfig')
-
-	def set_ExtendedConfig(self, ExtendedConfig):  # String
-		self.add_query_param('ExtendedConfig', ExtendedConfig)

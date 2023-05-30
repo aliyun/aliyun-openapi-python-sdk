@@ -32,6 +32,11 @@ class SetDeletionProtectionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DeletionProtectionDescription(self): # String
+		return self.get_query_params().get('DeletionProtectionDescription')
+
+	def set_DeletionProtectionDescription(self, DeletionProtectionDescription):  # String
+		self.add_query_param('DeletionProtectionDescription', DeletionProtectionDescription)
 	def get_EnableDeletionProtection(self): # Boolean
 		return self.get_query_params().get('EnableDeletionProtection')
 
@@ -42,8 +47,3 @@ class SetDeletionProtectionRequest(RpcRequest):
 
 	def set_ProtectedResourceArn(self, ProtectedResourceArn):  # String
 		self.add_query_param('ProtectedResourceArn', ProtectedResourceArn)
-	def get_DeletionProtectionDescription(self): # String
-		return self.get_query_params().get('DeletionProtectionDescription')
-
-	def set_DeletionProtectionDescription(self, DeletionProtectionDescription):  # String
-		self.add_query_param('DeletionProtectionDescription', DeletionProtectionDescription)

@@ -32,23 +32,23 @@ class ListSecretsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_Filters(self): # String
 		return self.get_query_params().get('Filters')
 
 	def set_Filters(self, Filters):  # String
 		self.add_query_param('Filters', Filters)
-	def get_FetchTags(self): # String
-		return self.get_query_params().get('FetchTags')
-
-	def set_FetchTags(self, FetchTags):  # String
-		self.add_query_param('FetchTags', FetchTags)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_FetchTags(self): # String
+		return self.get_query_params().get('FetchTags')
+
+	def set_FetchTags(self, FetchTags):  # String
+		self.add_query_param('FetchTags', FetchTags)

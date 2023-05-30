@@ -32,23 +32,23 @@ class CreateCertificateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExportablePrivateKey(self): # Boolean
-		return self.get_query_params().get('ExportablePrivateKey')
-
-	def set_ExportablePrivateKey(self, ExportablePrivateKey):  # Boolean
-		self.add_query_param('ExportablePrivateKey', ExportablePrivateKey)
 	def get_Subject(self): # String
 		return self.get_query_params().get('Subject')
 
 	def set_Subject(self, Subject):  # String
 		self.add_query_param('Subject', Subject)
-	def get_SubjectAlternativeNames(self): # Json
-		return self.get_query_params().get('SubjectAlternativeNames')
-
-	def set_SubjectAlternativeNames(self, SubjectAlternativeNames):  # Json
-		self.add_query_param('SubjectAlternativeNames', SubjectAlternativeNames)
 	def get_KeySpec(self): # String
 		return self.get_query_params().get('KeySpec')
 
 	def set_KeySpec(self, KeySpec):  # String
 		self.add_query_param('KeySpec', KeySpec)
+	def get_ExportablePrivateKey(self): # Boolean
+		return self.get_query_params().get('ExportablePrivateKey')
+
+	def set_ExportablePrivateKey(self, ExportablePrivateKey):  # Boolean
+		self.add_query_param('ExportablePrivateKey', ExportablePrivateKey)
+	def get_SubjectAlternativeNames(self): # Json
+		return self.get_query_params().get('SubjectAlternativeNames')
+
+	def set_SubjectAlternativeNames(self, SubjectAlternativeNames):  # Json
+		self.add_query_param('SubjectAlternativeNames', SubjectAlternativeNames)

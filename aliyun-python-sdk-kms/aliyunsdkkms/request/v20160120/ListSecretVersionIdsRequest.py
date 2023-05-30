@@ -37,6 +37,11 @@ class ListSecretVersionIdsRequest(RpcRequest):
 
 	def set_IncludeDeprecated(self, IncludeDeprecated):  # String
 		self.add_query_param('IncludeDeprecated', IncludeDeprecated)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -47,8 +52,3 @@ class ListSecretVersionIdsRequest(RpcRequest):
 
 	def set_SecretName(self, SecretName):  # String
 		self.add_query_param('SecretName', SecretName)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)

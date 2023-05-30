@@ -37,16 +37,16 @@ class AsymmetricVerifyRequest(RpcRequest):
 
 	def set_KeyVersionId(self, KeyVersionId):  # String
 		self.add_query_param('KeyVersionId', KeyVersionId)
-	def get_Digest(self): # String
-		return self.get_query_params().get('Digest')
-
-	def set_Digest(self, Digest):  # String
-		self.add_query_param('Digest', Digest)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 
 	def set_KeyId(self, KeyId):  # String
 		self.add_query_param('KeyId', KeyId)
+	def get_Digest(self): # String
+		return self.get_query_params().get('Digest')
+
+	def set_Digest(self, Digest):  # String
+		self.add_query_param('Digest', Digest)
 	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
