@@ -18,26 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class RebootAICInstanceRequest(RpcRequest):
+class DeleteSnatIpForSnatEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RebootAICInstance','ens')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSnatIpForSnatEntry','ens')
+		self.set_method('POST')
 
-	def get_ServerId(self): # String
-		return self.get_query_params().get('ServerId')
+	def get_SnatIp(self): # String
+		return self.get_query_params().get('SnatIp')
 
-	def set_ServerId(self, ServerId):  # String
-		self.add_query_param('ServerId', ServerId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_SnatIp(self, SnatIp):  # String
+		self.add_query_param('SnatIp', SnatIp)
+	def get_SnatEntryId(self): # String
+		return self.get_query_params().get('SnatEntryId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_InstanceIds(self): # Array
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # Array
-		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
+	def set_SnatEntryId(self, SnatEntryId):  # String
+		self.add_query_param('SnatEntryId', SnatEntryId)

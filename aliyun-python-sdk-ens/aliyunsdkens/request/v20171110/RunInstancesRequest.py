@@ -36,6 +36,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_UniqueSuffix(self, UniqueSuffix):  # Boolean
 		self.add_query_param('UniqueSuffix', UniqueSuffix)
+	def get_InstanceChargeStrategy(self): # String
+		return self.get_query_params().get('InstanceChargeStrategy')
+
+	def set_InstanceChargeStrategy(self, InstanceChargeStrategy):  # String
+		self.add_query_param('InstanceChargeStrategy', InstanceChargeStrategy)
 	def get_SecurityId(self): # String
 		return self.get_query_params().get('SecurityId')
 

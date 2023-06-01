@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class RebootARMServerInstanceRequest(RpcRequest):
 
@@ -30,3 +31,8 @@ class RebootARMServerInstanceRequest(RpcRequest):
 
 	def set_ServerId(self, ServerId):  # String
 		self.add_query_param('ServerId', ServerId)
+	def get_ServerIds(self): # Array
+		return self.get_query_params().get('ServerIds')
+
+	def set_ServerIds(self, ServerIds):  # Array
+		self.add_query_param("ServerIds", json.dumps(ServerIds))

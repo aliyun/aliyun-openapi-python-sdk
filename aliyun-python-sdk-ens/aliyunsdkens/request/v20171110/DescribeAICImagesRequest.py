@@ -25,11 +25,31 @@ class DescribeAICImagesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeAICImages','ens')
 		self.set_method('POST')
 
+	def get_ImageType(self): # String
+		return self.get_query_params().get('ImageType')
+
+	def set_ImageType(self, ImageType):  # String
+		self.add_query_param('ImageType', ImageType)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
 	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
 	def set_ImageId(self, ImageId):  # String
 		self.add_query_param('ImageId', ImageId)
+	def get_MaxDate(self): # String
+		return self.get_query_params().get('MaxDate')
+
+	def set_MaxDate(self, MaxDate):  # String
+		self.add_query_param('MaxDate', MaxDate)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 
@@ -40,6 +60,11 @@ class DescribeAICImagesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_MinDate(self): # String
+		return self.get_query_params().get('MinDate')
+
+	def set_MinDate(self, MinDate):  # String
+		self.add_query_param('MinDate', MinDate)
 	def get_ImageUrl(self): # String
 		return self.get_query_params().get('ImageUrl')
 

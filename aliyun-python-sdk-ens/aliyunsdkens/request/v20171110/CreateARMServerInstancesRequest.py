@@ -80,6 +80,11 @@ class CreateARMServerInstancesRequest(RpcRequest):
 
 	def set_Amount(self, Amount):  # Integer
 		self.add_query_param('Amount', Amount)
+	def get_NameSpace(self): # String
+		return self.get_query_params().get('NameSpace')
+
+	def set_NameSpace(self, NameSpace):  # String
+		self.add_query_param('NameSpace', NameSpace)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
