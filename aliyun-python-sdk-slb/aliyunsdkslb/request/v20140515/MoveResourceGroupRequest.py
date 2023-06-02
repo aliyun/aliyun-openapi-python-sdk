@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkslb.endpoint import endpoint_data
 
-class CreateMasterSlaveServerGroupRequest(RpcRequest):
+class MoveResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateMasterSlaveServerGroup','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'MoveResourceGroup','slb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,25 +31,26 @@ class CreateMasterSlaveServerGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_access_key_id(self): # String
+		return self.get_query_params().get('access_key_id')
+
+	def set_access_key_id(self, access_key_id):  # String
+		self.add_query_param('access_key_id', access_key_id)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_MasterSlaveBackendServers(self): # String
-		return self.get_query_params().get('MasterSlaveBackendServers')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_MasterSlaveBackendServers(self, MasterSlaveBackendServers):  # String
-		self.add_query_param('MasterSlaveBackendServers', MasterSlaveBackendServers)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -60,18 +61,18 @@ class CreateMasterSlaveServerGroupRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_MasterSlaveServerGroupName(self): # String
-		return self.get_query_params().get('MasterSlaveServerGroupName')
-
-	def set_MasterSlaveServerGroupName(self, MasterSlaveServerGroupName):  # String
-		self.add_query_param('MasterSlaveServerGroupName', MasterSlaveServerGroupName)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_LoadBalancerId(self): # String
-		return self.get_query_params().get('LoadBalancerId')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_LoadBalancerId(self, LoadBalancerId):  # String
-		self.add_query_param('LoadBalancerId', LoadBalancerId)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_query_params().get('NewResourceGroupId')
+
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)
