@@ -122,6 +122,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_RestoreTime(self, RestoreTime):  # String
 		self.add_query_param('RestoreTime', RestoreTime)
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
 	def get_ServerlessConfig(self): # Struct
 		return self.get_query_params().get('ServerlessConfig')
 
@@ -137,6 +142,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # Integer
 		self.add_query_param('UsedTime', UsedTime)
+	def get_BurstingEnabled(self): # Boolean
+		return self.get_query_params().get('BurstingEnabled')
+
+	def set_BurstingEnabled(self, BurstingEnabled):  # Boolean
+		self.add_query_param('BurstingEnabled', BurstingEnabled)
 	def get_DbNames(self): # String
 		return self.get_query_params().get('DbNames')
 
@@ -157,3 +167,8 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_PayType(self, PayType):  # String
 		self.add_query_param('PayType', PayType)
+	def get_BpeEnabled(self): # String
+		return self.get_query_params().get('BpeEnabled')
+
+	def set_BpeEnabled(self, BpeEnabled):  # String
+		self.add_query_param('BpeEnabled', BpeEnabled)

@@ -171,11 +171,21 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_DedicatedHostId(self, DedicatedHostId):  # String
 		self.add_query_param('DedicatedHostId', DedicatedHostId)
+	def get_Filter(self): # String
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self, Filter):  # String
+		self.add_query_param('Filter', Filter)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
+
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
