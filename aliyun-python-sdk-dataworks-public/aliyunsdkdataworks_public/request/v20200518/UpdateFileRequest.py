@@ -131,6 +131,11 @@ class UpdateFileRequest(RpcRequest):
 
 	def set_CronExpress(self, CronExpress):  # String
 		self.add_body_params('CronExpress', CronExpress)
+	def get_IgnoreParentSkipRunningProperty(self): # Boolean
+		return self.get_body_params().get('IgnoreParentSkipRunningProperty')
+
+	def set_IgnoreParentSkipRunningProperty(self, IgnoreParentSkipRunningProperty):  # Boolean
+		self.add_body_params('IgnoreParentSkipRunningProperty', IgnoreParentSkipRunningProperty)
 	def get_EndEffectDate(self): # Long
 		return self.get_body_params().get('EndEffectDate')
 

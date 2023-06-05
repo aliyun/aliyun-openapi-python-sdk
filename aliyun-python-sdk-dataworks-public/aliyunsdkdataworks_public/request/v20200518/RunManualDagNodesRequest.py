@@ -41,6 +41,16 @@ class RunManualDagNodesRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
+	def get_StartBizDate(self): # String
+		return self.get_body_params().get('StartBizDate')
+
+	def set_StartBizDate(self, StartBizDate):  # String
+		self.add_body_params('StartBizDate', StartBizDate)
+	def get_EndBizDate(self): # String
+		return self.get_body_params().get('EndBizDate')
+
+	def set_EndBizDate(self, EndBizDate):  # String
+		self.add_body_params('EndBizDate', EndBizDate)
 	def get_DagParameters(self): # String
 		return self.get_body_params().get('DagParameters')
 
