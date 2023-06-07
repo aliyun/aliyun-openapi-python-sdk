@@ -119,6 +119,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # String
 		self.add_body_params('Parameters', Parameters)
+	def get_Template(self): # String
+		return self.get_body_params().get('Template')
+
+	def set_Template(self, Template):  # String
+		self.add_body_params('Template', Template)
 	def get_NamespaceSource(self): # String
 		return self.get_body_params().get('NamespaceSource')
 
@@ -204,6 +209,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
+	def get_XAttrs(self): # String
+		return self.get_body_params().get('XAttrs')
+
+	def set_XAttrs(self, XAttrs):  # String
+		self.add_body_params('XAttrs', XAttrs)
 	def get_MaxConcurrency(self): # Integer
 		return self.get_body_params().get('MaxConcurrency')
 

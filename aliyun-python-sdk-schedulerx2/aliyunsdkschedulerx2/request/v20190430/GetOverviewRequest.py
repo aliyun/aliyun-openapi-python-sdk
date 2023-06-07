@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class ListGroupsRequest(RpcRequest):
+class GetOverviewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ListGroups')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetOverview')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,36 @@ class ListGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MetricType(self): # Integer
+		return self.get_query_params().get('MetricType')
+
+	def set_MetricType(self, MetricType):  # Integer
+		self.add_query_param('MetricType', MetricType)
 	def get_NamespaceSource(self): # String
 		return self.get_query_params().get('NamespaceSource')
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_AppGroupName(self): # String
-		return self.get_query_params().get('AppGroupName')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_AppGroupName(self, AppGroupName):  # String
-		self.add_query_param('AppGroupName', AppGroupName)
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_Operate(self): # String
+		return self.get_query_params().get('Operate')
+
+	def set_Operate(self, Operate):  # String
+		self.add_query_param('Operate', Operate)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
