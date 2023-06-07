@@ -19,39 +19,44 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListSnapshotsRequest(RpcRequest):
+class ListCustomImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListSnapshots','SWAS-OPEN')
+		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListCustomImages','SWAS-OPEN')
 		self.set_method('POST')
 
-	def get_SnapshotIds(self): # String
-		return self.get_query_params().get('SnapshotIds')
+	def get_SystemSnapshotId(self): # String
+		return self.get_query_params().get('SystemSnapshotId')
 
-	def set_SnapshotIds(self, SnapshotIds):  # String
-		self.add_query_param('SnapshotIds', SnapshotIds)
-	def get_SourceDiskType(self): # String
-		return self.get_query_params().get('SourceDiskType')
+	def set_SystemSnapshotId(self, SystemSnapshotId):  # String
+		self.add_query_param('SystemSnapshotId', SystemSnapshotId)
+	def get_DataSnapshotId(self): # String
+		return self.get_query_params().get('DataSnapshotId')
 
-	def set_SourceDiskType(self, SourceDiskType):  # String
-		self.add_query_param('SourceDiskType', SourceDiskType)
+	def set_DataSnapshotId(self, DataSnapshotId):  # String
+		self.add_query_param('DataSnapshotId', DataSnapshotId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ImageNames(self): # String
+		return self.get_query_params().get('ImageNames')
+
+	def set_ImageNames(self, ImageNames):  # String
+		self.add_query_param('ImageNames', ImageNames)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_DiskId(self): # String
-		return self.get_query_params().get('DiskId')
+	def get_ImageIds(self): # String
+		return self.get_query_params().get('ImageIds')
 
-	def set_DiskId(self, DiskId):  # String
-		self.add_query_param('DiskId', DiskId)
+	def set_ImageIds(self, ImageIds):  # String
+		self.add_query_param('ImageIds', ImageIds)

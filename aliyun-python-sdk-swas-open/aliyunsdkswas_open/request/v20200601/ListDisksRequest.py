@@ -25,6 +25,11 @@ class ListDisksRequest(RpcRequest):
 		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListDisks','SWAS-OPEN')
 		self.set_method('POST')
 
+	def get_DiskType(self): # String
+		return self.get_query_params().get('DiskType')
+
+	def set_DiskType(self, DiskType):  # String
+		self.add_query_param('DiskType', DiskType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
