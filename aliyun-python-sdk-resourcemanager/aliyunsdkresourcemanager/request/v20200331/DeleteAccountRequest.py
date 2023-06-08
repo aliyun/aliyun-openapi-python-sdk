@@ -24,7 +24,7 @@ import json
 class DeleteAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeleteAccount')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeleteAccount','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
