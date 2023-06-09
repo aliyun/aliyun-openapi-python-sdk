@@ -25,6 +25,16 @@ class ListEventStreamingsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'ListEventStreamings')
 		self.set_method('POST')
 
+	def get_SourceArn(self): # String
+		return self.get_body_params().get('SourceArn')
+
+	def set_SourceArn(self, SourceArn):  # String
+		self.add_body_params('SourceArn', SourceArn)
+	def get_SinkArn(self): # String
+		return self.get_body_params().get('SinkArn')
+
+	def set_SinkArn(self, SinkArn):  # String
+		self.add_body_params('SinkArn', SinkArn)
 	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
 

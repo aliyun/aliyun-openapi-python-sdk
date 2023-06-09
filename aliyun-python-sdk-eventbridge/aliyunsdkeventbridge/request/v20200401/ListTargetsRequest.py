@@ -18,12 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class CreateTargetsRequest(RpcRequest):
+class ListTargetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'CreateTargets')
+		RpcRequest.__init__(self, 'eventbridge', '2020-04-01', 'ListTargets')
 		self.set_method('POST')
 
 	def get_RuleName(self): # String
@@ -36,8 +35,18 @@ class CreateTargetsRequest(RpcRequest):
 
 	def set_EventBusName(self, EventBusName):  # String
 		self.add_query_param('EventBusName', EventBusName)
-	def get_Targets(self): # Array
-		return self.get_query_params().get('Targets')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_Targets(self, Targets):  # Array
-		self.add_query_param("Targets", json.dumps(Targets))
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Limit(self): # Integer
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)
+	def get_Arn(self): # String
+		return self.get_query_params().get('Arn')
+
+	def set_Arn(self, Arn):  # String
+		self.add_query_param('Arn', Arn)
