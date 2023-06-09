@@ -46,6 +46,11 @@ class DescribeIpv6AddressesRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_IncludeReservationData(self): # Boolean
+		return self.get_query_params().get('IncludeReservationData')
+
+	def set_IncludeReservationData(self, IncludeReservationData):  # Boolean
+		self.add_query_param('IncludeReservationData', IncludeReservationData)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

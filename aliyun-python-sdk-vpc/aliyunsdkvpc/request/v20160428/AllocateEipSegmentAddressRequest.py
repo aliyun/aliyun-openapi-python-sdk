@@ -51,6 +51,11 @@ class AllocateEipSegmentAddressRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Zone(self): # String
+		return self.get_query_params().get('Zone')
+
+	def set_Zone(self, Zone):  # String
+		self.add_query_param('Zone', Zone)
 	def get_Netmode(self): # String
 		return self.get_query_params().get('Netmode')
 
