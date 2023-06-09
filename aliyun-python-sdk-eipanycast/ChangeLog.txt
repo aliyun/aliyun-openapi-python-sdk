@@ -1,3 +1,6 @@
+2023-06-09 Version: 1.0.4
+- Anycast support tag.
+
 2023-04-07 Version: 1.0.3
 - Support tag for anycast.
 

@@ -23,7 +23,7 @@ from aliyunsdkeipanycast.endpoint import endpoint_data
 class ListAnycastEipAddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'ListAnycastEipAddresses','eipanycast')
+		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'ListAnycastEipAddresses')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
