@@ -18,36 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class SubmitTextToSignVideoTaskRequest(RpcRequest):
+class QueryAvatarListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'SubmitTextToSignVideoTask')
+		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'QueryAvatarList')
 		self.set_method('POST')
 
-	def get_App(self): # Struct
-		return self.get_query_params().get('App')
+	def get_ModelType(self): # String
+		return self.get_query_params().get('ModelType')
 
-	def set_App(self, App):  # Struct
-		self.add_query_param("App", json.dumps(App))
-	def get_VideoInfo(self): # Struct
-		return self.get_query_params().get('VideoInfo')
+	def set_ModelType(self, ModelType):  # String
+		self.add_query_param('ModelType', ModelType)
+	def get_PageNo(self): # Integer
+		return self.get_query_params().get('PageNo')
 
-	def set_VideoInfo(self, VideoInfo):  # Struct
-		self.add_query_param("VideoInfo", json.dumps(VideoInfo))
+	def set_PageNo(self, PageNo):  # Integer
+		self.add_query_param('PageNo', PageNo)
 	def get_TenantId(self): # Long
 		return self.get_query_params().get('TenantId')
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_query_param('TenantId', TenantId)
-	def get_Text(self): # String
-		return self.get_query_params().get('Text')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_Text(self, Text):  # String
-		self.add_query_param('Text', Text)
-	def get_Title(self): # String
-		return self.get_query_params().get('Title')
-
-	def set_Title(self, Title):  # String
-		self.add_query_param('Title', Title)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
