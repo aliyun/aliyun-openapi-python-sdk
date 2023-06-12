@@ -31,6 +31,11 @@ class AddFaceVideoTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_VideoScene(self): # String
+		return self.get_body_params().get('VideoScene')
+
+	def set_VideoScene(self, VideoScene):  # String
+		self.add_body_params('VideoScene', VideoScene)
 	def get_VideoURL(self): # String
 		return self.get_body_params().get('VideoURL')
 

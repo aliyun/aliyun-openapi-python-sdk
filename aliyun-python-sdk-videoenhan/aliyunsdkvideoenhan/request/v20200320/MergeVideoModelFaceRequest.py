@@ -36,6 +36,17 @@ class MergeVideoModelFaceRequest(RpcRequest):
 
 	def set_FaceImageURL(self, FaceImageURL):  # String
 		self.add_body_params('FaceImageURL', FaceImageURL)
+	def get_MergeInfoss(self): # RepeatList
+		return self.get_body_params().get('MergeInfos')
+
+	def set_MergeInfoss(self, MergeInfos):  # RepeatList
+		for depth1 in range(len(MergeInfos)):
+			if MergeInfos[depth1].get('TemplateFaceURL') is not None:
+				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.TemplateFaceURL', MergeInfos[depth1].get('TemplateFaceURL'))
+			if MergeInfos[depth1].get('ImageURL') is not None:
+				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.ImageURL', MergeInfos[depth1].get('ImageURL'))
+			if MergeInfos[depth1].get('TemplateFaceID') is not None:
+				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.TemplateFaceID', MergeInfos[depth1].get('TemplateFaceID'))
 	def get_TemplateId(self): # String
 		return self.get_body_params().get('TemplateId')
 
