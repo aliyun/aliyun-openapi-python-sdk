@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeDBClusterParametersRequest(RpcRequest):
+class ModifyDBNodeHotReplicaModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterParameters','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBNodeHotReplicaMode','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,11 @@ class DescribeDBClusterParametersRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DescribeType(self): # String
-		return self.get_query_params().get('DescribeType')
+	def get_DBNodeId(self): # String
+		return self.get_query_params().get('DBNodeId')
 
-	def set_DescribeType(self, DescribeType):  # String
-		self.add_query_param('DescribeType', DescribeType)
+	def set_DBNodeId(self, DBNodeId):  # String
+		self.add_query_param('DBNodeId', DBNodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,3 +61,8 @@ class DescribeDBClusterParametersRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_HotReplicaMode(self): # String
+		return self.get_query_params().get('HotReplicaMode')
+
+	def set_HotReplicaMode(self, HotReplicaMode):  # String
+		self.add_query_param('HotReplicaMode', HotReplicaMode)
