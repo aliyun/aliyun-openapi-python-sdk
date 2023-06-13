@@ -86,6 +86,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_EncryptionKey(self): # String
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self, EncryptionKey):  # String
+		self.add_query_param('EncryptionKey', EncryptionKey)
 	def get_ConfigServers(self): # RepeatList
 		return self.get_query_params().get('ConfigServer')
 
@@ -172,6 +177,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_Encrypted(self): # Boolean
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self, Encrypted):  # Boolean
+		self.add_query_param('Encrypted', Encrypted)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
