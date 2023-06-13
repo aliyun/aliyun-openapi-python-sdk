@@ -31,6 +31,11 @@ class SendMessageRequest(RpcRequest):
 
 	def set_Feedback(self, Feedback):  # Boolean
 		self.add_query_param('Feedback', Feedback)
+	def get_StreamExtension(self): # Struct
+		return self.get_query_params().get('StreamExtension')
+
+	def set_StreamExtension(self, StreamExtension):  # Struct
+		self.add_query_param("StreamExtension", json.dumps(StreamExtension))
 	def get_TextRequest(self): # String
 		return self.get_query_params().get('TextRequest')
 
