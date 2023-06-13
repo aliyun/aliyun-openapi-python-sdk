@@ -112,6 +112,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # Long
 		self.add_query_param('UsedTime', UsedTime)
+	def get_BurstingEnabled(self): # Boolean
+		return self.get_query_params().get('BurstingEnabled')
+
+	def set_BurstingEnabled(self, BurstingEnabled):  # Boolean
+		self.add_query_param('BurstingEnabled', BurstingEnabled)
 	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
