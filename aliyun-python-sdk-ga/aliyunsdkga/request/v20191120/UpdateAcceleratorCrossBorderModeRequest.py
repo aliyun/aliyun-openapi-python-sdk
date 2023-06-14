@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkga.endpoint import endpoint_data
 
-class QueryCrossPrivatePermissionRequest(RpcRequest):
+class UpdateAcceleratorCrossBorderModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'QueryCrossPrivatePermission','gaplus')
+		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'UpdateAcceleratorCrossBorderMode','gaplus')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,18 @@ class QueryCrossPrivatePermissionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_CrossBorderMode(self): # String
+		return self.get_query_params().get('CrossBorderMode')
+
+	def set_CrossBorderMode(self, CrossBorderMode):  # String
+		self.add_query_param('CrossBorderMode', CrossBorderMode)
+	def get_AcceleratorId(self): # String
+		return self.get_query_params().get('AcceleratorId')
+
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkga.endpoint import endpoint_data
 
-class UpdateCrossPrivateStateRequest(RpcRequest):
+class QueryCrossBorderApprovalStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'UpdateCrossPrivateState','gaplus')
+		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'QueryCrossBorderApprovalStatus','gaplus')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,3 @@ class UpdateCrossPrivateStateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CrossPrivateState(self): # Boolean
-		return self.get_query_params().get('CrossPrivateState')
-
-	def set_CrossPrivateState(self, CrossPrivateState):  # Boolean
-		self.add_query_param('CrossPrivateState', CrossPrivateState)
-	def get_AcceleratorId(self): # String
-		return self.get_query_params().get('AcceleratorId')
-
-	def set_AcceleratorId(self, AcceleratorId):  # String
-		self.add_query_param('AcceleratorId', AcceleratorId)

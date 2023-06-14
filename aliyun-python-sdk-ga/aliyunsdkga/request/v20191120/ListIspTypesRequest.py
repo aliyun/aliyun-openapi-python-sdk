@@ -41,3 +41,8 @@ class ListIspTypesRequest(RpcRequest):
 
 	def set_BusinessRegionId(self, BusinessRegionId):  # String
 		self.add_query_param('BusinessRegionId', BusinessRegionId)
+	def get_AcceleratorId(self): # String
+		return self.get_query_params().get('AcceleratorId')
+
+	def set_AcceleratorId(self, AcceleratorId):  # String
+		self.add_query_param('AcceleratorId', AcceleratorId)
