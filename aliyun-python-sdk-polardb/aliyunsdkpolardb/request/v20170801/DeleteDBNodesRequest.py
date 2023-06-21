@@ -47,6 +47,11 @@ class DeleteDBNodesRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_DBNodeType(self): # String
+		return self.get_query_params().get('DBNodeType')
+
+	def set_DBNodeType(self, DBNodeType):  # String
+		self.add_query_param('DBNodeType', DBNodeType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

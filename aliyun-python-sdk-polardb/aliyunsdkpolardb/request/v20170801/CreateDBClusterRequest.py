@@ -205,6 +205,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_LoosePolarLogBin(self, LoosePolarLogBin):  # String
 		self.add_query_param('LoosePolarLogBin', LoosePolarLogBin)
+	def get_Architecture(self): # String
+		return self.get_query_params().get('Architecture')
+
+	def set_Architecture(self, Architecture):  # String
+		self.add_query_param('Architecture', Architecture)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

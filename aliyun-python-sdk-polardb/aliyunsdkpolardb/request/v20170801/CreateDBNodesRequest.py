@@ -56,6 +56,11 @@ class CreateDBNodesRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DBNodeType(self): # String
+		return self.get_query_params().get('DBNodeType')
+
+	def set_DBNodeType(self, DBNodeType):  # String
+		self.add_query_param('DBNodeType', DBNodeType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
