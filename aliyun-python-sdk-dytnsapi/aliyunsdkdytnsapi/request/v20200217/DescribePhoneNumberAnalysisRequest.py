@@ -56,10 +56,10 @@ class DescribePhoneNumberAnalysisRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_NumberType(self): # Integer
+	def get_NumberType(self): # Long
 		return self.get_query_params().get('NumberType')
 
-	def set_NumberType(self, NumberType):  # Integer
+	def set_NumberType(self, NumberType):  # Long
 		self.add_query_param('NumberType', NumberType)
 	def get_AuthCode(self): # String
 		return self.get_query_params().get('AuthCode')
