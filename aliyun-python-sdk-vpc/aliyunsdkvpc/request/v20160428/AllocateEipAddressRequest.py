@@ -31,6 +31,11 @@ class AllocateEipAddressRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IpAddress(self): # String
+		return self.get_query_params().get('IpAddress')
+
+	def set_IpAddress(self, IpAddress):  # String
+		self.add_query_param('IpAddress', IpAddress)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -111,6 +116,11 @@ class AllocateEipAddressRequest(RpcRequest):
 
 	def set_ActivityId(self, ActivityId):  # Long
 		self.add_query_param('ActivityId', ActivityId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
