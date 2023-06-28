@@ -1,3 +1,6 @@
+2023-06-28 Version: 1.0.14
+- Update EndPointGroup api.
+
 2023-06-14 Version: 1.0.13
 - Add something for ga.
 
