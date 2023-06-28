@@ -80,3 +80,8 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
