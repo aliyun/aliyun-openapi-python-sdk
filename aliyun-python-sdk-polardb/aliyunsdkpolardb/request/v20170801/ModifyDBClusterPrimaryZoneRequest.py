@@ -71,6 +71,11 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 
 	def set_PlannedStartTime(self, PlannedStartTime):  # String
 		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_VPCId(self): # String
+		return self.get_query_params().get('VPCId')
+
+	def set_VPCId(self, VPCId):  # String
+		self.add_query_param('VPCId', VPCId)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 

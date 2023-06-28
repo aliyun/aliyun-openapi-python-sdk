@@ -61,6 +61,11 @@ class DescribeClassListRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MasterHa(self): # String
+		return self.get_query_params().get('MasterHa')
+
+	def set_MasterHa(self, MasterHa):  # String
+		self.add_query_param('MasterHa', MasterHa)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
