@@ -41,6 +41,11 @@ class AllocateInstancePublicConnectionRequest(RpcRequest):
 
 	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
 		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
+	def get_PGBouncerPort(self): # String
+		return self.get_query_params().get('PGBouncerPort')
+
+	def set_PGBouncerPort(self, PGBouncerPort):  # String
+		self.add_query_param('PGBouncerPort', PGBouncerPort)
 	def get_GeneralGroupName(self): # String
 		return self.get_query_params().get('GeneralGroupName')
 
