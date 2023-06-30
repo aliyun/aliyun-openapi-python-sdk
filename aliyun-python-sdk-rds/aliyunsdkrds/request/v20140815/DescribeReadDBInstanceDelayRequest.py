@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeReadDBInstanceDelayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeReadDBInstanceDelay','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeReadDBInstanceDelay')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

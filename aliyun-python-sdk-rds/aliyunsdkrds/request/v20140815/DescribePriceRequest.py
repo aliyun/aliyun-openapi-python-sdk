@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribePrice','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribePrice')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

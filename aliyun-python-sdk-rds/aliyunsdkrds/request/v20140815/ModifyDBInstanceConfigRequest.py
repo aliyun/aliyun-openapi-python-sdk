@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeModifyPGHbaConfigLogRequest(RpcRequest):
+class ModifyDBInstanceConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeModifyPGHbaConfigLog')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceConfig')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,16 +41,16 @@ class DescribeModifyPGHbaConfigLogRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ConfigName(self): # String
+		return self.get_query_params().get('ConfigName')
+
+	def set_ConfigName(self, ConfigName):  # String
+		self.add_query_param('ConfigName', ConfigName)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -66,11 +66,11 @@ class DescribeModifyPGHbaConfigLogRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def get_ConfigValue(self): # String
+		return self.get_query_params().get('ConfigValue')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_ConfigValue(self, ConfigValue):  # String
+		self.add_query_param('ConfigValue', ConfigValue)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
