@@ -41,6 +41,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_LocalLogRetentionHours(self, LocalLogRetentionHours):  # String
 		self.add_query_param('LocalLogRetentionHours', LocalLogRetentionHours)
+	def get_BackupPriority(self): # Integer
+		return self.get_query_params().get('BackupPriority')
+
+	def set_BackupPriority(self, BackupPriority):  # Integer
+		self.add_query_param('BackupPriority', BackupPriority)
 	def get_LogBackupFrequency(self): # String
 		return self.get_query_params().get('LogBackupFrequency')
 
