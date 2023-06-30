@@ -81,6 +81,11 @@ class CreateVpnGatewayRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DisasterRecoveryVSwitchId(self): # String
+		return self.get_query_params().get('DisasterRecoveryVSwitchId')
+
+	def set_DisasterRecoveryVSwitchId(self, DisasterRecoveryVSwitchId):  # String
+		self.add_query_param('DisasterRecoveryVSwitchId', DisasterRecoveryVSwitchId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

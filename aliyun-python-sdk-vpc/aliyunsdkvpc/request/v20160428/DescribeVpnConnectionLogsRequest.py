@@ -76,6 +76,11 @@ class DescribeVpnConnectionLogsRequest(RpcRequest):
 
 	def set_VpnConnectionId(self, VpnConnectionId):  # String
 		self.add_query_param('VpnConnectionId', VpnConnectionId)
+	def get_TunnelId(self): # String
+		return self.get_query_params().get('TunnelId')
+
+	def set_TunnelId(self, TunnelId):  # String
+		self.add_query_param('TunnelId', TunnelId)
 	def get_To(self): # Integer
 		return self.get_query_params().get('To')
 
