@@ -73,6 +73,15 @@ class CreateListenerRequest(RpcRequest):
 	def set_CertificateIdss(self, CertificateIds):  # RepeatList
 		for depth1 in range(len(CertificateIds)):
 			self.add_body_params('CertificateIds.' + str(depth1 + 1), CertificateIds[depth1])
+	def get_Tags(self): # RepeatList
+		return self.get_body_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_AlpnEnabled(self): # Boolean
 		return self.get_body_params().get('AlpnEnabled')
 

@@ -36,23 +36,18 @@ class ListListenerCertificatesRequest(RpcRequest):
 
 	def set_ListenerId(self, ListenerId):  # String
 		self.add_body_params('ListenerId', ListenerId)
+	def get_CertType(self): # String
+		return self.get_body_params().get('CertType')
+
+	def set_CertType(self, CertType):  # String
+		self.add_body_params('CertType', CertType)
 	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_body_params('NextToken', NextToken)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
 	def get_MaxResults(self): # Integer
 		return self.get_body_params().get('MaxResults')
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_body_params('MaxResults', MaxResults)
-	def get_Page(self): # Integer
-		return self.get_body_params().get('Page')
-
-	def set_Page(self, Page):  # Integer
-		self.add_body_params('Page', Page)

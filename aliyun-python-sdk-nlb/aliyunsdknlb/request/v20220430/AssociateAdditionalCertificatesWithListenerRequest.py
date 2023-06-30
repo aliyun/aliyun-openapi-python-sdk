@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknlb.endpoint import endpoint_data
 
-class ListSystemSecurityPolicyRequest(RpcRequest):
+class AssociateAdditionalCertificatesWithListenerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Nlb', '2022-04-30', 'ListSystemSecurityPolicy','nlb')
+		RpcRequest.__init__(self, 'Nlb', '2022-04-30', 'AssociateAdditionalCertificatesWithListener','nlb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,24 @@ class ListSystemSecurityPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
+	def get_ListenerId(self): # String
+		return self.get_body_params().get('ListenerId')
+
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_body_params('ListenerId', ListenerId)
+	def get_DryRun(self): # Boolean
+		return self.get_body_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_body_params('DryRun', DryRun)
+	def get_AdditionalCertificateIdss(self): # RepeatList
+		return self.get_body_params().get('AdditionalCertificateIds')
+
+	def set_AdditionalCertificateIdss(self, AdditionalCertificateIds):  # RepeatList
+		for depth1 in range(len(AdditionalCertificateIds)):
+			self.add_body_params('AdditionalCertificateIds.' + str(depth1 + 1), AdditionalCertificateIds[depth1])

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknlb.endpoint import endpoint_data
 
-class ListSystemSecurityPolicyRequest(RpcRequest):
+class MoveResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Nlb', '2022-04-30', 'ListSystemSecurityPolicy','nlb')
+		RpcRequest.__init__(self, 'Nlb', '2022-04-30', 'MoveResourceGroup','nlb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,18 @@ class ListSystemSecurityPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceId(self): # String
+		return self.get_body_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_body_params('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_body_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_body_params('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_body_params().get('NewResourceGroupId')
+
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_body_params('NewResourceGroupId', NewResourceGroupId)
