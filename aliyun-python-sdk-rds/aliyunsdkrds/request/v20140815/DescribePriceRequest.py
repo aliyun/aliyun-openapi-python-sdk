@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class DescribePriceRequest(RpcRequest):
 
@@ -71,6 +72,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Quantity(self, Quantity):  # Integer
 		self.add_query_param('Quantity', Quantity)
+	def get_ServerlessConfig(self): # Struct
+		return self.get_query_params().get('ServerlessConfig')
+
+	def set_ServerlessConfig(self, ServerlessConfig):  # Struct
+		self.add_query_param("ServerlessConfig", json.dumps(ServerlessConfig))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
