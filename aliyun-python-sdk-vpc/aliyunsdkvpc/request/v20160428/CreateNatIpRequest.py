@@ -31,11 +31,6 @@ class CreateNatIpRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NatIpCidrId(self): # String
-		return self.get_query_params().get('NatIpCidrId')
-
-	def set_NatIpCidrId(self, NatIpCidrId):  # String
-		self.add_query_param('NatIpCidrId', NatIpCidrId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 

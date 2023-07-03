@@ -1,3 +1,7 @@
+2023-07-03 Version: 3.0.44
+- Add CidrList Limit.
+- Delete CreateNatIp invalid fields.
+
 2023-06-30 Version: 3.0.43
 - Support HA VPN.
 - Api Type tag.
