@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateCloudMigrationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateCloudMigrationTask','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateCloudMigrationTask')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

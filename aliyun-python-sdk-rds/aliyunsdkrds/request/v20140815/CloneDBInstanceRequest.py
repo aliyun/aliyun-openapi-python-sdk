@@ -24,7 +24,7 @@ import json
 class CloneDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CloneDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CloneDBInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
