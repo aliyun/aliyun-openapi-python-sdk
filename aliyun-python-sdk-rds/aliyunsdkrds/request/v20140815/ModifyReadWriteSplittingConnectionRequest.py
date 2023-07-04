@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyReadWriteSplittingConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyReadWriteSplittingConnection')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyReadWriteSplittingConnection','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

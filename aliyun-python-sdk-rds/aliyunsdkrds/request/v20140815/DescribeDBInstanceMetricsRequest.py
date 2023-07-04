@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeDBInstanceMetricsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceMetrics')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceMetrics','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

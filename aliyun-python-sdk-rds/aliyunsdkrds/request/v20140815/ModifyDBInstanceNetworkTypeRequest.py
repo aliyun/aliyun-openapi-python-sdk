@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceNetworkType')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceNetworkType','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
