@@ -31,28 +31,43 @@ class SubmitAudioTo3DAvatarVideoTaskRequest(RpcRequest):
 
 	def set_App(self, App):  # Struct
 		self.add_query_param("App", json.dumps(App))
-	def get_VideoInfo(self): # Struct
-		return self.get_query_params().get('VideoInfo')
-
-	def set_VideoInfo(self, VideoInfo):  # Struct
-		self.add_query_param("VideoInfo", json.dumps(VideoInfo))
 	def get_AvatarInfo(self): # Struct
 		return self.get_query_params().get('AvatarInfo')
 
 	def set_AvatarInfo(self, AvatarInfo):  # Struct
 		self.add_query_param("AvatarInfo", json.dumps(AvatarInfo))
-	def get_TenantId(self): # Long
-		return self.get_query_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # Long
-		self.add_query_param('TenantId', TenantId)
 	def get_Title(self): # String
 		return self.get_query_params().get('Title')
 
 	def set_Title(self, Title):  # String
 		self.add_query_param('Title', Title)
+	def get_ExtParams(self): # String
+		return self.get_query_params().get('ExtParams')
+
+	def set_ExtParams(self, ExtParams):  # String
+		self.add_query_param('ExtParams', ExtParams)
 	def get_Url(self): # String
 		return self.get_query_params().get('Url')
 
 	def set_Url(self, Url):  # String
 		self.add_query_param('Url', Url)
+	def get_VideoInfo(self): # Struct
+		return self.get_query_params().get('VideoInfo')
+
+	def set_VideoInfo(self, VideoInfo):  # Struct
+		self.add_query_param("VideoInfo", json.dumps(VideoInfo))
+	def get_CallbackParams(self): # String
+		return self.get_query_params().get('CallbackParams')
+
+	def set_CallbackParams(self, CallbackParams):  # String
+		self.add_query_param('CallbackParams', CallbackParams)
+	def get_TenantId(self): # Long
+		return self.get_query_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # Long
+		self.add_query_param('TenantId', TenantId)
+	def get_Callback(self): # Boolean
+		return self.get_query_params().get('Callback')
+
+	def set_Callback(self, Callback):  # Boolean
+		self.add_query_param('Callback', Callback)
