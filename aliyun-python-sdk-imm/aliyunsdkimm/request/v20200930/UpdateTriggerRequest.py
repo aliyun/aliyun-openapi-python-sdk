@@ -32,11 +32,6 @@ class UpdateTriggerRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Notification(self): # Struct
-		return self.get_body_params().get('Notification')
-
-	def set_Notification(self, Notification):  # Struct
-		self.add_body_params("Notification", json.dumps(Notification))
 	def get_Id(self): # String
 		return self.get_body_params().get('Id')
 

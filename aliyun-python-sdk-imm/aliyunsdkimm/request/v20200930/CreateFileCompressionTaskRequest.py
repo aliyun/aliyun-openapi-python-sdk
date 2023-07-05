@@ -52,11 +52,6 @@ class CreateFileCompressionTaskRequest(RpcRequest):
 
 	def set_Notification(self, Notification):  # Struct
 		self.add_query_param("Notification", json.dumps(Notification))
-	def get_Password(self): # String
-		return self.get_query_params().get('Password')
-
-	def set_Password(self, Password):  # String
-		self.add_query_param('Password', Password)
 	def get_TargetURI(self): # String
 		return self.get_query_params().get('TargetURI')
 
