@@ -52,6 +52,11 @@ class UpdateVpcEndpointServiceResourceAttributeRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
 	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 

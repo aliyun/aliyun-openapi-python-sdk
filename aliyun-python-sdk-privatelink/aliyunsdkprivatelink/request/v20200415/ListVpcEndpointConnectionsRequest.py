@@ -47,11 +47,21 @@ class ListVpcEndpointConnectionsRequest(RpcRequest):
 
 	def set_ReplacedResourceId(self, ReplacedResourceId):  # String
 		self.add_query_param('ReplacedResourceId', ReplacedResourceId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ConnectionId(self): # Long
+		return self.get_query_params().get('ConnectionId')
+
+	def set_ConnectionId(self, ConnectionId):  # Long
+		self.add_query_param('ConnectionId', ConnectionId)
 	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 

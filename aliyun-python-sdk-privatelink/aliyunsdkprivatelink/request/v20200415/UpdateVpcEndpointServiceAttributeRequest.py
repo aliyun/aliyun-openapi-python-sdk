@@ -57,6 +57,11 @@ class UpdateVpcEndpointServiceAttributeRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_ServiceSupportIPv6(self): # Boolean
+		return self.get_query_params().get('ServiceSupportIPv6')
+
+	def set_ServiceSupportIPv6(self, ServiceSupportIPv6):  # Boolean
+		self.add_query_param('ServiceSupportIPv6', ServiceSupportIPv6)
 	def get_ServiceDescription(self): # String
 		return self.get_query_params().get('ServiceDescription')
 

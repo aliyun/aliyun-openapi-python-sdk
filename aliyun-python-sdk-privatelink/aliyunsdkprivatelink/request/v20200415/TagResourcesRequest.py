@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkprivatelink.endpoint import endpoint_data
 
-class AttachResourceToVpcEndpointServiceRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'AttachResourceToVpcEndpointService','privatelink')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'TagResources','privatelink')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,33 +31,33 @@ class AttachResourceToVpcEndpointServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceId(self): # Array
+		return self.get_body_params().get('ResourceId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
+	def set_ResourceId(self, ResourceId):  # Array
+		for index1, value1 in enumerate(ResourceId):
+			self.add_body_params('ResourceId.' + str(index1 + 1), value1)
 	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+		return self.get_body_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+		self.add_body_params('DryRun', DryRun)
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
+		return self.get_body_params().get('ResourceType')
 
 	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
+		self.add_body_params('ResourceType', ResourceType)
+	def get_Tag(self): # Array
+		return self.get_body_params().get('Tag')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_ServiceId(self): # String
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self, ServiceId):  # String
-		self.add_query_param('ServiceId', ServiceId)
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Key') is not None:
+				self.add_body_params('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
+			if value1.get('Value') is not None:
+				self.add_body_params('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))

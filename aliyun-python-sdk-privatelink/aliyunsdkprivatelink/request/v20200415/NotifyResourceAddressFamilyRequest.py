@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkprivatelink.endpoint import endpoint_data
 
-class AddUserToVpcEndpointServiceRequest(RpcRequest):
+class NotifyResourceAddressFamilyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'AddUserToVpcEndpointService','privatelink')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'NotifyResourceAddressFamily','privatelink')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,28 +31,23 @@ class AddUserToVpcEndpointServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_UserARN(self): # String
-		return self.get_query_params().get('UserARN')
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_UserARN(self, UserARN):  # String
-		self.add_query_param('UserARN', UserARN)
-	def get_UserId(self): # Long
-		return self.get_query_params().get('UserId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_AddressFamily(self): # String
+		return self.get_query_params().get('AddressFamily')
 
-	def set_UserId(self, UserId):  # Long
-		self.add_query_param('UserId', UserId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def set_AddressFamily(self, AddressFamily):  # String
+		self.add_query_param('AddressFamily', AddressFamily)
+	def get_Ipv6Address(self): # String
+		return self.get_query_params().get('Ipv6Address')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_ServiceId(self): # String
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self, ServiceId):  # String
-		self.add_query_param('ServiceId', ServiceId)
+	def set_Ipv6Address(self, Ipv6Address):  # String
+		self.add_query_param('Ipv6Address', Ipv6Address)

@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkprivatelink.endpoint import endpoint_data
 
-class AddUserToVpcEndpointServiceRequest(RpcRequest):
+class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'AddUserToVpcEndpointService','privatelink')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'ChangeResourceGroup','privatelink')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,28 +31,18 @@ class AddUserToVpcEndpointServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_UserARN(self): # String
-		return self.get_query_params().get('UserARN')
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ResourceRegionId(self): # String
+		return self.get_query_params().get('ResourceRegionId')
 
-	def set_UserARN(self, UserARN):  # String
-		self.add_query_param('UserARN', UserARN)
-	def get_UserId(self): # Long
-		return self.get_query_params().get('UserId')
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
+		self.add_query_param('ResourceRegionId', ResourceRegionId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_UserId(self, UserId):  # Long
-		self.add_query_param('UserId', UserId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
-	def get_ServiceId(self): # String
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self, ServiceId):  # String
-		self.add_query_param('ServiceId', ServiceId)
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)

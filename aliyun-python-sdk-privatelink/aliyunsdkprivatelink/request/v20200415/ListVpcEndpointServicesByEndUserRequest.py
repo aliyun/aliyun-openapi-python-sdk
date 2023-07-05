@@ -32,6 +32,11 @@ class ListVpcEndpointServicesByEndUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -42,6 +47,15 @@ class ListVpcEndpointServicesByEndUserRequest(RpcRequest):
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_query_param('ServiceName', ServiceName)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
 	def get_ServiceType(self): # String
 		return self.get_query_params().get('ServiceType')
 

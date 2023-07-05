@@ -37,6 +37,11 @@ class RemoveUserFromVpcEndpointServiceRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_UserARN(self): # String
+		return self.get_query_params().get('UserARN')
+
+	def set_UserARN(self, UserARN):  # String
+		self.add_query_param('UserARN', UserARN)
 	def get_UserId(self): # Long
 		return self.get_query_params().get('UserId')
 

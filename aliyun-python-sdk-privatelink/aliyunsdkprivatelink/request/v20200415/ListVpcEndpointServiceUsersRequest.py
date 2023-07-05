@@ -32,6 +32,11 @@ class ListVpcEndpointServiceUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UserListType(self): # String
+		return self.get_query_params().get('UserListType')
+
+	def set_UserListType(self, UserListType):  # String
+		self.add_query_param('UserListType', UserListType)
 	def get_UserId(self): # Long
 		return self.get_query_params().get('UserId')
 

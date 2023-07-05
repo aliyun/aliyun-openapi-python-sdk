@@ -47,11 +47,25 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 
 	def set_Payer(self, Payer):  # String
 		self.add_query_param('Payer', Payer)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ZoneAffinityEnabled(self): # Boolean
 		return self.get_query_params().get('ZoneAffinityEnabled')
 
 	def set_ZoneAffinityEnabled(self, ZoneAffinityEnabled):  # Boolean
 		self.add_query_param('ZoneAffinityEnabled', ZoneAffinityEnabled)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
@@ -73,6 +87,11 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 
 	def set_ServiceResourceType(self, ServiceResourceType):  # String
 		self.add_query_param('ServiceResourceType', ServiceResourceType)
+	def get_ServiceSupportIPv6(self): # Boolean
+		return self.get_query_params().get('ServiceSupportIPv6')
+
+	def set_ServiceSupportIPv6(self, ServiceSupportIPv6):  # Boolean
+		self.add_query_param('ServiceSupportIPv6', ServiceSupportIPv6)
 	def get_ServiceDescription(self): # String
 		return self.get_query_params().get('ServiceDescription')
 
