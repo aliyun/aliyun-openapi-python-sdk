@@ -46,8 +46,28 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_ApprovalType(self, ApprovalType):  # String
 		self.add_query_param('ApprovalType', ApprovalType)
+	def get_NewApprover(self): # Long
+		return self.get_query_params().get('NewApprover')
+
+	def set_NewApprover(self, NewApprover):  # Long
+		self.add_query_param('NewApprover', NewApprover)
+	def get_ApprovalNodeId(self): # Long
+		return self.get_query_params().get('ApprovalNodeId')
+
+	def set_ApprovalNodeId(self, ApprovalNodeId):  # Long
+		self.add_query_param('ApprovalNodeId', ApprovalNodeId)
+	def get_OldApprover(self): # Long
+		return self.get_query_params().get('OldApprover')
+
+	def set_OldApprover(self, OldApprover):  # Long
+		self.add_query_param('OldApprover', OldApprover)
 	def get_Comment(self): # String
 		return self.get_query_params().get('Comment')
 
 	def set_Comment(self, Comment):  # String
 		self.add_query_param('Comment', Comment)
+	def get_ApprovalNodePos(self): # String
+		return self.get_query_params().get('ApprovalNodePos')
+
+	def set_ApprovalNodePos(self, ApprovalNodePos):  # String
+		self.add_query_param('ApprovalNodePos', ApprovalNodePos)
