@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
+import json
 
 class CreatePatchBaselineRequest(RpcRequest):
 
@@ -51,6 +52,16 @@ class CreatePatchBaselineRequest(RpcRequest):
 
 	def set_OperationSystem(self, OperationSystem):  # String
 		self.add_query_param('OperationSystem', OperationSystem)
+	def get_RejectedPatches(self): # Array
+		return self.get_query_params().get('RejectedPatches')
+
+	def set_RejectedPatches(self, RejectedPatches):  # Array
+		self.add_query_param("RejectedPatches", json.dumps(RejectedPatches))
+	def get_RejectedPatchesAction(self): # String
+		return self.get_query_params().get('RejectedPatchesAction')
+
+	def set_RejectedPatchesAction(self, RejectedPatchesAction):  # String
+		self.add_query_param('RejectedPatchesAction', RejectedPatchesAction)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

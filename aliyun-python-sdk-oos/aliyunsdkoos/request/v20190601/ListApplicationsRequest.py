@@ -56,3 +56,8 @@ class ListApplicationsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_ApplicationType(self): # String
+		return self.get_query_params().get('ApplicationType')
+
+	def set_ApplicationType(self, ApplicationType):  # String
+		self.add_query_param('ApplicationType', ApplicationType)

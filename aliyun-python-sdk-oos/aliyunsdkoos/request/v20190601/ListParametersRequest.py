@@ -61,6 +61,11 @@ class ListParametersRequest(RpcRequest):
 
 	def set_SortOrder(self, SortOrder):  # String
 		self.add_query_param('SortOrder', SortOrder)
+	def get_ShareType(self): # String
+		return self.get_query_params().get('ShareType')
+
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)
 	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 

@@ -36,6 +36,11 @@ class UpdateExecutionRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_ExecutionId(self): # String
 		return self.get_query_params().get('ExecutionId')
 

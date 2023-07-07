@@ -41,6 +41,11 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_IncludeChildExecution(self, IncludeChildExecution):  # Boolean
 		self.add_query_param('IncludeChildExecution', IncludeChildExecution)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_Mode(self): # String
 		return self.get_query_params().get('Mode')
 
@@ -81,6 +86,11 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_SortOrder(self, SortOrder):  # String
 		self.add_query_param('SortOrder', SortOrder)
+	def get_Categories(self): # String
+		return self.get_query_params().get('Categories')
+
+	def set_Categories(self, Categories):  # String
+		self.add_query_param('Categories', Categories)
 	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
@@ -106,6 +116,11 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_ParentExecutionId(self, ParentExecutionId):  # String
 		self.add_query_param('ParentExecutionId', ParentExecutionId)
+	def get_Depth(self): # String
+		return self.get_query_params().get('Depth')
+
+	def set_Depth(self, Depth):  # String
+		self.add_query_param('Depth', Depth)
 	def get_EndDateAfter(self): # String
 		return self.get_query_params().get('EndDateAfter')
 

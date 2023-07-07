@@ -36,6 +36,11 @@ class GenerateExecutionPolicyRequest(RpcRequest):
 
 	def set_TemplateVersion(self, TemplateVersion):  # String
 		self.add_query_param('TemplateVersion', TemplateVersion)
+	def get_RamRole(self): # String
+		return self.get_query_params().get('RamRole')
+
+	def set_RamRole(self, RamRole):  # String
+		self.add_query_param('RamRole', RamRole)
 	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
