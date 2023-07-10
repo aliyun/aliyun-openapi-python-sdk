@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CheckInstanceExistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckInstanceExist')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckInstanceExist','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

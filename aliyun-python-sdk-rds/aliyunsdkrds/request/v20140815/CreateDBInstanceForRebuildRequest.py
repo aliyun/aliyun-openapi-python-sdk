@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateDBInstanceForRebuildRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstanceForRebuild')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstanceForRebuild','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

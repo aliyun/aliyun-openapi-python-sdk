@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyEndpoint')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyEndpoint','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

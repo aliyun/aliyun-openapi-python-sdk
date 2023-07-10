@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeMetaListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMetaList')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMetaList','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
