@@ -36,6 +36,11 @@ class CreateFullBackupSetDownloadRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupSetDataFormat(self): # String
+		return self.get_query_params().get('BackupSetDataFormat')
+
+	def set_BackupSetDataFormat(self, BackupSetDataFormat):  # String
+		self.add_query_param('BackupSetDataFormat', BackupSetDataFormat)
 	def get_BackupSetId(self): # String
 		return self.get_query_params().get('BackupSetId')
 
@@ -46,8 +51,3 @@ class CreateFullBackupSetDownloadRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
-	def get_BackupSetDataFormat(self): # String
-		return self.get_query_params().get('BackupSetDataFormat')
-
-	def set_BackupSetDataFormat(self, BackupSetDataFormat):  # String
-		self.add_query_param('BackupSetDataFormat', BackupSetDataFormat)

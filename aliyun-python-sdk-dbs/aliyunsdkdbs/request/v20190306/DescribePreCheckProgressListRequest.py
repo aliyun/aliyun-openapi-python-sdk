@@ -41,13 +41,13 @@ class DescribePreCheckProgressListRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_RestoreTaskId(self): # String
 		return self.get_query_params().get('RestoreTaskId')
 
 	def set_RestoreTaskId(self, RestoreTaskId):  # String
 		self.add_query_param('RestoreTaskId', RestoreTaskId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

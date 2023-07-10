@@ -31,11 +31,6 @@ class RenewBackupPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Period(self): # String
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -46,6 +41,11 @@ class RenewBackupPlanRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_Period(self): # String
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 

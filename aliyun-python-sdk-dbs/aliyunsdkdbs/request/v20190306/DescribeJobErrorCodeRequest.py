@@ -41,13 +41,13 @@ class DescribeJobErrorCodeRequest(RpcRequest):
 
 	def set_Language(self, Language):  # String
 		self.add_query_param('Language', Language)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
 	def set_TaskId(self, TaskId):  # String
 		self.add_query_param('TaskId', TaskId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

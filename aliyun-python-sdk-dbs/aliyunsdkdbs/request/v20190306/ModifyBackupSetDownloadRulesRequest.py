@@ -56,6 +56,16 @@ class ModifyBackupSetDownloadRulesRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_BackupSetDownloadTargetTypeLocation(self): # String
+		return self.get_query_params().get('BackupSetDownloadTargetTypeLocation')
+
+	def set_BackupSetDownloadTargetTypeLocation(self, BackupSetDownloadTargetTypeLocation):  # String
+		self.add_query_param('BackupSetDownloadTargetTypeLocation', BackupSetDownloadTargetTypeLocation)
+	def get_BackupSetDownloadDir(self): # String
+		return self.get_query_params().get('BackupSetDownloadDir')
+
+	def set_BackupSetDownloadDir(self, BackupSetDownloadDir):  # String
+		self.add_query_param('BackupSetDownloadDir', BackupSetDownloadDir)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
@@ -71,13 +81,3 @@ class ModifyBackupSetDownloadRulesRequest(RpcRequest):
 
 	def set_IncrementDataFormat(self, IncrementDataFormat):  # String
 		self.add_query_param('IncrementDataFormat', IncrementDataFormat)
-	def get_BackupSetDownloadTargetTypeLocation(self): # String
-		return self.get_query_params().get('BackupSetDownloadTargetTypeLocation')
-
-	def set_BackupSetDownloadTargetTypeLocation(self, BackupSetDownloadTargetTypeLocation):  # String
-		self.add_query_param('BackupSetDownloadTargetTypeLocation', BackupSetDownloadTargetTypeLocation)
-	def get_BackupSetDownloadDir(self): # String
-		return self.get_query_params().get('BackupSetDownloadDir')
-
-	def set_BackupSetDownloadDir(self, BackupSetDownloadDir):  # String
-		self.add_query_param('BackupSetDownloadDir', BackupSetDownloadDir)

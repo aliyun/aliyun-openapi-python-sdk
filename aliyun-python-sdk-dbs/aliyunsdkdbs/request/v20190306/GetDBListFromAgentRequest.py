@@ -46,13 +46,13 @@ class GetDBListFromAgentRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_TaskId(self): # Long
 		return self.get_query_params().get('TaskId')
 
 	def set_TaskId(self, TaskId):  # Long
 		self.add_query_param('TaskId', TaskId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

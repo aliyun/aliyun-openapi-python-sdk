@@ -51,6 +51,11 @@ class CreateGetDBListFromAgentTaskRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_SourceEndpointIP(self): # String
+		return self.get_query_params().get('SourceEndpointIP')
+
+	def set_SourceEndpointIP(self, SourceEndpointIP):  # String
+		self.add_query_param('SourceEndpointIP', SourceEndpointIP)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
@@ -61,8 +66,3 @@ class CreateGetDBListFromAgentTaskRequest(RpcRequest):
 
 	def set_SourceEndpointPort(self, SourceEndpointPort):  # Integer
 		self.add_query_param('SourceEndpointPort', SourceEndpointPort)
-	def get_SourceEndpointIP(self): # String
-		return self.get_query_params().get('SourceEndpointIP')
-
-	def set_SourceEndpointIP(self, SourceEndpointIP):  # String
-		self.add_query_param('SourceEndpointIP', SourceEndpointIP)

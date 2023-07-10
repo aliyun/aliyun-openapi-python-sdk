@@ -31,11 +31,6 @@ class ModifyBackupStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BackupLogIntervalSeconds(self): # Integer
-		return self.get_query_params().get('BackupLogIntervalSeconds')
-
-	def set_BackupLogIntervalSeconds(self, BackupLogIntervalSeconds):  # Integer
-		self.add_query_param('BackupLogIntervalSeconds', BackupLogIntervalSeconds)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -46,6 +41,16 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_BackupStartTime(self): # String
+		return self.get_query_params().get('BackupStartTime')
+
+	def set_BackupStartTime(self, BackupStartTime):  # String
+		self.add_query_param('BackupStartTime', BackupStartTime)
+	def get_BackupLogIntervalSeconds(self): # Integer
+		return self.get_query_params().get('BackupLogIntervalSeconds')
+
+	def set_BackupLogIntervalSeconds(self, BackupLogIntervalSeconds):  # Integer
+		self.add_query_param('BackupLogIntervalSeconds', BackupLogIntervalSeconds)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
@@ -56,11 +61,6 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def set_BackupPeriod(self, BackupPeriod):  # String
 		self.add_query_param('BackupPeriod', BackupPeriod)
-	def get_BackupStartTime(self): # String
-		return self.get_query_params().get('BackupStartTime')
-
-	def set_BackupStartTime(self, BackupStartTime):  # String
-		self.add_query_param('BackupStartTime', BackupStartTime)
 	def get_BackupStrategyType(self): # String
 		return self.get_query_params().get('BackupStrategyType')
 

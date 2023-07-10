@@ -41,13 +41,13 @@ class UpgradeBackupPlanRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
 	def set_InstanceClass(self, InstanceClass):  # String
 		self.add_query_param('InstanceClass', InstanceClass)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

@@ -36,26 +36,6 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def set_BackupGatewayId(self, BackupGatewayId):  # Long
 		self.add_query_param('BackupGatewayId', BackupGatewayId)
-	def get_DestinationEndpointInstanceType(self): # String
-		return self.get_query_params().get('DestinationEndpointInstanceType')
-
-	def set_DestinationEndpointInstanceType(self, DestinationEndpointInstanceType):  # String
-		self.add_query_param('DestinationEndpointInstanceType', DestinationEndpointInstanceType)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_BackupPlanId(self): # String
-		return self.get_query_params().get('BackupPlanId')
-
-	def set_BackupPlanId(self, BackupPlanId):  # String
-		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_DestinationEndpointRegion(self): # String
-		return self.get_query_params().get('DestinationEndpointRegion')
-
-	def set_DestinationEndpointRegion(self, DestinationEndpointRegion):  # String
-		self.add_query_param('DestinationEndpointRegion', DestinationEndpointRegion)
 	def get_CrossRoleName(self): # String
 		return self.get_query_params().get('CrossRoleName')
 
@@ -66,41 +46,16 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def set_DestinationEndpointUserName(self, DestinationEndpointUserName):  # String
 		self.add_query_param('DestinationEndpointUserName', DestinationEndpointUserName)
-	def get_RestoreObjects(self): # String
-		return self.get_query_params().get('RestoreObjects')
-
-	def set_RestoreObjects(self, RestoreObjects):  # String
-		self.add_query_param('RestoreObjects', RestoreObjects)
 	def get_RestoreTaskName(self): # String
 		return self.get_query_params().get('RestoreTaskName')
 
 	def set_RestoreTaskName(self, RestoreTaskName):  # String
 		self.add_query_param('RestoreTaskName', RestoreTaskName)
-	def get_RestoreHome(self): # String
-		return self.get_query_params().get('RestoreHome')
-
-	def set_RestoreHome(self, RestoreHome):  # String
-		self.add_query_param('RestoreHome', RestoreHome)
 	def get_DestinationEndpointOracleSID(self): # String
 		return self.get_query_params().get('DestinationEndpointOracleSID')
 
 	def set_DestinationEndpointOracleSID(self, DestinationEndpointOracleSID):  # String
 		self.add_query_param('DestinationEndpointOracleSID', DestinationEndpointOracleSID)
-	def get_RestoreTime(self): # Long
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self, RestoreTime):  # Long
-		self.add_query_param('RestoreTime', RestoreTime)
-	def get_CrossAliyunId(self): # String
-		return self.get_query_params().get('CrossAliyunId')
-
-	def set_CrossAliyunId(self, CrossAliyunId):  # String
-		self.add_query_param('CrossAliyunId', CrossAliyunId)
-	def get_DestinationEndpointInstanceID(self): # String
-		return self.get_query_params().get('DestinationEndpointInstanceID')
-
-	def set_DestinationEndpointInstanceID(self, DestinationEndpointInstanceID):  # String
-		self.add_query_param('DestinationEndpointInstanceID', DestinationEndpointInstanceID)
 	def get_DestinationEndpointPort(self): # Integer
 		return self.get_query_params().get('DestinationEndpointPort')
 
@@ -126,16 +81,61 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def set_DestinationEndpointIP(self, DestinationEndpointIP):  # String
 		self.add_query_param('DestinationEndpointIP', DestinationEndpointIP)
-	def get_DestinationEndpointDatabaseName(self): # String
-		return self.get_query_params().get('DestinationEndpointDatabaseName')
-
-	def set_DestinationEndpointDatabaseName(self, DestinationEndpointDatabaseName):  # String
-		self.add_query_param('DestinationEndpointDatabaseName', DestinationEndpointDatabaseName)
 	def get_DuplicateConflict(self): # String
 		return self.get_query_params().get('DuplicateConflict')
 
 	def set_DuplicateConflict(self, DuplicateConflict):  # String
 		self.add_query_param('DuplicateConflict', DuplicateConflict)
+	def get_DestinationEndpointInstanceType(self): # String
+		return self.get_query_params().get('DestinationEndpointInstanceType')
+
+	def set_DestinationEndpointInstanceType(self, DestinationEndpointInstanceType):  # String
+		self.add_query_param('DestinationEndpointInstanceType', DestinationEndpointInstanceType)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
+		return self.get_query_params().get('BackupPlanId')
+
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_DestinationEndpointRegion(self): # String
+		return self.get_query_params().get('DestinationEndpointRegion')
+
+	def set_DestinationEndpointRegion(self, DestinationEndpointRegion):  # String
+		self.add_query_param('DestinationEndpointRegion', DestinationEndpointRegion)
+	def get_RestoreObjects(self): # String
+		return self.get_query_params().get('RestoreObjects')
+
+	def set_RestoreObjects(self, RestoreObjects):  # String
+		self.add_query_param('RestoreObjects', RestoreObjects)
+	def get_RestoreHome(self): # String
+		return self.get_query_params().get('RestoreHome')
+
+	def set_RestoreHome(self, RestoreHome):  # String
+		self.add_query_param('RestoreHome', RestoreHome)
+	def get_RestoreTime(self): # Long
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self, RestoreTime):  # Long
+		self.add_query_param('RestoreTime', RestoreTime)
+	def get_CrossAliyunId(self): # String
+		return self.get_query_params().get('CrossAliyunId')
+
+	def set_CrossAliyunId(self, CrossAliyunId):  # String
+		self.add_query_param('CrossAliyunId', CrossAliyunId)
+	def get_DestinationEndpointInstanceID(self): # String
+		return self.get_query_params().get('DestinationEndpointInstanceID')
+
+	def set_DestinationEndpointInstanceID(self, DestinationEndpointInstanceID):  # String
+		self.add_query_param('DestinationEndpointInstanceID', DestinationEndpointInstanceID)
+	def get_DestinationEndpointDatabaseName(self): # String
+		return self.get_query_params().get('DestinationEndpointDatabaseName')
+
+	def set_DestinationEndpointDatabaseName(self, DestinationEndpointDatabaseName):  # String
+		self.add_query_param('DestinationEndpointDatabaseName', DestinationEndpointDatabaseName)
 	def get_DestinationEndpointPassword(self): # String
 		return self.get_query_params().get('DestinationEndpointPassword')
 

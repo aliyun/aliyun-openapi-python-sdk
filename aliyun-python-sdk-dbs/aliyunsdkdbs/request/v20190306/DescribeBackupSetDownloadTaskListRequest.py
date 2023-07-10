@@ -36,11 +36,6 @@ class DescribeBackupSetDownloadTaskListRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_BackupSetDownloadTaskId(self): # String
-		return self.get_query_params().get('BackupSetDownloadTaskId')
-
-	def set_BackupSetDownloadTaskId(self, BackupSetDownloadTaskId):  # String
-		self.add_query_param('BackupSetDownloadTaskId', BackupSetDownloadTaskId)
 	def get_BackupPlanId(self): # String
 		return self.get_query_params().get('BackupPlanId')
 
@@ -51,13 +46,18 @@ class DescribeBackupSetDownloadTaskListRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_BackupSetDownloadTaskId(self): # String
+		return self.get_query_params().get('BackupSetDownloadTaskId')
+
+	def set_BackupSetDownloadTaskId(self, BackupSetDownloadTaskId):  # String
+		self.add_query_param('BackupSetDownloadTaskId', BackupSetDownloadTaskId)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

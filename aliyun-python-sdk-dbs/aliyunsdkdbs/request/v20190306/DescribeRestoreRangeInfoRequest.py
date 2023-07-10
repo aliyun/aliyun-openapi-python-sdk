@@ -36,11 +36,6 @@ class DescribeRestoreRangeInfoRequest(RpcRequest):
 
 	def set_BeginTimestampForRestore(self, BeginTimestampForRestore):  # Long
 		self.add_query_param('BeginTimestampForRestore', BeginTimestampForRestore)
-	def get_EndTimestampForRestore(self): # Long
-		return self.get_query_params().get('EndTimestampForRestore')
-
-	def set_EndTimestampForRestore(self, EndTimestampForRestore):  # Long
-		self.add_query_param('EndTimestampForRestore', EndTimestampForRestore)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -51,13 +46,18 @@ class DescribeRestoreRangeInfoRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_RecentlyRestore(self): # Boolean
 		return self.get_query_params().get('RecentlyRestore')
 
 	def set_RecentlyRestore(self, RecentlyRestore):  # Boolean
 		self.add_query_param('RecentlyRestore', RecentlyRestore)
+	def get_EndTimestampForRestore(self): # Long
+		return self.get_query_params().get('EndTimestampForRestore')
+
+	def set_EndTimestampForRestore(self, EndTimestampForRestore):  # Long
+		self.add_query_param('EndTimestampForRestore', EndTimestampForRestore)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

@@ -31,11 +31,6 @@ class ModifyStorageStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DuplicationArchivePeriod(self): # Integer
-		return self.get_query_params().get('DuplicationArchivePeriod')
-
-	def set_DuplicationArchivePeriod(self, DuplicationArchivePeriod):  # Integer
-		self.add_query_param('DuplicationArchivePeriod', DuplicationArchivePeriod)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -46,6 +41,16 @@ class ModifyStorageStrategyRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_DuplicationInfrequentAccessPeriod(self): # Integer
+		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
+
+	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
+		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)
+	def get_DuplicationArchivePeriod(self): # Integer
+		return self.get_query_params().get('DuplicationArchivePeriod')
+
+	def set_DuplicationArchivePeriod(self, DuplicationArchivePeriod):  # Integer
+		self.add_query_param('DuplicationArchivePeriod', DuplicationArchivePeriod)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
@@ -56,8 +61,3 @@ class ModifyStorageStrategyRequest(RpcRequest):
 
 	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Integer
 		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
-	def get_DuplicationInfrequentAccessPeriod(self): # Integer
-		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
-
-	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
-		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)

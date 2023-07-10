@@ -31,46 +31,16 @@ class ConfigureBackupPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceEndpointRegion(self): # String
-		return self.get_query_params().get('SourceEndpointRegion')
-
-	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
-		self.add_query_param('SourceEndpointRegion', SourceEndpointRegion)
 	def get_BackupGatewayId(self): # Long
 		return self.get_query_params().get('BackupGatewayId')
 
 	def set_BackupGatewayId(self, BackupGatewayId):  # Long
 		self.add_query_param('BackupGatewayId', BackupGatewayId)
-	def get_SourceEndpointInstanceID(self): # String
-		return self.get_query_params().get('SourceEndpointInstanceID')
-
-	def set_SourceEndpointInstanceID(self, SourceEndpointInstanceID):  # String
-		self.add_query_param('SourceEndpointInstanceID', SourceEndpointInstanceID)
 	def get_SourceEndpointUserName(self): # String
 		return self.get_query_params().get('SourceEndpointUserName')
 
 	def set_SourceEndpointUserName(self, SourceEndpointUserName):  # String
 		self.add_query_param('SourceEndpointUserName', SourceEndpointUserName)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_BackupPlanId(self): # String
-		return self.get_query_params().get('BackupPlanId')
-
-	def set_BackupPlanId(self, BackupPlanId):  # String
-		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_SourceEndpointDatabaseName(self): # String
-		return self.get_query_params().get('SourceEndpointDatabaseName')
-
-	def set_SourceEndpointDatabaseName(self, SourceEndpointDatabaseName):  # String
-		self.add_query_param('SourceEndpointDatabaseName', SourceEndpointDatabaseName)
-	def get_DuplicationInfrequentAccessPeriod(self): # Integer
-		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
-
-	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
-		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -91,11 +61,6 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_CrossRoleName(self, CrossRoleName):  # String
 		self.add_query_param('CrossRoleName', CrossRoleName)
-	def get_EnableBackupLog(self): # Boolean
-		return self.get_query_params().get('EnableBackupLog')
-
-	def set_EnableBackupLog(self, EnableBackupLog):  # Boolean
-		self.add_query_param('EnableBackupLog', EnableBackupLog)
 	def get_BackupStorageType(self): # String
 		return self.get_query_params().get('BackupStorageType')
 
@@ -111,11 +76,6 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_BackupLogIntervalSeconds(self, BackupLogIntervalSeconds):  # Integer
 		self.add_query_param('BackupLogIntervalSeconds', BackupLogIntervalSeconds)
-	def get_CrossAliyunId(self): # String
-		return self.get_query_params().get('CrossAliyunId')
-
-	def set_CrossAliyunId(self, CrossAliyunId):  # String
-		self.add_query_param('CrossAliyunId', CrossAliyunId)
 	def get_AutoStartBackup(self): # Boolean
 		return self.get_query_params().get('AutoStartBackup')
 
@@ -126,26 +86,11 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_SourceEndpointPassword(self, SourceEndpointPassword):  # String
 		self.add_query_param('SourceEndpointPassword', SourceEndpointPassword)
-	def get_BackupObjects(self): # String
-		return self.get_query_params().get('BackupObjects')
-
-	def set_BackupObjects(self, BackupObjects):  # String
-		self.add_query_param('BackupObjects', BackupObjects)
-	def get_BackupRateLimit(self): # Long
-		return self.get_query_params().get('BackupRateLimit')
-
-	def set_BackupRateLimit(self, BackupRateLimit):  # Long
-		self.add_query_param('BackupRateLimit', BackupRateLimit)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SourceEndpointPort(self): # Integer
-		return self.get_query_params().get('SourceEndpointPort')
-
-	def set_SourceEndpointPort(self, SourceEndpointPort):  # Integer
-		self.add_query_param('SourceEndpointPort', SourceEndpointPort)
 	def get_BackupRetentionPeriod(self): # Integer
 		return self.get_query_params().get('BackupRetentionPeriod')
 
@@ -171,16 +116,71 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_BackupPlanName(self, BackupPlanName):  # String
 		self.add_query_param('BackupPlanName', BackupPlanName)
-	def get_SourceEndpointOracleSID(self): # String
-		return self.get_query_params().get('SourceEndpointOracleSID')
-
-	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
-		self.add_query_param('SourceEndpointOracleSID', SourceEndpointOracleSID)
 	def get_OSSBucketName(self): # String
 		return self.get_query_params().get('OSSBucketName')
 
 	def set_OSSBucketName(self, OSSBucketName):  # String
 		self.add_query_param('OSSBucketName', OSSBucketName)
+	def get_SourceEndpointRegion(self): # String
+		return self.get_query_params().get('SourceEndpointRegion')
+
+	def set_SourceEndpointRegion(self, SourceEndpointRegion):  # String
+		self.add_query_param('SourceEndpointRegion', SourceEndpointRegion)
+	def get_SourceEndpointInstanceID(self): # String
+		return self.get_query_params().get('SourceEndpointInstanceID')
+
+	def set_SourceEndpointInstanceID(self, SourceEndpointInstanceID):  # String
+		self.add_query_param('SourceEndpointInstanceID', SourceEndpointInstanceID)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_BackupPlanId(self): # String
+		return self.get_query_params().get('BackupPlanId')
+
+	def set_BackupPlanId(self, BackupPlanId):  # String
+		self.add_query_param('BackupPlanId', BackupPlanId)
+	def get_SourceEndpointDatabaseName(self): # String
+		return self.get_query_params().get('SourceEndpointDatabaseName')
+
+	def set_SourceEndpointDatabaseName(self, SourceEndpointDatabaseName):  # String
+		self.add_query_param('SourceEndpointDatabaseName', SourceEndpointDatabaseName)
+	def get_DuplicationInfrequentAccessPeriod(self): # Integer
+		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
+
+	def set_DuplicationInfrequentAccessPeriod(self, DuplicationInfrequentAccessPeriod):  # Integer
+		self.add_query_param('DuplicationInfrequentAccessPeriod', DuplicationInfrequentAccessPeriod)
+	def get_EnableBackupLog(self): # Boolean
+		return self.get_query_params().get('EnableBackupLog')
+
+	def set_EnableBackupLog(self, EnableBackupLog):  # Boolean
+		self.add_query_param('EnableBackupLog', EnableBackupLog)
+	def get_CrossAliyunId(self): # String
+		return self.get_query_params().get('CrossAliyunId')
+
+	def set_CrossAliyunId(self, CrossAliyunId):  # String
+		self.add_query_param('CrossAliyunId', CrossAliyunId)
+	def get_BackupObjects(self): # String
+		return self.get_query_params().get('BackupObjects')
+
+	def set_BackupObjects(self, BackupObjects):  # String
+		self.add_query_param('BackupObjects', BackupObjects)
+	def get_BackupRateLimit(self): # Long
+		return self.get_query_params().get('BackupRateLimit')
+
+	def set_BackupRateLimit(self, BackupRateLimit):  # Long
+		self.add_query_param('BackupRateLimit', BackupRateLimit)
+	def get_SourceEndpointPort(self): # Integer
+		return self.get_query_params().get('SourceEndpointPort')
+
+	def set_SourceEndpointPort(self, SourceEndpointPort):  # Integer
+		self.add_query_param('SourceEndpointPort', SourceEndpointPort)
+	def get_SourceEndpointOracleSID(self): # String
+		return self.get_query_params().get('SourceEndpointOracleSID')
+
+	def set_SourceEndpointOracleSID(self, SourceEndpointOracleSID):  # String
+		self.add_query_param('SourceEndpointOracleSID', SourceEndpointOracleSID)
 	def get_BackupStrategyType(self): # String
 		return self.get_query_params().get('BackupStrategyType')
 

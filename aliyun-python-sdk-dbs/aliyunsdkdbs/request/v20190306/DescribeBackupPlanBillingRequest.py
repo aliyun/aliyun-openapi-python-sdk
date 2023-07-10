@@ -41,13 +41,13 @@ class DescribeBackupPlanBillingRequest(RpcRequest):
 
 	def set_BackupPlanId(self, BackupPlanId):  # String
 		self.add_query_param('BackupPlanId', BackupPlanId)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ShowStorageType(self): # Boolean
 		return self.get_query_params().get('ShowStorageType')
 
 	def set_ShowStorageType(self, ShowStorageType):  # Boolean
 		self.add_query_param('ShowStorageType', ShowStorageType)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)

@@ -46,11 +46,6 @@ class DescribeBackupPlanListRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_OwnerId(self): # String
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # String
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -61,16 +56,21 @@ class DescribeBackupPlanListRequest(RpcRequest):
 
 	def set_BackupPlanStatus(self, BackupPlanStatus):  # String
 		self.add_query_param('BackupPlanStatus', BackupPlanStatus)
-	def get_BackupPlanName(self): # String
-		return self.get_query_params().get('BackupPlanName')
-
-	def set_BackupPlanName(self, BackupPlanName):  # String
-		self.add_query_param('BackupPlanName', BackupPlanName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_OwnerId(self): # String
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # String
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BackupPlanName(self): # String
+		return self.get_query_params().get('BackupPlanName')
+
+	def set_BackupPlanName(self, BackupPlanName):  # String
+		self.add_query_param('BackupPlanName', BackupPlanName)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
