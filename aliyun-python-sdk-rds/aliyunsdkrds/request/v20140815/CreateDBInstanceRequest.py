@@ -24,7 +24,7 @@ import json
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

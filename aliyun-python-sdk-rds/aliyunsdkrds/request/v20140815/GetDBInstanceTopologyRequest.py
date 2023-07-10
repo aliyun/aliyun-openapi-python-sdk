@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class GetDBInstanceTopologyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'GetDBInstanceTopology','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'GetDBInstanceTopology')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
