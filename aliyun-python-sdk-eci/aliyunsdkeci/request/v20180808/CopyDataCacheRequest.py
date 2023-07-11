@@ -20,22 +20,9 @@
 from aliyunsdkcore.request import RpcRequest
 
 
-class CreateDataCacheRequest(RpcRequest):
-
+class CopyDataCacheRequest(RpcRequest):
     def __init__(self):
-        RpcRequest.__init__(self, 'Eci', '2018-08-08', 'CreateDataCache', 'eci')
-
-    def get_SecurityGroupId(self):
-        return self.get_query_params().get("SecurityGroupId")
-
-    def set_SecurityGroupId(self, SecurityGroupId):
-        self.add_query_param("SecurityGroupId", SecurityGroupId)
-
-    def get_VSwitchId(self):
-        return self.get_query_params().get("VSwitchId")
-
-    def set_VSwitchId(self, VSwitchId):
-        self.add_query_param("VSwitchId", VSwitchId)
+        RpcRequest.__init__(self, 'Eci', '2018-08-08', 'CopyDataCache', 'eci')
 
     def get_Bucket(self):
         return self.get_query_params().get("Bucket")
@@ -55,12 +42,6 @@ class CreateDataCacheRequest(RpcRequest):
     def set_Name(self, Name):
         self.add_query_param("Name", Name)
 
-    def get_Size(self):
-        return self.get_query_params().get("Size")
-
-    def set_Size(self, Size):
-        self.add_query_param("Size", Size)
-
     def get_RetentionDays(self):
         return self.get_query_params().get("RetentionDays")
 
@@ -79,12 +60,6 @@ class CreateDataCacheRequest(RpcRequest):
     def set_ClientToken(self, ClientToken):
         self.add_query_param("ClientToken", ClientToken)
 
-    def get_EipInstanceId(self):
-        return self.get_query_params().get("EipInstanceId")
-
-    def set_EipInstanceId(self, EipInstanceId):
-        self.add_query_param("EipInstanceId", EipInstanceId)
-
     def get_Tags(self):
         return self.get_query_params().get('Tags')
 
@@ -95,35 +70,14 @@ class CreateDataCacheRequest(RpcRequest):
             if Tags[i].get('Value') is not None:
                 self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
 
-    def get_DataSource(self):
-        return self.get_query_params().get("DataSource")
+    def get_DataCacheId(self):
+        return self.get_query_params().get("DataCacheId")
 
-    def set_DataSource(self, DataSource):
-        if DataSource.get("Type") is not None:
-            self.add_query_param("DataSource.Type", DataSource.get("Type"))
-        if DataSource.get("Options") is not None:
-            for k, v in DataSource.get("Options").items():
-               self.add_query_param(f"DataSource.Options.#{len(k)}#{k}", v)
+    def set_DataCacheId(self, DataCacheId):
+        self.add_query_param("DataCacheId", DataCacheId)
 
-    def get_EipCreateParam(self):
-        return self.get_query_params().get("EipCreateParam")
+    def get_DestinationRegionId(self):
+        return self.get_query_params().get("DestinationRegionId")
 
-    def set_EipCreateParam(self, EipCreateParam):
-        if EipCreateParam.get("Bandwidth") is not None:
-            self.add_query_param("EipCreateParam.Bandwidth", EipCreateParam.get('Bandwidth'))
-
-        if EipCreateParam.get("CommonBandwidthPackage") is not None:
-                    self.add_query_param("EipCreateParam.CommonBandwidthPackage", EipCreateParam.get('CommonBandwidthPackage'))
-
-        if EipCreateParam.get("InternetChargeType") is not None:
-                    self.add_query_param("EipCreateParam.InternetChargeType", EipCreateParam.get('InternetChargeType'))
-
-        if EipCreateParam.get("PublicIpAddressPoolId") is not None:
-                    self.add_query_param("EipCreateParam.PublicIpAddressPoolId", EipCreateParam.get('PublicIpAddressPoolId'))
-
-        if EipCreateParam.get("ISP") is not None:
-                    self.add_query_param("EipCreateParam.ISP", EipCreateParam.get('ISP'))
-
-
-
-
+    def set_DestinationRegionId(self, DestinationRegionId):
+        self.add_query_param("DestinationRegionId", DestinationRegionId)

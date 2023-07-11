@@ -29,67 +29,67 @@ class UpdateDataCacheRequest(RpcRequest):
         return self.get_query_params().get("DataCacheId")
 
     def set_DataCacheId(self, DataCacheId):
-        return self.add_query_param("DataCacheId", DataCacheId)
+        self.add_query_param("DataCacheId", DataCacheId)
 
     def get_SecurityGroupId(self):
         return self.get_query_params().get("SecurityGroupId")
 
     def set_SecurityGroupId(self, SecurityGroupId):
-        return self.add_query_param("SecurityGroupId", SecurityGroupId)
+        self.add_query_param("SecurityGroupId", SecurityGroupId)
 
     def get_VSwitchId(self):
         return self.get_query_params().get("VSwitchId")
 
     def set_VSwitchId(self, VSwitchId):
-        return self.add_query_param("VSwitchId", VSwitchId)
+        self.add_query_param("VSwitchId", VSwitchId)
 
     def get_Bucket(self):
         return self.get_query_params().get("Bucket")
 
     def set_Bucket(self, Bucket):
-        return self.add_query_param("Bucket", Bucket)
+        self.add_query_param("Bucket", Bucket)
 
     def get_Path(self):
         return self.get_query_params().get("Path")
 
     def set_Path(self, Path):
-        return self.add_query_param("Path", Path)
+        self.add_query_param("Path", Path)
 
     def get_Name(self):
         return self.get_query_params().get("Name")
 
     def set_Name(self, Name):
-        return self.add_query_param("Name", Name)
+        self.add_query_param("Name", Name)
 
     def get_Size(self):
         return self.get_query_params().get("Size")
 
     def set_Size(self, Size):
-        return self.add_query_param("Size", Size)
+        self.add_query_param("Size", Size)
 
     def get_RetentionDays(self):
         return self.get_query_params().get("RetentionDays")
 
     def set_RetentionDays(self, RetentionDays):
-        return self.add_query_param("RetentionDays", RetentionDays)
+        self.add_query_param("RetentionDays", RetentionDays)
 
     def get_ResourceGroupId(self):
         return self.get_query_params().get("ResourceGroupId")
 
     def set_ResourceGroupId(self, ResourceGroupId):
-        return self.add_query_param("ResourceGroupId", ResourceGroupId)
+        self.add_query_param("ResourceGroupId", ResourceGroupId)
 
     def get_ClientToken(self):
         return self.get_query_params().get("ClientToken")
 
     def set_ClientToken(self, ClientToken):
-        return self.add_query_param("ClientToken", ClientToken)
+        self.add_query_param("ClientToken", ClientToken)
 
     def get_EipInstanceId(self):
         return self.get_query_params().get("EipInstanceId")
 
     def set_EipInstanceId(self, EipInstanceId):
-        return self.add_query_param("EipInstanceId", EipInstanceId)
+        self.add_query_param("EipInstanceId", EipInstanceId)
 
     def get_Tags(self):
         return self.get_query_params().get('Tags')

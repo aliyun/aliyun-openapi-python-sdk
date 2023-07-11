@@ -29,22 +29,22 @@ class DeleteDataCacheRequest(RpcRequest):
         return self.get_query_params().get("DataCacheId")
 
     def set_DataCacheId(self, DataCacheId):
-        return self.add_query_param("DataCacheId", DataCacheId)
+        self.add_query_param("DataCacheId", DataCacheId)
 
     def get_Bucket(self):
         return self.get_query_params().get("Bucket")
 
     def set_Bucket(self, Bucket):
-        return self.add_query_param("Bucket", Bucket)
+        self.add_query_param("Bucket", Bucket)
 
     def get_Path(self):
         return self.get_query_params().get("Path")
 
     def set_Path(self, Path):
-        return self.add_query_param("Path", Path)
+        self.add_query_param("Path", Path)
 
     def get_ClientToken(self):
         return self.get_query_params().get("ClientToken")
 
     def set_ClientToken(self, ClientToken):
-        return self.add_query_param("ClientToken", ClientToken)
+        self.add_query_param("ClientToken", ClientToken)
