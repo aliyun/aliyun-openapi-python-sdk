@@ -61,6 +61,11 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_IsSwitchOverForDisaster(self): # String
+		return self.get_query_params().get('IsSwitchOverForDisaster')
+
+	def set_IsSwitchOverForDisaster(self, IsSwitchOverForDisaster):  # String
+		self.add_query_param('IsSwitchOverForDisaster', IsSwitchOverForDisaster)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
