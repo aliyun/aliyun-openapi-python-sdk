@@ -31,6 +31,11 @@ class CreateEaiRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Image(self): # String
+		return self.get_query_params().get('Image')
+
+	def set_Image(self, Image):  # String
+		self.add_query_param('Image', Image)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
