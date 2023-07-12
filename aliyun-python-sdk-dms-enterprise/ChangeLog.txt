@@ -1,3 +1,6 @@
+2023-07-12 Version: 1.53.0
+- Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
+
 2023-07-06 Version: 1.52.0
 - Modify GetDataArchiveOrderDetail API. Add output parameter: TempTableNameMap.
 
