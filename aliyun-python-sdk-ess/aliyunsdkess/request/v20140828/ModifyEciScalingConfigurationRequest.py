@@ -240,6 +240,8 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 		for depth1 in range(len(Volume)):
 			if Volume[depth1].get('DiskVolume.FsType') is not None:
 				self.add_query_param('Volume.' + str(depth1 + 1) + '.DiskVolume.FsType', Volume[depth1].get('DiskVolume.FsType'))
+			if Volume[depth1].get('EmptyDirVolume.SizeLimit') is not None:
+				self.add_query_param('Volume.' + str(depth1 + 1) + '.EmptyDirVolume.SizeLimit', Volume[depth1].get('EmptyDirVolume.SizeLimit'))
 			if Volume[depth1].get('NFSVolume.Path') is not None:
 				self.add_query_param('Volume.' + str(depth1 + 1) + '.NFSVolume.Path', Volume[depth1].get('NFSVolume.Path'))
 			if Volume[depth1].get('DiskVolume.DiskId') is not None:

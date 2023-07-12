@@ -1,3 +1,6 @@
+2023-07-12 Version: 2.3.9
+- ECIScalingConfiguration support EmptyDirVolume size.
+
 2023-02-09 Version: 2.3.7
 - New AttachServerGroups and DetachServerGroups.
 

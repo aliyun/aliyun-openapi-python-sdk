@@ -80,6 +80,11 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_PrivatePoolOptionsId(self, PrivatePoolOptionsId):  # String
 		self.add_query_param('PrivatePoolOptions.Id', PrivatePoolOptionsId)
+	def get_ImageOptionsLoginAsNonRoot(self): # Boolean
+		return self.get_query_params().get('ImageOptions.LoginAsNonRoot')
+
+	def set_ImageOptionsLoginAsNonRoot(self, ImageOptionsLoginAsNonRoot):  # Boolean
+		self.add_query_param('ImageOptions.LoginAsNonRoot', ImageOptionsLoginAsNonRoot)
 	def get_Ipv6AddressCount(self): # Integer
 		return self.get_query_params().get('Ipv6AddressCount')
 

@@ -200,6 +200,15 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_LoadBalancerConfigs(self): # RepeatList
+		return self.get_query_params().get('LoadBalancerConfig')
+
+	def set_LoadBalancerConfigs(self, LoadBalancerConfig):  # RepeatList
+		for depth1 in range(len(LoadBalancerConfig)):
+			if LoadBalancerConfig[depth1].get('LoadBalancerId') is not None:
+				self.add_query_param('LoadBalancerConfig.' + str(depth1 + 1) + '.LoadBalancerId', LoadBalancerConfig[depth1].get('LoadBalancerId'))
+			if LoadBalancerConfig[depth1].get('Weight') is not None:
+				self.add_query_param('LoadBalancerConfig.' + str(depth1 + 1) + '.Weight', LoadBalancerConfig[depth1].get('Weight'))
 	def get_OnDemandBaseCapacity(self): # Integer
 		return self.get_query_params().get('OnDemandBaseCapacity')
 

@@ -31,6 +31,15 @@ class CreateScalingRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AlarmDimensions(self): # RepeatList
+		return self.get_query_params().get('AlarmDimension')
+
+	def set_AlarmDimensions(self, AlarmDimension):  # RepeatList
+		for depth1 in range(len(AlarmDimension)):
+			if AlarmDimension[depth1].get('DimensionValue') is not None:
+				self.add_query_param('AlarmDimension.' + str(depth1 + 1) + '.DimensionValue', AlarmDimension[depth1].get('DimensionValue'))
+			if AlarmDimension[depth1].get('DimensionKey') is not None:
+				self.add_query_param('AlarmDimension.' + str(depth1 + 1) + '.DimensionKey', AlarmDimension[depth1].get('DimensionKey'))
 	def get_StepAdjustments(self): # RepeatList
 		return self.get_query_params().get('StepAdjustment')
 
