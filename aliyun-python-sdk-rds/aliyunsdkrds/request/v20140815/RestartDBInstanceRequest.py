@@ -46,6 +46,11 @@ class RestartDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
