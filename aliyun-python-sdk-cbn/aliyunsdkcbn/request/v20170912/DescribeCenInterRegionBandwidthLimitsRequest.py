@@ -46,6 +46,11 @@ class DescribeCenInterRegionBandwidthLimitsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_TrRegionId(self): # String
+		return self.get_query_params().get('TrRegionId')
+
+	def set_TrRegionId(self, TrRegionId):  # String
+		self.add_query_param('TrRegionId', TrRegionId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
