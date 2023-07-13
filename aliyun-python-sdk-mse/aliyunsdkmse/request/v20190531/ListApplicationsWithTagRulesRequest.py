@@ -46,16 +46,21 @@ class ListApplicationsWithTagRulesRequest(RpcRequest):
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

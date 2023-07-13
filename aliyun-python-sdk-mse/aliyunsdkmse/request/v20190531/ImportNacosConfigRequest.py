@@ -31,16 +31,21 @@ class ImportNacosConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
@@ -51,8 +56,3 @@ class ImportNacosConfigRequest(RpcRequest):
 
 	def set_FileUrl(self, FileUrl):  # String
 		self.add_query_param('FileUrl', FileUrl)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)

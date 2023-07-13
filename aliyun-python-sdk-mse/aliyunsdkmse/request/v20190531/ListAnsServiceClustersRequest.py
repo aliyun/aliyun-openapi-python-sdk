@@ -24,7 +24,7 @@ class ListAnsServiceClustersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAnsServiceClusters','mse')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -46,11 +46,6 @@ class ListAnsServiceClustersRequest(RpcRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

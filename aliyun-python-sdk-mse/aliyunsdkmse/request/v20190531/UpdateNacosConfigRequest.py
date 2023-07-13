@@ -41,11 +41,6 @@ class UpdateNacosConfigRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_Content(self): # String
-		return self.get_query_params().get('Content')
-
-	def set_Content(self, Content):  # String
-		self.add_query_param('Content', Content)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -76,6 +71,16 @@ class UpdateNacosConfigRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Desc(self): # String
+		return self.get_query_params().get('Desc')
+
+	def set_Desc(self, Desc):  # String
+		self.add_query_param('Desc', Desc)
+	def get_Content(self): # String
+		return self.get_query_params().get('Content')
+
+	def set_Content(self, Content):  # String
+		self.add_query_param('Content', Content)
 	def get_DataId(self): # String
 		return self.get_query_params().get('DataId')
 
@@ -86,11 +91,6 @@ class UpdateNacosConfigRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Desc(self): # String
-		return self.get_query_params().get('Desc')
-
-	def set_Desc(self, Desc):  # String
-		self.add_query_param('Desc', Desc)
 	def get_Md5(self): # String
 		return self.get_query_params().get('Md5')
 

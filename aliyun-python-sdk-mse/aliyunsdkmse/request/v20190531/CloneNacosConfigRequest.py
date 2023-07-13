@@ -36,6 +36,16 @@ class CloneNacosConfigRequest(RpcRequest):
 
 	def set_TargetNamespaceId(self, TargetNamespaceId):  # String
 		self.add_query_param('TargetNamespaceId', TargetNamespaceId)
+	def get_OriginNamespaceId(self): # String
+		return self.get_query_params().get('OriginNamespaceId')
+
+	def set_OriginNamespaceId(self, OriginNamespaceId):  # String
+		self.add_query_param('OriginNamespaceId', OriginNamespaceId)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -51,13 +61,3 @@ class CloneNacosConfigRequest(RpcRequest):
 
 	def set_Ids(self, Ids):  # String
 		self.add_query_param('Ids', Ids)
-	def get_OriginNamespaceId(self): # String
-		return self.get_query_params().get('OriginNamespaceId')
-
-	def set_OriginNamespaceId(self, OriginNamespaceId):  # String
-		self.add_query_param('OriginNamespaceId', OriginNamespaceId)
-	def get_Policy(self): # String
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self, Policy):  # String
-		self.add_query_param('Policy', Policy)

@@ -31,11 +31,6 @@ class UpdateConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OpenSuperAcl(self): # String
-		return self.get_body_params().get('OpenSuperAcl')
-
-	def set_OpenSuperAcl(self, OpenSuperAcl):  # String
-		self.add_body_params('OpenSuperAcl', OpenSuperAcl)
 	def get_ConfigAuthEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigAuthEnabled')
 
@@ -46,16 +41,6 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_PassWord(self, PassWord):  # String
 		self.add_query_param('PassWord', PassWord)
-	def get_SnapshotCount(self): # String
-		return self.get_query_params().get('SnapshotCount')
-
-	def set_SnapshotCount(self, SnapshotCount):  # String
-		self.add_query_param('SnapshotCount', SnapshotCount)
-	def get_MinSessionTimeout(self): # String
-		return self.get_query_params().get('MinSessionTimeout')
-
-	def set_MinSessionTimeout(self, MinSessionTimeout):  # String
-		self.add_query_param('MinSessionTimeout', MinSessionTimeout)
 	def get_MaxClientCnxns(self): # String
 		return self.get_query_params().get('MaxClientCnxns')
 
@@ -66,21 +51,11 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
-	def get_JuteMaxbuffer(self): # String
-		return self.get_query_params().get('JuteMaxbuffer')
-
-	def set_JuteMaxbuffer(self, JuteMaxbuffer):  # String
-		self.add_query_param('JuteMaxbuffer', JuteMaxbuffer)
 	def get_NamingAuthEnabled(self): # Boolean
 		return self.get_query_params().get('NamingAuthEnabled')
 
 	def set_NamingAuthEnabled(self, NamingAuthEnabled):  # Boolean
 		self.add_query_param('NamingAuthEnabled', NamingAuthEnabled)
-	def get_ConfigType(self): # String
-		return self.get_query_params().get('ConfigType')
-
-	def set_ConfigType(self, ConfigType):  # String
-		self.add_query_param('ConfigType', ConfigType)
 	def get_ExtendedTypesEnable(self): # String
 		return self.get_query_params().get('ExtendedTypesEnable')
 
@@ -91,11 +66,6 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_AutopurgeSnapRetainCount(self, AutopurgeSnapRetainCount):  # String
 		self.add_query_param('AutopurgeSnapRetainCount', AutopurgeSnapRetainCount)
-	def get_MaxSessionTimeout(self): # String
-		return self.get_query_params().get('MaxSessionTimeout')
-
-	def set_MaxSessionTimeout(self, MaxSessionTimeout):  # String
-		self.add_query_param('MaxSessionTimeout', MaxSessionTimeout)
 	def get_ConfigSecretEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigSecretEnabled')
 
@@ -106,16 +76,6 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_MCPEnabled(self, MCPEnabled):  # Boolean
 		self.add_query_param('MCPEnabled', MCPEnabled)
-	def get_TickTime(self): # String
-		return self.get_query_params().get('TickTime')
-
-	def set_TickTime(self, TickTime):  # String
-		self.add_query_param('TickTime', TickTime)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_SyncLimit(self): # String
 		return self.get_query_params().get('SyncLimit')
 
@@ -126,6 +86,56 @@ class UpdateConfigRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_TLSEnabled(self): # Boolean
+		return self.get_query_params().get('TLSEnabled')
+
+	def set_TLSEnabled(self, TLSEnabled):  # Boolean
+		self.add_query_param('TLSEnabled', TLSEnabled)
+	def get_OpenSuperAcl(self): # String
+		return self.get_body_params().get('OpenSuperAcl')
+
+	def set_OpenSuperAcl(self, OpenSuperAcl):  # String
+		self.add_body_params('OpenSuperAcl', OpenSuperAcl)
+	def get_EurekaSupported(self): # Boolean
+		return self.get_query_params().get('EurekaSupported')
+
+	def set_EurekaSupported(self, EurekaSupported):  # Boolean
+		self.add_query_param('EurekaSupported', EurekaSupported)
+	def get_SnapshotCount(self): # String
+		return self.get_query_params().get('SnapshotCount')
+
+	def set_SnapshotCount(self, SnapshotCount):  # String
+		self.add_query_param('SnapshotCount', SnapshotCount)
+	def get_MinSessionTimeout(self): # String
+		return self.get_query_params().get('MinSessionTimeout')
+
+	def set_MinSessionTimeout(self, MinSessionTimeout):  # String
+		self.add_query_param('MinSessionTimeout', MinSessionTimeout)
+	def get_JuteMaxbuffer(self): # String
+		return self.get_query_params().get('JuteMaxbuffer')
+
+	def set_JuteMaxbuffer(self, JuteMaxbuffer):  # String
+		self.add_query_param('JuteMaxbuffer', JuteMaxbuffer)
+	def get_ConfigType(self): # String
+		return self.get_query_params().get('ConfigType')
+
+	def set_ConfigType(self, ConfigType):  # String
+		self.add_query_param('ConfigType', ConfigType)
+	def get_MaxSessionTimeout(self): # String
+		return self.get_query_params().get('MaxSessionTimeout')
+
+	def set_MaxSessionTimeout(self, MaxSessionTimeout):  # String
+		self.add_query_param('MaxSessionTimeout', MaxSessionTimeout)
+	def get_TickTime(self): # String
+		return self.get_query_params().get('TickTime')
+
+	def set_TickTime(self, TickTime):  # String
+		self.add_query_param('TickTime', TickTime)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
 	def get_AutopurgePurgeInterval(self): # String
 		return self.get_query_params().get('AutopurgePurgeInterval')
 

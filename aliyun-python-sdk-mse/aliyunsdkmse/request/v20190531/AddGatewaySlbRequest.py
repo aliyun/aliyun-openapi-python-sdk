@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
 class AddGatewaySlbRequest(RpcRequest):
 
@@ -61,6 +62,11 @@ class AddGatewaySlbRequest(RpcRequest):
 
 	def set_VServerGroupId(self, VServerGroupId):  # String
 		self.add_query_param('VServerGroupId', VServerGroupId)
+	def get_VServiceList(self): # Array
+		return self.get_query_params().get('VServiceList')
+
+	def set_VServiceList(self, VServiceList):  # Array
+		self.add_query_param("VServiceList", json.dumps(VServiceList))
 	def get_HttpsVServerGroupId(self): # String
 		return self.get_query_params().get('HttpsVServerGroupId')
 

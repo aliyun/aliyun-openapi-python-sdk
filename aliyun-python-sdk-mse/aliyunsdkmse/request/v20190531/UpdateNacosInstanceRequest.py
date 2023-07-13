@@ -46,21 +46,11 @@ class UpdateNacosInstanceRequest(RpcRequest):
 
 	def set_Ephemeral(self, Ephemeral):  # Boolean
 		self.add_query_param('Ephemeral', Ephemeral)
-	def get_Enabled(self): # Boolean
-		return self.get_query_params().get('Enabled')
-
-	def set_Enabled(self, Enabled):  # Boolean
-		self.add_query_param('Enabled', Enabled)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
 	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 
@@ -86,6 +76,16 @@ class UpdateNacosInstanceRequest(RpcRequest):
 
 	def set_Port(self, Port):  # Integer
 		self.add_query_param('Port', Port)
+	def get_Enabled(self): # Boolean
+		return self.get_query_params().get('Enabled')
+
+	def set_Enabled(self, Enabled):  # Boolean
+		self.add_query_param('Enabled', Enabled)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

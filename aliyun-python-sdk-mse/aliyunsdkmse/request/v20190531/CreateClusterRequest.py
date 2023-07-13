@@ -36,26 +36,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ClusterSpecification(self, ClusterSpecification):  # String
 		self.add_query_param('ClusterSpecification', ClusterSpecification)
-	def get_PubSlbSpecification(self): # String
-		return self.get_query_params().get('PubSlbSpecification')
-
-	def set_PubSlbSpecification(self, PubSlbSpecification):  # String
-		self.add_query_param('PubSlbSpecification', PubSlbSpecification)
-	def get_PrivateSlbSpecification(self): # String
-		return self.get_query_params().get('PrivateSlbSpecification')
-
-	def set_PrivateSlbSpecification(self, PrivateSlbSpecification):  # String
-		self.add_query_param('PrivateSlbSpecification', PrivateSlbSpecification)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_InstanceCount(self): # Integer
-		return self.get_query_params().get('InstanceCount')
-
-	def set_InstanceCount(self, InstanceCount):  # Integer
-		self.add_query_param('InstanceCount', InstanceCount)
 	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
@@ -70,21 +55,6 @@ class CreateClusterRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_ConnectionType(self): # String
-		return self.get_query_params().get('ConnectionType')
-
-	def set_ConnectionType(self, ConnectionType):  # String
-		self.add_query_param('ConnectionType', ConnectionType)
-	def get_ClusterVersion(self): # String
-		return self.get_query_params().get('ClusterVersion')
-
-	def set_ClusterVersion(self, ClusterVersion):  # String
-		self.add_query_param('ClusterVersion', ClusterVersion)
-	def get_DiskType(self): # String
-		return self.get_query_params().get('DiskType')
-
-	def set_DiskType(self, DiskType):  # String
-		self.add_query_param('DiskType', DiskType)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -100,16 +70,6 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
-	def get_PubNetworkFlow(self): # String
-		return self.get_query_params().get('PubNetworkFlow')
-
-	def set_PubNetworkFlow(self, PubNetworkFlow):  # String
-		self.add_query_param('PubNetworkFlow', PubNetworkFlow)
-	def get_VpcId(self): # String
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self, VpcId):  # String
-		self.add_query_param('VpcId', VpcId)
 	def get_NetType(self): # String
 		return self.get_query_params().get('NetType')
 
@@ -120,13 +80,58 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_MseVersion(self, MseVersion):  # String
 		self.add_query_param('MseVersion', MseVersion)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
+	def get_PubSlbSpecification(self): # String
+		return self.get_query_params().get('PubSlbSpecification')
+
+	def set_PubSlbSpecification(self, PubSlbSpecification):  # String
+		self.add_query_param('PubSlbSpecification', PubSlbSpecification)
+	def get_PrivateSlbSpecification(self): # String
+		return self.get_query_params().get('PrivateSlbSpecification')
+
+	def set_PrivateSlbSpecification(self, PrivateSlbSpecification):  # String
+		self.add_query_param('PrivateSlbSpecification', PrivateSlbSpecification)
+	def get_InstanceCount(self): # Integer
+		return self.get_query_params().get('InstanceCount')
+
+	def set_InstanceCount(self, InstanceCount):  # Integer
+		self.add_query_param('InstanceCount', InstanceCount)
+	def get_ConnectionType(self): # String
+		return self.get_query_params().get('ConnectionType')
+
+	def set_ConnectionType(self, ConnectionType):  # String
+		self.add_query_param('ConnectionType', ConnectionType)
+	def get_ClusterVersion(self): # String
+		return self.get_query_params().get('ClusterVersion')
+
+	def set_ClusterVersion(self, ClusterVersion):  # String
+		self.add_query_param('ClusterVersion', ClusterVersion)
+	def get_DiskType(self): # String
+		return self.get_query_params().get('DiskType')
+
+	def set_DiskType(self, DiskType):  # String
+		self.add_query_param('DiskType', DiskType)
+	def get_PubNetworkFlow(self): # String
+		return self.get_query_params().get('PubNetworkFlow')
+
+	def set_PubNetworkFlow(self, PubNetworkFlow):  # String
+		self.add_query_param('PubNetworkFlow', PubNetworkFlow)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)

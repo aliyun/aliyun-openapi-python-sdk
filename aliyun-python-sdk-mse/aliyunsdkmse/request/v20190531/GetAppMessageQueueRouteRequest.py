@@ -31,11 +31,21 @@ class GetAppMessageQueueRouteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

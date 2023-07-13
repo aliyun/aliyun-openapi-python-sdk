@@ -31,6 +31,11 @@ class ListInstanceCountRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
 	def get_ClusterType(self): # String
 		return self.get_query_params().get('ClusterType')
 
@@ -41,11 +46,6 @@ class ListInstanceCountRequest(RpcRequest):
 
 	def set_MseVersion(self, MseVersion):  # String
 		self.add_query_param('MseVersion', MseVersion)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

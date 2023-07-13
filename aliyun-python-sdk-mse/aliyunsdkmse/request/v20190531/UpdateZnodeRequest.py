@@ -36,11 +36,6 @@ class UpdateZnodeRequest(RpcRequest):
 
 	def set_Data(self, Data):  # String
 		self.add_query_param('Data', Data)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
@@ -51,6 +46,11 @@ class UpdateZnodeRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

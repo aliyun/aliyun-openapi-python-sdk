@@ -36,6 +36,11 @@ class QueryAllSwimmingLaneRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

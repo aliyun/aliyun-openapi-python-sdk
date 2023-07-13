@@ -24,13 +24,23 @@ class QueryMonitorRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryMonitor','mse')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
 	def get_MonitorType(self): # String
 		return self.get_query_params().get('MonitorType')
 
@@ -41,21 +51,11 @@ class QueryMonitorRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # Long
 		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

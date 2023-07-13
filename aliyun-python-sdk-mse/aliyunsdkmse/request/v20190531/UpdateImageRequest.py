@@ -31,6 +31,11 @@ class UpdateImageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_VersionCode(self): # String
+		return self.get_query_params().get('VersionCode')
+
+	def set_VersionCode(self, VersionCode):  # String
+		self.add_query_param('VersionCode', VersionCode)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -41,8 +46,3 @@ class UpdateImageRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_VersionCode(self): # String
-		return self.get_query_params().get('VersionCode')
-
-	def set_VersionCode(self, VersionCode):  # String
-		self.add_query_param('VersionCode', VersionCode)

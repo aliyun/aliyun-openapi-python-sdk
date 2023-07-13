@@ -36,16 +36,26 @@ class DeleteNacosInstanceRequest(RpcRequest):
 
 	def set_ClusterName(self, ClusterName):  # String
 		self.add_query_param('ClusterName', ClusterName)
-	def get_Ip(self): # String
-		return self.get_query_params().get('Ip')
-
-	def set_Ip(self, Ip):  # String
-		self.add_query_param('Ip', Ip)
 	def get_Ephemeral(self): # Boolean
 		return self.get_query_params().get('Ephemeral')
 
 	def set_Ephemeral(self, Ephemeral):  # Boolean
 		self.add_query_param('Ephemeral', Ephemeral)
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
+	def get_Ip(self): # String
+		return self.get_query_params().get('Ip')
+
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
 	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
@@ -56,11 +66,6 @@ class DeleteNacosInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_Port(self): # Integer
 		return self.get_query_params().get('Port')
 
@@ -71,8 +76,3 @@ class DeleteNacosInstanceRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)

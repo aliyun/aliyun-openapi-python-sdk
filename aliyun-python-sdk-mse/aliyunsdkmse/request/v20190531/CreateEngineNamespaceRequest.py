@@ -31,6 +31,16 @@ class CreateEngineNamespaceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ServiceCount(self): # Integer
+		return self.get_query_params().get('ServiceCount')
+
+	def set_ServiceCount(self, ServiceCount):  # Integer
+		self.add_query_param('ServiceCount', ServiceCount)
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -41,11 +51,6 @@ class CreateEngineNamespaceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_ServiceCount(self): # Integer
-		return self.get_query_params().get('ServiceCount')
-
-	def set_ServiceCount(self, ServiceCount):  # Integer
-		self.add_query_param('ServiceCount', ServiceCount)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
@@ -56,11 +61,6 @@ class CreateEngineNamespaceRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Id(self): # String
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # String
-		self.add_query_param('Id', Id)
 	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 

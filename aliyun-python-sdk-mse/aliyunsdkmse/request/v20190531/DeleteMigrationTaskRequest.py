@@ -36,13 +36,13 @@ class DeleteMigrationTaskRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Id(self): # String
 		return self.get_query_params().get('Id')
 
 	def set_Id(self, Id):  # String
 		self.add_query_param('Id', Id)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

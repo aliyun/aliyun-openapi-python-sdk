@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmse.endpoint import endpoint_data
+import json
 
 class AddGatewayRequest(RpcRequest):
 
@@ -41,21 +42,11 @@ class AddGatewayRequest(RpcRequest):
 
 	def set_EnableXtrace(self, EnableXtrace):  # Boolean
 		self.add_query_param('EnableXtrace', EnableXtrace)
-	def get_XtraceRatio(self): # String
-		return self.get_query_params().get('XtraceRatio')
-
-	def set_XtraceRatio(self, XtraceRatio):  # String
-		self.add_query_param('XtraceRatio', XtraceRatio)
 	def get_Replica(self): # Integer
 		return self.get_query_params().get('Replica')
 
 	def set_Replica(self, Replica):  # Integer
 		self.add_query_param('Replica', Replica)
-	def get_VSwitchId2(self): # String
-		return self.get_query_params().get('VSwitchId2')
-
-	def set_VSwitchId2(self, VSwitchId2):  # String
-		self.add_query_param('VSwitchId2', VSwitchId2)
 	def get_EnableHardwareAcceleration(self): # Boolean
 		return self.get_query_params().get('EnableHardwareAcceleration')
 
@@ -76,6 +67,11 @@ class AddGatewayRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
 	def get_EnterpriseSecurityGroup(self): # Boolean
 		return self.get_query_params().get('EnterpriseSecurityGroup')
 
@@ -90,11 +86,6 @@ class AddGatewayRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_Vpc(self): # String
-		return self.get_query_params().get('Vpc')
-
-	def set_Vpc(self, Vpc):  # String
-		self.add_query_param('Vpc', Vpc)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -110,13 +101,38 @@ class AddGatewayRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
 	def set_Region(self, Region):  # String
 		self.add_query_param('Region', Region)
+	def get_ZoneInfo(self): # Array
+		return self.get_query_params().get('ZoneInfo')
+
+	def set_ZoneInfo(self, ZoneInfo):  # Array
+		self.add_query_param("ZoneInfo", json.dumps(ZoneInfo))
+	def get_XtraceRatio(self): # String
+		return self.get_query_params().get('XtraceRatio')
+
+	def set_XtraceRatio(self, XtraceRatio):  # String
+		self.add_query_param('XtraceRatio', XtraceRatio)
+	def get_VSwitchId2(self): # String
+		return self.get_query_params().get('VSwitchId2')
+
+	def set_VSwitchId2(self, VSwitchId2):  # String
+		self.add_query_param('VSwitchId2', VSwitchId2)
+	def get_Vpc(self): # String
+		return self.get_query_params().get('Vpc')
+
+	def set_Vpc(self, Vpc):  # String
+		self.add_query_param('Vpc', Vpc)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)

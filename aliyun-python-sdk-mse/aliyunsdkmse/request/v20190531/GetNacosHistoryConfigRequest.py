@@ -36,6 +36,16 @@ class GetNacosHistoryConfigRequest(RpcRequest):
 
 	def set_Nid(self, Nid):  # String
 		self.add_query_param('Nid', Nid)
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Group(self): # String
+		return self.get_query_params().get('Group')
+
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -46,18 +56,8 @@ class GetNacosHistoryConfigRequest(RpcRequest):
 
 	def set_DataId(self, DataId):  # String
 		self.add_query_param('DataId', DataId)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Group(self): # String
-		return self.get_query_params().get('Group')
-
-	def set_Group(self, Group):  # String
-		self.add_query_param('Group', Group)

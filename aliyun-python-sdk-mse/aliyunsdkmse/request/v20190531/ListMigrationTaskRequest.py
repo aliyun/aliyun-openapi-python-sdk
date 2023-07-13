@@ -46,13 +46,13 @@ class ListMigrationTaskRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_OriginInstanceName(self): # String
 		return self.get_query_params().get('OriginInstanceName')
 
 	def set_OriginInstanceName(self, OriginInstanceName):  # String
 		self.add_query_param('OriginInstanceName', OriginInstanceName)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

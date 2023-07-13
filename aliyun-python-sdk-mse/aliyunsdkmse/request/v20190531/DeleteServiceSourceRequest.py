@@ -31,16 +31,16 @@ class DeleteServiceSourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceId(self): # Long
-		return self.get_query_params().get('SourceId')
-
-	def set_SourceId(self, SourceId):  # Long
-		self.add_query_param('SourceId', SourceId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_SourceId(self): # Long
+		return self.get_query_params().get('SourceId')
+
+	def set_SourceId(self, SourceId):  # Long
+		self.add_query_param('SourceId', SourceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

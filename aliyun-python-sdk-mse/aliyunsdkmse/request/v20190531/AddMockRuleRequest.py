@@ -36,11 +36,6 @@ class AddMockRuleRequest(RpcRequest):
 
 	def set_ExtraJson(self, ExtraJson):  # String
 		self.add_query_param('ExtraJson', ExtraJson)
-	def get_ProviderAppId(self): # String
-		return self.get_query_params().get('ProviderAppId')
-
-	def set_ProviderAppId(self, ProviderAppId):  # String
-		self.add_query_param('ProviderAppId', ProviderAppId)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -56,6 +51,21 @@ class AddMockRuleRequest(RpcRequest):
 
 	def set_ScMockItems(self, ScMockItems):  # String
 		self.add_query_param('ScMockItems', ScMockItems)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_ProviderAppId(self): # String
+		return self.get_query_params().get('ProviderAppId')
+
+	def set_ProviderAppId(self, ProviderAppId):  # String
+		self.add_query_param('ProviderAppId', ProviderAppId)
 	def get_ProviderAppName(self): # String
 		return self.get_query_params().get('ProviderAppName')
 
@@ -71,11 +81,6 @@ class AddMockRuleRequest(RpcRequest):
 
 	def set_DubboMockItems(self, DubboMockItems):  # String
 		self.add_query_param('DubboMockItems', DubboMockItems)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
@@ -86,8 +91,3 @@ class AddMockRuleRequest(RpcRequest):
 
 	def set_MockType(self, MockType):  # Long
 		self.add_query_param('MockType', MockType)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)

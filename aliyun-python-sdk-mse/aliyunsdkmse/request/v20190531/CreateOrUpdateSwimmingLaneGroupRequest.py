@@ -31,61 +31,21 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
-
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
-	def get_GmtModified(self): # String
-		return self.get_query_params().get('GmtModified')
-
-	def set_GmtModified(self, GmtModified):  # String
-		self.add_query_param('GmtModified', GmtModified)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_LicenseKey(self): # String
-		return self.get_query_params().get('LicenseKey')
-
-	def set_LicenseKey(self, LicenseKey):  # String
-		self.add_query_param('LicenseKey', LicenseKey)
 	def get_AppIds(self): # String
 		return self.get_query_params().get('AppIds')
 
 	def set_AppIds(self, AppIds):  # String
 		self.add_query_param('AppIds', AppIds)
-	def get_MessageQueueGrayEnable(self): # Boolean
-		return self.get_query_params().get('MessageQueueGrayEnable')
-
-	def set_MessageQueueGrayEnable(self, MessageQueueGrayEnable):  # Boolean
-		self.add_query_param('MessageQueueGrayEnable', MessageQueueGrayEnable)
 	def get_DbGrayEnable(self): # Boolean
 		return self.get_query_params().get('DbGrayEnable')
 
 	def set_DbGrayEnable(self, DbGrayEnable):  # Boolean
 		self.add_query_param('DbGrayEnable', DbGrayEnable)
-	def get_Enable(self): # Boolean
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self, Enable):  # Boolean
-		self.add_query_param('Enable', Enable)
-	def get_EntryApp(self): # String
-		return self.get_query_params().get('EntryApp')
-
-	def set_EntryApp(self, EntryApp):  # String
-		self.add_query_param('EntryApp', EntryApp)
 	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
 	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)
-	def get_GmtCreate(self): # String
-		return self.get_query_params().get('GmtCreate')
-
-	def set_GmtCreate(self, GmtCreate):  # String
-		self.add_query_param('GmtCreate', GmtCreate)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
@@ -96,16 +56,6 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 
 	def set_MessageQueueFilterSide(self, MessageQueueFilterSide):  # String
 		self.add_query_param('MessageQueueFilterSide', MessageQueueFilterSide)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
@@ -116,3 +66,28 @@ class CreateOrUpdateSwimmingLaneGroupRequest(RpcRequest):
 
 	def set_Status(self, Status):  # Integer
 		self.add_query_param('Status', Status)
+	def get_MessageQueueGrayEnable(self): # Boolean
+		return self.get_query_params().get('MessageQueueGrayEnable')
+
+	def set_MessageQueueGrayEnable(self, MessageQueueGrayEnable):  # Boolean
+		self.add_query_param('MessageQueueGrayEnable', MessageQueueGrayEnable)
+	def get_EntryApp(self): # String
+		return self.get_query_params().get('EntryApp')
+
+	def set_EntryApp(self, EntryApp):  # String
+		self.add_query_param('EntryApp', EntryApp)
+	def get_RecordCanaryDetail(self): # Boolean
+		return self.get_query_params().get('RecordCanaryDetail')
+
+	def set_RecordCanaryDetail(self, RecordCanaryDetail):  # Boolean
+		self.add_query_param('RecordCanaryDetail', RecordCanaryDetail)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

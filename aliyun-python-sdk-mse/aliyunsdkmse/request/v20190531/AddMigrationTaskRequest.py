@@ -46,11 +46,6 @@ class AddMigrationTaskRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
-	def get_Id(self): # String
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # String
-		self.add_query_param('Id', Id)
 	def get_OriginInstanceName(self): # String
 		return self.get_query_params().get('OriginInstanceName')
 

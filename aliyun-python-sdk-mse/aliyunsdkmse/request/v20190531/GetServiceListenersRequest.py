@@ -46,16 +46,26 @@ class GetServiceListenersRequest(RpcRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
+	def get_GroupName(self): # String
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
@@ -66,21 +76,11 @@ class GetServiceListenersRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_GroupName(self): # String
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self, GroupName):  # String
-		self.add_query_param('GroupName', GroupName)
 	def get_HasIpCount(self): # String
 		return self.get_query_params().get('HasIpCount')
 
 	def set_HasIpCount(self, HasIpCount):  # String
 		self.add_query_param('HasIpCount', HasIpCount)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

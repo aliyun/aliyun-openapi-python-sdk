@@ -31,6 +31,11 @@ class GetEngineNamepaceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -46,8 +51,3 @@ class GetEngineNamepaceRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_Id(self): # String
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # String
-		self.add_query_param('Id', Id)

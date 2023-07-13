@@ -31,16 +31,11 @@ class ExportNacosConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_DataIds(self): # String
+		return self.get_query_params().get('DataIds')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_DataId(self): # String
-		return self.get_query_params().get('DataId')
-
-	def set_DataId(self, DataId):  # String
-		self.add_query_param('DataId', DataId)
+	def set_DataIds(self, DataIds):  # String
+		self.add_query_param('DataIds', DataIds)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -51,6 +46,21 @@ class ExportNacosConfigRequest(RpcRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Group(self): # String
+		return self.get_query_params().get('Group')
+
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DataId(self): # String
+		return self.get_query_params().get('DataId')
+
+	def set_DataId(self, DataId):  # String
+		self.add_query_param('DataId', DataId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
@@ -61,8 +71,3 @@ class ExportNacosConfigRequest(RpcRequest):
 
 	def set_Ids(self, Ids):  # String
 		self.add_query_param('Ids', Ids)
-	def get_Group(self): # String
-		return self.get_query_params().get('Group')
-
-	def set_Group(self, Group):  # String
-		self.add_query_param('Group', Group)

@@ -41,6 +41,16 @@ class UpdateNacosClusterRequest(RpcRequest):
 
 	def set_CheckPort(self, CheckPort):  # Integer
 		self.add_query_param('CheckPort', CheckPort)
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
@@ -51,11 +61,6 @@ class UpdateNacosClusterRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_HealthChecker(self): # String
 		return self.get_query_params().get('HealthChecker')
 
@@ -66,11 +71,6 @@ class UpdateNacosClusterRequest(RpcRequest):
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
 	def get_UseInstancePortForCheck(self): # Boolean
 		return self.get_query_params().get('UseInstancePortForCheck')
 

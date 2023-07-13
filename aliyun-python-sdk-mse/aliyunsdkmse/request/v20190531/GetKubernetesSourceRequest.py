@@ -36,6 +36,11 @@ class GetKubernetesSourceRequest(RpcRequest):
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_IsAll(self): # Boolean
+		return self.get_query_params().get('IsAll')
+
+	def set_IsAll(self, IsAll):  # Boolean
+		self.add_query_param('IsAll', IsAll)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

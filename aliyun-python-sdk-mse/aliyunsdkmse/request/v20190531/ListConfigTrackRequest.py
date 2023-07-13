@@ -24,7 +24,7 @@ class ListConfigTrackRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListConfigTrack','mse')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -51,16 +51,6 @@ class ListConfigTrackRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
-	def get_EndTs(self): # Long
-		return self.get_query_params().get('EndTs')
-
-	def set_EndTs(self, EndTs):  # Long
-		self.add_query_param('EndTs', EndTs)
-	def get_PageSize(self): # Long
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Long
-		self.add_query_param('PageSize', PageSize)
 	def get_Group(self): # String
 		return self.get_query_params().get('Group')
 
@@ -71,16 +61,26 @@ class ListConfigTrackRequest(RpcRequest):
 
 	def set_Ip(self, Ip):  # String
 		self.add_query_param('Ip', Ip)
-	def get_Reverse(self): # Boolean
-		return self.get_query_params().get('Reverse')
-
-	def set_Reverse(self, Reverse):  # Boolean
-		self.add_query_param('Reverse', Reverse)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_EndTs(self): # Long
+		return self.get_query_params().get('EndTs')
+
+	def set_EndTs(self, EndTs):  # Long
+		self.add_query_param('EndTs', EndTs)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_Reverse(self): # Boolean
+		return self.get_query_params().get('Reverse')
+
+	def set_Reverse(self, Reverse):  # Boolean
+		self.add_query_param('Reverse', Reverse)
 	def get_DataId(self): # String
 		return self.get_query_params().get('DataId')
 

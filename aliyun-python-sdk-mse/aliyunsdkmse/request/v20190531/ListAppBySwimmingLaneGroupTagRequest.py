@@ -31,18 +31,23 @@ class ListAppBySwimmingLaneGroupTagRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # Long
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # Long
-		self.add_query_param('GroupId', GroupId)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Tag(self): # String
 		return self.get_query_params().get('Tag')
 
 	def set_Tag(self, Tag):  # String
 		self.add_query_param('Tag', Tag)
+	def get_GroupId(self): # Long
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # Long
+		self.add_query_param('GroupId', GroupId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

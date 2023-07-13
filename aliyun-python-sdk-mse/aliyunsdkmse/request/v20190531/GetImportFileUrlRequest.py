@@ -31,6 +31,11 @@ class GetImportFileUrlRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
 	def get_ContentType(self): # String
 		return self.get_query_params().get('ContentType')
 
@@ -41,11 +46,6 @@ class GetImportFileUrlRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

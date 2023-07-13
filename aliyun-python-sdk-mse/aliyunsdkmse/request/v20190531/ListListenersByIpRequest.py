@@ -31,16 +31,6 @@ class ListListenersByIpRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Ip(self): # String
-		return self.get_query_params().get('Ip')
-
-	def set_Ip(self, Ip):  # String
-		self.add_query_param('Ip', Ip)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
@@ -51,6 +41,16 @@ class ListListenersByIpRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
+	def get_Ip(self): # String
+		return self.get_query_params().get('Ip')
+
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

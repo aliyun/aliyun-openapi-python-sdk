@@ -36,6 +36,16 @@ class CreateNacosServiceRequest(RpcRequest):
 
 	def set_Ephemeral(self, Ephemeral):  # Boolean
 		self.add_query_param('Ephemeral', Ephemeral)
+	def get_NamespaceId(self): # String
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -51,21 +61,11 @@ class CreateNacosServiceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_NamespaceId(self): # String
-		return self.get_query_params().get('NamespaceId')
-
-	def set_NamespaceId(self, NamespaceId):  # String
-		self.add_query_param('NamespaceId', NamespaceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
 	def set_AcceptLanguage(self, AcceptLanguage):  # String
 		self.add_query_param('AcceptLanguage', AcceptLanguage)
-	def get_ServiceName(self): # String
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self, ServiceName):  # String
-		self.add_query_param('ServiceName', ServiceName)
 	def get_ProtectThreshold(self): # String
 		return self.get_query_params().get('ProtectThreshold')
 

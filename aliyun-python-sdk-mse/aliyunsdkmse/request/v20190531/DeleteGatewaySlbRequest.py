@@ -36,6 +36,11 @@ class DeleteGatewaySlbRequest(RpcRequest):
 
 	def set_DeleteSlb(self, DeleteSlb):  # Boolean
 		self.add_query_param('DeleteSlb', DeleteSlb)
+	def get_SlbId(self): # String
+		return self.get_query_params().get('SlbId')
+
+	def set_SlbId(self, SlbId):  # String
+		self.add_query_param('SlbId', SlbId)
 	def get_GatewayUniqueId(self): # String
 		return self.get_query_params().get('GatewayUniqueId')
 

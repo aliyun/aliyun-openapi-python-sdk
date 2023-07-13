@@ -32,16 +32,6 @@ class AddGatewayRouteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GatewayUniqueId(self): # String
-		return self.get_query_params().get('GatewayUniqueId')
-
-	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
-		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
-	def get_DestinationType(self): # String
-		return self.get_query_params().get('DestinationType')
-
-	def set_DestinationType(self, DestinationType):  # String
-		self.add_query_param('DestinationType', DestinationType)
 	def get_DomainIdListJSON(self): # String
 		return self.get_query_params().get('DomainIdListJSON')
 
@@ -52,36 +42,26 @@ class AddGatewayRouteRequest(RpcRequest):
 
 	def set_DomainId(self, DomainId):  # Long
 		self.add_query_param('DomainId', DomainId)
+	def get_RouteType(self): # String
+		return self.get_query_params().get('RouteType')
+
+	def set_RouteType(self, RouteType):  # String
+		self.add_query_param('RouteType', RouteType)
 	def get_GatewayId(self): # Long
 		return self.get_query_params().get('GatewayId')
 
 	def set_GatewayId(self, GatewayId):  # Long
 		self.add_query_param('GatewayId', GatewayId)
-	def get_RouteOrder(self): # Integer
-		return self.get_query_params().get('RouteOrder')
-
-	def set_RouteOrder(self, RouteOrder):  # Integer
-		self.add_query_param('RouteOrder', RouteOrder)
 	def get_EnableWaf(self): # Boolean
 		return self.get_query_params().get('EnableWaf')
 
 	def set_EnableWaf(self, EnableWaf):  # Boolean
 		self.add_query_param('EnableWaf', EnableWaf)
-	def get_Services(self): # Array
-		return self.get_query_params().get('Services')
-
-	def set_Services(self, Services):  # Array
-		self.add_query_param("Services", json.dumps(Services))
 	def get_Predicates(self): # Struct
 		return self.get_query_params().get('Predicates')
 
 	def set_Predicates(self, Predicates):  # Struct
 		self.add_query_param("Predicates", json.dumps(Predicates))
-	def get_RedirectJSON(self): # Struct
-		return self.get_query_params().get('RedirectJSON')
-
-	def set_RedirectJSON(self, RedirectJSON):  # Struct
-		self.add_query_param("RedirectJSON", json.dumps(RedirectJSON))
 	def get_DirectResponseJSON(self): # Struct
 		return self.get_query_params().get('DirectResponseJSON')
 
@@ -92,11 +72,6 @@ class AddGatewayRouteRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_FallbackServices(self): # Array
 		return self.get_query_params().get('FallbackServices')
 
@@ -107,3 +82,38 @@ class AddGatewayRouteRequest(RpcRequest):
 
 	def set_Fallback(self, Fallback):  # Boolean
 		self.add_query_param('Fallback', Fallback)
+	def get_GatewayUniqueId(self): # String
+		return self.get_query_params().get('GatewayUniqueId')
+
+	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
+		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
+	def get_DestinationType(self): # String
+		return self.get_query_params().get('DestinationType')
+
+	def set_DestinationType(self, DestinationType):  # String
+		self.add_query_param('DestinationType', DestinationType)
+	def get_Policies(self): # String
+		return self.get_query_params().get('Policies')
+
+	def set_Policies(self, Policies):  # String
+		self.add_query_param('Policies', Policies)
+	def get_RouteOrder(self): # Integer
+		return self.get_query_params().get('RouteOrder')
+
+	def set_RouteOrder(self, RouteOrder):  # Integer
+		self.add_query_param('RouteOrder', RouteOrder)
+	def get_Services(self): # Array
+		return self.get_query_params().get('Services')
+
+	def set_Services(self, Services):  # Array
+		self.add_query_param("Services", json.dumps(Services))
+	def get_RedirectJSON(self): # Struct
+		return self.get_query_params().get('RedirectJSON')
+
+	def set_RedirectJSON(self, RedirectJSON):  # Struct
+		self.add_query_param("RedirectJSON", json.dumps(RedirectJSON))
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

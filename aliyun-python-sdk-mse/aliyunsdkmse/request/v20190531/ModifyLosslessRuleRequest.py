@@ -31,31 +31,11 @@ class ModifyLosslessRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DelayTime(self): # Long
-		return self.get_query_params().get('DelayTime')
-
-	def set_DelayTime(self, DelayTime):  # Long
-		self.add_query_param('DelayTime', DelayTime)
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
-
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
-	def get_WarmupTime(self): # Long
-		return self.get_query_params().get('WarmupTime')
-
-	def set_WarmupTime(self, WarmupTime):  # Long
-		self.add_query_param('WarmupTime', WarmupTime)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
-	def get_Related(self): # Boolean
-		return self.get_query_params().get('Related')
-
-	def set_Related(self, Related):  # Boolean
-		self.add_query_param('Related', Related)
 	def get_Enable(self): # Boolean
 		return self.get_query_params().get('Enable')
 
@@ -66,11 +46,26 @@ class ModifyLosslessRuleRequest(RpcRequest):
 
 	def set_Aligned(self, Aligned):  # Boolean
 		self.add_query_param('Aligned', Aligned)
-	def get_ShutdownWaitSeconds(self): # Integer
-		return self.get_query_params().get('ShutdownWaitSeconds')
+	def get_FuncType(self): # Integer
+		return self.get_query_params().get('FuncType')
 
-	def set_ShutdownWaitSeconds(self, ShutdownWaitSeconds):  # Integer
-		self.add_query_param('ShutdownWaitSeconds', ShutdownWaitSeconds)
+	def set_FuncType(self, FuncType):  # Integer
+		self.add_query_param('FuncType', FuncType)
+	def get_DelayTime(self): # Integer
+		return self.get_query_params().get('DelayTime')
+
+	def set_DelayTime(self, DelayTime):  # Integer
+		self.add_query_param('DelayTime', DelayTime)
+	def get_WarmupTime(self): # Integer
+		return self.get_query_params().get('WarmupTime')
+
+	def set_WarmupTime(self, WarmupTime):  # Integer
+		self.add_query_param('WarmupTime', WarmupTime)
+	def get_Related(self): # Boolean
+		return self.get_query_params().get('Related')
+
+	def set_Related(self, Related):  # Boolean
+		self.add_query_param('Related', Related)
 	def get_Notice(self): # Boolean
 		return self.get_query_params().get('Notice')
 
@@ -81,11 +76,6 @@ class ModifyLosslessRuleRequest(RpcRequest):
 
 	def set_LossLessDetail(self, LossLessDetail):  # Boolean
 		self.add_query_param('LossLessDetail', LossLessDetail)
-	def get_FuncType(self): # Long
-		return self.get_query_params().get('FuncType')
-
-	def set_FuncType(self, FuncType):  # Long
-		self.add_query_param('FuncType', FuncType)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 

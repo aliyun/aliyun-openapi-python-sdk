@@ -24,18 +24,13 @@ class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusters','mse')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterAliasName(self): # String
-		return self.get_query_params().get('ClusterAliasName')
-
-	def set_ClusterAliasName(self, ClusterAliasName):  # String
-		self.add_query_param('ClusterAliasName', ClusterAliasName)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
@@ -56,11 +51,6 @@ class ListClustersRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -70,3 +60,13 @@ class ListClustersRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_ClusterAliasName(self): # String
+		return self.get_query_params().get('ClusterAliasName')
+
+	def set_ClusterAliasName(self, ClusterAliasName):  # String
+		self.add_query_param('ClusterAliasName', ClusterAliasName)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

@@ -31,6 +31,11 @@ class ImportZookeeperDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RequestPars(self): # String
+		return self.get_query_params().get('RequestPars')
+
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -41,11 +46,6 @@ class ImportZookeeperDataRequest(RpcRequest):
 
 	def set_FileName(self, FileName):  # String
 		self.add_query_param('FileName', FileName)
-	def get_RequestPars(self): # String
-		return self.get_query_params().get('RequestPars')
-
-	def set_RequestPars(self, RequestPars):  # String
-		self.add_query_param('RequestPars', RequestPars)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

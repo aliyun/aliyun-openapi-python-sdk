@@ -52,6 +52,16 @@ class ImportServicesRequest(RpcRequest):
 
 	def set_SourceType(self, SourceType):  # String
 		self.add_query_param('SourceType', SourceType)
+	def get_FcServiceName(self): # String
+		return self.get_query_params().get('FcServiceName')
+
+	def set_FcServiceName(self, FcServiceName):  # String
+		self.add_query_param('FcServiceName', FcServiceName)
+	def get_FcVersion(self): # String
+		return self.get_query_params().get('FcVersion')
+
+	def set_FcVersion(self, FcVersion):  # String
+		self.add_query_param('FcVersion', FcVersion)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

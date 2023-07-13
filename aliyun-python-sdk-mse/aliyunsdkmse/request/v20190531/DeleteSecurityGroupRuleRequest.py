@@ -36,13 +36,13 @@ class DeleteSecurityGroupRuleRequest(RpcRequest):
 
 	def set_GatewayUniqueId(self, GatewayUniqueId):  # String
 		self.add_query_param('GatewayUniqueId', GatewayUniqueId)
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
 	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
 	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

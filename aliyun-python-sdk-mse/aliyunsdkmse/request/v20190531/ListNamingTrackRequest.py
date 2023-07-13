@@ -51,6 +51,21 @@ class ListNamingTrackRequest(RpcRequest):
 
 	def set_RequestPars(self, RequestPars):  # String
 		self.add_query_param('RequestPars', RequestPars)
+	def get_Group(self): # String
+		return self.get_query_params().get('Group')
+
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)
+	def get_Ip(self): # String
+		return self.get_query_params().get('Ip')
+
+	def set_Ip(self, Ip):  # String
+		self.add_query_param('Ip', Ip)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_EndTs(self): # Long
 		return self.get_query_params().get('EndTs')
 
@@ -66,26 +81,11 @@ class ListNamingTrackRequest(RpcRequest):
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_query_param('ServiceName', ServiceName)
-	def get_Group(self): # String
-		return self.get_query_params().get('Group')
-
-	def set_Group(self, Group):  # String
-		self.add_query_param('Group', Group)
-	def get_Ip(self): # String
-		return self.get_query_params().get('Ip')
-
-	def set_Ip(self, Ip):  # String
-		self.add_query_param('Ip', Ip)
 	def get_Reverse(self): # Boolean
 		return self.get_query_params().get('Reverse')
 
 	def set_Reverse(self, Reverse):  # Boolean
 		self.add_query_param('Reverse', Reverse)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

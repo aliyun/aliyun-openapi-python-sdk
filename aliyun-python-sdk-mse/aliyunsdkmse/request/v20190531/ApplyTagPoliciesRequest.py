@@ -36,11 +36,11 @@ class ApplyTagPoliciesRequest(RpcRequest):
 
 	def set_Rules(self, Rules):  # String
 		self.add_query_param('Rules', Rules)
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
 	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
@@ -56,6 +56,11 @@ class ApplyTagPoliciesRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 
