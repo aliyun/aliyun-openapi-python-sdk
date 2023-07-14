@@ -1,3 +1,6 @@
+2023-07-14 Version: 1.2.6
+1、Support Api: DescribeContainerGroupStatus
+
 2023-07-05 Version: 1.2.5
 1、Support DataCache Api
 
