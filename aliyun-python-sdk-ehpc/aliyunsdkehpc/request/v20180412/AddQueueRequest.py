@@ -31,6 +31,11 @@ class AddQueueRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DeploymentSetId(self): # String
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self, DeploymentSetId):  # String
+		self.add_query_param('DeploymentSetId', DeploymentSetId)
 	def get_QueueName(self): # String
 		return self.get_query_params().get('QueueName')
 
@@ -41,3 +46,8 @@ class AddQueueRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_NetworkInterfaceTrafficMode(self): # String
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
+		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)

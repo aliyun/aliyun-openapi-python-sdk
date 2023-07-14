@@ -71,6 +71,11 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_Password(self, Password):  # String
 		self.add_query_param('Password', Password)
+	def get_HybridClusterOpMode(self): # String
+		return self.get_query_params().get('HybridClusterOpMode')
+
+	def set_HybridClusterOpMode(self, HybridClusterOpMode):  # String
+		self.add_query_param('HybridClusterOpMode', HybridClusterOpMode)
 	def get_WinAdPar(self): # Struct
 		return self.get_query_params().get('WinAdPar')
 
@@ -171,6 +176,8 @@ class CreateHybridClusterRequest(RpcRequest):
 		return self.get_query_params().get('OpenldapPar')
 
 	def set_OpenldapPar(self, OpenldapPar):  # Struct
+		if OpenldapPar.get('FallbackHomeDir') is not None:
+			self.add_query_param('OpenldapPar.FallbackHomeDir', OpenldapPar.get('FallbackHomeDir'))
 		if OpenldapPar.get('BaseDn') is not None:
 			self.add_query_param('OpenldapPar.BaseDn', OpenldapPar.get('BaseDn'))
 		if OpenldapPar.get('LdapServerIp') is not None:

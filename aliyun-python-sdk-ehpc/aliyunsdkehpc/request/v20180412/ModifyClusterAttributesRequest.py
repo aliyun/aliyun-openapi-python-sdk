@@ -62,6 +62,20 @@ class ModifyClusterAttributesRequest(RpcRequest):
 	def set_RamNodeTypess(self, RamNodeTypes):  # RepeatList
 		for depth1 in range(len(RamNodeTypes)):
 			self.add_query_param('RamNodeTypes.' + str(depth1 + 1), RamNodeTypes[depth1])
+	def get_WinAdPar(self): # Struct
+		return self.get_query_params().get('WinAdPar')
+
+	def set_WinAdPar(self, WinAdPar):  # Struct
+		if WinAdPar.get('AdUser') is not None:
+			self.add_query_param('WinAdPar.AdUser', WinAdPar.get('AdUser'))
+		if WinAdPar.get('AdUserPasswd') is not None:
+			self.add_query_param('WinAdPar.AdUserPasswd', WinAdPar.get('AdUserPasswd'))
+		if WinAdPar.get('AdIp') is not None:
+			self.add_query_param('WinAdPar.AdIp', WinAdPar.get('AdIp'))
+		if WinAdPar.get('FallbackHomeDir') is not None:
+			self.add_query_param('WinAdPar.FallbackHomeDir', WinAdPar.get('FallbackHomeDir'))
+		if WinAdPar.get('AdDc') is not None:
+			self.add_query_param('WinAdPar.AdDc', WinAdPar.get('AdDc'))
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

@@ -58,6 +58,25 @@ class CreateClusterRequest(RpcRequest):
 				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.Location', AdditionalVolumes[depth1].get('Location'))
 			if AdditionalVolumes[depth1].get('JobQueue') is not None:
 				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.JobQueue', AdditionalVolumes[depth1].get('JobQueue'))
+	def get_AddOnss(self): # RepeatList
+		return self.get_query_params().get('AddOns')
+
+	def set_AddOnss(self, AddOns):  # RepeatList
+		for depth1 in range(len(AddOns)):
+			if AddOns[depth1].get('DeployMode') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.DeployMode', AddOns[depth1].get('DeployMode'))
+			if AddOns[depth1].get('Port') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.Port', AddOns[depth1].get('Port'))
+			if AddOns[depth1].get('ConfigFile') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.ConfigFile', AddOns[depth1].get('ConfigFile'))
+			if AddOns[depth1].get('DefaultStart') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.DefaultStart', AddOns[depth1].get('DefaultStart'))
+			if AddOns[depth1].get('Name') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.Name', AddOns[depth1].get('Name'))
+			if AddOns[depth1].get('DBType') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.DBType', AddOns[depth1].get('DBType'))
+			if AddOns[depth1].get('Version') is not None:
+				self.add_query_param('AddOns.' + str(depth1 + 1) + '.Version', AddOns[depth1].get('Version'))
 	def get_EcsOrderManagerInstanceType(self): # String
 		return self.get_query_params().get('EcsOrder.Manager.InstanceType')
 
@@ -73,6 +92,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_SecurityGroupName(self, SecurityGroupName):  # String
 		self.add_query_param('SecurityGroupName', SecurityGroupName)
+	def get_WithoutNas(self): # Boolean
+		return self.get_query_params().get('WithoutNas')
+
+	def set_WithoutNas(self, WithoutNas):  # Boolean
+		self.add_query_param('WithoutNas', WithoutNas)
 	def get_ImageOwnerAlias(self): # String
 		return self.get_query_params().get('ImageOwnerAlias')
 
@@ -277,6 +301,11 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_SystemDiskType(self, SystemDiskType):  # String
 		self.add_query_param('SystemDiskType', SystemDiskType)
+	def get_DeploymentSetId(self): # String
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self, DeploymentSetId):  # String
+		self.add_query_param('DeploymentSetId', DeploymentSetId)
 	def get_VolumeProtocol(self): # String
 		return self.get_query_params().get('VolumeProtocol')
 

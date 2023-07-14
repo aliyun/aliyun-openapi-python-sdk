@@ -31,46 +31,16 @@ class AddNodesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ImageId(self): # String
-		return self.get_query_params().get('ImageId')
+	def get_DnsConfig(self): # String
+		return self.get_query_params().get('DnsConfig')
 
-	def set_ImageId(self, ImageId):  # String
-		self.add_query_param('ImageId', ImageId)
-	def get_SystemDiskLevel(self): # String
-		return self.get_query_params().get('SystemDiskLevel')
-
-	def set_SystemDiskLevel(self, SystemDiskLevel):  # String
-		self.add_query_param('SystemDiskLevel', SystemDiskLevel)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_AllocatePublicAddress(self): # Boolean
-		return self.get_query_params().get('AllocatePublicAddress')
-
-	def set_AllocatePublicAddress(self, AllocatePublicAddress):  # Boolean
-		self.add_query_param('AllocatePublicAddress', AllocatePublicAddress)
-	def get_InternetMaxBandWidthOut(self): # Integer
-		return self.get_query_params().get('InternetMaxBandWidthOut')
-
-	def set_InternetMaxBandWidthOut(self, InternetMaxBandWidthOut):  # Integer
-		self.add_query_param('InternetMaxBandWidthOut', InternetMaxBandWidthOut)
-	def get_JobQueue(self): # String
-		return self.get_query_params().get('JobQueue')
-
-	def set_JobQueue(self, JobQueue):  # String
-		self.add_query_param('JobQueue', JobQueue)
+	def set_DnsConfig(self, DnsConfig):  # String
+		self.add_query_param('DnsConfig', DnsConfig)
 	def get_ImageOwnerAlias(self): # String
 		return self.get_query_params().get('ImageOwnerAlias')
 
 	def set_ImageOwnerAlias(self, ImageOwnerAlias):  # String
 		self.add_query_param('ImageOwnerAlias', ImageOwnerAlias)
-	def get_SystemDiskType(self): # String
-		return self.get_query_params().get('SystemDiskType')
-
-	def set_SystemDiskType(self, SystemDiskType):  # String
-		self.add_query_param('SystemDiskType', SystemDiskType)
 	def get_DataDiskss(self): # RepeatList
 		return self.get_query_params().get('DataDisks')
 
@@ -88,21 +58,11 @@ class AddNodesRequest(RpcRequest):
 				self.add_query_param('DataDisks.' + str(depth1 + 1) + '.DataDiskCategory', DataDisks[depth1].get('DataDiskCategory'))
 			if DataDisks[depth1].get('DataDiskPerformanceLevel') is not None:
 				self.add_query_param('DataDisks.' + str(depth1 + 1) + '.DataDiskPerformanceLevel', DataDisks[depth1].get('DataDiskPerformanceLevel'))
-	def get_MinCount(self): # Integer
-		return self.get_query_params().get('MinCount')
-
-	def set_MinCount(self, MinCount):  # Integer
-		self.add_query_param('MinCount', MinCount)
 	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDiskSize')
 
 	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
 		self.add_query_param('SystemDiskSize', SystemDiskSize)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
 	def get_HostNamePrefix(self): # String
 		return self.get_query_params().get('HostNamePrefix')
 
@@ -133,11 +93,6 @@ class AddNodesRequest(RpcRequest):
 
 	def set_Count(self, Count):  # Integer
 		self.add_query_param('Count', Count)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_ComputeSpotStrategy(self): # String
 		return self.get_query_params().get('ComputeSpotStrategy')
 
@@ -153,21 +108,11 @@ class AddNodesRequest(RpcRequest):
 
 	def set_Sync(self, Sync):  # Boolean
 		self.add_query_param('Sync', Sync)
-	def get_NetworkInterfaceTrafficMode(self): # String
-		return self.get_query_params().get('NetworkInterfaceTrafficMode')
-
-	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
-		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
-	def get_ComputeSpotDuration(self): # Integer
-		return self.get_query_params().get('ComputeSpotDuration')
-
-	def set_ComputeSpotDuration(self, ComputeSpotDuration):  # Integer
-		self.add_query_param('ComputeSpotDuration', ComputeSpotDuration)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -183,11 +128,6 @@ class AddNodesRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
-	def get_EcsChargeType(self): # String
-		return self.get_query_params().get('EcsChargeType')
-
-	def set_EcsChargeType(self, EcsChargeType):  # String
-		self.add_query_param('EcsChargeType', EcsChargeType)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
@@ -208,3 +148,68 @@ class AddNodesRequest(RpcRequest):
 
 	def set_InternetMaxBandWidthIn(self, InternetMaxBandWidthIn):  # Integer
 		self.add_query_param('InternetMaxBandWidthIn', InternetMaxBandWidthIn)
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_SystemDiskLevel(self): # String
+		return self.get_query_params().get('SystemDiskLevel')
+
+	def set_SystemDiskLevel(self, SystemDiskLevel):  # String
+		self.add_query_param('SystemDiskLevel', SystemDiskLevel)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_AllocatePublicAddress(self): # Boolean
+		return self.get_query_params().get('AllocatePublicAddress')
+
+	def set_AllocatePublicAddress(self, AllocatePublicAddress):  # Boolean
+		self.add_query_param('AllocatePublicAddress', AllocatePublicAddress)
+	def get_InternetMaxBandWidthOut(self): # Integer
+		return self.get_query_params().get('InternetMaxBandWidthOut')
+
+	def set_InternetMaxBandWidthOut(self, InternetMaxBandWidthOut):  # Integer
+		self.add_query_param('InternetMaxBandWidthOut', InternetMaxBandWidthOut)
+	def get_JobQueue(self): # String
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self, JobQueue):  # String
+		self.add_query_param('JobQueue', JobQueue)
+	def get_SystemDiskType(self): # String
+		return self.get_query_params().get('SystemDiskType')
+
+	def set_SystemDiskType(self, SystemDiskType):  # String
+		self.add_query_param('SystemDiskType', SystemDiskType)
+	def get_MinCount(self): # Integer
+		return self.get_query_params().get('MinCount')
+
+	def set_MinCount(self, MinCount):  # Integer
+		self.add_query_param('MinCount', MinCount)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_NetworkInterfaceTrafficMode(self): # String
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
+		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
+	def get_ComputeSpotDuration(self): # Integer
+		return self.get_query_params().get('ComputeSpotDuration')
+
+	def set_ComputeSpotDuration(self, ComputeSpotDuration):  # Integer
+		self.add_query_param('ComputeSpotDuration', ComputeSpotDuration)
+	def get_EcsChargeType(self): # String
+		return self.get_query_params().get('EcsChargeType')
+
+	def set_EcsChargeType(self, EcsChargeType):  # String
+		self.add_query_param('EcsChargeType', EcsChargeType)

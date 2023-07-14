@@ -36,6 +36,11 @@ class SetAutoScaleConfigRequest(RpcRequest):
 
 	def set_ImageId(self, ImageId):  # String
 		self.add_query_param('ImageId', ImageId)
+	def get_DnsConfig(self): # String
+		return self.get_query_params().get('DnsConfig')
+
+	def set_DnsConfig(self, DnsConfig):  # String
+		self.add_query_param('DnsConfig', DnsConfig)
 	def get_SpotPriceLimit(self): # Float
 		return self.get_query_params().get('SpotPriceLimit')
 
@@ -86,6 +91,11 @@ class SetAutoScaleConfigRequest(RpcRequest):
 
 	def set_MaxNodesInCluster(self, MaxNodesInCluster):  # Integer
 		self.add_query_param('MaxNodesInCluster', MaxNodesInCluster)
+	def get_ComputeEnableHt(self): # Boolean
+		return self.get_query_params().get('ComputeEnableHt')
+
+	def set_ComputeEnableHt(self, ComputeEnableHt):  # Boolean
+		self.add_query_param('ComputeEnableHt', ComputeEnableHt)
 	def get_ShrinkIntervalInMinutes(self): # Integer
 		return self.get_query_params().get('ShrinkIntervalInMinutes')
 
@@ -100,6 +110,8 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueName', Queues[depth1].get('QueueName'))
 			if Queues[depth1].get('SystemDiskLevel') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.SystemDiskLevel', Queues[depth1].get('SystemDiskLevel'))
+			if Queues[depth1].get('SortedByInventory') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SortedByInventory', Queues[depth1].get('SortedByInventory'))
 			if Queues[depth1].get('InstanceTypes') is not None:
 				for depth2 in range(len(Queues[depth1].get('InstanceTypes'))):
 					if Queues[depth1].get('InstanceTypes')[depth2].get('VSwitchId') is not None:

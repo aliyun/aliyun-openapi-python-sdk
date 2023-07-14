@@ -40,6 +40,8 @@ class UpdateClusterVolumesRequest(RpcRequest):
 				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeType', AdditionalVolumes[depth1].get('VolumeType'))
 			if AdditionalVolumes[depth1].get('VolumeProtocol') is not None:
 				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeProtocol', AdditionalVolumes[depth1].get('VolumeProtocol'))
+			if AdditionalVolumes[depth1].get('VolumeMountOption') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeMountOption', AdditionalVolumes[depth1].get('VolumeMountOption'))
 			if AdditionalVolumes[depth1].get('LocalDirectory') is not None:
 				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.LocalDirectory', AdditionalVolumes[depth1].get('LocalDirectory'))
 			if AdditionalVolumes[depth1].get('RemoteDirectory') is not None:

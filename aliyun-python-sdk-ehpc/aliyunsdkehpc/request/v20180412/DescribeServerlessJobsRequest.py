@@ -20,39 +20,25 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class UpdateQueueConfigRequest(RpcRequest):
+class DescribeServerlessJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UpdateQueueConfig')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeServerlessJobs')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DeploymentSetId(self): # String
-		return self.get_query_params().get('DeploymentSetId')
-
-	def set_DeploymentSetId(self, DeploymentSetId):  # String
-		self.add_query_param('DeploymentSetId', DeploymentSetId)
-	def get_QueueName(self): # String
-		return self.get_query_params().get('QueueName')
-
-	def set_QueueName(self, QueueName):  # String
-		self.add_query_param('QueueName', QueueName)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_JobIds(self): # Array
+		return self.get_query_params().get('JobIds')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ComputeInstanceType(self): # String
-		return self.get_query_params().get('ComputeInstanceType')
-
-	def set_ComputeInstanceType(self, ComputeInstanceType):  # String
-		self.add_query_param('ComputeInstanceType', ComputeInstanceType)
+	def set_JobIds(self, JobIds):  # Array
+		for index1, value1 in enumerate(JobIds):
+			self.add_query_param('JobIds.' + str(index1 + 1), value1)
