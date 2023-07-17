@@ -31,6 +31,11 @@ class CreateUdfFileRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CreateFolderIfNotExists(self): # Boolean
+		return self.get_body_params().get('CreateFolderIfNotExists')
+
+	def set_CreateFolderIfNotExists(self, CreateFolderIfNotExists):  # Boolean
+		self.add_body_params('CreateFolderIfNotExists', CreateFolderIfNotExists)
 	def get_ReturnValue(self): # String
 		return self.get_body_params().get('ReturnValue')
 

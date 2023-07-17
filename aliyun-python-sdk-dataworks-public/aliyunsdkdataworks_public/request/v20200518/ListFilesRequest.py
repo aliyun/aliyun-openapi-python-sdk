@@ -41,6 +41,16 @@ class ListFilesRequest(RpcRequest):
 
 	def set_FileTypes(self, FileTypes):  # String
 		self.add_body_params('FileTypes', FileTypes)
+	def get_NeedContent(self): # Boolean
+		return self.get_body_params().get('NeedContent')
+
+	def set_NeedContent(self, NeedContent):  # Boolean
+		self.add_body_params('NeedContent', NeedContent)
+	def get_NeedAbsoluteFolderPath(self): # Boolean
+		return self.get_body_params().get('NeedAbsoluteFolderPath')
+
+	def set_NeedAbsoluteFolderPath(self, NeedAbsoluteFolderPath):  # Boolean
+		self.add_body_params('NeedAbsoluteFolderPath', NeedAbsoluteFolderPath)
 	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
@@ -51,6 +61,11 @@ class ListFilesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_FileIdIn(self): # String
+		return self.get_body_params().get('FileIdIn')
+
+	def set_FileIdIn(self, FileIdIn):  # String
+		self.add_body_params('FileIdIn', FileIdIn)
 	def get_FileFolderPath(self): # String
 		return self.get_body_params().get('FileFolderPath')
 
@@ -61,6 +76,11 @@ class ListFilesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_ExactFileName(self): # String
+		return self.get_body_params().get('ExactFileName')
+
+	def set_ExactFileName(self, ExactFileName):  # String
+		self.add_body_params('ExactFileName', ExactFileName)
 	def get_Keyword(self): # String
 		return self.get_body_params().get('Keyword')
 

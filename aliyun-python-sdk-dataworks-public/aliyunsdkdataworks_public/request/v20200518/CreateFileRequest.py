@@ -96,6 +96,11 @@ class CreateFileRequest(RpcRequest):
 
 	def set_InputList(self, InputList):  # String
 		self.add_body_params('InputList', InputList)
+	def get_CreateFolderIfNotExists(self): # Boolean
+		return self.get_body_params().get('CreateFolderIfNotExists')
+
+	def set_CreateFolderIfNotExists(self, CreateFolderIfNotExists):  # Boolean
+		self.add_body_params('CreateFolderIfNotExists', CreateFolderIfNotExists)
 	def get_RerunMode(self): # String
 		return self.get_body_params().get('RerunMode')
 
