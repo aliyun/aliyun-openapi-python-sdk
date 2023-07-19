@@ -50,3 +50,8 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
