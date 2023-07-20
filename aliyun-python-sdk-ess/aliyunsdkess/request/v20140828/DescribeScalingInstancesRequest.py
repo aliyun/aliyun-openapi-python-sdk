@@ -81,6 +81,12 @@ class DescribeScalingInstancesRequest(RpcRequest):
 
 	def set_ScalingActivityId(self, ScalingActivityId):  # String
 		self.add_query_param('ScalingActivityId', ScalingActivityId)
+	def get_CreationTypess(self): # RepeatList
+		return self.get_query_params().get('CreationTypes')
+
+	def set_CreationTypess(self, CreationTypes):  # RepeatList
+		for depth1 in range(len(CreationTypes)):
+			self.add_query_param('CreationTypes.' + str(depth1 + 1), CreationTypes[depth1])
 	def get_ScalingConfigurationId(self): # String
 		return self.get_query_params().get('ScalingConfigurationId')
 

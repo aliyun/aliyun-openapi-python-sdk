@@ -1,3 +1,6 @@
+2023-07-20 Version: 2.3.10
+- DescribeScalingInstances support creationTypes.
+
 2023-07-12 Version: 2.3.9
 - ECIScalingConfiguration support EmptyDirVolume size.
 
