@@ -67,12 +67,6 @@ class ListServerlessJobsRequest(RpcRequest):
 	def set_JobNames(self, JobNames):  # Array
 		for index1, value1 in enumerate(JobNames):
 			self.add_query_param('JobNames.' + str(index1 + 1), value1)
-	def get_Users(self): # Array
-		return self.get_query_params().get('Users')
-
-	def set_Users(self, Users):  # Array
-		for index1, value1 in enumerate(Users):
-			self.add_query_param('Users.' + str(index1 + 1), value1)
 	def get_StartOrder(self): # String
 		return self.get_query_params().get('StartOrder')
 
@@ -83,12 +77,6 @@ class ListServerlessJobsRequest(RpcRequest):
 
 	def set_SubmitTimeEnd(self, SubmitTimeEnd):  # String
 		self.add_query_param('SubmitTimeEnd', SubmitTimeEnd)
-	def get_Queues(self): # Array
-		return self.get_query_params().get('Queues')
-
-	def set_Queues(self, Queues):  # Array
-		for index1, value1 in enumerate(Queues):
-			self.add_query_param('Queues.' + str(index1 + 1), value1)
 	def get_JobIds(self): # Array
 		return self.get_query_params().get('JobIds')
 
