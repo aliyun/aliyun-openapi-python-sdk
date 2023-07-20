@@ -31,10 +31,10 @@ class ListCustomRoutingEndpointGroupDestinationsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # String
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # String
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
 	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
@@ -46,10 +46,10 @@ class ListCustomRoutingEndpointGroupDestinationsRequest(RpcRequest):
 
 	def set_FromPort(self, FromPort):  # Integer
 		self.add_query_param('FromPort', FromPort)
-	def get_PageSize(self): # String
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
 	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')

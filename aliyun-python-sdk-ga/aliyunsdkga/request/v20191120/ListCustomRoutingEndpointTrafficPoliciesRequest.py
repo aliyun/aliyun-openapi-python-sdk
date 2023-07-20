@@ -41,20 +41,20 @@ class ListCustomRoutingEndpointTrafficPoliciesRequest(RpcRequest):
 
 	def set_EndpointId(self, EndpointId):  # String
 		self.add_query_param('EndpointId', EndpointId)
-	def get_PageNumber(self): # String
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # String
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
 	def get_ListenerId(self): # String
 		return self.get_query_params().get('ListenerId')
 
 	def set_ListenerId(self, ListenerId):  # String
 		self.add_query_param('ListenerId', ListenerId)
-	def get_PageSize(self): # String
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
 	def get_AcceleratorId(self): # String
 		return self.get_query_params().get('AcceleratorId')
