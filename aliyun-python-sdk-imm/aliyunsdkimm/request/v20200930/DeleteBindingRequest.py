@@ -46,8 +46,3 @@ class DeleteBindingRequest(RpcRequest):
 
 	def set_URI(self, URI):  # String
 		self.add_query_param('URI', URI)
-	def get_Cleanup(self): # Boolean
-		return self.get_query_params().get('Cleanup')
-
-	def set_Cleanup(self, Cleanup):  # Boolean
-		self.add_query_param('Cleanup', Cleanup)
