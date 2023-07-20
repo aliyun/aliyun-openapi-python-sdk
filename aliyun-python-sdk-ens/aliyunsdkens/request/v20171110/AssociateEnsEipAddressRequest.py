@@ -25,6 +25,11 @@ class AssociateEnsEipAddressRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AssociateEnsEipAddress','ens')
 		self.set_method('POST')
 
+	def get_Standby(self): # Boolean
+		return self.get_query_params().get('Standby')
+
+	def set_Standby(self, Standby):  # Boolean
+		self.add_query_param('Standby', Standby)
 	def get_AllocationId(self): # String
 		return self.get_query_params().get('AllocationId')
 

@@ -50,6 +50,11 @@ class CreateForwardEntryRequest(RpcRequest):
 
 	def set_ExternalPort(self, ExternalPort):  # String
 		self.add_query_param('ExternalPort', ExternalPort)
+	def get_StandbyExternalIp(self): # String
+		return self.get_query_params().get('StandbyExternalIp')
+
+	def set_StandbyExternalIp(self, StandbyExternalIp):  # String
+		self.add_query_param('StandbyExternalIp', StandbyExternalIp)
 	def get_NatGatewayId(self): # String
 		return self.get_query_params().get('NatGatewayId')
 

@@ -25,11 +25,6 @@ class CreateSnatEntryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateSnatEntry','ens')
 		self.set_method('POST')
 
-	def get_SourceCIDR(self): # String
-		return self.get_query_params().get('SourceCIDR')
-
-	def set_SourceCIDR(self, SourceCIDR):  # String
-		self.add_query_param('SourceCIDR', SourceCIDR)
 	def get_SnatIp(self): # String
 		return self.get_query_params().get('SnatIp')
 
@@ -45,6 +40,16 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_SourceNetworkId(self, SourceNetworkId):  # String
 		self.add_query_param('SourceNetworkId', SourceNetworkId)
+	def get_StandbySnatIp(self): # String
+		return self.get_query_params().get('StandbySnatIp')
+
+	def set_StandbySnatIp(self, StandbySnatIp):  # String
+		self.add_query_param('StandbySnatIp', StandbySnatIp)
+	def get_SourceCIDR(self): # String
+		return self.get_query_params().get('SourceCIDR')
+
+	def set_SourceCIDR(self, SourceCIDR):  # String
+		self.add_query_param('SourceCIDR', SourceCIDR)
 	def get_NatGatewayId(self): # String
 		return self.get_query_params().get('NatGatewayId')
 

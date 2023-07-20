@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeEnsSaleControlAvailableResourceRequest(RpcRequest):
+class DescribeWorkflowActivityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsSaleControlAvailableResource','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeWorkflowActivity','ens')
 		self.set_method('POST')
 
-	def get_CustomAccount(self): # String
-		return self.get_query_params().get('CustomAccount')
+	def get_WorkFlowId(self): # String
+		return self.get_query_params().get('WorkFlowId')
 
-	def set_CustomAccount(self, CustomAccount):  # String
-		self.add_query_param('CustomAccount', CustomAccount)
-	def get_CommodityCode(self): # String
-		return self.get_query_params().get('CommodityCode')
-
-	def set_CommodityCode(self, CommodityCode):  # String
-		self.add_query_param('CommodityCode', CommodityCode)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)
+	def set_WorkFlowId(self, WorkFlowId):  # String
+		self.add_query_param('WorkFlowId', WorkFlowId)

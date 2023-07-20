@@ -23,7 +23,7 @@ class DescribeSnatAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSnatAttribute','ens')
-		self.set_method('GET')
+		self.set_method('POST')
 
 	def get_SnatEntryId(self): # String
 		return self.get_query_params().get('SnatEntryId')

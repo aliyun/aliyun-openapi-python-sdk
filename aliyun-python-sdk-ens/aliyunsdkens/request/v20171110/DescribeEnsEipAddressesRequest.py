@@ -40,6 +40,11 @@ class DescribeEnsEipAddressesRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_Standby(self): # String
+		return self.get_query_params().get('Standby')
+
+	def set_Standby(self, Standby):  # String
+		self.add_query_param('Standby', Standby)
 	def get_AllocationId(self): # String
 		return self.get_query_params().get('AllocationId')
 

@@ -25,6 +25,11 @@ class DescribeEnsSaleControlStockRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsSaleControlStock','ens')
 		self.set_method('POST')
 
+	def get_CustomAccount(self): # String
+		return self.get_query_params().get('CustomAccount')
+
+	def set_CustomAccount(self, CustomAccount):  # String
+		self.add_query_param('CustomAccount', CustomAccount)
 	def get_CommodityCode(self): # String
 		return self.get_query_params().get('CommodityCode')
 
