@@ -36,11 +36,6 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_AccessPointId(self, AccessPointId):  # String
 		self.add_query_param('AccessPointId', AccessPointId)
-	def get_OppositeRouterId(self): # String
-		return self.get_query_params().get('OppositeRouterId')
-
-	def set_OppositeRouterId(self, OppositeRouterId):  # String
-		self.add_query_param('OppositeRouterId', OppositeRouterId)
 	def get_OppositeAccessPointId(self): # String
 		return self.get_query_params().get('OppositeAccessPointId')
 
@@ -51,6 +46,70 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Spec(self): # String
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self, Spec):  # String
+		self.add_query_param('Spec', Spec)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Period(self): # Integer
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_OppositeRegionId(self): # String
+		return self.get_query_params().get('OppositeRegionId')
+
+	def set_OppositeRegionId(self, OppositeRegionId):  # String
+		self.add_query_param('OppositeRegionId', OppositeRegionId)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_OppositeInterfaceOwnerId(self): # String
+		return self.get_query_params().get('OppositeInterfaceOwnerId')
+
+	def set_OppositeInterfaceOwnerId(self, OppositeInterfaceOwnerId):  # String
+		self.add_query_param('OppositeInterfaceOwnerId', OppositeInterfaceOwnerId)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
+
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
+	def get_OppositeRouterType(self): # String
+		return self.get_query_params().get('OppositeRouterType')
+
+	def set_OppositeRouterType(self, OppositeRouterType):  # String
+		self.add_query_param('OppositeRouterType', OppositeRouterType)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_PricingCycle(self): # String
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self, PricingCycle):  # String
+		self.add_query_param('PricingCycle', PricingCycle)
+	def get_OppositeRouterId(self): # String
+		return self.get_query_params().get('OppositeRouterId')
+
+	def set_OppositeRouterId(self, OppositeRouterId):  # String
+		self.add_query_param('OppositeRouterId', OppositeRouterId)
 	def get_Role(self): # String
 		return self.get_query_params().get('Role')
 
@@ -71,11 +130,6 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_Spec(self): # String
-		return self.get_query_params().get('Spec')
-
-	def set_Spec(self, Spec):  # String
-		self.add_query_param('Spec', Spec)
 	def get_FastLinkMode(self): # Boolean
 		return self.get_query_params().get('FastLinkMode')
 
@@ -91,11 +145,6 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_InstanceChargeType(self, InstanceChargeType):  # String
 		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_Period(self): # Integer
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Integer
-		self.add_query_param('Period', Period)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
@@ -106,36 +155,16 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OppositeRegionId(self): # String
-		return self.get_query_params().get('OppositeRegionId')
-
-	def set_OppositeRegionId(self, OppositeRegionId):  # String
-		self.add_query_param('OppositeRegionId', OppositeRegionId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_OppositeInterfaceOwnerId(self): # String
-		return self.get_query_params().get('OppositeInterfaceOwnerId')
-
-	def set_OppositeInterfaceOwnerId(self, OppositeInterfaceOwnerId):  # String
-		self.add_query_param('OppositeInterfaceOwnerId', OppositeInterfaceOwnerId)
 	def get_RouterType(self): # String
 		return self.get_query_params().get('RouterType')
 
 	def set_RouterType(self, RouterType):  # String
 		self.add_query_param('RouterType', RouterType)
-	def get_AutoRenew(self): # Boolean
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
 	def get_HealthCheckSourceIp(self): # String
 		return self.get_query_params().get('HealthCheckSourceIp')
 
@@ -146,18 +175,3 @@ class CreateRouterInterfaceRequest(RpcRequest):
 
 	def set_RouterId(self, RouterId):  # String
 		self.add_query_param('RouterId', RouterId)
-	def get_OppositeRouterType(self): # String
-		return self.get_query_params().get('OppositeRouterType')
-
-	def set_OppositeRouterType(self, OppositeRouterType):  # String
-		self.add_query_param('OppositeRouterType', OppositeRouterType)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
-	def get_PricingCycle(self): # String
-		return self.get_query_params().get('PricingCycle')
-
-	def set_PricingCycle(self, PricingCycle):  # String
-		self.add_query_param('PricingCycle', PricingCycle)

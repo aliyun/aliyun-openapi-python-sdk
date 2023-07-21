@@ -51,6 +51,15 @@ class CreateVpcGatewayEndpointRequest(RpcRequest):
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_query_param('ServiceName', ServiceName)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
