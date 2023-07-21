@@ -91,3 +91,8 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_DBName(self, DBName):  # String
 		self.add_query_param('DBName', DBName)
+	def get_PrivForAllDB(self): # String
+		return self.get_query_params().get('PrivForAllDB')
+
+	def set_PrivForAllDB(self, PrivForAllDB):  # String
+		self.add_query_param('PrivForAllDB', PrivForAllDB)

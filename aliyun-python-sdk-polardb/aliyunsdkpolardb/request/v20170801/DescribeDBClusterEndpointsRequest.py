@@ -41,6 +41,11 @@ class DescribeDBClusterEndpointsRequest(RpcRequest):
 
 	def set_DBEndpointId(self, DBEndpointId):  # String
 		self.add_query_param('DBEndpointId', DBEndpointId)
+	def get_DescribeType(self): # String
+		return self.get_query_params().get('DescribeType')
+
+	def set_DescribeType(self, DescribeType):  # String
+		self.add_query_param('DescribeType', DescribeType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
