@@ -23,7 +23,7 @@ from aliyunsdkeipanycast.endpoint import endpoint_data
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'UntagResources')
+		RpcRequest.__init__(self, 'Eipanycast', '2020-03-09', 'UntagResources','eipanycast')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
