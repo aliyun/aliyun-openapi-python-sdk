@@ -32,6 +32,11 @@ class UpdatePatchBaselineRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Sources(self): # Array
+		return self.get_query_params().get('Sources')
+
+	def set_Sources(self, Sources):  # Array
+		self.add_query_param("Sources", json.dumps(Sources))
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -47,18 +52,33 @@ class UpdatePatchBaselineRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_RejectedPatches(self): # Array
-		return self.get_query_params().get('RejectedPatches')
-
-	def set_RejectedPatches(self, RejectedPatches):  # Array
-		self.add_query_param("RejectedPatches", json.dumps(RejectedPatches))
 	def get_RejectedPatchesAction(self): # String
 		return self.get_query_params().get('RejectedPatchesAction')
 
 	def set_RejectedPatchesAction(self, RejectedPatchesAction):  # String
 		self.add_query_param('RejectedPatchesAction', RejectedPatchesAction)
+	def get_ApprovedPatchesEnableNonSecurity(self): # Boolean
+		return self.get_query_params().get('ApprovedPatchesEnableNonSecurity')
+
+	def set_ApprovedPatchesEnableNonSecurity(self, ApprovedPatchesEnableNonSecurity):  # Boolean
+		self.add_query_param('ApprovedPatchesEnableNonSecurity', ApprovedPatchesEnableNonSecurity)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
+	def get_RejectedPatches(self): # Array
+		return self.get_query_params().get('RejectedPatches')
+
+	def set_RejectedPatches(self, RejectedPatches):  # Array
+		self.add_query_param("RejectedPatches", json.dumps(RejectedPatches))
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ApprovedPatches(self): # Array
+		return self.get_query_params().get('ApprovedPatches')
+
+	def set_ApprovedPatches(self, ApprovedPatches):  # Array
+		self.add_query_param("ApprovedPatches", json.dumps(ApprovedPatches))

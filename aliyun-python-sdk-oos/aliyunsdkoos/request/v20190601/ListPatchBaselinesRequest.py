@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
+import json
 
 class ListPatchBaselinesRequest(RpcRequest):
 
@@ -31,16 +32,36 @@ class ListPatchBaselinesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OperationSystem(self): # String
-		return self.get_query_params().get('OperationSystem')
+	def get_Sources(self): # Array
+		return self.get_query_params().get('Sources')
 
-	def set_OperationSystem(self, OperationSystem):  # String
-		self.add_query_param('OperationSystem', OperationSystem)
+	def set_Sources(self, Sources):  # Array
+		self.add_query_param("Sources", json.dumps(Sources))
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ShareType(self): # String
+		return self.get_query_params().get('ShareType')
+
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)
+	def get_ApprovedPatchesEnableNonSecurity(self): # Boolean
+		return self.get_query_params().get('ApprovedPatchesEnableNonSecurity')
+
+	def set_ApprovedPatchesEnableNonSecurity(self, ApprovedPatchesEnableNonSecurity):  # Boolean
+		self.add_query_param('ApprovedPatchesEnableNonSecurity', ApprovedPatchesEnableNonSecurity)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
+	def get_OperationSystem(self): # String
+		return self.get_query_params().get('OperationSystem')
+
+	def set_OperationSystem(self, OperationSystem):  # String
+		self.add_query_param('OperationSystem', OperationSystem)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
@@ -51,8 +72,8 @@ class ListPatchBaselinesRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
-	def get_ShareType(self): # String
-		return self.get_query_params().get('ShareType')
+	def get_ApprovedPatches(self): # Array
+		return self.get_query_params().get('ApprovedPatches')
 
-	def set_ShareType(self, ShareType):  # String
-		self.add_query_param('ShareType', ShareType)
+	def set_ApprovedPatches(self, ApprovedPatches):  # Array
+		self.add_query_param("ApprovedPatches", json.dumps(ApprovedPatches))
