@@ -76,6 +76,11 @@ class UpgradeDBClusterVersionRequest(RpcRequest):
 
 	def set_PlannedStartTime(self, PlannedStartTime):  # String
 		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_TargetDBRevisionVersionCode(self): # String
+		return self.get_query_params().get('TargetDBRevisionVersionCode')
+
+	def set_TargetDBRevisionVersionCode(self, TargetDBRevisionVersionCode):  # String
+		self.add_query_param('TargetDBRevisionVersionCode', TargetDBRevisionVersionCode)
 	def get_UpgradePolicy(self): # String
 		return self.get_query_params().get('UpgradePolicy')
 
