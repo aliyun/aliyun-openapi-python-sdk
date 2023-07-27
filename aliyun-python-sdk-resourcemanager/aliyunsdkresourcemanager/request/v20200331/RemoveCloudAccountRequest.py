@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class RemoveCloudAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'RemoveCloudAccount','resourcemanager')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'RemoveCloudAccount')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

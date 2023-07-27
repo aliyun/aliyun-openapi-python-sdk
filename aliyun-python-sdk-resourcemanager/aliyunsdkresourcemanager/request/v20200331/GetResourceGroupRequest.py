@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class GetResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetResourceGroup','resourcemanager')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetResourceGroup')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
