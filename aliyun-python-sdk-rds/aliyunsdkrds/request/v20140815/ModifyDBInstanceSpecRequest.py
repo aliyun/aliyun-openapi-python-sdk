@@ -122,6 +122,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_BurstingEnabled(self, BurstingEnabled):  # Boolean
 		self.add_query_param('BurstingEnabled', BurstingEnabled)
+	def get_TargetMinorVersion(self): # String
+		return self.get_query_params().get('TargetMinorVersion')
+
+	def set_TargetMinorVersion(self, TargetMinorVersion):  # String
+		self.add_query_param('TargetMinorVersion', TargetMinorVersion)
 	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 
