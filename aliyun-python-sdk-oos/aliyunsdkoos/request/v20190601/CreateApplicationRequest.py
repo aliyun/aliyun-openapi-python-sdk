@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
+import json
 
 class CreateApplicationRequest(RpcRequest):
 
@@ -41,6 +42,11 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_AlarmConfig(self): # Struct
+		return self.get_query_params().get('AlarmConfig')
+
+	def set_AlarmConfig(self, AlarmConfig):  # Struct
+		self.add_query_param("AlarmConfig", json.dumps(AlarmConfig))
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

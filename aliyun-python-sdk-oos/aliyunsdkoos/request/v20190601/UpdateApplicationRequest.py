@@ -37,6 +37,16 @@ class UpdateApplicationRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_AlarmConfig(self): # Struct
+		return self.get_query_params().get('AlarmConfig')
+
+	def set_AlarmConfig(self, AlarmConfig):  # Struct
+		self.add_query_param("AlarmConfig", json.dumps(AlarmConfig))
+	def get_DeleteAlarmRulesBeforeUpdate(self): # Boolean
+		return self.get_query_params().get('DeleteAlarmRulesBeforeUpdate')
+
+	def set_DeleteAlarmRulesBeforeUpdate(self, DeleteAlarmRulesBeforeUpdate):  # Boolean
+		self.add_query_param('DeleteAlarmRulesBeforeUpdate', DeleteAlarmRulesBeforeUpdate)
 	def get_Tags(self): # Map
 		return self.get_query_params().get('Tags')
 
