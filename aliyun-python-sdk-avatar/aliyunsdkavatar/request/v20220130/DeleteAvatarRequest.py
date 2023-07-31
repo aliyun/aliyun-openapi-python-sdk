@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryAvatarRequest(RpcRequest):
+class DeleteAvatarRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'QueryAvatar')
+		RpcRequest.__init__(self, 'avatar', '2022-01-30', 'DeleteAvatar')
 		self.set_method('POST')
 
 	def get_Code(self): # String
