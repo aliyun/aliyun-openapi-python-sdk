@@ -66,6 +66,11 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_ImageOwnerAlias(self, ImageOwnerAlias):  # String
 		self.add_query_param('ImageOwnerAlias', ImageOwnerAlias)
+	def get_DeletionProtection(self): # Boolean
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self, DeletionProtection):  # Boolean
+		self.add_query_param('DeletionProtection', DeletionProtection)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

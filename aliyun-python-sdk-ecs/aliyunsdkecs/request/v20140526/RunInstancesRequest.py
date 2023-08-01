@@ -455,6 +455,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Amount(self, Amount):  # Integer
 		self.add_query_param('Amount', Amount)
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
