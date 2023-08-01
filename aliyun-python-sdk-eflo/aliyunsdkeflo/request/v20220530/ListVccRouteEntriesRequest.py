@@ -25,6 +25,11 @@ class ListVccRouteEntriesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVccRouteEntries','eflo')
 		self.set_method('POST')
 
+	def get_IgnoreDetailedRouteEntry(self): # Boolean
+		return self.get_body_params().get('IgnoreDetailedRouteEntry')
+
+	def set_IgnoreDetailedRouteEntry(self, IgnoreDetailedRouteEntry):  # Boolean
+		self.add_body_params('IgnoreDetailedRouteEntry', IgnoreDetailedRouteEntry)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 

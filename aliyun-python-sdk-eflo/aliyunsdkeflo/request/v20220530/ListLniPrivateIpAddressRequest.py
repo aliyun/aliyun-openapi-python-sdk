@@ -25,6 +25,11 @@ class ListLniPrivateIpAddressRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListLniPrivateIpAddress','eflo')
 		self.set_method('POST')
 
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 

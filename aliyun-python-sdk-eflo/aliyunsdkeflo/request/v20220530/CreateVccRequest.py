@@ -40,6 +40,11 @@ class CreateVccRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_CenOwnerId(self): # String
+		return self.get_body_params().get('CenOwnerId')
+
+	def set_CenOwnerId(self, CenOwnerId):  # String
+		self.add_body_params('CenOwnerId', CenOwnerId)
 	def get_AccessCouldService(self): # Boolean
 		return self.get_body_params().get('AccessCouldService')
 

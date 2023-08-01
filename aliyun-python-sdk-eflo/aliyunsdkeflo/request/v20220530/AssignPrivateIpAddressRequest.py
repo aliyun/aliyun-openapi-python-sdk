@@ -25,6 +25,16 @@ class AssignPrivateIpAddressRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'AssignPrivateIpAddress','eflo')
 		self.set_method('POST')
 
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
+	def get_AssignMac(self): # Boolean
+		return self.get_body_params().get('AssignMac')
+
+	def set_AssignMac(self, AssignMac):  # Boolean
+		self.add_body_params('AssignMac', AssignMac)
 	def get_SubnetId(self): # String
 		return self.get_body_params().get('SubnetId')
 
@@ -35,11 +45,6 @@ class AssignPrivateIpAddressRequest(RpcRequest):
 
 	def set_SkipConfig(self, SkipConfig):  # Boolean
 		self.add_body_params('SkipConfig', SkipConfig)
-	def get_AssignMac(self): # Boolean
-		return self.get_body_params().get('AssignMac')
-
-	def set_AssignMac(self, AssignMac):  # Boolean
-		self.add_body_params('AssignMac', AssignMac)
 	def get_PrivateIpAddress(self): # String
 		return self.get_body_params().get('PrivateIpAddress')
 
