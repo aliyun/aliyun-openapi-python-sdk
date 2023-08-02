@@ -140,6 +140,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_HotStandbyCluster(self, HotStandbyCluster):  # String
 		self.add_query_param('HotStandbyCluster', HotStandbyCluster)
+	def get_StoragePayType(self): # String
+		return self.get_query_params().get('StoragePayType')
+
+	def set_StoragePayType(self, StoragePayType):  # String
+		self.add_query_param('StoragePayType', StoragePayType)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
