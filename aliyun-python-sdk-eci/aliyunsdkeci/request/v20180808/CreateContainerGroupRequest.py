@@ -714,3 +714,47 @@ class CreateContainerGroupRequest(RpcRequest):
 				if Arns[i].get('AssumeRoleFor') is not None:
 					self.add_query_param('Arns.' + str(i + 1) + '.AssumeRoleFor', Arns[i].get('AssumeRoleFor'))
 
+	def get_FixedIp(self):
+		return self.get_query_params().get('FixedIp')
+
+	def set_FixedIp(self, FixedIp):
+		self.add_query_param('FixedIp', FixedIp)
+
+	def get_FixedIpRetainHour(self):
+		return self.get_query_params().get('FixedIpRetainHour')
+
+	def set_FixedIpRetainHour(self, FixedIpRetainHour):
+		self.add_query_param('FixedIpRetainHour', FixedIpRetainHour)
+
+	def get_DataCacheBucket(self):
+		return self.get_query_params().get('DataCacheBucket')
+
+	def set_DataCacheBucket(self, DataCacheBucket):
+		self.add_query_param("DataCacheBucket", DataCacheBucket)
+
+	def get_DataCachePL(self):
+		return self.get_query_params().get('DataCachePL')
+
+	def set_DataCachePL(self, DataCachePL):
+		self.add_query_param("DataCachePL", DataCachePL)
+
+	def get_DataCacheProvisionedIops(self):
+		return self.get_query_params().get('DataCacheProvisionedIops')
+
+	def set_DataCacheProvisionedIops(self, DataCacheProvisionedIops):
+		self.add_query_param('DataCacheProvisionedIops', DataCacheProvisionedIops)
+
+	def get_DataCacheBurstingEnabled(self):
+		return self.get_query_params().get('DataCacheBurstingEnabled')
+
+	def set_DataCacheBurstingEnabled(self, DataCacheBurstingEnabled):
+		self.add_query_param('DataCacheBurstingEnabled', DataCacheBurstingEnabled)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):
+		self.add_query_param('DryRun', DryRun)
+
+
+
