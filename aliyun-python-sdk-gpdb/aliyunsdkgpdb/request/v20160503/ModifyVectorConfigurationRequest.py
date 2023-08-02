@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeSQLCollectorPolicyRequest(RpcRequest):
+class ModifyVectorConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLCollectorPolicy')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyVectorConfiguration')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,3 +36,13 @@ class DescribeSQLCollectorPolicyRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_VectorConfigurationStatus(self): # String
+		return self.get_query_params().get('VectorConfigurationStatus')
+
+	def set_VectorConfigurationStatus(self, VectorConfigurationStatus):  # String
+		self.add_query_param('VectorConfigurationStatus', VectorConfigurationStatus)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
+import json
 
-class DescribeDBInstanceOnECSAttributeRequest(RpcRequest):
+class UpsertCollectionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceOnECSAttribute')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpsertCollectionData')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,8 +37,28 @@ class DescribeDBInstanceOnECSAttributeRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Collection(self): # String
+		return self.get_query_params().get('Collection')
+
+	def set_Collection(self, Collection):  # String
+		self.add_query_param('Collection', Collection)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Rows(self): # Array
+		return self.get_query_params().get('Rows')
+
+	def set_Rows(self, Rows):  # Array
+		self.add_query_param("Rows", json.dumps(Rows))
+	def get_NamespacePassword(self): # String
+		return self.get_query_params().get('NamespacePassword')
+
+	def set_NamespacePassword(self, NamespacePassword):  # String
+		self.add_query_param('NamespacePassword', NamespacePassword)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

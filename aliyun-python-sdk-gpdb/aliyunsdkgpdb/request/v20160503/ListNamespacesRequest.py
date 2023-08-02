@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeDBInstanceNetInfoRequest(RpcRequest):
+class ListNamespacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceNetInfo')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ListNamespaces')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class DescribeDBInstanceNetInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConnectionString(self): # String
-		return self.get_query_params().get('ConnectionString')
+	def get_ManagerAccount(self): # String
+		return self.get_query_params().get('ManagerAccount')
 
-	def set_ConnectionString(self, ConnectionString):  # String
-		self.add_query_param('ConnectionString', ConnectionString)
+	def set_ManagerAccount(self, ManagerAccount):  # String
+		self.add_query_param('ManagerAccount', ManagerAccount)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ManagerAccountPassword(self): # String
+		return self.get_query_params().get('ManagerAccountPassword')
+
+	def set_ManagerAccountPassword(self, ManagerAccountPassword):  # String
+		self.add_query_param('ManagerAccountPassword', ManagerAccountPassword)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

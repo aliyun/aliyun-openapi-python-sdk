@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeSlowLogRecordsRequest(RpcRequest):
+class DeleteCollectionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSlowLogRecords')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DeleteCollectionData')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,38 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_CollectionDataFilter(self): # String
+		return self.get_query_params().get('CollectionDataFilter')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def set_CollectionDataFilter(self, CollectionDataFilter):  # String
+		self.add_query_param('CollectionDataFilter', CollectionDataFilter)
+	def get_CollectionData(self): # String
+		return self.get_query_params().get('CollectionData')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_CollectionData(self, CollectionData):  # String
+		self.add_query_param('CollectionData', CollectionData)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_SQLId(self): # Long
-		return self.get_query_params().get('SQLId')
+	def get_Collection(self): # String
+		return self.get_query_params().get('Collection')
 
-	def set_SQLId(self, SQLId):  # Long
-		self.add_query_param('SQLId', SQLId)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_Collection(self, Collection):  # String
+		self.add_query_param('Collection', Collection)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_DBName(self): # String
-		return self.get_query_params().get('DBName')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NamespacePassword(self): # String
+		return self.get_query_params().get('NamespacePassword')
 
-	def set_DBName(self, DBName):  # String
-		self.add_query_param('DBName', DBName)
+	def set_NamespacePassword(self, NamespacePassword):  # String
+		self.add_query_param('NamespacePassword', NamespacePassword)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

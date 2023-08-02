@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeSlowSQLLogsRequest(RpcRequest):
+class DownloadSQLLogsRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSlowSQLLogs')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DownloadSQLLogsRecords')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -71,11 +71,21 @@ class DescribeSlowSQLLogsRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_MaxExecuteCost(self): # String
 		return self.get_query_params().get('MaxExecuteCost')
 
 	def set_MaxExecuteCost(self, MaxExecuteCost):  # String
 		self.add_query_param('MaxExecuteCost', MaxExecuteCost)
+	def get_ExecuteCost(self): # String
+		return self.get_query_params().get('ExecuteCost')
+
+	def set_ExecuteCost(self, ExecuteCost):  # String
+		self.add_query_param('ExecuteCost', ExecuteCost)
 	def get_ExecuteState(self): # String
 		return self.get_query_params().get('ExecuteState')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeSQLLogFilesRequest(RpcRequest):
+class CreateNamespaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSQLLogFiles')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateNamespace')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,33 @@ class DescribeSQLLogFilesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_ManagerAccount(self): # String
+		return self.get_query_params().get('ManagerAccount')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_ManagerAccount(self, ManagerAccount):  # String
+		self.add_query_param('ManagerAccount', ManagerAccount)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_FileName(self): # String
-		return self.get_query_params().get('FileName')
+	def get_ManagerAccountPassword(self): # String
+		return self.get_query_params().get('ManagerAccountPassword')
 
-	def set_FileName(self, FileName):  # String
-		self.add_query_param('FileName', FileName)
+	def set_ManagerAccountPassword(self, ManagerAccountPassword):  # String
+		self.add_query_param('ManagerAccountPassword', ManagerAccountPassword)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NamespacePassword(self): # String
+		return self.get_query_params().get('NamespacePassword')
+
+	def set_NamespacePassword(self, NamespacePassword):  # String
+		self.add_query_param('NamespacePassword', NamespacePassword)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

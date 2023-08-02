@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeSpecificationRequest(RpcRequest):
+class GrantCollectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSpecification')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'GrantCollection')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,43 @@ class DescribeSpecificationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StorageType(self): # String
-		return self.get_query_params().get('StorageType')
+	def get_GrantType(self): # String
+		return self.get_query_params().get('GrantType')
 
-	def set_StorageType(self, StorageType):  # String
-		self.add_query_param('StorageType', StorageType)
-	def get_CpuCores(self): # Integer
-		return self.get_query_params().get('CpuCores')
+	def set_GrantType(self, GrantType):  # String
+		self.add_query_param('GrantType', GrantType)
+	def get_ManagerAccount(self): # String
+		return self.get_query_params().get('ManagerAccount')
 
-	def set_CpuCores(self, CpuCores):  # Integer
-		self.add_query_param('CpuCores', CpuCores)
+	def set_ManagerAccount(self, ManagerAccount):  # String
+		self.add_query_param('ManagerAccount', ManagerAccount)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_TotalNodeNum(self): # Integer
-		return self.get_query_params().get('TotalNodeNum')
+	def get_ManagerAccountPassword(self): # String
+		return self.get_query_params().get('ManagerAccountPassword')
 
-	def set_TotalNodeNum(self, TotalNodeNum):  # Integer
-		self.add_query_param('TotalNodeNum', TotalNodeNum)
+	def set_ManagerAccountPassword(self, ManagerAccountPassword):  # String
+		self.add_query_param('ManagerAccountPassword', ManagerAccountPassword)
+	def get_Collection(self): # String
+		return self.get_query_params().get('Collection')
+
+	def set_Collection(self, Collection):  # String
+		self.add_query_param('Collection', Collection)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_GrantToNamespace(self): # String
+		return self.get_query_params().get('GrantToNamespace')
+
+	def set_GrantToNamespace(self, GrantToNamespace):  # String
+		self.add_query_param('GrantToNamespace', GrantToNamespace)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
+class DescribeNamespaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceNetworkType')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeNamespace')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ManagerAccount(self): # String
+		return self.get_query_params().get('ManagerAccount')
+
+	def set_ManagerAccount(self, ManagerAccount):  # String
+		self.add_query_param('ManagerAccount', ManagerAccount)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
+	def get_ManagerAccountPassword(self): # String
+		return self.get_query_params().get('ManagerAccountPassword')
 
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_PrivateIpAddress(self): # String
-		return self.get_query_params().get('PrivateIpAddress')
+	def set_ManagerAccountPassword(self, ManagerAccountPassword):  # String
+		self.add_query_param('ManagerAccountPassword', ManagerAccountPassword)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-	def get_VPCId(self): # String
-		return self.get_query_params().get('VPCId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
 
-	def set_VPCId(self, VPCId):  # String
-		self.add_query_param('VPCId', VPCId)
-	def get_InstanceNetworkType(self): # String
-		return self.get_query_params().get('InstanceNetworkType')
-
-	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
-		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

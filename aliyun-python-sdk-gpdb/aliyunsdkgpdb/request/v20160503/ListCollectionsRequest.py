@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ModifyDBInstanceConnectionModeRequest(RpcRequest):
+class ListCollectionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionMode')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ListCollections')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,23 @@ class ModifyDBInstanceConnectionModeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConnectionMode(self): # String
-		return self.get_query_params().get('ConnectionMode')
-
-	def set_ConnectionMode(self, ConnectionMode):  # String
-		self.add_query_param('ConnectionMode', ConnectionMode)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NamespacePassword(self): # String
+		return self.get_query_params().get('NamespacePassword')
+
+	def set_NamespacePassword(self, NamespacePassword):  # String
+		self.add_query_param('NamespacePassword', NamespacePassword)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class DescribeDBInstanceSQLPatternsRequest(RpcRequest):
+class ModifyDBInstanceConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceSQLPatterns')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConfig')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,28 @@ class DescribeDBInstanceSQLPatternsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_QueryKeywords(self): # String
-		return self.get_query_params().get('QueryKeywords')
-
-	def set_QueryKeywords(self, QueryKeywords):  # String
-		self.add_query_param('QueryKeywords', QueryKeywords)
-	def get_Database(self): # String
-		return self.get_query_params().get('Database')
-
-	def set_Database(self, Database):  # String
-		self.add_query_param('Database', Database)
-	def get_SourceIP(self): # String
-		return self.get_query_params().get('SourceIP')
-
-	def set_SourceIP(self, SourceIP):  # String
-		self.add_query_param('SourceIP', SourceIP)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def get_DBInstanceDescription(self): # String
+		return self.get_query_params().get('DBInstanceDescription')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_User(self): # String
-		return self.get_query_params().get('User')
+	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
+		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_ServerlessResource(self): # Integer
+		return self.get_query_params().get('ServerlessResource')
 
-	def set_User(self, User):  # String
-		self.add_query_param('User', User)
+	def set_ServerlessResource(self, ServerlessResource):  # Integer
+		self.add_query_param('ServerlessResource', ServerlessResource)
+	def get_IdleTime(self): # Integer
+		return self.get_query_params().get('IdleTime')
+
+	def set_IdleTime(self, IdleTime):  # Integer
+		self.add_query_param('IdleTime', IdleTime)
