@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
+class DescribeStreamLocationBlockRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamTranscodeInfo','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeStreamLocationBlock','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,38 @@ class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BlockType(self): # String
+		return self.get_query_params().get('BlockType')
+
+	def set_BlockType(self, BlockType):  # String
+		self.add_query_param('BlockType', BlockType)
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_StreamName(self): # String
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DomainTranscodeName(self): # String
-		return self.get_query_params().get('DomainTranscodeName')
-
-	def set_DomainTranscodeName(self, DomainTranscodeName):  # String
-		self.add_query_param('DomainTranscodeName', DomainTranscodeName)

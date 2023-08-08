@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class AddLiveAppRecordConfigRequest(RpcRequest):
+class UpdateLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppRecordConfig','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -67,12 +67,8 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def set_TranscodeRecordFormats(self, TranscodeRecordFormat):  # RepeatList
 		for depth1 in range(len(TranscodeRecordFormat)):
-			if TranscodeRecordFormat[depth1].get('SliceOssObjectPrefix') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', TranscodeRecordFormat[depth1].get('SliceOssObjectPrefix'))
 			if TranscodeRecordFormat[depth1].get('SliceDuration') is not None:
 				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceDuration', TranscodeRecordFormat[depth1].get('SliceDuration'))
-			if TranscodeRecordFormat[depth1].get('OssObjectPrefix') is not None:
-				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', TranscodeRecordFormat[depth1].get('OssObjectPrefix'))
 			if TranscodeRecordFormat[depth1].get('Format') is not None:
 				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.Format', TranscodeRecordFormat[depth1].get('Format'))
 			if TranscodeRecordFormat[depth1].get('CycleDuration') is not None:
@@ -87,11 +83,6 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def set_StreamName(self, StreamName):  # String
 		self.add_query_param('StreamName', StreamName)
-	def get_OssBucket(self): # String
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self, OssBucket):  # String
-		self.add_query_param('OssBucket', OssBucket)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -112,12 +103,8 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def set_RecordFormats(self, RecordFormat):  # RepeatList
 		for depth1 in range(len(RecordFormat)):
-			if RecordFormat[depth1].get('SliceOssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormat[depth1].get('SliceOssObjectPrefix'))
 			if RecordFormat[depth1].get('SliceDuration') is not None:
 				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceDuration', RecordFormat[depth1].get('SliceDuration'))
-			if RecordFormat[depth1].get('OssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', RecordFormat[depth1].get('OssObjectPrefix'))
 			if RecordFormat[depth1].get('Format') is not None:
 				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.Format', RecordFormat[depth1].get('Format'))
 			if RecordFormat[depth1].get('CycleDuration') is not None:

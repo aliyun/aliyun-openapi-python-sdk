@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
+class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamTranscodeInfo','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainTranscodeParams','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
+	def get_pushdomain(self): # String
+		return self.get_query_params().get('pushdomain')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_pushdomain(self, pushdomain):  # String
+		self.add_query_param('pushdomain', pushdomain)
+	def get_app(self): # String
+		return self.get_query_params().get('app')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_DomainTranscodeName(self): # String
-		return self.get_query_params().get('DomainTranscodeName')
+	def set_app(self, app):  # String
+		self.add_query_param('app', app)
+	def get_template_name(self): # String
+		return self.get_query_params().get('template_name')
 
-	def set_DomainTranscodeName(self, DomainTranscodeName):  # String
-		self.add_query_param('DomainTranscodeName', DomainTranscodeName)
+	def set_template_name(self, template_name):  # String
+		self.add_query_param('template_name', template_name)

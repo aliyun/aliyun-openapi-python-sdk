@@ -31,21 +31,16 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Template(self): # String
-		return self.get_query_params().get('Template')
+	def get_ResWithSource(self): # String
+		return self.get_query_params().get('ResWithSource')
 
-	def set_Template(self, Template):  # String
-		self.add_query_param('Template', Template)
+	def set_ResWithSource(self, ResWithSource):  # String
+		self.add_query_param('ResWithSource', ResWithSource)
 	def get_Gop(self): # String
 		return self.get_query_params().get('Gop')
 
 	def set_Gop(self, Gop):  # String
 		self.add_query_param('Gop', Gop)
-	def get_KmsKeyExpireInterval(self): # String
-		return self.get_query_params().get('KmsKeyExpireInterval')
-
-	def set_KmsKeyExpireInterval(self, KmsKeyExpireInterval):  # String
-		self.add_query_param('KmsKeyExpireInterval', KmsKeyExpireInterval)
 	def get_AudioCodec(self): # String
 		return self.get_query_params().get('AudioCodec')
 
@@ -56,16 +51,6 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_KmsUID(self, KmsUID):  # String
 		self.add_query_param('KmsUID', KmsUID)
-	def get_TemplateType(self): # String
-		return self.get_query_params().get('TemplateType')
-
-	def set_TemplateType(self, TemplateType):  # String
-		self.add_query_param('TemplateType', TemplateType)
-	def get_AudioProfile(self): # String
-		return self.get_query_params().get('AudioProfile')
-
-	def set_AudioProfile(self, AudioProfile):  # String
-		self.add_query_param('AudioProfile', AudioProfile)
 	def get_Height(self): # Integer
 		return self.get_query_params().get('Height')
 
@@ -76,6 +61,56 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_App(self, App):  # String
 		self.add_query_param('App', App)
+	def get_Profile(self): # Integer
+		return self.get_query_params().get('Profile')
+
+	def set_Profile(self, Profile):  # Integer
+		self.add_query_param('Profile', Profile)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ExtWithSource(self): # String
+		return self.get_query_params().get('ExtWithSource')
+
+	def set_ExtWithSource(self, ExtWithSource):  # String
+		self.add_query_param('ExtWithSource', ExtWithSource)
+	def get_BitrateWithSource(self): # String
+		return self.get_query_params().get('BitrateWithSource')
+
+	def set_BitrateWithSource(self, BitrateWithSource):  # String
+		self.add_query_param('BitrateWithSource', BitrateWithSource)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
+	def get_Template(self): # String
+		return self.get_query_params().get('Template')
+
+	def set_Template(self, Template):  # String
+		self.add_query_param('Template', Template)
+	def get_Lazy(self): # String
+		return self.get_query_params().get('Lazy')
+
+	def set_Lazy(self, Lazy):  # String
+		self.add_query_param('Lazy', Lazy)
+	def get_KmsKeyExpireInterval(self): # String
+		return self.get_query_params().get('KmsKeyExpireInterval')
+
+	def set_KmsKeyExpireInterval(self, KmsKeyExpireInterval):  # String
+		self.add_query_param('KmsKeyExpireInterval', KmsKeyExpireInterval)
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_AudioProfile(self): # String
+		return self.get_query_params().get('AudioProfile')
+
+	def set_AudioProfile(self, AudioProfile):  # String
+		self.add_query_param('AudioProfile', AudioProfile)
 	def get_EncryptParameters(self): # String
 		return self.get_query_params().get('EncryptParameters')
 
@@ -86,36 +121,26 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_AudioChannelNum(self, AudioChannelNum):  # Integer
 		self.add_query_param('AudioChannelNum', AudioChannelNum)
-	def get_Profile(self): # Integer
-		return self.get_query_params().get('Profile')
-
-	def set_Profile(self, Profile):  # Integer
-		self.add_query_param('Profile', Profile)
 	def get_FPS(self): # Integer
 		return self.get_query_params().get('FPS')
 
 	def set_FPS(self, FPS):  # Integer
 		self.add_query_param('FPS', FPS)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_AudioRate(self): # Integer
 		return self.get_query_params().get('AudioRate')
 
 	def set_AudioRate(self, AudioRate):  # Integer
 		self.add_query_param('AudioRate', AudioRate)
+	def get_FpsWithSource(self): # String
+		return self.get_query_params().get('FpsWithSource')
+
+	def set_FpsWithSource(self, FpsWithSource):  # String
+		self.add_query_param('FpsWithSource', FpsWithSource)
 	def get_AudioBitrate(self): # Integer
 		return self.get_query_params().get('AudioBitrate')
 
 	def set_AudioBitrate(self, AudioBitrate):  # Integer
 		self.add_query_param('AudioBitrate', AudioBitrate)
-	def get_Domain(self): # String
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
 	def get_Width(self): # Integer
 		return self.get_query_params().get('Width')
 

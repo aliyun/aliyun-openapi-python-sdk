@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class AddLiveRecordVodConfigRequest(RpcRequest):
+class UpdateLiveRecordVodConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordVodConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveRecordVodConfig','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,6 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def set_ComposeVodTranscodeGroupId(self, ComposeVodTranscodeGroupId):  # String
 		self.add_query_param('ComposeVodTranscodeGroupId', ComposeVodTranscodeGroupId)
-	def get_StorageLocation(self): # String
-		return self.get_query_params().get('StorageLocation')
-
-	def set_StorageLocation(self, StorageLocation):  # String
-		self.add_query_param('StorageLocation', StorageLocation)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 

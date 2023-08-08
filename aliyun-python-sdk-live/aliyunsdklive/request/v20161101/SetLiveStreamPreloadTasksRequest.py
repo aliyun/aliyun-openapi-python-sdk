@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
+class SetLiveStreamPreloadTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamTranscodeInfo','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamPreloadTasks','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,33 @@ class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
+	def get_PreloadedStartTime(self): # String
+		return self.get_query_params().get('PreloadedStartTime')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
+	def set_PreloadedStartTime(self, PreloadedStartTime):  # String
+		self.add_query_param('PreloadedStartTime', PreloadedStartTime)
+	def get_Area(self): # String
+		return self.get_query_params().get('Area')
+
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_PreloadedEndTime(self): # String
+		return self.get_query_params().get('PreloadedEndTime')
+
+	def set_PreloadedEndTime(self, PreloadedEndTime):  # String
+		self.add_query_param('PreloadedEndTime', PreloadedEndTime)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DomainTranscodeName(self): # String
-		return self.get_query_params().get('DomainTranscodeName')
+	def get_PlayUrl(self): # String
+		return self.get_query_params().get('PlayUrl')
 
-	def set_DomainTranscodeName(self, DomainTranscodeName):  # String
-		self.add_query_param('DomainTranscodeName', DomainTranscodeName)
+	def set_PlayUrl(self, PlayUrl):  # String
+		self.add_query_param('PlayUrl', PlayUrl)
