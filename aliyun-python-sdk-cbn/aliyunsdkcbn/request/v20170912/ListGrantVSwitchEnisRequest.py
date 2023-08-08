@@ -41,6 +41,16 @@ class ListGrantVSwitchEnisRequest(RpcRequest):
 
 	def set_CenId(self, CenId):  # String
 		self.add_query_param('CenId', CenId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_NetworkInterfaceName(self): # String
+		return self.get_query_params().get('NetworkInterfaceName')
+
+	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
+		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,3 +76,19 @@ class ListGrantVSwitchEnisRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)
+	def get_PrimaryIpAddress(self): # String
+		return self.get_query_params().get('PrimaryIpAddress')
+
+	def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
+		self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
+	def get_NetworkInterfaceId(self): # Array
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # Array
+		for index1, value1 in enumerate(NetworkInterfaceId):
+			self.add_query_param('NetworkInterfaceId.' + str(index1 + 1), value1)
