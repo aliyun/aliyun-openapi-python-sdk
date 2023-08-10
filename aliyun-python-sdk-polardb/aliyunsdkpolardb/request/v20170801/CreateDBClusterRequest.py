@@ -150,6 +150,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_StorageAutoScale(self): # String
+		return self.get_query_params().get('StorageAutoScale')
+
+	def set_StorageAutoScale(self, StorageAutoScale):  # String
+		self.add_query_param('StorageAutoScale', StorageAutoScale)
 	def get_TDEStatus(self): # Boolean
 		return self.get_query_params().get('TDEStatus')
 
@@ -240,6 +245,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBNodeNum(self, DBNodeNum):  # Integer
 		self.add_query_param('DBNodeNum', DBNodeNum)
+	def get_StorageUpperBound(self): # Long
+		return self.get_query_params().get('StorageUpperBound')
+
+	def set_StorageUpperBound(self, StorageUpperBound):  # Long
+		self.add_query_param('StorageUpperBound', StorageUpperBound)
 	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
