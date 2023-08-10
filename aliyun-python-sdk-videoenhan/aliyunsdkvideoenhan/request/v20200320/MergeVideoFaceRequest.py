@@ -41,3 +41,8 @@ class MergeVideoFaceRequest(RpcRequest):
 
 	def set_VideoURL(self, VideoURL):  # String
 		self.add_body_params('VideoURL', VideoURL)
+	def get_AddWatermark(self): # Boolean
+		return self.get_body_params().get('AddWatermark')
+
+	def set_AddWatermark(self, AddWatermark):  # Boolean
+		self.add_body_params('AddWatermark', AddWatermark)

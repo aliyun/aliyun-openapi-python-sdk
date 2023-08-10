@@ -52,3 +52,8 @@ class MergeVideoModelFaceRequest(RpcRequest):
 
 	def set_TemplateId(self, TemplateId):  # String
 		self.add_body_params('TemplateId', TemplateId)
+	def get_AddWatermark(self): # Boolean
+		return self.get_body_params().get('AddWatermark')
+
+	def set_AddWatermark(self, AddWatermark):  # Boolean
+		self.add_body_params('AddWatermark', AddWatermark)
