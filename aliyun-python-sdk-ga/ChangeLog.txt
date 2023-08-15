@@ -1,3 +1,6 @@
+2023-08-15 Version: 1.0.18
+- Add service managed api.
+
 2023-08-01 Version: 1.0.17
 - Update region api.
 
