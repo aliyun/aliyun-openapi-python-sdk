@@ -36,6 +36,16 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CommandLine(self): # String
+		return self.get_query_params().get('CommandLine')
+
+	def set_CommandLine(self, CommandLine):  # String
+		self.add_query_param('CommandLine', CommandLine)
+	def get_TargetServer(self): # String
+		return self.get_query_params().get('TargetServer')
+
+	def set_TargetServer(self, TargetServer):  # String
+		self.add_query_param('TargetServer', TargetServer)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

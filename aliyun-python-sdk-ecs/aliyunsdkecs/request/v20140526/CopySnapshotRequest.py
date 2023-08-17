@@ -106,3 +106,8 @@ class CopySnapshotRequest(RpcRequest):
 
 	def set_KMSKeyId(self, KMSKeyId):  # String
 		self.add_query_param('KMSKeyId', KMSKeyId)
+	def get_DestinationStorageLocationArn(self): # String
+		return self.get_query_params().get('DestinationStorageLocationArn')
+
+	def set_DestinationStorageLocationArn(self, DestinationStorageLocationArn):  # String
+		self.add_query_param('DestinationStorageLocationArn', DestinationStorageLocationArn)
