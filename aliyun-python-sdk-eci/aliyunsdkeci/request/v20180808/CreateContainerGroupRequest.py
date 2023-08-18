@@ -756,5 +756,48 @@ class CreateContainerGroupRequest(RpcRequest):
 	def set_DryRun(self, DryRun):
 		self.add_query_param('DryRun', DryRun)
 
+	def get_ContainerResourceView(self):
+		return self.get_query_params().get("ContainerResourceView")
+
+	def set_ContainerResourceView(self, ContainerResourceView):
+		self.add_query_param("ContainerResourceView", ContainerResourceView)
+
+	def get_PlainHttpRegistry(self):
+		return self.get_query_params().get("PlainHttpRegistry")
+
+	def set_PlainHttpRegistry(self, PlainHttpRegistry):
+		self.add_query_param("PlainHttpRegistry", PlainHttpRegistry)
+
+	def get_InsecureRegistry(self):
+		return self.get_query_params().get("InsecureRegistry")
+
+	def set_InsecureRegistry(self, InsecureRegistry):
+		self.add_query_param("InsecureRegistry", InsecureRegistry)
+
+	def get_StrictSpot(self):
+		return self.get_query_params().get("StrictSpot")
+
+	def set_StrictSpot(self, StrictSpot):
+		self.add_query_param("StrictSpot", StrictSpot)
+
+	def get_ImageAccelerateMode(self):
+		return self.get_query_params().get("ImageAccelerateMode")
+
+	def set_ImageAccelerateMode(self, ImageAccelerateMode):
+		self.add_query_param("ImageAccelerateMode", ImageAccelerateMode)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get("PrivateIpAddress")
+
+	def set_PrivateIpAddress(self, PrivateIpAddress):
+		self.add_query_param("PrivateIpAddress", PrivateIpAddress)
+
+	def get_EciFailStrategy(self):
+		return self.get_query_params().get("EciFailStrategy")
+
+	def set_EciFailStrategy(self, EciFailStrategy):
+		self.add_query_param("EciFailStrategy", EciFailStrategy)
+
+
 
 

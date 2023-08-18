@@ -24,6 +24,13 @@ class DescribeDataCachesRequest(RpcRequest):
     def __init__(self):
         RpcRequest.__init__(self, 'Eci', '2018-08-08', 'DescribeDataCaches', 'eci')
 
+    def get_DataCacheId(self):
+        return self.get_query_params().get('DataCacheId')
+
+    def set_DataCacheId(self, DataCacheId):
+        for i in range(len(DataCacheId)):
+            self.add_query_param("DataCacheId." + str(i + 1), DataCacheId[i])
+
     def get_Bucket(self):
         return self.get_query_params().get("Bucket")
 
