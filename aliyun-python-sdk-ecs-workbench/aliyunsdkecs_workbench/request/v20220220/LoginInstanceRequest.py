@@ -89,6 +89,10 @@ class LoginInstanceRequest(RpcRequest):
 				self.add_query_param('InstanceLoginInfo.Options.NotificationRetryIntervalSeconds', InstanceLoginInfo.get('Options').get('NotificationRetryIntervalSeconds'))
 			if InstanceLoginInfo.get('Options').get('AudioMuteSeconds') is not None:
 				self.add_query_param('InstanceLoginInfo.Options.AudioMuteSeconds', InstanceLoginInfo.get('Options').get('AudioMuteSeconds'))
+			if InstanceLoginInfo.get('Options').get('FixedHeight') is not None:
+				self.add_query_param('InstanceLoginInfo.Options.FixedHeight', InstanceLoginInfo.get('Options').get('FixedHeight'))
+			if InstanceLoginInfo.get('Options').get('FixedWidth') is not None:
+				self.add_query_param('InstanceLoginInfo.Options.FixedWidth', InstanceLoginInfo.get('Options').get('FixedWidth'))
 			if InstanceLoginInfo.get('Options').get('NotificationEventTypes') is not None:
 				self.add_query_param('InstanceLoginInfo.Options.NotificationEventTypes', InstanceLoginInfo.get('Options').get('NotificationEventTypes'))
 			if InstanceLoginInfo.get('Options').get('NotificationRetryLimit') is not None:
