@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeComputeResourceRequest(RpcRequest):
+class MigrateDBClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeComputeResource','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'MigrateDBCluster','ads')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,23 +51,8 @@ class DescribeComputeResourceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_DBClusterVersion(self): # String
-		return self.get_query_params().get('DBClusterVersion')
-
-	def set_DBClusterVersion(self, DBClusterVersion):  # String
-		self.add_query_param('DBClusterVersion', DBClusterVersion)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_Migrate(self): # Boolean
-		return self.get_query_params().get('Migrate')
-
-	def set_Migrate(self, Migrate):  # Boolean
-		self.add_query_param('Migrate', Migrate)
