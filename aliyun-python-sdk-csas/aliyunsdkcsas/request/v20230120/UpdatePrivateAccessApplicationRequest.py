@@ -18,7 +18,6 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
 class UpdatePrivateAccessApplicationRequest(RpcRequest):
 
@@ -30,7 +29,8 @@ class UpdatePrivateAccessApplicationRequest(RpcRequest):
 		return self.get_body_params().get('Addresses')
 
 	def set_Addresses(self, Addresses):  # Array
-		self.add_body_params("Addresses", json.dumps(Addresses))
+		for index1, value1 in enumerate(Addresses):
+			self.add_body_params('Addresses.' + str(index1 + 1), value1)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
@@ -50,12 +50,17 @@ class UpdatePrivateAccessApplicationRequest(RpcRequest):
 		return self.get_body_params().get('TagIds')
 
 	def set_TagIds(self, TagIds):  # Array
-		self.add_body_params("TagIds", json.dumps(TagIds))
+		for index1, value1 in enumerate(TagIds):
+			self.add_body_params('TagIds.' + str(index1 + 1), value1)
 	def get_PortRanges(self): # Array
 		return self.get_body_params().get('PortRanges')
 
 	def set_PortRanges(self, PortRanges):  # Array
-		self.add_body_params("PortRanges", json.dumps(PortRanges))
+		for index1, value1 in enumerate(PortRanges):
+			if value1.get('End') is not None:
+				self.add_body_params('PortRanges.' + str(index1 + 1) + '.End', value1.get('End'))
+			if value1.get('Begin') is not None:
+				self.add_body_params('PortRanges.' + str(index1 + 1) + '.Begin', value1.get('Begin'))
 	def get_ModifyType(self): # String
 		return self.get_body_params().get('ModifyType')
 

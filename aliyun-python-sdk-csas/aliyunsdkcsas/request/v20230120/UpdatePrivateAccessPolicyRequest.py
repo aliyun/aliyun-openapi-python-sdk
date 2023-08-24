@@ -18,7 +18,6 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
 class UpdatePrivateAccessPolicyRequest(RpcRequest):
 
@@ -40,17 +39,27 @@ class UpdatePrivateAccessPolicyRequest(RpcRequest):
 		return self.get_body_params().get('CustomUserAttributes')
 
 	def set_CustomUserAttributes(self, CustomUserAttributes):  # Array
-		self.add_body_params("CustomUserAttributes", json.dumps(CustomUserAttributes))
+		for index1, value1 in enumerate(CustomUserAttributes):
+			if value1.get('UserGroupType') is not None:
+				self.add_body_params('CustomUserAttributes.' + str(index1 + 1) + '.UserGroupType', value1.get('UserGroupType'))
+			if value1.get('IdpId') is not None:
+				self.add_body_params('CustomUserAttributes.' + str(index1 + 1) + '.IdpId', value1.get('IdpId'))
+			if value1.get('Value') is not None:
+				self.add_body_params('CustomUserAttributes.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Relation') is not None:
+				self.add_body_params('CustomUserAttributes.' + str(index1 + 1) + '.Relation', value1.get('Relation'))
 	def get_TagIds(self): # Array
 		return self.get_body_params().get('TagIds')
 
 	def set_TagIds(self, TagIds):  # Array
-		self.add_body_params("TagIds", json.dumps(TagIds))
+		for index1, value1 in enumerate(TagIds):
+			self.add_body_params('TagIds.' + str(index1 + 1), value1)
 	def get_UserGroupIds(self): # Array
 		return self.get_body_params().get('UserGroupIds')
 
 	def set_UserGroupIds(self, UserGroupIds):  # Array
-		self.add_body_params("UserGroupIds", json.dumps(UserGroupIds))
+		for index1, value1 in enumerate(UserGroupIds):
+			self.add_body_params('UserGroupIds.' + str(index1 + 1), value1)
 	def get_PolicyAction(self): # String
 		return self.get_body_params().get('PolicyAction')
 
@@ -65,7 +74,8 @@ class UpdatePrivateAccessPolicyRequest(RpcRequest):
 		return self.get_body_params().get('ApplicationIds')
 
 	def set_ApplicationIds(self, ApplicationIds):  # Array
-		self.add_body_params("ApplicationIds", json.dumps(ApplicationIds))
+		for index1, value1 in enumerate(ApplicationIds):
+			self.add_body_params('ApplicationIds.' + str(index1 + 1), value1)
 	def get_UserGroupMode(self): # String
 		return self.get_body_params().get('UserGroupMode')
 
