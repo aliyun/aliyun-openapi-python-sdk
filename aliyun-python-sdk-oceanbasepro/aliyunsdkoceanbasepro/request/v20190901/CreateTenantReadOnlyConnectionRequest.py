@@ -31,16 +31,26 @@ class CreateTenantReadOnlyConnectionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # String
-		return self.get_body_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_body_params('InstanceId', InstanceId)
 	def get_TenantId(self): # String
 		return self.get_body_params().get('TenantId')
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_VSwitchId(self): # String
+		return self.get_body_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_body_params('VSwitchId', VSwitchId)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_VpcId(self): # String
+		return self.get_body_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_body_params('VpcId', VpcId)
 	def get_ZoneId(self): # String
 		return self.get_body_params().get('ZoneId')
 

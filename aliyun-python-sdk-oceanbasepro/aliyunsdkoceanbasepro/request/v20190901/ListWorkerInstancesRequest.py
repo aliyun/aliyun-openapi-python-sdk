@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
-class DescribeSlowSQLHistoryListRequest(RpcRequest):
+class ListWorkerInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeSlowSQLHistoryList','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'ListWorkerInstances','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +32,38 @@ class DescribeSlowSQLHistoryListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
+	def get_OnlyBindable(self): # Boolean
+		return self.get_body_params().get('OnlyBindable')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
+	def set_OnlyBindable(self, OnlyBindable):  # Boolean
+		self.add_body_params('OnlyBindable', OnlyBindable)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
+	def get_Specs(self): # Array
+		return self.get_body_params().get('Specs')
 
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
+	def set_Specs(self, Specs):  # Array
+		self.add_body_params("Specs", json.dumps(Specs))
+	def get_InstanceName(self): # String
+		return self.get_body_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_body_params('InstanceName', InstanceName)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_SQLId(self): # String
-		return self.get_body_params().get('SQLId')
+	def get_SourceType(self): # String
+		return self.get_body_params().get('SourceType')
 
-	def set_SQLId(self, SQLId):  # String
-		self.add_body_params('SQLId', SQLId)
-	def get_EndTime(self): # String
-		return self.get_body_params().get('EndTime')
+	def set_SourceType(self, SourceType):  # String
+		self.add_body_params('SourceType', SourceType)
+	def get_DestType(self): # String
+		return self.get_body_params().get('DestType')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_body_params('EndTime', EndTime)
+	def set_DestType(self, DestType):  # String
+		self.add_body_params('DestType', DestType)

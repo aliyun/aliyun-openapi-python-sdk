@@ -41,6 +41,16 @@ class DescribeOasTopSQLListRequest(RpcRequest):
 
 	def set_SearchRule(self, SearchRule):  # String
 		self.add_body_params('SearchRule', SearchRule)
+	def get_MergeDynamicSql(self): # Boolean
+		return self.get_body_params().get('MergeDynamicSql')
+
+	def set_MergeDynamicSql(self, MergeDynamicSql):  # Boolean
+		self.add_body_params('MergeDynamicSql', MergeDynamicSql)
+	def get_DynamicSql(self): # Boolean
+		return self.get_body_params().get('DynamicSql')
+
+	def set_DynamicSql(self, DynamicSql):  # Boolean
+		self.add_body_params('DynamicSql', DynamicSql)
 	def get_SqlTextLength(self): # Long
 		return self.get_body_params().get('SqlTextLength')
 

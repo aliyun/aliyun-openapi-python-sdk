@@ -46,6 +46,11 @@ class ModifyTenantPrimaryZoneRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_TenantEndpointId(self): # String
+		return self.get_body_params().get('TenantEndpointId')
+
+	def set_TenantEndpointId(self, TenantEndpointId):  # String
+		self.add_body_params('TenantEndpointId', TenantEndpointId)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
@@ -56,13 +61,3 @@ class ModifyTenantPrimaryZoneRequest(RpcRequest):
 
 	def set_PrimaryZone(self, PrimaryZone):  # String
 		self.add_body_params('PrimaryZone', PrimaryZone)
-	def get_ModifyType(self): # String
-		return self.get_body_params().get('ModifyType')
-
-	def set_ModifyType(self, ModifyType):  # String
-		self.add_body_params('ModifyType', ModifyType)
-	def get_PrimaryZoneDeployType(self): # String
-		return self.get_body_params().get('PrimaryZoneDeployType')
-
-	def set_PrimaryZoneDeployType(self, PrimaryZoneDeployType):  # String
-		self.add_body_params('PrimaryZoneDeployType', PrimaryZoneDeployType)

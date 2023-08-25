@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class DescribeTenantUserRolesRequest(RpcRequest):
+class StartProjectsByLabelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeTenantUserRoles','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'StartProjectsByLabel','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,8 @@ class DescribeTenantUserRolesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
 
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)

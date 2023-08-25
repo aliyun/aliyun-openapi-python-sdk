@@ -91,6 +91,11 @@ class DescribeAnomalySQLListRequest(RpcRequest):
 
 	def set_NodeIp(self, NodeIp):  # String
 		self.add_body_params('NodeIp', NodeIp)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
 	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 

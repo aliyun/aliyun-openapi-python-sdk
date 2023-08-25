@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
-class DescribeSlowSQLHistoryListRequest(RpcRequest):
+class ListProjectFullVerifyResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeSlowSQLHistoryList','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'ListProjectFullVerifyResult','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +32,33 @@ class DescribeSlowSQLHistoryListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
+	def get_DestSchemas(self): # Array
+		return self.get_body_params().get('DestSchemas')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
+	def set_DestSchemas(self, DestSchemas):  # Array
+		self.add_body_params("DestSchemas", json.dumps(DestSchemas))
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_SQLId(self): # String
-		return self.get_body_params().get('SQLId')
+	def get_SourceSchemas(self): # Array
+		return self.get_body_params().get('SourceSchemas')
 
-	def set_SQLId(self, SQLId):  # String
-		self.add_body_params('SQLId', SQLId)
-	def get_EndTime(self): # String
-		return self.get_body_params().get('EndTime')
+	def set_SourceSchemas(self, SourceSchemas):  # Array
+		self.add_body_params("SourceSchemas", json.dumps(SourceSchemas))
+	def get_ProjectId(self): # String
+		return self.get_body_params().get('ProjectId')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_body_params('EndTime', EndTime)
+	def set_ProjectId(self, ProjectId):  # String
+		self.add_body_params('ProjectId', ProjectId)
+	def get_Status(self): # String
+		return self.get_body_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_body_params('Status', Status)

@@ -41,8 +41,3 @@ class DescribeInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
-class DescribeSlowSQLHistoryListRequest(RpcRequest):
+class ListDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeSlowSQLHistoryList','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'ListDataSource','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +32,33 @@ class DescribeSlowSQLHistoryListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
+	def get_Types(self): # Array
+		return self.get_body_params().get('Types')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
-	def get_PageNumber(self): # Integer
+	def set_Types(self, Types):  # Array
+		self.add_body_params("Types", json.dumps(Types))
+	def get_SearchKey(self): # String
+		return self.get_body_params().get('SearchKey')
+
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_body_params('SearchKey', SearchKey)
+	def get_PageNumber(self): # String
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self, PageNumber):  # String
 		self.add_body_params('PageNumber', PageNumber)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
-	def get_PageSize(self): # Integer
+	def get_PageSize(self): # String
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # String
 		self.add_body_params('PageSize', PageSize)
-	def get_SQLId(self): # String
-		return self.get_body_params().get('SQLId')
+	def get_SortField(self): # String
+		return self.get_body_params().get('SortField')
 
-	def set_SQLId(self, SQLId):  # String
-		self.add_body_params('SQLId', SQLId)
-	def get_EndTime(self): # String
-		return self.get_body_params().get('EndTime')
+	def set_SortField(self, SortField):  # String
+		self.add_body_params('SortField', SortField)
+	def get_Order(self): # String
+		return self.get_body_params().get('Order')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_body_params('EndTime', EndTime)
+	def set_Order(self, Order):  # String
+		self.add_body_params('Order', Order)

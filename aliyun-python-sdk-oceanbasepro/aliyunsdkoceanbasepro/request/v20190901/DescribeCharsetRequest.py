@@ -36,6 +36,11 @@ class DescribeCharsetRequest(RpcRequest):
 
 	def set_TenantMode(self, TenantMode):  # String
 		self.add_body_params('TenantMode', TenantMode)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
 	def get_Series(self): # String
 		return self.get_body_params().get('Series')
 

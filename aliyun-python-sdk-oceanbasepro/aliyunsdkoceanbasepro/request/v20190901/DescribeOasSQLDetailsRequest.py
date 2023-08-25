@@ -31,6 +31,21 @@ class DescribeOasSQLDetailsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StartTime(self): # String
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_body_params('StartTime', StartTime)
+	def get_DynamicSql(self): # Boolean
+		return self.get_body_params().get('DynamicSql')
+
+	def set_DynamicSql(self, DynamicSql):  # Boolean
+		self.add_body_params('DynamicSql', DynamicSql)
+	def get_TenantId(self): # String
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # String
+		self.add_body_params('TenantId', TenantId)
 	def get_SqlId(self): # String
 		return self.get_body_params().get('SqlId')
 
@@ -41,11 +56,6 @@ class DescribeOasSQLDetailsRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
@@ -56,8 +66,3 @@ class DescribeOasSQLDetailsRequest(RpcRequest):
 
 	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)

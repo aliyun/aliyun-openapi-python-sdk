@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class CreateTenantUserRequest(RpcRequest):
+class CreateMySqlDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'CreateTenantUser','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'CreateMySqlDataSource','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,41 +31,56 @@ class CreateTenantUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Roles(self): # String
-		return self.get_body_params().get('Roles')
+	def get_Schema(self): # String
+		return self.get_body_params().get('Schema')
 
-	def set_Roles(self, Roles):  # String
-		self.add_body_params('Roles', Roles)
+	def set_Schema(self, Schema):  # String
+		self.add_body_params('Schema', Schema)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-	def get_UserPassword(self): # String
-		return self.get_body_params().get('UserPassword')
+	def get_Type(self): # String
+		return self.get_body_params().get('Type')
 
-	def set_UserPassword(self, UserPassword):  # String
-		self.add_body_params('UserPassword', UserPassword)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
+	def set_Type(self, Type):  # String
+		self.add_body_params('Type', Type)
+	def get_Password(self): # String
+		return self.get_body_params().get('Password')
 
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
-	def get_EncryptionType(self): # String
-		return self.get_body_params().get('EncryptionType')
+	def set_Password(self, Password):  # String
+		self.add_body_params('Password', Password)
+	def get_DgInstanceId(self): # String
+		return self.get_body_params().get('DgInstanceId')
 
-	def set_EncryptionType(self, EncryptionType):  # String
-		self.add_body_params('EncryptionType', EncryptionType)
-	def get_UserType(self): # String
-		return self.get_body_params().get('UserType')
+	def set_DgInstanceId(self, DgInstanceId):  # String
+		self.add_body_params('DgInstanceId', DgInstanceId)
+	def get_Ip(self): # String
+		return self.get_body_params().get('Ip')
 
-	def set_UserType(self, UserType):  # String
-		self.add_body_params('UserType', UserType)
+	def set_Ip(self, Ip):  # String
+		self.add_body_params('Ip', Ip)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
+	def get_Port(self): # Integer
+		return self.get_body_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_body_params('Port', Port)
+	def get_VpcId(self): # String
+		return self.get_body_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_body_params('VpcId', VpcId)
+	def get_Name(self): # String
+		return self.get_body_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_body_params('Name', Name)
 	def get_UserName(self): # String
 		return self.get_body_params().get('UserName')
 
