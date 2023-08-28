@@ -9,7 +9,7 @@ from aliyunsdkcore.utils import parameter_helper as helper
 class TestShaHmac1(unittest.TestCase):
     def test_get_uuid(self):
         uuid = helper.get_uuid()
-        self.assertEqual(36, len(uuid))
+        self.assertEqual(32, len(uuid))
         self.assertNotEqual(helper.get_uuid(), helper.get_uuid())
 
     def test_md5_sum(self):
