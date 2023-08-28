@@ -1,3 +1,6 @@
+2023-08-28 Version: 1.0.7
+- Support elastic network interface.
+
 2023-08-01 Version: 1.0.6
 - Support second cidr for vpd.
 - Support ignore 32 routeentry.
