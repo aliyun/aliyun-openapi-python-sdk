@@ -22,6 +22,8 @@ import base64
 import socket
 import uuid
 import time
+import random
+import threading
 import xml.etree.cElementTree as EleTree
 
 from aliyunsdkcore.compat import ensure_bytes, ensure_string
@@ -30,12 +32,21 @@ TIME_ZONE = "GMT"
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
 FORMAT_RFC_2616 = "%a, %d %b %Y %H:%M:%S GMT"
 
+_process_start_time = int(time.time() * 1000)
+_seqId = 0
+
 
 def get_uuid():
-    name = socket.gethostname() + str(uuid.uuid1())
-    namespace = uuid.NAMESPACE_URL
-    return str(uuid.uuid5(namespace, name))
-
+    global _seqId
+    thread_id = threading.current_thread().ident
+    current_time = int(time.time() * 1000)
+    seq = _seqId
+    _seqId += 1
+    randNum = random.getrandbits(64)
+    msg = '%d-%d-%d-%d-%d' % (_process_start_time, thread_id, current_time, seq, randNum)
+    md5 = hashlib.md5()
+    md5.update(msg.encode('utf-8'))
+    return md5.hexdigest()
 
 def get_iso_8061_date():
     return time.strftime(FORMAT_ISO_8601, time.gmtime())
