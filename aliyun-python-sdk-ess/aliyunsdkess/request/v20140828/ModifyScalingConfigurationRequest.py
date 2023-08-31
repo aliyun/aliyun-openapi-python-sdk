@@ -50,6 +50,11 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 				self.add_query_param('SpotPriceLimit.' + str(depth1 + 1) + '.InstanceType', SpotPriceLimit[depth1].get('InstanceType'))
 			if SpotPriceLimit[depth1].get('PriceLimit') is not None:
 				self.add_query_param('SpotPriceLimit.' + str(depth1 + 1) + '.PriceLimit', SpotPriceLimit[depth1].get('PriceLimit'))
+	def get_DeletionProtection(self): # Boolean
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self, DeletionProtection):  # Boolean
+		self.add_query_param('DeletionProtection', DeletionProtection)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
