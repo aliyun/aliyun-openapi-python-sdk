@@ -45,6 +45,11 @@ class ListPrivateAccessApplicationsRequest(RpcRequest):
 
 	def set_TagId(self, TagId):  # String
 		self.add_query_param('TagId', TagId)
+	def get_ConnectorId(self): # String
+		return self.get_query_params().get('ConnectorId')
+
+	def set_ConnectorId(self, ConnectorId):  # String
+		self.add_query_param('ConnectorId', ConnectorId)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
