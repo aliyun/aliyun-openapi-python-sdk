@@ -36,6 +36,11 @@ class MergeVideoFaceRequest(RpcRequest):
 
 	def set_ReferenceURL(self, ReferenceURL):  # String
 		self.add_body_params('ReferenceURL', ReferenceURL)
+	def get_Enhance(self): # Boolean
+		return self.get_body_params().get('Enhance')
+
+	def set_Enhance(self, Enhance):  # Boolean
+		self.add_body_params('Enhance', Enhance)
 	def get_VideoURL(self): # String
 		return self.get_body_params().get('VideoURL')
 
