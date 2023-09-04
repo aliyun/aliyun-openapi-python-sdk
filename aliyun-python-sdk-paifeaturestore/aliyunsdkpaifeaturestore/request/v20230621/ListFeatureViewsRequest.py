@@ -71,6 +71,11 @@ class ListFeatureViewsRequest(RoaRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_SortBy(self): # String
 		return self.get_query_params().get('SortBy')
 
