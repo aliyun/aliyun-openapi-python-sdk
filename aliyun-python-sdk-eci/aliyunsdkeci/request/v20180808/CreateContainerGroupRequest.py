@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
+
 class CreateContainerGroupRequest(RpcRequest):
 
 	def __init__(self):
@@ -447,6 +449,12 @@ class CreateContainerGroupRequest(RpcRequest):
 
 			if Volumes[i].get('Type') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.Type', Volumes[i].get('Type'))
+
+			if Volumes[i].get('HostPathVolume.Type') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.HostPathVolume.Type', Volumes[i].get('HostPathVolume.Type'))
+
+			if Volumes[i].get('HostPathVolume.Path') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.HostPathVolume.Path', Volumes[i].get('HostPathVolume.Path'))
 
 	def get_ContainerGroupName(self):
 		return self.get_query_params().get('ContainerGroupName')
