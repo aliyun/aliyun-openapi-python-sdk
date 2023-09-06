@@ -1,0 +1,46 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python test
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ["3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    runs-on: ubuntu-20.04
+    env:
+      ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+      ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.version }}
+    - name: Install dependencies
+      run: |
+        pip install unittest2
+        pip install coverage
+        pip install pycodestyle
+        pip install mock
+        pip install jmespath cryptography
+        pip install pytest
+    - name: Lint
+      run: |
+        make lint
+    - name: Test
+      run: |
+        make test
+        make coverage-report
+        test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || make functional-test
+        bash <(curl -s https://codecov.io/bash)
