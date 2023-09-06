@@ -100,13 +100,13 @@ class SDKTestBase(TestCase):
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
         self.user_id = self._read_key_from_env_or_config("USER_ID")
         self.root_user_id = self._read_key_from_env_or_config("ROOT_UID")
-        if 'TRAVIS_JOB_NUMBER' in os.environ:
-            self.travis_concurrent = os.environ.get('TRAVIS_JOB_NUMBER').split(".")[-1]
+        if 'CONCURRENT_ID' in os.environ:
+            self.concurrent_id = os.environ.get('CONCURRENT_ID')
         else:
-            self.travis_concurrent = "0"
-        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_concurrent
-        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_concurrent
-        self.default_role_session_name = "RoleSession" + self.travis_concurrent
+            self.concurrent_id = "0"
+        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.concurrent_id
+        self.default_ram_role_name = "RamRoleForSDKTest" + self.concurrent_id
+        self.default_role_session_name = "RoleSession" + self.concurrent_id
         self.ram_user_id = None
         self.ram_policy_attched = False
         self.ram_user_access_key_id = None
@@ -143,7 +143,7 @@ class SDKTestBase(TestCase):
 
     @staticmethod
     def get_dict_response(string):
-        return json.loads(string.decode('utf-8'), encoding="utf-8")
+        return json.loads(string.decode('utf-8'))
 
     def _create_default_ram_user(self):
         if self.ram_user_id:
