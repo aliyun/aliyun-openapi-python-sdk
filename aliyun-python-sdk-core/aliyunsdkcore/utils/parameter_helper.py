@@ -19,8 +19,6 @@
 
 import hashlib
 import base64
-import socket
-import uuid
 import time
 import random
 import threading
@@ -47,6 +45,7 @@ def get_uuid():
     md5 = hashlib.md5()
     md5.update(msg.encode('utf-8'))
     return md5.hexdigest()
+
 
 def get_iso_8061_date():
     return time.strftime(FORMAT_ISO_8601, time.gmtime())
