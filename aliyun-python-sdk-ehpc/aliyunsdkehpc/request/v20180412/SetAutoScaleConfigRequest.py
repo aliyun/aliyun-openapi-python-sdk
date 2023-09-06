@@ -138,6 +138,8 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoShrink', Queues[depth1].get('EnableAutoShrink'))
 			if Queues[depth1].get('SpotStrategy') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotStrategy', Queues[depth1].get('SpotStrategy'))
+			if Queues[depth1].get('AutoMinNodesPerCycle') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.AutoMinNodesPerCycle', Queues[depth1].get('AutoMinNodesPerCycle'))
 			if Queues[depth1].get('DataDisks') is not None:
 				for depth2 in range(len(Queues[depth1].get('DataDisks'))):
 					if Queues[depth1].get('DataDisks')[depth2].get('DataDiskDeleteWithInstance') is not None:

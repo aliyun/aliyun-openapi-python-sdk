@@ -51,3 +51,8 @@ class AddQueueRequest(RpcRequest):
 
 	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
 		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
+	def get_UseESS(self): # Boolean
+		return self.get_query_params().get('UseESS')
+
+	def set_UseESS(self, UseESS):  # Boolean
+		self.add_query_param('UseESS', UseESS)
