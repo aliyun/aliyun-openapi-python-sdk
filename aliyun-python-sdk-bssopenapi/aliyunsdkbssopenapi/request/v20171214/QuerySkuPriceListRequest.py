@@ -57,3 +57,8 @@ class QuerySkuPriceListRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

@@ -36,3 +36,8 @@ class QueryCommodityListRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_query_param('ProductCode', ProductCode)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
