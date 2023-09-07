@@ -37,6 +37,12 @@ class SetDevicePropertyRequest(RpcRequest):
 	def set_IotId(self,IotId):
 		self.add_query_param('IotId',IotId)
 
+	def get_Qos(self):
+		return self.get_query_params().get('Qos')
+
+	def set_Qos(self,Qos):
+		self.add_query_param('Qos',Qos)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

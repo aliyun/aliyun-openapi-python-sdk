@@ -44,10 +44,10 @@ class RRpcRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_RequestBase64Byte(self):
-		return self.get_query_params().get('RequestBase64Byte')
+		return self.get_body_params().get('RequestBase64Byte')
 
 	def set_RequestBase64Byte(self,RequestBase64Byte):
-		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
+		self.add_body_params('RequestBase64Byte', RequestBase64Byte)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

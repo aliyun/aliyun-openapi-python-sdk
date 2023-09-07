@@ -77,6 +77,12 @@ class PubRequest(RpcRequest):
 	def set_ResponseTopic(self,ResponseTopic):
 		self.add_query_param('ResponseTopic',ResponseTopic)
 
+	def get_TopicAlias(self):
+		return self.get_query_params().get('TopicAlias')
+
+	def set_TopicAlias(self,TopicAlias):
+		self.add_query_param('TopicAlias',TopicAlias)
+
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')
 
