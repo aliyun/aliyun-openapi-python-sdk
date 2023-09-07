@@ -20,7 +20,7 @@ jobs:
       REGION_ID: ${{ vars.REGION_ID }}
       USER_ID: ${{ secrets.USER_ID }}
       ROOT_UID: ${{ secrets.ROOT_UID }}
-      CONCURRENT_ID: ${{ strategy.job-index }}
+      CONCURRENT_ID: "${{ github.run_number }}${{ strategy.job-index }}"
 
     steps:
     - uses: actions/checkout@v3
