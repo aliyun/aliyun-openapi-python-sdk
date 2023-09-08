@@ -1,3 +1,6 @@
+2023-09-08 Version: 1.0.4
+- Add taskId in WriteFeatureViewTable.
+
 2023-09-04 Version: 1.0.3
 - Add request parameter Name in ListFeatureViews.
 

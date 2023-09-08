@@ -31,20 +31,20 @@ class ListModelFeaturesRequest(RoaRequest):
 
 	def set_Owner(self, Owner):  # String
 		self.add_query_param('Owner', Owner)
-	def get_PageNumber(self): # String
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # String
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
 	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_PageSize(self): # String
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # String
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
