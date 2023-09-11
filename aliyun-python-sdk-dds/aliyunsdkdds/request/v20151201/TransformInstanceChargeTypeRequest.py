@@ -85,3 +85,8 @@ class TransformInstanceChargeTypeRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
+	def get_PricingCycle(self): # String
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self, PricingCycle):  # String
+		self.add_query_param('PricingCycle', PricingCycle)

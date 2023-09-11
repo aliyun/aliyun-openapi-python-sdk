@@ -129,6 +129,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ProvisionedIops(self): # Long
+		return self.get_query_params().get('ProvisionedIops')
+
+	def set_ProvisionedIops(self, ProvisionedIops):  # Long
+		self.add_query_param('ProvisionedIops', ProvisionedIops)
 	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 

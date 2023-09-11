@@ -131,6 +131,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 		for depth1 in range(len(Mongos)):
 			if Mongos[depth1].get('Class') is not None:
 				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongos[depth1].get('Class'))
+	def get_ProvisionedIops(self): # Long
+		return self.get_query_params().get('ProvisionedIops')
+
+	def set_ProvisionedIops(self, ProvisionedIops):  # Long
+		self.add_query_param('ProvisionedIops', ProvisionedIops)
 	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 
