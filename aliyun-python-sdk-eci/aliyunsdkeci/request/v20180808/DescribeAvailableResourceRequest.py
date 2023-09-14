@@ -62,3 +62,28 @@ class DescribeAvailableResourceRequest(RpcRequest):
             self.add_query_param("DestinationResource.Category", DestinationResource.get("Category"))
         if DestinationResource.get("Value") is not None:
             self.add_query_param("DestinationResource.Value", DestinationResource.get("Value"))
+        if DestinationResource.get("Cores") is not None:
+            self.add_query_param("DestinationResource.Cores", DestinationResource.get("Cores"))
+        if DestinationResource.get("Memory") is not None:
+            self.add_query_param("DestinationResource.Memory", DestinationResource.get("Memory"))
+
+    def get_RegionId(self):
+        return self.get_query_params().get("RegionId")
+
+    def set_RegionId(self, RegionId):
+        self.add_query_param("RegionId", RegionId)
+
+    def get_SpotResource(self):
+        return self.get_query_params().get("SpotResource")
+
+    def set_SpotResource(self, SpotResource):
+        if DestinationResource.get("SpotStrategy") is not None:
+            self.add_query_param("SpotResource.SpotStrategy", SpotResource.get("SpotStrategy"))
+        if DestinationResource.get("SpotPriceLimit") is not None:
+            self.add_query_param("SpotResource.SpotPriceLimit", SpotResource.get("SpotPriceLimit"))
+        if DestinationResource.get("SpotDuration") is not None:
+            self.add_query_param("SpotResource.SpotDuration", SpotResource.get("SpotDuration"))
+
+
+
+

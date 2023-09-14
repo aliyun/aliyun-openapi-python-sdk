@@ -244,6 +244,8 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('Container.' + str(i + 1) + '.Tty', Containers[i].get('Tty'))
 			if Containers[i].get('Gpu') is not None:
 				self.add_query_param('Container.' + str(i + 1) + '.Gpu', Containers[i].get('Gpu'))
+			if Containers[i].get('EnvironmentVarHide') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.EnvironmentVarHide', Containers[i].get('EnvironmentVarHide'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
