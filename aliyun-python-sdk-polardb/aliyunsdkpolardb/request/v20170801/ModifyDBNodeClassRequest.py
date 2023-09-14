@@ -46,6 +46,11 @@ class ModifyDBNodeClassRequest(RpcRequest):
 
 	def set_PlannedEndTime(self, PlannedEndTime):  # String
 		self.add_query_param('PlannedEndTime', PlannedEndTime)
+	def get_DBNodeType(self): # String
+		return self.get_query_params().get('DBNodeType')
+
+	def set_DBNodeType(self, DBNodeType):  # String
+		self.add_query_param('DBNodeType', DBNodeType)
 	def get_DBNodeTargetClass(self): # String
 		return self.get_query_params().get('DBNodeTargetClass')
 
