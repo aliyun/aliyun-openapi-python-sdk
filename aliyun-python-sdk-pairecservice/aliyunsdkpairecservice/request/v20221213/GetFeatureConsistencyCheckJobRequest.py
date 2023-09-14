@@ -19,20 +19,20 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class CloneExperimentRequest(RoaRequest):
+class GetFeatureConsistencyCheckJobRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'PaiRecService', '2022-12-13', 'CloneExperiment')
-		self.set_uri_pattern('/api/v1/experiments/[ExperimentId]/action/clone')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'PaiRecService', '2022-12-13', 'GetFeatureConsistencyCheckJob')
+		self.set_uri_pattern('/api/v1/featureconsistencycheck/jobs/[FeatureConsistencyCheckJobId]')
+		self.set_method('GET')
 
-	def get_body(self): # String
-		return self.get_body_params().get('body')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_body(self, body):  # String
-		self.add_body_params('body', body)
-	def get_ExperimentId(self): # String
-		return self.get_path_params().get('ExperimentId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_FeatureConsistencyCheckJobId(self): # String
+		return self.get_path_params().get('FeatureConsistencyCheckJobId')
 
-	def set_ExperimentId(self, ExperimentId):  # String
-		self.add_path_param('ExperimentId', ExperimentId)
+	def set_FeatureConsistencyCheckJobId(self, FeatureConsistencyCheckJobId):  # String
+		self.add_path_param('FeatureConsistencyCheckJobId', FeatureConsistencyCheckJobId)
