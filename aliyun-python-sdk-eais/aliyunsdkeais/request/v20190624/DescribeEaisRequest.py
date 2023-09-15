@@ -46,11 +46,6 @@ class DescribeEaisRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_InstanceName(self): # String
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_query_param('InstanceName', InstanceName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +56,25 @@ class DescribeEaisRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_ClientInstanceId(self): # String
+		return self.get_query_params().get('ClientInstanceId')
+
+	def set_ClientInstanceId(self, ClientInstanceId):  # String
+		self.add_query_param('ClientInstanceId', ClientInstanceId)
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
