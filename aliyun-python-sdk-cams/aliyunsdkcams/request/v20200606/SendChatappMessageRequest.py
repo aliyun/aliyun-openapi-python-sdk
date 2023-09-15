@@ -32,6 +32,11 @@ class SendChatappMessageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProductAction(self): # Struct
+		return self.get_body_params().get('ProductAction')
+
+	def set_ProductAction(self, ProductAction):  # Struct
+		self.add_body_params("ProductAction", json.dumps(ProductAction))
 	def get_MessageType(self): # String
 		return self.get_body_params().get('MessageType')
 

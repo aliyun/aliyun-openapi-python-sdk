@@ -1,3 +1,6 @@
+2023-09-15 Version: 1.0.6
+- Generated 2020-06-06 for `cams`.
+
 2023-05-08 Version: 1.0.5
 - whatsapp 修改Authentication类型的模板
 

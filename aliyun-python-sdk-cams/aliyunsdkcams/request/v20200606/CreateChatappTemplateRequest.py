@@ -82,3 +82,8 @@ class CreateChatappTemplateRequest(RpcRequest):
 
 	def set_Category(self, Category):  # String
 		self.add_body_params('Category', Category)
+	def get_MessageSendTtlSeconds(self): # Integer
+		return self.get_body_params().get('MessageSendTtlSeconds')
+
+	def set_MessageSendTtlSeconds(self, MessageSendTtlSeconds):  # Integer
+		self.add_body_params('MessageSendTtlSeconds', MessageSendTtlSeconds)
