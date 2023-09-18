@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class CreateGlobalSecurityIPGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateGlobalSecurityIPGroup','dds')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
