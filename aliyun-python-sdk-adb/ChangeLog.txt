@@ -1,3 +1,6 @@
+2023-09-18 Version: 1.1.7
+- Public Api.
+
 2023-08-23 Version: 1.1.6
 - Support DryRunCluster For LakeVersion.
 
