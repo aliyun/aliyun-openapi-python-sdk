@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
+import json
 
-class RefundPayAsYouGoOrderRequest(RpcRequest):
+class CreateProcCorrectOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RefundPayAsYouGoOrder','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateProcCorrectOrder','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +37,23 @@ class RefundPayAsYouGoOrderRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
+	def get_Param(self): # Struct
+		return self.get_query_params().get('Param')
 
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_Param(self, Param):  # Struct
+		self.add_query_param("Param", json.dumps(Param))
+	def get_RelatedUserList(self): # Array
+		return self.get_query_params().get('RelatedUserList')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_RelatedUserList(self, RelatedUserList):  # Array
+		self.add_query_param("RelatedUserList", json.dumps(RelatedUserList))
+	def get_AttachmentKey(self): # String
+		return self.get_query_params().get('AttachmentKey')
+
+	def set_AttachmentKey(self, AttachmentKey):  # String
+		self.add_query_param('AttachmentKey', AttachmentKey)
+	def get_Comment(self): # String
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ModifyDesensitizationStrategyRequest(RpcRequest):
+class ChangeColumnSecurityLevelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ModifyDesensitizationStrategy','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ChangeColumnSecurityLevel','dms-enterprise')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +32,16 @@ class ModifyDesensitizationStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsReset(self): # Boolean
-		return self.get_query_params().get('IsReset')
+	def get_NewSensitivityLevel(self): # String
+		return self.get_query_params().get('NewSensitivityLevel')
 
-	def set_IsReset(self, IsReset):  # Boolean
-		self.add_query_param('IsReset', IsReset)
+	def set_NewSensitivityLevel(self, NewSensitivityLevel):  # String
+		self.add_query_param('NewSensitivityLevel', NewSensitivityLevel)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_IsDefault(self): # Boolean
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self, IsDefault):  # Boolean
-		self.add_query_param('IsDefault', IsDefault)
 	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 
@@ -66,13 +62,8 @@ class ModifyDesensitizationStrategyRequest(RpcRequest):
 
 	def set_ColumnName(self, ColumnName):  # String
 		self.add_query_param('ColumnName', ColumnName)
-	def get_DbId(self): # Integer
+	def get_DbId(self): # Long
 		return self.get_query_params().get('DbId')
 
-	def set_DbId(self, DbId):  # Integer
+	def set_DbId(self, DbId):  # Long
 		self.add_query_param('DbId', DbId)
-	def get_RuleId(self): # Integer
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # Integer
-		self.add_query_param('RuleId', RuleId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RefundPayAsYouGoOrderRequest(RpcRequest):
+class GetClassificationTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RefundPayAsYouGoOrder','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetClassificationTemplate','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,8 @@ class RefundPayAsYouGoOrderRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
+	def get_InstanceId(self): # Long
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # String
+	def set_InstanceId(self, InstanceId):  # Long
 		self.add_query_param('InstanceId', InstanceId)

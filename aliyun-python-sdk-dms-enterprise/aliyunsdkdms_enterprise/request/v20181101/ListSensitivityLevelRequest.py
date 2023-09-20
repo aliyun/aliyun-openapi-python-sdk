@@ -20,11 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RefundPayAsYouGoOrderRequest(RpcRequest):
+class ListSensitivityLevelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RefundPayAsYouGoOrder','dms-enterprise')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitivityLevel','dms-enterprise')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,13 +37,13 @@ class RefundPayAsYouGoOrderRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_OrderId(self): # String
-		return self.get_query_params().get('OrderId')
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
 
-	def set_OrderId(self, OrderId):  # String
-		self.add_query_param('OrderId', OrderId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
