@@ -67,6 +67,11 @@ class SendChatappMassMessageRequest(RpcRequest):
 
 	def set_Tag(self, Tag):  # String
 		self.add_body_params('Tag', Tag)
+	def get_FallBackRule(self): # String
+		return self.get_body_params().get('FallBackRule')
+
+	def set_FallBackRule(self, FallBackRule):  # String
+		self.add_body_params('FallBackRule', FallBackRule)
 	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
