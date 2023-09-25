@@ -1,3 +1,9 @@
+2023-09-25 Version 2.14.0
+1, Improve the design of nonce.
+2, Improve coding style.
+3, Update vendored version of six from "1.10.0" to "1.16.0".
+4, Remove cgi.py in vendored requests.
+
 2020-05-11 Version 2.13.35
 1, Add proxy args.
 
