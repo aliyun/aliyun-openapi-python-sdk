@@ -30,16 +30,16 @@ class ModifyFirewallRuleRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_SourceCidrIp(self): # String
-		return self.get_query_params().get('SourceCidrIp')
-
-	def set_SourceCidrIp(self, SourceCidrIp):  # String
-		self.add_query_param('SourceCidrIp', SourceCidrIp)
 	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_SourceCidrIp(self): # String
+		return self.get_query_params().get('SourceCidrIp')
+
+	def set_SourceCidrIp(self, SourceCidrIp):  # String
+		self.add_query_param('SourceCidrIp', SourceCidrIp)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

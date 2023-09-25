@@ -45,13 +45,13 @@ class CreateCustomImageRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
