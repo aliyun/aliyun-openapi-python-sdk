@@ -31,6 +31,11 @@ class GetProjectRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProjectIdentifier(self): # String
+		return self.get_query_params().get('ProjectIdentifier')
+
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+		self.add_query_param('ProjectIdentifier', ProjectIdentifier)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

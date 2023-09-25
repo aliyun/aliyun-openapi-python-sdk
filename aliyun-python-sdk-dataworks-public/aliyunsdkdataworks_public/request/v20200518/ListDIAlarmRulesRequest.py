@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class AddMetaCollectionEntityRequest(RpcRequest):
+class ListDIAlarmRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'AddMetaCollectionEntity')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDIAlarmRules')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,18 @@ class AddMetaCollectionEntityRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EntityQualifiedName(self): # String
-		return self.get_query_params().get('EntityQualifiedName')
+	def get_PageNumber(self): # Long
+		return self.get_body_params().get('PageNumber')
 
-	def set_EntityQualifiedName(self, EntityQualifiedName):  # String
-		self.add_query_param('EntityQualifiedName', EntityQualifiedName)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_body_params('PageNumber', PageNumber)
+	def get_DIJobId(self): # Long
+		return self.get_body_params().get('DIJobId')
 
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)
-	def get_CollectionQualifiedName(self): # String
-		return self.get_query_params().get('CollectionQualifiedName')
+	def set_DIJobId(self, DIJobId):  # Long
+		self.add_body_params('DIJobId', DIJobId)
+	def get_PageSize(self): # Long
+		return self.get_body_params().get('PageSize')
 
-	def set_CollectionQualifiedName(self, CollectionQualifiedName):  # String
-		self.add_query_param('CollectionQualifiedName', CollectionQualifiedName)
+	def set_PageSize(self, PageSize):  # Long
+		self.add_body_params('PageSize', PageSize)

@@ -19,30 +19,36 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
+import json
 
-class AddMetaCollectionEntityRequest(RpcRequest):
+class ListEntitiesByTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'AddMetaCollectionEntity')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListEntitiesByTags')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EntityQualifiedName(self): # String
-		return self.get_query_params().get('EntityQualifiedName')
+	def get_EntityType(self): # String
+		return self.get_query_params().get('EntityType')
 
-	def set_EntityQualifiedName(self, EntityQualifiedName):  # String
-		self.add_query_param('EntityQualifiedName', EntityQualifiedName)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
+	def set_EntityType(self, EntityType):  # String
+		self.add_query_param('EntityType', EntityType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)
-	def get_CollectionQualifiedName(self): # String
-		return self.get_query_params().get('CollectionQualifiedName')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_CollectionQualifiedName(self, CollectionQualifiedName):  # String
-		self.add_query_param('CollectionQualifiedName', CollectionQualifiedName)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))

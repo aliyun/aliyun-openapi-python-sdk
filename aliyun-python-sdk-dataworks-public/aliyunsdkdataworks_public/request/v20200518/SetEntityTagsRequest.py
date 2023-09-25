@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
+import json
 
-class AddMetaCollectionEntityRequest(RpcRequest):
+class SetEntityTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'AddMetaCollectionEntity')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'SetEntityTags')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +32,13 @@ class AddMetaCollectionEntityRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EntityQualifiedName(self): # String
-		return self.get_query_params().get('EntityQualifiedName')
+	def get_QualifiedName(self): # String
+		return self.get_query_params().get('QualifiedName')
 
-	def set_EntityQualifiedName(self, EntityQualifiedName):  # String
-		self.add_query_param('EntityQualifiedName', EntityQualifiedName)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
+	def set_QualifiedName(self, QualifiedName):  # String
+		self.add_query_param('QualifiedName', QualifiedName)
+	def get_Tags(self): # Array
+		return self.get_body_params().get('Tags')
 
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)
-	def get_CollectionQualifiedName(self): # String
-		return self.get_query_params().get('CollectionQualifiedName')
-
-	def set_CollectionQualifiedName(self, CollectionQualifiedName):  # String
-		self.add_query_param('CollectionQualifiedName', CollectionQualifiedName)
+	def set_Tags(self, Tags):  # Array
+		self.add_body_params("Tags", json.dumps(Tags))
