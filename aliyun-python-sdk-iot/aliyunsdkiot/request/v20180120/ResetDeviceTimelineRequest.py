@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SetDevicesPropertyRequest(RpcRequest):
+class ResetDeviceTimelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDevicesProperty')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ResetDeviceTimeline')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Qos(self):
-		return self.get_query_params().get('Qos')
-
-	def set_Qos(self,Qos):
-		self.add_query_param('Qos',Qos)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -49,16 +43,8 @@ class SetDevicesPropertyRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_DeviceNames(self):
+	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
-	def set_DeviceNames(self, DeviceNames):
-		for depth1 in range(len(DeviceNames)):
-			if DeviceNames[depth1] is not None:
-				self.add_query_param('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])
-
-	def get_Items(self):
-		return self.get_query_params().get('Items')
-
-	def set_Items(self,Items):
-		self.add_query_param('Items',Items)
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
