@@ -1,3 +1,6 @@
+2023-09-26 Version: 2.20.9
+- Update us-east-1 us-west-1 endpoint.
+
 2023-04-12 Version: 2.20.8
 - Update Python Sdk.
 

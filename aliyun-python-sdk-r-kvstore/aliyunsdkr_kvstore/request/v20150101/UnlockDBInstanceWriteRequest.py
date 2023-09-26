@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DeleteGlobalSecurityIPGroupRequest(RpcRequest):
+class UnlockDBInstanceWriteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DeleteGlobalSecurityIPGroup','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'UnlockDBInstanceWrite','redisa')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +37,16 @@ class DeleteGlobalSecurityIPGroupRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_GlobalSecurityGroupId(self): # String
-		return self.get_query_params().get('GlobalSecurityGroupId')
-
-	def set_GlobalSecurityGroupId(self, GlobalSecurityGroupId):  # String
-		self.add_query_param('GlobalSecurityGroupId', GlobalSecurityGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_DBInstanceId(self): # String
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +62,3 @@ class DeleteGlobalSecurityIPGroupRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_GlobalIgName(self): # String
-		return self.get_query_params().get('GlobalIgName')
-
-	def set_GlobalIgName(self, GlobalIgName):  # String
-		self.add_query_param('GlobalIgName', GlobalIgName)

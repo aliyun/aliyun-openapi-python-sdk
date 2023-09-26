@@ -205,6 +205,11 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_GlobalInstanceId(self, GlobalInstanceId):  # String
 		self.add_query_param('GlobalInstanceId', GlobalInstanceId)
+	def get_ParamGroupId(self): # String
+		return self.get_query_params().get('ParamGroupId')
+
+	def set_ParamGroupId(self, ParamGroupId):  # String
+		self.add_query_param('ParamGroupId', ParamGroupId)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

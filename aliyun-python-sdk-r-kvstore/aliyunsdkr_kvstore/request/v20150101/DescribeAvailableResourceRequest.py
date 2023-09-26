@@ -96,6 +96,11 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_InstanceScene(self): # String
+		return self.get_query_params().get('InstanceScene')
+
+	def set_InstanceScene(self, InstanceScene):  # String
+		self.add_query_param('InstanceScene', InstanceScene)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

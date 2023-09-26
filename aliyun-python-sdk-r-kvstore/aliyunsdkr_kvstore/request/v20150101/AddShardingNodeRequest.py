@@ -81,6 +81,16 @@ class AddShardingNodeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ForceTrans(self): # Boolean
+		return self.get_query_params().get('ForceTrans')
+
+	def set_ForceTrans(self, ForceTrans):  # Boolean
+		self.add_query_param('ForceTrans', ForceTrans)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

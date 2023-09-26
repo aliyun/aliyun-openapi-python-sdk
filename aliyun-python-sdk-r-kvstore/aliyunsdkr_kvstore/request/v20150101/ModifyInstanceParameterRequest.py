@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class ModifyGlobalSecurityIPGroupRelationRequest(RpcRequest):
+class ModifyInstanceParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyGlobalSecurityIPGroupRelation','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceParameter','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,11 @@ class ModifyGlobalSecurityIPGroupRelationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ParameterGroupId(self): # String
+		return self.get_query_params().get('ParameterGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_GlobalSecurityGroupId(self): # String
-		return self.get_query_params().get('GlobalSecurityGroupId')
-
-	def set_GlobalSecurityGroupId(self, GlobalSecurityGroupId):  # String
-		self.add_query_param('GlobalSecurityGroupId', GlobalSecurityGroupId)
+	def set_ParameterGroupId(self, ParameterGroupId):  # String
+		self.add_query_param('ParameterGroupId', ParameterGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -56,11 +51,6 @@ class ModifyGlobalSecurityIPGroupRelationRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DBClusterId(self): # String
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
@@ -71,3 +61,13 @@ class ModifyGlobalSecurityIPGroupRelationRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Parameters(self): # String
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

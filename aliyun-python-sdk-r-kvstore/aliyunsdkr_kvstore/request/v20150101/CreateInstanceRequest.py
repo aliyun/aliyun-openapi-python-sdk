@@ -36,6 +36,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ConnectionStringPrefix(self): # String
+		return self.get_query_params().get('ConnectionStringPrefix')
+
+	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
+		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
 	def get_SecondaryZoneId(self): # String
 		return self.get_query_params().get('SecondaryZoneId')
 
@@ -150,6 +155,16 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_Appendonly(self): # String
+		return self.get_query_params().get('Appendonly')
+
+	def set_Appendonly(self, Appendonly):  # String
+		self.add_query_param('Appendonly', Appendonly)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
 	def get_AutoUseCoupon(self): # String
 		return self.get_query_params().get('AutoUseCoupon')
 
@@ -210,6 +225,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_GlobalInstanceId(self, GlobalInstanceId):  # String
 		self.add_query_param('GlobalInstanceId', GlobalInstanceId)
+	def get_ParamGroupId(self): # String
+		return self.get_query_params().get('ParamGroupId')
+
+	def set_ParamGroupId(self, ParamGroupId):  # String
+		self.add_query_param('ParamGroupId', ParamGroupId)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

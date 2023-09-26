@@ -101,3 +101,8 @@ class EnableAdditionalBandwidthRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # Boolean
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
