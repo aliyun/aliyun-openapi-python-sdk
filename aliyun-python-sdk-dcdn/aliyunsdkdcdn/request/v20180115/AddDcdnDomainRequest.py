@@ -36,6 +36,11 @@ class AddDcdnDomainRequest(RpcRequest):
 
 	def set_Sources(self, Sources):  # String
 		self.add_query_param('Sources', Sources)
+	def get_Scene(self): # String
+		return self.get_query_params().get('Scene')
+
+	def set_Scene(self, Scene):  # String
+		self.add_query_param('Scene', Scene)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -75,6 +80,11 @@ class AddDcdnDomainRequest(RpcRequest):
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
+	def get_FunctionType(self): # String
+		return self.get_query_params().get('FunctionType')
+
+	def set_FunctionType(self, FunctionType):  # String
+		self.add_query_param('FunctionType', FunctionType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

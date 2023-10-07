@@ -36,6 +36,11 @@ class DescribeDcdnDomainByCertificateRequest(RpcRequest):
 
 	def set_SSLPub(self, SSLPub):  # String
 		self.add_query_param('SSLPub', SSLPub)
+	def get_Exact(self): # Boolean
+		return self.get_query_params().get('Exact')
+
+	def set_Exact(self, Exact):  # Boolean
+		self.add_query_param('Exact', Exact)
 	def get_SSLStatus(self): # Boolean
 		return self.get_query_params().get('SSLStatus')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class PutDcdnKvRequest(RpcRequest):
+class SetDcdnFullDomainsBlockIPRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'PutDcdnKv')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'SetDcdnFullDomainsBlockIP')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class PutDcdnKvRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpirationTtl(self): # Long
-		return self.get_query_params().get('ExpirationTtl')
+	def get_BlockInterval(self): # Integer
+		return self.get_body_params().get('BlockInterval')
 
-	def set_ExpirationTtl(self, ExpirationTtl):  # Long
-		self.add_query_param('ExpirationTtl', ExpirationTtl)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
+	def set_BlockInterval(self, BlockInterval):  # Integer
+		self.add_body_params('BlockInterval', BlockInterval)
+	def get_UpdateType(self): # String
+		return self.get_body_params().get('UpdateType')
 
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_Expiration(self): # Long
-		return self.get_query_params().get('Expiration')
+	def set_UpdateType(self, UpdateType):  # String
+		self.add_body_params('UpdateType', UpdateType)
+	def get_OperationType(self): # String
+		return self.get_body_params().get('OperationType')
 
-	def set_Expiration(self, Expiration):  # Long
-		self.add_query_param('Expiration', Expiration)
-	def get_Value(self): # String
-		return self.get_body_params().get('Value')
+	def set_OperationType(self, OperationType):  # String
+		self.add_body_params('OperationType', OperationType)
+	def get_IPList(self): # String
+		return self.get_body_params().get('IPList')
 
-	def set_Value(self, Value):  # String
-		self.add_body_params('Value', Value)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+	def set_IPList(self, IPList):  # String
+		self.add_body_params('IPList', IPList)

@@ -20,39 +20,14 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class PutDcdnKvRequest(RpcRequest):
+class DescribeDcdnKvAccountStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'PutDcdnKv')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnKvAccountStatus')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpirationTtl(self): # Long
-		return self.get_query_params().get('ExpirationTtl')
-
-	def set_ExpirationTtl(self, ExpirationTtl):  # Long
-		self.add_query_param('ExpirationTtl', ExpirationTtl)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_Expiration(self): # Long
-		return self.get_query_params().get('Expiration')
-
-	def set_Expiration(self, Expiration):  # Long
-		self.add_query_param('Expiration', Expiration)
-	def get_Value(self): # String
-		return self.get_body_params().get('Value')
-
-	def set_Value(self, Value):  # String
-		self.add_body_params('Value', Value)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class PutDcdnKvRequest(RpcRequest):
+class DescribeHighlightInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'PutDcdnKv')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeHighlightInfo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class PutDcdnKvRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpirationTtl(self): # Long
-		return self.get_query_params().get('ExpirationTtl')
+	def get_TraceId(self): # String
+		return self.get_query_params().get('TraceId')
 
-	def set_ExpirationTtl(self, ExpirationTtl):  # Long
-		self.add_query_param('ExpirationTtl', ExpirationTtl)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
+	def set_TraceId(self, TraceId):  # String
+		self.add_query_param('TraceId', TraceId)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_Expiration(self): # Long
-		return self.get_query_params().get('Expiration')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_Expiration(self, Expiration):  # Long
-		self.add_query_param('Expiration', Expiration)
-	def get_Value(self): # String
-		return self.get_body_params().get('Value')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
 
-	def set_Value(self, Value):  # String
-		self.add_body_params('Value', Value)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
