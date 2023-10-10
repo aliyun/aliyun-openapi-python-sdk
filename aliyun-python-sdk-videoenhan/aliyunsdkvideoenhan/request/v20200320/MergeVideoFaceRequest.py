@@ -36,6 +36,11 @@ class MergeVideoFaceRequest(RpcRequest):
 
 	def set_ReferenceURL(self, ReferenceURL):  # String
 		self.add_body_params('ReferenceURL', ReferenceURL)
+	def get_WatermarkType(self): # String
+		return self.get_body_params().get('WatermarkType')
+
+	def set_WatermarkType(self, WatermarkType):  # String
+		self.add_body_params('WatermarkType', WatermarkType)
 	def get_Enhance(self): # Boolean
 		return self.get_body_params().get('Enhance')
 
