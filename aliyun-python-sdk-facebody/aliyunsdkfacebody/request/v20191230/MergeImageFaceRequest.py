@@ -40,6 +40,11 @@ class MergeImageFaceRequest(RpcRequest):
 				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.ImageURL', MergeInfos[depth1].get('ImageURL'))
 			if MergeInfos[depth1].get('TemplateFaceID') is not None:
 				self.add_body_params('MergeInfos.' + str(depth1 + 1) + '.TemplateFaceID', MergeInfos[depth1].get('TemplateFaceID'))
+	def get_WatermarkType(self): # String
+		return self.get_body_params().get('WatermarkType')
+
+	def set_WatermarkType(self, WatermarkType):  # String
+		self.add_body_params('WatermarkType', WatermarkType)
 	def get_TemplateId(self): # String
 		return self.get_body_params().get('TemplateId')
 
