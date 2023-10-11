@@ -25,50 +25,44 @@ class QueryGateVerifyStatisticPublicRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QueryGateVerifyStatisticPublic')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthenticationType(self):
+	def get_AuthenticationType(self): # Integer
 		return self.get_query_params().get('AuthenticationType')
 
-	def set_AuthenticationType(self,AuthenticationType):
-		self.add_query_param('AuthenticationType',AuthenticationType)
-
-	def get_StartDate(self):
+	def set_AuthenticationType(self, AuthenticationType):  # Integer
+		self.add_query_param('AuthenticationType', AuthenticationType)
+	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_SceneCode(self):
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_SceneCode(self): # String
 		return self.get_query_params().get('SceneCode')
 
-	def set_SceneCode(self,SceneCode):
-		self.add_query_param('SceneCode',SceneCode)
-
-	def get_ResourceOwnerAccount(self):
+	def set_SceneCode(self, SceneCode):  # String
+		self.add_query_param('SceneCode', SceneCode)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OsType(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OsType(self): # String
 		return self.get_query_params().get('OsType')
 
-	def set_OsType(self,OsType):
-		self.add_query_param('OsType',OsType)
-
-	def get_OwnerId(self):
+	def set_OsType(self, OsType):  # String
+		self.add_query_param('OsType', OsType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_EndDate(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)

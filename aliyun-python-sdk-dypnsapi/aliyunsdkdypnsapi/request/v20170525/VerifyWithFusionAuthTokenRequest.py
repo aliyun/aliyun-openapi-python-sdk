@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class VerifyWithFusionAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyWithFusionAuthToken')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,18 +41,13 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_VerifyToken(self): # String
+		return self.get_query_params().get('VerifyToken')
+
+	def set_VerifyToken(self, VerifyToken):  # String
+		self.add_query_param('VerifyToken', VerifyToken)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
-
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
-
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)

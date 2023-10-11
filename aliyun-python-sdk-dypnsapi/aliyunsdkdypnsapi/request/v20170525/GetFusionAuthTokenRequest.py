@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class GetFusionAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetFusionAuthToken')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,23 +36,43 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_BundleId(self): # String
+		return self.get_query_params().get('BundleId')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_BundleId(self, BundleId):  # String
+		self.add_query_param('BundleId', BundleId)
+	def get_Platform(self): # String
+		return self.get_query_params().get('Platform')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_Platform(self, Platform):  # String
+		self.add_query_param('Platform', Platform)
 	def get_SchemeCode(self): # String
 		return self.get_query_params().get('SchemeCode')
 
 	def set_SchemeCode(self, SchemeCode):  # String
 		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_PackageName(self): # String
+		return self.get_query_params().get('PackageName')
+
+	def set_PackageName(self, PackageName):  # String
+		self.add_query_param('PackageName', PackageName)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PackageSign(self): # String
+		return self.get_query_params().get('PackageSign')
+
+	def set_PackageSign(self, PackageSign):  # String
+		self.add_query_param('PackageSign', PackageSign)
+	def get_DurationSeconds(self): # Long
+		return self.get_query_params().get('DurationSeconds')
+
+	def set_DurationSeconds(self, DurationSeconds):  # Long
+		self.add_query_param('DurationSeconds', DurationSeconds)

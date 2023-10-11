@@ -25,32 +25,29 @@ class QueryGateVerifyBillingPublicRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QueryGateVerifyBillingPublic')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthenticationType(self):
+	def get_AuthenticationType(self): # Integer
 		return self.get_query_params().get('AuthenticationType')
 
-	def set_AuthenticationType(self,AuthenticationType):
-		self.add_query_param('AuthenticationType',AuthenticationType)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AuthenticationType(self, AuthenticationType):  # Integer
+		self.add_query_param('AuthenticationType', AuthenticationType)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Month(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Month(self): # String
 		return self.get_query_params().get('Month')
 
-	def set_Month(self,Month):
-		self.add_query_param('Month',Month)
+	def set_Month(self, Month):  # String
+		self.add_query_param('Month', Month)

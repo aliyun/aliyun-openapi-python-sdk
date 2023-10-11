@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class CheckSmsVerifyCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'CheckSmsVerifyCode')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,31 @@ class DescribeVerifySchemeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CaseAuthPolicy(self): # Long
+		return self.get_query_params().get('CaseAuthPolicy')
+
+	def set_CaseAuthPolicy(self, CaseAuthPolicy):  # Long
+		self.add_query_param('CaseAuthPolicy', CaseAuthPolicy)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CountryCode(self): # String
+		return self.get_query_params().get('CountryCode')
+
+	def set_CountryCode(self, CountryCode):  # String
+		self.add_query_param('CountryCode', CountryCode)
+	def get_PhoneNumber(self): # String
+		return self.get_query_params().get('PhoneNumber')
+
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_VerifyCode(self): # String
+		return self.get_query_params().get('VerifyCode')
+
+	def set_VerifyCode(self, VerifyCode):  # String
+		self.add_query_param('VerifyCode', VerifyCode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,13 +66,13 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
+	def get_SchemeName(self): # String
+		return self.get_query_params().get('SchemeName')
 
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
+	def set_SchemeName(self, SchemeName):  # String
+		self.add_query_param('SchemeName', SchemeName)
+	def get_OutId(self): # String
+		return self.get_query_params().get('OutId')
 
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_OutId(self, OutId):  # String
+		self.add_query_param('OutId', OutId)

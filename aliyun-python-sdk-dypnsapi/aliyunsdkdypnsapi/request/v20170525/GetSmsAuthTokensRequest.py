@@ -25,74 +25,64 @@ class GetSmsAuthTokensRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetSmsAuthTokens')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_BundleId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_BundleId(self): # String
 		return self.get_query_params().get('BundleId')
 
-	def set_BundleId(self,BundleId):
-		self.add_query_param('BundleId',BundleId)
-
-	def get_SignName(self):
+	def set_BundleId(self, BundleId):  # String
+		self.add_query_param('BundleId', BundleId)
+	def get_SignName(self): # String
 		return self.get_query_params().get('SignName')
 
-	def set_SignName(self,SignName):
-		self.add_query_param('SignName',SignName)
-
-	def get_SceneCode(self):
+	def set_SignName(self, SignName):  # String
+		self.add_query_param('SignName', SignName)
+	def get_SceneCode(self): # String
 		return self.get_query_params().get('SceneCode')
 
-	def set_SceneCode(self,SceneCode):
-		self.add_query_param('SceneCode',SceneCode)
-
-	def get_ResourceOwnerAccount(self):
+	def set_SceneCode(self, SceneCode):  # String
+		self.add_query_param('SceneCode', SceneCode)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SmsCodeExpire(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SmsCodeExpire(self): # Integer
 		return self.get_query_params().get('SmsCodeExpire')
 
-	def set_SmsCodeExpire(self,SmsCodeExpire):
-		self.add_query_param('SmsCodeExpire',SmsCodeExpire)
-
-	def get_PackageName(self):
+	def set_SmsCodeExpire(self, SmsCodeExpire):  # Integer
+		self.add_query_param('SmsCodeExpire', SmsCodeExpire)
+	def get_PackageName(self): # String
 		return self.get_query_params().get('PackageName')
 
-	def set_PackageName(self,PackageName):
-		self.add_query_param('PackageName',PackageName)
-
-	def get_OsType(self):
+	def set_PackageName(self, PackageName):  # String
+		self.add_query_param('PackageName', PackageName)
+	def get_OsType(self): # String
 		return self.get_query_params().get('OsType')
 
-	def set_OsType(self,OsType):
-		self.add_query_param('OsType',OsType)
-
-	def get_OwnerId(self):
+	def set_OsType(self, OsType):  # String
+		self.add_query_param('OsType', OsType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SmsTemplateCode(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SmsTemplateCode(self): # String
 		return self.get_query_params().get('SmsTemplateCode')
 
-	def set_SmsTemplateCode(self,SmsTemplateCode):
-		self.add_query_param('SmsTemplateCode',SmsTemplateCode)
-
-	def get_Expire(self):
+	def set_SmsTemplateCode(self, SmsTemplateCode):  # String
+		self.add_query_param('SmsTemplateCode', SmsTemplateCode)
+	def get_Expire(self): # Long
 		return self.get_query_params().get('Expire')
 
-	def set_Expire(self,Expire):
-		self.add_query_param('Expire',Expire)
+	def set_Expire(self, Expire):  # Long
+		self.add_query_param('Expire', Expire)
