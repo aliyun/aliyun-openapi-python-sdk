@@ -46,3 +46,8 @@ class CreateCacheAnalysisJobRequest(RpcRequest):
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_query_param('NodeId', NodeId)
+	def get_Separators(self): # String
+		return self.get_query_params().get('Separators')
+
+	def set_Separators(self, Separators):  # String
+		self.add_query_param('Separators', Separators)

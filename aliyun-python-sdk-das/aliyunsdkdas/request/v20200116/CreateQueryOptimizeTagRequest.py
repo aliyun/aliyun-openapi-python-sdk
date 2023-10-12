@@ -20,34 +20,44 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetQueryOptimizeSolutionRequest(RpcRequest):
+class CreateQueryOptimizeTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeSolution')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateQueryOptimizeTag')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SqlId(self): # String
-		return self.get_query_params().get('SqlId')
-
-	def set_SqlId(self, SqlId):  # String
-		self.add_query_param('SqlId', SqlId)
-	def get_RuleIds(self): # String
-		return self.get_query_params().get('RuleIds')
-
-	def set_RuleIds(self, RuleIds):  # String
-		self.add_query_param('RuleIds', RuleIds)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 
 	def set_Engine(self, Engine):  # String
 		self.add_query_param('Engine', Engine)
+	def get_SqlIds(self): # String
+		return self.get_query_params().get('SqlIds')
+
+	def set_SqlIds(self, SqlIds):  # String
+		self.add_query_param('SqlIds', SqlIds)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)
+	def get_Comments(self): # String
+		return self.get_query_params().get('Comments')
+
+	def set_Comments(self, Comments):  # String
+		self.add_query_param('Comments', Comments)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

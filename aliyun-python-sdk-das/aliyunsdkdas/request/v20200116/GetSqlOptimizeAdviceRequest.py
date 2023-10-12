@@ -56,3 +56,8 @@ class GetSqlOptimizeAdviceRequest(RpcRequest):
 
 	def set_StartDt(self, StartDt):  # String
 		self.add_query_param('StartDt', StartDt)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

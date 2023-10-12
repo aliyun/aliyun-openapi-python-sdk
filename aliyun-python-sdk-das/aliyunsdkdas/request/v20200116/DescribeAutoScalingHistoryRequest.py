@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetQueryOptimizeSolutionRequest(RpcRequest):
+class DescribeAutoScalingHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetQueryOptimizeSolution')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeAutoScalingHistory')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class GetQueryOptimizeSolutionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SqlId(self): # String
-		return self.get_query_params().get('SqlId')
-
-	def set_SqlId(self, SqlId):  # String
-		self.add_query_param('SqlId', SqlId)
-	def get_RuleIds(self): # String
-		return self.get_query_params().get('RuleIds')
-
-	def set_RuleIds(self, RuleIds):  # String
-		self.add_query_param('RuleIds', RuleIds)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_Engine(self): # String
-		return self.get_query_params().get('Engine')
+	def get_AutoScalingTaskType(self): # String
+		return self.get_query_params().get('AutoScalingTaskType')
 
-	def set_Engine(self, Engine):  # String
-		self.add_query_param('Engine', Engine)
+	def set_AutoScalingTaskType(self, AutoScalingTaskType):  # String
+		self.add_query_param('AutoScalingTaskType', AutoScalingTaskType)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)

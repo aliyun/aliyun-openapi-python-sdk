@@ -56,3 +56,8 @@ class GetQueryOptimizeDataTopRequest(RpcRequest):
 
 	def set_Time(self, Time):  # String
 		self.add_query_param('Time', Time)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
