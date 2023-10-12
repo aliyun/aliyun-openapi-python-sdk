@@ -400,6 +400,12 @@ class CreateEciScalingConfigurationRequest(RpcRequest):
 						self.add_query_param('InitContainer.' + str(depth1 + 1) + '.InitContainerVolumeMount.'  + str(depth2 + 1) + '.SubPath', InitContainer[depth1].get('InitContainerVolumeMount')[depth2].get('SubPath'))
 			if InitContainer[depth1].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
 				self.add_query_param('InitContainer.' + str(depth1 + 1) + '.SecurityContext.ReadOnlyRootFilesystem', InitContainer[depth1].get('SecurityContext.ReadOnlyRootFilesystem'))
+	def get_InstanceTypes(self): # RepeatList
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceTypes(self, InstanceType):  # RepeatList
+		for depth1 in range(len(InstanceType)):
+			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType[depth1])
 	def get_TerminationGracePeriodSeconds(self): # Long
 		return self.get_query_params().get('TerminationGracePeriodSeconds')
 

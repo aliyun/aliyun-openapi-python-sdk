@@ -138,6 +138,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_SpotAllocationStrategy(self, SpotAllocationStrategy):  # String
 		self.add_query_param('SpotAllocationStrategy', SpotAllocationStrategy)
+	def get_DisableDesiredCapacity(self): # Boolean
+		return self.get_query_params().get('DisableDesiredCapacity')
+
+	def set_DisableDesiredCapacity(self, DisableDesiredCapacity):  # Boolean
+		self.add_query_param('DisableDesiredCapacity', DisableDesiredCapacity)
 	def get_RemovalPolicy1(self): # String
 		return self.get_query_params().get('RemovalPolicy.1')
 
