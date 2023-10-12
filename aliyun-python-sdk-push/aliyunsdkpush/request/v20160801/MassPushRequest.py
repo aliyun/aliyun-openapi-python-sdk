@@ -74,6 +74,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.ExpireTime', PushTask[depth1].get('ExpireTime'))
 			if PushTask[depth1].get('AndroidImageUrl') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidImageUrl', PushTask[depth1].get('AndroidImageUrl'))
+			if PushTask[depth1].get('AndroidHonorTargetUserType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidHonorTargetUserType', PushTask[depth1].get('AndroidHonorTargetUserType'))
 			if PushTask[depth1].get('AndroidNotificationVivoChannel') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationVivoChannel', PushTask[depth1].get('AndroidNotificationVivoChannel'))
 			if PushTask[depth1].get('iOSNotificationCategory') is not None:
@@ -136,6 +138,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationHonorChannel', PushTask[depth1].get('AndroidNotificationHonorChannel'))
 			if PushTask[depth1].get('AndroidXiaomiImageUrl') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaomiImageUrl', PushTask[depth1].get('AndroidXiaomiImageUrl'))
+			if PushTask[depth1].get('AndroidTargetUserType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidTargetUserType', PushTask[depth1].get('AndroidTargetUserType'))
 			if PushTask[depth1].get('AndroidPopupBody') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupBody', PushTask[depth1].get('AndroidPopupBody'))
 			if PushTask[depth1].get('AndroidBigPictureUrl') is not None:

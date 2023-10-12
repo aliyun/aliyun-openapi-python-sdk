@@ -131,6 +131,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidImageUrl(self, AndroidImageUrl):  # String
 		self.add_query_param('AndroidImageUrl', AndroidImageUrl)
+	def get_AndroidHonorTargetUserType(self): # Integer
+		return self.get_query_params().get('AndroidHonorTargetUserType')
+
+	def set_AndroidHonorTargetUserType(self, AndroidHonorTargetUserType):  # Integer
+		self.add_query_param('AndroidHonorTargetUserType', AndroidHonorTargetUserType)
 	def get_AndroidNotificationVivoChannel(self): # String
 		return self.get_query_params().get('AndroidNotificationVivoChannel')
 
@@ -296,6 +301,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidXiaomiImageUrl(self, AndroidXiaomiImageUrl):  # String
 		self.add_query_param('AndroidXiaomiImageUrl', AndroidXiaomiImageUrl)
+	def get_AndroidTargetUserType(self): # Integer
+		return self.get_query_params().get('AndroidTargetUserType')
+
+	def set_AndroidTargetUserType(self, AndroidTargetUserType):  # Integer
+		self.add_query_param('AndroidTargetUserType', AndroidTargetUserType)
 	def get_SmsTemplateName(self): # String
 		return self.get_query_params().get('SmsTemplateName')
 
