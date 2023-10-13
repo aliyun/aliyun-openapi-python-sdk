@@ -77,11 +77,11 @@ class DescribeAvailableResourceRequest(RpcRequest):
         return self.get_query_params().get("SpotResource")
 
     def set_SpotResource(self, SpotResource):
-        if DestinationResource.get("SpotStrategy") is not None:
+        if SpotResource.get("SpotStrategy") is not None:
             self.add_query_param("SpotResource.SpotStrategy", SpotResource.get("SpotStrategy"))
-        if DestinationResource.get("SpotPriceLimit") is not None:
+        if SpotResource.get("SpotPriceLimit") is not None:
             self.add_query_param("SpotResource.SpotPriceLimit", SpotResource.get("SpotPriceLimit"))
-        if DestinationResource.get("SpotDuration") is not None:
+        if SpotResource.get("SpotDuration") is not None:
             self.add_query_param("SpotResource.SpotDuration", SpotResource.get("SpotDuration"))
 
 
