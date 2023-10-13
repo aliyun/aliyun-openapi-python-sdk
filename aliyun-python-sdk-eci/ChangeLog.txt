@@ -1,3 +1,6 @@
+2023-10-13 Version: 1.3.1
+1、SpotResource
+
 2023-09-14 Version: 1.3.0
 1、Container env support hide
 2、DescribeAvalibleResource api parameters make up
