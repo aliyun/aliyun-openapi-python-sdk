@@ -36,16 +36,6 @@ class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Key(self): # String
-		return self.get_query_params().get('Key')
-
-	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +56,23 @@ class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourcePools(self): # String
+		return self.get_query_params().get('ResourcePools')
+
+	def set_ResourcePools(self, ResourcePools):  # String
+		self.add_query_param('ResourcePools', ResourcePools)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
+
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)
