@@ -61,6 +61,11 @@ class CreateLiveStreamMonitorRequest(RpcRequest):
 
 	def set_InputList(self, InputList):  # String
 		self.add_query_param('InputList', InputList)
+	def get_DingTalkWebHookUrl(self): # String
+		return self.get_query_params().get('DingTalkWebHookUrl')
+
+	def set_DingTalkWebHookUrl(self, DingTalkWebHookUrl):  # String
+		self.add_query_param('DingTalkWebHookUrl', DingTalkWebHookUrl)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -71,3 +76,8 @@ class CreateLiveStreamMonitorRequest(RpcRequest):
 
 	def set_Domain(self, Domain):  # String
 		self.add_query_param('Domain', Domain)
+	def get_CallbackUrl(self): # String
+		return self.get_query_params().get('CallbackUrl')
+
+	def set_CallbackUrl(self, CallbackUrl):  # String
+		self.add_query_param('CallbackUrl', CallbackUrl)

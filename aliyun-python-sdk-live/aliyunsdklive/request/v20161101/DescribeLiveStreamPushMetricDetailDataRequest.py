@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainStreamTranscodeDataRequest(RpcRequest):
+class DescribeLiveStreamPushMetricDetailDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainStreamTranscodeData','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamPushMetricDetailData','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,26 @@ class DescribeLiveDomainStreamTranscodeDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Precision(self): # String
-		return self.get_query_params().get('Precision')
+	def get_NextPageToken(self): # String
+		return self.get_query_params().get('NextPageToken')
 
-	def set_Precision(self, Precision):  # String
-		self.add_query_param('Precision', Precision)
+	def set_NextPageToken(self, NextPageToken):  # String
+		self.add_query_param('NextPageToken', NextPageToken)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_Split(self): # String
-		return self.get_query_params().get('Split')
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_Split(self, Split):  # String
-		self.add_query_param('Split', Split)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_StreamName(self): # String
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self, StreamName):  # String
+		self.add_query_param('StreamName', StreamName)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -61,8 +66,3 @@ class DescribeLiveDomainStreamTranscodeDataRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
