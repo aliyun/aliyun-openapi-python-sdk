@@ -41,6 +41,11 @@ class DeleteVodSpecificConfigRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
+
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 

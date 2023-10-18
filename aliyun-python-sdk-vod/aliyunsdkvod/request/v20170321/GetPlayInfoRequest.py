@@ -36,6 +36,16 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def set_Formats(self, Formats):  # String
 		self.add_query_param('Formats', Formats)
+	def get_DigitalWatermarkType(self): # String
+		return self.get_query_params().get('DigitalWatermarkType')
+
+	def set_DigitalWatermarkType(self, DigitalWatermarkType):  # String
+		self.add_query_param('DigitalWatermarkType', DigitalWatermarkType)
+	def get_Trace(self): # String
+		return self.get_query_params().get('Trace')
+
+	def set_Trace(self, Trace):  # String
+		self.add_query_param('Trace', Trace)
 	def get_ReAuthInfo(self): # String
 		return self.get_query_params().get('ReAuthInfo')
 
