@@ -24,7 +24,7 @@ import json
 class ListChatappTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListChatappTemplate')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListChatappTemplate','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

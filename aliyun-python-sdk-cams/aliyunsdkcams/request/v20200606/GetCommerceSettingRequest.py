@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
 
-class GetPreValidatePhoneIdRequest(RpcRequest):
+class GetCommerceSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'GetPreValidatePhoneId','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'GetCommerceSetting','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,12 +32,12 @@ class GetPreValidatePhoneIdRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_PhoneNumber(self): # String
-		return self.get_body_params().get('PhoneNumber')
+		return self.get_query_params().get('PhoneNumber')
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
-		self.add_body_params('PhoneNumber', PhoneNumber)
-	def get_VerifyCode(self): # String
-		return self.get_body_params().get('VerifyCode')
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_CustSpaceId(self): # String
+		return self.get_query_params().get('CustSpaceId')
 
-	def set_VerifyCode(self, VerifyCode):  # String
-		self.add_body_params('VerifyCode', VerifyCode)
+	def set_CustSpaceId(self, CustSpaceId):  # String
+		self.add_query_param('CustSpaceId', CustSpaceId)

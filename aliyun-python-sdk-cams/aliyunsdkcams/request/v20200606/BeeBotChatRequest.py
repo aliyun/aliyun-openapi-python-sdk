@@ -24,7 +24,7 @@ import json
 class BeeBotChatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'BeeBotChat')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'BeeBotChat','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

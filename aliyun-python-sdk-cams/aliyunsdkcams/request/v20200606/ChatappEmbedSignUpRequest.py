@@ -23,7 +23,7 @@ from aliyunsdkcams.endpoint import endpoint_data
 class ChatappEmbedSignUpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ChatappEmbedSignUp')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ChatappEmbedSignUp','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

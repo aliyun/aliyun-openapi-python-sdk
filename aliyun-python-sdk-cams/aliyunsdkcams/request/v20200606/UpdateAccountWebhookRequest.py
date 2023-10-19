@@ -23,7 +23,7 @@ from aliyunsdkcams.endpoint import endpoint_data
 class UpdateAccountWebhookRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'UpdateAccountWebhook')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'UpdateAccountWebhook','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

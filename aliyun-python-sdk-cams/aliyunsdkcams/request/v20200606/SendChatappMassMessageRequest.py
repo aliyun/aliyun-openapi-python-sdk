@@ -24,7 +24,7 @@ import json
 class SendChatappMassMessageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'SendChatappMassMessage')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'SendChatappMassMessage','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

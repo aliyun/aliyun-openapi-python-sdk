@@ -24,7 +24,7 @@ import json
 class ModifyPhoneBusinessProfileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ModifyPhoneBusinessProfile')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ModifyPhoneBusinessProfile','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
