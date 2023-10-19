@@ -37,6 +37,11 @@ class ImportServiceDataRequest(RpcRequest):
 
 	def set_SubPath(self, SubPath):  # String
 		self.add_body_params('SubPath', SubPath)
+	def get_Url(self): # String
+		return self.get_body_params().get('Url')
+
+	def set_Url(self, Url):  # String
+		self.add_body_params('Url', Url)
 	def get_Partition(self): # Array
 		return self.get_body_params().get('Partition')
 
