@@ -30,6 +30,11 @@ class UnAssignPrivateIpAddressRequest(RpcRequest):
 
 	def set_SubnetId(self, SubnetId):  # String
 		self.add_body_params('SubnetId', SubnetId)
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_PrivateIpAddress(self): # String
 		return self.get_body_params().get('PrivateIpAddress')
 

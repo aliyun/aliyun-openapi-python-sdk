@@ -25,11 +25,26 @@ class CreateElasticNetworkInterfaceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'CreateElasticNetworkInterface','eflo')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
+	def get_SecurityGroupId(self): # String
+		return self.get_body_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_body_params('SecurityGroupId', SecurityGroupId)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_NodeId(self): # String
+		return self.get_body_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # String
+		self.add_body_params('NodeId', NodeId)
 	def get_VSwitchId(self): # String
 		return self.get_body_params().get('VSwitchId')
 
@@ -45,8 +60,3 @@ class CreateElasticNetworkInterfaceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_body_params('ZoneId', ZoneId)
-	def get_NodeId(self): # String
-		return self.get_body_params().get('NodeId')
-
-	def set_NodeId(self, NodeId):  # String
-		self.add_body_params('NodeId', NodeId)

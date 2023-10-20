@@ -30,6 +30,11 @@ class ListNodeInfosForPodRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_body_params('ClusterId', ClusterId)
+	def get_ZoneId(self): # String
+		return self.get_body_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_body_params('ZoneId', ZoneId)
 	def get_NodeId(self): # String
 		return self.get_body_params().get('NodeId')
 
