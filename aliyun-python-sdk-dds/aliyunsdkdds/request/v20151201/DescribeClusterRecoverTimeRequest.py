@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
+class DescribeClusterRecoverTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceNetExpireTime','dds')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeClusterRecoverTime','dds')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,16 +36,6 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ConnectionString(self): # String
-		return self.get_query_params().get('ConnectionString')
-
-	def set_ConnectionString(self, ConnectionString):  # String
-		self.add_query_param('ConnectionString', ConnectionString)
-	def get_ClassicExpendExpiredDays(self): # Integer
-		return self.get_query_params().get('ClassicExpendExpiredDays')
-
-	def set_ClassicExpendExpiredDays(self, ClassicExpendExpiredDays):  # Integer
-		self.add_query_param('ClassicExpendExpiredDays', ClassicExpendExpiredDays)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -71,8 +61,3 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Category(self): # String
-		return self.get_query_params().get('Category')
-
-	def set_Category(self, Category):  # String
-		self.add_query_param('Category', Category)

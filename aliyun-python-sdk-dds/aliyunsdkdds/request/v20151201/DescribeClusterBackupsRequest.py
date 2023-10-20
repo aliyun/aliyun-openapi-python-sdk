@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
+class DescribeClusterBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceNetExpireTime','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeClusterBackups','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,21 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ConnectionString(self): # String
-		return self.get_query_params().get('ConnectionString')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_ConnectionString(self, ConnectionString):  # String
-		self.add_query_param('ConnectionString', ConnectionString)
-	def get_ClassicExpendExpiredDays(self): # Integer
-		return self.get_query_params().get('ClassicExpendExpiredDays')
-
-	def set_ClassicExpendExpiredDays(self, ClassicExpendExpiredDays):  # Integer
-		self.add_query_param('ClassicExpendExpiredDays', ClassicExpendExpiredDays)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -66,13 +66,28 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_BackupId(self): # String
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Category(self): # String
-		return self.get_query_params().get('Category')
+	def get_IsOnlyGetClusterBackUp(self): # Boolean
+		return self.get_query_params().get('IsOnlyGetClusterBackUp')
 
-	def set_Category(self, Category):  # String
-		self.add_query_param('Category', Category)
+	def set_IsOnlyGetClusterBackUp(self, IsOnlyGetClusterBackUp):  # Boolean
+		self.add_query_param('IsOnlyGetClusterBackUp', IsOnlyGetClusterBackUp)
+	def get_PageNo(self): # Integer
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self, PageNo):  # Integer
+		self.add_query_param('PageNo', PageNo)
