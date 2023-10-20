@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperateImageBaselineWhitelistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateImageBaselineWhitelist')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateImageBaselineWhitelist','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class OperateImageBaselineWhitelistRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ImageUuid(self): # String
-		return self.get_query_params().get('ImageUuid')
-
-	def set_ImageUuid(self, ImageUuid):  # String
-		self.add_query_param('ImageUuid', ImageUuid)
 	def get_BaselineItemKeyList(self): # String
 		return self.get_query_params().get('BaselineItemKeyList')
 
@@ -52,6 +47,11 @@ class OperateImageBaselineWhitelistRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ImageUuid(self): # String
+		return self.get_query_params().get('ImageUuid')
+
+	def set_ImageUuid(self, ImageUuid):  # String
+		self.add_query_param('ImageUuid', ImageUuid)
 	def get_Operation(self): # String
 		return self.get_query_params().get('Operation')
 

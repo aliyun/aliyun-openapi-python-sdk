@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListCheckItemWarningSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckItemWarningSummary')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckItemWarningSummary','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ListCheckItemWarningSummaryRequest(RpcRequest):
 
 	def set_RiskType(self, RiskType):  # String
 		self.add_query_param('RiskType', RiskType)
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
+
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_ContainerFieldName(self): # String
 		return self.get_query_params().get('ContainerFieldName')
 

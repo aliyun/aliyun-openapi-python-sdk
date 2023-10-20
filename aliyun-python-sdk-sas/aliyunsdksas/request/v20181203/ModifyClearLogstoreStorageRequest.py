@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyClearLogstoreStorageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyClearLogstoreStorage')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyClearLogstoreStorage','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class ModifyClearLogstoreStorageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserLogStore(self): # String
-		return self.get_query_params().get('UserLogStore')
-
-	def set_UserLogStore(self, UserLogStore):  # String
-		self.add_query_param('UserLogStore', UserLogStore)
-	def get_UserProject(self): # String
-		return self.get_query_params().get('UserProject')
-
-	def set_UserProject(self, UserProject):  # String
-		self.add_query_param('UserProject', UserProject)
 	def get_From(self): # String
 		return self.get_query_params().get('From')
 
@@ -51,3 +41,13 @@ class ModifyClearLogstoreStorageRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_UserLogStore(self): # String
+		return self.get_query_params().get('UserLogStore')
+
+	def set_UserLogStore(self, UserLogStore):  # String
+		self.add_query_param('UserLogStore', UserLogStore)
+	def get_UserProject(self): # String
+		return self.get_query_params().get('UserProject')
+
+	def set_UserProject(self, UserProject):  # String
+		self.add_query_param('UserProject', UserProject)

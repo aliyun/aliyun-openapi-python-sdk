@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifySecurityCheckScheduleConfig')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifySecurityCheckScheduleConfig','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_EndTime(self): # Integer
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Integer
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Integer
 		return self.get_query_params().get('StartTime')
 
@@ -61,3 +56,8 @@ class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_EndTime(self): # Integer
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Integer
+		self.add_query_param('EndTime', EndTime)

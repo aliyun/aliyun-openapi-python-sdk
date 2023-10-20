@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class AddPrivateRegistryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddPrivateRegistry')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddPrivateRegistry','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -71,6 +71,11 @@ class AddPrivateRegistryRequest(RpcRequest):
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
 	def get_NetType(self): # Long
 		return self.get_query_params().get('NetType')
 

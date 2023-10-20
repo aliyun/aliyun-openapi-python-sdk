@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class SubmitCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'SubmitCheck')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'SubmitCheck','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class SubmitCheckRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ScanRange(self): # String
+		return self.get_query_params().get('ScanRange')
+
+	def set_ScanRange(self, ScanRange):  # String
+		self.add_query_param('ScanRange', ScanRange)

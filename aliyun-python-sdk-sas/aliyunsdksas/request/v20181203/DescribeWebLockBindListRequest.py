@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeWebLockBindListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockBindList')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockBindList','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class DescribeWebLockBindListRequest(RpcRequest):
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
@@ -56,6 +51,11 @@ class DescribeWebLockBindListRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

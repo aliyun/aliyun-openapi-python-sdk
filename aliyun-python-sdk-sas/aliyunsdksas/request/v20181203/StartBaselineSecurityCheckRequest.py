@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,12 +36,6 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ItemIdss(self): # RepeatList
-		return self.get_query_params().get('ItemIds')
-
-	def set_ItemIdss(self, ItemIds):  # RepeatList
-		for depth1 in range(len(ItemIds)):
-			self.add_query_param('ItemIds.' + str(depth1 + 1), ItemIds[depth1])
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
@@ -57,3 +51,9 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ItemIdss(self): # RepeatList
+		return self.get_query_params().get('ItemIds')
+
+	def set_ItemIdss(self, ItemIds):  # RepeatList
+		for depth1 in range(len(ItemIds)):
+			self.add_query_param('ItemIds.' + str(depth1 + 1), ItemIds[depth1])

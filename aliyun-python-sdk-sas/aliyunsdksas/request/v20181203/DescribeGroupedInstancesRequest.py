@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeGroupedInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedInstances')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedInstances','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -76,3 +76,8 @@ class DescribeGroupedInstancesRequest(RpcRequest):
 
 	def set_MachineTypes(self, MachineTypes):  # String
 		self.add_query_param('MachineTypes', MachineTypes)
+	def get_SaleVersionCheckCode(self): # String
+		return self.get_query_params().get('SaleVersionCheckCode')
+
+	def set_SaleVersionCheckCode(self, SaleVersionCheckCode):  # String
+		self.add_query_param('SaleVersionCheckCode', SaleVersionCheckCode)

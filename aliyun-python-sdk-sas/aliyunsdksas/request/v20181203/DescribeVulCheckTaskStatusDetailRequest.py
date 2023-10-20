@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeVulCheckTaskStatusDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulCheckTaskStatusDetail')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulCheckTaskStatusDetail','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,12 +31,6 @@ class DescribeVulCheckTaskStatusDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Typess(self): # RepeatList
-		return self.get_query_params().get('Types')
-
-	def set_Typess(self, Types):  # RepeatList
-		for depth1 in range(len(Types)):
-			self.add_query_param('Types.' + str(depth1 + 1), Types[depth1])
 	def get_TaskIdss(self): # RepeatList
 		return self.get_query_params().get('TaskIds')
 
@@ -48,3 +42,9 @@ class DescribeVulCheckTaskStatusDetailRequest(RpcRequest):
 
 	def set_Uuid(self, Uuid):  # String
 		self.add_query_param('Uuid', Uuid)
+	def get_Typess(self): # RepeatList
+		return self.get_query_params().get('Types')
+
+	def set_Typess(self, Types):  # RepeatList
+		for depth1 in range(len(Types)):
+			self.add_query_param('Types.' + str(depth1 + 1), Types[depth1])

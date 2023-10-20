@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class StartDiscoverDatabaseTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartDiscoverDatabaseTask')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartDiscoverDatabaseTask','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

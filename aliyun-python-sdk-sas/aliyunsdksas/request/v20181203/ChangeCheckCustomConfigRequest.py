@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ChangeCheckCustomConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ChangeCheckCustomConfig')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ChangeCheckCustomConfig','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ChangeCheckCustomConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CheckId(self): # Long
+		return self.get_query_params().get('CheckId')
+
+	def set_CheckId(self, CheckId):  # Long
+		self.add_query_param('CheckId', CheckId)
 	def get_CustomConfigss(self): # RepeatList
 		return self.get_query_params().get('CustomConfigs')
 
@@ -42,8 +47,3 @@ class ChangeCheckCustomConfigRequest(RpcRequest):
 				self.add_query_param('CustomConfigs.' + str(depth1 + 1) + '.Value', CustomConfigs[depth1].get('Value'))
 			if CustomConfigs[depth1].get('Operation') is not None:
 				self.add_query_param('CustomConfigs.' + str(depth1 + 1) + '.Operation', CustomConfigs[depth1].get('Operation'))
-	def get_CheckId(self): # Long
-		return self.get_query_params().get('CheckId')
-
-	def set_CheckId(self, CheckId):  # Long
-		self.add_query_param('CheckId', CheckId)

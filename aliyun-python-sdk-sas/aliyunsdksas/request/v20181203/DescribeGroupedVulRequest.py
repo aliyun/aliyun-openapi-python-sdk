@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeGroupedVulRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedVul')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedVul','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribeGroupedVulRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TargetType(self): # String
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self, TargetType):  # String
-		self.add_query_param('TargetType', TargetType)
 	def get_AttachTypes(self): # String
 		return self.get_query_params().get('AttachTypes')
 
@@ -51,46 +46,16 @@ class DescribeGroupedVulRequest(RpcRequest):
 
 	def set_ContainerFieldName(self, ContainerFieldName):  # String
 		self.add_query_param('ContainerFieldName', ContainerFieldName)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)
-	def get_AssetType(self): # String
-		return self.get_query_params().get('AssetType')
-
-	def set_AssetType(self, AssetType):  # String
-		self.add_query_param('AssetType', AssetType)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
-	def get_Dealed(self): # String
-		return self.get_query_params().get('Dealed')
-
-	def set_Dealed(self, Dealed):  # String
-		self.add_query_param('Dealed', Dealed)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_AliasName(self): # String
 		return self.get_query_params().get('AliasName')
 
 	def set_AliasName(self, AliasName):  # String
 		self.add_query_param('AliasName', AliasName)
-	def get_SearchTags(self): # String
-		return self.get_query_params().get('SearchTags')
-
-	def set_SearchTags(self, SearchTags):  # String
-		self.add_query_param('SearchTags', SearchTags)
 	def get_Necessity(self): # String
 		return self.get_query_params().get('Necessity')
 
@@ -101,3 +66,43 @@ class DescribeGroupedVulRequest(RpcRequest):
 
 	def set_Uuids(self, Uuids):  # String
 		self.add_query_param('Uuids', Uuids)
+	def get_TargetType(self): # String
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self, TargetType):  # String
+		self.add_query_param('TargetType', TargetType)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
+	def get_AssetType(self): # String
+		return self.get_query_params().get('AssetType')
+
+	def set_AssetType(self, AssetType):  # String
+		self.add_query_param('AssetType', AssetType)
+	def get_Dealed(self): # String
+		return self.get_query_params().get('Dealed')
+
+	def set_Dealed(self, Dealed):  # String
+		self.add_query_param('Dealed', Dealed)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_SearchTags(self): # String
+		return self.get_query_params().get('SearchTags')
+
+	def set_SearchTags(self, SearchTags):  # String
+		self.add_query_param('SearchTags', SearchTags)

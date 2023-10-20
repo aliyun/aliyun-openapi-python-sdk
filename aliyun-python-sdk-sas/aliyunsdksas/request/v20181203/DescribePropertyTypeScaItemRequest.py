@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertyTypeScaItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyTypeScaItem')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyTypeScaItem','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribePropertyTypeScaItemRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -46,3 +41,8 @@ class DescribePropertyTypeScaItemRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class GetCloudAssetDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetCloudAssetDetail')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetCloudAssetDetail','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,15 +31,6 @@ class GetCloudAssetDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CloudAssetInstancess(self): # RepeatList
-		return self.get_query_params().get('CloudAssetInstances')
-
-	def set_CloudAssetInstancess(self, CloudAssetInstances):  # RepeatList
-		for depth1 in range(len(CloudAssetInstances)):
-			if CloudAssetInstances[depth1].get('InstanceId') is not None:
-				self.add_query_param('CloudAssetInstances.' + str(depth1 + 1) + '.InstanceId', CloudAssetInstances[depth1].get('InstanceId'))
-			if CloudAssetInstances[depth1].get('RegionId') is not None:
-				self.add_query_param('CloudAssetInstances.' + str(depth1 + 1) + '.RegionId', CloudAssetInstances[depth1].get('RegionId'))
 	def get_AssetSubType(self): # Integer
 		return self.get_query_params().get('AssetSubType')
 
@@ -55,3 +46,12 @@ class GetCloudAssetDetailRequest(RpcRequest):
 
 	def set_AssetType(self, AssetType):  # Integer
 		self.add_query_param('AssetType', AssetType)
+	def get_CloudAssetInstancess(self): # RepeatList
+		return self.get_query_params().get('CloudAssetInstances')
+
+	def set_CloudAssetInstancess(self, CloudAssetInstances):  # RepeatList
+		for depth1 in range(len(CloudAssetInstances)):
+			if CloudAssetInstances[depth1].get('InstanceId') is not None:
+				self.add_query_param('CloudAssetInstances.' + str(depth1 + 1) + '.InstanceId', CloudAssetInstances[depth1].get('InstanceId'))
+			if CloudAssetInstances[depth1].get('RegionId') is not None:
+				self.add_query_param('CloudAssetInstances.' + str(depth1 + 1) + '.RegionId', CloudAssetInstances[depth1].get('RegionId'))

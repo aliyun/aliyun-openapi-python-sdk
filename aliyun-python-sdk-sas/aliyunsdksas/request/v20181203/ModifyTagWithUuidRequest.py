@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyTagWithUuidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyTagWithUuid')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyTagWithUuid','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class ModifyTagWithUuidRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TagId(self): # String
-		return self.get_query_params().get('TagId')
-
-	def set_TagId(self, TagId):  # String
-		self.add_query_param('TagId', TagId)
-	def get_MachineTypes(self): # String
-		return self.get_query_params().get('MachineTypes')
-
-	def set_MachineTypes(self, MachineTypes):  # String
-		self.add_query_param('MachineTypes', MachineTypes)
 	def get_TagList(self): # String
 		return self.get_query_params().get('TagList')
 
@@ -51,3 +41,13 @@ class ModifyTagWithUuidRequest(RpcRequest):
 
 	def set_UuidList(self, UuidList):  # String
 		self.add_query_param('UuidList', UuidList)
+	def get_TagId(self): # String
+		return self.get_query_params().get('TagId')
+
+	def set_TagId(self, TagId):  # String
+		self.add_query_param('TagId', TagId)
+	def get_MachineTypes(self): # String
+		return self.get_query_params().get('MachineTypes')
+
+	def set_MachineTypes(self, MachineTypes):  # String
+		self.add_query_param('MachineTypes', MachineTypes)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeRiskTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeRiskType')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeRiskType','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeRiskTypeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
+
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 

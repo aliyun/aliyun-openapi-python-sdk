@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstanceAntiBruteForceRules')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstanceAntiBruteForceRules','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
@@ -57,3 +52,8 @@ class DescribeInstanceAntiBruteForceRulesRequest(RpcRequest):
 	def set_UuidLists(self, UuidList):  # RepeatList
 		for depth1 in range(len(UuidList)):
 			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

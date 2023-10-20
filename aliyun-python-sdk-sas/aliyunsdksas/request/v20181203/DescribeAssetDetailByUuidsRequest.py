@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeAssetDetailByUuidsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAssetDetailByUuids')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAssetDetailByUuids','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DescribeAssetDetailByUuidsRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

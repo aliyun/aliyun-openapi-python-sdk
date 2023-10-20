@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class IgnoreCheckItemsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'IgnoreCheckItems')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'IgnoreCheckItems','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,15 +36,11 @@ class IgnoreCheckItemsRequest(RpcRequest):
 
 	def set_Reason(self, Reason):  # String
 		self.add_query_param('Reason', Reason)
-	def get_CheckAndRiskTypeLists(self): # RepeatList
-		return self.get_query_params().get('CheckAndRiskTypeList')
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_CheckAndRiskTypeLists(self, CheckAndRiskTypeList):  # RepeatList
-		for depth1 in range(len(CheckAndRiskTypeList)):
-			if CheckAndRiskTypeList[depth1].get('RiskType') is not None:
-				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.RiskType', CheckAndRiskTypeList[depth1].get('RiskType'))
-			if CheckAndRiskTypeList[depth1].get('CheckId') is not None:
-				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.CheckId', CheckAndRiskTypeList[depth1].get('CheckId'))
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_Type(self): # Integer
 		return self.get_query_params().get('Type')
 
@@ -61,3 +57,12 @@ class IgnoreCheckItemsRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_CheckAndRiskTypeLists(self): # RepeatList
+		return self.get_query_params().get('CheckAndRiskTypeList')
+
+	def set_CheckAndRiskTypeLists(self, CheckAndRiskTypeList):  # RepeatList
+		for depth1 in range(len(CheckAndRiskTypeList)):
+			if CheckAndRiskTypeList[depth1].get('RiskType') is not None:
+				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.RiskType', CheckAndRiskTypeList[depth1].get('RiskType'))
+			if CheckAndRiskTypeList[depth1].get('CheckId') is not None:
+				self.add_query_param('CheckAndRiskTypeList.' + str(depth1 + 1) + '.CheckId', CheckAndRiskTypeList[depth1].get('CheckId'))

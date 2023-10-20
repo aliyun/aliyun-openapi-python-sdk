@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeAlarmEventDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventDetail')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventDetail','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribeAlarmEventDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlarmUniqueInfo(self): # String
-		return self.get_query_params().get('AlarmUniqueInfo')
-
-	def set_AlarmUniqueInfo(self, AlarmUniqueInfo):  # String
-		self.add_query_param('AlarmUniqueInfo', AlarmUniqueInfo)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
@@ -51,3 +46,8 @@ class DescribeAlarmEventDetailRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_AlarmUniqueInfo(self): # String
+		return self.get_query_params().get('AlarmUniqueInfo')
+
+	def set_AlarmUniqueInfo(self, AlarmUniqueInfo):  # String
+		self.add_query_param('AlarmUniqueInfo', AlarmUniqueInfo)

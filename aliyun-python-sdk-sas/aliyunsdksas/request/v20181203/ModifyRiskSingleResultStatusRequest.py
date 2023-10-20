@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyRiskSingleResultStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyRiskSingleResultStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyRiskSingleResultStatus','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,12 +41,6 @@ class ModifyRiskSingleResultStatusRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_Idss(self): # RepeatList
-		return self.get_query_params().get('Ids')
-
-	def set_Idss(self, Ids):  # RepeatList
-		for depth1 in range(len(Ids)):
-			self.add_query_param('Ids.' + str(depth1 + 1), Ids[depth1])
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -57,6 +51,12 @@ class ModifyRiskSingleResultStatusRequest(RpcRequest):
 
 	def set_TaskId(self, TaskId):  # Long
 		self.add_query_param('TaskId', TaskId)
+	def get_Idss(self): # RepeatList
+		return self.get_query_params().get('Ids')
+
+	def set_Idss(self, Ids):  # RepeatList
+		for depth1 in range(len(Ids)):
+			self.add_query_param('Ids.' + str(depth1 + 1), Ids[depth1])
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

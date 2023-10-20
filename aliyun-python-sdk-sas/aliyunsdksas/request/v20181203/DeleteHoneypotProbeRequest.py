@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DeleteHoneypotProbeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteHoneypotProbe')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteHoneypotProbe','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,3 +36,8 @@ class DeleteHoneypotProbeRequest(RpcRequest):
 
 	def set_ProbeId(self, ProbeId):  # String
 		self.add_query_param('ProbeId', ProbeId)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)

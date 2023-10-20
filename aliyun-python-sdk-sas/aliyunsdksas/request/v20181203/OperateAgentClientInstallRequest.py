@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperateAgentClientInstallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateAgentClientInstall','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,26 @@ class OperateAgentClientInstallRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_Os(self): # String
+		return self.get_query_params().get('Os')
+
+	def set_Os(self, Os):  # String
+		self.add_query_param('Os', Os)
+	def get_InstanceIds(self): # String
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

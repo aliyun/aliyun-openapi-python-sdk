@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeSuspEventDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SuspiciousEventId(self): # Integer
-		return self.get_query_params().get('SuspiciousEventId')
-
-	def set_SuspiciousEventId(self, SuspiciousEventId):  # Integer
-		self.add_query_param('SuspiciousEventId', SuspiciousEventId)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
@@ -51,3 +46,13 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
+	def get_SuspiciousEventId(self): # Integer
+		return self.get_query_params().get('SuspiciousEventId')
+
+	def set_SuspiciousEventId(self, SuspiciousEventId):  # Integer
+		self.add_query_param('SuspiciousEventId', SuspiciousEventId)

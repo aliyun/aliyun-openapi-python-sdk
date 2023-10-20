@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeCheckWarningsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckWarnings','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeCheckWarningsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ContainerName(self): # String
+		return self.get_query_params().get('ContainerName')
+
+	def set_ContainerName(self, ContainerName):  # String
+		self.add_query_param('ContainerName', ContainerName)
 	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 

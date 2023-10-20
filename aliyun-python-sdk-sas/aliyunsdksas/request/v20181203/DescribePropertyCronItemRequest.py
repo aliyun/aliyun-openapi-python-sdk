@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertyCronItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronItem')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronItem','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribePropertyCronItemRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -51,3 +46,8 @@ class DescribePropertyCronItemRequest(RpcRequest):
 
 	def set_ForceFlush(self, ForceFlush):  # Boolean
 		self.add_query_param('ForceFlush', ForceFlush)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

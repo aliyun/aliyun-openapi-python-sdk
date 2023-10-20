@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyBackupPolicyStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyBackupPolicyStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyBackupPolicyStatus','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class ModifyBackupPolicyStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyVersion(self): # String
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self, PolicyVersion):  # String
-		self.add_query_param('PolicyVersion', PolicyVersion)
 	def get_Id(self): # Long
 		return self.get_query_params().get('Id')
 
 	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)
+	def get_PolicyVersion(self): # String
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

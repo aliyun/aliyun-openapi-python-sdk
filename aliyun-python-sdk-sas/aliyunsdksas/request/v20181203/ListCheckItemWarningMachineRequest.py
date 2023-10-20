@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListCheckItemWarningMachineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckItemWarningMachine')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckItemWarningMachine','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class ListCheckItemWarningMachineRequest(RpcRequest):
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
+
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_ContainerFieldName(self): # String
 		return self.get_query_params().get('ContainerFieldName')
 

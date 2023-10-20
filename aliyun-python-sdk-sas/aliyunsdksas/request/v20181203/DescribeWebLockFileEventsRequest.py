@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeWebLockFileEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockFileEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockFileEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

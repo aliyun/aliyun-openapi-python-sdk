@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyOperateVulRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyOperateVul')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyOperateVul','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,13 +41,18 @@ class ModifyOperateVulRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_OperateType(self): # String
-		return self.get_query_params().get('OperateType')
+	def get_From(self): # String
+		return self.get_query_params().get('From')
 
-	def set_OperateType(self, OperateType):  # String
-		self.add_query_param('OperateType', OperateType)
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
 	def get_Info(self): # String
 		return self.get_query_params().get('Info')
 
 	def set_Info(self, Info):  # String
 		self.add_query_param('Info', Info)
+	def get_OperateType(self): # String
+		return self.get_query_params().get('OperateType')
+
+	def set_OperateType(self, OperateType):  # String
+		self.add_query_param('OperateType', OperateType)

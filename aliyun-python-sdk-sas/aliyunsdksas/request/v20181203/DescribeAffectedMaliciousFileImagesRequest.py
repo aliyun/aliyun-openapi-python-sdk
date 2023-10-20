@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAffectedMaliciousFileImages')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAffectedMaliciousFileImages','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -132,3 +132,8 @@ class DescribeAffectedMaliciousFileImagesRequest(RpcRequest):
 
 	def set_RepoRegionId(self, RepoRegionId):  # String
 		self.add_query_param('RepoRegionId', RepoRegionId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

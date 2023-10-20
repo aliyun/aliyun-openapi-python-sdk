@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class GetPropertyScheduleConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetPropertyScheduleConfig')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetPropertyScheduleConfig','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

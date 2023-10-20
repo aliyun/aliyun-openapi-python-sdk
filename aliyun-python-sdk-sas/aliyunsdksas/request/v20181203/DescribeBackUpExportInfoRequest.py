@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeBackUpExportInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeBackUpExportInfo')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeBackUpExportInfo','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class DescribeBackUpExportInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExportType(self): # String
-		return self.get_query_params().get('ExportType')
-
-	def set_ExportType(self, ExportType):  # String
-		self.add_query_param('ExportType', ExportType)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -51,3 +41,13 @@ class DescribeBackUpExportInfoRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ExportType(self): # String
+		return self.get_query_params().get('ExportType')
+
+	def set_ExportType(self, ExportType):  # String
+		self.add_query_param('ExportType', ExportType)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

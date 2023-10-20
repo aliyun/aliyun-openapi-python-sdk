@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyLogMetaStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyLogMetaStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyLogMetaStatus','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

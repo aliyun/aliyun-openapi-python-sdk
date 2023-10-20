@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyWebLockProcessStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockProcessStatus')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockProcessStatus','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class ModifyWebLockProcessStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DealAll(self): # Integer
-		return self.get_query_params().get('DealAll')
-
-	def set_DealAll(self, DealAll):  # Integer
-		self.add_query_param('DealAll', DealAll)
 	def get_ProcessPaths(self): # RepeatList
 		return self.get_query_params().get('ProcessPath')
 
@@ -47,6 +42,11 @@ class ModifyWebLockProcessStatusRequest(RpcRequest):
 
 	def set_Uuid(self, Uuid):  # String
 		self.add_query_param('Uuid', Uuid)
+	def get_DealAll(self): # Integer
+		return self.get_query_params().get('DealAll')
+
+	def set_DealAll(self, DealAll):  # Integer
+		self.add_query_param('DealAll', DealAll)
 	def get_OperateInfo(self): # String
 		return self.get_query_params().get('OperateInfo')
 

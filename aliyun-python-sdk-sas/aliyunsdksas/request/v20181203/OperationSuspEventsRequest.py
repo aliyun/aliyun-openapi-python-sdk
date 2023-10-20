@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperationSuspEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperationSuspEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperationSuspEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,26 +36,26 @@ class OperationSuspEventsRequest(RpcRequest):
 
 	def set_SuspiciousEventIds(self, SuspiciousEventIds):  # String
 		self.add_query_param('SuspiciousEventIds', SuspiciousEventIds)
-	def get_SubOperation(self): # String
-		return self.get_query_params().get('SubOperation')
-
-	def set_SubOperation(self, SubOperation):  # String
-		self.add_query_param('SubOperation', SubOperation)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_WarnType(self): # String
-		return self.get_query_params().get('WarnType')
-
-	def set_WarnType(self, WarnType):  # String
-		self.add_query_param('WarnType', WarnType)
 	def get_From(self): # String
 		return self.get_query_params().get('From')
 
 	def set_From(self, _From):  # String
 		self.add_query_param('From', _From)
+	def get_SubOperation(self): # String
+		return self.get_query_params().get('SubOperation')
+
+	def set_SubOperation(self, SubOperation):  # String
+		self.add_query_param('SubOperation', SubOperation)
+	def get_WarnType(self): # String
+		return self.get_query_params().get('WarnType')
+
+	def set_WarnType(self, WarnType):  # String
+		self.add_query_param('WarnType', WarnType)
 	def get_Operation(self): # String
 		return self.get_query_params().get('Operation')
 

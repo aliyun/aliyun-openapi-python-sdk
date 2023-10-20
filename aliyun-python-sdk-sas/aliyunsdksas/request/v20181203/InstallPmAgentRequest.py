@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class InstallPmAgentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'InstallPmAgent')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'InstallPmAgent','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -24,7 +24,7 @@ import json
 class DescribeImageSensitiveFileByKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageSensitiveFileByKey')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageSensitiveFileByKey','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyStrategyTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStrategyTarget')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStrategyTarget','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class ModifyStrategyTargetRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_Target(self): # String
-		return self.get_query_params().get('Target')
-
-	def set_Target(self, Target):  # String
-		self.add_query_param('Target', Target)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_Target(self): # String
+		return self.get_query_params().get('Target')
+
+	def set_Target(self, Target):  # String
+		self.add_query_param('Target', Target)
 	def get_Config(self): # String
 		return self.get_query_params().get('Config')
 

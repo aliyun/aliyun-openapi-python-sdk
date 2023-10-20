@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListCheckResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckResult')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckResult','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -49,6 +49,11 @@ class ListCheckResultRequest(RpcRequest):
 	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
 		for depth1 in range(len(InstanceTypes)):
 			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes[depth1])
+	def get_CustomParam(self): # Boolean
+		return self.get_query_params().get('CustomParam')
+
+	def set_CustomParam(self, CustomParam):  # Boolean
+		self.add_query_param('CustomParam', CustomParam)
 	def get_CheckKey(self): # String
 		return self.get_query_params().get('CheckKey')
 

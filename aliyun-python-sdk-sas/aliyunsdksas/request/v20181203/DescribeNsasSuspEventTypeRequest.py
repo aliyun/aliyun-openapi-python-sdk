@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeNsasSuspEventTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeNsasSuspEventType')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeNsasSuspEventType','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

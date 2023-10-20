@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyNoticeConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyNoticeConfig')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyNoticeConfig','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ModifyNoticeConfigRequest(RpcRequest):
 
 	def set_Project(self, Project):  # String
 		self.add_query_param('Project', Project)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_TimeLimit(self): # Integer
 		return self.get_query_params().get('TimeLimit')
 
@@ -46,8 +51,3 @@ class ModifyNoticeConfigRequest(RpcRequest):
 
 	def set_Route(self, Route):  # Integer
 		self.add_query_param('Route', Route)
-	def get_SourceIp(self): # String
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self, SourceIp):  # String
-		self.add_query_param('SourceIp', SourceIp)

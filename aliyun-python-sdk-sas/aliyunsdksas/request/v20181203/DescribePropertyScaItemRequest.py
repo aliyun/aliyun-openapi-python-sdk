@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribePropertyScaItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyScaItem')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyScaItem','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

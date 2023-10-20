@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class FixCheckWarningsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'FixCheckWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'FixCheckWarnings','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class FixCheckWarningsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RiskId(self): # Long
-		return self.get_query_params().get('RiskId')
-
-	def set_RiskId(self, RiskId):  # Long
-		self.add_query_param('RiskId', RiskId)
 	def get_CheckParams(self): # String
 		return self.get_query_params().get('CheckParams')
 
@@ -51,6 +46,11 @@ class FixCheckWarningsRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_RiskId(self): # Long
+		return self.get_query_params().get('RiskId')
+
+	def set_RiskId(self, RiskId):  # Long
+		self.add_query_param('RiskId', RiskId)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

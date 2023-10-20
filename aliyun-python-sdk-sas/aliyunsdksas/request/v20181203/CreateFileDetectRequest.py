@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class CreateFileDetectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateFileDetect')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateFileDetect','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,3 +51,8 @@ class CreateFileDetectRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_DownloadUrl(self): # String
+		return self.get_query_params().get('DownloadUrl')
+
+	def set_DownloadUrl(self, DownloadUrl):  # String
+		self.add_query_param('DownloadUrl', DownloadUrl)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListCheckStandardRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckStandard')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCheckStandard','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -43,12 +43,6 @@ class ListCheckStandardRequest(RpcRequest):
 	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
 		for depth1 in range(len(InstanceTypes)):
 			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes[depth1])
-	def get_InstanceIdss(self): # RepeatList
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIdss(self, InstanceIds):  # RepeatList
-		for depth1 in range(len(InstanceIds)):
-			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -60,3 +54,9 @@ class ListCheckStandardRequest(RpcRequest):
 	def set_Vendorss(self, Vendors):  # RepeatList
 		for depth1 in range(len(Vendors)):
 			self.add_query_param('Vendors.' + str(depth1 + 1), Vendors[depth1])
+	def get_InstanceIdss(self): # RepeatList
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])

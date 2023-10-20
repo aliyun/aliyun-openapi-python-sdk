@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperationCancelIgnoreSuspEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperationCancelIgnoreSuspEvent')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperationCancelIgnoreSuspEvent','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -37,3 +37,8 @@ class OperationCancelIgnoreSuspEventRequest(RpcRequest):
 	def set_SecurityEventIdss(self, SecurityEventIds):  # RepeatList
 		for depth1 in range(len(SecurityEventIds)):
 			self.add_query_param('SecurityEventIds.' + str(depth1 + 1), SecurityEventIds[depth1])
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)

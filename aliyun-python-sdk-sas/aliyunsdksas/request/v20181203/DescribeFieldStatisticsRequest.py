@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeFieldStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeFieldStatistics')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeFieldStatistics','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeFieldStatisticsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
 	def get_MachineTypes(self): # String
 		return self.get_query_params().get('MachineTypes')
 

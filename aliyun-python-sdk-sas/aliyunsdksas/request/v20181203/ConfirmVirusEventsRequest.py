@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ConfirmVirusEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ConfirmVirusEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ConfirmVirusEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ConfirmVirusEventsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OperationCode(self): # String
+		return self.get_query_params().get('OperationCode')
+
+	def set_OperationCode(self, OperationCode):  # String
+		self.add_query_param('OperationCode', OperationCode)
 	def get_OperationRange(self): # String
 		return self.get_query_params().get('OperationRange')
 
@@ -41,8 +46,3 @@ class ConfirmVirusEventsRequest(RpcRequest):
 
 	def set_OperationAll(self, OperationAll):  # Integer
 		self.add_query_param('OperationAll', OperationAll)
-	def get_OperationCode(self): # String
-		return self.get_query_params().get('OperationCode')
-
-	def set_OperationCode(self, OperationCode):  # String
-		self.add_query_param('OperationCode', OperationCode)

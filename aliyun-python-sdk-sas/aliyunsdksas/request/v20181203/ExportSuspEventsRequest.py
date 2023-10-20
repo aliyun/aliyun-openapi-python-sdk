@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ExportSuspEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ExportSuspEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ExportSuspEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class ExportSuspEventsRequest(RpcRequest):
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_Uuid(self): # String
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self, Uuid):  # String
+		self.add_query_param('Uuid', Uuid)
 	def get_ContainerFieldName(self): # String
 		return self.get_query_params().get('ContainerFieldName')
 
@@ -71,11 +76,21 @@ class ExportSuspEventsRequest(RpcRequest):
 
 	def set_From(self, _From):  # String
 		self.add_query_param('From', _From)
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_UniqueInfo(self): # String
+		return self.get_query_params().get('UniqueInfo')
+
+	def set_UniqueInfo(self, UniqueInfo):  # String
+		self.add_query_param('UniqueInfo', UniqueInfo)
 	def get_Dealed(self): # String
 		return self.get_query_params().get('Dealed')
 
@@ -91,6 +106,12 @@ class ExportSuspEventsRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_OperateErrorCodeLists(self): # RepeatList
+		return self.get_query_params().get('OperateErrorCodeList')
+
+	def set_OperateErrorCodeLists(self, OperateErrorCodeList):  # RepeatList
+		for depth1 in range(len(OperateErrorCodeList)):
+			self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1), OperateErrorCodeList[depth1])
 	def get_AssetsTypeLists(self): # RepeatList
 		return self.get_query_params().get('AssetsTypeList')
 

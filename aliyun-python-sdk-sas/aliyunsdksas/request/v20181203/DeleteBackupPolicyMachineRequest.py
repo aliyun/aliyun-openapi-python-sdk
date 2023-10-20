@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DeleteBackupPolicyMachineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteBackupPolicyMachine')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteBackupPolicyMachine','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DeleteBackupPolicyMachineRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyVersion(self): # String
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self, PolicyVersion):  # String
-		self.add_query_param('PolicyVersion', PolicyVersion)
 	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
@@ -52,3 +47,8 @@ class DeleteBackupPolicyMachineRequest(RpcRequest):
 	def set_UuidLists(self, UuidList):  # RepeatList
 		for depth1 in range(len(UuidList)):
 			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
+	def get_PolicyVersion(self): # String
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self, PolicyVersion):  # String
+		self.add_query_param('PolicyVersion', PolicyVersion)

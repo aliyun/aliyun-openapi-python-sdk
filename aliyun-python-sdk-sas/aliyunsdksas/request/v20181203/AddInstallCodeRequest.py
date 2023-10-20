@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class AddInstallCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddInstallCode')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddInstallCode','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class AddInstallCodeRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # Long
 		self.add_query_param('GroupId', GroupId)
+	def get_ProxyCluster(self): # String
+		return self.get_query_params().get('ProxyCluster')
+
+	def set_ProxyCluster(self, ProxyCluster):  # String
+		self.add_query_param('ProxyCluster', ProxyCluster)
 	def get_OnlyImage(self): # Boolean
 		return self.get_query_params().get('OnlyImage')
 

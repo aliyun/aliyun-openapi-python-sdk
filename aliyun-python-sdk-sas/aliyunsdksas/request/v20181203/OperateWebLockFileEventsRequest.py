@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperateWebLockFileEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateWebLockFileEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateWebLockFileEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class OperateWebLockFileEventsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DealAll(self): # Integer
-		return self.get_query_params().get('DealAll')
-
-	def set_DealAll(self, DealAll):  # Integer
-		self.add_query_param('DealAll', DealAll)
 	def get_EventIdss(self): # RepeatList
 		return self.get_query_params().get('EventIds')
 
@@ -47,3 +42,8 @@ class OperateWebLockFileEventsRequest(RpcRequest):
 
 	def set_OperationCode(self, OperationCode):  # String
 		self.add_query_param('OperationCode', OperationCode)
+	def get_DealAll(self): # Integer
+		return self.get_query_params().get('DealAll')
+
+	def set_DealAll(self, DealAll):  # Integer
+		self.add_query_param('DealAll', DealAll)

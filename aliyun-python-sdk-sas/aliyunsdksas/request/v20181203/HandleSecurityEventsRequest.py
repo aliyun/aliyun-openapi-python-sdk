@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class HandleSecurityEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'HandleSecurityEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'HandleSecurityEvents','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -42,6 +42,11 @@ class HandleSecurityEventsRequest(RpcRequest):
 	def set_SecurityEventIdss(self, SecurityEventIds):  # RepeatList
 		for depth1 in range(len(SecurityEventIds)):
 			self.add_query_param('SecurityEventIds.' + str(depth1 + 1), SecurityEventIds[depth1])
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 

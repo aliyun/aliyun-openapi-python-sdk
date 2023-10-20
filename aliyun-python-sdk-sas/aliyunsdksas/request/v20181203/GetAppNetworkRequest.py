@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class GetAppNetworkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetAppNetwork')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'GetAppNetwork','sas')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class GetAppNetworkRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # Long
 		self.add_query_param('StartTime', StartTime)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 

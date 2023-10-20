@@ -24,7 +24,7 @@ import json
 class DescribeImageListBySensitiveFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageListBySensitiveFile')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageListBySensitiveFile','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -82,3 +82,8 @@ class DescribeImageListBySensitiveFileRequest(RpcRequest):
 
 	def set_RepoInstanceId(self, RepoInstanceId):  # String
 		self.add_query_param('RepoInstanceId', RepoInstanceId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

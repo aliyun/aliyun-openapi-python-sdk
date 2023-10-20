@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class InstallCloudMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'InstallCloudMonitor')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'InstallCloudMonitor','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,12 @@ class InstallCloudMonitorRequest(RpcRequest):
 
 	def set_AgentSecretKey(self, AgentSecretKey):  # String
 		self.add_query_param('AgentSecretKey', AgentSecretKey)
+	def get_UuidLists(self): # RepeatList
+		return self.get_query_params().get('UuidList')
+
+	def set_UuidLists(self, UuidList):  # RepeatList
+		for depth1 in range(len(UuidList)):
+			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])
 	def get_ArgusVersion(self): # String
 		return self.get_query_params().get('ArgusVersion')
 
@@ -52,9 +58,3 @@ class InstallCloudMonitorRequest(RpcRequest):
 	def set_InstanceIdLists(self, InstanceIdList):  # RepeatList
 		for depth1 in range(len(InstanceIdList)):
 			self.add_query_param('InstanceIdList.' + str(depth1 + 1), InstanceIdList[depth1])
-	def get_UuidLists(self): # RepeatList
-		return self.get_query_params().get('UuidList')
-
-	def set_UuidLists(self, UuidList):  # RepeatList
-		for depth1 in range(len(UuidList)):
-			self.add_query_param('UuidList.' + str(depth1 + 1), UuidList[depth1])

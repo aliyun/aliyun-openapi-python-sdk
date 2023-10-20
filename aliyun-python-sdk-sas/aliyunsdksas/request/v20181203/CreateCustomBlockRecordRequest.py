@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class CreateCustomBlockRecordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateCustomBlockRecord')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateCustomBlockRecord','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,26 @@ class CreateCustomBlockRecordRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpireTime(self): # Long
-		return self.get_query_params().get('ExpireTime')
-
-	def set_ExpireTime(self, ExpireTime):  # Long
-		self.add_query_param('ExpireTime', ExpireTime)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Bound(self): # String
-		return self.get_query_params().get('Bound')
-
-	def set_Bound(self, Bound):  # String
-		self.add_query_param('Bound', Bound)
 	def get_BlockIp(self): # String
 		return self.get_query_params().get('BlockIp')
 
 	def set_BlockIp(self, BlockIp):  # String
 		self.add_query_param('BlockIp', BlockIp)
+	def get_ExpireTime(self): # Long
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self, ExpireTime):  # Long
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_Bound(self): # String
+		return self.get_query_params().get('Bound')
+
+	def set_Bound(self, Bound):  # String
+		self.add_query_param('Bound', Bound)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

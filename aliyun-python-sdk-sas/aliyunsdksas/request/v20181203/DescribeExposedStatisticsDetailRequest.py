@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeExposedStatisticsDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeExposedStatisticsDetail')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeExposedStatisticsDetail','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,11 @@ class DescribeExposedStatisticsDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StatisticsType(self): # String
-		return self.get_query_params().get('StatisticsType')
-
-	def set_StatisticsType(self, StatisticsType):  # String
-		self.add_query_param('StatisticsType', StatisticsType)
 	def get_StatisticsTypeGatewayType(self): # String
 		return self.get_query_params().get('StatisticsTypeGatewayType')
 
 	def set_StatisticsTypeGatewayType(self, StatisticsTypeGatewayType):  # String
 		self.add_query_param('StatisticsTypeGatewayType', StatisticsTypeGatewayType)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_StatisticsTypeInstanceValue(self): # String
 		return self.get_query_params().get('StatisticsTypeInstanceValue')
 
@@ -56,3 +46,13 @@ class DescribeExposedStatisticsDetailRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_StatisticsType(self): # String
+		return self.get_query_params().get('StatisticsType')
+
+	def set_StatisticsType(self, StatisticsType):  # String
+		self.add_query_param('StatisticsType', StatisticsType)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

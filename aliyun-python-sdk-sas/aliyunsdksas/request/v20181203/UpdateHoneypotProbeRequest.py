@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class UpdateHoneypotProbeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'UpdateHoneypotProbe')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'UpdateHoneypotProbe','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -47,6 +47,11 @@ class UpdateHoneypotProbeRequest(RpcRequest):
 	def set_ServiceIpLists(self, ServiceIpList):  # RepeatList
 		for depth1 in range(len(ServiceIpList)):
 			self.add_query_param('ServiceIpList.' + str(depth1 + 1), ServiceIpList[depth1])
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_Arp(self): # Boolean
 		return self.get_query_params().get('Arp')
 

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ValidateHcWarningsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ValidateHcWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ValidateHcWarnings','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class ValidateHcWarningsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CheckIds(self): # String
+		return self.get_query_params().get('CheckIds')
+
+	def set_CheckIds(self, CheckIds):  # String
+		self.add_query_param('CheckIds', CheckIds)
 	def get_RiskIds(self): # String
 		return self.get_query_params().get('RiskIds')
 
 	def set_RiskIds(self, RiskIds):  # String
 		self.add_query_param('RiskIds', RiskIds)
-	def get_SourceIp(self): # String
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self, SourceIp):  # String
-		self.add_query_param('SourceIp', SourceIp)
 	def get_Uuids(self): # String
 		return self.get_query_params().get('Uuids')
 

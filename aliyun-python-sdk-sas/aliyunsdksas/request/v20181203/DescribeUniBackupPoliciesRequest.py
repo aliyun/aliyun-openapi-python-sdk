@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeUniBackupPoliciesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUniBackupPolicies')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUniBackupPolicies','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

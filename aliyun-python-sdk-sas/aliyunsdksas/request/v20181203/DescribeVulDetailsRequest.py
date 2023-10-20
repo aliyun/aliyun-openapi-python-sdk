@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeVulDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulDetails')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulDetails','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,16 @@ class DescribeVulDetailsRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
 	def get_AliasName(self): # String
 		return self.get_query_params().get('AliasName')
 
@@ -46,8 +56,3 @@ class DescribeVulDetailsRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_Lang(self): # String
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self, Lang):  # String
-		self.add_query_param('Lang', Lang)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeRiskListCheckResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeRiskListCheckResult')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeRiskListCheckResult','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,22 +36,11 @@ class DescribeRiskListCheckResultRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_SourceIp(self): # String
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
-	def get_InstanceIdss(self): # RepeatList
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIdss(self, InstanceIds):  # RepeatList
-		for depth1 in range(len(InstanceIds)):
-			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -62,3 +51,14 @@ class DescribeRiskListCheckResultRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_InstanceIdss(self): # RepeatList
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])

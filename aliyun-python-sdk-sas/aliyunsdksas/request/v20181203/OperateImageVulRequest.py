@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class OperateImageVulRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateImageVul')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'OperateImageVul','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,13 @@ class OperateImageVulRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_OperateType(self): # String
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self, OperateType):  # String
-		self.add_query_param('OperateType', OperateType)
 	def get_Info(self): # String
 		return self.get_query_params().get('Info')
 
 	def set_Info(self, Info):  # String
 		self.add_query_param('Info', Info)
+	def get_OperateType(self): # String
+		return self.get_query_params().get('OperateType')
+
+	def set_OperateType(self, OperateType):  # String
+		self.add_query_param('OperateType', OperateType)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyStartVulScanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStartVulScan')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyStartVulScan','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

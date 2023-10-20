@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ModifyClientConfSetupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyClientConfSetup')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyClientConfSetup','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,13 @@ class ModifyClientConfSetupRequest(RpcRequest):
 
 	def set_StrategyConfig(self, StrategyConfig):  # String
 		self.add_query_param('StrategyConfig', StrategyConfig)
-	def get_StrategyTagValue(self): # String
-		return self.get_query_params().get('StrategyTagValue')
-
-	def set_StrategyTagValue(self, StrategyTagValue):  # String
-		self.add_query_param('StrategyTagValue', StrategyTagValue)
 	def get_StrategyTag(self): # String
 		return self.get_query_params().get('StrategyTag')
 
 	def set_StrategyTag(self, StrategyTag):  # String
 		self.add_query_param('StrategyTag', StrategyTag)
+	def get_StrategyTagValue(self): # String
+		return self.get_query_params().get('StrategyTagValue')
+
+	def set_StrategyTagValue(self, StrategyTagValue):  # String
+		self.add_query_param('StrategyTagValue', StrategyTagValue)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeImageScanAuthCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageScanAuthCount')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageScanAuthCount','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

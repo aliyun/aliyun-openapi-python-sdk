@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListInterceptionRulePageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListInterceptionRulePage')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListInterceptionRulePage','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,6 @@ class ListInterceptionRulePageRequest(RpcRequest):
 
 	def set_Criteria(self, Criteria):  # String
 		self.add_query_param('Criteria', Criteria)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -56,3 +46,13 @@ class ListInterceptionRulePageRequest(RpcRequest):
 
 	def set_CriteriaType(self, CriteriaType):  # String
 		self.add_query_param('CriteriaType', CriteriaType)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListHoneypotAlarmEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListHoneypotAlarmEvents')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListHoneypotAlarmEvents','sas')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,8 +62,3 @@ class ListHoneypotAlarmEventsRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_body_params('CurrentPage', CurrentPage)
-	def get_RequestId(self): # String
-		return self.get_body_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_body_params('RequestId', RequestId)

@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeAlarmEventStackInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventStackInfo')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventStackInfo','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribeAlarmEventStackInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UniqueInfo(self): # String
-		return self.get_query_params().get('UniqueInfo')
-
-	def set_UniqueInfo(self, UniqueInfo):  # String
-		self.add_query_param('UniqueInfo', UniqueInfo)
 	def get_Uuid(self): # String
 		return self.get_query_params().get('Uuid')
 
@@ -56,3 +51,13 @@ class DescribeAlarmEventStackInfoRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
+	def get_UniqueInfo(self): # String
+		return self.get_query_params().get('UniqueInfo')
+
+	def set_UniqueInfo(self, UniqueInfo):  # String
+		self.add_query_param('UniqueInfo', UniqueInfo)

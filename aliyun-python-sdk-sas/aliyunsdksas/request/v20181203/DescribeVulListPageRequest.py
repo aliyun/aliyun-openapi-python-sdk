@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeVulListPageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulListPage')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulListPage','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DescribeVulListPageRequest(RpcRequest):
 
 	def set_CveId(self, CveId):  # String
 		self.add_query_param('CveId', CveId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
@@ -46,8 +51,3 @@ class DescribeVulListPageRequest(RpcRequest):
 
 	def set_VulNameLike(self, VulNameLike):  # String
 		self.add_query_param('VulNameLike', VulNameLike)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)

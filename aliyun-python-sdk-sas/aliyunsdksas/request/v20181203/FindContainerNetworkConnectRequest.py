@@ -24,7 +24,7 @@ import json
 class FindContainerNetworkConnectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'FindContainerNetworkConnect')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'FindContainerNetworkConnect','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

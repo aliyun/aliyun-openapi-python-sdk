@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class UpdateHoneypotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'UpdateHoneypot')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'UpdateHoneypot','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class UpdateHoneypotRequest(RpcRequest):
 
 	def set_HoneypotName(self, HoneypotName):  # String
 		self.add_query_param('HoneypotName', HoneypotName)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
 	def get_HoneypotId(self): # String
 		return self.get_query_params().get('HoneypotId')
 

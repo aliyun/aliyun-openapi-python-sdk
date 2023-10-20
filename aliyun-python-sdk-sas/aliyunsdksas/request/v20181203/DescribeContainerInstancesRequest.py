@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeContainerInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeContainerInstances')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeContainerInstances','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class DescribeContainerInstancesRequest(RpcRequest):
 
 	def set_Criteria(self, Criteria):  # String
 		self.add_query_param('Criteria', Criteria)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -51,3 +46,8 @@ class DescribeContainerInstancesRequest(RpcRequest):
 
 	def set_LogicalExp(self, LogicalExp):  # String
 		self.add_query_param('LogicalExp', LogicalExp)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)

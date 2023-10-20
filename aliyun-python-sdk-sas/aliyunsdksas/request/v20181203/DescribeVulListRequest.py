@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeVulListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulList')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulList','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class DescribeVulListRequest(RpcRequest):
 
 	def set_VpcInstanceIds(self, VpcInstanceIds):  # String
 		self.add_query_param('VpcInstanceIds', VpcInstanceIds)
+	def get_UseNextToken(self): # Boolean
+		return self.get_query_params().get('UseNextToken')
+
+	def set_UseNextToken(self, UseNextToken):  # Boolean
+		self.add_query_param('UseNextToken', UseNextToken)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -71,11 +76,21 @@ class DescribeVulListRequest(RpcRequest):
 
 	def set_Uuids(self, Uuids):  # String
 		self.add_query_param('Uuids', Uuids)
+	def get_StatusList(self): # String
+		return self.get_query_params().get('StatusList')
+
+	def set_StatusList(self, StatusList):  # String
+		self.add_query_param('StatusList', StatusList)
 	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -86,6 +101,11 @@ class DescribeVulListRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
 	def get_Dealed(self): # String
 		return self.get_query_params().get('Dealed')
 

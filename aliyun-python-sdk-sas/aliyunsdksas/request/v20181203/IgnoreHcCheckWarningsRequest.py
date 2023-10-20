@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class IgnoreHcCheckWarningsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'IgnoreHcCheckWarnings')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'IgnoreHcCheckWarnings','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,11 @@ class IgnoreHcCheckWarningsRequest(RpcRequest):
 
 	def set_Reason(self, Reason):  # String
 		self.add_query_param('Reason', Reason)
-	def get_CheckIds(self): # String
-		return self.get_query_params().get('CheckIds')
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_CheckIds(self, CheckIds):  # String
-		self.add_query_param('CheckIds', CheckIds)
-	def get_RiskId(self): # String
-		return self.get_query_params().get('RiskId')
-
-	def set_RiskId(self, RiskId):  # String
-		self.add_query_param('RiskId', RiskId)
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_Type(self): # Long
 		return self.get_query_params().get('Type')
 
@@ -56,6 +51,16 @@ class IgnoreHcCheckWarningsRequest(RpcRequest):
 
 	def set_SourceIp(self, SourceIp):  # String
 		self.add_query_param('SourceIp', SourceIp)
+	def get_CheckIds(self): # String
+		return self.get_query_params().get('CheckIds')
+
+	def set_CheckIds(self, CheckIds):  # String
+		self.add_query_param('CheckIds', CheckIds)
+	def get_RiskId(self): # String
+		return self.get_query_params().get('RiskId')
+
+	def set_RiskId(self, RiskId):  # String
+		self.add_query_param('RiskId', RiskId)
 	def get_CheckWarningIds(self): # String
 		return self.get_query_params().get('CheckWarningIds')
 

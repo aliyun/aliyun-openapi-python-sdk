@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeImageBaselineStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageBaselineStrategy')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeImageBaselineStrategy','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,18 @@ class DescribeImageBaselineStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StrategyId(self): # Long
-		return self.get_query_params().get('StrategyId')
+	def get_Source(self): # String
+		return self.get_query_params().get('Source')
 
-	def set_StrategyId(self, StrategyId):  # Long
-		self.add_query_param('StrategyId', StrategyId)
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_StrategyId(self): # Long
+		return self.get_query_params().get('StrategyId')
+
+	def set_StrategyId(self, StrategyId):  # Long
+		self.add_query_param('StrategyId', StrategyId)

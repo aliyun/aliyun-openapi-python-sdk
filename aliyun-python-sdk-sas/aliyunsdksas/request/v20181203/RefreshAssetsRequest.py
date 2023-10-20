@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class RefreshAssetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RefreshAssets')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RefreshAssets','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,23 @@ class RefreshAssetsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CloudAssetType(self): # Integer
-		return self.get_query_params().get('CloudAssetType')
-
-	def set_CloudAssetType(self, CloudAssetType):  # Integer
-		self.add_query_param('CloudAssetType', CloudAssetType)
 	def get_CloudAssetSubType(self): # Integer
 		return self.get_query_params().get('CloudAssetSubType')
 
 	def set_CloudAssetSubType(self, CloudAssetSubType):  # Integer
 		self.add_query_param('CloudAssetSubType', CloudAssetSubType)
+	def get_Vendor(self): # Integer
+		return self.get_query_params().get('Vendor')
+
+	def set_Vendor(self, Vendor):  # Integer
+		self.add_query_param('Vendor', Vendor)
 	def get_AssetType(self): # String
 		return self.get_query_params().get('AssetType')
 
 	def set_AssetType(self, AssetType):  # String
 		self.add_query_param('AssetType', AssetType)
+	def get_CloudAssetType(self): # Integer
+		return self.get_query_params().get('CloudAssetType')
+
+	def set_CloudAssetType(self, CloudAssetType):  # Integer
+		self.add_query_param('CloudAssetType', CloudAssetType)

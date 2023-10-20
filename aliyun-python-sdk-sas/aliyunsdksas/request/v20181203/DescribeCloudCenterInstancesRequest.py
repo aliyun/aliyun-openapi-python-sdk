@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def set_Importance(self, Importance):  # Integer
 		self.add_query_param('Importance', Importance)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -56,6 +61,16 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_ResourceDirectoryAccountId(self): # Long
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self, ResourceDirectoryAccountId):  # Long
+		self.add_query_param('ResourceDirectoryAccountId', ResourceDirectoryAccountId)
+	def get_UseNextToken(self): # Boolean
+		return self.get_query_params().get('UseNextToken')
+
+	def set_UseNextToken(self, UseNextToken):  # Boolean
+		self.add_query_param('UseNextToken', UseNextToken)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

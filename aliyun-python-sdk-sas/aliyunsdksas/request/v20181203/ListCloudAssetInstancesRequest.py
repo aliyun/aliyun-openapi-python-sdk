@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class ListCloudAssetInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCloudAssetInstances')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ListCloudAssetInstances','sas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,8 @@ class ListCloudAssetInstancesRequest(RpcRequest):
 
 	def set_CloudAssetTypess(self, CloudAssetTypes):  # RepeatList
 		for depth1 in range(len(CloudAssetTypes)):
+			if CloudAssetTypes[depth1].get('Vendor') is not None:
+				self.add_query_param('CloudAssetTypes.' + str(depth1 + 1) + '.Vendor', CloudAssetTypes[depth1].get('Vendor'))
 			if CloudAssetTypes[depth1].get('AssetSubType') is not None:
 				self.add_query_param('CloudAssetTypes.' + str(depth1 + 1) + '.AssetSubType', CloudAssetTypes[depth1].get('AssetSubType'))
 			if CloudAssetTypes[depth1].get('AssetType') is not None:

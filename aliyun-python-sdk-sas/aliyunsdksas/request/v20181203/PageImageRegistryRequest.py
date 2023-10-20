@@ -23,7 +23,7 @@ from aliyunsdksas.endpoint import endpoint_data
 class PageImageRegistryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'PageImageRegistry')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'PageImageRegistry','sas')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,16 +32,6 @@ class PageImageRegistryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RegistryNameLike(self): # String
-		return self.get_body_params().get('RegistryNameLike')
-
-	def set_RegistryNameLike(self, RegistryNameLike):  # String
-		self.add_body_params('RegistryNameLike', RegistryNameLike)
-	def get_CurrentPage(self): # Integer
-		return self.get_body_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_body_params('CurrentPage', CurrentPage)
 	def get_RegistryTypeNotInLists(self): # RepeatList
 		return self.get_body_params().get('RegistryTypeNotInList')
 
@@ -58,6 +48,16 @@ class PageImageRegistryRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RegistryNameLike(self): # String
+		return self.get_body_params().get('RegistryNameLike')
+
+	def set_RegistryNameLike(self, RegistryNameLike):  # String
+		self.add_body_params('RegistryNameLike', RegistryNameLike)
+	def get_CurrentPage(self): # Integer
+		return self.get_body_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_body_params('CurrentPage', CurrentPage)
 	def get_RegistryTypeInLists(self): # RepeatList
 		return self.get_body_params().get('RegistryTypeInList')
 
