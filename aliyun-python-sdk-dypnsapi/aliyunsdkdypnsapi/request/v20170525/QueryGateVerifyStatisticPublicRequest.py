@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class QueryGateVerifyStatisticPublicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QueryGateVerifyStatisticPublic')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QueryGateVerifyStatisticPublic','dypnsapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

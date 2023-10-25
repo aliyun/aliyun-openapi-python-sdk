@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class VerifyWithFusionAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyWithFusionAuthToken')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyWithFusionAuthToken','dypnsapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

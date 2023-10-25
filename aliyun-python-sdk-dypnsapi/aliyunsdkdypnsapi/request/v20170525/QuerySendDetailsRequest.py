@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class QuerySendDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QuerySendDetails')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'QuerySendDetails','dypnsapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

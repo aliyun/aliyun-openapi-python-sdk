@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class DeleteVerifySchemeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DeleteVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DeleteVerifyScheme','dypnsapi')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
