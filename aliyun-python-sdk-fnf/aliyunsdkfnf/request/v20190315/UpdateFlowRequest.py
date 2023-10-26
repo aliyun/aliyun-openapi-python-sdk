@@ -25,50 +25,39 @@ class UpdateFlowRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'UpdateFlow','fnf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-
-	def get_RequestId(self):
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_RoleArn(self):
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)
+	def get_RoleArn(self): # String
 		return self.get_body_params().get('RoleArn')
 
-	def set_RoleArn(self,RoleArn):
+	def set_RoleArn(self, RoleArn):  # String
 		self.add_body_params('RoleArn', RoleArn)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_Definition(self):
+	def get_Definition(self): # String
 		return self.get_body_params().get('Definition')
 
-	def set_Definition(self,Definition):
+	def set_Definition(self, Definition):  # String
 		self.add_body_params('Definition', Definition)
-
-	def get_ExternalStorageLocation(self):
-		return self.get_body_params().get('ExternalStorageLocation')
-
-	def set_ExternalStorageLocation(self,ExternalStorageLocation):
-		self.add_body_params('ExternalStorageLocation', ExternalStorageLocation)

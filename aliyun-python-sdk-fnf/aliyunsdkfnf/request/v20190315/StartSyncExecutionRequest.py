@@ -20,29 +20,35 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfnf.endpoint import endpoint_data
 
-class DescribeScheduleRequest(RpcRequest):
+class StartSyncExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'DescribeSchedule','fnf')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'StartSyncExecution','fnf')
+		self.set_protocol_type('https')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScheduleName(self): # String
-		return self.get_query_params().get('ScheduleName')
+	def get_ExecutionName(self): # String
+		return self.get_body_params().get('ExecutionName')
 
-	def set_ScheduleName(self, ScheduleName):  # String
-		self.add_query_param('ScheduleName', ScheduleName)
+	def set_ExecutionName(self, ExecutionName):  # String
+		self.add_body_params('ExecutionName', ExecutionName)
+	def get_Input(self): # String
+		return self.get_body_params().get('Input')
+
+	def set_Input(self, Input):  # String
+		self.add_body_params('Input', Input)
 	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
 	def set_RequestId(self, RequestId):  # String
 		self.add_query_param('RequestId', RequestId)
 	def get_FlowName(self): # String
-		return self.get_query_params().get('FlowName')
+		return self.get_body_params().get('FlowName')
 
 	def set_FlowName(self, FlowName):  # String
-		self.add_query_param('FlowName', FlowName)
+		self.add_body_params('FlowName', FlowName)

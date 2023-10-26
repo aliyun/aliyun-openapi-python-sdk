@@ -25,26 +25,24 @@ class ReportTaskSucceededRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ReportTaskSucceeded','fnf')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Output(self):
+	def get_Output(self): # String
 		return self.get_body_params().get('Output')
 
-	def set_Output(self,Output):
+	def set_Output(self, Output):  # String
 		self.add_body_params('Output', Output)
-
-	def get_RequestId(self):
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_TaskToken(self):
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)
+	def get_TaskToken(self): # String
 		return self.get_query_params().get('TaskToken')
 
-	def set_TaskToken(self,TaskToken):
-		self.add_query_param('TaskToken',TaskToken)
+	def set_TaskToken(self, TaskToken):  # String
+		self.add_query_param('TaskToken', TaskToken)

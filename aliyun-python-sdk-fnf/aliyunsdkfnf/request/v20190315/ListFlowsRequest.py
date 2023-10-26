@@ -25,26 +25,24 @@ class ListFlowsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ListFlows','fnf')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NextToken(self):
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_RequestId(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_Limit(self):
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)
+	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
+	def set_Limit(self, Limit):  # Integer
+		self.add_query_param('Limit', Limit)

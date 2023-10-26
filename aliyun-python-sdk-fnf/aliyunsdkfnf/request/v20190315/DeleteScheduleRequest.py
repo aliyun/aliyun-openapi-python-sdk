@@ -25,26 +25,24 @@ class DeleteScheduleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'DeleteSchedule','fnf')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ScheduleName(self):
+	def get_ScheduleName(self): # String
 		return self.get_query_params().get('ScheduleName')
 
-	def set_ScheduleName(self,ScheduleName):
-		self.add_query_param('ScheduleName',ScheduleName)
-
-	def get_RequestId(self):
+	def set_ScheduleName(self, ScheduleName):  # String
+		self.add_query_param('ScheduleName', ScheduleName)
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_FlowName(self):
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)
+	def get_FlowName(self): # String
 		return self.get_query_params().get('FlowName')
 
-	def set_FlowName(self,FlowName):
-		self.add_query_param('FlowName',FlowName)
+	def set_FlowName(self, FlowName):  # String
+		self.add_query_param('FlowName', FlowName)
