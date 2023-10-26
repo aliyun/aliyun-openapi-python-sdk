@@ -57,6 +57,11 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
 		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
+	def get_DeleteOnRelease(self): # Boolean
+		return self.get_query_params().get('DeleteOnRelease')
+
+	def set_DeleteOnRelease(self, DeleteOnRelease):  # Boolean
+		self.add_query_param('DeleteOnRelease', DeleteOnRelease)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

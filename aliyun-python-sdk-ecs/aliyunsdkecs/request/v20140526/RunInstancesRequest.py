@@ -450,6 +450,10 @@ class RunInstancesRequest(RpcRequest):
 					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Ipv6Address.' + str(depth2 + 1), NetworkInterface[depth1].get('Ipv6Address')[depth2])
 			if NetworkInterface[depth1].get('NetworkCardIndex') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkCardIndex', NetworkInterface[depth1].get('NetworkCardIndex'))
+			if NetworkInterface[depth1].get('DeleteOnRelease') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.DeleteOnRelease', NetworkInterface[depth1].get('DeleteOnRelease'))
+			if NetworkInterface[depth1].get('NetworkInterfaceId') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceId', NetworkInterface[depth1].get('NetworkInterfaceId'))
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

@@ -71,3 +71,8 @@ class ModifySnapshotAttributeRequest(RpcRequest):
 
 	def set_DisableInstantAccess(self, DisableInstantAccess):  # Boolean
 		self.add_query_param('DisableInstantAccess', DisableInstantAccess)
+	def get_RetentionDays(self): # Integer
+		return self.get_query_params().get('RetentionDays')
+
+	def set_RetentionDays(self, RetentionDays):  # Integer
+		self.add_query_param('RetentionDays', RetentionDays)

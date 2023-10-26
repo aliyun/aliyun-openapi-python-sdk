@@ -291,6 +291,11 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
 		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_CreditSpecification(self): # String
+		return self.get_query_params().get('CreditSpecification')
+
+	def set_CreditSpecification(self, CreditSpecification):  # String
+		self.add_query_param('CreditSpecification', CreditSpecification)
 	def get_SpotDuration(self): # Integer
 		return self.get_query_params().get('SpotDuration')
 

@@ -85,6 +85,11 @@ class DescribeSendFileResultsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_InvocationStatus(self): # String
+		return self.get_query_params().get('InvocationStatus')
+
+	def set_InvocationStatus(self, InvocationStatus):  # String
+		self.add_query_param('InvocationStatus', InvocationStatus)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
