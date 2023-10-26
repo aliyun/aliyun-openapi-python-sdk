@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class ModifyAppRequest(RpcRequest):
+class SetGroupAuthAppCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyApp','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetGroupAuthAppCode','apigateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,37 +31,18 @@ class ModifyAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Extend(self): # String
-		return self.get_query_params().get('Extend')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_AuthAppCode(self): # String
+		return self.get_query_params().get('AuthAppCode')
 
-	def set_Extend(self, Extend):  # String
-		self.add_query_param('Extend', Extend)
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
+	def set_AuthAppCode(self, AuthAppCode):  # String
+		self.add_query_param('AuthAppCode', AuthAppCode)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_AppId(self): # Long
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # Long
-		self.add_query_param('AppId', AppId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class CreateAppRequest(RpcRequest):
+class DescribeAppsByApiProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApp','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAppsByApiProduct','apigateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,11 @@ class CreateAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Extend(self): # String
-		return self.get_query_params().get('Extend')
-
-	def set_Extend(self, Extend):  # String
-		self.add_query_param('Extend', Extend)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -51,27 +46,13 @@ class CreateAppRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_AppSecret(self): # String
-		return self.get_query_params().get('AppSecret')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_AppSecret(self, AppSecret):  # String
-		self.add_query_param('AppSecret', AppSecret)
-	def get_AppKey(self): # String
-		return self.get_query_params().get('AppKey')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ApiProductId(self): # String
+		return self.get_query_params().get('ApiProductId')
 
-	def set_AppKey(self, AppKey):  # String
-		self.add_query_param('AppKey', AppKey)
-	def get_AppCode(self): # String
-		return self.get_query_params().get('AppCode')
-
-	def set_AppCode(self, AppCode):  # String
-		self.add_query_param('AppCode', AppCode)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_ApiProductId(self, ApiProductId):  # String
+		self.add_query_param('ApiProductId', ApiProductId)

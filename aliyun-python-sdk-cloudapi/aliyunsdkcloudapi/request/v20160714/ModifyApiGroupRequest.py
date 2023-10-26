@@ -100,3 +100,8 @@ class ModifyApiGroupRequest(RpcRequest):
 
 	def set_CustomTraceConfig(self, CustomTraceConfig):  # String
 		self.add_query_param('CustomTraceConfig', CustomTraceConfig)
+	def get_SupportSSE(self): # String
+		return self.get_query_params().get('SupportSSE')
+
+	def set_SupportSSE(self, SupportSSE):  # String
+		self.add_query_param('SupportSSE', SupportSSE)

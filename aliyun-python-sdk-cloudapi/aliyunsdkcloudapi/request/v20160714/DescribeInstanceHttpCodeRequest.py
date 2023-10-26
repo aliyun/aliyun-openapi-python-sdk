@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class ModifyAppRequest(RpcRequest):
+class DescribeInstanceHttpCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyApp','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeInstanceHttpCode','apigateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,37 +31,28 @@ class ModifyAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_StageName(self): # String
+		return self.get_query_params().get('StageName')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Extend(self): # String
-		return self.get_query_params().get('Extend')
+	def set_StageName(self, StageName):  # String
+		self.add_query_param('StageName', StageName)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_Extend(self, Extend):  # String
-		self.add_query_param('Extend', Extend)
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_AppId(self): # Long
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # Long
-		self.add_query_param('AppId', AppId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))

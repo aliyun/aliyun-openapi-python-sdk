@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class ModifyAppRequest(RpcRequest):
+class DescribeApiProductsByAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyApp','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeApiProductsByApp','apigateway')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,11 @@ class ModifyAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Extend(self): # String
-		return self.get_query_params().get('Extend')
-
-	def set_Extend(self, Extend):  # String
-		self.add_query_param('Extend', Extend)
-	def get_AppName(self): # String
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self, AppName):  # String
-		self.add_query_param('AppName', AppName)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -56,12 +46,8 @@ class ModifyAppRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # Long
 		self.add_query_param('AppId', AppId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

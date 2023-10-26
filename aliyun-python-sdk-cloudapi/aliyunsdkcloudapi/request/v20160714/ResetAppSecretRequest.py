@@ -41,6 +41,11 @@ class ResetAppSecretRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_NewAppKey(self): # String
+		return self.get_query_params().get('NewAppKey')
+
+	def set_NewAppKey(self, NewAppKey):  # String
+		self.add_query_param('NewAppKey', NewAppKey)
 	def get_AppKey(self): # String
 		return self.get_query_params().get('AppKey')
 

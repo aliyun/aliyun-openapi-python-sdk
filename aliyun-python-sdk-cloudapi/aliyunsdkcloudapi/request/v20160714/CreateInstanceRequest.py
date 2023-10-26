@@ -36,6 +36,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_InstanceSpec(self, InstanceSpec):  # String
 		self.add_query_param('InstanceSpec', InstanceSpec)
+	def get_InstanceCidr(self): # String
+		return self.get_query_params().get('InstanceCidr')
+
+	def set_InstanceCidr(self, InstanceCidr):  # String
+		self.add_query_param('InstanceCidr', InstanceCidr)
 	def get_HttpsPolicy(self): # String
 		return self.get_query_params().get('HttpsPolicy')
 
@@ -46,6 +51,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Duration(self, Duration):  # Integer
 		self.add_query_param('Duration', Duration)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -60,11 +70,29 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_AutoPay(self, AutoPay):  # Boolean
 		self.add_query_param('AutoPay', AutoPay)
+	def get_UserVpcId(self): # String
+		return self.get_query_params().get('UserVpcId')
+
+	def set_UserVpcId(self, UserVpcId):  # String
+		self.add_query_param('UserVpcId', UserVpcId)
 	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 
 	def set_Token(self, Token):  # String
 		self.add_query_param('Token', Token)
+	def get_ZoneVSwitchSecurityGroups(self): # RepeatList
+		return self.get_query_params().get('ZoneVSwitchSecurityGroup')
+
+	def set_ZoneVSwitchSecurityGroups(self, ZoneVSwitchSecurityGroup):  # RepeatList
+		for depth1 in range(len(ZoneVSwitchSecurityGroup)):
+			if ZoneVSwitchSecurityGroup[depth1].get('VSwitchId') is not None:
+				self.add_query_param('ZoneVSwitchSecurityGroup.' + str(depth1 + 1) + '.VSwitchId', ZoneVSwitchSecurityGroup[depth1].get('VSwitchId'))
+			if ZoneVSwitchSecurityGroup[depth1].get('CidrBlock') is not None:
+				self.add_query_param('ZoneVSwitchSecurityGroup.' + str(depth1 + 1) + '.CidrBlock', ZoneVSwitchSecurityGroup[depth1].get('CidrBlock'))
+			if ZoneVSwitchSecurityGroup[depth1].get('SecurityGroupId') is not None:
+				self.add_query_param('ZoneVSwitchSecurityGroup.' + str(depth1 + 1) + '.SecurityGroupId', ZoneVSwitchSecurityGroup[depth1].get('SecurityGroupId'))
+			if ZoneVSwitchSecurityGroup[depth1].get('ZoneId') is not None:
+				self.add_query_param('ZoneVSwitchSecurityGroup.' + str(depth1 + 1) + '.ZoneId', ZoneVSwitchSecurityGroup[depth1].get('ZoneId'))
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 

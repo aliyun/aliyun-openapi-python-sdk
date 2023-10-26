@@ -37,10 +37,10 @@ class CreateApiRequest(RpcRequest):
 	def set_WebSocketApiType(self, WebSocketApiType):  # String
 		self.add_query_param('WebSocketApiType', WebSocketApiType)
 	def get_ErrorCodeSamples(self): # String
-		return self.get_query_params().get('ErrorCodeSamples')
+		return self.get_body_params().get('ErrorCodeSamples')
 
 	def set_ErrorCodeSamples(self, ErrorCodeSamples):  # String
-		self.add_query_param('ErrorCodeSamples', ErrorCodeSamples)
+		self.add_body_params('ErrorCodeSamples', ErrorCodeSamples)
 	def get_AppCodeAuthType(self): # String
 		return self.get_query_params().get('AppCodeAuthType')
 
@@ -62,10 +62,10 @@ class CreateApiRequest(RpcRequest):
 	def set_BackendId(self, BackendId):  # String
 		self.add_query_param('BackendId', BackendId)
 	def get_ConstantParameters(self): # String
-		return self.get_query_params().get('ConstantParameters')
+		return self.get_body_params().get('ConstantParameters')
 
 	def set_ConstantParameters(self, ConstantParameters):  # String
-		self.add_query_param('ConstantParameters', ConstantParameters)
+		self.add_body_params('ConstantParameters', ConstantParameters)
 	def get_AuthType(self): # String
 		return self.get_query_params().get('AuthType')
 
@@ -77,25 +77,25 @@ class CreateApiRequest(RpcRequest):
 	def set_AllowSignatureMethod(self, AllowSignatureMethod):  # String
 		self.add_query_param('AllowSignatureMethod', AllowSignatureMethod)
 	def get_ServiceParameters(self): # String
-		return self.get_query_params().get('ServiceParameters')
+		return self.get_body_params().get('ServiceParameters')
 
 	def set_ServiceParameters(self, ServiceParameters):  # String
-		self.add_query_param('ServiceParameters', ServiceParameters)
+		self.add_body_params('ServiceParameters', ServiceParameters)
 	def get_FailResultSample(self): # String
-		return self.get_query_params().get('FailResultSample')
+		return self.get_body_params().get('FailResultSample')
 
 	def set_FailResultSample(self, FailResultSample):  # String
-		self.add_query_param('FailResultSample', FailResultSample)
+		self.add_body_params('FailResultSample', FailResultSample)
 	def get_SystemParameters(self): # String
-		return self.get_query_params().get('SystemParameters')
+		return self.get_body_params().get('SystemParameters')
 
 	def set_SystemParameters(self, SystemParameters):  # String
-		self.add_query_param('SystemParameters', SystemParameters)
+		self.add_body_params('SystemParameters', SystemParameters)
 	def get_ServiceParametersMap(self): # String
-		return self.get_query_params().get('ServiceParametersMap')
+		return self.get_body_params().get('ServiceParametersMap')
 
 	def set_ServiceParametersMap(self, ServiceParametersMap):  # String
-		self.add_query_param('ServiceParametersMap', ServiceParametersMap)
+		self.add_body_params('ServiceParametersMap', ServiceParametersMap)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -107,15 +107,15 @@ class CreateApiRequest(RpcRequest):
 	def set_OpenIdConnectConfig(self, OpenIdConnectConfig):  # String
 		self.add_query_param('OpenIdConnectConfig', OpenIdConnectConfig)
 	def get_RequestParameters(self): # String
-		return self.get_query_params().get('RequestParameters')
+		return self.get_body_params().get('RequestParameters')
 
 	def set_RequestParameters(self, RequestParameters):  # String
-		self.add_query_param('RequestParameters', RequestParameters)
+		self.add_body_params('RequestParameters', RequestParameters)
 	def get_ResultDescriptions(self): # String
-		return self.get_query_params().get('ResultDescriptions')
+		return self.get_body_params().get('ResultDescriptions')
 
 	def set_ResultDescriptions(self, ResultDescriptions):  # String
-		self.add_query_param('ResultDescriptions', ResultDescriptions)
+		self.add_body_params('ResultDescriptions', ResultDescriptions)
 	def get_Visibility(self): # String
 		return self.get_query_params().get('Visibility')
 
@@ -142,10 +142,10 @@ class CreateApiRequest(RpcRequest):
 	def set_ApiName(self, ApiName):  # String
 		self.add_query_param('ApiName', ApiName)
 	def get_ResultSample(self): # String
-		return self.get_query_params().get('ResultSample')
+		return self.get_body_params().get('ResultSample')
 
 	def set_ResultSample(self, ResultSample):  # String
-		self.add_query_param('ResultSample', ResultSample)
+		self.add_body_params('ResultSample', ResultSample)
 	def get_BackendEnable(self): # Boolean
 		return self.get_query_params().get('BackendEnable')
 

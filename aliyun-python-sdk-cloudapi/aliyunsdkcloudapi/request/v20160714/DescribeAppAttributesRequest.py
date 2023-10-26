@@ -70,6 +70,11 @@ class DescribeAppAttributesRequest(RpcRequest):
 
 	def set_EnableTagAuth(self, EnableTagAuth):  # Boolean
 		self.add_query_param('EnableTagAuth', EnableTagAuth)
+	def get_Extend(self): # String
+		return self.get_query_params().get('Extend')
+
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
 	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
