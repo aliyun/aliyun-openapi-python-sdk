@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyDBClusterServerlessConfRequest(RpcRequest):
+class EnableDBClusterServerlessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterServerlessConf','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'EnableDBClusterServerless','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,16 +51,6 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_ScaleMax(self, ScaleMax):  # String
 		self.add_query_param('ScaleMax', ScaleMax)
-	def get_PlannedEndTime(self): # String
-		return self.get_query_params().get('PlannedEndTime')
-
-	def set_PlannedEndTime(self, PlannedEndTime):  # String
-		self.add_query_param('PlannedEndTime', PlannedEndTime)
-	def get_SecondsUntilAutoPause(self): # String
-		return self.get_query_params().get('SecondsUntilAutoPause')
-
-	def set_SecondsUntilAutoPause(self, SecondsUntilAutoPause):  # String
-		self.add_query_param('SecondsUntilAutoPause', SecondsUntilAutoPause)
 	def get_ScaleApRoNumMin(self): # String
 		return self.get_query_params().get('ScaleApRoNumMin')
 
@@ -91,23 +81,8 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PlannedStartTime(self): # String
-		return self.get_query_params().get('PlannedStartTime')
-
-	def set_PlannedStartTime(self, PlannedStartTime):  # String
-		self.add_query_param('PlannedStartTime', PlannedStartTime)
 	def get_ScaleRoNumMin(self): # String
 		return self.get_query_params().get('ScaleRoNumMin')
 
 	def set_ScaleRoNumMin(self, ScaleRoNumMin):  # String
 		self.add_query_param('ScaleRoNumMin', ScaleRoNumMin)
-	def get_AllowShutDown(self): # String
-		return self.get_query_params().get('AllowShutDown')
-
-	def set_AllowShutDown(self, AllowShutDown):  # String
-		self.add_query_param('AllowShutDown', AllowShutDown)
-	def get_FromTimeService(self): # Boolean
-		return self.get_query_params().get('FromTimeService')
-
-	def set_FromTimeService(self, FromTimeService):  # Boolean
-		self.add_query_param('FromTimeService', FromTimeService)
