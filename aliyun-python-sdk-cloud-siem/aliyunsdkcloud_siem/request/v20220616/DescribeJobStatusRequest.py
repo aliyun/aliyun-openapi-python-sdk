@@ -19,19 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class SendMessageRequest(RpcRequest):
+class DescribeJobStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'SendMessage','cloud-siem')
+		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'DescribeJobStatus','cloud-siem')
 		self.set_method('POST')
 
-	def get_ChannelType(self): # Integer
-		return self.get_body_params().get('ChannelType')
+	def get_SubmitId(self): # String
+		return self.get_body_params().get('SubmitId')
 
-	def set_ChannelType(self, ChannelType):  # Integer
-		self.add_body_params('ChannelType', ChannelType)
-	def get_ReceiveUid(self): # Long
-		return self.get_body_params().get('ReceiveUid')
-
-	def set_ReceiveUid(self, ReceiveUid):  # Long
-		self.add_body_params('ReceiveUid', ReceiveUid)
+	def set_SubmitId(self, SubmitId):  # String
+		self.add_body_params('SubmitId', SubmitId)
