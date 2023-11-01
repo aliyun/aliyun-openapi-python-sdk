@@ -65,6 +65,11 @@ class DescribeMonitoringAgentHostsRequest(RpcRequest):
 
 	def set_InstanceIds(self, InstanceIds):  # String
 		self.add_query_param('InstanceIds', InstanceIds)
+	def get_SysomStatus(self): # String
+		return self.get_query_params().get('SysomStatus')
+
+	def set_SysomStatus(self, SysomStatus):  # String
+		self.add_query_param('SysomStatus', SysomStatus)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

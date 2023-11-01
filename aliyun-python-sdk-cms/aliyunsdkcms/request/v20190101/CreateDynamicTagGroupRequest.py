@@ -45,6 +45,8 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 
 	def set_MatchExpresss(self, MatchExpress):  # RepeatList
 		for depth1 in range(len(MatchExpress)):
+			if MatchExpress[depth1].get('TagName') is not None:
+				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagName', MatchExpress[depth1].get('TagName'))
 			if MatchExpress[depth1].get('TagValue') is not None:
 				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValue', MatchExpress[depth1].get('TagValue'))
 			if MatchExpress[depth1].get('TagValueMatchFunction') is not None:

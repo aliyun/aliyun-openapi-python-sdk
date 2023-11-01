@@ -30,6 +30,11 @@ class DescribeSiteMonitorListRequest(RpcRequest):
 
 	def set_TaskType(self, TaskType):  # String
 		self.add_query_param('TaskType', TaskType)
+	def get_TaskState(self): # String
+		return self.get_query_params().get('TaskState')
+
+	def set_TaskState(self, TaskState):  # String
+		self.add_query_param('TaskState', TaskState)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

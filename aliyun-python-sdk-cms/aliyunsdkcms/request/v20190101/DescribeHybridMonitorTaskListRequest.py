@@ -30,6 +30,11 @@ class DescribeHybridMonitorTaskListRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_TargetUserId(self): # Long
+		return self.get_query_params().get('TargetUserId')
+
+	def set_TargetUserId(self, TargetUserId):  # Long
+		self.add_query_param('TargetUserId', TargetUserId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

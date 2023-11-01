@@ -30,6 +30,11 @@ class DescribeAlertingMetricRuleResourcesRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_AlertBeforeTime(self): # String
+		return self.get_query_params().get('AlertBeforeTime')
+
+	def set_AlertBeforeTime(self, AlertBeforeTime):  # String
+		self.add_query_param('AlertBeforeTime', AlertBeforeTime)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

@@ -79,6 +79,11 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def set_Keyword(self, Keyword):  # String
 		self.add_query_param('Keyword', Keyword)
+	def get_Types(self): # String
+		return self.get_query_params().get('Types')
+
+	def set_Types(self, Types):  # String
+		self.add_query_param('Types', Types)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 

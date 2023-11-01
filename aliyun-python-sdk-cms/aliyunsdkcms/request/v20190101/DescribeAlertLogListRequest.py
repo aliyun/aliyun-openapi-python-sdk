@@ -65,6 +65,11 @@ class DescribeAlertLogListRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_SourceType(self): # String
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
 	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 

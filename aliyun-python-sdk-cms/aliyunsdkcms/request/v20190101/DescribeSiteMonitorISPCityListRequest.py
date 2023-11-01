@@ -35,6 +35,11 @@ class DescribeSiteMonitorISPCityListRequest(RpcRequest):
 
 	def set_Isp(self, Isp):  # String
 		self.add_query_param('Isp', Isp)
+	def get_ViewAll(self): # Boolean
+		return self.get_query_params().get('ViewAll')
+
+	def set_ViewAll(self, ViewAll):  # Boolean
+		self.add_query_param('ViewAll', ViewAll)
 	def get_IPV4(self): # Boolean
 		return self.get_query_params().get('IPV4')
 

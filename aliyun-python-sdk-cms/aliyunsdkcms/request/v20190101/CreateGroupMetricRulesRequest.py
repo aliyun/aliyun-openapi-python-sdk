@@ -35,6 +35,8 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 
 	def set_GroupMetricRuless(self, GroupMetricRules):  # RepeatList
 		for depth1 in range(len(GroupMetricRules)):
+			if GroupMetricRules[depth1].get('Escalations.Info.N') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Info.N', GroupMetricRules[depth1].get('Escalations.Info.N'))
 			if GroupMetricRules[depth1].get('Webhook') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Webhook', GroupMetricRules[depth1].get('Webhook'))
 			if GroupMetricRules[depth1].get('Escalations.Warn.ComparisonOperator') is not None:
@@ -59,6 +61,8 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.NoEffectiveInterval', GroupMetricRules[depth1].get('NoEffectiveInterval'))
 			if GroupMetricRules[depth1].get('EmailSubject') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.EmailSubject', GroupMetricRules[depth1].get('EmailSubject'))
+			if GroupMetricRules[depth1].get('Escalations.Critical.N') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Critical.N', GroupMetricRules[depth1].get('Escalations.Critical.N'))
 			if GroupMetricRules[depth1].get('SilenceTime') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.SilenceTime', GroupMetricRules[depth1].get('SilenceTime'))
 			if GroupMetricRules[depth1].get('Escalations.Info.PreCondition') is not None:
@@ -97,6 +101,8 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', GroupMetricRules[depth1].get('Escalations.Warn.Statistics'))
 			if GroupMetricRules[depth1].get('Namespace') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Namespace', GroupMetricRules[depth1].get('Namespace'))
+			if GroupMetricRules[depth1].get('Escalations.Warn.N') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.N', GroupMetricRules[depth1].get('Escalations.Warn.N'))
 			if GroupMetricRules[depth1].get('Interval') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Interval', GroupMetricRules[depth1].get('Interval'))
 			if GroupMetricRules[depth1].get('RuleId') is not None:

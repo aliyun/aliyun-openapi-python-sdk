@@ -19,34 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeEventRuleListRequest(RpcRequest):
+class EnableMetricRuleBlackListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeEventRuleList','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'EnableMetricRuleBlackList','cms')
 		self.set_method('POST')
 
-	def get_PageNumber(self): # String
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # String
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # String
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
-	def get_NamePrefix(self): # String
-		return self.get_query_params().get('NamePrefix')
-
-	def set_NamePrefix(self, NamePrefix):  # String
-		self.add_query_param('NamePrefix', NamePrefix)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_IsEnable(self): # Boolean
 		return self.get_query_params().get('IsEnable')
 
 	def set_IsEnable(self, IsEnable):  # Boolean
 		self.add_query_param('IsEnable', IsEnable)
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)

@@ -60,6 +60,19 @@ class CreateHostAvailabilityRequest(RpcRequest):
 
 	def set_AlertConfigSilenceTime(self, AlertConfigSilenceTime):  # Integer
 		self.add_query_param('AlertConfig.SilenceTime', AlertConfigSilenceTime)
+	def get_AlertConfigTargetList(self): # Array
+		return self.get_query_params().get('AlertConfigTargetList')
+
+	def set_AlertConfigTargetList(self, AlertConfigTargetList):  # Array
+		for index1, value1 in enumerate(AlertConfigTargetList):
+			if value1.get('Level') is not None:
+				self.add_query_param('AlertConfigTargetList.' + str(index1 + 1) + '.Level', value1.get('Level'))
+			if value1.get('Id') is not None:
+				self.add_query_param('AlertConfigTargetList.' + str(index1 + 1) + '.Id', value1.get('Id'))
+			if value1.get('Arn') is not None:
+				self.add_query_param('AlertConfigTargetList.' + str(index1 + 1) + '.Arn', value1.get('Arn'))
+			if value1.get('JsonParams') is not None:
+				self.add_query_param('AlertConfigTargetList.' + str(index1 + 1) + '.JsonParams', value1.get('JsonParams'))
 	def get_TaskOptionHttpResponseCharset(self): # String
 		return self.get_query_params().get('TaskOption.HttpResponseCharset')
 

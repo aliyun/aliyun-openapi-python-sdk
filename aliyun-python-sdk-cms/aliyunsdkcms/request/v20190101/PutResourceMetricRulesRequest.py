@@ -30,6 +30,8 @@ class PutResourceMetricRulesRequest(RpcRequest):
 
 	def set_Ruless(self, Rules):  # RepeatList
 		for depth1 in range(len(Rules)):
+			if Rules[depth1].get('Escalations.Info.N') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Info.N', Rules[depth1].get('Escalations.Info.N'))
 			if Rules[depth1].get('Webhook') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Webhook', Rules[depth1].get('Webhook'))
 			if Rules[depth1].get('Escalations.Warn.ComparisonOperator') is not None:
@@ -56,6 +58,8 @@ class PutResourceMetricRulesRequest(RpcRequest):
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.EmailSubject', Rules[depth1].get('EmailSubject'))
 			if Rules[depth1].get('Options') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Options', Rules[depth1].get('Options'))
+			if Rules[depth1].get('Escalations.Critical.N') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Critical.N', Rules[depth1].get('Escalations.Critical.N'))
 			if Rules[depth1].get('SilenceTime') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.SilenceTime', Rules[depth1].get('SilenceTime'))
 			if Rules[depth1].get('Prometheus') is not None:
@@ -98,6 +102,8 @@ class PutResourceMetricRulesRequest(RpcRequest):
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', Rules[depth1].get('Escalations.Warn.Statistics'))
 			if Rules[depth1].get('Namespace') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Namespace', Rules[depth1].get('Namespace'))
+			if Rules[depth1].get('Escalations.Warn.N') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.N', Rules[depth1].get('Escalations.Warn.N'))
 			if Rules[depth1].get('Interval') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Interval', Rules[depth1].get('Interval'))
 			if Rules[depth1].get('RuleId') is not None:

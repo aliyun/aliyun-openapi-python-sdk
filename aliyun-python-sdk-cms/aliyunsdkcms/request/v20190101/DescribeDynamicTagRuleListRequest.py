@@ -30,6 +30,11 @@ class DescribeDynamicTagRuleListRequest(RpcRequest):
 
 	def set_TagValue(self, TagValue):  # String
 		self.add_query_param('TagValue', TagValue)
+	def get_DynamicTagRuleId(self): # String
+		return self.get_query_params().get('DynamicTagRuleId')
+
+	def set_DynamicTagRuleId(self, DynamicTagRuleId):  # String
+		self.add_query_param('DynamicTagRuleId', DynamicTagRuleId)
 	def get_PageNumber(self): # String
 		return self.get_query_params().get('PageNumber')
 

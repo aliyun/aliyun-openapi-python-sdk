@@ -19,14 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeActiveMetricRuleListRequest(RpcRequest):
+class DeleteMetricRuleBlackListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeActiveMetricRuleList','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMetricRuleBlackList','cms')
 		self.set_method('POST')
 
-	def get_Product(self): # String
-		return self.get_query_params().get('Product')
+	def get_Id(self): # String
+		return self.get_query_params().get('Id')
 
-	def set_Product(self, Product):  # String
-		self.add_query_param('Product', Product)
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)

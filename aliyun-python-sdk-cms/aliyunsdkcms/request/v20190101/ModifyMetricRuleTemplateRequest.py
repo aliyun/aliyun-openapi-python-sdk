@@ -54,6 +54,8 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.Threshold', AlertTemplates[depth1].get('Escalations.Warn.Threshold'))
 			if AlertTemplates[depth1].get('Period') is not None:
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Period', AlertTemplates[depth1].get('Period'))
+			if AlertTemplates[depth1].get('Escalations.Info.N') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Info.N', AlertTemplates[depth1].get('Escalations.Info.N'))
 			if AlertTemplates[depth1].get('Webhook') is not None:
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Webhook', AlertTemplates[depth1].get('Webhook'))
 			if AlertTemplates[depth1].get('Escalations.Warn.ComparisonOperator') is not None:
@@ -76,6 +78,10 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', AlertTemplates[depth1].get('Escalations.Warn.Statistics'))
 			if AlertTemplates[depth1].get('Namespace') is not None:
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Namespace', AlertTemplates[depth1].get('Namespace'))
+			if AlertTemplates[depth1].get('Escalations.Warn.N') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.N', AlertTemplates[depth1].get('Escalations.Warn.N'))
+			if AlertTemplates[depth1].get('Escalations.Critical.N') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Critical.N', AlertTemplates[depth1].get('Escalations.Critical.N'))
 			if AlertTemplates[depth1].get('Selector') is not None:
 				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Selector', AlertTemplates[depth1].get('Selector'))
 			if AlertTemplates[depth1].get('MetricName') is not None:

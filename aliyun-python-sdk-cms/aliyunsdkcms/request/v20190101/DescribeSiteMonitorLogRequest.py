@@ -25,6 +25,11 @@ class DescribeSiteMonitorLogRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorLog','cms')
 		self.set_method('POST')
 
+	def get_BrowserInfo(self): # String
+		return self.get_query_params().get('BrowserInfo')
+
+	def set_BrowserInfo(self, BrowserInfo):  # String
+		self.add_query_param('BrowserInfo', BrowserInfo)
 	def get_City(self): # String
 		return self.get_query_params().get('City')
 
@@ -50,6 +55,11 @@ class DescribeSiteMonitorLogRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_Browser(self): # String
+		return self.get_query_params().get('Browser')
+
+	def set_Browser(self, Browser):  # String
+		self.add_query_param('Browser', Browser)
 	def get_MetricName(self): # String
 		return self.get_query_params().get('MetricName')
 
@@ -70,3 +80,8 @@ class DescribeSiteMonitorLogRequest(RpcRequest):
 
 	def set_Filter(self, Filter):  # String
 		self.add_query_param('Filter', Filter)
+	def get_Device(self): # String
+		return self.get_query_params().get('Device')
+
+	def set_Device(self, Device):  # String
+		self.add_query_param('Device', Device)

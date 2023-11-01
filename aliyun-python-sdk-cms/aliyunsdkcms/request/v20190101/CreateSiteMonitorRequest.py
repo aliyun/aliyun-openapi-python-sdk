@@ -60,3 +60,8 @@ class CreateSiteMonitorRequest(RpcRequest):
 
 	def set_Interval(self, Interval):  # String
 		self.add_query_param('Interval', Interval)
+	def get_CustomSchedule(self): # String
+		return self.get_query_params().get('CustomSchedule')
+
+	def set_CustomSchedule(self, CustomSchedule):  # String
+		self.add_query_param('CustomSchedule', CustomSchedule)
