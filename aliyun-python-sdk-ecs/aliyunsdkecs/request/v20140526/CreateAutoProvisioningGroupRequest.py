@@ -157,6 +157,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_LaunchConfigurationImageFamily(self): # String
+		return self.get_query_params().get('LaunchConfiguration.ImageFamily')
+
+	def set_LaunchConfigurationImageFamily(self, LaunchConfigurationImageFamily):  # String
+		self.add_query_param('LaunchConfiguration.ImageFamily', LaunchConfigurationImageFamily)
 	def get_LaunchConfigurationSystemDiskSize(self): # Integer
 		return self.get_query_params().get('LaunchConfiguration.SystemDiskSize')
 
