@@ -35,3 +35,8 @@ class QueryEventRequest(RpcRequest):
 
 	def set_EventBusName(self, EventBusName):  # String
 		self.add_query_param('EventBusName', EventBusName)
+	def get_EventSource(self): # String
+		return self.get_query_params().get('EventSource')
+
+	def set_EventSource(self, EventSource):  # String
+		self.add_query_param('EventSource', EventSource)
