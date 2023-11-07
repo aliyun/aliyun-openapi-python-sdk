@@ -41,11 +41,6 @@ class OpenAITaskRequest(RpcRequest):
 
 	def set_NodeType(self, NodeType):  # String
 		self.add_query_param('NodeType', NodeType)
-	def get_DescribeType(self): # String
-		return self.get_query_params().get('DescribeType')
-
-	def set_DescribeType(self, DescribeType):  # String
-		self.add_query_param('DescribeType', DescribeType)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
