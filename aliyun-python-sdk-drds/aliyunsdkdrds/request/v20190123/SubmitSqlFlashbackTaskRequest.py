@@ -25,68 +25,59 @@ class SubmitSqlFlashbackTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitSqlFlashbackTask','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TraceId(self):
+	def get_TraceId(self): # String
 		return self.get_query_params().get('TraceId')
 
-	def set_TraceId(self,TraceId):
-		self.add_query_param('TraceId',TraceId)
-
-	def get_SqlPk(self):
+	def set_TraceId(self, TraceId):  # String
+		self.add_query_param('TraceId', TraceId)
+	def get_SqlPk(self): # String
 		return self.get_query_params().get('SqlPk')
 
-	def set_SqlPk(self,SqlPk):
-		self.add_query_param('SqlPk',SqlPk)
-
-	def get_StartTime(self):
+	def set_SqlPk(self, SqlPk):  # String
+		self.add_query_param('SqlPk', SqlPk)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_RecallRestoreType(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_RecallRestoreType(self): # Integer
 		return self.get_query_params().get('RecallRestoreType')
 
-	def set_RecallRestoreType(self,RecallRestoreType):
-		self.add_query_param('RecallRestoreType',RecallRestoreType)
-
-	def get_TableName(self):
+	def set_RecallRestoreType(self, RecallRestoreType):  # Integer
+		self.add_query_param('RecallRestoreType', RecallRestoreType)
+	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
-
-	def get_SqlType(self):
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)
+	def get_SqlType(self): # String
 		return self.get_query_params().get('SqlType')
 
-	def set_SqlType(self,SqlType):
-		self.add_query_param('SqlType',SqlType)
-
-	def get_EndTime(self):
+	def set_SqlType(self, SqlType):  # String
+		self.add_query_param('SqlType', SqlType)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_DrdsInstanceId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_RecallType(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_RecallType(self): # Integer
 		return self.get_query_params().get('RecallType')
 
-	def set_RecallType(self,RecallType):
-		self.add_query_param('RecallType',RecallType)
-
-	def get_DbName(self):
+	def set_RecallType(self, RecallType):  # Integer
+		self.add_query_param('RecallType', RecallType)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

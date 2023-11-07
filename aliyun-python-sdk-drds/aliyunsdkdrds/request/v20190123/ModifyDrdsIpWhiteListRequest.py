@@ -25,44 +25,39 @@ class ModifyDrdsIpWhiteListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyDrdsIpWhiteList','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_GroupName(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_Mode(self):
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_Mode(self): # Boolean
 		return self.get_query_params().get('Mode')
 
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
-
-	def get_DbName(self):
+	def set_Mode(self, Mode):  # Boolean
+		self.add_query_param('Mode', Mode)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_GroupAttribute(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_GroupAttribute(self): # String
 		return self.get_query_params().get('GroupAttribute')
 
-	def set_GroupAttribute(self,GroupAttribute):
-		self.add_query_param('GroupAttribute',GroupAttribute)
-
-	def get_IpWhiteList(self):
+	def set_GroupAttribute(self, GroupAttribute):  # String
+		self.add_query_param('GroupAttribute', GroupAttribute)
+	def get_IpWhiteList(self): # String
 		return self.get_query_params().get('IpWhiteList')
 
-	def set_IpWhiteList(self,IpWhiteList):
-		self.add_query_param('IpWhiteList',IpWhiteList)
+	def set_IpWhiteList(self, IpWhiteList):  # String
+		self.add_query_param('IpWhiteList', IpWhiteList)

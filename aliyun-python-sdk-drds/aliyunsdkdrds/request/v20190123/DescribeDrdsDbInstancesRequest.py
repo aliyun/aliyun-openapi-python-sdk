@@ -25,32 +25,29 @@ class DescribeDrdsDbInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDrdsDbInstances','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_PageNumber(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_DbName(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_PageSize(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

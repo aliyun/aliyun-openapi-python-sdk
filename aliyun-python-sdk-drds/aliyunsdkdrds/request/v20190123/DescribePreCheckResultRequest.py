@@ -25,20 +25,19 @@ class DescribePreCheckResultRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribePreCheckResult','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_TaskId(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_TaskId(self): # String
 		return self.get_query_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)

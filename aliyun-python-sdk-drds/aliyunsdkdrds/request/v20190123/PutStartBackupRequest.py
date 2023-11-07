@@ -25,32 +25,29 @@ class PutStartBackupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'PutStartBackup','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackupDbNames(self):
+	def get_BackupDbNames(self): # String
 		return self.get_query_params().get('BackupDbNames')
 
-	def set_BackupDbNames(self,BackupDbNames):
-		self.add_query_param('BackupDbNames',BackupDbNames)
-
-	def get_BackupLevel(self):
+	def set_BackupDbNames(self, BackupDbNames):  # String
+		self.add_query_param('BackupDbNames', BackupDbNames)
+	def get_BackupLevel(self): # String
 		return self.get_query_params().get('BackupLevel')
 
-	def set_BackupLevel(self,BackupLevel):
-		self.add_query_param('BackupLevel',BackupLevel)
-
-	def get_DrdsInstanceId(self):
+	def set_BackupLevel(self, BackupLevel):  # String
+		self.add_query_param('BackupLevel', BackupLevel)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_BackupMode(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_BackupMode(self): # String
 		return self.get_query_params().get('BackupMode')
 
-	def set_BackupMode(self,BackupMode):
-		self.add_query_param('BackupMode',BackupMode)
+	def set_BackupMode(self, BackupMode):  # String
+		self.add_query_param('BackupMode', BackupMode)

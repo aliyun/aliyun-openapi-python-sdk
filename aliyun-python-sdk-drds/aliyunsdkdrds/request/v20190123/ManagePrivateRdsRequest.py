@@ -25,32 +25,29 @@ class ManagePrivateRdsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ManagePrivateRds','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Params(self):
+	def get_Params(self): # String
 		return self.get_query_params().get('Params')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_DrdsInstanceId(self):
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DBInstanceId(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_RdsAction(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_RdsAction(self): # String
 		return self.get_query_params().get('RdsAction')
 
-	def set_RdsAction(self,RdsAction):
-		self.add_query_param('RdsAction',RdsAction)
+	def set_RdsAction(self, RdsAction):  # String
+		self.add_query_param('RdsAction', RdsAction)

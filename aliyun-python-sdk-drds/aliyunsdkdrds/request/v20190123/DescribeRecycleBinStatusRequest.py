@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdrds.endpoint import endpoint_data
 
-class DescribeTableListByTypeRequest(RpcRequest):
+class DescribeRecycleBinStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeTableListByType','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRecycleBinStatus','drds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,6 @@ class DescribeTableListByTypeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TableType(self): # String
-		return self.get_query_params().get('TableType')
-
-	def set_TableType(self, TableType):  # String
-		self.add_query_param('TableType', TableType)
-	def get_Query(self): # String
-		return self.get_query_params().get('Query')
-
-	def set_Query(self, Query):  # String
-		self.add_query_param('Query', Query)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
@@ -56,8 +41,3 @@ class DescribeTableListByTypeRequest(RpcRequest):
 
 	def set_DbName(self, DbName):  # String
 		self.add_query_param('DbName', DbName)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)

@@ -25,84 +25,77 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitHotExpandTask','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Mappings(self):
-		return self.get_query_params().get('Mapping')
-
-	def set_Mappings(self, Mappings):
-		for depth1 in range(len(Mappings)):
-			if Mappings[depth1].get('DbShardColumn') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.DbShardColumn', Mappings[depth1].get('DbShardColumn'))
-			if Mappings[depth1].get('TbShardColumn') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.TbShardColumn', Mappings[depth1].get('TbShardColumn'))
-			if Mappings[depth1].get('ShardTbValue') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.ShardTbValue', Mappings[depth1].get('ShardTbValue'))
-			if Mappings[depth1].get('HotDbName') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.HotDbName', Mappings[depth1].get('HotDbName'))
-			if Mappings[depth1].get('ShardDbValue') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.ShardDbValue', Mappings[depth1].get('ShardDbValue'))
-			if Mappings[depth1].get('HotTableName') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.HotTableName', Mappings[depth1].get('HotTableName'))
-			if Mappings[depth1].get('LogicTable') is not None:
-				self.add_query_param('Mapping.' + str(depth1 + 1) + '.LogicTable', Mappings[depth1].get('LogicTable'))
-
-	def get_TaskDesc(self):
+	def get_TaskDesc(self): # String
 		return self.get_query_params().get('TaskDesc')
 
-	def set_TaskDesc(self,TaskDesc):
-		self.add_query_param('TaskDesc',TaskDesc)
+	def set_TaskDesc(self, TaskDesc):  # String
+		self.add_query_param('TaskDesc', TaskDesc)
+	def get_Mappings(self): # RepeatList
+		return self.get_query_params().get('Mapping')
 
-	def get_SupperAccountMappings(self):
+	def set_Mappings(self, Mapping):  # RepeatList
+		for depth1 in range(len(Mapping)):
+			if Mapping[depth1].get('TbShardColumn') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.TbShardColumn', Mapping[depth1].get('TbShardColumn'))
+			if Mapping[depth1].get('DbShardColumn') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.DbShardColumn', Mapping[depth1].get('DbShardColumn'))
+			if Mapping[depth1].get('ShardTbValue') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.ShardTbValue', Mapping[depth1].get('ShardTbValue'))
+			if Mapping[depth1].get('HotDbName') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.HotDbName', Mapping[depth1].get('HotDbName'))
+			if Mapping[depth1].get('ShardDbValue') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.ShardDbValue', Mapping[depth1].get('ShardDbValue'))
+			if Mapping[depth1].get('HotTableName') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.HotTableName', Mapping[depth1].get('HotTableName'))
+			if Mapping[depth1].get('LogicTable') is not None:
+				self.add_query_param('Mapping.' + str(depth1 + 1) + '.LogicTable', Mapping[depth1].get('LogicTable'))
+	def get_SupperAccountMappings(self): # RepeatList
 		return self.get_query_params().get('SupperAccountMapping')
 
-	def set_SupperAccountMappings(self, SupperAccountMappings):
-		for depth1 in range(len(SupperAccountMappings)):
-			if SupperAccountMappings[depth1].get('InstanceName') is not None:
-				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.InstanceName', SupperAccountMappings[depth1].get('InstanceName'))
-			if SupperAccountMappings[depth1].get('SupperAccount') is not None:
-				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.SupperAccount', SupperAccountMappings[depth1].get('SupperAccount'))
-			if SupperAccountMappings[depth1].get('SupperPassword') is not None:
-				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.SupperPassword', SupperAccountMappings[depth1].get('SupperPassword'))
-
-	def get_ExtendedMappings(self):
+	def set_SupperAccountMappings(self, SupperAccountMapping):  # RepeatList
+		for depth1 in range(len(SupperAccountMapping)):
+			if SupperAccountMapping[depth1].get('InstanceName') is not None:
+				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.InstanceName', SupperAccountMapping[depth1].get('InstanceName'))
+			if SupperAccountMapping[depth1].get('SupperAccount') is not None:
+				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.SupperAccount', SupperAccountMapping[depth1].get('SupperAccount'))
+			if SupperAccountMapping[depth1].get('SupperPassword') is not None:
+				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.SupperPassword', SupperAccountMapping[depth1].get('SupperPassword'))
+	def get_ExtendedMappings(self): # RepeatList
 		return self.get_query_params().get('ExtendedMapping')
 
-	def set_ExtendedMappings(self, ExtendedMappings):
-		for depth1 in range(len(ExtendedMappings)):
-			if ExtendedMappings[depth1].get('SrcInstanceId') is not None:
-				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcInstanceId', ExtendedMappings[depth1].get('SrcInstanceId'))
-			if ExtendedMappings[depth1].get('SrcDb') is not None:
-				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcDb', ExtendedMappings[depth1].get('SrcDb'))
-
-	def get_TaskName(self):
+	def set_ExtendedMappings(self, ExtendedMapping):  # RepeatList
+		for depth1 in range(len(ExtendedMapping)):
+			if ExtendedMapping[depth1].get('SrcInstanceId') is not None:
+				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcInstanceId', ExtendedMapping[depth1].get('SrcInstanceId'))
+			if ExtendedMapping[depth1].get('SrcDb') is not None:
+				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcDb', ExtendedMapping[depth1].get('SrcDb'))
+	def get_TaskName(self): # String
 		return self.get_query_params().get('TaskName')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
-
-	def get_DrdsInstanceId(self):
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_InstanceDbMappings(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_InstanceDbMappings(self): # RepeatList
 		return self.get_query_params().get('InstanceDbMapping')
 
-	def set_InstanceDbMappings(self, InstanceDbMappings):
-		for depth1 in range(len(InstanceDbMappings)):
-			if InstanceDbMappings[depth1].get('DbList') is not None:
-				self.add_query_param('InstanceDbMapping.' + str(depth1 + 1) + '.DbList', InstanceDbMappings[depth1].get('DbList'))
-			if InstanceDbMappings[depth1].get('InstanceName') is not None:
-				self.add_query_param('InstanceDbMapping.' + str(depth1 + 1) + '.InstanceName', InstanceDbMappings[depth1].get('InstanceName'))
-
-	def get_DbName(self):
+	def set_InstanceDbMappings(self, InstanceDbMapping):  # RepeatList
+		for depth1 in range(len(InstanceDbMapping)):
+			if InstanceDbMapping[depth1].get('DbList') is not None:
+				self.add_query_param('InstanceDbMapping.' + str(depth1 + 1) + '.DbList', InstanceDbMapping[depth1].get('DbList'))
+			if InstanceDbMapping[depth1].get('InstanceName') is not None:
+				self.add_query_param('InstanceDbMapping.' + str(depth1 + 1) + '.InstanceName', InstanceDbMapping[depth1].get('InstanceName'))
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

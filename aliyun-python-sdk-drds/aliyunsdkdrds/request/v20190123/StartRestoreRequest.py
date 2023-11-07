@@ -25,44 +25,39 @@ class StartRestoreRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'StartRestore','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackupDbNames(self):
+	def get_BackupDbNames(self): # String
 		return self.get_query_params().get('BackupDbNames')
 
-	def set_BackupDbNames(self,BackupDbNames):
-		self.add_query_param('BackupDbNames',BackupDbNames)
-
-	def get_BackupId(self):
+	def set_BackupDbNames(self, BackupDbNames):  # String
+		self.add_query_param('BackupDbNames', BackupDbNames)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_BackupLevel(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_BackupLevel(self): # String
 		return self.get_query_params().get('BackupLevel')
 
-	def set_BackupLevel(self,BackupLevel):
-		self.add_query_param('BackupLevel',BackupLevel)
-
-	def get_DrdsInstanceId(self):
+	def set_BackupLevel(self, BackupLevel):  # String
+		self.add_query_param('BackupLevel', BackupLevel)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_PreferredBackupTime(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_PreferredBackupTime(self): # String
 		return self.get_query_params().get('PreferredBackupTime')
 
-	def set_PreferredBackupTime(self,PreferredBackupTime):
-		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
-
-	def get_BackupMode(self):
+	def set_PreferredBackupTime(self, PreferredBackupTime):  # String
+		self.add_query_param('PreferredBackupTime', PreferredBackupTime)
+	def get_BackupMode(self): # String
 		return self.get_query_params().get('BackupMode')
 
-	def set_BackupMode(self,BackupMode):
-		self.add_query_param('BackupMode',BackupMode)
+	def set_BackupMode(self, BackupMode):  # String
+		self.add_query_param('BackupMode', BackupMode)

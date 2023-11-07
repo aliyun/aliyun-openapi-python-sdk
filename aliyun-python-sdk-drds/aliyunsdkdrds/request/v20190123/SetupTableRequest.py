@@ -25,34 +25,30 @@ class SetupTableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetupTable','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AllowFullTableScan(self):
+	def get_AllowFullTableScan(self): # Boolean
 		return self.get_query_params().get('AllowFullTableScan')
 
-	def set_AllowFullTableScan(self,AllowFullTableScan):
-		self.add_query_param('AllowFullTableScan',AllowFullTableScan)
-
-	def get_DrdsInstanceId(self):
+	def set_AllowFullTableScan(self, AllowFullTableScan):  # Boolean
+		self.add_query_param('AllowFullTableScan', AllowFullTableScan)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbName(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_TableNames(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_TableNames(self): # RepeatList
 		return self.get_query_params().get('TableName')
 
-	def set_TableNames(self, TableNames):
-		for depth1 in range(len(TableNames)):
-			if TableNames[depth1] is not None:
-				self.add_query_param('TableName.' + str(depth1 + 1) , TableNames[depth1])
+	def set_TableNames(self, TableName):  # RepeatList
+		for depth1 in range(len(TableName)):
+			self.add_query_param('TableName.' + str(depth1 + 1), TableName[depth1])

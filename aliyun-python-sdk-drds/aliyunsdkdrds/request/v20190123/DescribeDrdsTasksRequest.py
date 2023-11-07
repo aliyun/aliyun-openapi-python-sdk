@@ -25,26 +25,24 @@ class DescribeDrdsTasksRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDrdsTasks','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TaskType(self):
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_DrdsInstanceId(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbName(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

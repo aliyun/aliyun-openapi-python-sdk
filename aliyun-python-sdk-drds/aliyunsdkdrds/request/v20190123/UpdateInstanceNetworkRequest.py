@@ -25,32 +25,29 @@ class UpdateInstanceNetworkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'UpdateInstanceNetwork','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_RetainClassic(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_RetainClassic(self): # Boolean
 		return self.get_query_params().get('RetainClassic')
 
-	def set_RetainClassic(self,RetainClassic):
-		self.add_query_param('RetainClassic',RetainClassic)
-
-	def get_ClassicExpiredDays(self):
+	def set_RetainClassic(self, RetainClassic):  # Boolean
+		self.add_query_param('RetainClassic', RetainClassic)
+	def get_ClassicExpiredDays(self): # Integer
 		return self.get_query_params().get('ClassicExpiredDays')
 
-	def set_ClassicExpiredDays(self,ClassicExpiredDays):
-		self.add_query_param('ClassicExpiredDays',ClassicExpiredDays)
-
-	def get_SrcInstanceNetworkType(self):
+	def set_ClassicExpiredDays(self, ClassicExpiredDays):  # Integer
+		self.add_query_param('ClassicExpiredDays', ClassicExpiredDays)
+	def get_SrcInstanceNetworkType(self): # String
 		return self.get_query_params().get('SrcInstanceNetworkType')
 
-	def set_SrcInstanceNetworkType(self,SrcInstanceNetworkType):
-		self.add_query_param('SrcInstanceNetworkType',SrcInstanceNetworkType)
+	def set_SrcInstanceNetworkType(self, SrcInstanceNetworkType):  # String
+		self.add_query_param('SrcInstanceNetworkType', SrcInstanceNetworkType)

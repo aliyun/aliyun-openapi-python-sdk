@@ -25,26 +25,24 @@ class DescribeBackupDbsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeBackupDbs','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PreferredRestoreTime(self):
+	def get_PreferredRestoreTime(self): # String
 		return self.get_query_params().get('PreferredRestoreTime')
 
-	def set_PreferredRestoreTime(self,PreferredRestoreTime):
-		self.add_query_param('PreferredRestoreTime',PreferredRestoreTime)
-
-	def get_BackupId(self):
+	def set_PreferredRestoreTime(self, PreferredRestoreTime):  # String
+		self.add_query_param('PreferredRestoreTime', PreferredRestoreTime)
+	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_DrdsInstanceId(self):
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)

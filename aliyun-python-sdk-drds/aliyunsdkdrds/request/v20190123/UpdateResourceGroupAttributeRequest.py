@@ -25,20 +25,19 @@ class UpdateResourceGroupAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'UpdateResourceGroupAttribute','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_NewResourceGroupId(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_NewResourceGroupId(self): # String
 		return self.get_query_params().get('NewResourceGroupId')
 
-	def set_NewResourceGroupId(self,NewResourceGroupId):
-		self.add_query_param('NewResourceGroupId',NewResourceGroupId)
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)

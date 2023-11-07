@@ -20,43 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdrds.endpoint import endpoint_data
 
-class SubmitSwitchTaskRequest(RpcRequest):
+class ModifyPolarDbReadWeightRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitSwitchTask','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyPolarDbReadWeight','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Weights(self): # String
+		return self.get_query_params().get('Weights')
 
-	def get_DrdsInstanceId(self):
+	def set_Weights(self, Weights):  # String
+		self.add_query_param('Weights', Weights)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DbNodeIds(self): # String
+		return self.get_query_params().get('DbNodeIds')
 
-	def get_ExpandType(self):
-		return self.get_query_params().get('ExpandType')
-
-	def set_ExpandType(self,ExpandType):
-		self.add_query_param('ExpandType',ExpandType)
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_DbName(self):
+	def set_DbNodeIds(self, DbNodeIds):  # String
+		self.add_query_param('DbNodeIds', DbNodeIds)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_DbInstanceId(self): # String
+		return self.get_query_params().get('DbInstanceId')
 
-	def get_ParentJobId(self):
-		return self.get_query_params().get('ParentJobId')
-
-	def set_ParentJobId(self,ParentJobId):
-		self.add_query_param('ParentJobId',ParentJobId)
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)

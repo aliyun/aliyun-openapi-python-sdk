@@ -25,32 +25,29 @@ class SetBackupLocalRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetBackupLocal','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_LocalLogRetentionHours(self):
+	def get_LocalLogRetentionHours(self): # String
 		return self.get_query_params().get('LocalLogRetentionHours')
 
-	def set_LocalLogRetentionHours(self,LocalLogRetentionHours):
-		self.add_query_param('LocalLogRetentionHours',LocalLogRetentionHours)
-
-	def get_LocalLogRetentionSpace(self):
+	def set_LocalLogRetentionHours(self, LocalLogRetentionHours):  # String
+		self.add_query_param('LocalLogRetentionHours', LocalLogRetentionHours)
+	def get_LocalLogRetentionSpace(self): # String
 		return self.get_query_params().get('LocalLogRetentionSpace')
 
-	def set_LocalLogRetentionSpace(self,LocalLogRetentionSpace):
-		self.add_query_param('LocalLogRetentionSpace',LocalLogRetentionSpace)
-
-	def get_DrdsInstanceId(self):
+	def set_LocalLogRetentionSpace(self, LocalLogRetentionSpace):  # String
+		self.add_query_param('LocalLogRetentionSpace', LocalLogRetentionSpace)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_HighSpaceUsageProtection(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_HighSpaceUsageProtection(self): # String
 		return self.get_query_params().get('HighSpaceUsageProtection')
 
-	def set_HighSpaceUsageProtection(self,HighSpaceUsageProtection):
-		self.add_query_param('HighSpaceUsageProtection',HighSpaceUsageProtection)
+	def set_HighSpaceUsageProtection(self, HighSpaceUsageProtection):  # String
+		self.add_query_param('HighSpaceUsageProtection', HighSpaceUsageProtection)

@@ -25,44 +25,39 @@ class DescribeRDSPerformanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRDSPerformance','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Keys(self):
+	def get_Keys(self): # String
 		return self.get_query_params().get('Keys')
 
-	def set_Keys(self,Keys):
-		self.add_query_param('Keys',Keys)
-
-	def get_EndTime(self):
+	def set_Keys(self, Keys):  # String
+		self.add_query_param('Keys', Keys)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_RdsInstanceId(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_RdsInstanceId(self): # String
 		return self.get_query_params().get('RdsInstanceId')
 
-	def set_RdsInstanceId(self,RdsInstanceId):
-		self.add_query_param('RdsInstanceId',RdsInstanceId)
-
-	def get_DrdsInstanceId(self):
+	def set_RdsInstanceId(self, RdsInstanceId):  # String
+		self.add_query_param('RdsInstanceId', RdsInstanceId)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbInstType(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DbInstType(self): # String
 		return self.get_query_params().get('DbInstType')
 
-	def set_DbInstType(self,DbInstType):
-		self.add_query_param('DbInstType',DbInstType)
+	def set_DbInstType(self, DbInstType):  # String
+		self.add_query_param('DbInstType', DbInstType)

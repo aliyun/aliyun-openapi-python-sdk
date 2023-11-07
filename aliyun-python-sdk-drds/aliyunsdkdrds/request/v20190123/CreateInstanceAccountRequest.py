@@ -25,36 +25,33 @@ class CreateInstanceAccountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'CreateInstanceAccount','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_Password(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_AccountName(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_DbPrivileges(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_DbPrivileges(self): # RepeatList
 		return self.get_query_params().get('DbPrivilege')
 
-	def set_DbPrivileges(self, DbPrivileges):
-		for depth1 in range(len(DbPrivileges)):
-			if DbPrivileges[depth1].get('DbName') is not None:
-				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.DbName', DbPrivileges[depth1].get('DbName'))
-			if DbPrivileges[depth1].get('Privilege') is not None:
-				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.Privilege', DbPrivileges[depth1].get('Privilege'))
+	def set_DbPrivileges(self, DbPrivilege):  # RepeatList
+		for depth1 in range(len(DbPrivilege)):
+			if DbPrivilege[depth1].get('DbName') is not None:
+				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.DbName', DbPrivilege[depth1].get('DbName'))
+			if DbPrivilege[depth1].get('Privilege') is not None:
+				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.Privilege', DbPrivilege[depth1].get('Privilege'))

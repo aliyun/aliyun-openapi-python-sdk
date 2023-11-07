@@ -25,44 +25,39 @@ class UpdatePrivateRdsClassRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'UpdatePrivateRdsClass','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Storage(self):
+	def get_Storage(self): # String
 		return self.get_query_params().get('Storage')
 
-	def set_Storage(self,Storage):
-		self.add_query_param('Storage',Storage)
-
-	def get_AutoUseCoupon(self):
+	def set_Storage(self, Storage):  # String
+		self.add_query_param('Storage', Storage)
+	def get_AutoUseCoupon(self): # Boolean
 		return self.get_query_params().get('AutoUseCoupon')
 
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
-	def get_DrdsInstanceId(self):
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_RdsClass(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_RdsClass(self): # String
 		return self.get_query_params().get('RdsClass')
 
-	def set_RdsClass(self,RdsClass):
-		self.add_query_param('RdsClass',RdsClass)
-
-	def get_PrePayDuration(self):
+	def set_RdsClass(self, RdsClass):  # String
+		self.add_query_param('RdsClass', RdsClass)
+	def get_PrePayDuration(self): # Integer
 		return self.get_query_params().get('PrePayDuration')
 
-	def set_PrePayDuration(self,PrePayDuration):
-		self.add_query_param('PrePayDuration',PrePayDuration)
-
-	def get_DBInstanceId(self):
+	def set_PrePayDuration(self, PrePayDuration):  # Integer
+		self.add_query_param('PrePayDuration', PrePayDuration)
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)

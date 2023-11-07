@@ -25,38 +25,34 @@ class SubmitCleanTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitCleanTask','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_ExpandType(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_ExpandType(self): # String
 		return self.get_query_params().get('ExpandType')
 
-	def set_ExpandType(self,ExpandType):
-		self.add_query_param('ExpandType',ExpandType)
-
-	def get_JobId(self):
+	def set_ExpandType(self, ExpandType):  # String
+		self.add_query_param('ExpandType', ExpandType)
+	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_DbName(self):
+	def set_JobId(self, JobId):  # String
+		self.add_query_param('JobId', JobId)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_ParentJobId(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_ParentJobId(self): # String
 		return self.get_query_params().get('ParentJobId')
 
-	def set_ParentJobId(self,ParentJobId):
-		self.add_query_param('ParentJobId',ParentJobId)
+	def set_ParentJobId(self, ParentJobId):  # String
+		self.add_query_param('ParentJobId', ParentJobId)

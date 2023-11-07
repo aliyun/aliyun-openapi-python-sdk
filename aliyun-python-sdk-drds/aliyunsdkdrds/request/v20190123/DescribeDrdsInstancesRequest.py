@@ -25,66 +25,58 @@ class DescribeDrdsInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDrdsInstances','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ProductVersion(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ProductVersion(self): # String
 		return self.get_query_params().get('ProductVersion')
 
-	def set_ProductVersion(self,ProductVersion):
-		self.add_query_param('ProductVersion',ProductVersion)
-
-	def get_Type(self):
+	def set_ProductVersion(self, ProductVersion):  # String
+		self.add_query_param('ProductVersion', ProductVersion)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Expired(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Expired(self): # Boolean
 		return self.get_query_params().get('Expired')
 
-	def set_Expired(self,Expired):
-		self.add_query_param('Expired',Expired)
-
-	def get_PageSize(self):
+	def set_Expired(self, Expired):  # Boolean
+		self.add_query_param('Expired', Expired)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_Mix(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_Mix(self): # Boolean
 		return self.get_query_params().get('Mix')
 
-	def set_Mix(self,Mix):
-		self.add_query_param('Mix',Mix)
+	def set_Mix(self, Mix):  # Boolean
+		self.add_query_param('Mix', Mix)

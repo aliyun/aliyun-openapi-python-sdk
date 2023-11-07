@@ -25,38 +25,34 @@ class DescribeDbInstanceDbsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDbInstanceDbs','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DrdsInstanceId(self):
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_Password(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_AccountName(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_DbInstanceId(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_DbInstanceId(self): # String
 		return self.get_query_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
-		self.add_query_param('DbInstanceId',DbInstanceId)
-
-	def get_DbInstType(self):
+	def set_DbInstanceId(self, DbInstanceId):  # String
+		self.add_query_param('DbInstanceId', DbInstanceId)
+	def get_DbInstType(self): # String
 		return self.get_query_params().get('DbInstType')
 
-	def set_DbInstType(self,DbInstType):
-		self.add_query_param('DbInstType',DbInstType)
+	def set_DbInstType(self, DbInstType):  # String
+		self.add_query_param('DbInstType', DbInstType)

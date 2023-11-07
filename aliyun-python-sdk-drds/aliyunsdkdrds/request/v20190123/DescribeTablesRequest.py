@@ -25,38 +25,34 @@ class DescribeTablesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeTables','drds')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Query(self):
+	def get_Query(self): # String
 		return self.get_query_params().get('Query')
 
-	def set_Query(self,Query):
-		self.add_query_param('Query',Query)
-
-	def get_CurrentPage(self):
+	def set_Query(self, Query):  # String
+		self.add_query_param('Query', Query)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_DrdsInstanceId(self):
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbName(self):
+	def set_DrdsInstanceId(self, DrdsInstanceId):  # String
+		self.add_query_param('DrdsInstanceId', DrdsInstanceId)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_PageSize(self):
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
