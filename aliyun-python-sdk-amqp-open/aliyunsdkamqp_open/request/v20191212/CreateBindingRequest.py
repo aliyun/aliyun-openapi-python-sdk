@@ -23,7 +23,7 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class CreateBindingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateBinding')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateBinding','onsproxy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

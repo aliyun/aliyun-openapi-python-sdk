@@ -23,7 +23,7 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class ListQueueUpStreamBindingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueueUpStreamBindings')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueueUpStreamBindings','onsproxy')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

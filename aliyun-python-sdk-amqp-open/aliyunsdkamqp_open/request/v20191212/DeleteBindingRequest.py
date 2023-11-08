@@ -23,7 +23,7 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class DeleteBindingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteBinding')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'DeleteBinding','onsproxy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

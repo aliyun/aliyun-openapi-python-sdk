@@ -23,7 +23,7 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class ListExchangesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListExchanges')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListExchanges','onsproxy')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

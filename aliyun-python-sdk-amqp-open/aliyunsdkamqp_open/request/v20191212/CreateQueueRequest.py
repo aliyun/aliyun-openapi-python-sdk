@@ -23,7 +23,7 @@ from aliyunsdkamqp_open.endpoint import endpoint_data
 class CreateQueueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateQueue')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateQueue','onsproxy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
