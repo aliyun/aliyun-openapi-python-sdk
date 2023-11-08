@@ -84,6 +84,15 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Filters(self): # RepeatList
+		return self.get_query_params().get('Filter')
+
+	def set_Filters(self, Filter):  # RepeatList
+		for depth1 in range(len(Filter)):
+			if Filter[depth1].get('Key') is not None:
+				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))
+			if Filter[depth1].get('Value') is not None:
+				self.add_query_param('Filter.' + str(depth1 + 1) + '.Value', Filter[depth1].get('Value'))
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
