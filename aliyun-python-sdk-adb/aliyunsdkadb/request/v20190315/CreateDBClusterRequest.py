@@ -100,6 +100,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ComputeResource(self, ComputeResource):  # String
 		self.add_query_param('ComputeResource', ComputeResource)
+	def get_KmsId(self): # String
+		return self.get_query_params().get('KmsId')
+
+	def set_KmsId(self, KmsId):  # String
+		self.add_query_param('KmsId', KmsId)
 	def get_ElasticIOResource(self): # String
 		return self.get_query_params().get('ElasticIOResource')
 
@@ -180,6 +185,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
+	def get_DiskEncryption(self): # String
+		return self.get_query_params().get('DiskEncryption')
+
+	def set_DiskEncryption(self, DiskEncryption):  # String
+		self.add_query_param('DiskEncryption', DiskEncryption)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
