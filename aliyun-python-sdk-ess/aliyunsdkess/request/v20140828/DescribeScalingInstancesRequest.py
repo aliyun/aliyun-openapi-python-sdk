@@ -103,3 +103,9 @@ class DescribeScalingInstancesRequest(RpcRequest):
 
 	def set_HealthStatus(self, HealthStatus):  # String
 		self.add_query_param('HealthStatus', HealthStatus)
+	def get_LifecycleStatess(self): # RepeatList
+		return self.get_query_params().get('LifecycleStates')
+
+	def set_LifecycleStatess(self, LifecycleStates):  # RepeatList
+		for depth1 in range(len(LifecycleStates)):
+			self.add_query_param('LifecycleStates.' + str(depth1 + 1), LifecycleStates[depth1])

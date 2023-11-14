@@ -203,6 +203,11 @@ class CreateEciScalingConfigurationRequest(RpcRequest):
 
 	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
 		self.add_query_param('CpuOptionsThreadsPerCore', CpuOptionsThreadsPerCore)
+	def get_DataCachePL(self): # String
+		return self.get_query_params().get('DataCachePL')
+
+	def set_DataCachePL(self, DataCachePL):  # String
+		self.add_query_param('DataCachePL', DataCachePL)
 	def get_Ipv6AddressCount(self): # Integer
 		return self.get_query_params().get('Ipv6AddressCount')
 
@@ -292,6 +297,11 @@ class CreateEciScalingConfigurationRequest(RpcRequest):
 
 	def set_EphemeralStorage(self, EphemeralStorage):  # Integer
 		self.add_query_param('EphemeralStorage', EphemeralStorage)
+	def get_DataCacheProvisionedIops(self): # Integer
+		return self.get_query_params().get('DataCacheProvisionedIops')
+
+	def set_DataCacheProvisionedIops(self, DataCacheProvisionedIops):  # Integer
+		self.add_query_param('DataCacheProvisionedIops', DataCacheProvisionedIops)
 	def get_EipBandwidth(self): # Integer
 		return self.get_query_params().get('EipBandwidth')
 
@@ -302,6 +312,11 @@ class CreateEciScalingConfigurationRequest(RpcRequest):
 
 	def set_CostOptimization(self, CostOptimization):  # Boolean
 		self.add_query_param('CostOptimization', CostOptimization)
+	def get_DataCacheBurstingEnabled(self): # Boolean
+		return self.get_query_params().get('DataCacheBurstingEnabled')
+
+	def set_DataCacheBurstingEnabled(self, DataCacheBurstingEnabled):  # Boolean
+		self.add_query_param('DataCacheBurstingEnabled', DataCacheBurstingEnabled)
 	def get_Memory(self): # Float
 		return self.get_query_params().get('Memory')
 
@@ -336,6 +351,11 @@ class CreateEciScalingConfigurationRequest(RpcRequest):
 				self.add_query_param('SecurityContextSysctl.' + str(depth1 + 1) + '.Name', SecurityContextSysctl[depth1].get('Name'))
 			if SecurityContextSysctl[depth1].get('Value') is not None:
 				self.add_query_param('SecurityContextSysctl.' + str(depth1 + 1) + '.Value', SecurityContextSysctl[depth1].get('Value'))
+	def get_DataCacheBucket(self): # String
+		return self.get_query_params().get('DataCacheBucket')
+
+	def set_DataCacheBucket(self, DataCacheBucket):  # String
+		self.add_query_param('DataCacheBucket', DataCacheBucket)
 	def get_DnsConfigNameServers(self): # RepeatList
 		return self.get_query_params().get('DnsConfigNameServer')
 

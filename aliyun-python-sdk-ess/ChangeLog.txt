@@ -1,3 +1,6 @@
+2023-11-14 Version: 2.3.14
+- ECIScalingConfiguration add data cache fields.
+
 2023-10-12 Version: 2.3.13
 - ECIScalingConfiguration support instanceTypes.
 
