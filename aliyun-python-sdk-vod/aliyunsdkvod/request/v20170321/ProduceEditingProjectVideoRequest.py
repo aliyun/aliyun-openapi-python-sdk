@@ -81,6 +81,11 @@ class ProduceEditingProjectVideoRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
 	def get_Timeline(self): # String
 		return self.get_query_params().get('Timeline')
 
