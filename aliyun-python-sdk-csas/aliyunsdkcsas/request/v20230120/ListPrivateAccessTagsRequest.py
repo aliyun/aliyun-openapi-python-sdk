@@ -40,6 +40,11 @@ class ListPrivateAccessTagsRequest(RpcRequest):
 
 	def set_ApplicationId(self, ApplicationId):  # String
 		self.add_query_param('ApplicationId', ApplicationId)
+	def get_SimpleMode(self): # Boolean
+		return self.get_query_params().get('SimpleMode')
+
+	def set_SimpleMode(self, SimpleMode):  # Boolean
+		self.add_query_param('SimpleMode', SimpleMode)
 	def get_TagIds(self): # Array
 		return self.get_query_params().get('TagIds')
 
