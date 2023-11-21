@@ -41,3 +41,8 @@ class DescribeTenantSecurityConfigsRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_CheckId(self): # String
+		return self.get_body_params().get('CheckId')
+
+	def set_CheckId(self, CheckId):  # String
+		self.add_body_params('CheckId', CheckId)

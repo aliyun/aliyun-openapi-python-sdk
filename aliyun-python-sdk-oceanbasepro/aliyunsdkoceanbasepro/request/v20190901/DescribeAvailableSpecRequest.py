@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class DescribeDatabasesRequest(RpcRequest):
+class DescribeAvailableSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeDatabases','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeAvailableSpec','oceanbase')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +32,18 @@ class DescribeDatabasesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SearchKey(self): # String
-		return self.get_body_params().get('SearchKey')
+	def get_UpgradeType(self): # String
+		return self.get_body_params().get('UpgradeType')
 
-	def set_SearchKey(self, SearchKey):  # String
-		self.add_body_params('SearchKey', SearchKey)
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
+	def set_UpgradeType(self, UpgradeType):  # String
+		self.add_body_params('UpgradeType', UpgradeType)
+	def get_Spec(self): # String
+		return self.get_body_params().get('Spec')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)
+	def set_Spec(self, Spec):  # String
+		self.add_body_params('Spec', Spec)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-	def get_DatabaseName(self): # String
-		return self.get_body_params().get('DatabaseName')
-
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_body_params('DatabaseName', DatabaseName)
-	def get_WithTables(self): # Boolean
-		return self.get_body_params().get('WithTables')
-
-	def set_WithTables(self, WithTables):  # Boolean
-		self.add_body_params('WithTables', WithTables)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)

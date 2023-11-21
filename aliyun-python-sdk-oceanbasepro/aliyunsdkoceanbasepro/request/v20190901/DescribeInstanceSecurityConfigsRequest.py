@@ -36,3 +36,8 @@ class DescribeInstanceSecurityConfigsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
+	def get_CheckId(self): # String
+		return self.get_body_params().get('CheckId')
+
+	def set_CheckId(self, CheckId):  # String
+		self.add_body_params('CheckId', CheckId)

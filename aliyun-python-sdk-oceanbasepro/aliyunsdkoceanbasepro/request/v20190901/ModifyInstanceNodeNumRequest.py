@@ -31,6 +31,11 @@ class ModifyInstanceNodeNumRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DryRun(self): # Boolean
+		return self.get_body_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_body_params('DryRun', DryRun)
 	def get_NodeNum(self): # String
 		return self.get_body_params().get('NodeNum')
 

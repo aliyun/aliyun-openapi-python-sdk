@@ -46,6 +46,11 @@ class CreateTenantRequest(RpcRequest):
 
 	def set_Memory(self, Memory):  # Integer
 		self.add_body_params('Memory', Memory)
+	def get_LogDisk(self): # Long
+		return self.get_body_params().get('LogDisk')
+
+	def set_LogDisk(self, LogDisk):  # Long
+		self.add_body_params('LogDisk', LogDisk)
 	def get_TimeZone(self): # String
 		return self.get_body_params().get('TimeZone')
 
@@ -91,3 +96,8 @@ class CreateTenantRequest(RpcRequest):
 
 	def set_TenantName(self, TenantName):  # String
 		self.add_body_params('TenantName', TenantName)
+	def get_ReadOnlyZoneList(self): # String
+		return self.get_body_params().get('ReadOnlyZoneList')
+
+	def set_ReadOnlyZoneList(self, ReadOnlyZoneList):  # String
+		self.add_body_params('ReadOnlyZoneList', ReadOnlyZoneList)

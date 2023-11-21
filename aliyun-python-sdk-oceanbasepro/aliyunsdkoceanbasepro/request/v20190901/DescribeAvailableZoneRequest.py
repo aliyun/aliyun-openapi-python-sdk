@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class ModifyInstanceSpecRequest(RpcRequest):
+class DescribeAvailableZoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'ModifyInstanceSpec','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeAvailableZone','oceanbase')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,28 @@ class ModifyInstanceSpecRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceClass(self): # String
-		return self.get_body_params().get('InstanceClass')
+	def get_Spec(self): # String
+		return self.get_body_params().get('Spec')
 
-	def set_InstanceClass(self, InstanceClass):  # String
-		self.add_body_params('InstanceClass', InstanceClass)
-	def get_DryRun(self): # Boolean
-		return self.get_body_params().get('DryRun')
+	def set_Spec(self, Spec):  # String
+		self.add_body_params('Spec', Spec)
+	def get_ObVersion(self): # String
+		return self.get_body_params().get('ObVersion')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_body_params('DryRun', DryRun)
-	def get_DiskSize(self): # Long
-		return self.get_body_params().get('DiskSize')
+	def set_ObVersion(self, ObVersion):  # String
+		self.add_body_params('ObVersion', ObVersion)
+	def get_Series(self): # String
+		return self.get_body_params().get('Series')
 
-	def set_DiskSize(self, DiskSize):  # Long
-		self.add_body_params('DiskSize', DiskSize)
-	def get_InstanceId(self): # String
-		return self.get_body_params().get('InstanceId')
+	def set_Series(self, Series):  # String
+		self.add_body_params('Series', Series)
+	def get_InstanceType(self): # String
+		return self.get_body_params().get('InstanceType')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_body_params('InstanceId', InstanceId)
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_body_params('InstanceType', InstanceType)
+	def get_DeployType(self): # String
+		return self.get_body_params().get('DeployType')
+
+	def set_DeployType(self, DeployType):  # String
+		self.add_body_params('DeployType', DeployType)

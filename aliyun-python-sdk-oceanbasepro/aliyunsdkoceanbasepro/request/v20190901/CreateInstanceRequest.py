@@ -31,6 +31,11 @@ class CreateInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IsolationOptimization(self): # String
+		return self.get_body_params().get('IsolationOptimization')
+
+	def set_IsolationOptimization(self, IsolationOptimization):  # String
+		self.add_body_params('IsolationOptimization', IsolationOptimization)
 	def get_InstanceClass(self): # String
 		return self.get_body_params().get('InstanceClass')
 
@@ -51,6 +56,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Long
 		self.add_body_params('Period', Period)
+	def get_DryRun(self): # Boolean
+		return self.get_body_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_body_params('DryRun', DryRun)
 	def get_DiskSize(self): # Long
 		return self.get_body_params().get('DiskSize')
 
@@ -81,6 +91,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_body_params('InstanceName', InstanceName)
+	def get_ReplicaMode(self): # String
+		return self.get_body_params().get('ReplicaMode')
+
+	def set_ReplicaMode(self, ReplicaMode):  # String
+		self.add_body_params('ReplicaMode', ReplicaMode)
 	def get_AutoRenew(self): # Boolean
 		return self.get_body_params().get('AutoRenew')
 

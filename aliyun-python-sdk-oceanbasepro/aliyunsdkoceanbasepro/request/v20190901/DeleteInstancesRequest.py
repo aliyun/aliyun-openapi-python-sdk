@@ -36,6 +36,11 @@ class DeleteInstancesRequest(RpcRequest):
 
 	def set_BackupRetainMode(self, BackupRetainMode):  # String
 		self.add_body_params('BackupRetainMode', BackupRetainMode)
+	def get_DryRun(self): # Boolean
+		return self.get_body_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_body_params('DryRun', DryRun)
 	def get_InstanceIds(self): # String
 		return self.get_body_params().get('InstanceIds')
 

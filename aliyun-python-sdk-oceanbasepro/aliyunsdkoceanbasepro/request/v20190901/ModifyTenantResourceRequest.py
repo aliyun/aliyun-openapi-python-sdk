@@ -36,6 +36,11 @@ class ModifyTenantResourceRequest(RpcRequest):
 
 	def set_Memory(self, Memory):  # Integer
 		self.add_body_params('Memory', Memory)
+	def get_LogDisk(self): # Long
+		return self.get_body_params().get('LogDisk')
+
+	def set_LogDisk(self, LogDisk):  # Long
+		self.add_body_params('LogDisk', LogDisk)
 	def get_Cpu(self): # Integer
 		return self.get_body_params().get('Cpu')
 
@@ -51,3 +56,8 @@ class ModifyTenantResourceRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_ReadOnlyZoneList(self): # String
+		return self.get_body_params().get('ReadOnlyZoneList')
+
+	def set_ReadOnlyZoneList(self, ReadOnlyZoneList):  # String
+		self.add_body_params('ReadOnlyZoneList', ReadOnlyZoneList)
