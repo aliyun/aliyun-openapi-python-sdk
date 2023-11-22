@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class ReleaseLindormInstanceRequest(RpcRequest):
+class GetLdpsResourceCostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'ReleaseLindormInstance','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetLdpsResourceCost','hitsdb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,16 @@ class ReleaseLindormInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Immediately(self): # Boolean
-		return self.get_query_params().get('Immediately')
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
 
-	def set_Immediately(self, Immediately):  # Boolean
-		self.add_query_param('Immediately', Immediately)
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_JobId(self): # String
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # String
+		self.add_query_param('JobId', JobId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -56,6 +61,11 @@ class ReleaseLindormInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

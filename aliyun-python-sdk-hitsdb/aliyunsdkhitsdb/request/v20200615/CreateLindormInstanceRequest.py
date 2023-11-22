@@ -91,6 +91,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_StreamNum(self): # Integer
+		return self.get_query_params().get('StreamNum')
+
+	def set_StreamNum(self, StreamNum):  # Integer
+		self.add_query_param('StreamNum', StreamNum)
 	def get_LogSingleStorage(self): # Integer
 		return self.get_query_params().get('LogSingleStorage')
 
@@ -201,6 +206,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_FilestoreNum(self, FilestoreNum):  # Integer
 		self.add_query_param('FilestoreNum', FilestoreNum)
+	def get_StreamSpec(self): # String
+		return self.get_query_params().get('StreamSpec')
+
+	def set_StreamSpec(self, StreamSpec):  # String
+		self.add_query_param('StreamSpec', StreamSpec)
 	def get_CoreSpec(self): # String
 		return self.get_query_params().get('CoreSpec')
 

@@ -56,11 +56,6 @@ class GetInstanceIpWhiteListRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_GroupName(self): # String
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self, GroupName):  # String
-		self.add_query_param('GroupName', GroupName)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
