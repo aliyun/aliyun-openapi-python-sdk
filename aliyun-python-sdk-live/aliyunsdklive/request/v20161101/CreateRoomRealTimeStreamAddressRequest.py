@@ -20,41 +20,40 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class CreateEventSubRequest(RpcRequest):
+class CreateRoomRealTimeStreamAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateEventSub','live')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateRoomRealTimeStreamAddress','live')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Userss(self): # RepeatList
-		return self.get_query_params().get('Users')
+	def get_ExpireTime(self): # Integer
+		return self.get_query_params().get('ExpireTime')
 
-	def set_Userss(self, Users):  # RepeatList
-		for depth1 in range(len(Users)):
-			self.add_query_param('Users.' + str(depth1 + 1), Users[depth1])
+	def set_ExpireTime(self, ExpireTime):  # Integer
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_CallbackUrl(self): # String
-		return self.get_query_params().get('CallbackUrl')
+	def get_DisplayName(self): # String
+		return self.get_query_params().get('DisplayName')
 
-	def set_CallbackUrl(self, CallbackUrl):  # String
-		self.add_query_param('CallbackUrl', CallbackUrl)
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
 	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
 	def set_ChannelId(self, ChannelId):  # String
 		self.add_query_param('ChannelId', ChannelId)
-	def get_Eventss(self): # RepeatList
-		return self.get_query_params().get('Events')
-
-	def set_Eventss(self, Events):  # RepeatList
-		for depth1 in range(len(Events)):
-			self.add_query_param('Events.' + str(depth1 + 1), Events[depth1])

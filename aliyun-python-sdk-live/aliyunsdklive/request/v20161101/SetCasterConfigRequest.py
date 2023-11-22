@@ -71,6 +71,16 @@ class SetCasterConfigRequest(RpcRequest):
 
 	def set_CasterName(self, CasterName):  # String
 		self.add_query_param('CasterName', CasterName)
+	def get_AutoSwitchUrgentOn(self): # Boolean
+		return self.get_query_params().get('AutoSwitchUrgentOn')
+
+	def set_AutoSwitchUrgentOn(self, AutoSwitchUrgentOn):  # Boolean
+		self.add_query_param('AutoSwitchUrgentOn', AutoSwitchUrgentOn)
+	def get_AutoSwitchUrgentConfig(self): # String
+		return self.get_query_params().get('AutoSwitchUrgentConfig')
+
+	def set_AutoSwitchUrgentConfig(self, AutoSwitchUrgentConfig):  # String
+		self.add_query_param('AutoSwitchUrgentConfig', AutoSwitchUrgentConfig)
 	def get_UrgentLiveStreamUrl(self): # String
 		return self.get_query_params().get('UrgentLiveStreamUrl')
 
