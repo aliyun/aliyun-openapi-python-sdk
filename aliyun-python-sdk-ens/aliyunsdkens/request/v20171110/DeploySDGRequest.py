@@ -18,25 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class JoinSecurityGroupRequest(RpcRequest):
+class DeploySDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'JoinSecurityGroup','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeploySDG','ens')
+		self.set_method('GET')
 
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
+	def get_DeploymentType(self): # String
+		return self.get_query_params().get('DeploymentType')
 
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_DeploymentType(self, DeploymentType):  # String
+		self.add_query_param('DeploymentType', DeploymentType)
+	def get_SDGId(self): # String
+		return self.get_query_params().get('SDGId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_query_params().get('NetworkInterfaceId')
+	def set_SDGId(self, SDGId):  # String
+		self.add_query_param('SDGId', SDGId)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))

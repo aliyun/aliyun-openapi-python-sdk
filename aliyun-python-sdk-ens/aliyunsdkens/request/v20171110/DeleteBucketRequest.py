@@ -19,9 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeRegionBandwidthQuotaRequest(RpcRequest):
+class DeleteBucketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeRegionBandwidthQuota','ens')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteBucket','ens')
+		self.set_method('POST')
 
+	def get_BucketName(self): # String
+		return self.get_query_params().get('BucketName')
+
+	def set_BucketName(self, BucketName):  # String
+		self.add_query_param('BucketName', BucketName)

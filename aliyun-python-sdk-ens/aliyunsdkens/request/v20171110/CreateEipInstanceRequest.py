@@ -35,16 +35,6 @@ class CreateEipInstanceRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_Bandwidth(self): # Long
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self, Bandwidth):  # Long
-		self.add_query_param('Bandwidth', Bandwidth)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
@@ -55,3 +45,18 @@ class CreateEipInstanceRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_Bandwidth(self): # Long
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self, Bandwidth):  # Long
+		self.add_query_param('Bandwidth', Bandwidth)

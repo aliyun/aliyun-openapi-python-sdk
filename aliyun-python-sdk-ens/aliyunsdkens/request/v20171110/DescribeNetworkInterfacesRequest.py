@@ -25,21 +25,21 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeNetworkInterfaces','ens')
 		self.set_method('POST')
 
-	def get_PageNumber(self): # String
-		return self.get_query_params().get('PageNumber')
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
 
-	def set_PageNumber(self, PageNumber):  # String
-		self.add_query_param('PageNumber', PageNumber)
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_PageSize(self): # String
-		return self.get_query_params().get('PageSize')
+	def get_NetworkInterfaceName(self): # String
+		return self.get_query_params().get('NetworkInterfaceName')
 
-	def set_PageSize(self, PageSize):  # String
-		self.add_query_param('PageSize', PageSize)
+	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
+		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -50,8 +50,38 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
+
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_PageNumber(self): # String
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)
 	def get_PrimaryIpAddress(self): # String
 		return self.get_query_params().get('PrimaryIpAddress')
 
 	def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
 		self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

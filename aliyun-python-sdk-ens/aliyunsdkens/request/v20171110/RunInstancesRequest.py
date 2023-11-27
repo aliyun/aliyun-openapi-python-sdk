@@ -86,6 +86,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PublicIpIdentification(self, PublicIpIdentification):  # Boolean
 		self.add_query_param('PublicIpIdentification', PublicIpIdentification)
+	def get_BillingCycle(self): # String
+		return self.get_query_params().get('BillingCycle')
+
+	def set_BillingCycle(self, BillingCycle):  # String
+		self.add_query_param('BillingCycle', BillingCycle)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -136,6 +141,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Long
 		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_AutoUseCoupon(self): # String
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # String
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
@@ -161,6 +171,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Amount(self, Amount):  # Long
 		self.add_query_param('Amount', Amount)
+	def get_IpType(self): # String
+		return self.get_query_params().get('IpType')
+
+	def set_IpType(self, IpType):  # String
+		self.add_query_param('IpType', IpType)
 	def get_DataDisk(self): # Array
 		return self.get_query_params().get('DataDisk')
 

@@ -19,24 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class JoinSecurityGroupRequest(RpcRequest):
+class CreateSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'JoinSecurityGroup','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateSnapshot','ens')
 		self.set_method('POST')
 
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SnapshotName(self): # String
+		return self.get_query_params().get('SnapshotName')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_query_params().get('NetworkInterfaceId')
+	def set_SnapshotName(self, SnapshotName):  # String
+		self.add_query_param('SnapshotName', SnapshotName)
+	def get_EnsRegionId(self): # String
+		return self.get_query_params().get('EnsRegionId')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_DiskId(self): # String
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)

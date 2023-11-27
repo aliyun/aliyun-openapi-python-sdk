@@ -19,24 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class JoinSecurityGroupRequest(RpcRequest):
+class ListBucketsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'JoinSecurityGroup','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ListBuckets','ens')
 		self.set_method('POST')
 
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
+	def get_Prefix(self): # String
+		return self.get_query_params().get('Prefix')
 
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_Prefix(self, Prefix):  # String
+		self.add_query_param('Prefix', Prefix)
+	def get_PageNumber(self): # String
+		return self.get_query_params().get('PageNumber')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_query_params().get('NetworkInterfaceId')
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
 
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)

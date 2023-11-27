@@ -86,11 +86,6 @@ class DescribeARMServerInstancesRequest(RpcRequest):
 
 	def set_MinDate(self, MinDate):  # String
 		self.add_query_param('MinDate', MinDate)
-	def get_LatestAction(self): # String
-		return self.get_query_params().get('LatestAction')
-
-	def set_LatestAction(self, LatestAction):  # String
-		self.add_query_param('LatestAction', LatestAction)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

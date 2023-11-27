@@ -18,25 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class JoinSecurityGroupRequest(RpcRequest):
+class CopySDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'JoinSecurityGroup','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CopySDG','ens')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
+	def get_DestinationRegionIds(self): # Array
+		return self.get_query_params().get('DestinationRegionIds')
 
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_DestinationRegionIds(self, DestinationRegionIds):  # Array
+		self.add_query_param("DestinationRegionIds", json.dumps(DestinationRegionIds))
+	def get_SDGId(self): # String
+		return self.get_query_params().get('SDGId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_query_params().get('NetworkInterfaceId')
-
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_SDGId(self, SDGId):  # String
+		self.add_query_param('SDGId', SDGId)

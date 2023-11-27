@@ -70,6 +70,11 @@ class CreateARMServerInstancesRequest(RpcRequest):
 
 	def set_ServerType(self, ServerType):  # String
 		self.add_query_param('ServerType', ServerType)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 

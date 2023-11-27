@@ -25,28 +25,43 @@ class CreateDiskRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateDisk','ens')
 		self.set_method('POST')
 
-	def get_SnapshotId(self): # String
-		return self.get_query_params().get('SnapshotId')
+	def get_DiskName(self): # String
+		return self.get_query_params().get('DiskName')
 
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
+	def set_DiskName(self, DiskName):  # String
+		self.add_query_param('DiskName', DiskName)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
 	def get_Size(self): # String
 		return self.get_query_params().get('Size')
 
 	def set_Size(self, Size):  # String
 		self.add_query_param('Size', Size)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
+
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_Encrypted(self): # Boolean
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self, Encrypted):  # Boolean
+		self.add_query_param('Encrypted', Encrypted)
 	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
 	def set_Category(self, Category):  # String
 		self.add_query_param('Category', Category)
+	def get_KMSKeyId(self): # String
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self, KMSKeyId):  # String
+		self.add_query_param('KMSKeyId', KMSKeyId)

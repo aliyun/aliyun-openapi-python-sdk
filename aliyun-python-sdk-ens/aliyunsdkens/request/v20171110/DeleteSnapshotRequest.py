@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class JoinSecurityGroupRequest(RpcRequest):
+class DeleteSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'JoinSecurityGroup','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSnapshot','ens')
 		self.set_method('POST')
 
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
 
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NetworkInterfaceId(self): # String
-		return self.get_query_params().get('NetworkInterfaceId')
-
-	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
