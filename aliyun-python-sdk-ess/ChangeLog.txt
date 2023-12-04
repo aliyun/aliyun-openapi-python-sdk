@@ -1,3 +1,6 @@
+2023-12-04 Version: 2.3.15
+- ScalingConfiguration support StorageSet.
+
 2023-11-14 Version: 2.3.14
 - ECIScalingConfiguration add data cache fields.
 

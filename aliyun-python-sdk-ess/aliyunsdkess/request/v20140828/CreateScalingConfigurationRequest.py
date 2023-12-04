@@ -85,6 +85,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_InstanceDescription(self, InstanceDescription):  # String
 		self.add_query_param('InstanceDescription', InstanceDescription)
+	def get_StorageSetPartitionNumber(self): # Integer
+		return self.get_query_params().get('StorageSetPartitionNumber')
+
+	def set_StorageSetPartitionNumber(self, StorageSetPartitionNumber):  # Integer
+		self.add_query_param('StorageSetPartitionNumber', StorageSetPartitionNumber)
 	def get_SystemDiskAutoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('SystemDisk.AutoSnapshotPolicyId')
 
@@ -382,6 +387,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_LoadBalancerWeight(self, LoadBalancerWeight):  # Integer
 		self.add_query_param('LoadBalancerWeight', LoadBalancerWeight)
+	def get_StorageSetId(self): # String
+		return self.get_query_params().get('StorageSetId')
+
+	def set_StorageSetId(self, StorageSetId):  # String
+		self.add_query_param('StorageSetId', StorageSetId)
 	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDisk.Size')
 
