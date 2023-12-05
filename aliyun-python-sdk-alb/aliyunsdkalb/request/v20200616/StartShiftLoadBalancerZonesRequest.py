@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class CreateAclRequest(RpcRequest):
+class StartShiftLoadBalancerZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'CreateAcl','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'StartShiftLoadBalancerZones','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,32 +31,27 @@ class CreateAclRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclName(self): # String
-		return self.get_query_params().get('AclName')
-
-	def set_AclName(self, AclName):  # String
-		self.add_query_param('AclName', AclName)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Tag(self): # Array
-		return self.get_query_params().get('Tag')
-
-	def set_Tag(self, Tag):  # Array
-		for index1, value1 in enumerate(Tag):
-			if value1.get('Value') is not None:
-				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
-			if value1.get('Key') is not None:
-				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_ZoneMappings(self): # Array
+		return self.get_query_params().get('ZoneMappings')
+
+	def set_ZoneMappings(self, ZoneMappings):  # Array
+		for index1, value1 in enumerate(ZoneMappings):
+			if value1.get('VSwitchId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.VSwitchId', value1.get('VSwitchId'))
+			if value1.get('ZoneId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.ZoneId', value1.get('ZoneId'))
+	def get_LoadBalancerId(self): # String
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)

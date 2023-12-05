@@ -54,6 +54,8 @@ class UpdateLoadBalancerZonesRequest(RpcRequest):
 				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.ZoneId', value1.get('ZoneId'))
 			if value1.get('AllocationId') is not None:
 				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.AllocationId', value1.get('AllocationId'))
+			if value1.get('IntranetAddress') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.IntranetAddress', value1.get('IntranetAddress'))
 	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 

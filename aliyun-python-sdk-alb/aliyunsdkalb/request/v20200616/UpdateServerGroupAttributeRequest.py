@@ -85,6 +85,11 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 
 	def set_ServerGroupId(self, ServerGroupId):  # String
 		self.add_query_param('ServerGroupId', ServerGroupId)
+	def get_UpstreamKeepaliveEnabled(self): # Boolean
+		return self.get_query_params().get('UpstreamKeepaliveEnabled')
+
+	def set_UpstreamKeepaliveEnabled(self, UpstreamKeepaliveEnabled):  # Boolean
+		self.add_query_param('UpstreamKeepaliveEnabled', UpstreamKeepaliveEnabled)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 

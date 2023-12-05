@@ -43,6 +43,11 @@ class ListLoadBalancersRequest(RpcRequest):
 	def set_LoadBalancerIds(self, LoadBalancerIds):  # Array
 		for index1, value1 in enumerate(LoadBalancerIds):
 			self.add_query_param('LoadBalancerIds.' + str(index1 + 1), value1)
+	def get_AddressIpVersion(self): # String
+		return self.get_query_params().get('AddressIpVersion')
+
+	def set_AddressIpVersion(self, AddressIpVersion):  # String
+		self.add_query_param('AddressIpVersion', AddressIpVersion)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -58,6 +63,11 @@ class ListLoadBalancersRequest(RpcRequest):
 
 	def set_LoadBalancerBussinessStatus(self, LoadBalancerBussinessStatus):  # String
 		self.add_query_param('LoadBalancerBussinessStatus', LoadBalancerBussinessStatus)
+	def get_DNSName(self): # String
+		return self.get_query_params().get('DNSName')
+
+	def set_DNSName(self, DNSName):  # String
+		self.add_query_param('DNSName', DNSName)
 	def get_AddressType(self): # String
 		return self.get_query_params().get('AddressType')
 
@@ -93,6 +103,11 @@ class ListLoadBalancersRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_Ipv6AddressType(self): # String
+		return self.get_query_params().get('Ipv6AddressType')
+
+	def set_Ipv6AddressType(self, Ipv6AddressType):  # String
+		self.add_query_param('Ipv6AddressType', Ipv6AddressType)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

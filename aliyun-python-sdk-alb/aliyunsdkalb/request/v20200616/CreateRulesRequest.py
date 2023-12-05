@@ -93,6 +93,12 @@ class CreateRulesRequest(RpcRequest):
 							self.add_query_param('Rules.' + str(index1 + 1) + '.RuleConditions.' + str(index2 + 1) + '.ResponseHeaderConfig.Key', value2.get('ResponseHeaderConfig').get('Key'))
 			if value1.get('RuleName') is not None:
 				self.add_query_param('Rules.' + str(index1 + 1) + '.RuleName', value1.get('RuleName'))
+			if value1.get('Tag') is not None:
+				for index2, value2 in enumerate(value1.get('Tag')):
+					if value2.get('Value') is not None:
+						self.add_query_param('Rules.' + str(index1 + 1) + '.Tag.' + str(index2 + 1) + '.Value', value2.get('Value'))
+					if value2.get('Key') is not None:
+						self.add_query_param('Rules.' + str(index1 + 1) + '.Tag.' + str(index2 + 1) + '.Key', value2.get('Key'))
 			if value1.get('Priority') is not None:
 				self.add_query_param('Rules.' + str(index1 + 1) + '.Priority', value1.get('Priority'))
 			if value1.get('RuleActions') is not None:

@@ -90,11 +90,25 @@ class CreateServerGroupRequest(RpcRequest):
 
 	def set_Protocol(self, Protocol):  # String
 		self.add_query_param('Protocol', Protocol)
+	def get_UpstreamKeepaliveEnabled(self): # Boolean
+		return self.get_query_params().get('UpstreamKeepaliveEnabled')
+
+	def set_UpstreamKeepaliveEnabled(self, UpstreamKeepaliveEnabled):  # Boolean
+		self.add_query_param('UpstreamKeepaliveEnabled', UpstreamKeepaliveEnabled)
 	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_query_param('ServiceName', ServiceName)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_StickySessionConfig(self): # Struct
 		return self.get_query_params().get('StickySessionConfig')
 
