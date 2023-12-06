@@ -36,16 +36,6 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_EcsRegion(self, EcsRegion):  # String
 		self.add_query_param('EcsRegion', EcsRegion)
-	def get_DdlOnline(self): # Integer
-		return self.get_query_params().get('DdlOnline')
-
-	def set_DdlOnline(self, DdlOnline):  # Integer
-		self.add_query_param('DdlOnline', DdlOnline)
-	def get_UseDsql(self): # Integer
-		return self.get_query_params().get('UseDsql')
-
-	def set_UseDsql(self, UseDsql):  # Integer
-		self.add_query_param('UseDsql', UseDsql)
 	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
@@ -56,26 +46,11 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_Sid(self): # String
-		return self.get_query_params().get('Sid')
-
-	def set_Sid(self, Sid):  # String
-		self.add_query_param('Sid', Sid)
 	def get_EnableSellSitd(self): # String
 		return self.get_query_params().get('EnableSellSitd')
 
 	def set_EnableSellSitd(self, EnableSellSitd):  # String
 		self.add_query_param('EnableSellSitd', EnableSellSitd)
-	def get_DataLinkName(self): # String
-		return self.get_query_params().get('DataLinkName')
-
-	def set_DataLinkName(self, DataLinkName):  # String
-		self.add_query_param('DataLinkName', DataLinkName)
-	def get_TemplateType(self): # String
-		return self.get_query_params().get('TemplateType')
-
-	def set_TemplateType(self, TemplateType):  # String
-		self.add_query_param('TemplateType', TemplateType)
 	def get_InstanceSource(self): # String
 		return self.get_query_params().get('InstanceSource')
 
@@ -91,16 +66,16 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_Host(self, Host):  # String
 		self.add_query_param('Host', Host)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
 	def get_QueryTimeout(self): # Integer
 		return self.get_query_params().get('QueryTimeout')
 
 	def set_QueryTimeout(self, QueryTimeout):  # Integer
 		self.add_query_param('QueryTimeout', QueryTimeout)
+	def get_DbaUidByString(self): # String
+		return self.get_query_params().get('DbaUidByString')
+
+	def set_DbaUidByString(self, DbaUidByString):  # String
+		self.add_query_param('DbaUidByString', DbaUidByString)
 	def get_EcsInstanceId(self): # String
 		return self.get_query_params().get('EcsInstanceId')
 
@@ -111,6 +86,51 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_ExportTimeout(self, ExportTimeout):  # Integer
 		self.add_query_param('ExportTimeout', ExportTimeout)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
+	def get_SafeRule(self): # String
+		return self.get_query_params().get('SafeRule')
+
+	def set_SafeRule(self, SafeRule):  # String
+		self.add_query_param('SafeRule', SafeRule)
+	def get_DdlOnline(self): # Integer
+		return self.get_query_params().get('DdlOnline')
+
+	def set_DdlOnline(self, DdlOnline):  # Integer
+		self.add_query_param('DdlOnline', DdlOnline)
+	def get_UseDsql(self): # Integer
+		return self.get_query_params().get('UseDsql')
+
+	def set_UseDsql(self, UseDsql):  # Integer
+		self.add_query_param('UseDsql', UseDsql)
+	def get_Sid(self): # String
+		return self.get_query_params().get('Sid')
+
+	def set_Sid(self, Sid):  # String
+		self.add_query_param('Sid', Sid)
+	def get_DataLinkName(self): # String
+		return self.get_query_params().get('DataLinkName')
+
+	def set_DataLinkName(self, DataLinkName):  # String
+		self.add_query_param('DataLinkName', DataLinkName)
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_DatabasePassword(self): # String
 		return self.get_query_params().get('DatabasePassword')
 
@@ -121,21 +141,11 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_InstanceAlias(self, InstanceAlias):  # String
 		self.add_query_param('InstanceAlias', InstanceAlias)
-	def get_TemplateId(self): # Long
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self, TemplateId):  # Long
-		self.add_query_param('TemplateId', TemplateId)
 	def get_DatabaseUser(self): # String
 		return self.get_query_params().get('DatabaseUser')
 
 	def set_DatabaseUser(self, DatabaseUser):  # String
 		self.add_query_param('DatabaseUser', DatabaseUser)
-	def get_Port(self): # Integer
-		return self.get_query_params().get('Port')
-
-	def set_Port(self, Port):  # Integer
-		self.add_query_param('Port', Port)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
@@ -151,8 +161,3 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_SkipTest(self, SkipTest):  # Boolean
 		self.add_query_param('SkipTest', SkipTest)
-	def get_SafeRule(self): # String
-		return self.get_query_params().get('SafeRule')
-
-	def set_SafeRule(self, SafeRule):  # String
-		self.add_query_param('SafeRule', SafeRule)
