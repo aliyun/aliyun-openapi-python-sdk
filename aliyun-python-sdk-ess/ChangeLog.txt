@@ -1,3 +1,6 @@
+2023-12-06 Version: 2.3.16
+- ScaleWithAdjustment supports ECI overrides.
+
 2023-12-04 Version: 2.3.15
 - ScalingConfiguration support StorageSet.
 

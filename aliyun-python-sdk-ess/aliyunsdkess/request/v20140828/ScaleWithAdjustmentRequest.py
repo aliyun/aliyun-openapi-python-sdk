@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
+import json
 
 class ScaleWithAdjustmentRequest(RpcRequest):
 
@@ -61,6 +62,11 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 
 	def set_AdjustmentType(self, AdjustmentType):  # String
 		self.add_query_param('AdjustmentType', AdjustmentType)
+	def get_Overrides(self): # Struct
+		return self.get_query_params().get('Overrides')
+
+	def set_Overrides(self, Overrides):  # Struct
+		self.add_query_param("Overrides", json.dumps(Overrides))
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
