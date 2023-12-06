@@ -23,7 +23,7 @@ from aliyunsdkimageseg.endpoint import endpoint_data
 class SegmentClothRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentCloth')
+		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentCloth','imageseg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,17 @@ class SegmentClothRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClothClasss(self): # RepeatList
+		return self.get_query_params().get('ClothClass')
+
+	def set_ClothClasss(self, ClothClass):  # RepeatList
+		for depth1 in range(len(ClothClass)):
+			self.add_query_param('ClothClass.' + str(depth1 + 1), ClothClass[depth1])
+	def get_ReturnForm(self): # String
+		return self.get_query_params().get('ReturnForm')
+
+	def set_ReturnForm(self, ReturnForm):  # String
+		self.add_query_param('ReturnForm', ReturnForm)
 	def get_ImageURL(self): # String
 		return self.get_query_params().get('ImageURL')
 

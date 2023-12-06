@@ -23,7 +23,7 @@ from aliyunsdkimageseg.endpoint import endpoint_data
 class SegmentSkinRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentSkin')
+		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentSkin','imageseg')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
