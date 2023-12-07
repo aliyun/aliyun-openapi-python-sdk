@@ -41,6 +41,11 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 
 	def set_FuzzyQuery(self, FuzzyQuery):  # Boolean
 		self.add_query_param('FuzzyQuery', FuzzyQuery)
+	def get_ServiceManaged(self): # Boolean
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self, ServiceManaged):  # Boolean
+		self.add_query_param('ServiceManaged', ServiceManaged)
 	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
