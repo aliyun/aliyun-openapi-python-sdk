@@ -51,6 +51,11 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_BeginBizdate(self, BeginBizdate):  # String
 		self.add_body_params('BeginBizdate', BeginBizdate)
+	def get_OrderBy(self): # String
+		return self.get_body_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_body_params('OrderBy', OrderBy)
 	def get_EndBizdate(self): # String
 		return self.get_body_params().get('EndBizdate')
 

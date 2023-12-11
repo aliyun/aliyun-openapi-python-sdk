@@ -19,7 +19,6 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
-import json
 
 class RegisterLineageRelationRequest(RpcRequest):
 
@@ -32,8 +31,8 @@ class RegisterLineageRelationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LineageRelationRegisterVO(self): # Struct
+	def get_LineageRelationRegisterVO(self): # ObjectOfAny
 		return self.get_body_params().get('LineageRelationRegisterVO')
 
-	def set_LineageRelationRegisterVO(self, LineageRelationRegisterVO):  # Struct
-		self.add_body_params("LineageRelationRegisterVO", json.dumps(LineageRelationRegisterVO))
+	def set_LineageRelationRegisterVO(self, LineageRelationRegisterVO):  # ObjectOfAny
+		self.add_body_params('LineageRelationRegisterVO', LineageRelationRegisterVO)

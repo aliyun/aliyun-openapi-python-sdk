@@ -31,6 +31,11 @@ class UpdateQualityRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TaskSetting(self): # String
+		return self.get_body_params().get('TaskSetting')
+
+	def set_TaskSetting(self, TaskSetting):  # String
+		self.add_body_params('TaskSetting', TaskSetting)
 	def get_Trend(self): # String
 		return self.get_body_params().get('Trend')
 

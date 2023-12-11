@@ -36,6 +36,11 @@ class GetInstanceStatusStatisticRequest(RpcRequest):
 
 	def set_ProjectEnv(self, ProjectEnv):  # String
 		self.add_body_params('ProjectEnv', ProjectEnv)
+	def get_SchedulerPeriod(self): # String
+		return self.get_body_params().get('SchedulerPeriod')
+
+	def set_SchedulerPeriod(self, SchedulerPeriod):  # String
+		self.add_body_params('SchedulerPeriod', SchedulerPeriod)
 	def get_DagType(self): # String
 		return self.get_body_params().get('DagType')
 
