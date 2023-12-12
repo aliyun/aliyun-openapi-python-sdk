@@ -41,6 +41,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AutoRenewDuration(self): # String
+		return self.get_query_params().get('AutoRenewDuration')
+
+	def set_AutoRenewDuration(self, AutoRenewDuration):  # String
+		self.add_query_param('AutoRenewDuration', AutoRenewDuration)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -51,6 +56,11 @@ class CreateLindormInstanceRequest(RpcRequest):
 
 	def set_LogSpec(self, LogSpec):  # String
 		self.add_query_param('LogSpec', LogSpec)
+	def get_AutoRenewal(self): # Boolean
+		return self.get_query_params().get('AutoRenewal')
+
+	def set_AutoRenewal(self, AutoRenewal):  # Boolean
+		self.add_query_param('AutoRenewal', AutoRenewal)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
