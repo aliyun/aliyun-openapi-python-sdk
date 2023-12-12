@@ -19,16 +19,16 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class GetTaskInfoRequest(RoaRequest):
+class DeleteTranscriptionPhrasesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'tingwu', '2023-09-30', 'GetTaskInfo')
+		RoaRequest.__init__(self, 'tingwu', '2023-09-30', 'DeleteTranscriptionPhrases')
 		self.set_protocol_type('https')
-		self.set_uri_pattern('/openapi/tingwu/v2/tasks/[TaskId]')
-		self.set_method('GET')
+		self.set_uri_pattern('/openapi/tingwu/v2/resources/phrases/[PhraseId]')
+		self.set_method('DELETE')
 
-	def get_TaskId(self): # String
-		return self.get_path_params().get('TaskId')
+	def get_PhraseId(self): # String
+		return self.get_path_params().get('PhraseId')
 
-	def set_TaskId(self, TaskId):  # String
-		self.add_path_param('TaskId', TaskId)
+	def set_PhraseId(self, PhraseId):  # String
+		self.add_path_param('PhraseId', PhraseId)
