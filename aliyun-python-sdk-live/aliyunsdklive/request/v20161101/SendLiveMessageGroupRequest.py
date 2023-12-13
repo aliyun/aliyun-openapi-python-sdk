@@ -32,16 +32,41 @@ class SendLiveMessageGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_SenderMetaInfo(self): # String
 		return self.get_query_params().get('SenderMetaInfo')
 
 	def set_SenderMetaInfo(self, SenderMetaInfo):  # String
 		self.add_query_param('SenderMetaInfo', SenderMetaInfo)
+	def get_Body(self): # String
+		return self.get_query_params().get('Body')
+
+	def set_Body(self, Body):  # String
+		self.add_query_param('Body', Body)
+	def get_StaticsIncrease(self): # Long
+		return self.get_query_params().get('StaticsIncrease')
+
+	def set_StaticsIncrease(self, StaticsIncrease):  # Long
+		self.add_query_param('StaticsIncrease', StaticsIncrease)
+	def get_MsgType(self): # Long
+		return self.get_query_params().get('MsgType')
+
+	def set_MsgType(self, MsgType):  # Long
+		self.add_query_param('MsgType', MsgType)
+	def get_NoStorage(self): # Boolean
+		return self.get_query_params().get('NoStorage')
+
+	def set_NoStorage(self, NoStorage):  # Boolean
+		self.add_query_param('NoStorage', NoStorage)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Weight(self): # Long
+		return self.get_query_params().get('Weight')
+
+	def set_Weight(self, Weight):  # Long
+		self.add_query_param('Weight', Weight)
 	def get_DataCenter(self): # String
 		return self.get_query_params().get('DataCenter')
 
@@ -52,11 +77,6 @@ class SendLiveMessageGroupRequest(RpcRequest):
 
 	def set_MsgTid(self, MsgTid):  # String
 		self.add_query_param('MsgTid', MsgTid)
-	def get_Body(self): # String
-		return self.get_query_params().get('Body')
-
-	def set_Body(self, Body):  # String
-		self.add_query_param('Body', Body)
 	def get_SenderId(self): # String
 		return self.get_query_params().get('SenderId')
 
@@ -67,8 +87,3 @@ class SendLiveMessageGroupRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_MsgType(self): # Long
-		return self.get_query_params().get('MsgType')
-
-	def set_MsgType(self, MsgType):  # Long
-		self.add_query_param('MsgType', MsgType)
