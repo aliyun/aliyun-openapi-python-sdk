@@ -51,3 +51,8 @@ class UpdateMediaStorageClassRequest(RpcRequest):
 
 	def set_StorageClass(self, StorageClass):  # String
 		self.add_query_param('StorageClass', StorageClass)
+	def get_AllowUpdateWithoutTimeLimit(self): # Boolean
+		return self.get_query_params().get('AllowUpdateWithoutTimeLimit')
+
+	def set_AllowUpdateWithoutTimeLimit(self, AllowUpdateWithoutTimeLimit):  # Boolean
+		self.add_query_param('AllowUpdateWithoutTimeLimit', AllowUpdateWithoutTimeLimit)
