@@ -1,3 +1,6 @@
+2023-12-13 Version: 2.20.10
+- Add DescribeDBNodeDirectVipInfo.
+
 2023-09-26 Version: 2.20.9
 - Update us-east-1 us-west-1 endpoint.
 

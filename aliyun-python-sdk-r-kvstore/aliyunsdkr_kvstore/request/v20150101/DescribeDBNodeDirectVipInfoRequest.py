@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class FlushInstanceForDBRequest(RpcRequest):
+class DescribeDBNodeDirectVipInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'FlushInstanceForDB','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeDBNodeDirectVipInfo','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,11 +51,6 @@ class FlushInstanceForDBRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DbIndex(self): # Integer
-		return self.get_query_params().get('DbIndex')
-
-	def set_DbIndex(self, DbIndex):  # Integer
-		self.add_query_param('DbIndex', DbIndex)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

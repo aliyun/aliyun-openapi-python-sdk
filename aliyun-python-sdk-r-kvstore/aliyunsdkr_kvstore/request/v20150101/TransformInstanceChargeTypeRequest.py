@@ -41,6 +41,11 @@ class TransformInstanceChargeTypeRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_AutoRenewPeriod(self): # Long
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Long
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Long
 		return self.get_query_params().get('Period')
 
@@ -71,6 +76,11 @@ class TransformInstanceChargeTypeRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_AutoRenew(self): # String
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # String
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
