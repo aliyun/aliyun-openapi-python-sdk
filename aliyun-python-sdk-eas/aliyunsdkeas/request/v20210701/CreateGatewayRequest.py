@@ -20,11 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class CreateServiceRequest(RoaRequest):
+class CreateGatewayRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'CreateService','eas')
-		self.set_uri_pattern('/api/v2/services')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'CreateGateway','eas')
+		self.set_protocol_type('https')
+		self.set_uri_pattern('/api/v2/gateways')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,23 +33,13 @@ class CreateServiceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Develop(self): # String
-		return self.get_query_params().get('Develop')
+	def get_ResourceName(self): # String
+		return self.get_query_params().get('ResourceName')
 
-	def set_Develop(self, Develop):  # String
-		self.add_query_param('Develop', Develop)
+	def set_ResourceName(self, ResourceName):  # String
+		self.add_query_param('ResourceName', ResourceName)
 	def get_body(self): # String
 		return self.get_body_params().get('body')
 
 	def set_body(self, body):  # String
 		self.add_body_params('body', body)
-	def get_Labels(self): # String
-		return self.get_query_params().get('Labels')
-
-	def set_Labels(self, Labels):  # String
-		self.add_query_param('Labels', Labels)
-	def get_WorkspaceId(self): # String
-		return self.get_query_params().get('WorkspaceId')
-
-	def set_WorkspaceId(self, WorkspaceId):  # String
-		self.add_query_param('WorkspaceId', WorkspaceId)

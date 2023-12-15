@@ -1,3 +1,6 @@
+2023-12-15 Version: 0.0.9
+- Generated 2021-07-01 for `eas`.
+
 2023-02-10 Version: 0.0.8
 - Add service label api.
 

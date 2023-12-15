@@ -47,6 +47,11 @@ class ListResourcesRequest(RoaRequest):
 
 	def set_ResourceName(self, ResourceName):  # String
 		self.add_query_param('ResourceName', ResourceName)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

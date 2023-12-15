@@ -32,6 +32,36 @@ class ListServicesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ServiceUid(self): # String
+		return self.get_query_params().get('ServiceUid')
+
+	def set_ServiceUid(self, ServiceUid):  # String
+		self.add_query_param('ServiceUid', ServiceUid)
+	def get_Sort(self): # String
+		return self.get_query_params().get('Sort')
+
+	def set_Sort(self, Sort):  # String
+		self.add_query_param('Sort', Sort)
+	def get_Label(self): # String
+		return self.get_query_params().get('Label')
+
+	def set_Label(self, Label):  # String
+		self.add_query_param('Label', Label)
+	def get_ServiceStatus(self): # String
+		return self.get_query_params().get('ServiceStatus')
+
+	def set_ServiceStatus(self, ServiceStatus):  # String
+		self.add_query_param('ServiceStatus', ServiceStatus)
+	def get_GroupName(self): # String
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_Filter(self): # String
 		return self.get_query_params().get('Filter')
 
@@ -52,28 +82,23 @@ class ListServicesRequest(RoaRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_Sort(self): # String
-		return self.get_query_params().get('Sort')
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
 
-	def set_Sort(self, Sort):  # String
-		self.add_query_param('Sort', Sort)
-	def get_Label(self): # String
-		return self.get_query_params().get('Label')
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
+	def get_ResourceName(self): # String
+		return self.get_query_params().get('ResourceName')
 
-	def set_Label(self, Label):  # String
-		self.add_query_param('Label', Label)
-	def get_GroupName(self): # String
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self, GroupName):  # String
-		self.add_query_param('GroupName', GroupName)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_ResourceName(self, ResourceName):  # String
+		self.add_query_param('ResourceName', ResourceName)
 	def get_Order(self): # String
 		return self.get_query_params().get('Order')
 
 	def set_Order(self, Order):  # String
 		self.add_query_param('Order', Order)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

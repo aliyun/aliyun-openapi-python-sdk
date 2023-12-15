@@ -32,6 +32,11 @@ class DeleteServiceInstancesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Container(self): # String
+		return self.get_query_params().get('Container')
+
+	def set_Container(self, Container):  # String
+		self.add_query_param('Container', Container)
 	def get_InstanceList(self): # String
 		return self.get_query_params().get('InstanceList')
 
@@ -47,3 +52,8 @@ class DeleteServiceInstancesRequest(RoaRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)
+	def get_SoftRestart(self): # Boolean
+		return self.get_query_params().get('SoftRestart')
+
+	def set_SoftRestart(self, SoftRestart):  # Boolean
+		self.add_query_param('SoftRestart', SoftRestart)

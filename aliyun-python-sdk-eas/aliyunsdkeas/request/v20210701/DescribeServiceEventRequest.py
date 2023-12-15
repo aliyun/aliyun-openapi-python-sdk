@@ -32,6 +32,11 @@ class DescribeServiceEventRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
 	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
@@ -47,6 +52,11 @@ class DescribeServiceEventRequest(RoaRequest):
 
 	def set_ServiceName(self, ServiceName):  # String
 		self.add_path_param('ServiceName', ServiceName)
+	def get_EventType(self): # String
+		return self.get_query_params().get('EventType')
+
+	def set_EventType(self, EventType):  # String
+		self.add_query_param('EventType', EventType)
 	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 

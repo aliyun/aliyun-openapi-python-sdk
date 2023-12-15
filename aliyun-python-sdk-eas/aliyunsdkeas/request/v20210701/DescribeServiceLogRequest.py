@@ -32,6 +32,21 @@ class DescribeServiceLogRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_ContainerName(self): # String
+		return self.get_query_params().get('ContainerName')
+
+	def set_ContainerName(self, ContainerName):  # String
+		self.add_query_param('ContainerName', ContainerName)
+	def get_Previous(self): # Boolean
+		return self.get_query_params().get('Previous')
+
+	def set_Previous(self, Previous):  # Boolean
+		self.add_query_param('Previous', Previous)
 	def get_Ip(self): # String
 		return self.get_query_params().get('Ip')
 

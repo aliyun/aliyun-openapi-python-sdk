@@ -47,3 +47,8 @@ class ListGroupsRequest(RoaRequest):
 
 	def set_PageNumber(self, PageNumber):  # String
 		self.add_query_param('PageNumber', PageNumber)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

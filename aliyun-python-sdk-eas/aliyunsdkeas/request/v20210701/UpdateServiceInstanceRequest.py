@@ -20,35 +20,36 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkeas.endpoint import endpoint_data
 
-class CreateServiceRequest(RoaRequest):
+class UpdateServiceInstanceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'eas', '2021-07-01', 'CreateService','eas')
-		self.set_uri_pattern('/api/v2/services')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'eas', '2021-07-01', 'UpdateServiceInstance','eas')
+		self.set_protocol_type('https')
+		self.set_uri_pattern('/api/v2/services/[ClusterId]/[ServiceName]/instances/[InstanceName]')
+		self.set_method('PUT')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Develop(self): # String
-		return self.get_query_params().get('Develop')
+	def get_InstanceName(self): # String
+		return self.get_path_params().get('InstanceName')
 
-	def set_Develop(self, Develop):  # String
-		self.add_query_param('Develop', Develop)
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_path_param('InstanceName', InstanceName)
+	def get_ServiceName(self): # String
+		return self.get_path_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_path_param('ServiceName', ServiceName)
+	def get_ClusterId(self): # String
+		return self.get_path_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_path_param('ClusterId', ClusterId)
 	def get_body(self): # String
 		return self.get_body_params().get('body')
 
 	def set_body(self, body):  # String
 		self.add_body_params('body', body)
-	def get_Labels(self): # String
-		return self.get_query_params().get('Labels')
-
-	def set_Labels(self, Labels):  # String
-		self.add_query_param('Labels', Labels)
-	def get_WorkspaceId(self): # String
-		return self.get_query_params().get('WorkspaceId')
-
-	def set_WorkspaceId(self, WorkspaceId):  # String
-		self.add_query_param('WorkspaceId', WorkspaceId)
