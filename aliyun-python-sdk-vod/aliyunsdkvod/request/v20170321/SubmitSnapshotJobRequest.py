@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
+import json
 
 class SubmitSnapshotJobRequest(RpcRequest):
 
@@ -46,6 +47,11 @@ class SubmitSnapshotJobRequest(RpcRequest):
 
 	def set_SpriteSnapshotConfig(self, SpriteSnapshotConfig):  # String
 		self.add_query_param('SpriteSnapshotConfig', SpriteSnapshotConfig)
+	def get_SpecifiedOffsetTimes(self): # Array
+		return self.get_query_params().get('SpecifiedOffsetTimes')
+
+	def set_SpecifiedOffsetTimes(self, SpecifiedOffsetTimes):  # Array
+		self.add_query_param("SpecifiedOffsetTimes", json.dumps(SpecifiedOffsetTimes))
 	def get_SnapshotTemplateId(self): # String
 		return self.get_query_params().get('SnapshotTemplateId')
 
