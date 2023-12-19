@@ -78,6 +78,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidHonorTargetUserType', PushTask[depth1].get('AndroidHonorTargetUserType'))
 			if PushTask[depth1].get('AndroidNotificationVivoChannel') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationVivoChannel', PushTask[depth1].get('AndroidNotificationVivoChannel'))
+			if PushTask[depth1].get('AndroidVivoReceiptId') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidVivoReceiptId', PushTask[depth1].get('AndroidVivoReceiptId'))
 			if PushTask[depth1].get('iOSNotificationCategory') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationCategory', PushTask[depth1].get('iOSNotificationCategory'))
 			if PushTask[depth1].get('AndroidNotificationXiaomiChannel') is not None:

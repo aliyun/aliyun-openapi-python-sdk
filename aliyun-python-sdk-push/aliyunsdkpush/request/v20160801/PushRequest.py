@@ -141,6 +141,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidNotificationVivoChannel(self, AndroidNotificationVivoChannel):  # String
 		self.add_query_param('AndroidNotificationVivoChannel', AndroidNotificationVivoChannel)
+	def get_AndroidVivoReceiptId(self): # String
+		return self.get_query_params().get('AndroidVivoReceiptId')
+
+	def set_AndroidVivoReceiptId(self, AndroidVivoReceiptId):  # String
+		self.add_query_param('AndroidVivoReceiptId', AndroidVivoReceiptId)
 	def get_iOSNotificationCategory(self): # String
 		return self.get_query_params().get('iOSNotificationCategory')
 
