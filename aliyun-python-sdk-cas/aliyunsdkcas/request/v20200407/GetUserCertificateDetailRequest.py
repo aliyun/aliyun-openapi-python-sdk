@@ -23,7 +23,7 @@ from aliyunsdkcas.endpoint import endpoint_data
 class GetUserCertificateDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetUserCertificateDetail')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetUserCertificateDetail','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkcas.endpoint import endpoint_data
 class UploadPCACertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'UploadPCACert')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'UploadPCACert','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

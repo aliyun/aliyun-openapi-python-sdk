@@ -23,7 +23,7 @@ from aliyunsdkcas.endpoint import endpoint_data
 class ListCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListCert')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListCert','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ListCertRequest(RpcRequest):
 
 	def set_WarehouseId(self, WarehouseId):  # Long
 		self.add_query_param('WarehouseId', WarehouseId)
+	def get_CertType(self): # String
+		return self.get_query_params().get('CertType')
+
+	def set_CertType(self, CertType):  # String
+		self.add_query_param('CertType', CertType)
 	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 

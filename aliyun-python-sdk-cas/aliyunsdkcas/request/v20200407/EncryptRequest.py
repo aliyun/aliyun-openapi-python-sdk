@@ -23,7 +23,7 @@ from aliyunsdkcas.endpoint import endpoint_data
 class EncryptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'Encrypt')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'Encrypt','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

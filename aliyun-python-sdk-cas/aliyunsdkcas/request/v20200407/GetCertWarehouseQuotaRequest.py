@@ -23,7 +23,7 @@ from aliyunsdkcas.endpoint import endpoint_data
 class GetCertWarehouseQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetCertWarehouseQuota')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetCertWarehouseQuota','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
