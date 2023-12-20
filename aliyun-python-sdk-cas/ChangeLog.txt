@@ -1,3 +1,6 @@
+2023-12-20 Version: 1.0.18
+- Fix some bugs.
+
 2023-12-19 Version: 1.0.17
 - Fix some bugs.
 
