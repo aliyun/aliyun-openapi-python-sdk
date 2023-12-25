@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class RestartInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'RestartInstance')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'RestartInstance','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,6 +61,11 @@ class RestartInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RestartTime(self): # String
+		return self.get_query_params().get('RestartTime')
+
+	def set_RestartTime(self, RestartTime):  # String
+		self.add_query_param('RestartTime', RestartTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

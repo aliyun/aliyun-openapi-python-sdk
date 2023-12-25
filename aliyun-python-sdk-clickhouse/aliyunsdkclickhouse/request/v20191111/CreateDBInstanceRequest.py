@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CreateDBInstance','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,61 +41,41 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBClusterDescription(self, DBClusterDescription):  # String
 		self.add_query_param('DBClusterDescription', DBClusterDescription)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_SourceDBClusterId(self): # String
 		return self.get_query_params().get('SourceDBClusterId')
 
 	def set_SourceDBClusterId(self, SourceDBClusterId):  # String
 		self.add_query_param('SourceDBClusterId', SourceDBClusterId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ZondIdBak2(self): # String
+		return self.get_query_params().get('ZondIdBak2')
+
+	def set_ZondIdBak2(self, ZondIdBak2):  # String
+		self.add_query_param('ZondIdBak2', ZondIdBak2)
 	def get_DbNodeStorageType(self): # String
 		return self.get_query_params().get('DbNodeStorageType')
 
 	def set_DbNodeStorageType(self, DbNodeStorageType):  # String
 		self.add_query_param('DbNodeStorageType', DbNodeStorageType)
-	def get_DBClusterCategory(self): # String
-		return self.get_query_params().get('DBClusterCategory')
-
-	def set_DBClusterCategory(self, DBClusterCategory):  # String
-		self.add_query_param('DBClusterCategory', DBClusterCategory)
 	def get_EncryptionType(self): # String
 		return self.get_query_params().get('EncryptionType')
 
 	def set_EncryptionType(self, EncryptionType):  # String
 		self.add_query_param('EncryptionType', EncryptionType)
-	def get_DBClusterNetworkType(self): # String
-		return self.get_query_params().get('DBClusterNetworkType')
+	def get_ZoneIdBak(self): # String
+		return self.get_query_params().get('ZoneIdBak')
 
-	def set_DBClusterNetworkType(self, DBClusterNetworkType):  # String
-		self.add_query_param('DBClusterNetworkType', DBClusterNetworkType)
+	def set_ZoneIdBak(self, ZoneIdBak):  # String
+		self.add_query_param('ZoneIdBak', ZoneIdBak)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
 	def set_Period(self, Period):  # String
 		self.add_query_param('Period', Period)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_DBClusterVersion(self): # String
-		return self.get_query_params().get('DBClusterVersion')
-
-	def set_DBClusterVersion(self, DBClusterVersion):  # String
-		self.add_query_param('DBClusterVersion', DBClusterVersion)
-	def get_DBClusterClass(self): # String
-		return self.get_query_params().get('DBClusterClass')
-
-	def set_DBClusterClass(self, DBClusterClass):  # String
-		self.add_query_param('DBClusterClass', DBClusterClass)
 	def get_BackupSetID(self): # String
 		return self.get_query_params().get('BackupSetID')
 
@@ -116,16 +96,66 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBNodeGroupCount(self, DBNodeGroupCount):  # String
 		self.add_query_param('DBNodeGroupCount', DBNodeGroupCount)
-	def get_UsedTime(self): # String
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self, UsedTime):  # String
-		self.add_query_param('UsedTime', UsedTime)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DBClusterCategory(self): # String
+		return self.get_query_params().get('DBClusterCategory')
+
+	def set_DBClusterCategory(self, DBClusterCategory):  # String
+		self.add_query_param('DBClusterCategory', DBClusterCategory)
+	def get_DBClusterNetworkType(self): # String
+		return self.get_query_params().get('DBClusterNetworkType')
+
+	def set_DBClusterNetworkType(self, DBClusterNetworkType):  # String
+		self.add_query_param('DBClusterNetworkType', DBClusterNetworkType)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DBClusterVersion(self): # String
+		return self.get_query_params().get('DBClusterVersion')
+
+	def set_DBClusterVersion(self, DBClusterVersion):  # String
+		self.add_query_param('DBClusterVersion', DBClusterVersion)
+	def get_DBClusterClass(self): # String
+		return self.get_query_params().get('DBClusterClass')
+
+	def set_DBClusterClass(self, DBClusterClass):  # String
+		self.add_query_param('DBClusterClass', DBClusterClass)
+	def get_VSwitchBak(self): # String
+		return self.get_query_params().get('VSwitchBak')
+
+	def set_VSwitchBak(self, VSwitchBak):  # String
+		self.add_query_param('VSwitchBak', VSwitchBak)
+	def get_UsedTime(self): # String
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self, UsedTime):  # String
+		self.add_query_param('UsedTime', UsedTime)
+	def get_VSwitchBak2(self): # String
+		return self.get_query_params().get('VSwitchBak2')
+
+	def set_VSwitchBak2(self, VSwitchBak2):  # String
+		self.add_query_param('VSwitchBak2', VSwitchBak2)
 	def get_DBNodeStorage(self): # String
 		return self.get_query_params().get('DBNodeStorage')
 
@@ -136,11 +166,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

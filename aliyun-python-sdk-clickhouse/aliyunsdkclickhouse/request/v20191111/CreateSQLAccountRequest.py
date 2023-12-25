@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkclickhouse.endpoint import endpoint_data
 
-class DescribeRDSVpcRequest(RpcRequest):
+class CreateSQLAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeRDSVpc')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CreateSQLAccount','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +36,43 @@ class DescribeRDSVpcRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AccountType(self): # String
+		return self.get_query_params().get('AccountType')
+
+	def set_AccountType(self, AccountType):  # String
+		self.add_query_param('AccountType', AccountType)
+	def get_AccountDescription(self): # String
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self, AccountDescription):  # String
+		self.add_query_param('AccountDescription', AccountDescription)
+	def get_AccountName(self): # String
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_DbClusterId(self): # String
-		return self.get_query_params().get('DbClusterId')
+	def get_DBClusterId(self): # String
+		return self.get_query_params().get('DBClusterId')
 
-	def set_DbClusterId(self, DbClusterId):  # String
-		self.add_query_param('DbClusterId', DbClusterId)
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_RdsId(self): # String
-		return self.get_query_params().get('RdsId')
-
-	def set_RdsId(self, RdsId):  # String
-		self.add_query_param('RdsId', RdsId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AccountPassword(self): # String
+		return self.get_query_params().get('AccountPassword')
+
+	def set_AccountPassword(self, AccountPassword):  # String
+		self.add_query_param('AccountPassword', AccountPassword)

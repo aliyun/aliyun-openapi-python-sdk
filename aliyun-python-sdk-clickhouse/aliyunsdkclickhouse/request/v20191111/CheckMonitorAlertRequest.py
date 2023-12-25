@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class CheckMonitorAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CheckMonitorAlert')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CheckMonitorAlert','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class DescribeDBClusterAccessWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusterAccessWhiteList')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusterAccessWhiteList','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

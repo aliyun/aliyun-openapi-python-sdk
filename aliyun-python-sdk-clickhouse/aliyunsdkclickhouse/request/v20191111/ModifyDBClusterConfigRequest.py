@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class ModifyDBClusterConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'ModifyDBClusterConfig')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'ModifyDBClusterConfig','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ModifyDBClusterConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Reason(self): # String
+		return self.get_query_params().get('Reason')
+
+	def set_Reason(self, Reason):  # String
+		self.add_query_param('Reason', Reason)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 

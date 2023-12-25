@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class DescribeDBClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusters')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusters','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,16 +46,16 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_DBClusterStatus(self, DBClusterStatus):  # String
 		self.add_query_param('DBClusterStatus', DBClusterStatus)
-	def get_ControlVersion(self): # String
-		return self.get_query_params().get('ControlVersion')
-
-	def set_ControlVersion(self, ControlVersion):  # String
-		self.add_query_param('ControlVersion', ControlVersion)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

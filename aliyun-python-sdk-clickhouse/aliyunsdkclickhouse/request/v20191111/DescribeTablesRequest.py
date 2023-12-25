@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class DescribeTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeTables')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeTables','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
