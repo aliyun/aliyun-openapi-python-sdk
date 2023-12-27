@@ -56,6 +56,11 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_RecentExpirationInterval(self, RecentExpirationInterval):  # Integer
 		self.add_query_param('RecentExpirationInterval', RecentExpirationInterval)
+	def get_DescribeType(self): # String
+		return self.get_query_params().get('DescribeType')
+
+	def set_DescribeType(self, DescribeType):  # String
+		self.add_query_param('DescribeType', DescribeType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

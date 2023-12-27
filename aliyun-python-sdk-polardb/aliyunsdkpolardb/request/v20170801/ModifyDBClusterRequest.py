@@ -66,6 +66,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_CompressStorage(self): # String
+		return self.get_query_params().get('CompressStorage')
+
+	def set_CompressStorage(self, CompressStorage):  # String
+		self.add_query_param('CompressStorage', CompressStorage)
 	def get_StorageUpperBound(self): # Long
 		return self.get_query_params().get('StorageUpperBound')
 

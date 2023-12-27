@@ -130,6 +130,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBMinorVersion(self, DBMinorVersion):  # String
 		self.add_query_param('DBMinorVersion', DBMinorVersion)
+	def get_ProvisionedIops(self): # Long
+		return self.get_query_params().get('ProvisionedIops')
+
+	def set_ProvisionedIops(self, ProvisionedIops):  # Long
+		self.add_query_param('ProvisionedIops', ProvisionedIops)
 	def get_AutoRenew(self): # Boolean
 		return self.get_query_params().get('AutoRenew')
 

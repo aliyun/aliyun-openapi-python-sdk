@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class FailoverDBClusterRequest(RpcRequest):
+class DescribeDasConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'FailoverDBCluster','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDasConfig','polardb')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +37,6 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_RollBackForDisaster(self): # Boolean
-		return self.get_query_params().get('RollBackForDisaster')
-
-	def set_RollBackForDisaster(self, RollBackForDisaster):  # Boolean
-		self.add_query_param('RollBackForDisaster', RollBackForDisaster)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +57,3 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TargetDBNodeId(self): # String
-		return self.get_query_params().get('TargetDBNodeId')
-
-	def set_TargetDBNodeId(self, TargetDBNodeId):  # String
-		self.add_query_param('TargetDBNodeId', TargetDBNodeId)
