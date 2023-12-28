@@ -31,6 +31,11 @@ class ModifyTenantPrimaryZoneRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TenantEndpointDirectId(self): # String
+		return self.get_body_params().get('TenantEndpointDirectId')
+
+	def set_TenantEndpointDirectId(self, TenantEndpointDirectId):  # String
+		self.add_body_params('TenantEndpointDirectId', TenantEndpointDirectId)
 	def get_UserVSwitchId(self): # String
 		return self.get_body_params().get('UserVSwitchId')
 
@@ -61,3 +66,8 @@ class ModifyTenantPrimaryZoneRequest(RpcRequest):
 
 	def set_PrimaryZone(self, PrimaryZone):  # String
 		self.add_body_params('PrimaryZone', PrimaryZone)
+	def get_UserDirectVSwitchId(self): # String
+		return self.get_body_params().get('UserDirectVSwitchId')
+
+	def set_UserDirectVSwitchId(self, UserDirectVSwitchId):  # String
+		self.add_body_params('UserDirectVSwitchId', UserDirectVSwitchId)

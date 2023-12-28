@@ -56,6 +56,11 @@ class DescribeMetricsDataRequest(RpcRequest):
 
 	def set_SortMetricKey(self, SortMetricKey):  # String
 		self.add_query_param('SortMetricKey', SortMetricKey)
+	def get_ReplicaType(self): # String
+		return self.get_body_params().get('ReplicaType')
+
+	def set_ReplicaType(self, ReplicaType):  # String
+		self.add_body_params('ReplicaType', ReplicaType)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 

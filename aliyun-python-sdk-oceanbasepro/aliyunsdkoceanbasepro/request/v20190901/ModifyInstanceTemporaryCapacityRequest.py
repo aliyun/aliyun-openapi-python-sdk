@@ -46,3 +46,8 @@ class ModifyInstanceTemporaryCapacityRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
+	def get_AcceptLanguage(self): # String
+		return self.get_body_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_body_params('AcceptLanguage', AcceptLanguage)

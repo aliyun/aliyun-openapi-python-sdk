@@ -46,6 +46,11 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_DiskSize(self, DiskSize):  # Long
 		self.add_body_params('DiskSize', DiskSize)
+	def get_DiskType(self): # String
+		return self.get_body_params().get('DiskType')
+
+	def set_DiskType(self, DiskType):  # String
+		self.add_body_params('DiskType', DiskType)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 

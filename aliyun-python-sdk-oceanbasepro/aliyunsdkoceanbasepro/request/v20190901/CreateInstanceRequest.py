@@ -106,6 +106,16 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Series(self, Series):  # String
 		self.add_body_params('Series', Series)
+	def get_PrimaryInstance(self): # String
+		return self.get_body_params().get('PrimaryInstance')
+
+	def set_PrimaryInstance(self, PrimaryInstance):  # String
+		self.add_body_params('PrimaryInstance', PrimaryInstance)
+	def get_PrimaryRegion(self): # String
+		return self.get_body_params().get('PrimaryRegion')
+
+	def set_PrimaryRegion(self, PrimaryRegion):  # String
+		self.add_body_params('PrimaryRegion', PrimaryRegion)
 	def get_ChargeType(self): # String
 		return self.get_body_params().get('ChargeType')
 
