@@ -1,0 +1,4 @@
+2024-01-08 Version: 1.0.1
+- Support share resource to service for RS.
+- Support display precheck information.
+
