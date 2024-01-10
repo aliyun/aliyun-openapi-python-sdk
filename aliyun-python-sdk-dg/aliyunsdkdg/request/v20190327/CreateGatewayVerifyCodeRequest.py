@@ -26,14 +26,14 @@ class CreateGatewayVerifyCodeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'CreateGatewayVerifyCode','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GatewayId(self):
+	def get_GatewayId(self): # String
 		return self.get_body_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
+	def set_GatewayId(self, GatewayId):  # String
 		self.add_body_params('GatewayId', GatewayId)

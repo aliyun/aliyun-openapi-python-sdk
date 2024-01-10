@@ -26,56 +26,49 @@ class ListDatabaseAccessPointRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'ListDatabaseAccessPoint','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SearchKey(self):
+	def get_SearchKey(self): # String
 		return self.get_body_params().get('SearchKey')
 
-	def set_SearchKey(self,SearchKey):
+	def set_SearchKey(self, SearchKey):  # String
 		self.add_body_params('SearchKey', SearchKey)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # String
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # String
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # String
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # String
 		self.add_body_params('PageSize', PageSize)
-
-	def get_Host(self):
+	def get_Host(self): # String
 		return self.get_body_params().get('Host')
 
-	def set_Host(self,Host):
+	def set_Host(self, Host):  # String
 		self.add_body_params('Host', Host)
-
-	def get_DbInstanceId(self):
+	def get_DbInstanceId(self): # String
 		return self.get_body_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
+	def set_DbInstanceId(self, DbInstanceId):  # String
 		self.add_body_params('DbInstanceId', DbInstanceId)
-
-	def get_GatewayId(self):
+	def get_GatewayId(self): # String
 		return self.get_body_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
+	def set_GatewayId(self, GatewayId):  # String
 		self.add_body_params('GatewayId', GatewayId)
-
-	def get_Port(self):
+	def get_Port(self): # Integer
 		return self.get_body_params().get('Port')
 
-	def set_Port(self,Port):
+	def set_Port(self, Port):  # Integer
 		self.add_body_params('Port', Port)
-
-	def get_VpcId(self):
+	def get_VpcId(self): # String
 		return self.get_body_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
+	def set_VpcId(self, VpcId):  # String
 		self.add_body_params('VpcId', VpcId)

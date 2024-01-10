@@ -26,26 +26,24 @@ class ModifyGatewayRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'ModifyGateway','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GatewayDesc(self):
+	def get_GatewayDesc(self): # String
 		return self.get_body_params().get('GatewayDesc')
 
-	def set_GatewayDesc(self,GatewayDesc):
+	def set_GatewayDesc(self, GatewayDesc):  # String
 		self.add_body_params('GatewayDesc', GatewayDesc)
-
-	def get_GatewayName(self):
+	def get_GatewayName(self): # String
 		return self.get_body_params().get('GatewayName')
 
-	def set_GatewayName(self,GatewayName):
+	def set_GatewayName(self, GatewayName):  # String
 		self.add_body_params('GatewayName', GatewayName)
-
-	def get_GatewayId(self):
+	def get_GatewayId(self): # String
 		return self.get_body_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
+	def set_GatewayId(self, GatewayId):  # String
 		self.add_body_params('GatewayId', GatewayId)

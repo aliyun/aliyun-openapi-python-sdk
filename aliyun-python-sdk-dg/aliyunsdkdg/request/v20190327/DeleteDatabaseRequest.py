@@ -26,14 +26,14 @@ class DeleteDatabaseRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'DeleteDatabase','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)

@@ -26,62 +26,54 @@ class AddDatabaseRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'AddDatabase','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-
-	def get_Host(self):
+	def get_Host(self): # String
 		return self.get_body_params().get('Host')
 
-	def set_Host(self,Host):
+	def set_Host(self, Host):  # String
 		self.add_body_params('Host', Host)
-
-	def get_DbUserName(self):
+	def get_DbUserName(self): # String
 		return self.get_body_params().get('DbUserName')
 
-	def set_DbUserName(self,DbUserName):
+	def set_DbUserName(self, DbUserName):  # String
 		self.add_body_params('DbUserName', DbUserName)
-
-	def get_DbDescription(self):
+	def get_DbDescription(self): # String
 		return self.get_body_params().get('DbDescription')
 
-	def set_DbDescription(self,DbDescription):
+	def set_DbDescription(self, DbDescription):  # String
 		self.add_body_params('DbDescription', DbDescription)
-
-	def get_GatewayId(self):
+	def get_GatewayId(self): # String
 		return self.get_body_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
+	def set_GatewayId(self, GatewayId):  # String
 		self.add_body_params('GatewayId', GatewayId)
-
-	def get_DbName(self):
+	def get_DbName(self): # String
 		return self.get_body_params().get('DbName')
 
-	def set_DbName(self,DbName):
+	def set_DbName(self, DbName):  # String
 		self.add_body_params('DbName', DbName)
-
-	def get_Port(self):
+	def get_Port(self): # Integer
 		return self.get_body_params().get('Port')
 
-	def set_Port(self,Port):
+	def set_Port(self, Port):  # Integer
 		self.add_body_params('Port', Port)
-
-	def get_DbPassword(self):
+	def get_DbPassword(self): # String
 		return self.get_body_params().get('DbPassword')
 
-	def set_DbPassword(self,DbPassword):
+	def set_DbPassword(self, DbPassword):  # String
 		self.add_body_params('DbPassword', DbPassword)
-
-	def get_DbType(self):
+	def get_DbType(self): # String
 		return self.get_body_params().get('DbType')
 
-	def set_DbType(self,DbType):
+	def set_DbType(self, DbType):  # String
 		self.add_body_params('DbType', DbType)

@@ -26,38 +26,34 @@ class DeleteDatabaseAccessPointRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'DeleteDatabaseAccessPoint','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VpcAZone(self):
+	def get_VpcAZone(self): # String
 		return self.get_body_params().get('VpcAZone')
 
-	def set_VpcAZone(self,VpcAZone):
+	def set_VpcAZone(self, VpcAZone):  # String
 		self.add_body_params('VpcAZone', VpcAZone)
-
-	def get_VpcRegionId(self):
+	def get_VpcRegionId(self): # String
 		return self.get_body_params().get('VpcRegionId')
 
-	def set_VpcRegionId(self,VpcRegionId):
+	def set_VpcRegionId(self, VpcRegionId):  # String
 		self.add_body_params('VpcRegionId', VpcRegionId)
-
-	def get_VSwitchId(self):
+	def get_VSwitchId(self): # String
 		return self.get_body_params().get('VSwitchId')
 
-	def set_VSwitchId(self,VSwitchId):
+	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_body_params('VSwitchId', VSwitchId)
-
-	def get_VpcId(self):
+	def get_VpcId(self): # String
 		return self.get_body_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
+	def set_VpcId(self, VpcId):  # String
 		self.add_body_params('VpcId', VpcId)
-
-	def get_DbInstanceId(self):
+	def get_DbInstanceId(self): # String
 		return self.get_body_params().get('DbInstanceId')
 
-	def set_DbInstanceId(self,DbInstanceId):
+	def set_DbInstanceId(self, DbInstanceId):  # String
 		self.add_body_params('DbInstanceId', DbInstanceId)

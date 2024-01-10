@@ -25,26 +25,24 @@ class GetUserGatewaysRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'GetUserGateways','dg')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SearchKey(self):
+	def get_SearchKey(self): # String
 		return self.get_body_params().get('SearchKey')
 
-	def set_SearchKey(self,SearchKey):
+	def set_SearchKey(self, SearchKey):  # String
 		self.add_body_params('SearchKey', SearchKey)
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)

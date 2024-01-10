@@ -26,20 +26,19 @@ class StopGatewayRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'StopGateway','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GatewayInstanceId(self):
+	def get_GatewayInstanceId(self): # String
 		return self.get_body_params().get('GatewayInstanceId')
 
-	def set_GatewayInstanceId(self,GatewayInstanceId):
+	def set_GatewayInstanceId(self, GatewayInstanceId):  # String
 		self.add_body_params('GatewayInstanceId', GatewayInstanceId)
-
-	def get_GatewayId(self):
+	def get_GatewayId(self): # String
 		return self.get_body_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
+	def set_GatewayId(self, GatewayId):  # String
 		self.add_body_params('GatewayId', GatewayId)

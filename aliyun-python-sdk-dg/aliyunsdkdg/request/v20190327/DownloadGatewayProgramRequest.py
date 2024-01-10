@@ -26,20 +26,19 @@ class DownloadGatewayProgramRequest(RpcRequest):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'DownloadGatewayProgram','dg')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserOS(self):
+	def get_UserOS(self): # String
 		return self.get_body_params().get('UserOS')
 
-	def set_UserOS(self,UserOS):
+	def set_UserOS(self, UserOS):  # String
 		self.add_body_params('UserOS', UserOS)
-
-	def get_DgVersion(self):
+	def get_DgVersion(self): # String
 		return self.get_body_params().get('DgVersion')
 
-	def set_DgVersion(self,DgVersion):
+	def set_DgVersion(self, DgVersion):  # String
 		self.add_body_params('DgVersion', DgVersion)

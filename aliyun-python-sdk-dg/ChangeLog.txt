@@ -1,3 +1,6 @@
+2024-01-10 Version: 1.0.10
+- Supported Python SDK.
+
 2021-01-18 Version: 1.0.9
 - Generated 2019-03-27 for `dg`.
 

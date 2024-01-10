@@ -25,20 +25,19 @@ class AddDatabaseListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dg', '2019-03-27', 'AddDatabaseList','dg')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DatabaseString(self):
+	def get_DatabaseString(self): # String
 		return self.get_body_params().get('DatabaseString')
 
-	def set_DatabaseString(self,DatabaseString):
+	def set_DatabaseString(self, DatabaseString):  # String
 		self.add_body_params('DatabaseString', DatabaseString)
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
