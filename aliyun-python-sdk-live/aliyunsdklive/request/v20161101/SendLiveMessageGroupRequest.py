@@ -47,6 +47,11 @@ class SendLiveMessageGroupRequest(RpcRequest):
 
 	def set_StaticsIncrease(self, StaticsIncrease):  # Long
 		self.add_query_param('StaticsIncrease', StaticsIncrease)
+	def get_NoCache(self): # Boolean
+		return self.get_query_params().get('NoCache')
+
+	def set_NoCache(self, NoCache):  # Boolean
+		self.add_query_param('NoCache', NoCache)
 	def get_MsgType(self): # Long
 		return self.get_query_params().get('MsgType')
 

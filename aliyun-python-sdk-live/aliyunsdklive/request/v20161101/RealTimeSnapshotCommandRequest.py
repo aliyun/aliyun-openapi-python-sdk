@@ -41,6 +41,11 @@ class RealTimeSnapshotCommandRequest(RpcRequest):
 
 	def set_Mode(self, Mode):  # Integer
 		self.add_query_param('Mode', Mode)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -66,6 +71,11 @@ class RealTimeSnapshotCommandRequest(RpcRequest):
 
 	def set_Command(self, Command):  # String
 		self.add_query_param('Command', Command)
+	def get_SnapshotType(self): # Integer
+		return self.get_query_params().get('SnapshotType')
+
+	def set_SnapshotType(self, SnapshotType):  # Integer
+		self.add_query_param('SnapshotType', SnapshotType)
 	def get_Interval(self): # Integer
 		return self.get_query_params().get('Interval')
 
