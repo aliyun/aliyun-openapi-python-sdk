@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class CreateRuleActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRuleAction')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRuleAction','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

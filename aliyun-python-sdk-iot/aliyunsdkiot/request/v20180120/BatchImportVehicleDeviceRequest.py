@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class BatchImportVehicleDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchImportVehicleDevice')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchImportVehicleDevice','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,6 +48,8 @@ class BatchImportVehicleDeviceRequest(RpcRequest):
 
 	def set_DeviceLists(self, DeviceLists):
 		for depth1 in range(len(DeviceLists)):
+			if DeviceLists[depth1].get('DeviceSecret') is not None:
+				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceSecret', DeviceLists[depth1].get('DeviceSecret'))
 			if DeviceLists[depth1].get('DeviceName') is not None:
 				self.add_body_params('DeviceList.' + str(depth1 + 1) + '.DeviceName', DeviceLists[depth1].get('DeviceName'))
 			if DeviceLists[depth1].get('DeviceId') is not None:

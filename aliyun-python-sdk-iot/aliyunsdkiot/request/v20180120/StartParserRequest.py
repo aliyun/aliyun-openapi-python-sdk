@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class StartParserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'StartParser')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'StartParser','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

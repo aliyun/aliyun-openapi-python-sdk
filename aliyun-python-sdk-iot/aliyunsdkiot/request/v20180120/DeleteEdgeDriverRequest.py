@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class DeleteEdgeDriverRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteEdgeDriver')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteEdgeDriver','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

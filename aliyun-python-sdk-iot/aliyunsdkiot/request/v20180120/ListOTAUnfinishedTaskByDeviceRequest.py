@@ -23,13 +23,21 @@ from aliyunsdkiot.endpoint import endpoint_data
 class ListOTAUnfinishedTaskByDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListOTAUnfinishedTaskByDevice')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListOTAUnfinishedTaskByDevice','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_TaskStatusLists(self):
+		return self.get_query_params().get('TaskStatusList')
+
+	def set_TaskStatusLists(self, TaskStatusLists):
+		for depth1 in range(len(TaskStatusLists)):
+			if TaskStatusLists[depth1] is not None:
+				self.add_query_param('TaskStatusList.' + str(depth1 + 1) , TaskStatusLists[depth1])
 
 	def get_TaskStatus(self):
 		return self.get_query_params().get('TaskStatus')

@@ -23,19 +23,13 @@ from aliyunsdkiot.endpoint import endpoint_data
 class CreateConsumerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateConsumerGroup')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateConsumerGroup','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -48,9 +42,3 @@ class CreateConsumerGroupRequest(RpcRequest):
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
-
-	def get_SubBizCode(self):
-		return self.get_query_params().get('SubBizCode')
-
-	def set_SubBizCode(self,SubBizCode):
-		self.add_query_param('SubBizCode',SubBizCode)

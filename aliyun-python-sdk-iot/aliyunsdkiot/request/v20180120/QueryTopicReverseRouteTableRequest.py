@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class QueryTopicReverseRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryTopicReverseRouteTable')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryTopicReverseRouteTable','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

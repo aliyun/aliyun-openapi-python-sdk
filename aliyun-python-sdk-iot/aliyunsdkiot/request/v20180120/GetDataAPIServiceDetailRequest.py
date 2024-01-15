@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class GetDataAPIServiceDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetDataAPIServiceDetail')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetDataAPIServiceDetail','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
