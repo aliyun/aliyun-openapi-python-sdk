@@ -31,6 +31,11 @@ class SubmitAudioTo3DAvatarVideoTaskRequest(RpcRequest):
 
 	def set_App(self, App):  # Struct
 		self.add_query_param("App", json.dumps(App))
+	def get_AudioInfo(self): # Struct
+		return self.get_query_params().get('AudioInfo')
+
+	def set_AudioInfo(self, AudioInfo):  # Struct
+		self.add_query_param("AudioInfo", json.dumps(AudioInfo))
 	def get_AvatarInfo(self): # Struct
 		return self.get_query_params().get('AvatarInfo')
 
