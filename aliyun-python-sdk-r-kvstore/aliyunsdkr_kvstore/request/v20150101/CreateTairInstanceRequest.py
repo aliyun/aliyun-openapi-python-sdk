@@ -225,3 +225,8 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
+	def get_ClusterBackupId(self): # String
+		return self.get_query_params().get('ClusterBackupId')
+
+	def set_ClusterBackupId(self, ClusterBackupId):  # String
+		self.add_query_param('ClusterBackupId', ClusterBackupId)

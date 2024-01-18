@@ -20,22 +20,17 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeBackupsRequest(RpcRequest):
+class DescribeClusterBackupListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeBackups','redisa')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeClusterBackupList','redisa')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BackupJobId(self): # Integer
-		return self.get_query_params().get('BackupJobId')
-
-	def set_BackupJobId(self, BackupJobId):  # Integer
-		self.add_query_param('BackupJobId', BackupJobId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -71,16 +66,6 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_BackupId(self): # Integer
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self, BackupId):  # Integer
-		self.add_query_param('BackupId', BackupId)
-	def get_NeedAof(self): # String
-		return self.get_query_params().get('NeedAof')
-
-	def set_NeedAof(self, NeedAof):  # String
-		self.add_query_param('NeedAof', NeedAof)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
@@ -96,3 +81,8 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_ClusterBackupId(self): # String
+		return self.get_query_params().get('ClusterBackupId')
+
+	def set_ClusterBackupId(self, ClusterBackupId):  # String
+		self.add_query_param('ClusterBackupId', ClusterBackupId)
