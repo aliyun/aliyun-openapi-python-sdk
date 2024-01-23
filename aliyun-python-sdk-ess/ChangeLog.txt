@@ -1,3 +1,6 @@
+2024-01-23 Version: 2.3.17
+- ECIScalingConfiguration add lifecycle params.
+
 2023-12-06 Version: 2.3.16
 - ScaleWithAdjustment supports ECI overrides.
 
