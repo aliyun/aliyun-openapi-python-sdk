@@ -31,6 +31,11 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_App(self, App):  # String
 		self.add_query_param('App', App)
+	def get_TextRequest(self): # Struct
+		return self.get_query_params().get('TextRequest')
+
+	def set_TextRequest(self, TextRequest):  # Struct
+		self.add_query_param("TextRequest", json.dumps(TextRequest))
 	def get_TenantId(self): # Long
 		return self.get_query_params().get('TenantId')
 
