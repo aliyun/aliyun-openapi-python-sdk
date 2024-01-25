@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DeleteHanaBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteHanaBackupPlan')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteHanaBackupPlan','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

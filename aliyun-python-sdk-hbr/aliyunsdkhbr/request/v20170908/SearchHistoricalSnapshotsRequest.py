@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
+import json
 
 class SearchHistoricalSnapshotsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'SearchHistoricalSnapshots')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'SearchHistoricalSnapshots','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +32,11 @@ class SearchHistoricalSnapshotsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Query(self): # String
+	def get_Query(self): # Array
 		return self.get_query_params().get('Query')
 
-	def set_Query(self, Query):  # String
-		self.add_query_param('Query', Query)
+	def set_Query(self, Query):  # Array
+		self.add_query_param("Query", json.dumps(Query))
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -51,3 +52,13 @@ class SearchHistoricalSnapshotsRequest(RpcRequest):
 
 	def set_SourceType(self, SourceType):  # String
 		self.add_query_param('SourceType', SourceType)
+	def get_SortBy(self): # String
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self, SortBy):  # String
+		self.add_query_param('SortBy', SortBy)
+	def get_Order(self): # String
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_query_param('Order', Order)

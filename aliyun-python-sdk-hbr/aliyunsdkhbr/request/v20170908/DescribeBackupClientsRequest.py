@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
+import json
 
 class DescribeBackupClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupClients')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupClients','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,11 +52,11 @@ class DescribeBackupClientsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_ClientIds(self): # Json
+	def get_ClientIds(self): # Array
 		return self.get_body_params().get('ClientIds')
 
-	def set_ClientIds(self, ClientIds):  # Json
-		self.add_body_params('ClientIds', ClientIds)
+	def set_ClientIds(self, ClientIds):  # Array
+		self.add_body_params("ClientIds", json.dumps(ClientIds))
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -70,11 +71,16 @@ class DescribeBackupClientsRequest(RpcRequest):
 				self.add_body_params('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_body_params('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_InstanceIds(self): # Json
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_InstanceIds(self): # Array
 		return self.get_body_params().get('InstanceIds')
 
-	def set_InstanceIds(self, InstanceIds):  # Json
-		self.add_body_params('InstanceIds', InstanceIds)
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_body_params("InstanceIds", json.dumps(InstanceIds))
 	def get_CrossAccountUserId(self): # Long
 		return self.get_query_params().get('CrossAccountUserId')
 

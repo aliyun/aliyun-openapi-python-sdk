@@ -24,7 +24,7 @@ import json
 class CreateBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateBackupPlan')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateBackupPlan','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -47,6 +47,72 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def set_CrossAccountType(self, CrossAccountType):  # String
 		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
+
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
+	def get_Paths(self): # RepeatList
+		return self.get_body_params().get('Path')
+
+	def set_Paths(self, Path):  # RepeatList
+		for depth1 in range(len(Path)):
+			self.add_body_params('Path.' + str(depth1 + 1), Path[depth1])
+	def get_ChangeListPath(self): # String
+		return self.get_query_params().get('ChangeListPath')
+
+	def set_ChangeListPath(self, ChangeListPath):  # String
+		self.add_query_param('ChangeListPath', ChangeListPath)
+	def get_Options(self): # String
+		return self.get_body_params().get('Options')
+
+	def set_Options(self, Options):  # String
+		self.add_body_params('Options', Options)
+	def get_SourceType(self): # String
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self, SourceType):  # String
+		self.add_query_param('SourceType', SourceType)
+	def get_Exclude(self): # String
+		return self.get_body_params().get('Exclude')
+
+	def set_Exclude(self, Exclude):  # String
+		self.add_body_params('Exclude', Exclude)
+	def get_BackupType(self): # String
+		return self.get_query_params().get('BackupType')
+
+	def set_BackupType(self, BackupType):  # String
+		self.add_query_param('BackupType', BackupType)
+	def get_DestDataSourceId(self): # String
+		return self.get_query_params().get('DestDataSourceId')
+
+	def set_DestDataSourceId(self, DestDataSourceId):  # String
+		self.add_query_param('DestDataSourceId', DestDataSourceId)
+	def get_Bucket(self): # String
+		return self.get_query_params().get('Bucket')
+
+	def set_Bucket(self, Bucket):  # String
+		self.add_query_param('Bucket', Bucket)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
+		return self.get_body_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_body_params('InstanceName', InstanceName)
+	def get_SpeedLimit(self): # String
+		return self.get_body_params().get('SpeedLimit')
+
+	def set_SpeedLimit(self, SpeedLimit):  # String
+		self.add_body_params('SpeedLimit', SpeedLimit)
+	def get_Detail(self): # String
+		return self.get_query_params().get('Detail')
+
+	def set_Detail(self, Detail):  # String
+		self.add_query_param('Detail', Detail)
 	def get_Rules(self): # RepeatList
 		return self.get_body_params().get('Rule')
 
@@ -68,42 +134,11 @@ class CreateBackupPlanRequest(RpcRequest):
 				self.add_body_params('Rule.' + str(depth1 + 1) + '.BackupType', Rule[depth1].get('BackupType'))
 			if Rule[depth1].get('DoCopy') is not None:
 				self.add_body_params('Rule.' + str(depth1 + 1) + '.DoCopy', Rule[depth1].get('DoCopy'))
-	def get_CrossAccountRoleName(self): # String
-		return self.get_query_params().get('CrossAccountRoleName')
-
-	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
-		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
-	def get_Paths(self): # RepeatList
-		return self.get_body_params().get('Path')
-
-	def set_Paths(self, Path):  # RepeatList
-		for depth1 in range(len(Path)):
-			self.add_body_params('Path.' + str(depth1 + 1), Path[depth1])
 	def get_PlanName(self): # String
 		return self.get_query_params().get('PlanName')
 
 	def set_PlanName(self, PlanName):  # String
 		self.add_query_param('PlanName', PlanName)
-	def get_Options(self): # String
-		return self.get_body_params().get('Options')
-
-	def set_Options(self, Options):  # String
-		self.add_body_params('Options', Options)
-	def get_SourceType(self): # String
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self, SourceType):  # String
-		self.add_query_param('SourceType', SourceType)
-	def get_Exclude(self): # String
-		return self.get_body_params().get('Exclude')
-
-	def set_Exclude(self, Exclude):  # String
-		self.add_body_params('Exclude', Exclude)
-	def get_BackupType(self): # String
-		return self.get_query_params().get('BackupType')
-
-	def set_BackupType(self, BackupType):  # String
-		self.add_query_param('BackupType', BackupType)
 	def get_Retention(self): # Long
 		return self.get_query_params().get('Retention')
 
@@ -124,46 +159,31 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def set_CreateTime(self, CreateTime):  # Long
 		self.add_query_param('CreateTime', CreateTime)
+	def get_DestSourceType(self): # String
+		return self.get_query_params().get('DestSourceType')
+
+	def set_DestSourceType(self, DestSourceType):  # String
+		self.add_query_param('DestSourceType', DestSourceType)
 	def get_KeepLatestSnapshots(self): # Long
 		return self.get_query_params().get('KeepLatestSnapshots')
 
 	def set_KeepLatestSnapshots(self, KeepLatestSnapshots):  # Long
 		self.add_query_param('KeepLatestSnapshots', KeepLatestSnapshots)
-	def get_Bucket(self): # String
-		return self.get_query_params().get('Bucket')
+	def get_DestDataSourceDetail(self): # String
+		return self.get_query_params().get('DestDataSourceDetail')
 
-	def set_Bucket(self, Bucket):  # String
-		self.add_query_param('Bucket', Bucket)
+	def set_DestDataSourceDetail(self, DestDataSourceDetail):  # String
+		self.add_query_param('DestDataSourceDetail', DestDataSourceDetail)
 	def get_Schedule(self): # String
 		return self.get_query_params().get('Schedule')
 
 	def set_Schedule(self, Schedule):  # String
 		self.add_query_param('Schedule', Schedule)
-	def get_InstanceId(self): # String
-		return self.get_body_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_body_params('InstanceId', InstanceId)
-	def get_InstanceName(self): # String
-		return self.get_body_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_body_params('InstanceName', InstanceName)
 	def get_OtsDetail(self): # Struct
 		return self.get_body_params().get('OtsDetail')
 
 	def set_OtsDetail(self, OtsDetail):  # Struct
 		self.add_body_params("OtsDetail", json.dumps(OtsDetail))
-	def get_SpeedLimit(self): # String
-		return self.get_body_params().get('SpeedLimit')
-
-	def set_SpeedLimit(self, SpeedLimit):  # String
-		self.add_body_params('SpeedLimit', SpeedLimit)
-	def get_Detail(self): # String
-		return self.get_query_params().get('Detail')
-
-	def set_Detail(self, Detail):  # String
-		self.add_query_param('Detail', Detail)
 	def get_CrossAccountUserId(self): # Long
 		return self.get_query_params().get('CrossAccountUserId')
 

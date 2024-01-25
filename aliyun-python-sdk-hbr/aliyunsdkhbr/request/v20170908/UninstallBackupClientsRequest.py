@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UninstallBackupClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UninstallBackupClients')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UninstallBackupClients','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

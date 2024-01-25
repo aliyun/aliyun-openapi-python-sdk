@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
 
-class EnableHanaBackupPlanRequest(RpcRequest):
+class CheckRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'EnableHanaBackupPlan','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CheckRole','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,18 @@ class EnableHanaBackupPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VaultId(self): # String
-		return self.get_query_params().get('VaultId')
+	def get_CheckRoleType(self): # String
+		return self.get_query_params().get('CheckRoleType')
 
-	def set_VaultId(self, VaultId):  # String
-		self.add_query_param('VaultId', VaultId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_CheckRoleType(self, CheckRoleType):  # String
+		self.add_query_param('CheckRoleType', CheckRoleType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_PlanId(self): # String
-		return self.get_query_params().get('PlanId')
-
-	def set_PlanId(self, PlanId):  # String
-		self.add_query_param('PlanId', PlanId)
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)

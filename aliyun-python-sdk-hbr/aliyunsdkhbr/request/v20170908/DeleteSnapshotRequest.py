@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DeleteSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteSnapshot')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteSnapshot','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

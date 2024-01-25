@@ -24,7 +24,7 @@ import json
 class CreateRestoreJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateRestoreJob')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateRestoreJob','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -77,6 +77,11 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_TargetInstanceName(self, TargetInstanceName):  # String
 		self.add_query_param('TargetInstanceName', TargetInstanceName)
+	def get_Options(self): # String
+		return self.get_query_params().get('Options')
+
+	def set_Options(self, Options):  # String
+		self.add_query_param('Options', Options)
 	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
@@ -137,6 +142,11 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_OtsDetail(self, OtsDetail):  # Struct
 		self.add_body_params("OtsDetail", json.dumps(OtsDetail))
+	def get_FailbackDetail(self): # String
+		return self.get_query_params().get('FailbackDetail')
+
+	def set_FailbackDetail(self, FailbackDetail):  # String
+		self.add_query_param('FailbackDetail', FailbackDetail)
 	def get_TargetFileSystemId(self): # String
 		return self.get_query_params().get('TargetFileSystemId')
 

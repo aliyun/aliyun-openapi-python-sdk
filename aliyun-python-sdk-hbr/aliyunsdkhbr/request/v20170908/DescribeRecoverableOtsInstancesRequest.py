@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeRecoverableOtsInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRecoverableOtsInstances')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRecoverableOtsInstances','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

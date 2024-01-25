@@ -1,3 +1,6 @@
+2024-01-25 Version: 1.2.9
+- Release parameter Detail in CreateBackupJob.
+
 2023-01-29 Version: 1.2.8
 - Update HBR OpenAPI.
 

@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class CreateVaultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateVault')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateVault','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class CreateVaultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VaultAccessKeySecret(self): # String
-		return self.get_query_params().get('VaultAccessKeySecret')
-
-	def set_VaultAccessKeySecret(self, VaultAccessKeySecret):  # String
-		self.add_query_param('VaultAccessKeySecret', VaultAccessKeySecret)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -51,11 +46,6 @@ class CreateVaultRequest(RpcRequest):
 
 	def set_EncryptType(self, EncryptType):  # String
 		self.add_query_param('EncryptType', EncryptType)
-	def get_Endpoint(self): # String
-		return self.get_query_params().get('Endpoint')
-
-	def set_Endpoint(self, Endpoint):  # String
-		self.add_query_param('Endpoint', Endpoint)
 	def get_VaultRegionId(self): # String
 		return self.get_query_params().get('VaultRegionId')
 
@@ -66,21 +56,6 @@ class CreateVaultRequest(RpcRequest):
 
 	def set_VaultType(self, VaultType):  # String
 		self.add_query_param('VaultType', VaultType)
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
-
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
-	def get_CompressionAlgorithm(self): # String
-		return self.get_query_params().get('CompressionAlgorithm')
-
-	def set_CompressionAlgorithm(self, CompressionAlgorithm):  # String
-		self.add_query_param('CompressionAlgorithm', CompressionAlgorithm)
-	def get_RedundancyType(self): # String
-		return self.get_query_params().get('RedundancyType')
-
-	def set_RedundancyType(self, RedundancyType):  # String
-		self.add_query_param('RedundancyType', RedundancyType)
 	def get_VaultStorageClass(self): # String
 		return self.get_query_params().get('VaultStorageClass')
 
@@ -91,8 +66,3 @@ class CreateVaultRequest(RpcRequest):
 
 	def set_KmsKeyId(self, KmsKeyId):  # String
 		self.add_query_param('KmsKeyId', KmsKeyId)
-	def get_VaultAccessKeyId(self): # String
-		return self.get_query_params().get('VaultAccessKeyId')
-
-	def set_VaultAccessKeyId(self, VaultAccessKeyId):  # String
-		self.add_query_param('VaultAccessKeyId', VaultAccessKeyId)

@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class CreateHanaRestoreRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateHanaRestore')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateHanaRestore','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class CreateHanaRestoreRequest(RpcRequest):
 
 	def set_LogPosition(self, LogPosition):  # Long
 		self.add_query_param('LogPosition', LogPosition)
+	def get_VaultId(self): # String
+		return self.get_query_params().get('VaultId')
+
+	def set_VaultId(self, VaultId):  # String
+		self.add_query_param('VaultId', VaultId)
 	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
@@ -66,6 +71,11 @@ class CreateHanaRestoreRequest(RpcRequest):
 
 	def set_CheckAccess(self, CheckAccess):  # Boolean
 		self.add_query_param('CheckAccess', CheckAccess)
+	def get_MasterClientId(self): # String
+		return self.get_query_params().get('MasterClientId')
+
+	def set_MasterClientId(self, MasterClientId):  # String
+		self.add_query_param('MasterClientId', MasterClientId)
 	def get_BackupId(self): # Long
 		return self.get_query_params().get('BackupId')
 

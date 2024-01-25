@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpgradeBackupClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpgradeBackupClients')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpgradeBackupClients','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

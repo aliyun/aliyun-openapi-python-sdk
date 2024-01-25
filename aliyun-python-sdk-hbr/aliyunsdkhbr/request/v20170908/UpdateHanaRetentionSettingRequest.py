@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateHanaRetentionSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaRetentionSetting')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaRetentionSetting','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

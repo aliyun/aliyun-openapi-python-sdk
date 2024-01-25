@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
 
-class DetachNasFileSystemRequest(RpcRequest):
+class AttachNasFileSystemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DetachNasFileSystem','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'AttachNasFileSystem','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

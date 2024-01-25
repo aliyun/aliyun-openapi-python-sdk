@@ -24,7 +24,7 @@ import json
 class UpdateBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateBackupPlan')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateBackupPlan','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -69,6 +69,11 @@ class UpdateBackupPlanRequest(RpcRequest):
 	def set_Paths(self, Path):  # RepeatList
 		for depth1 in range(len(Path)):
 			self.add_query_param('Path.' + str(depth1 + 1), Path[depth1])
+	def get_ChangeListPath(self): # String
+		return self.get_query_params().get('ChangeListPath')
+
+	def set_ChangeListPath(self, ChangeListPath):  # String
+		self.add_query_param('ChangeListPath', ChangeListPath)
 	def get_PlanName(self): # String
 		return self.get_query_params().get('PlanName')
 

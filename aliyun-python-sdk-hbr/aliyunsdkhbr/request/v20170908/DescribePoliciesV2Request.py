@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribePoliciesV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribePoliciesV2')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribePoliciesV2','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

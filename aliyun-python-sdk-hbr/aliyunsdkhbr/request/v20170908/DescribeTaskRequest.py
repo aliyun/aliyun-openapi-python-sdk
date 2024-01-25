@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeTask')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeTask','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

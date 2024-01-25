@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DescribeContainerClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeContainerCluster')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeContainerCluster','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeContainerClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
+
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 

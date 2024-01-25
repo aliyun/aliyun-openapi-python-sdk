@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class CreateBackupJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateBackupJob')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateBackupJob','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -111,6 +111,11 @@ class CreateBackupJobRequest(RpcRequest):
 
 	def set_SpeedLimit(self, SpeedLimit):  # String
 		self.add_query_param('SpeedLimit', SpeedLimit)
+	def get_Detail(self): # String
+		return self.get_query_params().get('Detail')
+
+	def set_Detail(self, Detail):  # String
+		self.add_query_param('Detail', Detail)
 	def get_CrossAccountUserId(self): # Long
 		return self.get_query_params().get('CrossAccountUserId')
 

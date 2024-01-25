@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
 
-class EnableHanaBackupPlanRequest(RpcRequest):
+class UpdateContainerClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'EnableHanaBackupPlan','hbr')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateContainerCluster','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,23 +31,28 @@ class EnableHanaBackupPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VaultId(self): # String
-		return self.get_query_params().get('VaultId')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_VaultId(self, VaultId):  # String
-		self.add_query_param('VaultId', VaultId)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_NetworkType(self): # String
+		return self.get_query_params().get('NetworkType')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_PlanId(self): # String
-		return self.get_query_params().get('PlanId')
+	def set_NetworkType(self, NetworkType):  # String
+		self.add_query_param('NetworkType', NetworkType)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_PlanId(self, PlanId):  # String
-		self.add_query_param('PlanId', PlanId)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_RenewToken(self): # Boolean
+		return self.get_query_params().get('RenewToken')
+
+	def set_RenewToken(self, RenewToken):  # Boolean
+		self.add_query_param('RenewToken', RenewToken)

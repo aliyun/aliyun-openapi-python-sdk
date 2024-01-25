@@ -24,7 +24,7 @@ import json
 class DescribePolicyBindingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribePolicyBindings')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribePolicyBindings','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -37,6 +37,18 @@ class DescribePolicyBindingsRequest(RpcRequest):
 
 	def set_DataSourceIds(self, DataSourceIds):  # Array
 		self.add_body_params("DataSourceIds", json.dumps(DataSourceIds))
+	def get_Filterss(self): # RepeatList
+		return self.get_query_params().get('Filters')
+
+	def set_Filterss(self, Filters):  # RepeatList
+		for depth1 in range(len(Filters)):
+			if Filters[depth1].get('Values') is not None:
+				for depth2 in range(len(Filters[depth1].get('Values'))):
+					self.add_query_param('Filters.' + str(depth1 + 1) + '.Values.' + str(depth2 + 1), Filters[depth1].get('Values')[depth2])
+			if Filters[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filters[depth1].get('Key'))
+			if Filters[depth1].get('Operator') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Operator', Filters[depth1].get('Operator'))
 	def get_PolicyId(self): # String
 		return self.get_body_params().get('PolicyId')
 

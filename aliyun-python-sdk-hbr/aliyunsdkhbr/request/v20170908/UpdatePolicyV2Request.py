@@ -24,7 +24,7 @@ import json
 class UpdatePolicyV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdatePolicyV2')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdatePolicyV2','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

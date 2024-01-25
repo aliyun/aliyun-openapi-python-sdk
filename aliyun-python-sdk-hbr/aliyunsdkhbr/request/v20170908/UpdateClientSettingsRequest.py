@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateClientSettingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateClientSettings')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateClientSettings','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -52,6 +52,11 @@ class UpdateClientSettingsRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
+	def get_MaxMemory(self): # Long
+		return self.get_query_params().get('MaxMemory')
+
+	def set_MaxMemory(self, MaxMemory):  # Long
+		self.add_query_param('MaxMemory', MaxMemory)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -67,6 +72,11 @@ class UpdateClientSettingsRequest(RpcRequest):
 
 	def set_UseHttps(self, UseHttps):  # Boolean
 		self.add_query_param('UseHttps', UseHttps)
+	def get_AlertOnPartialComplete(self): # Boolean
+		return self.get_query_params().get('AlertOnPartialComplete')
+
+	def set_AlertOnPartialComplete(self, AlertOnPartialComplete):  # Boolean
+		self.add_query_param('AlertOnPartialComplete', AlertOnPartialComplete)
 	def get_MaxWorker(self): # Integer
 		return self.get_query_params().get('MaxWorker')
 
