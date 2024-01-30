@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class GetAuthTokenRequest(RpcRequest):
+class JyCreateVerifySchemeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken','dypnsapi')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'JyCreateVerifyScheme','dypnsapi')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +37,58 @@ class GetAuthTokenRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Origin(self): # String
-		return self.get_query_params().get('Origin')
+	def get_BundleId(self): # String
+		return self.get_query_params().get('BundleId')
 
-	def set_Origin(self, Origin):  # String
-		self.add_query_param('Origin', Origin)
-	def get_SceneCode(self): # String
-		return self.get_query_params().get('SceneCode')
+	def set_BundleId(self, BundleId):  # String
+		self.add_query_param('BundleId', BundleId)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_SceneCode(self, SceneCode):  # String
-		self.add_query_param('SceneCode', SceneCode)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_PackSign(self): # String
+		return self.get_query_params().get('PackSign')
+
+	def set_PackSign(self, PackSign):  # String
+		self.add_query_param('PackSign', PackSign)
+	def get_PackName(self): # String
+		return self.get_query_params().get('PackName')
+
+	def set_PackName(self, PackName):  # String
+		self.add_query_param('PackName', PackName)
+	def get_CuApiCode(self): # Long
+		return self.get_query_params().get('CuApiCode')
+
+	def set_CuApiCode(self, CuApiCode):  # Long
+		self.add_query_param('CuApiCode', CuApiCode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_CtApiCode(self): # Long
+		return self.get_query_params().get('CtApiCode')
+
+	def set_CtApiCode(self, CtApiCode):  # Long
+		self.add_query_param('CtApiCode', CtApiCode)
+	def get_OsType(self): # String
+		return self.get_query_params().get('OsType')
+
+	def set_OsType(self, OsType):  # String
+		self.add_query_param('OsType', OsType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Url(self): # String
-		return self.get_query_params().get('Url')
+	def get_CmApiCode(self): # Long
+		return self.get_query_params().get('CmApiCode')
 
-	def set_Url(self, Url):  # String
-		self.add_query_param('Url', Url)
+	def set_CmApiCode(self, CmApiCode):  # Long
+		self.add_query_param('CmApiCode', CmApiCode)
+	def get_SchemeName(self): # String
+		return self.get_query_params().get('SchemeName')
+
+	def set_SchemeName(self, SchemeName):  # String
+		self.add_query_param('SchemeName', SchemeName)

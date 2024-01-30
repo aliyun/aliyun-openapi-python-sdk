@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class GetAuthTokenRequest(RpcRequest):
+class JyQueryAppInfoBySceneCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken','dypnsapi')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'JyQueryAppInfoBySceneCode','dypnsapi')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +37,6 @@ class GetAuthTokenRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Origin(self): # String
-		return self.get_query_params().get('Origin')
-
-	def set_Origin(self, Origin):  # String
-		self.add_query_param('Origin', Origin)
 	def get_SceneCode(self): # String
 		return self.get_query_params().get('SceneCode')
 
@@ -56,8 +52,3 @@ class GetAuthTokenRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Url(self): # String
-		return self.get_query_params().get('Url')
-
-	def set_Url(self, Url):  # String
-		self.add_query_param('Url', Url)
