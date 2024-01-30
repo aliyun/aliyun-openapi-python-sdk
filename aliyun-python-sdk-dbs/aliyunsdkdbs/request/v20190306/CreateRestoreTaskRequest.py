@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class CreateRestoreTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateRestoreTask')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateRestoreTask','cbs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

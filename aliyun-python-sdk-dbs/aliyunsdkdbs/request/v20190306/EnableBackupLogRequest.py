@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class EnableBackupLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'EnableBackupLog')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'EnableBackupLog','cbs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

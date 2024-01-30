@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ModifyStorageStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyStorageStrategy')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyStorageStrategy','cbs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

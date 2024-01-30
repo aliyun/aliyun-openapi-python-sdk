@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class DescribePreCheckProgressListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribePreCheckProgressList')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribePreCheckProgressList','cbs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
