@@ -80,6 +80,15 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_StorageSetPartitionNumber(self, StorageSetPartitionNumber):  # Integer
 		self.add_query_param('StorageSetPartitionNumber', StorageSetPartitionNumber)
+	def get_CustomPrioritiess(self): # RepeatList
+		return self.get_query_params().get('CustomPriorities')
+
+	def set_CustomPrioritiess(self, CustomPriorities):  # RepeatList
+		for depth1 in range(len(CustomPriorities)):
+			if CustomPriorities[depth1].get('VswitchId') is not None:
+				self.add_query_param('CustomPriorities.' + str(depth1 + 1) + '.VswitchId', CustomPriorities[depth1].get('VswitchId'))
+			if CustomPriorities[depth1].get('InstanceType') is not None:
+				self.add_query_param('CustomPriorities.' + str(depth1 + 1) + '.InstanceType', CustomPriorities[depth1].get('InstanceType'))
 	def get_SystemDiskAutoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('SystemDisk.AutoSnapshotPolicyId')
 
