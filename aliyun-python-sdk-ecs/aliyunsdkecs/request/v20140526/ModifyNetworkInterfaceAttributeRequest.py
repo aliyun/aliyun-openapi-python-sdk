@@ -57,6 +57,11 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
 		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
+	def get_TxQueueSize(self): # Integer
+		return self.get_query_params().get('TxQueueSize')
+
+	def set_TxQueueSize(self, TxQueueSize):  # Integer
+		self.add_query_param('TxQueueSize', TxQueueSize)
 	def get_DeleteOnRelease(self): # Boolean
 		return self.get_query_params().get('DeleteOnRelease')
 
@@ -72,6 +77,11 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RxQueueSize(self): # Integer
+		return self.get_query_params().get('RxQueueSize')
+
+	def set_RxQueueSize(self, RxQueueSize):  # Integer
+		self.add_query_param('RxQueueSize', RxQueueSize)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

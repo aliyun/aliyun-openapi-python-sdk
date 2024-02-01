@@ -51,6 +51,11 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ContentEncoding(self): # String
 		return self.get_query_params().get('ContentEncoding')
 
@@ -105,3 +110,8 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def set_IncludeHistory(self, IncludeHistory):  # Boolean
 		self.add_query_param('IncludeHistory', IncludeHistory)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

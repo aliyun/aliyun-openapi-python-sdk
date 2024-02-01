@@ -301,6 +301,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_SpotPriceLimit(self, SpotPriceLimit):  # Float
 		self.add_query_param('SpotPriceLimit', SpotPriceLimit)
+	def get_CpuOptionsTopologyType(self): # String
+		return self.get_query_params().get('CpuOptions.TopologyType')
+
+	def set_CpuOptionsTopologyType(self, CpuOptionsTopologyType):  # String
+		self.add_query_param('CpuOptions.TopologyType', CpuOptionsTopologyType)
 	def get_StorageSetPartitionNumber(self): # Integer
 		return self.get_query_params().get('StorageSetPartitionNumber')
 
@@ -454,6 +459,10 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.DeleteOnRelease', NetworkInterface[depth1].get('DeleteOnRelease'))
 			if NetworkInterface[depth1].get('NetworkInterfaceId') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceId', NetworkInterface[depth1].get('NetworkInterfaceId'))
+			if NetworkInterface[depth1].get('RxQueueSize') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.RxQueueSize', NetworkInterface[depth1].get('RxQueueSize'))
+			if NetworkInterface[depth1].get('TxQueueSize') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.TxQueueSize', NetworkInterface[depth1].get('TxQueueSize'))
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

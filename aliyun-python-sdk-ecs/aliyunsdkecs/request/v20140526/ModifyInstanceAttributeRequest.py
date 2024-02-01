@@ -71,6 +71,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_CpuOptionsTopologyType(self): # String
+		return self.get_query_params().get('CpuOptions.TopologyType')
+
+	def set_CpuOptionsTopologyType(self, CpuOptionsTopologyType):  # String
+		self.add_query_param('CpuOptions.TopologyType', CpuOptionsTopologyType)
 	def get_EnableJumboFrame(self): # Boolean
 		return self.get_query_params().get('EnableJumboFrame')
 

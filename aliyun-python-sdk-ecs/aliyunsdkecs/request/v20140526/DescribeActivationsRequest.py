@@ -46,6 +46,11 @@ class DescribeActivationsRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
@@ -80,6 +85,11 @@ class DescribeActivationsRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_ActivationId(self): # String
 		return self.get_query_params().get('ActivationId')
 

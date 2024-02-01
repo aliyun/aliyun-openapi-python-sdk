@@ -46,6 +46,11 @@ class DescribeKeyPairsRequest(RpcRequest):
 
 	def set_KeyPairName(self, KeyPairName):  # String
 		self.add_query_param('KeyPairName', KeyPairName)
+	def get_IncludePublicKey(self): # Boolean
+		return self.get_query_params().get('IncludePublicKey')
+
+	def set_IncludePublicKey(self, IncludePublicKey):  # Boolean
+		self.add_query_param('IncludePublicKey', IncludePublicKey)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

@@ -86,6 +86,11 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_Ipv6AddressCount(self, Ipv6AddressCount):  # Integer
 		self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
+	def get_RxQueueSize(self): # Integer
+		return self.get_query_params().get('RxQueueSize')
+
+	def set_RxQueueSize(self, RxQueueSize):  # Integer
+		self.add_query_param('RxQueueSize', RxQueueSize)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -139,6 +144,11 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_TxQueueSize(self): # Integer
+		return self.get_query_params().get('TxQueueSize')
+
+	def set_TxQueueSize(self, TxQueueSize):  # Integer
+		self.add_query_param('TxQueueSize', TxQueueSize)
 	def get_DeleteOnRelease(self): # Boolean
 		return self.get_query_params().get('DeleteOnRelease')
 
