@@ -31,6 +31,11 @@ class UpdateEventStreamingRequest(RpcRequest):
 
 	def set_Sink(self, Sink):  # Struct
 		self.add_body_params("Sink", json.dumps(Sink))
+	def get_Transforms(self): # Array
+		return self.get_body_params().get('Transforms')
+
+	def set_Transforms(self, Transforms):  # Array
+		self.add_body_params("Transforms", json.dumps(Transforms))
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
