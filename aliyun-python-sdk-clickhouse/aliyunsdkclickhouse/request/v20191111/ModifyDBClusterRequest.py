@@ -36,6 +36,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DbNodeStorageType(self): # String
+		return self.get_query_params().get('DbNodeStorageType')
+
+	def set_DbNodeStorageType(self, DbNodeStorageType):  # String
+		self.add_query_param('DbNodeStorageType', DbNodeStorageType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
