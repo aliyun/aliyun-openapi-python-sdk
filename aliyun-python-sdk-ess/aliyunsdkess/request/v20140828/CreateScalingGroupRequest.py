@@ -83,6 +83,12 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_DefaultCooldown(self, DefaultCooldown):  # Integer
 		self.add_query_param('DefaultCooldown', DefaultCooldown)
+	def get_HealthCheckTypess(self): # RepeatList
+		return self.get_query_params().get('HealthCheckTypes')
+
+	def set_HealthCheckTypess(self, HealthCheckTypes):  # RepeatList
+		for depth1 in range(len(HealthCheckTypes)):
+			self.add_query_param('HealthCheckTypes.' + str(depth1 + 1), HealthCheckTypes[depth1])
 	def get_ContainerGroupId(self): # String
 		return self.get_query_params().get('ContainerGroupId')
 

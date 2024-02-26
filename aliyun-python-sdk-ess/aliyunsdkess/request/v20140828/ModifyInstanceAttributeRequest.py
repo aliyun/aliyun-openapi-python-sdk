@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
 
-class DescribeNotificationConfigurationsRequest(RpcRequest):
+class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeNotificationConfigurations','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyInstanceAttribute','ess')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,3 +46,13 @@ class DescribeNotificationConfigurationsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Entrusted(self): # Boolean
+		return self.get_query_params().get('Entrusted')
+
+	def set_Entrusted(self, Entrusted):  # Boolean
+		self.add_query_param('Entrusted', Entrusted)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -72,6 +72,12 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_DefaultCooldown(self, DefaultCooldown):  # Integer
 		self.add_query_param('DefaultCooldown', DefaultCooldown)
+	def get_HealthCheckTypess(self): # RepeatList
+		return self.get_query_params().get('HealthCheckTypes')
+
+	def set_HealthCheckTypess(self, HealthCheckTypes):  # RepeatList
+		for depth1 in range(len(HealthCheckTypes)):
+			self.add_query_param('HealthCheckTypes.' + str(depth1 + 1), HealthCheckTypes[depth1])
 	def get_MultiAZPolicy(self): # String
 		return self.get_query_params().get('MultiAZPolicy')
 
@@ -193,6 +199,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateVersion(self, LaunchTemplateVersion):  # String
 		self.add_query_param('LaunchTemplateVersion', LaunchTemplateVersion)
+	def get_ScalingPolicy(self): # String
+		return self.get_query_params().get('ScalingPolicy')
+
+	def set_ScalingPolicy(self, ScalingPolicy):  # String
+		self.add_query_param('ScalingPolicy', ScalingPolicy)
 	def get_AllocationStrategy(self): # String
 		return self.get_query_params().get('AllocationStrategy')
 
