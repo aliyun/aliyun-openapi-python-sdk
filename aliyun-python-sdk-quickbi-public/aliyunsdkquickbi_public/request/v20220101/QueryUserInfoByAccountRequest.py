@@ -25,6 +25,11 @@ class QueryUserInfoByAccountRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserInfoByAccount','2.2.0')
 		self.set_method('POST')
 
+	def get_ParentAccountName(self): # String
+		return self.get_query_params().get('ParentAccountName')
+
+	def set_ParentAccountName(self, ParentAccountName):  # String
+		self.add_query_param('ParentAccountName', ParentAccountName)
 	def get_Account(self): # String
 		return self.get_query_params().get('Account')
 

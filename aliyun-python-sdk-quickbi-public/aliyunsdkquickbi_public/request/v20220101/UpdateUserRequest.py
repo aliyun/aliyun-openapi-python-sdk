@@ -40,6 +40,11 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_RoleIds(self): # String
+		return self.get_query_params().get('RoleIds')
+
+	def set_RoleIds(self, RoleIds):  # String
+		self.add_query_param('RoleIds', RoleIds)
 	def get_NickName(self): # String
 		return self.get_query_params().get('NickName')
 

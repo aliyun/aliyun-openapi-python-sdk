@@ -35,6 +35,11 @@ class AddUserRequest(RpcRequest):
 
 	def set_UserType(self, UserType):  # Integer
 		self.add_query_param('UserType', UserType)
+	def get_RoleIds(self): # String
+		return self.get_body_params().get('RoleIds')
+
+	def set_RoleIds(self, RoleIds):  # String
+		self.add_body_params('RoleIds', RoleIds)
 	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
