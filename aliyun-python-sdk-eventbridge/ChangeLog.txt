@@ -1,3 +1,6 @@
+2024-02-28 Version: 1.0.13
+- Fixed bugs for ListUserDefinedEventSources
+
 2024-02-01 Version: 1.0.12
 - Bugfix: change response code type to string for StartEventStreaming.
 
