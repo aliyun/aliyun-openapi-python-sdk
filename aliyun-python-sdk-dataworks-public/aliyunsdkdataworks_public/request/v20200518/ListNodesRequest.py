@@ -66,6 +66,11 @@ class ListNodesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_SchedulerType(self): # String
+		return self.get_body_params().get('SchedulerType')
+
+	def set_SchedulerType(self, SchedulerType):  # String
+		self.add_body_params('SchedulerType', SchedulerType)
 	def get_ProjectId(self): # Long
 		return self.get_body_params().get('ProjectId')
 

@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
-import json
 
-class RegisterLineageRelationRequest(RpcRequest):
+class GetAlertMessageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'RegisterLineageRelation')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetAlertMessage')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,8 +32,8 @@ class RegisterLineageRelationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LineageRelationRegisterVO(self): # Struct
-		return self.get_body_params().get('LineageRelationRegisterVO')
+	def get_AlertId(self): # String
+		return self.get_body_params().get('AlertId')
 
-	def set_LineageRelationRegisterVO(self, LineageRelationRegisterVO):  # Struct
-		self.add_body_params("LineageRelationRegisterVO", json.dumps(LineageRelationRegisterVO))
+	def set_AlertId(self, AlertId):  # String
+		self.add_body_params('AlertId', AlertId)

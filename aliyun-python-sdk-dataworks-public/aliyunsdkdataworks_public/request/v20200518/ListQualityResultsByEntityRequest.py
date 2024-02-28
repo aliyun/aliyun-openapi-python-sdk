@@ -36,10 +36,10 @@ class ListQualityResultsByEntityRequest(RpcRequest):
 
 	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-	def get_EntityId(self): # Integer
+	def get_EntityId(self): # Long
 		return self.get_body_params().get('EntityId')
 
-	def set_EntityId(self, EntityId):  # Integer
+	def set_EntityId(self, EntityId):  # Long
 		self.add_body_params('EntityId', EntityId)
 	def get_StartDate(self): # String
 		return self.get_body_params().get('StartDate')

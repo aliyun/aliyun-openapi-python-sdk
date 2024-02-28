@@ -46,6 +46,11 @@ class RunCycleDagNodesRequest(RpcRequest):
 
 	def set_Parallelism(self, Parallelism):  # Boolean
 		self.add_body_params('Parallelism', Parallelism)
+	def get_AlertNoticeType(self): # String
+		return self.get_body_params().get('AlertNoticeType')
+
+	def set_AlertNoticeType(self, AlertNoticeType):  # String
+		self.add_body_params('AlertNoticeType', AlertNoticeType)
 	def get_RootNodeId(self): # Long
 		return self.get_body_params().get('RootNodeId')
 
@@ -66,6 +71,16 @@ class RunCycleDagNodesRequest(RpcRequest):
 
 	def set_StartFutureInstanceImmediately(self, StartFutureInstanceImmediately):  # Boolean
 		self.add_body_params('StartFutureInstanceImmediately', StartFutureInstanceImmediately)
+	def get_ConcurrentRuns(self): # Integer
+		return self.get_body_params().get('ConcurrentRuns')
+
+	def set_ConcurrentRuns(self, ConcurrentRuns):  # Integer
+		self.add_body_params('ConcurrentRuns', ConcurrentRuns)
+	def get_AlertType(self): # String
+		return self.get_body_params().get('AlertType')
+
+	def set_AlertType(self, AlertType):  # String
+		self.add_body_params('AlertType', AlertType)
 	def get_IncludeNodeIds(self): # String
 		return self.get_body_params().get('IncludeNodeIds')
 
