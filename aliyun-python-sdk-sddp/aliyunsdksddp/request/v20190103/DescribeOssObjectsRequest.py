@@ -61,11 +61,21 @@ class DescribeOssObjectsRequest(RpcRequest):
 
 	def set_ServiceRegionId(self, ServiceRegionId):  # String
 		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_FileCategoryCode(self): # Long
+		return self.get_query_params().get('FileCategoryCode')
+
+	def set_FileCategoryCode(self, FileCategoryCode):  # Long
+		self.add_query_param('FileCategoryCode', FileCategoryCode)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

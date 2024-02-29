@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeRiskLevelsRequest(RpcRequest):
+class DescribeDocTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeRiskLevels','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDocTypes','sddp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class DescribeRiskLevelsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TemplateId(self): # Long
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self, TemplateId):  # Long
-		self.add_query_param('TemplateId', TemplateId)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

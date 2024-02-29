@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeRiskLevelsRequest(RpcRequest):
+class DescribeCategoryTemplateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeRiskLevels','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeCategoryTemplateList','sddp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,21 @@ class DescribeRiskLevelsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TemplateId(self): # Long
-		return self.get_query_params().get('TemplateId')
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
 
-	def set_TemplateId(self, TemplateId):  # Long
-		self.add_query_param('TemplateId', TemplateId)
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_UsageScenario(self): # Integer
+		return self.get_query_params().get('UsageScenario')
+
+	def set_UsageScenario(self, UsageScenario):  # Integer
+		self.add_query_param('UsageScenario', UsageScenario)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

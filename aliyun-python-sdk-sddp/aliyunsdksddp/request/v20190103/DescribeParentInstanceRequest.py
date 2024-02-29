@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeTablesRequest(RpcRequest):
+class DescribeParentInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeTables','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeParentInstance','sddp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,31 +31,16 @@ class DescribeTablesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProductCode(self): # String
-		return self.get_query_params().get('ProductCode')
-
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_query_param('ProductCode', ProductCode)
-	def get_ProductId(self): # Long
-		return self.get_query_params().get('ProductId')
-
-	def set_ProductId(self, ProductId):  # Long
-		self.add_query_param('ProductId', ProductId)
-	def get_PackageId(self): # Long
-		return self.get_query_params().get('PackageId')
-
-	def set_PackageId(self, PackageId):  # Long
-		self.add_query_param('PackageId', PackageId)
-	def get_RiskLevelId(self): # Long
-		return self.get_query_params().get('RiskLevelId')
-
-	def set_RiskLevelId(self, RiskLevelId):  # Long
-		self.add_query_param('RiskLevelId', RiskLevelId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_CheckStatus(self): # Integer
+		return self.get_query_params().get('CheckStatus')
+
+	def set_CheckStatus(self, CheckStatus):  # Integer
+		self.add_query_param('CheckStatus', CheckStatus)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -66,28 +51,38 @@ class DescribeTablesRequest(RpcRequest):
 
 	def set_ServiceRegionId(self, ServiceRegionId):  # String
 		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_EngineType(self): # String
+		return self.get_query_params().get('EngineType')
+
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
+	def get_ClusterStatus(self): # String
+		return self.get_query_params().get('ClusterStatus')
+
+	def set_ClusterStatus(self, ClusterStatus):  # String
+		self.add_query_param('ClusterStatus', ClusterStatus)
+	def get_AuthStatus(self): # Integer
+		return self.get_query_params().get('AuthStatus')
+
+	def set_AuthStatus(self, AuthStatus):  # Integer
+		self.add_query_param('AuthStatus', AuthStatus)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_TemplateId(self): # Long
-		return self.get_query_params().get('TemplateId')
+	def get_ResourceType(self): # Long
+		return self.get_query_params().get('ResourceType')
 
-	def set_TemplateId(self, TemplateId):  # Long
-		self.add_query_param('TemplateId', TemplateId)
-	def get_InstanceId(self): # Long
+	def set_ResourceType(self, ResourceType):  # Long
+		self.add_query_param('ResourceType', ResourceType)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # Long
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def get_DbName(self): # String
+		return self.get_query_params().get('DbName')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
-	def get_RuleId(self): # Long
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # Long
-		self.add_query_param('RuleId', RuleId)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

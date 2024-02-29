@@ -36,6 +36,12 @@ class ModifyDataLimitRequest(RpcRequest):
 
 	def set_ModifyPassword(self, ModifyPassword):  # Boolean
 		self.add_query_param('ModifyPassword', ModifyPassword)
+	def get_VSwitchIdLists(self): # RepeatList
+		return self.get_query_params().get('VSwitchIdList')
+
+	def set_VSwitchIdLists(self, VSwitchIdList):  # RepeatList
+		for depth1 in range(len(VSwitchIdList)):
+			self.add_query_param('VSwitchIdList.' + str(depth1 + 1), VSwitchIdList[depth1])
 	def get_SamplingSize(self): # Integer
 		return self.get_query_params().get('SamplingSize')
 
@@ -76,6 +82,12 @@ class ModifyDataLimitRequest(RpcRequest):
 
 	def set_AutoScan(self, AutoScan):  # Integer
 		self.add_query_param('AutoScan', AutoScan)
+	def get_SecurityGroupIdLists(self): # RepeatList
+		return self.get_query_params().get('SecurityGroupIdList')
+
+	def set_SecurityGroupIdLists(self, SecurityGroupIdList):  # RepeatList
+		for depth1 in range(len(SecurityGroupIdList)):
+			self.add_query_param('SecurityGroupIdList.' + str(depth1 + 1), SecurityGroupIdList[depth1])
 	def get_LogStoreDay(self): # Integer
 		return self.get_query_params().get('LogStoreDay')
 
@@ -91,6 +103,11 @@ class ModifyDataLimitRequest(RpcRequest):
 
 	def set_Port(self, Port):  # Integer
 		self.add_query_param('Port', Port)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
 	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 

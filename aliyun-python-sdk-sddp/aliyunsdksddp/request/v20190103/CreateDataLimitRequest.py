@@ -86,6 +86,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_LogStoreDay(self, LogStoreDay):  # Integer
 		self.add_query_param('LogStoreDay', LogStoreDay)
+	def get_CertificatePermission(self): # String
+		return self.get_query_params().get('CertificatePermission')
+
+	def set_CertificatePermission(self, CertificatePermission):  # String
+		self.add_query_param('CertificatePermission', CertificatePermission)
 	def get_ResourceType(self): # Integer
 		return self.get_query_params().get('ResourceType')
 

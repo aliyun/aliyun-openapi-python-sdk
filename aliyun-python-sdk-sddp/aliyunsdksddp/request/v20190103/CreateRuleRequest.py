@@ -61,11 +61,21 @@ class CreateRuleRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_MatchType(self): # Integer
+		return self.get_query_params().get('MatchType')
+
+	def set_MatchType(self, MatchType):  # Integer
+		self.add_query_param('MatchType', MatchType)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_SupportForm(self): # Integer
+		return self.get_query_params().get('SupportForm')
+
+	def set_SupportForm(self, SupportForm):  # Integer
+		self.add_query_param('SupportForm', SupportForm)
 	def get_RuleType(self): # Integer
 		return self.get_query_params().get('RuleType')
 

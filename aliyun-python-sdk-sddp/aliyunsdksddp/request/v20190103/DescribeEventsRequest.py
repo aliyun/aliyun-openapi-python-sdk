@@ -31,6 +31,11 @@ class DescribeEventsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_WarnLevel(self): # Integer
+		return self.get_query_params().get('WarnLevel')
+
+	def set_WarnLevel(self, WarnLevel):  # Integer
+		self.add_query_param('WarnLevel', WarnLevel)
 	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 

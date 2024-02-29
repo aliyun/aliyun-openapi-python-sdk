@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeTablesRequest(RpcRequest):
+class DescribeDataObjectsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeTables','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataObjects','sddp')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,36 @@ class DescribeTablesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProductCode(self): # String
-		return self.get_query_params().get('ProductCode')
+	def get_FileType(self): # Long
+		return self.get_query_params().get('FileType')
 
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_query_param('ProductCode', ProductCode)
-	def get_ProductId(self): # Long
-		return self.get_query_params().get('ProductId')
+	def set_FileType(self, FileType):  # Long
+		self.add_query_param('FileType', FileType)
+	def get_RiskLevels(self): # String
+		return self.get_query_params().get('RiskLevels')
 
-	def set_ProductId(self, ProductId):  # Long
-		self.add_query_param('ProductId', ProductId)
-	def get_PackageId(self): # Long
-		return self.get_query_params().get('PackageId')
+	def set_RiskLevels(self, RiskLevels):  # String
+		self.add_query_param('RiskLevels', RiskLevels)
+	def get_QueryName(self): # String
+		return self.get_query_params().get('QueryName')
 
-	def set_PackageId(self, PackageId):  # Long
-		self.add_query_param('PackageId', PackageId)
-	def get_RiskLevelId(self): # Long
-		return self.get_query_params().get('RiskLevelId')
+	def set_QueryName(self, QueryName):  # String
+		self.add_query_param('QueryName', QueryName)
+	def get_DomainId(self): # Long
+		return self.get_query_params().get('DomainId')
 
-	def set_RiskLevelId(self, RiskLevelId):  # Long
-		self.add_query_param('RiskLevelId', RiskLevelId)
+	def set_DomainId(self, DomainId):  # Long
+		self.add_query_param('DomainId', DomainId)
+	def get_ParentCategoryIds(self): # String
+		return self.get_query_params().get('ParentCategoryIds')
+
+	def set_ParentCategoryIds(self, ParentCategoryIds):  # String
+		self.add_query_param('ParentCategoryIds', ParentCategoryIds)
+	def get_ProductIds(self): # String
+		return self.get_query_params().get('ProductIds')
+
+	def set_ProductIds(self, ProductIds):  # String
+		self.add_query_param('ProductIds', ProductIds)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -66,6 +76,16 @@ class DescribeTablesRequest(RpcRequest):
 
 	def set_ServiceRegionId(self, ServiceRegionId):  # String
 		self.add_query_param('ServiceRegionId', ServiceRegionId)
+	def get_ModelTagIds(self): # String
+		return self.get_query_params().get('ModelTagIds')
+
+	def set_ModelTagIds(self, ModelTagIds):  # String
+		self.add_query_param('ModelTagIds', ModelTagIds)
+	def get_FileCategoryCode(self): # Long
+		return self.get_query_params().get('FileCategoryCode')
+
+	def set_FileCategoryCode(self, FileCategoryCode):  # Long
+		self.add_query_param('FileCategoryCode', FileCategoryCode)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
@@ -76,18 +96,13 @@ class DescribeTablesRequest(RpcRequest):
 
 	def set_TemplateId(self, TemplateId):  # Long
 		self.add_query_param('TemplateId', TemplateId)
-	def get_InstanceId(self): # Long
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # Long
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def get_ModelIds(self): # String
+		return self.get_query_params().get('ModelIds')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
-	def get_RuleId(self): # Long
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # Long
-		self.add_query_param('RuleId', RuleId)
+	def set_ModelIds(self, ModelIds):  # String
+		self.add_query_param('ModelIds', ModelIds)

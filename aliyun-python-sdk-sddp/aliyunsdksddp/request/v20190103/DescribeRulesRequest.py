@@ -56,6 +56,11 @@ class DescribeRulesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_MatchType(self): # Integer
+		return self.get_query_params().get('MatchType')
+
+	def set_MatchType(self, MatchType):  # Integer
+		self.add_query_param('MatchType', MatchType)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -66,6 +71,11 @@ class DescribeRulesRequest(RpcRequest):
 
 	def set_KeywordCompatible(self, KeywordCompatible):  # Boolean
 		self.add_query_param('KeywordCompatible', KeywordCompatible)
+	def get_SupportForm(self): # Integer
+		return self.get_query_params().get('SupportForm')
+
+	def set_SupportForm(self, SupportForm):  # Integer
+		self.add_query_param('SupportForm', SupportForm)
 	def get_RuleType(self): # Integer
 		return self.get_query_params().get('RuleType')
 
