@@ -51,6 +51,11 @@ class DescribeLiveCdnDiagnoseInfoRequest(RpcRequest):
 
 	def set_requestType(self, requestType):  # String
 		self.add_query_param('requestType', requestType)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
 	def get_streamName(self): # String
 		return self.get_query_params().get('streamName')
 

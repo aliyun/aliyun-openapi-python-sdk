@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
+class ListMuteGroupUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainTranscodeParams','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListMuteGroupUser','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,28 @@ class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_pushdomain(self): # String
-		return self.get_query_params().get('pushdomain')
+	def get_PageNum(self): # Integer
+		return self.get_body_params().get('PageNum')
 
-	def set_pushdomain(self, pushdomain):  # String
-		self.add_query_param('pushdomain', pushdomain)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_body_params('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_app(self): # String
-		return self.get_query_params().get('app')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
+	def get_OperatorUserId(self): # String
+		return self.get_body_params().get('OperatorUserId')
 
-	def set_app(self, app):  # String
-		self.add_query_param('app', app)
-	def get_template_name(self): # String
-		return self.get_query_params().get('template_name')
+	def set_OperatorUserId(self, OperatorUserId):  # String
+		self.add_body_params('OperatorUserId', OperatorUserId)
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
 
-	def set_template_name(self, template_name):  # String
-		self.add_query_param('template_name', template_name)
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
+	def get_AppId(self): # String
+		return self.get_body_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_body_params('AppId', AppId)

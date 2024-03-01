@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
+class DescribeLiveUpVideoAudioInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainTranscodeParams','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUpVideoAudioInfo','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,23 @@ class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_pushdomain(self): # String
-		return self.get_query_params().get('pushdomain')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_pushdomain(self, pushdomain):  # String
-		self.add_query_param('pushdomain', pushdomain)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Stream(self): # String
+		return self.get_query_params().get('Stream')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_app(self): # String
-		return self.get_query_params().get('app')
+	def set_Stream(self, Stream):  # String
+		self.add_query_param('Stream', Stream)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_app(self, app):  # String
-		self.add_query_param('app', app)
-	def get_template_name(self): # String
-		return self.get_query_params().get('template_name')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_template_name(self, template_name):  # String
-		self.add_query_param('template_name', template_name)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

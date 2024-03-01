@@ -42,6 +42,16 @@ class ListLiveMessageGroupMessagesRequest(RpcRequest):
 
 	def set_NextPageToken(self, NextPageToken):  # Long
 		self.add_query_param('NextPageToken', NextPageToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_MsgType(self): # Long
+		return self.get_query_params().get('MsgType')
+
+	def set_MsgType(self, MsgType):  # Long
+		self.add_query_param('MsgType', MsgType)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -67,13 +77,3 @@ class ListLiveMessageGroupMessagesRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_MsgType(self): # Long
-		return self.get_query_params().get('MsgType')
-
-	def set_MsgType(self, MsgType):  # Long
-		self.add_query_param('MsgType', MsgType)
