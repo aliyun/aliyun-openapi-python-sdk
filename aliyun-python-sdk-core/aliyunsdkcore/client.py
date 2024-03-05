@@ -283,7 +283,9 @@ class AcsClient:
             request.trans_to_acs_request()
 
         signer = self._signer if specific_signer is None else specific_signer
-        header, url = signer.sign(self._region_id, request)
+        header = request.get_headers()
+        signed_header, url = signer.sign(self._region_id, request)
+        header.update(signed_header)
 
         base = self.user_agent_header()
 

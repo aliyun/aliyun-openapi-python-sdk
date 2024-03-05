@@ -40,11 +40,13 @@ def _const_compare_digest_backport(a, b):
 _const_compare_digest = getattr(hmac, 'compare_digest',
                                 _const_compare_digest_backport)
 
-
+PROTOCOL_SSLv23 = None
 try:  # Test for SSL features
     import ssl
-    from ssl import wrap_socket, CERT_NONE, PROTOCOL_SSLv23
+    from ssl import wrap_socket, CERT_NONE
     from ssl import HAS_SNI  # Has SNI?
+
+    PROTOCOL_SSLv23 = ssl.PROTOCOL_SSLv23
 except ImportError:
     pass
 

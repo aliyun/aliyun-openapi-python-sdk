@@ -35,7 +35,7 @@ jobs:
         pip install pycodestyle
         pip install mock
         pip install jmespath cryptography
-        pip install pytest
+        pip install 'pytest<7.4.4'
     - name: Lint
       run: |
         make lint
