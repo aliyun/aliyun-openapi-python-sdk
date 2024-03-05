@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class QueryServicePackAndPriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'QueryServicePackAndPrice')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'QueryServicePackAndPrice','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

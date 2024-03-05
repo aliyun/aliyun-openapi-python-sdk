@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class ApplyNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ApplyNodes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ApplyNodes','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -76,6 +76,11 @@ class ApplyNodesRequest(RpcRequest):
 
 	def set_SystemDiskType(self, SystemDiskType):  # String
 		self.add_query_param('SystemDiskType', SystemDiskType)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
 	def get_Cores(self): # Integer
 		return self.get_query_params().get('Cores')
 

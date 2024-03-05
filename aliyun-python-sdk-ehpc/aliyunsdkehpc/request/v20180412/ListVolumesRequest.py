@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class ListVolumesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListVolumes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListVolumes','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

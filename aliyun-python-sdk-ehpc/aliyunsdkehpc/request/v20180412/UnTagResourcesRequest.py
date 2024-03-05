@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class UnTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UnTagResources')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UnTagResources','ehs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

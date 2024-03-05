@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class DescribeImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeImage')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeImage','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

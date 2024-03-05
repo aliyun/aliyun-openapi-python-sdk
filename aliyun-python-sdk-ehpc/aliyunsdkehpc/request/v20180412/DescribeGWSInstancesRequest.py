@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class DescribeGWSInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeGWSInstances')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeGWSInstances','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

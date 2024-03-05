@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class SetQueueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetQueue')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetQueue','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

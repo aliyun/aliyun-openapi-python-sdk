@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class ListPreferredEcsTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListPreferredEcsTypes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListPreferredEcsTypes','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

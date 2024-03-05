@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class CreateGWSImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateGWSImage')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateGWSImage','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

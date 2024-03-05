@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListClusters')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListClusters','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class InitializeEHPCRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'InitializeEHPC')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'InitializeEHPC','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class InitializeEHPCRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

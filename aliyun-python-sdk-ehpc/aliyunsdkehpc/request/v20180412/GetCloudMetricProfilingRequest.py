@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class GetCloudMetricProfilingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetCloudMetricProfiling')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetCloudMetricProfiling','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
