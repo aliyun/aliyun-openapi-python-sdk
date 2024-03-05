@@ -3,7 +3,7 @@ import sys
 
 from tests import unittest, MyServer
 
-from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcore.request import RpcRequest, RoaRequest, CommonRequest
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.client import AcsClient
 
@@ -141,3 +141,52 @@ class TestAcsClient(unittest.TestCase):
         except ClientException as e:
             self.assertEqual(e.get_error_code(), 'SDK.HttpError')
             self.assertIn('Cannot connect to proxy', e.message)
+
+    def test_http_header(self):
+        client = AcsClient("id", "aks", region_id='cn-hangzhou', port=51352)
+        rpc_request = RpcRequest(
+            product='sts',
+            version='2020',
+            action_name='test'
+        )
+        rpc_request.endpoint = 'localhost'
+        rpc_request.request_network = ''
+        rpc_request.product_suffix = ''
+        rpc_request.add_header('key', 'value')
+        rpc_request.add_header('x-sdk-client', 'python/5.0.0')
+        response = self.do_request(client, rpc_request)
+        self.assertEqual(response.headers['key'], 'value')
+        self.assertEqual(response.headers['x-sdk-client'], 'python/2.0.0')
+
+        roa_request = RoaRequest(
+            product='sts',
+            version='2020',
+            action_name='test',
+            method='GET',
+            uri_pattern='/test'
+        )
+        roa_request.endpoint = 'localhost'
+        roa_request.request_network = ''
+        roa_request.product_suffix = ''
+        roa_request.add_header('key', 'value')
+        roa_request.add_header('x-acs-region-id', 'test')
+        roa_request.add_header('x-acs-version', 'test')
+        roa_request.add_header('Authorization', 'test')
+        response = self.do_request(client, roa_request)
+        self.assertEqual(response.headers['key'], 'value')
+        self.assertEqual(response.headers['x-sdk-client'], 'python/2.0.0')
+        self.assertEqual(response.headers['x-acs-region-id'], 'cn-hangzhou')
+        self.assertEqual(response.headers['x-acs-version'], '2020')
+        self.assertNotEqual(response.headers['Authorization'], 'test')
+
+        rpc_request = CommonRequest(
+            product='sts',
+            version='2020',
+            action_name='test'
+        )
+        rpc_request.endpoint = 'localhost'
+        rpc_request.request_network = ''
+        rpc_request.product_suffix = ''
+        rpc_request.add_header('key', 'value')
+        response = self.do_request(client, rpc_request)
+        self.assertEqual(response.headers['key'], 'value')
