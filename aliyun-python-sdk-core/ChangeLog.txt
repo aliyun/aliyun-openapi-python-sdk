@@ -1,3 +1,6 @@
+2024-03-06 Version 2.15.0
+1, Support user-defined headers.
+
 2023-09-25 Version 2.14.0
 1, Improve the design of nonce.
 2, Improve coding style.
