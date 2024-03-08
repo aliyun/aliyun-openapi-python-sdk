@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkamqp_open.endpoint import endpoint_data
 
-class CreateInstanceRequest(RpcRequest):
+class UpdateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'CreateInstance','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'UpdateInstance','onsproxy')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_PeriodCycle(self): # String
-		return self.get_query_params().get('PeriodCycle')
-
-	def set_PeriodCycle(self, PeriodCycle):  # String
-		self.add_query_param('PeriodCycle', PeriodCycle)
 	def get_StorageSize(self): # Integer
 		return self.get_query_params().get('StorageSize')
 
@@ -81,48 +76,23 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
-	def get_RenewStatus(self): # String
-		return self.get_query_params().get('RenewStatus')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_RenewStatus(self, RenewStatus):  # String
-		self.add_query_param('RenewStatus', RenewStatus)
-	def get_AutoRenewPeriod(self): # Integer
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
-		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_Period(self): # Integer
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Integer
-		self.add_query_param('Period', Period)
-	def get_RenewalDurationUnit(self): # String
-		return self.get_query_params().get('RenewalDurationUnit')
-
-	def set_RenewalDurationUnit(self, RenewalDurationUnit):  # String
-		self.add_query_param('RenewalDurationUnit', RenewalDurationUnit)
-	def get_InstanceName(self): # String
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_query_param('InstanceName', InstanceName)
-	def get_AutoRenew(self): # Boolean
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_SupportEip(self): # Boolean
 		return self.get_query_params().get('SupportEip')
 
 	def set_SupportEip(self, SupportEip):  # Boolean
 		self.add_query_param('SupportEip', SupportEip)
+	def get_ModifyType(self): # String
+		return self.get_query_params().get('ModifyType')
+
+	def set_ModifyType(self, ModifyType):  # String
+		self.add_query_param('ModifyType', ModifyType)
 	def get_MaxEipTps(self): # Long
 		return self.get_query_params().get('MaxEipTps')
 
 	def set_MaxEipTps(self, MaxEipTps):  # Long
 		self.add_query_param('MaxEipTps', MaxEipTps)
-	def get_PaymentType(self): # String
-		return self.get_query_params().get('PaymentType')
-
-	def set_PaymentType(self, PaymentType):  # String
-		self.add_query_param('PaymentType', PaymentType)
