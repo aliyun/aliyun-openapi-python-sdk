@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class TransformInstanceChargeTypeRequest(RpcRequest):
+class DescribeHistoryTasksStatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'TransformInstanceChargeType','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeHistoryTasksStat','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,58 +36,48 @@ class TransformInstanceChargeTypeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CouponNo(self): # String
-		return self.get_query_params().get('CouponNo')
+	def get_ToStartTime(self): # String
+		return self.get_query_params().get('ToStartTime')
 
-	def set_CouponNo(self, CouponNo):  # String
-		self.add_query_param('CouponNo', CouponNo)
-	def get_BusinessInfo(self): # String
-		return self.get_query_params().get('BusinessInfo')
+	def set_ToStartTime(self, ToStartTime):  # String
+		self.add_query_param('ToStartTime', ToStartTime)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_BusinessInfo(self, BusinessInfo):  # String
-		self.add_query_param('BusinessInfo', BusinessInfo)
-	def get_Period(self): # Long
-		return self.get_query_params().get('Period')
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_ToExecTime(self): # Integer
+		return self.get_query_params().get('ToExecTime')
 
-	def set_Period(self, Period):  # Long
-		self.add_query_param('Period', Period)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
+	def set_ToExecTime(self, ToExecTime):  # Integer
+		self.add_query_param('ToExecTime', ToExecTime)
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
+	def get_FromStartTime(self): # String
+		return self.get_query_params().get('FromStartTime')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_FromStartTime(self, FromStartTime):  # String
+		self.add_query_param('FromStartTime', FromStartTime)
+	def get_FromExecTime(self): # Integer
+		return self.get_query_params().get('FromExecTime')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_FromExecTime(self, FromExecTime):  # Integer
+		self.add_query_param('FromExecTime', FromExecTime)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_AutoRenew(self): # String
-		return self.get_query_params().get('AutoRenew')
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-	def set_AutoRenew(self, AutoRenew):  # String
-		self.add_query_param('AutoRenew', AutoRenew)
-	def get_ChargeType(self): # String
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self, ChargeType):  # String
-		self.add_query_param('ChargeType', ChargeType)
-	def get_PricingCycle(self): # String
-		return self.get_query_params().get('PricingCycle')
-
-	def set_PricingCycle(self, PricingCycle):  # String
-		self.add_query_param('PricingCycle', PricingCycle)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

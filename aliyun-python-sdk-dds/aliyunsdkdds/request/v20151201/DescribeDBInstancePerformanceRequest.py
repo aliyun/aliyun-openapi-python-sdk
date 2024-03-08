@@ -51,11 +51,6 @@ class DescribeDBInstancePerformanceRequest(RpcRequest):
 
 	def set_ReplicaSetRole(self, ReplicaSetRole):  # String
 		self.add_query_param('ReplicaSetRole', ReplicaSetRole)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

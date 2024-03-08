@@ -46,11 +46,6 @@ class RenewDBInstanceRequest(RpcRequest):
 
 	def set_CouponNo(self, CouponNo):  # String
 		self.add_query_param('CouponNo', CouponNo)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -86,3 +81,8 @@ class RenewDBInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)

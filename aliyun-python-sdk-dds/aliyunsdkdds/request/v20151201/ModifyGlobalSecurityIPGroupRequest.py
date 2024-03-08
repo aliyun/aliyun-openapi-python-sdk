@@ -46,11 +46,6 @@ class ModifyGlobalSecurityIPGroupRequest(RpcRequest):
 
 	def set_GlobalSecurityGroupId(self, GlobalSecurityGroupId):  # String
 		self.add_query_param('GlobalSecurityGroupId', GlobalSecurityGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -46,11 +46,6 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_ClassicExpendExpiredDays(self, ClassicExpendExpiredDays):  # Integer
 		self.add_query_param('ClassicExpendExpiredDays', ClassicExpendExpiredDays)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -71,8 +66,3 @@ class ModifyDBInstanceNetExpireTimeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Category(self): # String
-		return self.get_query_params().get('Category')
-
-	def set_Category(self, Category):  # String
-		self.add_query_param('Category', Category)

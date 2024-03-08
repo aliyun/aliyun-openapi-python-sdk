@@ -56,11 +56,6 @@ class ModifyNodeSpecRequest(RpcRequest):
 
 	def set_NodeClass(self, NodeClass):  # String
 		self.add_query_param('NodeClass', NodeClass)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 

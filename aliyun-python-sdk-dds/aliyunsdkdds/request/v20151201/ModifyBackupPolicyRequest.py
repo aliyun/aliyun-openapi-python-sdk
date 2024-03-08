@@ -41,11 +41,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_BackupInterval(self, BackupInterval):  # String
 		self.add_query_param('BackupInterval', BackupInterval)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -91,6 +86,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Long
 		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
+	def get_HighFrequencyBackupRetention(self): # Long
+		return self.get_query_params().get('HighFrequencyBackupRetention')
+
+	def set_HighFrequencyBackupRetention(self, HighFrequencyBackupRetention):  # Long
+		self.add_query_param('HighFrequencyBackupRetention', HighFrequencyBackupRetention)
 	def get_LogBackupRetentionPeriod(self): # Long
 		return self.get_query_params().get('LogBackupRetentionPeriod')
 

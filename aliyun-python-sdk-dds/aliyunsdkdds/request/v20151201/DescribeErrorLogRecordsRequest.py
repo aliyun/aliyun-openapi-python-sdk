@@ -46,16 +46,16 @@ class DescribeErrorLogRecordsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_QueryKeywords(self): # String
+		return self.get_query_params().get('QueryKeywords')
+
+	def set_QueryKeywords(self, QueryKeywords):  # String
+		self.add_query_param('QueryKeywords', QueryKeywords)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -96,6 +96,11 @@ class DescribeErrorLogRecordsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_LogicalOperator(self): # String
+		return self.get_query_params().get('LogicalOperator')
+
+	def set_LogicalOperator(self, LogicalOperator):  # String
+		self.add_query_param('LogicalOperator', LogicalOperator)
 	def get_DBName(self): # String
 		return self.get_query_params().get('DBName')
 

@@ -46,11 +46,6 @@ class SwitchDBInstanceHARequest(RpcRequest):
 
 	def set_RoleIds(self, RoleIds):  # String
 		self.add_query_param('RoleIds', RoleIds)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

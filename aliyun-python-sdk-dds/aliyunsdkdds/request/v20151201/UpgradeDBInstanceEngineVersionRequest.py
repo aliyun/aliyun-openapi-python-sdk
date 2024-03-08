@@ -41,11 +41,6 @@ class UpgradeDBInstanceEngineVersionRequest(RpcRequest):
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

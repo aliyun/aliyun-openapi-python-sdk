@@ -66,11 +66,6 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_Expired(self, Expired):  # String
 		self.add_query_param('Expired', Expired)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

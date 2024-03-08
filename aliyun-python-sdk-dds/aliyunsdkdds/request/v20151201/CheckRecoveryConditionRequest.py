@@ -46,11 +46,6 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_DatabaseNames(self, DatabaseNames):  # String
 		self.add_query_param('DatabaseNames', DatabaseNames)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 

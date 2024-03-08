@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeClusterRecoverTimeRequest(RpcRequest):
+class ModifyTaskInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeClusterRecoverTime','dds')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyTaskInfo','dds')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,23 +36,28 @@ class DescribeClusterRecoverTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
+	def get_StepName(self): # String
+		return self.get_query_params().get('StepName')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_StepName(self, StepName):  # String
+		self.add_query_param('StepName', StepName)
+	def get_ActionParams(self): # String
+		return self.get_query_params().get('ActionParams')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_ActionParams(self, ActionParams):  # String
+		self.add_query_param('ActionParams', ActionParams)
+	def get_TaskAction(self): # String
+		return self.get_query_params().get('TaskAction')
+
+	def set_TaskAction(self, TaskAction):  # String
+		self.add_query_param('TaskAction', TaskAction)

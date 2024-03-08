@@ -56,11 +56,6 @@ class DescribeAuditRecordsRequest(RpcRequest):
 
 	def set_Database(self, Database):  # String
 		self.add_query_param('Database', Database)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -96,6 +91,11 @@ class DescribeAuditRecordsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_LogicalOperator(self): # String
+		return self.get_query_params().get('LogicalOperator')
+
+	def set_LogicalOperator(self, LogicalOperator):  # String
+		self.add_query_param('LogicalOperator', LogicalOperator)
 	def get_Form(self): # String
 		return self.get_query_params().get('Form')
 

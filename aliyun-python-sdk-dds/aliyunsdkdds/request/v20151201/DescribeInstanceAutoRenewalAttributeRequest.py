@@ -41,11 +41,6 @@ class DescribeInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 

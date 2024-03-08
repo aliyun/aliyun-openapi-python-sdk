@@ -41,11 +41,6 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_ClassicExpiredDays(self): # Integer
 		return self.get_query_params().get('ClassicExpiredDays')
 

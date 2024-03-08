@@ -36,21 +36,26 @@ class DescribeAvailabilityZonesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_EngineVersion(self): # String
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
 	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
 	def set_StorageType(self, StorageType):  # String
 		self.add_query_param('StorageType', StorageType)
+	def get_ReplicationFactor(self): # String
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self, ReplicationFactor):  # String
+		self.add_query_param('ReplicationFactor', ReplicationFactor)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_ExcludeZoneId(self): # String
 		return self.get_query_params().get('ExcludeZoneId')
 
@@ -86,6 +91,11 @@ class DescribeAvailabilityZonesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBInstanceClass(self): # String
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
 	def get_StorageSupport(self): # String
 		return self.get_query_params().get('StorageSupport')
 

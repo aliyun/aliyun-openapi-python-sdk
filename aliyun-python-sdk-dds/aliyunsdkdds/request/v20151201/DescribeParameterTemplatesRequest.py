@@ -36,16 +36,16 @@ class DescribeParameterTemplatesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Role(self): # String
+		return self.get_query_params().get('Role')
+
+	def set_Role(self, Role):  # String
+		self.add_query_param('Role', Role)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

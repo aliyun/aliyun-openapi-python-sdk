@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeClusterRecoverTimeRequest(RpcRequest):
+class DescribeInstanceRecoverTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeClusterRecoverTime','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeInstanceRecoverTime','dds')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DescribeClusterRecoverTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

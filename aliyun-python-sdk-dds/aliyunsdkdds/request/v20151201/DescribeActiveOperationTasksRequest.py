@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeRunningLogRecordsRequest(RpcRequest):
+class DescribeActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRunningLogRecords','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeActiveOperationTasks','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,51 +36,36 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_RoleId(self): # String
-		return self.get_query_params().get('RoleId')
+	def get_ProductId(self): # String
+		return self.get_query_params().get('ProductId')
 
-	def set_RoleId(self, RoleId):  # String
-		self.add_query_param('RoleId', RoleId)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def set_ProductId(self, ProductId):  # String
+		self.add_query_param('ProductId', ProductId)
+	def get_ChangeLevel(self): # String
+		return self.get_query_params().get('ChangeLevel')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
+	def set_ChangeLevel(self, ChangeLevel):  # String
+		self.add_query_param('ChangeLevel', ChangeLevel)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_QueryKeywords(self): # String
-		return self.get_query_params().get('QueryKeywords')
+	def get_InsName(self): # String
+		return self.get_query_params().get('InsName')
 
-	def set_QueryKeywords(self, QueryKeywords):  # String
-		self.add_query_param('QueryKeywords', QueryKeywords)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_InsName(self, InsName):  # String
+		self.add_query_param('InsName', InsName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_RoleType(self): # String
-		return self.get_query_params().get('RoleType')
-
-	def set_RoleType(self, RoleType):  # String
-		self.add_query_param('RoleType', RoleType)
-	def get_NodeId(self): # String
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self, NodeId):  # String
-		self.add_query_param('NodeId', NodeId)
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -91,28 +76,33 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def get_AllowCancel(self): # Integer
+		return self.get_query_params().get('AllowCancel')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
+	def set_AllowCancel(self, AllowCancel):  # Integer
+		self.add_query_param('AllowCancel', AllowCancel)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_LogicalOperator(self): # String
-		return self.get_query_params().get('LogicalOperator')
+	def get_DbType(self): # String
+		return self.get_query_params().get('DbType')
 
-	def set_LogicalOperator(self, LogicalOperator):  # String
-		self.add_query_param('LogicalOperator', LogicalOperator)
-	def get_DBName(self): # String
-		return self.get_query_params().get('DBName')
+	def set_DbType(self, DbType):  # String
+		self.add_query_param('DbType', DbType)
+	def get_AllowChange(self): # Integer
+		return self.get_query_params().get('AllowChange')
 
-	def set_DBName(self, DBName):  # String
-		self.add_query_param('DBName', DBName)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
+	def set_AllowChange(self, AllowChange):  # Integer
+		self.add_query_param('AllowChange', AllowChange)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
 
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

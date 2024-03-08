@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeClusterRecoverTimeRequest(RpcRequest):
+class CreateAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeClusterRecoverTime','dds')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateAccount','dds')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,11 @@ class DescribeClusterRecoverTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AccountName(self): # String
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -56,3 +61,8 @@ class DescribeClusterRecoverTimeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AccountPassword(self): # String
+		return self.get_query_params().get('AccountPassword')
+
+	def set_AccountPassword(self, AccountPassword):  # String
+		self.add_query_param('AccountPassword', AccountPassword)

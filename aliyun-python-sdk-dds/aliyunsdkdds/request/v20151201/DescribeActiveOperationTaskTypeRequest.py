@@ -46,11 +46,6 @@ class DescribeActiveOperationTaskTypeRequest(RpcRequest):
 
 	def set_IsHistory(self, IsHistory):  # Integer
 		self.add_query_param('IsHistory', IsHistory)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
