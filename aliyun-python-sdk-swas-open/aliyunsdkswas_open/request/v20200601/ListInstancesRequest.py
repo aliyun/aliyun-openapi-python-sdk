@@ -30,11 +30,6 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -45,6 +40,20 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_PublicIpAddresses(self, PublicIpAddresses):  # String
 		self.add_query_param('PublicIpAddresses', PublicIpAddresses)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_InstanceIds(self): # String
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 

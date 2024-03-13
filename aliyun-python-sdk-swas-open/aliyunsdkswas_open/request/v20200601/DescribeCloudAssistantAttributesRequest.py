@@ -18,15 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class ListRegionsRequest(RpcRequest):
+class DescribeCloudAssistantAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListRegions','SWAS-OPEN')
+		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'DescribeCloudAssistantAttributes','SWAS-OPEN')
 		self.set_method('POST')
 
-	def get_AcceptLanguage(self): # String
-		return self.get_query_params().get('AcceptLanguage')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_AcceptLanguage(self, AcceptLanguage):  # String
-		self.add_query_param('AcceptLanguage', AcceptLanguage)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

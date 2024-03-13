@@ -30,21 +30,11 @@ class ListSnapshotsRequest(RpcRequest):
 
 	def set_SnapshotIds(self, SnapshotIds):  # String
 		self.add_query_param('SnapshotIds', SnapshotIds)
-	def get_SourceDiskType(self): # String
-		return self.get_query_params().get('SourceDiskType')
-
-	def set_SourceDiskType(self, SourceDiskType):  # String
-		self.add_query_param('SourceDiskType', SourceDiskType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -55,3 +45,22 @@ class ListSnapshotsRequest(RpcRequest):
 
 	def set_DiskId(self, DiskId):  # String
 		self.add_query_param('DiskId', DiskId)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_SourceDiskType(self): # String
+		return self.get_query_params().get('SourceDiskType')
+
+	def set_SourceDiskType(self, SourceDiskType):  # String
+		self.add_query_param('SourceDiskType', SourceDiskType)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

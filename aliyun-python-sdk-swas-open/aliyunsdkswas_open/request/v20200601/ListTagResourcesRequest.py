@@ -19,27 +19,33 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateSnapshotRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'CreateSnapshot','SWAS-OPEN')
+		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListTagResources','SWAS-OPEN')
 		self.set_method('POST')
 
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_SnapshotName(self): # String
-		return self.get_query_params().get('SnapshotName')
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_SnapshotName(self, SnapshotName):  # String
-		self.add_query_param('SnapshotName', SnapshotName)
-	def get_DiskId(self): # String
-		return self.get_query_params().get('DiskId')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_DiskId(self, DiskId):  # String
-		self.add_query_param('DiskId', DiskId)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
