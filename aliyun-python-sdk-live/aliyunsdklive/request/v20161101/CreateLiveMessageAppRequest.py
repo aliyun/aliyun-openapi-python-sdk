@@ -37,6 +37,11 @@ class CreateLiveMessageAppRequest(RpcRequest):
 
 	def set_DataCenter(self, DataCenter):  # String
 		self.add_query_param('DataCenter', DataCenter)
+	def get_MsgLifeCycle(self): # Integer
+		return self.get_query_params().get('MsgLifeCycle')
+
+	def set_MsgLifeCycle(self, MsgLifeCycle):  # Integer
+		self.add_query_param('MsgLifeCycle', MsgLifeCycle)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
