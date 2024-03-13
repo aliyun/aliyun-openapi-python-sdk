@@ -31,8 +31,18 @@ class QueryFaceImageTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
 	def get_TemplateId(self): # String
 		return self.get_query_params().get('TemplateId')
 
 	def set_TemplateId(self, TemplateId):  # String
 		self.add_query_param('TemplateId', TemplateId)
+	def get_PageNo(self): # Long
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self, PageNo):  # Long
+		self.add_query_param('PageNo', PageNo)
