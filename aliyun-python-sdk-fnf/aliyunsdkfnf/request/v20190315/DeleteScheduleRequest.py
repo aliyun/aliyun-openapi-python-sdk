@@ -24,7 +24,7 @@ class DeleteScheduleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'DeleteSchedule','fnf')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,11 +36,6 @@ class DeleteScheduleRequest(RpcRequest):
 
 	def set_ScheduleName(self, ScheduleName):  # String
 		self.add_query_param('ScheduleName', ScheduleName)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_FlowName(self): # String
 		return self.get_query_params().get('FlowName')
 

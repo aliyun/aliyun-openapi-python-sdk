@@ -41,11 +41,6 @@ class CreateFlowRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_RoleArn(self): # String
 		return self.get_body_params().get('RoleArn')
 

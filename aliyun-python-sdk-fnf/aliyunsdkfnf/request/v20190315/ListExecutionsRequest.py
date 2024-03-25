@@ -46,11 +46,6 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_Limit(self): # Integer
 		return self.get_query_params().get('Limit')
 

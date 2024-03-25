@@ -41,11 +41,6 @@ class ReportTaskFailedRequest(RpcRequest):
 
 	def set_Error(self, Error):  # String
 		self.add_body_params('Error', Error)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_TaskToken(self): # String
 		return self.get_query_params().get('TaskToken')
 

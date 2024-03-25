@@ -46,11 +46,6 @@ class StartExecutionRequest(RpcRequest):
 
 	def set_Input(self, Input):  # String
 		self.add_body_params('Input', Input)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_FlowName(self): # String
 		return self.get_body_params().get('FlowName')
 

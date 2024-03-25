@@ -36,11 +36,6 @@ class DescribeScheduleRequest(RpcRequest):
 
 	def set_ScheduleName(self, ScheduleName):  # String
 		self.add_query_param('ScheduleName', ScheduleName)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
 	def get_FlowName(self): # String
 		return self.get_query_params().get('FlowName')
 

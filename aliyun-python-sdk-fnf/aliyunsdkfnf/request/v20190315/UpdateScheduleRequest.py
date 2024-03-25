@@ -31,36 +31,31 @@ class UpdateScheduleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScheduleName(self): # String
-		return self.get_body_params().get('ScheduleName')
-
-	def set_ScheduleName(self, ScheduleName):  # String
-		self.add_body_params('ScheduleName', ScheduleName)
 	def get_CronExpression(self): # String
 		return self.get_body_params().get('CronExpression')
 
 	def set_CronExpression(self, CronExpression):  # String
 		self.add_body_params('CronExpression', CronExpression)
-	def get_Payload(self): # String
-		return self.get_body_params().get('Payload')
-
-	def set_Payload(self, Payload):  # String
-		self.add_body_params('Payload', Payload)
-	def get_RequestId(self): # String
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self, RequestId):  # String
-		self.add_query_param('RequestId', RequestId)
-	def get_Enable(self): # Boolean
-		return self.get_body_params().get('Enable')
-
-	def set_Enable(self, Enable):  # Boolean
-		self.add_body_params('Enable', Enable)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_ScheduleName(self): # String
+		return self.get_body_params().get('ScheduleName')
+
+	def set_ScheduleName(self, ScheduleName):  # String
+		self.add_body_params('ScheduleName', ScheduleName)
+	def get_Payload(self): # String
+		return self.get_body_params().get('Payload')
+
+	def set_Payload(self, Payload):  # String
+		self.add_body_params('Payload', Payload)
+	def get_Enable(self): # Boolean
+		return self.get_body_params().get('Enable')
+
+	def set_Enable(self, Enable):  # Boolean
+		self.add_body_params('Enable', Enable)
 	def get_FlowName(self): # String
 		return self.get_body_params().get('FlowName')
 
