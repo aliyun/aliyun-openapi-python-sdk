@@ -77,6 +77,11 @@ class CreateProjectRequest(RpcRequest):
 
 	def set_WorkerGradeId(self, WorkerGradeId):  # String
 		self.add_body_params('WorkerGradeId', WorkerGradeId)
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)
 	def get_CommonTransferConfig(self): # Struct
 		return self.get_body_params().get('CommonTransferConfig')
 

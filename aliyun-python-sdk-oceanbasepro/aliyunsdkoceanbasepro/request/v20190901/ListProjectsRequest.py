@@ -77,6 +77,11 @@ class ListProjectsRequest(RpcRequest):
 
 	def set_SortField(self, SortField):  # String
 		self.add_body_params('SortField', SortField)
+	def get_NeedRelatedInfo(self): # Boolean
+		return self.get_body_params().get('NeedRelatedInfo')
+
+	def set_NeedRelatedInfo(self, NeedRelatedInfo):  # Boolean
+		self.add_body_params('NeedRelatedInfo', NeedRelatedInfo)
 	def get_LabelIds(self): # Array
 		return self.get_body_params().get('LabelIds')
 

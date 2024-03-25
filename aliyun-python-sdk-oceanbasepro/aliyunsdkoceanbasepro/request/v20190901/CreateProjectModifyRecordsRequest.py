@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
-class DescribeOmsOpenAPIProjectRequest(RpcRequest):
+class CreateProjectModifyRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeOmsOpenAPIProject','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'CreateProjectModifyRecords','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,13 @@ class DescribeOmsOpenAPIProjectRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Integer
-		return self.get_body_params().get('PageNumber')
+	def get_Databases(self): # Array
+		return self.get_body_params().get('Databases')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_body_params('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
+	def set_Databases(self, Databases):  # Array
+		self.add_body_params("Databases", json.dumps(Databases))
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
-	def get_WorkerGradeId(self): # String
-		return self.get_body_params().get('WorkerGradeId')
-
-	def set_WorkerGradeId(self, WorkerGradeId):  # String
-		self.add_body_params('WorkerGradeId', WorkerGradeId)
-	def get_ProjectId(self): # String
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # String
-		self.add_body_params('ProjectId', ProjectId)
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)

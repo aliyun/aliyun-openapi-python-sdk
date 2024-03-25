@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class SearchOmsOpenAPIMonitorMetricRequest(RpcRequest):
+class DescribeDataBackupSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'SearchOmsOpenAPIMonitorMetric','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeDataBackupSet','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,43 +31,38 @@ class SearchOmsOpenAPIMonitorMetricRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndTime(self): # Long
-		return self.get_body_params().get('EndTime')
+	def get_StartTime(self): # String
+		return self.get_body_params().get('StartTime')
 
-	def set_EndTime(self, EndTime):  # Long
-		self.add_body_params('EndTime', EndTime)
-	def get_BeginTime(self): # Long
-		return self.get_body_params().get('BeginTime')
-
-	def set_BeginTime(self, BeginTime):  # Long
-		self.add_body_params('BeginTime', BeginTime)
-	def get_MaxPointNum(self): # Long
-		return self.get_body_params().get('MaxPointNum')
-
-	def set_MaxPointNum(self, MaxPointNum):  # Long
-		self.add_body_params('MaxPointNum', MaxPointNum)
+	def set_StartTime(self, StartTime):  # String
+		self.add_body_params('StartTime', StartTime)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_Metric(self): # String
-		return self.get_body_params().get('Metric')
-
-	def set_Metric(self, Metric):  # String
-		self.add_body_params('Metric', Metric)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_WorkerGradeId(self): # String
-		return self.get_body_params().get('WorkerGradeId')
+	def get_BackupObjectType(self): # String
+		return self.get_body_params().get('BackupObjectType')
 
-	def set_WorkerGradeId(self, WorkerGradeId):  # String
-		self.add_body_params('WorkerGradeId', WorkerGradeId)
-	def get_ProjectId(self): # String
-		return self.get_body_params().get('ProjectId')
+	def set_BackupObjectType(self, BackupObjectType):  # String
+		self.add_body_params('BackupObjectType', BackupObjectType)
+	def get_EndTime(self): # String
+		return self.get_body_params().get('EndTime')
 
-	def set_ProjectId(self, ProjectId):  # String
-		self.add_body_params('ProjectId', ProjectId)
+	def set_EndTime(self, EndTime):  # String
+		self.add_body_params('EndTime', EndTime)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
+	def get_Status(self): # String
+		return self.get_body_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_body_params('Status', Status)
