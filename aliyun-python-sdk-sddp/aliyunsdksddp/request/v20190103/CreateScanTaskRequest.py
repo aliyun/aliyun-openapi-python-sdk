@@ -56,6 +56,11 @@ class CreateScanTaskRequest(RpcRequest):
 
 	def set_RunMinute(self, RunMinute):  # Integer
 		self.add_query_param('RunMinute', RunMinute)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_IntervalDay(self): # Integer
 		return self.get_query_params().get('IntervalDay')
 
@@ -71,6 +76,11 @@ class CreateScanTaskRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_OssScanPath(self): # String
 		return self.get_query_params().get('OssScanPath')
 

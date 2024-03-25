@@ -36,6 +36,11 @@ class DescribeEventTypesRequest(RpcRequest):
 
 	def set_ResourceId(self, ResourceId):  # Integer
 		self.add_query_param('ResourceId', ResourceId)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_ParentTypeId(self): # Long
 		return self.get_query_params().get('ParentTypeId')
 

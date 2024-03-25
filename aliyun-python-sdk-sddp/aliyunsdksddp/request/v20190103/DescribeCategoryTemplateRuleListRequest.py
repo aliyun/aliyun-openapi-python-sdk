@@ -46,6 +46,11 @@ class DescribeCategoryTemplateRuleListRequest(RpcRequest):
 
 	def set_Lang(self, Lang):  # String
 		self.add_query_param('Lang', Lang)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

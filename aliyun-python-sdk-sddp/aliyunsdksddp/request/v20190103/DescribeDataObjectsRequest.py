@@ -81,6 +81,11 @@ class DescribeDataObjectsRequest(RpcRequest):
 
 	def set_ModelTagIds(self, ModelTagIds):  # String
 		self.add_query_param('ModelTagIds', ModelTagIds)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_FileCategoryCode(self): # Long
 		return self.get_query_params().get('FileCategoryCode')
 

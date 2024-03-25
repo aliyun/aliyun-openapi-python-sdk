@@ -81,6 +81,11 @@ class DescribeRulesRequest(RpcRequest):
 
 	def set_RuleType(self, RuleType):  # Integer
 		self.add_query_param('RuleType', RuleType)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 

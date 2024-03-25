@@ -36,6 +36,11 @@ class ModifyEventTypeStatusRequest(RpcRequest):
 
 	def set_SubTypeIds(self, SubTypeIds):  # String
 		self.add_query_param('SubTypeIds', SubTypeIds)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

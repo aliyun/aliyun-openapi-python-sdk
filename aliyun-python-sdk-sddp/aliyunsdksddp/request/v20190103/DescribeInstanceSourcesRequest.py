@@ -81,6 +81,11 @@ class DescribeInstanceSourcesRequest(RpcRequest):
 
 	def set_AuthStatus(self, AuthStatus):  # Integer
 		self.add_query_param('AuthStatus', AuthStatus)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 

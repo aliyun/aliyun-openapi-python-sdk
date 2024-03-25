@@ -36,6 +36,11 @@ class ExecDatamaskRequest(RpcRequest):
 
 	def set_Data(self, Data):  # String
 		self.add_query_param('Data', Data)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_TemplateId(self): # Long
 		return self.get_query_params().get('TemplateId')
 

@@ -36,6 +36,11 @@ class DisableUserConfigRequest(RpcRequest):
 
 	def set_Code(self, Code):  # String
 		self.add_query_param('Code', Code)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

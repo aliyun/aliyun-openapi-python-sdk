@@ -81,6 +81,11 @@ class DescribeDataLimitsRequest(RpcRequest):
 
 	def set_AuditStatus(self, AuditStatus):  # Integer
 		self.add_query_param('AuditStatus', AuditStatus)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 

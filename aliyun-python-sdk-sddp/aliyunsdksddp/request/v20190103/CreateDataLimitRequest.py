@@ -51,6 +51,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_Password(self, Password):  # String
 		self.add_query_param('Password', Password)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_Enable(self): # Integer
 		return self.get_query_params().get('Enable')
 
@@ -81,6 +86,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_AutoScan(self, AutoScan):  # Integer
 		self.add_query_param('AutoScan', AutoScan)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_LogStoreDay(self): # Integer
 		return self.get_query_params().get('LogStoreDay')
 

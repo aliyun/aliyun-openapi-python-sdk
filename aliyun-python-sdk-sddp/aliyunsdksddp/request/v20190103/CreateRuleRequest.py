@@ -61,6 +61,11 @@ class CreateRuleRequest(RpcRequest):
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_MatchType(self): # Integer
 		return self.get_query_params().get('MatchType')
 

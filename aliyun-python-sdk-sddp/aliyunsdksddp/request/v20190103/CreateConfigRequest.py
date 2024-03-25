@@ -41,6 +41,11 @@ class CreateConfigRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 
@@ -51,3 +56,8 @@ class CreateConfigRequest(RpcRequest):
 
 	def set_Value(self, Value):  # String
 		self.add_query_param('Value', Value)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)

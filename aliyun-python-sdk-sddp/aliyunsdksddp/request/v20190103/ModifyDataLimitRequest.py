@@ -82,6 +82,11 @@ class ModifyDataLimitRequest(RpcRequest):
 
 	def set_AutoScan(self, AutoScan):  # Integer
 		self.add_query_param('AutoScan', AutoScan)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_SecurityGroupIdLists(self): # RepeatList
 		return self.get_query_params().get('SecurityGroupIdList')
 
