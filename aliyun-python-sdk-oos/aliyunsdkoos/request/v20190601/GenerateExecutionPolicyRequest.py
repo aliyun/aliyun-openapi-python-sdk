@@ -31,6 +31,11 @@ class GenerateExecutionPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TemplateContent(self): # String
+		return self.get_query_params().get('TemplateContent')
+
+	def set_TemplateContent(self, TemplateContent):  # String
+		self.add_query_param('TemplateContent', TemplateContent)
 	def get_TemplateVersion(self): # String
 		return self.get_query_params().get('TemplateVersion')
 

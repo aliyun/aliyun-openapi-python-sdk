@@ -91,6 +91,11 @@ class ListTemplatesRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_IsFavorite(self): # Boolean
+		return self.get_query_params().get('IsFavorite')
+
+	def set_IsFavorite(self, IsFavorite):  # Boolean
+		self.add_query_param('IsFavorite', IsFavorite)
 	def get_TemplateFormat(self): # String
 		return self.get_query_params().get('TemplateFormat')
 

@@ -31,6 +31,11 @@ class DeleteApplicationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RetainResource(self): # Boolean
+		return self.get_query_params().get('RetainResource')
+
+	def set_RetainResource(self, RetainResource):  # Boolean
+		self.add_query_param('RetainResource', RetainResource)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

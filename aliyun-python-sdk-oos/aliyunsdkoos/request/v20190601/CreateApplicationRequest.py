@@ -62,3 +62,8 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ServiceId(self): # String
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self, ServiceId):  # String
+		self.add_query_param('ServiceId', ServiceId)
