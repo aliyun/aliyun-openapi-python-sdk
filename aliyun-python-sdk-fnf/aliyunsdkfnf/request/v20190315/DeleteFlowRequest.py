@@ -32,7 +32,7 @@ class DeleteFlowRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+		return self.get_body_params().get('Name')
 
 	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+		self.add_body_params('Name', Name)

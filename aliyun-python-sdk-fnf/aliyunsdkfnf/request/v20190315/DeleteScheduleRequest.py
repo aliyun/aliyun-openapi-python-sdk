@@ -32,12 +32,12 @@ class DeleteScheduleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ScheduleName(self): # String
-		return self.get_query_params().get('ScheduleName')
+		return self.get_body_params().get('ScheduleName')
 
 	def set_ScheduleName(self, ScheduleName):  # String
-		self.add_query_param('ScheduleName', ScheduleName)
+		self.add_body_params('ScheduleName', ScheduleName)
 	def get_FlowName(self): # String
-		return self.get_query_params().get('FlowName')
+		return self.get_body_params().get('FlowName')
 
 	def set_FlowName(self, FlowName):  # String
-		self.add_query_param('FlowName', FlowName)
+		self.add_body_params('FlowName', FlowName)
