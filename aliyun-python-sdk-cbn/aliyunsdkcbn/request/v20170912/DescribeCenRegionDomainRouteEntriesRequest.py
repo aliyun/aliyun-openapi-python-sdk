@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DescribeCenRegionDomainRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenRegionDomainRouteEntries')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenRegionDomainRouteEntries','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

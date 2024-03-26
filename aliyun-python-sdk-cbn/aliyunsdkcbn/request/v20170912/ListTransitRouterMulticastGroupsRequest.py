@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ListTransitRouterMulticastGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterMulticastGroups')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTransitRouterMulticastGroups','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

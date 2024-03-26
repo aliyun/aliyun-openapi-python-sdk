@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class EnableCenVbrHealthCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'EnableCenVbrHealthCheck','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class EnableCenVbrHealthCheckRequest(RpcRequest):
 
 	def set_HealthCheckTargetIp(self, HealthCheckTargetIp):  # String
 		self.add_query_param('HealthCheckTargetIp', HealthCheckTargetIp)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_HealthyThreshold(self): # Integer
 		return self.get_query_params().get('HealthyThreshold')
 

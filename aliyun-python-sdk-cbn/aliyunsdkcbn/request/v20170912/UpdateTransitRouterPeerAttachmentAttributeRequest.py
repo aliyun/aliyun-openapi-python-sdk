@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UpdateTransitRouterPeerAttachmentAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterPeerAttachmentAttribute')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterPeerAttachmentAttribute','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class UpdateTransitRouterPeerAttachmentAttributeRequest(RpcRequest):
 
 	def set_TransitRouterAttachmentName(self, TransitRouterAttachmentName):  # String
 		self.add_query_param('TransitRouterAttachmentName', TransitRouterAttachmentName)
+	def get_DefaultLinkType(self): # String
+		return self.get_query_params().get('DefaultLinkType')
+
+	def set_DefaultLinkType(self, DefaultLinkType):  # String
+		self.add_query_param('DefaultLinkType', DefaultLinkType)
 	def get_AutoPublishRouteEnabled(self): # Boolean
 		return self.get_query_params().get('AutoPublishRouteEnabled')
 

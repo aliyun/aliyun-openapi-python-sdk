@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UpdateTransitRouterVpcAttachmentZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterVpcAttachmentZones')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UpdateTransitRouterVpcAttachmentZones','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
