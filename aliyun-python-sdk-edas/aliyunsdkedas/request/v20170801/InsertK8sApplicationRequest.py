@@ -42,6 +42,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_Sidecars(self, Sidecars):  # String
 		self.add_query_param('Sidecars', Sidecars)
+	def get_CustomAgentVersion(self): # String
+		return self.get_query_params().get('CustomAgentVersion')
+
+	def set_CustomAgentVersion(self, CustomAgentVersion):  # String
+		self.add_query_param('CustomAgentVersion', CustomAgentVersion)
 	def get_IntranetSlbId(self): # String
 		return self.get_query_params().get('IntranetSlbId')
 
@@ -87,16 +92,31 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
+	def get_Startup(self): # String
+		return self.get_query_params().get('Startup')
+
+	def set_Startup(self, Startup):  # String
+		self.add_query_param('Startup', Startup)
 	def get_RequestsmCpu(self): # Integer
 		return self.get_query_params().get('RequestsmCpu')
 
 	def set_RequestsmCpu(self, RequestsmCpu):  # Integer
 		self.add_query_param('RequestsmCpu', RequestsmCpu)
+	def get_ImagePlatforms(self): # String
+		return self.get_query_params().get('ImagePlatforms')
+
+	def set_ImagePlatforms(self, ImagePlatforms):  # String
+		self.add_query_param('ImagePlatforms', ImagePlatforms)
 	def get_DeployAcrossZones(self): # String
 		return self.get_query_params().get('DeployAcrossZones')
 
 	def set_DeployAcrossZones(self, DeployAcrossZones):  # String
 		self.add_query_param('DeployAcrossZones', DeployAcrossZones)
+	def get_TerminateGracePeriod(self): # Integer
+		return self.get_query_params().get('TerminateGracePeriod')
+
+	def set_TerminateGracePeriod(self, TerminateGracePeriod):  # Integer
+		self.add_query_param('TerminateGracePeriod', TerminateGracePeriod)
 	def get_IntranetSlbPort(self): # Integer
 		return self.get_query_params().get('IntranetSlbPort')
 
@@ -327,6 +347,11 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_MountDescs(self, MountDescs):  # String
 		self.add_query_param('MountDescs', MountDescs)
+	def get_FeatureConfig(self): # String
+		return self.get_query_params().get('FeatureConfig')
+
+	def set_FeatureConfig(self, FeatureConfig):  # String
+		self.add_query_param('FeatureConfig', FeatureConfig)
 	def get_Replicas(self): # Integer
 		return self.get_query_params().get('Replicas')
 

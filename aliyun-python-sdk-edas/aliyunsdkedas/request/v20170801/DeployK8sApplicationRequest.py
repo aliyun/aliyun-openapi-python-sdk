@@ -42,6 +42,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_Sidecars(self, Sidecars):  # String
 		self.add_query_param('Sidecars', Sidecars)
+	def get_CustomAgentVersion(self): # String
+		return self.get_query_params().get('CustomAgentVersion')
+
+	def set_CustomAgentVersion(self, CustomAgentVersion):  # String
+		self.add_query_param('CustomAgentVersion', CustomAgentVersion)
 	def get_PackageVersionId(self): # String
 		return self.get_query_params().get('PackageVersionId')
 
@@ -82,11 +87,21 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_ConfigMountDescs(self, ConfigMountDescs):  # String
 		self.add_query_param('ConfigMountDescs', ConfigMountDescs)
+	def get_Startup(self): # String
+		return self.get_query_params().get('Startup')
+
+	def set_Startup(self, Startup):  # String
+		self.add_query_param('Startup', Startup)
 	def get_MemoryLimit(self): # Integer
 		return self.get_query_params().get('MemoryLimit')
 
 	def set_MemoryLimit(self, MemoryLimit):  # Integer
 		self.add_query_param('MemoryLimit', MemoryLimit)
+	def get_ImagePlatforms(self): # String
+		return self.get_query_params().get('ImagePlatforms')
+
+	def set_ImagePlatforms(self, ImagePlatforms):  # String
+		self.add_query_param('ImagePlatforms', ImagePlatforms)
 	def get_ImageTag(self): # String
 		return self.get_query_params().get('ImageTag')
 
@@ -97,6 +112,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_DeployAcrossZones(self, DeployAcrossZones):  # String
 		self.add_query_param('DeployAcrossZones', DeployAcrossZones)
+	def get_TerminateGracePeriod(self): # Integer
+		return self.get_query_params().get('TerminateGracePeriod')
+
+	def set_TerminateGracePeriod(self, TerminateGracePeriod):  # Integer
+		self.add_query_param('TerminateGracePeriod', TerminateGracePeriod)
 	def get_DeployAcrossNodes(self): # String
 		return self.get_query_params().get('DeployAcrossNodes')
 
@@ -167,6 +187,11 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_LosslessRuleFuncType(self, LosslessRuleFuncType):  # Integer
 		self.add_query_param('LosslessRuleFuncType', LosslessRuleFuncType)
+	def get_CanaryRuleId(self): # String
+		return self.get_query_params().get('CanaryRuleId')
+
+	def set_CanaryRuleId(self, CanaryRuleId):  # String
+		self.add_query_param('CanaryRuleId', CanaryRuleId)
 	def get_EmptyDirs(self): # String
 		return self.get_query_params().get('EmptyDirs')
 
