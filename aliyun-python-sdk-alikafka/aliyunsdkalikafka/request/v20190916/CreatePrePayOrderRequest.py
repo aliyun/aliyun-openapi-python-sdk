@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalikafka.endpoint import endpoint_data
+import json
 
 class CreatePrePayOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'CreatePrePayOrder')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'CreatePrePayOrder','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +42,11 @@ class CreatePrePayOrderRequest(RpcRequest):
 
 	def set_EipMax(self, EipMax):  # Integer
 		self.add_query_param('EipMax', EipMax)
+	def get_Duration(self): # Integer
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self, Duration):  # Integer
+		self.add_query_param('Duration', Duration)
 	def get_SpecType(self): # String
 		return self.get_query_params().get('SpecType')
 
@@ -51,6 +57,11 @@ class CreatePrePayOrderRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ConfluentConfig(self): # Struct
+		return self.get_query_params().get('ConfluentConfig')
+
+	def set_ConfluentConfig(self, ConfluentConfig):  # Struct
+		self.add_query_param("ConfluentConfig", json.dumps(ConfluentConfig))
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -65,6 +76,11 @@ class CreatePrePayOrderRequest(RpcRequest):
 
 	def set_PartitionNum(self, PartitionNum):  # Integer
 		self.add_query_param('PartitionNum', PartitionNum)
+	def get_PaidType(self): # Integer
+		return self.get_query_params().get('PaidType')
+
+	def set_PaidType(self, PaidType):  # Integer
+		self.add_query_param('PaidType', PaidType)
 	def get_DiskSize(self): # Integer
 		return self.get_query_params().get('DiskSize')
 

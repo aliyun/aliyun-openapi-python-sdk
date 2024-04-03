@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class GetTopicListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetTopicList')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetTopicList','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

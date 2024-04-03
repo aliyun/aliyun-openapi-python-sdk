@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class DescribeAclsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'DescribeAcls')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'DescribeAcls','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class DescribeAclsRequest(RpcRequest):
 
 	def set_AclResourceType(self, AclResourceType):  # String
 		self.add_query_param('AclResourceType', AclResourceType)
+	def get_AclOperationType(self): # String
+		return self.get_query_params().get('AclOperationType')
+
+	def set_AclOperationType(self, AclOperationType):  # String
+		self.add_query_param('AclOperationType', AclOperationType)
 	def get_AclResourceName(self): # String
 		return self.get_query_params().get('AclResourceName')
 
@@ -51,6 +56,16 @@ class DescribeAclsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Host(self): # String
+		return self.get_query_params().get('Host')
+
+	def set_Host(self, Host):  # String
+		self.add_query_param('Host', Host)
+	def get_AclPermissionType(self): # String
+		return self.get_query_params().get('AclPermissionType')
+
+	def set_AclPermissionType(self, AclPermissionType):  # String
+		self.add_query_param('AclPermissionType', AclPermissionType)
 	def get_Username(self): # String
 		return self.get_query_params().get('Username')
 

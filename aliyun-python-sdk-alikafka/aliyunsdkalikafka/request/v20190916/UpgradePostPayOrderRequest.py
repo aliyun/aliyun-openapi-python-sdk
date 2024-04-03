@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalikafka.endpoint import endpoint_data
+import json
 
 class UpgradePostPayOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpgradePostPayOrder')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpgradePostPayOrder','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +32,11 @@ class UpgradePostPayOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ServerlessConfig(self): # Struct
+		return self.get_query_params().get('ServerlessConfig')
+
+	def set_ServerlessConfig(self, ServerlessConfig):  # Struct
+		self.add_query_param("ServerlessConfig", json.dumps(ServerlessConfig))
 	def get_DiskSize(self): # Integer
 		return self.get_query_params().get('DiskSize')
 

@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class DeleteSaslUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'DeleteSaslUser')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'DeleteSaslUser','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class DeleteSaslUserRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Mechanism(self): # String
+		return self.get_query_params().get('Mechanism')
+
+	def set_Mechanism(self, Mechanism):  # String
+		self.add_query_param('Mechanism', Mechanism)
 	def get_Username(self): # String
 		return self.get_query_params().get('Username')
 

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalikafka.endpoint import endpoint_data
+import json
 
 class UpgradePrePayOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpgradePrePayOrder')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpgradePrePayOrder','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +32,6 @@ class UpgradePrePayOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DiskSize(self): # Integer
-		return self.get_query_params().get('DiskSize')
-
-	def set_DiskSize(self, DiskSize):  # Integer
-		self.add_query_param('DiskSize', DiskSize)
 	def get_IoMax(self): # Integer
 		return self.get_query_params().get('IoMax')
 
@@ -46,16 +42,6 @@ class UpgradePrePayOrderRequest(RpcRequest):
 
 	def set_EipModel(self, EipModel):  # Boolean
 		self.add_query_param('EipModel', EipModel)
-	def get_IoMaxSpec(self): # String
-		return self.get_query_params().get('IoMaxSpec')
-
-	def set_IoMaxSpec(self, IoMaxSpec):  # String
-		self.add_query_param('IoMaxSpec', IoMaxSpec)
-	def get_TopicQuota(self): # Integer
-		return self.get_query_params().get('TopicQuota')
-
-	def set_TopicQuota(self, TopicQuota):  # Integer
-		self.add_query_param('TopicQuota', TopicQuota)
 	def get_EipMax(self): # Integer
 		return self.get_query_params().get('EipMax')
 
@@ -66,13 +52,38 @@ class UpgradePrePayOrderRequest(RpcRequest):
 
 	def set_SpecType(self, SpecType):  # String
 		self.add_query_param('SpecType', SpecType)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_ConfluentConfig(self): # Struct
+		return self.get_query_params().get('ConfluentConfig')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_ConfluentConfig(self, ConfluentConfig):  # Struct
+		self.add_query_param("ConfluentConfig", json.dumps(ConfluentConfig))
 	def get_PartitionNum(self): # Integer
 		return self.get_query_params().get('PartitionNum')
 
 	def set_PartitionNum(self, PartitionNum):  # Integer
 		self.add_query_param('PartitionNum', PartitionNum)
+	def get_PaidType(self): # Integer
+		return self.get_query_params().get('PaidType')
+
+	def set_PaidType(self, PaidType):  # Integer
+		self.add_query_param('PaidType', PaidType)
+	def get_DiskSize(self): # Integer
+		return self.get_query_params().get('DiskSize')
+
+	def set_DiskSize(self, DiskSize):  # Integer
+		self.add_query_param('DiskSize', DiskSize)
+	def get_IoMaxSpec(self): # String
+		return self.get_query_params().get('IoMaxSpec')
+
+	def set_IoMaxSpec(self, IoMaxSpec):  # String
+		self.add_query_param('IoMaxSpec', IoMaxSpec)
+	def get_TopicQuota(self): # Integer
+		return self.get_query_params().get('TopicQuota')
+
+	def set_TopicQuota(self, TopicQuota):  # Integer
+		self.add_query_param('TopicQuota', TopicQuota)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

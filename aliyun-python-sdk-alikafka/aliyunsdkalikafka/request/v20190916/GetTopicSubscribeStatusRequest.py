@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalikafka.endpoint import endpoint_data
 
-class GetConsumerListRequest(RpcRequest):
+class GetTopicSubscribeStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetConsumerList','alikafka')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetTopicSubscribeStatus','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,13 @@ class GetConsumerListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConsumerId(self): # String
-		return self.get_query_params().get('ConsumerId')
-
-	def set_ConsumerId(self, ConsumerId):  # String
-		self.add_query_param('ConsumerId', ConsumerId)
-	def get_CurrentPage(self): # Integer
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Integer
-		self.add_query_param('CurrentPage', CurrentPage)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_Topic(self): # String
+		return self.get_query_params().get('Topic')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_Topic(self, Topic):  # String
+		self.add_query_param('Topic', Topic)

@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class StartInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'StartInstance')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'StartInstance','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class StartInstanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_VSwitchIdss(self): # RepeatList
+		return self.get_query_params().get('VSwitchIds')
+
+	def set_VSwitchIdss(self, VSwitchIds):  # RepeatList
+		for depth1 in range(len(VSwitchIds)):
+			self.add_query_param('VSwitchIds.' + str(depth1 + 1), VSwitchIds[depth1])
 	def get_SelectedZones(self): # String
 		return self.get_query_params().get('SelectedZones')
 
@@ -91,6 +97,11 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_CrossZone(self): # Boolean
+		return self.get_query_params().get('CrossZone')
+
+	def set_CrossZone(self, CrossZone):  # Boolean
+		self.add_query_param('CrossZone', CrossZone)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

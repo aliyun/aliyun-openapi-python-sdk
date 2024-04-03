@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class ModifyTopicRemarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'ModifyTopicRemark')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'ModifyTopicRemark','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ModifyTopicRemarkRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -41,8 +46,3 @@ class ModifyTopicRemarkRequest(RpcRequest):
 
 	def set_Topic(self, Topic):  # String
 		self.add_query_param('Topic', Topic)
-	def get_Remark(self): # String
-		return self.get_query_params().get('Remark')
-
-	def set_Remark(self, Remark):  # String
-		self.add_query_param('Remark', Remark)

@@ -23,7 +23,7 @@ from aliyunsdkalikafka.endpoint import endpoint_data
 class GetConsumerProgressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetConsumerProgress')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'GetConsumerProgress','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

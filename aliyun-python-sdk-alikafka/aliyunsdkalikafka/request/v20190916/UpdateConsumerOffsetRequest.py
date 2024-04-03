@@ -24,7 +24,7 @@ import json
 class UpdateConsumerOffsetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpdateConsumerOffset')
+		RpcRequest.__init__(self, 'alikafka', '2019-09-16', 'UpdateConsumerOffset','alikafka')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
