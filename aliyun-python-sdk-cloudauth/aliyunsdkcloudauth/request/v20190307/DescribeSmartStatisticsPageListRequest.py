@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeDeviceInfoRequest(RpcRequest):
+class DescribeSmartStatisticsPageListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeDeviceInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeSmartStatisticsPageList','cloudauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,33 @@ class DescribeDeviceInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserDeviceId(self): # String
-		return self.get_query_params().get('UserDeviceId')
+	def get_StartDate(self): # String
+		return self.get_query_params().get('StartDate')
 
-	def set_UserDeviceId(self, UserDeviceId):  # String
-		self.add_query_param('UserDeviceId', UserDeviceId)
-	def get_PageSize(self): # Integer
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_PageSize(self): # String
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
-	def get_ExpiredStartDay(self): # String
-		return self.get_query_params().get('ExpiredStartDay')
-
-	def set_ExpiredStartDay(self, ExpiredStartDay):  # String
-		self.add_query_param('ExpiredStartDay', ExpiredStartDay)
-	def get_CurrentPage(self): # Integer
+	def get_CurrentPage(self): # String
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # Integer
+	def set_CurrentPage(self, CurrentPage):  # String
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_DeviceId(self): # String
-		return self.get_query_params().get('DeviceId')
+	def get_EndDate(self): # String
+		return self.get_query_params().get('EndDate')
 
-	def set_DeviceId(self, DeviceId):  # String
-		self.add_query_param('DeviceId', DeviceId)
-	def get_BizType(self): # String
-		return self.get_query_params().get('BizType')
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)
+	def get_ServiceCode(self): # String
+		return self.get_query_params().get('ServiceCode')
 
-	def set_BizType(self, BizType):  # String
-		self.add_query_param('BizType', BizType)
-	def get_ExpiredEndDay(self): # String
-		return self.get_query_params().get('ExpiredEndDay')
+	def set_ServiceCode(self, ServiceCode):  # String
+		self.add_query_param('ServiceCode', ServiceCode)
+	def get_SceneId(self): # String
+		return self.get_query_params().get('SceneId')
 
-	def set_ExpiredEndDay(self, ExpiredEndDay):  # String
-		self.add_query_param('ExpiredEndDay', ExpiredEndDay)
+	def set_SceneId(self, SceneId):  # String
+		self.add_query_param('SceneId', SceneId)

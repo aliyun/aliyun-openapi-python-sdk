@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeFaceVerifyRequest(RpcRequest):
+class DescribePageFaceVerifyDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribePageFaceVerifyData','cloudauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,33 @@ class DescribeFaceVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CertifyId(self): # String
-		return self.get_query_params().get('CertifyId')
+	def get_ProductCode(self): # String
+		return self.get_query_params().get('ProductCode')
 
-	def set_CertifyId(self, CertifyId):  # String
-		self.add_query_param('CertifyId', CertifyId)
-	def get_PictureReturnType(self): # String
-		return self.get_query_params().get('PictureReturnType')
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_CurrentPage(self): # Long
+		return self.get_query_params().get('CurrentPage')
 
-	def set_PictureReturnType(self, PictureReturnType):  # String
-		self.add_query_param('PictureReturnType', PictureReturnType)
+	def set_CurrentPage(self, CurrentPage):  # Long
+		self.add_query_param('CurrentPage', CurrentPage)
+	def get_StartDate(self): # String
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self, StartDate):  # String
+		self.add_query_param('StartDate', StartDate)
+	def get_EndDate(self): # String
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self, EndDate):  # String
+		self.add_query_param('EndDate', EndDate)
 	def get_SceneId(self): # Long
 		return self.get_query_params().get('SceneId')
 
 	def set_SceneId(self, SceneId):  # Long
 		self.add_query_param('SceneId', SceneId)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)

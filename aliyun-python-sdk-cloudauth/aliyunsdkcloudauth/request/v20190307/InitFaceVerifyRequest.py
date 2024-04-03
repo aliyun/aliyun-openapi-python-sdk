@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class InitFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitFaceVerify')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitFaceVerify','cloudauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class InitFaceVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Birthday(self): # String
+		return self.get_query_params().get('Birthday')
+
+	def set_Birthday(self, Birthday):  # String
+		self.add_query_param('Birthday', Birthday)
 	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
@@ -41,6 +46,21 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_FaceContrastPicture(self, FaceContrastPicture):  # String
 		self.add_body_params('FaceContrastPicture', FaceContrastPicture)
+	def get_ReadImg(self): # String
+		return self.get_query_params().get('ReadImg')
+
+	def set_ReadImg(self, ReadImg):  # String
+		self.add_query_param('ReadImg', ReadImg)
+	def get_RarelyCharacters(self): # String
+		return self.get_query_params().get('RarelyCharacters')
+
+	def set_RarelyCharacters(self, RarelyCharacters):  # String
+		self.add_query_param('RarelyCharacters', RarelyCharacters)
+	def get_VoluntaryCustomizedContent(self): # String
+		return self.get_query_params().get('VoluntaryCustomizedContent')
+
+	def set_VoluntaryCustomizedContent(self, VoluntaryCustomizedContent):  # String
+		self.add_query_param('VoluntaryCustomizedContent', VoluntaryCustomizedContent)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
@@ -56,6 +76,11 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_EncryptType(self, EncryptType):  # String
 		self.add_query_param('EncryptType', EncryptType)
+	def get_Mode(self): # String
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self, Mode):  # String
+		self.add_query_param('Mode', Mode)
 	def get_CertNo(self): # String
 		return self.get_query_params().get('CertNo')
 
@@ -81,6 +106,16 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_Model(self, Model):  # String
 		self.add_body_params('Model', Model)
+	def get_SuitableType(self): # String
+		return self.get_query_params().get('SuitableType')
+
+	def set_SuitableType(self, SuitableType):  # String
+		self.add_query_param('SuitableType', SuitableType)
+	def get_CertifyUrlStyle(self): # String
+		return self.get_query_params().get('CertifyUrlStyle')
+
+	def set_CertifyUrlStyle(self, CertifyUrlStyle):  # String
+		self.add_query_param('CertifyUrlStyle', CertifyUrlStyle)
 	def get_MetaInfo(self): # String
 		return self.get_query_params().get('MetaInfo')
 
@@ -91,6 +126,11 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_OssObjectName(self, OssObjectName):  # String
 		self.add_query_param('OssObjectName', OssObjectName)
+	def get_ValidityDate(self): # String
+		return self.get_query_params().get('ValidityDate')
+
+	def set_ValidityDate(self, ValidityDate):  # String
+		self.add_query_param('ValidityDate', ValidityDate)
 	def get_CertName(self): # String
 		return self.get_query_params().get('CertName')
 
@@ -106,11 +146,21 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_Mobile(self, Mobile):  # String
 		self.add_query_param('Mobile', Mobile)
+	def get_FaceGuardOutput(self): # String
+		return self.get_query_params().get('FaceGuardOutput')
+
+	def set_FaceGuardOutput(self, FaceGuardOutput):  # String
+		self.add_query_param('FaceGuardOutput', FaceGuardOutput)
 	def get_AuthId(self): # String
 		return self.get_body_params().get('AuthId')
 
 	def set_AuthId(self, AuthId):  # String
 		self.add_body_params('AuthId', AuthId)
+	def get_ProcedurePriority(self): # String
+		return self.get_query_params().get('ProcedurePriority')
+
+	def set_ProcedurePriority(self, ProcedurePriority):  # String
+		self.add_query_param('ProcedurePriority', ProcedurePriority)
 	def get_SceneId(self): # Long
 		return self.get_query_params().get('SceneId')
 
