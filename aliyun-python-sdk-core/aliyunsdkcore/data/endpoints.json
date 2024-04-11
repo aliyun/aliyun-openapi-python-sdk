@@ -427,8 +427,8 @@
       "cn-shanghai": "r-kvstore.aliyuncs.com",
       "cn-shenzhen": "r-kvstore.aliyuncs.com",
       "eu-west-1": "r-kvstore.eu-west-1.aliyuncs.com",
-      "us-west-1": "r-kvstore.aliyuncs.com",
-      "us-east-1": "r-kvstore.aliyuncs.com"
+      "us-west-1": "r-kvstore.us-west-1.aliyuncs.com",
+      "us-east-1": "r-kvstore.us-east-1.aliyuncs.com"
     },
     "codepipeline": {
       "cn-beijing": "cds.cn-beijing.aliyuncs.com"
