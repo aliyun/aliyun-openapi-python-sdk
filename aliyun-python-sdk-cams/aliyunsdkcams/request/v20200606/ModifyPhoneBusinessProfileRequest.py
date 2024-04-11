@@ -37,6 +37,11 @@ class ModifyPhoneBusinessProfileRequest(RpcRequest):
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
 		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_About(self): # String
+		return self.get_query_params().get('About')
+
+	def set_About(self, About):  # String
+		self.add_query_param('About', About)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 

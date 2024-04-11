@@ -57,6 +57,11 @@ class ModifyChatappTemplateRequest(RpcRequest):
 
 	def set_TemplateType(self, TemplateType):  # String
 		self.add_body_params('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
+		return self.get_body_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_body_params('TemplateName', TemplateName)
 	def get_IsvCode(self): # String
 		return self.get_body_params().get('IsvCode')
 

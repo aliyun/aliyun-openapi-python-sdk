@@ -1,3 +1,6 @@
+2024-04-11 Version: 1.0.9
+- Generated 2020-06-06 for `cams`.
+
 2023-10-19 Version: 1.0.8
 - Coupon template
 - Carousel template

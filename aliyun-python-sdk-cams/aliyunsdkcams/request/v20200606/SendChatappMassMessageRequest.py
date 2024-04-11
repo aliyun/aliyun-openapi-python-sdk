@@ -62,6 +62,11 @@ class SendChatappMassMessageRequest(RpcRequest):
 
 	def set_From(self, _From):  # String
 		self.add_body_params('From', _From)
+	def get_TemplateName(self): # String
+		return self.get_body_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_body_params('TemplateName', TemplateName)
 	def get_Tag(self): # String
 		return self.get_body_params().get('Tag')
 

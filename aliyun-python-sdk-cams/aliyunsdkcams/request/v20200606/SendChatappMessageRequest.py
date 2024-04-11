@@ -32,26 +32,11 @@ class SendChatappMessageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProductAction(self): # Struct
-		return self.get_body_params().get('ProductAction')
-
-	def set_ProductAction(self, ProductAction):  # Struct
-		self.add_body_params("ProductAction", json.dumps(ProductAction))
-	def get_MessageType(self): # String
-		return self.get_body_params().get('MessageType')
-
-	def set_MessageType(self, MessageType):  # String
-		self.add_body_params('MessageType', MessageType)
 	def get_Language(self): # String
 		return self.get_body_params().get('Language')
 
 	def set_Language(self, Language):  # String
 		self.add_body_params('Language', Language)
-	def get_CustWabaId(self): # String
-		return self.get_body_params().get('CustWabaId')
-
-	def set_CustWabaId(self, CustWabaId):  # String
-		self.add_body_params('CustWabaId', CustWabaId)
 	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
@@ -62,26 +47,11 @@ class SendChatappMessageRequest(RpcRequest):
 
 	def set_FallBackContent(self, FallBackContent):  # String
 		self.add_body_params('FallBackContent', FallBackContent)
-	def get_Content(self): # String
-		return self.get_query_params().get('Content')
-
-	def set_Content(self, Content):  # String
-		self.add_query_param('Content', Content)
-	def get_TemplateParams(self): # Map
-		return self.get_body_params().get('TemplateParams')
-
-	def set_TemplateParams(self, TemplateParams):  # Map
-		self.add_body_params("TemplateParams", json.dumps(TemplateParams))
 	def get_Payload(self): # Array
 		return self.get_query_params().get('Payload')
 
 	def set_Payload(self, Payload):  # Array
 		self.add_query_param("Payload", json.dumps(Payload))
-	def get_ChannelType(self): # String
-		return self.get_body_params().get('ChannelType')
-
-	def set_ChannelType(self, ChannelType):  # String
-		self.add_body_params('ChannelType', ChannelType)
 	def get_From(self): # String
 		return self.get_body_params().get('From')
 
@@ -97,11 +67,11 @@ class SendChatappMessageRequest(RpcRequest):
 
 	def set_FallBackRule(self, FallBackRule):  # String
 		self.add_body_params('FallBackRule', FallBackRule)
-	def get_TrackingData(self): # String
-		return self.get_body_params().get('TrackingData')
+	def get_FlowAction(self): # Struct
+		return self.get_body_params().get('FlowAction')
 
-	def set_TrackingData(self, TrackingData):  # String
-		self.add_body_params('TrackingData', TrackingData)
+	def set_FlowAction(self, FlowAction):  # Struct
+		self.add_body_params("FlowAction", json.dumps(FlowAction))
 	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
@@ -112,6 +82,56 @@ class SendChatappMessageRequest(RpcRequest):
 
 	def set_IsvCode(self, IsvCode):  # String
 		self.add_body_params('IsvCode', IsvCode)
+	def get_CustSpaceId(self): # String
+		return self.get_body_params().get('CustSpaceId')
+
+	def set_CustSpaceId(self, CustSpaceId):  # String
+		self.add_body_params('CustSpaceId', CustSpaceId)
+	def get_TemplateCode(self): # String
+		return self.get_body_params().get('TemplateCode')
+
+	def set_TemplateCode(self, TemplateCode):  # String
+		self.add_body_params('TemplateCode', TemplateCode)
+	def get_ProductAction(self): # Struct
+		return self.get_body_params().get('ProductAction')
+
+	def set_ProductAction(self, ProductAction):  # Struct
+		self.add_body_params("ProductAction", json.dumps(ProductAction))
+	def get_MessageType(self): # String
+		return self.get_body_params().get('MessageType')
+
+	def set_MessageType(self, MessageType):  # String
+		self.add_body_params('MessageType', MessageType)
+	def get_CustWabaId(self): # String
+		return self.get_body_params().get('CustWabaId')
+
+	def set_CustWabaId(self, CustWabaId):  # String
+		self.add_body_params('CustWabaId', CustWabaId)
+	def get_Content(self): # String
+		return self.get_query_params().get('Content')
+
+	def set_Content(self, Content):  # String
+		self.add_query_param('Content', Content)
+	def get_TemplateParams(self): # Map
+		return self.get_body_params().get('TemplateParams')
+
+	def set_TemplateParams(self, TemplateParams):  # Map
+		self.add_body_params("TemplateParams", json.dumps(TemplateParams))
+	def get_ChannelType(self): # String
+		return self.get_body_params().get('ChannelType')
+
+	def set_ChannelType(self, ChannelType):  # String
+		self.add_body_params('ChannelType', ChannelType)
+	def get_TemplateName(self): # String
+		return self.get_body_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_body_params('TemplateName', TemplateName)
+	def get_TrackingData(self): # String
+		return self.get_body_params().get('TrackingData')
+
+	def set_TrackingData(self, TrackingData):  # String
+		self.add_body_params('TrackingData', TrackingData)
 	def get_ContextMessageId(self): # String
 		return self.get_body_params().get('ContextMessageId')
 
@@ -137,18 +157,8 @@ class SendChatappMessageRequest(RpcRequest):
 
 	def set_FallBackDuration(self, FallBackDuration):  # Integer
 		self.add_body_params('FallBackDuration', FallBackDuration)
-	def get_CustSpaceId(self): # String
-		return self.get_body_params().get('CustSpaceId')
-
-	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_body_params('CustSpaceId', CustSpaceId)
 	def get_To(self): # String
 		return self.get_body_params().get('To')
 
 	def set_To(self, To):  # String
 		self.add_body_params('To', To)
-	def get_TemplateCode(self): # String
-		return self.get_body_params().get('TemplateCode')
-
-	def set_TemplateCode(self, TemplateCode):  # String
-		self.add_body_params('TemplateCode', TemplateCode)

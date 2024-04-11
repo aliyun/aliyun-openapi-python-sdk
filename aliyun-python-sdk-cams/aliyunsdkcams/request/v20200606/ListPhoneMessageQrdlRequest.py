@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
 
-class QueryChatappPhoneNumbersRequest(RpcRequest):
+class ListPhoneMessageQrdlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryChatappPhoneNumbers','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListPhoneMessageQrdl','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,13 @@ class QueryChatappPhoneNumbersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsvCode(self): # String
-		return self.get_query_params().get('IsvCode')
+	def get_PhoneNumber(self): # String
+		return self.get_body_params().get('PhoneNumber')
 
-	def set_IsvCode(self, IsvCode):  # String
-		self.add_query_param('IsvCode', IsvCode)
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_body_params('PhoneNumber', PhoneNumber)
 	def get_CustSpaceId(self): # String
-		return self.get_query_params().get('CustSpaceId')
+		return self.get_body_params().get('CustSpaceId')
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_query_param('CustSpaceId', CustSpaceId)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+		self.add_body_params('CustSpaceId', CustSpaceId)

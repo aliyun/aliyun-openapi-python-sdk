@@ -36,6 +36,21 @@ class DeleteChatappTemplateRequest(RpcRequest):
 
 	def set_CustWabaId(self, CustWabaId):  # String
 		self.add_query_param('CustWabaId', CustWabaId)
+	def get_Language(self): # String
+		return self.get_query_params().get('Language')
+
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
+	def get_TemplateType(self): # String
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self, TemplateType):  # String
+		self.add_query_param('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
+		return self.get_query_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
 	def get_IsvCode(self): # String
 		return self.get_query_params().get('IsvCode')
 

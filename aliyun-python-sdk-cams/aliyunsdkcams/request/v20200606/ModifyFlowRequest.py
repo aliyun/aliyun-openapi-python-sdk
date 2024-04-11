@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
+import json
 
-class QueryChatappPhoneNumbersRequest(RpcRequest):
+class ModifyFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryChatappPhoneNumbers','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ModifyFlow','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +32,23 @@ class QueryChatappPhoneNumbersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsvCode(self): # String
-		return self.get_query_params().get('IsvCode')
+	def get_Categories(self): # Array
+		return self.get_body_params().get('Categories')
 
-	def set_IsvCode(self, IsvCode):  # String
-		self.add_query_param('IsvCode', IsvCode)
+	def set_Categories(self, Categories):  # Array
+		self.add_body_params("Categories", json.dumps(Categories))
 	def get_CustSpaceId(self): # String
-		return self.get_query_params().get('CustSpaceId')
+		return self.get_body_params().get('CustSpaceId')
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_query_param('CustSpaceId', CustSpaceId)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
+		self.add_body_params('CustSpaceId', CustSpaceId)
+	def get_FlowName(self): # String
+		return self.get_body_params().get('FlowName')
 
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_FlowName(self, FlowName):  # String
+		self.add_body_params('FlowName', FlowName)
+	def get_FlowId(self): # String
+		return self.get_body_params().get('FlowId')
+
+	def set_FlowId(self, FlowId):  # String
+		self.add_body_params('FlowId', FlowId)

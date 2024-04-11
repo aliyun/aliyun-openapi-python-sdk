@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
 
-class QueryChatappPhoneNumbersRequest(RpcRequest):
+class ListFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryChatappPhoneNumbers','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListFlow','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,31 @@ class QueryChatappPhoneNumbersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsvCode(self): # String
-		return self.get_query_params().get('IsvCode')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_IsvCode(self, IsvCode):  # String
-		self.add_query_param('IsvCode', IsvCode)
-	def get_CustSpaceId(self): # String
-		return self.get_query_params().get('CustSpaceId')
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
 
-	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_query_param('CustSpaceId', CustSpaceId)
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PageNo(self): # Long
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self, PageNo):  # Long
+		self.add_query_param('PageNo', PageNo)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

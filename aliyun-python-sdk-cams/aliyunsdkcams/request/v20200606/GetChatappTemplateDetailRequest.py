@@ -46,6 +46,11 @@ class GetChatappTemplateDetailRequest(RpcRequest):
 
 	def set_TemplateType(self, TemplateType):  # String
 		self.add_query_param('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
+		return self.get_query_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
 	def get_IsvCode(self): # String
 		return self.get_query_params().get('IsvCode')
 
