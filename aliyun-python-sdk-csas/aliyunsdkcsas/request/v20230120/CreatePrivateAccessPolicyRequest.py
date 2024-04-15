@@ -49,6 +49,11 @@ class CreatePrivateAccessPolicyRequest(RpcRequest):
 	def set_TagIds(self, TagIds):  # Array
 		for index1, value1 in enumerate(TagIds):
 			self.add_body_params('TagIds.' + str(index1 + 1), value1)
+	def get_DeviceAttributeId(self): # String
+		return self.get_body_params().get('DeviceAttributeId')
+
+	def set_DeviceAttributeId(self, DeviceAttributeId):  # String
+		self.add_body_params('DeviceAttributeId', DeviceAttributeId)
 	def get_UserGroupIds(self): # Array
 		return self.get_body_params().get('UserGroupIds')
 

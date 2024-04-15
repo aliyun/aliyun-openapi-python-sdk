@@ -31,6 +31,11 @@ class ListPrivateAccessPolicesRequest(RpcRequest):
 	def set_PolicyIds(self, PolicyIds):  # Array
 		for index1, value1 in enumerate(PolicyIds):
 			self.add_query_param('PolicyIds.' + str(index1 + 1), value1)
+	def get_TagName(self): # String
+		return self.get_query_params().get('TagName')
+
+	def set_TagName(self, TagName):  # String
+		self.add_query_param('TagName', TagName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +66,11 @@ class ListPrivateAccessPolicesRequest(RpcRequest):
 
 	def set_PolicyAction(self, PolicyAction):  # String
 		self.add_query_param('PolicyAction', PolicyAction)
+	def get_ApplicationName(self): # String
+		return self.get_query_params().get('ApplicationName')
+
+	def set_ApplicationName(self, ApplicationName):  # String
+		self.add_query_param('ApplicationName', ApplicationName)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
