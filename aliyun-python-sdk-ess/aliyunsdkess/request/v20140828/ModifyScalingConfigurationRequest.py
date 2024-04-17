@@ -191,6 +191,20 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_Affinity(self, Affinity):  # String
 		self.add_query_param('Affinity', Affinity)
+	def get_NetworkInterfacess(self): # RepeatList
+		return self.get_query_params().get('NetworkInterfaces')
+
+	def set_NetworkInterfacess(self, NetworkInterfaces):  # RepeatList
+		for depth1 in range(len(NetworkInterfaces)):
+			if NetworkInterfaces[depth1].get('Ipv6AddressCount') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.Ipv6AddressCount', NetworkInterfaces[depth1].get('Ipv6AddressCount'))
+			if NetworkInterfaces[depth1].get('InstanceType') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.InstanceType', NetworkInterfaces[depth1].get('InstanceType'))
+			if NetworkInterfaces[depth1].get('SecurityGroupIds') is not None:
+				for depth2 in range(len(NetworkInterfaces[depth1].get('SecurityGroupIds'))):
+					self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1), NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2])
+			if NetworkInterfaces[depth1].get('NetworkInterfaceTrafficMode') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterfaces[depth1].get('NetworkInterfaceTrafficMode'))
 	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 

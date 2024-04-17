@@ -42,6 +42,11 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_LifecycleHookContext(self): # Struct
+		return self.get_query_params().get('LifecycleHookContext')
+
+	def set_LifecycleHookContext(self, LifecycleHookContext):  # Struct
+		self.add_query_param("LifecycleHookContext", json.dumps(LifecycleHookContext))
 	def get_SyncActivity(self): # Boolean
 		return self.get_query_params().get('SyncActivity')
 
@@ -57,6 +62,11 @@ class ScaleWithAdjustmentRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_ActivityMetadata(self): # String
+		return self.get_query_params().get('ActivityMetadata')
+
+	def set_ActivityMetadata(self, ActivityMetadata):  # String
+		self.add_query_param('ActivityMetadata', ActivityMetadata)
 	def get_AdjustmentType(self): # String
 		return self.get_query_params().get('AdjustmentType')
 
