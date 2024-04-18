@@ -71,3 +71,8 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_ApprovalNodePos(self, ApprovalNodePos):  # String
 		self.add_query_param('ApprovalNodePos', ApprovalNodePos)
+	def get_NewApproverList(self): # String
+		return self.get_query_params().get('NewApproverList')
+
+	def set_NewApproverList(self, NewApproverList):  # String
+		self.add_query_param('NewApproverList', NewApproverList)

@@ -1,3 +1,8 @@
+2024-04-18 Version: 1.53.8
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
 2023-12-06 Version: 1.53.7
 - Support CreateProcCorrectOrder request param of ExecMode.
 
