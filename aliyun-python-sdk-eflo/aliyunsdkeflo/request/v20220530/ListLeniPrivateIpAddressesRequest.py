@@ -19,34 +19,39 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetVccRequest(RpcRequest):
+class ListLeniPrivateIpAddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVcc','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListLeniPrivateIpAddresses','eflo')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_EnablePage(self): # Boolean
-		return self.get_body_params().get('EnablePage')
-
-	def set_EnablePage(self, EnablePage):  # Boolean
-		self.add_body_params('EnablePage', EnablePage)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-	def get_VccId(self): # String
-		return self.get_body_params().get('VccId')
+	def get_PrivateIpAddress(self): # String
+		return self.get_body_params().get('PrivateIpAddress')
 
-	def set_VccId(self, VccId):  # String
-		self.add_body_params('VccId', VccId)
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_body_params('PrivateIpAddress', PrivateIpAddress)
+	def get_IpName(self): # String
+		return self.get_body_params().get('IpName')
+
+	def set_IpName(self, IpName):  # String
+		self.add_body_params('IpName', IpName)
+	def get_ElasticNetworkInterfaceId(self): # String
+		return self.get_body_params().get('ElasticNetworkInterfaceId')
+
+	def set_ElasticNetworkInterfaceId(self, ElasticNetworkInterfaceId):  # String
+		self.add_body_params('ElasticNetworkInterfaceId', ElasticNetworkInterfaceId)
+	def get_Status(self): # String
+		return self.get_body_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_body_params('Status', Status)

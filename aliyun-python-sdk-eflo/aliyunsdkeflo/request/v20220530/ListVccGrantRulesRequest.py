@@ -35,6 +35,11 @@ class ListVccGrantRulesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_GrantRuleId(self): # String
 		return self.get_body_params().get('GrantRuleId')
 
