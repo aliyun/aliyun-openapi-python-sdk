@@ -102,6 +102,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_SaeVersion(self): # String
+		return self.get_query_params().get('SaeVersion')
+
+	def set_SaeVersion(self, SaeVersion):  # String
+		self.add_query_param('SaeVersion', SaeVersion)
 	def get_PvtzDiscoverySvc(self): # String
 		return self.get_query_params().get('PvtzDiscoverySvc')
 
@@ -162,6 +167,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_AssociateEip(self, AssociateEip):  # Boolean
 		self.add_body_params('AssociateEip', AssociateEip)
+	def get_AppSource(self): # String
+		return self.get_query_params().get('AppSource')
+
+	def set_AppSource(self, AppSource):  # String
+		self.add_query_param('AppSource', AppSource)
 	def get_WebContainer(self): # String
 		return self.get_query_params().get('WebContainer')
 
@@ -297,6 +307,11 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_query_param('ImageUrl', ImageUrl)
+	def get_Php(self): # String
+		return self.get_body_params().get('Php')
+
+	def set_Php(self, Php):  # String
+		self.add_body_params('Php', Php)
 	def get_PythonModules(self): # String
 		return self.get_query_params().get('PythonModules')
 

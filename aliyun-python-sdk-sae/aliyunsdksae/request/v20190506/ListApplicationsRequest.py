@@ -32,6 +32,11 @@ class ListApplicationsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AppSource(self): # String
+		return self.get_query_params().get('AppSource')
+
+	def set_AppSource(self, AppSource):  # String
+		self.add_query_param('AppSource', AppSource)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 

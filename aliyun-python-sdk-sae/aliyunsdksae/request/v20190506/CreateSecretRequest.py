@@ -43,10 +43,10 @@ class CreateSecretRequest(RoaRequest):
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
 	def get_SecretData(self): # String
-		return self.get_body_params().get('SecretData')
+		return self.get_query_params().get('SecretData')
 
 	def set_SecretData(self, SecretData):  # String
-		self.add_body_params('SecretData', SecretData)
+		self.add_query_param('SecretData', SecretData)
 	def get_SecretName(self): # String
 		return self.get_query_params().get('SecretName')
 

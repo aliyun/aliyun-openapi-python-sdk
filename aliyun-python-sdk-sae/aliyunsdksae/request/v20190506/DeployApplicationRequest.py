@@ -117,11 +117,21 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Python(self, Python):  # String
 		self.add_query_param('Python', Python)
+	def get_Cpu(self): # Integer
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self, Cpu):  # Integer
+		self.add_query_param('Cpu', Cpu)
 	def get_UpdateStrategy(self): # String
 		return self.get_query_params().get('UpdateStrategy')
 
 	def set_UpdateStrategy(self, UpdateStrategy):  # String
 		self.add_query_param('UpdateStrategy', UpdateStrategy)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
 	def get_ChangeOrderDesc(self): # String
 		return self.get_query_params().get('ChangeOrderDesc')
 
@@ -172,6 +182,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_KafkaConfigs(self, KafkaConfigs):  # String
 		self.add_query_param('KafkaConfigs', KafkaConfigs)
+	def get_Memory(self): # Integer
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self, Memory):  # Integer
+		self.add_query_param('Memory', Memory)
 	def get_CommandArgs(self): # String
 		return self.get_query_params().get('CommandArgs')
 
@@ -202,6 +217,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Liveness(self, Liveness):  # String
 		self.add_query_param('Liveness', Liveness)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
 	def get_PackageVersion(self): # String
 		return self.get_query_params().get('PackageVersion')
 
@@ -247,6 +267,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_EnableGreyTagRoute(self, EnableGreyTagRoute):  # Boolean
 		self.add_query_param('EnableGreyTagRoute', EnableGreyTagRoute)
+	def get_Replicas(self): # Integer
+		return self.get_query_params().get('Replicas')
+
+	def set_Replicas(self, Replicas):  # Integer
+		self.add_query_param('Replicas', Replicas)
 	def get_Command(self): # String
 		return self.get_query_params().get('Command')
 
@@ -282,6 +307,11 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_query_param('ImageUrl', ImageUrl)
+	def get_Php(self): # String
+		return self.get_body_params().get('Php')
+
+	def set_Php(self, Php):  # String
+		self.add_body_params('Php', Php)
 	def get_PythonModules(self): # String
 		return self.get_query_params().get('PythonModules')
 

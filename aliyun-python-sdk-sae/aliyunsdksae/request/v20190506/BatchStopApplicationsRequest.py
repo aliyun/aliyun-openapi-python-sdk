@@ -42,3 +42,8 @@ class BatchStopApplicationsRequest(RoaRequest):
 
 	def set_NamespaceId(self, NamespaceId):  # String
 		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Version(self): # String
+		return self.get_query_params().get('Version')
+
+	def set_Version(self, Version):  # String
+		self.add_query_param('Version', Version)

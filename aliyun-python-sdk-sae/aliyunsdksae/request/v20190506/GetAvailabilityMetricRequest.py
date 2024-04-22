@@ -32,6 +32,16 @@ class GetAvailabilityMetricRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AppSource(self): # String
+		return self.get_query_params().get('AppSource')
+
+	def set_AppSource(self, AppSource):  # String
+		self.add_query_param('AppSource', AppSource)
+	def get_CpuStrategy(self): # String
+		return self.get_query_params().get('CpuStrategy')
+
+	def set_CpuStrategy(self, CpuStrategy):  # String
+		self.add_query_param('CpuStrategy', CpuStrategy)
 	def get_Limit(self): # Long
 		return self.get_query_params().get('Limit')
 

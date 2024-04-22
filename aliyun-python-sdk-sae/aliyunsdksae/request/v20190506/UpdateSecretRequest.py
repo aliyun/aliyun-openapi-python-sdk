@@ -43,7 +43,7 @@ class UpdateSecretRequest(RoaRequest):
 	def set_SecretId(self, SecretId):  # Long
 		self.add_query_param('SecretId', SecretId)
 	def get_SecretData(self): # String
-		return self.get_body_params().get('SecretData')
+		return self.get_query_params().get('SecretData')
 
 	def set_SecretData(self, SecretData):  # String
-		self.add_body_params('SecretData', SecretData)
+		self.add_query_param('SecretData', SecretData)
