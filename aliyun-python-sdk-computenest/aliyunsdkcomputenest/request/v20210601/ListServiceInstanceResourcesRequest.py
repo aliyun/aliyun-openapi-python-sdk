@@ -41,6 +41,11 @@ class ListServiceInstanceResourcesRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ServiceInstanceResourceType(self): # String
+		return self.get_query_params().get('ServiceInstanceResourceType')
+
+	def set_ServiceInstanceResourceType(self, ServiceInstanceResourceType):  # String
+		self.add_query_param('ServiceInstanceResourceType', ServiceInstanceResourceType)
 	def get_ResourceARNs(self): # RepeatList
 		return self.get_query_params().get('ResourceARN')
 
@@ -66,10 +71,10 @@ class ListServiceInstanceResourcesRequest(RpcRequest):
 
 	def set_ExpireTimeStart(self, ExpireTimeStart):  # String
 		self.add_query_param('ExpireTimeStart', ExpireTimeStart)
-	def get_MaxResults(self): # String
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # String
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenest.endpoint import endpoint_data
 
-class ListServiceInstanceLogsRequest(RpcRequest):
+class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNest', '2021-06-01', 'ListServiceInstanceLogs','computenest')
+		RpcRequest.__init__(self, 'ComputeNest', '2021-06-01', 'ChangeResourceGroup','computenest')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,18 @@ class ListServiceInstanceLogsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_ServiceInstanceId(self): # String
-		return self.get_query_params().get('ServiceInstanceId')
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_ServiceInstanceId(self, ServiceInstanceId):  # String
-		self.add_query_param('ServiceInstanceId', ServiceInstanceId)
-	def get_LogSource(self): # String
-		return self.get_query_params().get('LogSource')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_query_params().get('NewResourceGroupId')
 
-	def set_LogSource(self, LogSource):  # String
-		self.add_query_param('LogSource', LogSource)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
-	def get_Logstore(self): # String
-		return self.get_query_params().get('Logstore')
-
-	def set_Logstore(self, Logstore):  # String
-		self.add_query_param('Logstore', Logstore)
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)

@@ -37,6 +37,10 @@ class CreateServiceInstanceRequest(RpcRequest):
 	def set_Commodity(self, Commodity):  # Struct
 		if Commodity.get('PayPeriod') is not None:
 			self.add_query_param('Commodity.PayPeriod', Commodity.get('PayPeriod'))
+		if Commodity.get('AutoPay') is not None:
+			self.add_query_param('Commodity.AutoPay', Commodity.get('AutoPay'))
+		if Commodity.get('AutoRenew') is not None:
+			self.add_query_param('Commodity.AutoRenew', Commodity.get('AutoRenew'))
 		if Commodity.get('PayPeriodUnit') is not None:
 			self.add_query_param('Commodity.PayPeriodUnit', Commodity.get('PayPeriodUnit'))
 	def get_ContactGroup(self): # String
@@ -118,11 +122,6 @@ class CreateServiceInstanceRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # String
 		self.add_query_param('Parameters', Parameters)
-	def get_PayType(self): # Long
-		return self.get_query_params().get('PayType')
-
-	def set_PayType(self, PayType):  # Long
-		self.add_query_param('PayType', PayType)
 	def get_OperationMetadata(self): # Struct
 		return self.get_query_params().get('OperationMetadata')
 

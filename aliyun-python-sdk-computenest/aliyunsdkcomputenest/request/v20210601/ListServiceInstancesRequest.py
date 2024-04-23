@@ -60,8 +60,8 @@ class ListServiceInstancesRequest(RpcRequest):
 			if Filter[depth1].get('Value') is not None:
 				for depth2 in range(len(Filter[depth1].get('Value'))):
 					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1), Filter[depth1].get('Value')[depth2])
-	def get_MaxResults(self): # String
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # String
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
