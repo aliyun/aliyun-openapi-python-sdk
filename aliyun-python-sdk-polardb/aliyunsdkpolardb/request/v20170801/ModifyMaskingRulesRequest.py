@@ -41,6 +41,11 @@ class ModifyMaskingRulesRequest(RpcRequest):
 
 	def set_RuleName(self, RuleName):  # String
 		self.add_query_param('RuleName', RuleName)
+	def get_RuleVersion(self): # String
+		return self.get_query_params().get('RuleVersion')
+
+	def set_RuleVersion(self, RuleVersion):  # String
+		self.add_query_param('RuleVersion', RuleVersion)
 	def get_RuleConfig(self): # String
 		return self.get_query_params().get('RuleConfig')
 

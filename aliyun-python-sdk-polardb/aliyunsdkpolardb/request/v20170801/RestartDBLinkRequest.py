@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class UpgradeDBClusterMinorVersionRequest(RpcRequest):
+class RestartDBLinkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'UpgradeDBClusterMinorVersion','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'RestartDBLink','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,11 @@ class UpgradeDBClusterMinorVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PlannedEndTime(self): # String
-		return self.get_query_params().get('PlannedEndTime')
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
 
-	def set_PlannedEndTime(self, PlannedEndTime):  # String
-		self.add_query_param('PlannedEndTime', PlannedEndTime)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,13 +61,3 @@ class UpgradeDBClusterMinorVersionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PlannedStartTime(self): # String
-		return self.get_query_params().get('PlannedStartTime')
-
-	def set_PlannedStartTime(self, PlannedStartTime):  # String
-		self.add_query_param('PlannedStartTime', PlannedStartTime)
-	def get_FromTimeService(self): # Boolean
-		return self.get_query_params().get('FromTimeService')
-
-	def set_FromTimeService(self, FromTimeService):  # Boolean
-		self.add_query_param('FromTimeService', FromTimeService)

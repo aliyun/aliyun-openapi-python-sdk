@@ -31,11 +31,21 @@ class DescribeDBProxyPerformanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBEndpointId(self): # String
+		return self.get_query_params().get('DBEndpointId')
+
+	def set_DBEndpointId(self, DBEndpointId):  # String
+		self.add_query_param('DBEndpointId', DBEndpointId)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_Key(self): # String
 		return self.get_query_params().get('Key')
 
@@ -51,3 +61,8 @@ class DescribeDBProxyPerformanceRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)

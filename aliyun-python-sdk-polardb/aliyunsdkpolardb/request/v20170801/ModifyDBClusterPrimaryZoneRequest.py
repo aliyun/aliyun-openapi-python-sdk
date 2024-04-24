@@ -86,6 +86,11 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ZoneType(self): # String
+		return self.get_query_params().get('ZoneType')
+
+	def set_ZoneType(self, ZoneType):  # String
+		self.add_query_param('ZoneType', ZoneType)
 	def get_FromTimeService(self): # Boolean
 		return self.get_query_params().get('FromTimeService')
 

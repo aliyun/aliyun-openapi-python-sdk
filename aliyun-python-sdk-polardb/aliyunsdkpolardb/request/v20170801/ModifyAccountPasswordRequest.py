@@ -36,6 +36,11 @@ class ModifyAccountPasswordRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PasswordType(self): # String
+		return self.get_query_params().get('PasswordType')
+
+	def set_PasswordType(self, PasswordType):  # String
+		self.add_query_param('PasswordType', PasswordType)
 	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 

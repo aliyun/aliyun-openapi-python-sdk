@@ -1,3 +1,6 @@
+2024-04-24 Version: 1.8.48
+- Support new feature.
+
 2023-12-27 Version: 1.8.47
 - Support new feature.
 
