@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class RefreshVodObjectCachesRequest(RpcRequest):
+class GenerateDownloadSecretKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RefreshVodObjectCaches','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GenerateDownloadSecretKey','vod')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class RefreshVodObjectCachesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ObjectPath(self): # String
-		return self.get_query_params().get('ObjectPath')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ObjectPath(self, ObjectPath):  # String
-		self.add_query_param('ObjectPath', ObjectPath)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_AppDecryptKey(self): # String
+		return self.get_query_params().get('AppDecryptKey')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_ObjectType(self): # String
-		return self.get_query_params().get('ObjectType')
+	def set_AppDecryptKey(self, AppDecryptKey):  # String
+		self.add_query_param('AppDecryptKey', AppDecryptKey)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ObjectType(self, ObjectType):  # String
-		self.add_query_param('ObjectType', ObjectType)
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_AppIdentification(self): # String
+		return self.get_query_params().get('AppIdentification')
+
+	def set_AppIdentification(self, AppIdentification):  # String
+		self.add_query_param('AppIdentification', AppIdentification)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
-
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)

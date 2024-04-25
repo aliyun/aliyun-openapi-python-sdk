@@ -20,39 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class RefreshVodObjectCachesRequest(RpcRequest):
+class DescribeVodDomainRealTimeReqHitRateDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RefreshVodObjectCaches','vod')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainRealTimeReqHitRateData','vod')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ObjectPath(self): # String
-		return self.get_query_params().get('ObjectPath')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_ObjectPath(self, ObjectPath):  # String
-		self.add_query_param('ObjectPath', ObjectPath)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_ObjectType(self): # String
-		return self.get_query_params().get('ObjectType')
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_ObjectType(self, ObjectType):  # String
-		self.add_query_param('ObjectType', ObjectType)
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
-
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)

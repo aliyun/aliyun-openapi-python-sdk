@@ -20,54 +20,59 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class DescribeVodTranscodeDataRequest(RpcRequest):
+class DescribeVodDomainRealTimeDetailDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodTranscodeData','vod')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainRealTimeDetailData','vod')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_LocationNameEn(self): # String
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self, LocationNameEn):  # String
+		self.add_query_param('LocationNameEn', LocationNameEn)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_Storage(self): # String
-		return self.get_query_params().get('Storage')
+	def get_IspNameEn(self): # String
+		return self.get_query_params().get('IspNameEn')
 
-	def set_Storage(self, Storage):  # String
-		self.add_query_param('Storage', Storage)
+	def set_IspNameEn(self, IspNameEn):  # String
+		self.add_query_param('IspNameEn', IspNameEn)
+	def get_Merge(self): # String
+		return self.get_query_params().get('Merge')
+
+	def set_Merge(self, Merge):  # String
+		self.add_query_param('Merge', Merge)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_Specification(self): # String
-		return self.get_query_params().get('Specification')
+	def get_MergeLocIsp(self): # String
+		return self.get_query_params().get('MergeLocIsp')
 
-	def set_Specification(self, Specification):  # String
-		self.add_query_param('Specification', Specification)
+	def set_MergeLocIsp(self, MergeLocIsp):  # String
+		self.add_query_param('MergeLocIsp', MergeLocIsp)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
+	def get_Field(self): # String
+		return self.get_query_params().get('Field')
 
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
-	def get_Interval(self): # String
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self, Interval):  # String
-		self.add_query_param('Interval', Interval)
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
-
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
+	def set_Field(self, Field):  # String
+		self.add_query_param('Field', Field)
