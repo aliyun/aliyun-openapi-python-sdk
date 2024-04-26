@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class StartTerminalSessionRequest(RpcRequest):
+class DescribeTerminalSessionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartTerminalSession','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeTerminalSessions','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CommandLine(self): # String
-		return self.get_query_params().get('CommandLine')
+	def get_SessionId(self): # String
+		return self.get_query_params().get('SessionId')
 
-	def set_CommandLine(self, CommandLine):  # String
-		self.add_query_param('CommandLine', CommandLine)
-	def get_TargetServer(self): # String
-		return self.get_query_params().get('TargetServer')
+	def set_SessionId(self, SessionId):  # String
+		self.add_query_param('SessionId', SessionId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_TargetServer(self, TargetServer):  # String
-		self.add_query_param('TargetServer', TargetServer)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,19 +61,13 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceIds(self): # RepeatList
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceId):  # RepeatList
-		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_PortNumber(self): # Integer
-		return self.get_query_params().get('PortNumber')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_PortNumber(self, PortNumber):  # Integer
-		self.add_query_param('PortNumber', PortNumber)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
-
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

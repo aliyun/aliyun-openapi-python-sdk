@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
-class StartTerminalSessionRequest(RpcRequest):
+class ModifyCloudAssistantSettingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartTerminalSession','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyCloudAssistantSettings','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +37,26 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CommandLine(self): # String
-		return self.get_query_params().get('CommandLine')
+	def get_AgentUpgradeConfig(self): # Struct
+		return self.get_query_params().get('AgentUpgradeConfig')
 
-	def set_CommandLine(self, CommandLine):  # String
-		self.add_query_param('CommandLine', CommandLine)
-	def get_TargetServer(self): # String
-		return self.get_query_params().get('TargetServer')
+	def set_AgentUpgradeConfig(self, AgentUpgradeConfig):  # Struct
+		self.add_query_param("AgentUpgradeConfig", json.dumps(AgentUpgradeConfig))
+	def get_OssDeliveryConfig(self): # Struct
+		return self.get_query_params().get('OssDeliveryConfig')
 
-	def set_TargetServer(self, TargetServer):  # String
-		self.add_query_param('TargetServer', TargetServer)
+	def set_OssDeliveryConfig(self, OssDeliveryConfig):  # Struct
+		self.add_query_param("OssDeliveryConfig", json.dumps(OssDeliveryConfig))
+	def get_SettingType(self): # String
+		return self.get_query_params().get('SettingType')
+
+	def set_SettingType(self, SettingType):  # String
+		self.add_query_param('SettingType', SettingType)
+	def get_SlsDeliveryConfig(self): # Struct
+		return self.get_query_params().get('SlsDeliveryConfig')
+
+	def set_SlsDeliveryConfig(self, SlsDeliveryConfig):  # Struct
+		self.add_query_param("SlsDeliveryConfig", json.dumps(SlsDeliveryConfig))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,19 +72,3 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceIds(self): # RepeatList
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceIds(self, InstanceId):  # RepeatList
-		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_PortNumber(self): # Integer
-		return self.get_query_params().get('PortNumber')
-
-	def set_PortNumber(self, PortNumber):  # Integer
-		self.add_query_param('PortNumber', PortNumber)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
-
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)

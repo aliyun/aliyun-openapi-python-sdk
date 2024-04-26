@@ -76,11 +76,23 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_MinimumCpuCoreCount(self, MinimumCpuCoreCount):  # Integer
 		self.add_query_param('MinimumCpuCoreCount', MinimumCpuCoreCount)
+	def get_LocalStorageCategoriess(self): # RepeatList
+		return self.get_query_params().get('LocalStorageCategories')
+
+	def set_LocalStorageCategoriess(self, LocalStorageCategories):  # RepeatList
+		for depth1 in range(len(LocalStorageCategories)):
+			self.add_query_param('LocalStorageCategories.' + str(depth1 + 1), LocalStorageCategories[depth1])
 	def get_MinimumPrimaryEniQueueNumber(self): # Integer
 		return self.get_query_params().get('MinimumPrimaryEniQueueNumber')
 
 	def set_MinimumPrimaryEniQueueNumber(self, MinimumPrimaryEniQueueNumber):  # Integer
 		self.add_query_param('MinimumPrimaryEniQueueNumber', MinimumPrimaryEniQueueNumber)
+	def get_InstanceTypeFamiliess(self): # RepeatList
+		return self.get_query_params().get('InstanceTypeFamilies')
+
+	def set_InstanceTypeFamiliess(self, InstanceTypeFamilies):  # RepeatList
+		for depth1 in range(len(InstanceTypeFamilies)):
+			self.add_query_param('InstanceTypeFamilies.' + str(depth1 + 1), InstanceTypeFamilies[depth1])
 	def get_MinimumBaselineCredit(self): # Integer
 		return self.get_query_params().get('MinimumBaselineCredit')
 
@@ -91,11 +103,23 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_MinimumSecondaryEniQueueNumber(self, MinimumSecondaryEniQueueNumber):  # Integer
 		self.add_query_param('MinimumSecondaryEniQueueNumber', MinimumSecondaryEniQueueNumber)
+	def get_CpuArchitecturess(self): # RepeatList
+		return self.get_query_params().get('CpuArchitectures')
+
+	def set_CpuArchitecturess(self, CpuArchitectures):  # RepeatList
+		for depth1 in range(len(CpuArchitectures)):
+			self.add_query_param('CpuArchitectures.' + str(depth1 + 1), CpuArchitectures[depth1])
 	def get_MinimumInstanceBandwidthTx(self): # Integer
 		return self.get_query_params().get('MinimumInstanceBandwidthTx')
 
 	def set_MinimumInstanceBandwidthTx(self, MinimumInstanceBandwidthTx):  # Integer
 		self.add_query_param('MinimumInstanceBandwidthTx', MinimumInstanceBandwidthTx)
+	def get_InstanceCategoriess(self): # RepeatList
+		return self.get_query_params().get('InstanceCategories')
+
+	def set_InstanceCategoriess(self, InstanceCategories):  # RepeatList
+		for depth1 in range(len(InstanceCategories)):
+			self.add_query_param('InstanceCategories.' + str(depth1 + 1), InstanceCategories[depth1])
 	def get_MinimumGPUAmount(self): # Integer
 		return self.get_query_params().get('MinimumGPUAmount')
 
@@ -116,6 +140,12 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PhysicalProcessorModelss(self): # RepeatList
+		return self.get_query_params().get('PhysicalProcessorModels')
+
+	def set_PhysicalProcessorModelss(self, PhysicalProcessorModels):  # RepeatList
+		for depth1 in range(len(PhysicalProcessorModels)):
+			self.add_query_param('PhysicalProcessorModels.' + str(depth1 + 1), PhysicalProcessorModels[depth1])
 	def get_MinimumMemorySize(self): # Float
 		return self.get_query_params().get('MinimumMemorySize')
 
@@ -232,6 +262,12 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_MinimumEniPrivateIpAddressQuantity(self, MinimumEniPrivateIpAddressQuantity):  # Integer
 		self.add_query_param('MinimumEniPrivateIpAddressQuantity', MinimumEniPrivateIpAddressQuantity)
+	def get_GpuSpecss(self): # RepeatList
+		return self.get_query_params().get('GpuSpecs')
+
+	def set_GpuSpecss(self, GpuSpecs):  # RepeatList
+		for depth1 in range(len(GpuSpecs)):
+			self.add_query_param('GpuSpecs.' + str(depth1 + 1), GpuSpecs[depth1])
 	def get_MinimumLocalStorageCapacity(self): # Long
 		return self.get_query_params().get('MinimumLocalStorageCapacity')
 

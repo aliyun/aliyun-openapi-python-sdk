@@ -36,6 +36,22 @@ class ModifyAutoSnapshotPolicyExRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CopyEncryptionConfiguration(self): # Struct
+		return self.get_query_params().get('CopyEncryptionConfiguration')
+
+	def set_CopyEncryptionConfiguration(self, CopyEncryptionConfiguration):  # Struct
+		if CopyEncryptionConfiguration.get('Encrypted') is not None:
+			self.add_query_param('CopyEncryptionConfiguration.Encrypted', CopyEncryptionConfiguration.get('Encrypted'))
+		if CopyEncryptionConfiguration.get('KMSKeyId') is not None:
+			self.add_query_param('CopyEncryptionConfiguration.KMSKeyId', CopyEncryptionConfiguration.get('KMSKeyId'))
+		if CopyEncryptionConfiguration.get('Arn') is not None:
+			for index1, value1 in enumerate(CopyEncryptionConfiguration.get('Arn')):
+				if value1.get('Rolearn') is not None:
+					self.add_query_param('CopyEncryptionConfiguration.Arn.' + str(index1 + 1) + '.Rolearn', value1.get('Rolearn'))
+				if value1.get('RoleType') is not None:
+					self.add_query_param('CopyEncryptionConfiguration.Arn.' + str(index1 + 1) + '.RoleType', value1.get('RoleType'))
+				if value1.get('AssumeRoleFor') is not None:
+					self.add_query_param('CopyEncryptionConfiguration.Arn.' + str(index1 + 1) + '.AssumeRoleFor', value1.get('AssumeRoleFor'))
 	def get_autoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('autoSnapshotPolicyId')
 

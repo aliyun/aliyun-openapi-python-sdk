@@ -78,6 +78,11 @@ class ImportImageRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_StorageLocationArn(self): # String
+		return self.get_query_params().get('StorageLocationArn')
+
+	def set_StorageLocationArn(self, StorageLocationArn):  # String
+		self.add_query_param('StorageLocationArn', StorageLocationArn)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

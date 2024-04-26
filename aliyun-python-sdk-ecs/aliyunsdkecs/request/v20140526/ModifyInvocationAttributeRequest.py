@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class StartTerminalSessionRequest(RpcRequest):
+class ModifyInvocationAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartTerminalSession','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInvocationAttribute','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,26 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_CommandLine(self): # String
-		return self.get_query_params().get('CommandLine')
+	def get_CommandContent(self): # String
+		return self.get_query_params().get('CommandContent')
 
-	def set_CommandLine(self, CommandLine):  # String
-		self.add_query_param('CommandLine', CommandLine)
-	def get_TargetServer(self): # String
-		return self.get_query_params().get('TargetServer')
+	def set_CommandContent(self, CommandContent):  # String
+		self.add_query_param('CommandContent', CommandContent)
+	def get_Frequency(self): # String
+		return self.get_query_params().get('Frequency')
 
-	def set_TargetServer(self, TargetServer):  # String
-		self.add_query_param('TargetServer', TargetServer)
+	def set_Frequency(self, Frequency):  # String
+		self.add_query_param('Frequency', Frequency)
+	def get_ContentEncoding(self): # String
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self, ContentEncoding):  # String
+		self.add_query_param('ContentEncoding', ContentEncoding)
+	def get_InvokeId(self): # String
+		return self.get_query_params().get('InvokeId')
+
+	def set_InvokeId(self, InvokeId):  # String
+		self.add_query_param('InvokeId', InvokeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -67,13 +77,13 @@ class StartTerminalSessionRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_PortNumber(self): # Integer
-		return self.get_query_params().get('PortNumber')
+	def get_Parameters(self): # Json
+		return self.get_query_params().get('Parameters')
 
-	def set_PortNumber(self, PortNumber):  # Integer
-		self.add_query_param('PortNumber', PortNumber)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
+	def set_Parameters(self, Parameters):  # Json
+		self.add_query_param('Parameters', Parameters)
+	def get_EnableParameter(self): # Boolean
+		return self.get_query_params().get('EnableParameter')
 
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
+	def set_EnableParameter(self, EnableParameter):  # Boolean
+		self.add_query_param('EnableParameter', EnableParameter)
