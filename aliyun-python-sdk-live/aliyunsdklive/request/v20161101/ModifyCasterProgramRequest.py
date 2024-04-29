@@ -36,21 +36,21 @@ class ModifyCasterProgramRequest(RpcRequest):
 
 	def set_Episodes(self, Episode):  # RepeatList
 		for depth1 in range(len(Episode)):
+			if Episode[depth1].get('ComponentId') is not None:
+				for depth2 in range(len(Episode[depth1].get('ComponentId'))):
+					self.add_query_param('Episode.' + str(depth1 + 1) + '.ComponentId.' + str(depth2 + 1), Episode[depth1].get('ComponentId')[depth2])
 			if Episode[depth1].get('EndTime') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.EndTime', Episode[depth1].get('EndTime'))
-			if Episode[depth1].get('StartTime') is not None:
-				self.add_query_param('Episode.' + str(depth1 + 1) + '.StartTime', Episode[depth1].get('StartTime'))
+			if Episode[depth1].get('EpisodeId') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeId', Episode[depth1].get('EpisodeId'))
 			if Episode[depth1].get('EpisodeName') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeName', Episode[depth1].get('EpisodeName'))
 			if Episode[depth1].get('EpisodeType') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeType', Episode[depth1].get('EpisodeType'))
-			if Episode[depth1].get('EpisodeId') is not None:
-				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeId', Episode[depth1].get('EpisodeId'))
 			if Episode[depth1].get('ResourceId') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.ResourceId', Episode[depth1].get('ResourceId'))
-			if Episode[depth1].get('ComponentId') is not None:
-				for depth2 in range(len(Episode[depth1].get('ComponentId'))):
-					self.add_query_param('Episode.' + str(depth1 + 1) + '.ComponentId.' + str(depth2 + 1), Episode[depth1].get('ComponentId')[depth2])
+			if Episode[depth1].get('StartTime') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.StartTime', Episode[depth1].get('StartTime'))
 			if Episode[depth1].get('SwitchType') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.SwitchType', Episode[depth1].get('SwitchType'))
 	def get_CasterId(self): # String

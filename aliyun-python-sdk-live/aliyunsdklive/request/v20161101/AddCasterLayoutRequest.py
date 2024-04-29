@@ -52,28 +52,28 @@ class AddCasterLayoutRequest(RpcRequest):
 
 	def set_AudioLayers(self, AudioLayer):  # RepeatList
 		for depth1 in range(len(AudioLayer)):
-			if AudioLayer[depth1].get('VolumeRate') is not None:
-				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayer[depth1].get('VolumeRate'))
 			if AudioLayer[depth1].get('FixedDelayDuration') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.FixedDelayDuration', AudioLayer[depth1].get('FixedDelayDuration'))
 			if AudioLayer[depth1].get('ValidChannel') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.ValidChannel', AudioLayer[depth1].get('ValidChannel'))
+			if AudioLayer[depth1].get('VolumeRate') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayer[depth1].get('VolumeRate'))
 	def get_VideoLayers(self): # RepeatList
 		return self.get_query_params().get('VideoLayer')
 
 	def set_VideoLayers(self, VideoLayer):  # RepeatList
 		for depth1 in range(len(VideoLayer)):
-			if VideoLayer[depth1].get('FixedDelayDuration') is not None:
-				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.FixedDelayDuration', VideoLayer[depth1].get('FixedDelayDuration'))
 			if VideoLayer[depth1].get('FillMode') is not None:
 				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.FillMode', VideoLayer[depth1].get('FillMode'))
+			if VideoLayer[depth1].get('FixedDelayDuration') is not None:
+				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.FixedDelayDuration', VideoLayer[depth1].get('FixedDelayDuration'))
 			if VideoLayer[depth1].get('HeightNormalized') is not None:
 				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.HeightNormalized', VideoLayer[depth1].get('HeightNormalized'))
-			if VideoLayer[depth1].get('PositionRefer') is not None:
-				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.PositionRefer', VideoLayer[depth1].get('PositionRefer'))
 			if VideoLayer[depth1].get('PositionNormalized') is not None:
 				for depth2 in range(len(VideoLayer[depth1].get('PositionNormalized'))):
 					self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.PositionNormalized.' + str(depth2 + 1), VideoLayer[depth1].get('PositionNormalized')[depth2])
+			if VideoLayer[depth1].get('PositionRefer') is not None:
+				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.PositionRefer', VideoLayer[depth1].get('PositionRefer'))
 			if VideoLayer[depth1].get('WidthNormalized') is not None:
 				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.WidthNormalized', VideoLayer[depth1].get('WidthNormalized'))
 	def get_MixLists(self): # RepeatList

@@ -36,20 +36,20 @@ class AddShowIntoShowListRequest(RpcRequest):
 
 	def set_showLists(self, showList):  # RepeatList
 		for depth1 in range(len(showList)):
-			if showList[depth1].get('showName') is not None:
-				self.add_query_param('showList.' + str(depth1 + 1) + '.showName', showList[depth1].get('showName'))
+			if showList[depth1].get('duration') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.duration', showList[depth1].get('duration'))
+			if showList[depth1].get('liveInputType') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.liveInputType', showList[depth1].get('liveInputType'))
 			if showList[depth1].get('repeatTimes') is not None:
 				self.add_query_param('showList.' + str(depth1 + 1) + '.repeatTimes', showList[depth1].get('repeatTimes'))
+			if showList[depth1].get('resourceId') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceId', showList[depth1].get('resourceId'))
 			if showList[depth1].get('resourceType') is not None:
 				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceType', showList[depth1].get('resourceType'))
 			if showList[depth1].get('resourceUrl') is not None:
 				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceUrl', showList[depth1].get('resourceUrl'))
-			if showList[depth1].get('liveInputType') is not None:
-				self.add_query_param('showList.' + str(depth1 + 1) + '.liveInputType', showList[depth1].get('liveInputType'))
-			if showList[depth1].get('duration') is not None:
-				self.add_query_param('showList.' + str(depth1 + 1) + '.duration', showList[depth1].get('duration'))
-			if showList[depth1].get('resourceId') is not None:
-				self.add_query_param('showList.' + str(depth1 + 1) + '.resourceId', showList[depth1].get('resourceId'))
+			if showList[depth1].get('showName') is not None:
+				self.add_query_param('showList.' + str(depth1 + 1) + '.showName', showList[depth1].get('showName'))
 	def get_LiveInputType(self): # Integer
 		return self.get_query_params().get('LiveInputType')
 

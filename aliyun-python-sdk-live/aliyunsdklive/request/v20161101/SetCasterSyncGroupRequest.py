@@ -48,13 +48,13 @@ class SetCasterSyncGroupRequest(RpcRequest):
 		for depth1 in range(len(SyncGroup)):
 			if SyncGroup[depth1].get('HostResourceId') is not None:
 				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.HostResourceId', SyncGroup[depth1].get('HostResourceId'))
+			if SyncGroup[depth1].get('Mode') is not None:
+				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.Mode', SyncGroup[depth1].get('Mode'))
 			if SyncGroup[depth1].get('ResourceIds') is not None:
 				for depth2 in range(len(SyncGroup[depth1].get('ResourceIds'))):
 					self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.ResourceIds.' + str(depth2 + 1), SyncGroup[depth1].get('ResourceIds')[depth2])
+			if SyncGroup[depth1].get('SyncDelayThreshold') is not None:
+				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.SyncDelayThreshold', SyncGroup[depth1].get('SyncDelayThreshold'))
 			if SyncGroup[depth1].get('SyncOffsets') is not None:
 				for depth2 in range(len(SyncGroup[depth1].get('SyncOffsets'))):
 					self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.SyncOffsets.' + str(depth2 + 1), SyncGroup[depth1].get('SyncOffsets')[depth2])
-			if SyncGroup[depth1].get('SyncDelayThreshold') is not None:
-				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.SyncDelayThreshold', SyncGroup[depth1].get('SyncDelayThreshold'))
-			if SyncGroup[depth1].get('Mode') is not None:
-				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.Mode', SyncGroup[depth1].get('Mode'))

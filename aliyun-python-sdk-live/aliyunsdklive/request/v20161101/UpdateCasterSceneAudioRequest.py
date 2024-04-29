@@ -46,14 +46,14 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 
 	def set_AudioLayers(self, AudioLayer):  # RepeatList
 		for depth1 in range(len(AudioLayer)):
-			if AudioLayer[depth1].get('VolumeRate') is not None:
-				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayer[depth1].get('VolumeRate'))
+			if AudioLayer[depth1].get('Filter') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.Filter', AudioLayer[depth1].get('Filter'))
 			if AudioLayer[depth1].get('FixedDelayDuration') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.FixedDelayDuration', AudioLayer[depth1].get('FixedDelayDuration'))
 			if AudioLayer[depth1].get('ValidChannel') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.ValidChannel', AudioLayer[depth1].get('ValidChannel'))
-			if AudioLayer[depth1].get('Filter') is not None:
-				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.Filter', AudioLayer[depth1].get('Filter'))
+			if AudioLayer[depth1].get('VolumeRate') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayer[depth1].get('VolumeRate'))
 	def get_SceneId(self): # String
 		return self.get_query_params().get('SceneId')
 
