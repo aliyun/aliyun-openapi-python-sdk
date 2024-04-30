@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
+class DescribeDcdnSSLCertificateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomainsByFunc')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnSSLCertificateList')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,33 @@ class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FuncFilter(self): # String
-		return self.get_query_params().get('FuncFilter')
+	def get_PageNumber(self): # Long
+		return self.get_query_params().get('PageNumber')
 
-	def set_FuncFilter(self, FuncFilter):  # String
-		self.add_query_param('FuncFilter', FuncFilter)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Long
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_MatchType(self): # String
-		return self.get_query_params().get('MatchType')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SearchKeyword(self): # String
+		return self.get_query_params().get('SearchKeyword')
 
-	def set_MatchType(self, MatchType):  # String
-		self.add_query_param('MatchType', MatchType)
-	def get_FuncId(self): # Integer
-		return self.get_query_params().get('FuncId')
-
-	def set_FuncId(self, FuncId):  # Integer
-		self.add_query_param('FuncId', FuncId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
+	def set_SearchKeyword(self, SearchKeyword):  # String
+		self.add_query_param('SearchKeyword', SearchKeyword)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
+class DescribeDcdnDomainLogExTtlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomainsByFunc')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainLogExTtl')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,28 @@ class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FuncFilter(self): # String
-		return self.get_query_params().get('FuncFilter')
-
-	def set_FuncFilter(self, FuncFilter):  # String
-		self.add_query_param('FuncFilter', FuncFilter)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
-	def get_PageSize(self): # Integer
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Integer
+	def set_PageSize(self, PageSize):  # Long
 		self.add_query_param('PageSize', PageSize)
-	def get_MatchType(self): # String
-		return self.get_query_params().get('MatchType')
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_MatchType(self, MatchType):  # String
-		self.add_query_param('MatchType', MatchType)
-	def get_FuncId(self): # Integer
-		return self.get_query_params().get('FuncId')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_FuncId(self, FuncId):  # Integer
-		self.add_query_param('FuncId', FuncId)
-	def get_PageNumber(self): # Integer
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Integer
+	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)

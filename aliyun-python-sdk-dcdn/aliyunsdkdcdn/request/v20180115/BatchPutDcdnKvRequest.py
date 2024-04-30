@@ -34,10 +34,10 @@ class BatchPutDcdnKvRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_KvList(self): # Array
-		return self.get_query_params().get('KvList')
+		return self.get_body_params().get('KvList')
 
 	def set_KvList(self, KvList):  # Array
-		self.add_query_param("KvList", json.dumps(KvList))
+		self.add_body_params("KvList", json.dumps(KvList))
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

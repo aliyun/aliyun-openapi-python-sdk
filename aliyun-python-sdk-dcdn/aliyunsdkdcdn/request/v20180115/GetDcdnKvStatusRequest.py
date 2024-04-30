@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class UpdateDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
+class GetDcdnKvStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnUserRealTimeDeliveryField')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'GetDcdnKvStatus')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +32,13 @@ class UpdateDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Fields(self): # String
-		return self.get_query_params().get('Fields')
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
 
-	def set_Fields(self, Fields):  # String
-		self.add_query_param('Fields', Fields)
-	def get_BusinessType(self): # String
-		return self.get_query_params().get('BusinessType')
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
 
-	def set_BusinessType(self, BusinessType):  # String
-		self.add_query_param('BusinessType', BusinessType)
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class UpdateDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
+class RefreshErObjectCachesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnUserRealTimeDeliveryField')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'RefreshErObjectCaches')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +32,28 @@ class UpdateDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Fields(self): # String
-		return self.get_query_params().get('Fields')
+	def get_MergeDomainName(self): # String
+		return self.get_query_params().get('MergeDomainName')
 
-	def set_Fields(self, Fields):  # String
-		self.add_query_param('Fields', Fields)
-	def get_BusinessType(self): # String
-		return self.get_query_params().get('BusinessType')
+	def set_MergeDomainName(self, MergeDomainName):  # String
+		self.add_query_param('MergeDomainName', MergeDomainName)
+	def get_ObjectPath(self): # String
+		return self.get_query_params().get('ObjectPath')
 
-	def set_BusinessType(self, BusinessType):  # String
-		self.add_query_param('BusinessType', BusinessType)
+	def set_ObjectPath(self, ObjectPath):  # String
+		self.add_query_param('ObjectPath', ObjectPath)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
+	def get_ObjectType(self): # String
+		return self.get_query_params().get('ObjectType')
+
+	def set_ObjectType(self, ObjectType):  # String
+		self.add_query_param('ObjectType', ObjectType)
+	def get_RoutineId(self): # String
+		return self.get_query_params().get('RoutineId')
+
+	def set_RoutineId(self, RoutineId):  # String
+		self.add_query_param('RoutineId', RoutineId)
