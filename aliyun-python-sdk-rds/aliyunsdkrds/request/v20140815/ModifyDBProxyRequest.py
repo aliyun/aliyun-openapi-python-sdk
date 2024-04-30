@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBProxyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxy')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxy','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class ModifyDBProxyRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_PersistentConnectionStatus(self): # String
+		return self.get_query_params().get('PersistentConnectionStatus')
+
+	def set_PersistentConnectionStatus(self, PersistentConnectionStatus):  # String
+		self.add_query_param('PersistentConnectionStatus', PersistentConnectionStatus)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,6 +81,11 @@ class ModifyDBProxyRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_DBProxyInstanceType(self): # String
+		return self.get_query_params().get('DBProxyInstanceType')
+
+	def set_DBProxyInstanceType(self, DBProxyInstanceType):  # String
+		self.add_query_param('DBProxyInstanceType', DBProxyInstanceType)
 	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 

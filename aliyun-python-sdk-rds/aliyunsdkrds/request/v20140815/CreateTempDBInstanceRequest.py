@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateTempDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateTempDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateTempDBInstance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,10 +56,10 @@ class CreateTempDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_BackupId(self): # Integer
+	def get_BackupId(self): # Long
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self, BackupId):  # Integer
+	def set_BackupId(self, BackupId):  # Long
 		self.add_query_param('BackupId', BackupId)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')

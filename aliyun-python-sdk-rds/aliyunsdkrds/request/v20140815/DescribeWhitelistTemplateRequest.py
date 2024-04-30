@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeWhitelistTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeWhitelistTemplate')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeWhitelistTemplate','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,3 +46,8 @@ class DescribeWhitelistTemplateRequest(RpcRequest):
 
 	def set_TemplateId(self, TemplateId):  # Integer
 		self.add_query_param('TemplateId', TemplateId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

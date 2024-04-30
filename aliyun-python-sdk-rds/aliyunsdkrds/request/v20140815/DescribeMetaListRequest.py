@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeMetaListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMetaList')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMetaList','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -76,10 +76,10 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_BackupSetID(self): # Integer
+	def get_BackupSetID(self): # Long
 		return self.get_query_params().get('BackupSetID')
 
-	def set_BackupSetID(self, BackupSetID):  # Integer
+	def set_BackupSetID(self, BackupSetID):  # Long
 		self.add_query_param('BackupSetID', BackupSetID)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')

@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBProxyInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyInstance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ModifyDBProxyInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_VSwitchIds(self): # String
+		return self.get_query_params().get('VSwitchIds')
+
+	def set_VSwitchIds(self, VSwitchIds):  # String
+		self.add_query_param('VSwitchIds', VSwitchIds)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 

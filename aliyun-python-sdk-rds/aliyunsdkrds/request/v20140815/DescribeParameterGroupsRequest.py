@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeParameterGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeParameterGroups')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeParameterGroups','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class DescribeParameterGroupsRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_EnableDetail(self): # Boolean
+		return self.get_query_params().get('EnableDetail')
+
+	def set_EnableDetail(self, EnableDetail):  # Boolean
+		self.add_query_param('EnableDetail', EnableDetail)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

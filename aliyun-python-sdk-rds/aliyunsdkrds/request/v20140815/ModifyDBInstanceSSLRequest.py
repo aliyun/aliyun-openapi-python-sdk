@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSSL')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSSL','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,11 +51,21 @@ class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def set_ClientCrlEnabled(self, ClientCrlEnabled):  # Integer
 		self.add_query_param('ClientCrlEnabled', ClientCrlEnabled)
+	def get_Certificate(self): # String
+		return self.get_query_params().get('Certificate')
+
+	def set_Certificate(self, Certificate):  # String
+		self.add_query_param('Certificate', Certificate)
 	def get_ACL(self): # String
 		return self.get_query_params().get('ACL')
 
 	def set_ACL(self, ACL):  # String
 		self.add_query_param('ACL', ACL)
+	def get_PassWord(self): # String
+		return self.get_query_params().get('PassWord')
+
+	def set_PassWord(self, PassWord):  # String
+		self.add_query_param('PassWord', PassWord)
 	def get_ClientCertRevocationList(self): # String
 		return self.get_query_params().get('ClientCertRevocationList')
 
@@ -71,6 +81,11 @@ class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ForceEncryption(self): # String
+		return self.get_query_params().get('ForceEncryption')
+
+	def set_ForceEncryption(self, ForceEncryption):  # String
+		self.add_query_param('ForceEncryption', ForceEncryption)
 	def get_ClientCAEnabled(self): # Integer
 		return self.get_query_params().get('ClientCAEnabled')
 
@@ -111,3 +126,8 @@ class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def set_SSLEnabled(self, SSLEnabled):  # Integer
 		self.add_query_param('SSLEnabled', SSLEnabled)
+	def get_TlsVersion(self): # String
+		return self.get_query_params().get('TlsVersion')
+
+	def set_TlsVersion(self, TlsVersion):  # String
+		self.add_query_param('TlsVersion', TlsVersion)

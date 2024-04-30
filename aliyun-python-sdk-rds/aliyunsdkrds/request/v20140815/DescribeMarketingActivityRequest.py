@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class ImportDatabaseBetweenInstancesRequest(RpcRequest):
+class DescribeMarketingActivityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ImportDatabaseBetweenInstances')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMarketingActivity','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,33 +36,38 @@ class ImportDatabaseBetweenInstancesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DBInfo(self): # String
-		return self.get_query_params().get('DBInfo')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_DBInfo(self, DBInfo):  # String
-		self.add_query_param('DBInfo', DBInfo)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_AliUid(self): # Long
+		return self.get_query_params().get('AliUid')
+
+	def set_AliUid(self, AliUid):  # Long
+		self.add_query_param('AliUid', AliUid)
+	def get_UpgradeCode(self): # String
+		return self.get_query_params().get('UpgradeCode')
+
+	def set_UpgradeCode(self, UpgradeCode):  # String
+		self.add_query_param('UpgradeCode', UpgradeCode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SourceDBInstanceId(self): # String
-		return self.get_query_params().get('SourceDBInstanceId')
+	def get_Bid(self): # String
+		return self.get_query_params().get('Bid')
 
-	def set_SourceDBInstanceId(self, SourceDBInstanceId):  # String
-		self.add_query_param('SourceDBInstanceId', SourceDBInstanceId)
+	def set_Bid(self, Bid):  # String
+		self.add_query_param('Bid', Bid)

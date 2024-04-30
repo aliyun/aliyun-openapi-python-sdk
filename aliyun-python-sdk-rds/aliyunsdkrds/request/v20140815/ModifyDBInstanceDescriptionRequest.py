@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBInstanceDescriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceDescription')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceDescription','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

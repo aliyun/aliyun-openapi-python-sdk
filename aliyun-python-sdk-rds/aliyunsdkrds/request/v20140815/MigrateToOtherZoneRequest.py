@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class MigrateToOtherZoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'MigrateToOtherZone')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'MigrateToOtherZone','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,6 +56,11 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_ZoneIdSlave2(self, ZoneIdSlave2):  # String
 		self.add_query_param('ZoneIdSlave2', ZoneIdSlave2)
+	def get_IoAccelerationEnabled(self): # String
+		return self.get_query_params().get('IoAccelerationEnabled')
+
+	def set_IoAccelerationEnabled(self, IoAccelerationEnabled):  # String
+		self.add_query_param('IoAccelerationEnabled', IoAccelerationEnabled)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 

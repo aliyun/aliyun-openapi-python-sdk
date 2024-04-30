@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreatePostgresExtensionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreatePostgresExtensions')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreatePostgresExtensions','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class CreatePostgresExtensionsRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_RiskConfirmed(self): # Boolean
+		return self.get_query_params().get('RiskConfirmed')
+
+	def set_RiskConfirmed(self, RiskConfirmed):  # Boolean
+		self.add_query_param('RiskConfirmed', RiskConfirmed)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

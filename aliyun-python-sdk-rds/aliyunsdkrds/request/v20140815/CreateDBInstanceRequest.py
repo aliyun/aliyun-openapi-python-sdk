@@ -24,7 +24,7 @@ import json
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -101,6 +101,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_WhitelistTemplateList(self): # String
+		return self.get_query_params().get('WhitelistTemplateList')
+
+	def set_WhitelistTemplateList(self, WhitelistTemplateList):  # String
+		self.add_query_param('WhitelistTemplateList', WhitelistTemplateList)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
@@ -201,6 +206,16 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBIsIgnoreCase(self, DBIsIgnoreCase):  # String
 		self.add_query_param('DBIsIgnoreCase', DBIsIgnoreCase)
+	def get_IoAccelerationEnabled(self): # String
+		return self.get_query_params().get('IoAccelerationEnabled')
+
+	def set_IoAccelerationEnabled(self, IoAccelerationEnabled):  # String
+		self.add_query_param('IoAccelerationEnabled', IoAccelerationEnabled)
+	def get_ColdDataEnabled(self): # Boolean
+		return self.get_query_params().get('ColdDataEnabled')
+
+	def set_ColdDataEnabled(self, ColdDataEnabled):  # Boolean
+		self.add_query_param('ColdDataEnabled', ColdDataEnabled)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

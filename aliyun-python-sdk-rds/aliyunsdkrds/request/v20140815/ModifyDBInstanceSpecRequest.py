@@ -24,7 +24,7 @@ import json
 class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSpec')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSpec','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -52,6 +52,16 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
 		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_IoAccelerationEnabled(self): # String
+		return self.get_query_params().get('IoAccelerationEnabled')
+
+	def set_IoAccelerationEnabled(self, IoAccelerationEnabled):  # String
+		self.add_query_param('IoAccelerationEnabled', IoAccelerationEnabled)
+	def get_ColdDataEnabled(self): # Boolean
+		return self.get_query_params().get('ColdDataEnabled')
+
+	def set_ColdDataEnabled(self, ColdDataEnabled):  # Boolean
+		self.add_query_param('ColdDataEnabled', ColdDataEnabled)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

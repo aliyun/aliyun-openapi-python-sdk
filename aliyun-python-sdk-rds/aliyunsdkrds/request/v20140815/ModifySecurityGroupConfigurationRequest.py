@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifySecurityGroupConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityGroupConfiguration')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityGroupConfiguration','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
