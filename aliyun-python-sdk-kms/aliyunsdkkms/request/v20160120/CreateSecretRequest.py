@@ -92,3 +92,8 @@ class CreateSecretRequest(RpcRequest):
 
 	def set_SecretDataType(self, SecretDataType):  # String
 		self.add_query_param('SecretDataType', SecretDataType)
+	def get_Policy(self): # String
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
