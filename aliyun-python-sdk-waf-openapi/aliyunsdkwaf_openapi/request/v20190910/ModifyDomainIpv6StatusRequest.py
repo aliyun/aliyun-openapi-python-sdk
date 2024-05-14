@@ -36,6 +36,11 @@ class ModifyDomainIpv6StatusRequest(RpcRequest):
 
 	def set_Enabled(self, Enabled):  # String
 		self.add_query_param('Enabled', Enabled)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

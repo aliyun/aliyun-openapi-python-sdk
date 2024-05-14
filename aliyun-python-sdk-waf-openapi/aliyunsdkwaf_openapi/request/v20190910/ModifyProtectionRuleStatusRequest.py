@@ -36,6 +36,11 @@ class ModifyProtectionRuleStatusRequest(RpcRequest):
 
 	def set_LockVersion(self, LockVersion):  # Long
 		self.add_query_param('LockVersion', LockVersion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DefenseType(self): # String
 		return self.get_query_params().get('DefenseType')
 

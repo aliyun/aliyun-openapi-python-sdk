@@ -31,16 +31,21 @@ class CreateProtectionModuleRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DefenseType(self): # String
-		return self.get_query_params().get('DefenseType')
-
-	def set_DefenseType(self, DefenseType):  # String
-		self.add_query_param('DefenseType', DefenseType)
 	def get_Rule(self): # String
 		return self.get_query_params().get('Rule')
 
 	def set_Rule(self, Rule):  # String
 		self.add_query_param('Rule', Rule)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DefenseType(self): # String
+		return self.get_query_params().get('DefenseType')
+
+	def set_DefenseType(self, DefenseType):  # String
+		self.add_query_param('DefenseType', DefenseType)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

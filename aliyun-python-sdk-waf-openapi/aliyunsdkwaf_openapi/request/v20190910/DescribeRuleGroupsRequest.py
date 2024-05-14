@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class ModifyProtectionRuleCacheStatusRequest(RpcRequest):
+class DescribeRuleGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'ModifyProtectionRuleCacheStatus','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeRuleGroups','waf')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,53 @@ class ModifyProtectionRuleCacheStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Type(self): # Integer
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # Integer
+		self.add_query_param('Type', Type)
+	def get_WafLang(self): # String
+		return self.get_query_params().get('WafLang')
+
+	def set_WafLang(self, WafLang):  # String
+		self.add_query_param('WafLang', WafLang)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_DefenseType(self): # String
-		return self.get_query_params().get('DefenseType')
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
 
-	def set_DefenseType(self, DefenseType):  # String
-		self.add_query_param('DefenseType', DefenseType)
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
+	def get_PolicyId(self): # Long
+		return self.get_query_params().get('PolicyId')
+
+	def set_PolicyId(self, PolicyId):  # Long
+		self.add_query_param('PolicyId', PolicyId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Lang(self): # String
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self, Lang):  # String
+		self.add_query_param('Lang', Lang)
+	def get_CurrentPage(self): # Integer
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self, CurrentPage):  # Integer
+		self.add_query_param('CurrentPage', CurrentPage)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_Domain(self): # String
-		return self.get_query_params().get('Domain')
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
 
-	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
-	def get_RuleId(self): # Long
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # Long
-		self.add_query_param('RuleId', RuleId)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

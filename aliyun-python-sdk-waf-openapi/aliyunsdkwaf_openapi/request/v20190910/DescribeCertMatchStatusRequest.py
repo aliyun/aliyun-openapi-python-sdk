@@ -42,6 +42,11 @@ class DescribeCertMatchStatusRequest(RpcRequest):
 
 	def set_PrivateKey(self, PrivateKey):  # String
 		self.add_query_param('PrivateKey', PrivateKey)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

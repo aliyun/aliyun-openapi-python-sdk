@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class ModifyProtectionRuleCacheStatusRequest(RpcRequest):
+class DescribeProtectionModuleModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'ModifyProtectionRuleCacheStatus','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeProtectionModuleMode','waf')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,8 +51,3 @@ class ModifyProtectionRuleCacheStatusRequest(RpcRequest):
 
 	def set_Domain(self, Domain):  # String
 		self.add_query_param('Domain', Domain)
-	def get_RuleId(self): # Long
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # Long
-		self.add_query_param('RuleId', RuleId)
