@@ -1,3 +1,6 @@
+2024-05-15 Version: 1.0.6
+- Generated 2023-09-30 for `tingwu`.
+
 2024-04-12 Version: 1.0.5
 - Generated 2023-09-30 for `tingwu`.
 
