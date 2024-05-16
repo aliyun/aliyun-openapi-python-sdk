@@ -46,6 +46,16 @@ class AttachDBInstancesRequest(RpcRequest):
 
 	def set_ForceAttach(self, ForceAttach):  # Boolean
 		self.add_query_param('ForceAttach', ForceAttach)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_AttachMode(self): # String
+		return self.get_query_params().get('AttachMode')
+
+	def set_AttachMode(self, AttachMode):  # String
+		self.add_query_param('AttachMode', AttachMode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

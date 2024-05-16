@@ -41,6 +41,11 @@ class DetachDBInstancesRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_RemoveSecurityGroup(self): # Boolean
+		return self.get_query_params().get('RemoveSecurityGroup')
+
+	def set_RemoveSecurityGroup(self, RemoveSecurityGroup):  # Boolean
+		self.add_query_param('RemoveSecurityGroup', RemoveSecurityGroup)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

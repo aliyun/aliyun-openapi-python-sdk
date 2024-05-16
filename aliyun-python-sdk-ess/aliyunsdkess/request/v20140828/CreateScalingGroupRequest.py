@@ -270,6 +270,17 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_SpotInstancePools(self, SpotInstancePools):  # Integer
 		self.add_query_param('SpotInstancePools', SpotInstancePools)
+	def get_DBInstances(self): # RepeatList
+		return self.get_query_params().get('DBInstance')
+
+	def set_DBInstances(self, DBInstance):  # RepeatList
+		for depth1 in range(len(DBInstance)):
+			if DBInstance[depth1].get('DBInstanceId') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.DBInstanceId', DBInstance[depth1].get('DBInstanceId'))
+			if DBInstance[depth1].get('Type') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.Type', DBInstance[depth1].get('Type'))
+			if DBInstance[depth1].get('AttachMode') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.AttachMode', DBInstance[depth1].get('AttachMode'))
 	def get_GroupDeletionProtection(self): # Boolean
 		return self.get_query_params().get('GroupDeletionProtection')
 

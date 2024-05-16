@@ -271,6 +271,11 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_DedicatedHostClusterId(self): # String
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self, DedicatedHostClusterId):  # String
+		self.add_query_param('DedicatedHostClusterId', DedicatedHostClusterId)
 	def get_Override(self): # Boolean
 		return self.get_query_params().get('Override')
 
