@@ -30,3 +30,8 @@ class DeleteKeyPairsRequest(RpcRequest):
 
 	def set_KeyPairName(self, KeyPairName):  # String
 		self.add_query_param('KeyPairName', KeyPairName)
+	def get_KeyPairId(self): # String
+		return self.get_query_params().get('KeyPairId')
+
+	def set_KeyPairId(self, KeyPairId):  # String
+		self.add_query_param('KeyPairId', KeyPairId)

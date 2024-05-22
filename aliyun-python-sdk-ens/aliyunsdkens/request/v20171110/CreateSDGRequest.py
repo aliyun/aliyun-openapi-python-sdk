@@ -18,16 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class RetryWorkflowRequest(RpcRequest):
+class CreateSDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RetryWorkflow','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateSDG','ens')
+		self.set_method('GET')
 
-	def get_WorkflowIds(self): # Array
-		return self.get_query_params().get('WorkflowIds')
+	def get_FromSDGId(self): # String
+		return self.get_query_params().get('FromSDGId')
 
-	def set_WorkflowIds(self, WorkflowIds):  # Array
-		self.add_query_param("WorkflowIds", json.dumps(WorkflowIds))
+	def set_FromSDGId(self, FromSDGId):  # String
+		self.add_query_param('FromSDGId', FromSDGId)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Size(self): # String
+		return self.get_query_params().get('Size')
+
+	def set_Size(self, Size):  # String
+		self.add_query_param('Size', Size)

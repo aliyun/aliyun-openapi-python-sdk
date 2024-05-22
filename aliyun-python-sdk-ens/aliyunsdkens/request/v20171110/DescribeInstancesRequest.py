@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class DescribeInstancesRequest(RpcRequest):
 
@@ -45,6 +46,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_EnsServiceId(self, EnsServiceId):  # String
 		self.add_query_param('EnsServiceId', EnsServiceId)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 

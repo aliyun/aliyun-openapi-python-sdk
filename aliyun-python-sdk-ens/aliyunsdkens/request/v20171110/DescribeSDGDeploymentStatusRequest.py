@@ -18,16 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class RollbackWorkflowRequest(RpcRequest):
+class DescribeSDGDeploymentStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RollbackWorkflow','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSDGDeploymentStatus','ens')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
-	def get_WorkflowIds(self): # Array
-		return self.get_query_params().get('WorkflowIds')
+	def get_PageNumber(self): # String
+		return self.get_query_params().get('PageNumber')
 
-	def set_WorkflowIds(self, WorkflowIds):  # Array
-		self.add_query_param("WorkflowIds", json.dumps(WorkflowIds))
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SDGId(self): # String
+		return self.get_query_params().get('SDGId')
+
+	def set_SDGId(self, SDGId):  # String
+		self.add_query_param('SDGId', SDGId)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)

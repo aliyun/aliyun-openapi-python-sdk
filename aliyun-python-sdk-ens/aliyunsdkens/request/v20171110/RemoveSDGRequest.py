@@ -20,14 +20,14 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class RestartWorkflowRequest(RpcRequest):
+class RemoveSDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RestartWorkflow','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RemoveSDG','ens')
+		self.set_method('GET')
 
-	def get_WorkflowIds(self): # Array
-		return self.get_query_params().get('WorkflowIds')
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
 
-	def set_WorkflowIds(self, WorkflowIds):  # Array
-		self.add_query_param("WorkflowIds", json.dumps(WorkflowIds))
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))

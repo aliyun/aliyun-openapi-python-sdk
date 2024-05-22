@@ -18,30 +18,46 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class RenewARMServerInstanceRequest(RpcRequest):
+class ModifyInstanceChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RenewARMServerInstance','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyInstanceChargeType','ens')
 		self.set_method('POST')
 
-	def get_Period(self): # Integer
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self, Period):  # Integer
+	def set_Period(self, Period):  # String
 		self.add_query_param('Period', Period)
+	def get_IncludeDataDisks(self): # Boolean
+		return self.get_query_params().get('IncludeDataDisks')
+
+	def set_IncludeDataDisks(self, IncludeDataDisks):  # Boolean
+		self.add_query_param('IncludeDataDisks', IncludeDataDisks)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
 	def set_PeriodUnit(self, PeriodUnit):  # String
 		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_AutoRenew(self): # Boolean
 		return self.get_query_params().get('AutoRenew')
 
 	def set_AutoRenew(self, AutoRenew):  # Boolean
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)

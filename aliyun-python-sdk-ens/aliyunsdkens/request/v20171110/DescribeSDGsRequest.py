@@ -18,15 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class DescribeWorkflowActivityRequest(RpcRequest):
+class DescribeSDGsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeWorkflowActivity','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSDGs','ens')
+		self.set_method('GET')
 
-	def get_WorkFlowId(self): # String
-		return self.get_query_params().get('WorkFlowId')
+	def get_SDGIds(self): # Array
+		return self.get_query_params().get('SDGIds')
 
-	def set_WorkFlowId(self, WorkFlowId):  # String
-		self.add_query_param('WorkFlowId', WorkFlowId)
+	def set_SDGIds(self, SDGIds):  # Array
+		self.add_query_param("SDGIds", json.dumps(SDGIds))
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))

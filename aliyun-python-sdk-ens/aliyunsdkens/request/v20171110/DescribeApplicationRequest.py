@@ -25,6 +25,11 @@ class DescribeApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeApplication','ens')
 		self.set_method('POST')
 
+	def get_ResourceSelector(self): # String
+		return self.get_query_params().get('ResourceSelector')
+
+	def set_ResourceSelector(self, ResourceSelector):  # String
+		self.add_query_param('ResourceSelector', ResourceSelector)
 	def get_AppVersions(self): # String
 		return self.get_query_params().get('AppVersions')
 

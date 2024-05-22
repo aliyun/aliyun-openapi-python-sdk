@@ -25,21 +25,16 @@ class RescaleApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RescaleApplication','ens')
 		self.set_method('POST')
 
-	def get_ResourceSelector(self): # String
-		return self.get_query_params().get('ResourceSelector')
-
-	def set_ResourceSelector(self, ResourceSelector):  # String
-		self.add_query_param('ResourceSelector', ResourceSelector)
-	def get_ToAppVersion(self): # String
-		return self.get_query_params().get('ToAppVersion')
-
-	def set_ToAppVersion(self, ToAppVersion):  # String
-		self.add_query_param('ToAppVersion', ToAppVersion)
 	def get_RescaleType(self): # String
 		return self.get_query_params().get('RescaleType')
 
 	def set_RescaleType(self, RescaleType):  # String
 		self.add_query_param('RescaleType', RescaleType)
+	def get_ResourceSelector(self): # String
+		return self.get_query_params().get('ResourceSelector')
+
+	def set_ResourceSelector(self, ResourceSelector):  # String
+		self.add_query_param('ResourceSelector', ResourceSelector)
 	def get_Timeout(self): # Integer
 		return self.get_query_params().get('Timeout')
 
@@ -55,3 +50,8 @@ class RescaleApplicationRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_ToAppVersion(self): # String
+		return self.get_query_params().get('ToAppVersion')
+
+	def set_ToAppVersion(self, ToAppVersion):  # String
+		self.add_query_param('ToAppVersion', ToAppVersion)

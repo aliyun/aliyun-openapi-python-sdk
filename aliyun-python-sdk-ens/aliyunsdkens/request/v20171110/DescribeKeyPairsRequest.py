@@ -40,3 +40,8 @@ class DescribeKeyPairsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_KeyPairId(self): # String
+		return self.get_query_params().get('KeyPairId')
+
+	def set_KeyPairId(self, KeyPairId):  # String
+		self.add_query_param('KeyPairId', KeyPairId)

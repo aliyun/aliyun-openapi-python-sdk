@@ -18,20 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
-class ModifyImageAttributeRequest(RpcRequest):
+class DeleteSDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyImageAttribute','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSDG','ens')
+		self.set_method('GET')
 
-	def get_ImageId(self): # String
-		return self.get_query_params().get('ImageId')
+	def get_SDGId(self): # Array
+		return self.get_query_params().get('SDGId')
 
-	def set_ImageId(self, ImageId):  # String
-		self.add_query_param('ImageId', ImageId)
-	def get_ImageName(self): # String
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self, ImageName):  # String
-		self.add_query_param('ImageName', ImageName)
+	def set_SDGId(self, SDGId):  # Array
+		self.add_query_param("SDGId", json.dumps(SDGId))

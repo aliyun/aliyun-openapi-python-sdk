@@ -18,7 +18,6 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
 class ResetAICInstanceRequest(RpcRequest):
 
@@ -36,8 +35,3 @@ class ResetAICInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_InstanceIds(self): # Array
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # Array
-		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
