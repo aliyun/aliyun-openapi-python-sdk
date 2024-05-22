@@ -25,20 +25,19 @@ class ModifyDBInstanceDescriptionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyDBInstanceDescription','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_DBInstanceDescription(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
+		self.add_query_param('DBInstanceDescription', DBInstanceDescription)

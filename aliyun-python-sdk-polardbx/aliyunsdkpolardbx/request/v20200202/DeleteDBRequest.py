@@ -25,20 +25,19 @@ class DeleteDBRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DeleteDB','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_DbName(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)

@@ -20,25 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class GetPolarxCommodityRequest(RpcRequest):
+class ChangeResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'GetPolarxCommodity','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ChangeResourceGroup','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_query_params().get('NewResourceGroupId')
 
-	def get_OrderType(self):
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)

@@ -25,32 +25,39 @@ class ModifyAccountPrivilegeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountPrivilege','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_SecurityAccountPassword(self): # String
+		return self.get_query_params().get('SecurityAccountPassword')
 
-	def get_AccountPrivilege(self):
+	def set_SecurityAccountPassword(self, SecurityAccountPassword):  # String
+		self.add_query_param('SecurityAccountPassword', SecurityAccountPassword)
+	def get_AccountPrivilege(self): # String
 		return self.get_query_params().get('AccountPrivilege')
 
-	def set_AccountPrivilege(self,AccountPrivilege):
-		self.add_query_param('AccountPrivilege',AccountPrivilege)
-
-	def get_AccountName(self):
+	def set_AccountPrivilege(self, AccountPrivilege):  # String
+		self.add_query_param('AccountPrivilege', AccountPrivilege)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
-
-	def get_DbName(self):
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_DbName(self): # String
 		return self.get_query_params().get('DbName')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_DbName(self, DbName):  # String
+		self.add_query_param('DbName', DbName)
+	def get_SecurityAccountName(self): # String
+		return self.get_query_params().get('SecurityAccountName')
+
+	def set_SecurityAccountName(self, SecurityAccountName):  # String
+		self.add_query_param('SecurityAccountName', SecurityAccountName)

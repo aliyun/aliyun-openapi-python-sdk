@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class CreateAccountRequest(RpcRequest):
+class EnableRightsSeparationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'CreateAccount','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'EnableRightsSeparation','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,43 +31,38 @@ class CreateAccountRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBInstanceName(self): # String
-		return self.get_query_params().get('DBInstanceName')
-
-	def set_DBInstanceName(self, DBInstanceName):  # String
-		self.add_query_param('DBInstanceName', DBInstanceName)
 	def get_SecurityAccountPassword(self): # String
 		return self.get_query_params().get('SecurityAccountPassword')
 
 	def set_SecurityAccountPassword(self, SecurityAccountPassword):  # String
 		self.add_query_param('SecurityAccountPassword', SecurityAccountPassword)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_SecurityAccountDescription(self): # String
+		return self.get_query_params().get('SecurityAccountDescription')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountPrivilege(self): # String
-		return self.get_query_params().get('AccountPrivilege')
+	def set_SecurityAccountDescription(self, SecurityAccountDescription):  # String
+		self.add_query_param('SecurityAccountDescription', SecurityAccountDescription)
+	def get_AuditAccountPassword(self): # String
+		return self.get_query_params().get('AuditAccountPassword')
 
-	def set_AccountPrivilege(self, AccountPrivilege):  # String
-		self.add_query_param('AccountPrivilege', AccountPrivilege)
-	def get_AccountPassword(self): # String
-		return self.get_query_params().get('AccountPassword')
+	def set_AuditAccountPassword(self, AuditAccountPassword):  # String
+		self.add_query_param('AuditAccountPassword', AuditAccountPassword)
+	def get_DBInstanceName(self): # String
+		return self.get_query_params().get('DBInstanceName')
 
-	def set_AccountPassword(self, AccountPassword):  # String
-		self.add_query_param('AccountPassword', AccountPassword)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
-	def get_DBName(self): # String
-		return self.get_query_params().get('DBName')
-
-	def set_DBName(self, DBName):  # String
-		self.add_query_param('DBName', DBName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
 	def get_SecurityAccountName(self): # String
 		return self.get_query_params().get('SecurityAccountName')
 
 	def set_SecurityAccountName(self, SecurityAccountName):  # String
 		self.add_query_param('SecurityAccountName', SecurityAccountName)
+	def get_AuditAccountName(self): # String
+		return self.get_query_params().get('AuditAccountName')
+
+	def set_AuditAccountName(self, AuditAccountName):  # String
+		self.add_query_param('AuditAccountName', AuditAccountName)
+	def get_AuditAccountDescription(self): # String
+		return self.get_query_params().get('AuditAccountDescription')
+
+	def set_AuditAccountDescription(self, AuditAccountDescription):  # String
+		self.add_query_param('AuditAccountDescription', AuditAccountDescription)

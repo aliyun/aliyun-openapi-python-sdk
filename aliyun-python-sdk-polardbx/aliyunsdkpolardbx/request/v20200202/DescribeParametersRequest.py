@@ -25,20 +25,19 @@ class DescribeParametersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeParameters','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceId(self):
+	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_ParamLevel(self):
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ParamLevel(self): # String
 		return self.get_query_params().get('ParamLevel')
 
-	def set_ParamLevel(self,ParamLevel):
-		self.add_query_param('ParamLevel',ParamLevel)
+	def set_ParamLevel(self, ParamLevel):  # String
+		self.add_query_param('ParamLevel', ParamLevel)

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class DescribeBackupSetListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeBackupSetList','polardbx')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,13 +36,28 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_DestCrossRegion(self): # String
+		return self.get_query_params().get('DestCrossRegion')
+
+	def set_DestCrossRegion(self, DestCrossRegion):  # String
+		self.add_query_param('DestCrossRegion', DestCrossRegion)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

@@ -20,25 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class CancelPolarxOrderRequest(RpcRequest):
+class DisableRightsSeparationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'CancelPolarxOrder','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DisableRightsSeparation','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_DbaAccountPassword(self): # String
+		return self.get_query_params().get('DbaAccountPassword')
 
-	def get_ScaleOutToken(self):
-		return self.get_query_params().get('ScaleOutToken')
+	def set_DbaAccountPassword(self, DbaAccountPassword):  # String
+		self.add_query_param('DbaAccountPassword', DbaAccountPassword)
+	def get_DbaAccountName(self): # String
+		return self.get_query_params().get('DbaAccountName')
 
-	def set_ScaleOutToken(self,ScaleOutToken):
-		self.add_query_param('ScaleOutToken',ScaleOutToken)
+	def set_DbaAccountName(self, DbaAccountName):  # String
+		self.add_query_param('DbaAccountName', DbaAccountName)

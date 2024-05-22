@@ -20,25 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class EnableSqlAuditRequest(RpcRequest):
+class ModifyActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'EnableSqlAudit','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyActiveOperationTasks','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)
+	def get_Ids(self): # String
+		return self.get_query_params().get('Ids')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_ImmediateStart(self): # Long
+		return self.get_query_params().get('ImmediateStart')
 
-	def get_ExpireAfterDays(self):
-		return self.get_query_params().get('ExpireAfterDays')
-
-	def set_ExpireAfterDays(self,ExpireAfterDays):
-		self.add_query_param('ExpireAfterDays',ExpireAfterDays)
+	def set_ImmediateStart(self, ImmediateStart):  # Long
+		self.add_query_param('ImmediateStart', ImmediateStart)

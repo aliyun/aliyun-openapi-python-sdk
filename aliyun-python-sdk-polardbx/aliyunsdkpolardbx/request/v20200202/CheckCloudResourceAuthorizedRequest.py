@@ -20,43 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class DescribeInstancePerformanceRequest(RpcRequest):
+class CheckCloudResourceAuthorizedRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeInstancePerformance','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'CheckCloudResourceAuthorized','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBInstanceName(self): # String
+		return self.get_query_params().get('DBInstanceName')
 
-	def get_DbInstanceName(self):
-		return self.get_query_params().get('DbInstanceName')
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_RoleArn(self): # String
+		return self.get_query_params().get('RoleArn')
 
-	def set_DbInstanceName(self,DbInstanceName):
-		self.add_query_param('DbInstanceName',DbInstanceName)
-
-	def get_Keys(self):
-		return self.get_query_params().get('Keys')
-
-	def set_Keys(self,Keys):
-		self.add_query_param('Keys',Keys)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)

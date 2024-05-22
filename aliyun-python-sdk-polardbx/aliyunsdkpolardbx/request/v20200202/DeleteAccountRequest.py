@@ -25,20 +25,29 @@ class DeleteAccountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DeleteAccount','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_SecurityAccountPassword(self): # String
+		return self.get_query_params().get('SecurityAccountPassword')
 
-	def get_AccountName(self):
+	def set_SecurityAccountPassword(self, SecurityAccountPassword):  # String
+		self.add_query_param('SecurityAccountPassword', SecurityAccountPassword)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)
+	def get_SecurityAccountName(self): # String
+		return self.get_query_params().get('SecurityAccountName')
+
+	def set_SecurityAccountName(self, SecurityAccountName):  # String
+		self.add_query_param('SecurityAccountName', SecurityAccountName)

@@ -25,26 +25,24 @@ class ModifyDBInstanceConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyDBInstanceConfig','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_ConfigName(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_ConfigName(self): # String
 		return self.get_query_params().get('ConfigName')
 
-	def set_ConfigName(self,ConfigName):
-		self.add_query_param('ConfigName',ConfigName)
-
-	def get_ConfigValue(self):
+	def set_ConfigName(self, ConfigName):  # String
+		self.add_query_param('ConfigName', ConfigName)
+	def get_ConfigValue(self): # String
 		return self.get_query_params().get('ConfigValue')
 
-	def set_ConfigValue(self,ConfigValue):
-		self.add_query_param('ConfigValue',ConfigValue)
+	def set_ConfigValue(self, ConfigValue):  # String
+		self.add_query_param('ConfigValue', ConfigValue)

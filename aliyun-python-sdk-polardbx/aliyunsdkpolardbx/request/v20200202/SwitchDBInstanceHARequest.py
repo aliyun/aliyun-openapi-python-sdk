@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class SwitchDBInstanceHARequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'SwitchDBInstanceHA','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,23 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_TargetPrimaryRegionId(self): # String
+		return self.get_query_params().get('TargetPrimaryRegionId')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_TargetPrimaryRegionId(self, TargetPrimaryRegionId):  # String
+		self.add_query_param('TargetPrimaryRegionId', TargetPrimaryRegionId)
+	def get_SwitchTimeMode(self): # String
+		return self.get_query_params().get('SwitchTimeMode')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
+		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
+	def get_TargetPrimaryAzoneId(self): # String
+		return self.get_query_params().get('TargetPrimaryAzoneId')
+
+	def set_TargetPrimaryAzoneId(self, TargetPrimaryAzoneId):  # String
+		self.add_query_param('TargetPrimaryAzoneId', TargetPrimaryAzoneId)
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
+
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)

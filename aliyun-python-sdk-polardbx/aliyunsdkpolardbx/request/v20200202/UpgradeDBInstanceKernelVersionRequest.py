@@ -25,26 +25,24 @@ class UpgradeDBInstanceKernelVersionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'UpgradeDBInstanceKernelVersion','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_SwitchMode(self): # String
+		return self.get_query_params().get('SwitchMode')
 
-	def get_SwitchTime(self):
-		return self.get_query_params().get('SwitchTime')
+	def set_SwitchMode(self, SwitchMode):  # String
+		self.add_query_param('SwitchMode', SwitchMode)
+	def get_MinorVersion(self): # String
+		return self.get_query_params().get('MinorVersion')
 
-	def set_SwitchTime(self,SwitchTime):
-		self.add_query_param('SwitchTime',SwitchTime)
-
-	def get_UpgradeTime(self):
-		return self.get_query_params().get('UpgradeTime')
-
-	def set_UpgradeTime(self,UpgradeTime):
-		self.add_query_param('UpgradeTime',UpgradeTime)
+	def set_MinorVersion(self, MinorVersion):  # String
+		self.add_query_param('MinorVersion', MinorVersion)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'UntagResources','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,25 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBInstanceName(self): # String
-		return self.get_query_params().get('DBInstanceName')
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
 
-	def set_DBInstanceName(self, DBInstanceName):  # String
-		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceIds(self): # RepeatList
+		return self.get_query_params().get('ResourceId')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
+
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])

@@ -20,25 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class GetPolarXPriceRequest(RpcRequest):
+class DescribeBackupSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'GetPolarXPrice','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeBackupSet','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_BackupSetId(self): # String
+		return self.get_query_params().get('BackupSetId')
 
-	def get_NodeCount(self):
-		return self.get_query_params().get('NodeCount')
+	def set_BackupSetId(self, BackupSetId):  # String
+		self.add_query_param('BackupSetId', BackupSetId)
+	def get_DestCrossRegion(self): # String
+		return self.get_query_params().get('DestCrossRegion')
 
-	def set_NodeCount(self,NodeCount):
-		self.add_query_param('NodeCount',NodeCount)
+	def set_DestCrossRegion(self, DestCrossRegion):  # String
+		self.add_query_param('DestCrossRegion', DestCrossRegion)

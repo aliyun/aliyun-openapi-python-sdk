@@ -25,32 +25,29 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifySecurityIps','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_ModifyMode(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_ModifyMode(self): # String
 		return self.get_query_params().get('ModifyMode')
 
-	def set_ModifyMode(self,ModifyMode):
-		self.add_query_param('ModifyMode',ModifyMode)
-
-	def get_GroupName(self):
+	def set_ModifyMode(self, ModifyMode):  # String
+		self.add_query_param('ModifyMode', ModifyMode)
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_SecurityIPList(self):
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_SecurityIPList(self): # String
 		return self.get_query_params().get('SecurityIPList')
 
-	def set_SecurityIPList(self,SecurityIPList):
-		self.add_query_param('SecurityIPList',SecurityIPList)
+	def set_SecurityIPList(self, SecurityIPList):  # String
+		self.add_query_param('SecurityIPList', SecurityIPList)

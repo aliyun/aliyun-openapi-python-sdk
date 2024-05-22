@@ -25,26 +25,49 @@ class UpdatePolarDBXInstanceNodeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'UpdatePolarDBXInstanceNode','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AddDNSpec(self): # String
+		return self.get_query_params().get('AddDNSpec')
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
+	def set_AddDNSpec(self, AddDNSpec):  # String
+		self.add_query_param('AddDNSpec', AddDNSpec)
+	def get_StoragePoolName(self): # String
+		return self.get_query_params().get('StoragePoolName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_DbInstanceNodeCount(self):
+	def set_StoragePoolName(self, StoragePoolName):  # String
+		self.add_query_param('StoragePoolName', StoragePoolName)
+	def get_DbInstanceNodeCount(self): # String
 		return self.get_query_params().get('DbInstanceNodeCount')
 
-	def set_DbInstanceNodeCount(self,DbInstanceNodeCount):
-		self.add_query_param('DbInstanceNodeCount',DbInstanceNodeCount)
+	def set_DbInstanceNodeCount(self, DbInstanceNodeCount):  # String
+		self.add_query_param('DbInstanceNodeCount', DbInstanceNodeCount)
+	def get_CNNodeCount(self): # String
+		return self.get_query_params().get('CNNodeCount')
+
+	def set_CNNodeCount(self, CNNodeCount):  # String
+		self.add_query_param('CNNodeCount', CNNodeCount)
+	def get_DBInstanceName(self): # String
+		return self.get_query_params().get('DBInstanceName')
+
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DeleteDNIds(self): # String
+		return self.get_query_params().get('DeleteDNIds')
+
+	def set_DeleteDNIds(self, DeleteDNIds):  # String
+		self.add_query_param('DeleteDNIds', DeleteDNIds)
+	def get_DNNodeCount(self): # String
+		return self.get_query_params().get('DNNodeCount')
+
+	def set_DNNodeCount(self, DNNodeCount):  # String
+		self.add_query_param('DNNodeCount', DNNodeCount)

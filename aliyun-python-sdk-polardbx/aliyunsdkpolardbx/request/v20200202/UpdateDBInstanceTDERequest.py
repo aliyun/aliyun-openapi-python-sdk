@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class UpdateDBInstanceTDERequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'UpdateDBInstanceTDE','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,18 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_EncryptionKey(self): # String
+		return self.get_query_params().get('EncryptionKey')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_EncryptionKey(self, EncryptionKey):  # String
+		self.add_query_param('EncryptionKey', EncryptionKey)
+	def get_RoleArn(self): # String
+		return self.get_query_params().get('RoleArn')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)
+	def get_TDEStatus(self): # Integer
+		return self.get_query_params().get('TDEStatus')
+
+	def set_TDEStatus(self, TDEStatus):  # Integer
+		self.add_query_param('TDEStatus', TDEStatus)

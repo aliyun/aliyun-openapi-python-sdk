@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class CreateBackupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'CreateBackup','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,13 +36,8 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_BackupType(self): # String
+		return self.get_query_params().get('BackupType')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_BackupType(self, BackupType):  # String
+		self.add_query_param('BackupType', BackupType)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ModifyAccountDescriptionRequest(RpcRequest):
+class DescribeDBNodePerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeDBNodePerformance','polardbx')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,38 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DBNodeRole(self): # String
+		return self.get_query_params().get('DBNodeRole')
+
+	def set_DBNodeRole(self, DBNodeRole):  # String
+		self.add_query_param('DBNodeRole', DBNodeRole)
+	def get_CharacterType(self): # String
+		return self.get_query_params().get('CharacterType')
+
+	def set_CharacterType(self, CharacterType):  # String
+		self.add_query_param('CharacterType', CharacterType)
 	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def get_DBNodeIds(self): # String
+		return self.get_query_params().get('DBNodeIds')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_DBNodeIds(self, DBNodeIds):  # String
+		self.add_query_param('DBNodeIds', DBNodeIds)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

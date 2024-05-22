@@ -20,31 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardbx.endpoint import endpoint_data
 
-class ResetPolarxPgAccountPasswordRequest(RpcRequest):
+class DescribeDBInstanceViaEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ResetPolarxPgAccountPassword','polardbx')
+		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'DescribeDBInstanceViaEndpoint','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Endpoint(self): # String
+		return self.get_query_params().get('Endpoint')
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
-
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
-
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_Endpoint(self, Endpoint):  # String
+		self.add_query_param('Endpoint', Endpoint)
