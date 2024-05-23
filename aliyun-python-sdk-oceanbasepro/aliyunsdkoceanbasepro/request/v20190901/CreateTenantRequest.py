@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
 class CreateTenantRequest(RpcRequest):
 
@@ -91,6 +92,16 @@ class CreateTenantRequest(RpcRequest):
 
 	def set_PrimaryZone(self, PrimaryZone):  # String
 		self.add_body_params('PrimaryZone', PrimaryZone)
+	def get_UserVpcOwnerId(self): # String
+		return self.get_body_params().get('UserVpcOwnerId')
+
+	def set_UserVpcOwnerId(self, UserVpcOwnerId):  # String
+		self.add_body_params('UserVpcOwnerId', UserVpcOwnerId)
+	def get_CreateParams(self): # Map
+		return self.get_body_params().get('CreateParams')
+
+	def set_CreateParams(self, CreateParams):  # Map
+		self.add_body_params("CreateParams", json.dumps(CreateParams))
 	def get_TenantName(self): # String
 		return self.get_body_params().get('TenantName')
 

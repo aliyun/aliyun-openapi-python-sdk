@@ -31,11 +31,21 @@ class DescribeOasSQLPlansRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ReturnBriefInfo(self): # Boolean
+		return self.get_body_params().get('ReturnBriefInfo')
+
+	def set_ReturnBriefInfo(self, ReturnBriefInfo):  # Boolean
+		self.add_body_params('ReturnBriefInfo', ReturnBriefInfo)
 	def get_StartTime(self): # String
 		return self.get_body_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
+	def get_PlanUnionHash(self): # String
+		return self.get_body_params().get('PlanUnionHash')
+
+	def set_PlanUnionHash(self, PlanUnionHash):  # String
+		self.add_body_params('PlanUnionHash', PlanUnionHash)
 	def get_DynamicSql(self): # Boolean
 		return self.get_body_params().get('DynamicSql')
 

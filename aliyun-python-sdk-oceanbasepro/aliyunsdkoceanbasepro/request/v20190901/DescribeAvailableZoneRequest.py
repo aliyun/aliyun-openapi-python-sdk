@@ -37,6 +37,11 @@ class DescribeAvailableZoneRequest(RpcRequest):
 
 	def set_Spec(self, Spec):  # String
 		self.add_body_params('Spec', Spec)
+	def get_InstanceType(self): # String
+		return self.get_body_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_body_params('InstanceType', InstanceType)
 	def get_ObVersion(self): # String
 		return self.get_body_params().get('ObVersion')
 
@@ -47,11 +52,11 @@ class DescribeAvailableZoneRequest(RpcRequest):
 
 	def set_Series(self, Series):  # String
 		self.add_body_params('Series', Series)
-	def get_InstanceType(self): # String
-		return self.get_body_params().get('InstanceType')
+	def get_CpuArch(self): # String
+		return self.get_body_params().get('CpuArch')
 
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_body_params('InstanceType', InstanceType)
+	def set_CpuArch(self, CpuArch):  # String
+		self.add_body_params('CpuArch', CpuArch)
 	def get_DeployType(self): # String
 		return self.get_body_params().get('DeployType')
 

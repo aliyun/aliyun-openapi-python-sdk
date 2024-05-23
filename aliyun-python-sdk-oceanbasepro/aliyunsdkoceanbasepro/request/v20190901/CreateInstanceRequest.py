@@ -106,6 +106,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Series(self, Series):  # String
 		self.add_body_params('Series', Series)
+	def get_CpuArch(self): # String
+		return self.get_body_params().get('CpuArch')
+
+	def set_CpuArch(self, CpuArch):  # String
+		self.add_body_params('CpuArch', CpuArch)
 	def get_PrimaryInstance(self): # String
 		return self.get_body_params().get('PrimaryInstance')
 

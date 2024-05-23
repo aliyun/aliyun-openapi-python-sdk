@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class DescribeSQLSamplesRequest(RpcRequest):
+class BatchKillProcessListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeSQLSamples','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'BatchKillProcessList','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,18 @@ class DescribeSQLSamplesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ReturnSqlText(self): # Boolean
-		return self.get_body_params().get('ReturnSqlText')
+	def get_SessionList(self): # String
+		return self.get_body_params().get('SessionList')
 
-	def set_ReturnSqlText(self, ReturnSqlText):  # Boolean
-		self.add_body_params('ReturnSqlText', ReturnSqlText)
-	def get_StartTime(self): # String
-		return self.get_body_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_body_params('StartTime', StartTime)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)
-	def get_SqlId(self): # String
-		return self.get_body_params().get('SqlId')
-
-	def set_SqlId(self, SqlId):  # String
-		self.add_body_params('SqlId', SqlId)
-	def get_EndTime(self): # String
-		return self.get_body_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_body_params('EndTime', EndTime)
+	def set_SessionList(self, SessionList):  # String
+		self.add_body_params('SessionList', SessionList)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-	def get_DbName(self): # String
-		return self.get_body_params().get('DbName')
+	def get_TenantId(self): # String
+		return self.get_body_params().get('TenantId')
 
-	def set_DbName(self, DbName):  # String
-		self.add_body_params('DbName', DbName)
+	def set_TenantId(self, TenantId):  # String
+		self.add_body_params('TenantId', TenantId)

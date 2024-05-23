@@ -71,6 +71,11 @@ class ModifyTenantPrimaryZoneRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_body_params('VpcId', VpcId)
+	def get_UserVpcOwnerId(self): # String
+		return self.get_body_params().get('UserVpcOwnerId')
+
+	def set_UserVpcOwnerId(self, UserVpcOwnerId):  # String
+		self.add_body_params('UserVpcOwnerId', UserVpcOwnerId)
 	def get_UserDirectVSwitchId(self): # String
 		return self.get_body_params().get('UserDirectVSwitchId')
 

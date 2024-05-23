@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class DescribeZonesRequest(RpcRequest):
+class DescribeTagValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeZones','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeTagValues','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,8 @@ class DescribeZonesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Series(self): # String
-		return self.get_body_params().get('Series')
+	def get_ResourceType(self): # String
+		return self.get_body_params().get('ResourceType')
 
-	def set_Series(self, Series):  # String
-		self.add_body_params('Series', Series)
-	def get_CpuArch(self): # String
-		return self.get_body_params().get('CpuArch')
-
-	def set_CpuArch(self, CpuArch):  # String
-		self.add_body_params('CpuArch', CpuArch)
-	def get_DeployType(self): # String
-		return self.get_body_params().get('DeployType')
-
-	def set_DeployType(self, DeployType):  # String
-		self.add_body_params('DeployType', DeployType)
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_body_params('ResourceType', ResourceType)
