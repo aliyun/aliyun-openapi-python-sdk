@@ -47,6 +47,20 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_Ipv4Prefixs(self, Ipv4Prefix):  # RepeatList
 		for depth1 in range(len(Ipv4Prefix)):
 			self.add_query_param('Ipv4Prefix.' + str(depth1 + 1), Ipv4Prefix[depth1])
+	def get_NetworkInterfaceTrafficConfig(self): # Struct
+		return self.get_query_params().get('NetworkInterfaceTrafficConfig')
+
+	def set_NetworkInterfaceTrafficConfig(self, NetworkInterfaceTrafficConfig):  # Struct
+		if NetworkInterfaceTrafficConfig.get('QueueNumber') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.QueueNumber', NetworkInterfaceTrafficConfig.get('QueueNumber'))
+		if NetworkInterfaceTrafficConfig.get('NetworkInterfaceTrafficMode') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode', NetworkInterfaceTrafficConfig.get('NetworkInterfaceTrafficMode'))
+		if NetworkInterfaceTrafficConfig.get('QueuePairNumber') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.QueuePairNumber', NetworkInterfaceTrafficConfig.get('QueuePairNumber'))
+		if NetworkInterfaceTrafficConfig.get('TxQueueSize') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.TxQueueSize', NetworkInterfaceTrafficConfig.get('TxQueueSize'))
+		if NetworkInterfaceTrafficConfig.get('RxQueueSize') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.RxQueueSize', NetworkInterfaceTrafficConfig.get('RxQueueSize'))
 	def get_SecondaryPrivateIpAddressCount(self): # Integer
 		return self.get_query_params().get('SecondaryPrivateIpAddressCount')
 
@@ -185,6 +199,16 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_Ipv4PrefixCount(self, Ipv4PrefixCount):  # Integer
 		self.add_query_param('Ipv4PrefixCount', Ipv4PrefixCount)
+	def get_ConnectionTrackingConfiguration(self): # Struct
+		return self.get_query_params().get('ConnectionTrackingConfiguration')
+
+	def set_ConnectionTrackingConfiguration(self, ConnectionTrackingConfiguration):  # Struct
+		if ConnectionTrackingConfiguration.get('TcpEstablishedTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.TcpEstablishedTimeout', ConnectionTrackingConfiguration.get('TcpEstablishedTimeout'))
+		if ConnectionTrackingConfiguration.get('TcpClosedAndTimeWaitTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout', ConnectionTrackingConfiguration.get('TcpClosedAndTimeWaitTimeout'))
+		if ConnectionTrackingConfiguration.get('UdpTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.UdpTimeout', ConnectionTrackingConfiguration.get('UdpTimeout'))
 	def get_PrimaryIpAddress(self): # String
 		return self.get_query_params().get('PrimaryIpAddress')
 

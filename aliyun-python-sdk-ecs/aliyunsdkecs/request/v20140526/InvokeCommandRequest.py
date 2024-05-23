@@ -114,6 +114,11 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TerminationMode(self): # String
+		return self.get_query_params().get('TerminationMode')
+
+	def set_TerminationMode(self, TerminationMode):  # String
+		self.add_query_param('TerminationMode', TerminationMode)
 	def get_InstanceIds(self): # RepeatList
 		return self.get_query_params().get('InstanceId')
 

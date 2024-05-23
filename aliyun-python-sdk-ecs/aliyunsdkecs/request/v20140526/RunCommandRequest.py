@@ -160,6 +160,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TerminationMode(self): # String
+		return self.get_query_params().get('TerminationMode')
+
+	def set_TerminationMode(self, TerminationMode):  # String
+		self.add_query_param('TerminationMode', TerminationMode)
 	def get_EnableParameter(self): # Boolean
 		return self.get_query_params().get('EnableParameter')
 

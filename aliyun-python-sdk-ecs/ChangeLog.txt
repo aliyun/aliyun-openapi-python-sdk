@@ -1,3 +1,6 @@
+2024-05-23 Version: 4.24.73
+- Add SnapshotLinkId for DescribeSnapshots.
+
 2024-04-26 Version: 4.24.72
 - Add SupportedBootModes for DescribeInstanceTypes.
 
