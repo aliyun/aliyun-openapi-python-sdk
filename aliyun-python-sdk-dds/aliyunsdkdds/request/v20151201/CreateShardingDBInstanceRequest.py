@@ -51,6 +51,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_ReplicaSets(self): # RepeatList
 		return self.get_query_params().get('ReplicaSet')
 
@@ -96,6 +101,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_BackupId(self): # String
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
 	def get_EncryptionKey(self): # String
 		return self.get_query_params().get('EncryptionKey')
 
@@ -172,6 +182,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_RestoreTime(self, RestoreTime):  # String
 		self.add_query_param('RestoreTime', RestoreTime)
+	def get_DestRegion(self): # String
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -187,6 +202,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RestoreType(self): # String
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
 	def get_AccountPassword(self): # String
 		return self.get_query_params().get('AccountPassword')
 

@@ -46,6 +46,11 @@ class ReleaseNodePrivateNetworkAddressRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ConnectionType(self): # String
+		return self.get_query_params().get('ConnectionType')
+
+	def set_ConnectionType(self, ConnectionType):  # String
+		self.add_query_param('ConnectionType', ConnectionType)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 

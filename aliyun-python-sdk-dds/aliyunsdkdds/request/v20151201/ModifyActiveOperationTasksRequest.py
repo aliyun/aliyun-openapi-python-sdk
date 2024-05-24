@@ -20,37 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeBackupTasksRequest(RpcRequest):
+class ModifyActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeBackupTasks','dds')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyActiveOperationTasks','dds')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BackupJobId(self): # String
-		return self.get_query_params().get('BackupJobId')
-
-	def set_BackupJobId(self, BackupJobId):  # String
-		self.add_query_param('BackupJobId', BackupJobId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,3 +56,13 @@ class DescribeBackupTasksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Ids(self): # String
+		return self.get_query_params().get('Ids')
+
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_ImmediateStart(self): # Integer
+		return self.get_query_params().get('ImmediateStart')
+
+	def set_ImmediateStart(self, ImmediateStart):  # Integer
+		self.add_query_param('ImmediateStart', ImmediateStart)

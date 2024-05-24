@@ -36,11 +36,21 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

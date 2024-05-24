@@ -41,6 +41,11 @@ class DescribeClusterBackupsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -51,6 +56,11 @@ class DescribeClusterBackupsRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DestRegion(self): # String
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

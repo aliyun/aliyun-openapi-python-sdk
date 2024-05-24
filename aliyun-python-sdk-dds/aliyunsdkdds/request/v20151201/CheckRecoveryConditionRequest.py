@@ -36,6 +36,11 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -46,11 +51,21 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_DatabaseNames(self, DatabaseNames):  # String
 		self.add_query_param('DatabaseNames', DatabaseNames)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_RestoreTime(self): # String
 		return self.get_query_params().get('RestoreTime')
 
 	def set_RestoreTime(self, RestoreTime):  # String
 		self.add_query_param('RestoreTime', RestoreTime)
+	def get_DestRegion(self): # String
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,3 +91,8 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_RestoreType(self): # String
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
