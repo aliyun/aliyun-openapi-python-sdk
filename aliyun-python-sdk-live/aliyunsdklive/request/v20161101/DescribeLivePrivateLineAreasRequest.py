@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class ListLiveMessageGroupsRequest(RpcRequest):
+class DescribeLivePrivateLineAreasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListLiveMessageGroups','live')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLivePrivateLineAreas','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,28 +31,13 @@ class ListLiveMessageGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SortType(self): # Integer
-		return self.get_query_params().get('SortType')
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
 
-	def set_SortType(self, SortType):  # Integer
-		self.add_query_param('SortType', SortType)
-	def get_GroupStatus(self): # Integer
-		return self.get_query_params().get('GroupStatus')
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_GroupStatus(self, GroupStatus):  # Integer
-		self.add_query_param('GroupStatus', GroupStatus)
-	def get_NextPageToken(self): # Long
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self, NextPageToken):  # Long
-		self.add_query_param('NextPageToken', NextPageToken)
-	def get_DataCenter(self): # String
-		return self.get_query_params().get('DataCenter')
-
-	def set_DataCenter(self, DataCenter):  # String
-		self.add_query_param('DataCenter', DataCenter)
-	def get_AppId(self): # String
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self, AppId):  # String
-		self.add_query_param('AppId', AppId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

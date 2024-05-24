@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class ListLiveMessageGroupsRequest(RpcRequest):
+class DescribeMeterLiveBypassDurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListLiveMessageGroups','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeMeterLiveBypassDuration','live')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,28 +32,23 @@ class ListLiveMessageGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SortType(self): # Integer
-		return self.get_query_params().get('SortType')
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_SortType(self, SortType):  # Integer
-		self.add_query_param('SortType', SortType)
-	def get_GroupStatus(self): # Integer
-		return self.get_query_params().get('GroupStatus')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_GroupStatus(self, GroupStatus):  # Integer
-		self.add_query_param('GroupStatus', GroupStatus)
-	def get_NextPageToken(self): # Long
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self, NextPageToken):  # Long
-		self.add_query_param('NextPageToken', NextPageToken)
-	def get_DataCenter(self): # String
-		return self.get_query_params().get('DataCenter')
-
-	def set_DataCenter(self, DataCenter):  # String
-		self.add_query_param('DataCenter', DataCenter)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
+	def get_Interval(self): # String
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self, Interval):  # String
+		self.add_query_param('Interval', Interval)
