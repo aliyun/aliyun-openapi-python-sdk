@@ -25,26 +25,29 @@ class AnalyzeAppLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'AnalyzeAppLog','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AppType(self):
+	def get_AppType(self): # String
 		return self.get_query_params().get('AppType')
 
-	def set_AppType(self,AppType):
-		self.add_query_param('AppType',AppType)
+	def set_AppType(self, AppType):  # String
+		self.add_query_param('AppType', AppType)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_VariableMap(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_VariableMap(self): # String
 		return self.get_query_params().get('VariableMap')
 
-	def set_VariableMap(self,VariableMap):
-		self.add_query_param('VariableMap',VariableMap)
-
-	def get_DisplayName(self):
+	def set_VariableMap(self, VariableMap):  # String
+		self.add_query_param('VariableMap', VariableMap)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)

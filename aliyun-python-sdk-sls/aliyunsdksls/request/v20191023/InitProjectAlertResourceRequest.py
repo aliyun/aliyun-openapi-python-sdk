@@ -25,20 +25,24 @@ class InitProjectAlertResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'InitProjectAlertResource','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_Region(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_Region(self): # String
 		return self.get_body_params().get('Region')
 
-	def set_Region(self,Region):
+	def set_Region(self, Region):  # String
 		self.add_body_params('Region', Region)

@@ -25,20 +25,24 @@ class SyncAlertUsersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'SyncAlertUsers','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_App(self):
+	def get_App(self): # String
 		return self.get_body_params().get('App')
 
-	def set_App(self,App):
+	def set_App(self, App):  # String
 		self.add_body_params('App', App)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_Users(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_Users(self): # String
 		return self.get_body_params().get('Users')
 
-	def set_Users(self,Users):
+	def set_Users(self, Users):  # String
 		self.add_body_params('Users', Users)

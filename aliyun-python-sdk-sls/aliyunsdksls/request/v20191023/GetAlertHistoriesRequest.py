@@ -25,62 +25,59 @@ class GetAlertHistoriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'GetAlertHistories','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Line(self):
+	def get_Line(self): # Integer
 		return self.get_body_params().get('Line')
 
-	def set_Line(self,Line):
+	def set_Line(self, Line):  # Integer
 		self.add_body_params('Line', Line)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_ToTs(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_ToTs(self): # Integer
 		return self.get_body_params().get('ToTs')
 
-	def set_ToTs(self,ToTs):
+	def set_ToTs(self, ToTs):  # Integer
 		self.add_body_params('ToTs', ToTs)
-
-	def get_Endpoint(self):
+	def get_Endpoint(self): # String
 		return self.get_body_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
+	def set_Endpoint(self, Endpoint):  # String
 		self.add_body_params('Endpoint', Endpoint)
-
-	def get_App(self):
+	def get_App(self): # String
 		return self.get_body_params().get('App')
 
-	def set_App(self,App):
+	def set_App(self, App):  # String
 		self.add_body_params('App', App)
-
-	def get_FromTs(self):
+	def get_FromTs(self): # Integer
 		return self.get_body_params().get('FromTs')
 
-	def set_FromTs(self,FromTs):
+	def set_FromTs(self, FromTs):  # Integer
 		self.add_body_params('FromTs', FromTs)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_Offset(self):
+	def get_Offset(self): # Integer
 		return self.get_body_params().get('Offset')
 
-	def set_Offset(self,Offset):
+	def set_Offset(self, Offset):  # Integer
 		self.add_body_params('Offset', Offset)
-
-	def get_AlertId(self):
+	def get_AlertId(self): # String
 		return self.get_body_params().get('AlertId')
 
-	def set_AlertId(self,AlertId):
+	def set_AlertId(self, AlertId):  # String
 		self.add_body_params('AlertId', AlertId)
-
-	def get_Region(self):
+	def get_Region(self): # String
 		return self.get_body_params().get('Region')
 
-	def set_Region(self,Region):
+	def set_Region(self, Region):  # String
 		self.add_body_params('Region', Region)

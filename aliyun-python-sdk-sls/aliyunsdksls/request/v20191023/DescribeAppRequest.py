@@ -25,20 +25,24 @@ class DescribeAppRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'DescribeApp','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_AppName(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_ClientIp(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_ClientIp(self): # String
 		return self.get_query_params().get('ClientIp')
 
-	def set_ClientIp(self,ClientIp):
-		self.add_query_param('ClientIp',ClientIp)
+	def set_ClientIp(self, ClientIp):  # String
+		self.add_query_param('ClientIp', ClientIp)

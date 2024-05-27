@@ -25,32 +25,34 @@ class SetAlertActionPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'SetAlertActionPolicy','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_App(self):
-		return self.get_body_params().get('App')
-
-	def set_App(self,App):
-		self.add_body_params('App', App)
-
-	def get_PolicyId(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_PolicyId(self): # String
 		return self.get_body_params().get('PolicyId')
 
-	def set_PolicyId(self,PolicyId):
+	def set_PolicyId(self, PolicyId):  # String
 		self.add_body_params('PolicyId', PolicyId)
-
-	def get_PolicyName(self):
-		return self.get_body_params().get('PolicyName')
-
-	def set_PolicyName(self,PolicyName):
-		self.add_body_params('PolicyName', PolicyName)
-
-	def get_Policy(self):
+	def get_Policy(self): # String
 		return self.get_body_params().get('Policy')
 
-	def set_Policy(self,Policy):
+	def set_Policy(self, Policy):  # String
 		self.add_body_params('Policy', Policy)
+	def get_App(self): # String
+		return self.get_body_params().get('App')
+
+	def set_App(self, App):  # String
+		self.add_body_params('App', App)
+	def get_PolicyName(self): # String
+		return self.get_body_params().get('PolicyName')
+
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_body_params('PolicyName', PolicyName)

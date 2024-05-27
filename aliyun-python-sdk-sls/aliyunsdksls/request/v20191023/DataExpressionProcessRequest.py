@@ -20,31 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksls.endpoint import endpoint_data
 
-class DeleteImportIngestionJobRequest(RpcRequest):
+class DataExpressionProcessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'DeleteImportIngestionJob','sls')
+		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'DataExpressionProcess','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Method(self): # String
+		return self.get_query_params().get('Method')
 
-	def get_Namespace(self):
-		return self.get_body_params().get('Namespace')
+	def set_Method(self, Method):  # String
+		self.add_query_param('Method', Method)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def set_Namespace(self,Namespace):
-		self.add_body_params('Namespace', Namespace)
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_Detail(self): # String
+		return self.get_query_params().get('Detail')
 
-	def get_Region(self):
-		return self.get_body_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_body_params('Region', Region)
-
-	def get_JobName(self):
-		return self.get_body_params().get('JobName')
-
-	def set_JobName(self,JobName):
-		self.add_body_params('JobName', JobName)
+	def set_Detail(self, Detail):  # String
+		self.add_query_param('Detail', Detail)

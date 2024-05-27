@@ -25,62 +25,59 @@ class EnableAlertRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'EnableAlert','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_Language(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_Language(self): # String
 		return self.get_body_params().get('Language')
 
-	def set_Language(self,Language):
+	def set_Language(self, Language):  # String
 		self.add_body_params('Language', Language)
-
-	def get_RuleVersion(self):
+	def get_RuleVersion(self): # String
 		return self.get_body_params().get('RuleVersion')
 
-	def set_RuleVersion(self,RuleVersion):
+	def set_RuleVersion(self, RuleVersion):  # String
 		self.add_body_params('RuleVersion', RuleVersion)
-
-	def get_Endpoint(self):
+	def get_Endpoint(self): # String
 		return self.get_body_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
+	def set_Endpoint(self, Endpoint):  # String
 		self.add_body_params('Endpoint', Endpoint)
-
-	def get_Tokens(self):
+	def get_Tokens(self): # String
 		return self.get_body_params().get('Tokens')
 
-	def set_Tokens(self,Tokens):
+	def set_Tokens(self, Tokens):  # String
 		self.add_body_params('Tokens', Tokens)
-
-	def get_App(self):
+	def get_App(self): # String
 		return self.get_body_params().get('App')
 
-	def set_App(self,App):
+	def set_App(self, App):  # String
 		self.add_body_params('App', App)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
-
-	def get_AlertId(self):
+	def get_AlertId(self): # String
 		return self.get_body_params().get('AlertId')
 
-	def set_AlertId(self,AlertId):
+	def set_AlertId(self, AlertId):  # String
 		self.add_body_params('AlertId', AlertId)
-
-	def get_RuleId(self):
+	def get_RuleId(self): # String
 		return self.get_body_params().get('RuleId')
 
-	def set_RuleId(self,RuleId):
+	def set_RuleId(self, RuleId):  # String
 		self.add_body_params('RuleId', RuleId)
-
-	def get_Region(self):
+	def get_Region(self): # String
 		return self.get_body_params().get('Region')
 
-	def set_Region(self,Region):
+	def set_Region(self, Region):  # String
 		self.add_body_params('Region', Region)

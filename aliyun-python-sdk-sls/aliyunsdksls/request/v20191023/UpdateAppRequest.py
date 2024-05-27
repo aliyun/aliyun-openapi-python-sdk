@@ -25,32 +25,34 @@ class UpdateAppRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'UpdateApp','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_AppName(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_DisplayName(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_DisplayName(self): # String
 		return self.get_query_params().get('DisplayName')
 
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
-	def get_ClientIp(self):
+	def set_DisplayName(self, DisplayName):  # String
+		self.add_query_param('DisplayName', DisplayName)
+	def get_ClientIp(self): # String
 		return self.get_query_params().get('ClientIp')
 
-	def set_ClientIp(self,ClientIp):
-		self.add_query_param('ClientIp',ClientIp)
-
-	def get_Config(self):
+	def set_ClientIp(self, ClientIp):  # String
+		self.add_query_param('ClientIp', ClientIp)
+	def get_Config(self): # String
 		return self.get_body_params().get('Config')
 
-	def set_Config(self,Config):
+	def set_Config(self, Config):  # String
 		self.add_body_params('Config', Config)

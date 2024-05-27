@@ -25,32 +25,34 @@ class GetAlertRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'GetAlert','sls')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_App(self):
+	def get_App(self): # String
 		return self.get_body_params().get('App')
 
-	def set_App(self,App):
+	def set_App(self, App):  # String
 		self.add_body_params('App', App)
-
-	def get_ProjectName(self):
+	def get_ProjectName(self): # String
 		return self.get_body_params().get('ProjectName')
 
-	def set_ProjectName(self,ProjectName):
+	def set_ProjectName(self, ProjectName):  # String
 		self.add_body_params('ProjectName', ProjectName)
+	def get_SlsAccessToken(self): # String
+		return self.get_query_params().get('SlsAccessToken')
 
-	def get_Endpoint(self):
+	def set_SlsAccessToken(self, SlsAccessToken):  # String
+		self.add_query_param('SlsAccessToken', SlsAccessToken)
+	def get_Endpoint(self): # String
 		return self.get_body_params().get('Endpoint')
 
-	def set_Endpoint(self,Endpoint):
+	def set_Endpoint(self, Endpoint):  # String
 		self.add_body_params('Endpoint', Endpoint)
-
-	def get_AlertId(self):
+	def get_AlertId(self): # String
 		return self.get_body_params().get('AlertId')
 
-	def set_AlertId(self,AlertId):
+	def set_AlertId(self, AlertId):  # String
 		self.add_body_params('AlertId', AlertId)
