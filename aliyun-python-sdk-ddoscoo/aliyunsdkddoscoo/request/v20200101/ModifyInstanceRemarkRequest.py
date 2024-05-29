@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class ModifyInstanceRemarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyInstanceRemark')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyInstanceRemark','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

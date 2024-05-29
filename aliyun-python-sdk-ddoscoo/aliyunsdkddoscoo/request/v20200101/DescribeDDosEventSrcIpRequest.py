@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribeDDosEventSrcIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDDosEventSrcIp')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDDosEventSrcIp','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

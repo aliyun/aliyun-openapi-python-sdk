@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribeCertsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeCerts')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeCerts','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

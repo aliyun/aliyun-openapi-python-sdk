@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class CreateAsyncTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateAsyncTask')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateAsyncTask','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

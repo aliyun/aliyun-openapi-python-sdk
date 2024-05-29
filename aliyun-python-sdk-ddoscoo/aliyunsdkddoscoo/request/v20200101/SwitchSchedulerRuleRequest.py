@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class SwitchSchedulerRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'SwitchSchedulerRule')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'SwitchSchedulerRule','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

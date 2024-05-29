@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class ModifyWebAreaBlockRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyWebAreaBlock')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyWebAreaBlock','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

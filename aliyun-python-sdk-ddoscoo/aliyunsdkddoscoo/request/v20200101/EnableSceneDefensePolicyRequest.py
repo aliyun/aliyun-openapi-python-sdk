@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class EnableSceneDefensePolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'EnableSceneDefensePolicy')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'EnableSceneDefensePolicy','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribeHealthCheckListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeHealthCheckList')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeHealthCheckList','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

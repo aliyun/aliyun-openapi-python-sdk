@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class ModifyDomainResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyDomainResource')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyDomainResource','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -47,22 +47,22 @@ class ModifyDomainResourceRequest(RpcRequest):
 	def set_RealServerss(self, RealServers):  # RepeatList
 		for depth1 in range(len(RealServers)):
 			self.add_query_param('RealServers.' + str(depth1 + 1), RealServers[depth1])
-	def get_ProxyTypess(self): # RepeatList
-		return self.get_query_params().get('ProxyTypes')
-
-	def set_ProxyTypess(self, ProxyTypes):  # RepeatList
-		for depth1 in range(len(ProxyTypes)):
-			if ProxyTypes[depth1].get('ProxyPorts') is not None:
-				for depth2 in range(len(ProxyTypes[depth1].get('ProxyPorts'))):
-					self.add_query_param('ProxyTypes.' + str(depth1 + 1) + '.ProxyPorts.' + str(depth2 + 1), ProxyTypes[depth1].get('ProxyPorts')[depth2])
-			if ProxyTypes[depth1].get('ProxyType') is not None:
-				self.add_query_param('ProxyTypes.' + str(depth1 + 1) + '.ProxyType', ProxyTypes[depth1].get('ProxyType'))
 	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
 	def set_InstanceIdss(self, InstanceIds):  # RepeatList
 		for depth1 in range(len(InstanceIds)):
 			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
+	def get_ProxyTypes(self): # Array
+		return self.get_query_params().get('ProxyTypes')
+
+	def set_ProxyTypes(self, ProxyTypes):  # Array
+		for index1, value1 in enumerate(ProxyTypes):
+			if value1.get('ProxyPorts') is not None:
+				for index2, value2 in enumerate(value1.get('ProxyPorts')):
+					self.add_query_param('ProxyTypes.' + str(index1 + 1) + '.ProxyPorts.' + str(index2 + 1), value2)
+			if value1.get('ProxyType') is not None:
+				self.add_query_param('ProxyTypes.' + str(index1 + 1) + '.ProxyType', value1.get('ProxyType'))
 	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 

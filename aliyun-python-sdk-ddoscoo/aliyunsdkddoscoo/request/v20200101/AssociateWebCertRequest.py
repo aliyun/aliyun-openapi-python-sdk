@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class AssociateWebCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'AssociateWebCert')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'AssociateWebCert','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,32 +32,42 @@ class AssociateWebCertRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_Cert(self): # String
-		return self.get_query_params().get('Cert')
+		return self.get_body_params().get('Cert')
 
 	def set_Cert(self, Cert):  # String
-		self.add_query_param('Cert', Cert)
+		self.add_body_params('Cert', Cert)
 	def get_CertId(self): # Integer
-		return self.get_query_params().get('CertId')
+		return self.get_body_params().get('CertId')
 
 	def set_CertId(self, CertId):  # Integer
-		self.add_query_param('CertId', CertId)
+		self.add_body_params('CertId', CertId)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Key(self): # String
-		return self.get_query_params().get('Key')
+		return self.get_body_params().get('Key')
 
 	def set_Key(self, Key):  # String
-		self.add_query_param('Key', Key)
+		self.add_body_params('Key', Key)
+	def get_CertRegion(self): # String
+		return self.get_body_params().get('CertRegion')
+
+	def set_CertRegion(self, CertRegion):  # String
+		self.add_body_params('CertRegion', CertRegion)
 	def get_CertName(self): # String
-		return self.get_query_params().get('CertName')
+		return self.get_body_params().get('CertName')
 
 	def set_CertName(self, CertName):  # String
-		self.add_query_param('CertName', CertName)
+		self.add_body_params('CertName', CertName)
+	def get_CertIdentifier(self): # String
+		return self.get_body_params().get('CertIdentifier')
+
+	def set_CertIdentifier(self, CertIdentifier):  # String
+		self.add_body_params('CertIdentifier', CertIdentifier)
 	def get_Domain(self): # String
-		return self.get_query_params().get('Domain')
+		return self.get_body_params().get('Domain')
 
 	def set_Domain(self, Domain):  # String
-		self.add_query_param('Domain', Domain)
+		self.add_body_params('Domain', Domain)

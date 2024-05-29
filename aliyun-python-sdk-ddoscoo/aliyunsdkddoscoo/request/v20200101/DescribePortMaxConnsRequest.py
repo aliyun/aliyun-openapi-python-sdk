@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribePortMaxConnsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribePortMaxConns')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribePortMaxConns','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

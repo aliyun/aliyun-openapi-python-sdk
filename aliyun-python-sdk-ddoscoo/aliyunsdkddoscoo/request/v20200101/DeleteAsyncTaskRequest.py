@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DeleteAsyncTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteAsyncTask')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteAsyncTask','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

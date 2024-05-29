@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkddoscoo.endpoint import endpoint_data
 
-class DescribeDomainQpsWithCacheRequest(RpcRequest):
+class ModifyOcspStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDomainQpsWithCache')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyOcspStatus','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,11 @@ class DescribeDomainQpsWithCacheRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
+	def get_Enable(self): # Integer
+		return self.get_query_params().get('Enable')
 
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_Enable(self, Enable):  # Integer
+		self.add_query_param('Enable', Enable)
 	def get_Domain(self): # String
 		return self.get_query_params().get('Domain')
 

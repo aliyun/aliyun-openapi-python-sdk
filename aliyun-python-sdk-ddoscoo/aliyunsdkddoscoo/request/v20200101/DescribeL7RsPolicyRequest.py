@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribeL7RsPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeL7RsPolicy')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeL7RsPolicy','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class EnableWebCCRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'EnableWebCCRule')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'EnableWebCCRule','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

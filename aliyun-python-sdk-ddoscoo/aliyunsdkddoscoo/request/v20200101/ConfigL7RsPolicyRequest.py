@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class ConfigL7RsPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ConfigL7RsPolicy')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ConfigL7RsPolicy','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class ConfigL7RsPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UpstreamRetry(self): # Integer
+		return self.get_query_params().get('UpstreamRetry')
+
+	def set_UpstreamRetry(self, UpstreamRetry):  # Integer
+		self.add_query_param('UpstreamRetry', UpstreamRetry)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

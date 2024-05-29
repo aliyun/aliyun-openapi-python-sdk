@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DescribeBackSourceCidrRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeBackSourceCidr')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeBackSourceCidr','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,3 +41,8 @@ class DescribeBackSourceCidrRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_IpVersion(self): # String
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self, IpVersion):  # String
+		self.add_query_param('IpVersion', IpVersion)

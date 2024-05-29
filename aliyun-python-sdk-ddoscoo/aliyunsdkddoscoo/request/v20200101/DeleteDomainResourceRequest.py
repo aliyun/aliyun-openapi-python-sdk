@@ -23,7 +23,7 @@ from aliyunsdkddoscoo.endpoint import endpoint_data
 class DeleteDomainResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteDomainResource')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteDomainResource','ddoscoo')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
