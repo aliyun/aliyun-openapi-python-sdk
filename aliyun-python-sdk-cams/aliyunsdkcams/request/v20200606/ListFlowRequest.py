@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
+import json
 
 class ListFlowRequest(RpcRequest):
 
@@ -31,33 +32,18 @@ class ListFlowRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_CustSpaceId(self): # String
+		return self.get_body_params().get('CustSpaceId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageSize(self): # Long
-		return self.get_query_params().get('PageSize')
+	def set_CustSpaceId(self, CustSpaceId):  # String
+		self.add_body_params('CustSpaceId', CustSpaceId)
+	def get_FlowName(self): # String
+		return self.get_body_params().get('FlowName')
 
-	def set_PageSize(self, PageSize):  # Long
-		self.add_query_param('PageSize', PageSize)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def set_FlowName(self, FlowName):  # String
+		self.add_body_params('FlowName', FlowName)
+	def get_Page(self): # Struct
+		return self.get_body_params().get('Page')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PageNo(self): # Long
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self, PageNo):  # Long
-		self.add_query_param('PageNo', PageNo)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_Page(self, Page):  # Struct
+		self.add_body_params("Page", json.dumps(Page))
