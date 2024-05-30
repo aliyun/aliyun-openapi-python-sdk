@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
 
-class ListArtifactVersionsRequest(RpcRequest):
+class DeleteServiceInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'ListArtifactVersions')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'DeleteServiceInstances')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,14 @@ class ListArtifactVersionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ServiceInstanceIds(self): # RepeatList
+		return self.get_query_params().get('ServiceInstanceId')
 
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
-	def get_ArtifactId(self): # String
-		return self.get_query_params().get('ArtifactId')
-
-	def set_ArtifactId(self, ArtifactId):  # String
-		self.add_query_param('ArtifactId', ArtifactId)
+	def set_ServiceInstanceIds(self, ServiceInstanceId):  # RepeatList
+		for depth1 in range(len(ServiceInstanceId)):
+			self.add_query_param('ServiceInstanceId.' + str(depth1 + 1), ServiceInstanceId[depth1])

@@ -31,31 +31,11 @@ class CreateServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlarmMetadata(self): # String
-		return self.get_query_params().get('AlarmMetadata')
-
-	def set_AlarmMetadata(self, AlarmMetadata):  # String
-		self.add_query_param('AlarmMetadata', AlarmMetadata)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_PolicyNames(self): # String
 		return self.get_query_params().get('PolicyNames')
 
 	def set_PolicyNames(self, PolicyNames):  # String
 		self.add_query_param('PolicyNames', PolicyNames)
-	def get_LicenseMetadata(self): # String
-		return self.get_query_params().get('LicenseMetadata')
-
-	def set_LicenseMetadata(self, LicenseMetadata):  # String
-		self.add_query_param('LicenseMetadata', LicenseMetadata)
-	def get_Duration(self): # Long
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self, Duration):  # Long
-		self.add_query_param('Duration', Duration)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -71,11 +51,6 @@ class CreateServiceRequest(RpcRequest):
 
 	def set_TrialDuration(self, TrialDuration):  # Long
 		self.add_query_param('TrialDuration', TrialDuration)
-	def get_ShareType(self): # String
-		return self.get_query_params().get('ShareType')
-
-	def set_ShareType(self, ShareType):  # String
-		self.add_query_param('ShareType', ShareType)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -85,6 +60,61 @@ class CreateServiceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_OperationMetadata(self): # String
+		return self.get_query_params().get('OperationMetadata')
+
+	def set_OperationMetadata(self, OperationMetadata):  # String
+		self.add_query_param('OperationMetadata', OperationMetadata)
+	def get_DeployType(self): # String
+		return self.get_query_params().get('DeployType')
+
+	def set_DeployType(self, DeployType):  # String
+		self.add_query_param('DeployType', DeployType)
+	def get_AlarmMetadata(self): # String
+		return self.get_query_params().get('AlarmMetadata')
+
+	def set_AlarmMetadata(self, AlarmMetadata):  # String
+		self.add_query_param('AlarmMetadata', AlarmMetadata)
+	def get_Resellable(self): # Boolean
+		return self.get_query_params().get('Resellable')
+
+	def set_Resellable(self, Resellable):  # Boolean
+		self.add_query_param('Resellable', Resellable)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_SourceServiceId(self): # String
+		return self.get_query_params().get('SourceServiceId')
+
+	def set_SourceServiceId(self, SourceServiceId):  # String
+		self.add_query_param('SourceServiceId', SourceServiceId)
+	def get_SourceServiceVersion(self): # String
+		return self.get_query_params().get('SourceServiceVersion')
+
+	def set_SourceServiceVersion(self, SourceServiceVersion):  # String
+		self.add_query_param('SourceServiceVersion', SourceServiceVersion)
+	def get_LicenseMetadata(self): # String
+		return self.get_query_params().get('LicenseMetadata')
+
+	def set_LicenseMetadata(self, LicenseMetadata):  # String
+		self.add_query_param('LicenseMetadata', LicenseMetadata)
+	def get_Duration(self): # Long
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self, Duration):  # Long
+		self.add_query_param('Duration', Duration)
+	def get_ShareType(self): # String
+		return self.get_query_params().get('ShareType')
+
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)
+	def get_BuildParameters(self): # String
+		return self.get_query_params().get('BuildParameters')
+
+	def set_BuildParameters(self, BuildParameters):  # String
+		self.add_query_param('BuildParameters', BuildParameters)
 	def get_UpgradeMetadata(self): # String
 		return self.get_query_params().get('UpgradeMetadata')
 
@@ -110,6 +140,11 @@ class CreateServiceRequest(RpcRequest):
 
 	def set_TenantType(self, TenantType):  # String
 		self.add_query_param('TenantType', TenantType)
+	def get_LogMetadata(self): # String
+		return self.get_query_params().get('LogMetadata')
+
+	def set_LogMetadata(self, LogMetadata):  # String
+		self.add_query_param('LogMetadata', LogMetadata)
 	def get_ServiceInfos(self): # RepeatList
 		return self.get_query_params().get('ServiceInfo')
 
@@ -121,8 +156,16 @@ class CreateServiceRequest(RpcRequest):
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Image', ServiceInfo[depth1].get('Image'))
 			if ServiceInfo[depth1].get('Name') is not None:
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Name', ServiceInfo[depth1].get('Name'))
+			if ServiceInfo[depth1].get('Agreements') is not None:
+				for depth2 in range(len(ServiceInfo[depth1].get('Agreements'))):
+					if ServiceInfo[depth1].get('Agreements')[depth2].get('Name') is not None:
+						self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Agreements.'  + str(depth2 + 1) + '.Name', ServiceInfo[depth1].get('Agreements')[depth2].get('Name'))
+					if ServiceInfo[depth1].get('Agreements')[depth2].get('Url') is not None:
+						self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Agreements.'  + str(depth2 + 1) + '.Url', ServiceInfo[depth1].get('Agreements')[depth2].get('Url'))
 			if ServiceInfo[depth1].get('Locale') is not None:
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Locale', ServiceInfo[depth1].get('Locale'))
+			if ServiceInfo[depth1].get('LongDescriptionUrl') is not None:
+				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.LongDescriptionUrl', ServiceInfo[depth1].get('LongDescriptionUrl'))
 	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 
@@ -133,13 +176,3 @@ class CreateServiceRequest(RpcRequest):
 
 	def set_VersionName(self, VersionName):  # String
 		self.add_query_param('VersionName', VersionName)
-	def get_OperationMetadata(self): # String
-		return self.get_query_params().get('OperationMetadata')
-
-	def set_OperationMetadata(self, OperationMetadata):  # String
-		self.add_query_param('OperationMetadata', OperationMetadata)
-	def get_DeployType(self): # String
-		return self.get_query_params().get('DeployType')
-
-	def set_DeployType(self, DeployType):  # String
-		self.add_query_param('DeployType', DeployType)

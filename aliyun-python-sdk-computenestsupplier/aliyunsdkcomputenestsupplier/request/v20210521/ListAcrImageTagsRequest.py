@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
 
-class ListArtifactsRequest(RpcRequest):
+class ListAcrImageTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'ListArtifacts')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'ListAcrImageTags')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,35 +31,21 @@ class ListArtifactsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_RepoId(self): # String
+		return self.get_query_params().get('RepoId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_RepoId(self, RepoId):  # String
+		self.add_query_param('RepoId', RepoId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def get_ArtifactType(self): # String
+		return self.get_query_params().get('ArtifactType')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_Filters(self): # RepeatList
-		return self.get_query_params().get('Filter')
-
-	def set_Filters(self, Filter):  # RepeatList
-		for depth1 in range(len(Filter)):
-			if Filter[depth1].get('Values') is not None:
-				for depth2 in range(len(Filter[depth1].get('Values'))):
-					self.add_query_param('Filter.' + str(depth1 + 1) + '.Values.' + str(depth2 + 1), Filter[depth1].get('Values')[depth2])
-			if Filter[depth1].get('Name') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Name', Filter[depth1].get('Name'))
+	def set_ArtifactType(self, ArtifactType):  # String
+		self.add_query_param('ArtifactType', ArtifactType)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

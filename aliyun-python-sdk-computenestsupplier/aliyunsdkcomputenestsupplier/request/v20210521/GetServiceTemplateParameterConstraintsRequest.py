@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
-import json
 
-class GetServiceEstimateCostRequest(RpcRequest):
+class GetServiceTemplateParameterConstraintsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetServiceEstimateCost')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetServiceTemplateParameterConstraints')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,16 +31,16 @@ class GetServiceEstimateCostRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Commodity(self): # Struct
-		return self.get_query_params().get('Commodity')
-
-	def set_Commodity(self, Commodity):  # Struct
-		self.add_query_param("Commodity", json.dumps(Commodity))
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_EnablePrivateVpcConnection(self): # Boolean
+		return self.get_query_params().get('EnablePrivateVpcConnection')
+
+	def set_EnablePrivateVpcConnection(self, EnablePrivateVpcConnection):  # Boolean
+		self.add_query_param('EnablePrivateVpcConnection', EnablePrivateVpcConnection)
 	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
@@ -52,11 +51,11 @@ class GetServiceEstimateCostRequest(RpcRequest):
 
 	def set_ServiceInstanceId(self, ServiceInstanceId):  # String
 		self.add_query_param('ServiceInstanceId', ServiceInstanceId)
-	def get_SpecificationName(self): # String
-		return self.get_query_params().get('SpecificationName')
+	def get_DeployRegionId(self): # String
+		return self.get_query_params().get('DeployRegionId')
 
-	def set_SpecificationName(self, SpecificationName):  # String
-		self.add_query_param('SpecificationName', SpecificationName)
+	def set_DeployRegionId(self, DeployRegionId):  # String
+		self.add_query_param('DeployRegionId', DeployRegionId)
 	def get_ServiceVersion(self): # String
 		return self.get_query_params().get('ServiceVersion')
 
@@ -67,8 +66,12 @@ class GetServiceEstimateCostRequest(RpcRequest):
 
 	def set_ServiceId(self, ServiceId):  # String
 		self.add_query_param('ServiceId', ServiceId)
-	def get_Parameters(self): # String
+	def get_Parameterss(self): # RepeatList
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self, Parameters):  # String
-		self.add_query_param('Parameters', Parameters)
+	def set_Parameterss(self, Parameters):  # RepeatList
+		for depth1 in range(len(Parameters)):
+			if Parameters[depth1].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameters[depth1].get('ParameterValue'))
+			if Parameters[depth1].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameters[depth1].get('ParameterKey'))

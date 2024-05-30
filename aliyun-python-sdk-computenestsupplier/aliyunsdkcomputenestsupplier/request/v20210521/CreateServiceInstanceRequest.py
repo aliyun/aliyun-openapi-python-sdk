@@ -19,12 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
-import json
 
-class GetServiceEstimateCostRequest(RpcRequest):
+class CreateServiceInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetServiceEstimateCost')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'CreateServiceInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,31 +31,55 @@ class GetServiceEstimateCostRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Commodity(self): # Struct
-		return self.get_query_params().get('Commodity')
-
-	def set_Commodity(self, Commodity):  # Struct
-		self.add_query_param("Commodity", json.dumps(Commodity))
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
 	def set_TemplateName(self, TemplateName):  # String
 		self.add_query_param('TemplateName', TemplateName)
-	def get_ServiceInstanceId(self): # String
-		return self.get_query_params().get('ServiceInstanceId')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_ServiceInstanceId(self, ServiceInstanceId):  # String
-		self.add_query_param('ServiceInstanceId', ServiceInstanceId)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_SpecificationName(self): # String
 		return self.get_query_params().get('SpecificationName')
 
 	def set_SpecificationName(self, SpecificationName):  # String
 		self.add_query_param('SpecificationName', SpecificationName)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
 	def get_ServiceVersion(self): # String
 		return self.get_query_params().get('ServiceVersion')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
 
-class GetServiceRequest(RpcRequest):
+class UpgradeServiceInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'GetService')
+		RpcRequest.__init__(self, 'ComputeNestSupplier', '2021-05-21', 'UpgradeServiceInstance')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,29 +31,28 @@ class GetServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ShowDetails(self): # RepeatList
-		return self.get_query_params().get('ShowDetail')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ShowDetails(self, ShowDetail):  # RepeatList
-		for depth1 in range(len(ShowDetail)):
-			self.add_query_param('ShowDetail.' + str(depth1 + 1), ShowDetail[depth1])
-	def get_SharedAccountType(self): # String
-		return self.get_query_params().get('SharedAccountType')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ServiceInstanceId(self): # String
+		return self.get_query_params().get('ServiceInstanceId')
 
-	def set_SharedAccountType(self, SharedAccountType):  # String
-		self.add_query_param('SharedAccountType', SharedAccountType)
-	def get_FilterAliUid(self): # Boolean
-		return self.get_query_params().get('FilterAliUid')
+	def set_ServiceInstanceId(self, ServiceInstanceId):  # String
+		self.add_query_param('ServiceInstanceId', ServiceInstanceId)
+	def get_DryRun(self): # String
+		return self.get_query_params().get('DryRun')
 
-	def set_FilterAliUid(self, FilterAliUid):  # Boolean
-		self.add_query_param('FilterAliUid', FilterAliUid)
+	def set_DryRun(self, DryRun):  # String
+		self.add_query_param('DryRun', DryRun)
 	def get_ServiceVersion(self): # String
 		return self.get_query_params().get('ServiceVersion')
 
 	def set_ServiceVersion(self, ServiceVersion):  # String
 		self.add_query_param('ServiceVersion', ServiceVersion)
-	def get_ServiceId(self): # String
-		return self.get_query_params().get('ServiceId')
+	def get_Parameters(self): # String
+		return self.get_query_params().get('Parameters')
 
-	def set_ServiceId(self, ServiceId):  # String
-		self.add_query_param('ServiceId', ServiceId)
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

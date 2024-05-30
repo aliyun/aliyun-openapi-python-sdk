@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcomputenestsupplier.endpoint import endpoint_data
+import json
 
 class UpdateServiceRequest(RpcRequest):
 
@@ -36,6 +37,11 @@ class UpdateServiceRequest(RpcRequest):
 
 	def set_AlarmMetadata(self, AlarmMetadata):  # String
 		self.add_query_param('AlarmMetadata', AlarmMetadata)
+	def get_Resellable(self): # Boolean
+		return self.get_query_params().get('Resellable')
+
+	def set_Resellable(self, Resellable):  # Boolean
+		self.add_query_param('Resellable', Resellable)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -91,6 +97,11 @@ class UpdateServiceRequest(RpcRequest):
 
 	def set_ServiceVersion(self, ServiceVersion):  # String
 		self.add_query_param('ServiceVersion', ServiceVersion)
+	def get_LogMetadata(self): # String
+		return self.get_query_params().get('LogMetadata')
+
+	def set_LogMetadata(self, LogMetadata):  # String
+		self.add_query_param('LogMetadata', LogMetadata)
 	def get_ServiceInfos(self): # RepeatList
 		return self.get_query_params().get('ServiceInfo')
 
@@ -102,8 +113,21 @@ class UpdateServiceRequest(RpcRequest):
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Image', ServiceInfo[depth1].get('Image'))
 			if ServiceInfo[depth1].get('Name') is not None:
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Name', ServiceInfo[depth1].get('Name'))
+			if ServiceInfo[depth1].get('Agreements') is not None:
+				for depth2 in range(len(ServiceInfo[depth1].get('Agreements'))):
+					if ServiceInfo[depth1].get('Agreements')[depth2].get('Name') is not None:
+						self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Agreements.'  + str(depth2 + 1) + '.Name', ServiceInfo[depth1].get('Agreements')[depth2].get('Name'))
+					if ServiceInfo[depth1].get('Agreements')[depth2].get('Url') is not None:
+						self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Agreements.'  + str(depth2 + 1) + '.Url', ServiceInfo[depth1].get('Agreements')[depth2].get('Url'))
 			if ServiceInfo[depth1].get('Locale') is not None:
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.Locale', ServiceInfo[depth1].get('Locale'))
+			if ServiceInfo[depth1].get('LongDescriptionUrl') is not None:
+				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.LongDescriptionUrl', ServiceInfo[depth1].get('LongDescriptionUrl'))
+	def get_UpdateOption(self): # Struct
+		return self.get_query_params().get('UpdateOption')
+
+	def set_UpdateOption(self, UpdateOption):  # Struct
+		self.add_query_param("UpdateOption", json.dumps(UpdateOption))
 	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 

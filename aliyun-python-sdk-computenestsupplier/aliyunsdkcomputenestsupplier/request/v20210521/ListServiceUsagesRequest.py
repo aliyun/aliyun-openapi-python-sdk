@@ -36,6 +36,11 @@ class ListServiceUsagesRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_SupplierRole(self): # String
+		return self.get_query_params().get('SupplierRole')
+
+	def set_SupplierRole(self, SupplierRole):  # String
+		self.add_query_param('SupplierRole', SupplierRole)
 	def get_Filters(self): # RepeatList
 		return self.get_query_params().get('Filter')
 
