@@ -1,3 +1,6 @@
+2024-06-03 Version: 1.0.15
+- Supported gateway for hdeni api.
+
 2024-05-06 Version: 1.0.14
 - Update HDENI and LENI API.
 

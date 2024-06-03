@@ -25,11 +25,21 @@ class GetFabricTopologyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetFabricTopology','eflo')
 		self.set_method('POST')
 
+	def get_ClusterId(self): # String
+		return self.get_body_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_body_params('ClusterId', ClusterId)
 	def get_VpdId(self): # String
 		return self.get_body_params().get('VpdId')
 
 	def set_VpdId(self, VpdId):  # String
 		self.add_body_params('VpdId', VpdId)
+	def get_VpcId(self): # String
+		return self.get_body_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_body_params('VpcId', VpcId)
 	def get_LniIdss(self): # RepeatList
 		return self.get_body_params().get('LniIds')
 
