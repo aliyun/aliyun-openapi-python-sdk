@@ -74,6 +74,11 @@ class ListUserDevicesRequest(RpcRequest):
 
 	def set_Department(self, Department):  # String
 		self.add_query_param('Department', Department)
+	def get_InnerIp(self): # String
+		return self.get_query_params().get('InnerIp')
+
+	def set_InnerIp(self, InnerIp):  # String
+		self.add_query_param('InnerIp', InnerIp)
 	def get_IaStatuses(self): # Array
 		return self.get_query_params().get('IaStatuses')
 
