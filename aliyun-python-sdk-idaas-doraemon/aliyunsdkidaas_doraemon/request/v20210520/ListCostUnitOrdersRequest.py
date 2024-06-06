@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkidaas_doraemon.endpoint import endpoint_data
 
-class UpdateAuthenticatorAttributeRequest(RpcRequest):
+class ListCostUnitOrdersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'UpdateAuthenticatorAttribute','idaasauth')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'ListCostUnitOrders','idaasauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,23 +31,23 @@ class UpdateAuthenticatorAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def get_BeginDate(self): # String
+		return self.get_query_params().get('BeginDate')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_AuthenticatorName(self): # String
-		return self.get_query_params().get('AuthenticatorName')
+	def set_BeginDate(self, BeginDate):  # String
+		self.add_query_param('BeginDate', BeginDate)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_AuthenticatorName(self, AuthenticatorName):  # String
-		self.add_query_param('AuthenticatorName', AuthenticatorName)
-	def get_AuthenticatorUuid(self): # String
-		return self.get_query_params().get('AuthenticatorUuid')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_FinalDate(self): # String
+		return self.get_query_params().get('FinalDate')
 
-	def set_AuthenticatorUuid(self, AuthenticatorUuid):  # String
-		self.add_query_param('AuthenticatorUuid', AuthenticatorUuid)
-	def get_ApplicationExternalId(self): # String
-		return self.get_query_params().get('ApplicationExternalId')
+	def set_FinalDate(self, FinalDate):  # String
+		self.add_query_param('FinalDate', FinalDate)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_ApplicationExternalId(self, ApplicationExternalId):  # String
-		self.add_query_param('ApplicationExternalId', ApplicationExternalId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

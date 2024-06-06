@@ -23,7 +23,7 @@ from aliyunsdkidaas_doraemon.endpoint import endpoint_data
 class ListAuthenticatorsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'ListAuthenticators')
+		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'ListAuthenticators','idaasauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

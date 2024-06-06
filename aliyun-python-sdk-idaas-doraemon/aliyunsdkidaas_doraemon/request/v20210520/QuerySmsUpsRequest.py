@@ -20,35 +20,14 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkidaas_doraemon.endpoint import endpoint_data
 
-class UpdateAuthenticatorAttributeRequest(RpcRequest):
+class QuerySmsUpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'UpdateAuthenticatorAttribute','idaasauth')
-		self.set_protocol_type('https')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'QuerySmsUps','idaasauth')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_AuthenticatorName(self): # String
-		return self.get_query_params().get('AuthenticatorName')
-
-	def set_AuthenticatorName(self, AuthenticatorName):  # String
-		self.add_query_param('AuthenticatorName', AuthenticatorName)
-	def get_AuthenticatorUuid(self): # String
-		return self.get_query_params().get('AuthenticatorUuid')
-
-	def set_AuthenticatorUuid(self, AuthenticatorUuid):  # String
-		self.add_query_param('AuthenticatorUuid', AuthenticatorUuid)
-	def get_ApplicationExternalId(self): # String
-		return self.get_query_params().get('ApplicationExternalId')
-
-	def set_ApplicationExternalId(self, ApplicationExternalId):  # String
-		self.add_query_param('ApplicationExternalId', ApplicationExternalId)

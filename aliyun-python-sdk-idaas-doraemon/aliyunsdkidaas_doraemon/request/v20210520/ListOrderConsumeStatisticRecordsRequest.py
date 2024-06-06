@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkidaas_doraemon.endpoint import endpoint_data
 
-class ListAuthenticatorOpsLogsRequest(RpcRequest):
+class ListOrderConsumeStatisticRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'ListAuthenticatorOpsLogs','idaasauth')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'ListOrderConsumeStatisticRecords','idaasauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,41 +31,36 @@ class ListAuthenticatorOpsLogsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ToTime(self): # Long
-		return self.get_query_params().get('ToTime')
+	def get_StatisticTimeMin(self): # String
+		return self.get_query_params().get('StatisticTimeMin')
 
-	def set_ToTime(self, ToTime):  # Long
-		self.add_query_param('ToTime', ToTime)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def set_StatisticTimeMin(self, StatisticTimeMin):  # String
+		self.add_query_param('StatisticTimeMin', StatisticTimeMin)
+	def get_AliOrderCode(self): # String
+		return self.get_query_params().get('AliOrderCode')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_PageNumber(self): # Long
+	def set_AliOrderCode(self, AliOrderCode):  # String
+		self.add_query_param('AliOrderCode', AliOrderCode)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Long
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Long
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Long
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_FromTime(self): # Long
-		return self.get_query_params().get('FromTime')
+	def get_ServiceCode(self): # String
+		return self.get_query_params().get('ServiceCode')
 
-	def set_FromTime(self, FromTime):  # Long
-		self.add_query_param('FromTime', FromTime)
-	def get_AuthenticatorUuid(self): # String
-		return self.get_query_params().get('AuthenticatorUuid')
+	def set_ServiceCode(self, ServiceCode):  # String
+		self.add_query_param('ServiceCode', ServiceCode)
+	def get_StatisticTimeMax(self): # String
+		return self.get_query_params().get('StatisticTimeMax')
 
-	def set_AuthenticatorUuid(self, AuthenticatorUuid):  # String
-		self.add_query_param('AuthenticatorUuid', AuthenticatorUuid)
-	def get_AuthenticatorType(self): # String
-		return self.get_query_params().get('AuthenticatorType')
-
-	def set_AuthenticatorType(self, AuthenticatorType):  # String
-		self.add_query_param('AuthenticatorType', AuthenticatorType)
+	def set_StatisticTimeMax(self, StatisticTimeMax):  # String
+		self.add_query_param('StatisticTimeMax', StatisticTimeMax)
 	def get_ApplicationExternalId(self): # String
 		return self.get_query_params().get('ApplicationExternalId')
 

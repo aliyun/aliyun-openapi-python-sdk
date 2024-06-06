@@ -1,3 +1,6 @@
+2024-06-06 Version: 1.0.1
+- ListOrderConsumeStatisticRecords  add applicationExternalId serviceCode.
+
 2022-05-19 Version: 1.0.0
 - Support all language.
 

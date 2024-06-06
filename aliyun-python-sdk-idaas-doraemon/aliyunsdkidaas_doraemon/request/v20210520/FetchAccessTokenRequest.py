@@ -23,7 +23,7 @@ from aliyunsdkidaas_doraemon.endpoint import endpoint_data
 class FetchAccessTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'FetchAccessToken')
+		RpcRequest.__init__(self, 'idaas-doraemon', '2021-05-20', 'FetchAccessToken','idaasauth')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
