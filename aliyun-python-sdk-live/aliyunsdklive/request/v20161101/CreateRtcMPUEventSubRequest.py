@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class GetMultiRateConfigListRequest(RpcRequest):
+class CreateRtcMPUEventSubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'GetMultiRateConfigList','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateRtcMPUEventSub','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,18 @@ class GetMultiRateConfigListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_CallbackUrl(self): # String
+		return self.get_query_params().get('CallbackUrl')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_CallbackUrl(self, CallbackUrl):  # String
+		self.add_query_param('CallbackUrl', CallbackUrl)
+	def get_ChannelIds(self): # String
+		return self.get_query_params().get('ChannelIds')
+
+	def set_ChannelIds(self, ChannelIds):  # String
+		self.add_query_param('ChannelIds', ChannelIds)

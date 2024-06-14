@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DeleteMultiRateConfigRequest(RpcRequest):
+class DeleteRtcAsrTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteMultiRateConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteRtcAsrTask','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,31 +31,11 @@ class DeleteMultiRateConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DeleteAll(self): # String
-		return self.get_query_params().get('DeleteAll')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_DeleteAll(self, DeleteAll):  # String
-		self.add_query_param('DeleteAll', DeleteAll)
-	def get_App(self): # String
-		return self.get_query_params().get('App')
-
-	def set_App(self, App):  # String
-		self.add_query_param('App', App)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_Templates(self): # String
-		return self.get_query_params().get('Templates')
-
-	def set_Templates(self, Templates):  # String
-		self.add_query_param('Templates', Templates)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

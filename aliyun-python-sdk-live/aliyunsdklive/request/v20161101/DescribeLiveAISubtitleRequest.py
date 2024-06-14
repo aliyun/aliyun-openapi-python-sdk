@@ -46,6 +46,11 @@ class DescribeLiveAISubtitleRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_IsDefault(self): # Boolean
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self, IsDefault):  # Boolean
+		self.add_query_param('IsDefault', IsDefault)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

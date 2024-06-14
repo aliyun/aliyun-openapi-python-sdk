@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class CreateLiveTranscodeTemplateRequest(RpcRequest):
+class DeleteRtcMPUEventSubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateLiveTranscodeTemplate','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteRtcMPUEventSub','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,8 @@ class CreateLiveTranscodeTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_TemplateConfig(self): # String
-		return self.get_query_params().get('TemplateConfig')
-
-	def set_TemplateConfig(self, TemplateConfig):  # String
-		self.add_query_param('TemplateConfig', TemplateConfig)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
