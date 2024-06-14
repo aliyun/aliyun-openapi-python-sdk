@@ -36,6 +36,11 @@ class DescribeInstanceRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_MaxConnectionLimit(self): # String
+		return self.get_body_params().get('MaxConnectionLimit')
+
+	def set_MaxConnectionLimit(self, MaxConnectionLimit):  # String
+		self.add_body_params('MaxConnectionLimit', MaxConnectionLimit)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
