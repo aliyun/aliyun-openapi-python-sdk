@@ -36,21 +36,11 @@ class DescribeBackupSetListRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # Long
 		self.add_query_param('StartTime', StartTime)
-	def get_DestCrossRegion(self): # String
-		return self.get_query_params().get('DestCrossRegion')
-
-	def set_DestCrossRegion(self, DestCrossRegion):  # String
-		self.add_query_param('DestCrossRegion', DestCrossRegion)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -61,3 +51,13 @@ class DescribeBackupSetListRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_DestCrossRegion(self): # String
+		return self.get_query_params().get('DestCrossRegion')
+
+	def set_DestCrossRegion(self, DestCrossRegion):  # String
+		self.add_query_param('DestCrossRegion', DestCrossRegion)

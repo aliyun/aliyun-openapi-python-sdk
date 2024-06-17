@@ -36,23 +36,23 @@ class SwitchDBInstanceHARequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_TargetPrimaryRegionId(self): # String
-		return self.get_query_params().get('TargetPrimaryRegionId')
-
-	def set_TargetPrimaryRegionId(self, TargetPrimaryRegionId):  # String
-		self.add_query_param('TargetPrimaryRegionId', TargetPrimaryRegionId)
 	def get_SwitchTimeMode(self): # String
 		return self.get_query_params().get('SwitchTimeMode')
 
 	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
 		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
-	def get_TargetPrimaryAzoneId(self): # String
-		return self.get_query_params().get('TargetPrimaryAzoneId')
-
-	def set_TargetPrimaryAzoneId(self, TargetPrimaryAzoneId):  # String
-		self.add_query_param('TargetPrimaryAzoneId', TargetPrimaryAzoneId)
 	def get_SwitchTime(self): # String
 		return self.get_query_params().get('SwitchTime')
 
 	def set_SwitchTime(self, SwitchTime):  # String
 		self.add_query_param('SwitchTime', SwitchTime)
+	def get_TargetPrimaryRegionId(self): # String
+		return self.get_query_params().get('TargetPrimaryRegionId')
+
+	def set_TargetPrimaryRegionId(self, TargetPrimaryRegionId):  # String
+		self.add_query_param('TargetPrimaryRegionId', TargetPrimaryRegionId)
+	def get_TargetPrimaryAzoneId(self): # String
+		return self.get_query_params().get('TargetPrimaryAzoneId')
+
+	def set_TargetPrimaryAzoneId(self, TargetPrimaryAzoneId):  # String
+		self.add_query_param('TargetPrimaryAzoneId', TargetPrimaryAzoneId)

@@ -136,6 +136,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # Integer
 		self.add_query_param('UsedTime', UsedTime)
+	def get_DnStorageSpace(self): # String
+		return self.get_query_params().get('DnStorageSpace')
+
+	def set_DnStorageSpace(self, DnStorageSpace):  # String
+		self.add_query_param('DnStorageSpace', DnStorageSpace)
 	def get_PrimaryZone(self): # String
 		return self.get_query_params().get('PrimaryZone')
 
