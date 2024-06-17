@@ -35,6 +35,11 @@ class CreateSnapshotRequest(RpcRequest):
 
 	def set_SnapshotName(self, SnapshotName):  # String
 		self.add_query_param('SnapshotName', SnapshotName)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DiskId(self): # String
 		return self.get_query_params().get('DiskId')
 

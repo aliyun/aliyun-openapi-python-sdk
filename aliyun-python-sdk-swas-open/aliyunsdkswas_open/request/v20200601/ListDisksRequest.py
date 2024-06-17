@@ -25,21 +25,16 @@ class ListDisksRequest(RpcRequest):
 		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListDisks','SWAS-OPEN')
 		self.set_method('POST')
 
-	def get_DiskType(self): # String
-		return self.get_query_params().get('DiskType')
-
-	def set_DiskType(self, DiskType):  # String
-		self.add_query_param('DiskType', DiskType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -59,3 +54,13 @@ class ListDisksRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_DiskType(self): # String
+		return self.get_query_params().get('DiskType')
+
+	def set_DiskType(self, DiskType):  # String
+		self.add_query_param('DiskType', DiskType)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
