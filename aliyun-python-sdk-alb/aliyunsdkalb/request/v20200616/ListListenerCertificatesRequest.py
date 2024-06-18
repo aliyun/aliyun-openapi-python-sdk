@@ -41,6 +41,12 @@ class ListListenerCertificatesRequest(RpcRequest):
 
 	def set_ListenerId(self, ListenerId):  # String
 		self.add_query_param('ListenerId', ListenerId)
+	def get_CertificateIds(self): # Array
+		return self.get_query_params().get('CertificateIds')
+
+	def set_CertificateIds(self, CertificateIds):  # Array
+		for index1, value1 in enumerate(CertificateIds):
+			self.add_query_param('CertificateIds.' + str(index1 + 1), value1)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

@@ -62,6 +62,11 @@ class ListServerGroupsRequest(RpcRequest):
 	def set_ServerGroupIds(self, ServerGroupIds):  # Array
 		for index1, value1 in enumerate(ServerGroupIds):
 			self.add_query_param('ServerGroupIds.' + str(index1 + 1), value1)
+	def get_ServerGroupType(self): # String
+		return self.get_query_params().get('ServerGroupType')
+
+	def set_ServerGroupType(self, ServerGroupType):  # String
+		self.add_query_param('ServerGroupType', ServerGroupType)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

@@ -75,6 +75,14 @@ class CreateServerGroupRequest(RpcRequest):
 			self.add_query_param('HealthCheckConfig.HealthCheckHttpVersion', HealthCheckConfig.get('HealthCheckHttpVersion'))
 		if HealthCheckConfig.get('HealthCheckConnectPort') is not None:
 			self.add_query_param('HealthCheckConfig.HealthCheckConnectPort', HealthCheckConfig.get('HealthCheckConnectPort'))
+	def get_SlowStartConfig(self): # Struct
+		return self.get_query_params().get('SlowStartConfig')
+
+	def set_SlowStartConfig(self, SlowStartConfig):  # Struct
+		if SlowStartConfig.get('SlowStartDuration') is not None:
+			self.add_query_param('SlowStartConfig.SlowStartDuration', SlowStartConfig.get('SlowStartDuration'))
+		if SlowStartConfig.get('SlowStartEnabled') is not None:
+			self.add_query_param('SlowStartConfig.SlowStartEnabled', SlowStartConfig.get('SlowStartEnabled'))
 	def get_Scheduler(self): # String
 		return self.get_query_params().get('Scheduler')
 
@@ -126,6 +134,14 @@ class CreateServerGroupRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_ConnectionDrainConfig(self): # Struct
+		return self.get_query_params().get('ConnectionDrainConfig')
+
+	def set_ConnectionDrainConfig(self, ConnectionDrainConfig):  # Struct
+		if ConnectionDrainConfig.get('ConnectionDrainEnabled') is not None:
+			self.add_query_param('ConnectionDrainConfig.ConnectionDrainEnabled', ConnectionDrainConfig.get('ConnectionDrainEnabled'))
+		if ConnectionDrainConfig.get('ConnectionDrainTimeout') is not None:
+			self.add_query_param('ConnectionDrainConfig.ConnectionDrainTimeout', ConnectionDrainConfig.get('ConnectionDrainTimeout'))
 	def get_ServerGroupType(self): # String
 		return self.get_query_params().get('ServerGroupType')
 
