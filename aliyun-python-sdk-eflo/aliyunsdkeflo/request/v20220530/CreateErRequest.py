@@ -40,3 +40,8 @@ class CreateErRequest(RpcRequest):
 
 	def set_MasterZoneId(self, MasterZoneId):  # String
 		self.add_body_params('MasterZoneId', MasterZoneId)
+	def get_ResourceGroupId(self): # String
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_body_params('ResourceGroupId', ResourceGroupId)

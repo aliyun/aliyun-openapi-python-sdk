@@ -30,6 +30,11 @@ class UpdateElasticNetworkInterfaceRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
+	def get_SecurityGroupId(self): # String
+		return self.get_body_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_body_params('SecurityGroupId', SecurityGroupId)
 	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
