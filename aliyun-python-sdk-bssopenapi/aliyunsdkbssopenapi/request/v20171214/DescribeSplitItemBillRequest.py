@@ -36,6 +36,11 @@ class DescribeSplitItemBillRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_query_param('ProductCode', ProductCode)
+	def get_IsHideZeroCharge(self): # Boolean
+		return self.get_query_params().get('IsHideZeroCharge')
+
+	def set_IsHideZeroCharge(self, IsHideZeroCharge):  # Boolean
+		self.add_query_param('IsHideZeroCharge', IsHideZeroCharge)
 	def get_SubscriptionType(self): # String
 		return self.get_query_params().get('SubscriptionType')
 
@@ -101,3 +106,8 @@ class DescribeSplitItemBillRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_PipCode(self): # String
+		return self.get_query_params().get('PipCode')
+
+	def set_PipCode(self, PipCode):  # String
+		self.add_query_param('PipCode', PipCode)

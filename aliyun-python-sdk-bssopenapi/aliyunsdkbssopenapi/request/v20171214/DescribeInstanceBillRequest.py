@@ -96,3 +96,8 @@ class DescribeInstanceBillRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_PipCode(self): # String
+		return self.get_query_params().get('PipCode')
+
+	def set_PipCode(self, PipCode):  # String
+		self.add_query_param('PipCode', PipCode)
