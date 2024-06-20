@@ -70,6 +70,11 @@ class CreatePrivateAccessPolicyRequest(RpcRequest):
 
 	def set_Priority(self, Priority):  # Integer
 		self.add_body_params('Priority', Priority)
+	def get_DeviceAttributeAction(self): # String
+		return self.get_body_params().get('DeviceAttributeAction')
+
+	def set_DeviceAttributeAction(self, DeviceAttributeAction):  # String
+		self.add_body_params('DeviceAttributeAction', DeviceAttributeAction)
 	def get_ApplicationIds(self): # Array
 		return self.get_body_params().get('ApplicationIds')
 
