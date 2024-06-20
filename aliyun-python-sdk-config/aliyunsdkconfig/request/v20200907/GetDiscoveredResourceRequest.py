@@ -23,8 +23,8 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GetDiscoveredResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetDiscoveredResource')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetDiscoveredResource','config')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,11 @@ class GetDiscoveredResourceRequest(RpcRequest):
 
 	def set_ResourceId(self, ResourceId):  # String
 		self.add_query_param('ResourceId', ResourceId)
+	def get_ComplianceOption(self): # Integer
+		return self.get_query_params().get('ComplianceOption')
+
+	def set_ComplianceOption(self, ComplianceOption):  # Integer
+		self.add_query_param('ComplianceOption', ComplianceOption)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 

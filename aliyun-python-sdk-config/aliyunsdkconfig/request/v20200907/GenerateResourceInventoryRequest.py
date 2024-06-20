@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GenerateResourceInventoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GenerateResourceInventory')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GenerateResourceInventory','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class GenerateResourceInventoryRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceDeleted(self): # Integer
+		return self.get_query_params().get('ResourceDeleted')
+
+	def set_ResourceDeleted(self, ResourceDeleted):  # Integer
+		self.add_query_param('ResourceDeleted', ResourceDeleted)
 	def get_Regions(self): # String
 		return self.get_query_params().get('Regions')
 

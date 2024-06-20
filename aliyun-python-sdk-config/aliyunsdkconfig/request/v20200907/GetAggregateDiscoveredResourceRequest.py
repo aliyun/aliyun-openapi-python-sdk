@@ -23,19 +23,14 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GetAggregateDiscoveredResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateDiscoveredResource')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetAggregateDiscoveredResource','config')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,16 +41,26 @@ class GetAggregateDiscoveredResourceRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_ResourceAccountId(self): # Long
 		return self.get_query_params().get('ResourceAccountId')
 
 	def set_ResourceAccountId(self, ResourceAccountId):  # Long
 		self.add_query_param('ResourceAccountId', ResourceAccountId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ComplianceOption(self): # Integer
+		return self.get_query_params().get('ComplianceOption')
+
+	def set_ComplianceOption(self, ComplianceOption):  # Integer
+		self.add_query_param('ComplianceOption', ComplianceOption)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 

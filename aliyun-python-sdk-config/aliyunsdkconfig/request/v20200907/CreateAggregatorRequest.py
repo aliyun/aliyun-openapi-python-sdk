@@ -24,7 +24,7 @@ import json
 class CreateAggregatorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'CreateAggregator')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'CreateAggregator','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,11 +32,6 @@ class CreateAggregatorRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AggregatorType(self): # String
-		return self.get_body_params().get('AggregatorType')
-
-	def set_AggregatorType(self, AggregatorType):  # String
-		self.add_body_params('AggregatorType', AggregatorType)
 	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
@@ -52,6 +47,16 @@ class CreateAggregatorRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_FolderId(self): # String
+		return self.get_body_params().get('FolderId')
+
+	def set_FolderId(self, FolderId):  # String
+		self.add_body_params('FolderId', FolderId)
+	def get_AggregatorType(self): # String
+		return self.get_body_params().get('AggregatorType')
+
+	def set_AggregatorType(self, AggregatorType):  # String
+		self.add_body_params('AggregatorType', AggregatorType)
 	def get_AggregatorAccounts(self): # Array
 		return self.get_body_params().get('AggregatorAccounts')
 

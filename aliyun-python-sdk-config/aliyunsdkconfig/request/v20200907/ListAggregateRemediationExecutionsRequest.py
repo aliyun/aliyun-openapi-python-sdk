@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class ListAggregateRemediationExecutionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListAggregateRemediationExecutions')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListAggregateRemediationExecutions','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,6 @@ class ListAggregateRemediationExecutionsRequest(RpcRequest):
 
 	def set_ConfigRuleId(self, ConfigRuleId):  # String
 		self.add_query_param('ConfigRuleId', ConfigRuleId)
-	def get_ExecutionStatus(self): # String
-		return self.get_query_params().get('ExecutionStatus')
-
-	def set_ExecutionStatus(self, ExecutionStatus):  # String
-		self.add_query_param('ExecutionStatus', ExecutionStatus)
 	def get_AggregatorId(self): # String
 		return self.get_query_params().get('AggregatorId')
 
@@ -56,6 +51,11 @@ class ListAggregateRemediationExecutionsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ExecutionStatus(self): # String
+		return self.get_query_params().get('ExecutionStatus')
+
+	def set_ExecutionStatus(self, ExecutionStatus):  # String
+		self.add_query_param('ExecutionStatus', ExecutionStatus)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class UpdateConfigurationRecorderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigurationRecorder')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigurationRecorder','config')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

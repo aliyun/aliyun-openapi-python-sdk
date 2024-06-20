@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class DescribeRemediationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'DescribeRemediation')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'DescribeRemediation','config')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

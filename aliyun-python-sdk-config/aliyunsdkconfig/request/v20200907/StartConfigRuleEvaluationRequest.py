@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class StartConfigRuleEvaluationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'StartConfigRuleEvaluation')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'StartConfigRuleEvaluation','config')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class UpdateIntegratedServiceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateIntegratedServiceStatus')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateIntegratedServiceStatus','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class UpdateIntegratedServiceStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IntegratedTypes(self): # String
+		return self.get_body_params().get('IntegratedTypes')
+
+	def set_IntegratedTypes(self, IntegratedTypes):  # String
+		self.add_body_params('IntegratedTypes', IntegratedTypes)
 	def get_ServiceCode(self): # String
 		return self.get_body_params().get('ServiceCode')
 

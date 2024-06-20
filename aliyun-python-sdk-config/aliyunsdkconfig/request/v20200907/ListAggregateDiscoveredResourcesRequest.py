@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class ListAggregateDiscoveredResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListAggregateDiscoveredResources')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListAggregateDiscoveredResources','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

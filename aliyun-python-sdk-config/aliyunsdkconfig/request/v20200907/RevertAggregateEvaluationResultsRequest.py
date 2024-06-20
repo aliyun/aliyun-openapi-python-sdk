@@ -24,7 +24,7 @@ import json
 class RevertAggregateEvaluationResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'RevertAggregateEvaluationResults')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'RevertAggregateEvaluationResults','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

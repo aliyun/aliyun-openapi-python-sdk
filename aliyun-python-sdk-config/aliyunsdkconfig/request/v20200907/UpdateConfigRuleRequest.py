@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class UpdateConfigRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigRule')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigRule','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -57,6 +57,11 @@ class UpdateConfigRuleRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
+	def get_ExcludeResourceGroupIdsScope(self): # String
+		return self.get_body_params().get('ExcludeResourceGroupIdsScope')
+
+	def set_ExcludeResourceGroupIdsScope(self, ExcludeResourceGroupIdsScope):  # String
+		self.add_body_params('ExcludeResourceGroupIdsScope', ExcludeResourceGroupIdsScope)
 	def get_ConfigRuleTriggerTypes(self): # String
 		return self.get_body_params().get('ConfigRuleTriggerTypes')
 
@@ -72,11 +77,34 @@ class UpdateConfigRuleRequest(RpcRequest):
 
 	def set_RegionIdsScope(self, RegionIdsScope):  # String
 		self.add_body_params('RegionIdsScope', RegionIdsScope)
+	def get_ResourceIdsScope(self): # String
+		return self.get_body_params().get('ResourceIdsScope')
+
+	def set_ResourceIdsScope(self, ResourceIdsScope):  # String
+		self.add_body_params('ResourceIdsScope', ResourceIdsScope)
+	def get_ExcludeTagsScope(self): # Array
+		return self.get_body_params().get('ExcludeTagsScope')
+
+	def set_ExcludeTagsScope(self, ExcludeTagsScope):  # Array
+		for index1, value1 in enumerate(ExcludeTagsScope):
+			if value1.get('TagValue') is not None:
+				self.add_body_params('ExcludeTagsScope.' + str(index1 + 1) + '.TagValue', value1.get('TagValue'))
+			if value1.get('TagKey') is not None:
+				self.add_body_params('ExcludeTagsScope.' + str(index1 + 1) + '.TagKey', value1.get('TagKey'))
 	def get_RiskLevel(self): # Integer
 		return self.get_body_params().get('RiskLevel')
 
 	def set_RiskLevel(self, RiskLevel):  # Integer
 		self.add_body_params('RiskLevel', RiskLevel)
+	def get_TagsScope(self): # Array
+		return self.get_body_params().get('TagsScope')
+
+	def set_TagsScope(self, TagsScope):  # Array
+		for index1, value1 in enumerate(TagsScope):
+			if value1.get('TagValue') is not None:
+				self.add_body_params('TagsScope.' + str(index1 + 1) + '.TagValue', value1.get('TagValue'))
+			if value1.get('TagKey') is not None:
+				self.add_body_params('TagsScope.' + str(index1 + 1) + '.TagKey', value1.get('TagKey'))
 	def get_ResourceGroupIdsScope(self): # String
 		return self.get_body_params().get('ResourceGroupIdsScope')
 
@@ -87,16 +115,21 @@ class UpdateConfigRuleRequest(RpcRequest):
 
 	def set_InputParameters(self, InputParameters):  # String
 		self.add_body_params('InputParameters', InputParameters)
-	def get_ConfigRuleName(self): # String
-		return self.get_body_params().get('ConfigRuleName')
+	def get_ExcludeRegionIdsScope(self): # String
+		return self.get_body_params().get('ExcludeRegionIdsScope')
 
-	def set_ConfigRuleName(self, ConfigRuleName):  # String
-		self.add_body_params('ConfigRuleName', ConfigRuleName)
+	def set_ExcludeRegionIdsScope(self, ExcludeRegionIdsScope):  # String
+		self.add_body_params('ExcludeRegionIdsScope', ExcludeRegionIdsScope)
 	def get_TagKeyLogicScope(self): # String
 		return self.get_body_params().get('TagKeyLogicScope')
 
 	def set_TagKeyLogicScope(self, TagKeyLogicScope):  # String
 		self.add_body_params('TagKeyLogicScope', TagKeyLogicScope)
+	def get_ConfigRuleName(self): # String
+		return self.get_body_params().get('ConfigRuleName')
+
+	def set_ConfigRuleName(self, ConfigRuleName):  # String
+		self.add_body_params('ConfigRuleName', ConfigRuleName)
 	def get_MaximumExecutionFrequency(self): # String
 		return self.get_body_params().get('MaximumExecutionFrequency')
 

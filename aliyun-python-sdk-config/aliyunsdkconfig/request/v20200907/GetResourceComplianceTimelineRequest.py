@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class GetResourceComplianceTimelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetResourceComplianceTimeline')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'GetResourceComplianceTimeline','config')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

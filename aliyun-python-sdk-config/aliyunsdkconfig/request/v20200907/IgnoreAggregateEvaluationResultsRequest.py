@@ -24,7 +24,7 @@ import json
 class IgnoreAggregateEvaluationResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'IgnoreAggregateEvaluationResults')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'IgnoreAggregateEvaluationResults','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

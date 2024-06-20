@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class DeleteConfigRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'DeleteConfigRules')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'DeleteConfigRules','config')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class ListCompliancePacksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListCompliancePacks')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'ListCompliancePacks','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

@@ -24,7 +24,7 @@ import json
 class UpdateAggregatorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateAggregator')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateAggregator','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

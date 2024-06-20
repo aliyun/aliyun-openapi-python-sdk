@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class StartAggregateConfigRuleEvaluationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'StartAggregateConfigRuleEvaluation')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'StartAggregateConfigRuleEvaluation','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

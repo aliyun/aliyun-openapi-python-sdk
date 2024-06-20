@@ -24,7 +24,7 @@ import json
 class UpdateAggregateCompliancePackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateAggregateCompliancePack')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateAggregateCompliancePack','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -57,6 +57,11 @@ class UpdateAggregateCompliancePackRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_body_params('AggregatorId', AggregatorId)
+	def get_ExcludeResourceGroupIdsScope(self): # String
+		return self.get_body_params().get('ExcludeResourceGroupIdsScope')
+
+	def set_ExcludeResourceGroupIdsScope(self, ExcludeResourceGroupIdsScope):  # String
+		self.add_body_params('ExcludeResourceGroupIdsScope', ExcludeResourceGroupIdsScope)
 	def get_TagValueScope(self): # String
 		return self.get_body_params().get('TagValueScope')
 
@@ -72,21 +77,49 @@ class UpdateAggregateCompliancePackRequest(RpcRequest):
 
 	def set_CompliancePackId(self, CompliancePackId):  # String
 		self.add_body_params('CompliancePackId', CompliancePackId)
+	def get_ResourceIdsScope(self): # String
+		return self.get_body_params().get('ResourceIdsScope')
+
+	def set_ResourceIdsScope(self, ResourceIdsScope):  # String
+		self.add_body_params('ResourceIdsScope', ResourceIdsScope)
 	def get_ConfigRules(self): # Array
 		return self.get_body_params().get('ConfigRules')
 
 	def set_ConfigRules(self, ConfigRules):  # Array
 		self.add_body_params("ConfigRules", json.dumps(ConfigRules))
+	def get_ExcludeTagsScope(self): # Array
+		return self.get_body_params().get('ExcludeTagsScope')
+
+	def set_ExcludeTagsScope(self, ExcludeTagsScope):  # Array
+		for index1, value1 in enumerate(ExcludeTagsScope):
+			if value1.get('TagValue') is not None:
+				self.add_body_params('ExcludeTagsScope.' + str(index1 + 1) + '.TagValue', value1.get('TagValue'))
+			if value1.get('TagKey') is not None:
+				self.add_body_params('ExcludeTagsScope.' + str(index1 + 1) + '.TagKey', value1.get('TagKey'))
 	def get_RiskLevel(self): # Integer
 		return self.get_body_params().get('RiskLevel')
 
 	def set_RiskLevel(self, RiskLevel):  # Integer
 		self.add_body_params('RiskLevel', RiskLevel)
+	def get_TagsScope(self): # Array
+		return self.get_body_params().get('TagsScope')
+
+	def set_TagsScope(self, TagsScope):  # Array
+		for index1, value1 in enumerate(TagsScope):
+			if value1.get('TagValue') is not None:
+				self.add_body_params('TagsScope.' + str(index1 + 1) + '.TagValue', value1.get('TagValue'))
+			if value1.get('TagKey') is not None:
+				self.add_body_params('TagsScope.' + str(index1 + 1) + '.TagKey', value1.get('TagKey'))
 	def get_ResourceGroupIdsScope(self): # String
 		return self.get_body_params().get('ResourceGroupIdsScope')
 
 	def set_ResourceGroupIdsScope(self, ResourceGroupIdsScope):  # String
 		self.add_body_params('ResourceGroupIdsScope', ResourceGroupIdsScope)
+	def get_ExcludeRegionIdsScope(self): # String
+		return self.get_body_params().get('ExcludeRegionIdsScope')
+
+	def set_ExcludeRegionIdsScope(self, ExcludeRegionIdsScope):  # String
+		self.add_body_params('ExcludeRegionIdsScope', ExcludeRegionIdsScope)
 	def get_ExcludeResourceIdsScope(self): # String
 		return self.get_body_params().get('ExcludeResourceIdsScope')
 
