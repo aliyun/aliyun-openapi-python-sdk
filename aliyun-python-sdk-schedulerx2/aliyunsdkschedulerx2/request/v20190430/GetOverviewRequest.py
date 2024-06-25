@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class GetOverviewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetOverview')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetOverview','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class GetOverviewRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -51,11 +56,6 @@ class GetOverviewRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # Long
 		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
 	def get_Operate(self): # String
 		return self.get_query_params().get('Operate')
 

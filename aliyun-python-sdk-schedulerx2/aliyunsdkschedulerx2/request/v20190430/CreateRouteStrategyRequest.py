@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class CreateRouteStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateRouteStrategy')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateRouteStrategy','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,6 @@ class CreateRouteStrategyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_StrategyContent(self): # String
-		return self.get_query_params().get('StrategyContent')
-
-	def set_StrategyContent(self, StrategyContent):  # String
-		self.add_query_param('StrategyContent', StrategyContent)
 	def get_Type(self): # Integer
 		return self.get_query_params().get('Type')
 
@@ -51,6 +41,16 @@ class CreateRouteStrategyRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_StrategyContent(self): # String
+		return self.get_query_params().get('StrategyContent')
+
+	def set_StrategyContent(self, StrategyContent):  # String
+		self.add_query_param('StrategyContent', StrategyContent)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

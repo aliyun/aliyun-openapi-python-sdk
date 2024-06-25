@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class UpdateAppGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateAppGroup')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateAppGroup','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class UpdateAppGroupRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_AppVersion(self): # Integer
+		return self.get_query_params().get('AppVersion')
+
+	def set_AppVersion(self, AppVersion):  # Integer
+		self.add_query_param('AppVersion', AppVersion)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

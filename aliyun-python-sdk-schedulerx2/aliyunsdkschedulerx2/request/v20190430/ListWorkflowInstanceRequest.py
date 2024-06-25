@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class ListWorkflowInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ListWorkflowInstance')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ListWorkflowInstance','schedulerx2')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

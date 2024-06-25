@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class GetJobInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetJobInstanceList')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetJobInstanceList','schedulerx2')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_StartTimestamp(self): # Long
 		return self.get_query_params().get('StartTimestamp')
 
 	def set_StartTimestamp(self, StartTimestamp):  # Long
 		self.add_query_param('StartTimestamp', StartTimestamp)
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
 	def get_EndTimestamp(self): # Long
 		return self.get_query_params().get('EndTimestamp')
 
@@ -56,6 +56,16 @@ class GetJobInstanceListRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

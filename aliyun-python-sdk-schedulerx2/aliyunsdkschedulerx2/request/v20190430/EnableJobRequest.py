@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class EnableJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'EnableJob')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'EnableJob','schedulerx2')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

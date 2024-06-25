@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class RerunJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'RerunJob')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'RerunJob','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,6 @@ class RerunJobRequest(RpcRequest):
 
 	def set_DataTime(self, DataTime):  # String
 		self.add_body_params('DataTime', DataTime)
-	def get_GroupId(self): # String
-		return self.get_body_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_body_params('GroupId', GroupId)
 	def get_StartDate(self): # Long
 		return self.get_body_params().get('StartDate')
 
@@ -56,6 +51,11 @@ class RerunJobRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # Long
 		self.add_body_params('JobId', JobId)
+	def get_GroupId(self): # String
+		return self.get_body_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_body_params('GroupId', GroupId)
 	def get_EndDate(self): # Long
 		return self.get_body_params().get('EndDate')
 

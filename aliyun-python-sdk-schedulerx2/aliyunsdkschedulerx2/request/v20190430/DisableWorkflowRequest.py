@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class DisableWorkflowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DisableWorkflow')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DisableWorkflow','schedulerx2')
 		self.set_protocol_type('https')
 		self.set_method('GET')
 

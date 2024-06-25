@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class CreateNamespaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateNamespace')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateNamespace','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
