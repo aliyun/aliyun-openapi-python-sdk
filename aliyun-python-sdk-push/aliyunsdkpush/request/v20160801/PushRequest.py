@@ -36,16 +36,6 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidNotificationBarType(self, AndroidNotificationBarType):  # Integer
 		self.add_query_param('AndroidNotificationBarType', AndroidNotificationBarType)
-	def get_SmsSendPolicy(self): # Integer
-		return self.get_query_params().get('SmsSendPolicy')
-
-	def set_SmsSendPolicy(self, SmsSendPolicy):  # Integer
-		self.add_query_param('SmsSendPolicy', SmsSendPolicy)
-	def get_Body(self): # String
-		return self.get_query_params().get('Body')
-
-	def set_Body(self, Body):  # String
-		self.add_query_param('Body', Body)
 	def get_DeviceType(self): # String
 		return self.get_query_params().get('DeviceType')
 
@@ -61,16 +51,6 @@ class PushRequest(RpcRequest):
 
 	def set_SendSpeed(self, SendSpeed):  # Integer
 		self.add_query_param('SendSpeed', SendSpeed)
-	def get_AndroidNotificationHuaweiChannel(self): # String
-		return self.get_query_params().get('AndroidNotificationHuaweiChannel')
-
-	def set_AndroidNotificationHuaweiChannel(self, AndroidNotificationHuaweiChannel):  # String
-		self.add_query_param('AndroidNotificationHuaweiChannel', AndroidNotificationHuaweiChannel)
-	def get_AndroidPopupActivity(self): # String
-		return self.get_query_params().get('AndroidPopupActivity')
-
-	def set_AndroidPopupActivity(self, AndroidPopupActivity):  # String
-		self.add_query_param('AndroidPopupActivity', AndroidPopupActivity)
 	def get_iOSRemindBody(self): # String
 		return self.get_query_params().get('iOSRemindBody')
 
@@ -81,41 +61,16 @@ class PushRequest(RpcRequest):
 
 	def set_Trim(self, Trim):  # Boolean
 		self.add_query_param('Trim', Trim)
-	def get_AndroidMessageVivoCategory(self): # String
-		return self.get_query_params().get('AndroidMessageVivoCategory')
-
-	def set_AndroidMessageVivoCategory(self, AndroidMessageVivoCategory):  # String
-		self.add_query_param('AndroidMessageVivoCategory', AndroidMessageVivoCategory)
-	def get_AndroidNotifyType(self): # String
-		return self.get_query_params().get('AndroidNotifyType')
-
-	def set_AndroidNotifyType(self, AndroidNotifyType):  # String
-		self.add_query_param('AndroidNotifyType', AndroidNotifyType)
 	def get_AndroidPopupTitle(self): # String
 		return self.get_query_params().get('AndroidPopupTitle')
 
 	def set_AndroidPopupTitle(self, AndroidPopupTitle):  # String
 		self.add_query_param('AndroidPopupTitle', AndroidPopupTitle)
-	def get_AndroidMessageHuaweiCategory(self): # String
-		return self.get_query_params().get('AndroidMessageHuaweiCategory')
-
-	def set_AndroidMessageHuaweiCategory(self, AndroidMessageHuaweiCategory):  # String
-		self.add_query_param('AndroidMessageHuaweiCategory', AndroidMessageHuaweiCategory)
-	def get_iOSMusic(self): # String
-		return self.get_query_params().get('iOSMusic')
-
-	def set_iOSMusic(self, iOSMusic):  # String
-		self.add_query_param('iOSMusic', iOSMusic)
 	def get_iOSApnsEnv(self): # String
 		return self.get_query_params().get('iOSApnsEnv')
 
 	def set_iOSApnsEnv(self, iOSApnsEnv):  # String
 		self.add_query_param('iOSApnsEnv', iOSApnsEnv)
-	def get_iOSMutableContent(self): # Boolean
-		return self.get_query_params().get('iOSMutableContent')
-
-	def set_iOSMutableContent(self, iOSMutableContent):  # Boolean
-		self.add_query_param('iOSMutableContent', iOSMutableContent)
 	def get_AndroidNotificationBarPriority(self): # Integer
 		return self.get_query_params().get('AndroidNotificationBarPriority')
 
@@ -131,16 +86,6 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidImageUrl(self, AndroidImageUrl):  # String
 		self.add_query_param('AndroidImageUrl', AndroidImageUrl)
-	def get_AndroidHonorTargetUserType(self): # Integer
-		return self.get_query_params().get('AndroidHonorTargetUserType')
-
-	def set_AndroidHonorTargetUserType(self, AndroidHonorTargetUserType):  # Integer
-		self.add_query_param('AndroidHonorTargetUserType', AndroidHonorTargetUserType)
-	def get_AndroidNotificationVivoChannel(self): # String
-		return self.get_query_params().get('AndroidNotificationVivoChannel')
-
-	def set_AndroidNotificationVivoChannel(self, AndroidNotificationVivoChannel):  # String
-		self.add_query_param('AndroidNotificationVivoChannel', AndroidNotificationVivoChannel)
 	def get_AndroidVivoReceiptId(self): # String
 		return self.get_query_params().get('AndroidVivoReceiptId')
 
@@ -151,61 +96,16 @@ class PushRequest(RpcRequest):
 
 	def set_iOSNotificationCategory(self, iOSNotificationCategory):  # String
 		self.add_query_param('iOSNotificationCategory', iOSNotificationCategory)
-	def get_AndroidNotificationXiaomiChannel(self): # String
-		return self.get_query_params().get('AndroidNotificationXiaomiChannel')
-
-	def set_AndroidNotificationXiaomiChannel(self, AndroidNotificationXiaomiChannel):  # String
-		self.add_query_param('AndroidNotificationXiaomiChannel', AndroidNotificationXiaomiChannel)
-	def get_StoreOffline(self): # Boolean
-		return self.get_query_params().get('StoreOffline')
-
-	def set_StoreOffline(self, StoreOffline):  # Boolean
-		self.add_query_param('StoreOffline', StoreOffline)
-	def get_iOSRelevanceScore(self): # Double
-		return self.get_query_params().get('iOSRelevanceScore')
-
-	def set_iOSRelevanceScore(self, iOSRelevanceScore):  # Double
-		self.add_query_param('iOSRelevanceScore', iOSRelevanceScore)
-	def get_SmsParams(self): # String
-		return self.get_query_params().get('SmsParams')
-
-	def set_SmsParams(self, SmsParams):  # String
-		self.add_query_param('SmsParams', SmsParams)
-	def get_AndroidVivoPushMode(self): # Integer
-		return self.get_query_params().get('AndroidVivoPushMode')
-
-	def set_AndroidVivoPushMode(self, AndroidVivoPushMode):  # Integer
-		self.add_query_param('AndroidVivoPushMode', AndroidVivoPushMode)
-	def get_AndroidInboxBody(self): # String
-		return self.get_query_params().get('AndroidInboxBody')
-
-	def set_AndroidInboxBody(self, AndroidInboxBody):  # String
-		self.add_query_param('AndroidInboxBody', AndroidInboxBody)
-	def get_JobKey(self): # String
-		return self.get_query_params().get('JobKey')
-
-	def set_JobKey(self, JobKey):  # String
-		self.add_query_param('JobKey', JobKey)
-	def get_AndroidOpenUrl(self): # String
-		return self.get_query_params().get('AndroidOpenUrl')
-
-	def set_AndroidOpenUrl(self, AndroidOpenUrl):  # String
-		self.add_query_param('AndroidOpenUrl', AndroidOpenUrl)
-	def get_AndroidXiaoMiNotifyBody(self): # String
-		return self.get_query_params().get('AndroidXiaoMiNotifyBody')
-
-	def set_AndroidXiaoMiNotifyBody(self, AndroidXiaoMiNotifyBody):  # String
-		self.add_query_param('AndroidXiaoMiNotifyBody', AndroidXiaoMiNotifyBody)
-	def get_iOSSubtitle(self): # String
-		return self.get_query_params().get('iOSSubtitle')
-
-	def set_iOSSubtitle(self, iOSSubtitle):  # String
-		self.add_query_param('iOSSubtitle', iOSSubtitle)
 	def get_AndroidXiaomiBigPictureUrl(self): # String
 		return self.get_query_params().get('AndroidXiaomiBigPictureUrl')
 
 	def set_AndroidXiaomiBigPictureUrl(self, AndroidXiaomiBigPictureUrl):  # String
 		self.add_query_param('AndroidXiaomiBigPictureUrl', AndroidXiaomiBigPictureUrl)
+	def get_HarmonyCategory(self): # String
+		return self.get_query_params().get('HarmonyCategory')
+
+	def set_HarmonyCategory(self, HarmonyCategory):  # String
+		self.add_query_param('HarmonyCategory', HarmonyCategory)
 	def get_iOSRemind(self): # Boolean
 		return self.get_query_params().get('iOSRemind')
 
@@ -221,26 +121,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidHuaweiTargetUserType(self, AndroidHuaweiTargetUserType):  # Integer
 		self.add_query_param('AndroidHuaweiTargetUserType', AndroidHuaweiTargetUserType)
-	def get_AndroidMusic(self): # String
-		return self.get_query_params().get('AndroidMusic')
-
-	def set_AndroidMusic(self, AndroidMusic):  # String
-		self.add_query_param('AndroidMusic', AndroidMusic)
-	def get_iOSNotificationCollapseId(self): # String
-		return self.get_query_params().get('iOSNotificationCollapseId')
-
-	def set_iOSNotificationCollapseId(self, iOSNotificationCollapseId):  # String
-		self.add_query_param('iOSNotificationCollapseId', iOSNotificationCollapseId)
 	def get_AndroidMessageHuaweiUrgency(self): # String
 		return self.get_query_params().get('AndroidMessageHuaweiUrgency')
 
 	def set_AndroidMessageHuaweiUrgency(self, AndroidMessageHuaweiUrgency):  # String
 		self.add_query_param('AndroidMessageHuaweiUrgency', AndroidMessageHuaweiUrgency)
-	def get_PushType(self): # String
-		return self.get_query_params().get('PushType')
-
-	def set_PushType(self, PushType):  # String
-		self.add_query_param('PushType', PushType)
 	def get_iOSInterruptionLevel(self): # String
 		return self.get_query_params().get('iOSInterruptionLevel')
 
@@ -256,11 +141,6 @@ class PushRequest(RpcRequest):
 
 	def set_iOSBadge(self, iOSBadge):  # Integer
 		self.add_query_param('iOSBadge', iOSBadge)
-	def get_AndroidBigBody(self): # String
-		return self.get_query_params().get('AndroidBigBody')
-
-	def set_AndroidBigBody(self, AndroidBigBody):  # String
-		self.add_query_param('AndroidBigBody', AndroidBigBody)
 	def get_iOSBadgeAutoIncrement(self): # Boolean
 		return self.get_query_params().get('iOSBadgeAutoIncrement')
 
@@ -271,11 +151,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidOpenType(self, AndroidOpenType):  # String
 		self.add_query_param('AndroidOpenType', AndroidOpenType)
-	def get_Title(self): # String
-		return self.get_query_params().get('Title')
+	def get_HarmonyRemindTitle(self): # String
+		return self.get_query_params().get('HarmonyRemindTitle')
 
-	def set_Title(self, Title):  # String
-		self.add_query_param('Title', Title)
+	def set_HarmonyRemindTitle(self, HarmonyRemindTitle):  # String
+		self.add_query_param('HarmonyRemindTitle', HarmonyRemindTitle)
 	def get_SmsDelaySecs(self): # Integer
 		return self.get_query_params().get('SmsDelaySecs')
 
@@ -291,36 +171,26 @@ class PushRequest(RpcRequest):
 
 	def set_iOSExtParameters(self, iOSExtParameters):  # String
 		self.add_query_param('iOSExtParameters', iOSExtParameters)
-	def get_AndroidHuaweiReceiptId(self): # String
-		return self.get_query_params().get('AndroidHuaweiReceiptId')
-
-	def set_AndroidHuaweiReceiptId(self, AndroidHuaweiReceiptId):  # String
-		self.add_query_param('AndroidHuaweiReceiptId', AndroidHuaweiReceiptId)
-	def get_AndroidNotificationHonorChannel(self): # String
-		return self.get_query_params().get('AndroidNotificationHonorChannel')
-
-	def set_AndroidNotificationHonorChannel(self, AndroidNotificationHonorChannel):  # String
-		self.add_query_param('AndroidNotificationHonorChannel', AndroidNotificationHonorChannel)
 	def get_AndroidXiaomiImageUrl(self): # String
 		return self.get_query_params().get('AndroidXiaomiImageUrl')
 
 	def set_AndroidXiaomiImageUrl(self, AndroidXiaomiImageUrl):  # String
 		self.add_query_param('AndroidXiaomiImageUrl', AndroidXiaomiImageUrl)
-	def get_AndroidTargetUserType(self): # Integer
-		return self.get_query_params().get('AndroidTargetUserType')
-
-	def set_AndroidTargetUserType(self, AndroidTargetUserType):  # Integer
-		self.add_query_param('AndroidTargetUserType', AndroidTargetUserType)
 	def get_SmsTemplateName(self): # String
 		return self.get_query_params().get('SmsTemplateName')
 
 	def set_SmsTemplateName(self, SmsTemplateName):  # String
 		self.add_query_param('SmsTemplateName', SmsTemplateName)
-	def get_AndroidPopupBody(self): # String
-		return self.get_query_params().get('AndroidPopupBody')
+	def get_HarmonyUri(self): # String
+		return self.get_query_params().get('HarmonyUri')
 
-	def set_AndroidPopupBody(self, AndroidPopupBody):  # String
-		self.add_query_param('AndroidPopupBody', AndroidPopupBody)
+	def set_HarmonyUri(self, HarmonyUri):  # String
+		self.add_query_param('HarmonyUri', HarmonyUri)
+	def get_HarmonyExtParameters(self): # String
+		return self.get_query_params().get('HarmonyExtParameters')
+
+	def set_HarmonyExtParameters(self, HarmonyExtParameters):  # String
+		self.add_query_param('HarmonyExtParameters', HarmonyExtParameters)
 	def get_AndroidBigPictureUrl(self): # String
 		return self.get_query_params().get('AndroidBigPictureUrl')
 
@@ -331,21 +201,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSSilentNotification(self, iOSSilentNotification):  # Boolean
 		self.add_query_param('iOSSilentNotification', iOSSilentNotification)
-	def get_AndroidNotificationGroup(self): # String
-		return self.get_query_params().get('AndroidNotificationGroup')
+	def get_HarmonyNotificationSlotType(self): # String
+		return self.get_query_params().get('HarmonyNotificationSlotType')
 
-	def set_AndroidNotificationGroup(self, AndroidNotificationGroup):  # String
-		self.add_query_param('AndroidNotificationGroup', AndroidNotificationGroup)
-	def get_SendChannels(self): # String
-		return self.get_query_params().get('SendChannels')
-
-	def set_SendChannels(self, SendChannels):  # String
-		self.add_query_param('SendChannels', SendChannels)
-	def get_Target(self): # String
-		return self.get_query_params().get('Target')
-
-	def set_Target(self, Target):  # String
-		self.add_query_param('Target', Target)
+	def set_HarmonyNotificationSlotType(self, HarmonyNotificationSlotType):  # String
+		self.add_query_param('HarmonyNotificationSlotType', HarmonyNotificationSlotType)
 	def get_AndroidBigTitle(self): # String
 		return self.get_query_params().get('AndroidBigTitle')
 
@@ -391,6 +251,221 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidXiaoMiNotifyTitle(self, AndroidXiaoMiNotifyTitle):  # String
 		self.add_query_param('AndroidXiaoMiNotifyTitle', AndroidXiaoMiNotifyTitle)
+	def get_SmsSendPolicy(self): # Integer
+		return self.get_query_params().get('SmsSendPolicy')
+
+	def set_SmsSendPolicy(self, SmsSendPolicy):  # Integer
+		self.add_query_param('SmsSendPolicy', SmsSendPolicy)
+	def get_Body(self): # String
+		return self.get_query_params().get('Body')
+
+	def set_Body(self, Body):  # String
+		self.add_query_param('Body', Body)
+	def get_AndroidNotificationHuaweiChannel(self): # String
+		return self.get_query_params().get('AndroidNotificationHuaweiChannel')
+
+	def set_AndroidNotificationHuaweiChannel(self, AndroidNotificationHuaweiChannel):  # String
+		self.add_query_param('AndroidNotificationHuaweiChannel', AndroidNotificationHuaweiChannel)
+	def get_AndroidPopupActivity(self): # String
+		return self.get_query_params().get('AndroidPopupActivity')
+
+	def set_AndroidPopupActivity(self, AndroidPopupActivity):  # String
+		self.add_query_param('AndroidPopupActivity', AndroidPopupActivity)
+	def get_HarmonyNotifyId(self): # Integer
+		return self.get_query_params().get('HarmonyNotifyId')
+
+	def set_HarmonyNotifyId(self, HarmonyNotifyId):  # Integer
+		self.add_query_param('HarmonyNotifyId', HarmonyNotifyId)
+	def get_HarmonyRenderStyle(self): # String
+		return self.get_query_params().get('HarmonyRenderStyle')
+
+	def set_HarmonyRenderStyle(self, HarmonyRenderStyle):  # String
+		self.add_query_param('HarmonyRenderStyle', HarmonyRenderStyle)
+	def get_AndroidMessageVivoCategory(self): # String
+		return self.get_query_params().get('AndroidMessageVivoCategory')
+
+	def set_AndroidMessageVivoCategory(self, AndroidMessageVivoCategory):  # String
+		self.add_query_param('AndroidMessageVivoCategory', AndroidMessageVivoCategory)
+	def get_AndroidNotifyType(self): # String
+		return self.get_query_params().get('AndroidNotifyType')
+
+	def set_AndroidNotifyType(self, AndroidNotifyType):  # String
+		self.add_query_param('AndroidNotifyType', AndroidNotifyType)
+	def get_AndroidMessageHuaweiCategory(self): # String
+		return self.get_query_params().get('AndroidMessageHuaweiCategory')
+
+	def set_AndroidMessageHuaweiCategory(self, AndroidMessageHuaweiCategory):  # String
+		self.add_query_param('AndroidMessageHuaweiCategory', AndroidMessageHuaweiCategory)
+	def get_iOSMusic(self): # String
+		return self.get_query_params().get('iOSMusic')
+
+	def set_iOSMusic(self, iOSMusic):  # String
+		self.add_query_param('iOSMusic', iOSMusic)
+	def get_iOSMutableContent(self): # Boolean
+		return self.get_query_params().get('iOSMutableContent')
+
+	def set_iOSMutableContent(self, iOSMutableContent):  # Boolean
+		self.add_query_param('iOSMutableContent', iOSMutableContent)
+	def get_AndroidHonorTargetUserType(self): # Integer
+		return self.get_query_params().get('AndroidHonorTargetUserType')
+
+	def set_AndroidHonorTargetUserType(self, AndroidHonorTargetUserType):  # Integer
+		self.add_query_param('AndroidHonorTargetUserType', AndroidHonorTargetUserType)
+	def get_HarmonyRemindBody(self): # String
+		return self.get_query_params().get('HarmonyRemindBody')
+
+	def set_HarmonyRemindBody(self, HarmonyRemindBody):  # String
+		self.add_query_param('HarmonyRemindBody', HarmonyRemindBody)
+	def get_AndroidNotificationVivoChannel(self): # String
+		return self.get_query_params().get('AndroidNotificationVivoChannel')
+
+	def set_AndroidNotificationVivoChannel(self, AndroidNotificationVivoChannel):  # String
+		self.add_query_param('AndroidNotificationVivoChannel', AndroidNotificationVivoChannel)
+	def get_AndroidNotificationXiaomiChannel(self): # String
+		return self.get_query_params().get('AndroidNotificationXiaomiChannel')
+
+	def set_AndroidNotificationXiaomiChannel(self, AndroidNotificationXiaomiChannel):  # String
+		self.add_query_param('AndroidNotificationXiaomiChannel', AndroidNotificationXiaomiChannel)
+	def get_HarmonyAction(self): # String
+		return self.get_query_params().get('HarmonyAction')
+
+	def set_HarmonyAction(self, HarmonyAction):  # String
+		self.add_query_param('HarmonyAction', HarmonyAction)
+	def get_StoreOffline(self): # Boolean
+		return self.get_query_params().get('StoreOffline')
+
+	def set_StoreOffline(self, StoreOffline):  # Boolean
+		self.add_query_param('StoreOffline', StoreOffline)
+	def get_iOSRelevanceScore(self): # Double
+		return self.get_query_params().get('iOSRelevanceScore')
+
+	def set_iOSRelevanceScore(self, iOSRelevanceScore):  # Double
+		self.add_query_param('iOSRelevanceScore', iOSRelevanceScore)
+	def get_SmsParams(self): # String
+		return self.get_query_params().get('SmsParams')
+
+	def set_SmsParams(self, SmsParams):  # String
+		self.add_query_param('SmsParams', SmsParams)
+	def get_AndroidVivoPushMode(self): # Integer
+		return self.get_query_params().get('AndroidVivoPushMode')
+
+	def set_AndroidVivoPushMode(self, AndroidVivoPushMode):  # Integer
+		self.add_query_param('AndroidVivoPushMode', AndroidVivoPushMode)
+	def get_AndroidInboxBody(self): # String
+		return self.get_query_params().get('AndroidInboxBody')
+
+	def set_AndroidInboxBody(self, AndroidInboxBody):  # String
+		self.add_query_param('AndroidInboxBody', AndroidInboxBody)
+	def get_JobKey(self): # String
+		return self.get_query_params().get('JobKey')
+
+	def set_JobKey(self, JobKey):  # String
+		self.add_query_param('JobKey', JobKey)
+	def get_HarmonyReceiptId(self): # String
+		return self.get_query_params().get('HarmonyReceiptId')
+
+	def set_HarmonyReceiptId(self, HarmonyReceiptId):  # String
+		self.add_query_param('HarmonyReceiptId', HarmonyReceiptId)
+	def get_AndroidOpenUrl(self): # String
+		return self.get_query_params().get('AndroidOpenUrl')
+
+	def set_AndroidOpenUrl(self, AndroidOpenUrl):  # String
+		self.add_query_param('AndroidOpenUrl', AndroidOpenUrl)
+	def get_AndroidXiaoMiNotifyBody(self): # String
+		return self.get_query_params().get('AndroidXiaoMiNotifyBody')
+
+	def set_AndroidXiaoMiNotifyBody(self, AndroidXiaoMiNotifyBody):  # String
+		self.add_query_param('AndroidXiaoMiNotifyBody', AndroidXiaoMiNotifyBody)
+	def get_iOSSubtitle(self): # String
+		return self.get_query_params().get('iOSSubtitle')
+
+	def set_iOSSubtitle(self, iOSSubtitle):  # String
+		self.add_query_param('iOSSubtitle', iOSSubtitle)
+	def get_HarmonyRemind(self): # Boolean
+		return self.get_query_params().get('HarmonyRemind')
+
+	def set_HarmonyRemind(self, HarmonyRemind):  # Boolean
+		self.add_query_param('HarmonyRemind', HarmonyRemind)
+	def get_AndroidMusic(self): # String
+		return self.get_query_params().get('AndroidMusic')
+
+	def set_AndroidMusic(self, AndroidMusic):  # String
+		self.add_query_param('AndroidMusic', AndroidMusic)
+	def get_iOSNotificationCollapseId(self): # String
+		return self.get_query_params().get('iOSNotificationCollapseId')
+
+	def set_iOSNotificationCollapseId(self, iOSNotificationCollapseId):  # String
+		self.add_query_param('iOSNotificationCollapseId', iOSNotificationCollapseId)
+	def get_PushType(self): # String
+		return self.get_query_params().get('PushType')
+
+	def set_PushType(self, PushType):  # String
+		self.add_query_param('PushType', PushType)
+	def get_HarmonyImageUrl(self): # String
+		return self.get_query_params().get('HarmonyImageUrl')
+
+	def set_HarmonyImageUrl(self, HarmonyImageUrl):  # String
+		self.add_query_param('HarmonyImageUrl', HarmonyImageUrl)
+	def get_AndroidBigBody(self): # String
+		return self.get_query_params().get('AndroidBigBody')
+
+	def set_AndroidBigBody(self, AndroidBigBody):  # String
+		self.add_query_param('AndroidBigBody', AndroidBigBody)
+	def get_Title(self): # String
+		return self.get_query_params().get('Title')
+
+	def set_Title(self, Title):  # String
+		self.add_query_param('Title', Title)
+	def get_HarmonyTestMessage(self): # Boolean
+		return self.get_query_params().get('HarmonyTestMessage')
+
+	def set_HarmonyTestMessage(self, HarmonyTestMessage):  # Boolean
+		self.add_query_param('HarmonyTestMessage', HarmonyTestMessage)
+	def get_AndroidHuaweiReceiptId(self): # String
+		return self.get_query_params().get('AndroidHuaweiReceiptId')
+
+	def set_AndroidHuaweiReceiptId(self, AndroidHuaweiReceiptId):  # String
+		self.add_query_param('AndroidHuaweiReceiptId', AndroidHuaweiReceiptId)
+	def get_AndroidNotificationHonorChannel(self): # String
+		return self.get_query_params().get('AndroidNotificationHonorChannel')
+
+	def set_AndroidNotificationHonorChannel(self, AndroidNotificationHonorChannel):  # String
+		self.add_query_param('AndroidNotificationHonorChannel', AndroidNotificationHonorChannel)
+	def get_AndroidTargetUserType(self): # Integer
+		return self.get_query_params().get('AndroidTargetUserType')
+
+	def set_AndroidTargetUserType(self, AndroidTargetUserType):  # Integer
+		self.add_query_param('AndroidTargetUserType', AndroidTargetUserType)
+	def get_AndroidPopupBody(self): # String
+		return self.get_query_params().get('AndroidPopupBody')
+
+	def set_AndroidPopupBody(self, AndroidPopupBody):  # String
+		self.add_query_param('AndroidPopupBody', AndroidPopupBody)
+	def get_AndroidNotificationGroup(self): # String
+		return self.get_query_params().get('AndroidNotificationGroup')
+
+	def set_AndroidNotificationGroup(self, AndroidNotificationGroup):  # String
+		self.add_query_param('AndroidNotificationGroup', AndroidNotificationGroup)
+	def get_SendChannels(self): # String
+		return self.get_query_params().get('SendChannels')
+
+	def set_SendChannels(self, SendChannels):  # String
+		self.add_query_param('SendChannels', SendChannels)
+	def get_HarmonyActionType(self): # String
+		return self.get_query_params().get('HarmonyActionType')
+
+	def set_HarmonyActionType(self, HarmonyActionType):  # String
+		self.add_query_param('HarmonyActionType', HarmonyActionType)
+	def get_Target(self): # String
+		return self.get_query_params().get('Target')
+
+	def set_Target(self, Target):  # String
+		self.add_query_param('Target', Target)
+	def get_HarmonyInboxContent(self): # String
+		return self.get_query_params().get('HarmonyInboxContent')
+
+	def set_HarmonyInboxContent(self, HarmonyInboxContent):  # String
+		self.add_query_param('HarmonyInboxContent', HarmonyInboxContent)
 	def get_AndroidXiaoMiActivity(self): # String
 		return self.get_query_params().get('AndroidXiaoMiActivity')
 

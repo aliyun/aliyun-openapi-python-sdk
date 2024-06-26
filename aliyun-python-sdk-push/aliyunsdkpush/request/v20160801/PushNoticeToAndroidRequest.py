@@ -31,16 +31,6 @@ class PushNoticeToAndroidRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExtParameters(self): # String
-		return self.get_query_params().get('ExtParameters')
-
-	def set_ExtParameters(self, ExtParameters):  # String
-		self.add_query_param('ExtParameters', ExtParameters)
-	def get_StoreOffline(self): # Boolean
-		return self.get_query_params().get('StoreOffline')
-
-	def set_StoreOffline(self, StoreOffline):  # Boolean
-		self.add_query_param('StoreOffline', StoreOffline)
 	def get_Title(self): # String
 		return self.get_query_params().get('Title')
 
@@ -51,6 +41,16 @@ class PushNoticeToAndroidRequest(RpcRequest):
 
 	def set_Body(self, Body):  # String
 		self.add_query_param('Body', Body)
+	def get_ExtParameters(self): # String
+		return self.get_query_params().get('ExtParameters')
+
+	def set_ExtParameters(self, ExtParameters):  # String
+		self.add_query_param('ExtParameters', ExtParameters)
+	def get_StoreOffline(self): # Boolean
+		return self.get_query_params().get('StoreOffline')
+
+	def set_StoreOffline(self, StoreOffline):  # Boolean
+		self.add_query_param('StoreOffline', StoreOffline)
 	def get_JobKey(self): # String
 		return self.get_query_params().get('JobKey')
 
