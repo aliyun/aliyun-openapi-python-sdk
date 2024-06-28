@@ -40,6 +40,11 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_IsDeleted(self): # Boolean
+		return self.get_query_params().get('IsDeleted')
+
+	def set_IsDeleted(self, IsDeleted):  # Boolean
+		self.add_query_param('IsDeleted', IsDeleted)
 	def get_RoleIds(self): # String
 		return self.get_query_params().get('RoleIds')
 
