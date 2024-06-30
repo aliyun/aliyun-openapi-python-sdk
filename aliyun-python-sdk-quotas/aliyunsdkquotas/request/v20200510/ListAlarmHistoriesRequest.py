@@ -56,6 +56,11 @@ class ListAlarmHistoriesRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # Long
 		self.add_body_params('EndTime', EndTime)
+	def get_AlarmId(self): # String
+		return self.get_body_params().get('AlarmId')
+
+	def set_AlarmId(self, AlarmId):  # String
+		self.add_body_params('AlarmId', AlarmId)
 	def get_MaxResults(self): # Integer
 		return self.get_body_params().get('MaxResults')
 

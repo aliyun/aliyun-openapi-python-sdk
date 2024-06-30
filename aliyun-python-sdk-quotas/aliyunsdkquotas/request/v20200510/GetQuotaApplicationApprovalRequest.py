@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquotas.endpoint import endpoint_data
 
-class ListProductQuotaDimensionsRequest(RpcRequest):
+class GetQuotaApplicationApprovalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListProductQuotaDimensions','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetQuotaApplicationApproval','quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,8 @@ class ListProductQuotaDimensionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProductCode(self): # String
-		return self.get_body_params().get('ProductCode')
+	def get_ApplicationId(self): # String
+		return self.get_body_params().get('ApplicationId')
 
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_body_params('ProductCode', ProductCode)
-	def get_NextToken(self): # String
-		return self.get_body_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_body_params('NextToken', NextToken)
-	def get_QuotaCategory(self): # String
-		return self.get_body_params().get('QuotaCategory')
-
-	def set_QuotaCategory(self, QuotaCategory):  # String
-		self.add_body_params('QuotaCategory', QuotaCategory)
-	def get_MaxResults(self): # Integer
-		return self.get_body_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_body_params('MaxResults', MaxResults)
+	def set_ApplicationId(self, ApplicationId):  # String
+		self.add_body_params('ApplicationId', ApplicationId)
