@@ -1,6 +1,0 @@
-2020-06-17 Version: 0.0.3
-- Change dependency to aliyun-python-sdk-core.
-
-2019-03-21 Version: 0.0.2
-1, Update Dependency
-
