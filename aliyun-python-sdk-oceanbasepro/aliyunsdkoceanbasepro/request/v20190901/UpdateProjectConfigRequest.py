@@ -32,6 +32,11 @@ class UpdateProjectConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CommonTransferConfig(self): # Struct
+		return self.get_body_params().get('CommonTransferConfig')
+
+	def set_CommonTransferConfig(self, CommonTransferConfig):  # Struct
+		self.add_body_params("CommonTransferConfig", json.dumps(CommonTransferConfig))
 	def get_ReverseIncrTransferConfig(self): # Struct
 		return self.get_body_params().get('ReverseIncrTransferConfig')
 

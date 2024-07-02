@@ -46,6 +46,11 @@ class CreateMySqlDataSourceRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
+	def get_UseSsl(self): # Boolean
+		return self.get_body_params().get('UseSsl')
+
+	def set_UseSsl(self, UseSsl):  # Boolean
+		self.add_body_params('UseSsl', UseSsl)
 	def get_Password(self): # String
 		return self.get_body_params().get('Password')
 
