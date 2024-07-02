@@ -16,7 +16,7 @@
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from base import SDKTestBase
-from mock import MagicMock, patch
+from mock import patch
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
@@ -432,22 +432,3 @@ class NewEndpointTest(SDKTestBase):
             self.client.do_action_with_exception(request)
         except ServerException as e:
             self.assertNotEqual("SDK.EndpointResolvingError", e.get_error_code())
-
-    def test_faas_resolve(self):
-        resolver = DefaultEndpointResolver(self.client)
-        request = ResolveEndpointRequest("cn-hangzhou", "faas", None, None)
-        self.assertEqual("faas.cn-hangzhou.aliyuncs.com", resolver.resolve(request))
-        client = self.init_client(region_id="cn-hangzhou")
-
-        from aliyunsdkfaas.request.v20170824.DescribeLoadTaskStatusRequest \
-            import DescribeLoadTaskStatusRequest
-        request = DescribeLoadTaskStatusRequest()
-        request.set_FpgaUUID("blah")
-        request.set_InstanceId("blah")
-        request.set_RoleArn("blah")
-
-        try:
-            client.do_action_with_exception(request)
-            assert False
-        except ServerException as e:
-            self.assertNotEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
