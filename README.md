@@ -1,9 +1,8 @@
 # Alibaba Cloud Python Software Development Kit
 
 [![PyPI version](https://badge.fury.io/py/aliyun-python-sdk-core.svg)](https://badge.fury.io/py/aliyun-python-sdk-core)
-[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk)
-[![Build status](https://ci.appveyor.com/api/projects/status/ddq0kwqqbep9jasi/branch/master?svg=true)](https://ci.appveyor.com/project/aliyun/aliyun-openapi-python-sdk/branch/master)
-[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
+[![Python test](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/graph/badge.svg?token=qmWxah6dPs)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
 
 [中文文档](./README_zh.md)
 
@@ -12,13 +11,14 @@ The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Ali
 This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 ## Troubleshoot
-[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
+
+[Troubleshoot](https://api.alibabacloud.com/troubleshoot?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
 
 ## Online Demo
 
-**[API Workbench](https://next.api.aliyun.com)** provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API. **It is highly recommended**.
+**[API Developer Portal](https://api.alibabacloud.com)** provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API. **It is highly recommended**.
 
-<a href="https://next.api.aliyun.com" target="api_explorer">
+<a href="https://api.alibabacloud.com" target="api_explorer">
   <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
 </a>
 
@@ -45,12 +45,11 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 - To use Alibaba Cloud Python SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
-- Alibaba Cloud Python SDK requires 2.7.x, and Python 3.x.
-
+- Alibaba Cloud Python SDK requires Python 3.7.x and above.
 
 ## Install Python SDK
 
-Alibaba Cloud Python SDK supports Python 2.7.x, and Python 3.x. Run ``python --version`` to check your version of Python.
+Alibaba Cloud Python SDK supports Python 3.7.x and above. Run ``python --version`` to check your version of Python.
 
 You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed.
 
@@ -139,12 +138,13 @@ print response
 ```
 
 ## HTTP DEBUG
+
 To use the function `HTTP DEBUG`, you must set `DEBUG` in your environment variable, the corresponding value
 may be `sdk` or `SDK`.
 
 The following example shows what the `HTTP DEBUG` do, which will help you debug your codes.
 
-```
+```plaintext
 > GET /databases?RegionId=cn-hangzhou HTTP/1.1
 > Host : ads.cn-hangzhou.aliyuncs.com
 > User-Agent : AlibabaCloud (Windows 10;AMD64) Python/3.7.1 Core/2.13.1 python-requests/2.18.1
