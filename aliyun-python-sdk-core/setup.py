@@ -45,7 +45,7 @@ with open("README.rst") as fp:
 
 requires = [
     "jmespath>=0.9.3,<1.0.0",
-    "cryptography>=2.6.0"
+    "cryptography>=3.0.0"
 ]
 
 setup_args = {
@@ -67,10 +67,7 @@ setup_args = {
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
