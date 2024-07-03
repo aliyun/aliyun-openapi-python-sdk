@@ -45,6 +45,11 @@ class PutBucketRequest(RpcRequest):
 
 	def set_BucketAcl(self, BucketAcl):  # String
 		self.add_body_params('BucketAcl', BucketAcl)
+	def get_DispatchScope(self): # String
+		return self.get_body_params().get('DispatchScope')
+
+	def set_DispatchScope(self, DispatchScope):  # String
+		self.add_body_params('DispatchScope', DispatchScope)
 	def get_Comment(self): # String
 		return self.get_body_params().get('Comment')
 

@@ -20,14 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class DeleteSDGRequest(RpcRequest):
+class DeployInstanceSDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSDG','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeployInstanceSDG','ens')
 		self.set_method('POST')
 
-	def get_SDGId(self): # Array
+	def get_DeploymentType(self): # String
+		return self.get_query_params().get('DeploymentType')
+
+	def set_DeploymentType(self, DeploymentType):  # String
+		self.add_query_param('DeploymentType', DeploymentType)
+	def get_SDGId(self): # String
 		return self.get_query_params().get('SDGId')
 
-	def set_SDGId(self, SDGId):  # Array
-		self.add_query_param("SDGId", json.dumps(SDGId))
+	def set_SDGId(self, SDGId):  # String
+		self.add_query_param('SDGId', SDGId)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))

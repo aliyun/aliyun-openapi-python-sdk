@@ -111,6 +111,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_EnsRegionIds(self): # String
 		return self.get_query_params().get('EnsRegionIds')
 

@@ -31,6 +31,11 @@ class CreateEnsSaleControlRequest(RpcRequest):
 
 	def set_SaleControls(self, SaleControls):  # Array
 		self.add_query_param("SaleControls", json.dumps(SaleControls))
+	def get_CustomAccount(self): # String
+		return self.get_query_params().get('CustomAccount')
+
+	def set_CustomAccount(self, CustomAccount):  # String
+		self.add_query_param('CustomAccount', CustomAccount)
 	def get_CommodityCode(self): # String
 		return self.get_query_params().get('CommodityCode')
 

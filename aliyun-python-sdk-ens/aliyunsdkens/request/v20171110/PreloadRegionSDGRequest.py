@@ -20,14 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class DeleteSDGRequest(RpcRequest):
+class PreloadRegionSDGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteSDG','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'PreloadRegionSDG','ens')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_SDGId(self): # Array
+	def get_DestinationRegionIds(self): # Array
+		return self.get_query_params().get('DestinationRegionIds')
+
+	def set_DestinationRegionIds(self, DestinationRegionIds):  # Array
+		self.add_query_param("DestinationRegionIds", json.dumps(DestinationRegionIds))
+	def get_SDGId(self): # String
 		return self.get_query_params().get('SDGId')
 
-	def set_SDGId(self, SDGId):  # Array
-		self.add_query_param("SDGId", json.dumps(SDGId))
+	def set_SDGId(self, SDGId):  # String
+		self.add_query_param('SDGId', SDGId)
+	def get_RedundantNum(self): # Integer
+		return self.get_query_params().get('RedundantNum')
+
+	def set_RedundantNum(self, RedundantNum):  # Integer
+		self.add_query_param('RedundantNum', RedundantNum)
+	def get_Namespaces(self): # Array
+		return self.get_query_params().get('Namespaces')
+
+	def set_Namespaces(self, Namespaces):  # Array
+		self.add_query_param("Namespaces", json.dumps(Namespaces))

@@ -35,6 +35,11 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 
 	def set_HealthCheckURI(self, HealthCheckURI):  # String
 		self.add_query_param('HealthCheckURI', HealthCheckURI)
+	def get_XForwardedFor(self): # String
+		return self.get_query_params().get('XForwardedFor')
+
+	def set_XForwardedFor(self, XForwardedFor):  # String
+		self.add_query_param('XForwardedFor', XForwardedFor)
 	def get_HealthCheck(self): # String
 		return self.get_query_params().get('HealthCheck')
 

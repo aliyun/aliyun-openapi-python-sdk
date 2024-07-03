@@ -24,7 +24,7 @@ class DescribeSDGsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSDGs','ens')
-		self.set_method('GET')
+		self.set_method('POST')
 
 	def get_SDGIds(self): # Array
 		return self.get_query_params().get('SDGIds')
