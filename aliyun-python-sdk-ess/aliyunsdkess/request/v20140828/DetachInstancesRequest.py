@@ -51,6 +51,11 @@ class DetachInstancesRequest(RpcRequest):
 
 	def set_DecreaseDesiredCapacity(self, DecreaseDesiredCapacity):  # Boolean
 		self.add_query_param('DecreaseDesiredCapacity', DecreaseDesiredCapacity)
+	def get_IgnoreInvalidInstance(self): # Boolean
+		return self.get_query_params().get('IgnoreInvalidInstance')
+
+	def set_IgnoreInvalidInstance(self, IgnoreInvalidInstance):  # Boolean
+		self.add_query_param('IgnoreInvalidInstance', IgnoreInvalidInstance)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -180,19 +180,56 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_InstancePatternInfos(self, InstancePatternInfo):  # RepeatList
 		for depth1 in range(len(InstancePatternInfo)):
+			if InstancePatternInfo[depth1].get('InstanceCategories') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('InstanceCategories'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceCategories.' + str(depth2 + 1), InstancePatternInfo[depth1].get('InstanceCategories')[depth2])
+			if InstancePatternInfo[depth1].get('Memory') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Memory', InstancePatternInfo[depth1].get('Memory'))
+			if InstancePatternInfo[depth1].get('MaximumCpuCoreCount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumCpuCoreCount', InstancePatternInfo[depth1].get('MaximumCpuCoreCount'))
+			if InstancePatternInfo[depth1].get('MaxPrice') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaxPrice', InstancePatternInfo[depth1].get('MaxPrice'))
+			if InstancePatternInfo[depth1].get('MinimumGpuAmount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumGpuAmount', InstancePatternInfo[depth1].get('MinimumGpuAmount'))
+			if InstancePatternInfo[depth1].get('MaximumGpuAmount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumGpuAmount', InstancePatternInfo[depth1].get('MaximumGpuAmount'))
+			if InstancePatternInfo[depth1].get('MaximumMemorySize') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumMemorySize', InstancePatternInfo[depth1].get('MaximumMemorySize'))
+			if InstancePatternInfo[depth1].get('MinimumInitialCredit') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumInitialCredit', InstancePatternInfo[depth1].get('MinimumInitialCredit'))
+			if InstancePatternInfo[depth1].get('ExcludedInstanceType') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('ExcludedInstanceType'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.ExcludedInstanceType.' + str(depth2 + 1), InstancePatternInfo[depth1].get('ExcludedInstanceType')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumEniIpv6AddressQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniIpv6AddressQuantity', InstancePatternInfo[depth1].get('MinimumEniIpv6AddressQuantity'))
+			if InstancePatternInfo[depth1].get('MinimumEniPrivateIpAddressQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniPrivateIpAddressQuantity', InstancePatternInfo[depth1].get('MinimumEniPrivateIpAddressQuantity'))
+			if InstancePatternInfo[depth1].get('BurstablePerformance') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.BurstablePerformance', InstancePatternInfo[depth1].get('BurstablePerformance'))
+			if InstancePatternInfo[depth1].get('PhysicalProcessorModels') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('PhysicalProcessorModels'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.PhysicalProcessorModels.' + str(depth2 + 1), InstancePatternInfo[depth1].get('PhysicalProcessorModels')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumCpuCoreCount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumCpuCoreCount', InstancePatternInfo[depth1].get('MinimumCpuCoreCount'))
+			if InstancePatternInfo[depth1].get('GpuSpecs') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('GpuSpecs'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.GpuSpecs.' + str(depth2 + 1), InstancePatternInfo[depth1].get('GpuSpecs')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumEniQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniQuantity', InstancePatternInfo[depth1].get('MinimumEniQuantity'))
+			if InstancePatternInfo[depth1].get('MinimumMemorySize') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumMemorySize', InstancePatternInfo[depth1].get('MinimumMemorySize'))
 			if InstancePatternInfo[depth1].get('Cores') is not None:
 				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Cores', InstancePatternInfo[depth1].get('Cores'))
 			if InstancePatternInfo[depth1].get('InstanceFamilyLevel') is not None:
 				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceFamilyLevel', InstancePatternInfo[depth1].get('InstanceFamilyLevel'))
-			if InstancePatternInfo[depth1].get('Memory') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Memory', InstancePatternInfo[depth1].get('Memory'))
-			if InstancePatternInfo[depth1].get('MaxPrice') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaxPrice', InstancePatternInfo[depth1].get('MaxPrice'))
-			if InstancePatternInfo[depth1].get('ExcludedInstanceType') is not None:
-				for depth2 in range(len(InstancePatternInfo[depth1].get('ExcludedInstanceType'))):
-					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.ExcludedInstanceType.' + str(depth2 + 1), InstancePatternInfo[depth1].get('ExcludedInstanceType')[depth2])
-			if InstancePatternInfo[depth1].get('BurstablePerformance') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.BurstablePerformance', InstancePatternInfo[depth1].get('BurstablePerformance'))
+			if InstancePatternInfo[depth1].get('InstanceTypeFamilies') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('InstanceTypeFamilies'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceTypeFamilies.' + str(depth2 + 1), InstancePatternInfo[depth1].get('InstanceTypeFamilies')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumBaselineCredit') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumBaselineCredit', InstancePatternInfo[depth1].get('MinimumBaselineCredit'))
+			if InstancePatternInfo[depth1].get('CpuArchitectures') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('CpuArchitectures'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.CpuArchitectures.' + str(depth2 + 1), InstancePatternInfo[depth1].get('CpuArchitectures')[depth2])
 			if InstancePatternInfo[depth1].get('Architecture') is not None:
 				for depth2 in range(len(InstancePatternInfo[depth1].get('Architecture'))):
 					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Architecture.' + str(depth2 + 1), InstancePatternInfo[depth1].get('Architecture')[depth2])

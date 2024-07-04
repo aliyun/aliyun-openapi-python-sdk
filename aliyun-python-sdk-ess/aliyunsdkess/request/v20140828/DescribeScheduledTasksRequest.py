@@ -47,6 +47,11 @@ class DescribeScheduledTasksRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_TaskName(self): # String
+		return self.get_query_params().get('TaskName')
+
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -72,15 +77,30 @@ class DescribeScheduledTasksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_RecurrenceValue(self): # String
+		return self.get_query_params().get('RecurrenceValue')
+
+	def set_RecurrenceValue(self, RecurrenceValue):  # String
+		self.add_query_param('RecurrenceValue', RecurrenceValue)
 	def get_ScheduledTaskNames(self): # RepeatList
 		return self.get_query_params().get('ScheduledTaskName')
 
 	def set_ScheduledTaskNames(self, ScheduledTaskName):  # RepeatList
 		for depth1 in range(len(ScheduledTaskName)):
 			self.add_query_param('ScheduledTaskName.' + str(depth1 + 1), ScheduledTaskName[depth1])
+	def get_TaskEnabled(self): # Boolean
+		return self.get_query_params().get('TaskEnabled')
+
+	def set_TaskEnabled(self, TaskEnabled):  # Boolean
+		self.add_query_param('TaskEnabled', TaskEnabled)
 	def get_ScheduledTaskIds(self): # RepeatList
 		return self.get_query_params().get('ScheduledTaskId')
 
 	def set_ScheduledTaskIds(self, ScheduledTaskId):  # RepeatList
 		for depth1 in range(len(ScheduledTaskId)):
 			self.add_query_param('ScheduledTaskId.' + str(depth1 + 1), ScheduledTaskId[depth1])
+	def get_RecurrenceType(self): # String
+		return self.get_query_params().get('RecurrenceType')
+
+	def set_RecurrenceType(self, RecurrenceType):  # String
+		self.add_query_param('RecurrenceType', RecurrenceType)
