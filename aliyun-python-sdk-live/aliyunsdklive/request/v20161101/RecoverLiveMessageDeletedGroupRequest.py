@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeRoomKickoutUserListRequest(RpcRequest):
+class RecoverLiveMessageDeletedGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeRoomKickoutUserList','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'RecoverLiveMessageDeletedGroup','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,31 +32,16 @@ class DescribeRoomKickoutUserListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DataCenter(self): # String
+		return self.get_query_params().get('DataCenter')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Order(self): # String
-		return self.get_query_params().get('Order')
-
-	def set_Order(self, Order):  # String
-		self.add_query_param('Order', Order)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_RoomId(self): # String
-		return self.get_query_params().get('RoomId')
-
-	def set_RoomId(self, RoomId):  # String
-		self.add_query_param('RoomId', RoomId)
+	def set_DataCenter(self, DataCenter):  # String
+		self.add_query_param('DataCenter', DataCenter)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 

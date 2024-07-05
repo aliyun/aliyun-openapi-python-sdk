@@ -66,8 +66,3 @@ class AddLiveAIProduceRulesRequest(RpcRequest):
 
 	def set_Domain(self, Domain):  # String
 		self.add_query_param('Domain', Domain)
-	def get_IsOrigin(self): # Boolean
-		return self.get_query_params().get('IsOrigin')
-
-	def set_IsOrigin(self, IsOrigin):  # Boolean
-		self.add_query_param('IsOrigin', IsOrigin)
