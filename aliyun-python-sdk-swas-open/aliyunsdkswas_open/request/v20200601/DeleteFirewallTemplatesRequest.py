@@ -19,29 +19,25 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class LoginInstanceRequest(RpcRequest):
+class DeleteFirewallTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'LoginInstance','SWAS-OPEN')
+		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'DeleteFirewallTemplates','SWAS-OPEN')
 		self.set_method('POST')
 
-	def get_Password(self): # String
-		return self.get_query_params().get('Password')
+	def get_FirewallTemplateIds(self): # RepeatList
+		return self.get_query_params().get('FirewallTemplateId')
 
-	def set_Password(self, Password):  # String
-		self.add_query_param('Password', Password)
+	def set_FirewallTemplateIds(self, FirewallTemplateId):  # RepeatList
+		for depth1 in range(len(FirewallTemplateId)):
+			self.add_query_param('FirewallTemplateId.' + str(depth1 + 1), FirewallTemplateId[depth1])
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_Port(self): # Integer
-		return self.get_query_params().get('Port')
-
-	def set_Port(self, Port):  # Integer
-		self.add_query_param('Port', Port)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
-
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
