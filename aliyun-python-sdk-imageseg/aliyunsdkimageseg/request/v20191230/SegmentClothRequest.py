@@ -42,6 +42,11 @@ class SegmentClothRequest(RpcRequest):
 
 	def set_ReturnForm(self, ReturnForm):  # String
 		self.add_query_param('ReturnForm', ReturnForm)
+	def get_OutMode(self): # Long
+		return self.get_query_params().get('OutMode')
+
+	def set_OutMode(self, OutMode):  # Long
+		self.add_query_param('OutMode', OutMode)
 	def get_ImageURL(self): # String
 		return self.get_query_params().get('ImageURL')
 
