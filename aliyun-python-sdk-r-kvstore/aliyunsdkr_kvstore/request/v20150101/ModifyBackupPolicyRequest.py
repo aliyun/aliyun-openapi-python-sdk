@@ -71,6 +71,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupTime(self, PreferredBackupTime):  # String
 		self.add_query_param('PreferredBackupTime', PreferredBackupTime)
+	def get_BackupRetentionPeriod(self): # Integer
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Integer
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

@@ -46,6 +46,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
 		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
+	def get_SlaveReadOnlyCount(self): # Integer
+		return self.get_query_params().get('SlaveReadOnlyCount')
+
+	def set_SlaveReadOnlyCount(self, SlaveReadOnlyCount):  # Integer
+		self.add_query_param('SlaveReadOnlyCount', SlaveReadOnlyCount)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
@@ -215,6 +220,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_GlobalInstance(self, GlobalInstance):  # Boolean
 		self.add_query_param('GlobalInstance', GlobalInstance)
+	def get_RecoverConfigMode(self): # String
+		return self.get_query_params().get('RecoverConfigMode')
+
+	def set_RecoverConfigMode(self, RecoverConfigMode):  # String
+		self.add_query_param('RecoverConfigMode', RecoverConfigMode)
 	def get_Token(self): # String
 		return self.get_query_params().get('Token')
 

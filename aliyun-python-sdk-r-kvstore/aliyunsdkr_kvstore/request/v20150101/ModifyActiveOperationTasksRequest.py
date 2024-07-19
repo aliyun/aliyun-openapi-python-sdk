@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class CreateGlobalDistributeCacheRequest(RpcRequest):
+class ModifyActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateGlobalDistributeCache','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyActiveOperationTasks','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,16 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
 
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +61,13 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SeedSubInstanceId(self): # String
-		return self.get_query_params().get('SeedSubInstanceId')
+	def get_Ids(self): # String
+		return self.get_query_params().get('Ids')
 
-	def set_SeedSubInstanceId(self, SeedSubInstanceId):  # String
-		self.add_query_param('SeedSubInstanceId', SeedSubInstanceId)
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_ImmediateStart(self): # Integer
+		return self.get_query_params().get('ImmediateStart')
+
+	def set_ImmediateStart(self, ImmediateStart):  # Integer
+		self.add_query_param('ImmediateStart', ImmediateStart)

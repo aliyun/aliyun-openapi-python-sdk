@@ -36,6 +36,11 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NodeRole(self): # String
+		return self.get_query_params().get('NodeRole')
+
+	def set_NodeRole(self, NodeRole):  # String
+		self.add_query_param('NodeRole', NodeRole)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 

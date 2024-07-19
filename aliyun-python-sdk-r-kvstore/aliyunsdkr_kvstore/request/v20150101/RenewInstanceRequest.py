@@ -101,3 +101,8 @@ class RenewInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)

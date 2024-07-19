@@ -31,10 +31,10 @@ class DescribeBackupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BackupJobId(self): # Integer
+	def get_BackupJobId(self): # Long
 		return self.get_query_params().get('BackupJobId')
 
-	def set_BackupJobId(self, BackupJobId):  # Integer
+	def set_BackupJobId(self, BackupJobId):  # Long
 		self.add_query_param('BackupJobId', BackupJobId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -71,10 +71,10 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_BackupId(self): # Integer
+	def get_BackupId(self): # Long
 		return self.get_query_params().get('BackupId')
 
-	def set_BackupId(self, BackupId):  # Integer
+	def set_BackupId(self, BackupId):  # Long
 		self.add_query_param('BackupId', BackupId)
 	def get_NeedAof(self): # String
 		return self.get_query_params().get('NeedAof')

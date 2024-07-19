@@ -51,6 +51,11 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_SourceBiz(self): # String
+		return self.get_query_params().get('SourceBiz')
+
+	def set_SourceBiz(self, SourceBiz):  # String
+		self.add_query_param('SourceBiz', SourceBiz)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

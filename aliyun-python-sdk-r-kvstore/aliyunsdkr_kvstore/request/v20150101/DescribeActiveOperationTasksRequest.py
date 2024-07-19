@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class CreateGlobalDistributeCacheRequest(RpcRequest):
+class DescribeActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateGlobalDistributeCache','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeActiveOperationTasks','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,41 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ProductId(self): # String
+		return self.get_query_params().get('ProductId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_ProductId(self, ProductId):  # String
+		self.add_query_param('ProductId', ProductId)
+	def get_ChangeLevel(self): # String
+		return self.get_query_params().get('ChangeLevel')
+
+	def set_ChangeLevel(self, ChangeLevel):  # String
+		self.add_query_param('ChangeLevel', ChangeLevel)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InsName(self): # String
+		return self.get_query_params().get('InsName')
+
+	def set_InsName(self, InsName):  # String
+		self.add_query_param('InsName', InsName)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,13 +81,33 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_AllowCancel(self): # Integer
+		return self.get_query_params().get('AllowCancel')
+
+	def set_AllowCancel(self, AllowCancel):  # Integer
+		self.add_query_param('AllowCancel', AllowCancel)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SeedSubInstanceId(self): # String
-		return self.get_query_params().get('SeedSubInstanceId')
+	def get_DbType(self): # String
+		return self.get_query_params().get('DbType')
 
-	def set_SeedSubInstanceId(self, SeedSubInstanceId):  # String
-		self.add_query_param('SeedSubInstanceId', SeedSubInstanceId)
+	def set_DbType(self, DbType):  # String
+		self.add_query_param('DbType', DbType)
+	def get_AllowChange(self): # Integer
+		return self.get_query_params().get('AllowChange')
+
+	def set_AllowChange(self, AllowChange):  # Integer
+		self.add_query_param('AllowChange', AllowChange)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class CreateGlobalDistributeCacheRequest(RpcRequest):
+class DescribeParameterGroupTemplateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateGlobalDistributeCache','redisa')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeParameterGroupTemplateList','redisa')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,21 +36,21 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_EngineVersion(self): # String
+		return self.get_query_params().get('EngineVersion')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
+	def get_EngineType(self): # String
+		return self.get_query_params().get('EngineType')
 
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +66,13 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SeedSubInstanceId(self): # String
-		return self.get_query_params().get('SeedSubInstanceId')
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
 
-	def set_SeedSubInstanceId(self, SeedSubInstanceId):  # String
-		self.add_query_param('SeedSubInstanceId', SeedSubInstanceId)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
+	def get_CharacterType(self): # String
+		return self.get_query_params().get('CharacterType')
+
+	def set_CharacterType(self, CharacterType):  # String
+		self.add_query_param('CharacterType', CharacterType)

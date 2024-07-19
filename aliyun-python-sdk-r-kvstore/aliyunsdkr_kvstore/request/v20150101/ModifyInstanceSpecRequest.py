@@ -36,11 +36,21 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_SlaveReadOnlyCount(self): # Integer
+		return self.get_query_params().get('SlaveReadOnlyCount')
+
+	def set_SlaveReadOnlyCount(self, SlaveReadOnlyCount):  # Integer
+		self.add_query_param('SlaveReadOnlyCount', SlaveReadOnlyCount)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 

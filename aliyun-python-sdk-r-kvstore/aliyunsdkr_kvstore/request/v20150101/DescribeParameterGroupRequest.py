@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class CreateGlobalDistributeCacheRequest(RpcRequest):
+class DescribeParameterGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateGlobalDistributeCache','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeParameterGroup','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +36,16 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ParameterGroupId(self): # String
+		return self.get_query_params().get('ParameterGroupId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_ParameterGroupId(self, ParameterGroupId):  # String
+		self.add_query_param('ParameterGroupId', ParameterGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
-
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,8 +61,3 @@ class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SeedSubInstanceId(self): # String
-		return self.get_query_params().get('SeedSubInstanceId')
-
-	def set_SeedSubInstanceId(self, SeedSubInstanceId):  # String
-		self.add_query_param('SeedSubInstanceId', SeedSubInstanceId)
