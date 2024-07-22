@@ -32,18 +32,18 @@ class ListDefaultCollectorConfigurationsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_resType(self): # string
+	def get_resType(self): # String
 		return self.get_query_params().get('resType')
 
-	def set_resType(self, resType):  # string
+	def set_resType(self, resType):  # String
 		self.add_query_param('resType', resType)
-	def get_resVersion(self): # string
+	def get_resVersion(self): # String
 		return self.get_query_params().get('resVersion')
 
-	def set_resVersion(self, resVersion):  # string
+	def set_resVersion(self, resVersion):  # String
 		self.add_query_param('resVersion', resVersion)
-	def get_sourceType(self): # string
+	def get_sourceType(self): # String
 		return self.get_query_params().get('sourceType')
 
-	def set_sourceType(self, sourceType):  # string
+	def set_sourceType(self, sourceType):  # String
 		self.add_query_param('sourceType', sourceType)

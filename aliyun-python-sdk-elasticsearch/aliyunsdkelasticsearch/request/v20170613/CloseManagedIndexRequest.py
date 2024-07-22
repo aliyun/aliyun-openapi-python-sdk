@@ -32,18 +32,18 @@ class CloseManagedIndexRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_ClientToken(self): # string
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self, ClientToken):  # string
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_Index(self): # string
+	def get_Index(self): # String
 		return self.get_path_params().get('Index')
 
-	def set_Index(self, Index):  # string
+	def set_Index(self, Index):  # String
 		self.add_path_param('Index', Index)

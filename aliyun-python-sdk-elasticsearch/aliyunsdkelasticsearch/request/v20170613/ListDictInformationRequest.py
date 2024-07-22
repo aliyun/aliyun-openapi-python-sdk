@@ -32,23 +32,23 @@ class ListDictInformationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_analyzerType(self): # string
+	def get_analyzerType(self): # String
 		return self.get_query_params().get('analyzerType')
 
-	def set_analyzerType(self, analyzerType):  # string
+	def set_analyzerType(self, analyzerType):  # String
 		self.add_query_param('analyzerType', analyzerType)
-	def get_bucketName(self): # string
+	def get_bucketName(self): # String
 		return self.get_query_params().get('bucketName')
 
-	def set_bucketName(self, bucketName):  # string
+	def set_bucketName(self, bucketName):  # String
 		self.add_query_param('bucketName', bucketName)
-	def get_key(self): # string
+	def get_key(self): # String
 		return self.get_query_params().get('key')
 
-	def set_key(self, key):  # string
+	def set_key(self, key):  # String
 		self.add_query_param('key', key)

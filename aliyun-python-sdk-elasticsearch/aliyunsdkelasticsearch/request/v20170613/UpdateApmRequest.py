@@ -32,10 +32,10 @@ class UpdateApmRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_instanceId(self): # string
+	def get_instanceId(self): # String
 		return self.get_path_params().get('instanceId')
 
-	def set_instanceId(self, instanceId):  # string
+	def set_instanceId(self, instanceId):  # String
 		self.add_path_param('instanceId', instanceId)
 	def get_body(self): # String
 		return self.get_body_params().get('body')

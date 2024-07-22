@@ -32,33 +32,33 @@ class ListCollectorsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_instanceId(self): # string
+	def get_instanceId(self): # String
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self, instanceId):  # string
+	def set_instanceId(self, instanceId):  # String
 		self.add_query_param('instanceId', instanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_name(self): # string
+	def get_name(self): # String
 		return self.get_query_params().get('name')
 
-	def set_name(self, name):  # string
+	def set_name(self, name):  # String
 		self.add_query_param('name', name)
-	def get_sourceType(self): # string
+	def get_sourceType(self): # String
 		return self.get_query_params().get('sourceType')
 
-	def set_sourceType(self, sourceType):  # string
+	def set_sourceType(self, sourceType):  # String
 		self.add_query_param('sourceType', sourceType)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_resId(self): # string
+	def get_resId(self): # String
 		return self.get_query_params().get('resId')
 
-	def set_resId(self, resId):  # string
+	def set_resId(self, resId):  # String
 		self.add_query_param('resId', resId)

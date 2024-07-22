@@ -32,48 +32,48 @@ class ListActionRecordsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_filter(self): # string
+	def get_filter(self): # String
 		return self.get_query_params().get('filter')
 
-	def set_filter(self, filter):  # string
+	def set_filter(self, filter):  # String
 		self.add_query_param('filter', filter)
-	def get_actionNames(self): # string
+	def get_actionNames(self): # String
 		return self.get_query_params().get('actionNames')
 
-	def set_actionNames(self, actionNames):  # string
+	def set_actionNames(self, actionNames):  # String
 		self.add_query_param('actionNames', actionNames)
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_requestId(self): # string
+	def get_requestId(self): # String
 		return self.get_query_params().get('requestId')
 
-	def set_requestId(self, requestId):  # string
+	def set_requestId(self, requestId):  # String
 		self.add_query_param('requestId', requestId)
-	def get_endTime(self): # integer
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self, endTime):  # integer
+	def set_endTime(self, endTime):  # Long
 		self.add_query_param('endTime', endTime)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_startTime(self): # integer
+	def get_startTime(self): # Long
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self, startTime):  # integer
+	def set_startTime(self, startTime):  # Long
 		self.add_query_param('startTime', startTime)
-	def get_userId(self): # string
+	def get_userId(self): # String
 		return self.get_query_params().get('userId')
 
-	def set_userId(self, userId):  # string
+	def set_userId(self, userId):  # String
 		self.add_query_param('userId', userId)

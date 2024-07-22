@@ -32,18 +32,18 @@ class MigrateToOtherZoneRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_dryRun(self): # boolean
+	def get_dryRun(self): # Boolean
 		return self.get_query_params().get('dryRun')
 
-	def set_dryRun(self, dryRun):  # boolean
+	def set_dryRun(self, dryRun):  # Boolean
 		self.add_query_param('dryRun', dryRun)
-	def get_body(self): # string
+	def get_body(self): # String
 		return self.get_body_params().get('body')
 
-	def set_body(self, body):  # string
+	def set_body(self, body):  # String
 		self.add_body_params('body', body)

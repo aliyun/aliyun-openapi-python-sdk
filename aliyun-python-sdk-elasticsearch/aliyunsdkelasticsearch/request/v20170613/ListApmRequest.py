@@ -32,28 +32,28 @@ class ListApmRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_output(self): # string
+	def get_output(self): # String
 		return self.get_query_params().get('output')
 
-	def set_output(self, output):  # string
+	def set_output(self, output):  # String
 		self.add_query_param('output', output)
-	def get_instanceId(self): # string
+	def get_instanceId(self): # String
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self, instanceId):  # string
+	def set_instanceId(self, instanceId):  # String
 		self.add_query_param('instanceId', instanceId)
-	def get_size(self): # integer
+	def get_size(self): # Long
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Long
 		self.add_query_param('size', size)
-	def get_description(self): # string
+	def get_description(self): # String
 		return self.get_query_params().get('description')
 
-	def set_description(self, description):  # string
+	def set_description(self, description):  # String
 		self.add_query_param('description', description)
-	def get_page(self): # integer
+	def get_page(self): # Long
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Long
 		self.add_query_param('page', page)

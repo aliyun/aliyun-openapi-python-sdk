@@ -32,18 +32,18 @@ class ListDataStreamsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_isManaged(self): # boolean
+	def get_isManaged(self): # Boolean
 		return self.get_query_params().get('isManaged')
 
-	def set_isManaged(self, isManaged):  # boolean
+	def set_isManaged(self, isManaged):  # Boolean
 		self.add_query_param('isManaged', isManaged)
-	def get_name(self): # string
+	def get_name(self): # String
 		return self.get_query_params().get('name')
 
-	def set_name(self, name):  # string
+	def set_name(self, name):  # String
 		self.add_query_param('name', name)

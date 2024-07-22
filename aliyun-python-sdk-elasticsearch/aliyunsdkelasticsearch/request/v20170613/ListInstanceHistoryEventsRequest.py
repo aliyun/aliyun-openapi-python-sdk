@@ -32,53 +32,58 @@ class ListInstanceHistoryEventsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_eventFinashEndTime(self): # string
+	def get_eventFinashEndTime(self): # String
 		return self.get_query_params().get('eventFinashEndTime')
 
-	def set_eventFinashEndTime(self, eventFinashEndTime):  # string
+	def set_eventFinashEndTime(self, eventFinashEndTime):  # String
 		self.add_query_param('eventFinashEndTime', eventFinashEndTime)
-	def get_instanceId(self): # string
+	def get_instanceId(self): # String
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self, instanceId):  # string
+	def set_instanceId(self, instanceId):  # String
 		self.add_query_param('instanceId', instanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_eventExecuteStartTime(self): # string
+	def get_eventExecuteStartTime(self): # String
 		return self.get_query_params().get('eventExecuteStartTime')
 
-	def set_eventExecuteStartTime(self, eventExecuteStartTime):  # string
+	def set_eventExecuteStartTime(self, eventExecuteStartTime):  # String
 		self.add_query_param('eventExecuteStartTime', eventExecuteStartTime)
-	def get_eventFinashStartTime(self): # string
+	def get_eventFinashStartTime(self): # String
 		return self.get_query_params().get('eventFinashStartTime')
 
-	def set_eventFinashStartTime(self, eventFinashStartTime):  # string
+	def set_eventFinashStartTime(self, eventFinashStartTime):  # String
 		self.add_query_param('eventFinashStartTime', eventFinashStartTime)
-	def get_nodeIP(self): # string
+	def get_nodeIP(self): # String
 		return self.get_query_params().get('nodeIP')
 
-	def set_nodeIP(self, nodeIP):  # string
+	def set_nodeIP(self, nodeIP):  # String
 		self.add_query_param('nodeIP', nodeIP)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_eventCreateEndTime(self): # string
+	def get_eventCreateEndTime(self): # String
 		return self.get_query_params().get('eventCreateEndTime')
 
-	def set_eventCreateEndTime(self, eventCreateEndTime):  # string
+	def set_eventCreateEndTime(self, eventCreateEndTime):  # String
 		self.add_query_param('eventCreateEndTime', eventCreateEndTime)
-	def get_eventCreateStartTime(self): # string
+	def get_body(self): # String
+		return self.get_body_params().get('body')
+
+	def set_body(self, body):  # String
+		self.add_body_params('body', body)
+	def get_eventCreateStartTime(self): # String
 		return self.get_query_params().get('eventCreateStartTime')
 
-	def set_eventCreateStartTime(self, eventCreateStartTime):  # string
+	def set_eventCreateStartTime(self, eventCreateStartTime):  # String
 		self.add_query_param('eventCreateStartTime', eventCreateStartTime)
-	def get_eventExecuteEndTime(self): # string
+	def get_eventExecuteEndTime(self): # String
 		return self.get_query_params().get('eventExecuteEndTime')
 
-	def set_eventExecuteEndTime(self, eventExecuteEndTime):  # string
+	def set_eventExecuteEndTime(self, eventExecuteEndTime):  # String
 		self.add_query_param('eventExecuteEndTime', eventExecuteEndTime)

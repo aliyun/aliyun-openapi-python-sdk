@@ -20,12 +20,13 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DeleteVpcEndpointRequest(RoaRequest):
+class DisableKibanaPvlNetworkRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DeleteVpcEndpoint','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/vpc-endpoints/[EndpointId]')
-		self.set_method('DELETE')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DisableKibanaPvlNetwork','elasticsearch')
+		self.set_protocol_type('https')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/disable-kibana-private')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,13 +38,3 @@ class DeleteVpcEndpointRequest(RoaRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_EndpointId(self): # String
-		return self.get_path_params().get('EndpointId')
-
-	def set_EndpointId(self, EndpointId):  # String
-		self.add_path_param('EndpointId', EndpointId)

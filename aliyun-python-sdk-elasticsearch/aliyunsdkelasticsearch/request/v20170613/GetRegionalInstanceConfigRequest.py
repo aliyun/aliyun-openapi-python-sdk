@@ -20,30 +20,16 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class CreateDataTasksRequest(RoaRequest):
+class GetRegionalInstanceConfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreateDataTasks','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/data-task')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetRegionalInstanceConfig','elasticsearch')
+		self.set_protocol_type('https')
+		self.set_uri_pattern('/openapi/regions/instance-config')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
-		return self.get_path_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # string
-		self.add_path_param('InstanceId', InstanceId)
-	def get_ClientToken(self): # string
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # string
-		self.add_query_param('ClientToken', ClientToken)
-	def get_body(self): # string
-		return self.get_body_params().get('body')
-
-	def set_body(self, body):  # string
-		self.add_body_params('body', body)

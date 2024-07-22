@@ -32,13 +32,13 @@ class DescribeILMPolicyRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_PolicyName(self): # string
+	def get_PolicyName(self): # String
 		return self.get_path_params().get('PolicyName')
 
-	def set_PolicyName(self, PolicyName):  # string
+	def set_PolicyName(self, PolicyName):  # String
 		self.add_path_param('PolicyName', PolicyName)

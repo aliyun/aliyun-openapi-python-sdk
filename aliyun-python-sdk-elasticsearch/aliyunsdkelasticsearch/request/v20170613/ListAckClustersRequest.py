@@ -32,18 +32,18 @@ class ListAckClustersRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_vpcId(self): # string
+	def get_vpcId(self): # String
 		return self.get_query_params().get('vpcId')
 
-	def set_vpcId(self, vpcId):  # string
+	def set_vpcId(self, vpcId):  # String
 		self.add_query_param('vpcId', vpcId)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)

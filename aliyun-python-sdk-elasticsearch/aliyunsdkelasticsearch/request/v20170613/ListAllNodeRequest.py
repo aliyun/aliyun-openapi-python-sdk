@@ -32,13 +32,13 @@ class ListAllNodeRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_extended(self): # boolean
+	def get_extended(self): # Boolean
 		return self.get_query_params().get('extended')
 
-	def set_extended(self, extended):  # boolean
+	def set_extended(self, extended):  # Boolean
 		self.add_query_param('extended', extended)

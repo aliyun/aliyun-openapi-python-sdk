@@ -32,18 +32,18 @@ class DeleteLogstashRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_clientToken(self): # string
+	def get_clientToken(self): # String
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self, clientToken):  # string
+	def set_clientToken(self, clientToken):  # String
 		self.add_query_param('clientToken', clientToken)
-	def get_deleteType(self): # string
+	def get_deleteType(self): # String
 		return self.get_query_params().get('deleteType')
 
-	def set_deleteType(self, deleteType):  # string
+	def set_deleteType(self, deleteType):  # String
 		self.add_query_param('deleteType', deleteType)

@@ -32,18 +32,18 @@ class ListAckNamespacesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_ClusterId(self): # string
+	def get_ClusterId(self): # String
 		return self.get_path_params().get('ClusterId')
 
-	def set_ClusterId(self, ClusterId):  # string
+	def set_ClusterId(self, ClusterId):  # String
 		self.add_path_param('ClusterId', ClusterId)

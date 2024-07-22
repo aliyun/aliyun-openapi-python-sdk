@@ -32,28 +32,28 @@ class UntagResourcesRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_All(self): # boolean
+	def get_All(self): # Boolean
 		return self.get_query_params().get('All')
 
-	def set_All(self, All):  # boolean
+	def set_All(self, All):  # Boolean
 		self.add_query_param('All', All)
-	def get_TagKeys(self): # string
+	def get_TagKeys(self): # String
 		return self.get_query_params().get('TagKeys')
 
-	def set_TagKeys(self, TagKeys):  # string
+	def set_TagKeys(self, TagKeys):  # String
 		self.add_query_param('TagKeys', TagKeys)
-	def get_body(self): # string
+	def get_body(self): # String
 		return self.get_body_params().get('body')
 
-	def set_body(self, body):  # string
+	def set_body(self, body):  # String
 		self.add_body_params('body', body)
-	def get_ResourceType(self): # string
+	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceType(self, ResourceType):  # string
+	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
-	def get_ResourceIds(self): # string
+	def get_ResourceIds(self): # String
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self, ResourceIds):  # string
+	def set_ResourceIds(self, ResourceIds):  # String
 		self.add_query_param('ResourceIds', ResourceIds)

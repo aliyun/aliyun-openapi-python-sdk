@@ -32,58 +32,58 @@ class ListInstanceRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_description(self): # string
+	def get_description(self): # String
 		return self.get_query_params().get('description')
 
-	def set_description(self, description):  # string
+	def set_description(self, description):  # String
 		self.add_query_param('description', description)
-	def get_instanceCategory(self): # string
+	def get_instanceCategory(self): # String
 		return self.get_query_params().get('instanceCategory')
 
-	def set_instanceCategory(self, instanceCategory):  # string
+	def set_instanceCategory(self, instanceCategory):  # String
 		self.add_query_param('instanceCategory', instanceCategory)
-	def get_tags(self): # string
+	def get_tags(self): # String
 		return self.get_query_params().get('tags')
 
-	def set_tags(self, tags):  # string
+	def set_tags(self, tags):  # String
 		self.add_query_param('tags', tags)
-	def get_resourceGroupId(self): # string
+	def get_resourceGroupId(self): # String
 		return self.get_query_params().get('resourceGroupId')
 
-	def set_resourceGroupId(self, resourceGroupId):  # string
+	def set_resourceGroupId(self, resourceGroupId):  # String
 		self.add_query_param('resourceGroupId', resourceGroupId)
-	def get_instanceId(self): # string
+	def get_instanceId(self): # String
 		return self.get_query_params().get('instanceId')
 
-	def set_instanceId(self, instanceId):  # string
+	def set_instanceId(self, instanceId):  # String
 		self.add_query_param('instanceId', instanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_esVersion(self): # string
+	def get_esVersion(self): # String
 		return self.get_query_params().get('esVersion')
 
-	def set_esVersion(self, esVersion):  # string
+	def set_esVersion(self, esVersion):  # String
 		self.add_query_param('esVersion', esVersion)
-	def get_vpcId(self): # string
+	def get_vpcId(self): # String
 		return self.get_query_params().get('vpcId')
 
-	def set_vpcId(self, vpcId):  # string
+	def set_vpcId(self, vpcId):  # String
 		self.add_query_param('vpcId', vpcId)
-	def get_zoneId(self): # string
+	def get_zoneId(self): # String
 		return self.get_query_params().get('zoneId')
 
-	def set_zoneId(self, zoneId):  # string
+	def set_zoneId(self, zoneId):  # String
 		self.add_query_param('zoneId', zoneId)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_paymentType(self): # string
+	def get_paymentType(self): # String
 		return self.get_query_params().get('paymentType')
 
-	def set_paymentType(self, paymentType):  # string
+	def set_paymentType(self, paymentType):  # String
 		self.add_query_param('paymentType', paymentType)

@@ -32,13 +32,13 @@ class ListTagsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_pageSize(self): # integer
+	def get_pageSize(self): # Integer
 		return self.get_query_params().get('pageSize')
 
-	def set_pageSize(self, pageSize):  # integer
+	def set_pageSize(self, pageSize):  # Integer
 		self.add_query_param('pageSize', pageSize)
-	def get_resourceType(self): # string
+	def get_resourceType(self): # String
 		return self.get_query_params().get('resourceType')
 
-	def set_resourceType(self, resourceType):  # string
+	def set_resourceType(self, resourceType):  # String
 		self.add_query_param('resourceType', resourceType)

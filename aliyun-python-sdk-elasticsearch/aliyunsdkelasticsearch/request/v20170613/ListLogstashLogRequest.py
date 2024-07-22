@@ -32,38 +32,38 @@ class ListLogstashLogRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_query(self): # string
+	def get_query(self): # String
 		return self.get_query_params().get('query')
 
-	def set_query(self, query):  # string
+	def set_query(self, query):  # String
 		self.add_query_param('query', query)
-	def get_endTime(self): # integer
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self, endTime):  # integer
+	def set_endTime(self, endTime):  # Long
 		self.add_query_param('endTime', endTime)
-	def get_beginTime(self): # integer
+	def get_beginTime(self): # Long
 		return self.get_query_params().get('beginTime')
 
-	def set_beginTime(self, beginTime):  # integer
+	def set_beginTime(self, beginTime):  # Long
 		self.add_query_param('beginTime', beginTime)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_type(self): # string
+	def get_type(self): # String
 		return self.get_query_params().get('type')
 
-	def set_type(self, type):  # string
+	def set_type(self, type):  # String
 		self.add_query_param('type', type)

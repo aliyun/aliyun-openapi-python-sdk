@@ -32,13 +32,13 @@ class DescribePipelineRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_PipelineId(self): # string
+	def get_PipelineId(self): # String
 		return self.get_path_params().get('PipelineId')
 
-	def set_PipelineId(self, PipelineId):  # string
+	def set_PipelineId(self, PipelineId):  # String
 		self.add_path_param('PipelineId', PipelineId)

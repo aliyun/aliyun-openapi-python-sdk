@@ -32,13 +32,13 @@ class DescribeConnectableClustersRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_alreadySetItems(self): # boolean
+	def get_alreadySetItems(self): # Boolean
 		return self.get_query_params().get('alreadySetItems')
 
-	def set_alreadySetItems(self, alreadySetItems):  # boolean
+	def set_alreadySetItems(self, alreadySetItems):  # Boolean
 		self.add_query_param('alreadySetItems', alreadySetItems)

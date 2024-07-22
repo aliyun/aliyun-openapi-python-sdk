@@ -32,28 +32,28 @@ class ListPluginsRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_name(self): # string
+	def get_name(self): # String
 		return self.get_query_params().get('name')
 
-	def set_name(self, name):  # string
+	def set_name(self, name):  # String
 		self.add_query_param('name', name)
-	def get_page(self): # string
+	def get_page(self): # String
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # string
+	def set_page(self, page):  # String
 		self.add_query_param('page', page)
-	def get_source(self): # string
+	def get_source(self): # String
 		return self.get_query_params().get('source')
 
-	def set_source(self, source):  # string
+	def set_source(self, source):  # String
 		self.add_query_param('source', source)

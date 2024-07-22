@@ -32,43 +32,43 @@ class ListDiagnoseReportRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_size(self): # integer
+	def get_size(self): # Integer
 		return self.get_query_params().get('size')
 
-	def set_size(self, size):  # integer
+	def set_size(self, size):  # Integer
 		self.add_query_param('size', size)
-	def get_endTime(self): # integer
+	def get_endTime(self): # Long
 		return self.get_query_params().get('endTime')
 
-	def set_endTime(self, endTime):  # integer
+	def set_endTime(self, endTime):  # Long
 		self.add_query_param('endTime', endTime)
-	def get_startTime(self): # integer
+	def get_startTime(self): # Long
 		return self.get_query_params().get('startTime')
 
-	def set_startTime(self, startTime):  # integer
+	def set_startTime(self, startTime):  # Long
 		self.add_query_param('startTime', startTime)
-	def get_page(self): # integer
+	def get_page(self): # Integer
 		return self.get_query_params().get('page')
 
-	def set_page(self, page):  # integer
+	def set_page(self, page):  # Integer
 		self.add_query_param('page', page)
-	def get_detail(self): # boolean
+	def get_detail(self): # Boolean
 		return self.get_query_params().get('detail')
 
-	def set_detail(self, detail):  # boolean
+	def set_detail(self, detail):  # Boolean
 		self.add_query_param('detail', detail)
-	def get_trigger(self): # string
+	def get_trigger(self): # String
 		return self.get_query_params().get('trigger')
 
-	def set_trigger(self, trigger):  # string
+	def set_trigger(self, trigger):  # String
 		self.add_query_param('trigger', trigger)
-	def get_lang(self): # string
+	def get_lang(self): # String
 		return self.get_query_params().get('lang')
 
-	def set_lang(self, lang):  # string
+	def set_lang(self, lang):  # String
 		self.add_query_param('lang', lang)

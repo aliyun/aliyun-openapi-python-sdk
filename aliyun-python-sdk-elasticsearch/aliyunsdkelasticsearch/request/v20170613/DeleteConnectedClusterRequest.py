@@ -32,18 +32,18 @@ class DeleteConnectedClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # string
+	def get_InstanceId(self): # String
 		return self.get_path_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceId):  # string
+	def set_InstanceId(self, InstanceId):  # String
 		self.add_path_param('InstanceId', InstanceId)
-	def get_clientToken(self): # string
+	def get_clientToken(self): # String
 		return self.get_query_params().get('clientToken')
 
-	def set_clientToken(self, clientToken):  # string
+	def set_clientToken(self, clientToken):  # String
 		self.add_query_param('clientToken', clientToken)
-	def get_connectedInstanceId(self): # string
+	def get_connectedInstanceId(self): # String
 		return self.get_query_params().get('connectedInstanceId')
 
-	def set_connectedInstanceId(self, connectedInstanceId):  # string
+	def set_connectedInstanceId(self, connectedInstanceId):  # String
 		self.add_query_param('connectedInstanceId', connectedInstanceId)

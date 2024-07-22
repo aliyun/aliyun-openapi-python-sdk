@@ -32,8 +32,8 @@ class DescribeCollectorRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResId(self): # string
+	def get_ResId(self): # String
 		return self.get_path_params().get('ResId')
 
-	def set_ResId(self, ResId):  # string
+	def set_ResId(self, ResId):  # String
 		self.add_path_param('ResId', ResId)
