@@ -1,3 +1,6 @@
+2024-07-22 Version: 1.0.3
+- Add status operation api.
+
 2024-06-18 Version: 1.0.2
 - Add status operation api.
 

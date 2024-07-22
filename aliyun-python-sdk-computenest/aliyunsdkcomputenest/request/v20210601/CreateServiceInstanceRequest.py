@@ -63,6 +63,11 @@ class CreateServiceInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ResourceAutoPay(self): # Boolean
+		return self.get_query_params().get('ResourceAutoPay')
+
+	def set_ResourceAutoPay(self, ResourceAutoPay):  # Boolean
+		self.add_query_param('ResourceAutoPay', ResourceAutoPay)
 	def get_EnableInstanceOps(self): # Boolean
 		return self.get_query_params().get('EnableInstanceOps')
 
