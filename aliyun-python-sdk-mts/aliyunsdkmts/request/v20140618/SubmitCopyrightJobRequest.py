@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class SubmitVideoQualityJobRequest(RpcRequest):
+class SubmitCopyrightJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitVideoQualityJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitCopyrightJob','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class SubmitVideoQualityJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobParams(self): # String
-		return self.get_query_params().get('JobParams')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_JobParams(self, JobParams):  # String
-		self.add_query_param('JobParams', JobParams)
-	def get_UserId(self): # Long
-		return self.get_query_params().get('UserId')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_UserId(self, UserId):  # Long
-		self.add_query_param('UserId', UserId)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_Output(self): # String
 		return self.get_query_params().get('Output')
 
@@ -51,33 +51,38 @@ class SubmitVideoQualityJobRequest(RpcRequest):
 
 	def set_UserData(self, UserData):  # String
 		self.add_query_param('UserData', UserData)
-	def get_NotifyUrl(self): # String
-		return self.get_query_params().get('NotifyUrl')
+	def get_Level(self): # Long
+		return self.get_query_params().get('Level')
 
-	def set_NotifyUrl(self, NotifyUrl):  # String
-		self.add_query_param('NotifyUrl', NotifyUrl)
-	def get_SourceType(self): # String
-		return self.get_query_params().get('SourceType')
+	def set_Level(self, Level):  # Long
+		self.add_query_param('Level', Level)
+	def get_Message(self): # String
+		return self.get_query_params().get('Message')
 
-	def set_SourceType(self, SourceType):  # String
-		self.add_query_param('SourceType', SourceType)
-	def get_ModelId(self): # String
-		return self.get_query_params().get('ModelId')
+	def set_Message(self, Message):  # String
+		self.add_query_param('Message', Message)
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
 
-	def set_ModelId(self, ModelId):  # String
-		self.add_query_param('ModelId', ModelId)
-	def get_PipelineId(self): # String
-		return self.get_query_params().get('PipelineId')
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_Url(self): # String
+		return self.get_query_params().get('Url')
 
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)
 	def get_Input(self): # String
 		return self.get_query_params().get('Input')
 
 	def set_Input(self, Input):  # String
 		self.add_query_param('Input', Input)
-	def get_ScheduleParams(self): # String
-		return self.get_query_params().get('ScheduleParams')
+	def get_TotalTime(self): # String
+		return self.get_query_params().get('TotalTime')
 
-	def set_ScheduleParams(self, ScheduleParams):  # String
-		self.add_query_param('ScheduleParams', ScheduleParams)
+	def set_TotalTime(self, TotalTime):  # String
+		self.add_query_param('TotalTime', TotalTime)
+	def get_CallBack(self): # String
+		return self.get_query_params().get('CallBack')
+
+	def set_CallBack(self, CallBack):  # String
+		self.add_query_param('CallBack', CallBack)

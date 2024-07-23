@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class QueryVideoQualityJobRequest(RpcRequest):
+class QueryCopyrightExtractJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryVideoQualityJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryCopyrightExtractJob','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,6 @@ class QueryVideoQualityJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # Long
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # Long
-		self.add_query_param('UserId', UserId)
 	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 

@@ -81,6 +81,11 @@ class SubmitSmarttagJobRequest(RpcRequest):
 
 	def set_TemplateId(self, TemplateId):  # String
 		self.add_query_param('TemplateId', TemplateId)
+	def get_Priority(self): # String
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self, Priority):  # String
+		self.add_query_param('Priority', Priority)
 	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 

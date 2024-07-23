@@ -61,3 +61,13 @@ class UpdateMediaWorkflowRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TriggerMode(self): # String
+		return self.get_query_params().get('TriggerMode')
+
+	def set_TriggerMode(self, TriggerMode):  # String
+		self.add_query_param('TriggerMode', TriggerMode)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

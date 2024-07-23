@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class CancelJobRequest(RpcRequest):
+class SubmitTraceM3u8JobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CancelJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitTraceM3u8Job','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class CancelJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_MediaId(self): # String
+		return self.get_query_params().get('MediaId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
 
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_Output(self): # String
+		return self.get_query_params().get('Output')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
+	def set_Output(self, Output):  # String
+		self.add_query_param('Output', Output)
+	def get_Trace(self): # String
+		return self.get_query_params().get('Trace')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_Trace(self, Trace):  # String
+		self.add_query_param('Trace', Trace)
+	def get_KeyUri(self): # String
+		return self.get_query_params().get('KeyUri')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_KeyUri(self, KeyUri):  # String
+		self.add_query_param('KeyUri', KeyUri)

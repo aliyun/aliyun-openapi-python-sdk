@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class ReportFpShotJobResultRequest(RpcRequest):
+class QueryTraceAbJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportFpShotJobResult','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryTraceAbJob','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,13 @@ class ReportFpShotJobResultRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_MediaId(self): # String
+		return self.get_query_params().get('MediaId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Result(self): # String
-		return self.get_query_params().get('Result')
-
-	def set_Result(self, Result):  # String
-		self.add_query_param('Result', Result)
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)
 	def get_JobId(self): # String
 		return self.get_query_params().get('JobId')
 
 	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
-	def get_Details(self): # String
-		return self.get_query_params().get('Details')
-
-	def set_Details(self, Details):  # String
-		self.add_query_param('Details', Details)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)

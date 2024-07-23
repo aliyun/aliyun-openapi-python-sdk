@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class CancelJobRequest(RpcRequest):
+class SubmitTraceExtractJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CancelJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitTraceExtractJob','mts')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,28 @@ class CancelJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Params(self): # String
+		return self.get_query_params().get('Params')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_JobId(self): # String
-		return self.get_query_params().get('JobId')
+	def set_Params(self, Params):  # String
+		self.add_query_param('Params', Params)
+	def get_Url(self): # String
+		return self.get_query_params().get('Url')
 
-	def set_JobId(self, JobId):  # String
-		self.add_query_param('JobId', JobId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)
+	def get_Input(self): # String
+		return self.get_query_params().get('Input')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
+	def set_Input(self, Input):  # String
+		self.add_query_param('Input', Input)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_CallBack(self): # String
+		return self.get_query_params().get('CallBack')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_CallBack(self, CallBack):  # String
+		self.add_query_param('CallBack', CallBack)
