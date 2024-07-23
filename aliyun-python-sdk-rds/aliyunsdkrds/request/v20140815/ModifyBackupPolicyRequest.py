@@ -36,16 +36,56 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_LocalLogRetentionHours(self): # String
-		return self.get_query_params().get('LocalLogRetentionHours')
-
-	def set_LocalLogRetentionHours(self, LocalLogRetentionHours):  # String
-		self.add_query_param('LocalLogRetentionHours', LocalLogRetentionHours)
 	def get_BackupPriority(self): # Integer
 		return self.get_query_params().get('BackupPriority')
 
 	def set_BackupPriority(self, BackupPriority):  # Integer
 		self.add_query_param('BackupPriority', BackupPriority)
+	def get_BackupLog(self): # String
+		return self.get_query_params().get('BackupLog')
+
+	def set_BackupLog(self, BackupLog):  # String
+		self.add_query_param('BackupLog', BackupLog)
+	def get_HighSpaceUsageProtection(self): # String
+		return self.get_query_params().get('HighSpaceUsageProtection')
+
+	def set_HighSpaceUsageProtection(self, HighSpaceUsageProtection):  # String
+		self.add_query_param('HighSpaceUsageProtection', HighSpaceUsageProtection)
+	def get_EnableIncrementDataBackup(self): # Boolean
+		return self.get_query_params().get('EnableIncrementDataBackup')
+
+	def set_EnableIncrementDataBackup(self, EnableIncrementDataBackup):  # Boolean
+		self.add_query_param('EnableIncrementDataBackup', EnableIncrementDataBackup)
+	def get_LocalLogRetentionSpace(self): # String
+		return self.get_query_params().get('LocalLogRetentionSpace')
+
+	def set_LocalLogRetentionSpace(self, LocalLogRetentionSpace):  # String
+		self.add_query_param('LocalLogRetentionSpace', LocalLogRetentionSpace)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ArchiveBackupKeepPolicy(self): # String
+		return self.get_query_params().get('ArchiveBackupKeepPolicy')
+
+	def set_ArchiveBackupKeepPolicy(self, ArchiveBackupKeepPolicy):  # String
+		self.add_query_param('ArchiveBackupKeepPolicy', ArchiveBackupKeepPolicy)
+	def get_BackupRetentionPeriod(self): # String
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # String
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
+	def get_BackupMethod(self): # String
+		return self.get_query_params().get('BackupMethod')
+
+	def set_BackupMethod(self, BackupMethod):  # String
+		self.add_query_param('BackupMethod', BackupMethod)
+	def get_LocalLogRetentionHours(self): # String
+		return self.get_query_params().get('LocalLogRetentionHours')
+
+	def set_LocalLogRetentionHours(self, LocalLogRetentionHours):  # String
+		self.add_query_param('LocalLogRetentionHours', LocalLogRetentionHours)
 	def get_LogBackupFrequency(self): # String
 		return self.get_query_params().get('LogBackupFrequency')
 
@@ -56,21 +96,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_ArchiveBackupKeepCount(self, ArchiveBackupKeepCount):  # Integer
 		self.add_query_param('ArchiveBackupKeepCount', ArchiveBackupKeepCount)
-	def get_BackupLog(self): # String
-		return self.get_query_params().get('BackupLog')
-
-	def set_BackupLog(self, BackupLog):  # String
-		self.add_query_param('BackupLog', BackupLog)
 	def get_BackupInterval(self): # String
 		return self.get_query_params().get('BackupInterval')
 
 	def set_BackupInterval(self, BackupInterval):  # String
 		self.add_query_param('BackupInterval', BackupInterval)
-	def get_HighSpaceUsageProtection(self): # String
-		return self.get_query_params().get('HighSpaceUsageProtection')
-
-	def set_HighSpaceUsageProtection(self, HighSpaceUsageProtection):  # String
-		self.add_query_param('HighSpaceUsageProtection', HighSpaceUsageProtection)
 	def get_LogBackupLocalRetentionNumber(self): # Integer
 		return self.get_query_params().get('LogBackupLocalRetentionNumber')
 
@@ -96,11 +126,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupPeriod(self, PreferredBackupPeriod):  # String
 		self.add_query_param('PreferredBackupPeriod', PreferredBackupPeriod)
-	def get_EnableIncrementDataBackup(self): # Boolean
-		return self.get_query_params().get('EnableIncrementDataBackup')
-
-	def set_EnableIncrementDataBackup(self, EnableIncrementDataBackup):  # Boolean
-		self.add_query_param('EnableIncrementDataBackup', EnableIncrementDataBackup)
 	def get_ReleasedKeepPolicy(self): # String
 		return self.get_query_params().get('ReleasedKeepPolicy')
 
@@ -121,36 +146,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_CompressType(self, CompressType):  # String
 		self.add_query_param('CompressType', CompressType)
-	def get_LocalLogRetentionSpace(self): # String
-		return self.get_query_params().get('LocalLogRetentionSpace')
-
-	def set_LocalLogRetentionSpace(self, LocalLogRetentionSpace):  # String
-		self.add_query_param('LocalLogRetentionSpace', LocalLogRetentionSpace)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ArchiveBackupKeepPolicy(self): # String
-		return self.get_query_params().get('ArchiveBackupKeepPolicy')
-
-	def set_ArchiveBackupKeepPolicy(self, ArchiveBackupKeepPolicy):  # String
-		self.add_query_param('ArchiveBackupKeepPolicy', ArchiveBackupKeepPolicy)
 	def get_PreferredBackupTime(self): # String
 		return self.get_query_params().get('PreferredBackupTime')
 
 	def set_PreferredBackupTime(self, PreferredBackupTime):  # String
 		self.add_query_param('PreferredBackupTime', PreferredBackupTime)
-	def get_BackupRetentionPeriod(self): # String
-		return self.get_query_params().get('BackupRetentionPeriod')
-
-	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # String
-		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
-	def get_BackupMethod(self): # String
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self, BackupMethod):  # String
-		self.add_query_param('BackupMethod', BackupMethod)
 	def get_ArchiveBackupRetentionPeriod(self): # String
 		return self.get_query_params().get('ArchiveBackupRetentionPeriod')
 
