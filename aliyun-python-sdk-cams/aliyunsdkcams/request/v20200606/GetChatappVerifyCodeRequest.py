@@ -31,23 +31,38 @@ class GetChatappVerifyCodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_PhoneNumber(self): # String
-		return self.get_body_params().get('PhoneNumber')
+		return self.get_query_params().get('PhoneNumber')
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
-		self.add_body_params('PhoneNumber', PhoneNumber)
+		self.add_query_param('PhoneNumber', PhoneNumber)
 	def get_Locale(self): # String
-		return self.get_body_params().get('Locale')
+		return self.get_query_params().get('Locale')
 
 	def set_Locale(self, Locale):  # String
-		self.add_body_params('Locale', Locale)
+		self.add_query_param('Locale', Locale)
 	def get_Method(self): # String
-		return self.get_body_params().get('Method')
+		return self.get_query_params().get('Method')
 
 	def set_Method(self, Method):  # String
-		self.add_body_params('Method', Method)
+		self.add_query_param('Method', Method)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
 	def get_CustSpaceId(self): # String
-		return self.get_body_params().get('CustSpaceId')
+		return self.get_query_params().get('CustSpaceId')
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_body_params('CustSpaceId', CustSpaceId)
+		self.add_query_param('CustSpaceId', CustSpaceId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
 
-class QueryPhoneBusinessProfileRequest(RpcRequest):
+class GetWhatsappHealthStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryPhoneBusinessProfile','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'GetWhatsappHealthStatus','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,21 @@ class QueryPhoneBusinessProfileRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
 	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
 		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_Language(self): # String
+		return self.get_query_params().get('Language')
+
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,8 +61,18 @@ class QueryPhoneBusinessProfileRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_WabaId(self): # String
+		return self.get_query_params().get('WabaId')
+
+	def set_WabaId(self, WabaId):  # String
+		self.add_query_param('WabaId', WabaId)
 	def get_CustSpaceId(self): # String
 		return self.get_query_params().get('CustSpaceId')
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
 		self.add_query_param('CustSpaceId', CustSpaceId)
+	def get_TemplateCode(self): # String
+		return self.get_query_params().get('TemplateCode')
+
+	def set_TemplateCode(self, TemplateCode):  # String
+		self.add_query_param('TemplateCode', TemplateCode)

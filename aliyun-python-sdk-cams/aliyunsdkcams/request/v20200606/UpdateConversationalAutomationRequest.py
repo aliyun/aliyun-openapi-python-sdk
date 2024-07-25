@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcams.endpoint import endpoint_data
+import json
 
-class QueryPhoneBusinessProfileRequest(RpcRequest):
+class UpdateConversationalAutomationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryPhoneBusinessProfile','cams')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'UpdateConversationalAutomation','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +42,21 @@ class QueryPhoneBusinessProfileRequest(RpcRequest):
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
 		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_EnableWelcomeMessage(self): # Boolean
+		return self.get_query_params().get('EnableWelcomeMessage')
+
+	def set_EnableWelcomeMessage(self, EnableWelcomeMessage):  # Boolean
+		self.add_query_param('EnableWelcomeMessage', EnableWelcomeMessage)
+	def get_Commands(self): # Array
+		return self.get_query_params().get('Commands')
+
+	def set_Commands(self, Commands):  # Array
+		self.add_query_param("Commands", json.dumps(Commands))
+	def get_Prompts(self): # Array
+		return self.get_query_params().get('Prompts')
+
+	def set_Prompts(self, Prompts):  # Array
+		self.add_query_param("Prompts", json.dumps(Prompts))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

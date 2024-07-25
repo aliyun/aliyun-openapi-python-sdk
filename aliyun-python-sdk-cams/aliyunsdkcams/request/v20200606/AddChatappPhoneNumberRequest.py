@@ -31,28 +31,43 @@ class AddChatappPhoneNumberRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_PreValidateId(self): # String
-		return self.get_body_params().get('PreValidateId')
+		return self.get_query_params().get('PreValidateId')
 
 	def set_PreValidateId(self, PreValidateId):  # String
-		self.add_body_params('PreValidateId', PreValidateId)
+		self.add_query_param('PreValidateId', PreValidateId)
 	def get_VerifiedName(self): # String
-		return self.get_body_params().get('VerifiedName')
+		return self.get_query_params().get('VerifiedName')
 
 	def set_VerifiedName(self, VerifiedName):  # String
-		self.add_body_params('VerifiedName', VerifiedName)
+		self.add_query_param('VerifiedName', VerifiedName)
 	def get_PhoneNumber(self): # String
-		return self.get_body_params().get('PhoneNumber')
+		return self.get_query_params().get('PhoneNumber')
 
 	def set_PhoneNumber(self, PhoneNumber):  # String
-		self.add_body_params('PhoneNumber', PhoneNumber)
+		self.add_query_param('PhoneNumber', PhoneNumber)
 	def get_Cc(self): # String
-		return self.get_body_params().get('Cc')
+		return self.get_query_params().get('Cc')
 
 	def set_Cc(self, Cc):  # String
-		self.add_body_params('Cc', Cc)
+		self.add_query_param('Cc', Cc)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
 	def get_CustSpaceId(self): # String
-		return self.get_body_params().get('CustSpaceId')
+		return self.get_query_params().get('CustSpaceId')
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
-		self.add_body_params('CustSpaceId', CustSpaceId)
+		self.add_query_param('CustSpaceId', CustSpaceId)
