@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeDistributionProductsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeDistributionProducts')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeDistributionProducts','yunmarket')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):

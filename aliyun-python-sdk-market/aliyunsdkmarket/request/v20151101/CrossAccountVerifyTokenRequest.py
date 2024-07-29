@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class CrossAccountVerifyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'CrossAccountVerifyToken')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'CrossAccountVerifyToken','yunmarket')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class AutoRenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'AutoRenewInstance')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'AutoRenewInstance','yunmarket')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

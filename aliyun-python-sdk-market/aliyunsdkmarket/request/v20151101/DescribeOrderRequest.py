@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeOrder')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeOrder','yunmarket')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

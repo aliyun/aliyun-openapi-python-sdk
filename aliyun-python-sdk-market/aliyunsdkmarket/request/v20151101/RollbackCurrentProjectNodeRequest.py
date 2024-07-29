@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class RollbackCurrentProjectNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'RollbackCurrentProjectNode')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'RollbackCurrentProjectNode','yunmarket')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class RollbackCurrentProjectNodeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_NodeId(self): # Long
 		return self.get_query_params().get('NodeId')
 

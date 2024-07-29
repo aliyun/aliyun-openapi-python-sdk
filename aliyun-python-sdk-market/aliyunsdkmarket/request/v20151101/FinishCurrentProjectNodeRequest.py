@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class FinishCurrentProjectNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'FinishCurrentProjectNode')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'FinishCurrentProjectNode','yunmarket')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class FinishCurrentProjectNodeRequest(RpcRequest):
 
 	def set_TemplateForm(self, TemplateForm):  # String
 		self.add_query_param('TemplateForm', TemplateForm)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_Remark(self): # String
 		return self.get_query_params().get('Remark')
 
 	def set_Remark(self, Remark):  # String
 		self.add_query_param('Remark', Remark)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_NodeId(self): # Long
 		return self.get_query_params().get('NodeId')
 

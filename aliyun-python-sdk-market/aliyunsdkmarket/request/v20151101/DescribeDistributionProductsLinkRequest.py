@@ -24,7 +24,7 @@ import json
 class DescribeDistributionProductsLinkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeDistributionProductsLink')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeDistributionProductsLink','yunmarket')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
