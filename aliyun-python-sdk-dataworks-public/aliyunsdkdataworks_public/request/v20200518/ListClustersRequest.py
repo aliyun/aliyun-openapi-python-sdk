@@ -20,29 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class DeleteFileRequest(RpcRequest):
+class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2018-06-01', 'DeleteFile')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListClusters')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
-	def get_ProjectIdentifier(self): # String
-		return self.get_body_params().get('ProjectIdentifier')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ClusterType(self): # String
+		return self.get_query_params().get('ClusterType')
 
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
-		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
-	def get_FileId(self): # Long
-		return self.get_body_params().get('FileId')
+	def set_ClusterType(self, ClusterType):  # String
+		self.add_query_param('ClusterType', ClusterType)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_FileId(self, FileId):  # Long
-		self.add_body_params('FileId', FileId)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

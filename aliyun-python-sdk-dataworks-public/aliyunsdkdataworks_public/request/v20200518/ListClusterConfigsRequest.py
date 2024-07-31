@@ -20,19 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class OpenDataWorksStandardServiceRequest(RpcRequest):
+class ListClusterConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2018-06-01', 'OpenDataWorksStandardService')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListClusterConfigs')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Region(self): # String
-		return self.get_query_params().get('Region')
+	def get_ConfigType(self): # String
+		return self.get_query_params().get('ConfigType')
 
-	def set_Region(self, Region):  # String
-		self.add_query_param('Region', Region)
+	def set_ConfigType(self, ConfigType):  # String
+		self.add_query_param('ConfigType', ConfigType)
+	def get_ClusterId(self): # Long
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # Long
+		self.add_query_param('ClusterId', ClusterId)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListHiveTableLineagesRequest(RpcRequest):
+class ListMeasureDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2018-06-01', 'ListHiveTableLineages')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListMeasureData')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,23 @@ class ListHiveTableLineagesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DatabaseName(self): # String
-		return self.get_query_params().get('DatabaseName')
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
 
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_query_param('DatabaseName', DatabaseName)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
+		return self.get_query_params().get('StartTime')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_DomainCode(self): # String
+		return self.get_query_params().get('DomainCode')
 
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)
+	def set_DomainCode(self, DomainCode):  # String
+		self.add_query_param('DomainCode', DomainCode)
+	def get_ComponentCode(self): # String
+		return self.get_query_params().get('ComponentCode')
+
+	def set_ComponentCode(self, ComponentCode):  # String
+		self.add_query_param('ComponentCode', ComponentCode)

@@ -19,11 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
+import json
 
-class StartCollectQualityRequest(RpcRequest):
+class UpdateClusterConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2018-06-01', 'StartCollectQuality')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateClusterConfigs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +33,23 @@ class StartCollectQualityRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CallbackResultString(self): # String
-		return self.get_body_params().get('CallbackResultString')
+	def get_ConfigType(self): # String
+		return self.get_query_params().get('ConfigType')
 
-	def set_CallbackResultString(self, CallbackResultString):  # String
-		self.add_body_params('CallbackResultString', CallbackResultString)
+	def set_ConfigType(self, ConfigType):  # String
+		self.add_query_param('ConfigType', ConfigType)
+	def get_ClusterId(self): # Long
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # Long
+		self.add_query_param('ClusterId', ClusterId)
+	def get_ConfigValues(self): # Array
+		return self.get_body_params().get('ConfigValues')
+
+	def set_ConfigValues(self, ConfigValues):  # Array
+		self.add_body_params("ConfigValues", json.dumps(ConfigValues))
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

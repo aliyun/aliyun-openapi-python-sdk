@@ -31,21 +31,11 @@ class ListFoldersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
 	def get_ParentFolderPath(self): # String
 		return self.get_body_params().get('ParentFolderPath')
 
 	def set_ParentFolderPath(self, ParentFolderPath):  # String
 		self.add_body_params('ParentFolderPath', ParentFolderPath)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
 	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
@@ -56,3 +46,13 @@ class ListFoldersRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)

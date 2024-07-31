@@ -31,6 +31,11 @@ class DeployFileRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ProjectIdentifier(self): # String
+		return self.get_body_params().get('ProjectIdentifier')
+
+	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
+		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
 	def get_Comment(self): # String
 		return self.get_body_params().get('Comment')
 
@@ -46,11 +51,6 @@ class DeployFileRequest(RpcRequest):
 
 	def set_NodeId(self, NodeId):  # Long
 		self.add_body_params('NodeId', NodeId)
-	def get_ProjectIdentifier(self): # String
-		return self.get_body_params().get('ProjectIdentifier')
-
-	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
-		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
 	def get_FileId(self): # Long
 		return self.get_body_params().get('FileId')
 

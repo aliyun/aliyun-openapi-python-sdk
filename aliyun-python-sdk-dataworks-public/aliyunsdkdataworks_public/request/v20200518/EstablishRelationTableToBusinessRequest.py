@@ -31,21 +31,11 @@ class EstablishRelationTableToBusinessRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TableGuid(self): # String
-		return self.get_body_params().get('TableGuid')
-
-	def set_TableGuid(self, TableGuid):  # String
-		self.add_body_params('TableGuid', TableGuid)
 	def get_BusinessId(self): # String
 		return self.get_body_params().get('BusinessId')
 
 	def set_BusinessId(self, BusinessId):  # String
 		self.add_body_params('BusinessId', BusinessId)
-	def get_ProjectId(self): # Long
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_body_params('ProjectId', ProjectId)
 	def get_ProjectIdentifier(self): # String
 		return self.get_body_params().get('ProjectIdentifier')
 
@@ -56,3 +46,13 @@ class EstablishRelationTableToBusinessRequest(RpcRequest):
 
 	def set_FolderId(self, FolderId):  # String
 		self.add_body_params('FolderId', FolderId)
+	def get_TableGuid(self): # String
+		return self.get_body_params().get('TableGuid')
+
+	def set_TableGuid(self, TableGuid):  # String
+		self.add_body_params('TableGuid', TableGuid)
+	def get_ProjectId(self): # Long
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_body_params('ProjectId', ProjectId)
