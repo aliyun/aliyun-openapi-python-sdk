@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class RestoreDBInstanceRequest(RpcRequest):
+class RestartNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'RestoreDBInstance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'RestartNode','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,21 @@ class RestoreDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RoleId(self): # String
+		return self.get_query_params().get('RoleId')
+
+	def set_RoleId(self, RoleId):  # String
+		self.add_query_param('RoleId', RoleId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,11 +61,6 @@ class RestoreDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_BackupId(self): # Integer
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self, BackupId):  # Integer
-		self.add_query_param('BackupId', BackupId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

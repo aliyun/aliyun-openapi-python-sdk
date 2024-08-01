@@ -36,11 +36,21 @@ class MigrateAvailableZoneRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecondaryZoneId(self): # String
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
 	def set_EffectiveTime(self, EffectiveTime):  # String
 		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_HiddenZoneId(self): # String
+		return self.get_query_params().get('HiddenZoneId')
+
+	def set_HiddenZoneId(self, HiddenZoneId):  # String
+		self.add_query_param('HiddenZoneId', HiddenZoneId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
