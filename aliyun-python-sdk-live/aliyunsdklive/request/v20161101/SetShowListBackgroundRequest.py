@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamOptimizedFeatureConfigRequest(RpcRequest):
+class SetShowListBackgroundRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamOptimizedFeatureConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetShowListBackground','live')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,28 @@ class DescribeLiveStreamOptimizedFeatureConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ConfigName(self): # String
-		return self.get_query_params().get('ConfigName')
+	def get_MaterialId(self): # String
+		return self.get_query_params().get('MaterialId')
 
-	def set_ConfigName(self, ConfigName):  # String
-		self.add_query_param('ConfigName', ConfigName)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def set_MaterialId(self, MaterialId):  # String
+		self.add_query_param('MaterialId', MaterialId)
+	def get_CasterId(self): # String
+		return self.get_query_params().get('CasterId')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
+	def set_CasterId(self, CasterId):  # String
+		self.add_query_param('CasterId', CasterId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_ResourceUrl(self): # String
+		return self.get_query_params().get('ResourceUrl')
+
+	def set_ResourceUrl(self, ResourceUrl):  # String
+		self.add_query_param('ResourceUrl', ResourceUrl)
