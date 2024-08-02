@@ -46,3 +46,8 @@ class ExecuteDataExportRequest(RpcRequest):
 
 	def set_OrderId(self, OrderId):  # Long
 		self.add_query_param('OrderId', OrderId)
+	def get_RealLoginUserUid(self): # String
+		return self.get_query_params().get('RealLoginUserUid')
+
+	def set_RealLoginUserUid(self, RealLoginUserUid):  # String
+		self.add_query_param('RealLoginUserUid', RealLoginUserUid)

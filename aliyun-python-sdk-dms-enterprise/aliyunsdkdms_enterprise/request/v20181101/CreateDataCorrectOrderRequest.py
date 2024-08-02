@@ -47,6 +47,11 @@ class CreateDataCorrectOrderRequest(RpcRequest):
 
 	def set_RelatedUserList(self, RelatedUserList):  # Array
 		self.add_query_param("RelatedUserList", json.dumps(RelatedUserList))
+	def get_RealLoginUserUid(self): # String
+		return self.get_query_params().get('RealLoginUserUid')
+
+	def set_RealLoginUserUid(self, RealLoginUserUid):  # String
+		self.add_query_param('RealLoginUserUid', RealLoginUserUid)
 	def get_AttachmentKey(self): # String
 		return self.get_query_params().get('AttachmentKey')
 

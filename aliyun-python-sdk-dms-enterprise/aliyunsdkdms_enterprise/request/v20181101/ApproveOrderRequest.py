@@ -61,6 +61,11 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_OldApprover(self, OldApprover):  # Long
 		self.add_query_param('OldApprover', OldApprover)
+	def get_RealLoginUserUid(self): # String
+		return self.get_query_params().get('RealLoginUserUid')
+
+	def set_RealLoginUserUid(self, RealLoginUserUid):  # String
+		self.add_query_param('RealLoginUserUid', RealLoginUserUid)
 	def get_Comment(self): # String
 		return self.get_query_params().get('Comment')
 

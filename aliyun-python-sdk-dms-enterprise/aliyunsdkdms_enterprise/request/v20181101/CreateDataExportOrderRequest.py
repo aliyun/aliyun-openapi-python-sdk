@@ -52,6 +52,11 @@ class CreateDataExportOrderRequest(RpcRequest):
 
 	def set_PluginParam(self, PluginParam):  # Struct
 		self.add_query_param("PluginParam", json.dumps(PluginParam))
+	def get_RealLoginUserUid(self): # String
+		return self.get_query_params().get('RealLoginUserUid')
+
+	def set_RealLoginUserUid(self, RealLoginUserUid):  # String
+		self.add_query_param('RealLoginUserUid', RealLoginUserUid)
 	def get_AttachmentKey(self): # String
 		return self.get_query_params().get('AttachmentKey')
 
