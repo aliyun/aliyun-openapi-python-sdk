@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
+import json
 
 class DeleteTraceAppRequest(RpcRequest):
 
@@ -31,6 +32,11 @@ class DeleteTraceAppRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DeleteReason(self): # Struct
+		return self.get_query_params().get('DeleteReason')
+
+	def set_DeleteReason(self, DeleteReason):  # Struct
+		self.add_query_param("DeleteReason", json.dumps(DeleteReason))
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 

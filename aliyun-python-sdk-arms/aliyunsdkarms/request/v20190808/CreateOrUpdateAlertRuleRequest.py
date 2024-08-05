@@ -51,16 +51,45 @@ class CreateOrUpdateAlertRuleRequest(RpcRequest):
 
 	def set_Annotations(self, Annotations):  # String
 		self.add_body_params('Annotations', Annotations)
+	def get_DataConfig(self): # String
+		return self.get_body_params().get('DataConfig')
+
+	def set_DataConfig(self, DataConfig):  # String
+		self.add_body_params('DataConfig', DataConfig)
 	def get_Duration(self): # Long
 		return self.get_body_params().get('Duration')
 
 	def set_Duration(self, Duration):  # Long
 		self.add_body_params('Duration', Duration)
+	def get_AutoAddTargetConfig(self): # String
+		return self.get_body_params().get('AutoAddTargetConfig')
+
+	def set_AutoAddTargetConfig(self, AutoAddTargetConfig):  # String
+		self.add_body_params('AutoAddTargetConfig', AutoAddTargetConfig)
 	def get_MetricsKey(self): # String
 		return self.get_body_params().get('MetricsKey')
 
 	def set_MetricsKey(self, MetricsKey):  # String
 		self.add_body_params('MetricsKey', MetricsKey)
+	def get_AlertPiplines(self): # String
+		return self.get_body_params().get('AlertPiplines')
+
+	def set_AlertPiplines(self, AlertPiplines):  # String
+		self.add_body_params('AlertPiplines', AlertPiplines)
+	def get_MarkTagss(self): # RepeatList
+		return self.get_body_params().get('MarkTags')
+
+	def set_MarkTagss(self, MarkTags):  # RepeatList
+		for depth1 in range(len(MarkTags)):
+			if MarkTags[depth1].get('Value') is not None:
+				self.add_body_params('MarkTags.' + str(depth1 + 1) + '.Value', MarkTags[depth1].get('Value'))
+			if MarkTags[depth1].get('Key') is not None:
+				self.add_body_params('MarkTags.' + str(depth1 + 1) + '.Key', MarkTags[depth1].get('Key'))
+	def get_Notice(self): # String
+		return self.get_body_params().get('Notice')
+
+	def set_Notice(self, Notice):  # String
+		self.add_body_params('Notice', Notice)
 	def get_AlertRuleContent(self): # String
 		return self.get_body_params().get('AlertRuleContent')
 
@@ -71,6 +100,11 @@ class CreateOrUpdateAlertRuleRequest(RpcRequest):
 
 	def set_PromQL(self, PromQL):  # String
 		self.add_body_params('PromQL', PromQL)
+	def get_Product(self): # String
+		return self.get_body_params().get('Product')
+
+	def set_Product(self, Product):  # String
+		self.add_body_params('Product', Product)
 	def get_Level(self): # String
 		return self.get_body_params().get('Level')
 
@@ -115,6 +149,11 @@ class CreateOrUpdateAlertRuleRequest(RpcRequest):
 				self.add_body_params('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_body_params('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def get_NotifyMode(self): # String
+		return self.get_body_params().get('NotifyMode')
+
+	def set_NotifyMode(self, NotifyMode):  # String
+		self.add_body_params('NotifyMode', NotifyMode)
 	def get_AlertType(self): # String
 		return self.get_body_params().get('AlertType')
 

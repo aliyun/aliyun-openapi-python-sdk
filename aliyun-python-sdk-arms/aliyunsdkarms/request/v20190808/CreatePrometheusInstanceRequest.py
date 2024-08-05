@@ -36,11 +36,6 @@ class CreatePrometheusInstanceRequest(RpcRequest):
 
 	def set_GrafanaInstanceId(self, GrafanaInstanceId):  # String
 		self.add_query_param('GrafanaInstanceId', GrafanaInstanceId)
-	def get_AllSubClustersSuccess(self): # Boolean
-		return self.get_query_params().get('AllSubClustersSuccess')
-
-	def set_AllSubClustersSuccess(self, AllSubClustersSuccess):  # Boolean
-		self.add_query_param('AllSubClustersSuccess', AllSubClustersSuccess)
 	def get_ClusterName(self): # String
 		return self.get_query_params().get('ClusterName')
 
@@ -51,6 +46,26 @@ class CreatePrometheusInstanceRequest(RpcRequest):
 
 	def set_SecurityGroupId(self, SecurityGroupId):  # String
 		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_Duration(self): # Integer
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self, Duration):  # Integer
+		self.add_query_param('Duration', Duration)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_SubClustersJson(self): # String
+		return self.get_query_params().get('SubClustersJson')
+
+	def set_SubClustersJson(self, SubClustersJson):  # String
+		self.add_query_param('SubClustersJson', SubClustersJson)
+	def get_AllSubClustersSuccess(self): # Boolean
+		return self.get_query_params().get('AllSubClustersSuccess')
+
+	def set_AllSubClustersSuccess(self, AllSubClustersSuccess):  # Boolean
+		self.add_query_param('AllSubClustersSuccess', AllSubClustersSuccess)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
@@ -75,18 +90,13 @@ class CreatePrometheusInstanceRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
-	def get_SubClustersJson(self): # String
-		return self.get_query_params().get('SubClustersJson')
+	def get_ArchiveDuration(self): # Integer
+		return self.get_query_params().get('ArchiveDuration')
 
-	def set_SubClustersJson(self, SubClustersJson):  # String
-		self.add_query_param('SubClustersJson', SubClustersJson)
+	def set_ArchiveDuration(self, ArchiveDuration):  # Integer
+		self.add_query_param('ArchiveDuration', ArchiveDuration)

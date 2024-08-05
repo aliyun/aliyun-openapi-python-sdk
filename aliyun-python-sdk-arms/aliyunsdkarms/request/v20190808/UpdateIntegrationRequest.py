@@ -31,21 +31,6 @@ class UpdateIntegrationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ShortToken(self): # String
-		return self.get_body_params().get('ShortToken')
-
-	def set_ShortToken(self, ShortToken):  # String
-		self.add_body_params('ShortToken', ShortToken)
-	def get_FieldRedefineRules(self): # String
-		return self.get_body_params().get('FieldRedefineRules')
-
-	def set_FieldRedefineRules(self, FieldRedefineRules):  # String
-		self.add_body_params('FieldRedefineRules', FieldRedefineRules)
-	def get_Stat(self): # String
-		return self.get_body_params().get('Stat')
-
-	def set_Stat(self, Stat):  # String
-		self.add_body_params('Stat', Stat)
 	def get_InitiativeRecoverValue(self): # String
 		return self.get_body_params().get('InitiativeRecoverValue')
 
@@ -66,16 +51,6 @@ class UpdateIntegrationRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-	def get_ApiEndpoint(self): # String
-		return self.get_body_params().get('ApiEndpoint')
-
-	def set_ApiEndpoint(self, ApiEndpoint):  # String
-		self.add_body_params('ApiEndpoint', ApiEndpoint)
-	def get_AutoRecover(self): # Boolean
-		return self.get_body_params().get('AutoRecover')
-
-	def set_AutoRecover(self, AutoRecover):  # Boolean
-		self.add_body_params('AutoRecover', AutoRecover)
 	def get_RecoverTime(self): # Long
 		return self.get_body_params().get('RecoverTime')
 
@@ -96,16 +71,31 @@ class UpdateIntegrationRequest(RpcRequest):
 
 	def set_State(self, State):  # Boolean
 		self.add_body_params('State', State)
-	def get_ExtendedFieldRedefineRules(self): # String
-		return self.get_body_params().get('ExtendedFieldRedefineRules')
-
-	def set_ExtendedFieldRedefineRules(self, ExtendedFieldRedefineRules):  # String
-		self.add_body_params('ExtendedFieldRedefineRules', ExtendedFieldRedefineRules)
 	def get_InitiativeRecoverField(self): # String
 		return self.get_body_params().get('InitiativeRecoverField')
 
 	def set_InitiativeRecoverField(self, InitiativeRecoverField):  # String
 		self.add_body_params('InitiativeRecoverField', InitiativeRecoverField)
+	def get_FieldRedefineRules(self): # String
+		return self.get_body_params().get('FieldRedefineRules')
+
+	def set_FieldRedefineRules(self, FieldRedefineRules):  # String
+		self.add_body_params('FieldRedefineRules', FieldRedefineRules)
+	def get_Stat(self): # String
+		return self.get_body_params().get('Stat')
+
+	def set_Stat(self, Stat):  # String
+		self.add_body_params('Stat', Stat)
+	def get_AutoRecover(self): # Boolean
+		return self.get_body_params().get('AutoRecover')
+
+	def set_AutoRecover(self, AutoRecover):  # Boolean
+		self.add_body_params('AutoRecover', AutoRecover)
+	def get_ExtendedFieldRedefineRules(self): # String
+		return self.get_body_params().get('ExtendedFieldRedefineRules')
+
+	def set_ExtendedFieldRedefineRules(self, ExtendedFieldRedefineRules):  # String
+		self.add_body_params('ExtendedFieldRedefineRules', ExtendedFieldRedefineRules)
 	def get_IntegrationProductType(self): # String
 		return self.get_body_params().get('IntegrationProductType')
 

@@ -41,11 +41,21 @@ class UpdatePrometheusGlobalViewRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_GroupName(self): # String
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_MostRegionId(self): # String
+		return self.get_query_params().get('MostRegionId')
+
+	def set_MostRegionId(self, MostRegionId):  # String
+		self.add_query_param('MostRegionId', MostRegionId)
 	def get_SubClustersJson(self): # String
 		return self.get_query_params().get('SubClustersJson')
 

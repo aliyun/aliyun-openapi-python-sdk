@@ -31,23 +31,23 @@ class DescribeWebhookContactsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Size(self): # Long
-		return self.get_query_params().get('Size')
-
-	def set_Size(self, Size):  # Long
-		self.add_query_param('Size', Size)
 	def get_WebhookName(self): # String
 		return self.get_query_params().get('WebhookName')
 
 	def set_WebhookName(self, WebhookName):  # String
 		self.add_query_param('WebhookName', WebhookName)
-	def get_Page(self): # Long
-		return self.get_query_params().get('Page')
-
-	def set_Page(self, Page):  # Long
-		self.add_query_param('Page', Page)
 	def get_ContactIds(self): # String
 		return self.get_query_params().get('ContactIds')
 
 	def set_ContactIds(self, ContactIds):  # String
 		self.add_query_param('ContactIds', ContactIds)
+	def get_Size(self): # Long
+		return self.get_query_params().get('Size')
+
+	def set_Size(self, Size):  # Long
+		self.add_query_param('Size', Size)
+	def get_Page(self): # Long
+		return self.get_query_params().get('Page')
+
+	def set_Page(self, Page):  # Long
+		self.add_query_param('Page', Page)

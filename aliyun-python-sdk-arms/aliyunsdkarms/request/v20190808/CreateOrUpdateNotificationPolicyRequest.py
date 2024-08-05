@@ -31,26 +31,11 @@ class CreateOrUpdateNotificationPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EscalationPolicyId(self): # Long
-		return self.get_body_params().get('EscalationPolicyId')
-
-	def set_EscalationPolicyId(self, EscalationPolicyId):  # Long
-		self.add_body_params('EscalationPolicyId', EscalationPolicyId)
-	def get_SendRecoverMessage(self): # Boolean
-		return self.get_body_params().get('SendRecoverMessage')
-
-	def set_SendRecoverMessage(self, SendRecoverMessage):  # Boolean
-		self.add_body_params('SendRecoverMessage', SendRecoverMessage)
 	def get_IntegrationId(self): # Long
 		return self.get_body_params().get('IntegrationId')
 
 	def set_IntegrationId(self, IntegrationId):  # Long
 		self.add_body_params('IntegrationId', IntegrationId)
-	def get_MatchingRules(self): # String
-		return self.get_body_params().get('MatchingRules')
-
-	def set_MatchingRules(self, MatchingRules):  # String
-		self.add_body_params('MatchingRules', MatchingRules)
 	def get_GroupRule(self): # String
 		return self.get_body_params().get('GroupRule')
 
@@ -61,11 +46,6 @@ class CreateOrUpdateNotificationPolicyRequest(RpcRequest):
 
 	def set_Repeat(self, Repeat):  # Boolean
 		self.add_body_params('Repeat', Repeat)
-	def get_Name(self): # String
-		return self.get_body_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_body_params('Name', Name)
 	def get_Id(self): # Long
 		return self.get_body_params().get('Id')
 
@@ -76,13 +56,43 @@ class CreateOrUpdateNotificationPolicyRequest(RpcRequest):
 
 	def set_NotifyRule(self, NotifyRule):  # String
 		self.add_body_params('NotifyRule', NotifyRule)
-	def get_NotifyTemplate(self): # String
-		return self.get_body_params().get('NotifyTemplate')
+	def get_State(self): # String
+		return self.get_body_params().get('State')
 
-	def set_NotifyTemplate(self, NotifyTemplate):  # String
-		self.add_body_params('NotifyTemplate', NotifyTemplate)
+	def set_State(self, State):  # String
+		self.add_body_params('State', State)
 	def get_RepeatInterval(self): # Long
 		return self.get_body_params().get('RepeatInterval')
 
 	def set_RepeatInterval(self, RepeatInterval):  # Long
 		self.add_body_params('RepeatInterval', RepeatInterval)
+	def get_EscalationPolicyId(self): # Long
+		return self.get_body_params().get('EscalationPolicyId')
+
+	def set_EscalationPolicyId(self, EscalationPolicyId):  # Long
+		self.add_body_params('EscalationPolicyId', EscalationPolicyId)
+	def get_SendRecoverMessage(self): # Boolean
+		return self.get_body_params().get('SendRecoverMessage')
+
+	def set_SendRecoverMessage(self, SendRecoverMessage):  # Boolean
+		self.add_body_params('SendRecoverMessage', SendRecoverMessage)
+	def get_MatchingRules(self): # String
+		return self.get_body_params().get('MatchingRules')
+
+	def set_MatchingRules(self, MatchingRules):  # String
+		self.add_body_params('MatchingRules', MatchingRules)
+	def get_DirectedMode(self): # Boolean
+		return self.get_body_params().get('DirectedMode')
+
+	def set_DirectedMode(self, DirectedMode):  # Boolean
+		self.add_body_params('DirectedMode', DirectedMode)
+	def get_Name(self): # String
+		return self.get_body_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_body_params('Name', Name)
+	def get_NotifyTemplate(self): # String
+		return self.get_body_params().get('NotifyTemplate')
+
+	def set_NotifyTemplate(self, NotifyTemplate):  # String
+		self.add_body_params('NotifyTemplate', NotifyTemplate)

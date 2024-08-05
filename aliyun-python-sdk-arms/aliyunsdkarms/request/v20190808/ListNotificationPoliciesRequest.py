@@ -31,6 +31,16 @@ class ListNotificationPoliciesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IsDetail(self): # Boolean
+		return self.get_query_params().get('IsDetail')
+
+	def set_IsDetail(self, IsDetail):  # Boolean
+		self.add_query_param('IsDetail', IsDetail)
+	def get_DirectedMode(self): # Boolean
+		return self.get_query_params().get('DirectedMode')
+
+	def set_DirectedMode(self, DirectedMode):  # Boolean
+		self.add_query_param('DirectedMode', DirectedMode)
 	def get_Size(self): # Long
 		return self.get_query_params().get('Size')
 
@@ -41,11 +51,6 @@ class ListNotificationPoliciesRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_IsDetail(self): # Boolean
-		return self.get_query_params().get('IsDetail')
-
-	def set_IsDetail(self, IsDetail):  # Boolean
-		self.add_query_param('IsDetail', IsDetail)
 	def get_Ids(self): # String
 		return self.get_query_params().get('Ids')
 

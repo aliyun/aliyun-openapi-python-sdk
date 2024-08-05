@@ -56,6 +56,11 @@ class ListAlertEventsRequest(RpcRequest):
 
 	def set_MatchingConditions(self, MatchingConditions):  # String
 		self.add_query_param('MatchingConditions', MatchingConditions)
+	def get_ShowNotificationPolicies(self): # Boolean
+		return self.get_query_params().get('ShowNotificationPolicies')
+
+	def set_ShowNotificationPolicies(self, ShowNotificationPolicies):  # Boolean
+		self.add_query_param('ShowNotificationPolicies', ShowNotificationPolicies)
 	def get_Page(self): # Long
 		return self.get_query_params().get('Page')
 

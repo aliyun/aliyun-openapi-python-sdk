@@ -31,11 +31,6 @@ class DescribeIMRobotsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Size(self): # Long
-		return self.get_query_params().get('Size')
-
-	def set_Size(self, Size):  # Long
-		self.add_query_param('Size', Size)
 	def get_RobotIds(self): # String
 		return self.get_query_params().get('RobotIds')
 
@@ -46,6 +41,11 @@ class DescribeIMRobotsRequest(RpcRequest):
 
 	def set_RobotName(self, RobotName):  # String
 		self.add_query_param('RobotName', RobotName)
+	def get_Size(self): # Long
+		return self.get_query_params().get('Size')
+
+	def set_Size(self, Size):  # Long
+		self.add_query_param('Size', Size)
 	def get_Page(self): # Long
 		return self.get_query_params().get('Page')
 

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
+import json
 
-class GetPrometheusRemoteWriteRequest(RpcRequest):
+class ListGrafanaWorkspaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetPrometheusRemoteWrite','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListGrafanaWorkspace','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +32,18 @@ class GetPrometheusRemoteWriteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def get_AliyunLang(self): # String
+		return self.get_query_params().get('AliyunLang')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_RemoteWriteName(self): # String
-		return self.get_query_params().get('RemoteWriteName')
+	def set_AliyunLang(self, AliyunLang):  # String
+		self.add_query_param('AliyunLang', AliyunLang)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
 
-	def set_RemoteWriteName(self, RemoteWriteName):  # String
-		self.add_query_param('RemoteWriteName', RemoteWriteName)
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)

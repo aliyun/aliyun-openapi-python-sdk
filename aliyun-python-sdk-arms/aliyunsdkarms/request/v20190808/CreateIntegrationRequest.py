@@ -31,6 +31,11 @@ class CreateIntegrationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Description(self): # String
+		return self.get_body_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_body_params('Description', Description)
 	def get_AutoRecover(self): # Boolean
 		return self.get_body_params().get('AutoRecover')
 
@@ -46,11 +51,6 @@ class CreateIntegrationRequest(RpcRequest):
 
 	def set_IntegrationName(self, IntegrationName):  # String
 		self.add_body_params('IntegrationName', IntegrationName)
-	def get_Description(self): # String
-		return self.get_body_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_body_params('Description', Description)
 	def get_IntegrationProductType(self): # String
 		return self.get_body_params().get('IntegrationProductType')
 

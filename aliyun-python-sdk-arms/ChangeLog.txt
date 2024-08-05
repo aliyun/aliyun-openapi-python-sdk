@@ -1,3 +1,7 @@
+2024-08-05 Version: 2.7.31
+- Offline remote write related APIs.
+- Mark the managedPrometheus related APIs as deprecated.
+
 2023-05-26 Version: 2.7.30
 - Add solution to response for GetAlerts Api.
 

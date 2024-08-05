@@ -36,6 +36,16 @@ class ListTraceAppsRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_AppType(self): # String
+		return self.get_query_params().get('AppType')
+
+	def set_AppType(self, AppType):  # String
+		self.add_query_param('AppType', AppType)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
 	def get_Tagss(self): # RepeatList
 		return self.get_query_params().get('Tags')
 

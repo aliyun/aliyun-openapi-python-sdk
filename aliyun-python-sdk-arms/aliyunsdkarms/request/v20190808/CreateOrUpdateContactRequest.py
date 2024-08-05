@@ -41,6 +41,11 @@ class CreateOrUpdateContactRequest(RpcRequest):
 
 	def set_ReissueSendNotice(self, ReissueSendNotice):  # Long
 		self.add_body_params('ReissueSendNotice', ReissueSendNotice)
+	def get_CorpUserId(self): # String
+		return self.get_body_params().get('CorpUserId')
+
+	def set_CorpUserId(self, CorpUserId):  # String
+		self.add_body_params('CorpUserId', CorpUserId)
 	def get_ContactName(self): # String
 		return self.get_body_params().get('ContactName')
 

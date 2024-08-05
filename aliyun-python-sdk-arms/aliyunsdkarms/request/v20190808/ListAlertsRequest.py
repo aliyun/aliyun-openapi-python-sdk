@@ -36,6 +36,11 @@ class ListAlertsRequest(RpcRequest):
 
 	def set_Severity(self, Severity):  # String
 		self.add_query_param('Severity', Severity)
+	def get_Owner(self): # String
+		return self.get_query_params().get('Owner')
+
+	def set_Owner(self, Owner):  # String
+		self.add_query_param('Owner', Owner)
 	def get_IntegrationType(self): # String
 		return self.get_query_params().get('IntegrationType')
 

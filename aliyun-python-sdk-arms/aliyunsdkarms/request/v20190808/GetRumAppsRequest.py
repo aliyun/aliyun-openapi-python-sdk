@@ -19,11 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
+import json
 
-class DeletePrometheusRemoteWriteRequest(RpcRequest):
+class GetRumAppsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeletePrometheusRemoteWrite','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetRumApps','arms')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +33,28 @@ class DeletePrometheusRemoteWriteRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RemoteWriteNames(self): # String
-		return self.get_query_params().get('RemoteWriteNames')
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
 
-	def set_RemoteWriteNames(self, RemoteWriteNames):  # String
-		self.add_query_param('RemoteWriteNames', RemoteWriteNames)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_AppGroup(self): # String
+		return self.get_query_params().get('AppGroup')
+
+	def set_AppGroup(self, AppGroup):  # String
+		self.add_query_param('AppGroup', AppGroup)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

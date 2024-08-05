@@ -42,14 +42,23 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
 			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_Tagss(self): # RepeatList
+		return self.get_query_params().get('Tags')
+
+	def set_Tagss(self, Tags):  # RepeatList
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 	def get_TagKeys(self): # RepeatList
 		return self.get_query_params().get('TagKey')
 
 	def set_TagKeys(self, TagKey):  # RepeatList
 		for depth1 in range(len(TagKey)):
 			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)

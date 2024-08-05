@@ -31,6 +31,11 @@ class ListIntegrationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IsDetail(self): # Boolean
+		return self.get_query_params().get('IsDetail')
+
+	def set_IsDetail(self, IsDetail):  # Boolean
+		self.add_query_param('IsDetail', IsDetail)
 	def get_Size(self): # Long
 		return self.get_query_params().get('Size')
 
@@ -41,11 +46,6 @@ class ListIntegrationRequest(RpcRequest):
 
 	def set_IntegrationName(self, IntegrationName):  # String
 		self.add_query_param('IntegrationName', IntegrationName)
-	def get_IsDetail(self): # Boolean
-		return self.get_query_params().get('IsDetail')
-
-	def set_IsDetail(self, IsDetail):  # Boolean
-		self.add_query_param('IsDetail', IsDetail)
 	def get_Page(self): # Long
 		return self.get_query_params().get('Page')
 

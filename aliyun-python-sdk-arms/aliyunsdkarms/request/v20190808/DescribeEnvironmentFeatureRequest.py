@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListPrometheusRemoteWritesRequest(RpcRequest):
+class DescribeEnvironmentFeatureRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusRemoteWrites','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DescribeEnvironmentFeature','arms')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,18 @@ class ListPrometheusRemoteWritesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
+	def get_AliyunLang(self): # String
+		return self.get_query_params().get('AliyunLang')
 
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
+	def set_AliyunLang(self, AliyunLang):  # String
+		self.add_query_param('AliyunLang', AliyunLang)
+	def get_FeatureName(self): # String
+		return self.get_query_params().get('FeatureName')
+
+	def set_FeatureName(self, FeatureName):  # String
+		self.add_query_param('FeatureName', FeatureName)
+	def get_EnvironmentId(self): # String
+		return self.get_query_params().get('EnvironmentId')
+
+	def set_EnvironmentId(self, EnvironmentId):  # String
+		self.add_query_param('EnvironmentId', EnvironmentId)

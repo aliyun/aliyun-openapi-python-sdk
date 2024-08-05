@@ -36,13 +36,13 @@ class ChangeResourceGroupRequest(RpcRequest):
 
 	def set_ResourceId(self, ResourceId):  # String
 		self.add_query_param('ResourceId', ResourceId)
-	def get_NewResourceGroupId(self): # String
-		return self.get_query_params().get('NewResourceGroupId')
-
-	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
-		self.add_query_param('NewResourceGroupId', NewResourceGroupId)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
+	def get_NewResourceGroupId(self): # String
+		return self.get_query_params().get('NewResourceGroupId')
+
+	def set_NewResourceGroupId(self, NewResourceGroupId):  # String
+		self.add_query_param('NewResourceGroupId', NewResourceGroupId)

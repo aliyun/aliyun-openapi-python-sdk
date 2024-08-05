@@ -36,3 +36,8 @@ class DescribePrometheusAlertRuleRequest(RpcRequest):
 
 	def set_AlertId(self, AlertId):  # Long
 		self.add_query_param('AlertId', AlertId)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

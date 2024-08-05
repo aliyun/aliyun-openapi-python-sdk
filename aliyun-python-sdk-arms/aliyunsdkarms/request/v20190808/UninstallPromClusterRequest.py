@@ -31,6 +31,11 @@ class UninstallPromClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AliyunLang(self): # String
+		return self.get_query_params().get('AliyunLang')
+
+	def set_AliyunLang(self, AliyunLang):  # String
+		self.add_query_param('AliyunLang', AliyunLang)
 	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 

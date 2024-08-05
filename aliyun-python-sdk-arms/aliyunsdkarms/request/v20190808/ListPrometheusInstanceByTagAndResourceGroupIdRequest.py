@@ -36,11 +36,6 @@ class ListPrometheusInstanceByTagAndResourceGroupIdRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ListAsConsole(self): # Boolean
-		return self.get_query_params().get('ListAsConsole')
-
-	def set_ListAsConsole(self, ListAsConsole):  # Boolean
-		self.add_query_param('ListAsConsole', ListAsConsole)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
