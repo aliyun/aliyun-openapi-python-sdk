@@ -32,6 +32,11 @@ class UpdateLiveMPUTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MultiStreamURL(self): # Array
+		return self.get_query_params().get('MultiStreamURL')
+
+	def set_MultiStreamURL(self, MultiStreamURL):  # Array
+		self.add_query_param("MultiStreamURL", json.dumps(MultiStreamURL))
 	def get_SingleSubParams(self): # Struct
 		return self.get_query_params().get('SingleSubParams')
 

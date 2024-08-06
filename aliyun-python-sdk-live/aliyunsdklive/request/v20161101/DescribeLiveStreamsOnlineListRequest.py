@@ -51,11 +51,6 @@ class DescribeLiveStreamsOnlineListRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_IsGetCurrentRate(self): # Boolean
-		return self.get_query_params().get('IsGetCurrentRate')
-
-	def set_IsGetCurrentRate(self, IsGetCurrentRate):  # Boolean
-		self.add_query_param('IsGetCurrentRate', IsGetCurrentRate)
 	def get_StreamName(self): # String
 		return self.get_query_params().get('StreamName')
 

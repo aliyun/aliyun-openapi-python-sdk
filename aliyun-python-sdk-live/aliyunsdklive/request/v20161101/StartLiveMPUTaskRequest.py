@@ -37,6 +37,21 @@ class StartLiveMPUTaskRequest(RpcRequest):
 
 	def set_SingleSubParams(self, SingleSubParams):  # Struct
 		self.add_query_param("SingleSubParams", json.dumps(SingleSubParams))
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_StreamURL(self): # String
+		return self.get_query_params().get('StreamURL')
+
+	def set_StreamURL(self, StreamURL):  # String
+		self.add_query_param('StreamURL', StreamURL)
+	def get_MultiStreamURL(self): # Array
+		return self.get_query_params().get('MultiStreamURL')
+
+	def set_MultiStreamURL(self, MultiStreamURL):  # Array
+		self.add_query_param("MultiStreamURL", json.dumps(MultiStreamURL))
 	def get_SeiParams(self): # Struct
 		return self.get_query_params().get('SeiParams')
 
@@ -67,13 +82,3 @@ class StartLiveMPUTaskRequest(RpcRequest):
 
 	def set_ChannelId(self, ChannelId):  # String
 		self.add_query_param('ChannelId', ChannelId)
-	def get_TaskId(self): # String
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self, TaskId):  # String
-		self.add_query_param('TaskId', TaskId)
-	def get_StreamURL(self): # String
-		return self.get_query_params().get('StreamURL')
-
-	def set_StreamURL(self, StreamURL):  # String
-		self.add_query_param('StreamURL', StreamURL)
