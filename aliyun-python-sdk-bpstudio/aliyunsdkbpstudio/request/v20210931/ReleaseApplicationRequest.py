@@ -25,6 +25,11 @@ class ReleaseApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'ReleaseApplication','bpstudio')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_ResourceGroupId(self): # String
 		return self.get_body_params().get('ResourceGroupId')
 

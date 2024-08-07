@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeployApplicationRequest(RpcRequest):
+class ExecuteOperationSyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'DeployApplication','bpstudio')
+		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'ExecuteOperationSync','bpstudio')
 		self.set_method('POST')
 
 	def get_ClientToken(self): # String
@@ -35,8 +35,23 @@ class DeployApplicationRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def get_ServiceType(self): # String
+		return self.get_body_params().get('ServiceType')
+
+	def set_ServiceType(self, ServiceType):  # String
+		self.add_body_params('ServiceType', ServiceType)
+	def get_Attributes(self): # String
+		return self.get_body_params().get('Attributes')
+
+	def set_Attributes(self, Attributes):  # String
+		self.add_body_params('Attributes', Attributes)
 	def get_ApplicationId(self): # String
-		return self.get_query_params().get('ApplicationId')
+		return self.get_body_params().get('ApplicationId')
 
 	def set_ApplicationId(self, ApplicationId):  # String
-		self.add_query_param('ApplicationId', ApplicationId)
+		self.add_body_params('ApplicationId', ApplicationId)
+	def get_Operation(self): # String
+		return self.get_body_params().get('Operation')
+
+	def set_Operation(self, Operation):  # String
+		self.add_body_params('Operation', Operation)

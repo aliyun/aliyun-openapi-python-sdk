@@ -19,24 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeployApplicationRequest(RpcRequest):
+class GetPotentialFailZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'DeployApplication','bpstudio')
+		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'GetPotentialFailZones','bpstudio')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
+	def get_IsPlanId(self): # Boolean
+		return self.get_body_params().get('IsPlanId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
+	def set_IsPlanId(self, IsPlanId):  # Boolean
+		self.add_body_params('IsPlanId', IsPlanId)
+	def get_ObjectId(self): # String
+		return self.get_body_params().get('ObjectId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
-	def get_ApplicationId(self): # String
-		return self.get_query_params().get('ApplicationId')
-
-	def set_ApplicationId(self, ApplicationId):  # String
-		self.add_query_param('ApplicationId', ApplicationId)
+	def set_ObjectId(self, ObjectId):  # String
+		self.add_body_params('ObjectId', ObjectId)

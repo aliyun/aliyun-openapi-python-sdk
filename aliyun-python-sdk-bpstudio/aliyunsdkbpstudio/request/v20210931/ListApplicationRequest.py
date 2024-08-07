@@ -25,6 +25,16 @@ class ListApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'ListApplication','bpstudio')
 		self.set_method('POST')
 
+	def get_ResourceId(self): # String
+		return self.get_body_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_body_params('ResourceId', ResourceId)
+	def get_TemplateId(self): # String
+		return self.get_body_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_body_params('TemplateId', TemplateId)
 	def get_ResourceGroupId(self): # String
 		return self.get_body_params().get('ResourceGroupId')
 

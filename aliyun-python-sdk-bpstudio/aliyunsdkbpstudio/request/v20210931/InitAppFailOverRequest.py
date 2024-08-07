@@ -19,24 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeployApplicationRequest(RpcRequest):
+class InitAppFailOverRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'DeployApplication','bpstudio')
+		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'InitAppFailOver','bpstudio')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_body_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_body_params('ClientToken', ClientToken)
-	def get_ResourceGroupId(self): # String
-		return self.get_body_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_body_params('ResourceGroupId', ResourceGroupId)
 	def get_ApplicationId(self): # String
-		return self.get_query_params().get('ApplicationId')
+		return self.get_body_params().get('ApplicationId')
 
 	def set_ApplicationId(self, ApplicationId):  # String
-		self.add_query_param('ApplicationId', ApplicationId)
+		self.add_body_params('ApplicationId', ApplicationId)

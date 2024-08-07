@@ -25,6 +25,11 @@ class ExecuteOperationASyncRequest(RpcRequest):
 		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'ExecuteOperationASync','bpstudio')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_ResourceGroupId(self): # String
 		return self.get_body_params().get('ResourceGroupId')
 
@@ -40,6 +45,11 @@ class ExecuteOperationASyncRequest(RpcRequest):
 
 	def set_Attributes(self, Attributes):  # String
 		self.add_body_params('Attributes', Attributes)
+	def get_ApplicationId(self): # String
+		return self.get_body_params().get('ApplicationId')
+
+	def set_ApplicationId(self, ApplicationId):  # String
+		self.add_body_params('ApplicationId', ApplicationId)
 	def get_Operation(self): # String
 		return self.get_body_params().get('Operation')
 
