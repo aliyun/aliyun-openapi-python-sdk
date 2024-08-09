@@ -156,6 +156,11 @@ class PushRequest(RpcRequest):
 
 	def set_HarmonyRemindTitle(self, HarmonyRemindTitle):  # String
 		self.add_query_param('HarmonyRemindTitle', HarmonyRemindTitle)
+	def get_AndroidBadgeClass(self): # String
+		return self.get_query_params().get('AndroidBadgeClass')
+
+	def set_AndroidBadgeClass(self, AndroidBadgeClass):  # String
+		self.add_query_param('AndroidBadgeClass', AndroidBadgeClass)
 	def get_SmsDelaySecs(self): # Integer
 		return self.get_query_params().get('SmsDelaySecs')
 
@@ -371,6 +376,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidOpenUrl(self, AndroidOpenUrl):  # String
 		self.add_query_param('AndroidOpenUrl', AndroidOpenUrl)
+	def get_AndroidBadgeSetNum(self): # Integer
+		return self.get_query_params().get('AndroidBadgeSetNum')
+
+	def set_AndroidBadgeSetNum(self, AndroidBadgeSetNum):  # Integer
+		self.add_query_param('AndroidBadgeSetNum', AndroidBadgeSetNum)
 	def get_AndroidXiaoMiNotifyBody(self): # String
 		return self.get_query_params().get('AndroidXiaoMiNotifyBody')
 
@@ -421,6 +431,11 @@ class PushRequest(RpcRequest):
 
 	def set_HarmonyTestMessage(self, HarmonyTestMessage):  # Boolean
 		self.add_query_param('HarmonyTestMessage', HarmonyTestMessage)
+	def get_AndroidBadgeAddNum(self): # Integer
+		return self.get_query_params().get('AndroidBadgeAddNum')
+
+	def set_AndroidBadgeAddNum(self, AndroidBadgeAddNum):  # Integer
+		self.add_query_param('AndroidBadgeAddNum', AndroidBadgeAddNum)
 	def get_AndroidHuaweiReceiptId(self): # String
 		return self.get_query_params().get('AndroidHuaweiReceiptId')
 

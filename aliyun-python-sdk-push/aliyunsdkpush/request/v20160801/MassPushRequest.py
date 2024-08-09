@@ -106,6 +106,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyReceiptId', PushTask[depth1].get('HarmonyReceiptId'))
 			if PushTask[depth1].get('AndroidOpenUrl') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidOpenUrl', PushTask[depth1].get('AndroidOpenUrl'))
+			if PushTask[depth1].get('AndroidBadgeSetNum') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBadgeSetNum', PushTask[depth1].get('AndroidBadgeSetNum'))
 			if PushTask[depth1].get('AndroidXiaoMiNotifyBody') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyBody', PushTask[depth1].get('AndroidXiaoMiNotifyBody'))
 			if PushTask[depth1].get('iOSSubtitle') is not None:
@@ -148,12 +150,16 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyRemindTitle', PushTask[depth1].get('HarmonyRemindTitle'))
 			if PushTask[depth1].get('Title') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Title', PushTask[depth1].get('Title'))
+			if PushTask[depth1].get('AndroidBadgeClass') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBadgeClass', PushTask[depth1].get('AndroidBadgeClass'))
 			if PushTask[depth1].get('HarmonyTestMessage') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyTestMessage', PushTask[depth1].get('HarmonyTestMessage'))
 			if PushTask[depth1].get('AndroidRenderStyle') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidRenderStyle', PushTask[depth1].get('AndroidRenderStyle'))
 			if PushTask[depth1].get('iOSExtParameters') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSExtParameters', PushTask[depth1].get('iOSExtParameters'))
+			if PushTask[depth1].get('AndroidBadgeAddNum') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBadgeAddNum', PushTask[depth1].get('AndroidBadgeAddNum'))
 			if PushTask[depth1].get('AndroidHuaweiReceiptId') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidHuaweiReceiptId', PushTask[depth1].get('AndroidHuaweiReceiptId'))
 			if PushTask[depth1].get('AndroidNotificationHonorChannel') is not None:
