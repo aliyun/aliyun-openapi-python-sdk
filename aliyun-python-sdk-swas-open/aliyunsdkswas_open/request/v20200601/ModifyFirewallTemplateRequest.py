@@ -40,11 +40,6 @@ class ModifyFirewallTemplateRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_FirewallTemplateRules(self): # RepeatList
 		return self.get_query_params().get('FirewallTemplateRule')
 

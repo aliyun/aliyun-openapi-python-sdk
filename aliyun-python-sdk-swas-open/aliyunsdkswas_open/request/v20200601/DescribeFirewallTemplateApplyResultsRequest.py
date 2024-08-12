@@ -40,11 +40,6 @@ class DescribeFirewallTemplateApplyResultsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
