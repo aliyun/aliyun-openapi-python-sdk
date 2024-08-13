@@ -51,11 +51,6 @@ class CreateRtcAsrTaskRequest(RpcRequest):
 
 	def set_TranslateEnabled(self, TranslateEnabled):  # Boolean
 		self.add_query_param('TranslateEnabled', TranslateEnabled)
-	def get_Tag(self): # String
-		return self.get_query_params().get('Tag')
-
-	def set_Tag(self, Tag):  # String
-		self.add_query_param('Tag', Tag)
 	def get_StreamURL(self): # String
 		return self.get_query_params().get('StreamURL')
 

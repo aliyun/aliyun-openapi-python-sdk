@@ -51,11 +51,6 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def set_VodUrl(self, VodUrl):  # String
 		self.add_query_param('VodUrl', VodUrl)
-	def get_StreamId(self): # String
-		return self.get_query_params().get('StreamId')
-
-	def set_StreamId(self, StreamId):  # String
-		self.add_query_param('StreamId', StreamId)
 	def get_CasterId(self): # String
 		return self.get_query_params().get('CasterId')
 
