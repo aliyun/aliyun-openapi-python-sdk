@@ -32,6 +32,11 @@ class GenerateAndExportDataKeyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DryRun(self): # String
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # String
+		self.add_query_param('DryRun', DryRun)
 	def get_KeyId(self): # String
 		return self.get_query_params().get('KeyId')
 

@@ -32,6 +32,11 @@ class AsymmetricDecryptRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DryRun(self): # String
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # String
+		self.add_query_param('DryRun', DryRun)
 	def get_KeyVersionId(self): # String
 		return self.get_query_params().get('KeyVersionId')
 

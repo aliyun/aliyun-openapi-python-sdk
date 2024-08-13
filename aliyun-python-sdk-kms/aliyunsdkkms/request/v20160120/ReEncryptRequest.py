@@ -37,6 +37,11 @@ class ReEncryptRequest(RpcRequest):
 
 	def set_DestinationEncryptionContext(self, DestinationEncryptionContext):  # String
 		self.add_query_param('DestinationEncryptionContext', DestinationEncryptionContext)
+	def get_DryRun(self): # String
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # String
+		self.add_query_param('DryRun', DryRun)
 	def get_SourceKeyId(self): # String
 		return self.get_query_params().get('SourceKeyId')
 
