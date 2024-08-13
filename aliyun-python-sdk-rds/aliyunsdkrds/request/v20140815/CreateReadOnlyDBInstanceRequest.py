@@ -41,6 +41,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_AutoCreateProxy(self): # Boolean
+		return self.get_query_params().get('AutoCreateProxy')
+
+	def set_AutoCreateProxy(self, AutoCreateProxy):  # Boolean
+		self.add_query_param('AutoCreateProxy', AutoCreateProxy)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 

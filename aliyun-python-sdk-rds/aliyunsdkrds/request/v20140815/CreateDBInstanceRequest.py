@@ -62,6 +62,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ConnectionString(self, ConnectionString):  # String
 		self.add_query_param('ConnectionString', ConnectionString)
+	def get_AutoCreateProxy(self): # Boolean
+		return self.get_query_params().get('AutoCreateProxy')
+
+	def set_AutoCreateProxy(self, AutoCreateProxy):  # Boolean
+		self.add_query_param('AutoCreateProxy', AutoCreateProxy)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 

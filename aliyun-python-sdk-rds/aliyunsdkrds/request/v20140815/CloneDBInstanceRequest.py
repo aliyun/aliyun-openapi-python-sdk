@@ -87,6 +87,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
 		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_ZoneIdSlave1(self): # String
 		return self.get_query_params().get('ZoneIdSlave1')
 
