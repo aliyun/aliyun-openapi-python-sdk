@@ -36,13 +36,28 @@ class PreloadVodObjectCachesRequest(RpcRequest):
 
 	def set_ObjectPath(self, ObjectPath):  # String
 		self.add_query_param('ObjectPath', ObjectPath)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_L2Preload(self): # Boolean
+		return self.get_query_params().get('L2Preload')
+
+	def set_L2Preload(self, L2Preload):  # Boolean
+		self.add_query_param('L2Preload', L2Preload)
+	def get_Area(self): # String
+		return self.get_query_params().get('Area')
+
+	def set_Area(self, Area):  # String
+		self.add_query_param('Area', Area)
+	def get_WithHeader(self): # String
+		return self.get_query_params().get('WithHeader')
+
+	def set_WithHeader(self, WithHeader):  # String
+		self.add_query_param('WithHeader', WithHeader)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class ListAppInfoRequest(RpcRequest):
+class DescribeVodTieringStorageDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAppInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodTieringStorageData','vod')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,28 @@ class ListAppInfoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_PageNo(self): # Integer
-		return self.get_query_params().get('PageNo')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_PageNo(self, PageNo):  # Integer
-		self.add_query_param('PageNo', PageNo)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_StorageClass(self): # String
+		return self.get_query_params().get('StorageClass')
 
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_StorageClass(self, StorageClass):  # String
+		self.add_query_param('StorageClass', StorageClass)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
