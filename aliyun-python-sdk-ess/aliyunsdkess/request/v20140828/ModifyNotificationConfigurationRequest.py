@@ -36,6 +36,11 @@ class ModifyNotificationConfigurationRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_TimeZone(self): # String
+		return self.get_query_params().get('TimeZone')
+
+	def set_TimeZone(self, TimeZone):  # String
+		self.add_query_param('TimeZone', TimeZone)
 	def get_NotificationArn(self): # String
 		return self.get_query_params().get('NotificationArn')
 
