@@ -40,14 +40,24 @@ class LoginInstanceRequest(RpcRequest):
 	def set_InstanceLoginInfo(self, InstanceLoginInfo):  # Struct
 		if InstanceLoginInfo.get('ExpireTime') is not None:
 			self.add_query_param('InstanceLoginInfo.ExpireTime', InstanceLoginInfo.get('ExpireTime'))
+		if InstanceLoginInfo.get('LoginByInstanceShortcut') is not None:
+			self.add_query_param('InstanceLoginInfo.LoginByInstanceShortcut', InstanceLoginInfo.get('LoginByInstanceShortcut'))
 		if InstanceLoginInfo.get('Certificate') is not None:
 			self.add_query_param('InstanceLoginInfo.Certificate', InstanceLoginInfo.get('Certificate'))
 		if InstanceLoginInfo.get('AuthenticationType') is not None:
 			self.add_query_param('InstanceLoginInfo.AuthenticationType', InstanceLoginInfo.get('AuthenticationType'))
+		if InstanceLoginInfo.get('DockerExec') is not None:
+			self.add_query_param('InstanceLoginInfo.DockerExec', InstanceLoginInfo.get('DockerExec'))
+		if InstanceLoginInfo.get('ShortcutToken') is not None:
+			self.add_query_param('InstanceLoginInfo.ShortcutToken', InstanceLoginInfo.get('ShortcutToken'))
+		if InstanceLoginInfo.get('ResourceGroupId') is not None:
+			self.add_query_param('InstanceLoginInfo.ResourceGroupId', InstanceLoginInfo.get('ResourceGroupId'))
 		if InstanceLoginInfo.get('Protocol') is not None:
 			self.add_query_param('InstanceLoginInfo.Protocol', InstanceLoginInfo.get('Protocol'))
 		if InstanceLoginInfo.get('Password') is not None:
 			self.add_query_param('InstanceLoginInfo.Password', InstanceLoginInfo.get('Password'))
+		if InstanceLoginInfo.get('LoginByInstanceCredential') is not None:
+			self.add_query_param('InstanceLoginInfo.LoginByInstanceCredential', InstanceLoginInfo.get('LoginByInstanceCredential'))
 		if InstanceLoginInfo.get('InstanceId') is not None:
 			self.add_query_param('InstanceLoginInfo.InstanceId', InstanceLoginInfo.get('InstanceId'))
 		if InstanceLoginInfo.get('RegionId') is not None:
@@ -99,8 +109,12 @@ class LoginInstanceRequest(RpcRequest):
 				self.add_query_param('InstanceLoginInfo.Options.NotificationRetryLimit', InstanceLoginInfo.get('Options').get('NotificationRetryLimit'))
 		if InstanceLoginInfo.get('InstanceType') is not None:
 			self.add_query_param('InstanceLoginInfo.InstanceType', InstanceLoginInfo.get('InstanceType'))
+		if InstanceLoginInfo.get('DockerContainerName') is not None:
+			self.add_query_param('InstanceLoginInfo.DockerContainerName', InstanceLoginInfo.get('DockerContainerName'))
 		if InstanceLoginInfo.get('PassPhrase') is not None:
 			self.add_query_param('InstanceLoginInfo.PassPhrase', InstanceLoginInfo.get('PassPhrase'))
+		if InstanceLoginInfo.get('CredentialToken') is not None:
+			self.add_query_param('InstanceLoginInfo.CredentialToken', InstanceLoginInfo.get('CredentialToken'))
 		if InstanceLoginInfo.get('DurationSeconds') is not None:
 			self.add_query_param('InstanceLoginInfo.DurationSeconds', InstanceLoginInfo.get('DurationSeconds'))
 		if InstanceLoginInfo.get('NetworkAccessMode') is not None:
