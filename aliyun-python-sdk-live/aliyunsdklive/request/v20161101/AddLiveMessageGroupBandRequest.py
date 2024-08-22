@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class SetCasterTimedEventRequest(RpcRequest):
+class AddLiveMessageGroupBandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterTimedEvent','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveMessageGroupBand','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,24 @@ class SetCasterTimedEventRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EventName(self): # String
-		return self.get_query_params().get('EventName')
+	def get_BannedUsers(self): # Array
+		return self.get_query_params().get('BannedUsers')
 
-	def set_EventName(self, EventName):  # String
-		self.add_query_param('EventName', EventName)
-	def get_StartTimeUTC(self): # String
-		return self.get_query_params().get('StartTimeUTC')
+	def set_BannedUsers(self, BannedUsers):  # Array
+		for index1, value1 in enumerate(BannedUsers):
+			self.add_query_param('BannedUsers.' + str(index1 + 1), value1)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_StartTimeUTC(self, StartTimeUTC):  # String
-		self.add_query_param('StartTimeUTC', StartTimeUTC)
-	def get_CasterId(self): # String
-		return self.get_query_params().get('CasterId')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DataCenter(self): # String
+		return self.get_query_params().get('DataCenter')
 
-	def set_CasterId(self, CasterId):  # String
-		self.add_query_param('CasterId', CasterId)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_DataCenter(self, DataCenter):  # String
+		self.add_query_param('DataCenter', DataCenter)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

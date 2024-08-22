@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class UpdateLiveTopLevelDomainRequest(RpcRequest):
+class RemoveLiveMessageGroupBandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveTopLevelDomain','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'RemoveLiveMessageGroupBand','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +32,24 @@ class UpdateLiveTopLevelDomainRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TopLevelDomain(self): # String
-		return self.get_query_params().get('TopLevelDomain')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_TopLevelDomain(self, TopLevelDomain):  # String
-		self.add_query_param('TopLevelDomain', TopLevelDomain)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DataCenter(self): # String
+		return self.get_query_params().get('DataCenter')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_DataCenter(self, DataCenter):  # String
+		self.add_query_param('DataCenter', DataCenter)
+	def get_UnbannedUsers(self): # Array
+		return self.get_query_params().get('UnbannedUsers')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
+	def set_UnbannedUsers(self, UnbannedUsers):  # Array
+		for index1, value1 in enumerate(UnbannedUsers):
+			self.add_query_param('UnbannedUsers.' + str(index1 + 1), value1)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

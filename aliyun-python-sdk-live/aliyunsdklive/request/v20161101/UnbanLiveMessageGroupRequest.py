@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class UnTagLiveResourcesRequest(RpcRequest):
+class UnbanLiveMessageGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UnTagLiveResources','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UnbanLiveMessageGroup','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,30 +32,18 @@ class UnTagLiveResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_All(self): # Boolean
-		return self.get_query_params().get('All')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_All(self, All):  # Boolean
-		self.add_query_param('All', All)
-	def get_ResourceIds(self): # RepeatList
-		return self.get_query_params().get('ResourceId')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_DataCenter(self): # String
+		return self.get_query_params().get('DataCenter')
 
-	def set_ResourceIds(self, ResourceId):  # RepeatList
-		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_DataCenter(self, DataCenter):  # String
+		self.add_query_param('DataCenter', DataCenter)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
-	def get_TagKeys(self): # RepeatList
-		return self.get_query_params().get('TagKey')
-
-	def set_TagKeys(self, TagKey):  # RepeatList
-		for depth1 in range(len(TagKey)):
-			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey[depth1])
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveDomainRecordDataRequest(RpcRequest):
+class BanLiveMessageGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainRecordData','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'BanLiveMessageGroup','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +32,24 @@ class DescribeLiveDomainRecordDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_RecordType(self): # String
-		return self.get_query_params().get('RecordType')
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_ExceptUsers(self): # Array
+		return self.get_query_params().get('ExceptUsers')
 
-	def set_RecordType(self, RecordType):  # String
-		self.add_query_param('RecordType', RecordType)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def set_ExceptUsers(self, ExceptUsers):  # Array
+		for index1, value1 in enumerate(ExceptUsers):
+			self.add_query_param('ExceptUsers.' + str(index1 + 1), value1)
+	def get_DataCenter(self): # String
+		return self.get_query_params().get('DataCenter')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
+	def set_DataCenter(self, DataCenter):  # String
+		self.add_query_param('DataCenter', DataCenter)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
