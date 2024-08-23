@@ -18,47 +18,45 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class DescribeSDGDeploymentStatusRequest(RpcRequest):
+class DescribeStorageVolumeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSDGDeploymentStatus','ens')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeStorageVolume','ens')
 		self.set_method('POST')
 
-	def get_RegionIds(self): # Array
-		return self.get_query_params().get('RegionIds')
+	def get_EnsRegionId(self): # String
+		return self.get_query_params().get('EnsRegionId')
 
-	def set_RegionIds(self, RegionIds):  # Array
-		self.add_query_param("RegionIds", json.dumps(RegionIds))
-	def get_InstanceIds(self): # Array
-		return self.get_query_params().get('InstanceIds')
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_GatewayId(self): # String
+		return self.get_query_params().get('GatewayId')
 
-	def set_InstanceIds(self, InstanceIds):  # Array
-		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)
+	def get_VolumeId(self): # String
+		return self.get_query_params().get('VolumeId')
 
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
-	def get_DeploymentType(self): # String
-		return self.get_query_params().get('DeploymentType')
-
-	def set_DeploymentType(self, DeploymentType):  # String
-		self.add_query_param('DeploymentType', DeploymentType)
+	def set_VolumeId(self, VolumeId):  # String
+		self.add_query_param('VolumeId', VolumeId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_SDGId(self): # String
-		return self.get_query_params().get('SDGId')
-
-	def set_SDGId(self, SDGId):  # String
-		self.add_query_param('SDGId', SDGId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_IsEnable(self): # Integer
+		return self.get_query_params().get('IsEnable')
+
+	def set_IsEnable(self, IsEnable):  # Integer
+		self.add_query_param('IsEnable', IsEnable)
+	def get_StorageId(self): # String
+		return self.get_query_params().get('StorageId')
+
+	def set_StorageId(self, StorageId):  # String
+		self.add_query_param('StorageId', StorageId)

@@ -75,6 +75,11 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def set_HealthCheckInterval(self, HealthCheckInterval):  # Integer
 		self.add_query_param('HealthCheckInterval', HealthCheckInterval)
+	def get_BackendServerPort(self): # Integer
+		return self.get_query_params().get('BackendServerPort')
+
+	def set_BackendServerPort(self, BackendServerPort):  # Integer
+		self.add_query_param('BackendServerPort', BackendServerPort)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 

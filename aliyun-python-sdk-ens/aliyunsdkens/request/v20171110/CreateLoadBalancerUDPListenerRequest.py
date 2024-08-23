@@ -25,6 +25,11 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateLoadBalancerUDPListener','ens')
 		self.set_method('POST')
 
+	def get_EstablishedTimeout(self): # Integer
+		return self.get_query_params().get('EstablishedTimeout')
+
+	def set_EstablishedTimeout(self, EstablishedTimeout):  # Integer
+		self.add_query_param('EstablishedTimeout', EstablishedTimeout)
 	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 
