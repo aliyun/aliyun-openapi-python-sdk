@@ -1,3 +1,6 @@
+2024-08-28 Version: 2.20.13
+- DescibePrice add ShardCount parameters.
+
 2024-07-19 Version: 2.20.12
 - Account management add SourceBiz parameters.
 

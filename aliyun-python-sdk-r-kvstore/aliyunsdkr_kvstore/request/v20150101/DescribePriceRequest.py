@@ -71,6 +71,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_ShardCount(self): # Integer
+		return self.get_query_params().get('ShardCount')
+
+	def set_ShardCount(self, ShardCount):  # Integer
+		self.add_query_param('ShardCount', ShardCount)
 	def get_Period(self): # Long
 		return self.get_query_params().get('Period')
 
