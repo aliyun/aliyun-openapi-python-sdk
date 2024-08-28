@@ -670,7 +670,7 @@
       "cn-hangzhou": "mongodb.aliyuncs.com",
       "cn-shanghai": "mongodb.aliyuncs.com",
       "cn-shenzhen": "mongodb.aliyuncs.com",
-      "cn-hongkong": "mongodb.aliyuncs.com",
+      "cn-hongkong": "mongodb.cn-hongkong.aliyuncs.com",
       "ap-southeast-1": "mongodb.aliyuncs.com",
       "ap-northeast-1": "mongodb.ap-northeast-1.aliyuncs.com",
       "eu-west-1": "mongodb.eu-west-1.aliyuncs.com",
