@@ -66,6 +66,11 @@ class CreateConfigDeliveryChannelRequest(RpcRequest):
 
 	def set_ConfigurationItemChangeNotification(self, ConfigurationItemChangeNotification):  # Boolean
 		self.add_query_param('ConfigurationItemChangeNotification', ConfigurationItemChangeNotification)
+	def get_CompliantSnapshot(self): # Boolean
+		return self.get_query_params().get('CompliantSnapshot')
+
+	def set_CompliantSnapshot(self, CompliantSnapshot):  # Boolean
+		self.add_query_param('CompliantSnapshot', CompliantSnapshot)
 	def get_DeliveryChannelName(self): # String
 		return self.get_query_params().get('DeliveryChannelName')
 

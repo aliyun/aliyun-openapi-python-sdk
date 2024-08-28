@@ -36,26 +36,41 @@ class ListDiscoveredResourcesRequest(RpcRequest):
 
 	def set_ResourceDeleted(self, ResourceDeleted):  # Integer
 		self.add_query_param('ResourceDeleted', ResourceDeleted)
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
 	def get_Regions(self): # String
 		return self.get_query_params().get('Regions')
 
 	def set_Regions(self, Regions):  # String
 		self.add_query_param('Regions', Regions)
-	def get_ResourceTypes(self): # String
-		return self.get_query_params().get('ResourceTypes')
+	def get_EndUpdateTimestamp(self): # Long
+		return self.get_query_params().get('EndUpdateTimestamp')
 
-	def set_ResourceTypes(self, ResourceTypes):  # String
-		self.add_query_param('ResourceTypes', ResourceTypes)
+	def set_EndUpdateTimestamp(self, EndUpdateTimestamp):  # Long
+		self.add_query_param('EndUpdateTimestamp', EndUpdateTimestamp)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_StartUpdateTimestamp(self): # Long
+		return self.get_query_params().get('StartUpdateTimestamp')
+
+	def set_StartUpdateTimestamp(self, StartUpdateTimestamp):  # Long
+		self.add_query_param('StartUpdateTimestamp', StartUpdateTimestamp)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceTypes(self): # String
+		return self.get_query_params().get('ResourceTypes')
+
+	def set_ResourceTypes(self, ResourceTypes):  # String
+		self.add_query_param('ResourceTypes', ResourceTypes)
+	def get_ExcludeResourceTypes(self): # String
+		return self.get_query_params().get('ExcludeResourceTypes')
+
+	def set_ExcludeResourceTypes(self, ExcludeResourceTypes):  # String
+		self.add_query_param('ExcludeResourceTypes', ExcludeResourceTypes)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

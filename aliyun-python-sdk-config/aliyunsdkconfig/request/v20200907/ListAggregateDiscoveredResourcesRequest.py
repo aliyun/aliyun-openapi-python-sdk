@@ -51,6 +51,11 @@ class ListAggregateDiscoveredResourcesRequest(RpcRequest):
 
 	def set_AggregatorId(self, AggregatorId):  # String
 		self.add_query_param('AggregatorId', AggregatorId)
+	def get_EndUpdateTimestamp(self): # Long
+		return self.get_query_params().get('EndUpdateTimestamp')
+
+	def set_EndUpdateTimestamp(self, EndUpdateTimestamp):  # Long
+		self.add_query_param('EndUpdateTimestamp', EndUpdateTimestamp)
 	def get_ResourceAccountId(self): # Long
 		return self.get_query_params().get('ResourceAccountId')
 
@@ -61,6 +66,11 @@ class ListAggregateDiscoveredResourcesRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_StartUpdateTimestamp(self): # Long
+		return self.get_query_params().get('StartUpdateTimestamp')
+
+	def set_StartUpdateTimestamp(self, StartUpdateTimestamp):  # Long
+		self.add_query_param('StartUpdateTimestamp', StartUpdateTimestamp)
 	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
@@ -71,6 +81,11 @@ class ListAggregateDiscoveredResourcesRequest(RpcRequest):
 
 	def set_ResourceTypes(self, ResourceTypes):  # String
 		self.add_query_param('ResourceTypes', ResourceTypes)
+	def get_ExcludeResourceTypes(self): # String
+		return self.get_query_params().get('ExcludeResourceTypes')
+
+	def set_ExcludeResourceTypes(self, ExcludeResourceTypes):  # String
+		self.add_query_param('ExcludeResourceTypes', ExcludeResourceTypes)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
