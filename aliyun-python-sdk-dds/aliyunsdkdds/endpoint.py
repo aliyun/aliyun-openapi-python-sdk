@@ -58,7 +58,7 @@ class EndpointData():
 			"cn-hongkong-finance-pop": "mongodb.aliyuncs.com",
 			"cn-shanghai": "mongodb.aliyuncs.com",
 			"cn-shanghai-finance-1": "mongodb.aliyuncs.com",
-			"cn-hongkong": "mongodb.aliyuncs.com",
+			"cn-hongkong": "mongodb.cn-hongkong.aliyuncs.com",
 			"eu-central-1": "mongodb.eu-central-1.aliyuncs.com",
 			"cn-shenzhen": "mongodb.aliyuncs.com",
 			"cn-zhengzhou-nebula-1": "mongodb.aliyuncs.com",
