@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class ScrollDomainListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ScrollDomainList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ScrollDomainList','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class ScrollDomainListRequest(RpcRequest):
 
 	def set_StartLength(self, StartLength):  # Integer
 		self.add_query_param('StartLength', StartLength)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ExcludedSuffix(self): # Boolean
 		return self.get_query_params().get('ExcludedSuffix')
 

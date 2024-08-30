@@ -1,3 +1,10 @@
+2024-08-30 Version: 3.14.10
+- 增加国际一口价相关接口.
+- GetIntlFixPriceDomainListUrl.
+- CheckIntlFixPriceDomainStatus.
+- CreateIntlFixedPriceDomainOrder.
+- QueryIntlFixedPriceOrderList.
+
 2022-07-21 Version: 3.14.9
 - Ram action config.
 

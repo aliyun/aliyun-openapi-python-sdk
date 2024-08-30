@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForReserveDropListDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForReserveDropListDomain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForReserveDropListDomain','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,10 @@ class SaveBatchTaskForReserveDropListDomainRequest(RpcRequest):
 
 	def set_Domainss(self, Domains):  # RepeatList
 		for depth1 in range(len(Domains)):
+			if Domains[depth1].get('Dns2') is not None:
+				self.add_query_param('Domains.' + str(depth1 + 1) + '.Dns2', Domains[depth1].get('Dns2'))
+			if Domains[depth1].get('Dns1') is not None:
+				self.add_query_param('Domains.' + str(depth1 + 1) + '.Dns1', Domains[depth1].get('Dns1'))
 			if Domains[depth1].get('DomainName') is not None:
 				self.add_query_param('Domains.' + str(depth1 + 1) + '.DomainName', Domains[depth1].get('DomainName'))
 	def get_ContactTemplateId(self): # String

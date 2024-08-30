@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class QueryDomainListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainList','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class QueryDomainListRequest(RpcRequest):
 
 	def set_ProductDomainType(self, ProductDomainType):  # String
 		self.add_query_param('ProductDomainType', ProductDomainType)
+	def get_Ccompany(self): # String
+		return self.get_query_params().get('Ccompany')
+
+	def set_Ccompany(self, Ccompany):  # String
+		self.add_query_param('Ccompany', Ccompany)
 	def get_OrderKeyType(self): # String
 		return self.get_query_params().get('OrderKeyType')
 
@@ -51,11 +56,25 @@ class QueryDomainListRequest(RpcRequest):
 
 	def set_OrderByType(self, OrderByType):  # String
 		self.add_query_param('OrderByType', OrderByType)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

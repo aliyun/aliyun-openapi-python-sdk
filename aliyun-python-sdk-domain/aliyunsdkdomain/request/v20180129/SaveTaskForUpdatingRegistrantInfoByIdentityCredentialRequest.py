@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByIdentityCredential')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByIdentityCredential','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

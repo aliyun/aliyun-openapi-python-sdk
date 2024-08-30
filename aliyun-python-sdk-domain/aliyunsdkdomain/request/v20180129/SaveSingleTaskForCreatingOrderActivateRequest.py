@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderActivate')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderActivate','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,81 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_Country(self, Country):  # String
 		self.add_query_param('Country', Country)
+	def get_Dns2(self): # String
+		return self.get_query_params().get('Dns2')
+
+	def set_Dns2(self, Dns2):  # String
+		self.add_query_param('Dns2', Dns2)
+	def get_Dns1(self): # String
+		return self.get_query_params().get('Dns1')
+
+	def set_Dns1(self, Dns1):  # String
+		self.add_query_param('Dns1', Dns1)
+	def get_CouponNo(self): # String
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self, CouponNo):  # String
+		self.add_query_param('CouponNo', CouponNo)
+	def get_ZhCity(self): # String
+		return self.get_query_params().get('ZhCity')
+
+	def set_ZhCity(self, ZhCity):  # String
+		self.add_query_param('ZhCity', ZhCity)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_TelExt(self): # String
+		return self.get_query_params().get('TelExt')
+
+	def set_TelExt(self, TelExt):  # String
+		self.add_query_param('TelExt', TelExt)
+	def get_Province(self): # String
+		return self.get_query_params().get('Province')
+
+	def set_Province(self, Province):  # String
+		self.add_query_param('Province', Province)
+	def get_DomainName(self): # String
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self, DomainName):  # String
+		self.add_query_param('DomainName', DomainName)
+	def get_ZhAddress(self): # String
+		return self.get_query_params().get('ZhAddress')
+
+	def set_ZhAddress(self, ZhAddress):  # String
+		self.add_query_param('ZhAddress', ZhAddress)
+	def get_Telephone(self): # String
+		return self.get_query_params().get('Telephone')
+
+	def set_Telephone(self, Telephone):  # String
+		self.add_query_param('Telephone', Telephone)
+	def get_ZhProvince(self): # String
+		return self.get_query_params().get('ZhProvince')
+
+	def set_ZhProvince(self, ZhProvince):  # String
+		self.add_query_param('ZhProvince', ZhProvince)
+	def get_RegistrantOrganization(self): # String
+		return self.get_query_params().get('RegistrantOrganization')
+
+	def set_RegistrantOrganization(self, RegistrantOrganization):  # String
+		self.add_query_param('RegistrantOrganization', RegistrantOrganization)
+	def get_PromotionNo(self): # String
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self, PromotionNo):  # String
+		self.add_query_param('PromotionNo', PromotionNo)
+	def get_RegistrantName(self): # String
+		return self.get_query_params().get('RegistrantName')
+
+	def set_RegistrantName(self, RegistrantName):  # String
+		self.add_query_param('RegistrantName', RegistrantName)
+	def get_UsePromotion(self): # Boolean
+		return self.get_query_params().get('UsePromotion')
+
+	def set_UsePromotion(self, UsePromotion):  # Boolean
+		self.add_query_param('UsePromotion', UsePromotion)
 	def get_SubscriptionDuration(self): # Integer
 		return self.get_query_params().get('SubscriptionDuration')
 
@@ -51,51 +126,21 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_City(self, City):  # String
 		self.add_query_param('City', City)
-	def get_Dns2(self): # String
-		return self.get_query_params().get('Dns2')
-
-	def set_Dns2(self, Dns2):  # String
-		self.add_query_param('Dns2', Dns2)
-	def get_Dns1(self): # String
-		return self.get_query_params().get('Dns1')
-
-	def set_Dns1(self, Dns1):  # String
-		self.add_query_param('Dns1', Dns1)
 	def get_RegistrantProfileId(self): # Long
 		return self.get_query_params().get('RegistrantProfileId')
 
 	def set_RegistrantProfileId(self, RegistrantProfileId):  # Long
 		self.add_query_param('RegistrantProfileId', RegistrantProfileId)
-	def get_CouponNo(self): # String
-		return self.get_query_params().get('CouponNo')
-
-	def set_CouponNo(self, CouponNo):  # String
-		self.add_query_param('CouponNo', CouponNo)
 	def get_AliyunDns(self): # Boolean
 		return self.get_query_params().get('AliyunDns')
 
 	def set_AliyunDns(self, AliyunDns):  # Boolean
 		self.add_query_param('AliyunDns', AliyunDns)
-	def get_ZhCity(self): # String
-		return self.get_query_params().get('ZhCity')
-
-	def set_ZhCity(self, ZhCity):  # String
-		self.add_query_param('ZhCity', ZhCity)
-	def get_TelExt(self): # String
-		return self.get_query_params().get('TelExt')
-
-	def set_TelExt(self, TelExt):  # String
-		self.add_query_param('TelExt', TelExt)
 	def get_ZhRegistrantName(self): # String
 		return self.get_query_params().get('ZhRegistrantName')
 
 	def set_ZhRegistrantName(self, ZhRegistrantName):  # String
 		self.add_query_param('ZhRegistrantName', ZhRegistrantName)
-	def get_Province(self): # String
-		return self.get_query_params().get('Province')
-
-	def set_Province(self, Province):  # String
-		self.add_query_param('Province', Province)
 	def get_PostalCode(self): # String
 		return self.get_query_params().get('PostalCode')
 
@@ -126,26 +171,11 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_TelArea(self, TelArea):  # String
 		self.add_query_param('TelArea', TelArea)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_ZhAddress(self): # String
-		return self.get_query_params().get('ZhAddress')
-
-	def set_ZhAddress(self, ZhAddress):  # String
-		self.add_query_param('ZhAddress', ZhAddress)
 	def get_RegistrantType(self): # String
 		return self.get_query_params().get('RegistrantType')
 
 	def set_RegistrantType(self, RegistrantType):  # String
 		self.add_query_param('RegistrantType', RegistrantType)
-	def get_Telephone(self): # String
-		return self.get_query_params().get('Telephone')
-
-	def set_Telephone(self, Telephone):  # String
-		self.add_query_param('Telephone', Telephone)
 	def get_TrademarkDomainActivation(self): # Boolean
 		return self.get_query_params().get('TrademarkDomainActivation')
 
@@ -156,21 +186,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_UseCoupon(self, UseCoupon):  # Boolean
 		self.add_query_param('UseCoupon', UseCoupon)
-	def get_ZhProvince(self): # String
-		return self.get_query_params().get('ZhProvince')
-
-	def set_ZhProvince(self, ZhProvince):  # String
-		self.add_query_param('ZhProvince', ZhProvince)
-	def get_RegistrantOrganization(self): # String
-		return self.get_query_params().get('RegistrantOrganization')
-
-	def set_RegistrantOrganization(self, RegistrantOrganization):  # String
-		self.add_query_param('RegistrantOrganization', RegistrantOrganization)
-	def get_PromotionNo(self): # String
-		return self.get_query_params().get('PromotionNo')
-
-	def set_PromotionNo(self, PromotionNo):  # String
-		self.add_query_param('PromotionNo', PromotionNo)
 	def get_EnableDomainProxy(self): # Boolean
 		return self.get_query_params().get('EnableDomainProxy')
 
@@ -181,13 +196,3 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_UserClientIp(self, UserClientIp):  # String
 		self.add_query_param('UserClientIp', UserClientIp)
-	def get_RegistrantName(self): # String
-		return self.get_query_params().get('RegistrantName')
-
-	def set_RegistrantName(self, RegistrantName):  # String
-		self.add_query_param('RegistrantName', RegistrantName)
-	def get_UsePromotion(self): # Boolean
-		return self.get_query_params().get('UsePromotion')
-
-	def set_UsePromotion(self, UsePromotion):  # Boolean
-		self.add_query_param('UsePromotion', UsePromotion)

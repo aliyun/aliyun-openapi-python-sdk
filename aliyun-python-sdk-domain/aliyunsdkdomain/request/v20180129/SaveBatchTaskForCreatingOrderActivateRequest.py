@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -54,6 +54,8 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.AliyunDns', OrderActivateParam[depth1].get('AliyunDns'))
 			if OrderActivateParam[depth1].get('ZhCity') is not None:
 				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhCity', OrderActivateParam[depth1].get('ZhCity'))
+			if OrderActivateParam[depth1].get('ResourceGroupId') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ResourceGroupId', OrderActivateParam[depth1].get('ResourceGroupId'))
 			if OrderActivateParam[depth1].get('TelExt') is not None:
 				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.TelExt', OrderActivateParam[depth1].get('TelExt'))
 			if OrderActivateParam[depth1].get('ZhRegistrantName') is not None:

@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class QueryRegistrantProfilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryRegistrantProfiles')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryRegistrantProfiles','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class QueryRegistrantProfilesRequest(RpcRequest):
 
 	def set_RegistrantProfileId(self, RegistrantProfileId):  # Long
 		self.add_query_param('RegistrantProfileId', RegistrantProfileId)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 

@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class ListServerLockRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ListServerLock')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ListServerLock','domain')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class ListServerLockRequest(RpcRequest):
 
 	def set_BeginStartDate(self, BeginStartDate):  # Long
 		self.add_query_param('BeginStartDate', BeginStartDate)
+	def get_OrderByType(self): # String
+		return self.get_query_params().get('OrderByType')
+
+	def set_OrderByType(self, OrderByType):  # String
+		self.add_query_param('OrderByType', OrderByType)
 	def get_ServerLockStatus(self): # Integer
 		return self.get_query_params().get('ServerLockStatus')
 
@@ -76,6 +81,11 @@ class ListServerLockRequest(RpcRequest):
 
 	def set_DomainName(self, DomainName):  # String
 		self.add_query_param('DomainName', DomainName)
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)
 	def get_EndStartDate(self): # Long
 		return self.get_query_params().get('EndStartDate')
 
