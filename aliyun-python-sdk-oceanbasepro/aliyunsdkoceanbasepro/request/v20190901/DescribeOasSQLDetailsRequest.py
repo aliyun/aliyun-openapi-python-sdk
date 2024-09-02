@@ -36,6 +36,11 @@ class DescribeOasSQLDetailsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
+	def get_ParseTable(self): # Boolean
+		return self.get_body_params().get('ParseTable')
+
+	def set_ParseTable(self, ParseTable):  # Boolean
+		self.add_body_params('ParseTable', ParseTable)
 	def get_DynamicSql(self): # Boolean
 		return self.get_body_params().get('DynamicSql')
 
