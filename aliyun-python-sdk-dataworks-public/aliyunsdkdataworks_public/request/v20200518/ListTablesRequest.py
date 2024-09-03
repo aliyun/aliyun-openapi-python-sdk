@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class DeleteLineageRelationRequest(RpcRequest):
+class ListTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteLineageRelation')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListTables')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +32,18 @@ class DeleteLineageRelationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SrcEntityQualifiedName(self): # String
-		return self.get_query_params().get('SrcEntityQualifiedName')
+	def get_DataSourceType(self): # String
+		return self.get_query_params().get('DataSourceType')
 
-	def set_SrcEntityQualifiedName(self, SrcEntityQualifiedName):  # String
-		self.add_query_param('SrcEntityQualifiedName', SrcEntityQualifiedName)
-	def get_DestEntityQualifiedName(self): # String
-		return self.get_query_params().get('DestEntityQualifiedName')
+	def set_DataSourceType(self, DataSourceType):  # String
+		self.add_query_param('DataSourceType', DataSourceType)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_DestEntityQualifiedName(self, DestEntityQualifiedName):  # String
-		self.add_query_param('DestEntityQualifiedName', DestEntityQualifiedName)
-	def get_RelationshipType(self): # String
-		return self.get_query_params().get('RelationshipType')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_RelationshipType(self, RelationshipType):  # String
-		self.add_query_param('RelationshipType', RelationshipType)
-	def get_RelationshipGuid(self): # String
-		return self.get_query_params().get('RelationshipGuid')
-
-	def set_RelationshipGuid(self, RelationshipGuid):  # String
-		self.add_query_param('RelationshipGuid', RelationshipGuid)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

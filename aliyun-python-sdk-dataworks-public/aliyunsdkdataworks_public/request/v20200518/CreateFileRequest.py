@@ -101,6 +101,11 @@ class CreateFileRequest(RpcRequest):
 
 	def set_CreateFolderIfNotExists(self, CreateFolderIfNotExists):  # Boolean
 		self.add_body_params('CreateFolderIfNotExists', CreateFolderIfNotExists)
+	def get_ApplyScheduleImmediately(self): # Boolean
+		return self.get_body_params().get('ApplyScheduleImmediately')
+
+	def set_ApplyScheduleImmediately(self, ApplyScheduleImmediately):  # Boolean
+		self.add_body_params('ApplyScheduleImmediately', ApplyScheduleImmediately)
 	def get_RerunMode(self): # String
 		return self.get_body_params().get('RerunMode')
 
