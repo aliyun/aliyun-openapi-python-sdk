@@ -76,6 +76,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_EnhancedNetwork(self): # Struct
+		return self.get_query_params().get('EnhancedNetwork')
+
+	def set_EnhancedNetwork(self, EnhancedNetwork):  # Struct
+		if EnhancedNetwork.get('EnableSriov') is not None:
+			self.add_query_param('EnhancedNetwork.EnableSriov', EnhancedNetwork.get('EnableSriov'))
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

@@ -106,6 +106,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # Json
 		self.add_query_param('Parameters', Parameters)
+	def get_Launcher(self): # String
+		return self.get_query_params().get('Launcher')
+
+	def set_Launcher(self, Launcher):  # String
+		self.add_query_param('Launcher', Launcher)
 	def get_ContainerName(self): # String
 		return self.get_query_params().get('ContainerName')
 

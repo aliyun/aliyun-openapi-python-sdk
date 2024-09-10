@@ -46,6 +46,11 @@ class PurchaseReservedInstancesOfferingRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 

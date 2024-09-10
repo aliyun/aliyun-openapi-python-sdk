@@ -66,6 +66,12 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 			self.add_query_param('NetworkInterfaceTrafficConfig.RxQueueSize', NetworkInterfaceTrafficConfig.get('RxQueueSize'))
 		if NetworkInterfaceTrafficConfig.get('TxQueueSize') is not None:
 			self.add_query_param('NetworkInterfaceTrafficConfig.TxQueueSize', NetworkInterfaceTrafficConfig.get('TxQueueSize'))
+	def get_EnhancedNetwork(self): # Struct
+		return self.get_query_params().get('EnhancedNetwork')
+
+	def set_EnhancedNetwork(self, EnhancedNetwork):  # Struct
+		if EnhancedNetwork.get('EnableSriov') is not None:
+			self.add_query_param('EnhancedNetwork.EnableSriov', EnhancedNetwork.get('EnableSriov'))
 	def get_NetworkInterfaceName(self): # String
 		return self.get_query_params().get('NetworkInterfaceName')
 

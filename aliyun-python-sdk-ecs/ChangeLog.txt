@@ -1,3 +1,6 @@
+2024-09-10 Version: 4.24.74
+- Update EBS default encrypted APIs from private to public.
+
 2024-05-23 Version: 4.24.73
 - Add SnapshotLinkId for DescribeSnapshots.
 

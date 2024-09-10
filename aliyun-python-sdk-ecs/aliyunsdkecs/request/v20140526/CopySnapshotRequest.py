@@ -41,6 +41,11 @@ class CopySnapshotRequest(RpcRequest):
 
 	def set_SnapshotId(self, SnapshotId):  # String
 		self.add_query_param('SnapshotId', SnapshotId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_DestinationRegionId(self): # String
 		return self.get_query_params().get('DestinationRegionId')
 

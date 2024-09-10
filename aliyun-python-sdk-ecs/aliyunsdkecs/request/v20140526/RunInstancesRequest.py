@@ -203,6 +203,20 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PasswordInherit(self, PasswordInherit):  # Boolean
 		self.add_query_param('PasswordInherit', PasswordInherit)
+	def get_PrivateDnsNameOptions(self): # Struct
+		return self.get_query_params().get('PrivateDnsNameOptions')
+
+	def set_PrivateDnsNameOptions(self, PrivateDnsNameOptions):  # Struct
+		if PrivateDnsNameOptions.get('EnableInstanceIdDnsARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableInstanceIdDnsARecord', PrivateDnsNameOptions.get('EnableInstanceIdDnsARecord'))
+		if PrivateDnsNameOptions.get('EnableInstanceIdDnsAAAARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord', PrivateDnsNameOptions.get('EnableInstanceIdDnsAAAARecord'))
+		if PrivateDnsNameOptions.get('EnableIpDnsARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsARecord', PrivateDnsNameOptions.get('EnableIpDnsARecord'))
+		if PrivateDnsNameOptions.get('EnableIpDnsPtrRecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsPtrRecord', PrivateDnsNameOptions.get('EnableIpDnsPtrRecord'))
+		if PrivateDnsNameOptions.get('HostnameType') is not None:
+			self.add_query_param('PrivateDnsNameOptions.HostnameType', PrivateDnsNameOptions.get('HostnameType'))
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 

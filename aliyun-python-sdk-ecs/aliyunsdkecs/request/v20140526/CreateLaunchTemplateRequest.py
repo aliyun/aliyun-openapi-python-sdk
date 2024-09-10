@@ -109,6 +109,11 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_SystemDiskAutoSnapshotPolicyId(self, SystemDiskAutoSnapshotPolicyId):  # String
 		self.add_query_param('SystemDisk.AutoSnapshotPolicyId', SystemDiskAutoSnapshotPolicyId)
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -149,11 +154,21 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_SystemDiskBurstingEnabled(self, SystemDiskBurstingEnabled):  # Boolean
 		self.add_query_param('SystemDisk.BurstingEnabled', SystemDiskBurstingEnabled)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 

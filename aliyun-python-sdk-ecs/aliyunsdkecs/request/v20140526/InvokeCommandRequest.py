@@ -140,3 +140,8 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_Username(self, Username):  # String
 		self.add_query_param('Username', Username)
+	def get_Launcher(self): # String
+		return self.get_query_params().get('Launcher')
+
+	def set_Launcher(self, Launcher):  # String
+		self.add_query_param('Launcher', Launcher)

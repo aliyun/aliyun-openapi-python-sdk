@@ -71,6 +71,20 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_PrivateDnsNameOptions(self): # Struct
+		return self.get_query_params().get('PrivateDnsNameOptions')
+
+	def set_PrivateDnsNameOptions(self, PrivateDnsNameOptions):  # Struct
+		if PrivateDnsNameOptions.get('HostnameType') is not None:
+			self.add_query_param('PrivateDnsNameOptions.HostnameType', PrivateDnsNameOptions.get('HostnameType'))
+		if PrivateDnsNameOptions.get('EnableInstanceIdDnsARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableInstanceIdDnsARecord', PrivateDnsNameOptions.get('EnableInstanceIdDnsARecord'))
+		if PrivateDnsNameOptions.get('EnableInstanceIdDnsAAAARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableInstanceIdDnsAAAARecord', PrivateDnsNameOptions.get('EnableInstanceIdDnsAAAARecord'))
+		if PrivateDnsNameOptions.get('EnableIpDnsARecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsARecord', PrivateDnsNameOptions.get('EnableIpDnsARecord'))
+		if PrivateDnsNameOptions.get('EnableIpDnsPtrRecord') is not None:
+			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsPtrRecord', PrivateDnsNameOptions.get('EnableIpDnsPtrRecord'))
 	def get_CpuOptionsTopologyType(self): # String
 		return self.get_query_params().get('CpuOptions.TopologyType')
 
