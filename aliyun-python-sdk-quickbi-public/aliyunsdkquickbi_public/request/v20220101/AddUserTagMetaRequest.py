@@ -25,13 +25,13 @@ class AddUserTagMetaRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddUserTagMeta','2.2.0')
 		self.set_method('POST')
 
-	def get_TagDescription(self): # String
-		return self.get_query_params().get('TagDescription')
-
-	def set_TagDescription(self, TagDescription):  # String
-		self.add_query_param('TagDescription', TagDescription)
 	def get_TagName(self): # String
 		return self.get_query_params().get('TagName')
 
 	def set_TagName(self, TagName):  # String
 		self.add_query_param('TagName', TagName)
+	def get_TagDescription(self): # String
+		return self.get_query_params().get('TagDescription')
+
+	def set_TagDescription(self, TagDescription):  # String
+		self.add_query_param('TagDescription', TagDescription)

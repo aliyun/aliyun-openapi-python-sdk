@@ -25,6 +25,11 @@ class UpdateUserTagMetaRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUserTagMeta','2.2.0')
 		self.set_method('POST')
 
+	def get_TagId(self): # String
+		return self.get_query_params().get('TagId')
+
+	def set_TagId(self, TagId):  # String
+		self.add_query_param('TagId', TagId)
 	def get_TagDescription(self): # String
 		return self.get_query_params().get('TagDescription')
 
@@ -35,8 +40,3 @@ class UpdateUserTagMetaRequest(RpcRequest):
 
 	def set_TagName(self, TagName):  # String
 		self.add_query_param('TagName', TagName)
-	def get_TagId(self): # String
-		return self.get_query_params().get('TagId')
-
-	def set_TagId(self, TagId):  # String
-		self.add_query_param('TagId', TagId)

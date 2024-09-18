@@ -25,26 +25,26 @@ class QueryWorksByOrganizationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorksByOrganization','2.2.0')
 		self.set_method('POST')
 
-	def get_WorksType(self): # String
-		return self.get_query_params().get('WorksType')
-
-	def set_WorksType(self, WorksType):  # String
-		self.add_query_param('WorksType', WorksType)
 	def get_ThirdPartAuthFlag(self): # Integer
 		return self.get_query_params().get('ThirdPartAuthFlag')
 
 	def set_ThirdPartAuthFlag(self, ThirdPartAuthFlag):  # Integer
 		self.add_query_param('ThirdPartAuthFlag', ThirdPartAuthFlag)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_WorksType(self): # String
+		return self.get_query_params().get('WorksType')
+
+	def set_WorksType(self, WorksType):  # String
+		self.add_query_param('WorksType', WorksType)
 	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 

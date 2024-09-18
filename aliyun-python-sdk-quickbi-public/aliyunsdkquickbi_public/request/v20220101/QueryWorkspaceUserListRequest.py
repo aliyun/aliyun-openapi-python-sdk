@@ -25,6 +25,11 @@ class QueryWorkspaceUserListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorkspaceUserList','2.2.0')
 		self.set_method('POST')
 
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -35,11 +40,6 @@ class QueryWorkspaceUserListRequest(RpcRequest):
 
 	def set_Keyword(self, Keyword):  # String
 		self.add_query_param('Keyword', Keyword)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
 	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 

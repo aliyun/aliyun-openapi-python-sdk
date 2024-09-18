@@ -30,11 +30,6 @@ class CreateTicket4CopilotRequest(RpcRequest):
 
 	def set_CopilotId(self, CopilotId):  # String
 		self.add_query_param('CopilotId', CopilotId)
-	def get_ExpireTime(self): # Integer
-		return self.get_query_params().get('ExpireTime')
-
-	def set_ExpireTime(self, ExpireTime):  # Integer
-		self.add_query_param('ExpireTime', ExpireTime)
 	def get_AccountType(self): # Integer
 		return self.get_query_params().get('AccountType')
 
@@ -50,6 +45,11 @@ class CreateTicket4CopilotRequest(RpcRequest):
 
 	def set_AccountName(self, AccountName):  # String
 		self.add_query_param('AccountName', AccountName)
+	def get_ExpireTime(self): # Integer
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self, ExpireTime):  # Integer
+		self.add_query_param('ExpireTime', ExpireTime)
 	def get_TicketNum(self): # Integer
 		return self.get_query_params().get('TicketNum')
 

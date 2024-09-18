@@ -25,11 +25,6 @@ class QueryWorksByWorkspaceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryWorksByWorkspace','2.2.0')
 		self.set_method('POST')
 
-	def get_WorksType(self): # String
-		return self.get_query_params().get('WorksType')
-
-	def set_WorksType(self, WorksType):  # String
-		self.add_query_param('WorksType', WorksType)
 	def get_ThirdPartAuthFlag(self): # Integer
 		return self.get_query_params().get('ThirdPartAuthFlag')
 
@@ -45,6 +40,11 @@ class QueryWorksByWorkspaceRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_WorksType(self): # String
+		return self.get_query_params().get('WorksType')
+
+	def set_WorksType(self, WorksType):  # String
+		self.add_query_param('WorksType', WorksType)
 	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 

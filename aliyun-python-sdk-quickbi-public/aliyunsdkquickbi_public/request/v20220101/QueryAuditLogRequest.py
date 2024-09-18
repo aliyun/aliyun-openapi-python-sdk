@@ -30,6 +30,11 @@ class QueryAuditLogRequest(RpcRequest):
 
 	def set_StartDate(self, StartDate):  # String
 		self.add_query_param('StartDate', StartDate)
+	def get_LogType(self): # String
+		return self.get_query_params().get('LogType')
+
+	def set_LogType(self, LogType):  # String
+		self.add_query_param('LogType', LogType)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
@@ -40,11 +45,6 @@ class QueryAuditLogRequest(RpcRequest):
 
 	def set_OperatorTypes(self, OperatorTypes):  # String
 		self.add_query_param('OperatorTypes', OperatorTypes)
-	def get_LogType(self): # String
-		return self.get_query_params().get('LogType')
-
-	def set_LogType(self, LogType):  # String
-		self.add_query_param('LogType', LogType)
 	def get_EndDate(self): # String
 		return self.get_query_params().get('EndDate')
 

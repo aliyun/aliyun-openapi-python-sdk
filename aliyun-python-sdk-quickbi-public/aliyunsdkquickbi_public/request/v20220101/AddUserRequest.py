@@ -30,11 +30,6 @@ class AddUserRequest(RpcRequest):
 
 	def set_AdminUser(self, AdminUser):  # Boolean
 		self.add_query_param('AdminUser', AdminUser)
-	def get_UserType(self): # Integer
-		return self.get_query_params().get('UserType')
-
-	def set_UserType(self, UserType):  # Integer
-		self.add_query_param('UserType', UserType)
 	def get_RoleIds(self): # String
 		return self.get_body_params().get('RoleIds')
 
@@ -55,3 +50,8 @@ class AddUserRequest(RpcRequest):
 
 	def set_AuthAdminUser(self, AuthAdminUser):  # Boolean
 		self.add_query_param('AuthAdminUser', AuthAdminUser)
+	def get_UserType(self): # Integer
+		return self.get_query_params().get('UserType')
+
+	def set_UserType(self, UserType):  # Integer
+		self.add_query_param('UserType', UserType)

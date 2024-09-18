@@ -35,11 +35,6 @@ class QueryComponentPerformanceRequest(RpcRequest):
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -55,6 +50,11 @@ class QueryComponentPerformanceRequest(RpcRequest):
 
 	def set_QueryType(self, QueryType):  # String
 		self.add_query_param('QueryType', QueryType)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 

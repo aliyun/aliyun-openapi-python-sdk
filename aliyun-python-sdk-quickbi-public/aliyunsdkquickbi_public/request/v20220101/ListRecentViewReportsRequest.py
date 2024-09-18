@@ -35,16 +35,6 @@ class ListRecentViewReportsRequest(RpcRequest):
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
-	def get_QueryMode(self): # String
-		return self.get_query_params().get('QueryMode')
-
-	def set_QueryMode(self, QueryMode):  # String
-		self.add_query_param('QueryMode', QueryMode)
-	def get_TreeType(self): # String
-		return self.get_query_params().get('TreeType')
-
-	def set_TreeType(self, TreeType):  # String
-		self.add_query_param('TreeType', TreeType)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -55,3 +45,13 @@ class ListRecentViewReportsRequest(RpcRequest):
 
 	def set_Keyword(self, Keyword):  # String
 		self.add_query_param('Keyword', Keyword)
+	def get_QueryMode(self): # String
+		return self.get_query_params().get('QueryMode')
+
+	def set_QueryMode(self, QueryMode):  # String
+		self.add_query_param('QueryMode', QueryMode)
+	def get_TreeType(self): # String
+		return self.get_query_params().get('TreeType')
+
+	def set_TreeType(self, TreeType):  # String
+		self.add_query_param('TreeType', TreeType)

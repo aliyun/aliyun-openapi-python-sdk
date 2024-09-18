@@ -25,16 +25,16 @@ class ListApiDatasourceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListApiDatasource','2.2.0')
 		self.set_method('POST')
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_KeyWord(self): # String
 		return self.get_query_params().get('KeyWord')
 

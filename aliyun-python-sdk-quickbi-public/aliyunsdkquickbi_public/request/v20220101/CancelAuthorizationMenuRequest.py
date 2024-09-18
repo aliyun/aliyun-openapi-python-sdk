@@ -30,16 +30,16 @@ class CancelAuthorizationMenuRequest(RpcRequest):
 
 	def set_DataPortalId(self, DataPortalId):  # String
 		self.add_query_param('DataPortalId', DataPortalId)
-	def get_UserIds(self): # String
-		return self.get_query_params().get('UserIds')
-
-	def set_UserIds(self, UserIds):  # String
-		self.add_query_param('UserIds', UserIds)
 	def get_UserGroupIds(self): # String
 		return self.get_query_params().get('UserGroupIds')
 
 	def set_UserGroupIds(self, UserGroupIds):  # String
 		self.add_query_param('UserGroupIds', UserGroupIds)
+	def get_UserIds(self): # String
+		return self.get_query_params().get('UserIds')
+
+	def set_UserIds(self, UserIds):  # String
+		self.add_query_param('UserIds', UserIds)
 	def get_MenuIds(self): # String
 		return self.get_query_params().get('MenuIds')
 

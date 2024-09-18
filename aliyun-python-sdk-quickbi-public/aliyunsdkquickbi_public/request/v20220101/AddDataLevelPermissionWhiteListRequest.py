@@ -30,6 +30,11 @@ class AddDataLevelPermissionWhiteListRequest(RpcRequest):
 
 	def set_TargetType(self, TargetType):  # String
 		self.add_query_param('TargetType', TargetType)
+	def get_CubeId(self): # String
+		return self.get_query_params().get('CubeId')
+
+	def set_CubeId(self, CubeId):  # String
+		self.add_query_param('CubeId', CubeId)
 	def get_TargetIds(self): # String
 		return self.get_query_params().get('TargetIds')
 
@@ -45,8 +50,3 @@ class AddDataLevelPermissionWhiteListRequest(RpcRequest):
 
 	def set_OperateType(self, OperateType):  # String
 		self.add_query_param('OperateType', OperateType)
-	def get_CubeId(self): # String
-		return self.get_query_params().get('CubeId')
-
-	def set_CubeId(self, CubeId):  # String
-		self.add_query_param('CubeId', CubeId)

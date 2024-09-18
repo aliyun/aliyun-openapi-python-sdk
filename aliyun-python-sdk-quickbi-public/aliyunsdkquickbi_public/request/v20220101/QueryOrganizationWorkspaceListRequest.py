@@ -25,16 +25,6 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryOrganizationWorkspaceList','2.2.0')
 		self.set_method('POST')
 
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
@@ -45,3 +35,13 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Keyword(self): # String
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self, Keyword):  # String
+		self.add_query_param('Keyword', Keyword)

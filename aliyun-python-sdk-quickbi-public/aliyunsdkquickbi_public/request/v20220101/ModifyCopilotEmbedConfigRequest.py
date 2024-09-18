@@ -30,11 +30,6 @@ class ModifyCopilotEmbedConfigRequest(RpcRequest):
 
 	def set_CopilotId(self, CopilotId):  # String
 		self.add_query_param('CopilotId', CopilotId)
-	def get_AgentName(self): # String
-		return self.get_query_params().get('AgentName')
-
-	def set_AgentName(self, AgentName):  # String
-		self.add_query_param('AgentName', AgentName)
 	def get_DataRange(self): # String
 		return self.get_query_params().get('DataRange')
 
@@ -45,3 +40,8 @@ class ModifyCopilotEmbedConfigRequest(RpcRequest):
 
 	def set_ModuleName(self, ModuleName):  # String
 		self.add_query_param('ModuleName', ModuleName)
+	def get_AgentName(self): # String
+		return self.get_query_params().get('AgentName')
+
+	def set_AgentName(self, AgentName):  # String
+		self.add_query_param('AgentName', AgentName)

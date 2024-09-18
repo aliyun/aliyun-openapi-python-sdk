@@ -25,21 +25,11 @@ class CreateTicketRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CreateTicket','2.2.0')
 		self.set_method('POST')
 
-	def get_ExpireTime(self): # Integer
-		return self.get_query_params().get('ExpireTime')
-
-	def set_ExpireTime(self, ExpireTime):  # Integer
-		self.add_query_param('ExpireTime', ExpireTime)
 	def get_AccountType(self): # Integer
 		return self.get_query_params().get('AccountType')
 
 	def set_AccountType(self, AccountType):  # Integer
 		self.add_query_param('AccountType', AccountType)
-	def get_CmptId(self): # String
-		return self.get_query_params().get('CmptId')
-
-	def set_CmptId(self, CmptId):  # String
-		self.add_query_param('CmptId', CmptId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
@@ -50,6 +40,16 @@ class CreateTicketRequest(RpcRequest):
 
 	def set_AccountName(self, AccountName):  # String
 		self.add_query_param('AccountName', AccountName)
+	def get_ExpireTime(self): # Integer
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self, ExpireTime):  # Integer
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_CmptId(self): # String
+		return self.get_query_params().get('CmptId')
+
+	def set_CmptId(self, CmptId):  # String
+		self.add_query_param('CmptId', CmptId)
 	def get_GlobalParam(self): # String
 		return self.get_query_params().get('GlobalParam')
 

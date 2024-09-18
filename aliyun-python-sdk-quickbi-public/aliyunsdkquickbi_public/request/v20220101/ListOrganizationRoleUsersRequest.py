@@ -30,16 +30,16 @@ class ListOrganizationRoleUsersRequest(RpcRequest):
 
 	def set_RoleId(self, RoleId):  # Long
 		self.add_query_param('RoleId', RoleId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self, PageNum):  # Integer
 		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 

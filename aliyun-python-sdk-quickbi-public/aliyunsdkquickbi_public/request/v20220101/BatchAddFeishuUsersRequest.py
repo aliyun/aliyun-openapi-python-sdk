@@ -25,16 +25,16 @@ class BatchAddFeishuUsersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'BatchAddFeishuUsers','2.2.0')
 		self.set_method('POST')
 
+	def get_IsAuthAdmin(self): # Boolean
+		return self.get_query_params().get('IsAuthAdmin')
+
+	def set_IsAuthAdmin(self, IsAuthAdmin):  # Boolean
+		self.add_query_param('IsAuthAdmin', IsAuthAdmin)
 	def get_IsAdmin(self): # Boolean
 		return self.get_query_params().get('IsAdmin')
 
 	def set_IsAdmin(self, IsAdmin):  # Boolean
 		self.add_query_param('IsAdmin', IsAdmin)
-	def get_FeishuUsers(self): # String
-		return self.get_query_params().get('FeishuUsers')
-
-	def set_FeishuUsers(self, FeishuUsers):  # String
-		self.add_query_param('FeishuUsers', FeishuUsers)
 	def get_UserType(self): # Integer
 		return self.get_query_params().get('UserType')
 
@@ -45,8 +45,8 @@ class BatchAddFeishuUsersRequest(RpcRequest):
 
 	def set_UserGroupIds(self, UserGroupIds):  # String
 		self.add_query_param('UserGroupIds', UserGroupIds)
-	def get_IsAuthAdmin(self): # Boolean
-		return self.get_query_params().get('IsAuthAdmin')
+	def get_FeishuUsers(self): # String
+		return self.get_query_params().get('FeishuUsers')
 
-	def set_IsAuthAdmin(self, IsAuthAdmin):  # Boolean
-		self.add_query_param('IsAuthAdmin', IsAuthAdmin)
+	def set_FeishuUsers(self, FeishuUsers):  # String
+		self.add_query_param('FeishuUsers', FeishuUsers)

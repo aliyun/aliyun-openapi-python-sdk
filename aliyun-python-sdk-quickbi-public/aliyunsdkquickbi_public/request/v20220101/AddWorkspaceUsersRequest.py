@@ -25,16 +25,16 @@ class AddWorkspaceUsersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddWorkspaceUsers','2.2.0')
 		self.set_method('POST')
 
-	def get_UserIds(self): # String
-		return self.get_query_params().get('UserIds')
-
-	def set_UserIds(self, UserIds):  # String
-		self.add_query_param('UserIds', UserIds)
 	def get_RoleId(self): # Long
 		return self.get_query_params().get('RoleId')
 
 	def set_RoleId(self, RoleId):  # Long
 		self.add_query_param('RoleId', RoleId)
+	def get_UserIds(self): # String
+		return self.get_query_params().get('UserIds')
+
+	def set_UserIds(self, UserIds):  # String
+		self.add_query_param('UserIds', UserIds)
 	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 

@@ -30,13 +30,13 @@ class CancelReportShareRequest(RpcRequest):
 
 	def set_ReportId(self, ReportId):  # String
 		self.add_query_param('ReportId', ReportId)
-	def get_ShareToType(self): # Integer
-		return self.get_query_params().get('ShareToType')
-
-	def set_ShareToType(self, ShareToType):  # Integer
-		self.add_query_param('ShareToType', ShareToType)
 	def get_ShareToIds(self): # String
 		return self.get_query_params().get('ShareToIds')
 
 	def set_ShareToIds(self, ShareToIds):  # String
 		self.add_query_param('ShareToIds', ShareToIds)
+	def get_ShareToType(self): # Integer
+		return self.get_query_params().get('ShareToType')
+
+	def set_ShareToType(self, ShareToType):  # Integer
+		self.add_query_param('ShareToType', ShareToType)

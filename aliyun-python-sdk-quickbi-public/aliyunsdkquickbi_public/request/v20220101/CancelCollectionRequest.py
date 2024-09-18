@@ -25,13 +25,13 @@ class CancelCollectionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CancelCollection','2.2.0')
 		self.set_method('POST')
 
-	def get_WorksId(self): # String
-		return self.get_query_params().get('WorksId')
-
-	def set_WorksId(self, WorksId):  # String
-		self.add_query_param('WorksId', WorksId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_WorksId(self): # String
+		return self.get_query_params().get('WorksId')
+
+	def set_WorksId(self, WorksId):  # String
+		self.add_query_param('WorksId', WorksId)

@@ -25,16 +25,16 @@ class AddShareReportRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'AddShareReport','2.2.0')
 		self.set_method('POST')
 
-	def get_AuthPoint(self): # Integer
-		return self.get_query_params().get('AuthPoint')
-
-	def set_AuthPoint(self, AuthPoint):  # Integer
-		self.add_query_param('AuthPoint', AuthPoint)
 	def get_ExpireDate(self): # Long
 		return self.get_query_params().get('ExpireDate')
 
 	def set_ExpireDate(self, ExpireDate):  # Long
 		self.add_query_param('ExpireDate', ExpireDate)
+	def get_AuthPoint(self): # Integer
+		return self.get_query_params().get('AuthPoint')
+
+	def set_AuthPoint(self, AuthPoint):  # Integer
+		self.add_query_param('AuthPoint', AuthPoint)
 	def get_ShareToType(self): # Integer
 		return self.get_query_params().get('ShareToType')
 

@@ -25,13 +25,13 @@ class UpdateEmbeddedStatusRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateEmbeddedStatus','2.2.0')
 		self.set_method('POST')
 
-	def get_WorksId(self): # String
-		return self.get_query_params().get('WorksId')
-
-	def set_WorksId(self, WorksId):  # String
-		self.add_query_param('WorksId', WorksId)
 	def get_ThirdPartAuthFlag(self): # Boolean
 		return self.get_query_params().get('ThirdPartAuthFlag')
 
 	def set_ThirdPartAuthFlag(self, ThirdPartAuthFlag):  # Boolean
 		self.add_query_param('ThirdPartAuthFlag', ThirdPartAuthFlag)
+	def get_WorksId(self): # String
+		return self.get_query_params().get('WorksId')
+
+	def set_WorksId(self, WorksId):  # String
+		self.add_query_param('WorksId', WorksId)

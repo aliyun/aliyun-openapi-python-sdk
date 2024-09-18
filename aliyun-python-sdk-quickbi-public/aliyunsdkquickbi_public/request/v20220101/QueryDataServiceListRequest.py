@@ -25,6 +25,16 @@ class QueryDataServiceListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryDataServiceList','2.2.0')
 		self.set_method('POST')
 
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_PageNo(self): # Integer
 		return self.get_query_params().get('PageNo')
 
@@ -35,13 +45,3 @@ class QueryDataServiceListRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)

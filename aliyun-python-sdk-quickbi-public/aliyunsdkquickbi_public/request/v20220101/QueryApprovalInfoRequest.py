@@ -25,6 +25,11 @@ class QueryApprovalInfoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryApprovalInfo','2.2.0')
 		self.set_method('POST')
 
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -35,11 +40,6 @@ class QueryApprovalInfoRequest(RpcRequest):
 
 	def set_Page(self, Page):  # Integer
 		self.add_query_param('Page', Page)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
 	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 
