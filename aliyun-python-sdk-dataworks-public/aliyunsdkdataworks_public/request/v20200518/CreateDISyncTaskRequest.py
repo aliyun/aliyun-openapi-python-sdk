@@ -52,10 +52,10 @@ class CreateDISyncTaskRequest(RpcRequest):
 	def set_TaskName(self, TaskName):  # String
 		self.add_query_param('TaskName', TaskName)
 	def get_TaskContent(self): # String
-		return self.get_query_params().get('TaskContent')
+		return self.get_body_params().get('TaskContent')
 
 	def set_TaskContent(self, TaskContent):  # String
-		self.add_query_param('TaskContent', TaskContent)
+		self.add_body_params('TaskContent', TaskContent)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
