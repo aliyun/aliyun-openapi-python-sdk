@@ -56,3 +56,8 @@ class DisablePolicyTypeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_OpenType(self): # String
+		return self.get_query_params().get('OpenType')
+
+	def set_OpenType(self, OpenType):  # String
+		self.add_query_param('OpenType', OpenType)
