@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/aliyun-python-sdk-core.svg)](https://badge.fury.io/py/aliyun-python-sdk-core)
 [![Python test](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/graph/badge.svg?token=qmWxah6dPs)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
+[![python](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)
 
 [中文文档](./README_zh.md)
 
@@ -21,6 +22,10 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 <a href="https://api.alibabacloud.com" target="api_explorer">
   <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
 </a>
+
+## Important Updates
+
+- Starting from version 2.16.0, the Alibaba Cloud Python SDK core library `aliyun-python-sdk-core` only supports Python 3.7 and above.
 
 ## Documentation
 

@@ -68,7 +68,6 @@ setup_args = {
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
@@ -76,7 +75,8 @@ setup_args = {
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
         'Topic :: Software Development',
-    )
+    ),
+    'python_requires': '>=3.7'
 }
 
 setup(name='aliyun-python-sdk-core', **setup_args)
