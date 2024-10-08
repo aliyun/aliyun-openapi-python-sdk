@@ -19,30 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListMultiAccountResourceGroupsRequest(RpcRequest):
+class ListSavedQueriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceCenter', '2022-12-01', 'ListMultiAccountResourceGroups')
+		RpcRequest.__init__(self, 'ResourceCenter', '2022-12-01', 'ListSavedQueries')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_AccountId(self): # String
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self, AccountId):  # String
-		self.add_query_param('AccountId', AccountId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_ResourceGroupIdss(self): # RepeatList
-		return self.get_query_params().get('ResourceGroupIds')
-
-	def set_ResourceGroupIdss(self, ResourceGroupIds):  # RepeatList
-		for depth1 in range(len(ResourceGroupIds)):
-			self.add_query_param('ResourceGroupIds.' + str(depth1 + 1), ResourceGroupIds[depth1])
-	def get_MaxResults(self): # Integer
+	def get_MaxResults(self): # String
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # Integer
+	def set_MaxResults(self, MaxResults):  # String
 		self.add_query_param('MaxResults', MaxResults)

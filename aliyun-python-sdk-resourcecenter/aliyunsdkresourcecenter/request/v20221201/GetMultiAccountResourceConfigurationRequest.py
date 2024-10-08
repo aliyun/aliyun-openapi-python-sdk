@@ -25,16 +25,6 @@ class GetMultiAccountResourceConfigurationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'ResourceCenter', '2022-12-01', 'GetMultiAccountResourceConfiguration')
 		self.set_method('POST')
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_AccountId(self): # String
 		return self.get_query_params().get('AccountId')
 
@@ -45,3 +35,13 @@ class GetMultiAccountResourceConfigurationRequest(RpcRequest):
 
 	def set_ResourceRegionId(self, ResourceRegionId):  # String
 		self.add_query_param('ResourceRegionId', ResourceRegionId)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
