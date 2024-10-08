@@ -42,11 +42,6 @@ class DescribeOtsTableSnapshotsRequest(RpcRequest):
 	def set_SnapshotIds(self, SnapshotIds):  # Array
 		for index1, value1 in enumerate(SnapshotIds):
 			self.add_body_params('SnapshotIds.' + str(index1 + 1), value1)
-	def get_EndTime(self): # Long
-		return self.get_body_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_body_params('EndTime', EndTime)
 	def get_CrossAccountRoleName(self): # String
 		return self.get_query_params().get('CrossAccountRoleName')
 
@@ -57,16 +52,6 @@ class DescribeOtsTableSnapshotsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # Long
 		self.add_body_params('StartTime', StartTime)
-	def get_OtsInstances(self): # Array
-		return self.get_body_params().get('OtsInstances')
-
-	def set_OtsInstances(self, OtsInstances):  # Array
-		for index1, value1 in enumerate(OtsInstances):
-			if value1.get('InstanceName') is not None:
-				self.add_body_params('OtsInstances.' + str(index1 + 1) + '.InstanceName', value1.get('InstanceName'))
-			if value1.get('TableNames') is not None:
-				for index2, value2 in enumerate(value1.get('TableNames')):
-					self.add_body_params('OtsInstances.' + str(index1 + 1) + '.TableNames.' + str(index2 + 1), value2)
 	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
 
@@ -77,6 +62,21 @@ class DescribeOtsTableSnapshotsRequest(RpcRequest):
 
 	def set_Limit(self, Limit):  # Integer
 		self.add_body_params('Limit', Limit)
+	def get_EndTime(self): # Long
+		return self.get_body_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_body_params('EndTime', EndTime)
+	def get_OtsInstances(self): # Array
+		return self.get_body_params().get('OtsInstances')
+
+	def set_OtsInstances(self, OtsInstances):  # Array
+		for index1, value1 in enumerate(OtsInstances):
+			if value1.get('InstanceName') is not None:
+				self.add_body_params('OtsInstances.' + str(index1 + 1) + '.InstanceName', value1.get('InstanceName'))
+			if value1.get('TableNames') is not None:
+				for index2, value2 in enumerate(value1.get('TableNames')):
+					self.add_body_params('OtsInstances.' + str(index1 + 1) + '.TableNames.' + str(index2 + 1), value2)
 	def get_CrossAccountUserId(self): # Long
 		return self.get_query_params().get('CrossAccountUserId')
 

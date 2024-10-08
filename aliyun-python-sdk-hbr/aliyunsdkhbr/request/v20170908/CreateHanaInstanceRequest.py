@@ -41,6 +41,16 @@ class CreateHanaInstanceRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
+	def get_CrossAccountType(self): # String
+		return self.get_query_params().get('CrossAccountType')
+
+	def set_CrossAccountType(self, CrossAccountType):  # String
+		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
+
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
 	def get_UseSsl(self): # Boolean
 		return self.get_query_params().get('UseSsl')
 
@@ -86,6 +96,11 @@ class CreateHanaInstanceRequest(RpcRequest):
 
 	def set_InstanceNumber(self, InstanceNumber):  # Integer
 		self.add_query_param('InstanceNumber', InstanceNumber)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
+
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)
 	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class DeleteUdmDiskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRegions','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteUdmDisk','hbr')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +32,8 @@ class DescribeRegionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DiskId(self): # String
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)

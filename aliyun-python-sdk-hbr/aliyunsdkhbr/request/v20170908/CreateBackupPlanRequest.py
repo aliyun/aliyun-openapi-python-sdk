@@ -139,6 +139,11 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def set_PlanName(self, PlanName):  # String
 		self.add_query_param('PlanName', PlanName)
+	def get_Disabled(self): # Boolean
+		return self.get_query_params().get('Disabled')
+
+	def set_Disabled(self, Disabled):  # Boolean
+		self.add_query_param('Disabled', Disabled)
 	def get_Retention(self): # Long
 		return self.get_query_params().get('Retention')
 

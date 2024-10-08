@@ -37,26 +37,11 @@ class DescribeHanaRestoresRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
-	def get_BackupId(self): # Long
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self, BackupId):  # Long
-		self.add_query_param('BackupId', BackupId)
 	def get_RestoreStatus(self): # String
 		return self.get_query_params().get('RestoreStatus')
 
 	def set_RestoreStatus(self, RestoreStatus):  # String
 		self.add_query_param('RestoreStatus', RestoreStatus)
-	def get_RestoreId(self): # String
-		return self.get_query_params().get('RestoreId')
-
-	def set_RestoreId(self, RestoreId):  # String
-		self.add_query_param('RestoreId', RestoreId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -67,13 +52,28 @@ class DescribeHanaRestoresRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_DatabaseName(self): # String
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_query_param('DatabaseName', DatabaseName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_BackupId(self): # Long
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # Long
+		self.add_query_param('BackupId', BackupId)
+	def get_RestoreId(self): # String
+		return self.get_query_params().get('RestoreId')
+
+	def set_RestoreId(self, RestoreId):  # String
+		self.add_query_param('RestoreId', RestoreId)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_DatabaseName(self): # String
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)

@@ -32,6 +32,11 @@ class CreatePolicyV2Request(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PolicyType(self): # String
+		return self.get_body_params().get('PolicyType')
+
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_body_params('PolicyType', PolicyType)
 	def get_Rules(self): # Array
 		return self.get_body_params().get('Rules')
 

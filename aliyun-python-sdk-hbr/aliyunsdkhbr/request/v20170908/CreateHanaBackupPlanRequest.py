@@ -37,31 +37,11 @@ class CreateHanaBackupPlanRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
-	def get_ClusterId(self): # String
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self, ClusterId):  # String
-		self.add_query_param('ClusterId', ClusterId)
-	def get_Schedule(self): # String
-		return self.get_query_params().get('Schedule')
-
-	def set_Schedule(self, Schedule):  # String
-		self.add_query_param('Schedule', Schedule)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_BackupPrefix(self): # String
-		return self.get_query_params().get('BackupPrefix')
-
-	def set_BackupPrefix(self, BackupPrefix):  # String
-		self.add_query_param('BackupPrefix', BackupPrefix)
-	def get_DatabaseName(self): # String
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self, DatabaseName):  # String
-		self.add_query_param('DatabaseName', DatabaseName)
 	def get_PlanName(self): # String
 		return self.get_query_params().get('PlanName')
 
@@ -72,3 +52,23 @@ class CreateHanaBackupPlanRequest(RpcRequest):
 
 	def set_BackupType(self, BackupType):  # String
 		self.add_query_param('BackupType', BackupType)
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Schedule(self): # String
+		return self.get_query_params().get('Schedule')
+
+	def set_Schedule(self, Schedule):  # String
+		self.add_query_param('Schedule', Schedule)
+	def get_BackupPrefix(self): # String
+		return self.get_query_params().get('BackupPrefix')
+
+	def set_BackupPrefix(self, BackupPrefix):  # String
+		self.add_query_param('BackupPrefix', BackupPrefix)
+	def get_DatabaseName(self): # String
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)

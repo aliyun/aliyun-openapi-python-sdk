@@ -36,11 +36,6 @@ class DescribeUdmSnapshotsRequest(RpcRequest):
 
 	def set_SnapshotIds(self, SnapshotIds):  # Json
 		self.add_body_params('SnapshotIds', SnapshotIds)
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
@@ -51,11 +46,6 @@ class DescribeUdmSnapshotsRequest(RpcRequest):
 
 	def set_JobId(self, JobId):  # String
 		self.add_query_param('JobId', JobId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_SourceType(self): # String
 		return self.get_query_params().get('SourceType')
 
@@ -66,6 +56,16 @@ class DescribeUdmSnapshotsRequest(RpcRequest):
 
 	def set_DiskId(self, DiskId):  # String
 		self.add_query_param('DiskId', DiskId)
+	def get_EndTime(self): # Long
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_UdmRegionId(self): # String
 		return self.get_query_params().get('UdmRegionId')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbr.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class DeleteUdmEcsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRegions','hbr')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteUdmEcsInstance','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,3 +31,8 @@ class DescribeRegionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

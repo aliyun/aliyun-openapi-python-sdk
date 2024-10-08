@@ -32,16 +32,6 @@ class CreateRestoreJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TargetPrefix(self): # String
-		return self.get_query_params().get('TargetPrefix')
-
-	def set_TargetPrefix(self, TargetPrefix):  # String
-		self.add_query_param('TargetPrefix', TargetPrefix)
-	def get_SnapshotId(self): # String
-		return self.get_query_params().get('SnapshotId')
-
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
 	def get_TargetCreateTime(self): # Long
 		return self.get_query_params().get('TargetCreateTime')
 
@@ -62,16 +52,6 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
 		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
-	def get_SnapshotHash(self): # String
-		return self.get_query_params().get('SnapshotHash')
-
-	def set_SnapshotHash(self, SnapshotHash):  # String
-		self.add_query_param('SnapshotHash', SnapshotHash)
-	def get_TargetTime(self): # Long
-		return self.get_query_params().get('TargetTime')
-
-	def set_TargetTime(self, TargetTime):  # Long
-		self.add_query_param('TargetTime', TargetTime)
 	def get_TargetInstanceName(self): # String
 		return self.get_query_params().get('TargetInstanceName')
 
@@ -92,6 +72,51 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_Exclude(self, Exclude):  # String
 		self.add_body_params('Exclude', Exclude)
+	def get_UdmDetail(self): # String
+		return self.get_query_params().get('UdmDetail')
+
+	def set_UdmDetail(self, UdmDetail):  # String
+		self.add_query_param('UdmDetail', UdmDetail)
+	def get_TargetTableName(self): # String
+		return self.get_query_params().get('TargetTableName')
+
+	def set_TargetTableName(self, TargetTableName):  # String
+		self.add_query_param('TargetTableName', TargetTableName)
+	def get_InitiatedByAck(self): # Boolean
+		return self.get_query_params().get('InitiatedByAck')
+
+	def set_InitiatedByAck(self, InitiatedByAck):  # Boolean
+		self.add_query_param('InitiatedByAck', InitiatedByAck)
+	def get_FailbackDetail(self): # String
+		return self.get_query_params().get('FailbackDetail')
+
+	def set_FailbackDetail(self, FailbackDetail):  # String
+		self.add_query_param('FailbackDetail', FailbackDetail)
+	def get_TargetPath(self): # String
+		return self.get_body_params().get('TargetPath')
+
+	def set_TargetPath(self, TargetPath):  # String
+		self.add_body_params('TargetPath', TargetPath)
+	def get_TargetPrefix(self): # String
+		return self.get_query_params().get('TargetPrefix')
+
+	def set_TargetPrefix(self, TargetPrefix):  # String
+		self.add_query_param('TargetPrefix', TargetPrefix)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
+
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
+	def get_SnapshotHash(self): # String
+		return self.get_query_params().get('SnapshotHash')
+
+	def set_SnapshotHash(self, SnapshotHash):  # String
+		self.add_query_param('SnapshotHash', SnapshotHash)
+	def get_TargetTime(self): # Long
+		return self.get_query_params().get('TargetTime')
+
+	def set_TargetTime(self, TargetTime):  # Long
+		self.add_query_param('TargetTime', TargetTime)
 	def get_TargetContainer(self): # String
 		return self.get_query_params().get('TargetContainer')
 
@@ -112,21 +137,6 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_Include(self, Include):  # String
 		self.add_body_params('Include', Include)
-	def get_UdmDetail(self): # String
-		return self.get_query_params().get('UdmDetail')
-
-	def set_UdmDetail(self, UdmDetail):  # String
-		self.add_query_param('UdmDetail', UdmDetail)
-	def get_TargetTableName(self): # String
-		return self.get_query_params().get('TargetTableName')
-
-	def set_TargetTableName(self, TargetTableName):  # String
-		self.add_query_param('TargetTableName', TargetTableName)
-	def get_InitiatedByAck(self): # Boolean
-		return self.get_query_params().get('InitiatedByAck')
-
-	def set_InitiatedByAck(self, InitiatedByAck):  # Boolean
-		self.add_query_param('InitiatedByAck', InitiatedByAck)
 	def get_RestoreType(self): # String
 		return self.get_query_params().get('RestoreType')
 
@@ -142,21 +152,11 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_OtsDetail(self, OtsDetail):  # Struct
 		self.add_body_params("OtsDetail", json.dumps(OtsDetail))
-	def get_FailbackDetail(self): # String
-		return self.get_query_params().get('FailbackDetail')
-
-	def set_FailbackDetail(self, FailbackDetail):  # String
-		self.add_query_param('FailbackDetail', FailbackDetail)
 	def get_TargetFileSystemId(self): # String
 		return self.get_query_params().get('TargetFileSystemId')
 
 	def set_TargetFileSystemId(self, TargetFileSystemId):  # String
 		self.add_query_param('TargetFileSystemId', TargetFileSystemId)
-	def get_TargetPath(self): # String
-		return self.get_body_params().get('TargetPath')
-
-	def set_TargetPath(self, TargetPath):  # String
-		self.add_body_params('TargetPath', TargetPath)
 	def get_CrossAccountUserId(self): # Long
 		return self.get_query_params().get('CrossAccountUserId')
 

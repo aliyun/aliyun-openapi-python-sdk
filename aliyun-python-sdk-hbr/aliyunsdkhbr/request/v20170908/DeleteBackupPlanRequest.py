@@ -36,6 +36,11 @@ class DeleteBackupPlanRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
+	def get_RequireNoRunningJobs(self): # Boolean
+		return self.get_query_params().get('RequireNoRunningJobs')
+
+	def set_RequireNoRunningJobs(self, RequireNoRunningJobs):  # Boolean
+		self.add_query_param('RequireNoRunningJobs', RequireNoRunningJobs)
 	def get_PlanId(self): # String
 		return self.get_query_params().get('PlanId')
 

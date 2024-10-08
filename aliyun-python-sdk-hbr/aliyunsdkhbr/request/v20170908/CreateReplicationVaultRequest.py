@@ -46,11 +46,11 @@ class CreateReplicationVaultRequest(RpcRequest):
 
 	def set_VaultName(self, VaultName):  # String
 		self.add_query_param('VaultName', VaultName)
-	def get_RedundancyType(self): # String
-		return self.get_query_params().get('RedundancyType')
+	def get_EncryptType(self): # String
+		return self.get_query_params().get('EncryptType')
 
-	def set_RedundancyType(self, RedundancyType):  # String
-		self.add_query_param('RedundancyType', RedundancyType)
+	def set_EncryptType(self, EncryptType):  # String
+		self.add_query_param('EncryptType', EncryptType)
 	def get_ReplicationSourceRegionId(self): # String
 		return self.get_query_params().get('ReplicationSourceRegionId')
 
@@ -61,8 +61,18 @@ class CreateReplicationVaultRequest(RpcRequest):
 
 	def set_VaultRegionId(self, VaultRegionId):  # String
 		self.add_query_param('VaultRegionId', VaultRegionId)
+	def get_RedundancyType(self): # String
+		return self.get_query_params().get('RedundancyType')
+
+	def set_RedundancyType(self, RedundancyType):  # String
+		self.add_query_param('RedundancyType', RedundancyType)
 	def get_VaultStorageClass(self): # String
 		return self.get_query_params().get('VaultStorageClass')
 
 	def set_VaultStorageClass(self, VaultStorageClass):  # String
 		self.add_query_param('VaultStorageClass', VaultStorageClass)
+	def get_KmsKeyId(self): # String
+		return self.get_query_params().get('KmsKeyId')
+
+	def set_KmsKeyId(self, KmsKeyId):  # String
+		self.add_query_param('KmsKeyId', KmsKeyId)
