@@ -251,6 +251,11 @@ class PushRequest(RpcRequest):
 
 	def set_TargetValue(self, TargetValue):  # String
 		self.add_query_param('TargetValue', TargetValue)
+	def get_HarmonyBadgeSetNum(self): # Integer
+		return self.get_query_params().get('HarmonyBadgeSetNum')
+
+	def set_HarmonyBadgeSetNum(self, HarmonyBadgeSetNum):  # Integer
+		self.add_query_param('HarmonyBadgeSetNum', HarmonyBadgeSetNum)
 	def get_AndroidXiaoMiNotifyTitle(self): # String
 		return self.get_query_params().get('AndroidXiaoMiNotifyTitle')
 
@@ -401,6 +406,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidMusic(self, AndroidMusic):  # String
 		self.add_query_param('AndroidMusic', AndroidMusic)
+	def get_HarmonyExtensionPush(self): # Boolean
+		return self.get_query_params().get('HarmonyExtensionPush')
+
+	def set_HarmonyExtensionPush(self, HarmonyExtensionPush):  # Boolean
+		self.add_query_param('HarmonyExtensionPush', HarmonyExtensionPush)
 	def get_iOSNotificationCollapseId(self): # String
 		return self.get_query_params().get('iOSNotificationCollapseId')
 
@@ -411,6 +421,11 @@ class PushRequest(RpcRequest):
 
 	def set_PushType(self, PushType):  # String
 		self.add_query_param('PushType', PushType)
+	def get_HarmonyExtensionExtraData(self): # String
+		return self.get_query_params().get('HarmonyExtensionExtraData')
+
+	def set_HarmonyExtensionExtraData(self, HarmonyExtensionExtraData):  # String
+		self.add_query_param('HarmonyExtensionExtraData', HarmonyExtensionExtraData)
 	def get_HarmonyImageUrl(self): # String
 		return self.get_query_params().get('HarmonyImageUrl')
 
@@ -426,6 +441,11 @@ class PushRequest(RpcRequest):
 
 	def set_Title(self, Title):  # String
 		self.add_query_param('Title', Title)
+	def get_HarmonyBadgeAddNum(self): # Integer
+		return self.get_query_params().get('HarmonyBadgeAddNum')
+
+	def set_HarmonyBadgeAddNum(self, HarmonyBadgeAddNum):  # Integer
+		self.add_query_param('HarmonyBadgeAddNum', HarmonyBadgeAddNum)
 	def get_HarmonyTestMessage(self): # Boolean
 		return self.get_query_params().get('HarmonyTestMessage')
 

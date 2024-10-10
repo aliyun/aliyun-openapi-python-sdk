@@ -126,6 +126,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyRemind', PushTask[depth1].get('HarmonyRemind'))
 			if PushTask[depth1].get('AndroidMusic') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMusic', PushTask[depth1].get('AndroidMusic'))
+			if PushTask[depth1].get('HarmonyExtensionPush') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyExtensionPush', PushTask[depth1].get('HarmonyExtensionPush'))
 			if PushTask[depth1].get('iOSNotificationCollapseId') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationCollapseId', PushTask[depth1].get('iOSNotificationCollapseId'))
 			if PushTask[depth1].get('AndroidMessageHuaweiUrgency') is not None:
@@ -134,6 +136,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushType', PushTask[depth1].get('PushType'))
 			if PushTask[depth1].get('iOSInterruptionLevel') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSInterruptionLevel', PushTask[depth1].get('iOSInterruptionLevel'))
+			if PushTask[depth1].get('HarmonyExtensionExtraData') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyExtensionExtraData', PushTask[depth1].get('HarmonyExtensionExtraData'))
 			if PushTask[depth1].get('AndroidExtParameters') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidExtParameters', PushTask[depth1].get('AndroidExtParameters'))
 			if PushTask[depth1].get('HarmonyImageUrl') is not None:
@@ -152,6 +156,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Title', PushTask[depth1].get('Title'))
 			if PushTask[depth1].get('AndroidBadgeClass') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBadgeClass', PushTask[depth1].get('AndroidBadgeClass'))
+			if PushTask[depth1].get('HarmonyBadgeAddNum') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyBadgeAddNum', PushTask[depth1].get('HarmonyBadgeAddNum'))
 			if PushTask[depth1].get('HarmonyTestMessage') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyTestMessage', PushTask[depth1].get('HarmonyTestMessage'))
 			if PushTask[depth1].get('AndroidRenderStyle') is not None:
@@ -202,6 +208,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationNotifyId', PushTask[depth1].get('AndroidNotificationNotifyId'))
 			if PushTask[depth1].get('TargetValue') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.TargetValue', PushTask[depth1].get('TargetValue'))
+			if PushTask[depth1].get('HarmonyBadgeSetNum') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.HarmonyBadgeSetNum', PushTask[depth1].get('HarmonyBadgeSetNum'))
 			if PushTask[depth1].get('AndroidXiaoMiNotifyTitle') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyTitle', PushTask[depth1].get('AndroidXiaoMiNotifyTitle'))
 			if PushTask[depth1].get('AndroidXiaoMiActivity') is not None:
