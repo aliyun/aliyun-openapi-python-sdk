@@ -31,8 +31,18 @@ class ExecuteMultiAccountSQLQueryRequest(RpcRequest):
 
 	def set_Expression(self, Expression):  # String
 		self.add_query_param('Expression', Expression)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_Scope(self): # String
 		return self.get_query_params().get('Scope')
 
 	def set_Scope(self, Scope):  # String
 		self.add_query_param('Scope', Scope)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
