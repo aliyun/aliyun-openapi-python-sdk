@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class UpdateTenantMembersRequest(RpcRequest):
+class ListNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'UpdateTenantMembers')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'ListNodes')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +32,13 @@ class UpdateTenantMembersRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_UpdateTenantMembersCommand(self): # Struct
-		return self.get_query_params().get('UpdateTenantMembersCommand')
+	def get_ListQuery(self): # Struct
+		return self.get_body_params().get('ListQuery')
 
-	def set_UpdateTenantMembersCommand(self, UpdateTenantMembersCommand):  # Struct
-		self.add_query_param("UpdateTenantMembersCommand", json.dumps(UpdateTenantMembersCommand))
+	def set_ListQuery(self, ListQuery):  # Struct
+		self.add_body_params("ListQuery", json.dumps(ListQuery))
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
+
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)

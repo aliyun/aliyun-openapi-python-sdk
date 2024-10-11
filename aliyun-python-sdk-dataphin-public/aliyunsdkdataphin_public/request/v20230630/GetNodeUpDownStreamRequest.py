@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class BatchGetUsersRequest(RpcRequest):
+class GetNodeUpDownStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'BatchGetUsers')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'GetNodeUpDownStream')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +32,28 @@ class BatchGetUsersRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_UserIdList(self): # Array
-		return self.get_query_params().get('UserIdList')
+	def get_UpStreamDepth(self): # Integer
+		return self.get_query_params().get('UpStreamDepth')
 
-	def set_UserIdList(self, UserIdList):  # Array
-		self.add_query_param("UserIdList", json.dumps(UserIdList))
+	def set_UpStreamDepth(self, UpStreamDepth):  # Integer
+		self.add_query_param('UpStreamDepth', UpStreamDepth)
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
+
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_NodeId(self): # Struct
+		return self.get_body_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # Struct
+		self.add_body_params("NodeId", json.dumps(NodeId))
+	def get_DownStreamDepth(self): # Integer
+		return self.get_query_params().get('DownStreamDepth')
+
+	def set_DownStreamDepth(self, DownStreamDepth):  # Integer
+		self.add_query_param('DownStreamDepth', DownStreamDepth)

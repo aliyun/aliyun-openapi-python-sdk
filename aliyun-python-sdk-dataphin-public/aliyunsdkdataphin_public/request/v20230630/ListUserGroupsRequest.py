@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class QueryPagedAddableUsersRequest(RpcRequest):
+class ListUserGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'QueryPagedAddableUsers')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'ListUserGroups')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +32,8 @@ class QueryPagedAddableUsersRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_AddableUserPagedQuery(self): # Struct
-		return self.get_query_params().get('AddableUserPagedQuery')
+	def get_ListQuery(self): # Struct
+		return self.get_body_params().get('ListQuery')
 
-	def set_AddableUserPagedQuery(self, AddableUserPagedQuery):  # Struct
-		self.add_query_param("AddableUserPagedQuery", json.dumps(AddableUserPagedQuery))
+	def set_ListQuery(self, ListQuery):  # Struct
+		self.add_body_params("ListQuery", json.dumps(ListQuery))

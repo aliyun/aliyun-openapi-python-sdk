@@ -18,12 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class ListUsersRequest(RpcRequest):
+class GetPhysicalInstanceLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'ListUsers')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'GetPhysicalInstanceLog')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +31,18 @@ class ListUsersRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_UserPagedQuery(self): # Struct
-		return self.get_query_params().get('UserPagedQuery')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_UserPagedQuery(self, UserPagedQuery):  # Struct
-		self.add_query_param("UserPagedQuery", json.dumps(UserPagedQuery))
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
+
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

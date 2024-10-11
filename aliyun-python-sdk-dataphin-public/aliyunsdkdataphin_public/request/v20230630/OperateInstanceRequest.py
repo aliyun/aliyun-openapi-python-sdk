@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class BatchAddTenantMemberRequest(RpcRequest):
+class OperateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'BatchAddTenantMember')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'OperateInstance')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +32,13 @@ class BatchAddTenantMemberRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_BatchAddTenantMemberCommand(self): # Struct
-		return self.get_query_params().get('BatchAddTenantMemberCommand')
+	def get_OperateCommand(self): # Struct
+		return self.get_body_params().get('OperateCommand')
 
-	def set_BatchAddTenantMemberCommand(self, BatchAddTenantMemberCommand):  # Struct
-		self.add_query_param("BatchAddTenantMemberCommand", json.dumps(BatchAddTenantMemberCommand))
+	def set_OperateCommand(self, OperateCommand):  # Struct
+		self.add_body_params("OperateCommand", json.dumps(OperateCommand))
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
+
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)

@@ -18,12 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class RemoveUserRequest(RpcRequest):
+class UpdateFileNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'RemoveUser')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'UpdateFileName')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +31,18 @@ class RemoveUserRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_RemoveUserCommand(self): # Struct
-		return self.get_query_params().get('RemoveUserCommand')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_RemoveUserCommand(self, RemoveUserCommand):  # Struct
-		self.add_query_param("RemoveUserCommand", json.dumps(RemoveUserCommand))
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
+	def get_FileId(self): # Long
+		return self.get_query_params().get('FileId')
+
+	def set_FileId(self, FileId):  # Long
+		self.add_query_param('FileId', FileId)
