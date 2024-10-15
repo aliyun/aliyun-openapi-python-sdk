@@ -36,6 +36,11 @@ class ModifyElasticityAssuranceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -66,3 +71,8 @@ class ModifyElasticityAssuranceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
+
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)

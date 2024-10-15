@@ -51,6 +51,11 @@ class CreateImageComponentRequest(RpcRequest):
 
 	def set_SystemType(self, SystemType):  # String
 		self.add_query_param('SystemType', SystemType)
+	def get_ComponentVersion(self): # String
+		return self.get_query_params().get('ComponentVersion')
+
+	def set_ComponentVersion(self, ComponentVersion):  # String
+		self.add_query_param('ComponentVersion', ComponentVersion)
 	def get_Content(self): # String
 		return self.get_query_params().get('Content')
 

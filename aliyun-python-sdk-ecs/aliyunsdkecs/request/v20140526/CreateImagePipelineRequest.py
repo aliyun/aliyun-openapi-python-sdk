@@ -101,6 +101,11 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RepairMode(self): # String
+		return self.get_query_params().get('RepairMode')
+
+	def set_RepairMode(self, RepairMode):  # String
+		self.add_query_param('RepairMode', RepairMode)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -132,8 +137,18 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ImageFamily(self): # String
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self, ImageFamily):  # String
+		self.add_query_param('ImageFamily', ImageFamily)
 	def get_BuildContent(self): # String
 		return self.get_query_params().get('BuildContent')
 
 	def set_BuildContent(self, BuildContent):  # String
 		self.add_query_param('BuildContent', BuildContent)
+	def get_TestContent(self): # String
+		return self.get_query_params().get('TestContent')
+
+	def set_TestContent(self, TestContent):  # String
+		self.add_query_param('TestContent', TestContent)

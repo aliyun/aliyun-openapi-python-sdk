@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
 class CreateAutoProvisioningGroupRequest(RpcRequest):
 
@@ -277,6 +278,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_SpotAllocationStrategy(self, SpotAllocationStrategy):  # String
 		self.add_query_param('SpotAllocationStrategy', SpotAllocationStrategy)
+	def get_ResourcePoolOptions(self): # Struct
+		return self.get_query_params().get('ResourcePoolOptions')
+
+	def set_ResourcePoolOptions(self, ResourcePoolOptions):  # Struct
+		self.add_query_param("ResourcePoolOptions", json.dumps(ResourcePoolOptions))
 	def get_TerminateInstances(self): # Boolean
 		return self.get_query_params().get('TerminateInstances')
 

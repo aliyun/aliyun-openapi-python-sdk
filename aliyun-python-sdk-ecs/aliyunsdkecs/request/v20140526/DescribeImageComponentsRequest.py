@@ -36,6 +36,16 @@ class DescribeImageComponentsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SystemType(self): # String
+		return self.get_query_params().get('SystemType')
+
+	def set_SystemType(self, SystemType):  # String
+		self.add_query_param('SystemType', SystemType)
+	def get_ComponentVersion(self): # String
+		return self.get_query_params().get('ComponentVersion')
+
+	def set_ComponentVersion(self, ComponentVersion):  # String
+		self.add_query_param('ComponentVersion', ComponentVersion)
 	def get_ImageComponentIds(self): # RepeatList
 		return self.get_query_params().get('ImageComponentId')
 
@@ -81,6 +91,11 @@ class DescribeImageComponentsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ComponentType(self): # String
+		return self.get_query_params().get('ComponentType')
+
+	def set_ComponentType(self, ComponentType):  # String
+		self.add_query_param('ComponentType', ComponentType)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

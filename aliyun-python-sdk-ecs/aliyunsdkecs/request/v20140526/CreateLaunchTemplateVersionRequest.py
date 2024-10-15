@@ -41,6 +41,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_HttpPutResponseHopLimit(self): # Integer
+		return self.get_query_params().get('HttpPutResponseHopLimit')
+
+	def set_HttpPutResponseHopLimit(self, HttpPutResponseHopLimit):  # Integer
+		self.add_query_param('HttpPutResponseHopLimit', HttpPutResponseHopLimit)
 	def get_SecurityEnhancementStrategy(self): # String
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -230,6 +235,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_PasswordInherit(self, PasswordInherit):  # Boolean
 		self.add_query_param('PasswordInherit', PasswordInherit)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
@@ -357,6 +367,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
 	def get_SystemDiskDescription(self): # String
 		return self.get_query_params().get('SystemDisk.Description')
 
