@@ -1,3 +1,8 @@
+2024-10-17 Version: 3.14.11
+- 基于转移码的转出接口
+- SaveSingleTaskForTransferOutByAuthorizationCode
+- SaveBatchTaskForTransferOutByAuthorizationCode
+
 2024-08-30 Version: 3.14.10
 - 增加国际一口价相关接口.
 - GetIntlFixPriceDomainListUrl.
