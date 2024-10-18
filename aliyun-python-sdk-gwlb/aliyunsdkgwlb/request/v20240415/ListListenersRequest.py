@@ -32,10 +32,10 @@ class ListListenersRequest(RpcRequest):
 	def set_LoadBalancerIds(self, LoadBalancerIds):  # Array
 		for index1, value1 in enumerate(LoadBalancerIds):
 			self.add_body_params('LoadBalancerIds.' + str(index1 + 1), value1)
-	def get_Skip(self): # Long
+	def get_Skip(self): # Integer
 		return self.get_body_params().get('Skip')
 
-	def set_Skip(self, Skip):  # Long
+	def set_Skip(self, Skip):  # Integer
 		self.add_body_params('Skip', Skip)
 	def get_NextToken(self): # String
 		return self.get_body_params().get('NextToken')
