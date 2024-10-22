@@ -56,6 +56,11 @@ class RemoveInstancesRequest(RpcRequest):
 
 	def set_IgnoreInvalidInstance(self, IgnoreInvalidInstance):  # Boolean
 		self.add_query_param('IgnoreInvalidInstance', IgnoreInvalidInstance)
+	def get_StopInstanceTimeout(self): # Integer
+		return self.get_query_params().get('StopInstanceTimeout')
+
+	def set_StopInstanceTimeout(self, StopInstanceTimeout):  # Integer
+		self.add_query_param('StopInstanceTimeout', StopInstanceTimeout)
 	def get_RemovePolicy(self): # String
 		return self.get_query_params().get('RemovePolicy')
 

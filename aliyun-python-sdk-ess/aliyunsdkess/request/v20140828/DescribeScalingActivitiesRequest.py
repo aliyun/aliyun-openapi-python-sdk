@@ -41,6 +41,11 @@ class DescribeScalingActivitiesRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_InstanceRefreshTaskId(self): # String
+		return self.get_query_params().get('InstanceRefreshTaskId')
+
+	def set_InstanceRefreshTaskId(self, InstanceRefreshTaskId):  # String
+		self.add_query_param('InstanceRefreshTaskId', InstanceRefreshTaskId)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

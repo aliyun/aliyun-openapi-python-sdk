@@ -67,6 +67,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_CustomPolicyARN(self, CustomPolicyARN):  # String
 		self.add_query_param('CustomPolicyARN', CustomPolicyARN)
+	def get_StopInstanceTimeout(self): # Integer
+		return self.get_query_params().get('StopInstanceTimeout')
+
+	def set_StopInstanceTimeout(self, StopInstanceTimeout):  # Integer
+		self.add_query_param('StopInstanceTimeout', StopInstanceTimeout)
 	def get_DefaultCooldown(self): # Integer
 		return self.get_query_params().get('DefaultCooldown')
 

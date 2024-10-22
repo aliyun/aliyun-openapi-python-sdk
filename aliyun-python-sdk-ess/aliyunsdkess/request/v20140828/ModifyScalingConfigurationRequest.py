@@ -36,6 +36,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_HpcClusterId(self, HpcClusterId):  # String
 		self.add_query_param('HpcClusterId', HpcClusterId)
+	def get_SecurityOptions(self): # Struct
+		return self.get_query_params().get('SecurityOptions')
+
+	def set_SecurityOptions(self, SecurityOptions):  # Struct
+		if SecurityOptions.get('ConfidentialComputingMode') is not None:
+			self.add_query_param('SecurityOptions.ConfidentialComputingMode', SecurityOptions.get('ConfidentialComputingMode'))
 	def get_KeyPairName(self): # String
 		return self.get_query_params().get('KeyPairName')
 
