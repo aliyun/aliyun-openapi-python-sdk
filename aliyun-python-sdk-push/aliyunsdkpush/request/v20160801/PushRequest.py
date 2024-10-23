@@ -181,16 +181,16 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidXiaomiImageUrl(self, AndroidXiaomiImageUrl):  # String
 		self.add_query_param('AndroidXiaomiImageUrl', AndroidXiaomiImageUrl)
-	def get_SmsTemplateName(self): # String
-		return self.get_query_params().get('SmsTemplateName')
-
-	def set_SmsTemplateName(self, SmsTemplateName):  # String
-		self.add_query_param('SmsTemplateName', SmsTemplateName)
 	def get_HarmonyUri(self): # String
 		return self.get_query_params().get('HarmonyUri')
 
 	def set_HarmonyUri(self, HarmonyUri):  # String
 		self.add_query_param('HarmonyUri', HarmonyUri)
+	def get_SmsTemplateName(self): # String
+		return self.get_query_params().get('SmsTemplateName')
+
+	def set_SmsTemplateName(self, SmsTemplateName):  # String
+		self.add_query_param('SmsTemplateName', SmsTemplateName)
 	def get_HarmonyExtParameters(self): # String
 		return self.get_query_params().get('HarmonyExtParameters')
 
@@ -316,6 +316,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSMutableContent(self, iOSMutableContent):  # Boolean
 		self.add_query_param('iOSMutableContent', iOSMutableContent)
+	def get_AndroidNotificationThreadId(self): # String
+		return self.get_query_params().get('AndroidNotificationThreadId')
+
+	def set_AndroidNotificationThreadId(self, AndroidNotificationThreadId):  # String
+		self.add_query_param('AndroidNotificationThreadId', AndroidNotificationThreadId)
 	def get_AndroidHonorTargetUserType(self): # Integer
 		return self.get_query_params().get('AndroidHonorTargetUserType')
 
