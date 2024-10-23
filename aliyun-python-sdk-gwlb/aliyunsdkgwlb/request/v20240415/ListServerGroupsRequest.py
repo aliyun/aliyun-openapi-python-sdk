@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgwlb.endpoint import endpoint_data
 
 class ListServerGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Gwlb', '2024-04-15', 'ListServerGroups')
+		RpcRequest.__init__(self, 'Gwlb', '2024-04-15', 'ListServerGroups','gwlb')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ServerGroupNames(self): # Array
 		return self.get_body_params().get('ServerGroupNames')
