@@ -46,18 +46,43 @@ class GetAuthTokenRequest(RpcRequest):
 
 	def set_SceneCode(self, SceneCode):  # String
 		self.add_query_param('SceneCode', SceneCode)
+	def get_CuApiCode(self): # Integer
+		return self.get_query_params().get('CuApiCode')
+
+	def set_CuApiCode(self, CuApiCode):  # Integer
+		self.add_query_param('CuApiCode', CuApiCode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_CtApiCode(self): # Integer
+		return self.get_query_params().get('CtApiCode')
+
+	def set_CtApiCode(self, CtApiCode):  # Integer
+		self.add_query_param('CtApiCode', CtApiCode)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Version(self): # String
+		return self.get_query_params().get('Version')
+
+	def set_Version(self, Version):  # String
+		self.add_query_param('Version', Version)
 	def get_Url(self): # String
 		return self.get_query_params().get('Url')
 
 	def set_Url(self, Url):  # String
 		self.add_query_param('Url', Url)
+	def get_BizType(self): # Integer
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self, BizType):  # Integer
+		self.add_query_param('BizType', BizType)
+	def get_CmApiCode(self): # Integer
+		return self.get_query_params().get('CmApiCode')
+
+	def set_CmApiCode(self, CmApiCode):  # Integer
+		self.add_query_param('CmApiCode', CmApiCode)

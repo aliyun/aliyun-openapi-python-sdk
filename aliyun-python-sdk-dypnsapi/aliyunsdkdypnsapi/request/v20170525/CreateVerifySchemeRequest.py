@@ -66,6 +66,11 @@ class CreateVerifySchemeRequest(RpcRequest):
 
 	def set_Email(self, Email):  # String
 		self.add_query_param('Email', Email)
+	def get_HmSignName(self): # String
+		return self.get_query_params().get('HmSignName')
+
+	def set_HmSignName(self, HmSignName):  # String
+		self.add_query_param('HmSignName', HmSignName)
 	def get_PackSign(self): # String
 		return self.get_query_params().get('PackSign')
 
@@ -76,6 +81,11 @@ class CreateVerifySchemeRequest(RpcRequest):
 
 	def set_PackName(self, PackName):  # String
 		self.add_query_param('PackName', PackName)
+	def get_HmAppIdentifier(self): # String
+		return self.get_query_params().get('HmAppIdentifier')
+
+	def set_HmAppIdentifier(self, HmAppIdentifier):  # String
+		self.add_query_param('HmAppIdentifier', HmAppIdentifier)
 	def get_CuApiCode(self): # Long
 		return self.get_query_params().get('CuApiCode')
 
@@ -126,3 +136,8 @@ class CreateVerifySchemeRequest(RpcRequest):
 
 	def set_SmsSignName(self, SmsSignName):  # String
 		self.add_query_param('SmsSignName', SmsSignName)
+	def get_HmPackageName(self): # String
+		return self.get_query_params().get('HmPackageName')
+
+	def set_HmPackageName(self, HmPackageName):  # String
+		self.add_query_param('HmPackageName', HmPackageName)
