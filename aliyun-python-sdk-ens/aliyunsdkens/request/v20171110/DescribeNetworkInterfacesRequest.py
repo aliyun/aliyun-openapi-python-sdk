@@ -55,6 +55,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_NetworkId(self, NetworkId):  # String
 		self.add_query_param('NetworkId', NetworkId)
+	def get_Ipv6Address(self): # Array
+		return self.get_query_params().get('Ipv6Address')
+
+	def set_Ipv6Address(self, Ipv6Address):  # Array
+		for index1, value1 in enumerate(Ipv6Address):
+			self.add_query_param('Ipv6Address.' + str(index1 + 1), value1)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

@@ -19,15 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetBucketAclRequest(RpcRequest):
+class CreateClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetBucketAcl','ens')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateCluster','ens')
 		self.set_method('POST')
 
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
+	def get_ClusterVersion(self): # String
+		return self.get_query_params().get('ClusterVersion')
 
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
+	def set_ClusterVersion(self, ClusterVersion):  # String
+		self.add_query_param('ClusterVersion', ClusterVersion)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

@@ -19,19 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeApplicationResourceSummaryRequest(RpcRequest):
+class DescribeClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeApplicationResourceSummary','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeCluster','ens')
 		self.set_method('POST')
 
-	def get_Level(self): # String
-		return self.get_query_params().get('Level')
+	def get_ClusterId(self): # String
+		return self.get_query_params().get('ClusterId')
 
-	def set_Level(self, Level):  # String
-		self.add_query_param('Level', Level)
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)

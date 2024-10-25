@@ -19,15 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetBucketAclRequest(RpcRequest):
+class AttachNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetBucketAcl','ens')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AttachNetworkInterface','ens')
 		self.set_method('POST')
 
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

@@ -19,15 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetBucketAclRequest(RpcRequest):
+class DescribeLoadBalancerListenersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetBucketAcl','ens')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeLoadBalancerListeners','ens')
 		self.set_method('POST')
 
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_LoadBalancerId(self): # String
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)

@@ -19,15 +19,25 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetBucketAclRequest(RpcRequest):
+class DescribeDiskIopsListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetBucketAcl','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeDiskIopsList','ens')
 		self.set_protocol_type('https')
-		self.set_method('POST')
+		self.set_method('GET')
 
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_DiskId(self): # String
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)

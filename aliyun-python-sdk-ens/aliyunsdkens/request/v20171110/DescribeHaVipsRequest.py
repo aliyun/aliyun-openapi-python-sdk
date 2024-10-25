@@ -19,31 +19,27 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateNatGatewayRequest(RpcRequest):
+class DescribeHaVipsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateNatGateway','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeHaVips','ens')
+		self.set_method('GET')
 
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
+	def get_HaVipId(self): # String
+		return self.get_query_params().get('HaVipId')
 
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def set_HaVipId(self, HaVipId):  # String
+		self.add_query_param('HaVipId', HaVipId)
+	def get_HaVipAddress(self): # String
+		return self.get_query_params().get('HaVipAddress')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_HaVipAddress(self, HaVipAddress):  # String
+		self.add_query_param('HaVipAddress', HaVipAddress)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -59,3 +55,18 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_NetworkId(self, NetworkId):  # String
 		self.add_query_param('NetworkId', NetworkId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_PageNumber(self): # String
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # String
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # String
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # String
+		self.add_query_param('PageSize', PageSize)

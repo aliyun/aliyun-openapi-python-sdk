@@ -19,19 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeEipAddressesRequest(RpcRequest):
+class ModifyHaVipAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEipAddresses','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyHaVipAttribute','ens')
 		self.set_method('POST')
 
-	def get_Eips(self): # String
-		return self.get_query_params().get('Eips')
+	def get_HaVipId(self): # String
+		return self.get_query_params().get('HaVipId')
 
-	def set_Eips(self, Eips):  # String
-		self.add_query_param('Eips', Eips)
-	def get_EnsRegionId(self): # String
-		return self.get_query_params().get('EnsRegionId')
+	def set_HaVipId(self, HaVipId):  # String
+		self.add_query_param('HaVipId', HaVipId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-	def set_EnsRegionId(self, EnsRegionId):  # String
-		self.add_query_param('EnsRegionId', EnsRegionId)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

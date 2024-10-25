@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class DescribeCloudDiskTypesRequest(RpcRequest):
 
@@ -30,3 +31,8 @@ class DescribeCloudDiskTypesRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		self.add_query_param("EnsRegionIds", json.dumps(EnsRegionIds))

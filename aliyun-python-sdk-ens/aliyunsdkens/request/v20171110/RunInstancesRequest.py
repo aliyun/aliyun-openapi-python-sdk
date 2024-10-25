@@ -195,6 +195,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_IpType(self, IpType):  # String
 		self.add_query_param('IpType', IpType)
+	def get_SpotDuration(self): # Integer
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self, SpotDuration):  # Integer
+		self.add_query_param('SpotDuration', SpotDuration)
 	def get_DataDisk(self): # Array
 		return self.get_query_params().get('DataDisk')
 

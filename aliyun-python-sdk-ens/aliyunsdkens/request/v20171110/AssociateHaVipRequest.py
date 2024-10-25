@@ -19,15 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetBucketAclRequest(RpcRequest):
+class AssociateHaVipRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'GetBucketAcl','ens')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AssociateHaVip','ens')
 		self.set_method('POST')
 
-	def get_BucketName(self): # String
-		return self.get_query_params().get('BucketName')
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
 
-	def set_BucketName(self, BucketName):  # String
-		self.add_query_param('BucketName', BucketName)
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_HaVipId(self): # String
+		return self.get_query_params().get('HaVipId')
+
+	def set_HaVipId(self, HaVipId):  # String
+		self.add_query_param('HaVipId', HaVipId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
