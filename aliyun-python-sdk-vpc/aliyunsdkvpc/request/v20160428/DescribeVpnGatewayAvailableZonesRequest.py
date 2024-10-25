@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ModifyIpv6GatewaySpecRequest(RpcRequest):
+class DescribeVpnGatewayAvailableZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIpv6GatewaySpec','vpc')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnGatewayAvailableZones','vpc')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,11 +36,6 @@ class ModifyIpv6GatewaySpecRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_Spec(self): # String
 		return self.get_query_params().get('Spec')
 
@@ -61,8 +56,8 @@ class ModifyIpv6GatewaySpecRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Ipv6GatewayId(self): # String
-		return self.get_query_params().get('Ipv6GatewayId')
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_Ipv6GatewayId(self, Ipv6GatewayId):  # String
-		self.add_query_param('Ipv6GatewayId', Ipv6GatewayId)
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

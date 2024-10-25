@@ -80,13 +80,30 @@ class CreatePublicIpAddressPoolRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_Zoness(self): # RepeatList
+		return self.get_query_params().get('Zones')
+
+	def set_Zoness(self, Zones):  # RepeatList
+		for depth1 in range(len(Zones)):
+			self.add_query_param('Zones.' + str(depth1 + 1), Zones[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_BizType(self): # String
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_SecurityProtectionTypess(self): # RepeatList
+		return self.get_query_params().get('SecurityProtectionTypes')
+
+	def set_SecurityProtectionTypess(self, SecurityProtectionTypes):  # RepeatList
+		for depth1 in range(len(SecurityProtectionTypes)):
+			self.add_query_param('SecurityProtectionTypes.' + str(depth1 + 1), SecurityProtectionTypes[depth1])

@@ -36,6 +36,12 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NetworkInterfaceIds(self): # Array
+		return self.get_query_params().get('NetworkInterfaceIds')
+
+	def set_NetworkInterfaceIds(self, NetworkInterfaceIds):  # Array
+		for index1, value1 in enumerate(NetworkInterfaceIds):
+			self.add_query_param('NetworkInterfaceIds.' + str(index1 + 1), value1)
 	def get_SourceCIDR(self): # String
 		return self.get_query_params().get('SourceCIDR')
 

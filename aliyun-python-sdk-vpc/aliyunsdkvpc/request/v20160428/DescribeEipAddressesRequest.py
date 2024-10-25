@@ -46,11 +46,6 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_Filter2Value(self, Filter2Value):  # String
 		self.add_query_param('Filter.2.Value', Filter2Value)
-	def get_SecurityProtectionEnabled(self): # Boolean
-		return self.get_query_params().get('SecurityProtectionEnabled')
-
-	def set_SecurityProtectionEnabled(self, SecurityProtectionEnabled):  # Boolean
-		self.add_query_param('SecurityProtectionEnabled', SecurityProtectionEnabled)
 	def get_ISP(self): # String
 		return self.get_query_params().get('ISP')
 
@@ -61,26 +56,11 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_EipName(self, EipName):  # String
 		self.add_query_param('EipName', EipName)
-	def get_AllocationId(self): # String
-		return self.get_query_params().get('AllocationId')
-
-	def set_AllocationId(self, AllocationId):  # String
-		self.add_query_param('AllocationId', AllocationId)
-	def get_IncludeReservationData(self): # Boolean
-		return self.get_query_params().get('IncludeReservationData')
-
-	def set_IncludeReservationData(self, IncludeReservationData):  # Boolean
-		self.add_query_param('IncludeReservationData', IncludeReservationData)
 	def get_EipAddress(self): # String
 		return self.get_query_params().get('EipAddress')
 
 	def set_EipAddress(self, EipAddress):  # String
 		self.add_query_param('EipAddress', EipAddress)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -96,16 +76,15 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_Filter1Key(self, Filter1Key):  # String
 		self.add_query_param('Filter.1.Key', Filter1Key)
-	def get_AssociatedInstanceType(self): # String
-		return self.get_query_params().get('AssociatedInstanceType')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_AssociatedInstanceType(self, AssociatedInstanceType):  # String
-		self.add_query_param('AssociatedInstanceType', AssociatedInstanceType)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_SegmentInstanceId(self): # String
 		return self.get_query_params().get('SegmentInstanceId')
 
@@ -116,6 +95,56 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_Filter1Value(self): # String
+		return self.get_query_params().get('Filter.1.Value')
+
+	def set_Filter1Value(self, Filter1Value):  # String
+		self.add_query_param('Filter.1.Value', Filter1Value)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_SecurityProtectionEnabled(self): # Boolean
+		return self.get_query_params().get('SecurityProtectionEnabled')
+
+	def set_SecurityProtectionEnabled(self, SecurityProtectionEnabled):  # Boolean
+		self.add_query_param('SecurityProtectionEnabled', SecurityProtectionEnabled)
+	def get_ServiceManaged(self): # Boolean
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self, ServiceManaged):  # Boolean
+		self.add_query_param('ServiceManaged', ServiceManaged)
+	def get_AllocationId(self): # String
+		return self.get_query_params().get('AllocationId')
+
+	def set_AllocationId(self, AllocationId):  # String
+		self.add_query_param('AllocationId', AllocationId)
+	def get_IncludeReservationData(self): # Boolean
+		return self.get_query_params().get('IncludeReservationData')
+
+	def set_IncludeReservationData(self, IncludeReservationData):  # Boolean
+		self.add_query_param('IncludeReservationData', IncludeReservationData)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_AssociatedInstanceType(self): # String
+		return self.get_query_params().get('AssociatedInstanceType')
+
+	def set_AssociatedInstanceType(self, AssociatedInstanceType):  # String
+		self.add_query_param('AssociatedInstanceType', AssociatedInstanceType)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -126,21 +155,11 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_Filter1Value(self): # String
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self, Filter1Value):  # String
-		self.add_query_param('Filter.1.Value', Filter1Value)
 	def get_Filter2Key(self): # String
 		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self, Filter2Key):  # String
 		self.add_query_param('Filter.2.Key', Filter2Key)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
@@ -151,8 +170,3 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_AssociatedInstanceId(self, AssociatedInstanceId):  # String
 		self.add_query_param('AssociatedInstanceId', AssociatedInstanceId)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)

@@ -56,6 +56,11 @@ class ModifyVpcAttributeRequest(RpcRequest):
 
 	def set_Ipv6Isp(self, Ipv6Isp):  # String
 		self.add_query_param('Ipv6Isp', Ipv6Isp)
+	def get_EnableDnsHostname(self): # Boolean
+		return self.get_query_params().get('EnableDnsHostname')
+
+	def set_EnableDnsHostname(self, EnableDnsHostname):  # Boolean
+		self.add_query_param('EnableDnsHostname', EnableDnsHostname)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

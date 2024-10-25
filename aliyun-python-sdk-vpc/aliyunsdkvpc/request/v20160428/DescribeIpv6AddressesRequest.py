@@ -36,6 +36,11 @@ class DescribeIpv6AddressesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ServiceManaged(self): # Boolean
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self, ServiceManaged):  # Boolean
+		self.add_query_param('ServiceManaged', ServiceManaged)
 	def get_Ipv6InternetBandwidthId(self): # String
 		return self.get_query_params().get('Ipv6InternetBandwidthId')
 
@@ -56,6 +61,11 @@ class DescribeIpv6AddressesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_AssociatedInstanceType(self): # String
 		return self.get_query_params().get('AssociatedInstanceType')
 
@@ -66,6 +76,20 @@ class DescribeIpv6AddressesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_AddressType(self): # String
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self, AddressType):  # String
+		self.add_query_param('AddressType', AddressType)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

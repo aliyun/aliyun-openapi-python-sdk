@@ -86,3 +86,8 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_SnatEntryName(self, SnatEntryName):  # String
 		self.add_query_param('SnatEntryName', SnatEntryName)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

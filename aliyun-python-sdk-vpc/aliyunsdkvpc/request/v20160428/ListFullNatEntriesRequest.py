@@ -52,6 +52,11 @@ class ListFullNatEntriesRequest(RpcRequest):
 
 	def set_FullNatEntryId(self, FullNatEntryId):  # String
 		self.add_query_param('FullNatEntryId', FullNatEntryId)
+	def get_NatIpPort(self): # String
+		return self.get_query_params().get('NatIpPort')
+
+	def set_NatIpPort(self, NatIpPort):  # String
+		self.add_query_param('NatIpPort', NatIpPort)
 	def get_FullNatTableId(self): # String
 		return self.get_query_params().get('FullNatTableId')
 
@@ -93,6 +98,11 @@ class ListFullNatEntriesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_NatIp(self): # String
+		return self.get_query_params().get('NatIp')
+
+	def set_NatIp(self, NatIp):  # String
+		self.add_query_param('NatIp', NatIp)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 

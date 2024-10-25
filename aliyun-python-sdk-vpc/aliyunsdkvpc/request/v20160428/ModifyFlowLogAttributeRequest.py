@@ -41,6 +41,11 @@ class ModifyFlowLogAttributeRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_IpVersion(self): # String
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self, IpVersion):  # String
+		self.add_query_param('IpVersion', IpVersion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

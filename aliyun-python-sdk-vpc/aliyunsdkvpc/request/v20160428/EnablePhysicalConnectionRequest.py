@@ -56,6 +56,11 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ByPassSp(self): # Boolean
+		return self.get_query_params().get('ByPassSp')
+
+	def set_ByPassSp(self, ByPassSp):  # Boolean
+		self.add_query_param('ByPassSp', ByPassSp)
 	def get_PhysicalConnectionId(self): # String
 		return self.get_query_params().get('PhysicalConnectionId')
 

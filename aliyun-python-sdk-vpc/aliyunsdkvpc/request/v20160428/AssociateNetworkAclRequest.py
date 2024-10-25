@@ -46,6 +46,11 @@ class AssociateNetworkAclRequest(RpcRequest):
 
 	def set_NetworkAclId(self, NetworkAclId):  # String
 		self.add_query_param('NetworkAclId', NetworkAclId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_Resources(self): # RepeatList
 		return self.get_query_params().get('Resource')
 
@@ -60,6 +65,11 @@ class AssociateNetworkAclRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

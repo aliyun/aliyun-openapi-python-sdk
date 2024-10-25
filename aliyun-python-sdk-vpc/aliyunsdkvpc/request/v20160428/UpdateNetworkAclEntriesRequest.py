@@ -55,6 +55,8 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Protocol', EgressAclEntries[depth1].get('Protocol'))
 			if EgressAclEntries[depth1].get('DestinationCidrIp') is not None:
 				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.DestinationCidrIp', EgressAclEntries[depth1].get('DestinationCidrIp'))
+			if EgressAclEntries[depth1].get('IpVersion') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.IpVersion', EgressAclEntries[depth1].get('IpVersion'))
 			if EgressAclEntries[depth1].get('Port') is not None:
 				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Port', EgressAclEntries[depth1].get('Port'))
 	def get_ClientToken(self): # String
@@ -72,11 +74,21 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 
 	def set_UpdateIngressAclEntries(self, UpdateIngressAclEntries):  # Boolean
 		self.add_query_param('UpdateIngressAclEntries', UpdateIngressAclEntries)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_UpdateEgressAclEntries(self): # Boolean
 		return self.get_query_params().get('UpdateEgressAclEntries')
 
@@ -102,6 +114,8 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Policy', IngressAclEntries[depth1].get('Policy'))
 			if IngressAclEntries[depth1].get('SourceCidrIp') is not None:
 				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.SourceCidrIp', IngressAclEntries[depth1].get('SourceCidrIp'))
+			if IngressAclEntries[depth1].get('IpVersion') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.IpVersion', IngressAclEntries[depth1].get('IpVersion'))
 			if IngressAclEntries[depth1].get('Description') is not None:
 				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Description', IngressAclEntries[depth1].get('Description'))
 			if IngressAclEntries[depth1].get('Protocol') is not None:

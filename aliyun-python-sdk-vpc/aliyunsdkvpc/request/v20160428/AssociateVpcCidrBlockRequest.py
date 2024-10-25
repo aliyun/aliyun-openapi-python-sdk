@@ -71,6 +71,11 @@ class AssociateVpcCidrBlockRequest(RpcRequest):
 
 	def set_IPv6CidrBlock(self, IPv6CidrBlock):  # String
 		self.add_query_param('IPv6CidrBlock', IPv6CidrBlock)
+	def get_SecondaryCidrMask(self): # Integer
+		return self.get_query_params().get('SecondaryCidrMask')
+
+	def set_SecondaryCidrMask(self, SecondaryCidrMask):  # Integer
+		self.add_query_param('SecondaryCidrMask', SecondaryCidrMask)
 	def get_SecondaryCidrBlock(self): # String
 		return self.get_query_params().get('SecondaryCidrBlock')
 

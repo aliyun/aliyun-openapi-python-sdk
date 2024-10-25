@@ -120,6 +120,8 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecAuthAlg', value1.get('TunnelIpsecConfig').get('IpsecAuthAlg'))
 				if value1.get('TunnelIpsecConfig').get('IpsecEncAlg') is not None:
 					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecEncAlg', value1.get('TunnelIpsecConfig').get('IpsecEncAlg'))
+			if value1.get('Role') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.Role', value1.get('Role'))
 			if value1.get('TunnelBgpConfig') is not None:
 				if value1.get('TunnelBgpConfig').get('LocalAsn') is not None:
 					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelBgpConfig.LocalAsn', value1.get('TunnelBgpConfig').get('LocalAsn'))
@@ -154,6 +156,8 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.EnableNatTraversal', value1.get('EnableNatTraversal'))
 			if value1.get('EnableDpd') is not None:
 				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.EnableDpd', value1.get('EnableDpd'))
+			if value1.get('CustomerGatewayId') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.CustomerGatewayId', value1.get('CustomerGatewayId'))
 	def get_RemoteCaCertificate(self): # String
 		return self.get_query_params().get('RemoteCaCertificate')
 

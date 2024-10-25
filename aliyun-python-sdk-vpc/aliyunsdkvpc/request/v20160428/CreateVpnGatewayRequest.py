@@ -51,6 +51,11 @@ class CreateVpnGatewayRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_InstanceChargeType(self): # String
 		return self.get_query_params().get('InstanceChargeType')
 

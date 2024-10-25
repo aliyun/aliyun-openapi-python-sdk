@@ -46,6 +46,21 @@ class CompletePhysicalConnectionLOARequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_LineSPContactInfo(self): # String
+		return self.get_query_params().get('LineSPContactInfo')
+
+	def set_LineSPContactInfo(self, LineSPContactInfo):  # String
+		self.add_query_param('LineSPContactInfo', LineSPContactInfo)
+	def get_FinishWork(self): # Boolean
+		return self.get_query_params().get('FinishWork')
+
+	def set_FinishWork(self, FinishWork):  # Boolean
+		self.add_query_param('FinishWork', FinishWork)
+	def get_LineServiceProvider(self): # String
+		return self.get_query_params().get('LineServiceProvider')
+
+	def set_LineServiceProvider(self, LineServiceProvider):  # String
+		self.add_query_param('LineServiceProvider', LineServiceProvider)
 	def get_LineLabel(self): # String
 		return self.get_query_params().get('LineLabel')
 

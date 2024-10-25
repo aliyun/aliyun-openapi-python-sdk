@@ -86,6 +86,11 @@ class ModifyVpnAttachmentAttributeRequest(RpcRequest):
 
 	def set_RemoteCaCert(self, RemoteCaCert):  # String
 		self.add_query_param('RemoteCaCert', RemoteCaCert)
+	def get_EnableTunnelsBgp(self): # Boolean
+		return self.get_query_params().get('EnableTunnelsBgp')
+
+	def set_EnableTunnelsBgp(self, EnableTunnelsBgp):  # Boolean
+		self.add_query_param('EnableTunnelsBgp', EnableTunnelsBgp)
 	def get_RemoteSubnet(self): # String
 		return self.get_query_params().get('RemoteSubnet')
 
@@ -111,6 +116,58 @@ class ModifyVpnAttachmentAttributeRequest(RpcRequest):
 
 	def set_EnableDpd(self, EnableDpd):  # Boolean
 		self.add_query_param('EnableDpd', EnableDpd)
+	def get_TunnelOptionsSpecification(self): # Array
+		return self.get_body_params().get('TunnelOptionsSpecification')
+
+	def set_TunnelOptionsSpecification(self, TunnelOptionsSpecification):  # Array
+		for index1, value1 in enumerate(TunnelOptionsSpecification):
+			if value1.get('TunnelIpsecConfig') is not None:
+				if value1.get('TunnelIpsecConfig').get('IpsecPfs') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecPfs', value1.get('TunnelIpsecConfig').get('IpsecPfs'))
+				if value1.get('TunnelIpsecConfig').get('IpsecLifetime') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecLifetime', value1.get('TunnelIpsecConfig').get('IpsecLifetime'))
+				if value1.get('TunnelIpsecConfig').get('IpsecAuthAlg') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecAuthAlg', value1.get('TunnelIpsecConfig').get('IpsecAuthAlg'))
+				if value1.get('TunnelIpsecConfig').get('IpsecEncAlg') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIpsecConfig.IpsecEncAlg', value1.get('TunnelIpsecConfig').get('IpsecEncAlg'))
+			if value1.get('TunnelBgpConfig') is not None:
+				if value1.get('TunnelBgpConfig').get('LocalAsn') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelBgpConfig.LocalAsn', value1.get('TunnelBgpConfig').get('LocalAsn'))
+				if value1.get('TunnelBgpConfig').get('TunnelCidr') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelBgpConfig.TunnelCidr', value1.get('TunnelBgpConfig').get('TunnelCidr'))
+				if value1.get('TunnelBgpConfig').get('LocalBgpIp') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelBgpConfig.LocalBgpIp', value1.get('TunnelBgpConfig').get('LocalBgpIp'))
+			if value1.get('RemoteCaCertificate') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.RemoteCaCertificate', value1.get('RemoteCaCertificate'))
+			if value1.get('TunnelId') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelId', value1.get('TunnelId'))
+			if value1.get('TunnelIkeConfig') is not None:
+				if value1.get('TunnelIkeConfig').get('IkeVersion') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkeVersion', value1.get('TunnelIkeConfig').get('IkeVersion'))
+				if value1.get('TunnelIkeConfig').get('IkeMode') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkeMode', value1.get('TunnelIkeConfig').get('IkeMode'))
+				if value1.get('TunnelIkeConfig').get('IkeAuthAlg') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkeAuthAlg', value1.get('TunnelIkeConfig').get('IkeAuthAlg'))
+				if value1.get('TunnelIkeConfig').get('Psk') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.Psk', value1.get('TunnelIkeConfig').get('Psk'))
+				if value1.get('TunnelIkeConfig').get('IkePfs') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkePfs', value1.get('TunnelIkeConfig').get('IkePfs'))
+				if value1.get('TunnelIkeConfig').get('IkeLifetime') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkeLifetime', value1.get('TunnelIkeConfig').get('IkeLifetime'))
+				if value1.get('TunnelIkeConfig').get('LocalId') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.LocalId', value1.get('TunnelIkeConfig').get('LocalId'))
+				if value1.get('TunnelIkeConfig').get('IkeEncAlg') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.IkeEncAlg', value1.get('TunnelIkeConfig').get('IkeEncAlg'))
+				if value1.get('TunnelIkeConfig').get('RemoteId') is not None:
+					self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIkeConfig.RemoteId', value1.get('TunnelIkeConfig').get('RemoteId'))
+			if value1.get('EnableNatTraversal') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.EnableNatTraversal', value1.get('EnableNatTraversal'))
+			if value1.get('TunnelIndex') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.TunnelIndex', value1.get('TunnelIndex'))
+			if value1.get('EnableDpd') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.EnableDpd', value1.get('EnableDpd'))
+			if value1.get('CustomerGatewayId') is not None:
+				self.add_body_params('TunnelOptionsSpecification.' + str(index1 + 1) + '.CustomerGatewayId', value1.get('CustomerGatewayId'))
 	def get_VpnConnectionId(self): # String
 		return self.get_query_params().get('VpnConnectionId')
 

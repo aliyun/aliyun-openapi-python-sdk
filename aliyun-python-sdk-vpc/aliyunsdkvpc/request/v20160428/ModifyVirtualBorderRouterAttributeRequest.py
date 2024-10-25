@@ -131,6 +131,11 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def set_MinRxInterval(self, MinRxInterval):  # Long
 		self.add_query_param('MinRxInterval', MinRxInterval)
+	def get_SitelinkEnable(self): # Boolean
+		return self.get_query_params().get('SitelinkEnable')
+
+	def set_SitelinkEnable(self, SitelinkEnable):  # Boolean
+		self.add_query_param('SitelinkEnable', SitelinkEnable)
 	def get_LocalIpv6GatewayIp(self): # String
 		return self.get_query_params().get('LocalIpv6GatewayIp')
 

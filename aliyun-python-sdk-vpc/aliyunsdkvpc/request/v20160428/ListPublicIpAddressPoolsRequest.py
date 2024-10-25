@@ -36,6 +36,11 @@ class ListPublicIpAddressPoolsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecurityProtectionEnabled(self): # Boolean
+		return self.get_query_params().get('SecurityProtectionEnabled')
+
+	def set_SecurityProtectionEnabled(self, SecurityProtectionEnabled):  # Boolean
+		self.add_query_param('SecurityProtectionEnabled', SecurityProtectionEnabled)
 	def get_Isp(self): # String
 		return self.get_query_params().get('Isp')
 

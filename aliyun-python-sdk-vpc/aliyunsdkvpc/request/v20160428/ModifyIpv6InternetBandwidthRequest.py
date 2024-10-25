@@ -46,6 +46,11 @@ class ModifyIpv6InternetBandwidthRequest(RpcRequest):
 
 	def set_Ipv6InternetBandwidthId(self, Ipv6InternetBandwidthId):  # String
 		self.add_query_param('Ipv6InternetBandwidthId', Ipv6InternetBandwidthId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_Bandwidth(self): # Long
 		return self.get_query_params().get('Bandwidth')
 

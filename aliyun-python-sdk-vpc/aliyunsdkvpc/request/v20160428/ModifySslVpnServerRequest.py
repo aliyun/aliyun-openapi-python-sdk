@@ -71,6 +71,11 @@ class ModifySslVpnServerRequest(RpcRequest):
 
 	def set_Cipher(self, Cipher):  # String
 		self.add_query_param('Cipher', Cipher)
+	def get_IDaaSApplicationId(self): # String
+		return self.get_query_params().get('IDaaSApplicationId')
+
+	def set_IDaaSApplicationId(self, IDaaSApplicationId):  # String
+		self.add_query_param('IDaaSApplicationId', IDaaSApplicationId)
 	def get_ClientIpPool(self): # String
 		return self.get_query_params().get('ClientIpPool')
 

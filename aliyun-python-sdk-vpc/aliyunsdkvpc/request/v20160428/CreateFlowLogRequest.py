@@ -46,6 +46,11 @@ class CreateFlowLogRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_IpVersion(self): # String
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self, IpVersion):  # String
+		self.add_query_param('IpVersion', IpVersion)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

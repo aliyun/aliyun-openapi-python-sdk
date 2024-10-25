@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class AssociateGlobalAccelerationInstanceRequest(RpcRequest):
+class GetPublicIpAddressPoolServiceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateGlobalAccelerationInstance','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'GetPublicIpAddressPoolServiceStatus','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,11 @@ class AssociateGlobalAccelerationInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_GlobalAccelerationInstanceId(self): # String
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_GlobalAccelerationInstanceId(self, GlobalAccelerationInstanceId):  # String
-		self.add_query_param('GlobalAccelerationInstanceId', GlobalAccelerationInstanceId)
-	def get_BackendServerId(self): # String
-		return self.get_query_params().get('BackendServerId')
-
-	def set_BackendServerId(self, BackendServerId):  # String
-		self.add_query_param('BackendServerId', BackendServerId)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,13 +56,3 @@ class AssociateGlobalAccelerationInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_BackendServerRegionId(self): # String
-		return self.get_query_params().get('BackendServerRegionId')
-
-	def set_BackendServerRegionId(self, BackendServerRegionId):  # String
-		self.add_query_param('BackendServerRegionId', BackendServerRegionId)
-	def get_BackendServerType(self): # String
-		return self.get_query_params().get('BackendServerType')
-
-	def set_BackendServerType(self, BackendServerType):  # String
-		self.add_query_param('BackendServerType', BackendServerType)

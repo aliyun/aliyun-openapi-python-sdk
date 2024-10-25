@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class GetNatGatewayConvertStatusRequest(RpcRequest):
+class DeleteExpressConnectTrafficQosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'GetNatGatewayConvertStatus','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteExpressConnectTrafficQos','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class GetNatGatewayConvertStatusRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_QosId(self): # String
+		return self.get_query_params().get('QosId')
 
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)
+	def set_QosId(self, QosId):  # String
+		self.add_query_param('QosId', QosId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

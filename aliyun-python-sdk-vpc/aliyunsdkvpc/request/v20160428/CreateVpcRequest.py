@@ -51,6 +51,11 @@ class CreateVpcRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Ipv4CidrMask(self): # Integer
+		return self.get_query_params().get('Ipv4CidrMask')
+
+	def set_Ipv4CidrMask(self, Ipv4CidrMask):  # Integer
+		self.add_query_param('Ipv4CidrMask', Ipv4CidrMask)
 	def get_VpcName(self): # String
 		return self.get_query_params().get('VpcName')
 
@@ -90,6 +95,11 @@ class CreateVpcRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
+	def get_EnableDnsHostname(self): # Boolean
+		return self.get_query_params().get('EnableDnsHostname')
+
+	def set_EnableDnsHostname(self, EnableDnsHostname):  # Boolean
+		self.add_query_param('EnableDnsHostname', EnableDnsHostname)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

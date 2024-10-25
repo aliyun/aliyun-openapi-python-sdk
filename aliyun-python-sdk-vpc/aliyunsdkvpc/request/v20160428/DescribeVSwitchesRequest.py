@@ -36,6 +36,11 @@ class DescribeVSwitchesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_EnableIpv6(self): # Boolean
+		return self.get_query_params().get('EnableIpv6')
+
+	def set_EnableIpv6(self, EnableIpv6):  # Boolean
+		self.add_query_param('EnableIpv6', EnableIpv6)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -56,6 +61,15 @@ class DescribeVSwitchesRequest(RpcRequest):
 
 	def set_IsDefault(self, IsDefault):  # Boolean
 		self.add_query_param('IsDefault', IsDefault)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_RouteTableId(self): # String
 		return self.get_query_params().get('RouteTableId')
 

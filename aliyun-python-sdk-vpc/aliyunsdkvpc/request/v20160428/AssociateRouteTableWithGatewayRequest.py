@@ -51,6 +51,11 @@ class AssociateRouteTableWithGatewayRequest(RpcRequest):
 
 	def set_RouteTableId(self, RouteTableId):  # String
 		self.add_query_param('RouteTableId', RouteTableId)
+	def get_GatewayType(self): # String
+		return self.get_query_params().get('GatewayType')
+
+	def set_GatewayType(self, GatewayType):  # String
+		self.add_query_param('GatewayType', GatewayType)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

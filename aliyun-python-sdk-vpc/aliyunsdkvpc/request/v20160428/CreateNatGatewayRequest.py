@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
+import json
 
 class CreateNatGatewayRequest(RpcRequest):
 
@@ -130,6 +131,11 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_PrivateLinkEnabled(self): # Boolean
+		return self.get_query_params().get('PrivateLinkEnabled')
+
+	def set_PrivateLinkEnabled(self, PrivateLinkEnabled):  # Boolean
+		self.add_query_param('PrivateLinkEnabled', PrivateLinkEnabled)
 	def get_EipBindMode(self): # String
 		return self.get_query_params().get('EipBindMode')
 
@@ -140,3 +146,8 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_PricingCycle(self, PricingCycle):  # String
 		self.add_query_param('PricingCycle', PricingCycle)
+	def get_AccessMode(self): # Struct
+		return self.get_query_params().get('AccessMode')
+
+	def set_AccessMode(self, AccessMode):  # Struct
+		self.add_query_param("AccessMode", json.dumps(AccessMode))

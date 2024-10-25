@@ -61,6 +61,11 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RoutePropagationEnable(self): # Boolean
+		return self.get_query_params().get('RoutePropagationEnable')
+
+	def set_RoutePropagationEnable(self, RoutePropagationEnable):  # Boolean
+		self.add_query_param('RoutePropagationEnable', RoutePropagationEnable)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

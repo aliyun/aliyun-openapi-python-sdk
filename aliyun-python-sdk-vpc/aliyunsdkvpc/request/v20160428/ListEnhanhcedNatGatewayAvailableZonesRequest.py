@@ -51,6 +51,15 @@ class ListEnhanhcedNatGatewayAvailableZonesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Filter(self): # Array
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self, Filter):  # Array
+		for index1, value1 in enumerate(Filter):
+			if value1.get('Key') is not None:
+				self.add_query_param('Filter.' + str(index1 + 1) + '.Key', value1.get('Key'))
+			if value1.get('Value') is not None:
+				self.add_query_param('Filter.' + str(index1 + 1) + '.Value', value1.get('Value'))
 	def get_AcceptLanguage(self): # String
 		return self.get_query_params().get('AcceptLanguage')
 

@@ -81,6 +81,11 @@ class UpdateGatewayRouteTableEntryAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_GatewayRouteTableId(self): # String
+		return self.get_query_params().get('GatewayRouteTableId')
+
+	def set_GatewayRouteTableId(self, GatewayRouteTableId):  # String
+		self.add_query_param('GatewayRouteTableId', GatewayRouteTableId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

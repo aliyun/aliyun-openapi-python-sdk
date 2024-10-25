@@ -46,6 +46,16 @@ class ModifyRouteEntryRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_NewNextHopId(self): # String
+		return self.get_query_params().get('NewNextHopId')
+
+	def set_NewNextHopId(self, NewNextHopId):  # String
+		self.add_query_param('NewNextHopId', NewNextHopId)
+	def get_RouteTableId(self): # String
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self, RouteTableId):  # String
+		self.add_query_param('RouteTableId', RouteTableId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,11 +66,21 @@ class ModifyRouteEntryRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DestinationCidrBlock(self): # String
+		return self.get_query_params().get('DestinationCidrBlock')
+
+	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
+		self.add_query_param('DestinationCidrBlock', DestinationCidrBlock)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_NewNextHopType(self): # String
+		return self.get_query_params().get('NewNextHopType')
+
+	def set_NewNextHopType(self, NewNextHopType):  # String
+		self.add_query_param('NewNextHopType', NewNextHopType)
 	def get_RouteEntryId(self): # String
 		return self.get_query_params().get('RouteEntryId')
 

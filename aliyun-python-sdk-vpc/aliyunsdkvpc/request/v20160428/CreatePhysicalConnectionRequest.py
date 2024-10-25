@@ -120,3 +120,9 @@ class CreatePhysicalConnectionRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_DeviceAdvancedCapacitys(self): # RepeatList
+		return self.get_query_params().get('DeviceAdvancedCapacity')
+
+	def set_DeviceAdvancedCapacitys(self, DeviceAdvancedCapacity):  # RepeatList
+		for depth1 in range(len(DeviceAdvancedCapacity)):
+			self.add_query_param('DeviceAdvancedCapacity.' + str(depth1 + 1), DeviceAdvancedCapacity[depth1])

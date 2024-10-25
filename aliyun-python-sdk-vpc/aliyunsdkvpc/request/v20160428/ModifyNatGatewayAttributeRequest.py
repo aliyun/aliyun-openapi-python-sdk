@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
+import json
 
 class ModifyNatGatewayAttributeRequest(RpcRequest):
 
@@ -41,6 +42,11 @@ class ModifyNatGatewayAttributeRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_LogDelivery(self): # Struct
+		return self.get_query_params().get('LogDelivery')
+
+	def set_LogDelivery(self, LogDelivery):  # Struct
+		self.add_query_param("LogDelivery", json.dumps(LogDelivery))
 	def get_IcmpReplyEnabled(self): # Boolean
 		return self.get_query_params().get('IcmpReplyEnabled')
 
@@ -66,6 +72,11 @@ class ModifyNatGatewayAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_EnableSessionLog(self): # Boolean
+		return self.get_query_params().get('EnableSessionLog')
+
+	def set_EnableSessionLog(self, EnableSessionLog):  # Boolean
+		self.add_query_param('EnableSessionLog', EnableSessionLog)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

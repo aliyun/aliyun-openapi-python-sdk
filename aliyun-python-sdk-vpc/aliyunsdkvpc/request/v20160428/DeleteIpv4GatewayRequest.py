@@ -66,3 +66,8 @@ class DeleteIpv4GatewayRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_InternetMode(self): # String
+		return self.get_query_params().get('InternetMode')
+
+	def set_InternetMode(self, InternetMode):  # String
+		self.add_query_param('InternetMode', InternetMode)

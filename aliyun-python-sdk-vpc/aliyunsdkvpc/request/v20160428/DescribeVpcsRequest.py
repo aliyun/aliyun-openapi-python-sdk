@@ -41,6 +41,11 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_VpcOwnerId(self, VpcOwnerId):  # Long
 		self.add_query_param('VpcOwnerId', VpcOwnerId)
+	def get_EnableIpv6(self): # Boolean
+		return self.get_query_params().get('EnableIpv6')
+
+	def set_EnableIpv6(self, EnableIpv6):  # Boolean
+		self.add_query_param('EnableIpv6', EnableIpv6)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -66,6 +71,15 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_IsDefault(self, IsDefault):  # Boolean
 		self.add_query_param('IsDefault', IsDefault)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
