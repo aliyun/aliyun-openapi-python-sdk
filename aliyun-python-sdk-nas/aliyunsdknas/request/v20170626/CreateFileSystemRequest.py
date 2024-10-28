@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateFileSystemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateFileSystem','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateFileSystem','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -71,6 +71,11 @@ class CreateFileSystemRequest(RpcRequest):
 
 	def set_Duration(self, Duration):  # Integer
 		self.add_query_param('Duration', Duration)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

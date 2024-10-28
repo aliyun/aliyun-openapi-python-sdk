@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateFilesetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateFileset','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateFileset','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,19 @@ class CreateFilesetRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_DeletionProtection(self): # Boolean
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self, DeletionProtection):  # Boolean
+		self.add_query_param('DeletionProtection', DeletionProtection)
+	def get_Quota(self): # Struct
+		return self.get_query_params().get('Quota')
+
+	def set_Quota(self, Quota):  # Struct
+		if Quota.get('SizeLimit') is not None:
+			self.add_query_param('Quota.SizeLimit', Quota.get('SizeLimit'))
+		if Quota.get('FileCountLimit') is not None:
+			self.add_query_param('Quota.FileCountLimit', Quota.get('FileCountLimit'))
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 

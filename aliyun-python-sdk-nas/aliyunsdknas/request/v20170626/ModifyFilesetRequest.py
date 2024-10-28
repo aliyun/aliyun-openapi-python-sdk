@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class ModifyFilesetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyFileset','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyFileset','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class ModifyFilesetRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_DeletionProtection(self): # Boolean
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self, DeletionProtection):  # Boolean
+		self.add_query_param('DeletionProtection', DeletionProtection)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 

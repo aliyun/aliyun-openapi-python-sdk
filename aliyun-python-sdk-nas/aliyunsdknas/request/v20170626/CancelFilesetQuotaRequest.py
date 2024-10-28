@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DescribeLDAPConfigRequest(RpcRequest):
+class CancelFilesetQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLDAPConfig','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CancelFilesetQuota','nas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +32,23 @@ class DescribeLDAPConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_FsetId(self): # String
+		return self.get_query_params().get('FsetId')
+
+	def set_FsetId(self, FsetId):  # String
+		self.add_query_param('FsetId', FsetId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)

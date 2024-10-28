@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DescribeLogAnalysisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLogAnalysis','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLogAnalysis','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeLogAnalysisRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_FileSystemType(self): # String
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self, FileSystemType):  # String
+		self.add_query_param('FileSystemType', FileSystemType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

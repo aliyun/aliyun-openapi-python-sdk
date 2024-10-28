@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateDataFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDataFlow','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDataFlow','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -88,3 +88,13 @@ class CreateDataFlowRequest(RpcRequest):
 
 	def set_AutoRefreshInterval(self, AutoRefreshInterval):  # Long
 		self.add_query_param('AutoRefreshInterval', AutoRefreshInterval)
+	def get_SourceStoragePath(self): # String
+		return self.get_query_params().get('SourceStoragePath')
+
+	def set_SourceStoragePath(self, SourceStoragePath):  # String
+		self.add_query_param('SourceStoragePath', SourceStoragePath)
+	def get_FileSystemPath(self): # String
+		return self.get_query_params().get('FileSystemPath')
+
+	def set_FileSystemPath(self, FileSystemPath):  # String
+		self.add_query_param('FileSystemPath', FileSystemPath)

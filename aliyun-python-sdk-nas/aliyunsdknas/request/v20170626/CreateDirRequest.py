@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DescribeTagsRequest(RpcRequest):
+class CreateDirRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeTags','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDir','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,27 +31,33 @@ class DescribeTagsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_Recursion(self): # Boolean
+		return self.get_query_params().get('Recursion')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_Recursion(self, Recursion):  # Boolean
+		self.add_query_param('Recursion', Recursion)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self, FileSystemId):  # String
 		self.add_query_param('FileSystemId', FileSystemId)
+	def get_OwnerGroupId(self): # Integer
+		return self.get_query_params().get('OwnerGroupId')
+
+	def set_OwnerGroupId(self, OwnerGroupId):  # Integer
+		self.add_query_param('OwnerGroupId', OwnerGroupId)
+	def get_OwnerUserId(self): # Integer
+		return self.get_query_params().get('OwnerUserId')
+
+	def set_OwnerUserId(self, OwnerUserId):  # Integer
+		self.add_query_param('OwnerUserId', OwnerUserId)
+	def get_Permission(self): # String
+		return self.get_query_params().get('Permission')
+
+	def set_Permission(self, Permission):  # String
+		self.add_query_param('Permission', Permission)
+	def get_RootDirectory(self): # String
+		return self.get_query_params().get('RootDirectory')
+
+	def set_RootDirectory(self, RootDirectory):  # String
+		self.add_query_param('RootDirectory', RootDirectory)

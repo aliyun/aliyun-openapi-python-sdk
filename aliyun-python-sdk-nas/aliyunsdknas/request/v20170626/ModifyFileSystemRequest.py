@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
+import json
 
 class ModifyFileSystemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyFileSystem','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyFileSystem','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +37,11 @@ class ModifyFileSystemRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Options(self): # Struct
+		return self.get_query_params().get('Options')
+
+	def set_Options(self, Options):  # Struct
+		self.add_query_param("Options", json.dumps(Options))
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 

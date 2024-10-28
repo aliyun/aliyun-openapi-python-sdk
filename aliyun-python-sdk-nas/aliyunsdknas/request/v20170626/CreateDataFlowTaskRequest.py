@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateDataFlowTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDataFlowTask','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateDataFlowTask','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class CreateDataFlowTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DstDirectory(self): # String
+		return self.get_query_params().get('DstDirectory')
+
+	def set_DstDirectory(self, DstDirectory):  # String
+		self.add_query_param('DstDirectory', DstDirectory)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -51,6 +56,11 @@ class CreateDataFlowTaskRequest(RpcRequest):
 
 	def set_DataType(self, DataType):  # String
 		self.add_query_param('DataType', DataType)
+	def get_CreateDirIfNotExist(self): # Boolean
+		return self.get_query_params().get('CreateDirIfNotExist')
+
+	def set_CreateDirIfNotExist(self, CreateDirIfNotExist):  # Boolean
+		self.add_query_param('CreateDirIfNotExist', CreateDirIfNotExist)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 
@@ -71,6 +81,11 @@ class CreateDataFlowTaskRequest(RpcRequest):
 
 	def set_EntryList(self, EntryList):  # String
 		self.add_query_param('EntryList', EntryList)
+	def get_ConflictPolicy(self): # String
+		return self.get_query_params().get('ConflictPolicy')
+
+	def set_ConflictPolicy(self, ConflictPolicy):  # String
+		self.add_query_param('ConflictPolicy', ConflictPolicy)
 	def get_TaskAction(self): # String
 		return self.get_query_params().get('TaskAction')
 

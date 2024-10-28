@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class ListLifecycleRetrieveJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ListLifecycleRetrieveJobs','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ListLifecycleRetrieveJobs','nas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ListLifecycleRetrieveJobsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_StorageType(self): # String
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DescribeLifecyclePoliciesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLifecyclePolicies','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLifecyclePolicies','nas')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,16 @@ class DescribeLifecyclePoliciesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_StorageType(self): # String
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
+	def get_LifecyclePolicyName(self): # String
+		return self.get_query_params().get('LifecyclePolicyName')
+
+	def set_LifecyclePolicyName(self, LifecyclePolicyName):  # String
+		self.add_query_param('LifecyclePolicyName', LifecyclePolicyName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
