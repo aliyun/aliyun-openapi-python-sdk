@@ -61,6 +61,11 @@ class ListPrivateAccessApplicationsRequest(RpcRequest):
 	def set_ApplicationIds(self, ApplicationIds):  # Array
 		for index1, value1 in enumerate(ApplicationIds):
 			self.add_query_param('ApplicationIds.' + str(index1 + 1), value1)
+	def get_AccessModes(self): # String
+		return self.get_query_params().get('AccessModes')
+
+	def set_AccessModes(self, AccessModes):  # String
+		self.add_query_param('AccessModes', AccessModes)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 

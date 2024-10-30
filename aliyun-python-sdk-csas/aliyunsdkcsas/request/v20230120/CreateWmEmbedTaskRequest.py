@@ -56,6 +56,11 @@ class CreateWmEmbedTaskRequest(RpcRequest):
 
 	def set_WmInfoUint(self, WmInfoUint):  # String
 		self.add_body_params('WmInfoUint', WmInfoUint)
+	def get_CsvControl(self): # Struct
+		return self.get_query_params().get('CsvControl')
+
+	def set_CsvControl(self, CsvControl):  # Struct
+		self.add_query_param("CsvControl", json.dumps(CsvControl))
 	def get_Filename(self): # String
 		return self.get_body_params().get('Filename')
 

@@ -46,12 +46,27 @@ class UpdatePrivateAccessApplicationRequest(RpcRequest):
 
 	def set_ApplicationId(self, ApplicationId):  # String
 		self.add_body_params('ApplicationId', ApplicationId)
+	def get_L7ProxyDomainCustom(self): # String
+		return self.get_body_params().get('L7ProxyDomainCustom')
+
+	def set_L7ProxyDomainCustom(self, L7ProxyDomainCustom):  # String
+		self.add_body_params('L7ProxyDomainCustom', L7ProxyDomainCustom)
+	def get_L7ProxyDomainPrivate(self): # String
+		return self.get_body_params().get('L7ProxyDomainPrivate')
+
+	def set_L7ProxyDomainPrivate(self, L7ProxyDomainPrivate):  # String
+		self.add_body_params('L7ProxyDomainPrivate', L7ProxyDomainPrivate)
 	def get_TagIds(self): # Array
 		return self.get_body_params().get('TagIds')
 
 	def set_TagIds(self, TagIds):  # Array
 		for index1, value1 in enumerate(TagIds):
 			self.add_body_params('TagIds.' + str(index1 + 1), value1)
+	def get_L7ProxyDomainAutomaticPrefix(self): # String
+		return self.get_body_params().get('L7ProxyDomainAutomaticPrefix')
+
+	def set_L7ProxyDomainAutomaticPrefix(self, L7ProxyDomainAutomaticPrefix):  # String
+		self.add_body_params('L7ProxyDomainAutomaticPrefix', L7ProxyDomainAutomaticPrefix)
 	def get_PortRanges(self): # Array
 		return self.get_body_params().get('PortRanges')
 
