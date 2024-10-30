@@ -105,3 +105,8 @@ class CreateCommandRequest(RpcRequest):
 
 	def set_EnableParameter(self, EnableParameter):  # Boolean
 		self.add_query_param('EnableParameter', EnableParameter)
+	def get_Launcher(self): # String
+		return self.get_query_params().get('Launcher')
+
+	def set_Launcher(self, Launcher):  # String
+		self.add_query_param('Launcher', Launcher)

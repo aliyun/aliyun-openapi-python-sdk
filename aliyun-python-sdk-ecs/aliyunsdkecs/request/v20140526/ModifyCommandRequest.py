@@ -81,3 +81,8 @@ class ModifyCommandRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_Launcher(self): # String
+		return self.get_query_params().get('Launcher')
+
+	def set_Launcher(self, Launcher):  # String
+		self.add_query_param('Launcher', Launcher)
