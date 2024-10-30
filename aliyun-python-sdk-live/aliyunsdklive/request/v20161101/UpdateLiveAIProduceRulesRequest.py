@@ -36,6 +36,11 @@ class UpdateLiveAIProduceRulesRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Suffix(self): # String
+		return self.get_query_params().get('Suffix')
+
+	def set_Suffix(self, Suffix):  # String
+		self.add_query_param('Suffix', Suffix)
 	def get_SubtitleName(self): # String
 		return self.get_query_params().get('SubtitleName')
 
@@ -61,6 +66,11 @@ class UpdateLiveAIProduceRulesRequest(RpcRequest):
 
 	def set_IsLazy(self, IsLazy):  # Boolean
 		self.add_query_param('IsLazy', IsLazy)
+	def get_StudioName(self): # String
+		return self.get_query_params().get('StudioName')
+
+	def set_StudioName(self, StudioName):  # String
+		self.add_query_param('StudioName', StudioName)
 	def get_LiveTemplate(self): # String
 		return self.get_query_params().get('LiveTemplate')
 
