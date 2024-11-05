@@ -36,6 +36,11 @@ class UpgradeDBInstanceKernelVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SwitchMode(self): # String
+		return self.get_query_params().get('SwitchMode')
+
+	def set_SwitchMode(self, SwitchMode):  # String
+		self.add_query_param('SwitchMode', SwitchMode)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

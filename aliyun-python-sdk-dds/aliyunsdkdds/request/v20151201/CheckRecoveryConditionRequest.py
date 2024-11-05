@@ -36,6 +36,11 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_EngineVersion(self): # String
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
 	def get_SrcRegion(self): # String
 		return self.get_query_params().get('SrcRegion')
 

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class UpgradeDBInstanceEngineVersionRequest(RpcRequest):
+class DescribeRestoreDBInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'UpgradeDBInstanceEngineVersion','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRestoreDBInstanceList','dds')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +37,21 @@ class UpgradeDBInstanceEngineVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_EngineVersion(self): # String
-		return self.get_query_params().get('EngineVersion')
+	def get_CreationTimeAfter(self): # String
+		return self.get_query_params().get('CreationTimeAfter')
 
-	def set_EngineVersion(self, EngineVersion):  # String
-		self.add_query_param('EngineVersion', EngineVersion)
-	def get_SwitchMode(self): # Integer
-		return self.get_query_params().get('SwitchMode')
+	def set_CreationTimeAfter(self, CreationTimeAfter):  # String
+		self.add_query_param('CreationTimeAfter', CreationTimeAfter)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_SwitchMode(self, SwitchMode):  # Integer
-		self.add_query_param('SwitchMode', SwitchMode)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
