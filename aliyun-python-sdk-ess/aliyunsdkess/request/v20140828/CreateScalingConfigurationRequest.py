@@ -334,6 +334,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
 	def get_DedicatedHostClusterId(self): # String
 		return self.get_query_params().get('DedicatedHostClusterId')
 
@@ -473,6 +478,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_ImageFamily(self, ImageFamily):  # String
 		self.add_query_param('ImageFamily', ImageFamily)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
 	def get_SystemDiskDescription(self): # String
 		return self.get_query_params().get('SystemDisk.Description')
 

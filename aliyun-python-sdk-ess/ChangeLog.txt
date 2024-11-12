@@ -1,3 +1,6 @@
+2024-11-12 Version: 2.3.26
+- ScalingConfiguration supoort ConfidentialComputingMode.
+
 2024-10-22 Version: 2.3.25
 - ScalingConfiguration supoort ConfidentialComputingMode.
 
