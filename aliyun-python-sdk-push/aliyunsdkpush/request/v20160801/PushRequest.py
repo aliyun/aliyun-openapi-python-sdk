@@ -36,6 +36,11 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidNotificationBarType(self, AndroidNotificationBarType):  # Integer
 		self.add_query_param('AndroidNotificationBarType', AndroidNotificationBarType)
+	def get_AndroidMessageOppoNotifyLevel(self): # Integer
+		return self.get_query_params().get('AndroidMessageOppoNotifyLevel')
+
+	def set_AndroidMessageOppoNotifyLevel(self, AndroidMessageOppoNotifyLevel):  # Integer
+		self.add_query_param('AndroidMessageOppoNotifyLevel', AndroidMessageOppoNotifyLevel)
 	def get_DeviceType(self): # String
 		return self.get_query_params().get('DeviceType')
 
@@ -506,6 +511,11 @@ class PushRequest(RpcRequest):
 
 	def set_HarmonyInboxContent(self, HarmonyInboxContent):  # String
 		self.add_query_param('HarmonyInboxContent', HarmonyInboxContent)
+	def get_AndroidMessageOppoCategory(self): # String
+		return self.get_query_params().get('AndroidMessageOppoCategory')
+
+	def set_AndroidMessageOppoCategory(self, AndroidMessageOppoCategory):  # String
+		self.add_query_param('AndroidMessageOppoCategory', AndroidMessageOppoCategory)
 	def get_AndroidXiaoMiActivity(self): # String
 		return self.get_query_params().get('AndroidXiaoMiActivity')
 
