@@ -52,6 +52,11 @@ class StartLiveMPUTaskRequest(RpcRequest):
 
 	def set_MultiStreamURL(self, MultiStreamURL):  # Array
 		self.add_query_param("MultiStreamURL", json.dumps(MultiStreamURL))
+	def get_MaxIdleTime(self): # String
+		return self.get_query_params().get('MaxIdleTime')
+
+	def set_MaxIdleTime(self, MaxIdleTime):  # String
+		self.add_query_param('MaxIdleTime', MaxIdleTime)
 	def get_SeiParams(self): # Struct
 		return self.get_query_params().get('SeiParams')
 
