@@ -56,6 +56,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DBNodeCrashList(self): # String
+		return self.get_query_params().get('DBNodeCrashList')
+
+	def set_DBNodeCrashList(self, DBNodeCrashList):  # String
+		self.add_query_param('DBNodeCrashList', DBNodeCrashList)
 	def get_FaultSimulateMode(self): # String
 		return self.get_query_params().get('FaultSimulateMode')
 
@@ -76,11 +81,21 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_StorageUpperBound(self, StorageUpperBound):  # Long
 		self.add_query_param('StorageUpperBound', StorageUpperBound)
+	def get_ImciAutoIndex(self): # String
+		return self.get_query_params().get('ImciAutoIndex')
+
+	def set_ImciAutoIndex(self, ImciAutoIndex):  # String
+		self.add_query_param('ImciAutoIndex', ImciAutoIndex)
 	def get_StorageAutoScale(self): # String
 		return self.get_query_params().get('StorageAutoScale')
 
 	def set_StorageAutoScale(self, StorageAutoScale):  # String
 		self.add_query_param('StorageAutoScale', StorageAutoScale)
+	def get_FaultInjectionType(self): # String
+		return self.get_query_params().get('FaultInjectionType')
+
+	def set_FaultInjectionType(self, FaultInjectionType):  # String
+		self.add_query_param('FaultInjectionType', FaultInjectionType)
 	def get_DataSyncMode(self): # String
 		return self.get_query_params().get('DataSyncMode')
 

@@ -46,11 +46,21 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 
 	def set_DBEndpointId(self, DBEndpointId):  # String
 		self.add_query_param('DBEndpointId', DBEndpointId)
+	def get_PolarSccWaitTimeout(self): # String
+		return self.get_query_params().get('PolarSccWaitTimeout')
+
+	def set_PolarSccWaitTimeout(self, PolarSccWaitTimeout):  # String
+		self.add_query_param('PolarSccWaitTimeout', PolarSccWaitTimeout)
 	def get_ReadWriteMode(self): # String
 		return self.get_query_params().get('ReadWriteMode')
 
 	def set_ReadWriteMode(self, ReadWriteMode):  # String
 		self.add_query_param('ReadWriteMode', ReadWriteMode)
+	def get_PolarSccTimeoutAction(self): # String
+		return self.get_query_params().get('PolarSccTimeoutAction')
+
+	def set_PolarSccTimeoutAction(self, PolarSccTimeoutAction):  # String
+		self.add_query_param('PolarSccTimeoutAction', PolarSccTimeoutAction)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -86,3 +96,8 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 
 	def set_Nodes(self, Nodes):  # String
 		self.add_query_param('Nodes', Nodes)
+	def get_SccMode(self): # String
+		return self.get_query_params().get('SccMode')
+
+	def set_SccMode(self, SccMode):  # String
+		self.add_query_param('SccMode', SccMode)

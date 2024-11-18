@@ -81,6 +81,11 @@ class UpgradeDBClusterVersionRequest(RpcRequest):
 
 	def set_TargetDBRevisionVersionCode(self, TargetDBRevisionVersionCode):  # String
 		self.add_query_param('TargetDBRevisionVersionCode', TargetDBRevisionVersionCode)
+	def get_TargetProxyRevisionVersionCode(self): # String
+		return self.get_query_params().get('TargetProxyRevisionVersionCode')
+
+	def set_TargetProxyRevisionVersionCode(self, TargetProxyRevisionVersionCode):  # String
+		self.add_query_param('TargetProxyRevisionVersionCode', TargetProxyRevisionVersionCode)
 	def get_UpgradePolicy(self): # String
 		return self.get_query_params().get('UpgradePolicy')
 

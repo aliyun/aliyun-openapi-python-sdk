@@ -61,6 +61,11 @@ class ModifyDBNodesClassRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_PlannedFlashingOffTime(self): # String
+		return self.get_query_params().get('PlannedFlashingOffTime')
+
+	def set_PlannedFlashingOffTime(self, PlannedFlashingOffTime):  # String
+		self.add_query_param('PlannedFlashingOffTime', PlannedFlashingOffTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

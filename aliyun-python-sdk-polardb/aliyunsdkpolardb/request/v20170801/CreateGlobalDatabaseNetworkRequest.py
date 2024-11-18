@@ -66,6 +66,11 @@ class CreateGlobalDatabaseNetworkRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EnableGlobalDomainName(self): # Boolean
+		return self.get_query_params().get('EnableGlobalDomainName')
+
+	def set_EnableGlobalDomainName(self, EnableGlobalDomainName):  # Boolean
+		self.add_query_param('EnableGlobalDomainName', EnableGlobalDomainName)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

@@ -61,6 +61,11 @@ class ModifyDBClusterTDERequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_EnableAutomaticRotation(self): # String
+		return self.get_query_params().get('EnableAutomaticRotation')
+
+	def set_EnableAutomaticRotation(self, EnableAutomaticRotation):  # String
+		self.add_query_param('EnableAutomaticRotation', EnableAutomaticRotation)
 	def get_RoleArn(self): # String
 		return self.get_query_params().get('RoleArn')
 

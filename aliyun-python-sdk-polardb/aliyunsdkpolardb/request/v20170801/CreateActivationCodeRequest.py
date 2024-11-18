@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyGlobalDatabaseNetworkRequest(RpcRequest):
+class CreateActivationCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyGlobalDatabaseNetwork','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateActivationCode','polardb')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,26 +37,26 @@ class ModifyGlobalDatabaseNetworkRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AliyunOrderId(self): # String
+		return self.get_query_params().get('AliyunOrderId')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_GDNId(self): # String
-		return self.get_query_params().get('GDNId')
+	def set_AliyunOrderId(self, AliyunOrderId):  # String
+		self.add_query_param('AliyunOrderId', AliyunOrderId)
+	def get_MacAddress(self): # String
+		return self.get_query_params().get('MacAddress')
 
-	def set_GDNId(self, GDNId):  # String
-		self.add_query_param('GDNId', GDNId)
-	def get_GDNDescription(self): # String
-		return self.get_query_params().get('GDNDescription')
+	def set_MacAddress(self, MacAddress):  # String
+		self.add_query_param('MacAddress', MacAddress)
+	def get_SystemIdentifier(self): # String
+		return self.get_query_params().get('SystemIdentifier')
 
-	def set_GDNDescription(self, GDNDescription):  # String
-		self.add_query_param('GDNDescription', GDNDescription)
+	def set_SystemIdentifier(self, SystemIdentifier):  # String
+		self.add_query_param('SystemIdentifier', SystemIdentifier)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,13 +67,13 @@ class ModifyGlobalDatabaseNetworkRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EnableGlobalDomainName(self): # Boolean
-		return self.get_query_params().get('EnableGlobalDomainName')
-
-	def set_EnableGlobalDomainName(self, EnableGlobalDomainName):  # Boolean
-		self.add_query_param('EnableGlobalDomainName', EnableGlobalDomainName)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

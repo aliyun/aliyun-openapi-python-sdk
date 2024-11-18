@@ -51,6 +51,11 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

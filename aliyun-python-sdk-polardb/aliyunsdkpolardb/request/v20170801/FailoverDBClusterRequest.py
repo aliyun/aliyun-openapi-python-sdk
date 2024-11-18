@@ -61,6 +61,11 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TargetZoneType(self): # String
+		return self.get_query_params().get('TargetZoneType')
+
+	def set_TargetZoneType(self, TargetZoneType):  # String
+		self.add_query_param('TargetZoneType', TargetZoneType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

@@ -31,6 +31,11 @@ class DescribeDBProxyPerformanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBNodeId(self): # String
+		return self.get_query_params().get('DBNodeId')
+
+	def set_DBNodeId(self, DBNodeId):  # String
+		self.add_query_param('DBNodeId', DBNodeId)
 	def get_DBEndpointId(self): # String
 		return self.get_query_params().get('DBEndpointId')
 

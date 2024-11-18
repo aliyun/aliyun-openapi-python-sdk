@@ -245,6 +245,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_UsedTime(self, UsedTime):  # String
 		self.add_query_param('UsedTime', UsedTime)
+	def get_BurstingEnabled(self): # String
+		return self.get_query_params().get('BurstingEnabled')
+
+	def set_BurstingEnabled(self, BurstingEnabled):  # String
+		self.add_query_param('BurstingEnabled', BurstingEnabled)
 	def get_DBNodeNum(self): # Integer
 		return self.get_query_params().get('DBNodeNum')
 
