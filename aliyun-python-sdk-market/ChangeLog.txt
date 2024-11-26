@@ -1,3 +1,6 @@
+2024-11-26 Version: 1.0.5
+- Update DescribeApiMetering API.
+
 2024-11-26 Version: 1.0.4
 - Update DescribeApiMetering API.
 
