@@ -30,6 +30,11 @@ class AddUserRequest(RpcRequest):
 
 	def set_AdminUser(self, AdminUser):  # Boolean
 		self.add_query_param('AdminUser', AdminUser)
+	def get_AccountId(self): # String
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
 	def get_RoleIds(self): # String
 		return self.get_body_params().get('RoleIds')
 
