@@ -25,21 +25,31 @@ class DescribeSnapshotsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeSnapshots','ens')
 		self.set_method('POST')
 
-	def get_SnapshotId(self): # String
-		return self.get_query_params().get('SnapshotId')
-
-	def set_SnapshotId(self, SnapshotId):  # String
-		self.add_query_param('SnapshotId', SnapshotId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
+
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
+	def get_SnapshotName(self): # String
+		return self.get_query_params().get('SnapshotName')
+
+	def set_SnapshotName(self, SnapshotName):  # String
+		self.add_query_param('SnapshotName', SnapshotName)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -50,8 +60,8 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_DiskId(self, DiskId):  # String
 		self.add_query_param('DiskId', DiskId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_EnsRegionIds(self): # String
+		return self.get_query_params().get('EnsRegionIds')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_EnsRegionIds(self, EnsRegionIds):  # String
+		self.add_query_param('EnsRegionIds', EnsRegionIds)

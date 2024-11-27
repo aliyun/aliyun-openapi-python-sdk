@@ -85,6 +85,11 @@ class CreateARMServerInstancesRequest(RpcRequest):
 
 	def set_Amount(self, Amount):  # Integer
 		self.add_query_param('Amount', Amount)
+	def get_EnvironmentVar(self): # String
+		return self.get_query_params().get('EnvironmentVar')
+
+	def set_EnvironmentVar(self, EnvironmentVar):  # String
+		self.add_query_param('EnvironmentVar', EnvironmentVar)
 	def get_NameSpace(self): # String
 		return self.get_query_params().get('NameSpace')
 
