@@ -31,6 +31,11 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SessionId(self): # String
+		return self.get_query_params().get('SessionId')
+
+	def set_SessionId(self, SessionId):  # String
+		self.add_query_param('SessionId', SessionId)
 	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 

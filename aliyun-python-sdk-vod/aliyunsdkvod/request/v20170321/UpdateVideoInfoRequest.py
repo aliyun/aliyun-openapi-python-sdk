@@ -46,6 +46,11 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def set_CoverURL(self, CoverURL):  # String
 		self.add_query_param('CoverURL', CoverURL)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
 	def get_CateId(self): # Long
 		return self.get_query_params().get('CateId')
 
