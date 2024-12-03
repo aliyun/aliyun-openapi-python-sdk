@@ -159,6 +159,11 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_Ipv6PrefixCount(self, Ipv6PrefixCount):  # Integer
 		self.add_query_param('Ipv6PrefixCount', Ipv6PrefixCount)
+	def get_SourceDestCheck(self): # Boolean
+		return self.get_query_params().get('SourceDestCheck')
+
+	def set_SourceDestCheck(self, SourceDestCheck):  # Boolean
+		self.add_query_param('SourceDestCheck', SourceDestCheck)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 

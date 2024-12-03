@@ -56,3 +56,8 @@ class RedeployDedicatedHostRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MigrationType(self): # String
+		return self.get_query_params().get('MigrationType')
+
+	def set_MigrationType(self, MigrationType):  # String
+		self.add_query_param('MigrationType', MigrationType)

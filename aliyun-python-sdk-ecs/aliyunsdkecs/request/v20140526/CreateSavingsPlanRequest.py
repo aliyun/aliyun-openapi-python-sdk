@@ -32,6 +32,21 @@ class CreateSavingsPlanRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceTypeFamilyGroup(self): # String
+		return self.get_query_params().get('InstanceTypeFamilyGroup')
+
+	def set_InstanceTypeFamilyGroup(self, InstanceTypeFamilyGroup):  # String
+		self.add_query_param('InstanceTypeFamilyGroup', InstanceTypeFamilyGroup)
+	def get_PlanType(self): # String
+		return self.get_query_params().get('PlanType')
+
+	def set_PlanType(self, PlanType):  # String
+		self.add_query_param('PlanType', PlanType)
+	def get_CommittedAmount(self): # String
+		return self.get_query_params().get('CommittedAmount')
+
+	def set_CommittedAmount(self, CommittedAmount):  # String
+		self.add_query_param('CommittedAmount', CommittedAmount)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
@@ -48,11 +63,6 @@ class CreateSavingsPlanRequest(RpcRequest):
 
 	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
 		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-	def get_PlanType(self): # String
-		return self.get_query_params().get('PlanType')
-
-	def set_PlanType(self, PlanType):  # String
-		self.add_query_param('PlanType', PlanType)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -68,8 +78,3 @@ class CreateSavingsPlanRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
-	def get_CommittedAmount(self): # String
-		return self.get_query_params().get('CommittedAmount')
-
-	def set_CommittedAmount(self, CommittedAmount):  # String
-		self.add_query_param('CommittedAmount', CommittedAmount)

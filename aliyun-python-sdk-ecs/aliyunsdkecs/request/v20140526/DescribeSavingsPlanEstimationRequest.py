@@ -47,6 +47,11 @@ class DescribeSavingsPlanEstimationRequest(RpcRequest):
 
 	def set_PlanType(self, PlanType):  # String
 		self.add_query_param('PlanType', PlanType)
+	def get_InstanceTypeScope(self): # String
+		return self.get_query_params().get('InstanceTypeScope')
+
+	def set_InstanceTypeScope(self, InstanceTypeScope):  # String
+		self.add_query_param('InstanceTypeScope', InstanceTypeScope)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -57,3 +62,8 @@ class DescribeSavingsPlanEstimationRequest(RpcRequest):
 
 	def set_OfferingType(self, OfferingType):  # String
 		self.add_query_param('OfferingType', OfferingType)
+	def get_EstimationResource(self): # String
+		return self.get_query_params().get('EstimationResource')
+
+	def set_EstimationResource(self, EstimationResource):  # String
+		self.add_query_param('EstimationResource', EstimationResource)

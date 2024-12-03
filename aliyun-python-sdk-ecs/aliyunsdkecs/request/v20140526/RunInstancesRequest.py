@@ -477,6 +477,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.RxQueueSize', NetworkInterface[depth1].get('RxQueueSize'))
 			if NetworkInterface[depth1].get('TxQueueSize') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.TxQueueSize', NetworkInterface[depth1].get('TxQueueSize'))
+			if NetworkInterface[depth1].get('SourceDestCheck') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SourceDestCheck', NetworkInterface[depth1].get('SourceDestCheck'))
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

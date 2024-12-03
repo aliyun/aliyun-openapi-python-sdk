@@ -32,6 +32,11 @@ class DescribeSavingsPlanPriceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InstanceTypeFamilyGroup(self): # String
+		return self.get_query_params().get('InstanceTypeFamilyGroup')
+
+	def set_InstanceTypeFamilyGroup(self, InstanceTypeFamilyGroup):  # String
+		self.add_query_param('InstanceTypeFamilyGroup', InstanceTypeFamilyGroup)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 

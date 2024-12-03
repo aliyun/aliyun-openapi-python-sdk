@@ -340,6 +340,8 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				for depth2 in range(len(LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface'))):
 					if LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface')[depth2].get('VSwitchId') is not None:
 						self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.SecondaryNetworkInterface.'  + str(depth2 + 1) + '.VSwitchId', LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface')[depth2].get('VSwitchId'))
+			if LaunchTemplateConfig[depth1].get('ImageId') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.ImageId', LaunchTemplateConfig[depth1].get('ImageId'))
 	def get_LaunchConfigurationRamRoleName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.RamRoleName')
 
