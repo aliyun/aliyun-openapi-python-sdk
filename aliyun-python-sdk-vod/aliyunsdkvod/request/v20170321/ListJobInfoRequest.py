@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class GetTranscodeTaskRequest(RpcRequest):
+class ListJobInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetTranscodeTask','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListJobInfo','vod')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +31,13 @@ class GetTranscodeTaskRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TranscodeTaskId(self): # String
-		return self.get_query_params().get('TranscodeTaskId')
+	def get_MediaId(self): # String
+		return self.get_query_params().get('MediaId')
 
-	def set_TranscodeTaskId(self, TranscodeTaskId):  # String
-		self.add_query_param('TranscodeTaskId', TranscodeTaskId)
-	def get_JobIds(self): # String
-		return self.get_query_params().get('JobIds')
+	def set_MediaId(self, MediaId):  # String
+		self.add_query_param('MediaId', MediaId)
+	def get_JobType(self): # String
+		return self.get_query_params().get('JobType')
 
-	def set_JobIds(self, JobIds):  # String
-		self.add_query_param('JobIds', JobIds)
+	def set_JobType(self, JobType):  # String
+		self.add_query_param('JobType', JobType)
