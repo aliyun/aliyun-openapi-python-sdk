@@ -31,6 +31,11 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CrossZoneEnabled(self): # Boolean
+		return self.get_query_params().get('CrossZoneEnabled')
+
+	def set_CrossZoneEnabled(self, CrossZoneEnabled):  # Boolean
+		self.add_query_param('CrossZoneEnabled', CrossZoneEnabled)
 	def get_ServerGroupName(self): # String
 		return self.get_query_params().get('ServerGroupName')
 
