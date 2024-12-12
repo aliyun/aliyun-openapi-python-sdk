@@ -42,6 +42,11 @@ class ListDataLakeDatabaseRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_CatalogName(self): # String
 		return self.get_query_params().get('CatalogName')
 
@@ -52,3 +57,8 @@ class ListDataLakeDatabaseRequest(RpcRequest):
 
 	def set_DataRegion(self, DataRegion):  # String
 		self.add_query_param('DataRegion', DataRegion)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
