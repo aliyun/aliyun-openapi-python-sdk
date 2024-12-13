@@ -76,6 +76,11 @@ class ModifyDBClusterAndNodesParametersRequest(RpcRequest):
 
 	def set_PlannedStartTime(self, PlannedStartTime):  # String
 		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_StandbyClusterIdListNeedToSync(self): # String
+		return self.get_query_params().get('StandbyClusterIdListNeedToSync')
+
+	def set_StandbyClusterIdListNeedToSync(self, StandbyClusterIdListNeedToSync):  # String
+		self.add_query_param('StandbyClusterIdListNeedToSync', StandbyClusterIdListNeedToSync)
 	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
