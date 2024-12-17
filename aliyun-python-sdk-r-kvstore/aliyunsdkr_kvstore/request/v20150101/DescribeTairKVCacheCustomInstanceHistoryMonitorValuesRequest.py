@@ -20,11 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class TransformToPrePaidRequest(RpcRequest):
+class DescribeTairKVCacheCustomInstanceHistoryMonitorValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'TransformToPrePaid','redisa')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeTairKVCacheCustomInstanceHistoryMonitorValues','redisa')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,26 +37,31 @@ class TransformToPrePaidRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Express(self): # String
+		return self.get_query_params().get('Express')
+
+	def set_Express(self, Express):  # String
+		self.add_query_param('Express', Express)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_AutoRenewPeriod(self): # Long
-		return self.get_query_params().get('AutoRenewPeriod')
+	def get_MetricName(self): # String
+		return self.get_query_params().get('MetricName')
 
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Long
-		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_Period(self): # Long
+	def set_MetricName(self, MetricName):  # String
+		self.add_query_param('MetricName', MetricName)
+	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
-	def set_Period(self, Period):  # Long
+	def set_Period(self, Period):  # String
 		self.add_query_param('Period', Period)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,6 +72,16 @@ class TransformToPrePaidRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_Length(self): # String
+		return self.get_query_params().get('Length')
+
+	def set_Length(self, Length):  # String
+		self.add_query_param('Length', Length)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -76,8 +92,3 @@ class TransformToPrePaidRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_AutoRenew(self): # String
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self, AutoRenew):  # String
-		self.add_query_param('AutoRenew', AutoRenew)

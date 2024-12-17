@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class TransformToPrePaidRequest(RpcRequest):
+class ModifyTairKVCacheCustomInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'TransformToPrePaid','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyTairKVCacheCustomInstanceAttribute','redisa')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,21 +42,11 @@ class TransformToPrePaidRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_AutoRenewPeriod(self): # Long
-		return self.get_query_params().get('AutoRenewPeriod')
+	def get_SourceBiz(self): # String
+		return self.get_query_params().get('SourceBiz')
 
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Long
-		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_Period(self): # Long
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Long
-		self.add_query_param('Period', Period)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
+	def set_SourceBiz(self, SourceBiz):  # String
+		self.add_query_param('SourceBiz', SourceBiz)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,8 +67,8 @@ class TransformToPrePaidRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_AutoRenew(self): # String
-		return self.get_query_params().get('AutoRenew')
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
 
-	def set_AutoRenew(self, AutoRenew):  # String
-		self.add_query_param('AutoRenew', AutoRenew)
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)

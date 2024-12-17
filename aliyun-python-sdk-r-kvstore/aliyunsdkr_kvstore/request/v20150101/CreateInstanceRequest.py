@@ -160,6 +160,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ReplicaCount(self): # Integer
+		return self.get_query_params().get('ReplicaCount')
+
+	def set_ReplicaCount(self, ReplicaCount):  # Integer
+		self.add_query_param('ReplicaCount', ReplicaCount)
 	def get_Appendonly(self): # String
 		return self.get_query_params().get('Appendonly')
 
@@ -255,6 +260,11 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
+	def get_SlaveReplicaCount(self): # Integer
+		return self.get_query_params().get('SlaveReplicaCount')
+
+	def set_SlaveReplicaCount(self, SlaveReplicaCount):  # Integer
+		self.add_query_param('SlaveReplicaCount', SlaveReplicaCount)
 	def get_ClusterBackupId(self): # String
 		return self.get_query_params().get('ClusterBackupId')
 

@@ -36,11 +36,36 @@ class ModifyInstanceConfigRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ParamSemisyncReplTimeout(self): # String
+		return self.get_query_params().get('ParamSemisyncReplTimeout')
+
+	def set_ParamSemisyncReplTimeout(self, ParamSemisyncReplTimeout):  # String
+		self.add_query_param('ParamSemisyncReplTimeout', ParamSemisyncReplTimeout)
+	def get_ParamNoLooseSentinelPasswordFreeCommands(self): # String
+		return self.get_query_params().get('ParamNoLooseSentinelPasswordFreeCommands')
+
+	def set_ParamNoLooseSentinelPasswordFreeCommands(self, ParamNoLooseSentinelPasswordFreeCommands):  # String
+		self.add_query_param('ParamNoLooseSentinelPasswordFreeCommands', ParamNoLooseSentinelPasswordFreeCommands)
+	def get_ParamNoLooseSentinelPasswordFreeAccess(self): # String
+		return self.get_query_params().get('ParamNoLooseSentinelPasswordFreeAccess')
+
+	def set_ParamNoLooseSentinelPasswordFreeAccess(self, ParamNoLooseSentinelPasswordFreeAccess):  # String
+		self.add_query_param('ParamNoLooseSentinelPasswordFreeAccess', ParamNoLooseSentinelPasswordFreeAccess)
+	def get_ParamReplMode(self): # String
+		return self.get_query_params().get('ParamReplMode')
+
+	def set_ParamReplMode(self, ParamReplMode):  # String
+		self.add_query_param('ParamReplMode', ParamReplMode)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ParamNoLooseSentinelEnabled(self): # String
+		return self.get_query_params().get('ParamNoLooseSentinelEnabled')
+
+	def set_ParamNoLooseSentinelEnabled(self, ParamNoLooseSentinelEnabled):  # String
+		self.add_query_param('ParamNoLooseSentinelEnabled', ParamNoLooseSentinelEnabled)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,6 +76,11 @@ class ModifyInstanceConfigRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ParamSentinelCompatEnable(self): # String
+		return self.get_query_params().get('ParamSentinelCompatEnable')
+
+	def set_ParamSentinelCompatEnable(self, ParamSentinelCompatEnable):  # String
+		self.add_query_param('ParamSentinelCompatEnable', ParamSentinelCompatEnable)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

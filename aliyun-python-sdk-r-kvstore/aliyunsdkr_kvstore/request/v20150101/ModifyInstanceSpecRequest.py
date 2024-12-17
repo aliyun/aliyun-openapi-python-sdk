@@ -56,11 +56,21 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_CouponNo(self, CouponNo):  # String
 		self.add_query_param('CouponNo', CouponNo)
+	def get_Storage(self): # Integer
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self, Storage):  # Integer
+		self.add_query_param('Storage', Storage)
 	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
 	def set_InstanceClass(self, InstanceClass):  # String
 		self.add_query_param('InstanceClass', InstanceClass)
+	def get_StorageType(self): # String
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self, StorageType):  # String
+		self.add_query_param('StorageType', StorageType)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -131,8 +141,18 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_ForceUpgrade(self, ForceUpgrade):  # Boolean
 		self.add_query_param('ForceUpgrade', ForceUpgrade)
+	def get_SlaveReplicaCount(self): # Integer
+		return self.get_query_params().get('SlaveReplicaCount')
+
+	def set_SlaveReplicaCount(self, SlaveReplicaCount):  # Integer
+		self.add_query_param('SlaveReplicaCount', SlaveReplicaCount)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 
 	def set_OrderType(self, OrderType):  # String
 		self.add_query_param('OrderType', OrderType)
+	def get_ReplicaCount(self): # Integer
+		return self.get_query_params().get('ReplicaCount')
+
+	def set_ReplicaCount(self, ReplicaCount):  # Integer
+		self.add_query_param('ReplicaCount', ReplicaCount)
