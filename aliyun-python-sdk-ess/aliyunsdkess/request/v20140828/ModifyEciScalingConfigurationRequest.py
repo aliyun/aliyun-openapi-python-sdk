@@ -347,6 +347,11 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 
 	def set_EipBandwidth(self, EipBandwidth):  # Integer
 		self.add_query_param('EipBandwidth', EipBandwidth)
+	def get_GpuDriverVersion(self): # String
+		return self.get_query_params().get('GpuDriverVersion')
+
+	def set_GpuDriverVersion(self, GpuDriverVersion):  # String
+		self.add_query_param('GpuDriverVersion', GpuDriverVersion)
 	def get_CostOptimization(self): # Boolean
 		return self.get_query_params().get('CostOptimization')
 

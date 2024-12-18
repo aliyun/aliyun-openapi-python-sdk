@@ -1,3 +1,6 @@
+2024-12-18 Version: 2.3.28
+- InstanceRefresh support SkipMatching.
+
 2024-12-02 Version: 2.3.27
 - ScalingGroup support spot replace on demand instance.
 

@@ -148,6 +148,18 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_CompensateWithOnDemand(self, CompensateWithOnDemand):  # Boolean
 		self.add_query_param('CompensateWithOnDemand', CompensateWithOnDemand)
+	def get_CapacityOptions(self): # Struct
+		return self.get_query_params().get('CapacityOptions')
+
+	def set_CapacityOptions(self, CapacityOptions):  # Struct
+		if CapacityOptions.get('CompensateWithOnDemand') is not None:
+			self.add_query_param('CapacityOptions.CompensateWithOnDemand', CapacityOptions.get('CompensateWithOnDemand'))
+		if CapacityOptions.get('OnDemandBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandBaseCapacity', CapacityOptions.get('OnDemandBaseCapacity'))
+		if CapacityOptions.get('SpotAutoReplaceOnDemand') is not None:
+			self.add_query_param('CapacityOptions.SpotAutoReplaceOnDemand', CapacityOptions.get('SpotAutoReplaceOnDemand'))
+		if CapacityOptions.get('OnDemandPercentageAboveBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandPercentageAboveBaseCapacity', CapacityOptions.get('OnDemandPercentageAboveBaseCapacity'))
 	def get_MinSize(self): # Integer
 		return self.get_query_params().get('MinSize')
 
