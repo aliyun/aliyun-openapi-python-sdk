@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class CreateAccountRequest(RpcRequest):
+class DescribeActiveOperationTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateAccount','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeActiveOperationTasks','polardb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,31 +36,31 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ChangeLevel(self): # String
+		return self.get_query_params().get('ChangeLevel')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_AccountType(self): # String
-		return self.get_query_params().get('AccountType')
+	def set_ChangeLevel(self, ChangeLevel):  # String
+		self.add_query_param('ChangeLevel', ChangeLevel)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_AccountType(self, AccountType):  # String
-		self.add_query_param('AccountType', AccountType)
-	def get_AccountDescription(self): # String
-		return self.get_query_params().get('AccountDescription')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
 
-	def set_AccountDescription(self, AccountDescription):  # String
-		self.add_query_param('AccountDescription', AccountDescription)
-	def get_AccountPrivilege(self): # String
-		return self.get_query_params().get('AccountPrivilege')
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_AccountPrivilege(self, AccountPrivilege):  # String
-		self.add_query_param('AccountPrivilege', AccountPrivilege)
-	def get_AccountName(self): # String
-		return self.get_query_params().get('AccountName')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_TaskType(self): # String
+		return self.get_query_params().get('TaskType')
 
-	def set_AccountName(self, AccountName):  # String
-		self.add_query_param('AccountName', AccountName)
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,23 +76,28 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_AllowCancel(self): # Long
+		return self.get_query_params().get('AllowCancel')
+
+	def set_AllowCancel(self, AllowCancel):  # Long
+		self.add_query_param('AllowCancel', AllowCancel)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_AccountPassword(self): # String
-		return self.get_query_params().get('AccountPassword')
+	def get_DBType(self): # String
+		return self.get_query_params().get('DBType')
 
-	def set_AccountPassword(self, AccountPassword):  # String
-		self.add_query_param('AccountPassword', AccountPassword)
-	def get_DBName(self): # String
-		return self.get_query_params().get('DBName')
+	def set_DBType(self, DBType):  # String
+		self.add_query_param('DBType', DBType)
+	def get_AllowChange(self): # Long
+		return self.get_query_params().get('AllowChange')
 
-	def set_DBName(self, DBName):  # String
-		self.add_query_param('DBName', DBName)
-	def get_PrivForAllDB(self): # String
-		return self.get_query_params().get('PrivForAllDB')
+	def set_AllowChange(self, AllowChange):  # Long
+		self.add_query_param('AllowChange', AllowChange)
+	def get_Status(self): # Long
+		return self.get_query_params().get('Status')
 
-	def set_PrivForAllDB(self, PrivForAllDB):  # String
-		self.add_query_param('PrivForAllDB', PrivForAllDB)
+	def set_Status(self, Status):  # Long
+		self.add_query_param('Status', Status)
