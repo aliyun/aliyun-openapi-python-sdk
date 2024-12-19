@@ -61,3 +61,8 @@ class UploadStreamByURLRequest(RpcRequest):
 
 	def set_MediaId(self, MediaId):  # String
 		self.add_query_param('MediaId', MediaId)
+	def get_UploadMetadata(self): # String
+		return self.get_query_params().get('UploadMetadata')
+
+	def set_UploadMetadata(self, UploadMetadata):  # String
+		self.add_query_param('UploadMetadata', UploadMetadata)
