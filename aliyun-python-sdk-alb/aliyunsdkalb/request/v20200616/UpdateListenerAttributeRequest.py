@@ -100,6 +100,10 @@ class UpdateListenerAttributeRequest(RpcRequest):
 			self.add_query_param('XForwardedForConfig.XForwardedForClientSourceIpsEnabled', XForwardedForConfig.get('XForwardedForClientSourceIpsEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled', XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled'))
+		if XForwardedForConfig.get('XForwardedForHostEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForHostEnabled', XForwardedForConfig.get('XForwardedForHostEnabled'))
+		if XForwardedForConfig.get('XForwardedForProcessingMode') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForProcessingMode', XForwardedForConfig.get('XForwardedForProcessingMode'))
 		if XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertFingerprintEnabled', XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNAlias') is not None:
