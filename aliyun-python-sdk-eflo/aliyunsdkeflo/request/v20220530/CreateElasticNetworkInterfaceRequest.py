@@ -45,6 +45,11 @@ class CreateElasticNetworkInterfaceRequest(RpcRequest):
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_body_params('NodeId', NodeId)
+	def get_EnableJumboFrame(self): # Boolean
+		return self.get_body_params().get('EnableJumboFrame')
+
+	def set_EnableJumboFrame(self, EnableJumboFrame):  # Boolean
+		self.add_body_params('EnableJumboFrame', EnableJumboFrame)
 	def get_VSwitchId(self): # String
 		return self.get_body_params().get('VSwitchId')
 

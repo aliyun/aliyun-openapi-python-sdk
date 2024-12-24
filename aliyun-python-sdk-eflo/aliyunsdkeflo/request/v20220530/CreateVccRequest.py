@@ -45,6 +45,11 @@ class CreateVccRequest(RpcRequest):
 
 	def set_CenOwnerId(self, CenOwnerId):  # String
 		self.add_body_params('CenOwnerId', CenOwnerId)
+	def get_BgpAsn(self): # Long
+		return self.get_body_params().get('BgpAsn')
+
+	def set_BgpAsn(self, BgpAsn):  # Long
+		self.add_body_params('BgpAsn', BgpAsn)
 	def get_AccessCouldService(self): # Boolean
 		return self.get_body_params().get('AccessCouldService')
 
