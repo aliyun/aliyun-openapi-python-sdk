@@ -65,3 +65,8 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_SnatEntryName(self, SnatEntryName):  # String
 		self.add_query_param('SnatEntryName', SnatEntryName)
+	def get_IspAffinity(self): # Boolean
+		return self.get_query_params().get('IspAffinity')
+
+	def set_IspAffinity(self, IspAffinity):  # Boolean
+		self.add_query_param('IspAffinity', IspAffinity)

@@ -26,6 +26,11 @@ class DescribeInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstances','ens')
 		self.set_method('POST')
 
+	def get_ServiceStatus(self): # Array
+		return self.get_query_params().get('ServiceStatus')
+
+	def set_ServiceStatus(self, ServiceStatus):  # Array
+		self.add_query_param("ServiceStatus", json.dumps(ServiceStatus))
 	def get_OrderByParams(self): # String
 		return self.get_query_params().get('OrderByParams')
 
