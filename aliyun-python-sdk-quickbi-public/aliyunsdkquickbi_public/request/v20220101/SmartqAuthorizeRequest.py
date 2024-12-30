@@ -19,27 +19,33 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CancelAuthorizationMenuRequest(RpcRequest):
+class SmartqAuthorizeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'CancelAuthorizationMenu','2.2.0')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'SmartqAuthorize','2.2.0')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_DataPortalId(self): # String
-		return self.get_query_params().get('DataPortalId')
+	def get_LlmCubeThemes(self): # String
+		return self.get_query_params().get('LlmCubeThemes')
 
-	def set_DataPortalId(self, DataPortalId):  # String
-		self.add_query_param('DataPortalId', DataPortalId)
-	def get_MenuIds(self): # String
-		return self.get_query_params().get('MenuIds')
+	def set_LlmCubeThemes(self, LlmCubeThemes):  # String
+		self.add_query_param('LlmCubeThemes', LlmCubeThemes)
+	def get_LlmCubes(self): # String
+		return self.get_query_params().get('LlmCubes')
 
-	def set_MenuIds(self, MenuIds):  # String
-		self.add_query_param('MenuIds', MenuIds)
-	def get_UserGroupIds(self): # String
-		return self.get_query_params().get('UserGroupIds')
+	def set_LlmCubes(self, LlmCubes):  # String
+		self.add_query_param('LlmCubes', LlmCubes)
+	def get_OperationType(self): # Integer
+		return self.get_query_params().get('OperationType')
 
-	def set_UserGroupIds(self, UserGroupIds):  # String
-		self.add_query_param('UserGroupIds', UserGroupIds)
+	def set_OperationType(self, OperationType):  # Integer
+		self.add_query_param('OperationType', OperationType)
+	def get_ExpireDay(self): # String
+		return self.get_query_params().get('ExpireDay')
+
+	def set_ExpireDay(self, ExpireDay):  # String
+		self.add_query_param('ExpireDay', ExpireDay)
 	def get_UserIds(self): # String
 		return self.get_query_params().get('UserIds')
 

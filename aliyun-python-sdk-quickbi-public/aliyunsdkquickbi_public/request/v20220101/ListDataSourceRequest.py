@@ -19,27 +19,18 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class UpdateWorkspaceUserRoleRequest(RpcRequest):
+class ListDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateWorkspaceUserRole','2.2.0')
+		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'ListDataSource','2.2.0')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_RoleId(self): # Long
-		return self.get_query_params().get('RoleId')
+	def get_DsType(self): # String
+		return self.get_query_params().get('DsType')
 
-	def set_RoleId(self, RoleId):  # Long
-		self.add_query_param('RoleId', RoleId)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_RoleIds(self): # String
-		return self.get_query_params().get('RoleIds')
-
-	def set_RoleIds(self, RoleIds):  # String
-		self.add_query_param('RoleIds', RoleIds)
+	def set_DsType(self, DsType):  # String
+		self.add_query_param('DsType', DsType)
 	def get_WorkspaceId(self): # String
 		return self.get_query_params().get('WorkspaceId')
 
