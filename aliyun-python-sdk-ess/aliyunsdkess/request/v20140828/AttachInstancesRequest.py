@@ -46,6 +46,11 @@ class AttachInstancesRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_IgnoreInvalidInstance(self): # Boolean
+		return self.get_query_params().get('IgnoreInvalidInstance')
+
+	def set_IgnoreInvalidInstance(self, IgnoreInvalidInstance):  # Boolean
+		self.add_query_param('IgnoreInvalidInstance', IgnoreInvalidInstance)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
