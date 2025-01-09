@@ -1,0 +1,3 @@
+2025-01-09 Version: 1.0.0
+- Supported GetInstanceLicense.
+
