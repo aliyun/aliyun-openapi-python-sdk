@@ -36,6 +36,11 @@ class ModifyDiskSpecRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DestinationZoneId(self): # String
+		return self.get_query_params().get('DestinationZoneId')
+
+	def set_DestinationZoneId(self, DestinationZoneId):  # String
+		self.add_query_param('DestinationZoneId', DestinationZoneId)
 	def get_DiskCategory(self): # String
 		return self.get_query_params().get('DiskCategory')
 

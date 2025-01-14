@@ -79,6 +79,8 @@ class ImportImageRequest(RpcRequest):
 	def set_Features(self, Features):  # Struct
 		if Features.get('NvmeSupport') is not None:
 			self.add_query_param('Features.NvmeSupport', Features.get('NvmeSupport'))
+		if Features.get('ImdsSupport') is not None:
+			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
 	def get_BootMode(self): # String
 		return self.get_query_params().get('BootMode')
 

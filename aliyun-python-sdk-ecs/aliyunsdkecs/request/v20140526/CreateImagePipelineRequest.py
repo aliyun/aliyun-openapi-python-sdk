@@ -91,6 +91,21 @@ class CreateImagePipelineRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_AdvancedOptions(self): # Struct
+		return self.get_query_params().get('AdvancedOptions')
+
+	def set_AdvancedOptions(self, AdvancedOptions):  # Struct
+		if AdvancedOptions.get('RetainCloudAssistant') is not None:
+			self.add_query_param('AdvancedOptions.RetainCloudAssistant', AdvancedOptions.get('RetainCloudAssistant'))
+		if AdvancedOptions.get('SkipBuildImage') is not None:
+			self.add_query_param('AdvancedOptions.SkipBuildImage', AdvancedOptions.get('SkipBuildImage'))
+		if AdvancedOptions.get('SkipCheckImage') is not None:
+			self.add_query_param('AdvancedOptions.SkipCheckImage', AdvancedOptions.get('SkipCheckImage'))
+	def get_NvmeSupport(self): # String
+		return self.get_query_params().get('NvmeSupport')
+
+	def set_NvmeSupport(self, NvmeSupport):  # String
+		self.add_query_param('NvmeSupport', NvmeSupport)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -147,6 +162,35 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_BuildContent(self, BuildContent):  # String
 		self.add_query_param('BuildContent', BuildContent)
+	def get_ImportImageOptions(self): # Struct
+		return self.get_query_params().get('ImportImageOptions')
+
+	def set_ImportImageOptions(self, ImportImageOptions):  # Struct
+		if ImportImageOptions.get('Architecture') is not None:
+			self.add_query_param('ImportImageOptions.Architecture', ImportImageOptions.get('Architecture'))
+		if ImportImageOptions.get('OSType') is not None:
+			self.add_query_param('ImportImageOptions.OSType', ImportImageOptions.get('OSType'))
+		if ImportImageOptions.get('Platform') is not None:
+			self.add_query_param('ImportImageOptions.Platform', ImportImageOptions.get('Platform'))
+		if ImportImageOptions.get('BootMode') is not None:
+			self.add_query_param('ImportImageOptions.BootMode', ImportImageOptions.get('BootMode'))
+		if ImportImageOptions.get('LicenseType') is not None:
+			self.add_query_param('ImportImageOptions.LicenseType', ImportImageOptions.get('LicenseType'))
+		if ImportImageOptions.get('DiskDeviceMappings') is not None:
+			for index1, value1 in enumerate(ImportImageOptions.get('DiskDeviceMappings')):
+				if value1.get('OSSBucket') is not None:
+					self.add_query_param('ImportImageOptions.DiskDeviceMappings.' + str(index1 + 1) + '.OSSBucket', value1.get('OSSBucket'))
+				if value1.get('OSSObject') is not None:
+					self.add_query_param('ImportImageOptions.DiskDeviceMappings.' + str(index1 + 1) + '.OSSObject', value1.get('OSSObject'))
+				if value1.get('Format') is not None:
+					self.add_query_param('ImportImageOptions.DiskDeviceMappings.' + str(index1 + 1) + '.Format', value1.get('Format'))
+				if value1.get('DiskImageSize') is not None:
+					self.add_query_param('ImportImageOptions.DiskDeviceMappings.' + str(index1 + 1) + '.DiskImageSize', value1.get('DiskImageSize'))
+		if ImportImageOptions.get('Features') is not None:
+			if ImportImageOptions.get('Features').get('NvmeSupport') is not None:
+				self.add_query_param('ImportImageOptions.Features.NvmeSupport', ImportImageOptions.get('Features').get('NvmeSupport'))
+		if ImportImageOptions.get('RetainImportedImage') is not None:
+			self.add_query_param('ImportImageOptions.RetainImportedImage', ImportImageOptions.get('RetainImportedImage'))
 	def get_TestContent(self): # String
 		return self.get_query_params().get('TestContent')
 

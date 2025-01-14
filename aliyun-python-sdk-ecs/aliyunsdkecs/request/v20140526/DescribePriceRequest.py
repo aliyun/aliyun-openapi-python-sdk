@@ -232,6 +232,8 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DataDisks(self, DataDisk):  # RepeatList
 		for depth1 in range(len(DataDisk)):
+			if DataDisk[depth1].get('ProvisionedIops') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', DataDisk[depth1].get('ProvisionedIops'))
 			if DataDisk[depth1].get('Size') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
 			if DataDisk[depth1].get('PerformanceLevel') is not None:

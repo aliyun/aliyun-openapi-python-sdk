@@ -51,6 +51,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_CpuOptionsThreadsPerCore(self): # Integer
+		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
+
+	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
+		self.add_query_param('CpuOptions.ThreadsPerCore', CpuOptionsThreadsPerCore)
 	def get_DeletionProtection(self): # Boolean
 		return self.get_query_params().get('DeletionProtection')
 
@@ -95,6 +100,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_EnableJumboFrame(self, EnableJumboFrame):  # Boolean
 		self.add_query_param('EnableJumboFrame', EnableJumboFrame)
+	def get_CpuOptionsCore(self): # Integer
+		return self.get_query_params().get('CpuOptions.Core')
+
+	def set_CpuOptionsCore(self, CpuOptionsCore):  # Integer
+		self.add_query_param('CpuOptions.Core', CpuOptionsCore)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ModifyImageAttributeRequest(RpcRequest):
+class EndTerminalSessionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyImageAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'EndTerminalSession','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,39 +37,11 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ImageId(self): # String
-		return self.get_query_params().get('ImageId')
+	def get_SessionId(self): # String
+		return self.get_query_params().get('SessionId')
 
-	def set_ImageId(self, ImageId):  # String
-		self.add_query_param('ImageId', ImageId)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Features(self): # Struct
-		return self.get_query_params().get('Features')
-
-	def set_Features(self, Features):  # Struct
-		if Features.get('NvmeSupport') is not None:
-			self.add_query_param('Features.NvmeSupport', Features.get('NvmeSupport'))
-		if Features.get('ImdsSupport') is not None:
-			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
-	def get_BootMode(self): # String
-		return self.get_query_params().get('BootMode')
-
-	def set_BootMode(self, BootMode):  # String
-		self.add_query_param('BootMode', BootMode)
-	def get_ImageName(self): # String
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self, ImageName):  # String
-		self.add_query_param('ImageName', ImageName)
-	def get_LicenseType(self): # String
-		return self.get_query_params().get('LicenseType')
-
-	def set_LicenseType(self, LicenseType):  # String
-		self.add_query_param('LicenseType', LicenseType)
+	def set_SessionId(self, SessionId):  # String
+		self.add_query_param('SessionId', SessionId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -84,13 +57,3 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ImageFamily(self): # String
-		return self.get_query_params().get('ImageFamily')
-
-	def set_ImageFamily(self, ImageFamily):  # String
-		self.add_query_param('ImageFamily', ImageFamily)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)

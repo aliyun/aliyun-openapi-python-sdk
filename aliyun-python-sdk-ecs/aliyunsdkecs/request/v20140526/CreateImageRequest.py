@@ -74,6 +74,12 @@ class CreateImageRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Features(self): # Struct
+		return self.get_query_params().get('Features')
+
+	def set_Features(self, Features):  # Struct
+		if Features.get('ImdsSupport') is not None:
+			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
 	def get_BootMode(self): # String
 		return self.get_query_params().get('BootMode')
 

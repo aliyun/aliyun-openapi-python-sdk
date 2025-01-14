@@ -72,6 +72,8 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 	def set_EnhancedNetwork(self, EnhancedNetwork):  # Struct
 		if EnhancedNetwork.get('EnableSriov') is not None:
 			self.add_query_param('EnhancedNetwork.EnableSriov', EnhancedNetwork.get('EnableSriov'))
+		if EnhancedNetwork.get('EnableRss') is not None:
+			self.add_query_param('EnhancedNetwork.EnableRss', EnhancedNetwork.get('EnableRss'))
 	def get_SourceDestCheck(self): # Boolean
 		return self.get_query_params().get('SourceDestCheck')
 
