@@ -175,6 +175,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_LowerCaseTableNames(self, LowerCaseTableNames):  # String
 		self.add_query_param('LowerCaseTableNames', LowerCaseTableNames)
+	def get_StorageEncryption(self): # Boolean
+		return self.get_query_params().get('StorageEncryption')
+
+	def set_StorageEncryption(self, StorageEncryption):  # Boolean
+		self.add_query_param('StorageEncryption', StorageEncryption)
 	def get_ScaleRoNumMax(self): # String
 		return self.get_query_params().get('ScaleRoNumMax')
 
@@ -200,6 +205,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ClusterNetworkType(self, ClusterNetworkType):  # String
 		self.add_query_param('ClusterNetworkType', ClusterNetworkType)
+	def get_StorageEncryptionKey(self): # String
+		return self.get_query_params().get('StorageEncryptionKey')
+
+	def set_StorageEncryptionKey(self, StorageEncryptionKey):  # String
+		self.add_query_param('StorageEncryptionKey', StorageEncryptionKey)
 	def get_ParameterGroupId(self): # String
 		return self.get_query_params().get('ParameterGroupId')
 

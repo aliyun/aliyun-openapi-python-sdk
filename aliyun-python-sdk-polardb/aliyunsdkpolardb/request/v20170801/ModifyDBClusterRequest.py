@@ -31,11 +31,21 @@ class ModifyDBClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ModifyRowCompression(self): # String
+		return self.get_query_params().get('ModifyRowCompression')
+
+	def set_ModifyRowCompression(self, ModifyRowCompression):  # String
+		self.add_query_param('ModifyRowCompression', ModifyRowCompression)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_TableMeta(self): # String
+		return self.get_query_params().get('TableMeta')
+
+	def set_TableMeta(self, TableMeta):  # String
+		self.add_query_param('TableMeta', TableMeta)
 	def get_StandbyHAMode(self): # String
 		return self.get_query_params().get('StandbyHAMode')
 
