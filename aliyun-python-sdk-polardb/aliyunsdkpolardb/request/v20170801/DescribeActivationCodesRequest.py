@@ -52,6 +52,16 @@ class DescribeActivationCodesRequest(RpcRequest):
 
 	def set_AliyunOrderId(self, AliyunOrderId):  # String
 		self.add_query_param('AliyunOrderId', AliyunOrderId)
+	def get_MacAddress(self): # String
+		return self.get_query_params().get('MacAddress')
+
+	def set_MacAddress(self, MacAddress):  # String
+		self.add_query_param('MacAddress', MacAddress)
+	def get_SystemIdentifier(self): # String
+		return self.get_query_params().get('SystemIdentifier')
+
+	def set_SystemIdentifier(self, SystemIdentifier):  # String
+		self.add_query_param('SystemIdentifier', SystemIdentifier)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
