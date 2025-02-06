@@ -31,11 +31,6 @@ class CreateEaiRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Image(self): # String
-		return self.get_query_params().get('Image')
-
-	def set_Image(self, Image):  # String
-		self.add_query_param('Image', Image)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -46,23 +41,37 @@ class CreateEaiRequest(RpcRequest):
 
 	def set_SecurityGroupId(self, SecurityGroupId):  # String
 		self.add_query_param('SecurityGroupId', SecurityGroupId)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_InstanceName(self): # String
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_query_param('InstanceName', InstanceName)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_Image(self): # String
+		return self.get_query_params().get('Image')
+
+	def set_Image(self, Image):  # String
+		self.add_query_param('Image', Image)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)

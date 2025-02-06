@@ -47,11 +47,6 @@ class CreateEaiEcsRequest(RpcRequest):
 
 	def set_EaisType(self, EaisType):  # String
 		self.add_query_param('EaisType', EaisType)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -67,3 +62,17 @@ class CreateEaiEcsRequest(RpcRequest):
 
 	def set_EaisName(self, EaisName):  # String
 		self.add_query_param('EaisName', EaisName)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
