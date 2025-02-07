@@ -19,46 +19,35 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribePackageDeductionsRequest(RpcRequest):
+class ModifyInstancePropertiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'wss', '2021-12-21', 'DescribePackageDeductions')
+		RpcRequest.__init__(self, 'wss', '2021-12-21', 'ModifyInstanceProperties')
 		self.set_method('POST')
 
-	def get_EndTime(self): # Long
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_query_param('EndTime', EndTime)
-	def get_StartTime(self): # Long
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # Long
-		self.add_query_param('StartTime', StartTime)
-	def get_PageNum(self): # Integer
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self, PageNum):  # Integer
-		self.add_query_param('PageNum', PageNum)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self, ResourceType):  # String
 		self.add_query_param('ResourceType', ResourceType)
-	def get_PackageIdss(self): # RepeatList
-		return self.get_query_params().get('PackageIds')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_PackageIdss(self, PackageIds):  # RepeatList
-		for depth1 in range(len(PackageIds)):
-			self.add_query_param('PackageIds.' + str(depth1 + 1), PackageIds[depth1])
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_InstanceIdss(self): # RepeatList
 		return self.get_query_params().get('InstanceIds')
 
 	def set_InstanceIdss(self, InstanceIds):  # RepeatList
 		for depth1 in range(len(InstanceIds)):
 			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def get_Value(self): # String
+		return self.get_query_params().get('Value')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
+	def set_Value(self, Value):  # String
+		self.add_query_param('Value', Value)
+	def get_Key(self): # String
+		return self.get_query_params().get('Key')
+
+	def set_Key(self, Key):  # String
+		self.add_query_param('Key', Key)
