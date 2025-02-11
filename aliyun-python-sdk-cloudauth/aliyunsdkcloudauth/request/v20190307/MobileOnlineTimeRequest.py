@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class MobileOnlineTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'MobileOnlineTime','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -42,13 +42,3 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 
 	def set_Mobile(self, Mobile):  # String
 		self.add_body_params('Mobile', Mobile)
-	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
-
-	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
-	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
-
-	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)

@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
+import json
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class RemoveWhiteListSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'RemoveWhiteListSetting','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +33,13 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ParamType(self): # String
-		return self.get_body_params().get('ParamType')
+	def get_ServiceCode(self): # String
+		return self.get_query_params().get('ServiceCode')
 
-	def set_ParamType(self, ParamType):  # String
-		self.add_body_params('ParamType', ParamType)
-	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+	def set_ServiceCode(self, ServiceCode):  # String
+		self.add_query_param('ServiceCode', ServiceCode)
+	def get_Ids(self): # Array
+		return self.get_query_params().get('Ids')
 
-	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
-	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
-
-	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
-	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
-
-	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
+	def set_Ids(self, Ids):  # Array
+		self.add_query_param("Ids", json.dumps(Ids))

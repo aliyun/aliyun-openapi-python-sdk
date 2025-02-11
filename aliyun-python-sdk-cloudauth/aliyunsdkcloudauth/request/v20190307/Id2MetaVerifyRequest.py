@@ -33,17 +33,17 @@ class Id2MetaVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ParamType(self): # String
-		return self.get_query_params().get('ParamType')
+		return self.get_body_params().get('ParamType')
 
 	def set_ParamType(self, ParamType):  # String
-		self.add_query_param('ParamType', ParamType)
+		self.add_body_params('ParamType', ParamType)
 	def get_IdentifyNum(self): # String
-		return self.get_query_params().get('IdentifyNum')
+		return self.get_body_params().get('IdentifyNum')
 
 	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_query_param('IdentifyNum', IdentifyNum)
+		self.add_body_params('IdentifyNum', IdentifyNum)
 	def get_UserName(self): # String
-		return self.get_query_params().get('UserName')
+		return self.get_body_params().get('UserName')
 
 	def set_UserName(self, UserName):  # String
-		self.add_query_param('UserName', UserName)
+		self.add_body_params('UserName', UserName)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class BankMetaVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'BankMetaVerify','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -33,22 +33,42 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ParamType(self): # String
-		return self.get_body_params().get('ParamType')
+		return self.get_query_params().get('ParamType')
 
 	def set_ParamType(self, ParamType):  # String
-		self.add_body_params('ParamType', ParamType)
+		self.add_query_param('ParamType', ParamType)
+	def get_VerifyMode(self): # String
+		return self.get_query_params().get('VerifyMode')
+
+	def set_VerifyMode(self, VerifyMode):  # String
+		self.add_query_param('VerifyMode', VerifyMode)
+	def get_IdentityType(self): # String
+		return self.get_query_params().get('IdentityType')
+
+	def set_IdentityType(self, IdentityType):  # String
+		self.add_query_param('IdentityType', IdentityType)
 	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+		return self.get_query_params().get('Mobile')
 
 	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
+		self.add_query_param('Mobile', Mobile)
 	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
+		return self.get_query_params().get('IdentifyNum')
 
 	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
+		self.add_query_param('IdentifyNum', IdentifyNum)
+	def get_ProductType(self): # String
+		return self.get_query_params().get('ProductType')
+
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_BankCard(self): # String
+		return self.get_query_params().get('BankCard')
+
+	def set_BankCard(self, BankCard):  # String
+		self.add_query_param('BankCard', BankCard)
 	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
+		return self.get_query_params().get('UserName')
 
 	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
+		self.add_query_param('UserName', UserName)

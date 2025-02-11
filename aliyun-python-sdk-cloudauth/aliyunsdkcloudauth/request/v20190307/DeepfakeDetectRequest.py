@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class DeepfakeDetectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DeepfakeDetect','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,23 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ParamType(self): # String
-		return self.get_body_params().get('ParamType')
+	def get_FaceBase64(self): # String
+		return self.get_body_params().get('FaceBase64')
 
-	def set_ParamType(self, ParamType):  # String
-		self.add_body_params('ParamType', ParamType)
-	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+	def set_FaceBase64(self, FaceBase64):  # String
+		self.add_body_params('FaceBase64', FaceBase64)
+	def get_OuterOrderNo(self): # String
+		return self.get_query_params().get('OuterOrderNo')
 
-	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
-	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
+	def set_OuterOrderNo(self, OuterOrderNo):  # String
+		self.add_query_param('OuterOrderNo', OuterOrderNo)
+	def get_FaceUrl(self): # String
+		return self.get_query_params().get('FaceUrl')
 
-	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
-	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
+	def set_FaceUrl(self, FaceUrl):  # String
+		self.add_query_param('FaceUrl', FaceUrl)
+	def get_FaceInputType(self): # String
+		return self.get_query_params().get('FaceInputType')
 
-	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
+	def set_FaceInputType(self, FaceInputType):  # String
+		self.add_query_param('FaceInputType', FaceInputType)

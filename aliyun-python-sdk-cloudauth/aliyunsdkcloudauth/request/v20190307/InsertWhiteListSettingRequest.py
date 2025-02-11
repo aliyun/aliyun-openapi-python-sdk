@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class InsertWhiteListSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InsertWhiteListSetting','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,33 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ParamType(self): # String
-		return self.get_body_params().get('ParamType')
+	def get_ValidDay(self): # Integer
+		return self.get_query_params().get('ValidDay')
 
-	def set_ParamType(self, ParamType):  # String
-		self.add_body_params('ParamType', ParamType)
-	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+	def set_ValidDay(self, ValidDay):  # Integer
+		self.add_query_param('ValidDay', ValidDay)
+	def get_Remark(self): # String
+		return self.get_query_params().get('Remark')
 
-	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
-	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
+	def set_Remark(self, Remark):  # String
+		self.add_query_param('Remark', Remark)
+	def get_CertifyId(self): # String
+		return self.get_query_params().get('CertifyId')
 
-	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
-	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
+	def set_CertifyId(self, CertifyId):  # String
+		self.add_query_param('CertifyId', CertifyId)
+	def get_CertNo(self): # String
+		return self.get_query_params().get('CertNo')
 
-	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
+	def set_CertNo(self, CertNo):  # String
+		self.add_query_param('CertNo', CertNo)
+	def get_ServiceCode(self): # String
+		return self.get_query_params().get('ServiceCode')
+
+	def set_ServiceCode(self, ServiceCode):  # String
+		self.add_query_param('ServiceCode', ServiceCode)
+	def get_SceneId(self): # Long
+		return self.get_query_params().get('SceneId')
+
+	def set_SceneId(self, SceneId):  # Long
+		self.add_query_param('SceneId', SceneId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class Id2MetaPeriodVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Id2MetaPeriodVerify','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -37,11 +37,16 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 
 	def set_ParamType(self, ParamType):  # String
 		self.add_body_params('ParamType', ParamType)
-	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+	def get_ValidityStartDate(self): # String
+		return self.get_body_params().get('ValidityStartDate')
 
-	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
+	def set_ValidityStartDate(self, ValidityStartDate):  # String
+		self.add_body_params('ValidityStartDate', ValidityStartDate)
+	def get_ValidityEndDate(self): # String
+		return self.get_body_params().get('ValidityEndDate')
+
+	def set_ValidityEndDate(self, ValidityEndDate):  # String
+		self.add_body_params('ValidityEndDate', ValidityEndDate)
 	def get_IdentifyNum(self): # String
 		return self.get_body_params().get('IdentifyNum')
 

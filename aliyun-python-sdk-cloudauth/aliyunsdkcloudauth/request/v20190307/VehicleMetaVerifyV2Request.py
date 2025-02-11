@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class Mobile3MetaSimpleVerifyRequest(RpcRequest):
+class VehicleMetaVerifyV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'Mobile3MetaSimpleVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VehicleMetaVerifyV2','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,23 +32,33 @@ class Mobile3MetaSimpleVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_VehicleType(self): # String
+		return self.get_query_params().get('VehicleType')
+
+	def set_VehicleType(self, VehicleType):  # String
+		self.add_query_param('VehicleType', VehicleType)
 	def get_ParamType(self): # String
-		return self.get_body_params().get('ParamType')
+		return self.get_query_params().get('ParamType')
 
 	def set_ParamType(self, ParamType):  # String
-		self.add_body_params('ParamType', ParamType)
-	def get_Mobile(self): # String
-		return self.get_body_params().get('Mobile')
+		self.add_query_param('ParamType', ParamType)
+	def get_VehicleNum(self): # String
+		return self.get_query_params().get('VehicleNum')
 
-	def set_Mobile(self, Mobile):  # String
-		self.add_body_params('Mobile', Mobile)
+	def set_VehicleNum(self, VehicleNum):  # String
+		self.add_query_param('VehicleNum', VehicleNum)
 	def get_IdentifyNum(self): # String
-		return self.get_body_params().get('IdentifyNum')
+		return self.get_query_params().get('IdentifyNum')
 
 	def set_IdentifyNum(self, IdentifyNum):  # String
-		self.add_body_params('IdentifyNum', IdentifyNum)
+		self.add_query_param('IdentifyNum', IdentifyNum)
+	def get_VerifyMetaType(self): # String
+		return self.get_query_params().get('VerifyMetaType')
+
+	def set_VerifyMetaType(self, VerifyMetaType):  # String
+		self.add_query_param('VerifyMetaType', VerifyMetaType)
 	def get_UserName(self): # String
-		return self.get_body_params().get('UserName')
+		return self.get_query_params().get('UserName')
 
 	def set_UserName(self, UserName):  # String
-		self.add_body_params('UserName', UserName)
+		self.add_query_param('UserName', UserName)

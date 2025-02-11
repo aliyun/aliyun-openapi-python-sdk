@@ -31,16 +31,6 @@ class InitFaceVerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Birthday(self): # String
-		return self.get_query_params().get('Birthday')
-
-	def set_Birthday(self, Birthday):  # String
-		self.add_query_param('Birthday', Birthday)
-	def get_ProductCode(self): # String
-		return self.get_query_params().get('ProductCode')
-
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_query_param('ProductCode', ProductCode)
 	def get_FaceContrastPicture(self): # String
 		return self.get_body_params().get('FaceContrastPicture')
 
@@ -66,11 +56,6 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
-	def get_CertifyId(self): # String
-		return self.get_query_params().get('CertifyId')
-
-	def set_CertifyId(self, CertifyId):  # String
-		self.add_query_param('CertifyId', CertifyId)
 	def get_EncryptType(self): # String
 		return self.get_query_params().get('EncryptType')
 
@@ -81,21 +66,11 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_Mode(self, Mode):  # String
 		self.add_query_param('Mode', Mode)
-	def get_CertNo(self): # String
-		return self.get_query_params().get('CertNo')
-
-	def set_CertNo(self, CertNo):  # String
-		self.add_query_param('CertNo', CertNo)
 	def get_OuterOrderNo(self): # String
 		return self.get_query_params().get('OuterOrderNo')
 
 	def set_OuterOrderNo(self, OuterOrderNo):  # String
 		self.add_query_param('OuterOrderNo', OuterOrderNo)
-	def get_CertType(self): # String
-		return self.get_query_params().get('CertType')
-
-	def set_CertType(self, CertType):  # String
-		self.add_query_param('CertType', CertType)
 	def get_FaceContrastPictureUrl(self): # String
 		return self.get_query_params().get('FaceContrastPictureUrl')
 
@@ -106,11 +81,6 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_Model(self, Model):  # String
 		self.add_body_params('Model', Model)
-	def get_SuitableType(self): # String
-		return self.get_query_params().get('SuitableType')
-
-	def set_SuitableType(self, SuitableType):  # String
-		self.add_query_param('SuitableType', SuitableType)
 	def get_CertifyUrlStyle(self): # String
 		return self.get_query_params().get('CertifyUrlStyle')
 
@@ -121,11 +91,11 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_MetaInfo(self, MetaInfo):  # String
 		self.add_query_param('MetaInfo', MetaInfo)
-	def get_OssObjectName(self): # String
-		return self.get_query_params().get('OssObjectName')
+	def get_CameraSelection(self): # String
+		return self.get_query_params().get('CameraSelection')
 
-	def set_OssObjectName(self, OssObjectName):  # String
-		self.add_query_param('OssObjectName', OssObjectName)
+	def set_CameraSelection(self, CameraSelection):  # String
+		self.add_query_param('CameraSelection', CameraSelection)
 	def get_ValidityDate(self): # String
 		return self.get_query_params().get('ValidityDate')
 
@@ -141,6 +111,71 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_Ip(self, Ip):  # String
 		self.add_query_param('Ip', Ip)
+	def get_SceneId(self): # Long
+		return self.get_query_params().get('SceneId')
+
+	def set_SceneId(self, SceneId):  # Long
+		self.add_query_param('SceneId', SceneId)
+	def get_OssBucketName(self): # String
+		return self.get_query_params().get('OssBucketName')
+
+	def set_OssBucketName(self, OssBucketName):  # String
+		self.add_query_param('OssBucketName', OssBucketName)
+	def get_Crop(self): # String
+		return self.get_body_params().get('Crop')
+
+	def set_Crop(self, Crop):  # String
+		self.add_body_params('Crop', Crop)
+	def get_CertifyUrlType(self): # String
+		return self.get_query_params().get('CertifyUrlType')
+
+	def set_CertifyUrlType(self, CertifyUrlType):  # String
+		self.add_query_param('CertifyUrlType', CertifyUrlType)
+	def get_Birthday(self): # String
+		return self.get_query_params().get('Birthday')
+
+	def set_Birthday(self, Birthday):  # String
+		self.add_query_param('Birthday', Birthday)
+	def get_ProductCode(self): # String
+		return self.get_query_params().get('ProductCode')
+
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_VideoEvidence(self): # String
+		return self.get_query_params().get('VideoEvidence')
+
+	def set_VideoEvidence(self, VideoEvidence):  # String
+		self.add_query_param('VideoEvidence', VideoEvidence)
+	def get_CertifyId(self): # String
+		return self.get_query_params().get('CertifyId')
+
+	def set_CertifyId(self, CertifyId):  # String
+		self.add_query_param('CertifyId', CertifyId)
+	def get_CertNo(self): # String
+		return self.get_query_params().get('CertNo')
+
+	def set_CertNo(self, CertNo):  # String
+		self.add_query_param('CertNo', CertNo)
+	def get_CertType(self): # String
+		return self.get_query_params().get('CertType')
+
+	def set_CertType(self, CertType):  # String
+		self.add_query_param('CertType', CertType)
+	def get_SuitableType(self): # String
+		return self.get_query_params().get('SuitableType')
+
+	def set_SuitableType(self, SuitableType):  # String
+		self.add_query_param('SuitableType', SuitableType)
+	def get_OssObjectName(self): # String
+		return self.get_query_params().get('OssObjectName')
+
+	def set_OssObjectName(self, OssObjectName):  # String
+		self.add_query_param('OssObjectName', OssObjectName)
+	def get_AppQualityCheck(self): # String
+		return self.get_query_params().get('AppQualityCheck')
+
+	def set_AppQualityCheck(self, AppQualityCheck):  # String
+		self.add_query_param('AppQualityCheck', AppQualityCheck)
 	def get_Mobile(self): # String
 		return self.get_query_params().get('Mobile')
 
@@ -161,21 +196,16 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_ProcedurePriority(self, ProcedurePriority):  # String
 		self.add_query_param('ProcedurePriority', ProcedurePriority)
-	def get_SceneId(self): # Long
-		return self.get_query_params().get('SceneId')
-
-	def set_SceneId(self, SceneId):  # Long
-		self.add_query_param('SceneId', SceneId)
-	def get_OssBucketName(self): # String
-		return self.get_query_params().get('OssBucketName')
-
-	def set_OssBucketName(self, OssBucketName):  # String
-		self.add_query_param('OssBucketName', OssBucketName)
 	def get_CallbackToken(self): # String
 		return self.get_query_params().get('CallbackToken')
 
 	def set_CallbackToken(self, CallbackToken):  # String
 		self.add_query_param('CallbackToken', CallbackToken)
+	def get_UiCustomUrl(self): # String
+		return self.get_query_params().get('UiCustomUrl')
+
+	def set_UiCustomUrl(self, UiCustomUrl):  # String
+		self.add_query_param('UiCustomUrl', UiCustomUrl)
 	def get_ReturnUrl(self): # String
 		return self.get_query_params().get('ReturnUrl')
 
@@ -186,13 +216,3 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_CallbackUrl(self, CallbackUrl):  # String
 		self.add_query_param('CallbackUrl', CallbackUrl)
-	def get_Crop(self): # String
-		return self.get_body_params().get('Crop')
-
-	def set_Crop(self, Crop):  # String
-		self.add_body_params('Crop', Crop)
-	def get_CertifyUrlType(self): # String
-		return self.get_query_params().get('CertifyUrlType')
-
-	def set_CertifyUrlType(self, CertifyUrlType):  # String
-		self.add_query_param('CertifyUrlType', CertifyUrlType)
