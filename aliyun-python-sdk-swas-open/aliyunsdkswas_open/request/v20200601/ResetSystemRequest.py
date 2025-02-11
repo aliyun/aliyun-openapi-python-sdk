@@ -35,6 +35,14 @@ class ResetSystemRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_LoginCredentials(self): # Struct
+		return self.get_query_params().get('LoginCredentials')
+
+	def set_LoginCredentials(self, LoginCredentials):  # Struct
+		if LoginCredentials.get('Password') is not None:
+			self.add_query_param('LoginCredentials.Password', LoginCredentials.get('Password'))
+		if LoginCredentials.get('KeyPairName') is not None:
+			self.add_query_param('LoginCredentials.KeyPairName', LoginCredentials.get('KeyPairName'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
