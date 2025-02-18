@@ -25,32 +25,29 @@ class ModifyGatewayFileShareWatermarkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'ModifyGatewayFileShareWatermark','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Watermark(self):
+	def get_Watermark(self): # Integer
 		return self.get_query_params().get('Watermark')
 
-	def set_Watermark(self,Watermark):
-		self.add_query_param('Watermark',Watermark)
-
-	def get_SecurityToken(self):
+	def set_Watermark(self, Watermark):  # Integer
+		self.add_query_param('Watermark', Watermark)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_IndexId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_IndexId(self): # String
 		return self.get_query_params().get('IndexId')
 
-	def set_IndexId(self,IndexId):
-		self.add_query_param('IndexId',IndexId)
-
-	def get_GatewayId(self):
+	def set_IndexId(self, IndexId):  # String
+		self.add_query_param('IndexId', IndexId)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)

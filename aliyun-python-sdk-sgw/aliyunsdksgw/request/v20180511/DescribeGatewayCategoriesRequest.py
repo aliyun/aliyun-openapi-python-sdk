@@ -25,20 +25,19 @@ class DescribeGatewayCategoriesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DescribeGatewayCategories','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GatewayLocation(self):
+	def get_GatewayLocation(self): # String
 		return self.get_query_params().get('GatewayLocation')
 
-	def set_GatewayLocation(self,GatewayLocation):
-		self.add_query_param('GatewayLocation',GatewayLocation)
-
-	def get_SecurityToken(self):
+	def set_GatewayLocation(self, GatewayLocation):  # String
+		self.add_query_param('GatewayLocation', GatewayLocation)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)

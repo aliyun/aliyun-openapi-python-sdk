@@ -25,32 +25,29 @@ class CreateGatewayLoggingRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'CreateGatewayLogging','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SlsLogstore(self):
+	def get_SlsLogstore(self): # String
 		return self.get_query_params().get('SlsLogstore')
 
-	def set_SlsLogstore(self,SlsLogstore):
-		self.add_query_param('SlsLogstore',SlsLogstore)
-
-	def get_SlsProject(self):
+	def set_SlsLogstore(self, SlsLogstore):  # String
+		self.add_query_param('SlsLogstore', SlsLogstore)
+	def get_SlsProject(self): # String
 		return self.get_query_params().get('SlsProject')
 
-	def set_SlsProject(self,SlsProject):
-		self.add_query_param('SlsProject',SlsProject)
-
-	def get_SecurityToken(self):
+	def set_SlsProject(self, SlsProject):  # String
+		self.add_query_param('SlsProject', SlsProject)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_GatewayId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)

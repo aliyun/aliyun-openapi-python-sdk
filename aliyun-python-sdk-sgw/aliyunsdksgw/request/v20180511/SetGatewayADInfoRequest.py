@@ -25,44 +25,39 @@ class SetGatewayADInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'SetGatewayADInfo','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_SecurityToken(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ServerIp(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ServerIp(self): # String
 		return self.get_query_params().get('ServerIp')
 
-	def set_ServerIp(self,ServerIp):
-		self.add_query_param('ServerIp',ServerIp)
-
-	def get_GatewayId(self):
+	def set_ServerIp(self, ServerIp):  # String
+		self.add_query_param('ServerIp', ServerIp)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
-
-	def get_Username(self):
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)
+	def get_Username(self): # String
 		return self.get_query_params().get('Username')
 
-	def set_Username(self,Username):
-		self.add_query_param('Username',Username)
-
-	def get_IsEnabled(self):
+	def set_Username(self, Username):  # String
+		self.add_query_param('Username', Username)
+	def get_IsEnabled(self): # Boolean
 		return self.get_query_params().get('IsEnabled')
 
-	def set_IsEnabled(self,IsEnabled):
-		self.add_query_param('IsEnabled',IsEnabled)
+	def set_IsEnabled(self, IsEnabled):  # Boolean
+		self.add_query_param('IsEnabled', IsEnabled)

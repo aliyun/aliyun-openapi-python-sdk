@@ -25,32 +25,29 @@ class ReportBlockVolumesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'ReportBlockVolumes','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientUUID(self):
+	def get_ClientUUID(self): # String
 		return self.get_query_params().get('ClientUUID')
 
-	def set_ClientUUID(self,ClientUUID):
-		self.add_query_param('ClientUUID',ClientUUID)
-
-	def get_SecurityToken(self):
+	def set_ClientUUID(self, ClientUUID):  # String
+		self.add_query_param('ClientUUID', ClientUUID)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_GatewayId(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
-
-	def get_Info(self):
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)
+	def get_Info(self): # String
 		return self.get_query_params().get('Info')
 
-	def set_Info(self,Info):
-		self.add_query_param('Info',Info)
+	def set_Info(self, Info):  # String
+		self.add_query_param('Info', Info)

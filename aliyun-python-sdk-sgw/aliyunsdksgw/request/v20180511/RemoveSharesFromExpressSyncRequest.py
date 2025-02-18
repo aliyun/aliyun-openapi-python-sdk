@@ -25,26 +25,24 @@ class RemoveSharesFromExpressSyncRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'RemoveSharesFromExpressSync','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExpressSyncId(self):
+	def get_ExpressSyncId(self): # String
 		return self.get_query_params().get('ExpressSyncId')
 
-	def set_ExpressSyncId(self,ExpressSyncId):
-		self.add_query_param('ExpressSyncId',ExpressSyncId)
-
-	def get_GatewayShares(self):
+	def set_ExpressSyncId(self, ExpressSyncId):  # String
+		self.add_query_param('ExpressSyncId', ExpressSyncId)
+	def get_GatewayShares(self): # String
 		return self.get_query_params().get('GatewayShares')
 
-	def set_GatewayShares(self,GatewayShares):
-		self.add_query_param('GatewayShares',GatewayShares)
-
-	def get_SecurityToken(self):
+	def set_GatewayShares(self, GatewayShares):  # String
+		self.add_query_param('GatewayShares', GatewayShares)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)

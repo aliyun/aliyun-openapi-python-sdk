@@ -25,56 +25,49 @@ class SetGatewayLDAPInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'SetGatewayLDAPInfo','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IsTls(self):
+	def get_IsTls(self): # Boolean
 		return self.get_query_params().get('IsTls')
 
-	def set_IsTls(self,IsTls):
-		self.add_query_param('IsTls',IsTls)
-
-	def get_Password(self):
+	def set_IsTls(self, IsTls):  # Boolean
+		self.add_query_param('IsTls', IsTls)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_RootDN(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_RootDN(self): # String
 		return self.get_query_params().get('RootDN')
 
-	def set_RootDN(self,RootDN):
-		self.add_query_param('RootDN',RootDN)
-
-	def get_SecurityToken(self):
+	def set_RootDN(self, RootDN):  # String
+		self.add_query_param('RootDN', RootDN)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ServerIp(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ServerIp(self): # String
 		return self.get_query_params().get('ServerIp')
 
-	def set_ServerIp(self,ServerIp):
-		self.add_query_param('ServerIp',ServerIp)
-
-	def get_BaseDN(self):
+	def set_ServerIp(self, ServerIp):  # String
+		self.add_query_param('ServerIp', ServerIp)
+	def get_BaseDN(self): # String
 		return self.get_query_params().get('BaseDN')
 
-	def set_BaseDN(self,BaseDN):
-		self.add_query_param('BaseDN',BaseDN)
-
-	def get_GatewayId(self):
+	def set_BaseDN(self, BaseDN):  # String
+		self.add_query_param('BaseDN', BaseDN)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
-
-	def get_IsEnabled(self):
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)
+	def get_IsEnabled(self): # Boolean
 		return self.get_query_params().get('IsEnabled')
 
-	def set_IsEnabled(self,IsEnabled):
-		self.add_query_param('IsEnabled',IsEnabled)
+	def set_IsEnabled(self, IsEnabled):  # Boolean
+		self.add_query_param('IsEnabled', IsEnabled)

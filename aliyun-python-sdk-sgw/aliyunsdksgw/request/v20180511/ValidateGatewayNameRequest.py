@@ -25,20 +25,24 @@ class ValidateGatewayNameRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'ValidateGatewayName','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
 
-	def get_Name(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_StorageBundleId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_StorageBundleId(self): # String
 		return self.get_query_params().get('StorageBundleId')
 
-	def set_StorageBundleId(self,StorageBundleId):
-		self.add_query_param('StorageBundleId',StorageBundleId)
+	def set_StorageBundleId(self, StorageBundleId):  # String
+		self.add_query_param('StorageBundleId', StorageBundleId)

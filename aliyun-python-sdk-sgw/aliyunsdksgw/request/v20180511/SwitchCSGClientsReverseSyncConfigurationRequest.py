@@ -25,38 +25,35 @@ class SwitchCSGClientsReverseSyncConfigurationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'SwitchCSGClientsReverseSyncConfiguration','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReverseSyncInternalSecond(self):
+	def get_ReverseSyncInternalSecond(self): # Integer
 		return self.get_query_params().get('ReverseSyncInternalSecond')
 
-	def set_ReverseSyncInternalSecond(self,ReverseSyncInternalSecond):
-		self.add_query_param('ReverseSyncInternalSecond',ReverseSyncInternalSecond)
-
-	def get_ClientIds(self):
+	def set_ReverseSyncInternalSecond(self, ReverseSyncInternalSecond):  # Integer
+		self.add_query_param('ReverseSyncInternalSecond', ReverseSyncInternalSecond)
+	def get_ClientIds(self): # Array
 		return self.get_query_params().get('ClientIds')
 
-	def set_ClientIds(self,ClientIds):
-		self.add_query_param('ClientIds',ClientIds)
-
-	def get_ClientRegionId(self):
+	def set_ClientIds(self, ClientIds):  # Array
+		for index1, value1 in enumerate(ClientIds):
+			self.add_query_param('ClientIds.' + str(index1 + 1), value1)
+	def get_ClientRegionId(self): # String
 		return self.get_query_params().get('ClientRegionId')
 
-	def set_ClientRegionId(self,ClientRegionId):
-		self.add_query_param('ClientRegionId',ClientRegionId)
-
-	def get_IsReverseSync(self):
+	def set_ClientRegionId(self, ClientRegionId):  # String
+		self.add_query_param('ClientRegionId', ClientRegionId)
+	def get_IsReverseSync(self): # Boolean
 		return self.get_query_params().get('IsReverseSync')
 
-	def set_IsReverseSync(self,IsReverseSync):
-		self.add_query_param('IsReverseSync',IsReverseSync)
-
-	def get_SecurityToken(self):
+	def set_IsReverseSync(self, IsReverseSync):  # Boolean
+		self.add_query_param('IsReverseSync', IsReverseSync)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)

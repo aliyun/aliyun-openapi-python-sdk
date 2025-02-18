@@ -25,26 +25,24 @@ class DescribeExpressSyncSharesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DescribeExpressSyncShares','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IsExternal(self):
+	def get_IsExternal(self): # Boolean
 		return self.get_query_params().get('IsExternal')
 
-	def set_IsExternal(self,IsExternal):
-		self.add_query_param('IsExternal',IsExternal)
-
-	def get_ExpressSyncIds(self):
+	def set_IsExternal(self, IsExternal):  # Boolean
+		self.add_query_param('IsExternal', IsExternal)
+	def get_ExpressSyncIds(self): # String
 		return self.get_query_params().get('ExpressSyncIds')
 
-	def set_ExpressSyncIds(self,ExpressSyncIds):
-		self.add_query_param('ExpressSyncIds',ExpressSyncIds)
-
-	def get_SecurityToken(self):
+	def set_ExpressSyncIds(self, ExpressSyncIds):  # String
+		self.add_query_param('ExpressSyncIds', ExpressSyncIds)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)

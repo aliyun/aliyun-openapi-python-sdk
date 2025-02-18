@@ -25,44 +25,39 @@ class CreateExpressSyncRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'CreateExpressSync','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BucketRegion(self):
+	def get_BucketRegion(self): # String
 		return self.get_query_params().get('BucketRegion')
 
-	def set_BucketRegion(self,BucketRegion):
-		self.add_query_param('BucketRegion',BucketRegion)
-
-	def get_Description(self):
+	def set_BucketRegion(self, BucketRegion):  # String
+		self.add_query_param('BucketRegion', BucketRegion)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_SecurityToken(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_BucketName(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_BucketName(self): # String
 		return self.get_query_params().get('BucketName')
 
-	def set_BucketName(self,BucketName):
-		self.add_query_param('BucketName',BucketName)
-
-	def get_Name(self):
+	def set_BucketName(self, BucketName):  # String
+		self.add_query_param('BucketName', BucketName)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_BucketPrefix(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_BucketPrefix(self): # String
 		return self.get_query_params().get('BucketPrefix')
 
-	def set_BucketPrefix(self,BucketPrefix):
-		self.add_query_param('BucketPrefix',BucketPrefix)
+	def set_BucketPrefix(self, BucketPrefix):  # String
+		self.add_query_param('BucketPrefix', BucketPrefix)

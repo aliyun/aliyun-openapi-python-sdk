@@ -25,20 +25,24 @@ class DescribePayAsYouGoPriceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DescribePayAsYouGoPrice','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GatewayClass(self):
+	def get_GatewayClass(self): # String
 		return self.get_query_params().get('GatewayClass')
 
-	def set_GatewayClass(self,GatewayClass):
-		self.add_query_param('GatewayClass',GatewayClass)
-
-	def get_SecurityToken(self):
+	def set_GatewayClass(self, GatewayClass):  # String
+		self.add_query_param('GatewayClass', GatewayClass)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ResourceRegionId(self): # String
+		return self.get_query_params().get('ResourceRegionId')
+
+	def set_ResourceRegionId(self, ResourceRegionId):  # String
+		self.add_query_param('ResourceRegionId', ResourceRegionId)

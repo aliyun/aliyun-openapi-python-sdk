@@ -25,98 +25,89 @@ class CreateGatewayBlockVolumeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'CreateGatewayBlockVolume','hcs_sgw')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OssEndpoint(self):
+	def get_OssEndpoint(self): # String
 		return self.get_query_params().get('OssEndpoint')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_Recovery(self):
+	def set_OssEndpoint(self, OssEndpoint):  # String
+		self.add_query_param('OssEndpoint', OssEndpoint)
+	def get_Recovery(self): # Boolean
 		return self.get_query_params().get('Recovery')
 
-	def set_Recovery(self,Recovery):
-		self.add_query_param('Recovery',Recovery)
-
-	def get_SecurityToken(self):
+	def set_Recovery(self, Recovery):  # Boolean
+		self.add_query_param('Recovery', Recovery)
+	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ChunkSize(self):
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_ChunkSize(self): # Integer
 		return self.get_query_params().get('ChunkSize')
 
-	def set_ChunkSize(self,ChunkSize):
-		self.add_query_param('ChunkSize',ChunkSize)
-
-	def get_GatewayId(self):
+	def set_ChunkSize(self, ChunkSize):  # Integer
+		self.add_query_param('ChunkSize', ChunkSize)
+	def get_GatewayId(self): # String
 		return self.get_query_params().get('GatewayId')
 
-	def set_GatewayId(self,GatewayId):
-		self.add_query_param('GatewayId',GatewayId)
-
-	def get_VolumeProtocol(self):
+	def set_GatewayId(self, GatewayId):  # String
+		self.add_query_param('GatewayId', GatewayId)
+	def get_VolumeProtocol(self): # String
 		return self.get_query_params().get('VolumeProtocol')
 
-	def set_VolumeProtocol(self,VolumeProtocol):
-		self.add_query_param('VolumeProtocol',VolumeProtocol)
-
-	def get_ChapEnabled(self):
+	def set_VolumeProtocol(self, VolumeProtocol):  # String
+		self.add_query_param('VolumeProtocol', VolumeProtocol)
+	def get_ChapEnabled(self): # Boolean
 		return self.get_query_params().get('ChapEnabled')
 
-	def set_ChapEnabled(self,ChapEnabled):
-		self.add_query_param('ChapEnabled',ChapEnabled)
-
-	def get_CacheMode(self):
+	def set_ChapEnabled(self, ChapEnabled):  # Boolean
+		self.add_query_param('ChapEnabled', ChapEnabled)
+	def get_CacheMode(self): # String
 		return self.get_query_params().get('CacheMode')
 
-	def set_CacheMode(self,CacheMode):
-		self.add_query_param('CacheMode',CacheMode)
-
-	def get_LocalFilePath(self):
+	def set_CacheMode(self, CacheMode):  # String
+		self.add_query_param('CacheMode', CacheMode)
+	def get_LocalFilePath(self): # String
 		return self.get_query_params().get('LocalFilePath')
 
-	def set_LocalFilePath(self,LocalFilePath):
-		self.add_query_param('LocalFilePath',LocalFilePath)
+	def set_LocalFilePath(self, LocalFilePath):  # String
+		self.add_query_param('LocalFilePath', LocalFilePath)
+	def get_OssBucketRegionId(self): # String
+		return self.get_query_params().get('OssBucketRegionId')
 
-	def get_OssBucketSsl(self):
+	def set_OssBucketRegionId(self, OssBucketRegionId):  # String
+		self.add_query_param('OssBucketRegionId', OssBucketRegionId)
+	def get_OssBucketSsl(self): # Boolean
 		return self.get_query_params().get('OssBucketSsl')
 
-	def set_OssBucketSsl(self,OssBucketSsl):
-		self.add_query_param('OssBucketSsl',OssBucketSsl)
-
-	def get_Size(self):
+	def set_OssBucketSsl(self, OssBucketSsl):  # Boolean
+		self.add_query_param('OssBucketSsl', OssBucketSsl)
+	def get_Size(self): # Long
 		return self.get_query_params().get('Size')
 
-	def set_Size(self,Size):
-		self.add_query_param('Size',Size)
-
-	def get_ChapInUser(self):
+	def set_Size(self, Size):  # Long
+		self.add_query_param('Size', Size)
+	def get_ChapInUser(self): # String
 		return self.get_query_params().get('ChapInUser')
 
-	def set_ChapInUser(self,ChapInUser):
-		self.add_query_param('ChapInUser',ChapInUser)
-
-	def get_Name(self):
+	def set_ChapInUser(self, ChapInUser):  # String
+		self.add_query_param('ChapInUser', ChapInUser)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_OssBucketName(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_OssBucketName(self): # String
 		return self.get_query_params().get('OssBucketName')
 
-	def set_OssBucketName(self,OssBucketName):
-		self.add_query_param('OssBucketName',OssBucketName)
-
-	def get_ChapInPassword(self):
+	def set_OssBucketName(self, OssBucketName):  # String
+		self.add_query_param('OssBucketName', OssBucketName)
+	def get_ChapInPassword(self): # String
 		return self.get_query_params().get('ChapInPassword')
 
-	def set_ChapInPassword(self,ChapInPassword):
-		self.add_query_param('ChapInPassword',ChapInPassword)
+	def set_ChapInPassword(self, ChapInPassword):  # String
+		self.add_query_param('ChapInPassword', ChapInPassword)
