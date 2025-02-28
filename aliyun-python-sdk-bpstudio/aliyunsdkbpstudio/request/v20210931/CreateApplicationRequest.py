@@ -26,11 +26,6 @@ class CreateApplicationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'BPStudio', '2021-09-31', 'CreateApplication','bpstudio')
 		self.set_method('POST')
 
-	def get_Variables(self): # Map
-		return self.get_body_params().get('Variables')
-
-	def set_Variables(self, Variables):  # Map
-		self.add_body_params("Variables", json.dumps(Variables))
 	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
@@ -46,11 +41,6 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Configuration(self, Configuration):  # Map
 		self.add_body_params("Configuration", json.dumps(Configuration))
-	def get_TemplateId(self): # String
-		return self.get_body_params().get('TemplateId')
-
-	def set_TemplateId(self, TemplateId):  # String
-		self.add_body_params('TemplateId', TemplateId)
 	def get_ResourceGroupId(self): # String
 		return self.get_body_params().get('ResourceGroupId')
 
@@ -61,6 +51,16 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_AreaId(self, AreaId):  # String
 		self.add_body_params('AreaId', AreaId)
+	def get_Variables(self): # Map
+		return self.get_body_params().get('Variables')
+
+	def set_Variables(self, Variables):  # Map
+		self.add_body_params("Variables", json.dumps(Variables))
+	def get_TemplateId(self): # String
+		return self.get_body_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # String
+		self.add_body_params('TemplateId', TemplateId)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
