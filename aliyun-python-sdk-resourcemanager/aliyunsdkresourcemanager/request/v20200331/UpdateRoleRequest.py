@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class UpdateRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateRole')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UpdateRole','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

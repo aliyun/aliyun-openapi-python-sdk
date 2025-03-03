@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class CreateResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateResourceGroup')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateResourceGroup','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -42,3 +42,12 @@ class CreateResourceGroupRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))

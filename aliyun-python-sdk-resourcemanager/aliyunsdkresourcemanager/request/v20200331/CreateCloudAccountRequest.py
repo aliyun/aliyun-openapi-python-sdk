@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class CreateCloudAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateCloudAccount')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'CreateCloudAccount','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

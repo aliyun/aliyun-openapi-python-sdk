@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class DetachPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DetachPolicy')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DetachPolicy','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,6 +32,11 @@ class DetachPolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 
@@ -42,11 +47,6 @@ class DetachPolicyRequest(RpcRequest):
 
 	def set_PrincipalType(self, PrincipalType):  # String
 		self.add_query_param('PrincipalType', PrincipalType)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 
