@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksmc.endpoint import endpoint_data
 
-class ModifySourceServerAttributeRequest(RpcRequest):
+class CreateAccessTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'smc', '2019-06-01', 'ModifySourceServerAttribute','smc')
+		RpcRequest.__init__(self, 'smc', '2019-06-01', 'CreateAccessToken','smc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,26 @@ class ModifySourceServerAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TimeToLiveInDays(self): # String
+		return self.get_query_params().get('TimeToLiveInDays')
+
+	def set_TimeToLiveInDays(self, TimeToLiveInDays):  # String
+		self.add_query_param('TimeToLiveInDays', TimeToLiveInDays)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_SourceId(self): # String
-		return self.get_query_params().get('SourceId')
-
-	def set_SourceId(self, SourceId):  # String
-		self.add_query_param('SourceId', SourceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Count(self): # String
+		return self.get_query_params().get('Count')
+
+	def set_Count(self, Count):  # String
+		self.add_query_param('Count', Count)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

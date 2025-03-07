@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksmc.endpoint import endpoint_data
 
-class ModifySourceServerAttributeRequest(RpcRequest):
+class CreateWorkgroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'smc', '2019-06-01', 'ModifySourceServerAttribute','smc')
+		RpcRequest.__init__(self, 'smc', '2019-06-01', 'CreateWorkgroup','smc')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +32,25 @@ class ModifySourceServerAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_SourceId(self): # String
-		return self.get_query_params().get('SourceId')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_SourceId(self, SourceId):  # String
-		self.add_query_param('SourceId', SourceId)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -25,32 +25,29 @@ class DeleteSourceServerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'smc', '2019-06-01', 'DeleteSourceServer','smc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceId(self):
+	def get_SourceId(self): # String
 		return self.get_query_params().get('SourceId')
 
-	def set_SourceId(self,SourceId):
-		self.add_query_param('SourceId',SourceId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_SourceId(self, SourceId):  # String
+		self.add_query_param('SourceId', SourceId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Force(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Force(self): # Boolean
 		return self.get_query_params().get('Force')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
