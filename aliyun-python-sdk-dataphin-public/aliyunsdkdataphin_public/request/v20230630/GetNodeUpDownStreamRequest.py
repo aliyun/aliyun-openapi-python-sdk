@@ -32,16 +32,16 @@ class GetNodeUpDownStreamRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_UpStreamDepth(self): # Integer
-		return self.get_query_params().get('UpStreamDepth')
-
-	def set_UpStreamDepth(self, UpStreamDepth):  # Integer
-		self.add_query_param('UpStreamDepth', UpStreamDepth)
 	def get_Env(self): # String
 		return self.get_query_params().get('Env')
 
 	def set_Env(self, Env):  # String
 		self.add_query_param('Env', Env)
+	def get_UpStreamDepth(self): # Integer
+		return self.get_query_params().get('UpStreamDepth')
+
+	def set_UpStreamDepth(self, UpStreamDepth):  # Integer
+		self.add_query_param('UpStreamDepth', UpStreamDepth)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 

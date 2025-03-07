@@ -37,16 +37,16 @@ class GetInstanceDownStreamRequest(RpcRequest):
 
 	def set_RunStatus(self, RunStatus):  # String
 		self.add_query_param('RunStatus', RunStatus)
-	def get_InstanceGet(self): # Struct
-		return self.get_body_params().get('InstanceGet')
-
-	def set_InstanceGet(self, InstanceGet):  # Struct
-		self.add_body_params("InstanceGet", json.dumps(InstanceGet))
 	def get_Env(self): # String
 		return self.get_query_params().get('Env')
 
 	def set_Env(self, Env):  # String
 		self.add_query_param('Env', Env)
+	def get_InstanceGet(self): # Struct
+		return self.get_body_params().get('InstanceGet')
+
+	def set_InstanceGet(self, InstanceGet):  # Struct
+		self.add_body_params("InstanceGet", json.dumps(InstanceGet))
 	def get_DownStreamDepth(self): # Integer
 		return self.get_query_params().get('DownStreamDepth')
 

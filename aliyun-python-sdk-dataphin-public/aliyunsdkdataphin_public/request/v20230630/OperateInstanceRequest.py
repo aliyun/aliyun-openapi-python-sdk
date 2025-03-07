@@ -32,13 +32,13 @@ class OperateInstanceRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_OperateCommand(self): # Struct
-		return self.get_body_params().get('OperateCommand')
-
-	def set_OperateCommand(self, OperateCommand):  # Struct
-		self.add_body_params("OperateCommand", json.dumps(OperateCommand))
 	def get_Env(self): # String
 		return self.get_query_params().get('Env')
 
 	def set_Env(self, Env):  # String
 		self.add_query_param('Env', Env)
+	def get_OperateCommand(self): # Struct
+		return self.get_body_params().get('OperateCommand')
+
+	def set_OperateCommand(self, OperateCommand):  # Struct
+		self.add_body_params("OperateCommand", json.dumps(OperateCommand))

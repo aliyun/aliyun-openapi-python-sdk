@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 import json
 
-class GetInstanceUpDownStreamRequest(RpcRequest):
+class ListAuthorizedDataServiceApiDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'GetInstanceUpDownStream')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'ListAuthorizedDataServiceApiDetails')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,28 +32,8 @@ class GetInstanceUpDownStreamRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_Env(self): # String
-		return self.get_query_params().get('Env')
+	def get_ListQuery(self): # Struct
+		return self.get_body_params().get('ListQuery')
 
-	def set_Env(self, Env):  # String
-		self.add_query_param('Env', Env)
-	def get_UpStreamDepth(self): # Integer
-		return self.get_query_params().get('UpStreamDepth')
-
-	def set_UpStreamDepth(self, UpStreamDepth):  # Integer
-		self.add_query_param('UpStreamDepth', UpStreamDepth)
-	def get_InstanceId(self): # Struct
-		return self.get_body_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # Struct
-		self.add_body_params("InstanceId", json.dumps(InstanceId))
-	def get_ProjectId(self): # Long
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
-	def get_DownStreamDepth(self): # Integer
-		return self.get_query_params().get('DownStreamDepth')
-
-	def set_DownStreamDepth(self, DownStreamDepth):  # Integer
-		self.add_query_param('DownStreamDepth', DownStreamDepth)
+	def set_ListQuery(self, ListQuery):  # Struct
+		self.add_body_params("ListQuery", json.dumps(ListQuery))

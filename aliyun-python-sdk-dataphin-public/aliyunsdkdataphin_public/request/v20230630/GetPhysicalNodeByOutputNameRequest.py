@@ -31,13 +31,13 @@ class GetPhysicalNodeByOutputNameRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_OutputName(self): # String
-		return self.get_query_params().get('OutputName')
-
-	def set_OutputName(self, OutputName):  # String
-		self.add_query_param('OutputName', OutputName)
 	def get_Env(self): # String
 		return self.get_query_params().get('Env')
 
 	def set_Env(self, Env):  # String
 		self.add_query_param('Env', Env)
+	def get_OutputName(self): # String
+		return self.get_query_params().get('OutputName')
+
+	def set_OutputName(self, OutputName):  # String
+		self.add_query_param('OutputName', OutputName)

@@ -31,16 +31,16 @@ class GetBatchTaskInfoRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_IncludeAllUpStreams(self): # Boolean
-		return self.get_query_params().get('IncludeAllUpStreams')
-
-	def set_IncludeAllUpStreams(self, IncludeAllUpStreams):  # Boolean
-		self.add_query_param('IncludeAllUpStreams', IncludeAllUpStreams)
 	def get_Env(self): # String
 		return self.get_query_params().get('Env')
 
 	def set_Env(self, Env):  # String
 		self.add_query_param('Env', Env)
+	def get_IncludeAllUpStreams(self): # Boolean
+		return self.get_query_params().get('IncludeAllUpStreams')
+
+	def set_IncludeAllUpStreams(self, IncludeAllUpStreams):  # Boolean
+		self.add_query_param('IncludeAllUpStreams', IncludeAllUpStreams)
 	def get_ProjectId(self): # Long
 		return self.get_query_params().get('ProjectId')
 
