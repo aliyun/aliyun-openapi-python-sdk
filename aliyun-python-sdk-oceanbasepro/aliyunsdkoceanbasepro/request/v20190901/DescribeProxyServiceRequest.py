@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
 
-class DescribeTenantUserRolesRequest(RpcRequest):
+class DescribeProxyServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeTenantUserRoles','oceanbase')
+		RpcRequest.__init__(self, 'OceanBasePro', '2019-09-01', 'DescribeProxyService','oceanbase')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,8 +36,3 @@ class DescribeTenantUserRolesRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
-	def get_TenantId(self): # String
-		return self.get_body_params().get('TenantId')
-
-	def set_TenantId(self, TenantId):  # String
-		self.add_body_params('TenantId', TenantId)

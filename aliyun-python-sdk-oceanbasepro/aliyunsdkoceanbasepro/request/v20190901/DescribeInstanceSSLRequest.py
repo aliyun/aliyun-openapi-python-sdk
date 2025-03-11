@@ -36,3 +36,8 @@ class DescribeInstanceSSLRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
+	def get_TenantId(self): # String
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # String
+		self.add_body_params('TenantId', TenantId)
