@@ -36,6 +36,11 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 
 	def set_TaskDesc(self, TaskDesc):  # String
 		self.add_query_param('TaskDesc', TaskDesc)
+	def get_TaskName(self): # String
+		return self.get_query_params().get('TaskName')
+
+	def set_TaskName(self, TaskName):  # String
+		self.add_query_param('TaskName', TaskName)
 	def get_Mappings(self): # RepeatList
 		return self.get_query_params().get('Mapping')
 
@@ -75,11 +80,6 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcInstanceId', ExtendedMapping[depth1].get('SrcInstanceId'))
 			if ExtendedMapping[depth1].get('SrcDb') is not None:
 				self.add_query_param('ExtendedMapping.' + str(depth1 + 1) + '.SrcDb', ExtendedMapping[depth1].get('SrcDb'))
-	def get_TaskName(self): # String
-		return self.get_query_params().get('TaskName')
-
-	def set_TaskName(self, TaskName):  # String
-		self.add_query_param('TaskName', TaskName)
 	def get_DrdsInstanceId(self): # String
 		return self.get_query_params().get('DrdsInstanceId')
 
