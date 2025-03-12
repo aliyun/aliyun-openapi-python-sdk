@@ -100,6 +100,11 @@ class DescribeElasticityAssurancesRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_PackageType(self): # String
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self, PackageType):  # String
+		self.add_query_param('PackageType', PackageType)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

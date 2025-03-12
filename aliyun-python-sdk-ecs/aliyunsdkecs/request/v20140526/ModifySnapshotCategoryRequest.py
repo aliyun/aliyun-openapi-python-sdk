@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class RenewElasticityAssurancesRequest(RpcRequest):
+class ModifySnapshotCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewElasticityAssurances','ecs')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySnapshotCategory','ecs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -37,32 +36,11 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_PrivatePoolOptionsIds(self): # RepeatList
-		return self.get_query_params().get('PrivatePoolOptions.Id')
-
-	def set_PrivatePoolOptionsIds(self, PrivatePoolOptionsId):  # RepeatList
-		for depth1 in range(len(PrivatePoolOptionsId)):
-			self.add_query_param('PrivatePoolOptions.Id.' + str(depth1 + 1), PrivatePoolOptionsId[depth1])
-	def get_AutoRenewPeriod(self): # Integer
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
-		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_Period(self): # Integer
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Integer
-		self.add_query_param('Period', Period)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -78,13 +56,13 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PeriodUnit(self): # String
-		return self.get_query_params().get('PeriodUnit')
+	def get_RetentionDays(self): # Integer
+		return self.get_query_params().get('RetentionDays')
 
-	def set_PeriodUnit(self, PeriodUnit):  # String
-		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_AutoRenew(self): # Boolean
-		return self.get_query_params().get('AutoRenew')
+	def set_RetentionDays(self, RetentionDays):  # Integer
+		self.add_query_param('RetentionDays', RetentionDays)
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
 
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)

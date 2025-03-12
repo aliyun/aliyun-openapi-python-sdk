@@ -76,6 +76,11 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -116,12 +121,30 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_PeriodUnit(self, PeriodUnit):  # String
 		self.add_query_param('PeriodUnit', PeriodUnit)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_ZoneIds(self): # RepeatList
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneIds(self, ZoneId):  # RepeatList
 		for depth1 in range(len(ZoneId)):
 			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId[depth1])
+	def get_RecurrenceRuless(self): # RepeatList
+		return self.get_query_params().get('RecurrenceRules')
+
+	def set_RecurrenceRuless(self, RecurrenceRules):  # RepeatList
+		for depth1 in range(len(RecurrenceRules)):
+			if RecurrenceRules[depth1].get('RecurrenceType') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceType', RecurrenceRules[depth1].get('RecurrenceType'))
+			if RecurrenceRules[depth1].get('RecurrenceValue') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceValue', RecurrenceRules[depth1].get('RecurrenceValue'))
+			if RecurrenceRules[depth1].get('StartHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.StartHour', RecurrenceRules[depth1].get('StartHour'))
+			if RecurrenceRules[depth1].get('EndHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.EndHour', RecurrenceRules[depth1].get('EndHour'))
 	def get_InstanceAmount(self): # Integer
 		return self.get_query_params().get('InstanceAmount')
 

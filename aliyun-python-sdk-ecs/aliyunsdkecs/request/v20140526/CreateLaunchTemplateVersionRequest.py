@@ -282,6 +282,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.InstanceType', NetworkInterface[depth1].get('InstanceType'))
 			if NetworkInterface[depth1].get('NetworkInterfaceTrafficMode') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterface[depth1].get('NetworkInterfaceTrafficMode'))
+			if NetworkInterface[depth1].get('DeleteOnRelease') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.DeleteOnRelease', NetworkInterface[depth1].get('DeleteOnRelease'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class PurchaseStorageCapacityUnitRequest(RpcRequest):
+class ModifyElasticityAssuranceAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'PurchaseStorageCapacityUnit','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyElasticityAssuranceAutoRenewAttribute','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,55 +37,22 @@ class PurchaseStorageCapacityUnitRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_RenewalStatus(self): # String
+		return self.get_query_params().get('RenewalStatus')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def set_RenewalStatus(self, RenewalStatus):  # String
+		self.add_query_param('RenewalStatus', RenewalStatus)
+	def get_PrivatePoolOptionsIds(self): # RepeatList
+		return self.get_query_params().get('PrivatePoolOptions.Id')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_Capacity(self): # Integer
-		return self.get_query_params().get('Capacity')
-
-	def set_Capacity(self, Capacity):  # Integer
-		self.add_query_param('Capacity', Capacity)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def set_PrivatePoolOptionsIds(self, PrivatePoolOptionsId):  # RepeatList
+		for depth1 in range(len(PrivatePoolOptionsId)):
+			self.add_query_param('PrivatePoolOptions.Id.' + str(depth1 + 1), PrivatePoolOptionsId[depth1])
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
-	def get_Amount(self): # Integer
-		return self.get_query_params().get('Amount')
-
-	def set_Amount(self, Amount):  # Integer
-		self.add_query_param('Amount', Amount)
-	def get_FromApp(self): # String
-		return self.get_query_params().get('FromApp')
-
-	def set_FromApp(self, FromApp):  # String
-		self.add_query_param('FromApp', FromApp)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -105,8 +73,3 @@ class PurchaseStorageCapacityUnitRequest(RpcRequest):
 
 	def set_PeriodUnit(self, PeriodUnit):  # String
 		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)

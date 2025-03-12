@@ -51,6 +51,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Isp(self, Isp):  # String
 		self.add_query_param('Isp', Isp)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_DataDisk4Size(self): # Integer
 		return self.get_query_params().get('DataDisk.4.Size')
 
@@ -260,3 +265,16 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_OfferingType(self, OfferingType):  # String
 		self.add_query_param('OfferingType', OfferingType)
+	def get_RecurrenceRuless(self): # RepeatList
+		return self.get_query_params().get('RecurrenceRules')
+
+	def set_RecurrenceRuless(self, RecurrenceRules):  # RepeatList
+		for depth1 in range(len(RecurrenceRules)):
+			if RecurrenceRules[depth1].get('EndHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.EndHour', RecurrenceRules[depth1].get('EndHour'))
+			if RecurrenceRules[depth1].get('StartHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.StartHour', RecurrenceRules[depth1].get('StartHour'))
+			if RecurrenceRules[depth1].get('RecurrenceValue') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceValue', RecurrenceRules[depth1].get('RecurrenceValue'))
+			if RecurrenceRules[depth1].get('RecurrenceType') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceType', RecurrenceRules[depth1].get('RecurrenceType'))

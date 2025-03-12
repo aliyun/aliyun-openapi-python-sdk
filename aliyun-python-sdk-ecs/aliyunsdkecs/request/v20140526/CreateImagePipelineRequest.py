@@ -41,47 +41,35 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_ToRegionIds(self): # RepeatList
-		return self.get_query_params().get('ToRegionId')
-
-	def set_ToRegionIds(self, ToRegionId):  # RepeatList
-		for depth1 in range(len(ToRegionId)):
-			self.add_query_param('ToRegionId.' + str(depth1 + 1), ToRegionId[depth1])
-	def get_InternetMaxBandwidthOut(self): # Integer
-		return self.get_query_params().get('InternetMaxBandwidthOut')
-
-	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
-		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ImageName(self): # String
-		return self.get_query_params().get('ImageName')
+	def get_ImageOptions(self): # Struct
+		return self.get_query_params().get('ImageOptions')
 
-	def set_ImageName(self, ImageName):  # String
-		self.add_query_param('ImageName', ImageName)
+	def set_ImageOptions(self, ImageOptions):  # Struct
+		if ImageOptions.get('ImageName') is not None:
+			self.add_query_param('ImageOptions.ImageName', ImageOptions.get('ImageName'))
+		if ImageOptions.get('ImageFamily') is not None:
+			self.add_query_param('ImageOptions.ImageFamily', ImageOptions.get('ImageFamily'))
+		if ImageOptions.get('Description') is not None:
+			self.add_query_param('ImageOptions.Description', ImageOptions.get('Description'))
+		if ImageOptions.get('ImageFeatures') is not None:
+			if ImageOptions.get('ImageFeatures').get('NvmeSupport') is not None:
+				self.add_query_param('ImageOptions.ImageFeatures.NvmeSupport', ImageOptions.get('ImageFeatures').get('NvmeSupport'))
+		if ImageOptions.get('ImageTags') is not None:
+			for index1, value1 in enumerate(ImageOptions.get('ImageTags')):
+				if value1.get('Key') is not None:
+					self.add_query_param('ImageOptions.ImageTags.' + str(index1 + 1) + '.Key', value1.get('Key'))
+				if value1.get('Value') is not None:
+					self.add_query_param('ImageOptions.ImageTags.' + str(index1 + 1) + '.Value', value1.get('Value'))
 	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDiskSize')
 
 	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
 		self.add_query_param('SystemDiskSize', SystemDiskSize)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -101,21 +89,8 @@ class CreateImagePipelineRequest(RpcRequest):
 			self.add_query_param('AdvancedOptions.SkipBuildImage', AdvancedOptions.get('SkipBuildImage'))
 		if AdvancedOptions.get('SkipCheckImage') is not None:
 			self.add_query_param('AdvancedOptions.SkipCheckImage', AdvancedOptions.get('SkipCheckImage'))
-	def get_NvmeSupport(self): # String
-		return self.get_query_params().get('NvmeSupport')
-
-	def set_NvmeSupport(self, NvmeSupport):  # String
-		self.add_query_param('NvmeSupport', NvmeSupport)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
+		if AdvancedOptions.get('ImageNameSuffix') is not None:
+			self.add_query_param('AdvancedOptions.ImageNameSuffix', AdvancedOptions.get('ImageNameSuffix'))
 	def get_RepairMode(self): # String
 		return self.get_query_params().get('RepairMode')
 
@@ -126,11 +101,6 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_BaseImage(self): # String
-		return self.get_query_params().get('BaseImage')
-
-	def set_BaseImage(self, BaseImage):  # String
-		self.add_query_param('BaseImage', BaseImage)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -152,16 +122,6 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
-	def get_ImageFamily(self): # String
-		return self.get_query_params().get('ImageFamily')
-
-	def set_ImageFamily(self, ImageFamily):  # String
-		self.add_query_param('ImageFamily', ImageFamily)
-	def get_BuildContent(self): # String
-		return self.get_query_params().get('BuildContent')
-
-	def set_BuildContent(self, BuildContent):  # String
-		self.add_query_param('BuildContent', BuildContent)
 	def get_ImportImageOptions(self): # Struct
 		return self.get_query_params().get('ImportImageOptions')
 
@@ -196,3 +156,64 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_TestContent(self, TestContent):  # String
 		self.add_query_param('TestContent', TestContent)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ToRegionIds(self): # RepeatList
+		return self.get_query_params().get('ToRegionId')
+
+	def set_ToRegionIds(self, ToRegionId):  # RepeatList
+		for depth1 in range(len(ToRegionId)):
+			self.add_query_param('ToRegionId.' + str(depth1 + 1), ToRegionId[depth1])
+	def get_InternetMaxBandwidthOut(self): # Integer
+		return self.get_query_params().get('InternetMaxBandwidthOut')
+
+	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
+		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ImageName(self): # String
+		return self.get_query_params().get('ImageName')
+
+	def set_ImageName(self, ImageName):  # String
+		self.add_query_param('ImageName', ImageName)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_NvmeSupport(self): # String
+		return self.get_query_params().get('NvmeSupport')
+
+	def set_NvmeSupport(self, NvmeSupport):  # String
+		self.add_query_param('NvmeSupport', NvmeSupport)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_BaseImage(self): # String
+		return self.get_query_params().get('BaseImage')
+
+	def set_BaseImage(self, BaseImage):  # String
+		self.add_query_param('BaseImage', BaseImage)
+	def get_ImageFamily(self): # String
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self, ImageFamily):  # String
+		self.add_query_param('ImageFamily', ImageFamily)
+	def get_BuildContent(self): # String
+		return self.get_query_params().get('BuildContent')
+
+	def set_BuildContent(self, BuildContent):  # String
+		self.add_query_param('BuildContent', BuildContent)

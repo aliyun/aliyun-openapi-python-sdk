@@ -168,6 +168,17 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateId(self, LaunchTemplateId):  # String
 		self.add_query_param('LaunchTemplateId', LaunchTemplateId)
+	def get_PrePaidOptions(self): # Struct
+		return self.get_query_params().get('PrePaidOptions')
+
+	def set_PrePaidOptions(self, PrePaidOptions):  # Struct
+		if PrePaidOptions.get('SpecifyCapacityDistribution') is not None:
+			for index1, value1 in enumerate(PrePaidOptions.get('SpecifyCapacityDistribution')):
+				if value1.get('InstanceTypes') is not None:
+					for index2, value2 in enumerate(value1.get('InstanceTypes')):
+						self.add_query_param('PrePaidOptions.SpecifyCapacityDistribution.' + str(index1 + 1) + '.InstanceTypes.' + str(index2 + 1), value2)
+				if value1.get('MinTargetCapacity') is not None:
+					self.add_query_param('PrePaidOptions.SpecifyCapacityDistribution.' + str(index1 + 1) + '.MinTargetCapacity', value1.get('MinTargetCapacity'))
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -203,6 +214,18 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_MaxSpotPrice(self, MaxSpotPrice):  # Float
 		self.add_query_param('MaxSpotPrice', MaxSpotPrice)
+	def get_LaunchConfiguration(self): # Struct
+		return self.get_query_params().get('LaunchConfiguration')
+
+	def set_LaunchConfiguration(self, LaunchConfiguration):  # Struct
+		if LaunchConfiguration.get('Period') is not None:
+			self.add_query_param('LaunchConfiguration.Period', LaunchConfiguration.get('Period'))
+		if LaunchConfiguration.get('PeriodUnit') is not None:
+			self.add_query_param('LaunchConfiguration.PeriodUnit', LaunchConfiguration.get('PeriodUnit'))
+		if LaunchConfiguration.get('AutoRenew') is not None:
+			self.add_query_param('LaunchConfiguration.AutoRenew', LaunchConfiguration.get('AutoRenew'))
+		if LaunchConfiguration.get('AutoRenewPeriod') is not None:
+			self.add_query_param('LaunchConfiguration.AutoRenewPeriod', LaunchConfiguration.get('AutoRenewPeriod'))
 	def get_LaunchConfigurationArns(self): # RepeatList
 		return self.get_query_params().get('LaunchConfiguration.Arn')
 

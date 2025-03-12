@@ -36,16 +36,6 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_CpuOverCommitRatio(self): # Float
 		return self.get_query_params().get('CpuOverCommitRatio')
 
@@ -66,11 +56,6 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 
 	def set_ActionOnMaintenance(self, ActionOnMaintenance):  # String
 		self.add_query_param('ActionOnMaintenance', ActionOnMaintenance)
-	def get_DedicatedHostClusterId(self): # String
-		return self.get_query_params().get('DedicatedHostClusterId')
-
-	def set_DedicatedHostClusterId(self, DedicatedHostClusterId):  # String
-		self.add_query_param('DedicatedHostClusterId', DedicatedHostClusterId)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -80,11 +65,6 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-	def get_DedicatedHostType(self): # String
-		return self.get_query_params().get('DedicatedHostType')
-
-	def set_DedicatedHostType(self, DedicatedHostType):  # String
-		self.add_query_param('DedicatedHostType', DedicatedHostType)
 	def get_AutoRenewPeriod(self): # Integer
 		return self.get_query_params().get('AutoRenewPeriod')
 
@@ -95,31 +75,11 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
-	def get_Quantity(self): # Integer
-		return self.get_query_params().get('Quantity')
-
-	def set_Quantity(self, Quantity):  # Integer
-		self.add_query_param('Quantity', Quantity)
 	def get_DedicatedHostName(self): # String
 		return self.get_query_params().get('DedicatedHostName')
 
 	def set_DedicatedHostName(self, DedicatedHostName):  # String
 		self.add_query_param('DedicatedHostName', DedicatedHostName)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_AutoReleaseTime(self): # String
-		return self.get_query_params().get('AutoReleaseTime')
-
-	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
-		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -150,13 +110,53 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 
 	def set_AutoPlacement(self, AutoPlacement):  # String
 		self.add_query_param('AutoPlacement', AutoPlacement)
-	def get_ChargeType(self): # String
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self, ChargeType):  # String
-		self.add_query_param('ChargeType', ChargeType)
 	def get_NetworkAttributesUdpTimeout(self): # Integer
 		return self.get_query_params().get('NetworkAttributes.UdpTimeout')
 
 	def set_NetworkAttributesUdpTimeout(self, NetworkAttributesUdpTimeout):  # Integer
 		self.add_query_param('NetworkAttributes.UdpTimeout', NetworkAttributesUdpTimeout)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_DedicatedHostClusterId(self): # String
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self, DedicatedHostClusterId):  # String
+		self.add_query_param('DedicatedHostClusterId', DedicatedHostClusterId)
+	def get_DedicatedHostType(self): # String
+		return self.get_query_params().get('DedicatedHostType')
+
+	def set_DedicatedHostType(self, DedicatedHostType):  # String
+		self.add_query_param('DedicatedHostType', DedicatedHostType)
+	def get_Quantity(self): # Integer
+		return self.get_query_params().get('Quantity')
+
+	def set_Quantity(self, Quantity):  # Integer
+		self.add_query_param('Quantity', Quantity)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_AutoReleaseTime(self): # String
+		return self.get_query_params().get('AutoReleaseTime')
+
+	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
+		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_ChargeType(self): # String
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)

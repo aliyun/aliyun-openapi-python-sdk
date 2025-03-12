@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class RenewElasticityAssurancesRequest(RpcRequest):
+class DescribeElasticityAssuranceAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewElasticityAssurances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeElasticityAssuranceAutoRenewAttribute','ecs')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -37,32 +37,12 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_PrivatePoolOptionsIds(self): # RepeatList
 		return self.get_query_params().get('PrivatePoolOptions.Id')
 
 	def set_PrivatePoolOptionsIds(self, PrivatePoolOptionsId):  # RepeatList
 		for depth1 in range(len(PrivatePoolOptionsId)):
 			self.add_query_param('PrivatePoolOptions.Id.' + str(depth1 + 1), PrivatePoolOptionsId[depth1])
-	def get_AutoRenewPeriod(self): # Integer
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
-		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-	def get_Period(self): # Integer
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Integer
-		self.add_query_param('Period', Period)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -78,13 +58,3 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PeriodUnit(self): # String
-		return self.get_query_params().get('PeriodUnit')
-
-	def set_PeriodUnit(self, PeriodUnit):  # String
-		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_AutoRenew(self): # Boolean
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self, AutoRenew):  # Boolean
-		self.add_query_param('AutoRenew', AutoRenew)
