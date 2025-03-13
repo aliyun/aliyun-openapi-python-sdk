@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyMaskingRulesRequest(RpcRequest):
+class ModifyDBClusterArchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyMaskingRules','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterArch','polardb')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +32,18 @@ class ModifyMaskingRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InterfaceVersion(self): # String
-		return self.get_query_params().get('InterfaceVersion')
+	def get_StandbyAZ(self): # String
+		return self.get_query_params().get('StandbyAZ')
 
-	def set_InterfaceVersion(self, InterfaceVersion):  # String
-		self.add_query_param('InterfaceVersion', InterfaceVersion)
+	def set_StandbyAZ(self, StandbyAZ):  # String
+		self.add_query_param('StandbyAZ', StandbyAZ)
 	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 
 	def set_DBClusterId(self, DBClusterId):  # String
 		self.add_query_param('DBClusterId', DBClusterId)
-	def get_RuleName(self): # String
-		return self.get_query_params().get('RuleName')
+	def get_HotStandbyCluster(self): # String
+		return self.get_query_params().get('HotStandbyCluster')
 
-	def set_RuleName(self, RuleName):  # String
-		self.add_query_param('RuleName', RuleName)
-	def get_RuleVersion(self): # String
-		return self.get_query_params().get('RuleVersion')
-
-	def set_RuleVersion(self, RuleVersion):  # String
-		self.add_query_param('RuleVersion', RuleVersion)
-	def get_RuleConfig(self): # String
-		return self.get_query_params().get('RuleConfig')
-
-	def set_RuleConfig(self, RuleConfig):  # String
-		self.add_query_param('RuleConfig', RuleConfig)
-	def get_Enable(self): # String
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self, Enable):  # String
-		self.add_query_param('Enable', Enable)
-	def get_RuleNameList(self): # String
-		return self.get_query_params().get('RuleNameList')
-
-	def set_RuleNameList(self, RuleNameList):  # String
-		self.add_query_param('RuleNameList', RuleNameList)
+	def set_HotStandbyCluster(self, HotStandbyCluster):  # String
+		self.add_query_param('HotStandbyCluster', HotStandbyCluster)

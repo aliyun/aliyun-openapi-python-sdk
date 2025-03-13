@@ -36,6 +36,11 @@ class DescribeAccountsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
