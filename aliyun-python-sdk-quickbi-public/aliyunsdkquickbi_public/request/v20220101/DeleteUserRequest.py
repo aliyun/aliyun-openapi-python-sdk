@@ -25,13 +25,13 @@ class DeleteUserRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteUser','2.2.0')
 		self.set_method('POST')
 
-	def get_TransferUserId(self): # String
-		return self.get_query_params().get('TransferUserId')
-
-	def set_TransferUserId(self, TransferUserId):  # String
-		self.add_query_param('TransferUserId', TransferUserId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
 	def set_UserId(self, UserId):  # String
 		self.add_query_param('UserId', UserId)
+	def get_TransferUserId(self): # String
+		return self.get_query_params().get('TransferUserId')
+
+	def set_TransferUserId(self, TransferUserId):  # String
+		self.add_query_param('TransferUserId', TransferUserId)

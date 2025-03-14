@@ -1,3 +1,7 @@
+2025-03-14 Version: 2.1.13
+- Add API errors.
+- QueryUserList API add return parameter.
+
 2024-12-30 Version: 2.1.12
 - Add SmartQ APIs.
 - Add GetDataSourceConnectionInfo, QueryDatasetList APIs.
