@@ -1,3 +1,6 @@
+2025-03-14 Version: 2.3.31
+- 支持根据属性查询弹性强度时返回库存健康度
+
 2025-01-14 Version: 2.3.30
 - InstanceRefresh support SkipMatching.
 

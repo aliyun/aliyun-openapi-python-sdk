@@ -31,6 +31,11 @@ class ModifyScalingRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MetricType(self): # String
+		return self.get_query_params().get('MetricType')
+
+	def set_MetricType(self, MetricType):  # String
+		self.add_query_param('MetricType', MetricType)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -76,6 +81,11 @@ class ModifyScalingRuleRequest(RpcRequest):
 
 	def set_ScalingRuleName(self, ScalingRuleName):  # String
 		self.add_query_param('ScalingRuleName', ScalingRuleName)
+	def get_HybridMonitorNamespace(self): # String
+		return self.get_query_params().get('HybridMonitorNamespace')
+
+	def set_HybridMonitorNamespace(self, HybridMonitorNamespace):  # String
+		self.add_query_param('HybridMonitorNamespace', HybridMonitorNamespace)
 	def get_Cooldown(self): # Integer
 		return self.get_query_params().get('Cooldown')
 
@@ -141,6 +151,25 @@ class ModifyScalingRuleRequest(RpcRequest):
 
 	def set_PredictiveValueBuffer(self, PredictiveValueBuffer):  # Integer
 		self.add_query_param('PredictiveValueBuffer', PredictiveValueBuffer)
+	def get_HybridMetricss(self): # RepeatList
+		return self.get_query_params().get('HybridMetrics')
+
+	def set_HybridMetricss(self, HybridMetrics):  # RepeatList
+		for depth1 in range(len(HybridMetrics)):
+			if HybridMetrics[depth1].get('Statistic') is not None:
+				self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.Statistic', HybridMetrics[depth1].get('Statistic'))
+			if HybridMetrics[depth1].get('Expression') is not None:
+				self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.Expression', HybridMetrics[depth1].get('Expression'))
+			if HybridMetrics[depth1].get('Id') is not None:
+				self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.Id', HybridMetrics[depth1].get('Id'))
+			if HybridMetrics[depth1].get('MetricName') is not None:
+				self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.MetricName', HybridMetrics[depth1].get('MetricName'))
+			if HybridMetrics[depth1].get('Dimensions') is not None:
+				for depth2 in range(len(HybridMetrics[depth1].get('Dimensions'))):
+					if HybridMetrics[depth1].get('Dimensions')[depth2].get('DimensionValue') is not None:
+						self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.Dimensions.'  + str(depth2 + 1) + '.DimensionValue', HybridMetrics[depth1].get('Dimensions')[depth2].get('DimensionValue'))
+					if HybridMetrics[depth1].get('Dimensions')[depth2].get('DimensionKey') is not None:
+						self.add_query_param('HybridMetrics.' + str(depth1 + 1) + '.Dimensions.'  + str(depth2 + 1) + '.DimensionKey', HybridMetrics[depth1].get('Dimensions')[depth2].get('DimensionKey'))
 	def get_ScaleOutEvaluationCount(self): # Integer
 		return self.get_query_params().get('ScaleOutEvaluationCount')
 
