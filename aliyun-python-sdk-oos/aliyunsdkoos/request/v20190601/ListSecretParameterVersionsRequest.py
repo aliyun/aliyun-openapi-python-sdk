@@ -41,6 +41,11 @@ class ListSecretParameterVersionsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ShareType(self): # String
+		return self.get_query_params().get('ShareType')
+
+	def set_ShareType(self, ShareType):  # String
+		self.add_query_param('ShareType', ShareType)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
@@ -51,8 +56,3 @@ class ListSecretParameterVersionsRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
-	def get_ShareType(self): # String
-		return self.get_query_params().get('ShareType')
-
-	def set_ShareType(self, ShareType):  # String
-		self.add_query_param('ShareType', ShareType)

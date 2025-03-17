@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class UpdateApplicationGroupRequest(RpcRequest):
+class GenerateOpsItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateApplicationGroup','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GenerateOpsItem','oos')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class UpdateApplicationGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NewName(self): # String
-		return self.get_query_params().get('NewName')
+	def get_Data(self): # String
+		return self.get_query_params().get('Data')
 
-	def set_NewName(self, NewName):  # String
-		self.add_query_param('NewName', NewName)
-	def get_ApplicationName(self): # String
-		return self.get_query_params().get('ApplicationName')
+	def set_Data(self, Data):  # String
+		self.add_query_param('Data', Data)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_ApplicationName(self, ApplicationName):  # String
-		self.add_query_param('ApplicationName', ApplicationName)
-	def get_OperationName(self): # String
-		return self.get_query_params().get('OperationName')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DataSource(self): # String
+		return self.get_query_params().get('DataSource')
 
-	def set_OperationName(self, OperationName):  # String
-		self.add_query_param('OperationName', OperationName)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def set_DataSource(self, DataSource):  # String
+		self.add_query_param('DataSource', DataSource)
+	def get_ConfigurationId(self): # String
+		return self.get_query_params().get('ConfigurationId')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
-	def get_Parameters(self): # String
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self, Parameters):  # String
-		self.add_query_param('Parameters', Parameters)
+	def set_ConfigurationId(self, ConfigurationId):  # String
+		self.add_query_param('ConfigurationId', ConfigurationId)

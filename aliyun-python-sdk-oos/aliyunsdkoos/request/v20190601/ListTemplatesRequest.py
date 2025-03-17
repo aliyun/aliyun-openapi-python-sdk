@@ -71,6 +71,11 @@ class ListTemplatesRequest(RpcRequest):
 
 	def set_ShareType(self, ShareType):  # String
 		self.add_query_param('ShareType', ShareType)
+	def get_IsExample(self): # Boolean
+		return self.get_query_params().get('IsExample')
+
+	def set_IsExample(self, IsExample):  # Boolean
+		self.add_query_param('IsExample', IsExample)
 	def get_HasTrigger(self): # Boolean
 		return self.get_query_params().get('HasTrigger')
 

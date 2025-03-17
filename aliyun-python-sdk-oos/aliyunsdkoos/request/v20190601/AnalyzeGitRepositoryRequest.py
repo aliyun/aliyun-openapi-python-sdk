@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class ListGitRepositoriesRequest(RpcRequest):
+class AnalyzeGitRepositoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListGitRepositories','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'AnalyzeGitRepository','oos')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +32,38 @@ class ListGitRepositoriesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RepoId(self): # String
+		return self.get_query_params().get('RepoId')
+
+	def set_RepoId(self, RepoId):  # String
+		self.add_query_param('RepoId', RepoId)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_RepoFullName(self): # String
+		return self.get_query_params().get('RepoFullName')
+
+	def set_RepoFullName(self, RepoFullName):  # String
+		self.add_query_param('RepoFullName', RepoFullName)
+	def get_Branch(self): # String
+		return self.get_query_params().get('Branch')
+
+	def set_Branch(self, Branch):  # String
+		self.add_query_param('Branch', Branch)
 	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 
 	def set_Platform(self, Platform):  # String
 		self.add_query_param('Platform', Platform)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_OrgName(self): # String
-		return self.get_query_params().get('OrgName')
-
-	def set_OrgName(self, OrgName):  # String
-		self.add_query_param('OrgName', OrgName)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_Owner(self): # String
 		return self.get_query_params().get('Owner')
 
 	def set_Owner(self, Owner):  # String
 		self.add_query_param('Owner', Owner)
+	def get_OrgId(self): # String
+		return self.get_query_params().get('OrgId')
+
+	def set_OrgId(self, OrgId):  # String
+		self.add_query_param('OrgId', OrgId)

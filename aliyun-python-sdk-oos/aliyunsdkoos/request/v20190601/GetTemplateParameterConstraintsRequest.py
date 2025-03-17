@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class UpdateApplicationGroupRequest(RpcRequest):
+class GetTemplateParameterConstraintsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateApplicationGroup','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetTemplateParameterConstraints','oos')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,26 +31,26 @@ class UpdateApplicationGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NewName(self): # String
-		return self.get_query_params().get('NewName')
+	def get_TemplateURL(self): # String
+		return self.get_query_params().get('TemplateURL')
 
-	def set_NewName(self, NewName):  # String
-		self.add_query_param('NewName', NewName)
-	def get_ApplicationName(self): # String
-		return self.get_query_params().get('ApplicationName')
+	def set_TemplateURL(self, TemplateURL):  # String
+		self.add_query_param('TemplateURL', TemplateURL)
+	def get_TemplateVersion(self): # String
+		return self.get_query_params().get('TemplateVersion')
 
-	def set_ApplicationName(self, ApplicationName):  # String
-		self.add_query_param('ApplicationName', ApplicationName)
-	def get_OperationName(self): # String
-		return self.get_query_params().get('OperationName')
+	def set_TemplateVersion(self, TemplateVersion):  # String
+		self.add_query_param('TemplateVersion', TemplateVersion)
+	def get_TemplateName(self): # String
+		return self.get_query_params().get('TemplateName')
 
-	def set_OperationName(self, OperationName):  # String
-		self.add_query_param('OperationName', OperationName)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
+	def get_TemplateContent(self): # String
+		return self.get_query_params().get('TemplateContent')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_TemplateContent(self, TemplateContent):  # String
+		self.add_query_param('TemplateContent', TemplateContent)
 	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 

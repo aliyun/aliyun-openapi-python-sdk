@@ -51,23 +51,23 @@ class CreateParameterRequest(RpcRequest):
 
 	def set_Constraints(self, Constraints):  # String
 		self.add_query_param('Constraints', Constraints)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
 	def get_Value(self): # String
 		return self.get_query_params().get('Value')
 
 	def set_Value(self, Value):  # String
 		self.add_query_param('Value', Value)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
+
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
