@@ -35,6 +35,12 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 
 	def set_SnatEntryId(self, SnatEntryId):  # String
 		self.add_query_param('SnatEntryId', SnatEntryId)
+	def get_SnatIps(self): # Array
+		return self.get_query_params().get('SnatIps')
+
+	def set_SnatIps(self, SnatIps):  # Array
+		for index1, value1 in enumerate(SnatIps):
+			self.add_query_param('SnatIps.' + str(index1 + 1), value1)
 	def get_SourceCIDR(self): # String
 		return self.get_query_params().get('SourceCIDR')
 

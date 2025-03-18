@@ -19,19 +19,25 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteNatGatewayRequest(RpcRequest):
+class ModifyEnsRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteNatGateway','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyEnsRouteEntry','ens')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_ForceDelete(self): # Boolean
-		return self.get_query_params().get('ForceDelete')
+	def get_RouteEntryName(self): # String
+		return self.get_query_params().get('RouteEntryName')
 
-	def set_ForceDelete(self, ForceDelete):  # Boolean
-		self.add_query_param('ForceDelete', ForceDelete)
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
+	def set_RouteEntryName(self, RouteEntryName):  # String
+		self.add_query_param('RouteEntryName', RouteEntryName)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_RouteEntryId(self): # String
+		return self.get_query_params().get('RouteEntryId')
+
+	def set_RouteEntryId(self, RouteEntryId):  # String
+		self.add_query_param('RouteEntryId', RouteEntryId)

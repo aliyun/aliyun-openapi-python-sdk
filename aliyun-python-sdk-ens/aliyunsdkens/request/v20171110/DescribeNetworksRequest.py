@@ -25,16 +25,27 @@ class DescribeNetworksRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeNetworks','ens')
 		self.set_method('POST')
 
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_NetworkIds(self): # Array
+		return self.get_query_params().get('NetworkIds')
+
+	def set_NetworkIds(self, NetworkIds):  # Array
+		for index1, value1 in enumerate(NetworkIds):
+			self.add_query_param('NetworkIds.' + str(index1 + 1), value1)
+	def get_NetworkId(self): # String
+		return self.get_query_params().get('NetworkId')
+
+	def set_NetworkId(self, NetworkId):  # String
+		self.add_query_param('NetworkId', NetworkId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -45,8 +56,9 @@ class DescribeNetworksRequest(RpcRequest):
 
 	def set_NetworkName(self, NetworkName):  # String
 		self.add_query_param('NetworkName', NetworkName)
-	def get_NetworkId(self): # String
-		return self.get_query_params().get('NetworkId')
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
 
-	def set_NetworkId(self, NetworkId):  # String
-		self.add_query_param('NetworkId', NetworkId)
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		for index1, value1 in enumerate(EnsRegionIds):
+			self.add_query_param('EnsRegionIds.' + str(index1 + 1), value1)

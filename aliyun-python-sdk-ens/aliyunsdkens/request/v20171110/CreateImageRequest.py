@@ -40,6 +40,11 @@ class CreateImageRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_TargetOSSRegionId(self): # String
+		return self.get_query_params().get('TargetOSSRegionId')
+
+	def set_TargetOSSRegionId(self, TargetOSSRegionId):  # String
+		self.add_query_param('TargetOSSRegionId', TargetOSSRegionId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

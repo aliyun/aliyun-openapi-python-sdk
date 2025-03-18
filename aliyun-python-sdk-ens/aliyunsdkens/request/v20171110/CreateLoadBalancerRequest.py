@@ -50,6 +50,11 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_NetworkId(self, NetworkId):  # String
 		self.add_query_param('NetworkId', NetworkId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

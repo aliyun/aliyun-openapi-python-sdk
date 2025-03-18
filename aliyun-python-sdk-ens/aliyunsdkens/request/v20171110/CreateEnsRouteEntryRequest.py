@@ -30,11 +30,6 @@ class CreateEnsRouteEntryRequest(RpcRequest):
 
 	def set_RouteEntryName(self, RouteEntryName):  # String
 		self.add_query_param('RouteEntryName', RouteEntryName)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_NextHopId(self): # String
 		return self.get_query_params().get('NextHopId')
 
@@ -55,3 +50,13 @@ class CreateEnsRouteEntryRequest(RpcRequest):
 
 	def set_DestinationCidrBlock(self, DestinationCidrBlock):  # String
 		self.add_query_param('DestinationCidrBlock', DestinationCidrBlock)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_SourceCidrBlock(self): # String
+		return self.get_query_params().get('SourceCidrBlock')
+
+	def set_SourceCidrBlock(self, SourceCidrBlock):  # String
+		self.add_query_param('SourceCidrBlock', SourceCidrBlock)

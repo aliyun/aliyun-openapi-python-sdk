@@ -25,6 +25,11 @@ class DescribeLoadBalancerListenersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeLoadBalancerListeners','ens')
 		self.set_method('POST')
 
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
@@ -35,6 +40,11 @@ class DescribeLoadBalancerListenersRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_ListenerPort(self): # Integer
+		return self.get_query_params().get('ListenerPort')
+
+	def set_ListenerPort(self, ListenerPort):  # Integer
+		self.add_query_param('ListenerPort', ListenerPort)
 	def get_LoadBalancerId(self): # String
 		return self.get_query_params().get('LoadBalancerId')
 

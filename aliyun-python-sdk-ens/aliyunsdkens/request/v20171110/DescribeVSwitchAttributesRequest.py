@@ -19,19 +19,15 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteNatGatewayRequest(RpcRequest):
+class DescribeVSwitchAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteNatGateway','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeVSwitchAttributes','ens')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_ForceDelete(self): # Boolean
-		return self.get_query_params().get('ForceDelete')
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-	def set_ForceDelete(self, ForceDelete):  # Boolean
-		self.add_query_param('ForceDelete', ForceDelete)
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
-
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)

@@ -26,32 +26,32 @@ class PutBucketRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_EnsRegionId(self): # String
-		return self.get_body_params().get('EnsRegionId')
+		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
-		self.add_body_params('EnsRegionId', EnsRegionId)
+		self.add_query_param('EnsRegionId', EnsRegionId)
 	def get_LogicalBucketType(self): # String
-		return self.get_body_params().get('LogicalBucketType')
+		return self.get_query_params().get('LogicalBucketType')
 
 	def set_LogicalBucketType(self, LogicalBucketType):  # String
-		self.add_body_params('LogicalBucketType', LogicalBucketType)
+		self.add_query_param('LogicalBucketType', LogicalBucketType)
 	def get_BucketName(self): # String
-		return self.get_body_params().get('BucketName')
+		return self.get_query_params().get('BucketName')
 
 	def set_BucketName(self, BucketName):  # String
-		self.add_body_params('BucketName', BucketName)
+		self.add_query_param('BucketName', BucketName)
 	def get_BucketAcl(self): # String
-		return self.get_body_params().get('BucketAcl')
+		return self.get_query_params().get('BucketAcl')
 
 	def set_BucketAcl(self, BucketAcl):  # String
-		self.add_body_params('BucketAcl', BucketAcl)
+		self.add_query_param('BucketAcl', BucketAcl)
 	def get_DispatchScope(self): # String
-		return self.get_body_params().get('DispatchScope')
+		return self.get_query_params().get('DispatchScope')
 
 	def set_DispatchScope(self, DispatchScope):  # String
-		self.add_body_params('DispatchScope', DispatchScope)
+		self.add_query_param('DispatchScope', DispatchScope)
 	def get_Comment(self): # String
-		return self.get_body_params().get('Comment')
+		return self.get_query_params().get('Comment')
 
 	def set_Comment(self, Comment):  # String
-		self.add_body_params('Comment', Comment)
+		self.add_query_param('Comment', Comment)

@@ -25,6 +25,16 @@ class ModifySnatEntryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifySnatEntry','ens')
 		self.set_method('POST')
 
+	def get_SnatIp(self): # String
+		return self.get_query_params().get('SnatIp')
+
+	def set_SnatIp(self, SnatIp):  # String
+		self.add_query_param('SnatIp', SnatIp)
+	def get_EipAffinity(self): # Boolean
+		return self.get_query_params().get('EipAffinity')
+
+	def set_EipAffinity(self, EipAffinity):  # Boolean
+		self.add_query_param('EipAffinity', EipAffinity)
 	def get_SnatEntryId(self): # String
 		return self.get_query_params().get('SnatEntryId')
 

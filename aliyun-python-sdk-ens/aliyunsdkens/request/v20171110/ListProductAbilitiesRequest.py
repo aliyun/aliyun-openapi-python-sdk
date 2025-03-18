@@ -19,19 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteNatGatewayRequest(RpcRequest):
+class ListProductAbilitiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteNatGateway','ens')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ListProductAbilities','ens')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
-	def get_ForceDelete(self): # Boolean
-		return self.get_query_params().get('ForceDelete')
-
-	def set_ForceDelete(self, ForceDelete):  # Boolean
-		self.add_query_param('ForceDelete', ForceDelete)
-	def get_NatGatewayId(self): # String
-		return self.get_query_params().get('NatGatewayId')
-
-	def set_NatGatewayId(self, NatGatewayId):  # String
-		self.add_query_param('NatGatewayId', NatGatewayId)

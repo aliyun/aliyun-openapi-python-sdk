@@ -25,11 +25,12 @@ class DescribeVSwitchesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeVSwitches','ens')
 		self.set_method('POST')
 
-	def get_OrderByParams(self): # String
-		return self.get_query_params().get('OrderByParams')
+	def get_VSwitchIds(self): # Array
+		return self.get_query_params().get('VSwitchIds')
 
-	def set_OrderByParams(self, OrderByParams):  # String
-		self.add_query_param('OrderByParams', OrderByParams)
+	def set_VSwitchIds(self, VSwitchIds):  # Array
+		for index1, value1 in enumerate(VSwitchIds):
+			self.add_query_param('VSwitchIds.' + str(index1 + 1), value1)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
@@ -55,6 +56,12 @@ class DescribeVSwitchesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		for index1, value1 in enumerate(EnsRegionIds):
+			self.add_query_param('EnsRegionIds.' + str(index1 + 1), value1)
 	def get_VSwitchName(self): # String
 		return self.get_query_params().get('VSwitchName')
 

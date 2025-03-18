@@ -25,6 +25,31 @@ class ModifyForwardEntryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyForwardEntry','ens')
 		self.set_method('POST')
 
+	def get_InternalIp(self): # String
+		return self.get_query_params().get('InternalIp')
+
+	def set_InternalIp(self, InternalIp):  # String
+		self.add_query_param('InternalIp', InternalIp)
+	def get_ExternalIp(self): # String
+		return self.get_query_params().get('ExternalIp')
+
+	def set_ExternalIp(self, ExternalIp):  # String
+		self.add_query_param('ExternalIp', ExternalIp)
+	def get_IpProtocol(self): # String
+		return self.get_query_params().get('IpProtocol')
+
+	def set_IpProtocol(self, IpProtocol):  # String
+		self.add_query_param('IpProtocol', IpProtocol)
+	def get_HealthCheckPort(self): # Integer
+		return self.get_query_params().get('HealthCheckPort')
+
+	def set_HealthCheckPort(self, HealthCheckPort):  # Integer
+		self.add_query_param('HealthCheckPort', HealthCheckPort)
+	def get_ExternalPort(self): # String
+		return self.get_query_params().get('ExternalPort')
+
+	def set_ExternalPort(self, ExternalPort):  # String
+		self.add_query_param('ExternalPort', ExternalPort)
 	def get_ForwardEntryId(self): # String
 		return self.get_query_params().get('ForwardEntryId')
 
@@ -35,8 +60,8 @@ class ModifyForwardEntryRequest(RpcRequest):
 
 	def set_ForwardEntryName(self, ForwardEntryName):  # String
 		self.add_query_param('ForwardEntryName', ForwardEntryName)
-	def get_HealthCheckPort(self): # Integer
-		return self.get_query_params().get('HealthCheckPort')
+	def get_InternalPort(self): # String
+		return self.get_query_params().get('InternalPort')
 
-	def set_HealthCheckPort(self, HealthCheckPort):  # Integer
-		self.add_query_param('HealthCheckPort', HealthCheckPort)
+	def set_InternalPort(self, InternalPort):  # String
+		self.add_query_param('InternalPort', InternalPort)
