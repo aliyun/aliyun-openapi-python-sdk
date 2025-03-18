@@ -161,6 +161,11 @@ class PushRequest(RpcRequest):
 
 	def set_HarmonyRemindTitle(self, HarmonyRemindTitle):  # String
 		self.add_query_param('HarmonyRemindTitle', HarmonyRemindTitle)
+	def get_IdempotentToken(self): # String
+		return self.get_query_params().get('IdempotentToken')
+
+	def set_IdempotentToken(self, IdempotentToken):  # String
+		self.add_query_param('IdempotentToken', IdempotentToken)
 	def get_AndroidBadgeClass(self): # String
 		return self.get_query_params().get('AndroidBadgeClass')
 

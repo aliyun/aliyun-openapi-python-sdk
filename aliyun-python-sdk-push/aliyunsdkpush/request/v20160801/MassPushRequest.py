@@ -31,6 +31,11 @@ class MassPushRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_IdempotentToken(self): # String
+		return self.get_query_params().get('IdempotentToken')
+
+	def set_IdempotentToken(self, IdempotentToken):  # String
+		self.add_query_param('IdempotentToken', IdempotentToken)
 	def get_PushTasks(self): # RepeatList
 		return self.get_body_params().get('PushTask')
 
