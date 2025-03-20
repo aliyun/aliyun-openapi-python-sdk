@@ -80,6 +80,10 @@ class CreateIdentityProviderRequest(RpcRequest):
 			self.add_query_param('LarkConfig.AppId', LarkConfig.get('AppId'))
 		if LarkConfig.get('AppSecret') is not None:
 			self.add_query_param('LarkConfig.AppSecret', LarkConfig.get('AppSecret'))
+		if LarkConfig.get('VerificationToken') is not None:
+			self.add_query_param('LarkConfig.VerificationToken', LarkConfig.get('VerificationToken'))
+		if LarkConfig.get('EncryptKey') is not None:
+			self.add_query_param('LarkConfig.EncryptKey', LarkConfig.get('EncryptKey'))
 	def get_WeComConfig(self): # Struct
 		return self.get_query_params().get('WeComConfig')
 

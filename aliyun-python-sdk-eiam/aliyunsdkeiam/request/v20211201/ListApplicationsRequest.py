@@ -26,11 +26,21 @@ class ListApplicationsRequest(RpcRequest):
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_ResourceServerStatus(self): # String
+		return self.get_query_params().get('ResourceServerStatus')
+
+	def set_ResourceServerStatus(self, ResourceServerStatus):  # String
+		self.add_query_param('ResourceServerStatus', ResourceServerStatus)
 	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)
+	def get_M2MClientStatus(self): # String
+		return self.get_query_params().get('M2MClientStatus')
+
+	def set_M2MClientStatus(self, M2MClientStatus):  # String
+		self.add_query_param('M2MClientStatus', M2MClientStatus)
 	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
@@ -57,6 +67,11 @@ class ListApplicationsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_SsoType(self): # String
+		return self.get_query_params().get('SsoType')
+
+	def set_SsoType(self, SsoType):  # String
+		self.add_query_param('SsoType', SsoType)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
