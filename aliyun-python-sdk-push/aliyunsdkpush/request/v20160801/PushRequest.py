@@ -66,6 +66,11 @@ class PushRequest(RpcRequest):
 
 	def set_Trim(self, Trim):  # Boolean
 		self.add_query_param('Trim', Trim)
+	def get_iOSLiveActivityAttributesType(self): # String
+		return self.get_query_params().get('iOSLiveActivityAttributesType')
+
+	def set_iOSLiveActivityAttributesType(self, iOSLiveActivityAttributesType):  # String
+		self.add_query_param('iOSLiveActivityAttributesType', iOSLiveActivityAttributesType)
 	def get_AndroidPopupTitle(self): # String
 		return self.get_query_params().get('AndroidPopupTitle')
 
@@ -121,11 +126,21 @@ class PushRequest(RpcRequest):
 
 	def set_iOSNotificationThreadId(self, iOSNotificationThreadId):  # String
 		self.add_query_param('iOSNotificationThreadId', iOSNotificationThreadId)
+	def get_iOSLiveActivityStaleDate(self): # Long
+		return self.get_query_params().get('iOSLiveActivityStaleDate')
+
+	def set_iOSLiveActivityStaleDate(self, iOSLiveActivityStaleDate):  # Long
+		self.add_query_param('iOSLiveActivityStaleDate', iOSLiveActivityStaleDate)
 	def get_AndroidHuaweiTargetUserType(self): # Integer
 		return self.get_query_params().get('AndroidHuaweiTargetUserType')
 
 	def set_AndroidHuaweiTargetUserType(self, AndroidHuaweiTargetUserType):  # Integer
 		self.add_query_param('AndroidHuaweiTargetUserType', AndroidHuaweiTargetUserType)
+	def get_iOSLiveActivityContentState(self): # String
+		return self.get_query_params().get('iOSLiveActivityContentState')
+
+	def set_iOSLiveActivityContentState(self, iOSLiveActivityContentState):  # String
+		self.add_query_param('iOSLiveActivityContentState', iOSLiveActivityContentState)
 	def get_AndroidMessageHuaweiUrgency(self): # String
 		return self.get_query_params().get('AndroidMessageHuaweiUrgency')
 
@@ -186,6 +201,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSExtParameters(self, iOSExtParameters):  # String
 		self.add_query_param('iOSExtParameters', iOSExtParameters)
+	def get_iOSLiveActivityAttributes(self): # String
+		return self.get_query_params().get('iOSLiveActivityAttributes')
+
+	def set_iOSLiveActivityAttributes(self, iOSLiveActivityAttributes):  # String
+		self.add_query_param('iOSLiveActivityAttributes', iOSLiveActivityAttributes)
 	def get_AndroidXiaomiImageUrl(self): # String
 		return self.get_query_params().get('AndroidXiaomiImageUrl')
 
@@ -216,6 +236,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSSilentNotification(self, iOSSilentNotification):  # Boolean
 		self.add_query_param('iOSSilentNotification', iOSSilentNotification)
+	def get_iOSLiveActivityEvent(self): # String
+		return self.get_query_params().get('iOSLiveActivityEvent')
+
+	def set_iOSLiveActivityEvent(self, iOSLiveActivityEvent):  # String
+		self.add_query_param('iOSLiveActivityEvent', iOSLiveActivityEvent)
 	def get_HarmonyNotificationSlotType(self): # String
 		return self.get_query_params().get('HarmonyNotificationSlotType')
 
@@ -326,6 +351,11 @@ class PushRequest(RpcRequest):
 
 	def set_iOSMutableContent(self, iOSMutableContent):  # Boolean
 		self.add_query_param('iOSMutableContent', iOSMutableContent)
+	def get_iOSLiveActivityId(self): # String
+		return self.get_query_params().get('iOSLiveActivityId')
+
+	def set_iOSLiveActivityId(self, iOSLiveActivityId):  # String
+		self.add_query_param('iOSLiveActivityId', iOSLiveActivityId)
 	def get_AndroidNotificationThreadId(self): # String
 		return self.get_query_params().get('AndroidNotificationThreadId')
 
@@ -391,6 +421,11 @@ class PushRequest(RpcRequest):
 
 	def set_HarmonyReceiptId(self, HarmonyReceiptId):  # String
 		self.add_query_param('HarmonyReceiptId', HarmonyReceiptId)
+	def get_iOSLiveActivityDismissalDate(self): # Long
+		return self.get_query_params().get('iOSLiveActivityDismissalDate')
+
+	def set_iOSLiveActivityDismissalDate(self, iOSLiveActivityDismissalDate):  # Long
+		self.add_query_param('iOSLiveActivityDismissalDate', iOSLiveActivityDismissalDate)
 	def get_AndroidOpenUrl(self): # String
 		return self.get_query_params().get('AndroidOpenUrl')
 
