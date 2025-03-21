@@ -68,6 +68,14 @@ class CreateIdentityProviderRequest(RpcRequest):
 					self.add_query_param('UdPullConfig.UdSyncScopeConfig.SourceScopes.' + str(index1 + 1), value1)
 		if UdPullConfig.get('PeriodicSyncStatus') is not None:
 			self.add_query_param('UdPullConfig.PeriodicSyncStatus', UdPullConfig.get('PeriodicSyncStatus'))
+		if UdPullConfig.get('PeriodicSyncConfig') is not None:
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncTimes') is not None:
+				for index1, value1 in enumerate(UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncTimes')):
+					self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncTimes.' + str(index1 + 1), value1)
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncCron') is not None:
+				self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncCron', UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncCron'))
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncType') is not None:
+				self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncType', UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncType'))
 		if UdPullConfig.get('IncrementalCallbackStatus') is not None:
 			self.add_query_param('UdPullConfig.IncrementalCallbackStatus', UdPullConfig.get('IncrementalCallbackStatus'))
 	def get_LarkConfig(self): # Struct
