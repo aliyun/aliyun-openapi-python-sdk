@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class DescribeVodSSLCertificateListRequest(RpcRequest):
+class DescribeVodEditingUsageDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodSSLCertificateList','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodEditingUsageData','vod')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,33 @@ class DescribeVodSSLCertificateListRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNumber(self): # Long
-		return self.get_query_params().get('PageNumber')
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
 
-	def set_PageNumber(self, PageNumber):  # Long
-		self.add_query_param('PageNumber', PageNumber)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_PageSize(self): # Long
-		return self.get_query_params().get('PageSize')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_Specification(self): # String
+		return self.get_query_params().get('Specification')
 
-	def set_PageSize(self, PageSize):  # Long
-		self.add_query_param('PageSize', PageSize)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
+	def set_Specification(self, Specification):  # String
+		self.add_query_param('Specification', Specification)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SearchKeyword(self): # String
-		return self.get_query_params().get('SearchKeyword')
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def set_SearchKeyword(self, SearchKeyword):  # String
-		self.add_query_param('SearchKeyword', SearchKeyword)
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

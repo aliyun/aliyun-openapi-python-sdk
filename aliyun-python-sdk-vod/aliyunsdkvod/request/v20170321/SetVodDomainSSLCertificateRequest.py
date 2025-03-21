@@ -24,7 +24,6 @@ class SetVodDomainSSLCertificateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetVodDomainSSLCertificate','vod')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
