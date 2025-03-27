@@ -32,6 +32,31 @@ class SendLiveMessageUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Storage(self): # Boolean
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self, Storage):  # Boolean
+		self.add_query_param('Storage', Storage)
+	def get_Body(self): # String
+		return self.get_query_params().get('Body')
+
+	def set_Body(self, Body):  # String
+		self.add_query_param('Body', Body)
+	def get_SenderInfo(self): # String
+		return self.get_query_params().get('SenderInfo')
+
+	def set_SenderInfo(self, SenderInfo):  # String
+		self.add_query_param('SenderInfo', SenderInfo)
+	def get_MsgType(self): # Long
+		return self.get_query_params().get('MsgType')
+
+	def set_MsgType(self, MsgType):  # Long
+		self.add_query_param('MsgType', MsgType)
+	def get_HighReliability(self): # Boolean
+		return self.get_query_params().get('HighReliability')
+
+	def set_HighReliability(self, HighReliability):  # Boolean
+		self.add_query_param('HighReliability', HighReliability)
 	def get_DataCenter(self): # String
 		return self.get_query_params().get('DataCenter')
 
@@ -42,11 +67,6 @@ class SendLiveMessageUserRequest(RpcRequest):
 
 	def set_MsgTid(self, MsgTid):  # String
 		self.add_query_param('MsgTid', MsgTid)
-	def get_Body(self): # String
-		return self.get_query_params().get('Body')
-
-	def set_Body(self, Body):  # String
-		self.add_query_param('Body', Body)
 	def get_SenderId(self): # String
 		return self.get_query_params().get('SenderId')
 
@@ -62,13 +82,3 @@ class SendLiveMessageUserRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_SenderInfo(self): # String
-		return self.get_query_params().get('SenderInfo')
-
-	def set_SenderInfo(self, SenderInfo):  # String
-		self.add_query_param('SenderInfo', SenderInfo)
-	def get_MsgType(self): # Long
-		return self.get_query_params().get('MsgType')
-
-	def set_MsgType(self, MsgType):  # Long
-		self.add_query_param('MsgType', MsgType)

@@ -20,22 +20,23 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class DescribeUidOnlineStreamsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeUidOnlineStreams','live')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NotifyType(self): # String
-		return self.get_query_params().get('NotifyType')
+	def get_AppName(self): # String
+		return self.get_query_params().get('AppName')
 
-	def set_NotifyType(self, NotifyType):  # String
-		self.add_query_param('NotifyType', NotifyType)
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 

@@ -20,29 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class SetLiveDomainMultiStreamConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveDomainMultiStreamConfig','live')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NotifyType(self): # String
-		return self.get_query_params().get('NotifyType')
+	def get_Switch(self): # String
+		return self.get_query_params().get('Switch')
 
-	def set_NotifyType(self, NotifyType):  # String
-		self.add_query_param('NotifyType', NotifyType)
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
+	def set_Switch(self, Switch):  # String
+		self.add_query_param('Switch', Switch)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)
