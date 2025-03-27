@@ -36,6 +36,11 @@ class UpdateFileRequest(RpcRequest):
 
 	def set_OutputList(self, OutputList):  # String
 		self.add_body_params('OutputList', OutputList)
+	def get_ImageId(self): # String
+		return self.get_body_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_body_params('ImageId', ImageId)
 	def get_DependentNodeIdList(self): # String
 		return self.get_body_params().get('DependentNodeIdList')
 
@@ -51,6 +56,11 @@ class UpdateFileRequest(RpcRequest):
 
 	def set_ProjectIdentifier(self, ProjectIdentifier):  # String
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+	def get_Timeout(self): # Integer
+		return self.get_body_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Integer
+		self.add_body_params('Timeout', Timeout)
 	def get_StartImmediately(self): # Boolean
 		return self.get_body_params().get('StartImmediately')
 

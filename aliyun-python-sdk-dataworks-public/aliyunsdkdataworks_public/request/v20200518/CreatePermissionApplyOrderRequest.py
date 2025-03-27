@@ -31,6 +31,21 @@ class CreatePermissionApplyOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ApplyUserIds(self): # String
+		return self.get_query_params().get('ApplyUserIds')
+
+	def set_ApplyUserIds(self, ApplyUserIds):  # String
+		self.add_query_param('ApplyUserIds', ApplyUserIds)
+	def get_Deadline(self): # Long
+		return self.get_query_params().get('Deadline')
+
+	def set_Deadline(self, Deadline):  # Long
+		self.add_query_param('Deadline', Deadline)
+	def get_EngineType(self): # String
+		return self.get_query_params().get('EngineType')
+
+	def set_EngineType(self, EngineType):  # String
+		self.add_query_param('EngineType', EngineType)
 	def get_ApplyReason(self): # String
 		return self.get_query_params().get('ApplyReason')
 
@@ -50,20 +65,22 @@ class CreatePermissionApplyOrderRequest(RpcRequest):
 				for depth2 in range(len(ApplyObject[depth1].get('ColumnMetaList'))):
 					if ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name') is not None:
 						self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.ColumnMetaList.'  + str(depth2 + 1) + '.Name', ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Name'))
+					if ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Actions') is not None:
+						self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.ColumnMetaList.'  + str(depth2 + 1) + '.Actions', ApplyObject[depth1].get('ColumnMetaList')[depth2].get('Actions'))
 			if ApplyObject[depth1].get('Name') is not None:
 				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Name', ApplyObject[depth1].get('Name'))
 			if ApplyObject[depth1].get('Actions') is not None:
 				self.add_query_param('ApplyObject.' + str(depth1 + 1) + '.Actions', ApplyObject[depth1].get('Actions'))
-	def get_ApplyUserIds(self): # String
-		return self.get_query_params().get('ApplyUserIds')
+	def get_CatalogName(self): # String
+		return self.get_query_params().get('CatalogName')
 
-	def set_ApplyUserIds(self, ApplyUserIds):  # String
-		self.add_query_param('ApplyUserIds', ApplyUserIds)
-	def get_Deadline(self): # Long
-		return self.get_query_params().get('Deadline')
+	def set_CatalogName(self, CatalogName):  # String
+		self.add_query_param('CatalogName', CatalogName)
+	def get_ApplyType(self): # String
+		return self.get_query_params().get('ApplyType')
 
-	def set_Deadline(self, Deadline):  # Long
-		self.add_query_param('Deadline', Deadline)
+	def set_ApplyType(self, ApplyType):  # String
+		self.add_query_param('ApplyType', ApplyType)
 	def get_WorkspaceId(self): # Integer
 		return self.get_query_params().get('WorkspaceId')
 
@@ -74,8 +91,3 @@ class CreatePermissionApplyOrderRequest(RpcRequest):
 
 	def set_OrderType(self, OrderType):  # Integer
 		self.add_query_param('OrderType', OrderType)
-	def get_EngineType(self): # String
-		return self.get_query_params().get('EngineType')
-
-	def set_EngineType(self, EngineType):  # String
-		self.add_query_param('EngineType', EngineType)

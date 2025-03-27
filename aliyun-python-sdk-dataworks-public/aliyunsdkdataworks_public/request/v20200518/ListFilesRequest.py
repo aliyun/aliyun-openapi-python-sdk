@@ -66,6 +66,11 @@ class ListFilesRequest(RpcRequest):
 
 	def set_FileIdIn(self, FileIdIn):  # String
 		self.add_body_params('FileIdIn', FileIdIn)
+	def get_LastEditUser(self): # String
+		return self.get_body_params().get('LastEditUser')
+
+	def set_LastEditUser(self, LastEditUser):  # String
+		self.add_body_params('LastEditUser', LastEditUser)
 	def get_FileFolderPath(self): # String
 		return self.get_body_params().get('FileFolderPath')
 

@@ -66,6 +66,11 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 
 	def set_MaxComputeProjectName(self, MaxComputeProjectName):  # String
 		self.add_query_param('MaxComputeProjectName', MaxComputeProjectName)
+	def get_CatalogName(self): # String
+		return self.get_query_params().get('CatalogName')
+
+	def set_CatalogName(self, CatalogName):  # String
+		self.add_query_param('CatalogName', CatalogName)
 	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
@@ -76,6 +81,11 @@ class ListPermissionApplyOrdersRequest(RpcRequest):
 
 	def set_FlowStatus(self, FlowStatus):  # Integer
 		self.add_query_param('FlowStatus', FlowStatus)
+	def get_ApplyType(self): # String
+		return self.get_query_params().get('ApplyType')
+
+	def set_ApplyType(self, ApplyType):  # String
+		self.add_query_param('ApplyType', ApplyType)
 	def get_WorkspaceId(self): # Integer
 		return self.get_query_params().get('WorkspaceId')
 

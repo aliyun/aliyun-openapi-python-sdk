@@ -32,11 +32,11 @@ class ListCheckProcessesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EventCode(self): # String
-		return self.get_body_params().get('EventCode')
+	def get_MessageId(self): # String
+		return self.get_body_params().get('MessageId')
 
-	def set_EventCode(self, EventCode):  # String
-		self.add_body_params('EventCode', EventCode)
+	def set_MessageId(self, MessageId):  # String
+		self.add_body_params('MessageId', MessageId)
 	def get_Operator(self): # String
 		return self.get_body_params().get('Operator')
 
@@ -57,6 +57,11 @@ class ListCheckProcessesRequest(RpcRequest):
 
 	def set_ProjectId(self, ProjectId):  # Long
 		self.add_body_params('ProjectId', ProjectId)
+	def get_EventCode(self): # String
+		return self.get_body_params().get('EventCode')
+
+	def set_EventCode(self, EventCode):  # String
+		self.add_body_params('EventCode', EventCode)
 	def get_Status(self): # String
 		return self.get_body_params().get('Status')
 
