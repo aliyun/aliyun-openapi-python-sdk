@@ -35,23 +35,29 @@ class DescribeSecondaryPublicIpAddressesRequest(RpcRequest):
 
 	def set_Isp(self, Isp):  # String
 		self.add_query_param('Isp', Isp)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_EnsRegionId(self): # String
 		return self.get_query_params().get('EnsRegionId')
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_SecondaryPublicIpAddress(self): # String
 		return self.get_query_params().get('SecondaryPublicIpAddress')
 
 	def set_SecondaryPublicIpAddress(self, SecondaryPublicIpAddress):  # String
 		self.add_query_param('SecondaryPublicIpAddress', SecondaryPublicIpAddress)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		for index1, value1 in enumerate(EnsRegionIds):
+			self.add_query_param('EnsRegionIds.' + str(index1 + 1), value1)

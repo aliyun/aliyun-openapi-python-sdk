@@ -70,3 +70,9 @@ class DescribeHaVipsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		for index1, value1 in enumerate(EnsRegionIds):
+			self.add_query_param('EnsRegionIds.' + str(index1 + 1), value1)

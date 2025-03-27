@@ -19,24 +19,30 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteDeviceInternetPortRequest(RpcRequest):
+class DescribeInstanceBootConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteDeviceInternetPort','ens')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceBootConfiguration','ens')
+		self.set_protocol_type('https')
+		self.set_method('POST')
 
-	def get_NatType(self): # String
-		return self.get_query_params().get('NatType')
+	def get_DiskSet(self): # String
+		return self.get_query_params().get('DiskSet')
 
-	def set_NatType(self, NatType):  # String
-		self.add_query_param('NatType', NatType)
+	def set_DiskSet(self, DiskSet):  # String
+		self.add_query_param('DiskSet', DiskSet)
+	def get_BootType(self): # String
+		return self.get_query_params().get('BootType')
+
+	def set_BootType(self, BootType):  # String
+		self.add_query_param('BootType', BootType)
+	def get_BootSet(self): # String
+		return self.get_query_params().get('BootSet')
+
+	def set_BootSet(self, BootSet):  # String
+		self.add_query_param('BootSet', BootSet)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_RuleId(self): # String
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # String
-		self.add_query_param('RuleId', RuleId)

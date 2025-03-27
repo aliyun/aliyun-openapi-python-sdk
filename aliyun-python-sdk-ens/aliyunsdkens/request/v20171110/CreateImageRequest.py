@@ -35,6 +35,11 @@ class CreateImageRequest(RpcRequest):
 
 	def set_DeleteAfterImageUpload(self, DeleteAfterImageUpload):  # String
 		self.add_query_param('DeleteAfterImageUpload', DeleteAfterImageUpload)
+	def get_WithDataDisks(self): # Boolean
+		return self.get_query_params().get('WithDataDisks')
+
+	def set_WithDataDisks(self, WithDataDisks):  # Boolean
+		self.add_query_param('WithDataDisks', WithDataDisks)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
