@@ -30,11 +30,21 @@ class DescribeEntityInfoRequest(RpcRequest):
 
 	def set_EntityIdentity(self, EntityIdentity):  # String
 		self.add_body_params('EntityIdentity', EntityIdentity)
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_EntityId(self): # Long
 		return self.get_body_params().get('EntityId')
 
 	def set_EntityId(self, EntityId):  # Long
 		self.add_body_params('EntityId', EntityId)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_SophonTaskId(self): # String
 		return self.get_body_params().get('SophonTaskId')
 

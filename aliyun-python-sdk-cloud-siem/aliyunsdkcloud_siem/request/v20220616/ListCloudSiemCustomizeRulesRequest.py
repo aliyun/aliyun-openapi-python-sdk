@@ -25,6 +25,11 @@ class ListCloudSiemCustomizeRulesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'ListCloudSiemCustomizeRules','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_RuleName(self): # String
 		return self.get_body_params().get('RuleName')
 
@@ -40,11 +45,26 @@ class ListCloudSiemCustomizeRulesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_Id(self): # String
 		return self.get_body_params().get('Id')
 
 	def set_Id(self, Id):  # String
 		self.add_body_params('Id', Id)
+	def get_OrderField(self): # String
+		return self.get_body_params().get('OrderField')
+
+	def set_OrderField(self, OrderField):  # String
+		self.add_body_params('OrderField', OrderField)
+	def get_Order(self): # String
+		return self.get_body_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_body_params('Order', Order)
 	def get_RuleType(self): # String
 		return self.get_body_params().get('RuleType')
 

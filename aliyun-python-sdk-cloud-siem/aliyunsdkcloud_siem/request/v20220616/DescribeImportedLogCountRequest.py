@@ -25,3 +25,13 @@ class DescribeImportedLogCountRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'DescribeImportedLogCount','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # String
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # String
+		self.add_body_params('RoleFor', RoleFor)
+	def get_RoleType(self): # String
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # String
+		self.add_body_params('RoleType', RoleType)

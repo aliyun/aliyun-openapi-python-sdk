@@ -25,3 +25,23 @@ class DescribeEventCountByThreatLevelRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'DescribeEventCountByThreatLevel','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
+	def get_StartTime(self): # Long
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_body_params('StartTime', StartTime)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
+	def get_EndTime(self): # Long
+		return self.get_body_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # Long
+		self.add_body_params('EndTime', EndTime)

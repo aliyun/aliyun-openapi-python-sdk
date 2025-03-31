@@ -19,10 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListCustomizeRuleTestResultRequest(RpcRequest):
+class ListEntitiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'ListCustomizeRuleTestResult','cloud-siem')
+		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'ListEntities','cloud-siem')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 	def get_RoleFor(self): # Long
@@ -30,16 +31,16 @@ class ListCustomizeRuleTestResultRequest(RpcRequest):
 
 	def set_RoleFor(self, RoleFor):  # Long
 		self.add_body_params('RoleFor', RoleFor)
-	def get_StartTime(self): # Long
-		return self.get_body_params().get('StartTime')
+	def get_MalwareType(self): # String
+		return self.get_body_params().get('MalwareType')
 
-	def set_StartTime(self, StartTime):  # Long
-		self.add_body_params('StartTime', StartTime)
-	def get_VerifyType(self): # String
-		return self.get_body_params().get('VerifyType')
+	def set_MalwareType(self, MalwareType):  # String
+		self.add_body_params('MalwareType', MalwareType)
+	def get_EntityName(self): # String
+		return self.get_body_params().get('EntityName')
 
-	def set_VerifyType(self, VerifyType):  # String
-		self.add_body_params('VerifyType', VerifyType)
+	def set_EntityName(self, EntityName):  # String
+		self.add_body_params('EntityName', EntityName)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -50,23 +51,28 @@ class ListCustomizeRuleTestResultRequest(RpcRequest):
 
 	def set_RoleType(self, RoleType):  # Integer
 		self.add_body_params('RoleType', RoleType)
-	def get_Id(self): # Long
-		return self.get_body_params().get('Id')
-
-	def set_Id(self, Id):  # Long
-		self.add_body_params('Id', Id)
-	def get_EndTime(self): # Long
-		return self.get_body_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # Long
-		self.add_body_params('EndTime', EndTime)
 	def get_CurrentPage(self): # Integer
 		return self.get_body_params().get('CurrentPage')
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_body_params('CurrentPage', CurrentPage)
-	def get_DetectionRuleId(self): # String
-		return self.get_body_params().get('DetectionRuleId')
+	def get_IsMalwareEntity(self): # String
+		return self.get_body_params().get('IsMalwareEntity')
 
-	def set_DetectionRuleId(self, DetectionRuleId):  # String
-		self.add_body_params('DetectionRuleId', DetectionRuleId)
+	def set_IsMalwareEntity(self, IsMalwareEntity):  # String
+		self.add_body_params('IsMalwareEntity', IsMalwareEntity)
+	def get_EntityType(self): # String
+		return self.get_body_params().get('EntityType')
+
+	def set_EntityType(self, EntityType):  # String
+		self.add_body_params('EntityType', EntityType)
+	def get_EntityUuid(self): # String
+		return self.get_body_params().get('EntityUuid')
+
+	def set_EntityUuid(self, EntityUuid):  # String
+		self.add_body_params('EntityUuid', EntityUuid)
+	def get_IncidentUuid(self): # String
+		return self.get_body_params().get('IncidentUuid')
+
+	def set_IncidentUuid(self, IncidentUuid):  # String
+		self.add_body_params('IncidentUuid', IncidentUuid)

@@ -30,11 +30,21 @@ class DeleteBindAccountRequest(RpcRequest):
 
 	def set_CloudCode(self, CloudCode):  # String
 		self.add_body_params('CloudCode', CloudCode)
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_AccountId(self): # String
 		return self.get_body_params().get('AccountId')
 
 	def set_AccountId(self, AccountId):  # String
 		self.add_body_params('AccountId', AccountId)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_BindId(self): # Long
 		return self.get_body_params().get('BindId')
 

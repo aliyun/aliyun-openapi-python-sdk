@@ -40,6 +40,11 @@ class ListDisposeStrategyRequest(RpcRequest):
 
 	def set_PlaybookTypes(self, PlaybookTypes):  # String
 		self.add_body_params('PlaybookTypes', PlaybookTypes)
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_StartTime(self): # Long
 		return self.get_body_params().get('StartTime')
 
@@ -50,6 +55,11 @@ class ListDisposeStrategyRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_OrderField(self): # String
 		return self.get_body_params().get('OrderField')
 
@@ -90,3 +100,8 @@ class ListDisposeStrategyRequest(RpcRequest):
 
 	def set_EntityType(self, EntityType):  # String
 		self.add_body_params('EntityType', EntityType)
+	def get_IncidentUuid(self): # String
+		return self.get_body_params().get('IncidentUuid')
+
+	def set_IncidentUuid(self, IncidentUuid):  # String
+		self.add_body_params('IncidentUuid', IncidentUuid)

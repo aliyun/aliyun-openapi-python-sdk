@@ -25,6 +25,11 @@ class PostEventDisposeAndWhiteruleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'PostEventDisposeAndWhiteruleList','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_Remark(self): # String
 		return self.get_body_params().get('Remark')
 
@@ -40,6 +45,16 @@ class PostEventDisposeAndWhiteruleListRequest(RpcRequest):
 
 	def set_ReceiverInfo(self, ReceiverInfo):  # String
 		self.add_body_params('ReceiverInfo', ReceiverInfo)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
+	def get_ThreatLevel(self): # String
+		return self.get_body_params().get('ThreatLevel')
+
+	def set_ThreatLevel(self, ThreatLevel):  # String
+		self.add_body_params('ThreatLevel', ThreatLevel)
 	def get_IncidentUuid(self): # String
 		return self.get_body_params().get('IncidentUuid')
 

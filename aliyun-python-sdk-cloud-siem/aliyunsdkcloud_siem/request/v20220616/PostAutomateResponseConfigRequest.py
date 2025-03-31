@@ -30,6 +30,11 @@ class PostAutomateResponseConfigRequest(RpcRequest):
 
 	def set_ActionType(self, ActionType):  # String
 		self.add_body_params('ActionType', ActionType)
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_RuleName(self): # String
 		return self.get_body_params().get('RuleName')
 
@@ -55,6 +60,11 @@ class PostAutomateResponseConfigRequest(RpcRequest):
 
 	def set_AutoResponseType(self, AutoResponseType):  # String
 		self.add_body_params('AutoResponseType', AutoResponseType)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_Id(self): # Long
 		return self.get_body_params().get('Id')
 
