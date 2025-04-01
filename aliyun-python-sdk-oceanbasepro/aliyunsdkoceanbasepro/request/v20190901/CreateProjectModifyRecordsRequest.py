@@ -37,6 +37,11 @@ class CreateProjectModifyRecordsRequest(RpcRequest):
 
 	def set_Databases(self, Databases):  # Array
 		self.add_body_params("Databases", json.dumps(Databases))
+	def get_TransferMapping(self): # Struct
+		return self.get_body_params().get('TransferMapping')
+
+	def set_TransferMapping(self, TransferMapping):  # Struct
+		self.add_body_params("TransferMapping", json.dumps(TransferMapping))
 	def get_Id(self): # String
 		return self.get_body_params().get('Id')
 
