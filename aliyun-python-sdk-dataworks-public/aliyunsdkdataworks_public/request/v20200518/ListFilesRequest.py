@@ -46,6 +46,11 @@ class ListFilesRequest(RpcRequest):
 
 	def set_NeedContent(self, NeedContent):  # Boolean
 		self.add_body_params('NeedContent', NeedContent)
+	def get_CommitStatus(self): # Integer
+		return self.get_body_params().get('CommitStatus')
+
+	def set_CommitStatus(self, CommitStatus):  # Integer
+		self.add_body_params('CommitStatus', CommitStatus)
 	def get_NeedAbsoluteFolderPath(self): # Boolean
 		return self.get_body_params().get('NeedAbsoluteFolderPath')
 
