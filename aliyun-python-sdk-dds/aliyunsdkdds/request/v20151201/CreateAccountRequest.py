@@ -66,3 +66,8 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_CharacterType(self): # String
+		return self.get_query_params().get('CharacterType')
+
+	def set_CharacterType(self, CharacterType):  # String
+		self.add_query_param('CharacterType', CharacterType)

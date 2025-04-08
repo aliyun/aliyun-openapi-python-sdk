@@ -36,6 +36,11 @@ class DescribeDBInstancesOverviewRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ShowTags(self): # Boolean
+		return self.get_query_params().get('ShowTags')
+
+	def set_ShowTags(self, ShowTags):  # Boolean
+		self.add_query_param('ShowTags', ShowTags)
 	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 

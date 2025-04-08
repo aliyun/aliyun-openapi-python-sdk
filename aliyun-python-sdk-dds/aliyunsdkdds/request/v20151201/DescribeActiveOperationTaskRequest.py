@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeHistoryTasksStatRequest(RpcRequest):
+class DescribeActiveOperationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeHistoryTasksStat','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeActiveOperationTask','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,26 +36,26 @@ class DescribeHistoryTasksStatRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ToStartTime(self): # String
-		return self.get_query_params().get('ToStartTime')
+	def get_ProductId(self): # String
+		return self.get_query_params().get('ProductId')
 
-	def set_ToStartTime(self, ToStartTime):  # String
-		self.add_query_param('ToStartTime', ToStartTime)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_ProductId(self, ProductId):  # String
+		self.add_query_param('ProductId', ProductId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_TaskId(self): # String
-		return self.get_query_params().get('TaskId')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_IsHistory(self): # Integer
+		return self.get_query_params().get('IsHistory')
 
-	def set_TaskId(self, TaskId):  # String
-		self.add_query_param('TaskId', TaskId)
-	def get_ToExecTime(self): # Integer
-		return self.get_query_params().get('ToExecTime')
+	def set_IsHistory(self, IsHistory):  # Integer
+		self.add_query_param('IsHistory', IsHistory)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_ToExecTime(self, ToExecTime):  # Integer
-		self.add_query_param('ToExecTime', ToExecTime)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
@@ -66,23 +66,18 @@ class DescribeHistoryTasksStatRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_FromStartTime(self): # String
-		return self.get_query_params().get('FromStartTime')
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_FromStartTime(self, FromStartTime):  # String
-		self.add_query_param('FromStartTime', FromStartTime)
-	def get_FromExecTime(self): # Integer
-		return self.get_query_params().get('FromExecTime')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-	def set_FromExecTime(self, FromExecTime):  # Integer
-		self.add_query_param('FromExecTime', FromExecTime)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_Status(self): # String
-		return self.get_query_params().get('Status')
-
-	def set_Status(self, Status):  # String
-		self.add_query_param('Status', Status)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

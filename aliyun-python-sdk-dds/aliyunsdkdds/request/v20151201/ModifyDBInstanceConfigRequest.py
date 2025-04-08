@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class ModifyActiveOperationTasksRequest(RpcRequest):
+class ModifyDBInstanceConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyActiveOperationTasks','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceConfig','dds')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +37,16 @@ class ModifyActiveOperationTasksRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ConfigName(self): # String
+		return self.get_query_params().get('ConfigName')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SwitchTime(self): # String
-		return self.get_query_params().get('SwitchTime')
+	def set_ConfigName(self, ConfigName):  # String
+		self.add_query_param('ConfigName', ConfigName)
+	def get_DBInstanceId(self): # String
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_SwitchTime(self, SwitchTime):  # String
-		self.add_query_param('SwitchTime', SwitchTime)
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,18 +57,13 @@ class ModifyActiveOperationTasksRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ConfigValue(self): # String
+		return self.get_query_params().get('ConfigValue')
+
+	def set_ConfigValue(self, ConfigValue):  # String
+		self.add_query_param('ConfigValue', ConfigValue)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_Ids(self): # String
-		return self.get_query_params().get('Ids')
-
-	def set_Ids(self, Ids):  # String
-		self.add_query_param('Ids', Ids)
-	def get_ImmediateStart(self): # Integer
-		return self.get_query_params().get('ImmediateStart')
-
-	def set_ImmediateStart(self, ImmediateStart):  # Integer
-		self.add_query_param('ImmediateStart', ImmediateStart)
