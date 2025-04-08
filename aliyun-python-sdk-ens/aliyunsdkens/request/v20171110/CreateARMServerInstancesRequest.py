@@ -80,6 +80,11 @@ class CreateARMServerInstancesRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_Cidr(self): # String
+		return self.get_query_params().get('Cidr')
+
+	def set_Cidr(self, Cidr):  # String
+		self.add_query_param('Cidr', Cidr)
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 
