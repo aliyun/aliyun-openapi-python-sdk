@@ -5,9 +5,7 @@
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/graph/badge.svg?token=qmWxah6dPs)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
 [![python](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)
 
-欢迎使用阿里云开发者工具套件（SDK）。阿里云 Python SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云 Python SDK 并开始调用。
-
-如果您在使用 SDK 的过程中遇到任何问题，欢迎在当前 GitHub 提交 Issues。
+阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
 
 ## 使用诊断
 

@@ -7,9 +7,7 @@
 
 [中文文档](./README_zh.md)
 
-The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Object Storage Service (OSS), and Resource Access Management (RAM).  You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
-
-This document introduces how to obtain and call Alibaba Cloud Python SDK.
+The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
 
 ## Troubleshoot
 
