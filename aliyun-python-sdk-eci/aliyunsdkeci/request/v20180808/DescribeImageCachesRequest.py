@@ -70,6 +70,14 @@ class DescribeImageCachesRequest(RpcRequest):
 			if Tags[i].get('Value') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
 
+	def get_MatchImage(self):
+		return self.get_query_params().get('MatchImage')
+
+	def set_MatchImage(self, MatchImage):
+		for i in range(len(MatchImage)):
+			if MatchImage[i] is not None:
+				self.add_query_param('MatchImage.' + str(i + 1), MatchImage[i])
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -87,3 +95,32 @@ class DescribeImageCachesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self, Limit):
+		self.add_query_param('Limit', Limit)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):
+		self.add_query_param('NextToken', NextToken)
+
+	def get_ImageFullMatch(self):
+		return self.get_query_params().get('ImageFullMatch')
+
+	def set_ImageFullMatch(self, ImageFullMatch):
+		self.add_query_param('ImageFullMatch', ImageFullMatch)
+
+	def get_ImageMatchCountRequest(self):
+		return self.get_query_params().get('ImageMatchCountRequest')
+
+	def set_ImageMatchCountRequest(self, ImageMatchCountRequest):
+		self.add_query_param('ImageMatchCountRequest', ImageMatchCountRequest)
+
+
+
+
+

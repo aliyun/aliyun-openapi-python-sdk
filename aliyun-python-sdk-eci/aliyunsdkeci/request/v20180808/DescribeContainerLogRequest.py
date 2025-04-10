@@ -59,6 +59,30 @@ class DescribeContainerLogRequest(RpcRequest):
 	def set_Tail(self,Tail):
 		self.add_query_param('Tail',Tail)
 
+	def get_LastTime(self):
+		return self.get_query_params().get('LastTime')
+
+	def set_LastTime(self,LastTime):
+		self.add_query_param('LastTime',LastTime)
+
+	def get_SinceSeconds(self):
+		return self.get_query_params().get('SinceSeconds')
+
+	def set_SinceSeconds(self,SinceSeconds):
+		self.add_query_param('SinceSeconds',SinceSeconds)
+
+	def get_LimitBytes(self):
+		return self.get_query_params().get('LimitBytes')
+
+	def set_LimitBytes(self,LimitBytes):
+		self.add_query_param('LimitBytes',LimitBytes)
+
+	def get_Timestamps(self):
+		return self.get_query_params().get('Timestamps')
+
+	def set_Timestamps(self,Timestamps):
+		self.add_query_param('Timestamps',Timestamps)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
