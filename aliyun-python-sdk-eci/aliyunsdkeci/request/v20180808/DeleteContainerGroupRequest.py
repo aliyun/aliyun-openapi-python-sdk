@@ -58,3 +58,9 @@ class DeleteContainerGroupRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):
 		self.add_query_param('ClientToken', ClientToken)
+
+	def get_Force(self):
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):
+		self.add_query_param('Force', Force)

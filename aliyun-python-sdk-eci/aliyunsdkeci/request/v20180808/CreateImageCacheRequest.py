@@ -165,4 +165,41 @@ class CreateImageCacheRequest(RpcRequest):
 			if Tags[i].get('Value') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
 
+	def get_PlainHttpRegistry(self):
+		return self.get_query_params().get('PlainHttpRegistry')
+
+	def set_PlainHttpRegistry(self, PlainHttpRegistry):
+		self.add_query_param('PlainHttpRegistry', PlainHttpRegistry)
+
+	def get_InsecureRegistry(self):
+		return self.get_query_params().get('InsecureRegistry')
+
+	def set_InsecureRegistry(self, InsecureRegistry):
+		self.add_query_param('InsecureRegistry', InsecureRegistry)
+
+	def get_StandardCopyCount(self):
+		return self.get_query_params().get('StandardCopyCount')
+
+	def set_StandardCopyCount(self, StandardCopyCount):
+		self.add_query_param('StandardCopyCount', StandardCopyCount)
+
+	def get_FlashCopyCount(self):
+		return self.get_query_params().get('FlashCopyCount')
+
+	def set_FlashCopyCount(self, FlashCopyCount):
+		self.add_query_param("FlashCopyCount", FlashCopyCount)
+
+	def get_EliminationStrategy(self):
+		return self.get_query_params().get('EliminationStrategy')
+
+	def set_EliminationStrategy(self, EliminationStrategy):
+		self.add_query_param('EliminationStrategy', EliminationStrategy)
+
+	def get_OsType(self):
+		return self.get_query_params().get('OsType')
+
+	def set_OsType(self, OsType):
+		self.add_query_param('OsType', OsType)
+
+
 

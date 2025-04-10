@@ -167,11 +167,23 @@ class UpdateImageCacheRequest(RpcRequest):
     def set_Flash(self, Flash):
         self.add_query_param("Flash", Flash)
 
-    def get_Annotations(self):
-        return self.get_query_params().get("Annotations")
+    def get_StandardCopyCount(self):
+        return self.get_query_params().get('StandardCopyCount')
 
-    def set_Annotations(self, Annotations):
-        self.add_query_param("Annotations", Annotations)
+    def set_StandardCopyCount(self, StandardCopyCount):
+        self.add_query_param('StandardCopyCount', StandardCopyCount)
+
+    def get_FlashCopyCount(self):
+        return self.get_query_params().get('FlashCopyCount')
+
+    def set_FlashCopyCount(self, FlashCopyCount):
+        self.add_query_param("FlashCopyCount", FlashCopyCount)
+
+    def get_EliminationStrategy(self):
+        return self.get_query_params().get('EliminationStrategy')
+
+    def set_EliminationStrategy(self, EliminationStrategy):
+        self.add_query_param('EliminationStrategy', EliminationStrategy)
 
 
 

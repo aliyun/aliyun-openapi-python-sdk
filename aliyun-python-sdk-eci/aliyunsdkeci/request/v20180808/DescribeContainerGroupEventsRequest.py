@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2025 Aliyun.com All right reserved. This software is the
+# confidential and proprietary information of Aliyun.com ("Confidential
+# Information"). You shall not disclose such Confidential Information and shall
+# use it only in accordance with the terms of the license agreement you entered
+# into with Aliyun.com .
+# created by xiaohui at 2025/4/10 15:16
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -20,10 +27,21 @@
 from aliyunsdkcore.request import RpcRequest
 
 
-class DescribeContainerGroupStatusRequest(RpcRequest):
+class DescribeContainerGroupEventsRequest(RpcRequest):
     def __init__(self):
-        RpcRequest.__init__(self, 'Eci', '2018-08-08', 'DescribeContainerGroupStatus', 'eci')
-        self.set_method('POST')
+        RpcRequest.__init__(self, 'Eci', '2018-08-08', 'DescribeContainerGroupEvents', 'eci')
+
+    def get_ResourceOwnerId(self):
+        return self.get_query_params().get('ResourceOwnerId')
+
+    def set_ResourceOwnerId(self, ResourceOwnerId):
+        self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+
+    def get_RegionId(self):
+        return self.get_query_params().get('RegionId')
+
+    def set_RegionId(self, RegionId):
+        self.add_query_param('RegionId', RegionId)
 
     def get_ZoneId(self):
         return self.get_query_params().get('ZoneId')
@@ -43,6 +61,12 @@ class DescribeContainerGroupStatusRequest(RpcRequest):
     def set_ResourceGroupId(self, ResourceGroupId):
         self.add_query_param('ResourceGroupId', ResourceGroupId)
 
+    def get_ContainerGroupIds(self):
+        return self.get_query_params().get('ContainerGroupIds')
+
+    def set_ContainerGroupIds(self, ContainerGroupIds):
+        self.add_query_param('ContainerGroupIds', ContainerGroupIds)
+
     def get_Tags(self):
         return self.get_query_params().get('Tags')
 
@@ -53,17 +77,15 @@ class DescribeContainerGroupStatusRequest(RpcRequest):
             if Tags[i].get('Value') is not None:
                 self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
 
-    def get_ContainerGroupIds(self):
-        return self.get_query_params().get('ContainerGroupIds')
+    def get_Condition(self):
+        return self.get_query_params().get('Condition')
 
-    def set_ContainerGroupIds(self, ContainerGroupIds):
-        self.add_query_param('ContainerGroupIds', ContainerGroupIds)
-
-    def get_SinceSecond(self):
-        return self.get_query_params().get('SinceSecond')
-
-    def set_SinceSecond(self, SinceSecond):
-        self.add_query_param('SinceSecond', SinceSecond)
+    def set_Condition(self, Condition):
+        for i in range(len(Condition)):
+            if Condition[i].get('Type') is not None:
+                self.add_query_param('Condition.' + str(i + 1) + '.Type', Condition[i].get('Type'))
+            if Condition[i].get('Status') is not None:
+                self.add_query_param('Condition.' + str(i + 1) + '.Status', Condition[i].get('Status'))
 
     def get_NextToken(self):
         return self.get_query_params().get('NextToken')
@@ -71,9 +93,14 @@ class DescribeContainerGroupStatusRequest(RpcRequest):
     def set_NextToken(self, NextToken):
         self.add_query_param('NextToken', NextToken)
 
-    def get_Limit(self):
-        return self.get_query_params().get('Limit')
+    def get_EventSource(self):
+        return self.get_query_params().get('EventSource')
 
-    def set_Limit(self, Limit):
-        self.add_query_param('Limit', Limit)
+    def set_EventSource(self, EventSource):
+        self.add_query_param('EventSource', EventSource)
 
+    def get_SinceSecond(self):
+        return self.get_query_params().get('SinceSecond')
+
+    def set_SinceSecond(self, SinceSecond):
+        self.add_query_param('SinceSecond', SinceSecond)
