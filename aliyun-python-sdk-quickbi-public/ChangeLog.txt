@@ -1,3 +1,6 @@
+2025-04-14 Version: 2.1.14
+- Add SmartqQueryAbility api request parameters.
+
 2025-03-14 Version: 2.1.13
 - Add API errors.
 - QueryUserList API add return parameter.
