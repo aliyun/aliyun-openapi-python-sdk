@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeDemandsRequest(RpcRequest):
+class DescribePortRangeListsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDemands','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePortRangeLists','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +37,16 @@ class DescribeDemandsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -60,16 +56,12 @@ class DescribeDemandsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
+	def get_PortRangeListIds(self): # RepeatList
+		return self.get_query_params().get('PortRangeListId')
 
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_PortRangeListIds(self, PortRangeListId):  # RepeatList
+		for depth1 in range(len(PortRangeListId)):
+			self.add_query_param('PortRangeListId.' + str(depth1 + 1), PortRangeListId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -80,34 +72,18 @@ class DescribeDemandsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_InstanceTypeFamily(self): # String
-		return self.get_query_params().get('InstanceTypeFamily')
-
-	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
-		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DemandStatuss(self): # RepeatList
-		return self.get_query_params().get('DemandStatus')
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_DemandStatuss(self, DemandStatus):  # RepeatList
-		for depth1 in range(len(DemandStatus)):
-			self.add_query_param('DemandStatus.' + str(depth1 + 1), DemandStatus[depth1])
-	def get_DemandId(self): # String
-		return self.get_query_params().get('DemandId')
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_PortRangeListName(self): # String
+		return self.get_query_params().get('PortRangeListName')
 
-	def set_DemandId(self, DemandId):  # String
-		self.add_query_param('DemandId', DemandId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_DemandType(self): # String
-		return self.get_query_params().get('DemandType')
-
-	def set_DemandType(self, DemandType):  # String
-		self.add_query_param('DemandType', DemandType)
+	def set_PortRangeListName(self, PortRangeListName):  # String
+		self.add_query_param('PortRangeListName', PortRangeListName)

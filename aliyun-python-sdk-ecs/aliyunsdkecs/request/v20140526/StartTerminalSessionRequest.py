@@ -46,6 +46,11 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_TargetServer(self, TargetServer):  # String
 		self.add_query_param('TargetServer', TargetServer)
+	def get_ConnectionType(self): # String
+		return self.get_query_params().get('ConnectionType')
+
+	def set_ConnectionType(self, ConnectionType):  # String
+		self.add_query_param('ConnectionType', ConnectionType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

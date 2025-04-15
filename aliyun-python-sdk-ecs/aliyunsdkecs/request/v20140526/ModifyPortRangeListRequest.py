@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class CreateDemandRequest(RpcRequest):
+class ModifyPortRangeListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDemand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPortRangeList','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,41 +42,25 @@ class CreateDemandRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_StartTime(self): # String
-		return self.get_query_params().get('StartTime')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_StartTime(self, StartTime):  # String
-		self.add_query_param('StartTime', StartTime)
-	def get_DemandDescription(self): # String
-		return self.get_query_params().get('DemandDescription')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AddEntrys(self): # RepeatList
+		return self.get_query_params().get('AddEntry')
 
-	def set_DemandDescription(self, DemandDescription):  # String
-		self.add_query_param('DemandDescription', DemandDescription)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
+	def set_AddEntrys(self, AddEntry):  # RepeatList
+		for depth1 in range(len(AddEntry)):
+			if AddEntry[depth1].get('PortRange') is not None:
+				self.add_query_param('AddEntry.' + str(depth1 + 1) + '.PortRange', AddEntry[depth1].get('PortRange'))
+			if AddEntry[depth1].get('Description') is not None:
+				self.add_query_param('AddEntry.' + str(depth1 + 1) + '.Description', AddEntry[depth1].get('Description'))
+	def get_PortRangeListId(self): # String
+		return self.get_query_params().get('PortRangeListId')
 
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_DemandName(self): # String
-		return self.get_query_params().get('DemandName')
-
-	def set_DemandName(self, DemandName):  # String
-		self.add_query_param('DemandName', DemandName)
-	def get_Amount(self): # Integer
-		return self.get_query_params().get('Amount')
-
-	def set_Amount(self, Amount):  # Integer
-		self.add_query_param('Amount', Amount)
-	def get_Period(self): # Integer
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # Integer
-		self.add_query_param('Period', Period)
+	def set_PortRangeListId(self, PortRangeListId):  # String
+		self.add_query_param('PortRangeListId', PortRangeListId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -86,23 +71,20 @@ class CreateDemandRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PeriodUnit(self): # String
-		return self.get_query_params().get('PeriodUnit')
+	def get_PortRangeListName(self): # String
+		return self.get_query_params().get('PortRangeListName')
 
-	def set_PeriodUnit(self, PeriodUnit):  # String
-		self.add_query_param('PeriodUnit', PeriodUnit)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
+	def set_PortRangeListName(self, PortRangeListName):  # String
+		self.add_query_param('PortRangeListName', PortRangeListName)
+	def get_RemoveEntrys(self): # RepeatList
+		return self.get_query_params().get('RemoveEntry')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
+	def set_RemoveEntrys(self, RemoveEntry):  # RepeatList
+		for depth1 in range(len(RemoveEntry)):
+			if RemoveEntry[depth1].get('PortRange') is not None:
+				self.add_query_param('RemoveEntry.' + str(depth1 + 1) + '.PortRange', RemoveEntry[depth1].get('PortRange'))

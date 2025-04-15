@@ -36,36 +36,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Recyclable(self): # Boolean
-		return self.get_query_params().get('Recyclable')
-
-	def set_Recyclable(self, Recyclable):  # Boolean
-		self.add_query_param('Recyclable', Recyclable)
-	def get_NetworkInterfaceQueueNumber(self): # Integer
-		return self.get_query_params().get('NetworkInterfaceQueueNumber')
-
-	def set_NetworkInterfaceQueueNumber(self, NetworkInterfaceQueueNumber):  # Integer
-		self.add_query_param('NetworkInterfaceQueueNumber', NetworkInterfaceQueueNumber)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_CpuOptionsThreadsPerCore(self): # Integer
-		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
-
-	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
-		self.add_query_param('CpuOptions.ThreadsPerCore', CpuOptionsThreadsPerCore)
 	def get_DeletionProtection(self): # Boolean
 		return self.get_query_params().get('DeletionProtection')
 
 	def set_DeletionProtection(self, DeletionProtection):  # Boolean
 		self.add_query_param('DeletionProtection', DeletionProtection)
-	def get_UserData(self): # String
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
 	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
@@ -76,6 +51,61 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_CpuOptionsTopologyType(self): # String
+		return self.get_query_params().get('CpuOptions.TopologyType')
+
+	def set_CpuOptionsTopologyType(self, CpuOptionsTopologyType):  # String
+		self.add_query_param('CpuOptions.TopologyType', CpuOptionsTopologyType)
+	def get_CpuOptionsCore(self): # Integer
+		return self.get_query_params().get('CpuOptions.Core')
+
+	def set_CpuOptionsCore(self, CpuOptionsCore):  # Integer
+		self.add_query_param('CpuOptions.Core', CpuOptionsCore)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_Recyclable(self): # Boolean
+		return self.get_query_params().get('Recyclable')
+
+	def set_Recyclable(self, Recyclable):  # Boolean
+		self.add_query_param('Recyclable', Recyclable)
+	def get_NetworkInterfaceQueueNumber(self): # Integer
+		return self.get_query_params().get('NetworkInterfaceQueueNumber')
+
+	def set_NetworkInterfaceQueueNumber(self, NetworkInterfaceQueueNumber):  # Integer
+		self.add_query_param('NetworkInterfaceQueueNumber', NetworkInterfaceQueueNumber)
+	def get_EnableNetworkEncryption(self): # Boolean
+		return self.get_query_params().get('EnableNetworkEncryption')
+
+	def set_EnableNetworkEncryption(self, EnableNetworkEncryption):  # Boolean
+		self.add_query_param('EnableNetworkEncryption', EnableNetworkEncryption)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_CpuOptionsThreadsPerCore(self): # Integer
+		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
+
+	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
+		self.add_query_param('CpuOptions.ThreadsPerCore', CpuOptionsThreadsPerCore)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
 	def get_PrivateDnsNameOptions(self): # Struct
 		return self.get_query_params().get('PrivateDnsNameOptions')
 
@@ -90,21 +120,11 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsARecord', PrivateDnsNameOptions.get('EnableIpDnsARecord'))
 		if PrivateDnsNameOptions.get('EnableIpDnsPtrRecord') is not None:
 			self.add_query_param('PrivateDnsNameOptions.EnableIpDnsPtrRecord', PrivateDnsNameOptions.get('EnableIpDnsPtrRecord'))
-	def get_CpuOptionsTopologyType(self): # String
-		return self.get_query_params().get('CpuOptions.TopologyType')
-
-	def set_CpuOptionsTopologyType(self, CpuOptionsTopologyType):  # String
-		self.add_query_param('CpuOptions.TopologyType', CpuOptionsTopologyType)
 	def get_EnableJumboFrame(self): # Boolean
 		return self.get_query_params().get('EnableJumboFrame')
 
 	def set_EnableJumboFrame(self, EnableJumboFrame):  # Boolean
 		self.add_query_param('EnableJumboFrame', EnableJumboFrame)
-	def get_CpuOptionsCore(self): # Integer
-		return self.get_query_params().get('CpuOptions.Core')
-
-	def set_CpuOptionsCore(self, CpuOptionsCore):  # Integer
-		self.add_query_param('CpuOptions.Core', CpuOptionsCore)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -120,27 +140,12 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_CreditSpecification(self, CreditSpecification):  # String
 		self.add_query_param('CreditSpecification', CreditSpecification)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SecurityGroupIdss(self): # RepeatList
 		return self.get_query_params().get('SecurityGroupIds')
 
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
 			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_InstanceName(self): # String
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self, InstanceName):  # String
-		self.add_query_param('InstanceName', InstanceName)
 	def get_RemoteConnectionOptions(self): # Struct
 		return self.get_query_params().get('RemoteConnectionOptions')
 

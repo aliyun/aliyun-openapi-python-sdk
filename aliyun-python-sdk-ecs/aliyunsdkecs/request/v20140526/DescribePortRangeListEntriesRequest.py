@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteInstanceRequest(RpcRequest):
+class DescribePortRangeListEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteInstance','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePortRangeListEntries','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,21 +37,11 @@ class DeleteInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ForceStop(self): # Boolean
-		return self.get_query_params().get('ForceStop')
+	def get_PortRangeListId(self): # String
+		return self.get_query_params().get('PortRangeListId')
 
-	def set_ForceStop(self, ForceStop):  # Boolean
-		self.add_query_param('ForceStop', ForceStop)
-	def get_TerminateSubscription(self): # Boolean
-		return self.get_query_params().get('TerminateSubscription')
-
-	def set_TerminateSubscription(self, TerminateSubscription):  # Boolean
-		self.add_query_param('TerminateSubscription', TerminateSubscription)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_PortRangeListId(self, PortRangeListId):  # String
+		self.add_query_param('PortRangeListId', PortRangeListId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,13 +57,3 @@ class DeleteInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
-
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)

@@ -36,26 +36,11 @@ class CreateCapacityReservationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
-	def get_Platform(self): # String
-		return self.get_query_params().get('Platform')
-
-	def set_Platform(self, Platform):  # String
-		self.add_query_param('Platform', Platform)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -66,11 +51,6 @@ class CreateCapacityReservationRequest(RpcRequest):
 
 	def set_PrivatePoolOptionsMatchCriteria(self, PrivatePoolOptionsMatchCriteria):  # String
 		self.add_query_param('PrivatePoolOptions.MatchCriteria', PrivatePoolOptionsMatchCriteria)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -85,6 +65,42 @@ class CreateCapacityReservationRequest(RpcRequest):
 
 	def set_EndTimeType(self, EndTimeType):  # String
 		self.add_query_param('EndTimeType', EndTimeType)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ZoneIds(self): # RepeatList
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneIds(self, ZoneId):  # RepeatList
+		for depth1 in range(len(ZoneId)):
+			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId[depth1])
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
+
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Platform(self): # String
+		return self.get_query_params().get('Platform')
+
+	def set_Platform(self, Platform):  # String
+		self.add_query_param('Platform', Platform)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -105,19 +121,3 @@ class CreateCapacityReservationRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_ZoneIds(self): # RepeatList
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneIds(self, ZoneId):  # RepeatList
-		for depth1 in range(len(ZoneId)):
-			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId[depth1])
-	def get_InstanceAmount(self): # Integer
-		return self.get_query_params().get('InstanceAmount')
-
-	def set_InstanceAmount(self, InstanceAmount):  # Integer
-		self.add_query_param('InstanceAmount', InstanceAmount)

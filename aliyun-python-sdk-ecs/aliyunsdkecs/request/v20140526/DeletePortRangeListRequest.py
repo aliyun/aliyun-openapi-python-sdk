@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteDemandRequest(RpcRequest):
+class DeletePortRangeListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteDemand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeletePortRangeList','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +32,16 @@ class DeleteDemandRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Reason(self): # String
-		return self.get_query_params().get('Reason')
-
-	def set_Reason(self, Reason):  # String
-		self.add_query_param('Reason', Reason)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_PortRangeListId(self): # String
+		return self.get_query_params().get('PortRangeListId')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
+	def set_PortRangeListId(self, PortRangeListId):  # String
+		self.add_query_param('PortRangeListId', PortRangeListId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -61,8 +57,3 @@ class DeleteDemandRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_DemandId(self): # String
-		return self.get_query_params().get('DemandId')
-
-	def set_DemandId(self, DemandId):  # String
-		self.add_query_param('DemandId', DemandId)

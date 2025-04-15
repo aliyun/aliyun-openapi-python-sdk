@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteInstancesRequest(RpcRequest):
+class CreatePortRangeListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreatePortRangeList','ecs')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,21 +42,30 @@ class DeleteInstancesRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
-	def get_ForceStop(self): # Boolean
-		return self.get_query_params().get('ForceStop')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-	def set_ForceStop(self, ForceStop):  # Boolean
-		self.add_query_param('ForceStop', ForceStop)
-	def get_TerminateSubscription(self): # Boolean
-		return self.get_query_params().get('TerminateSubscription')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_MaxEntries(self): # Integer
+		return self.get_query_params().get('MaxEntries')
 
-	def set_TerminateSubscription(self, TerminateSubscription):  # Boolean
-		self.add_query_param('TerminateSubscription', TerminateSubscription)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def set_MaxEntries(self, MaxEntries):  # Integer
+		self.add_query_param('MaxEntries', MaxEntries)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,14 +81,17 @@ class DeleteInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceIds(self): # RepeatList
-		return self.get_query_params().get('InstanceId')
+	def get_Entrys(self): # RepeatList
+		return self.get_query_params().get('Entry')
 
-	def set_InstanceIds(self, InstanceId):  # RepeatList
-		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
-	def get_Force(self): # Boolean
-		return self.get_query_params().get('Force')
+	def set_Entrys(self, Entry):  # RepeatList
+		for depth1 in range(len(Entry)):
+			if Entry[depth1].get('PortRange') is not None:
+				self.add_query_param('Entry.' + str(depth1 + 1) + '.PortRange', Entry[depth1].get('PortRange'))
+			if Entry[depth1].get('Description') is not None:
+				self.add_query_param('Entry.' + str(depth1 + 1) + '.Description', Entry[depth1].get('Description'))
+	def get_PortRangeListName(self): # String
+		return self.get_query_params().get('PortRangeListName')
 
-	def set_Force(self, Force):  # Boolean
-		self.add_query_param('Force', Force)
+	def set_PortRangeListName(self, PortRangeListName):  # String
+		self.add_query_param('PortRangeListName', PortRangeListName)

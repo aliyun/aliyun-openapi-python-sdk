@@ -36,26 +36,11 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ContainerName(self): # String
-		return self.get_query_params().get('ContainerName')
-
-	def set_ContainerName(self, ContainerName):  # String
-		self.add_query_param('ContainerName', ContainerName)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
 	def get_CommandId(self): # String
 		return self.get_query_params().get('CommandId')
 
 	def set_CommandId(self, CommandId):  # String
 		self.add_query_param('CommandId', CommandId)
-	def get_Timeout(self): # Long
-		return self.get_query_params().get('Timeout')
-
-	def set_Timeout(self, Timeout):  # Long
-		self.add_query_param('Timeout', Timeout)
 	def get_Frequency(self): # String
 		return self.get_query_params().get('Frequency')
 
@@ -71,20 +56,6 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_RepeatMode(self, RepeatMode):  # String
 		self.add_query_param('RepeatMode', RepeatMode)
-	def get_WindowsPasswordName(self): # String
-		return self.get_query_params().get('WindowsPasswordName')
-
-	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
-		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
-	def get_ResourceTags(self): # RepeatList
-		return self.get_query_params().get('ResourceTag')
-
-	def set_ResourceTags(self, ResourceTag):  # RepeatList
-		for depth1 in range(len(ResourceTag)):
-			if ResourceTag[depth1].get('Key') is not None:
-				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
-			if ResourceTag[depth1].get('Value') is not None:
-				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Value', ResourceTag[depth1].get('Value'))
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -99,26 +70,11 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_Timed(self, Timed):  # Boolean
 		self.add_query_param('Timed', Timed)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_TerminationMode(self): # String
-		return self.get_query_params().get('TerminationMode')
-
-	def set_TerminationMode(self, TerminationMode):  # String
-		self.add_query_param('TerminationMode', TerminationMode)
 	def get_InstanceIds(self): # RepeatList
 		return self.get_query_params().get('InstanceId')
 
@@ -135,13 +91,57 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # Json
 		self.add_query_param('Parameters', Parameters)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
-
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
 	def get_Launcher(self): # String
 		return self.get_query_params().get('Launcher')
 
 	def set_Launcher(self, Launcher):  # String
 		self.add_query_param('Launcher', Launcher)
+	def get_ContainerName(self): # String
+		return self.get_query_params().get('ContainerName')
+
+	def set_ContainerName(self, ContainerName):  # String
+		self.add_query_param('ContainerName', ContainerName)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Timeout(self): # Long
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self, Timeout):  # Long
+		self.add_query_param('Timeout', Timeout)
+	def get_WindowsPasswordName(self): # String
+		return self.get_query_params().get('WindowsPasswordName')
+
+	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
+		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
+	def get_ResourceTags(self): # RepeatList
+		return self.get_query_params().get('ResourceTag')
+
+	def set_ResourceTags(self, ResourceTag):  # RepeatList
+		for depth1 in range(len(ResourceTag)):
+			if ResourceTag[depth1].get('Key') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
+			if ResourceTag[depth1].get('Value') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Value', ResourceTag[depth1].get('Value'))
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TerminationMode(self): # String
+		return self.get_query_params().get('TerminationMode')
+
+	def set_TerminationMode(self, TerminationMode):  # String
+		self.add_query_param('TerminationMode', TerminationMode)
+	def get_Username(self): # String
+		return self.get_query_params().get('Username')
+
+	def set_Username(self, Username):  # String
+		self.add_query_param('Username', Username)

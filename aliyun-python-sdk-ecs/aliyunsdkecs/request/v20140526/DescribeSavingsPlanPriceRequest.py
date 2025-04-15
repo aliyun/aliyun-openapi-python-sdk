@@ -37,6 +37,16 @@ class DescribeSavingsPlanPriceRequest(RpcRequest):
 
 	def set_InstanceTypeFamilyGroup(self, InstanceTypeFamilyGroup):  # String
 		self.add_query_param('InstanceTypeFamilyGroup', InstanceTypeFamilyGroup)
+	def get_PlanType(self): # String
+		return self.get_query_params().get('PlanType')
+
+	def set_PlanType(self, PlanType):  # String
+		self.add_query_param('PlanType', PlanType)
+	def get_CommittedAmount(self): # String
+		return self.get_query_params().get('CommittedAmount')
+
+	def set_CommittedAmount(self, CommittedAmount):  # String
+		self.add_query_param('CommittedAmount', CommittedAmount)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -53,11 +63,6 @@ class DescribeSavingsPlanPriceRequest(RpcRequest):
 
 	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
 		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-	def get_PlanType(self): # String
-		return self.get_query_params().get('PlanType')
-
-	def set_PlanType(self, PlanType):  # String
-		self.add_query_param('PlanType', PlanType)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -68,8 +73,3 @@ class DescribeSavingsPlanPriceRequest(RpcRequest):
 
 	def set_OfferingType(self, OfferingType):  # String
 		self.add_query_param('OfferingType', OfferingType)
-	def get_CommittedAmount(self): # String
-		return self.get_query_params().get('CommittedAmount')
-
-	def set_CommittedAmount(self, CommittedAmount):  # String
-		self.add_query_param('CommittedAmount', CommittedAmount)

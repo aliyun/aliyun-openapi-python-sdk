@@ -270,6 +270,8 @@ class RunInstancesRequest(RpcRequest):
 	def set_NetworkOptions(self, NetworkOptions):  # Struct
 		if NetworkOptions.get('EnableJumboFrame') is not None:
 			self.add_query_param('NetworkOptions.EnableJumboFrame', NetworkOptions.get('EnableJumboFrame'))
+		if NetworkOptions.get('EnableNetworkEncryption') is not None:
+			self.add_query_param('NetworkOptions.EnableNetworkEncryption', NetworkOptions.get('EnableNetworkEncryption'))
 	def get_SystemDiskSize(self): # String
 		return self.get_query_params().get('SystemDisk.Size')
 

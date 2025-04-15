@@ -36,41 +36,16 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ServiceManaged(self): # Boolean
-		return self.get_query_params().get('ServiceManaged')
-
-	def set_ServiceManaged(self, ServiceManaged):  # Boolean
-		self.add_query_param('ServiceManaged', ServiceManaged)
-	def get_SecurityGroupId(self): # String
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self, SecurityGroupId):  # String
-		self.add_query_param('SecurityGroupId', SecurityGroupId)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -85,16 +60,6 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
 		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -116,27 +81,11 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_VpcId(self): # String
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self, VpcId):  # String
-		self.add_query_param('VpcId', VpcId)
-	def get_PrimaryIpAddress(self): # String
-		return self.get_query_params().get('PrimaryIpAddress')
-
-	def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
-		self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
-	def get_NetworkInterfaceIds(self): # RepeatList
-		return self.get_query_params().get('NetworkInterfaceId')
-
-	def set_NetworkInterfaceIds(self, NetworkInterfaceId):  # RepeatList
-		for depth1 in range(len(NetworkInterfaceId)):
-			self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId[depth1])
 	def get_Ipv6Addresss(self): # RepeatList
 		return self.get_query_params().get('Ipv6Address')
 
@@ -148,3 +97,54 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_Status(self, Status):  # String
 		self.add_query_param('Status', Status)
+	def get_ServiceManaged(self): # Boolean
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self, ServiceManaged):  # Boolean
+		self.add_query_param('ServiceManaged', ServiceManaged)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_PrimaryIpAddress(self): # String
+		return self.get_query_params().get('PrimaryIpAddress')
+
+	def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
+		self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
+	def get_NetworkInterfaceIds(self): # RepeatList
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceIds(self, NetworkInterfaceId):  # RepeatList
+		for depth1 in range(len(NetworkInterfaceId)):
+			self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId[depth1])

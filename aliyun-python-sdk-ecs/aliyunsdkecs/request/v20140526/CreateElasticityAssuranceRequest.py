@@ -36,16 +36,6 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
-
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
@@ -61,12 +51,6 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_PrivatePoolOptionsMatchCriteria(self, PrivatePoolOptionsMatchCriteria):  # String
 		self.add_query_param('PrivatePoolOptions.MatchCriteria', PrivatePoolOptionsMatchCriteria)
-	def get_InstanceTypes(self): # RepeatList
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceTypes(self, InstanceType):  # RepeatList
-		for depth1 in range(len(InstanceType)):
-			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType[depth1])
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -86,21 +70,6 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_PrivatePoolOptionsName(self): # String
-		return self.get_query_params().get('PrivatePoolOptions.Name')
-
-	def set_PrivatePoolOptionsName(self, PrivatePoolOptionsName):  # String
-		self.add_query_param('PrivatePoolOptions.Name', PrivatePoolOptionsName)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_AssuranceTimes(self): # String
 		return self.get_query_params().get('AssuranceTimes')
 
@@ -132,6 +101,42 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 	def set_ZoneIds(self, ZoneId):  # RepeatList
 		for depth1 in range(len(ZoneId)):
 			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId[depth1])
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
+
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InstanceTypes(self): # RepeatList
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceTypes(self, InstanceType):  # RepeatList
+		for depth1 in range(len(InstanceType)):
+			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType[depth1])
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_PrivatePoolOptionsName(self): # String
+		return self.get_query_params().get('PrivatePoolOptions.Name')
+
+	def set_PrivatePoolOptionsName(self, PrivatePoolOptionsName):  # String
+		self.add_query_param('PrivatePoolOptions.Name', PrivatePoolOptionsName)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_RecurrenceRuless(self): # RepeatList
 		return self.get_query_params().get('RecurrenceRules')
 
@@ -145,8 +150,3 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.StartHour', RecurrenceRules[depth1].get('StartHour'))
 			if RecurrenceRules[depth1].get('EndHour') is not None:
 				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.EndHour', RecurrenceRules[depth1].get('EndHour'))
-	def get_InstanceAmount(self): # Integer
-		return self.get_query_params().get('InstanceAmount')
-
-	def set_InstanceAmount(self, InstanceAmount):  # Integer
-		self.add_query_param('InstanceAmount', InstanceAmount)

@@ -63,6 +63,8 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', LaunchConfigurationDataDisk[depth1].get('ProvisionedIops'))
 			if LaunchConfigurationDataDisk[depth1].get('BurstingEnabled') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', LaunchConfigurationDataDisk[depth1].get('BurstingEnabled'))
+			if LaunchConfigurationDataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', LaunchConfigurationDataDisk[depth1].get('AutoSnapshotPolicyId'))
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -226,6 +228,13 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 			self.add_query_param('LaunchConfiguration.AutoRenew', LaunchConfiguration.get('AutoRenew'))
 		if LaunchConfiguration.get('AutoRenewPeriod') is not None:
 			self.add_query_param('LaunchConfiguration.AutoRenewPeriod', LaunchConfiguration.get('AutoRenewPeriod'))
+		if LaunchConfiguration.get('SpotDuration') is not None:
+			self.add_query_param('LaunchConfiguration.SpotDuration', LaunchConfiguration.get('SpotDuration'))
+		if LaunchConfiguration.get('SpotInterruptionBehavior') is not None:
+			self.add_query_param('LaunchConfiguration.SpotInterruptionBehavior', LaunchConfiguration.get('SpotInterruptionBehavior'))
+		if LaunchConfiguration.get('ImageOptions') is not None:
+			if LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot') is not None:
+				self.add_query_param('LaunchConfiguration.ImageOptions.LoginAsNonRoot', LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot'))
 	def get_LaunchConfigurationArns(self): # RepeatList
 		return self.get_query_params().get('LaunchConfiguration.Arn')
 
@@ -286,6 +295,8 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 			self.add_query_param('LaunchConfiguration.SystemDisk.ProvisionedIops', LaunchConfigurationSystemDisk.get('ProvisionedIops'))
 		if LaunchConfigurationSystemDisk.get('BurstingEnabled') is not None:
 			self.add_query_param('LaunchConfiguration.SystemDisk.BurstingEnabled', LaunchConfigurationSystemDisk.get('BurstingEnabled'))
+		if LaunchConfigurationSystemDisk.get('AutoSnapshotPolicyId') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.AutoSnapshotPolicyId', LaunchConfigurationSystemDisk.get('AutoSnapshotPolicyId'))
 	def get_LaunchConfigurationInstanceName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.InstanceName')
 

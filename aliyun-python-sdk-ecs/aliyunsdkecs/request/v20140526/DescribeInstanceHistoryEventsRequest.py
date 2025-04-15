@@ -31,27 +31,11 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EventIds(self): # RepeatList
-		return self.get_query_params().get('EventId')
-
-	def set_EventIds(self, EventId):  # RepeatList
-		for depth1 in range(len(EventId)):
-			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_EventCycleStatus(self): # String
-		return self.get_query_params().get('EventCycleStatus')
-
-	def set_EventCycleStatus(self, EventCycleStatus):  # String
-		self.add_query_param('EventCycleStatus', EventCycleStatus)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
 	def get_ImpactLevel(self): # String
 		return self.get_query_params().get('ImpactLevel')
 
@@ -62,16 +46,6 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
 	def get_InstanceEventCycleStatuss(self): # RepeatList
 		return self.get_query_params().get('InstanceEventCycleStatus')
 
@@ -87,6 +61,62 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_NotBeforeStart(self): # String
+		return self.get_query_params().get('NotBefore.Start')
+
+	def set_NotBeforeStart(self, NotBeforeStart):  # String
+		self.add_query_param('NotBefore.Start', NotBeforeStart)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NotBeforeEnd(self): # String
+		return self.get_query_params().get('NotBefore.End')
+
+	def set_NotBeforeEnd(self, NotBeforeEnd):  # String
+		self.add_query_param('NotBefore.End', NotBeforeEnd)
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)
+	def get_EventType(self): # String
+		return self.get_query_params().get('EventType')
+
+	def set_EventType(self, EventType):  # String
+		self.add_query_param('EventType', EventType)
+	def get_EventIds(self): # RepeatList
+		return self.get_query_params().get('EventId')
+
+	def set_EventIds(self, EventId):  # RepeatList
+		for depth1 in range(len(EventId)):
+			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
+	def get_EventCycleStatus(self): # String
+		return self.get_query_params().get('EventCycleStatus')
+
+	def set_EventCycleStatus(self, EventCycleStatus):  # String
+		self.add_query_param('EventCycleStatus', EventCycleStatus)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
 	def get_EventPublishTimeEnd(self): # String
 		return self.get_query_params().get('EventPublishTime.End')
 
@@ -114,16 +144,6 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_NotBeforeStart(self): # String
-		return self.get_query_params().get('NotBefore.Start')
-
-	def set_NotBeforeStart(self, NotBeforeStart):  # String
-		self.add_query_param('NotBefore.Start', NotBeforeStart)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
@@ -134,23 +154,3 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_EventPublishTimeStart(self, EventPublishTimeStart):  # String
 		self.add_query_param('EventPublishTime.Start', EventPublishTimeStart)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_NotBeforeEnd(self): # String
-		return self.get_query_params().get('NotBefore.End')
-
-	def set_NotBeforeEnd(self, NotBeforeEnd):  # String
-		self.add_query_param('NotBefore.End', NotBeforeEnd)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
-	def get_EventType(self): # String
-		return self.get_query_params().get('EventType')
-
-	def set_EventType(self, EventType):  # String
-		self.add_query_param('EventType', EventType)
