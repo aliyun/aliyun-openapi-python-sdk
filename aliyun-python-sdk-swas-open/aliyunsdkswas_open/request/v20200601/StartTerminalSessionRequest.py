@@ -25,6 +25,11 @@ class StartTerminalSessionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'StartTerminalSession','SWAS-OPEN')
 		self.set_method('POST')
 
+	def get_CommandLine(self): # String
+		return self.get_query_params().get('CommandLine')
+
+	def set_CommandLine(self, CommandLine):  # String
+		self.add_query_param('CommandLine', CommandLine)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
