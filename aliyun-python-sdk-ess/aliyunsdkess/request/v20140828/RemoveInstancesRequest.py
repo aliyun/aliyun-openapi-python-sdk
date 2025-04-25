@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
+import json
 
 class RemoveInstancesRequest(RpcRequest):
 
@@ -46,6 +47,11 @@ class RemoveInstancesRequest(RpcRequest):
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_LifecycleHookContext(self): # Struct
+		return self.get_query_params().get('LifecycleHookContext')
+
+	def set_LifecycleHookContext(self, LifecycleHookContext):  # Struct
+		self.add_query_param("LifecycleHookContext", json.dumps(LifecycleHookContext))
 	def get_DecreaseDesiredCapacity(self): # Boolean
 		return self.get_query_params().get('DecreaseDesiredCapacity')
 

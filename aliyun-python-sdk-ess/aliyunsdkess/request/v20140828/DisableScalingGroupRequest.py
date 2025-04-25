@@ -36,16 +36,16 @@ class DisableScalingGroupRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_ScalingGroupId(self): # String
 		return self.get_query_params().get('ScalingGroupId')
 
 	def set_ScalingGroupId(self, ScalingGroupId):  # String
 		self.add_query_param('ScalingGroupId', ScalingGroupId)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

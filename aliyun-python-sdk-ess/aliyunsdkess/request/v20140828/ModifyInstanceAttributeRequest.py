@@ -56,3 +56,9 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceIdss(self): # RepeatList
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIdss(self, InstanceIds):  # RepeatList
+		for depth1 in range(len(InstanceIds)):
+			self.add_query_param('InstanceIds.' + str(depth1 + 1), InstanceIds[depth1])

@@ -329,6 +329,15 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_PasswordInherit(self, PasswordInherit):  # Boolean
 		self.add_query_param('PasswordInherit', PasswordInherit)
+	def get_ResourcePoolOptions(self): # Struct
+		return self.get_query_params().get('ResourcePoolOptions')
+
+	def set_ResourcePoolOptions(self, ResourcePoolOptions):  # Struct
+		if ResourcePoolOptions.get('Strategy') is not None:
+			self.add_query_param('ResourcePoolOptions.Strategy', ResourcePoolOptions.get('Strategy'))
+		if ResourcePoolOptions.get('PrivatePoolIds') is not None:
+			for index1, value1 in enumerate(ResourcePoolOptions.get('PrivatePoolIds')):
+				self.add_query_param('ResourcePoolOptions.PrivatePoolIds.' + str(index1 + 1), value1)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
