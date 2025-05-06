@@ -31,16 +31,11 @@ class ModifyMaskingRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InterfaceVersion(self): # String
-		return self.get_query_params().get('InterfaceVersion')
+	def get_MaskingAlgo(self): # String
+		return self.get_query_params().get('MaskingAlgo')
 
-	def set_InterfaceVersion(self, InterfaceVersion):  # String
-		self.add_query_param('InterfaceVersion', InterfaceVersion)
-	def get_DBClusterId(self): # String
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self, DBClusterId):  # String
-		self.add_query_param('DBClusterId', DBClusterId)
+	def set_MaskingAlgo(self, MaskingAlgo):  # String
+		self.add_query_param('MaskingAlgo', MaskingAlgo)
 	def get_RuleName(self): # String
 		return self.get_query_params().get('RuleName')
 
@@ -51,16 +46,31 @@ class ModifyMaskingRulesRequest(RpcRequest):
 
 	def set_RuleVersion(self, RuleVersion):  # String
 		self.add_query_param('RuleVersion', RuleVersion)
-	def get_RuleConfig(self): # String
-		return self.get_query_params().get('RuleConfig')
-
-	def set_RuleConfig(self, RuleConfig):  # String
-		self.add_query_param('RuleConfig', RuleConfig)
 	def get_Enable(self): # String
 		return self.get_query_params().get('Enable')
 
 	def set_Enable(self, Enable):  # String
 		self.add_query_param('Enable', Enable)
+	def get_InterfaceVersion(self): # String
+		return self.get_query_params().get('InterfaceVersion')
+
+	def set_InterfaceVersion(self, InterfaceVersion):  # String
+		self.add_query_param('InterfaceVersion', InterfaceVersion)
+	def get_DBClusterId(self): # String
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self, DBClusterId):  # String
+		self.add_query_param('DBClusterId', DBClusterId)
+	def get_DefaultAlgo(self): # String
+		return self.get_query_params().get('DefaultAlgo')
+
+	def set_DefaultAlgo(self, DefaultAlgo):  # String
+		self.add_query_param('DefaultAlgo', DefaultAlgo)
+	def get_RuleConfig(self): # String
+		return self.get_query_params().get('RuleConfig')
+
+	def set_RuleConfig(self, RuleConfig):  # String
+		self.add_query_param('RuleConfig', RuleConfig)
 	def get_RuleNameList(self): # String
 		return self.get_query_params().get('RuleNameList')
 
