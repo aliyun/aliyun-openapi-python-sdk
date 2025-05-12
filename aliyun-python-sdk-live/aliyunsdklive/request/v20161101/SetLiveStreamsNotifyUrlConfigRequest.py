@@ -46,11 +46,6 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_NotifyUrl(self, NotifyUrl):  # String
 		self.add_query_param('NotifyUrl', NotifyUrl)
-	def get_NotifyType(self): # String
-		return self.get_query_params().get('NotifyType')
-
-	def set_NotifyType(self, NotifyType):  # String
-		self.add_query_param('NotifyType', NotifyType)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
@@ -61,11 +56,6 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_ExceptionNotifyType(self): # String
-		return self.get_query_params().get('ExceptionNotifyType')
-
-	def set_ExceptionNotifyType(self, ExceptionNotifyType):  # String
-		self.add_query_param('ExceptionNotifyType', ExceptionNotifyType)
 	def get_NotifyAuthKey(self): # String
 		return self.get_query_params().get('NotifyAuthKey')
 

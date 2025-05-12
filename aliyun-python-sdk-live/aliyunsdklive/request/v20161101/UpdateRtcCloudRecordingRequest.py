@@ -19,11 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
+import json
 
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class UpdateRtcCloudRecordingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateRtcCloudRecording','live')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +33,18 @@ class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DomainName(self): # String
-		return self.get_query_params().get('DomainName')
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
 
-	def set_DomainName(self, DomainName):  # String
-		self.add_query_param('DomainName', DomainName)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
+	def get_SubscribeParams(self): # Struct
+		return self.get_query_params().get('SubscribeParams')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
+	def set_SubscribeParams(self, SubscribeParams):  # Struct
+		self.add_query_param("SubscribeParams", json.dumps(SubscribeParams))
+	def get_MixLayoutParams(self): # Struct
+		return self.get_query_params().get('MixLayoutParams')
+
+	def set_MixLayoutParams(self, MixLayoutParams):  # Struct
+		self.add_query_param("MixLayoutParams", json.dumps(MixLayoutParams))
