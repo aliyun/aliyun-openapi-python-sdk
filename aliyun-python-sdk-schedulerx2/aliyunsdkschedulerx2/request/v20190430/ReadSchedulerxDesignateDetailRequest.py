@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GrantPermissionRequest(RpcRequest):
+class ReadSchedulerxDesignateDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GrantPermission','schedulerx2')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ReadSchedulerxDesignateDetail','schedulerx2')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +37,23 @@ class GrantPermissionRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_GrantOption(self): # Boolean
-		return self.get_query_params().get('GrantOption')
-
-	def set_GrantOption(self, GrantOption):  # Boolean
-		self.add_query_param('GrantOption', GrantOption)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_DesignateType(self): # Integer
+		return self.get_query_params().get('DesignateType')
+
+	def set_DesignateType(self, DesignateType):  # Integer
+		self.add_query_param('DesignateType', DesignateType)
+	def get_JobId(self): # Long
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self, JobId):  # Long
+		self.add_query_param('JobId', JobId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
-	def get_UserName(self): # String
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self, UserName):  # String
-		self.add_query_param('UserName', UserName)

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GrantPermissionRequest(RpcRequest):
+class UpdateJobScriptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GrantPermission','schedulerx2')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateJobScript','schedulerx2')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,32 +33,32 @@ class GrantPermissionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_NamespaceSource(self): # String
-		return self.get_query_params().get('NamespaceSource')
+		return self.get_body_params().get('NamespaceSource')
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
-		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+		self.add_body_params('NamespaceSource', NamespaceSource)
+	def get_JobId(self): # Long
+		return self.get_body_params().get('JobId')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
-	def get_GrantOption(self): # Boolean
-		return self.get_query_params().get('GrantOption')
-
-	def set_GrantOption(self, GrantOption):  # Boolean
-		self.add_query_param('GrantOption', GrantOption)
+	def set_JobId(self, JobId):  # Long
+		self.add_body_params('JobId', JobId)
 	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
+		return self.get_body_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
+		self.add_body_params('GroupId', GroupId)
 	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
+		return self.get_body_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
-	def get_UserName(self): # String
-		return self.get_query_params().get('UserName')
+		self.add_body_params('Namespace', Namespace)
+	def get_ScriptContent(self): # String
+		return self.get_body_params().get('ScriptContent')
 
-	def set_UserName(self, UserName):  # String
-		self.add_query_param('UserName', UserName)
+	def set_ScriptContent(self, ScriptContent):  # String
+		self.add_body_params('ScriptContent', ScriptContent)
+	def get_VersionDescription(self): # String
+		return self.get_body_params().get('VersionDescription')
+
+	def set_VersionDescription(self, VersionDescription):  # String
+		self.add_body_params('VersionDescription', VersionDescription)

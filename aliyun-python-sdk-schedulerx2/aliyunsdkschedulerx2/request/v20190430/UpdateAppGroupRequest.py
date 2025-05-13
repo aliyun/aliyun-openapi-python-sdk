@@ -36,6 +36,11 @@ class UpdateAppGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_MonitorContactsJson(self): # String
+		return self.get_query_params().get('MonitorContactsJson')
+
+	def set_MonitorContactsJson(self, MonitorContactsJson):  # String
+		self.add_query_param('MonitorContactsJson', MonitorContactsJson)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -46,6 +51,11 @@ class UpdateAppGroupRequest(RpcRequest):
 
 	def set_AppVersion(self, AppVersion):  # Integer
 		self.add_query_param('AppVersion', AppVersion)
+	def get_MonitorConfigJson(self): # String
+		return self.get_query_params().get('MonitorConfigJson')
+
+	def set_MonitorConfigJson(self, MonitorConfigJson):  # String
+		self.add_query_param('MonitorConfigJson', MonitorConfigJson)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
