@@ -46,6 +46,11 @@ class RegisterCustomFaceRequest(RpcRequest):
 
 	def set_CategoryId(self, CategoryId):  # String
 		self.add_query_param('CategoryId', CategoryId)
+	def get_PersonName(self): # String
+		return self.get_query_params().get('PersonName')
+
+	def set_PersonName(self, PersonName):  # String
+		self.add_query_param('PersonName', PersonName)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

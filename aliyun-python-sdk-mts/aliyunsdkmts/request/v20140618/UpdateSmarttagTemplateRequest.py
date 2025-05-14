@@ -56,6 +56,11 @@ class UpdateSmarttagTemplateRequest(RpcRequest):
 
 	def set_Scene(self, Scene):  # String
 		self.add_query_param('Scene', Scene)
+	def get_TemplateConfig(self): # String
+		return self.get_query_params().get('TemplateConfig')
+
+	def set_TemplateConfig(self, TemplateConfig):  # String
+		self.add_query_param('TemplateConfig', TemplateConfig)
 	def get_FaceCustomParamsConfig(self): # String
 		return self.get_query_params().get('FaceCustomParamsConfig')
 
