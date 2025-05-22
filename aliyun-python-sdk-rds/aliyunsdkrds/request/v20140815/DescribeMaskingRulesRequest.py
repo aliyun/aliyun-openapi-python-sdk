@@ -24,7 +24,6 @@ class DescribeMaskingRulesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMaskingRules','rds')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -57,3 +56,8 @@ class DescribeMaskingRulesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBName(self): # String
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)

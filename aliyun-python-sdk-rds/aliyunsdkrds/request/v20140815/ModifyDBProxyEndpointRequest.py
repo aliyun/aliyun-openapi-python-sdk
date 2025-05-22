@@ -41,6 +41,16 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def set_ConfigDBProxyFeatures(self, ConfigDBProxyFeatures):  # String
 		self.add_query_param('ConfigDBProxyFeatures', ConfigDBProxyFeatures)
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_EffectiveSpecificTime(self): # String
+		return self.get_query_params().get('EffectiveSpecificTime')
+
+	def set_EffectiveSpecificTime(self, EffectiveSpecificTime):  # String
+		self.add_query_param('EffectiveSpecificTime', EffectiveSpecificTime)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -61,6 +71,11 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_DbEndpointMinSlaveCount(self): # String
+		return self.get_query_params().get('DbEndpointMinSlaveCount')
+
+	def set_DbEndpointMinSlaveCount(self, DbEndpointMinSlaveCount):  # String
+		self.add_query_param('DbEndpointMinSlaveCount', DbEndpointMinSlaveCount)
 	def get_DbEndpointAliases(self): # String
 		return self.get_query_params().get('DbEndpointAliases')
 
@@ -71,6 +86,11 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def set_DBProxyEngineType(self, DBProxyEngineType):  # String
 		self.add_query_param('DBProxyEngineType', DBProxyEngineType)
+	def get_CausalConsistReadTimeout(self): # String
+		return self.get_query_params().get('CausalConsistReadTimeout')
+
+	def set_CausalConsistReadTimeout(self, CausalConsistReadTimeout):  # String
+		self.add_query_param('CausalConsistReadTimeout', CausalConsistReadTimeout)
 	def get_DbEndpointOperator(self): # String
 		return self.get_query_params().get('DbEndpointOperator')
 
@@ -91,11 +111,21 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 
 	def set_DbEndpointReadWriteMode(self, DbEndpointReadWriteMode):  # String
 		self.add_query_param('DbEndpointReadWriteMode', DbEndpointReadWriteMode)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
 	def get_DBProxyEndpointId(self): # String
 		return self.get_query_params().get('DBProxyEndpointId')
 
 	def set_DBProxyEndpointId(self, DBProxyEndpointId):  # String
 		self.add_query_param('DBProxyEndpointId', DBProxyEndpointId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
 	def get_ReadOnlyInstanceDistributionType(self): # String
 		return self.get_query_params().get('ReadOnlyInstanceDistributionType')
 

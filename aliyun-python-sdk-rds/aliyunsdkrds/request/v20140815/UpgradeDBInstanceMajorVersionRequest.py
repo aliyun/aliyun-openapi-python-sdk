@@ -41,6 +41,46 @@ class UpgradeDBInstanceMajorVersionRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_Period(self): # String
+		return self.get_query_params().get('Period')
+
+	def set_Period(self, Period):  # String
+		self.add_query_param('Period', Period)
+	def get_UpgradeMode(self): # String
+		return self.get_query_params().get('UpgradeMode')
+
+	def set_UpgradeMode(self, UpgradeMode):  # String
+		self.add_query_param('UpgradeMode', UpgradeMode)
+	def get_DBInstanceClass(self): # String
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_PrivateIpAddress(self): # String
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_InstanceNetworkType(self): # String
+		return self.get_query_params().get('InstanceNetworkType')
+
+	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
+		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def get_TargetMajorVersion(self): # String
+		return self.get_query_params().get('TargetMajorVersion')
+
+	def set_TargetMajorVersion(self, TargetMajorVersion):  # String
+		self.add_query_param('TargetMajorVersion', TargetMajorVersion)
 	def get_ZoneIdSlave1(self): # String
 		return self.get_query_params().get('ZoneIdSlave1')
 
@@ -81,53 +121,18 @@ class UpgradeDBInstanceMajorVersionRequest(RpcRequest):
 
 	def set_DBInstanceStorageType(self, DBInstanceStorageType):  # String
 		self.add_query_param('DBInstanceStorageType', DBInstanceStorageType)
-	def get_Period(self): # String
-		return self.get_query_params().get('Period')
-
-	def set_Period(self, Period):  # String
-		self.add_query_param('Period', Period)
 	def get_UsedTime(self): # String
 		return self.get_query_params().get('UsedTime')
 
 	def set_UsedTime(self, UsedTime):  # String
 		self.add_query_param('UsedTime', UsedTime)
-	def get_DBInstanceClass(self): # String
-		return self.get_query_params().get('DBInstanceClass')
-
-	def set_DBInstanceClass(self, DBInstanceClass):  # String
-		self.add_query_param('DBInstanceClass', DBInstanceClass)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_PrivateIpAddress(self): # String
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
 	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 
 	def set_PayType(self, PayType):  # String
 		self.add_query_param('PayType', PayType)
-	def get_InstanceNetworkType(self): # String
-		return self.get_query_params().get('InstanceNetworkType')
-
-	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
-		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
-	def get_TargetMajorVersion(self): # String
-		return self.get_query_params().get('TargetMajorVersion')
-
-	def set_TargetMajorVersion(self, TargetMajorVersion):  # String
-		self.add_query_param('TargetMajorVersion', TargetMajorVersion)

@@ -42,11 +42,56 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_OptimizedWrites(self): # String
+		return self.get_query_params().get('OptimizedWrites')
+
+	def set_OptimizedWrites(self, OptimizedWrites):  # String
+		self.add_query_param('OptimizedWrites', OptimizedWrites)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ServerlessConfiguration(self): # Struct
+		return self.get_query_params().get('ServerlessConfiguration')
+
+	def set_ServerlessConfiguration(self, ServerlessConfiguration):  # Struct
+		self.add_query_param("ServerlessConfiguration", json.dumps(ServerlessConfiguration))
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DBInstanceClass(self): # String
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self, DBInstanceClass):  # String
+		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_ZoneIdSlave1(self): # String
+		return self.get_query_params().get('ZoneIdSlave1')
+
+	def set_ZoneIdSlave1(self, ZoneIdSlave1):  # String
+		self.add_query_param('ZoneIdSlave1', ZoneIdSlave1)
 	def get_AutoUseCoupon(self): # Boolean
 		return self.get_query_params().get('AutoUseCoupon')
 
@@ -62,21 +107,16 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_ColdDataEnabled(self, ColdDataEnabled):  # Boolean
 		self.add_query_param('ColdDataEnabled', ColdDataEnabled)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_ServerlessConfiguration(self): # Struct
-		return self.get_query_params().get('ServerlessConfiguration')
-
-	def set_ServerlessConfiguration(self, ServerlessConfiguration):  # Struct
-		self.add_query_param("ServerlessConfiguration", json.dumps(ServerlessConfiguration))
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
 	def set_EffectiveTime(self, EffectiveTime):  # String
 		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_ReadOnlyDBInstanceClass(self): # String
+		return self.get_query_params().get('ReadOnlyDBInstanceClass')
+
+	def set_ReadOnlyDBInstanceClass(self, ReadOnlyDBInstanceClass):  # String
+		self.add_query_param('ReadOnlyDBInstanceClass', ReadOnlyDBInstanceClass)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -107,6 +147,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_Direction(self, Direction):  # String
 		self.add_query_param('Direction', Direction)
+	def get_CompressionMode(self): # String
+		return self.get_query_params().get('CompressionMode')
+
+	def set_CompressionMode(self, CompressionMode):  # String
+		self.add_query_param('CompressionMode', CompressionMode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -117,11 +162,6 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_UsedTime(self): # Long
 		return self.get_query_params().get('UsedTime')
 
@@ -137,16 +177,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_TargetMinorVersion(self, TargetMinorVersion):  # String
 		self.add_query_param('TargetMinorVersion', TargetMinorVersion)
-	def get_DBInstanceClass(self): # String
-		return self.get_query_params().get('DBInstanceClass')
+	def get_AllowMajorVersionUpgrade(self): # Boolean
+		return self.get_query_params().get('AllowMajorVersionUpgrade')
 
-	def set_DBInstanceClass(self, DBInstanceClass):  # String
-		self.add_query_param('DBInstanceClass', DBInstanceClass)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
+	def set_AllowMajorVersionUpgrade(self, AllowMajorVersionUpgrade):  # Boolean
+		self.add_query_param('AllowMajorVersionUpgrade', AllowMajorVersionUpgrade)
 	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 

@@ -41,6 +41,11 @@ class ModifyDBInstanceConfigRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_SwitchTimeMode(self): # String
+		return self.get_query_params().get('SwitchTimeMode')
+
+	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
+		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -56,6 +61,11 @@ class ModifyDBInstanceConfigRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_SwitchTime(self): # String
+		return self.get_query_params().get('SwitchTime')
+
+	def set_SwitchTime(self, SwitchTime):  # String
+		self.add_query_param('SwitchTime', SwitchTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

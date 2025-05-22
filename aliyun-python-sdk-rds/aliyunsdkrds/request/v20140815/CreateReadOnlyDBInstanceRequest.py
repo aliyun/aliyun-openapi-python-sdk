@@ -116,6 +116,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_Port(self, Port):  # String
 		self.add_query_param('Port', Port)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -136,6 +141,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_InstructionSetArch(self, InstructionSetArch):  # String
 		self.add_query_param('InstructionSetArch', InstructionSetArch)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_IoAccelerationEnabled(self): # String
 		return self.get_query_params().get('IoAccelerationEnabled')
 

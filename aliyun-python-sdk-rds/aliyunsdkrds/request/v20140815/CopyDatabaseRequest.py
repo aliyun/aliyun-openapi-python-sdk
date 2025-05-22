@@ -31,6 +31,11 @@ class CopyDatabaseRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBInstanceName(self): # String
+		return self.get_query_params().get('DBInstanceName')
+
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -41,6 +46,16 @@ class CopyDatabaseRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ReserveAccount(self): # Integer
+		return self.get_query_params().get('ReserveAccount')
+
+	def set_ReserveAccount(self, ReserveAccount):  # Integer
+		self.add_query_param('ReserveAccount', ReserveAccount)
+	def get_SrcDBName(self): # String
+		return self.get_query_params().get('SrcDBName')
+
+	def set_SrcDBName(self, SrcDBName):  # String
+		self.add_query_param('SrcDBName', SrcDBName)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,3 +66,8 @@ class CopyDatabaseRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DstDBName(self): # String
+		return self.get_query_params().get('DstDBName')
+
+	def set_DstDBName(self, DstDBName):  # String
+		self.add_query_param('DstDBName', DstDBName)

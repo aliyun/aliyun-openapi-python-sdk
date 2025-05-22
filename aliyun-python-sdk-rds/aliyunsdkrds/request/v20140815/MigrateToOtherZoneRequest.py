@@ -76,6 +76,11 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_SwitchTime(self, SwitchTime):  # String
 		self.add_query_param('SwitchTime', SwitchTime)
+	def get_DBInstanceStorageType(self): # String
+		return self.get_query_params().get('DBInstanceStorageType')
+
+	def set_DBInstanceStorageType(self, DBInstanceStorageType):  # String
+		self.add_query_param('DBInstanceStorageType', DBInstanceStorageType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

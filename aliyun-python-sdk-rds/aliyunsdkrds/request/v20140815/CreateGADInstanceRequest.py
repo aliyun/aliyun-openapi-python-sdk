@@ -79,10 +79,10 @@ class CreateGADInstanceRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.SecurityIPList', UnitNode[depth1].get('SecurityIPList'))
 			if UnitNode[depth1].get('VSwitchID') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.VSwitchID', UnitNode[depth1].get('VSwitchID'))
-			if UnitNode[depth1].get('RegionID') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
 			if UnitNode[depth1].get('Engine') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.Engine', UnitNode[depth1].get('Engine'))
+			if UnitNode[depth1].get('RegionID') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
 			if UnitNode[depth1].get('DtsInstanceClass') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsInstanceClass', UnitNode[depth1].get('DtsInstanceClass'))
 			if UnitNode[depth1].get('VpcID') is not None:
@@ -93,10 +93,10 @@ class CreateGADInstanceRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DBInstanceDescription', UnitNode[depth1].get('DBInstanceDescription'))
 			if UnitNode[depth1].get('DBInstanceStorageType') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DBInstanceStorageType', UnitNode[depth1].get('DBInstanceStorageType'))
-			if UnitNode[depth1].get('PayType') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.PayType', UnitNode[depth1].get('PayType'))
 			if UnitNode[depth1].get('DtsConflict') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsConflict', UnitNode[depth1].get('DtsConflict'))
+			if UnitNode[depth1].get('PayType') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.PayType', UnitNode[depth1].get('PayType'))
 	def get_DBList(self): # String
 		return self.get_query_params().get('DBList')
 

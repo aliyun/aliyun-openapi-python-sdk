@@ -47,6 +47,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_DeletionProtection(self, DeletionProtection):  # Boolean
 		self.add_query_param('DeletionProtection', DeletionProtection)
+	def get_DBInstanceDescription(self): # String
+		return self.get_query_params().get('DBInstanceDescription')
+
+	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
+		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
 	def get_BackupType(self): # String
 		return self.get_query_params().get('BackupType')
 

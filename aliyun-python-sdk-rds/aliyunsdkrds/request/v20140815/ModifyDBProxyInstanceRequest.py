@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class ModifyDBProxyInstanceRequest(RpcRequest):
 
@@ -41,6 +42,11 @@ class ModifyDBProxyInstanceRequest(RpcRequest):
 
 	def set_VSwitchIds(self, VSwitchIds):  # String
 		self.add_query_param('VSwitchIds', VSwitchIds)
+	def get_MigrateAZ(self): # Array
+		return self.get_query_params().get('MigrateAZ')
+
+	def set_MigrateAZ(self, MigrateAZ):  # Array
+		self.add_query_param("MigrateAZ", json.dumps(MigrateAZ))
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
@@ -51,6 +57,11 @@ class ModifyDBProxyInstanceRequest(RpcRequest):
 
 	def set_EffectiveSpecificTime(self, EffectiveSpecificTime):  # String
 		self.add_query_param('EffectiveSpecificTime', EffectiveSpecificTime)
+	def get_DBProxyNodes(self): # Array
+		return self.get_query_params().get('DBProxyNodes')
+
+	def set_DBProxyNodes(self, DBProxyNodes):  # Array
+		self.add_query_param("DBProxyNodes", json.dumps(DBProxyNodes))
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

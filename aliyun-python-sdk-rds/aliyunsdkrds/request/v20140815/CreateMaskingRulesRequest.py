@@ -25,7 +25,6 @@ class CreateMaskingRulesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateMaskingRules','rds')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -73,3 +72,8 @@ class CreateMaskingRulesRequest(RpcRequest):
 
 	def set_RuleConfig(self, RuleConfig):  # Struct
 		self.add_query_param("RuleConfig", json.dumps(RuleConfig))
+	def get_DBName(self): # String
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)
