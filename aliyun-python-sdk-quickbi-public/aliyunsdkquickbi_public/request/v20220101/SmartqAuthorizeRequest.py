@@ -36,6 +36,11 @@ class SmartqAuthorizeRequest(RpcRequest):
 
 	def set_LlmCubes(self, LlmCubes):  # String
 		self.add_query_param('LlmCubes', LlmCubes)
+	def get_CubeIds(self): # String
+		return self.get_query_params().get('CubeIds')
+
+	def set_CubeIds(self, CubeIds):  # String
+		self.add_query_param('CubeIds', CubeIds)
 	def get_OperationType(self): # Integer
 		return self.get_query_params().get('OperationType')
 
