@@ -28,6 +28,11 @@ class PodcastTaskSubmitRequest(RoaRequest):
 		self.set_uri_pattern('/podcast/task/submit')
 		self.set_method('POST')
 
+	def get_sourceLang(self): # String
+		return self.get_body_params().get('sourceLang')
+
+	def set_sourceLang(self, sourceLang):  # String
+		self.add_body_params('sourceLang', sourceLang)
 	def get_counts(self): # Integer
 		return self.get_body_params().get('counts')
 
