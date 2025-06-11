@@ -46,6 +46,11 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_NotifyUrl(self, NotifyUrl):  # String
 		self.add_query_param('NotifyUrl', NotifyUrl)
+	def get_SwitchNotifyUrl(self): # String
+		return self.get_query_params().get('SwitchNotifyUrl')
+
+	def set_SwitchNotifyUrl(self, SwitchNotifyUrl):  # String
+		self.add_query_param('SwitchNotifyUrl', SwitchNotifyUrl)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 
