@@ -36,6 +36,11 @@ class DescribeProcessStatsCompositionRequest(RpcRequest):
 
 	def set_UId(self, UId):  # String
 		self.add_body_params('UId', UId)
+	def get_MergeDynamicSql(self): # Boolean
+		return self.get_body_params().get('MergeDynamicSql')
+
+	def set_MergeDynamicSql(self, MergeDynamicSql):  # Boolean
+		self.add_body_params('MergeDynamicSql', MergeDynamicSql)
 	def get_SqlText(self): # String
 		return self.get_body_params().get('SqlText')
 

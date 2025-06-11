@@ -36,6 +36,11 @@ class DescribeOasTopSQLListRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
+	def get_CustomColumns(self): # String
+		return self.get_body_params().get('CustomColumns')
+
+	def set_CustomColumns(self, CustomColumns):  # String
+		self.add_body_params('CustomColumns', CustomColumns)
 	def get_SearchRule(self): # String
 		return self.get_body_params().get('SearchRule')
 

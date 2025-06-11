@@ -46,6 +46,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_body_params('ResourceGroupId', ResourceGroupId)
+	def get_PageSize(self): # Integer
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_body_params('PageSize', PageSize)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
@@ -56,8 +61,8 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_body_params('InstanceName', InstanceName)
-	def get_PageSize(self): # Integer
-		return self.get_body_params().get('PageSize')
+	def get_WithOBCloudInstances(self): # Boolean
+		return self.get_body_params().get('WithOBCloudInstances')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_body_params('PageSize', PageSize)
+	def set_WithOBCloudInstances(self, WithOBCloudInstances):  # Boolean
+		self.add_body_params('WithOBCloudInstances', WithOBCloudInstances)
