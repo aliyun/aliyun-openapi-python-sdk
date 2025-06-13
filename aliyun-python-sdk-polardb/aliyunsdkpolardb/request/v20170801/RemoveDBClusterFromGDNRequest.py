@@ -66,3 +66,8 @@ class RemoveDBClusterFromGDNRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)
