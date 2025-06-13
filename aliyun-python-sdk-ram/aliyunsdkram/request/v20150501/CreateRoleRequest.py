@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
+import json
 
 class CreateRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateRole','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateRole','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -42,6 +43,11 @@ class CreateRoleRequest(RpcRequest):
 
 	def set_AssumeRolePolicyDocument(self, AssumeRolePolicyDocument):  # String
 		self.add_query_param('AssumeRolePolicyDocument', AssumeRolePolicyDocument)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		self.add_query_param("Tag", json.dumps(Tag))
 	def get_MaxSessionDuration(self): # Long
 		return self.get_query_params().get('MaxSessionDuration')
 

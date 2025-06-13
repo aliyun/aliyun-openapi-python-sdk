@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
+import json
 
-class GetAccountAliasRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetAccountAlias','ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UntagResources','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,3 +33,23 @@ class GetAccountAliasRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceNames(self): # Array
+		return self.get_query_params().get('ResourceNames')
+
+	def set_ResourceNames(self, ResourceNames):  # Array
+		self.add_query_param("ResourceNames", json.dumps(ResourceNames))
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
+
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # Array
+		return self.get_query_params().get('TagKeys')
+
+	def set_TagKeys(self, TagKeys):  # Array
+		self.add_query_param("TagKeys", json.dumps(TagKeys))

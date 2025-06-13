@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class DeletePolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicy','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicy','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,6 +32,11 @@ class DeletePolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CascadingDelete(self): # Boolean
+		return self.get_query_params().get('CascadingDelete')
+
+	def set_CascadingDelete(self, CascadingDelete):  # Boolean
+		self.add_query_param('CascadingDelete', CascadingDelete)
 	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 

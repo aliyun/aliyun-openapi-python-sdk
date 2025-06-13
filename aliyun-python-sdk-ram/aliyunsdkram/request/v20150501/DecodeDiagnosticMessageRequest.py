@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
 
-class GetAccountAliasRequest(RpcRequest):
+class DecodeDiagnosticMessageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetAccountAlias','ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DecodeDiagnosticMessage','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,3 +32,8 @@ class GetAccountAliasRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_EncodedDiagnosticMessage(self): # String
+		return self.get_query_params().get('EncodedDiagnosticMessage')
+
+	def set_EncodedDiagnosticMessage(self, EncodedDiagnosticMessage):  # String
+		self.add_query_param('EncodedDiagnosticMessage', EncodedDiagnosticMessage)

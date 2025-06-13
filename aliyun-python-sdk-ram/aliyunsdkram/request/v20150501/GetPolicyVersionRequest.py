@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class GetPolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetPolicyVersion','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetPolicyVersion','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,16 +32,16 @@ class GetPolicyVersionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PolicyType(self): # String
-		return self.get_query_params().get('PolicyType')
-
-	def set_PolicyType(self, PolicyType):  # String
-		self.add_query_param('PolicyType', PolicyType)
 	def get_VersionId(self): # String
 		return self.get_query_params().get('VersionId')
 
 	def set_VersionId(self, VersionId):  # String
 		self.add_query_param('VersionId', VersionId)
+	def get_PolicyType(self): # String
+		return self.get_query_params().get('PolicyType')
+
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_query_param('PolicyType', PolicyType)
 	def get_PolicyName(self): # String
 		return self.get_query_params().get('PolicyName')
 

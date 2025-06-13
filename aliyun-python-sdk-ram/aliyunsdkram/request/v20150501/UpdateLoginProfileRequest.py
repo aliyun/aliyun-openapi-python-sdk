@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class UpdateLoginProfileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateLoginProfile','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateLoginProfile','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

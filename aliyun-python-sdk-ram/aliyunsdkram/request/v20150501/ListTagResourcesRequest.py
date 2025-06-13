@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
+import json
 
-class GetAccountAliasRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetAccountAlias','ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListTagResources','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,3 +33,28 @@ class GetAccountAliasRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceNames(self): # Array
+		return self.get_query_params().get('ResourceNames')
+
+	def set_ResourceNames(self, ResourceNames):  # Array
+		self.add_query_param("ResourceNames", json.dumps(ResourceNames))
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		self.add_query_param("Tag", json.dumps(Tag))
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)

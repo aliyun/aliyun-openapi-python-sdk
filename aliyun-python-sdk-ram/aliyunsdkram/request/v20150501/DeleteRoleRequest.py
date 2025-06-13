@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class DeleteRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeleteRole','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeleteRole','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class DeletePolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicyVersion','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicyVersion','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
