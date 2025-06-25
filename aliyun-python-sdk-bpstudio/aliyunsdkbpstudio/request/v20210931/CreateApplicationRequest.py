@@ -56,6 +56,11 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Variables(self, Variables):  # Map
 		self.add_body_params("Variables", json.dumps(Variables))
+	def get_ProcessVariables(self): # Map
+		return self.get_body_params().get('ProcessVariables')
+
+	def set_ProcessVariables(self, ProcessVariables):  # Map
+		self.add_body_params("ProcessVariables", json.dumps(ProcessVariables))
 	def get_TemplateId(self): # String
 		return self.get_body_params().get('TemplateId')
 
