@@ -18,12 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-import json
 
-class SyncDepartmentUserRequest(RpcRequest):
+class GetStreamJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'SyncDepartmentUser')
+		RpcRequest.__init__(self, 'dataphin-public', '2023-06-30', 'GetStreamJobs')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,8 +31,13 @@ class SyncDepartmentUserRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_SyncDepartmentUserCommand(self): # Struct
-		return self.get_body_params().get('SyncDepartmentUserCommand')
+	def get_Env(self): # String
+		return self.get_query_params().get('Env')
 
-	def set_SyncDepartmentUserCommand(self, SyncDepartmentUserCommand):  # Struct
-		self.add_body_params("SyncDepartmentUserCommand", json.dumps(SyncDepartmentUserCommand))
+	def set_Env(self, Env):  # String
+		self.add_query_param('Env', Env)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)

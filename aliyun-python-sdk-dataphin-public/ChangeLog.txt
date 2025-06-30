@@ -1,3 +1,6 @@
+2025-06-30 Version: 1.0.8
+- Add api GetStreamJobs .
+
 2025-04-28 Version: 1.0.7
 - Dataphin v5.1.0 openAPI changs log.
 - Add API ListRowPermission.
