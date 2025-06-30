@@ -23,7 +23,7 @@ from aliyunsdksts.endpoint import endpoint_data
 class GetCallerIdentityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'GetCallerIdentity')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'GetCallerIdentity','sts')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -23,7 +23,7 @@ from aliyunsdksts.endpoint import endpoint_data
 class AssumeRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole','sts')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -37,6 +37,11 @@ class AssumeRoleRequest(RpcRequest):
 
 	def set_ExternalId(self, ExternalId):  # String
 		self.add_query_param('ExternalId', ExternalId)
+	def get_SourceIdentity(self): # String
+		return self.get_query_params().get('SourceIdentity')
+
+	def set_SourceIdentity(self, SourceIdentity):  # String
+		self.add_query_param('SourceIdentity', SourceIdentity)
 	def get_RoleSessionName(self): # String
 		return self.get_query_params().get('RoleSessionName')
 
