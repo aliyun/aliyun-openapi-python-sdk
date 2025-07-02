@@ -99,3 +99,8 @@ class DescribeUsersRequest(RpcRequest):
 
 	def set_ShowExtras(self, ShowExtras):  # Map
 		self.add_body_params("ShowExtras", json.dumps(ShowExtras))
+	def get_Status(self): # Integer
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # Integer
+		self.add_query_param('Status', Status)
