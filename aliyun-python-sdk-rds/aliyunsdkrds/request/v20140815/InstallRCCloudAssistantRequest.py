@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
-class DescribeRCInstanceAttributeRequest(RpcRequest):
+class InstallRCCloudAssistantRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeRCInstanceAttribute','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'InstallRCCloudAssistant','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +32,8 @@ class DescribeRCInstanceAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PrivateIpAddress(self): # String
-		return self.get_query_params().get('PrivateIpAddress')
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
 
-	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_MaxDisksResults(self): # Long
-		return self.get_query_params().get('MaxDisksResults')
-
-	def set_MaxDisksResults(self, MaxDisksResults):  # Long
-		self.add_query_param('MaxDisksResults', MaxDisksResults)
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))

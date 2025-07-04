@@ -206,6 +206,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_TargetDedicatedHostIdForSlave(self, TargetDedicatedHostIdForSlave):  # String
 		self.add_query_param('TargetDedicatedHostIdForSlave', TargetDedicatedHostIdForSlave)
+	def get_ExternalReplication(self): # Boolean
+		return self.get_query_params().get('ExternalReplication')
+
+	def set_ExternalReplication(self, ExternalReplication):  # Boolean
+		self.add_query_param('ExternalReplication', ExternalReplication)
 	def get_ZoneIdSlave1(self): # String
 		return self.get_query_params().get('ZoneIdSlave1')
 

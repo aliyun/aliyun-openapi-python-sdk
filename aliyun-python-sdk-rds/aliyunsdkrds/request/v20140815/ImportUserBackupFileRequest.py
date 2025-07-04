@@ -36,11 +36,21 @@ class ImportUserBackupFileRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SourceInfo(self): # String
+		return self.get_query_params().get('SourceInfo')
+
+	def set_SourceInfo(self, SourceInfo):  # String
+		self.add_query_param('SourceInfo', SourceInfo)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
+	def get_Mode(self): # String
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self, Mode):  # String
+		self.add_query_param('Mode', Mode)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -76,6 +86,16 @@ class ImportUserBackupFileRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MasterInfo(self): # String
+		return self.get_query_params().get('MasterInfo')
+
+	def set_MasterInfo(self, MasterInfo):  # String
+		self.add_query_param('MasterInfo', MasterInfo)
+	def get_BuildReplication(self): # Boolean
+		return self.get_query_params().get('BuildReplication')
+
+	def set_BuildReplication(self, BuildReplication):  # Boolean
+		self.add_query_param('BuildReplication', BuildReplication)
 	def get_RestoreSize(self): # Integer
 		return self.get_query_params().get('RestoreSize')
 

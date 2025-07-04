@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
-class DescribeRCSnapshotsRequest(RpcRequest):
+class DescribeRCCloudAssistantStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeRCSnapshots','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeRCCloudAssistantStatus','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,32 +32,33 @@ class DescribeRCSnapshotsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SnapshotIds(self): # String
-		return self.get_query_params().get('SnapshotIds')
+	def get_OSType(self): # String
+		return self.get_query_params().get('OSType')
 
-	def set_SnapshotIds(self, SnapshotIds):  # String
-		self.add_query_param('SnapshotIds', SnapshotIds)
-	def get_PageNumber(self): # Long
+	def set_OSType(self, OSType):  # String
+		self.add_query_param('OSType', OSType)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Long
+	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_PageSize(self): # Long
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self, PageSize):  # Long
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
-	def get_DiskId(self): # String
-		return self.get_query_params().get('DiskId')
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_DiskId(self, DiskId):  # String
-		self.add_query_param('DiskId', DiskId)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

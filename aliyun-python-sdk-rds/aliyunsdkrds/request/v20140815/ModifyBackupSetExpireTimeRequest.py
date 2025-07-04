@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeRCInstanceAttributeRequest(RpcRequest):
+class ModifyBackupSetExpireTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeRCInstanceAttribute','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupSetExpireTime','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,18 +31,23 @@ class DescribeRCInstanceAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PrivateIpAddress(self): # String
-		return self.get_query_params().get('PrivateIpAddress')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ExpectExpireTime(self): # String
+		return self.get_query_params().get('ExpectExpireTime')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_MaxDisksResults(self): # Long
-		return self.get_query_params().get('MaxDisksResults')
+	def set_ExpectExpireTime(self, ExpectExpireTime):  # String
+		self.add_query_param('ExpectExpireTime', ExpectExpireTime)
+	def get_DBInstanceId(self): # String
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_MaxDisksResults(self, MaxDisksResults):  # Long
-		self.add_query_param('MaxDisksResults', MaxDisksResults)
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_BackupId(self): # Long
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # Long
+		self.add_query_param('BackupId', BackupId)

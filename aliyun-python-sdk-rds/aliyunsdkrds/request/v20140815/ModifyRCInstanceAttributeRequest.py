@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class ModifyRCInstanceAttributeRequest(RpcRequest):
 
@@ -31,16 +32,16 @@ class ModifyRCInstanceAttributeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Reboot(self): # Boolean
-		return self.get_query_params().get('Reboot')
-
-	def set_Reboot(self, Reboot):  # Boolean
-		self.add_query_param('Reboot', Reboot)
 	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
 	def set_SecurityGroupId(self, SecurityGroupId):  # String
 		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_DeletionProtection(self): # Boolean
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self, DeletionProtection):  # Boolean
+		self.add_query_param('DeletionProtection', DeletionProtection)
 	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
@@ -51,8 +52,23 @@ class ModifyRCInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_Reboot(self): # Boolean
+		return self.get_query_params().get('Reboot')
+
+	def set_Reboot(self, Reboot):  # Boolean
+		self.add_query_param('Reboot', Reboot)
+	def get_SecurityGroupIds(self): # Array
+		return self.get_query_params().get('SecurityGroupIds')
+
+	def set_SecurityGroupIds(self, SecurityGroupIds):  # Array
+		self.add_query_param("SecurityGroupIds", json.dumps(SecurityGroupIds))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_InstanceIds(self): # Array
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # Array
+		self.add_query_param("InstanceIds", json.dumps(InstanceIds))
