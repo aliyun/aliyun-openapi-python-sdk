@@ -31,11 +31,6 @@ class CreateLogoTaskRequest(RpcRequest):
 
 	def set_NegativePrompt(self, NegativePrompt):  # String
 		self.add_query_param('NegativePrompt', NegativePrompt)
-	def get_Version(self): # String
-		return self.get_query_params().get('Version')
-
-	def set_Version(self, Version):  # String
-		self.add_query_param('Version', Version)
 	def get_Prompt(self): # String
 		return self.get_query_params().get('Prompt')
 
@@ -46,3 +41,8 @@ class CreateLogoTaskRequest(RpcRequest):
 
 	def set_Parameters(self, Parameters):  # String
 		self.add_query_param('Parameters', Parameters)
+	def get_LogoVersion(self): # String
+		return self.get_query_params().get('LogoVersion')
+
+	def set_LogoVersion(self, LogoVersion):  # String
+		self.add_query_param('LogoVersion', LogoVersion)
