@@ -61,6 +61,11 @@ class DescribeMetricsDataRequest(RpcRequest):
 
 	def set_ReplicaType(self, ReplicaType):  # String
 		self.add_body_params('ReplicaType', ReplicaType)
+	def get_MetricScope(self): # String
+		return self.get_body_params().get('MetricScope')
+
+	def set_MetricScope(self, MetricScope):  # String
+		self.add_body_params('MetricScope', MetricScope)
 	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 

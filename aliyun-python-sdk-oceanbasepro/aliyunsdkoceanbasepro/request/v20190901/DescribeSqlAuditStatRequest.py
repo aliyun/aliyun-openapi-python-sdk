@@ -37,6 +37,11 @@ class DescribeSqlAuditStatRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
+	def get_OperatorType(self): # String
+		return self.get_body_params().get('OperatorType')
+
+	def set_OperatorType(self, OperatorType):  # String
+		self.add_body_params('OperatorType', OperatorType)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
