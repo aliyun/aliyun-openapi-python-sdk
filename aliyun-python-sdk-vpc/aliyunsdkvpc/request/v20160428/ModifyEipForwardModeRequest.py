@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DeleteRouteEntriesRequest(RpcRequest):
+class ModifyEipForwardModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteRouteEntries','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyEipForwardMode','vpc')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,36 +36,28 @@ class DeleteRouteEntriesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_DryRun(self): # Boolean
-		return self.get_query_params().get('DryRun')
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_DryRun(self, DryRun):  # Boolean
-		self.add_query_param('DryRun', DryRun)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Mode(self): # String
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self, Mode):  # String
+		self.add_query_param('Mode', Mode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_RouteEntriess(self): # RepeatList
-		return self.get_query_params().get('RouteEntries')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_RouteEntriess(self, RouteEntries):  # RepeatList
-		for depth1 in range(len(RouteEntries)):
-			if RouteEntries[depth1].get('RouteTableId') is not None:
-				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.RouteTableId', RouteEntries[depth1].get('RouteTableId'))
-			if RouteEntries[depth1].get('RouteEntryId') is not None:
-				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.RouteEntryId', RouteEntries[depth1].get('RouteEntryId'))
-			if RouteEntries[depth1].get('DstCidrBlock') is not None:
-				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.DstCidrBlock', RouteEntries[depth1].get('DstCidrBlock'))
-			if RouteEntries[depth1].get('NextHop') is not None:
-				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.NextHop', RouteEntries[depth1].get('NextHop'))
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

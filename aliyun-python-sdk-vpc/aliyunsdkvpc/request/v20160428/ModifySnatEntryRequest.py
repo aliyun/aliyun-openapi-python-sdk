@@ -56,6 +56,11 @@ class ModifySnatEntryRequest(RpcRequest):
 
 	def set_SnatEntryId(self, SnatEntryId):  # String
 		self.add_query_param('SnatEntryId', SnatEntryId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -36,6 +36,11 @@ class CreateRouteEntriesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -68,7 +73,5 @@ class CreateRouteEntriesRequest(RpcRequest):
 				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.NextHopType', RouteEntries[depth1].get('NextHopType'))
 			if RouteEntries[depth1].get('Name') is not None:
 				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Name', RouteEntries[depth1].get('Name'))
-			if RouteEntries[depth1].get('Describption') is not None:
-				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Describption', RouteEntries[depth1].get('Describption'))
 			if RouteEntries[depth1].get('Description') is not None:
 				self.add_query_param('RouteEntries.' + str(depth1 + 1) + '.Description', RouteEntries[depth1].get('Description'))
