@@ -1,3 +1,9 @@
+2025-07-30 Version: 1.0.11
+- Add DataService OpenAPIs.
+- Add Udf OpenAPIs.
+- Add Project OpenAPIs.
+- Add ComputeSource OpenAPIs.
+
 2025-07-29 Version: 1.0.10
 - Add DataService OpenAPIs.
 - Add Udf OpenAPIs.
