@@ -41,6 +41,11 @@ class DeleteShardingNodeRequest(RpcRequest):
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
 	def get_NodeId(self): # String
 		return self.get_query_params().get('NodeId')
 

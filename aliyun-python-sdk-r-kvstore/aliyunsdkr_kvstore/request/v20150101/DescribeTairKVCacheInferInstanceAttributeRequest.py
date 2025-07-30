@@ -20,11 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class MigrateToOtherZoneRequest(RpcRequest):
+class DescribeTairKVCacheInferInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'MigrateToOtherZone','redisa')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeTairKVCacheInferInstanceAttribute','redisa')
+		self.set_protocol_type('https')
+		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,31 +37,11 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SecondaryZoneId(self): # String
-		return self.get_query_params().get('SecondaryZoneId')
-
-	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
-		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
-	def get_SlaveReadOnlyCount(self): # Integer
-		return self.get_query_params().get('SlaveReadOnlyCount')
-
-	def set_SlaveReadOnlyCount(self, SlaveReadOnlyCount):  # Integer
-		self.add_query_param('SlaveReadOnlyCount', SlaveReadOnlyCount)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self, SecurityToken):  # String
 		self.add_query_param('SecurityToken', SecurityToken)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
-
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,28 +57,8 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
-	def get_ReadOnlyCount(self): # Integer
-		return self.get_query_params().get('ReadOnlyCount')
-
-	def set_ReadOnlyCount(self, ReadOnlyCount):  # Integer
-		self.add_query_param('ReadOnlyCount', ReadOnlyCount)
-	def get_SlaveReplicaCount(self): # Integer
-		return self.get_query_params().get('SlaveReplicaCount')
-
-	def set_SlaveReplicaCount(self, SlaveReplicaCount):  # Integer
-		self.add_query_param('SlaveReplicaCount', SlaveReplicaCount)
-	def get_ReplicaCount(self): # Integer
-		return self.get_query_params().get('ReplicaCount')
-
-	def set_ReplicaCount(self, ReplicaCount):  # Integer
-		self.add_query_param('ReplicaCount', ReplicaCount)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

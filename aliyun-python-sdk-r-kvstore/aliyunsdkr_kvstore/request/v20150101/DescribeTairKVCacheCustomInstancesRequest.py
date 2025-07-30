@@ -106,6 +106,11 @@ class DescribeTairKVCacheCustomInstancesRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_PrivateIp(self): # String
+		return self.get_query_params().get('PrivateIp')
+
+	def set_PrivateIp(self, PrivateIp):  # String
+		self.add_query_param('PrivateIp', PrivateIp)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

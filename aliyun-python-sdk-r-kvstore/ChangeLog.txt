@@ -1,3 +1,6 @@
+2025-07-30 Version: 2.20.15
+- Backup OpenAPI update.
+
 2024-12-17 Version: 2.20.14
 - CreateInstance add ReplicaCount parameter.
 

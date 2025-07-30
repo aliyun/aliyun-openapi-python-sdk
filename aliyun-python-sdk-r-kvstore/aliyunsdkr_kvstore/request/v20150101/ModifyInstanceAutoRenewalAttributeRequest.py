@@ -51,6 +51,11 @@ class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Product(self): # String
+		return self.get_query_params().get('Product')
+
+	def set_Product(self, Product):  # String
+		self.add_query_param('Product', Product)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
