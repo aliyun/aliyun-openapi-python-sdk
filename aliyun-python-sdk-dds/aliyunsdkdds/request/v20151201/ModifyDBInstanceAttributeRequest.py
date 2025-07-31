@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class ModifyDBInstanceTDERequest(RpcRequest):
+class ModifyDBInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceTDE','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceAttribute','dds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,16 +31,16 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DBInstanceReleaseProtection(self): # Boolean
+		return self.get_query_params().get('DBInstanceReleaseProtection')
+
+	def set_DBInstanceReleaseProtection(self, DBInstanceReleaseProtection):  # Boolean
+		self.add_query_param('DBInstanceReleaseProtection', DBInstanceReleaseProtection)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SwitchMode(self): # String
-		return self.get_query_params().get('SwitchMode')
-
-	def set_SwitchMode(self, SwitchMode):  # String
-		self.add_query_param('SwitchMode', SwitchMode)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -56,28 +56,8 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_EncryptionKey(self): # String
-		return self.get_query_params().get('EncryptionKey')
-
-	def set_EncryptionKey(self, EncryptionKey):  # String
-		self.add_query_param('EncryptionKey', EncryptionKey)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_EncryptorName(self): # String
-		return self.get_query_params().get('EncryptorName')
-
-	def set_EncryptorName(self, EncryptorName):  # String
-		self.add_query_param('EncryptorName', EncryptorName)
-	def get_RoleARN(self): # String
-		return self.get_query_params().get('RoleARN')
-
-	def set_RoleARN(self, RoleARN):  # String
-		self.add_query_param('RoleARN', RoleARN)
-	def get_TDEStatus(self): # String
-		return self.get_query_params().get('TDEStatus')
-
-	def set_TDEStatus(self, TDEStatus):  # String
-		self.add_query_param('TDEStatus', TDEStatus)

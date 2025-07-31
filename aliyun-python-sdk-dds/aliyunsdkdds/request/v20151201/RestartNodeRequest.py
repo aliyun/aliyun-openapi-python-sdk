@@ -41,6 +41,11 @@ class RestartNodeRequest(RpcRequest):
 
 	def set_RoleId(self, RoleId):  # String
 		self.add_query_param('RoleId', RoleId)
+	def get_SwitchMode(self): # String
+		return self.get_query_params().get('SwitchMode')
+
+	def set_SwitchMode(self, SwitchMode):  # String
+		self.add_query_param('SwitchMode', SwitchMode)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
