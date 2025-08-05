@@ -53,11 +53,21 @@ class StartRtcCloudRecordingRequest(RpcRequest):
 
 	def set_RecordParams(self, RecordParams):  # Struct
 		self.add_query_param("RecordParams", json.dumps(RecordParams))
+	def get_MaxIdleTime(self): # Long
+		return self.get_query_params().get('MaxIdleTime')
+
+	def set_MaxIdleTime(self, MaxIdleTime):  # Long
+		self.add_query_param('MaxIdleTime', MaxIdleTime)
 	def get_MixTranscodeParams(self): # Struct
 		return self.get_query_params().get('MixTranscodeParams')
 
 	def set_MixTranscodeParams(self, MixTranscodeParams):  # Struct
 		self.add_query_param("MixTranscodeParams", json.dumps(MixTranscodeParams))
+	def get_NotifyAuthKey(self): # String
+		return self.get_query_params().get('NotifyAuthKey')
+
+	def set_NotifyAuthKey(self, NotifyAuthKey):  # String
+		self.add_query_param('NotifyAuthKey', NotifyAuthKey)
 	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
