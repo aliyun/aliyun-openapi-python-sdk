@@ -201,6 +201,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
+	def get_IsAnalyticReadOnlyIns(self): # Boolean
+		return self.get_query_params().get('IsAnalyticReadOnlyIns')
+
+	def set_IsAnalyticReadOnlyIns(self, IsAnalyticReadOnlyIns):  # Boolean
+		self.add_query_param('IsAnalyticReadOnlyIns', IsAnalyticReadOnlyIns)
 	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 
