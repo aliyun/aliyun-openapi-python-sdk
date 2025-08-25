@@ -19,28 +19,28 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class UpdateConditionalAccessPolicyDescriptionRequest(RpcRequest):
+class UpdateApplicationClientSecretExpirationTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'UpdateConditionalAccessPolicyDescription','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'UpdateApplicationClientSecretExpirationTime','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
+	def get_ExpirationTime(self): # Long
+		return self.get_query_params().get('ExpirationTime')
 
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_Description(self): # String
-		return self.get_query_params().get('Description')
+	def set_ExpirationTime(self, ExpirationTime):  # Long
+		self.add_query_param('ExpirationTime', ExpirationTime)
+	def get_ApplicationId(self): # String
+		return self.get_query_params().get('ApplicationId')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_ConditionalAccessPolicyId(self): # String
-		return self.get_query_params().get('ConditionalAccessPolicyId')
+	def set_ApplicationId(self, ApplicationId):  # String
+		self.add_query_param('ApplicationId', ApplicationId)
+	def get_SecretId(self): # String
+		return self.get_query_params().get('SecretId')
 
-	def set_ConditionalAccessPolicyId(self, ConditionalAccessPolicyId):  # String
-		self.add_query_param('ConditionalAccessPolicyId', ConditionalAccessPolicyId)
+	def set_SecretId(self, SecretId):  # String
+		self.add_query_param('SecretId', SecretId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

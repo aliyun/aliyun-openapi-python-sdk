@@ -92,6 +92,8 @@ class SetApplicationSsoConfigRequest(RpcRequest):
 			self.add_query_param('OidcSsoConfig.SubjectIdExpression', OidcSsoConfig.get('SubjectIdExpression'))
 		if OidcSsoConfig.get('PkceRequired') is not None:
 			self.add_query_param('OidcSsoConfig.PkceRequired', OidcSsoConfig.get('PkceRequired'))
+		if OidcSsoConfig.get('AllowedPublicClient') is not None:
+			self.add_query_param('OidcSsoConfig.AllowedPublicClient', OidcSsoConfig.get('AllowedPublicClient'))
 		if OidcSsoConfig.get('RedirectUris') is not None:
 			for index1, value1 in enumerate(OidcSsoConfig.get('RedirectUris')):
 				self.add_query_param('OidcSsoConfig.RedirectUris.' + str(index1 + 1), value1)

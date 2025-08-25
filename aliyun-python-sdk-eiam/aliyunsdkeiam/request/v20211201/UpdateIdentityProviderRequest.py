@@ -32,8 +32,17 @@ class UpdateIdentityProviderRequest(RpcRequest):
 	def set_DingtalkAppConfig(self, DingtalkAppConfig):  # Struct
 		if DingtalkAppConfig.get('AppSecret') is not None:
 			self.add_query_param('DingtalkAppConfig.AppSecret', DingtalkAppConfig.get('AppSecret'))
+		if DingtalkAppConfig.get('VerificationToken') is not None:
+			self.add_query_param('DingtalkAppConfig.VerificationToken', DingtalkAppConfig.get('VerificationToken'))
 		if DingtalkAppConfig.get('AppKey') is not None:
 			self.add_query_param('DingtalkAppConfig.AppKey', DingtalkAppConfig.get('AppKey'))
+		if DingtalkAppConfig.get('EncryptKey') is not None:
+			self.add_query_param('DingtalkAppConfig.EncryptKey', DingtalkAppConfig.get('EncryptKey'))
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_NetworkAccessEndpointId(self): # String
 		return self.get_query_params().get('NetworkAccessEndpointId')
 

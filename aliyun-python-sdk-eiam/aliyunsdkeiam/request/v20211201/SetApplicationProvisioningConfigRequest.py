@@ -26,6 +26,11 @@ class SetApplicationProvisioningConfigRequest(RpcRequest):
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_NetworkAccessEndpointId(self): # String
+		return self.get_query_params().get('NetworkAccessEndpointId')
+
+	def set_NetworkAccessEndpointId(self, NetworkAccessEndpointId):  # String
+		self.add_query_param('NetworkAccessEndpointId', NetworkAccessEndpointId)
 	def get_ProvisionProtocolType(self): # String
 		return self.get_query_params().get('ProvisionProtocolType')
 

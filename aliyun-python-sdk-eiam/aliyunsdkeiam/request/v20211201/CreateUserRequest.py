@@ -26,6 +26,11 @@ class CreateUserRequest(RpcRequest):
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
