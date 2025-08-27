@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class DescribeInstanceRecoverTimeRequest(RpcRequest):
+class AllocateDBInstanceSrvNetworkAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeInstanceRecoverTime','dds')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'AllocateDBInstanceSrvNetworkAddress','dds')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,31 +36,26 @@ class DescribeInstanceRecoverTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SrcRegion(self): # String
-		return self.get_query_params().get('SrcRegion')
-
-	def set_SrcRegion(self, SrcRegion):  # String
-		self.add_query_param('SrcRegion', SrcRegion)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
-	def get_DestRegion(self): # String
-		return self.get_query_params().get('DestRegion')
+	def get_NodeId(self): # String
+		return self.get_query_params().get('NodeId')
 
-	def set_DestRegion(self, DestRegion):  # String
-		self.add_query_param('DestRegion', DestRegion)
+	def set_NodeId(self, NodeId):  # String
+		self.add_query_param('NodeId', NodeId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SrvConnectionType(self): # String
+		return self.get_query_params().get('SrvConnectionType')
+
+	def set_SrvConnectionType(self, SrvConnectionType):  # String
+		self.add_query_param('SrvConnectionType', SrvConnectionType)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
