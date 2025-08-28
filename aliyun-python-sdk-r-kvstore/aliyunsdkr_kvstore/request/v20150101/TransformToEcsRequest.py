@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribePriceRequest(RpcRequest):
+class TransformToEcsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribePrice','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'TransformToEcs','redisa')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,26 +36,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_NodeType(self): # String
-		return self.get_query_params().get('NodeType')
-
-	def set_NodeType(self, NodeType):  # String
-		self.add_query_param('NodeType', NodeType)
-	def get_Instances(self): # String
-		return self.get_query_params().get('Instances')
-
-	def set_Instances(self, Instances):  # String
-		self.add_query_param('Instances', Instances)
-	def get_SecondaryZoneId(self): # String
-		return self.get_query_params().get('SecondaryZoneId')
-
-	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
-		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
-	def get_CouponNo(self): # String
-		return self.get_query_params().get('CouponNo')
-
-	def set_CouponNo(self, CouponNo):  # String
-		self.add_query_param('CouponNo', CouponNo)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -66,36 +46,31 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InstanceClass(self, InstanceClass):  # String
 		self.add_query_param('InstanceClass', InstanceClass)
-	def get_Capacity(self): # Long
-		return self.get_query_params().get('Capacity')
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
 
-	def set_Capacity(self, Capacity):  # Long
-		self.add_query_param('Capacity', Capacity)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
-	def get_BusinessInfo(self): # String
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self, BusinessInfo):  # String
-		self.add_query_param('BusinessInfo', BusinessInfo)
-	def get_ShardCount(self): # Integer
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_ShardCount(self): # Long
 		return self.get_query_params().get('ShardCount')
 
-	def set_ShardCount(self, ShardCount):  # Integer
+	def set_ShardCount(self, ShardCount):  # Long
 		self.add_query_param('ShardCount', ShardCount)
+	def get_AutoRenewPeriod(self): # Long
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Long
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Long
 		return self.get_query_params().get('Period')
 
 	def set_Period(self, Period):  # Long
 		self.add_query_param('Period', Period)
-	def get_Quantity(self): # Long
-		return self.get_query_params().get('Quantity')
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
 
-	def set_Quantity(self, Quantity):  # Long
-		self.add_query_param('Quantity', Quantity)
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -106,11 +81,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OrderParamOut(self): # String
-		return self.get_query_params().get('OrderParamOut')
-
-	def set_OrderParamOut(self, OrderParamOut):  # String
-		self.add_query_param('OrderParamOut', OrderParamOut)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -121,23 +91,13 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
+	def get_AutoRenew(self): # String
+		return self.get_query_params().get('AutoRenew')
 
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
+	def set_AutoRenew(self, AutoRenew):  # String
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
-	def get_ForceUpgrade(self): # Boolean
-		return self.get_query_params().get('ForceUpgrade')
-
-	def set_ForceUpgrade(self, ForceUpgrade):  # Boolean
-		self.add_query_param('ForceUpgrade', ForceUpgrade)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)

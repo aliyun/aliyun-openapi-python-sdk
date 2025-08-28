@@ -24,7 +24,6 @@ class DescribeTairKVCacheInferInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeTairKVCacheInferInstances','redisa')
-		self.set_protocol_type('https')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
