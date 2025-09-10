@@ -41,6 +41,11 @@ class UpgradeDBInstanceMajorVersionRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 

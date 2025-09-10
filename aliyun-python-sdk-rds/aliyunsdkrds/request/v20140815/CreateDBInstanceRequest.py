@@ -106,6 +106,11 @@ class CreateDBInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 

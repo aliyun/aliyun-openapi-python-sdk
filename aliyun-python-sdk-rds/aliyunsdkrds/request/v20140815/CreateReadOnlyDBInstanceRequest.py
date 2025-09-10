@@ -76,6 +76,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_GdnInstanceName(self, GdnInstanceName):  # String
 		self.add_query_param('GdnInstanceName', GdnInstanceName)
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_TddlBizType(self): # String
 		return self.get_query_params().get('TddlBizType')
 

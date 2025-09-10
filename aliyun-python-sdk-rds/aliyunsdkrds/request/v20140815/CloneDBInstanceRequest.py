@@ -52,6 +52,11 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
 		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_BackupType(self): # String
 		return self.get_query_params().get('BackupType')
 
