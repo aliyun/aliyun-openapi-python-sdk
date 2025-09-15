@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribePackageStateRequest(RpcRequest):
+class DescribeClientCertificateStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribePackageState','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'DescribeClientCertificateStatus','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,8 @@ class DescribePackageStateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ProductCode(self): # String
-		return self.get_query_params().get('ProductCode')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_query_param('ProductCode', ProductCode)
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)

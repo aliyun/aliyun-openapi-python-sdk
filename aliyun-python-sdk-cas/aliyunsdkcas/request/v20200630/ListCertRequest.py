@@ -23,7 +23,8 @@ from aliyunsdkcas.endpoint import endpoint_data
 class ListCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListCert','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'ListCert','cas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,36 +32,46 @@ class ListCertRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WarehouseId(self): # Long
-		return self.get_query_params().get('WarehouseId')
+	def get_BeforeDate(self): # String
+		return self.get_query_params().get('BeforeDate')
 
-	def set_WarehouseId(self, WarehouseId):  # Long
-		self.add_query_param('WarehouseId', WarehouseId)
-	def get_CertType(self): # String
-		return self.get_query_params().get('CertType')
-
-	def set_CertType(self, CertType):  # String
-		self.add_query_param('CertType', CertType)
-	def get_SourceType(self): # String
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self, SourceType):  # String
-		self.add_query_param('SourceType', SourceType)
-	def get_KeyWord(self): # String
-		return self.get_query_params().get('KeyWord')
-
-	def set_KeyWord(self, KeyWord):  # String
-		self.add_query_param('KeyWord', KeyWord)
-	def get_ShowSize(self): # Long
+	def set_BeforeDate(self, BeforeDate):  # String
+		self.add_query_param('BeforeDate', BeforeDate)
+	def get_ShowSize(self): # Integer
 		return self.get_query_params().get('ShowSize')
 
-	def set_ShowSize(self, ShowSize):  # Long
+	def set_ShowSize(self, ShowSize):  # Integer
 		self.add_query_param('ShowSize', ShowSize)
-	def get_CurrentPage(self): # Long
+	def get_InstanceUuid(self): # String
+		return self.get_query_params().get('InstanceUuid')
+
+	def set_InstanceUuid(self, InstanceUuid):  # String
+		self.add_query_param('InstanceUuid', InstanceUuid)
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # Long
+	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_AfterDate(self): # String
+		return self.get_query_params().get('AfterDate')
+
+	def set_AfterDate(self, AfterDate):  # String
+		self.add_query_param('AfterDate', AfterDate)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

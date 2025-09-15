@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class CreateWHClientCertificateRequest(RpcRequest):
+class CreateServerCertificateWithCsrRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateWHClientCertificate','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'CreateServerCertificateWithCsr','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,46 +36,16 @@ class CreateWHClientCertificateRequest(RpcRequest):
 
 	def set_Country(self, Country):  # String
 		self.add_query_param('Country', Country)
-	def get_Csr(self): # String
-		return self.get_query_params().get('Csr')
-
-	def set_Csr(self, Csr):  # String
-		self.add_query_param('Csr', Csr)
-	def get_Immediately(self): # Long
-		return self.get_query_params().get('Immediately')
-
-	def set_Immediately(self, Immediately):  # Long
-		self.add_query_param('Immediately', Immediately)
-	def get_Years(self): # Long
-		return self.get_query_params().get('Years')
-
-	def set_Years(self, Years):  # Long
-		self.add_query_param('Years', Years)
-	def get_CommonName(self): # String
-		return self.get_query_params().get('CommonName')
-
-	def set_CommonName(self, CommonName):  # String
-		self.add_query_param('CommonName', CommonName)
-	def get_SanValue(self): # String
-		return self.get_query_params().get('SanValue')
-
-	def set_SanValue(self, SanValue):  # String
-		self.add_query_param('SanValue', SanValue)
-	def get_State(self): # String
-		return self.get_query_params().get('State')
-
-	def set_State(self, State):  # String
-		self.add_query_param('State', State)
-	def get_Algorithm(self): # String
-		return self.get_query_params().get('Algorithm')
-
-	def set_Algorithm(self, Algorithm):  # String
-		self.add_query_param('Algorithm', Algorithm)
-	def get_Months(self): # Long
+	def get_Months(self): # Integer
 		return self.get_query_params().get('Months')
 
-	def set_Months(self, Months):  # Long
+	def set_Months(self, Months):  # Integer
 		self.add_query_param('Months', Months)
+	def get_EnableCrl(self): # Long
+		return self.get_query_params().get('EnableCrl')
+
+	def set_EnableCrl(self, EnableCrl):  # Long
+		self.add_query_param('EnableCrl', EnableCrl)
 	def get_AfterTime(self): # Long
 		return self.get_query_params().get('AfterTime')
 
@@ -86,26 +56,41 @@ class CreateWHClientCertificateRequest(RpcRequest):
 
 	def set_Locality(self, Locality):  # String
 		self.add_query_param('Locality', Locality)
-	def get_SanType(self): # Long
-		return self.get_query_params().get('SanType')
+	def get_Immediately(self): # Integer
+		return self.get_query_params().get('Immediately')
 
-	def set_SanType(self, SanType):  # Long
-		self.add_query_param('SanType', SanType)
+	def set_Immediately(self, Immediately):  # Integer
+		self.add_query_param('Immediately', Immediately)
+	def get_Years(self): # Integer
+		return self.get_query_params().get('Years')
+
+	def set_Years(self, Years):  # Integer
+		self.add_query_param('Years', Years)
+	def get_CommonName(self): # String
+		return self.get_query_params().get('CommonName')
+
+	def set_CommonName(self, CommonName):  # String
+		self.add_query_param('CommonName', CommonName)
 	def get_Organization(self): # String
 		return self.get_query_params().get('Organization')
 
 	def set_Organization(self, Organization):  # String
 		self.add_query_param('Organization', Organization)
-	def get_Days(self): # Long
+	def get_Days(self): # Integer
 		return self.get_query_params().get('Days')
 
-	def set_Days(self, Days):  # Long
+	def set_Days(self, Days):  # Integer
 		self.add_query_param('Days', Days)
 	def get_BeforeTime(self): # Long
 		return self.get_query_params().get('BeforeTime')
 
 	def set_BeforeTime(self, BeforeTime):  # Long
 		self.add_query_param('BeforeTime', BeforeTime)
+	def get_State(self): # String
+		return self.get_query_params().get('State')
+
+	def set_State(self, State):  # String
+		self.add_query_param('State', State)
 	def get_ParentIdentifier(self): # String
 		return self.get_query_params().get('ParentIdentifier')
 
@@ -116,3 +101,18 @@ class CreateWHClientCertificateRequest(RpcRequest):
 
 	def set_OrganizationUnit(self, OrganizationUnit):  # String
 		self.add_query_param('OrganizationUnit', OrganizationUnit)
+	def get_Algorithm(self): # String
+		return self.get_query_params().get('Algorithm')
+
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)
+	def get_Csr(self): # String
+		return self.get_query_params().get('Csr')
+
+	def set_Csr(self, Csr):  # String
+		self.add_query_param('Csr', Csr)
+	def get_Domain(self): # String
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self, Domain):  # String
+		self.add_query_param('Domain', Domain)

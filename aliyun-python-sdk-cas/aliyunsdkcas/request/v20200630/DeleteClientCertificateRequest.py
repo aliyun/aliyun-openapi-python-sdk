@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class CancelCertificateForPackageRequestRequest(RpcRequest):
+class DeleteClientCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CancelCertificateForPackageRequest','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'DeleteClientCertificate','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,8 @@ class CancelCertificateForPackageRequestRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)

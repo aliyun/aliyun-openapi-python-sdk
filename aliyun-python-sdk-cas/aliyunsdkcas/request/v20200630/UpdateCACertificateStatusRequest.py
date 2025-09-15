@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class ListUserCertificateOrderRequest(RpcRequest):
+class UpdateCACertificateStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListUserCertificateOrder','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'UpdateCACertificateStatus','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,18 @@ class ListUserCertificateOrderRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Keyword(self): # String
-		return self.get_query_params().get('Keyword')
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-	def set_Keyword(self, Keyword):  # String
-		self.add_query_param('Keyword', Keyword)
-	def get_ShowSize(self): # Long
-		return self.get_query_params().get('ShowSize')
-
-	def set_ShowSize(self, ShowSize):  # Long
-		self.add_query_param('ShowSize', ShowSize)
-	def get_CurrentPage(self): # Long
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self, CurrentPage):  # Long
-		self.add_query_param('CurrentPage', CurrentPage)
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
 	def set_Status(self, Status):  # String
 		self.add_query_param('Status', Status)
-	def get_OrderType(self): # String
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self, OrderType):  # String
-		self.add_query_param('OrderType', OrderType)

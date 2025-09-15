@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class ListCertWarehouseRequest(RpcRequest):
+class DescribeCACertificateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'ListCertWarehouse','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'DescribeCACertificateList','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,38 @@ class ListCertWarehouseRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ShowSize(self): # Long
+	def get_CaStatus(self): # String
+		return self.get_query_params().get('CaStatus')
+
+	def set_CaStatus(self, CaStatus):  # String
+		self.add_query_param('CaStatus', CaStatus)
+	def get_CertType(self): # String
+		return self.get_query_params().get('CertType')
+
+	def set_CertType(self, CertType):  # String
+		self.add_query_param('CertType', CertType)
+	def get_ValidStatus(self): # String
+		return self.get_query_params().get('ValidStatus')
+
+	def set_ValidStatus(self, ValidStatus):  # String
+		self.add_query_param('ValidStatus', ValidStatus)
+	def get_IssuerType(self): # String
+		return self.get_query_params().get('IssuerType')
+
+	def set_IssuerType(self, IssuerType):  # String
+		self.add_query_param('IssuerType', IssuerType)
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
+
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)
+	def get_ShowSize(self): # Integer
 		return self.get_query_params().get('ShowSize')
 
-	def set_ShowSize(self, ShowSize):  # Long
+	def set_ShowSize(self, ShowSize):  # Integer
 		self.add_query_param('ShowSize', ShowSize)
-	def get_CurrentPage(self): # Long
+	def get_CurrentPage(self): # Integer
 		return self.get_query_params().get('CurrentPage')
 
-	def set_CurrentPage(self, CurrentPage):  # Long
+	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
-	def get_Name(self): # String
-		return self.get_query_params().get('Name')
-
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)

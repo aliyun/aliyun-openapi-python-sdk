@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DeletePCACertRequest(RpcRequest):
+class DescribeCertificatePrivateKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DeletePCACert','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'DescribeCertificatePrivateKey','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,3 +36,8 @@ class DeletePCACertRequest(RpcRequest):
 
 	def set_Identifier(self, Identifier):  # String
 		self.add_query_param('Identifier', Identifier)
+	def get_EncryptedCode(self): # String
+		return self.get_query_params().get('EncryptedCode')
+
+	def set_EncryptedCode(self, EncryptedCode):  # String
+		self.add_query_param('EncryptedCode', EncryptedCode)

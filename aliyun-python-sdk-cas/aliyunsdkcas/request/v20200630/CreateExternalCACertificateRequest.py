@@ -19,11 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
+import json
 
-class CreateCertificateWithCsrRequestRequest(RpcRequest):
+class CreateExternalCACertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'CreateCertificateWithCsrRequest','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'CreateExternalCACertificate','cas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,28 +38,18 @@ class CreateCertificateWithCsrRequestRequest(RpcRequest):
 
 	def set_Csr(self, Csr):  # String
 		self.add_query_param('Csr', Csr)
-	def get_ProductCode(self): # String
-		return self.get_query_params().get('ProductCode')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_ProductCode(self, ProductCode):  # String
-		self.add_query_param('ProductCode', ProductCode)
-	def get_Username(self): # String
-		return self.get_query_params().get('Username')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Validity(self): # String
+		return self.get_query_params().get('Validity')
 
-	def set_Username(self, Username):  # String
-		self.add_query_param('Username', Username)
-	def get_Phone(self): # String
-		return self.get_query_params().get('Phone')
+	def set_Validity(self, Validity):  # String
+		self.add_query_param('Validity', Validity)
+	def get_ApiPassthrough(self): # Struct
+		return self.get_query_params().get('ApiPassthrough')
 
-	def set_Phone(self, Phone):  # String
-		self.add_query_param('Phone', Phone)
-	def get_Email(self): # String
-		return self.get_query_params().get('Email')
-
-	def set_Email(self, Email):  # String
-		self.add_query_param('Email', Email)
-	def get_ValidateType(self): # String
-		return self.get_query_params().get('ValidateType')
-
-	def set_ValidateType(self, ValidateType):  # String
-		self.add_query_param('ValidateType', ValidateType)
+	def set_ApiPassthrough(self, ApiPassthrough):  # Struct
+		self.add_query_param("ApiPassthrough", json.dumps(ApiPassthrough))

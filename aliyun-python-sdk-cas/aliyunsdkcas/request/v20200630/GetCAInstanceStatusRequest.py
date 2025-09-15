@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class DeleteCertificateRequestRequest(RpcRequest):
+class GetCAInstanceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DeleteCertificateRequest','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'GetCAInstanceStatus','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,8 +31,13 @@ class DeleteCertificateRequestRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrderId(self): # Long
-		return self.get_query_params().get('OrderId')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_OrderId(self, OrderId):  # Long
-		self.add_query_param('OrderId', OrderId)
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

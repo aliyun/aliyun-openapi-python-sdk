@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class VerifyRequest(RpcRequest):
+class ListPcaCaCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'Verify','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'ListPcaCaCertificate','cas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +32,13 @@ class VerifyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MessageType(self): # String
-		return self.get_query_params().get('MessageType')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_MessageType(self, MessageType):  # String
-		self.add_query_param('MessageType', MessageType)
-	def get_SigningAlgorithm(self): # String
-		return self.get_query_params().get('SigningAlgorithm')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_SigningAlgorithm(self, SigningAlgorithm):  # String
-		self.add_query_param('SigningAlgorithm', SigningAlgorithm)
-	def get_Message(self): # String
-		return self.get_query_params().get('Message')
-
-	def set_Message(self, Message):  # String
-		self.add_query_param('Message', Message)
-	def get_SignatureValue(self): # String
-		return self.get_query_params().get('SignatureValue')
-
-	def set_SignatureValue(self, SignatureValue):  # String
-		self.add_query_param('SignatureValue', SignatureValue)
-	def get_CertIdentifier(self): # String
-		return self.get_query_params().get('CertIdentifier')
-
-	def set_CertIdentifier(self, CertIdentifier):  # String
-		self.add_query_param('CertIdentifier', CertIdentifier)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class EncryptRequest(RpcRequest):
+class CreateRevokeClientCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'Encrypt','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'CreateRevokeClientCertificate','cas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,8 @@ class EncryptRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MessageType(self): # String
-		return self.get_query_params().get('MessageType')
+	def get_Identifier(self): # String
+		return self.get_query_params().get('Identifier')
 
-	def set_MessageType(self, MessageType):  # String
-		self.add_query_param('MessageType', MessageType)
-	def get_Plaintext(self): # String
-		return self.get_query_params().get('Plaintext')
-
-	def set_Plaintext(self, Plaintext):  # String
-		self.add_query_param('Plaintext', Plaintext)
-	def get_CertIdentifier(self): # String
-		return self.get_query_params().get('CertIdentifier')
-
-	def set_CertIdentifier(self, CertIdentifier):  # String
-		self.add_query_param('CertIdentifier', CertIdentifier)
-	def get_Algorithm(self): # String
-		return self.get_query_params().get('Algorithm')
-
-	def set_Algorithm(self, Algorithm):  # String
-		self.add_query_param('Algorithm', Algorithm)
+	def set_Identifier(self, Identifier):  # String
+		self.add_query_param('Identifier', Identifier)

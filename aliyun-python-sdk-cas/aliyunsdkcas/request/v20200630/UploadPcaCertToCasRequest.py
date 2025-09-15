@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcas.endpoint import endpoint_data
 
-class GetUserCertificateDetailRequest(RpcRequest):
+class UploadPcaCertToCasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2020-04-07', 'GetUserCertificateDetail','cas')
+		RpcRequest.__init__(self, 'cas', '2020-06-30', 'UploadPcaCertToCas','cas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,13 +32,8 @@ class GetUserCertificateDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CertId(self): # Long
-		return self.get_query_params().get('CertId')
+	def get_Ids(self): # String
+		return self.get_query_params().get('Ids')
 
-	def set_CertId(self, CertId):  # Long
-		self.add_query_param('CertId', CertId)
-	def get_CertFilter(self): # Boolean
-		return self.get_query_params().get('CertFilter')
-
-	def set_CertFilter(self, CertFilter):  # Boolean
-		self.add_query_param('CertFilter', CertFilter)
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
