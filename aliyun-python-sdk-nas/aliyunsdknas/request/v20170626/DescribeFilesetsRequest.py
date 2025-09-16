@@ -31,11 +31,21 @@ class DescribeFilesetsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_OrderByField(self): # String
+		return self.get_query_params().get('OrderByField')
+
+	def set_OrderByField(self, OrderByField):  # String
+		self.add_query_param('OrderByField', OrderByField)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_SortOrder(self): # String
+		return self.get_query_params().get('SortOrder')
+
+	def set_SortOrder(self, SortOrder):  # String
+		self.add_query_param('SortOrder', SortOrder)
 	def get_FileSystemId(self): # String
 		return self.get_query_params().get('FileSystemId')
 

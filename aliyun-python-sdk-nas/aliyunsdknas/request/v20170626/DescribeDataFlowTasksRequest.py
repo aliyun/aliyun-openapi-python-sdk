@@ -31,6 +31,11 @@ class DescribeDataFlowTasksRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_WithReports(self): # Boolean
+		return self.get_query_params().get('WithReports')
+
+	def set_WithReports(self, WithReports):  # Boolean
+		self.add_query_param('WithReports', WithReports)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

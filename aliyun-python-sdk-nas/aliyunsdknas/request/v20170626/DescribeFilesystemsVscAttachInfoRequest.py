@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class AddTagsRequest(RpcRequest):
+class DescribeFilesystemsVscAttachInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'AddTags','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeFilesystemsVscAttachInfo','nas')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,17 +32,22 @@ class AddTagsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-	def get_FileSystemId(self): # String
-		return self.get_query_params().get('FileSystemId')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_FileSystemId(self, FileSystemId):  # String
-		self.add_query_param('FileSystemId', FileSystemId)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_ResourceIds(self): # Array
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self, ResourceIds):  # Array
+		for index1, value1 in enumerate(ResourceIds):
+			if value1.get('VscId') is not None:
+				self.add_query_param('ResourceIds.' + str(index1 + 1) + '.VscId', value1.get('VscId'))
+			if value1.get('FileSystemId') is not None:
+				self.add_query_param('ResourceIds.' + str(index1 + 1) + '.FileSystemId', value1.get('FileSystemId'))

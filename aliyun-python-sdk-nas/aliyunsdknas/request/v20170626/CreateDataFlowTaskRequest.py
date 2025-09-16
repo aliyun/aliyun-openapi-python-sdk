@@ -81,6 +81,11 @@ class CreateDataFlowTaskRequest(RpcRequest):
 
 	def set_EntryList(self, EntryList):  # String
 		self.add_query_param('EntryList', EntryList)
+	def get_Includes(self): # String
+		return self.get_query_params().get('Includes')
+
+	def set_Includes(self, Includes):  # String
+		self.add_query_param('Includes', Includes)
 	def get_ConflictPolicy(self): # String
 		return self.get_query_params().get('ConflictPolicy')
 
