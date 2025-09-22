@@ -1,3 +1,6 @@
+2025-09-22 Version: 1.0.4
+- Support encrypt options for ecs.
+
 2024-09-27 Version: 1.0.3
 - Support command audit for ecs.
 
