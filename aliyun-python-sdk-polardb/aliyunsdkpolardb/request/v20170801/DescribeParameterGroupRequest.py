@@ -61,3 +61,8 @@ class DescribeParameterGroupRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBType(self): # String
+		return self.get_query_params().get('DBType')
+
+	def set_DBType(self, DBType):  # String
+		self.add_query_param('DBType', DBType)

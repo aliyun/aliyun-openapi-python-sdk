@@ -41,6 +41,11 @@ class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_SubGroupName(self): # String
+		return self.get_query_params().get('SubGroupName')
+
+	def set_SubGroupName(self, SubGroupName):  # String
+		self.add_query_param('SubGroupName', SubGroupName)
 	def get_Key(self): # String
 		return self.get_query_params().get('Key')
 
