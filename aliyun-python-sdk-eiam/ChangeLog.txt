@@ -1,3 +1,6 @@
+2025-10-20 Version: 1.0.4
+- Supported Brand.
+
 2025-08-25 Version: 1.0.3
 - Generated 2021-12-01 for `Eiam`.
 

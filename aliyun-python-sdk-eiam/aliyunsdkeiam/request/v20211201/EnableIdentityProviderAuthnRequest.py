@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class EnableIdentityProviderAuthnRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'EnableIdentityProviderAuthn','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -31,8 +31,8 @@ class ListDomainsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_BrandId(self): # String
-		return self.get_query_params().get('BrandId')
+	def get_IdentityProviderId(self): # String
+		return self.get_query_params().get('IdentityProviderId')
 
-	def set_BrandId(self, BrandId):  # String
-		self.add_query_param('BrandId', BrandId)
+	def set_IdentityProviderId(self, IdentityProviderId):  # String
+		self.add_query_param('IdentityProviderId', IdentityProviderId)

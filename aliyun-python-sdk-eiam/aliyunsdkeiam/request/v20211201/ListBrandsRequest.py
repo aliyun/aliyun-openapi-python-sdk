@@ -19,20 +19,30 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class ListBrandsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListBrands','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PreviousToken(self): # String
+		return self.get_query_params().get('PreviousToken')
+
+	def set_PreviousToken(self, PreviousToken):  # String
+		self.add_query_param('PreviousToken', PreviousToken)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_BrandId(self): # String
-		return self.get_query_params().get('BrandId')
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
 
-	def set_BrandId(self, BrandId):  # String
-		self.add_query_param('BrandId', BrandId)
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

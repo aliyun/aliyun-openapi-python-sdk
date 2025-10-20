@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class GetLoginRedirectApplicationForBrandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'GetLoginRedirectApplicationForBrand','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

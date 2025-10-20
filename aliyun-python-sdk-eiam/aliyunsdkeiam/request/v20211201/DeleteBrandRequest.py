@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class DeleteBrandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'DeleteBrand','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

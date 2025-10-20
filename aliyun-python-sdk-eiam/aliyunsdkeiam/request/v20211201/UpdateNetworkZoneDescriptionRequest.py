@@ -19,20 +19,30 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class UpdateNetworkZoneDescriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'UpdateNetworkZoneDescription','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_NetworkZoneId(self): # String
+		return self.get_query_params().get('NetworkZoneId')
+
+	def set_NetworkZoneId(self, NetworkZoneId):  # String
+		self.add_query_param('NetworkZoneId', NetworkZoneId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_BrandId(self): # String
-		return self.get_query_params().get('BrandId')
-
-	def set_BrandId(self, BrandId):  # String
-		self.add_query_param('BrandId', BrandId)

@@ -19,20 +19,25 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class UpdateFederatedCredentialProviderDescriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'UpdateFederatedCredentialProviderDescription','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_FederatedCredentialProviderId(self): # String
+		return self.get_query_params().get('FederatedCredentialProviderId')
+
+	def set_FederatedCredentialProviderId(self, FederatedCredentialProviderId):  # String
+		self.add_query_param('FederatedCredentialProviderId', FederatedCredentialProviderId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_BrandId(self): # String
-		return self.get_query_params().get('BrandId')
-
-	def set_BrandId(self, BrandId):  # String
-		self.add_query_param('BrandId', BrandId)

@@ -19,20 +19,25 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListDomainsRequest(RpcRequest):
+class DeleteApplicationTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'ListDomains','eiam')
+		RpcRequest.__init__(self, 'Eiam', '2021-12-01', 'DeleteApplicationToken','eiam')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
+	def get_ApplicationId(self): # String
+		return self.get_query_params().get('ApplicationId')
+
+	def set_ApplicationId(self, ApplicationId):  # String
+		self.add_query_param('ApplicationId', ApplicationId)
+	def get_ApplicationTokenId(self): # String
+		return self.get_query_params().get('ApplicationTokenId')
+
+	def set_ApplicationTokenId(self, ApplicationTokenId):  # String
+		self.add_query_param('ApplicationTokenId', ApplicationTokenId)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
-	def get_BrandId(self): # String
-		return self.get_query_params().get('BrandId')
-
-	def set_BrandId(self, BrandId):  # String
-		self.add_query_param('BrandId', BrandId)
