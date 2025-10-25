@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
+        version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.14t"]
 
     runs-on: ubuntu-20.04
     env:
@@ -23,9 +23,9 @@ jobs:
       CONCURRENT_ID: "${{ github.run_number }}${{ strategy.job-index }}"
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
     - name: Set up Python ${{ matrix.version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.version }}
     - name: Install dependencies
