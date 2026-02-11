@@ -1,11 +1,36 @@
-# 阿里云开发者 Python 工具套件
+# 阿里云开发者 Python 工具套件 (V1.0 - 已废弃)
 
 [![PyPI version](https://badge.fury.io/py/aliyun-python-sdk-core.svg)](https://badge.fury.io/py/aliyun-python-sdk-core)
 [![Python test](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/graph/badge.svg?token=qmWxah6dPs)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
 [![python](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)
 
-阿里云 V1.0 SDK 即将进入基础安全维护阶段，不再建议使用，建议使用 V2.0 SDK。
+⚠️ **重要通知**: 阿里云 Python SDK V1.0 已进入基础安全维护阶段（预计2025年3月1日终止支持），不再推荐使用，**强烈建议**使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)。
+
+## 🚨 重要声明
+
+**V1.0 SDK状态**: 
+- 当前处于基础安全维护阶段
+- 不再添加新功能
+- 仅修复严重安全问题
+- 预计2025年3月1日完全终止支持
+
+**迁移建议**:
+- 新项目请直接使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)
+- 现有V1.0项目建议尽快迁移至V2.0
+- V2.0提供更好的性能、更简洁的API和更完善的文档
+
+## 🔗 V2.0 SDK 资源
+
+**GitHub仓库**: [https://github.com/aliyun/alibabacloud-python-sdk](https://github.com/aliyun/alibabacloud-python-sdk)
+
+**官方文档**: [https://help.aliyun.com/zh/sdk/developer-reference/v2-python-integrated-sdk](https://help.aliyun.com/zh/sdk/developer-reference/v2-python-integrated-sdk)
+
+**开发者门户**: [https://api.aliyun.com](https://api.aliyun.com)
+
+## 🛠 V1.0 SDK 继续使用说明
+
+如果您仍需要使用V1.0 SDK，请继续阅读以下内容：
 
 ## 使用诊断
 
@@ -21,7 +46,9 @@
 
 ## 重要的更新
 
-- 阿里云 Python SDK 核心库 `aliyun-python-sdk-core` 版本从 2.16.0 开始，仅支持 Python 3.7 及以上的环境。
+- 阿里云 Python SDK 核心库 `aliyun-python-sdk-core` 版本从 2.16.0 开始，仅支持 Python 3.7 及以上的环境
+- V1.0 SDK将不再接收新功能更新
+- 建议尽快迁移到V2.0 SDK以获得更好的支持和功能
 
 ## 文档
 
@@ -35,7 +62,6 @@
 - [Https配置](./docs/7-Https-CN.md)
 - [调试](./docs/8-Debug-CN.md)
 - [异常](./docs/9-Exception-CN.md)
-
 
 ## 环境准备
 
@@ -58,7 +84,6 @@ pip install aliyun-python-sdk-ecs # 安装管理 ECS SDK
 1. 创建 Client 实例
 2. 创建 API 请求并设置参数
 3. 发起请求并处理异常
-
 
 ```python
 # -*- coding: utf8 -*-
@@ -116,3 +141,15 @@ print response
 < x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
 < Server : Jetty(7.2.2.v20101205)
 ```
+
+## 贡献
+
+请确保在提交pull request之前阅读[贡献指南](CONTRIBUTING.md)。
+
+## 许可证
+
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+---
+
+**推荐使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk) 获得更好的开发体验！** 🚀
