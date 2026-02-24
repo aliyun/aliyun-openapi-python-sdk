@@ -7,15 +7,13 @@
 
 [English](./README.md) | [中文文档](./README_zh.md)
 
-⚠️ **重要通知**: 阿里云 Python SDK V1.0 已进入基础安全维护阶段（预计2025年3月1日终止支持），不再推荐使用。**强烈建议**使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)。
+⚠️ **重要通知**: 阿里云 Python SDK V1.0 已进入基础安全维护阶段，不再推荐使用。**强烈建议**使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)。
 
 ## 🚨 重要声明
 
 **V1.0 SDK状态**: 
 - 当前处于基础安全维护阶段
 - 不再添加新功能
-- 仅修复严重安全问题
-- 预计2025年3月1日完全终止支持
 
 **迁移建议**:
 - 新项目请直接使用 [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)
