@@ -31,6 +31,11 @@ class DescribeGroupUserRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -41,6 +46,21 @@ class DescribeGroupUserRequest(RpcRequest):
 
 	def set_BizType(self, BizType):  # String
 		self.add_query_param('BizType', BizType)
+	def get_Filter(self): # String
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self, Filter):  # String
+		self.add_query_param('Filter', Filter)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_SolutionId(self): # String
 		return self.get_query_params().get('SolutionId')
 

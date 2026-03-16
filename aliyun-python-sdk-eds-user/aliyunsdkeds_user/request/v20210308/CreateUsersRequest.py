@@ -31,6 +31,11 @@ class CreateUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_AutoLockTime(self): # String
 		return self.get_query_params().get('AutoLockTime')
 
@@ -46,6 +51,9 @@ class CreateUsersRequest(RpcRequest):
 
 	def set_Userss(self, Users):  # RepeatList
 		for depth1 in range(len(Users)):
+			if Users[depth1].get('GroupIdList') is not None:
+				for depth2 in range(len(Users[depth1].get('GroupIdList'))):
+					self.add_body_params('Users.' + str(depth1 + 1) + '.GroupIdList.' + str(depth2 + 1), Users[depth1].get('GroupIdList')[depth2])
 			if Users[depth1].get('Password') is not None:
 				self.add_body_params('Users.' + str(depth1 + 1) + '.Password', Users[depth1].get('Password'))
 			if Users[depth1].get('RealNickName') is not None:

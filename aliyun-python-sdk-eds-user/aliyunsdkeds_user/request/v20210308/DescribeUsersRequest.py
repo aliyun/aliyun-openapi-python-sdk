@@ -32,6 +32,11 @@ class DescribeUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_IsQueryAllSubOrgs(self): # Boolean
 		return self.get_body_params().get('IsQueryAllSubOrgs')
 
@@ -49,6 +54,11 @@ class DescribeUsersRequest(RpcRequest):
 	def set_ExcludeEndUserIdss(self, ExcludeEndUserIds):  # RepeatList
 		for depth1 in range(len(ExcludeEndUserIds)):
 			self.add_body_params('ExcludeEndUserIds.' + str(depth1 + 1), ExcludeEndUserIds[depth1])
+	def get_FilterMap(self): # String
+		return self.get_query_params().get('FilterMap')
+
+	def set_FilterMap(self, FilterMap):  # String
+		self.add_query_param('FilterMap', FilterMap)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -75,10 +85,10 @@ class DescribeUsersRequest(RpcRequest):
 	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
 	def get_FilterWithAssignedResource(self): # Map
-		return self.get_query_params().get('FilterWithAssignedResource')
+		return self.get_body_params().get('FilterWithAssignedResource')
 
 	def set_FilterWithAssignedResource(self, FilterWithAssignedResource):  # Map
-		self.add_query_param("FilterWithAssignedResource", json.dumps(FilterWithAssignedResource))
+		self.add_body_params("FilterWithAssignedResource", json.dumps(FilterWithAssignedResource))
 	def get_Filter(self): # String
 		return self.get_query_params().get('Filter')
 
@@ -94,13 +104,18 @@ class DescribeUsersRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
+	def get_ExcludeGroupId(self): # String
+		return self.get_body_params().get('ExcludeGroupId')
+
+	def set_ExcludeGroupId(self, ExcludeGroupId):  # String
+		self.add_body_params('ExcludeGroupId', ExcludeGroupId)
 	def get_ShowExtras(self): # Map
 		return self.get_body_params().get('ShowExtras')
 
 	def set_ShowExtras(self, ShowExtras):  # Map
 		self.add_body_params("ShowExtras", json.dumps(ShowExtras))
 	def get_Status(self): # Integer
-		return self.get_query_params().get('Status')
+		return self.get_body_params().get('Status')
 
 	def set_Status(self, Status):  # Integer
-		self.add_query_param('Status', Status)
+		self.add_body_params('Status', Status)

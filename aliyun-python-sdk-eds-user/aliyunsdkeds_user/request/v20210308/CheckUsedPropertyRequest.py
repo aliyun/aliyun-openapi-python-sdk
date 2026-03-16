@@ -31,6 +31,11 @@ class CheckUsedPropertyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_PropertyId(self): # Long
 		return self.get_query_params().get('PropertyId')
 

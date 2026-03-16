@@ -31,6 +31,41 @@ class DescribeGroupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
+	def get_TransferFileNeedApproval(self): # Boolean
+		return self.get_query_params().get('TransferFileNeedApproval')
+
+	def set_TransferFileNeedApproval(self, TransferFileNeedApproval):  # Boolean
+		self.add_query_param('TransferFileNeedApproval', TransferFileNeedApproval)
+	def get_LoginPolicyId(self): # String
+		return self.get_query_params().get('LoginPolicyId')
+
+	def set_LoginPolicyId(self, LoginPolicyId):  # String
+		self.add_query_param('LoginPolicyId', LoginPolicyId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_SolutionId(self): # String
+		return self.get_query_params().get('SolutionId')
+
+	def set_SolutionId(self, SolutionId):  # String
+		self.add_query_param('SolutionId', SolutionId)
+	def get_IdpId(self): # String
+		return self.get_query_params().get('IdpId')
+
+	def set_IdpId(self, IdpId):  # String
+		self.add_query_param('IdpId', IdpId)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -41,13 +76,13 @@ class DescribeGroupsRequest(RpcRequest):
 
 	def set_GroupName(self, GroupName):  # String
 		self.add_query_param('GroupName', GroupName)
+	def get_ExcludeAttachedLoginPolicyGroups(self): # Boolean
+		return self.get_query_params().get('ExcludeAttachedLoginPolicyGroups')
+
+	def set_ExcludeAttachedLoginPolicyGroups(self, ExcludeAttachedLoginPolicyGroups):  # Boolean
+		self.add_query_param('ExcludeAttachedLoginPolicyGroups', ExcludeAttachedLoginPolicyGroups)
 	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
 	def set_BizType(self, BizType):  # String
 		self.add_query_param('BizType', BizType)
-	def get_SolutionId(self): # String
-		return self.get_query_params().get('SolutionId')
-
-	def set_SolutionId(self, SolutionId):  # String
-		self.add_query_param('SolutionId', SolutionId)

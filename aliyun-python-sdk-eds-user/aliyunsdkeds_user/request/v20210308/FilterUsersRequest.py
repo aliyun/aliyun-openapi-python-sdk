@@ -32,6 +32,11 @@ class FilterUsersRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_IsQueryAllSubOrgs(self): # Boolean
 		return self.get_query_params().get('IsQueryAllSubOrgs')
 
@@ -48,6 +53,11 @@ class FilterUsersRequest(RpcRequest):
 	def set_ExcludeEndUserIdss(self, ExcludeEndUserIds):  # RepeatList
 		for depth1 in range(len(ExcludeEndUserIds)):
 			self.add_query_param('ExcludeEndUserIds.' + str(depth1 + 1), ExcludeEndUserIds[depth1])
+	def get_FilterMap(self): # Map
+		return self.get_query_params().get('FilterMap')
+
+	def set_FilterMap(self, FilterMap):  # Map
+		self.add_query_param("FilterMap", json.dumps(FilterMap))
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -82,6 +92,12 @@ class FilterUsersRequest(RpcRequest):
 
 	def set_IncludeDesktopGroupCount(self, IncludeDesktopGroupCount):  # Boolean
 		self.add_query_param('IncludeDesktopGroupCount', IncludeDesktopGroupCount)
+	def get_IncludeEndUserIdss(self): # RepeatList
+		return self.get_query_params().get('IncludeEndUserIds')
+
+	def set_IncludeEndUserIdss(self, IncludeEndUserIds):  # RepeatList
+		for depth1 in range(len(IncludeEndUserIds)):
+			self.add_query_param('IncludeEndUserIds.' + str(depth1 + 1), IncludeEndUserIds[depth1])
 	def get_OrgId(self): # String
 		return self.get_query_params().get('OrgId')
 

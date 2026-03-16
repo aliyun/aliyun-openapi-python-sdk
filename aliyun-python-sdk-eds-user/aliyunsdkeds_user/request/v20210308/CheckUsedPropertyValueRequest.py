@@ -36,6 +36,11 @@ class CheckUsedPropertyValueRequest(RpcRequest):
 
 	def set_PropertyValueId(self, PropertyValueId):  # Long
 		self.add_query_param('PropertyValueId', PropertyValueId)
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_PropertyId(self): # Long
 		return self.get_query_params().get('PropertyId')
 
