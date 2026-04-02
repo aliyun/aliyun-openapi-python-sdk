@@ -19,25 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteErRouteMapRequest(RpcRequest):
+class DetachElasticNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteErRouteMap','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DetachElasticNetworkInterface','eflo')
 		self.set_method('POST')
 
-	def get_ErId(self): # String
-		return self.get_body_params().get('ErId')
+	def get_NodeId(self): # String
+		return self.get_body_params().get('NodeId')
 
-	def set_ErId(self, ErId):  # String
-		self.add_body_params('ErId', ErId)
-	def get_ErRouteMapId(self): # String
-		return self.get_body_params().get('ErRouteMapId')
+	def set_NodeId(self, NodeId):  # String
+		self.add_body_params('NodeId', NodeId)
+	def get_ElasticNetworkInterfaceId(self): # String
+		return self.get_body_params().get('ElasticNetworkInterfaceId')
 
-	def set_ErRouteMapId(self, ErRouteMapId):  # String
-		self.add_body_params('ErRouteMapId', ErRouteMapId)
-	def get_ErRouteMapIdss(self): # RepeatList
-		return self.get_body_params().get('ErRouteMapIds')
-
-	def set_ErRouteMapIdss(self, ErRouteMapIds):  # RepeatList
-		for depth1 in range(len(ErRouteMapIds)):
-			self.add_body_params('ErRouteMapIds.' + str(depth1 + 1), ErRouteMapIds[depth1])
+	def set_ElasticNetworkInterfaceId(self, ElasticNetworkInterfaceId):  # String
+		self.add_body_params('ElasticNetworkInterfaceId', ElasticNetworkInterfaceId)

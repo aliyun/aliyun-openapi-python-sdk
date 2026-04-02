@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkeflo"
-NAME = "aliyun-python-sdk-eflo"
+NAME = "aliyun_python_sdk_eflo"
 DESCRIPTION = "The eflo module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

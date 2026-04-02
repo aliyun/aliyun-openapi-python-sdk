@@ -19,34 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListVccFlowInfosRequest(RpcRequest):
+class RetryVccRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'ListVccFlowInfos','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'RetryVcc','eflo')
 		self.set_method('POST')
 
-	def get_From(self): # Long
-		return self.get_body_params().get('From')
-
-	def set_From(self, _From):  # Long
-		self.add_body_params('From', _From)
 	def get_VccId(self): # String
 		return self.get_body_params().get('VccId')
 
 	def set_VccId(self, VccId):  # String
 		self.add_body_params('VccId', VccId)
-	def get_MetricName(self): # String
-		return self.get_body_params().get('MetricName')
-
-	def set_MetricName(self, MetricName):  # String
-		self.add_body_params('MetricName', MetricName)
-	def get_Direction(self): # String
-		return self.get_body_params().get('Direction')
-
-	def set_Direction(self, Direction):  # String
-		self.add_body_params('Direction', Direction)
-	def get_To(self): # Long
-		return self.get_body_params().get('To')
-
-	def set_To(self, To):  # Long
-		self.add_body_params('To', To)

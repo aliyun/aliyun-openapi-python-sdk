@@ -19,25 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteErRouteMapRequest(RpcRequest):
+class GetDestinationCidrBlockRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'DeleteErRouteMap','eflo')
+		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetDestinationCidrBlock','eflo')
 		self.set_method('POST')
 
-	def get_ErId(self): # String
-		return self.get_body_params().get('ErId')
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
 
-	def set_ErId(self, ErId):  # String
-		self.add_body_params('ErId', ErId)
-	def get_ErRouteMapId(self): # String
-		return self.get_body_params().get('ErRouteMapId')
-
-	def set_ErRouteMapId(self, ErRouteMapId):  # String
-		self.add_body_params('ErRouteMapId', ErRouteMapId)
-	def get_ErRouteMapIdss(self): # RepeatList
-		return self.get_body_params().get('ErRouteMapIds')
-
-	def set_ErRouteMapIdss(self, ErRouteMapIds):  # RepeatList
-		for depth1 in range(len(ErRouteMapIds)):
-			self.add_body_params('ErRouteMapIds.' + str(depth1 + 1), ErRouteMapIds[depth1])
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
