@@ -41,6 +41,11 @@ class CreateResourceGroupRequest(RpcRequest):
 
 	def set_BusinessChannel(self, BusinessChannel):  # String
 		self.add_query_param('BusinessChannel', BusinessChannel)
+	def get_EnableAliyunResourceGroup(self): # Boolean
+		return self.get_query_params().get('EnableAliyunResourceGroup')
+
+	def set_EnableAliyunResourceGroup(self, EnableAliyunResourceGroup):  # Boolean
+		self.add_query_param('EnableAliyunResourceGroup', EnableAliyunResourceGroup)
 	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 

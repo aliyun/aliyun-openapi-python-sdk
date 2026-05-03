@@ -127,6 +127,12 @@ class FilterUsersRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
+	def get_ShowExtras(self): # Map
+		return self.get_query_params().get('ShowExtras')
+
+	def set_ShowExtras(self, ShowExtras):  # Map
+		for key1, value1 in ShowExtras.items():
+			self.add_query_param('ShowExtras.#' + str(len(key1)) + '#' + key1, value1)
 	def get_Status(self): # Integer
 		return self.get_query_params().get('Status')
 

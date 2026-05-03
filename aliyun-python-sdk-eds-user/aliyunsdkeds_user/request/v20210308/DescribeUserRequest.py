@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkeds_user.endpoint import endpoint_data
 
-class DescribeOrgsRequest(RpcRequest):
+class DescribeUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'eds-user', '2021-03-08', 'DescribeOrgs','eds-user')
+		RpcRequest.__init__(self, 'eds-user', '2021-03-08', 'DescribeUser','eds-user')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,34 +37,14 @@ class DescribeOrgsRequest(RpcRequest):
 
 	def set_BusinessChannel(self, BusinessChannel):  # String
 		self.add_query_param('BusinessChannel', BusinessChannel)
-	def get_IncludeOrgIds(self): # Array
-		return self.get_query_params().get('IncludeOrgIds')
+	def get_RequireExtraAttributes(self): # Array
+		return self.get_query_params().get('RequireExtraAttributes')
 
-	def set_IncludeOrgIds(self, IncludeOrgIds):  # Array
-		for index1, value1 in enumerate(IncludeOrgIds):
-			self.add_query_param('IncludeOrgIds.' + str(index1 + 1), value1)
-	def get_OrgName(self): # String
-		return self.get_query_params().get('OrgName')
+	def set_RequireExtraAttributes(self, RequireExtraAttributes):  # Array
+		for index1, value1 in enumerate(RequireExtraAttributes):
+			self.add_query_param('RequireExtraAttributes.' + str(index1 + 1), value1)
+	def get_EndUserId(self): # String
+		return self.get_query_params().get('EndUserId')
 
-	def set_OrgName(self, OrgName):  # String
-		self.add_query_param('OrgName', OrgName)
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
-	def get_ParentOrgId(self): # String
-		return self.get_query_params().get('ParentOrgId')
-
-	def set_ParentOrgId(self, ParentOrgId):  # String
-		self.add_query_param('ParentOrgId', ParentOrgId)
-	def get_MaxResults(self): # Long
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Long
-		self.add_query_param('MaxResults', MaxResults)
-	def get_ShowExtras(self): # String
-		return self.get_query_params().get('ShowExtras')
-
-	def set_ShowExtras(self, ShowExtras):  # String
-		self.add_query_param('ShowExtras', ShowExtras)
+	def set_EndUserId(self, EndUserId):  # String
+		self.add_query_param('EndUserId', EndUserId)
