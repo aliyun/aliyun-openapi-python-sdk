@@ -47,6 +47,11 @@ class ModifyCloudAssistantSettingsRequest(RpcRequest):
 
 	def set_OssDeliveryConfig(self, OssDeliveryConfig):  # Struct
 		self.add_query_param("OssDeliveryConfig", json.dumps(OssDeliveryConfig))
+	def get_SessionManagerConfig(self): # Struct
+		return self.get_query_params().get('SessionManagerConfig')
+
+	def set_SessionManagerConfig(self, SessionManagerConfig):  # Struct
+		self.add_query_param("SessionManagerConfig", json.dumps(SessionManagerConfig))
 	def get_SettingType(self): # String
 		return self.get_query_params().get('SettingType')
 
@@ -72,3 +77,8 @@ class ModifyCloudAssistantSettingsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceUsageConfig(self): # Struct
+		return self.get_query_params().get('ResourceUsageConfig')
+
+	def set_ResourceUsageConfig(self, ResourceUsageConfig):  # Struct
+		self.add_query_param("ResourceUsageConfig", json.dumps(ResourceUsageConfig))

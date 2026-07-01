@@ -41,6 +41,11 @@ class DescribeDeploymentSetsRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

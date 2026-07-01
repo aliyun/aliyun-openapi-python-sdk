@@ -36,6 +36,11 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_WorkingDir(self): # String
+		return self.get_query_params().get('WorkingDir')
+
+	def set_WorkingDir(self, WorkingDir):  # String
+		self.add_query_param('WorkingDir', WorkingDir)
 	def get_CommandId(self): # String
 		return self.get_query_params().get('CommandId')
 
@@ -61,10 +66,10 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_Tags(self, Tag):  # RepeatList
 		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Timed(self): # Boolean
 		return self.get_query_params().get('Timed')
 
@@ -101,6 +106,11 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_ContainerName(self, ContainerName):  # String
 		self.add_query_param('ContainerName', ContainerName)
+	def get_OssOutputDelivery(self): # String
+		return self.get_query_params().get('OssOutputDelivery')
+
+	def set_OssOutputDelivery(self, OssOutputDelivery):  # String
+		self.add_query_param('OssOutputDelivery', OssOutputDelivery)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -121,10 +131,10 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_ResourceTags(self, ResourceTag):  # RepeatList
 		for depth1 in range(len(ResourceTag)):
-			if ResourceTag[depth1].get('Key') is not None:
-				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
 			if ResourceTag[depth1].get('Value') is not None:
 				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Value', ResourceTag[depth1].get('Value'))
+			if ResourceTag[depth1].get('Key') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

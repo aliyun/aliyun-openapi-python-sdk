@@ -36,11 +36,41 @@ class DescribeInstanceModificationPriceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_ISP(self): # String
+		return self.get_query_params().get('ISP')
+
+	def set_ISP(self, ISP):  # String
+		self.add_query_param('ISP', ISP)
+	def get_InternetMaxBandwidthOut(self): # Integer
+		return self.get_query_params().get('InternetMaxBandwidthOut')
+
+	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
+		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_StartTime(self): # String
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
 	def get_SystemDiskCategory(self): # String
 		return self.get_query_params().get('SystemDisk.Category')
 
 	def set_SystemDiskCategory(self, SystemDiskCategory):  # String
 		self.add_query_param('SystemDisk.Category', SystemDiskCategory)
+	def get_SystemDisk(self): # Struct
+		return self.get_query_params().get('SystemDisk')
+
+	def set_SystemDisk(self, SystemDisk):  # Struct
+		if SystemDisk.get('Category') is not None:
+			self.add_query_param('SystemDisk.Category', SystemDisk.get('Category'))
+		if SystemDisk.get('PerformanceLevel') is not None:
+			self.add_query_param('SystemDisk.PerformanceLevel', SystemDisk.get('PerformanceLevel'))
+		if SystemDisk.get('Size') is not None:
+			self.add_query_param('SystemDisk.Size', SystemDisk.get('Size'))
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
@@ -56,6 +86,11 @@ class DescribeInstanceModificationPriceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -72,8 +107,15 @@ class DescribeInstanceModificationPriceRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
 			if DataDisk[depth1].get('Category') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
+			if DataDisk[depth1].get('DiskId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskId', DataDisk[depth1].get('DiskId'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_InternetChargeType(self): # String
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self, InternetChargeType):  # String
+		self.add_query_param('InternetChargeType', InternetChargeType)

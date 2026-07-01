@@ -51,11 +51,25 @@ class CreatePrefixListRequest(RpcRequest):
 
 	def set_MaxEntries(self, MaxEntries):  # Integer
 		self.add_query_param('MaxEntries', MaxEntries)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_AddressFamily(self): # String
 		return self.get_query_params().get('AddressFamily')
 
 	def set_AddressFamily(self, AddressFamily):  # String
 		self.add_query_param('AddressFamily', AddressFamily)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

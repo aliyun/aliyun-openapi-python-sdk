@@ -66,6 +66,18 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_CpuOptions(self): # Struct
+		return self.get_query_params().get('CpuOptions')
+
+	def set_CpuOptions(self, CpuOptions):  # Struct
+		if CpuOptions.get('NestedVirtualization') is not None:
+			self.add_query_param('CpuOptions.NestedVirtualization', CpuOptions.get('NestedVirtualization'))
+		if CpuOptions.get('EnableVRDT') is not None:
+			self.add_query_param('CpuOptions.EnableVRDT', CpuOptions.get('EnableVRDT'))
+		if CpuOptions.get('EnableVISST') is not None:
+			self.add_query_param('CpuOptions.EnableVISST', CpuOptions.get('EnableVISST'))
+		if CpuOptions.get('TurboMode') is not None:
+			self.add_query_param('CpuOptions.TurboMode', CpuOptions.get('TurboMode'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

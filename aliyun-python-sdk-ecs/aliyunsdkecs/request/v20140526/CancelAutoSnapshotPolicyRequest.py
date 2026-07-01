@@ -36,6 +36,11 @@ class CancelAutoSnapshotPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_autoSnapshotPolicyId(self): # String
+		return self.get_query_params().get('autoSnapshotPolicyId')
+
+	def set_autoSnapshotPolicyId(self, autoSnapshotPolicyId):  # String
+		self.add_query_param('autoSnapshotPolicyId', autoSnapshotPolicyId)
 	def get_diskIds(self): # String
 		return self.get_query_params().get('diskIds')
 

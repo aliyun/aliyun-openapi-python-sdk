@@ -211,6 +211,11 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_MinTargetCapacity(self, MinTargetCapacity):  # String
 		self.add_query_param('MinTargetCapacity', MinTargetCapacity)
+	def get_ExecutionMode(self): # String
+		return self.get_query_params().get('ExecutionMode')
+
+	def set_ExecutionMode(self, ExecutionMode):  # String
+		self.add_query_param('ExecutionMode', ExecutionMode)
 	def get_MaxSpotPrice(self): # Float
 		return self.get_query_params().get('MaxSpotPrice')
 
@@ -235,6 +240,19 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 		if LaunchConfiguration.get('ImageOptions') is not None:
 			if LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot') is not None:
 				self.add_query_param('LaunchConfiguration.ImageOptions.LoginAsNonRoot', LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot'))
+		if LaunchConfiguration.get('SchedulerOptions') is not None:
+			if LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostId') is not None:
+				self.add_query_param('LaunchConfiguration.SchedulerOptions.DedicatedHostId', LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostId'))
+			if LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostClusterId') is not None:
+				self.add_query_param('LaunchConfiguration.SchedulerOptions.DedicatedHostClusterId', LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostClusterId'))
+		if LaunchConfiguration.get('SecurityOptions') is not None:
+			if LaunchConfiguration.get('SecurityOptions').get('TrustedSystemMode') is not None:
+				self.add_query_param('LaunchConfiguration.SecurityOptions.TrustedSystemMode', LaunchConfiguration.get('SecurityOptions').get('TrustedSystemMode'))
+		if LaunchConfiguration.get('CpuOptions') is not None:
+			if LaunchConfiguration.get('CpuOptions').get('Core') is not None:
+				self.add_query_param('LaunchConfiguration.CpuOptions.Core', LaunchConfiguration.get('CpuOptions').get('Core'))
+			if LaunchConfiguration.get('CpuOptions').get('ThreadsPerCore') is not None:
+				self.add_query_param('LaunchConfiguration.CpuOptions.ThreadsPerCore', LaunchConfiguration.get('CpuOptions').get('ThreadsPerCore'))
 	def get_LaunchConfigurationArns(self): # RepeatList
 		return self.get_query_params().get('LaunchConfiguration.Arn')
 
@@ -317,6 +335,14 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_ResourcePoolOptions(self, ResourcePoolOptions):  # Struct
 		self.add_query_param("ResourcePoolOptions", json.dumps(ResourcePoolOptions))
+	def get_CandidateOptions(self): # Struct
+		return self.get_query_params().get('CandidateOptions')
+
+	def set_CandidateOptions(self, CandidateOptions):  # Struct
+		if CandidateOptions.get('TimeoutMinutes') is not None:
+			self.add_query_param('CandidateOptions.TimeoutMinutes', CandidateOptions.get('TimeoutMinutes'))
+		if CandidateOptions.get('Evaluate') is not None:
+			self.add_query_param('CandidateOptions.Evaluate', CandidateOptions.get('Evaluate'))
 	def get_TerminateInstances(self): # Boolean
 		return self.get_query_params().get('TerminateInstances')
 

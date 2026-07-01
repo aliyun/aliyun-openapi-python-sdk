@@ -51,6 +51,11 @@ class DescribeSecurityGroupAttributeRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_Attribute(self): # String
+		return self.get_query_params().get('Attribute')
+
+	def set_Attribute(self, Attribute):  # String
+		self.add_query_param('Attribute', Attribute)
 	def get_Direction(self): # String
 		return self.get_query_params().get('Direction')
 

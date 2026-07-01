@@ -46,6 +46,12 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_HttpPutResponseHopLimit(self, HttpPutResponseHopLimit):  # Integer
 		self.add_query_param('HttpPutResponseHopLimit', HttpPutResponseHopLimit)
+	def get_SecurityOptions(self): # Struct
+		return self.get_query_params().get('SecurityOptions')
+
+	def set_SecurityOptions(self, SecurityOptions):  # Struct
+		if SecurityOptions.get('TrustedSystemMode') is not None:
+			self.add_query_param('SecurityOptions.TrustedSystemMode', SecurityOptions.get('TrustedSystemMode'))
 	def get_SecurityEnhancementStrategy(self): # String
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -86,6 +92,12 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_ImageOptions(self): # Struct
+		return self.get_query_params().get('ImageOptions')
+
+	def set_ImageOptions(self, ImageOptions):  # Struct
+		if ImageOptions.get('LoginAsNonRoot') is not None:
+			self.add_query_param('ImageOptions.LoginAsNonRoot', ImageOptions.get('LoginAsNonRoot'))
 	def get_SystemDiskIops(self): # Integer
 		return self.get_query_params().get('SystemDisk.Iops')
 
@@ -215,6 +227,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_SystemDiskKMSKeyId(self): # String
+		return self.get_query_params().get('SystemDisk.KMSKeyId')
+
+	def set_SystemDiskKMSKeyId(self, SystemDiskKMSKeyId):  # String
+		self.add_query_param('SystemDisk.KMSKeyId', SystemDiskKMSKeyId)
 	def get_SystemDiskCategory(self): # String
 		return self.get_query_params().get('SystemDisk.Category')
 
@@ -354,6 +371,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', DataDisk[depth1].get('BurstingEnabled'))
 			if DataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisk[depth1].get('AutoSnapshotPolicyId'))
+			if DataDisk[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisk[depth1].get('KMSKeyId'))
 	def get_SystemDiskProvisionedIops(self): # Long
 		return self.get_query_params().get('SystemDisk.ProvisionedIops')
 

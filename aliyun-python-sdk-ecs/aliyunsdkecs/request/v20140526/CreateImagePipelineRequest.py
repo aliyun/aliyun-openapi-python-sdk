@@ -149,8 +149,29 @@ class CreateImagePipelineRequest(RpcRequest):
 		if ImportImageOptions.get('Features') is not None:
 			if ImportImageOptions.get('Features').get('NvmeSupport') is not None:
 				self.add_query_param('ImportImageOptions.Features.NvmeSupport', ImportImageOptions.get('Features').get('NvmeSupport'))
+			if ImportImageOptions.get('Features').get('ImdsSupport') is not None:
+				self.add_query_param('ImportImageOptions.Features.ImdsSupport', ImportImageOptions.get('Features').get('ImdsSupport'))
 		if ImportImageOptions.get('RetainImportedImage') is not None:
 			self.add_query_param('ImportImageOptions.RetainImportedImage', ImportImageOptions.get('RetainImportedImage'))
+		if ImportImageOptions.get('RetentionStrategy') is not None:
+			self.add_query_param('ImportImageOptions.RetentionStrategy', ImportImageOptions.get('RetentionStrategy'))
+		if ImportImageOptions.get('ImageName') is not None:
+			self.add_query_param('ImportImageOptions.ImageName', ImportImageOptions.get('ImageName'))
+		if ImportImageOptions.get('Description') is not None:
+			self.add_query_param('ImportImageOptions.Description', ImportImageOptions.get('Description'))
+		if ImportImageOptions.get('RoleName') is not None:
+			self.add_query_param('ImportImageOptions.RoleName', ImportImageOptions.get('RoleName'))
+		if ImportImageOptions.get('DockerOptions') is not None:
+			if ImportImageOptions.get('DockerOptions').get('Image') is not None:
+				self.add_query_param('ImportImageOptions.DockerOptions.Image', ImportImageOptions.get('DockerOptions').get('Image'))
+			if ImportImageOptions.get('DockerOptions').get('ImageSize') is not None:
+				self.add_query_param('ImportImageOptions.DockerOptions.ImageSize', ImportImageOptions.get('DockerOptions').get('ImageSize'))
+		if ImportImageOptions.get('ImportImageTags') is not None:
+			for index1, value1 in enumerate(ImportImageOptions.get('ImportImageTags')):
+				if value1.get('Key') is not None:
+					self.add_query_param('ImportImageOptions.ImportImageTags.' + str(index1 + 1) + '.Key', value1.get('Key'))
+				if value1.get('Value') is not None:
+					self.add_query_param('ImportImageOptions.ImportImageTags.' + str(index1 + 1) + '.Value', value1.get('Value'))
 	def get_TestContent(self): # String
 		return self.get_query_params().get('TestContent')
 
