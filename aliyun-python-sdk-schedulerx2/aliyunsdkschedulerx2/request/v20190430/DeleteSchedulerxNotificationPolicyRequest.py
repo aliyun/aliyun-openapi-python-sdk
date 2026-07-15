@@ -20,39 +20,20 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class GetWorkflowInstanceRequest(RpcRequest):
+class DeleteSchedulerxNotificationPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GetWorkflowInstance','schedulerx2')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DeleteSchedulerxNotificationPolicy','schedulerx2')
+		self.set_protocol_type('https')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NamespaceSource(self): # String
-		return self.get_query_params().get('NamespaceSource')
+	def get_PolicyName(self): # String
+		return self.get_body_params().get('PolicyName')
 
-	def set_NamespaceSource(self, NamespaceSource):  # String
-		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_WfInstanceId(self): # Long
-		return self.get_query_params().get('WfInstanceId')
-
-	def set_WfInstanceId(self, WfInstanceId):  # Long
-		self.add_query_param('WfInstanceId', WfInstanceId)
-	def get_WorkflowId(self): # Long
-		return self.get_query_params().get('WorkflowId')
-
-	def set_WorkflowId(self, WorkflowId):  # Long
-		self.add_query_param('WorkflowId', WorkflowId)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
+	def set_PolicyName(self, PolicyName):  # String
+		self.add_body_params('PolicyName', PolicyName)

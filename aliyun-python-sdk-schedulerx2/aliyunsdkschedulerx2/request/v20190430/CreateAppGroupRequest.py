@@ -52,6 +52,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_NotificationPolicyName(self): # String
+		return self.get_query_params().get('NotificationPolicyName')
+
+	def set_NotificationPolicyName(self, NotificationPolicyName):  # String
+		self.add_query_param('NotificationPolicyName', NotificationPolicyName)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 

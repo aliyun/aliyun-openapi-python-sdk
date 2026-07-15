@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class UpdateWorkflowDagRequest(RpcRequest):
+class ManageSchedulerxJobSyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateWorkflowDag','schedulerx2')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ManageSchedulerxJobSync','schedulerx2')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,23 +37,28 @@ class UpdateWorkflowDagRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_body_params('NamespaceSource', NamespaceSource)
-	def get_WorkflowId(self): # String
-		return self.get_body_params().get('WorkflowId')
+	def get_TargetNamespace(self): # String
+		return self.get_body_params().get('TargetNamespace')
 
-	def set_WorkflowId(self, WorkflowId):  # String
-		self.add_body_params('WorkflowId', WorkflowId)
-	def get_DagJson(self): # String
-		return self.get_body_params().get('DagJson')
+	def set_TargetNamespace(self, TargetNamespace):  # String
+		self.add_body_params('TargetNamespace', TargetNamespace)
+	def get_OriginalGroupId(self): # String
+		return self.get_body_params().get('OriginalGroupId')
 
-	def set_DagJson(self, DagJson):  # String
-		self.add_body_params('DagJson', DagJson)
-	def get_GroupId(self): # String
-		return self.get_body_params().get('GroupId')
+	def set_OriginalGroupId(self, OriginalGroupId):  # String
+		self.add_body_params('OriginalGroupId', OriginalGroupId)
+	def get_JobIdList(self): # String
+		return self.get_body_params().get('JobIdList')
 
-	def set_GroupId(self, GroupId):  # String
-		self.add_body_params('GroupId', GroupId)
-	def get_Namespace(self): # String
-		return self.get_body_params().get('Namespace')
+	def set_JobIdList(self, JobIdList):  # String
+		self.add_body_params('JobIdList', JobIdList)
+	def get_OriginalNamespace(self): # String
+		return self.get_body_params().get('OriginalNamespace')
 
-	def set_Namespace(self, Namespace):  # String
-		self.add_body_params('Namespace', Namespace)
+	def set_OriginalNamespace(self, OriginalNamespace):  # String
+		self.add_body_params('OriginalNamespace', OriginalNamespace)
+	def get_TargetGroupId(self): # String
+		return self.get_body_params().get('TargetGroupId')
+
+	def set_TargetGroupId(self, TargetGroupId):  # String
+		self.add_body_params('TargetGroupId', TargetGroupId)
