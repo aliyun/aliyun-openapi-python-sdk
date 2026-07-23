@@ -19,9 +19,8 @@
 '''
 
 import os
-import sys
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 """
 Setup module for core.
@@ -44,8 +43,8 @@ with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
 requires = [
-    "jmespath>=0.9.3,<1.0.0",
-    "cryptography>=3.0.0"
+    "jmespath>=0.9.3,<2.0.0",
+    "cryptography>=3.0.0",
 ]
 
 setup_args = {
