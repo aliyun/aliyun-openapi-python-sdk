@@ -1,3 +1,6 @@
+2026-08-17 Version 2.16.1
+1, Update vendored certifi from 2018.01.18 to 2026.07.22 to fix CVE-2023-37920 (remove e-Tugra roots).
+
 2024-10-09 Version 2.16.0
 1, Dropped support for Python 3.6.
 
