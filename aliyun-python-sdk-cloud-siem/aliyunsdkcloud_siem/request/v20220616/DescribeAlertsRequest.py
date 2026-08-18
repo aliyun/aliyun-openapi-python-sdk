@@ -25,6 +25,31 @@ class DescribeAlertsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'DescribeAlerts','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
+	def get_AlertName(self): # String
+		return self.get_body_params().get('AlertName')
+
+	def set_AlertName(self, AlertName):  # String
+		self.add_body_params('AlertName', AlertName)
+	def get_EntityName(self): # String
+		return self.get_body_params().get('EntityName')
+
+	def set_EntityName(self, EntityName):  # String
+		self.add_body_params('EntityName', EntityName)
+	def get_AssetName(self): # String
+		return self.get_body_params().get('AssetName')
+
+	def set_AssetName(self, AssetName):  # String
+		self.add_body_params('AssetName', AssetName)
+	def get_EntityId(self): # String
+		return self.get_body_params().get('EntityId')
+
+	def set_EntityId(self, EntityId):  # String
+		self.add_body_params('EntityId', EntityId)
 	def get_Source(self): # String
 		return self.get_body_params().get('Source')
 
@@ -50,6 +75,11 @@ class DescribeAlertsRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_Levels(self): # RepeatList
 		return self.get_body_params().get('Level')
 
@@ -71,8 +101,23 @@ class DescribeAlertsRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_body_params('CurrentPage', CurrentPage)
+	def get_AlertType(self): # String
+		return self.get_body_params().get('AlertType')
+
+	def set_AlertType(self, AlertType):  # String
+		self.add_body_params('AlertType', AlertType)
 	def get_AlertUuid(self): # String
 		return self.get_body_params().get('AlertUuid')
 
 	def set_AlertUuid(self, AlertUuid):  # String
 		self.add_body_params('AlertUuid', AlertUuid)
+	def get_AssetId(self): # String
+		return self.get_body_params().get('AssetId')
+
+	def set_AssetId(self, AssetId):  # String
+		self.add_body_params('AssetId', AssetId)
+	def get_LabelType(self): # String
+		return self.get_body_params().get('LabelType')
+
+	def set_LabelType(self, LabelType):  # String
+		self.add_body_params('LabelType', LabelType)

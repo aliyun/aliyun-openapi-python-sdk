@@ -56,6 +56,11 @@ class PurchaseStorageCapacityUnitRequest(RpcRequest):
 
 	def set_Capacity(self, Capacity):  # Integer
 		self.add_query_param('Capacity', Capacity)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

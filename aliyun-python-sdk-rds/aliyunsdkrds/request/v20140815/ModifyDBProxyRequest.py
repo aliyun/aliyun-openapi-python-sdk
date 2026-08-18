@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
+import json
 
 class ModifyDBProxyRequest(RpcRequest):
 
@@ -41,6 +42,11 @@ class ModifyDBProxyRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_DBProxyNodes(self): # Array
+		return self.get_query_params().get('DBProxyNodes')
+
+	def set_DBProxyNodes(self, DBProxyNodes):  # Array
+		self.add_query_param("DBProxyNodes", json.dumps(DBProxyNodes))
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

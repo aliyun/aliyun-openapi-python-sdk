@@ -52,6 +52,13 @@ class LoginInstanceRequest(RpcRequest):
 			self.add_query_param('InstanceLoginInfo.ShortcutToken', InstanceLoginInfo.get('ShortcutToken'))
 		if InstanceLoginInfo.get('ResourceGroupId') is not None:
 			self.add_query_param('InstanceLoginInfo.ResourceGroupId', InstanceLoginInfo.get('ResourceGroupId'))
+		if InstanceLoginInfo.get('EncryptionOptions') is not None:
+			if InstanceLoginInfo.get('EncryptionOptions').get('Mode') is not None:
+				self.add_query_param('InstanceLoginInfo.EncryptionOptions.Mode', InstanceLoginInfo.get('EncryptionOptions').get('Mode'))
+			if InstanceLoginInfo.get('EncryptionOptions').get('KMSKeyId') is not None:
+				self.add_query_param('InstanceLoginInfo.EncryptionOptions.KMSKeyId', InstanceLoginInfo.get('EncryptionOptions').get('KMSKeyId'))
+			if InstanceLoginInfo.get('EncryptionOptions').get('Enabled') is not None:
+				self.add_query_param('InstanceLoginInfo.EncryptionOptions.Enabled', InstanceLoginInfo.get('EncryptionOptions').get('Enabled'))
 		if InstanceLoginInfo.get('Protocol') is not None:
 			self.add_query_param('InstanceLoginInfo.Protocol', InstanceLoginInfo.get('Protocol'))
 		if InstanceLoginInfo.get('Password') is not None:

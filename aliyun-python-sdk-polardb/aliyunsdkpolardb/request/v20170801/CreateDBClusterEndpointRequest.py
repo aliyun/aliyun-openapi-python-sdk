@@ -96,6 +96,11 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PolarFsInstanceId(self): # String
+		return self.get_query_params().get('PolarFsInstanceId')
+
+	def set_PolarFsInstanceId(self, PolarFsInstanceId):  # String
+		self.add_query_param('PolarFsInstanceId', PolarFsInstanceId)
 	def get_Nodes(self): # String
 		return self.get_query_params().get('Nodes')
 

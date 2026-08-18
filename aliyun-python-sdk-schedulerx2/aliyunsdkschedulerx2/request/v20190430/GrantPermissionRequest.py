@@ -36,11 +36,6 @@ class GrantPermissionRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
@@ -51,6 +46,11 @@ class GrantPermissionRequest(RpcRequest):
 
 	def set_GrantOption(self, GrantOption):  # Boolean
 		self.add_query_param('GrantOption', GrantOption)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

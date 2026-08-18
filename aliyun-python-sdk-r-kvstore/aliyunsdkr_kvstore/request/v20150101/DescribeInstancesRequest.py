@@ -36,11 +36,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SearchKey(self): # String
-		return self.get_query_params().get('SearchKey')
-
-	def set_SearchKey(self, SearchKey):  # String
-		self.add_query_param('SearchKey', SearchKey)
 	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
@@ -51,6 +46,55 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_EngineVersion(self, EngineVersion):  # String
 		self.add_query_param('EngineVersion', EngineVersion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_InstanceIds(self): # String
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
+	def get_SearchKey(self): # String
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_query_param('SearchKey', SearchKey)
 	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
@@ -61,21 +105,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Expired(self): # String
 		return self.get_query_params().get('Expired')
 
 	def set_Expired(self, Expired):  # String
 		self.add_query_param('Expired', Expired)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -91,15 +125,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_EditionType(self, EditionType):  # String
 		self.add_query_param('EditionType', EditionType)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_InstanceStatus(self): # String
 		return self.get_query_params().get('InstanceStatus')
 
@@ -125,21 +150,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PrivateIp(self, PrivateIp):  # String
 		self.add_query_param('PrivateIp', PrivateIp)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_VSwitchId(self): # String
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self, VSwitchId):  # String
-		self.add_query_param('VSwitchId', VSwitchId)
-	def get_InstanceIds(self): # String
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self, InstanceIds):  # String
-		self.add_query_param('InstanceIds', InstanceIds)
 	def get_ArchitectureType(self): # String
 		return self.get_query_params().get('ArchitectureType')
 
@@ -150,11 +160,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)
 	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 

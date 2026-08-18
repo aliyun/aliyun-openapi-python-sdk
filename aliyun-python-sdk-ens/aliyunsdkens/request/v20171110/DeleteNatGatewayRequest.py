@@ -25,6 +25,11 @@ class DeleteNatGatewayRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DeleteNatGateway','ens')
 		self.set_method('POST')
 
+	def get_ForceDelete(self): # Boolean
+		return self.get_query_params().get('ForceDelete')
+
+	def set_ForceDelete(self, ForceDelete):  # Boolean
+		self.add_query_param('ForceDelete', ForceDelete)
 	def get_NatGatewayId(self): # String
 		return self.get_query_params().get('NatGatewayId')
 

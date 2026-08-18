@@ -37,16 +37,16 @@ class DescribeDiagnosticMetricsRequest(RpcRequest):
 	def set_MetricIdss(self, MetricIds):  # RepeatList
 		for depth1 in range(len(MetricIds)):
 			self.add_query_param('MetricIds.' + str(depth1 + 1), MetricIds[depth1])
-	def get_ResourceType(self): # String
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self, ResourceType):  # String
-		self.add_query_param('ResourceType', ResourceType)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

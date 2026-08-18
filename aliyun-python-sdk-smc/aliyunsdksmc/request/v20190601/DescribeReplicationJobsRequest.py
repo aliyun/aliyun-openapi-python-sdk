@@ -25,66 +25,81 @@ class DescribeReplicationJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'smc', '2019-06-01', 'DescribeReplicationJobs','smc')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageNumber(self):
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-	def get_JobIds(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_JobIds(self): # RepeatList
 		return self.get_query_params().get('JobId')
 
-	def set_JobIds(self, JobIds):
-		for depth1 in range(len(JobIds)):
-			if JobIds[depth1] is not None:
-				self.add_query_param('JobId.' + str(depth1 + 1) , JobIds[depth1])
-
-	def get_PageSize(self):
+	def set_JobIds(self, JobId):  # RepeatList
+		for depth1 in range(len(JobId)):
+			self.add_query_param('JobId.' + str(depth1 + 1), JobId[depth1])
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def get_SourceIds(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_SourceIds(self): # RepeatList
 		return self.get_query_params().get('SourceId')
 
-	def set_SourceIds(self, SourceIds):
-		for depth1 in range(len(SourceIds)):
-			if SourceIds[depth1] is not None:
-				self.add_query_param('SourceId.' + str(depth1 + 1) , SourceIds[depth1])
-
-	def get_BusinessStatus(self):
+	def set_SourceIds(self, SourceId):  # RepeatList
+		for depth1 in range(len(SourceId)):
+			self.add_query_param('SourceId.' + str(depth1 + 1), SourceId[depth1])
+	def get_BusinessStatus(self): # String
 		return self.get_query_params().get('BusinessStatus')
 
-	def set_BusinessStatus(self,BusinessStatus):
-		self.add_query_param('BusinessStatus',BusinessStatus)
-
-	def get_ResourceOwnerAccount(self):
+	def set_BusinessStatus(self, BusinessStatus):  # String
+		self.add_query_param('BusinessStatus', BusinessStatus)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_JobType(self): # Integer
+		return self.get_query_params().get('JobType')
 
-	def get_Name(self):
+	def set_JobType(self, JobType):  # Integer
+		self.add_query_param('JobType', JobType)
+	def get_InstanceIds(self): # RepeatList
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceIds(self, InstanceId):  # RepeatList
+		for depth1 in range(len(InstanceId)):
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Status(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

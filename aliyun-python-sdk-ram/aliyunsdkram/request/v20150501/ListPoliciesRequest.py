@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkram.endpoint import endpoint_data
+import json
 
 class ListPoliciesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListPolicies','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListPolicies','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,6 +33,11 @@ class ListPoliciesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		self.add_query_param("Tag", json.dumps(Tag))
 	def get_PolicyType(self): # String
 		return self.get_query_params().get('PolicyType')
 

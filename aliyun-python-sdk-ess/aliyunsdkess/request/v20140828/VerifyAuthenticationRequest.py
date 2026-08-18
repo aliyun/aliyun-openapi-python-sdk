@@ -36,6 +36,11 @@ class VerifyAuthenticationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Uid(self): # Long
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self, Uid):  # Long
+		self.add_query_param('Uid', Uid)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -51,8 +56,3 @@ class VerifyAuthenticationRequest(RpcRequest):
 
 	def set_OnlyCheck(self, OnlyCheck):  # Boolean
 		self.add_query_param('OnlyCheck', OnlyCheck)
-	def get_Uid(self): # Long
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self, Uid):  # Long
-		self.add_query_param('Uid', Uid)

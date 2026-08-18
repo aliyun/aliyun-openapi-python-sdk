@@ -6,6 +6,11 @@ certifi.py
 ~~~~~~~~~~
 
 This module returns the installation location of cacert.pem.
+
+Vendored from certifi 2026.07.22. The where() implementation keeps using
+__file__ so the CA bundle resolves correctly under the nested
+aliyunsdkcore.vendored.requests.packages.certifi package path
+(importlib.resources with package name "certifi" would not work here).
 """
 import os
 import warnings
@@ -32,6 +37,3 @@ def old_where():
         DeprecatedBundleWarning
     )
     return where()
-
-if __name__ == '__main__':
-    print(where())

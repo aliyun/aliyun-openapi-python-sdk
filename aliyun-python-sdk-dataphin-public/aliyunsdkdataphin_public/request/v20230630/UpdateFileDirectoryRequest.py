@@ -31,16 +31,16 @@ class UpdateFileDirectoryRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_ProjectId(self): # Long
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self, ProjectId):  # Long
-		self.add_query_param('ProjectId', ProjectId)
 	def get_Directory(self): # String
 		return self.get_query_params().get('Directory')
 
 	def set_Directory(self, Directory):  # String
 		self.add_query_param('Directory', Directory)
+	def get_ProjectId(self): # Long
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self, ProjectId):  # Long
+		self.add_query_param('ProjectId', ProjectId)
 	def get_FileId(self): # Long
 		return self.get_query_params().get('FileId')
 

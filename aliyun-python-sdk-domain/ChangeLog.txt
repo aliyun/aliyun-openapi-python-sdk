@@ -1,3 +1,6 @@
+2025-05-15 Version: 3.14.8
+- Supported CreateFixedPriceSelectedOrder return block domain.
+
 2024-10-17 Version: 3.14.11
 - 基于转移码的转出接口
 - SaveSingleTaskForTransferOutByAuthorizationCode

@@ -23,7 +23,7 @@ from aliyunsdksts.endpoint import endpoint_data
 class AssumeRoleWithOIDCRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithOIDC')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithOIDC','sts')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

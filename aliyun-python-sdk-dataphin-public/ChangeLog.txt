@@ -1,3 +1,63 @@
+2025-09-12 Version: 1.0.13
+- Add api UpdatePipelineByAsync.
+- Add api OfflinePipeline.
+- Add api GetPipelineById.
+- Add api GetPipelineAsyncResult.
+- Add api CreatePipeline.
+- Add api UpdatePipeline.
+- Add api OfflinePipelineByAsync.
+- Add api CreatePipelineByAsync.
+
+2025-08-29 Version: 1.0.12
+- Dataphin OpenAPI v5.3.0 changes
+- Add api GetTransferInfo.
+- Add api RetryTransferOwnership.
+- Add api TransferOwnershipForAllObject.
+
+2025-07-30 Version: 1.0.11
+- Add DataService OpenAPIs.
+- Add Udf OpenAPIs.
+- Add Project OpenAPIs.
+- Add ComputeSource OpenAPIs.
+
+2025-07-29 Version: 1.0.10
+- Add DataService OpenAPIs.
+- Add Udf OpenAPIs.
+- Add Project OpenAPIs.
+- Add ComputeSource OpenAPIs.
+
+2025-06-30 Version: 1.0.9
+- Add api GetStreamJobs .
+
+2025-06-30 Version: 1.0.8
+- Add api GetStreamJobs .
+
+2025-04-28 Version: 1.0.7
+- Dataphin v5.1.0 openAPI changs log.
+- Add API ListRowPermission.
+- Add API SyncDepartmentUser.
+- Add API ListRowPermissionByUserId.
+- Add API SyncDepartment.
+- Add API GetTableColumnLineageByTaskId.
+- Add API GetTableLineageByTaskId.
+- Add API GetAccountByRowPermissionId.
+- Add API CreateRowPermission.
+- Add API CreateDataServiceApi.
+- Add API UpdateRowPermission.
+- Add API DeleteRowPermission.
+- Fix API GetSupplementDagrunInstance metadata.
+- Fix API GetClusterQueueInfoByEnv metadata.
+
+
+2025-04-17 Version: 1.0.6
+-- Add API ListApiByApp.
+
+2025-04-16 Version: 1.0.5
+-- API CreateDataSource  input param fix.
+
+2025-03-07 Version: 1.0.4
+- Dataphin v4.5.1 openapi.
+
 2024-12-30 Version: 1.0.3
 - Dataphin openapi start.
 

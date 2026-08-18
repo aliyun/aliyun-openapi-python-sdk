@@ -25,6 +25,11 @@ class QueryAuditLogRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryAuditLog','2.2.0')
 		self.set_method('POST')
 
+	def get_AccessSourceFlag(self): # String
+		return self.get_query_params().get('AccessSourceFlag')
+
+	def set_AccessSourceFlag(self, AccessSourceFlag):  # String
+		self.add_query_param('AccessSourceFlag', AccessSourceFlag)
 	def get_StartDate(self): # String
 		return self.get_query_params().get('StartDate')
 
@@ -60,3 +65,8 @@ class QueryAuditLogRequest(RpcRequest):
 
 	def set_WorkspaceId(self, WorkspaceId):  # String
 		self.add_query_param('WorkspaceId', WorkspaceId)
+	def get_UserAccessDevice(self): # String
+		return self.get_query_params().get('UserAccessDevice')
+
+	def set_UserAccessDevice(self, UserAccessDevice):  # String
+		self.add_query_param('UserAccessDevice', UserAccessDevice)

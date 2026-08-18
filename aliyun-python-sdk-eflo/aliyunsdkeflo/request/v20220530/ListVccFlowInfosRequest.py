@@ -30,11 +30,6 @@ class ListVccFlowInfosRequest(RpcRequest):
 
 	def set_From(self, _From):  # Long
 		self.add_body_params('From', _From)
-	def get_To(self): # Long
-		return self.get_body_params().get('To')
-
-	def set_To(self, To):  # Long
-		self.add_body_params('To', To)
 	def get_VccId(self): # String
 		return self.get_body_params().get('VccId')
 
@@ -50,3 +45,8 @@ class ListVccFlowInfosRequest(RpcRequest):
 
 	def set_Direction(self, Direction):  # String
 		self.add_body_params('Direction', Direction)
+	def get_To(self): # Long
+		return self.get_body_params().get('To')
+
+	def set_To(self, To):  # Long
+		self.add_body_params('To', To)

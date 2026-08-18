@@ -31,16 +31,16 @@ class UntagResourcesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_All(self): # Boolean
-		return self.get_query_params().get('All')
-
-	def set_All(self, All):  # Boolean
-		self.add_query_param('All', All)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_All(self): # Boolean
+		return self.get_query_params().get('All')
+
+	def set_All(self, All):  # Boolean
+		self.add_query_param('All', All)
 	def get_ResourceIds(self): # RepeatList
 		return self.get_query_params().get('ResourceId')
 

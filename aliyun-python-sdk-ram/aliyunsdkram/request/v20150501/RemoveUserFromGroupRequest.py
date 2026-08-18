@@ -23,7 +23,7 @@ from aliyunsdkram.endpoint import endpoint_data
 class RemoveUserFromGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'RemoveUserFromGroup','Ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'RemoveUserFromGroup','ram')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

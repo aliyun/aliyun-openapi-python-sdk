@@ -31,13 +31,13 @@ class GetBizEntityInfoRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
-	def get_Id(self): # Long
-		return self.get_query_params().get('Id')
-
-	def set_Id(self, Id):  # Long
-		self.add_query_param('Id', Id)
 	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
 	def set_Type(self, Type):  # String
 		self.add_query_param('Type', Type)
+	def get_Id(self): # Long
+		return self.get_query_params().get('Id')
+
+	def set_Id(self, Id):  # Long
+		self.add_query_param('Id', Id)

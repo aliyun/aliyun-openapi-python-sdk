@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
+import json
 
 class ModifyBackupPolicyRequest(RpcRequest):
 
@@ -41,6 +42,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_DataLevel2BackupRetentionPeriod(self, DataLevel2BackupRetentionPeriod):  # String
 		self.add_query_param('DataLevel2BackupRetentionPeriod', DataLevel2BackupRetentionPeriod)
+	def get_AdvancedDataPolicies(self): # Array
+		return self.get_query_params().get('AdvancedDataPolicies')
+
+	def set_AdvancedDataPolicies(self, AdvancedDataPolicies):  # Array
+		self.add_query_param("AdvancedDataPolicies", json.dumps(AdvancedDataPolicies))
 	def get_DataLevel1BackupPeriod(self): # String
 		return self.get_query_params().get('DataLevel1BackupPeriod')
 
@@ -86,6 +92,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_DataLevel2BackupAnotherRegionRetentionPeriod(self, DataLevel2BackupAnotherRegionRetentionPeriod):  # String
 		self.add_query_param('DataLevel2BackupAnotherRegionRetentionPeriod', DataLevel2BackupAnotherRegionRetentionPeriod)
+	def get_BackupPolicyLevel(self): # String
+		return self.get_query_params().get('BackupPolicyLevel')
+
+	def set_BackupPolicyLevel(self, BackupPolicyLevel):  # String
+		self.add_query_param('BackupPolicyLevel', BackupPolicyLevel)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

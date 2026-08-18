@@ -36,11 +36,21 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_NotifyReqAuth(self, NotifyReqAuth):  # String
 		self.add_query_param('NotifyReqAuth', NotifyReqAuth)
+	def get_ExceptionNotifyUrl(self): # String
+		return self.get_query_params().get('ExceptionNotifyUrl')
+
+	def set_ExceptionNotifyUrl(self, ExceptionNotifyUrl):  # String
+		self.add_query_param('ExceptionNotifyUrl', ExceptionNotifyUrl)
 	def get_NotifyUrl(self): # String
 		return self.get_query_params().get('NotifyUrl')
 
 	def set_NotifyUrl(self, NotifyUrl):  # String
 		self.add_query_param('NotifyUrl', NotifyUrl)
+	def get_SwitchNotifyUrl(self): # String
+		return self.get_query_params().get('SwitchNotifyUrl')
+
+	def set_SwitchNotifyUrl(self, SwitchNotifyUrl):  # String
+		self.add_query_param('SwitchNotifyUrl', SwitchNotifyUrl)
 	def get_DomainName(self): # String
 		return self.get_query_params().get('DomainName')
 

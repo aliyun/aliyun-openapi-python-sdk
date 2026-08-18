@@ -25,16 +25,16 @@ class UpdateUserGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'UpdateUserGroup','2.2.0')
 		self.set_method('POST')
 
-	def get_UserGroupId(self): # String
-		return self.get_query_params().get('UserGroupId')
-
-	def set_UserGroupId(self, UserGroupId):  # String
-		self.add_query_param('UserGroupId', UserGroupId)
 	def get_UserGroupName(self): # String
 		return self.get_query_params().get('UserGroupName')
 
 	def set_UserGroupName(self, UserGroupName):  # String
 		self.add_query_param('UserGroupName', UserGroupName)
+	def get_UserGroupId(self): # String
+		return self.get_query_params().get('UserGroupId')
+
+	def set_UserGroupId(self, UserGroupId):  # String
+		self.add_query_param('UserGroupId', UserGroupId)
 	def get_UserGroupDescription(self): # String
 		return self.get_query_params().get('UserGroupDescription')
 

@@ -41,6 +41,11 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
 		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
+	def get_SlaveReadOnlyCount(self): # Integer
+		return self.get_query_params().get('SlaveReadOnlyCount')
+
+	def set_SlaveReadOnlyCount(self, SlaveReadOnlyCount):  # Integer
+		self.add_query_param('SlaveReadOnlyCount', SlaveReadOnlyCount)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -81,3 +86,18 @@ class MigrateToOtherZoneRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ReadOnlyCount(self): # Integer
+		return self.get_query_params().get('ReadOnlyCount')
+
+	def set_ReadOnlyCount(self, ReadOnlyCount):  # Integer
+		self.add_query_param('ReadOnlyCount', ReadOnlyCount)
+	def get_SlaveReplicaCount(self): # Integer
+		return self.get_query_params().get('SlaveReplicaCount')
+
+	def set_SlaveReplicaCount(self, SlaveReplicaCount):  # Integer
+		self.add_query_param('SlaveReplicaCount', SlaveReplicaCount)
+	def get_ReplicaCount(self): # Integer
+		return self.get_query_params().get('ReplicaCount')
+
+	def set_ReplicaCount(self, ReplicaCount):  # Integer
+		self.add_query_param('ReplicaCount', ReplicaCount)

@@ -66,3 +66,8 @@ class ModifyDeploymentSetAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Affinity(self): # Long
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self, Affinity):  # Long
+		self.add_query_param('Affinity', Affinity)

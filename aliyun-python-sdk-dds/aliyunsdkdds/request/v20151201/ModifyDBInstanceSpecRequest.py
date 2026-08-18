@@ -51,6 +51,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_ExtraParam(self, ExtraParam):  # String
 		self.add_query_param('ExtraParam', ExtraParam)
+	def get_TargetSecondaryZoneId(self): # String
+		return self.get_query_params().get('TargetSecondaryZoneId')
+
+	def set_TargetSecondaryZoneId(self, TargetSecondaryZoneId):  # String
+		self.add_query_param('TargetSecondaryZoneId', TargetSecondaryZoneId)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
@@ -61,6 +66,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_ReplicationFactor(self, ReplicationFactor):  # String
 		self.add_query_param('ReplicationFactor', ReplicationFactor)
+	def get_TargetZoneId(self): # String
+		return self.get_query_params().get('TargetZoneId')
+
+	def set_TargetZoneId(self, TargetZoneId):  # String
+		self.add_query_param('TargetZoneId', TargetZoneId)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
@@ -91,6 +101,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TargetVswitchId(self): # String
+		return self.get_query_params().get('TargetVswitchId')
+
+	def set_TargetVswitchId(self, TargetVswitchId):  # String
+		self.add_query_param('TargetVswitchId', TargetVswitchId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -101,6 +116,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceClass(self, DBInstanceClass):  # String
 		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_TargetHiddenZoneId(self): # String
+		return self.get_query_params().get('TargetHiddenZoneId')
+
+	def set_TargetHiddenZoneId(self, TargetHiddenZoneId):  # String
+		self.add_query_param('TargetHiddenZoneId', TargetHiddenZoneId)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

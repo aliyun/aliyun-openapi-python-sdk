@@ -30,6 +30,11 @@ class DeleteErRouteMapRequest(RpcRequest):
 
 	def set_ErId(self, ErId):  # String
 		self.add_body_params('ErId', ErId)
+	def get_ErRouteMapId(self): # String
+		return self.get_body_params().get('ErRouteMapId')
+
+	def set_ErRouteMapId(self, ErRouteMapId):  # String
+		self.add_body_params('ErRouteMapId', ErRouteMapId)
 	def get_ErRouteMapIdss(self): # RepeatList
 		return self.get_body_params().get('ErRouteMapIds')
 

@@ -1,3 +1,27 @@
+2025-09-09 Version: 3.9.73
+- support query rtc live rooms
+
+2025-08-19 Version: 3.9.72
+- Generated 2016-11-01 for `live`.
+
+2025-08-13 Version: 3.9.71
+- Generated 2016-11-01 for `live`.
+
+2025-08-05 Version: 3.9.70
+- Generated 2016-11-01 for `live`.
+
+2025-07-29 Version: 3.9.69
+- Generated 2016-11-01 for `live`.
+
+2025-06-11 Version: 3.9.68
+支持创建RTC WHIP推流地址
+
+2025-05-12 Version: 3.9.67
+- Generated 2016-11-01 for `live`.
+
+2025-03-27 Version: 3.9.66
+- Generated 2016-11-01 for `live`.
+
 2024-12-06 Version: 3.9.65
 - Generated 2016-11-01 for `live`.
 

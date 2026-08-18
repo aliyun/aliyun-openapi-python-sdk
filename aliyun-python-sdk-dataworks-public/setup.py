@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkdataworks_public"
-NAME = "aliyun-python-sdk-dataworks-public"
+NAME = "aliyun_python_sdk_dataworks_public"
 DESCRIPTION = "The dataworks-public module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

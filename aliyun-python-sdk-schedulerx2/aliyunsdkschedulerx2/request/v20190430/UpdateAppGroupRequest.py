@@ -36,6 +36,16 @@ class UpdateAppGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_NotificationPolicyName(self): # String
+		return self.get_query_params().get('NotificationPolicyName')
+
+	def set_NotificationPolicyName(self, NotificationPolicyName):  # String
+		self.add_query_param('NotificationPolicyName', NotificationPolicyName)
+	def get_MonitorContactsJson(self): # String
+		return self.get_query_params().get('MonitorContactsJson')
+
+	def set_MonitorContactsJson(self, MonitorContactsJson):  # String
+		self.add_query_param('MonitorContactsJson', MonitorContactsJson)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
@@ -46,11 +56,21 @@ class UpdateAppGroupRequest(RpcRequest):
 
 	def set_AppVersion(self, AppVersion):  # Integer
 		self.add_query_param('AppVersion', AppVersion)
+	def get_MonitorConfigJson(self): # String
+		return self.get_query_params().get('MonitorConfigJson')
+
+	def set_MonitorConfigJson(self, MonitorConfigJson):  # String
+		self.add_query_param('MonitorConfigJson', MonitorConfigJson)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
+	def get_EnableLog(self): # Boolean
+		return self.get_query_params().get('EnableLog')
+
+	def set_EnableLog(self, EnableLog):  # Boolean
+		self.add_query_param('EnableLog', EnableLog)
 	def get_MaxConcurrency(self): # Integer
 		return self.get_query_params().get('MaxConcurrency')
 

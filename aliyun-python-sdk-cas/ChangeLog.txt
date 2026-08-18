@@ -1,3 +1,7 @@
+2025-09-15 Version: 1.0.0
+- Add CreateExternalCACertificate.
+- Add ListPcaCaCertificate.
+
 2023-12-20 Version: 1.0.18
 - Fix some bugs.
 

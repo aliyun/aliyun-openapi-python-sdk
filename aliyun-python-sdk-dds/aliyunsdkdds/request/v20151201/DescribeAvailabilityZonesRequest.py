@@ -61,6 +61,11 @@ class DescribeAvailabilityZonesRequest(RpcRequest):
 
 	def set_ExcludeZoneId(self, ExcludeZoneId):  # String
 		self.add_query_param('ExcludeZoneId', ExcludeZoneId)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_ExcludeSecondaryZoneId(self): # String
 		return self.get_query_params().get('ExcludeSecondaryZoneId')
 

@@ -25,6 +25,16 @@ class ListCloudSiemPredefinedRulesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'ListCloudSiemPredefinedRules','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
+	def get_AttCk(self): # String
+		return self.get_body_params().get('AttCk')
+
+	def set_AttCk(self, AttCk):  # String
+		self.add_body_params('AttCk', AttCk)
 	def get_RuleName(self): # String
 		return self.get_body_params().get('RuleName')
 
@@ -40,11 +50,26 @@ class ListCloudSiemPredefinedRulesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_Id(self): # String
 		return self.get_body_params().get('Id')
 
 	def set_Id(self, Id):  # String
 		self.add_body_params('Id', Id)
+	def get_OrderField(self): # String
+		return self.get_body_params().get('OrderField')
+
+	def set_OrderField(self, OrderField):  # String
+		self.add_body_params('OrderField', OrderField)
+	def get_Order(self): # String
+		return self.get_body_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_body_params('Order', Order)
 	def get_RuleType(self): # String
 		return self.get_body_params().get('RuleType')
 
@@ -60,11 +85,21 @@ class ListCloudSiemPredefinedRulesRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_body_params('CurrentPage', CurrentPage)
+	def get_LogSource(self): # String
+		return self.get_body_params().get('LogSource')
+
+	def set_LogSource(self, LogSource):  # String
+		self.add_body_params('LogSource', LogSource)
 	def get_AlertType(self): # String
 		return self.get_body_params().get('AlertType')
 
 	def set_AlertType(self, AlertType):  # String
 		self.add_body_params('AlertType', AlertType)
+	def get_EventTransferType(self): # String
+		return self.get_body_params().get('EventTransferType')
+
+	def set_EventTransferType(self, EventTransferType):  # String
+		self.add_body_params('EventTransferType', EventTransferType)
 	def get_ThreatLevels(self): # RepeatList
 		return self.get_body_params().get('ThreatLevel')
 

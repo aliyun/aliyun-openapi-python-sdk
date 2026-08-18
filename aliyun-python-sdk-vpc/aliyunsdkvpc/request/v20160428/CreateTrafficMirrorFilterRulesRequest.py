@@ -52,6 +52,8 @@ class CreateTrafficMirrorFilterRulesRequest(RpcRequest):
 				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.SourceCidrBlock', IngressRules[depth1].get('SourceCidrBlock'))
 			if IngressRules[depth1].get('Protocol') is not None:
 				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.Protocol', IngressRules[depth1].get('Protocol'))
+			if IngressRules[depth1].get('IpVersion') is not None:
+				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.IpVersion', IngressRules[depth1].get('IpVersion'))
 			if IngressRules[depth1].get('DestinationPortRange') is not None:
 				self.add_query_param('IngressRules.' + str(depth1 + 1) + '.DestinationPortRange', IngressRules[depth1].get('DestinationPortRange'))
 			if IngressRules[depth1].get('Priority') is not None:
@@ -71,6 +73,8 @@ class CreateTrafficMirrorFilterRulesRequest(RpcRequest):
 				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.SourceCidrBlock', EgressRules[depth1].get('SourceCidrBlock'))
 			if EgressRules[depth1].get('Protocol') is not None:
 				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.Protocol', EgressRules[depth1].get('Protocol'))
+			if EgressRules[depth1].get('IpVersion') is not None:
+				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.IpVersion', EgressRules[depth1].get('IpVersion'))
 			if EgressRules[depth1].get('DestinationPortRange') is not None:
 				self.add_query_param('EgressRules.' + str(depth1 + 1) + '.DestinationPortRange', EgressRules[depth1].get('DestinationPortRange'))
 			if EgressRules[depth1].get('Priority') is not None:

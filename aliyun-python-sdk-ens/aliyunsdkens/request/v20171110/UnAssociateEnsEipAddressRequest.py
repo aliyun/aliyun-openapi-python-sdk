@@ -30,3 +30,8 @@ class UnAssociateEnsEipAddressRequest(RpcRequest):
 
 	def set_AllocationId(self, AllocationId):  # String
 		self.add_query_param('AllocationId', AllocationId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)

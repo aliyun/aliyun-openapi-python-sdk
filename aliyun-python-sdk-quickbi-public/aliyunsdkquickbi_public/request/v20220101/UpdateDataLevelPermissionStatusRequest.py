@@ -30,13 +30,13 @@ class UpdateDataLevelPermissionStatusRequest(RpcRequest):
 
 	def set_IsOpen(self, IsOpen):  # Integer
 		self.add_query_param('IsOpen', IsOpen)
-	def get_RuleType(self): # String
-		return self.get_query_params().get('RuleType')
-
-	def set_RuleType(self, RuleType):  # String
-		self.add_query_param('RuleType', RuleType)
 	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
 	def set_CubeId(self, CubeId):  # String
 		self.add_query_param('CubeId', CubeId)
+	def get_RuleType(self): # String
+		return self.get_query_params().get('RuleType')
+
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)

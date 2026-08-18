@@ -36,16 +36,6 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Memory(self): # Float
-		return self.get_query_params().get('Memory')
-
-	def set_Memory(self, Memory):  # Float
-		self.add_query_param('Memory', Memory)
-	def get_IoOptimized(self): # String
-		return self.get_query_params().get('IoOptimized')
-
-	def set_IoOptimized(self, IoOptimized):  # String
-		self.add_query_param('IoOptimized', IoOptimized)
 	def get_NetworkType(self): # String
 		return self.get_query_params().get('NetworkType')
 
@@ -66,6 +56,41 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def set_SystemDiskCategory(self, SystemDiskCategory):  # String
 		self.add_query_param('SystemDiskCategory', SystemDiskCategory)
+	def get_MaxPrice(self): # Float
+		return self.get_query_params().get('MaxPrice')
+
+	def set_MaxPrice(self, MaxPrice):  # Float
+		self.add_query_param('MaxPrice', MaxPrice)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SpotStrategy(self): # String
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self, SpotStrategy):  # String
+		self.add_query_param('SpotStrategy', SpotStrategy)
+	def get_InstanceFamilyLevel(self): # String
+		return self.get_query_params().get('InstanceFamilyLevel')
+
+	def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
+		self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_Memory(self): # Float
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self, Memory):  # Float
+		self.add_query_param('Memory', Memory)
+	def get_IoOptimized(self): # String
+		return self.get_query_params().get('IoOptimized')
+
+	def set_IoOptimized(self, IoOptimized):  # String
+		self.add_query_param('IoOptimized', IoOptimized)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
@@ -76,11 +101,6 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def set_InstanceChargeType(self, InstanceChargeType):  # String
 		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_MaxPrice(self): # Float
-		return self.get_query_params().get('MaxPrice')
-
-	def set_MaxPrice(self, MaxPrice):  # Float
-		self.add_query_param('MaxPrice', MaxPrice)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -102,28 +122,8 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 	def set_InstanceTypeFamilys(self, InstanceTypeFamily):  # RepeatList
 		for depth1 in range(len(InstanceTypeFamily)):
 			self.add_query_param('InstanceTypeFamily.' + str(depth1 + 1), InstanceTypeFamily[depth1])
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SpotStrategy(self): # String
-		return self.get_query_params().get('SpotStrategy')
-
-	def set_SpotStrategy(self, SpotStrategy):  # String
-		self.add_query_param('SpotStrategy', SpotStrategy)
 	def get_PriorityStrategy(self): # String
 		return self.get_query_params().get('PriorityStrategy')
 
 	def set_PriorityStrategy(self, PriorityStrategy):  # String
 		self.add_query_param('PriorityStrategy', PriorityStrategy)
-	def get_InstanceFamilyLevel(self): # String
-		return self.get_query_params().get('InstanceFamilyLevel')
-
-	def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
-		self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
-	def get_ZoneId(self): # String
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self, ZoneId):  # String
-		self.add_query_param('ZoneId', ZoneId)

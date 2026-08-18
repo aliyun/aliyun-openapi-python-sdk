@@ -52,6 +52,11 @@ class DescribeVodTieringStorageRetrievalDataRequest(RpcRequest):
 
 	def set_StorageClass(self, StorageClass):  # String
 		self.add_query_param('StorageClass', StorageClass)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
 	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 

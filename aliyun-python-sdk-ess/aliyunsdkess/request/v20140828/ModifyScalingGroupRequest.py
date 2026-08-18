@@ -120,6 +120,8 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def set_CapacityOptions(self, CapacityOptions):  # Struct
 		if CapacityOptions.get('CompensateWithOnDemand') is not None:
 			self.add_query_param('CapacityOptions.CompensateWithOnDemand', CapacityOptions.get('CompensateWithOnDemand'))
+		if CapacityOptions.get('PriceComparisonMode') is not None:
+			self.add_query_param('CapacityOptions.PriceComparisonMode', CapacityOptions.get('PriceComparisonMode'))
 		if CapacityOptions.get('OnDemandBaseCapacity') is not None:
 			self.add_query_param('CapacityOptions.OnDemandBaseCapacity', CapacityOptions.get('OnDemandBaseCapacity'))
 		if CapacityOptions.get('SpotAutoReplaceOnDemand') is not None:

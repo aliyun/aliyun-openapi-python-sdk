@@ -76,3 +76,8 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_CheckPolicy(self): # Boolean
+		return self.get_query_params().get('CheckPolicy')
+
+	def set_CheckPolicy(self, CheckPolicy):  # Boolean
+		self.add_query_param('CheckPolicy', CheckPolicy)

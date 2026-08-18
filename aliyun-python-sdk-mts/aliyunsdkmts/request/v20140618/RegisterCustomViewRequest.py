@@ -36,6 +36,11 @@ class RegisterCustomViewRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_LabelPrompt(self): # String
+		return self.get_query_params().get('LabelPrompt')
+
+	def set_LabelPrompt(self, LabelPrompt):  # String
+		self.add_query_param('LabelPrompt', LabelPrompt)
 	def get_Algorithm(self): # String
 		return self.get_query_params().get('Algorithm')
 

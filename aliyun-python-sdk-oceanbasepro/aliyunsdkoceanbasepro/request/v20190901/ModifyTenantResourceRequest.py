@@ -56,6 +56,11 @@ class ModifyTenantResourceRequest(RpcRequest):
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
+	def get_Iops(self): # String
+		return self.get_body_params().get('Iops')
+
+	def set_Iops(self, Iops):  # String
+		self.add_body_params('Iops', Iops)
 	def get_ReadOnlyZoneList(self): # String
 		return self.get_body_params().get('ReadOnlyZoneList')
 

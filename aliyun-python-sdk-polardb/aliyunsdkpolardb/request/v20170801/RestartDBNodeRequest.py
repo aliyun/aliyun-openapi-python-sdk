@@ -41,6 +41,11 @@ class RestartDBNodeRequest(RpcRequest):
 
 	def set_DBNodeId(self, DBNodeId):  # String
 		self.add_query_param('DBNodeId', DBNodeId)
+	def get_PlannedEndTime(self): # String
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self, PlannedEndTime):  # String
+		self.add_query_param('PlannedEndTime', PlannedEndTime)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,3 +61,13 @@ class RestartDBNodeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PlannedStartTime(self): # String
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self, PlannedStartTime):  # String
+		self.add_query_param('PlannedStartTime', PlannedStartTime)
+	def get_FromTimeService(self): # String
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self, FromTimeService):  # String
+		self.add_query_param('FromTimeService', FromTimeService)

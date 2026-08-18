@@ -41,6 +41,11 @@ class ListClassesRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_Engine(self): # String
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self, Engine):  # String
+		self.add_query_param('Engine', Engine)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

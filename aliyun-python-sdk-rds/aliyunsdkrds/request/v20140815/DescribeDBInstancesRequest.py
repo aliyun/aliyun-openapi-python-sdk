@@ -126,6 +126,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_Expired(self, Expired):  # String
 		self.add_query_param('Expired', Expired)
+	def get_QueryAutoRenewal(self): # Boolean
+		return self.get_query_params().get('QueryAutoRenewal')
+
+	def set_QueryAutoRenewal(self, QueryAutoRenewal):  # Boolean
+		self.add_query_param('QueryAutoRenewal', QueryAutoRenewal)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

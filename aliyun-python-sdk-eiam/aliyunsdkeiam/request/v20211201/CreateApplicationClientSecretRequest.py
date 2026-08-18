@@ -26,13 +26,18 @@ class CreateApplicationClientSecretRequest(RpcRequest):
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
+	def get_ExpirationTime(self): # Long
+		return self.get_query_params().get('ExpirationTime')
 
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
+	def set_ExpirationTime(self, ExpirationTime):  # Long
+		self.add_query_param('ExpirationTime', ExpirationTime)
 	def get_ApplicationId(self): # String
 		return self.get_query_params().get('ApplicationId')
 
 	def set_ApplicationId(self, ApplicationId):  # String
 		self.add_query_param('ApplicationId', ApplicationId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -56,6 +56,11 @@ class DescribeUserEncryptionKeyListRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_RoleARN(self): # String
+		return self.get_query_params().get('RoleARN')
+
+	def set_RoleARN(self, RoleARN):  # String
+		self.add_query_param('RoleARN', RoleARN)
 	def get_TargetRegionId(self): # String
 		return self.get_query_params().get('TargetRegionId')
 

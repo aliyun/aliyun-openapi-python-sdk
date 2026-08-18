@@ -41,6 +41,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_DbNodeStorageType(self, DbNodeStorageType):  # String
 		self.add_query_param('DbNodeStorageType', DbNodeStorageType)
+	def get_DisableWriteWindows(self): # String
+		return self.get_query_params().get('DisableWriteWindows')
+
+	def set_DisableWriteWindows(self, DisableWriteWindows):  # String
+		self.add_query_param('DisableWriteWindows', DisableWriteWindows)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

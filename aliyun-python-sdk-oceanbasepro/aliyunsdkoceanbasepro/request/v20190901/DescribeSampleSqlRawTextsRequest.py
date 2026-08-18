@@ -42,15 +42,20 @@ class DescribeSampleSqlRawTextsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
+	def get_DynamicSql(self): # Boolean
+		return self.get_body_params().get('DynamicSql')
+
+	def set_DynamicSql(self, DynamicSql):  # Boolean
+		self.add_body_params('DynamicSql', DynamicSql)
 	def get_TenantId(self): # String
 		return self.get_body_params().get('TenantId')
 
 	def set_TenantId(self, TenantId):  # String
 		self.add_body_params('TenantId', TenantId)
-	def get_Limit(self): # String
+	def get_Limit(self): # Integer
 		return self.get_body_params().get('Limit')
 
-	def set_Limit(self, Limit):  # String
+	def set_Limit(self, Limit):  # Integer
 		self.add_body_params('Limit', Limit)
 	def get_SqlId(self): # String
 		return self.get_body_params().get('SqlId')

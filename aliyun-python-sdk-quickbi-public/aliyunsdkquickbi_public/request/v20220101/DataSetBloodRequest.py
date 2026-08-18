@@ -25,6 +25,11 @@ class DataSetBloodRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DataSetBlood','2.2.0')
 		self.set_method('POST')
 
+	def get_UserId(self): # String
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
 	def get_DataSetIds(self): # String
 		return self.get_query_params().get('DataSetIds')
 
@@ -35,8 +40,3 @@ class DataSetBloodRequest(RpcRequest):
 
 	def set_WorksType(self, WorksType):  # String
 		self.add_query_param('WorksType', WorksType)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)

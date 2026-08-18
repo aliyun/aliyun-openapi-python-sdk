@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class CreateSecurityGroupRequest(RpcRequest):
 
@@ -35,3 +36,8 @@ class CreateSecurityGroupRequest(RpcRequest):
 
 	def set_SecurityGroupName(self, SecurityGroupName):  # String
 		self.add_query_param('SecurityGroupName', SecurityGroupName)
+	def get_Permissions(self): # Array
+		return self.get_query_params().get('Permissions')
+
+	def set_Permissions(self, Permissions):  # Array
+		self.add_query_param("Permissions", json.dumps(Permissions))

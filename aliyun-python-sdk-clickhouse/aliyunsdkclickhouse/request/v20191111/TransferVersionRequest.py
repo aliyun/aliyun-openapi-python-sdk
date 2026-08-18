@@ -51,6 +51,11 @@ class TransferVersionRequest(RpcRequest):
 
 	def set_TargetAccount(self, TargetAccount):  # String
 		self.add_query_param('TargetAccount', TargetAccount)
+	def get_SourceClusterName(self): # String
+		return self.get_query_params().get('SourceClusterName')
+
+	def set_SourceClusterName(self, SourceClusterName):  # String
+		self.add_query_param('SourceClusterName', SourceClusterName)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -61,6 +66,11 @@ class TransferVersionRequest(RpcRequest):
 
 	def set_SourcePassword(self, SourcePassword):  # String
 		self.add_query_param('SourcePassword', SourcePassword)
+	def get_DisableWriteWindows(self): # String
+		return self.get_query_params().get('DisableWriteWindows')
+
+	def set_DisableWriteWindows(self, DisableWriteWindows):  # String
+		self.add_query_param('DisableWriteWindows', DisableWriteWindows)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -91,3 +101,8 @@ class TransferVersionRequest(RpcRequest):
 
 	def set_TargetDbClusterId(self, TargetDbClusterId):  # String
 		self.add_query_param('TargetDbClusterId', TargetDbClusterId)
+	def get_SourceShards(self): # String
+		return self.get_query_params().get('SourceShards')
+
+	def set_SourceShards(self, SourceShards):  # String
+		self.add_query_param('SourceShards', SourceShards)

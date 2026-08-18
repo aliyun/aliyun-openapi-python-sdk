@@ -61,6 +61,11 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_EipAffinity(self, EipAffinity):  # Integer
 		self.add_query_param('EipAffinity', EipAffinity)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

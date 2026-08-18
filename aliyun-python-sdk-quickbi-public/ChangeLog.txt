@@ -1,3 +1,25 @@
+2025-09-11 Version: 2.1.19
+- Add some APIs.
+
+2025-08-11 Version: 2.1.18
+- Add QueryDashboardNl2sql, QueryLastAccelerationEngineJob APIs.
+
+2025-07-14 Version: 2.1.17
+- Add QueryReadableResourcesListByUserIdV2 API.
+
+2025-07-03 Version: 2.1.16
+- QueryAuditLog API add request parameters.
+
+2025-05-28 Version: 2.1.15
+- Add api request parameters and error code.
+
+2025-04-14 Version: 2.1.14
+- Add SmartqQueryAbility api request parameters.
+
+2025-03-14 Version: 2.1.13
+- Add API errors.
+- QueryUserList API add return parameter.
+
 2024-12-30 Version: 2.1.12
 - Add SmartQ APIs.
 - Add GetDataSourceConnectionInfo, QueryDatasetList APIs.

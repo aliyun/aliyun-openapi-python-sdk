@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class ListPolicyAttachmentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListPolicyAttachments')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListPolicyAttachments','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

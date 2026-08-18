@@ -48,6 +48,11 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 	def set_PrivatePoolOptionsIds(self, PrivatePoolOptionsId):  # RepeatList
 		for depth1 in range(len(PrivatePoolOptionsId)):
 			self.add_query_param('PrivatePoolOptions.Id.' + str(depth1 + 1), PrivatePoolOptionsId[depth1])
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -78,3 +83,8 @@ class RenewElasticityAssurancesRequest(RpcRequest):
 
 	def set_PeriodUnit(self, PeriodUnit):  # String
 		self.add_query_param('PeriodUnit', PeriodUnit)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)

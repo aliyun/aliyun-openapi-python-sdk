@@ -32,6 +32,16 @@ class DescribeSavingsPlanEstimationRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PlanType(self): # String
+		return self.get_query_params().get('PlanType')
+
+	def set_PlanType(self, PlanType):  # String
+		self.add_query_param('PlanType', PlanType)
+	def get_EstimationResource(self): # String
+		return self.get_query_params().get('EstimationResource')
+
+	def set_EstimationResource(self, EstimationResource):  # String
+		self.add_query_param('EstimationResource', EstimationResource)
 	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
@@ -42,11 +52,6 @@ class DescribeSavingsPlanEstimationRequest(RpcRequest):
 
 	def set_Period(self, Period):  # String
 		self.add_query_param('Period', Period)
-	def get_PlanType(self): # String
-		return self.get_query_params().get('PlanType')
-
-	def set_PlanType(self, PlanType):  # String
-		self.add_query_param('PlanType', PlanType)
 	def get_InstanceTypeScope(self): # String
 		return self.get_query_params().get('InstanceTypeScope')
 
@@ -62,8 +67,3 @@ class DescribeSavingsPlanEstimationRequest(RpcRequest):
 
 	def set_OfferingType(self, OfferingType):  # String
 		self.add_query_param('OfferingType', OfferingType)
-	def get_EstimationResource(self): # String
-		return self.get_query_params().get('EstimationResource')
-
-	def set_EstimationResource(self, EstimationResource):  # String
-		self.add_query_param('EstimationResource', EstimationResource)

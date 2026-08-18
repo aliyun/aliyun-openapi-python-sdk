@@ -67,6 +67,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_AutoCreateProxy(self, AutoCreateProxy):  # Boolean
 		self.add_query_param('AutoCreateProxy', AutoCreateProxy)
+	def get_OptimizedWrites(self): # String
+		return self.get_query_params().get('OptimizedWrites')
+
+	def set_OptimizedWrites(self, OptimizedWrites):  # String
+		self.add_query_param('OptimizedWrites', OptimizedWrites)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -101,6 +106,11 @@ class CreateDBInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 
@@ -166,6 +176,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_RoleARN(self, RoleARN):  # String
 		self.add_query_param('RoleARN', RoleARN)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -196,6 +211,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_TargetDedicatedHostIdForSlave(self, TargetDedicatedHostIdForSlave):  # String
 		self.add_query_param('TargetDedicatedHostIdForSlave', TargetDedicatedHostIdForSlave)
+	def get_ExternalReplication(self): # Boolean
+		return self.get_query_params().get('ExternalReplication')
+
+	def set_ExternalReplication(self, ExternalReplication):  # Boolean
+		self.add_query_param('ExternalReplication', ExternalReplication)
 	def get_ZoneIdSlave1(self): # String
 		return self.get_query_params().get('ZoneIdSlave1')
 
@@ -206,6 +226,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ZoneIdSlave2(self, ZoneIdSlave2):  # String
 		self.add_query_param('ZoneIdSlave2', ZoneIdSlave2)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_DBIsIgnoreCase(self): # String
 		return self.get_query_params().get('DBIsIgnoreCase')
 

@@ -24,7 +24,6 @@ class ModifyAccountMaskingPrivilegeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyAccountMaskingPrivilege','rds')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -37,31 +36,36 @@ class ModifyAccountMaskingPrivilegeRequest(RpcRequest):
 
 	def set_DBInstanceName(self, DBInstanceName):  # String
 		self.add_query_param('DBInstanceName', DBInstanceName)
-	def get_ExpireTime(self): # String
-		return self.get_query_params().get('ExpireTime')
-
-	def set_ExpireTime(self, ExpireTime):  # String
-		self.add_query_param('ExpireTime', ExpireTime)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_Privilege(self): # String
 		return self.get_query_params().get('Privilege')
 
 	def set_Privilege(self, Privilege):  # String
 		self.add_query_param('Privilege', Privilege)
+	def get_ExpireTime(self): # String
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self, ExpireTime):  # String
+		self.add_query_param('ExpireTime', ExpireTime)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
 	def get_OwnerId(self): # String
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # String
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBName(self): # String
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)
 	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 

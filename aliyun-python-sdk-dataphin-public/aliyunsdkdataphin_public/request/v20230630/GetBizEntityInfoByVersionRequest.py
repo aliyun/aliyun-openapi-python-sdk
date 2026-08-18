@@ -31,6 +31,11 @@ class GetBizEntityInfoByVersionRequest(RpcRequest):
 
 	def set_OpTenantId(self, OpTenantId):  # Long
 		self.add_query_param('OpTenantId', OpTenantId)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_VersionId(self): # Long
 		return self.get_query_params().get('VersionId')
 
@@ -41,8 +46,3 @@ class GetBizEntityInfoByVersionRequest(RpcRequest):
 
 	def set_Id(self, Id):  # Long
 		self.add_query_param('Id', Id)
-	def get_Type(self): # String
-		return self.get_query_params().get('Type')
-
-	def set_Type(self, Type):  # String
-		self.add_query_param('Type', Type)

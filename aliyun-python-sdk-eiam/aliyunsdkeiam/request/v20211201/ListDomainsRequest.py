@@ -31,3 +31,8 @@ class ListDomainsRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_BrandId(self): # String
+		return self.get_query_params().get('BrandId')
+
+	def set_BrandId(self, BrandId):  # String
+		self.add_query_param('BrandId', BrandId)

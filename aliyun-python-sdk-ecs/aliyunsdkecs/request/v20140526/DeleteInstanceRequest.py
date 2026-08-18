@@ -36,6 +36,11 @@ class DeleteInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ForceStop(self): # Boolean
+		return self.get_query_params().get('ForceStop')
+
+	def set_ForceStop(self, ForceStop):  # Boolean
+		self.add_query_param('ForceStop', ForceStop)
 	def get_TerminateSubscription(self): # Boolean
 		return self.get_query_params().get('TerminateSubscription')
 

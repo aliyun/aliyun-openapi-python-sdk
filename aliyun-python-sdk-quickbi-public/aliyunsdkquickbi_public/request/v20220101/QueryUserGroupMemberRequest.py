@@ -25,13 +25,13 @@ class QueryUserGroupMemberRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'QueryUserGroupMember','2.2.0')
 		self.set_method('POST')
 
-	def get_UserGroupId(self): # String
-		return self.get_query_params().get('UserGroupId')
-
-	def set_UserGroupId(self, UserGroupId):  # String
-		self.add_query_param('UserGroupId', UserGroupId)
 	def get_Keyword(self): # String
 		return self.get_query_params().get('Keyword')
 
 	def set_Keyword(self, Keyword):  # String
 		self.add_query_param('Keyword', Keyword)
+	def get_UserGroupId(self): # String
+		return self.get_query_params().get('UserGroupId')
+
+	def set_UserGroupId(self, UserGroupId):  # String
+		self.add_query_param('UserGroupId', UserGroupId)

@@ -48,6 +48,8 @@ class CommitContainerRequest(RpcRequest):
     def set_AcrRegistryInfo(self, AcrRegistryInfo):
         self.add_query_param("AcrRegistryInfo.InstanceId", AcrRegistryInfo.get("InstanceId"))
         self.add_query_param("AcrRegistryInfo.RegionId", AcrRegistryInfo.get("RegionId"))
+        self.add_query_param("AcrRegistryInfo.ArnService", AcrRegistryInfo.get("ArnService"))
+        self.add_query_param("AcrRegistryInfo.ArnUser", AcrRegistryInfo.get("ArnUser"))
 
     def get_AcrRegistryInfo(self):
         return self.get_query_params().get("AcrRegistryInfo")

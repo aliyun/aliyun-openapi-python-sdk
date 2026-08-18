@@ -23,7 +23,6 @@ class SmartqQueryAbilityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'SmartqQueryAbility','2.2.0')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 
 	def get_UserId(self): # String

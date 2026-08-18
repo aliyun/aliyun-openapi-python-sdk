@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class DeleteServiceLinkedRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeleteServiceLinkedRole')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'DeleteServiceLinkedRole','resourcemanager')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

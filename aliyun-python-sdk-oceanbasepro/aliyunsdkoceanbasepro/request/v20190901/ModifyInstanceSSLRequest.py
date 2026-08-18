@@ -41,3 +41,8 @@ class ModifyInstanceSSLRequest(RpcRequest):
 
 	def set_EnableSSL(self, EnableSSL):  # String
 		self.add_body_params('EnableSSL', EnableSSL)
+	def get_TenantId(self): # String
+		return self.get_body_params().get('TenantId')
+
+	def set_TenantId(self, TenantId):  # String
+		self.add_body_params('TenantId', TenantId)

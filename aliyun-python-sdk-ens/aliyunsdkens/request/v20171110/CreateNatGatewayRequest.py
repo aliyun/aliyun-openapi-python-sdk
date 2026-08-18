@@ -30,11 +30,6 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceType(self): # String
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):  # String
-		self.add_query_param('InstanceType', InstanceType)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -44,6 +39,11 @@ class CreateNatGatewayRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_InstanceBillingCycle(self): # String
+		return self.get_query_params().get('InstanceBillingCycle')
+
+	def set_InstanceBillingCycle(self, InstanceBillingCycle):  # String
+		self.add_query_param('InstanceBillingCycle', InstanceBillingCycle)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -59,3 +59,8 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_NetworkId(self, NetworkId):  # String
 		self.add_query_param('NetworkId', NetworkId)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)

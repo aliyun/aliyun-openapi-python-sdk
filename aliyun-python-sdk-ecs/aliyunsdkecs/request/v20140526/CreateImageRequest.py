@@ -31,6 +31,51 @@ class CreateImageRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Features(self): # Struct
+		return self.get_query_params().get('Features')
+
+	def set_Features(self, Features):  # Struct
+		if Features.get('ImdsSupport') is not None:
+			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
+	def get_BootMode(self): # String
+		return self.get_query_params().get('BootMode')
+
+	def set_BootMode(self, BootMode):  # String
+		self.add_query_param('BootMode', BootMode)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_DiskDeviceMappings(self): # RepeatList
 		return self.get_query_params().get('DiskDeviceMapping')
 
@@ -44,11 +89,6 @@ class CreateImageRequest(RpcRequest):
 				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskType', DiskDeviceMapping[depth1].get('DiskType'))
 			if DiskDeviceMapping[depth1].get('Device') is not None:
 				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Device', DiskDeviceMapping[depth1].get('Device'))
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
 	def get_SnapshotId(self): # String
 		return self.get_query_params().get('SnapshotId')
 
@@ -69,36 +109,11 @@ class CreateImageRequest(RpcRequest):
 
 	def set_Platform(self, Platform):  # String
 		self.add_query_param('Platform', Platform)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_Features(self): # Struct
-		return self.get_query_params().get('Features')
-
-	def set_Features(self, Features):  # Struct
-		if Features.get('ImdsSupport') is not None:
-			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
-	def get_BootMode(self): # String
-		return self.get_query_params().get('BootMode')
-
-	def set_BootMode(self, BootMode):  # String
-		self.add_query_param('BootMode', BootMode)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
-	def get_Tags(self): # RepeatList
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tag):  # RepeatList
-		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Architecture(self): # String
 		return self.get_query_params().get('Architecture')
 
@@ -119,16 +134,6 @@ class CreateImageRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_InstanceId(self): # String
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # String
-		self.add_query_param('InstanceId', InstanceId)
 	def get_ImageFamily(self): # String
 		return self.get_query_params().get('ImageFamily')
 

@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class ListHandshakesForResourceDirectoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListHandshakesForResourceDirectory')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'ListHandshakesForResourceDirectory','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

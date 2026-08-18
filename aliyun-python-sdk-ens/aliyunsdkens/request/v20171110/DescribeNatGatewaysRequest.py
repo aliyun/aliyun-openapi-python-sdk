@@ -60,3 +60,15 @@ class DescribeNatGatewaysRequest(RpcRequest):
 
 	def set_NatGatewayId(self, NatGatewayId):  # String
 		self.add_query_param('NatGatewayId', NatGatewayId)
+	def get_EnsRegionIds(self): # Array
+		return self.get_query_params().get('EnsRegionIds')
+
+	def set_EnsRegionIds(self, EnsRegionIds):  # Array
+		for index1, value1 in enumerate(EnsRegionIds):
+			self.add_query_param('EnsRegionIds.' + str(index1 + 1), value1)
+	def get_NatGatewayIds(self): # Array
+		return self.get_query_params().get('NatGatewayIds')
+
+	def set_NatGatewayIds(self, NatGatewayIds):  # Array
+		for index1, value1 in enumerate(NatGatewayIds):
+			self.add_query_param('NatGatewayIds.' + str(index1 + 1), value1)

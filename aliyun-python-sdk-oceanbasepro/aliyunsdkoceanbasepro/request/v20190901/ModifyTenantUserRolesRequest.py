@@ -31,6 +31,11 @@ class ModifyTenantUserRolesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_UserType(self): # String
+		return self.get_body_params().get('UserType')
+
+	def set_UserType(self, UserType):  # String
+		self.add_body_params('UserType', UserType)
 	def get_UserRole(self): # String
 		return self.get_body_params().get('UserRole')
 
@@ -46,6 +51,11 @@ class ModifyTenantUserRolesRequest(RpcRequest):
 
 	def set_ModifyType(self, ModifyType):  # String
 		self.add_body_params('ModifyType', ModifyType)
+	def get_GlobalPermissions(self): # String
+		return self.get_body_params().get('GlobalPermissions')
+
+	def set_GlobalPermissions(self, GlobalPermissions):  # String
+		self.add_body_params('GlobalPermissions', GlobalPermissions)
 	def get_TenantId(self): # String
 		return self.get_body_params().get('TenantId')
 

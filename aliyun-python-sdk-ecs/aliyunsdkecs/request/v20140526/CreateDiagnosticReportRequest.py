@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
 class CreateDiagnosticReportRequest(RpcRequest):
 
@@ -51,3 +52,8 @@ class CreateDiagnosticReportRequest(RpcRequest):
 
 	def set_EndTime(self, EndTime):  # String
 		self.add_query_param('EndTime', EndTime)
+	def get_AdditionalOptions(self): # Map
+		return self.get_query_params().get('AdditionalOptions')
+
+	def set_AdditionalOptions(self, AdditionalOptions):  # Map
+		self.add_query_param("AdditionalOptions", json.dumps(AdditionalOptions))

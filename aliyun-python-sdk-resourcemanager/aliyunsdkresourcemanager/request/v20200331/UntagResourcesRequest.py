@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UntagResources')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'UntagResources','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

@@ -25,13 +25,13 @@ class DeleteDataLevelRuleConfigRequest(RpcRequest):
 		RpcRequest.__init__(self, 'quickbi-public', '2022-01-01', 'DeleteDataLevelRuleConfig','2.2.0')
 		self.set_method('POST')
 
-	def get_RuleId(self): # String
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self, RuleId):  # String
-		self.add_query_param('RuleId', RuleId)
 	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
 	def set_CubeId(self, CubeId):  # String
 		self.add_query_param('CubeId', CubeId)
+	def get_RuleId(self): # String
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self, RuleId):  # String
+		self.add_query_param('RuleId', RuleId)

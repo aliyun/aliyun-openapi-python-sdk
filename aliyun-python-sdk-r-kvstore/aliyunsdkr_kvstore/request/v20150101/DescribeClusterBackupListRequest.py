@@ -81,6 +81,11 @@ class DescribeClusterBackupListRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_NoShardBackup(self): # String
+		return self.get_query_params().get('NoShardBackup')
+
+	def set_NoShardBackup(self, NoShardBackup):  # String
+		self.add_query_param('NoShardBackup', NoShardBackup)
 	def get_ClusterBackupId(self): # String
 		return self.get_query_params().get('ClusterBackupId')
 

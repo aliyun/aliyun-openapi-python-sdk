@@ -36,11 +36,6 @@ class ListStateConfigurationsRequest(RpcRequest):
 
 	def set_StateConfigurationIds(self, StateConfigurationIds):  # String
 		self.add_query_param('StateConfigurationIds', StateConfigurationIds)
-	def get_Tags(self): # String
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):  # String
-		self.add_query_param('Tags', Tags)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -56,13 +51,18 @@ class ListStateConfigurationsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_query_param('MaxResults', MaxResults)
 	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
 	def set_TemplateName(self, TemplateName):  # String
 		self.add_query_param('TemplateName', TemplateName)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

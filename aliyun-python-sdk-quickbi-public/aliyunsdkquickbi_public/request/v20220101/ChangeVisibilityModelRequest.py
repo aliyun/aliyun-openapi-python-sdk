@@ -30,13 +30,13 @@ class ChangeVisibilityModelRequest(RpcRequest):
 
 	def set_DataPortalId(self, DataPortalId):  # String
 		self.add_query_param('DataPortalId', DataPortalId)
-	def get_ShowOnlyWithAccess(self): # Boolean
-		return self.get_query_params().get('ShowOnlyWithAccess')
-
-	def set_ShowOnlyWithAccess(self, ShowOnlyWithAccess):  # Boolean
-		self.add_query_param('ShowOnlyWithAccess', ShowOnlyWithAccess)
 	def get_MenuIds(self): # String
 		return self.get_query_params().get('MenuIds')
 
 	def set_MenuIds(self, MenuIds):  # String
 		self.add_query_param('MenuIds', MenuIds)
+	def get_ShowOnlyWithAccess(self): # Boolean
+		return self.get_query_params().get('ShowOnlyWithAccess')
+
+	def set_ShowOnlyWithAccess(self, ShowOnlyWithAccess):  # Boolean
+		self.add_query_param('ShowOnlyWithAccess', ShowOnlyWithAccess)

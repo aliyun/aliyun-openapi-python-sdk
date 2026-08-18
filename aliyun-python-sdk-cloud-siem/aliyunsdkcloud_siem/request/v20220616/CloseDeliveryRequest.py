@@ -30,8 +30,18 @@ class CloseDeliveryRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_LogCode(self): # String
 		return self.get_body_params().get('LogCode')
 
 	def set_LogCode(self, LogCode):  # String
 		self.add_body_params('LogCode', LogCode)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)

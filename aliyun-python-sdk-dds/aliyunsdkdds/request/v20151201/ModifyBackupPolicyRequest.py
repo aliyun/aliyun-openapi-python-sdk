@@ -151,3 +151,8 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_LogBackupRetentionPeriod(self, LogBackupRetentionPeriod):  # Long
 		self.add_query_param('LogBackupRetentionPeriod', LogBackupRetentionPeriod)
+	def get_PreserveOneEachHour(self): # Boolean
+		return self.get_query_params().get('PreserveOneEachHour')
+
+	def set_PreserveOneEachHour(self, PreserveOneEachHour):  # Boolean
+		self.add_query_param('PreserveOneEachHour', PreserveOneEachHour)

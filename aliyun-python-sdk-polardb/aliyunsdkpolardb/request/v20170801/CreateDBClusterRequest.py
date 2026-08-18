@@ -66,16 +66,31 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_CreationCategory(self, CreationCategory):  # String
 		self.add_query_param('CreationCategory', CreationCategory)
+	def get_CloudProvider(self): # String
+		return self.get_query_params().get('CloudProvider')
+
+	def set_CloudProvider(self, CloudProvider):  # String
+		self.add_query_param('CloudProvider', CloudProvider)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_SourceUid(self): # Long
+		return self.get_query_params().get('SourceUid')
+
+	def set_SourceUid(self, SourceUid):  # Long
+		self.add_query_param('SourceUid', SourceUid)
 	def get_DBNodeClass(self): # String
 		return self.get_query_params().get('DBNodeClass')
 
 	def set_DBNodeClass(self, DBNodeClass):  # String
 		self.add_query_param('DBNodeClass', DBNodeClass)
+	def get_EnsRegionId(self): # String
+		return self.get_query_params().get('EnsRegionId')
+
+	def set_EnsRegionId(self, EnsRegionId):  # String
+		self.add_query_param('EnsRegionId', EnsRegionId)
 	def get_CreationOption(self): # String
 		return self.get_query_params().get('CreationOption')
 

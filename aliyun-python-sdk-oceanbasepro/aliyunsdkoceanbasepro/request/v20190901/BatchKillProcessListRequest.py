@@ -36,6 +36,11 @@ class BatchKillProcessListRequest(RpcRequest):
 
 	def set_SessionList(self, SessionList):  # String
 		self.add_body_params('SessionList', SessionList)
+	def get_ByObSessionId(self): # Boolean
+		return self.get_body_params().get('ByObSessionId')
+
+	def set_ByObSessionId(self, ByObSessionId):  # Boolean
+		self.add_body_params('ByObSessionId', ByObSessionId)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 

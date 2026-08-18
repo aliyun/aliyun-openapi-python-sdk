@@ -51,11 +51,21 @@ class AddSmarttagTemplateRequest(RpcRequest):
 
 	def set_LabelVersion(self, LabelVersion):  # String
 		self.add_query_param('LabelVersion', LabelVersion)
+	def get_LabelCustomParamsConfig(self): # String
+		return self.get_query_params().get('LabelCustomParamsConfig')
+
+	def set_LabelCustomParamsConfig(self, LabelCustomParamsConfig):  # String
+		self.add_query_param('LabelCustomParamsConfig', LabelCustomParamsConfig)
 	def get_Scene(self): # String
 		return self.get_query_params().get('Scene')
 
 	def set_Scene(self, Scene):  # String
 		self.add_query_param('Scene', Scene)
+	def get_TemplateConfig(self): # String
+		return self.get_query_params().get('TemplateConfig')
+
+	def set_TemplateConfig(self, TemplateConfig):  # String
+		self.add_query_param('TemplateConfig', TemplateConfig)
 	def get_FaceCustomParamsConfig(self): # String
 		return self.get_query_params().get('FaceCustomParamsConfig')
 
@@ -96,6 +106,11 @@ class AddSmarttagTemplateRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_LabelCustomCategoryIds(self): # String
+		return self.get_query_params().get('LabelCustomCategoryIds')
+
+	def set_LabelCustomCategoryIds(self, LabelCustomCategoryIds):  # String
+		self.add_query_param('LabelCustomCategoryIds', LabelCustomCategoryIds)
 	def get_ObjectGroupIds(self): # String
 		return self.get_query_params().get('ObjectGroupIds')
 

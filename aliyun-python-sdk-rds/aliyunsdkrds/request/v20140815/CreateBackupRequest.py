@@ -56,6 +56,11 @@ class CreateBackupRequest(RpcRequest):
 
 	def set_BackupMethod(self, BackupMethod):  # String
 		self.add_query_param('BackupMethod', BackupMethod)
+	def get_BackupRetentionPeriod(self): # Long
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Long
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
 	def get_DBName(self): # String
 		return self.get_query_params().get('DBName')
 

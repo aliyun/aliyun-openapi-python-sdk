@@ -61,6 +61,11 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self, DBInstanceDescription):  # String
 		self.add_query_param('DBInstanceDescription', DBInstanceDescription)
+	def get_BackupSetRegion(self): # String
+		return self.get_query_params().get('BackupSetRegion')
+
+	def set_BackupSetRegion(self, BackupSetRegion):  # String
+		self.add_query_param('BackupSetRegion', BackupSetRegion)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
@@ -71,6 +76,11 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_BackupSetId(self, BackupSetId):  # String
 		self.add_query_param('BackupSetId', BackupSetId)
+	def get_EncryptionKey(self): # String
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self, EncryptionKey):  # String
+		self.add_query_param('EncryptionKey', EncryptionKey)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -96,6 +106,11 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_RoleARN(self): # String
+		return self.get_query_params().get('RoleARN')
+
+	def set_RoleARN(self, RoleARN):  # String
+		self.add_query_param('RoleARN', RoleARN)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 

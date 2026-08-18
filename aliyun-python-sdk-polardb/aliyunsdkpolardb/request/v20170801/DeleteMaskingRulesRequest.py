@@ -31,6 +31,11 @@ class DeleteMaskingRulesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_InterfaceVersion(self): # String
+		return self.get_query_params().get('InterfaceVersion')
+
+	def set_InterfaceVersion(self, InterfaceVersion):  # String
+		self.add_query_param('InterfaceVersion', InterfaceVersion)
 	def get_DBClusterId(self): # String
 		return self.get_query_params().get('DBClusterId')
 

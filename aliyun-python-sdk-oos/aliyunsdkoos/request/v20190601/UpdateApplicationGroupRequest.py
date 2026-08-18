@@ -41,8 +41,18 @@ class UpdateApplicationGroupRequest(RpcRequest):
 
 	def set_ApplicationName(self, ApplicationName):  # String
 		self.add_query_param('ApplicationName', ApplicationName)
+	def get_OperationName(self): # String
+		return self.get_query_params().get('OperationName')
+
+	def set_OperationName(self, OperationName):  # String
+		self.add_query_param('OperationName', OperationName)
 	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_Parameters(self): # String
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

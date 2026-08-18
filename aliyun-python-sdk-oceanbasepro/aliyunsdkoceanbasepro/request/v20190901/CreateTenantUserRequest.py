@@ -46,6 +46,11 @@ class CreateTenantUserRequest(RpcRequest):
 
 	def set_UserPassword(self, UserPassword):  # String
 		self.add_body_params('UserPassword', UserPassword)
+	def get_GlobalPermissions(self): # String
+		return self.get_body_params().get('GlobalPermissions')
+
+	def set_GlobalPermissions(self, GlobalPermissions):  # String
+		self.add_body_params('GlobalPermissions', GlobalPermissions)
 	def get_TenantId(self): # String
 		return self.get_body_params().get('TenantId')
 

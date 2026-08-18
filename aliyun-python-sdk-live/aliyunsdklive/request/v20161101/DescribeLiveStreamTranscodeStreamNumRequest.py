@@ -41,3 +41,8 @@ class DescribeLiveStreamTranscodeStreamNumRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SplitType(self): # String
+		return self.get_query_params().get('SplitType')
+
+	def set_SplitType(self, SplitType):  # String
+		self.add_query_param('SplitType', SplitType)

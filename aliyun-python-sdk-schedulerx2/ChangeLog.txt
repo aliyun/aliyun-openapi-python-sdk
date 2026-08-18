@@ -1,3 +1,12 @@
+2026-07-15 Version: 1.1.16
+- CreateJob And UpdateJob Support StartTime.
+
+2025-06-10 Version: 1.1.15
+- Add API ReadSchedulerxDesignateInfo.
+
+2025-05-13 Version: 1.1.14
+- Add Api ReadSchedulerxDesignateDetail.
+
 2024-06-25 Version: 1.1.13
 - Create AppGroup Support Set AppVersion.
 - Update AppGroup Support Set AppVersion.

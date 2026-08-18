@@ -61,14 +61,14 @@ class CreateGadInstanceMemberRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.EngineVersion', UnitNode[depth1].get('EngineVersion'))
 			if UnitNode[depth1].get('DbInstanceClass') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DbInstanceClass', UnitNode[depth1].get('DbInstanceClass'))
-			if UnitNode[depth1].get('VSwitchID') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.VSwitchID', UnitNode[depth1].get('VSwitchID'))
 			if UnitNode[depth1].get('SecurityIPList') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.SecurityIPList', UnitNode[depth1].get('SecurityIPList'))
-			if UnitNode[depth1].get('RegionID') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
+			if UnitNode[depth1].get('VSwitchID') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.VSwitchID', UnitNode[depth1].get('VSwitchID'))
 			if UnitNode[depth1].get('Engine') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.Engine', UnitNode[depth1].get('Engine'))
+			if UnitNode[depth1].get('RegionID') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
 			if UnitNode[depth1].get('DtsInstanceClass') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsInstanceClass', UnitNode[depth1].get('DtsInstanceClass'))
 			if UnitNode[depth1].get('VpcID') is not None:

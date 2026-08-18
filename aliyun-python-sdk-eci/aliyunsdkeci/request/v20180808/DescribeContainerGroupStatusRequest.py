@@ -53,16 +53,6 @@ class DescribeContainerGroupStatusRequest(RpcRequest):
             if Tags[i].get('Value') is not None:
                 self.add_query_param('Tag.' + str(i + 1) + '.Value', Tags[i].get('Value'))
 
-    def get_Condition(self):
-        return self.get_query_params().get('Condition')
-
-    def set_Condition(self, Condition):
-        for con in range(len(Condition)):
-            if Condition[con].get('Type') is not None:
-                self.add_query_param(f'Condition.{str(con + 1)}.Type', Condition[con].get('Type'))
-            if Condition[con].get('Status') is not None:
-                self.add_query_param(f'Condition.{str(con + 1)}.Status', Condition[con].get('Status'))
-
     def get_ContainerGroupIds(self):
         return self.get_query_params().get('ContainerGroupIds')
 

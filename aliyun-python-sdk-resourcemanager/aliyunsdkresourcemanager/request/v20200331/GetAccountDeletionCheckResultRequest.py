@@ -23,7 +23,7 @@ from aliyunsdkresourcemanager.endpoint import endpoint_data
 class GetAccountDeletionCheckResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetAccountDeletionCheckResult')
+		RpcRequest.__init__(self, 'ResourceManager', '2020-03-31', 'GetAccountDeletionCheckResult','resourcemanager')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

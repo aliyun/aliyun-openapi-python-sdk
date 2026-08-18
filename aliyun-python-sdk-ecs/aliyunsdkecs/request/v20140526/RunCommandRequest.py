@@ -66,10 +66,10 @@ class RunCommandRequest(RpcRequest):
 
 	def set_Tags(self, Tag):  # RepeatList
 		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_KeepCommand(self): # Boolean
 		return self.get_query_params().get('KeepCommand')
 
@@ -116,6 +116,11 @@ class RunCommandRequest(RpcRequest):
 
 	def set_ContainerName(self, ContainerName):  # String
 		self.add_query_param('ContainerName', ContainerName)
+	def get_OssOutputDelivery(self): # String
+		return self.get_query_params().get('OssOutputDelivery')
+
+	def set_OssOutputDelivery(self, OssOutputDelivery):  # String
+		self.add_query_param('OssOutputDelivery', OssOutputDelivery)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -151,10 +156,10 @@ class RunCommandRequest(RpcRequest):
 
 	def set_ResourceTags(self, ResourceTag):  # RepeatList
 		for depth1 in range(len(ResourceTag)):
-			if ResourceTag[depth1].get('Key') is not None:
-				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
 			if ResourceTag[depth1].get('Value') is not None:
 				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Value', ResourceTag[depth1].get('Value'))
+			if ResourceTag[depth1].get('Key') is not None:
+				self.add_query_param('ResourceTag.' + str(depth1 + 1) + '.Key', ResourceTag[depth1].get('Key'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -31,10 +31,10 @@ class SubmitTraceAbJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StartTime(self): # String
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self, StartTime):  # String
+	def set_StartTime(self, StartTime):  # Long
 		self.add_query_param('StartTime', StartTime)
 	def get_Output(self): # String
 		return self.get_query_params().get('Output')
@@ -66,10 +66,10 @@ class SubmitTraceAbJobRequest(RpcRequest):
 
 	def set_Input(self, Input):  # String
 		self.add_query_param('Input', Input)
-	def get_TotalTime(self): # String
+	def get_TotalTime(self): # Long
 		return self.get_query_params().get('TotalTime')
 
-	def set_TotalTime(self, TotalTime):  # String
+	def set_TotalTime(self, TotalTime):  # Long
 		self.add_query_param('TotalTime', TotalTime)
 	def get_CallBack(self): # String
 		return self.get_query_params().get('CallBack')

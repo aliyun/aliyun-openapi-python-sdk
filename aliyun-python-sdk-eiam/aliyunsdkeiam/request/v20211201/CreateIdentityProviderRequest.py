@@ -36,8 +36,17 @@ class CreateIdentityProviderRequest(RpcRequest):
 			self.add_query_param('DingtalkAppConfig.DingtalkVersion', DingtalkAppConfig.get('DingtalkVersion'))
 		if DingtalkAppConfig.get('AppSecret') is not None:
 			self.add_query_param('DingtalkAppConfig.AppSecret', DingtalkAppConfig.get('AppSecret'))
+		if DingtalkAppConfig.get('VerificationToken') is not None:
+			self.add_query_param('DingtalkAppConfig.VerificationToken', DingtalkAppConfig.get('VerificationToken'))
 		if DingtalkAppConfig.get('AppKey') is not None:
 			self.add_query_param('DingtalkAppConfig.AppKey', DingtalkAppConfig.get('AppKey'))
+		if DingtalkAppConfig.get('EncryptKey') is not None:
+			self.add_query_param('DingtalkAppConfig.EncryptKey', DingtalkAppConfig.get('EncryptKey'))
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_NetworkAccessEndpointId(self): # String
 		return self.get_query_params().get('NetworkAccessEndpointId')
 
@@ -68,6 +77,14 @@ class CreateIdentityProviderRequest(RpcRequest):
 					self.add_query_param('UdPullConfig.UdSyncScopeConfig.SourceScopes.' + str(index1 + 1), value1)
 		if UdPullConfig.get('PeriodicSyncStatus') is not None:
 			self.add_query_param('UdPullConfig.PeriodicSyncStatus', UdPullConfig.get('PeriodicSyncStatus'))
+		if UdPullConfig.get('PeriodicSyncConfig') is not None:
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncTimes') is not None:
+				for index1, value1 in enumerate(UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncTimes')):
+					self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncTimes.' + str(index1 + 1), value1)
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncCron') is not None:
+				self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncCron', UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncCron'))
+			if UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncType') is not None:
+				self.add_query_param('UdPullConfig.PeriodicSyncConfig.PeriodicSyncType', UdPullConfig.get('PeriodicSyncConfig').get('PeriodicSyncType'))
 		if UdPullConfig.get('IncrementalCallbackStatus') is not None:
 			self.add_query_param('UdPullConfig.IncrementalCallbackStatus', UdPullConfig.get('IncrementalCallbackStatus'))
 	def get_LarkConfig(self): # Struct
@@ -80,6 +97,10 @@ class CreateIdentityProviderRequest(RpcRequest):
 			self.add_query_param('LarkConfig.AppId', LarkConfig.get('AppId'))
 		if LarkConfig.get('AppSecret') is not None:
 			self.add_query_param('LarkConfig.AppSecret', LarkConfig.get('AppSecret'))
+		if LarkConfig.get('VerificationToken') is not None:
+			self.add_query_param('LarkConfig.VerificationToken', LarkConfig.get('VerificationToken'))
+		if LarkConfig.get('EncryptKey') is not None:
+			self.add_query_param('LarkConfig.EncryptKey', LarkConfig.get('EncryptKey'))
 	def get_WeComConfig(self): # Struct
 		return self.get_query_params().get('WeComConfig')
 

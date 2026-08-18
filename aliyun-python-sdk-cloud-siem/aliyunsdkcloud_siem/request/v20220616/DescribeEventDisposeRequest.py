@@ -25,11 +25,21 @@ class DescribeEventDisposeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'cloud-siem', '2022-06-16', 'DescribeEventDispose','cloud-siem')
 		self.set_method('POST')
 
+	def get_RoleFor(self): # Long
+		return self.get_body_params().get('RoleFor')
+
+	def set_RoleFor(self, RoleFor):  # Long
+		self.add_body_params('RoleFor', RoleFor)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
+	def get_RoleType(self): # Integer
+		return self.get_body_params().get('RoleType')
+
+	def set_RoleType(self, RoleType):  # Integer
+		self.add_body_params('RoleType', RoleType)
 	def get_CurrentPage(self): # Integer
 		return self.get_body_params().get('CurrentPage')
 

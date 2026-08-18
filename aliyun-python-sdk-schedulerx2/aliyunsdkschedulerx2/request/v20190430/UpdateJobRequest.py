@@ -41,6 +41,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_FailTimes(self, FailTimes):  # Integer
 		self.add_body_params('FailTimes', FailTimes)
+	def get_StartTime(self): # Long
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_body_params('StartTime', StartTime)
 	def get_JobId(self): # Long
 		return self.get_body_params().get('JobId')
 
@@ -71,6 +76,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_DispatcherSize(self, DispatcherSize):  # Integer
 		self.add_body_params('DispatcherSize', DispatcherSize)
+	def get_Priority(self): # Integer
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
 	def get_TaskAttemptInterval(self): # Integer
 		return self.get_body_params().get('TaskAttemptInterval')
 

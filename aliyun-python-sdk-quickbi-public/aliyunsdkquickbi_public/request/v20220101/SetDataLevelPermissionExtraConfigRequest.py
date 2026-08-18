@@ -30,13 +30,13 @@ class SetDataLevelPermissionExtraConfigRequest(RpcRequest):
 
 	def set_MissHitPolicy(self, MissHitPolicy):  # String
 		self.add_query_param('MissHitPolicy', MissHitPolicy)
-	def get_RuleType(self): # String
-		return self.get_query_params().get('RuleType')
-
-	def set_RuleType(self, RuleType):  # String
-		self.add_query_param('RuleType', RuleType)
 	def get_CubeId(self): # String
 		return self.get_query_params().get('CubeId')
 
 	def set_CubeId(self, CubeId):  # String
 		self.add_query_param('CubeId', CubeId)
+	def get_RuleType(self): # String
+		return self.get_query_params().get('RuleType')
+
+	def set_RuleType(self, RuleType):  # String
+		self.add_query_param('RuleType', RuleType)

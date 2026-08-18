@@ -56,6 +56,11 @@ class SendSmsVerifyCodeRequest(RpcRequest):
 
 	def set_SignName(self, SignName):  # String
 		self.add_query_param('SignName', SignName)
+	def get_AutoRetry(self): # Long
+		return self.get_query_params().get('AutoRetry')
+
+	def set_AutoRetry(self, AutoRetry):  # Long
+		self.add_query_param('AutoRetry', AutoRetry)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

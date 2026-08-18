@@ -76,3 +76,8 @@ class CreateGlobalDatabaseNetworkRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_GDNVersion(self): # String
+		return self.get_query_params().get('GDNVersion')
+
+	def set_GDNVersion(self, GDNVersion):  # String
+		self.add_query_param('GDNVersion', GDNVersion)

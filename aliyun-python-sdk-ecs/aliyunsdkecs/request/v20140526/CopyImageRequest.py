@@ -46,6 +46,11 @@ class CopyImageRequest(RpcRequest):
 
 	def set_EncryptAlgorithm(self, EncryptAlgorithm):  # String
 		self.add_query_param('EncryptAlgorithm', EncryptAlgorithm)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_DestinationRegionId(self): # String
 		return self.get_query_params().get('DestinationRegionId')
 
@@ -65,6 +70,11 @@ class CopyImageRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -66,6 +66,17 @@ class SetIdentityProviderUdPullConfigurationRequest(RpcRequest):
 
 	def set_IdentityProviderId(self, IdentityProviderId):  # String
 		self.add_query_param('IdentityProviderId', IdentityProviderId)
+	def get_PeriodicSyncConfig(self): # Struct
+		return self.get_query_params().get('PeriodicSyncConfig')
+
+	def set_PeriodicSyncConfig(self, PeriodicSyncConfig):  # Struct
+		if PeriodicSyncConfig.get('PeriodicSyncTimes') is not None:
+			for index1, value1 in enumerate(PeriodicSyncConfig.get('PeriodicSyncTimes')):
+				self.add_query_param('PeriodicSyncConfig.PeriodicSyncTimes.' + str(index1 + 1), value1)
+		if PeriodicSyncConfig.get('PeriodicSyncCron') is not None:
+			self.add_query_param('PeriodicSyncConfig.PeriodicSyncCron', PeriodicSyncConfig.get('PeriodicSyncCron'))
+		if PeriodicSyncConfig.get('PeriodicSyncType') is not None:
+			self.add_query_param('PeriodicSyncConfig.PeriodicSyncType', PeriodicSyncConfig.get('PeriodicSyncType'))
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

@@ -56,6 +56,11 @@ class AddLiveStreamMergeRequest(RpcRequest):
 
 	def set_AppName(self, AppName):  # String
 		self.add_query_param('AppName', AppName)
+	def get_LiveMerger(self): # String
+		return self.get_query_params().get('LiveMerger')
+
+	def set_LiveMerger(self, LiveMerger):  # String
+		self.add_query_param('LiveMerger', LiveMerger)
 	def get_InStreamName2(self): # String
 		return self.get_query_params().get('InStreamName2')
 
@@ -86,3 +91,8 @@ class AddLiveStreamMergeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MergeParameters(self): # String
+		return self.get_query_params().get('MergeParameters')
+
+	def set_MergeParameters(self, MergeParameters):  # String
+		self.add_query_param('MergeParameters', MergeParameters)
