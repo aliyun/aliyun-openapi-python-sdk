@@ -35,11 +35,6 @@ class GetVccRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_EnablePage(self): # Boolean
-		return self.get_body_params().get('EnablePage')
-
-	def set_EnablePage(self, EnablePage):  # Boolean
-		self.add_body_params('EnablePage', EnablePage)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -50,3 +45,8 @@ class GetVccRequest(RpcRequest):
 
 	def set_VccId(self, VccId):  # String
 		self.add_body_params('VccId', VccId)
+	def get_EnablePage(self): # Boolean
+		return self.get_body_params().get('EnablePage')
+
+	def set_EnablePage(self, EnablePage):  # Boolean
+		self.add_body_params('EnablePage', EnablePage)

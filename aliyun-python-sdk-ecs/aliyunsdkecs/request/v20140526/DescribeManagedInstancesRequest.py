@@ -46,6 +46,11 @@ class DescribeManagedInstancesRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_MachineId(self): # String
+		return self.get_query_params().get('MachineId')
+
+	def set_MachineId(self, MachineId):  # String
+		self.add_query_param('MachineId', MachineId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -85,6 +90,11 @@ class DescribeManagedInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Connected(self): # String
+		return self.get_query_params().get('Connected')
+
+	def set_Connected(self, Connected):  # String
+		self.add_query_param('Connected', Connected)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 

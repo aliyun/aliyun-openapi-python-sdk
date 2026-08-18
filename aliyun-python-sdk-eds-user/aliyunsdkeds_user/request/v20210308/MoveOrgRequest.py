@@ -36,6 +36,11 @@ class MoveOrgRequest(RpcRequest):
 
 	def set_NewParentOrgId(self, NewParentOrgId):  # String
 		self.add_body_params('NewParentOrgId', NewParentOrgId)
+	def get_BusinessChannel(self): # String
+		return self.get_body_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_body_params('BusinessChannel', BusinessChannel)
 	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 

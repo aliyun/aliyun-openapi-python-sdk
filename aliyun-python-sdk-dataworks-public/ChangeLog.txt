@@ -1,3 +1,6 @@
+2026-03-06 Version: 5.0.4
+- Add GetDataServiceConfig.
+
 2025-04-27 Version: 6.1.12
 - Generated 2020-05-18 for `dataworks-public`.
 

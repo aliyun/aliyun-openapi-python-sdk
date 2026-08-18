@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
 class StartTerminalSessionRequest(RpcRequest):
 
@@ -36,11 +37,21 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_CommandLine(self): # String
 		return self.get_query_params().get('CommandLine')
 
 	def set_CommandLine(self, CommandLine):  # String
 		self.add_query_param('CommandLine', CommandLine)
+	def get_EncryptionOptions(self): # Struct
+		return self.get_query_params().get('EncryptionOptions')
+
+	def set_EncryptionOptions(self, EncryptionOptions):  # Struct
+		self.add_query_param("EncryptionOptions", json.dumps(EncryptionOptions))
 	def get_TargetServer(self): # String
 		return self.get_query_params().get('TargetServer')
 
@@ -77,6 +88,11 @@ class StartTerminalSessionRequest(RpcRequest):
 
 	def set_PortNumber(self, PortNumber):  # Integer
 		self.add_query_param('PortNumber', PortNumber)
+	def get_PasswordName(self): # String
+		return self.get_query_params().get('PasswordName')
+
+	def set_PasswordName(self, PasswordName):  # String
+		self.add_query_param('PasswordName', PasswordName)
 	def get_Username(self): # String
 		return self.get_query_params().get('Username')
 

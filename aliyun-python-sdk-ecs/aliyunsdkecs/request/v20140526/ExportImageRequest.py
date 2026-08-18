@@ -51,6 +51,11 @@ class ExportImageRequest(RpcRequest):
 
 	def set_OSSBucket(self, OSSBucket):  # String
 		self.add_query_param('OSSBucket', OSSBucket)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

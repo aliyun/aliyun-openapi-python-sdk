@@ -46,6 +46,11 @@ class CreateDeploymentSetRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
 	def get_GroupCount(self): # Long
 		return self.get_query_params().get('GroupCount')
 
@@ -91,3 +96,8 @@ class CreateDeploymentSetRequest(RpcRequest):
 
 	def set_Strategy(self, Strategy):  # String
 		self.add_query_param('Strategy', Strategy)
+	def get_Affinity(self): # Long
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self, Affinity):  # Long
+		self.add_query_param('Affinity', Affinity)

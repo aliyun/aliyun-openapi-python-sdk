@@ -36,6 +36,11 @@ class DeleteUserPropertyValueRequest(RpcRequest):
 
 	def set_PropertyValueId(self, PropertyValueId):  # Long
 		self.add_body_params('PropertyValueId', PropertyValueId)
+	def get_BusinessChannel(self): # String
+		return self.get_body_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_body_params('BusinessChannel', BusinessChannel)
 	def get_UserId(self): # Long
 		return self.get_body_params().get('UserId')
 

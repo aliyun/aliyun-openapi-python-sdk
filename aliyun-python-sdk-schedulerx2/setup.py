@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkschedulerx2"
-NAME = "aliyun-python-sdk-schedulerx2"
+NAME = "aliyun_python_sdk_schedulerx2"
 DESCRIPTION = "The schedulerx2 module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

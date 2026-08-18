@@ -101,6 +101,11 @@ class CreateCapacityReservationRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

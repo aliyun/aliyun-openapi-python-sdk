@@ -106,6 +106,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_SchedulerOptionsDeploymentSetStrategy(self): # String
+		return self.get_query_params().get('SchedulerOptions.DeploymentSetStrategy')
+
+	def set_SchedulerOptionsDeploymentSetStrategy(self, SchedulerOptionsDeploymentSetStrategy):  # String
+		self.add_query_param('SchedulerOptions.DeploymentSetStrategy', SchedulerOptionsDeploymentSetStrategy)
 	def get_InstanceNetworkType(self): # String
 		return self.get_query_params().get('InstanceNetworkType')
 

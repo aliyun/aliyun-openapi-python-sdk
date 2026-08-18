@@ -31,8 +31,19 @@ class RemoveGroupRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_GroupId(self): # String
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_GroupIds(self): # Array
+		return self.get_query_params().get('GroupIds')
+
+	def set_GroupIds(self, GroupIds):  # Array
+		for index1, value1 in enumerate(GroupIds):
+			self.add_query_param('GroupIds.' + str(index1 + 1), value1)

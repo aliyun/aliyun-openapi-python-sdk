@@ -84,6 +84,10 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 			self.add_query_param('EnhancedNetwork.EnableSriov', EnhancedNetwork.get('EnableSriov'))
 		if EnhancedNetwork.get('EnableRss') is not None:
 			self.add_query_param('EnhancedNetwork.EnableRss', EnhancedNetwork.get('EnableRss'))
+		if EnhancedNetwork.get('VirtualFunctionTotalQueueNumber') is not None:
+			self.add_query_param('EnhancedNetwork.VirtualFunctionTotalQueueNumber', EnhancedNetwork.get('VirtualFunctionTotalQueueNumber'))
+		if EnhancedNetwork.get('VirtualFunctionQuantity') is not None:
+			self.add_query_param('EnhancedNetwork.VirtualFunctionQuantity', EnhancedNetwork.get('VirtualFunctionQuantity'))
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

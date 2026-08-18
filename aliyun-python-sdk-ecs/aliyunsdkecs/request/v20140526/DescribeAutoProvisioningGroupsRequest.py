@@ -71,6 +71,12 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_AutoProvisioningGroupTypess(self): # RepeatList
+		return self.get_query_params().get('AutoProvisioningGroupTypes')
+
+	def set_AutoProvisioningGroupTypess(self, AutoProvisioningGroupTypes):  # RepeatList
+		for depth1 in range(len(AutoProvisioningGroupTypes)):
+			self.add_query_param('AutoProvisioningGroupTypes.' + str(depth1 + 1), AutoProvisioningGroupTypes[depth1])
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

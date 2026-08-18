@@ -81,6 +81,11 @@ class DescribeTasksRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TaskGroupId(self): # String
+		return self.get_query_params().get('TaskGroupId')
+
+	def set_TaskGroupId(self, TaskGroupId):  # String
+		self.add_query_param('TaskGroupId', TaskGroupId)
 	def get_TaskAction(self): # String
 		return self.get_query_params().get('TaskAction')
 

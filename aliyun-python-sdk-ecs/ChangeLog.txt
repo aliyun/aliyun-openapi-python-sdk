@@ -1,3 +1,6 @@
+2026-07-01 Version: 4.24.83
+- Add ModifySystemEventAttribute.
+
 2025-04-15 Version: 4.24.82
 - Generate SDK unified.
 

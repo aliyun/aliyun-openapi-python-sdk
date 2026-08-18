@@ -31,6 +31,11 @@ class DescribeMfaDevicesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
 	def get_EndUserIdss(self): # RepeatList
 		return self.get_query_params().get('EndUserIds')
 
@@ -43,6 +48,11 @@ class DescribeMfaDevicesRequest(RpcRequest):
 	def set_SerialNumberss(self, SerialNumbers):  # RepeatList
 		for depth1 in range(len(SerialNumbers)):
 			self.add_query_param('SerialNumbers.' + str(depth1 + 1), SerialNumbers[depth1])
+	def get_Filter(self): # String
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self, Filter):  # String
+		self.add_query_param('Filter', Filter)
 	def get_AdDomain(self): # String
 		return self.get_query_params().get('AdDomain')
 

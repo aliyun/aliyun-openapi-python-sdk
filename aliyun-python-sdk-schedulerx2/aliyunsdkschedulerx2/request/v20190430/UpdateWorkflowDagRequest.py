@@ -31,16 +31,21 @@ class UpdateWorkflowDagRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DagJson(self): # String
-		return self.get_body_params().get('DagJson')
-
-	def set_DagJson(self, DagJson):  # String
-		self.add_body_params('DagJson', DagJson)
 	def get_NamespaceSource(self): # String
 		return self.get_body_params().get('NamespaceSource')
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_body_params('NamespaceSource', NamespaceSource)
+	def get_WorkflowId(self): # String
+		return self.get_body_params().get('WorkflowId')
+
+	def set_WorkflowId(self, WorkflowId):  # String
+		self.add_body_params('WorkflowId', WorkflowId)
+	def get_DagJson(self): # String
+		return self.get_body_params().get('DagJson')
+
+	def set_DagJson(self, DagJson):  # String
+		self.add_body_params('DagJson', DagJson)
 	def get_GroupId(self): # String
 		return self.get_body_params().get('GroupId')
 
@@ -51,8 +56,3 @@ class UpdateWorkflowDagRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_body_params('Namespace', Namespace)
-	def get_WorkflowId(self): # String
-		return self.get_body_params().get('WorkflowId')
-
-	def set_WorkflowId(self, WorkflowId):  # String
-		self.add_body_params('WorkflowId', WorkflowId)

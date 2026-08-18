@@ -36,6 +36,17 @@ class DescribeResourceGroupsRequest(RpcRequest):
 
 	def set_ResourceGroupName(self, ResourceGroupName):  # String
 		self.add_query_param('ResourceGroupName', ResourceGroupName)
+	def get_BusinessChannel(self): # String
+		return self.get_query_params().get('BusinessChannel')
+
+	def set_BusinessChannel(self, BusinessChannel):  # String
+		self.add_query_param('BusinessChannel', BusinessChannel)
+	def get_AliyunResourceGroupIds(self): # Array
+		return self.get_query_params().get('AliyunResourceGroupIds')
+
+	def set_AliyunResourceGroupIds(self, AliyunResourceGroupIds):  # Array
+		for index1, value1 in enumerate(AliyunResourceGroupIds):
+			self.add_query_param('AliyunResourceGroupIds.' + str(index1 + 1), value1)
 	def get_NeedContainResourceGroupWithOfficeSite(self): # Long
 		return self.get_query_params().get('NeedContainResourceGroupWithOfficeSite')
 

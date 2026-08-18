@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkecs"
-NAME = "aliyun-python-sdk-ecs"
+NAME = "aliyun_python_sdk_ecs"
 DESCRIPTION = "The ecs module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

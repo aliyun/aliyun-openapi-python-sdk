@@ -41,6 +41,11 @@ class CreateJobRequest(RpcRequest):
 
 	def set_FailTimes(self, FailTimes):  # Integer
 		self.add_body_params('FailTimes', FailTimes)
+	def get_StartTime(self): # Long
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_body_params('StartTime', StartTime)
 	def get_ConsumerSize(self): # Integer
 		return self.get_body_params().get('ConsumerSize')
 

@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkeds_user"
-NAME = "aliyun-python-sdk-eds-user"
+NAME = "aliyun_python_sdk_eds_user"
 DESCRIPTION = "The eds-user module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

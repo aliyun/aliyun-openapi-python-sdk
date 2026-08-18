@@ -1,153 +1,121 @@
-# Alibaba Cloud Python Software Development Kit
+# Alibaba Cloud Developer Python Toolkit (V1.0 - Deprecated)
 
 [![PyPI version](https://badge.fury.io/py/aliyun-python-sdk-core.svg)](https://badge.fury.io/py/aliyun-python-sdk-core)
 [![Python test](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/aliyun/aliyun-openapi-python-sdk/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/graph/badge.svg?token=qmWxah6dPs)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
 [![python](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)](https://img.shields.io/pypi/pyversions/aliyun-python-sdk-core.svg)
 
-[中文文档](./README_zh.md)
+⚠️ **Important Notice**: Alibaba Cloud Python SDK V1.0 has entered the basic security maintenance phase and is no longer recommended for use. It is **strongly recommended** to use the [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk).
 
-The Alibaba Cloud V1.0 SDK will soon enter the Basic Security Maintenance phase and is no longer recommended for use. It is suggested to use the V2.0 SDK instead.
+## 🚨 Important Statement
 
-## Troubleshoot
+**V1.0 SDK Status**:
+- Currently in basic security maintenance phase
+- No new features will be added
 
-[Troubleshoot](https://api.alibabacloud.com/troubleshoot?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
+**Migration Recommendations**:
+- New projects should directly use the [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk)
+- Existing V1.0 projects are advised to migrate to V2.0 as soon as possible
+- V2.0 provides better performance, a more concise API, and more complete documentation
 
-## Online Demo
+## 🔗 V2.0 SDK Resources
 
-**[API Developer Portal](https://api.alibabacloud.com)** provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API. **It is highly recommended**.
+**GitHub Repository**: [https://github.com/aliyun/alibabacloud-python-sdk](https://github.com/aliyun/alibabacloud-python-sdk)
 
-<a href="https://api.alibabacloud.com" target="api_explorer">
+**Official Documentation**: [https://help.aliyun.com/zh/sdk/developer-reference/v2-python-integrated-sdk](https://help.aliyun.com/zh/sdk/developer-reference/v2-python-integrated-sdk)
+
+**Developer Portal**: [https://api.aliyun.com](https://api.aliyun.com)
+
+## 🛠 Instructions for Continuing to Use V1.0 SDK
+
+If you still need to use the V1.0 SDK, please continue reading the following content:
+
+## Troubleshooting
+
+[Troubleshoot](https://api.aliyun.com/troubleshoot?source=github_sdk) provides OpenAPI usage diagnostics. By entering the `RequestID` or `error message`, it helps developers quickly locate issues and provides corresponding solutions.
+
+## Online Examples
+
+The **[Developer Portal](https://api.aliyun.com)** provides capabilities such as invoking cloud product OpenAPIs online, dynamically generating SDK example code, and quickly searching for APIs. This can significantly reduce the difficulty of using cloud APIs and is highly recommended.
+
+<a href="https://api.aliyun.com" target="api_explorer">
   <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
 </a>
 
 ## Important Updates
 
-- Starting from version 2.16.0, the Alibaba Cloud Python SDK core library `aliyun-python-sdk-core` only supports Python 3.7 and above.
+- Starting from version 2.16.0, the core library of Alibaba Cloud Python SDK, `aliyun-python-sdk-core`, only supports Python 3.7 and above.
+- The V1.0 SDK will no longer receive new feature updates.
+- It is recommended to migrate to the V2.0 SDK as soon as possible to gain better support and features.
 
 ## Documentation
 
-- [Requirements](docs/0-Requirement-EN.md)
-- [Installation](./docs/1-Installation-EN.md)
-- [Client & Credentials](./docs/2-Client-EN.md)
-- [Timeout](./docs/3-Timeout-EN.md)
-- [Proxy Configurations](./docs/4-Proxy-EN.md)
-- [Log](./docs/5-Log-EN.md)
-- [Endpoint](./docs/6-Endpoint-EN.md)
-- [Https](./docs/7-Https-EN.md)
-- [Debug](./docs/8-Debug-EN.md)
-- [Exception](./docs/9-Exception-EN.md)
+- [Environment Requirements](./docs/0-Requirement-CN.md)
+- [Installation](./docs/1-Installation-CN.md)
+- [Client and Credentials](./docs/2-Client-CN.md)
+- [Timeout Mechanism](./docs/3-Timeout-CN.md)
+- [Proxy Configuration](./docs/4-Proxy-CN.md)
+- [Logging](./docs/5-Log-CN.md)
+- [Endpoints](./docs/6-Endpoint-CN.md)
+- [HTTPS Configuration](./docs/7-Https-CN.md)
+- [Debugging](./docs/8-Debug-CN.md)
+- [Exceptions](./docs/9-Exception-CN.md)
 
-## Prerequisites
+## Environment Preparation
 
-- To use Alibaba Cloud Python SDK, you must have an Alibaba Cloud account as well as an AccessKey.
+1. To use the Alibaba Cloud Python SDK, you need a cloud account and a pair of `Access Key ID` and `Access Key Secret`. Please create and view your Access Keys on the [AccessKey management page](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak) in the Alibaba Cloud console, or contact your system administrator.
+2. To use the Alibaba Cloud SDK to access the API of a specific product, you must first activate that product in the [Alibaba Cloud Console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w).
 
-	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
+## Getting and Installing the SDK
 
-	> **Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+### Install via pip (Recommended)
 
-- To use Alibaba Cloud Python SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+```bash
+pip install aliyun-python-sdk-core # Install the Alibaba Cloud SDK core library
+pip install aliyun-python-sdk-ecs  # Install the ECS management SDK
+```
 
-- Alibaba Cloud Python SDK requires Python 3.7.x and above.
+## Getting Started
 
-## Install Python SDK
+The following code example demonstrates the three main steps for calling the Alibaba Cloud Python SDK:
 
-Alibaba Cloud Python SDK supports Python 3.7.x and above. Run ``python --version`` to check your version of Python.
-
-You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed.
-
-- **Install with pip**
-
-	Python SDK uses a common package management tool named `pip`. If pip is not installed, see the [pip user guide](https://pip.pypa.io/en/stable/installing/?spm=5176.doc53090.2.7.zHDiNV "pip User Guide") to install pip.
-
-	Run the following command to install the individual libraries of Alibaba Cloud services:
-
-	```bash
-	# Install the core library
-	pip install aliyun-python-sdk-core
-	# Install the ECS management library
-	pip install aliyun-python-sdk-ecs
-	# Install the RDS management library
-	pip install aliyun-python-sdk-rds
-	```
-
-## Use Python SDK
-
-1. Import the required modules as follows:
-
-    ```python
-    from aliyunsdkcore.client import AcsClient
-    from aliyunsdkcore.acs_exception.exceptions import ClientException
-    from aliyunsdkcore.acs_exception.exceptions import ServerException
-    from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
-    from aliyunsdkecs.request.v20140526 import StopInstanceRequest
-    ```
-2. Initialize the `AcsClient` instance:
-
-    ```python
-    client = AcsClient(
-        "<access-key-id>",
-        "<access-key-secret>",
-        "<region-id>"
-    )
-    ```
-
-	where:
-
-	- `access-key-id` is the Accesskey ID for your account.
-	- `access-key-secret` is the AccessKey secret for your account.
-	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](https://www.alibabacloud.com/help/doc-detail/40654.html).
-
-	> **Note:** The sequence of these parameters cannot be changed.
-
-3. Initialize a request and print response.
-
-	```python
-	# Initialize a request and set parameters
-	request = DescribeInstancesRequest.DescribeInstancesRequest()
-	request.set_PageSize(10)
-	# Print response
-	response = client.do_action_with_exception(request)
-	print response
-	```
-
-## Code example
-
-The following example shows how to query a list of ECS instances in a specific region using [DescribeInstances](~~25506~~). Substitute the values for `your-access-key-id`, `your-access-key-secret`, and `your-region-id`.
+1. Create a Client instance
+2. Create an API request and set parameters
+3. Send the request and handle exceptions
 
 ```python
 # -*- coding: utf8 -*-
-
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
 from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 
-# Initialize AcsClient instance
+# Create an AcsClient instance
 client = AcsClient(
-  "<your-access-key-id>",
-  "<your-access-key-secret>",
-  "<your-region-id>"
+   "<your-access-key-id>",
+   "<your-access-key-secret>",
+   "<your-region-id>"
 )
 
-# Initialize a request and set parameters
+# Create a request and set parameters
 request = DescribeInstancesRequest.DescribeInstancesRequest()
 request.set_PageSize(10)
 
-# Print response
+# Send the API request and print the response
 response = client.do_action_with_exception(request)
 print response
 ```
 
+When creating the Client instance, you need to provide three parameters: Region ID, Access Key ID, and Access Key Secret. Access Key ID and Access Key Secret can be obtained from the console, and Region ID can be found in the [Region List](https://help.aliyun.com/document_detail/40654.html).
+
 ## HTTP DEBUG
 
-To use the function `HTTP DEBUG`, you must set `DEBUG` in your environment variable, the corresponding value
-may be `sdk` or `SDK`.
+To use the HTTP DEBUG feature, you need to set the `DEBUG` environment variable in your environment. Its value can be either `sdk` or `SDK`.
 
-The following example shows what the `HTTP DEBUG` do, which will help you debug your codes.
+**HTTP DEBUG** displays the following information to help you debug your code:
 
-```plaintext
+```
 > GET /databases?RegionId=cn-hangzhou HTTP/1.1
 > Host : ads.cn-hangzhou.aliyuncs.com
 > User-Agent : AlibabaCloud (Windows 10;AMD64) Python/3.7.1 Core/2.13.1 python-requests/2.18.1
@@ -175,3 +143,15 @@ The following example shows what the `HTTP DEBUG` do, which will help you debug 
 < x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
 < Server : Jetty(7.2.2.v20101205)
 ```
+
+## Contributing
+
+Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before submitting a pull request.
+
+## License
+
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+---
+
+**We recommend using the [V2.0 SDK](https://github.com/aliyun/alibabacloud-python-sdk) for a better development experience!** 🚀

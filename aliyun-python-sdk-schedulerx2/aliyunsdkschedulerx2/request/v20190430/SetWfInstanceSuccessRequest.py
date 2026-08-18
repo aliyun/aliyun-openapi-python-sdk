@@ -36,23 +36,23 @@ class SetWfInstanceSuccessRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_WfInstanceId(self): # Long
 		return self.get_query_params().get('WfInstanceId')
 
 	def set_WfInstanceId(self, WfInstanceId):  # Long
 		self.add_query_param('WfInstanceId', WfInstanceId)
-	def get_Namespace(self): # String
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self, Namespace):  # String
-		self.add_query_param('Namespace', Namespace)
 	def get_WorkflowId(self): # Long
 		return self.get_query_params().get('WorkflowId')
 
 	def set_WorkflowId(self, WorkflowId):  # Long
 		self.add_query_param('WorkflowId', WorkflowId)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
+	def get_Namespace(self): # String
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self, Namespace):  # String
+		self.add_query_param('Namespace', Namespace)

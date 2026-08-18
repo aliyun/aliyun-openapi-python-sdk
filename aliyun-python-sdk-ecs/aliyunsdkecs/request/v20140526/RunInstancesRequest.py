@@ -138,6 +138,18 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_CpuOptions(self): # Struct
+		return self.get_query_params().get('CpuOptions')
+
+	def set_CpuOptions(self, CpuOptions):  # Struct
+		if CpuOptions.get('TurboMode') is not None:
+			self.add_query_param('CpuOptions.TurboMode', CpuOptions.get('TurboMode'))
+		if CpuOptions.get('EnableVISST') is not None:
+			self.add_query_param('CpuOptions.EnableVISST', CpuOptions.get('EnableVISST'))
+		if CpuOptions.get('EnableVRDT') is not None:
+			self.add_query_param('CpuOptions.EnableVRDT', CpuOptions.get('EnableVRDT'))
+		if CpuOptions.get('NestedVirtualization') is not None:
+			self.add_query_param('CpuOptions.NestedVirtualization', CpuOptions.get('NestedVirtualization'))
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -272,6 +284,8 @@ class RunInstancesRequest(RpcRequest):
 			self.add_query_param('NetworkOptions.EnableJumboFrame', NetworkOptions.get('EnableJumboFrame'))
 		if NetworkOptions.get('EnableNetworkEncryption') is not None:
 			self.add_query_param('NetworkOptions.EnableNetworkEncryption', NetworkOptions.get('EnableNetworkEncryption'))
+		if NetworkOptions.get('BandwidthWeighting') is not None:
+			self.add_query_param('NetworkOptions.BandwidthWeighting', NetworkOptions.get('BandwidthWeighting'))
 	def get_SystemDiskSize(self): # String
 		return self.get_query_params().get('SystemDisk.Size')
 
@@ -481,6 +495,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.TxQueueSize', NetworkInterface[depth1].get('TxQueueSize'))
 			if NetworkInterface[depth1].get('SourceDestCheck') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SourceDestCheck', NetworkInterface[depth1].get('SourceDestCheck'))
+			if NetworkInterface[depth1].get('SecondaryPrivateIpAddressCount') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecondaryPrivateIpAddressCount', NetworkInterface[depth1].get('SecondaryPrivateIpAddressCount'))
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 
@@ -556,6 +572,12 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', DataDisk[depth1].get('ProvisionedIops'))
 			if DataDisk[depth1].get('BurstingEnabled') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', DataDisk[depth1].get('BurstingEnabled'))
+	def get_ClockOptions(self): # Struct
+		return self.get_query_params().get('ClockOptions')
+
+	def set_ClockOptions(self, ClockOptions):  # Struct
+		if ClockOptions.get('PtpStatus') is not None:
+			self.add_query_param('ClockOptions.PtpStatus', ClockOptions.get('PtpStatus'))
 	def get_StorageSetId(self): # String
 		return self.get_query_params().get('StorageSetId')
 
