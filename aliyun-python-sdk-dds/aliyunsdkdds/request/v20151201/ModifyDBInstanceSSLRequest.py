@@ -46,6 +46,11 @@ class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_ForceEncryption(self): # String
+		return self.get_query_params().get('ForceEncryption')
+
+	def set_ForceEncryption(self, ForceEncryption):  # String
+		self.add_query_param('ForceEncryption', ForceEncryption)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

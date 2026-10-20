@@ -106,6 +106,11 @@ class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def set_TargetHiddenZoneId(self, TargetHiddenZoneId):  # String
 		self.add_query_param('TargetHiddenZoneId', TargetHiddenZoneId)
+	def get_AlignPrimaryZone(self): # Boolean
+		return self.get_query_params().get('AlignPrimaryZone')
+
+	def set_AlignPrimaryZone(self, AlignPrimaryZone):  # Boolean
+		self.add_query_param('AlignPrimaryZone', AlignPrimaryZone)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

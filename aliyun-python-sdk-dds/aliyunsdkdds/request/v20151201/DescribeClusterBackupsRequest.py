@@ -31,6 +31,11 @@ class DescribeClusterBackupsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_BackupJobId(self): # String
+		return self.get_query_params().get('BackupJobId')
+
+	def set_BackupJobId(self, BackupJobId):  # String
+		self.add_query_param('BackupJobId', BackupJobId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,6 +51,11 @@ class DescribeClusterBackupsRequest(RpcRequest):
 
 	def set_SrcRegion(self, SrcRegion):  # String
 		self.add_query_param('SrcRegion', SrcRegion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 

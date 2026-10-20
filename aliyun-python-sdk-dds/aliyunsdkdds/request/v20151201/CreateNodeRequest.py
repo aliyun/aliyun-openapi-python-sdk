@@ -106,8 +106,23 @@ class CreateNodeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SearchDBInstanceClass(self): # String
+		return self.get_query_params().get('SearchDBInstanceClass')
+
+	def set_SearchDBInstanceClass(self, SearchDBInstanceClass):  # String
+		self.add_query_param('SearchDBInstanceClass', SearchDBInstanceClass)
 	def get_AccountPassword(self): # String
 		return self.get_query_params().get('AccountPassword')
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_SearchNodeCount(self): # Integer
+		return self.get_query_params().get('SearchNodeCount')
+
+	def set_SearchNodeCount(self, SearchNodeCount):  # Integer
+		self.add_query_param('SearchNodeCount', SearchNodeCount)
+	def get_SearchStorage(self): # Integer
+		return self.get_query_params().get('SearchStorage')
+
+	def set_SearchStorage(self, SearchStorage):  # Integer
+		self.add_query_param('SearchStorage', SearchStorage)

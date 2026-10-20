@@ -41,6 +41,11 @@ class ModifyAuditPolicyRequest(RpcRequest):
 
 	def set_StoragePeriod(self, StoragePeriod):  # Integer
 		self.add_query_param('StoragePeriod', StoragePeriod)
+	def get_HotStoragePeriod(self): # Integer
+		return self.get_query_params().get('HotStoragePeriod')
+
+	def set_HotStoragePeriod(self, HotStoragePeriod):  # Integer
+		self.add_query_param('HotStoragePeriod', HotStoragePeriod)
 	def get_AuditLogSwitchSource(self): # String
 		return self.get_query_params().get('AuditLogSwitchSource')
 

@@ -1,3 +1,6 @@
+2026-10-20 Version: 3.7.26
+- Remove the default value for the `ReplicationFactor` parameter in the `ModifyDBInstanceSpec` API.
+
 2025-08-27 Version: 3.7.24
 - Generated 2015-12-01 for `Dds`.
 

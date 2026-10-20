@@ -36,6 +36,11 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NetworkType(self): # String
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self, NetworkType):  # String
+		self.add_query_param('NetworkType', NetworkType)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -76,3 +81,13 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_CurrentConnectionString(self, CurrentConnectionString):  # String
 		self.add_query_param('CurrentConnectionString', CurrentConnectionString)
+	def get_PortModifyOnly(self): # Boolean
+		return self.get_query_params().get('PortModifyOnly')
+
+	def set_PortModifyOnly(self, PortModifyOnly):  # Boolean
+		self.add_query_param('PortModifyOnly', PortModifyOnly)
+	def get_ForceModifySuffix(self): # Boolean
+		return self.get_query_params().get('ForceModifySuffix')
+
+	def set_ForceModifySuffix(self, ForceModifySuffix):  # Boolean
+		self.add_query_param('ForceModifySuffix', ForceModifySuffix)

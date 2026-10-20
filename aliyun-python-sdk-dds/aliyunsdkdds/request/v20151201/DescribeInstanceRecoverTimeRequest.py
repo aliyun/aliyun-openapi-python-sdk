@@ -24,7 +24,7 @@ class DescribeInstanceRecoverTimeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeInstanceRecoverTime','dds')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -41,6 +41,11 @@ class DescribeInstanceRecoverTimeRequest(RpcRequest):
 
 	def set_SrcRegion(self, SrcRegion):  # String
 		self.add_query_param('SrcRegion', SrcRegion)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -61,6 +66,11 @@ class DescribeInstanceRecoverTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OnlyDbTableRecovery(self): # Boolean
+		return self.get_query_params().get('OnlyDbTableRecovery')
+
+	def set_OnlyDbTableRecovery(self, OnlyDbTableRecovery):  # Boolean
+		self.add_query_param('OnlyDbTableRecovery', OnlyDbTableRecovery)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

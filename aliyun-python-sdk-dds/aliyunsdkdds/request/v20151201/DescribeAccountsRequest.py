@@ -61,3 +61,13 @@ class DescribeAccountsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_DBName(self): # String
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)
+	def get_CharacterType(self): # String
+		return self.get_query_params().get('CharacterType')
+
+	def set_CharacterType(self, CharacterType):  # String
+		self.add_query_param('CharacterType', CharacterType)

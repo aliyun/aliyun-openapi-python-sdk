@@ -36,6 +36,20 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Roless(self): # RepeatList
+		return self.get_query_params().get('Roles')
+
+	def set_Roless(self, Roles):  # RepeatList
+		for depth1 in range(len(Roles)):
+			if Roles[depth1].get('Role') is not None:
+				self.add_query_param('Roles.' + str(depth1 + 1) + '.Role', Roles[depth1].get('Role'))
+			if Roles[depth1].get('DBName') is not None:
+				self.add_query_param('Roles.' + str(depth1 + 1) + '.DBName', Roles[depth1].get('DBName'))
+	def get_AccountDescription(self): # String
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self, AccountDescription):  # String
+		self.add_query_param('AccountDescription', AccountDescription)
 	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
@@ -66,6 +80,11 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_DBName(self): # String
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self, DBName):  # String
+		self.add_query_param('DBName', DBName)
 	def get_CharacterType(self): # String
 		return self.get_query_params().get('CharacterType')
 

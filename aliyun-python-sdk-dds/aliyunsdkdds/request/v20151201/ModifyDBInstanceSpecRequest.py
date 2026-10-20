@@ -86,6 +86,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_SearchNodeClass(self): # String
+		return self.get_query_params().get('SearchNodeClass')
+
+	def set_SearchNodeClass(self, SearchNodeClass):  # String
+		self.add_query_param('SearchNodeClass', SearchNodeClass)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
@@ -101,6 +106,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_SearchNodeStorage(self): # Long
+		return self.get_query_params().get('SearchNodeStorage')
+
+	def set_SearchNodeStorage(self, SearchNodeStorage):  # Long
+		self.add_query_param('SearchNodeStorage', SearchNodeStorage)
 	def get_TargetVswitchId(self): # String
 		return self.get_query_params().get('TargetVswitchId')
 
@@ -116,11 +126,21 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceClass(self, DBInstanceClass):  # String
 		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_SearchNodeCount(self): # Long
+		return self.get_query_params().get('SearchNodeCount')
+
+	def set_SearchNodeCount(self, SearchNodeCount):  # Long
+		self.add_query_param('SearchNodeCount', SearchNodeCount)
 	def get_TargetHiddenZoneId(self): # String
 		return self.get_query_params().get('TargetHiddenZoneId')
 
 	def set_TargetHiddenZoneId(self, TargetHiddenZoneId):  # String
 		self.add_query_param('TargetHiddenZoneId', TargetHiddenZoneId)
+	def get_AlignPrimaryZone(self): # Boolean
+		return self.get_query_params().get('AlignPrimaryZone')
+
+	def set_AlignPrimaryZone(self, AlignPrimaryZone):  # Boolean
+		self.add_query_param('AlignPrimaryZone', AlignPrimaryZone)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

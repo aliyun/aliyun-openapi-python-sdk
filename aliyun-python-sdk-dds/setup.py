@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkdds"
-NAME = "aliyun-python-sdk-dds"
+NAME = "aliyun_python_sdk_dds"
 DESCRIPTION = "The dds module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"

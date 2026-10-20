@@ -86,6 +86,11 @@ class DescribeDBInstancePerformanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_SearchId(self): # String
+		return self.get_query_params().get('SearchId')
+
+	def set_SearchId(self, SearchId):  # String
+		self.add_query_param('SearchId', SearchId)
 	def get_Interval(self): # String
 		return self.get_query_params().get('Interval')
 

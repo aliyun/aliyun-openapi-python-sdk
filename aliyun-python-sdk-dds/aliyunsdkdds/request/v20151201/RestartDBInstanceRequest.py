@@ -36,6 +36,11 @@ class RestartDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NodeType(self): # String
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self, NodeType):  # String
+		self.add_query_param('NodeType', NodeType)
 	def get_SwitchMode(self): # String
 		return self.get_query_params().get('SwitchMode')
 
@@ -56,6 +61,11 @@ class RestartDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_ParallelRestartMongos(self): # Boolean
+		return self.get_query_params().get('ParallelRestartMongos')
+
+	def set_ParallelRestartMongos(self, ParallelRestartMongos):  # Boolean
+		self.add_query_param('ParallelRestartMongos', ParallelRestartMongos)
 	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 

@@ -36,6 +36,11 @@ class ModifySecurityIpsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_SecurityIps(self): # String
 		return self.get_query_params().get('SecurityIps')
 
@@ -56,6 +61,11 @@ class ModifySecurityIpsRequest(RpcRequest):
 
 	def set_ModifyMode(self, ModifyMode):  # String
 		self.add_query_param('ModifyMode', ModifyMode)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -51,6 +51,41 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_CrossRetentionType(self, CrossRetentionType):  # String
 		self.add_query_param('CrossRetentionType', CrossRetentionType)
+	def get_BackupRetentionPolicyOnClusterDeletion(self): # Integer
+		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
+
+	def set_BackupRetentionPolicyOnClusterDeletion(self, BackupRetentionPolicyOnClusterDeletion):  # Integer
+		self.add_query_param('BackupRetentionPolicyOnClusterDeletion', BackupRetentionPolicyOnClusterDeletion)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BackupRetentionPeriod(self): # Long
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Long
+		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
+	def get_EnableCrossLogBackup(self): # Integer
+		return self.get_query_params().get('EnableCrossLogBackup')
+
+	def set_EnableCrossLogBackup(self, EnableCrossLogBackup):  # Integer
+		self.add_query_param('EnableCrossLogBackup', EnableCrossLogBackup)
+	def get_CrossBackupPeriod(self): # String
+		return self.get_query_params().get('CrossBackupPeriod')
+
+	def set_CrossBackupPeriod(self, CrossBackupPeriod):  # String
+		self.add_query_param('CrossBackupPeriod', CrossBackupPeriod)
+	def get_CrossRetentionValue(self): # Integer
+		return self.get_query_params().get('CrossRetentionValue')
+
+	def set_CrossRetentionValue(self, CrossRetentionValue):  # Integer
+		self.add_query_param('CrossRetentionValue', CrossRetentionValue)
+	def get_CrossLogRetentionType(self): # String
+		return self.get_query_params().get('CrossLogRetentionType')
+
+	def set_CrossLogRetentionType(self, CrossLogRetentionType):  # String
+		self.add_query_param('CrossLogRetentionType', CrossLogRetentionType)
 	def get_BackupInterval(self): # String
 		return self.get_query_params().get('BackupInterval')
 
@@ -76,11 +111,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupPeriod(self, PreferredBackupPeriod):  # String
 		self.add_query_param('PreferredBackupPeriod', PreferredBackupPeriod)
-	def get_BackupRetentionPolicyOnClusterDeletion(self): # Integer
-		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
-
-	def set_BackupRetentionPolicyOnClusterDeletion(self, BackupRetentionPolicyOnClusterDeletion):  # Integer
-		self.add_query_param('BackupRetentionPolicyOnClusterDeletion', BackupRetentionPolicyOnClusterDeletion)
 	def get_DestRegion(self): # String
 		return self.get_query_params().get('DestRegion')
 
@@ -101,11 +131,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SnapshotBackupType(self): # String
 		return self.get_query_params().get('SnapshotBackupType')
 
@@ -116,36 +141,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupTime(self, PreferredBackupTime):  # String
 		self.add_query_param('PreferredBackupTime', PreferredBackupTime)
-	def get_BackupRetentionPeriod(self): # Long
-		return self.get_query_params().get('BackupRetentionPeriod')
-
-	def set_BackupRetentionPeriod(self, BackupRetentionPeriod):  # Long
-		self.add_query_param('BackupRetentionPeriod', BackupRetentionPeriod)
 	def get_HighFrequencyBackupRetention(self): # Long
 		return self.get_query_params().get('HighFrequencyBackupRetention')
 
 	def set_HighFrequencyBackupRetention(self, HighFrequencyBackupRetention):  # Long
 		self.add_query_param('HighFrequencyBackupRetention', HighFrequencyBackupRetention)
-	def get_EnableCrossLogBackup(self): # Integer
-		return self.get_query_params().get('EnableCrossLogBackup')
-
-	def set_EnableCrossLogBackup(self, EnableCrossLogBackup):  # Integer
-		self.add_query_param('EnableCrossLogBackup', EnableCrossLogBackup)
-	def get_CrossBackupPeriod(self): # String
-		return self.get_query_params().get('CrossBackupPeriod')
-
-	def set_CrossBackupPeriod(self, CrossBackupPeriod):  # String
-		self.add_query_param('CrossBackupPeriod', CrossBackupPeriod)
-	def get_CrossRetentionValue(self): # Integer
-		return self.get_query_params().get('CrossRetentionValue')
-
-	def set_CrossRetentionValue(self, CrossRetentionValue):  # Integer
-		self.add_query_param('CrossRetentionValue', CrossRetentionValue)
-	def get_CrossLogRetentionType(self): # String
-		return self.get_query_params().get('CrossLogRetentionType')
-
-	def set_CrossLogRetentionType(self, CrossLogRetentionType):  # String
-		self.add_query_param('CrossLogRetentionType', CrossLogRetentionType)
 	def get_LogBackupRetentionPeriod(self): # Long
 		return self.get_query_params().get('LogBackupRetentionPeriod')
 
