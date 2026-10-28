@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class ListProductDimensionGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListProductDimensionGroups','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListProductDimensionGroups','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

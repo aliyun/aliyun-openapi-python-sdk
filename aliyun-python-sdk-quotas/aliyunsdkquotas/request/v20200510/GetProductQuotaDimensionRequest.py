@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class GetProductQuotaDimensionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuotaDimension','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuotaDimension','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,17 +36,17 @@ class GetProductQuotaDimensionRequest(RpcRequest):
 
 	def set_ProductCode(self, ProductCode):  # String
 		self.add_body_params('ProductCode', ProductCode)
-	def get_DependentDimensionss(self): # RepeatList
-		return self.get_body_params().get('DependentDimensions')
-
-	def set_DependentDimensionss(self, DependentDimensions):  # RepeatList
-		for depth1 in range(len(DependentDimensions)):
-			if DependentDimensions[depth1].get('Key') is not None:
-				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Key', DependentDimensions[depth1].get('Key'))
-			if DependentDimensions[depth1].get('Value') is not None:
-				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Value', DependentDimensions[depth1].get('Value'))
 	def get_DimensionKey(self): # String
 		return self.get_body_params().get('DimensionKey')
 
 	def set_DimensionKey(self, DimensionKey):  # String
 		self.add_body_params('DimensionKey', DimensionKey)
+	def get_DependentDimensionss(self): # RepeatList
+		return self.get_body_params().get('DependentDimensions')
+
+	def set_DependentDimensionss(self, DependentDimensions):  # RepeatList
+		for depth1 in range(len(DependentDimensions)):
+			if DependentDimensions[depth1].get('Value') is not None:
+				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Value', DependentDimensions[depth1].get('Value'))
+			if DependentDimensions[depth1].get('Key') is not None:
+				self.add_body_params('DependentDimensions.' + str(depth1 + 1) + '.Key', DependentDimensions[depth1].get('Key'))

@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class DeleteQuotaAlarmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'DeleteQuotaAlarm','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'DeleteQuotaAlarm','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

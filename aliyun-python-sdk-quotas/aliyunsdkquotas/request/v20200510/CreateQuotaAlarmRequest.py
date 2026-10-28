@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class CreateQuotaAlarmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'CreateQuotaAlarm','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'CreateQuotaAlarm','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,10 +61,15 @@ class CreateQuotaAlarmRequest(RpcRequest):
 
 	def set_QuotaDimensionss(self, QuotaDimensions):  # RepeatList
 		for depth1 in range(len(QuotaDimensions)):
-			if QuotaDimensions[depth1].get('Key') is not None:
-				self.add_body_params('QuotaDimensions.' + str(depth1 + 1) + '.Key', QuotaDimensions[depth1].get('Key'))
 			if QuotaDimensions[depth1].get('Value') is not None:
 				self.add_body_params('QuotaDimensions.' + str(depth1 + 1) + '.Value', QuotaDimensions[depth1].get('Value'))
+			if QuotaDimensions[depth1].get('Key') is not None:
+				self.add_body_params('QuotaDimensions.' + str(depth1 + 1) + '.Key', QuotaDimensions[depth1].get('Key'))
+	def get_OriginalContext(self): # String
+		return self.get_body_params().get('OriginalContext')
+
+	def set_OriginalContext(self, OriginalContext):  # String
+		self.add_body_params('OriginalContext', OriginalContext)
 	def get_ThresholdPercent(self): # Float
 		return self.get_body_params().get('ThresholdPercent')
 

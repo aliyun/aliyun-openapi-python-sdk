@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class GetProductQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuota','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetProductQuota','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,7 +46,7 @@ class GetProductQuotaRequest(RpcRequest):
 
 	def set_Dimensionss(self, Dimensions):  # RepeatList
 		for depth1 in range(len(Dimensions)):
-			if Dimensions[depth1].get('Key') is not None:
-				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Key', Dimensions[depth1].get('Key'))
 			if Dimensions[depth1].get('Value') is not None:
 				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Value', Dimensions[depth1].get('Value'))
+			if Dimensions[depth1].get('Key') is not None:
+				self.add_body_params('Dimensions.' + str(depth1 + 1) + '.Key', Dimensions[depth1].get('Key'))

@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class ListQuotaApplicationsDetailForTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListQuotaApplicationsDetailForTemplate','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'ListQuotaApplicationsDetailForTemplate','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

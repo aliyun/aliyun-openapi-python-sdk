@@ -23,7 +23,7 @@ from aliyunsdkquotas.endpoint import endpoint_data
 class GetQuotaApplicationApprovalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetQuotaApplicationApproval','quotas')
+		RpcRequest.__init__(self, 'quotas', '2020-05-10', 'GetQuotaApplicationApproval','Quotas')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
