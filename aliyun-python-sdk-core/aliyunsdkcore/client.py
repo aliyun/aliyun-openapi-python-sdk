@@ -103,7 +103,8 @@ class AcsClient:
         :param region_id: String, region id
         :param auto_retry: Boolean
         :param max_retry_time: Number
-        :param signature_method: String, HMAC-SHA256 (default) or HMAC-SHA1
+        :param signature_method: Signature V2 only: HMAC-SHA256 (default) or HMAC-SHA1.
+            SHA1 is less secure; this compatibility fallback is not recommended.
         :param pool_size:
             In a multithreaded environment,
             you should set the maxsize of the pool to a higher number,

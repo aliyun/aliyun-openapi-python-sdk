@@ -293,6 +293,10 @@ class RpcRequest(AcsRequest):
             format=None,
             protocol=None,
             signer=None):
+        """
+        :param signer: Explicit signer for signature V2 only. HMAC-SHA1 is a less
+            secure compatibility fallback and is not recommended.
+        """
         AcsRequest.__init__(
             self,
             product,
