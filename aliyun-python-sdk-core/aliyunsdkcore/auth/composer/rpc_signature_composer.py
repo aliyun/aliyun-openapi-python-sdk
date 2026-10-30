@@ -20,7 +20,7 @@ from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
 
-from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.auth.algorithm import hmac_sha256 as default_signer
 from aliyunsdkcore.utils import parameter_helper as helper
 
 
@@ -33,7 +33,7 @@ def __refresh_sign_parameters(
         parameters,
         access_key_id,
         accept_format="JSON",
-        signer=mac1):
+        signer=default_signer):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
     if 'Signature' in parameters:
@@ -64,11 +64,11 @@ def __compose_string_to_sign(method, queries):
     return string_to_sign
 
 
-def __get_signature(string_to_sign, secret, signer=mac1):
+def __get_signature(string_to_sign, secret, signer=default_signer):
     return signer.get_sign_string(string_to_sign, secret + '&')
 
 
-def get_signed_url(params, ak, secret, accept_format, method, body_params, signer=mac1):
+def get_signed_url(params, ak, secret, accept_format, method, body_params, signer=default_signer):
     url_params = __refresh_sign_parameters(params, ak, accept_format, signer)
     sign_params = dict(url_params)
     sign_params.update(body_params)

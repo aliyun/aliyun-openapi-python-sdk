@@ -38,6 +38,7 @@ from aliyunsdkcore.http.http_response import HttpResponse
 from aliyunsdkcore.request import AcsRequest
 from aliyunsdkcore.http import format_type
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
+from aliyunsdkcore.auth.algorithm import hmac_sha256, sha_hmac1
 from aliyunsdkcore.request import CommonRequest
 
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
@@ -92,7 +93,8 @@ class AcsClient:
             debug=False,
             verify=None,
             pool_size=10,
-            proxy=None
+            proxy=None,
+            signature_method="HMAC-SHA256"
     ):
         """
         constructor for AcsClient
@@ -101,6 +103,7 @@ class AcsClient:
         :param region_id: String, region id
         :param auto_retry: Boolean
         :param max_retry_time: Number
+        :param signature_method: String, HMAC-SHA256 (default) or HMAC-SHA1
         :param pool_size:
             In a multithreaded environment,
             you should set the maxsize of the pool to a higher number,
@@ -108,6 +111,7 @@ class AcsClient:
         :return:
         """
 
+        self.session = None
         self._max_retry_num = max_retry_time
         self._auto_retry = auto_retry
         self._ak = ak
@@ -119,6 +123,10 @@ class AcsClient:
         self._read_timeout = timeout
         self._extra_user_agent = {}
         self._verify = verify
+        if signature_method not in ("HMAC-SHA256", "HMAC-SHA1"):
+            raise ClientException(error_code.SDK_INVALID_PARAMS,
+                                  "Invalid signature_method, should be HMAC-SHA256 or HMAC-SHA1")
+        self._signature_algorithm = sha_hmac1 if signature_method == "HMAC-SHA1" else hmac_sha256
         credential = {
             'ak': ak,
             'secret': secret,
@@ -279,6 +287,7 @@ class AcsClient:
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
 
+        request._default_signer = self._signature_algorithm
         if isinstance(request, CommonRequest):
             request.trans_to_acs_request()
 
