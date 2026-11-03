@@ -85,8 +85,6 @@ class AcsRequest:
         :param accept_format:
         :return:
         """
-        self._signer = None
-        self._default_signer = hmac_sha256
         self._version = version
         self._product = product
         self._action_name = action_name
@@ -292,11 +290,7 @@ class RpcRequest(AcsRequest):
             location_endpoint_type='openAPI',
             format=None,
             protocol=None,
-            signer=None):
-        """
-        :param signer: Explicit signer for signature V2 only. HMAC-SHA1 is a less
-            secure compatibility fallback and is not recommended.
-        """
+            signer=hmac_sha256):
         AcsRequest.__init__(
             self,
             product,
@@ -334,7 +328,7 @@ class RpcRequest(AcsRequest):
             self.get_accept_format(),
             self.get_method(),
             self.get_body_params(),
-            self._signer or self._default_signer)
+            self._signer)
         self.string_to_sign = string_to_sign
         return url
 
@@ -444,8 +438,7 @@ class RoaRequest(AcsRequest):
             self.get_headers().copy(),
             self.get_uri_pattern(),
             self.get_path_params(),
-            self.get_method(),
-            self._signer or self._default_signer)
+            self.get_method())
         self.string_to_sign = sign_to_string
         return signed_headers
 
@@ -477,6 +470,7 @@ class CommonRequest(AcsRequest):
         self._uri_pattern = uri_pattern
         self._product = product
         self._location_endpoint_type = location_endpoint_type
+        self._signer = hmac_sha256
         self.add_header('x-sdk-invoke-type', 'common')
         self._path_params = None
         self._method = "GET"
@@ -549,9 +543,6 @@ class CommonRequest(AcsRequest):
         return self.request.get_signed_header(region_id, access_key_id, access_key_secret)
 
     def fill_params(self):
-
-        self.request._signer = self._signer
-        self.request._default_signer = self._default_signer
 
         self.request.set_uri_pattern(self.get_uri_pattern())
 

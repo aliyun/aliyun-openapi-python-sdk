@@ -10,7 +10,6 @@ from urllib.parse import parse_qsl, quote, urlsplit
 from mock import patch
 from tests import unittest
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.auth.algorithm import hmac_sha256, sha_hmac1
 from aliyunsdkcore.auth.credentials import AccessKeyCredential, RamRoleArnCredential, StsTokenCredential
 from aliyunsdkcore.auth.signers.rsa_key_pair_signer import GetSessionAkRequest
@@ -25,7 +24,7 @@ class TestSignatureV2(unittest.TestCase):
         self.addCleanup(environment.stop)
 
     @staticmethod
-    def request(style, method):
+    def request(style, method, parameters=True):
         if style.startswith('common'):
             request = CommonRequest(product='Ecs', version='2014-05-26', action_name='DescribeRegions')
             if style == 'common_roa':
@@ -39,8 +38,9 @@ class TestSignatureV2(unittest.TestCase):
                                  path_params={'region_id': 'cn-hangzhou'})
         request.set_accept_format('JSON')
         request.set_method(method)
-        request.add_query_param('Value', 'Unicode-中文 +/~*')
-        if method == 'POST':
+        if parameters:
+            request.add_query_param('Value', 'Unicode-中文 +/~*')
+        if parameters and method == 'POST':
             request.add_body_params('BodyValue', 'body +/~*')
         return request
 
@@ -84,18 +84,17 @@ class TestSignatureV2(unittest.TestCase):
                                              algorithm).digest()).decode('ascii')
         self.assertEqual(expected, signature)
 
-    def test_client_algorithms(self):
+    def test_client_defaults_to_sha256(self):
         cases = itertools.product(('rpc', 'roa', 'common_rpc', 'common_roa'),
-                                  ('GET', 'POST'), (False, True), (None, 'HMAC-SHA1', 'HMAC-SHA256'))
-        for style, http_method, sts, method in cases:
-            with self.subTest(style=style, http_method=http_method, sts=sts, method=method):
+                                  ('GET', 'POST'), (False, True), (False, True))
+        for style, http_method, sts, parameters in cases:
+            with self.subTest(style=style, http_method=http_method, sts=sts, parameters=parameters):
                 credential = (StsTokenCredential('key', 'secret', 'token+/=')
                               if sts else AccessKeyCredential('key', 'secret'))
-                options = {} if method is None else {'signature_method': method}
-                client = AcsClient(credential=credential, **options)
-                request = self.request(style, http_method)
+                client = AcsClient(credential=credential)
+                request = self.request(style, http_method, parameters)
                 message = client._make_http_response('example.test', request, 10, 10)
-                self.assert_signature(message, style, method or 'HMAC-SHA256', 'secret', 'token+/=' if sts else None)
+                self.assert_signature(message, style, 'HMAC-SHA256', 'secret', 'token+/=' if sts else None)
                 client.session.close()
 
     def test_explicit_request_signer_overrides_client_default(self):
@@ -105,40 +104,28 @@ class TestSignatureV2(unittest.TestCase):
         self.assert_signature(message, 'rpc', 'HMAC-SHA1', 'secret')
         client.session.close()
 
-    def test_request_can_be_reused_with_different_client_defaults(self):
-        for style in ('rpc', 'roa', 'common_rpc', 'common_roa'):
-            request = self.request(style, 'GET')
-            for method in ('HMAC-SHA1', 'HMAC-SHA256'):
-                with self.subTest(style=style, method=method):
-                    client = AcsClient('key', 'secret', signature_method=method)
-                    message = client._make_http_response('example.test', request, 10, 10)
-                    self.assert_signature(message, style, method, 'secret')
-                    client.session.close()
+    def test_assume_role_defaults_to_sha256(self):
+        credential = RamRoleArnCredential('source-key', 'source-secret', 'role-arn', 'session')
+        client = AcsClient(credential=credential)
+        exchange = []
 
-    def test_assume_role_inherits_client_algorithm(self):
-        for method in ('HMAC-SHA256', 'HMAC-SHA1'):
-            with self.subTest(method=method):
-                credential = RamRoleArnCredential('source-key', 'source-secret', 'role-arn', 'session')
-                client = AcsClient(credential=credential, signature_method=method)
-                exchange = []
+        def assume_role(request, signer):
+            exchange.append(client._make_http_response('example.test', request, 10, 10, signer))
+            return 200, {}, json.dumps({'Credentials': {
+                'AccessKeyId': 'temporary-key', 'AccessKeySecret': 'temporary-secret',
+                'SecurityToken': 'temporary-token'
+            }}).encode('utf-8'), None
 
-                def assume_role(request, signer):
-                    exchange.append(client._make_http_response('example.test', request, 10, 10, signer))
-                    return 200, {}, json.dumps({'Credentials': {
-                        'AccessKeyId': 'temporary-key', 'AccessKeySecret': 'temporary-secret',
-                        'SecurityToken': 'temporary-token'
-                    }}).encode('utf-8'), None
-
-                client._signer._doAction = assume_role
-                message = client._make_http_response('example.test', self.request('rpc', 'GET'), 10, 10)
-                self.assertEqual(1, len(exchange))
-                self.assert_signature(exchange[0], 'rpc', method, 'source-secret')
-                self.assert_signature(message, 'rpc', method, 'temporary-secret', 'temporary-token')
-                client.session.close()
+        client._signer._doAction = assume_role
+        message = client._make_http_response('example.test', self.request('rpc', 'GET'), 10, 10)
+        self.assertEqual(1, len(exchange))
+        self.assert_signature(exchange[0], 'rpc', 'HMAC-SHA256', 'source-secret')
+        self.assert_signature(message, 'rpc', 'HMAC-SHA256', 'temporary-secret', 'temporary-token')
+        client.session.close()
 
     @patch('aliyunsdkcore.auth.algorithm.sha_hmac256.get_sign_string', return_value='rsa-signature')
     def test_rsa_exchange_keeps_explicit_algorithm(self, sign):
-        client = AcsClient('public-key-id', 'private-key', signature_method='HMAC-SHA1')
+        client = AcsClient('public-key-id', 'private-key')
         message = client._make_http_response('example.test', GetSessionAkRequest(), 10, 10)
         parameters = dict(parse_qsl(urlsplit(message.get_url()).query))
         self.assertEqual('SHA256withRSA', parameters['SignatureMethod'])
@@ -146,13 +133,6 @@ class TestSignatureV2(unittest.TestCase):
         self.assertEqual('rsa-signature', parameters['Signature'])
         sign.assert_called_once()
         client.session.close()
-
-    def test_invalid_client_algorithm(self):
-        for method in ('sha1', '', None, []):
-            with self.subTest(method=method):
-                with self.assertRaises(ClientException) as error:
-                    AcsClient('key', 'secret', signature_method=method)
-                self.assertEqual('SDK.InvalidParams', error.exception.error_code)
 
     def test_hmac_sha256_vectors(self):
         self.assertEqual('HMAC-SHA256', hmac_sha256.get_signer_name())
