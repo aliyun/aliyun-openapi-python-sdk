@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.14t"]
+        version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.14t", "3.15", "3.15t"]
 
     runs-on: ubuntu-20.04
     env:
@@ -23,19 +23,15 @@ jobs:
       CONCURRENT_ID: "${{ github.run_number }}${{ strategy.job-index }}"
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v7
     - name: Set up Python ${{ matrix.version }}
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.version }}
+        allow-prereleases: true
     - name: Install dependencies
       run: |
-        pip install unittest2
-        pip install coverage
-        pip install pycodestyle
-        pip install mock
-        pip install jmespath cryptography
-        pip install 'pytest<7.4.4'
+        pip install coverage cryptography jmespath mock pycodestyle 'pytest<7.4.4' unittest2
     - name: Lint
       run: |
         make lint
