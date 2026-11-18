@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSellerInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'DescribeSellerInstances')
+		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'DescribeSellerInstances','MarketplaceIntl')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

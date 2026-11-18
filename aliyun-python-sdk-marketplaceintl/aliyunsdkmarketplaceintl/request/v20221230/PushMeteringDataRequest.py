@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class PushMeteringDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'PushMeteringData')
+		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'PushMeteringData','MarketplaceIntl')
 		self.set_method('POST')
 
 	def get_MeteringDatas(self): # RepeatList
@@ -30,10 +30,10 @@ class PushMeteringDataRequest(RpcRequest):
 
 	def set_MeteringDatas(self, MeteringData):  # RepeatList
 		for depth1 in range(len(MeteringData)):
-			if MeteringData[depth1].get('MeteringAssist') is not None:
-				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.MeteringAssist', MeteringData[depth1].get('MeteringAssist'))
 			if MeteringData[depth1].get('PushOrderBizId') is not None:
 				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.PushOrderBizId', MeteringData[depth1].get('PushOrderBizId'))
+			if MeteringData[depth1].get('MeteringAssist') is not None:
+				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.MeteringAssist', MeteringData[depth1].get('MeteringAssist'))
 			if MeteringData[depth1].get('InstanceId') is not None:
 				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.InstanceId', MeteringData[depth1].get('InstanceId'))
 			if MeteringData[depth1].get('EndTime') is not None:
@@ -42,6 +42,11 @@ class PushMeteringDataRequest(RpcRequest):
 				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.StartTime', MeteringData[depth1].get('StartTime'))
 			if MeteringData[depth1].get('MeteringEntity') is not None:
 				self.add_body_params('MeteringData.' + str(depth1 + 1) + '.MeteringEntity', MeteringData[depth1].get('MeteringEntity'))
+	def get_Metering(self): # String
+		return self.get_query_params().get('Metering')
+
+	def set_Metering(self, Metering):  # String
+		self.add_query_param('Metering', Metering)
 	def get_GmtCreate(self): # String
 		return self.get_body_params().get('GmtCreate')
 

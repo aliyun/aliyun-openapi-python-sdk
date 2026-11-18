@@ -1,3 +1,6 @@
+2026-11-18 Version: 1.0.1
+- Generated 2022-12-30 for `marketplaceIntl`.
+
 2025-09-17 Version: 1.0.0
 - Generated 2022-12-30 for `marketplaceIntl`.
 

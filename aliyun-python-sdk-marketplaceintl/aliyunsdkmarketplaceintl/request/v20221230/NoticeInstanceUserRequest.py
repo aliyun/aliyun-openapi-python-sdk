@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class NoticeInstanceUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'NoticeInstanceUser')
+		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'NoticeInstanceUser','MarketplaceIntl')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 

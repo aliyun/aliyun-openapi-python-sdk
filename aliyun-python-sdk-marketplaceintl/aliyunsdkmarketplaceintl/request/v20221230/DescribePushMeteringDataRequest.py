@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePushMeteringDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'DescribePushMeteringData')
+		RpcRequest.__init__(self, 'marketplaceIntl', '2022-12-30', 'DescribePushMeteringData','MarketplaceIntl')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
