@@ -61,6 +61,11 @@ class RenewDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 

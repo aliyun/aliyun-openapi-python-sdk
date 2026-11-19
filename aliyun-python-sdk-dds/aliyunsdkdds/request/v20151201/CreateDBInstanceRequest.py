@@ -66,6 +66,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_SrcRegion(self, SrcRegion):  # String
 		self.add_query_param('SrcRegion', SrcRegion)
+	def get_TTLEnabled(self): # Boolean
+		return self.get_query_params().get('TTLEnabled')
+
+	def set_TTLEnabled(self, TTLEnabled):  # Boolean
+		self.add_query_param('TTLEnabled', TTLEnabled)
 	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
@@ -76,6 +81,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_MaintainStartTime(self): # String
+		return self.get_query_params().get('MaintainStartTime')
+
+	def set_MaintainStartTime(self, MaintainStartTime):  # String
+		self.add_query_param('MaintainStartTime', MaintainStartTime)
 	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
@@ -105,6 +115,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_BackupId(self): # String
 		return self.get_query_params().get('BackupId')
 
@@ -120,6 +135,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MaintainEndTime(self): # String
+		return self.get_query_params().get('MaintainEndTime')
+
+	def set_MaintainEndTime(self, MaintainEndTime):  # String
+		self.add_query_param('MaintainEndTime', MaintainEndTime)
 	def get_DBInstanceClass(self): # String
 		return self.get_query_params().get('DBInstanceClass')
 

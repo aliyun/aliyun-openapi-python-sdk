@@ -41,11 +41,6 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # String
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
-	def get_ReadonlyReplicas(self): # String
-		return self.get_query_params().get('ReadonlyReplicas')
-
-	def set_ReadonlyReplicas(self, ReadonlyReplicas):  # String
-		self.add_query_param('ReadonlyReplicas', ReadonlyReplicas)
 	def get_ExtraParam(self): # String
 		return self.get_query_params().get('ExtraParam')
 
@@ -61,26 +56,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_CouponNo(self, CouponNo):  # String
 		self.add_query_param('CouponNo', CouponNo)
-	def get_ReplicationFactor(self): # String
-		return self.get_query_params().get('ReplicationFactor')
-
-	def set_ReplicationFactor(self, ReplicationFactor):  # String
-		self.add_query_param('ReplicationFactor', ReplicationFactor)
 	def get_TargetZoneId(self): # String
 		return self.get_query_params().get('TargetZoneId')
 
 	def set_TargetZoneId(self, TargetZoneId):  # String
 		self.add_query_param('TargetZoneId', TargetZoneId)
-	def get_EffectiveTime(self): # String
-		return self.get_query_params().get('EffectiveTime')
-
-	def set_EffectiveTime(self, EffectiveTime):  # String
-		self.add_query_param('EffectiveTime', EffectiveTime)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 
@@ -91,31 +71,11 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_SearchNodeClass(self, SearchNodeClass):  # String
 		self.add_query_param('SearchNodeClass', SearchNodeClass)
-	def get_AutoPay(self): # Boolean
-		return self.get_query_params().get('AutoPay')
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
 
-	def set_AutoPay(self, AutoPay):  # Boolean
-		self.add_query_param('AutoPay', AutoPay)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_SearchNodeStorage(self): # Long
-		return self.get_query_params().get('SearchNodeStorage')
-
-	def set_SearchNodeStorage(self, SearchNodeStorage):  # Long
-		self.add_query_param('SearchNodeStorage', SearchNodeStorage)
-	def get_TargetVswitchId(self): # String
-		return self.get_query_params().get('TargetVswitchId')
-
-	def set_TargetVswitchId(self, TargetVswitchId):  # String
-		self.add_query_param('TargetVswitchId', TargetVswitchId)
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -146,3 +106,53 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_OrderType(self, OrderType):  # String
 		self.add_query_param('OrderType', OrderType)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_ReadonlyReplicas(self): # String
+		return self.get_query_params().get('ReadonlyReplicas')
+
+	def set_ReadonlyReplicas(self, ReadonlyReplicas):  # String
+		self.add_query_param('ReadonlyReplicas', ReadonlyReplicas)
+	def get_ReplicationFactor(self): # String
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self, ReplicationFactor):  # String
+		self.add_query_param('ReplicationFactor', ReplicationFactor)
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_DBInstanceId(self): # String
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_SearchNodeStorage(self): # Long
+		return self.get_query_params().get('SearchNodeStorage')
+
+	def set_SearchNodeStorage(self, SearchNodeStorage):  # Long
+		self.add_query_param('SearchNodeStorage', SearchNodeStorage)
+	def get_TargetVswitchId(self): # String
+		return self.get_query_params().get('TargetVswitchId')
+
+	def set_TargetVswitchId(self, TargetVswitchId):  # String
+		self.add_query_param('TargetVswitchId', TargetVswitchId)

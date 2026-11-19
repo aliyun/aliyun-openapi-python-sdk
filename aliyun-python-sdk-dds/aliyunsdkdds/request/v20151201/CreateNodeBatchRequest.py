@@ -71,6 +71,11 @@ class CreateNodeBatchRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
