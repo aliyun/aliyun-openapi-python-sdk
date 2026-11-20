@@ -291,10 +291,10 @@ class TestRequest(unittest.TestCase):
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
+            'Authorization': 'acs accesskeyid:MF0ngFVlg34K5SuJeGYQiBb5UA/eXQr/UBOEJmRZhD4=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
-            'x-acs-signature-method': 'HMAC-SHA1',
+            'x-acs-signature-method': 'HMAC-SHA256',
             'x-acs-signature-version': '1.0',
             'x-acs-version': 'version'
         })
@@ -303,10 +303,10 @@ class TestRequest(unittest.TestCase):
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
+            'Authorization': 'acs accesskeyid:MF0ngFVlg34K5SuJeGYQiBb5UA/eXQr/UBOEJmRZhD4=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
-            'x-acs-signature-method': 'HMAC-SHA1',
+            'x-acs-signature-method': 'HMAC-SHA256',
             'x-acs-signature-version': '1.0',
             'x-acs-version': 'version'
         })
@@ -315,10 +315,10 @@ class TestRequest(unittest.TestCase):
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
+            'Authorization': 'acs accesskeyid:MF0ngFVlg34K5SuJeGYQiBb5UA/eXQr/UBOEJmRZhD4=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
-            'x-acs-signature-method': 'HMAC-SHA1',
+            'x-acs-signature-method': 'HMAC-SHA256',
             'x-acs-signature-version': '1.0',
             'x-acs-version': 'version'
         })
@@ -327,11 +327,11 @@ class TestRequest(unittest.TestCase):
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:u2RdkokGTtn2BhUmzUNJjVUh448=',
+            'Authorization': 'acs accesskeyid:bUYa87QP/Ts93gc78qtkVxG/QCyYd9khVzMWCHKyt70=',
             'Content-MD5': 'mgNkuembtIDdJeHwKEyFVQ==',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
-            'x-acs-signature-method': 'HMAC-SHA1',
+            'x-acs-signature-method': 'HMAC-SHA256',
             'x-acs-signature-version': '1.0',
             'x-acs-version': 'version'
         })
@@ -503,11 +503,11 @@ class TestRequest(unittest.TestCase):
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:j73ZHar0vd0+MGaKFlGK9JyBnEo=',
+            'Authorization': 'acs accesskeyid:b6aEEEYifojv60v06CVkcnWKOR7pmJ92t8w3BQB0Dgc=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-action': 'action_name',
             'x-acs-region-id': 'regionid',
-            'x-acs-signature-method': 'HMAC-SHA1',
+            'x-acs-signature-method': 'HMAC-SHA256',
             'x-acs-signature-version': '1.0',
             'x-acs-version': 'version',
             'x-sdk-invoke-type': 'common'

@@ -66,14 +66,14 @@ class TestRoaSignatureComposer(unittest.TestCase):
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertEqual(parameters.get('Date'), '2018-12-04T03:25:29Z')
         self.assertEqual(parameters.get('Accept'), 'application/octet-stream')
-        self.assertEqual(parameters.get('x-acs-signature-method'), 'HMAC-SHA1')
+        self.assertEqual(parameters.get('x-acs-signature-method'), 'HMAC-SHA256')
         self.assertEqual(parameters.get('x-acs-signature-version'), '1.0')
         # with none
         parameters = refresh_sign_parameters(None)
         mock_get_rfc_2616_date.assert_called_with()
         self.assertEqual(parameters.get('Date'), '2018-12-04T03:25:29Z')
         self.assertEqual(parameters.get('Accept'), 'application/octet-stream')
-        self.assertEqual(parameters.get('x-acs-signature-method'), 'HMAC-SHA1')
+        self.assertEqual(parameters.get('x-acs-signature-method'), 'HMAC-SHA256')
         self.assertEqual(parameters.get('x-acs-signature-version'), '1.0')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
@@ -82,7 +82,7 @@ class TestRoaSignatureComposer(unittest.TestCase):
         sign, _ = get_signature({}, 'access_key_id',
                                 'access_key_secret', 'json', {}, '/', {}, 'GET')
         mock_get_rfc_2616_date.assert_called_once_with()
-        self.assertEqual(sign, 'HKCpm41tJg6b3EYdtGMbNuwALZU=')
+        self.assertEqual(sign, 'dH1gZsa/Z+mTd+VJmr+W9OCofWTRhmrPWFIprWVPR6o=')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_get_signature_headers(self, mock_get_rfc_2616_date):
@@ -91,4 +91,4 @@ class TestRoaSignatureComposer(unittest.TestCase):
             {}, 'access_key_id', 'access_key_secret', 'json', {}, '/', {}, 'GET')
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertEqual(headers.get('Authorization'),
-                         'acs access_key_id:HKCpm41tJg6b3EYdtGMbNuwALZU=')
+                         'acs access_key_id:dH1gZsa/Z+mTd+VJmr+W9OCofWTRhmrPWFIprWVPR6o=')

@@ -29,7 +29,7 @@ from aliyunsdkcore.http import format_type as ft
 from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
 from aliyunsdkcore.auth.composer import roa_signature_composer as roa_signer
 from aliyunsdkcore.utils.parameter_helper import md5_sum
-from aliyunsdkcore.auth.algorithm import sha_hmac1
+from aliyunsdkcore.auth.algorithm import hmac_sha256
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.compat import ensure_string
@@ -290,7 +290,7 @@ class RpcRequest(AcsRequest):
             location_endpoint_type='openAPI',
             format=None,
             protocol=None,
-            signer=sha_hmac1):
+            signer=hmac_sha256):
         AcsRequest.__init__(
             self,
             product,
@@ -470,7 +470,7 @@ class CommonRequest(AcsRequest):
         self._uri_pattern = uri_pattern
         self._product = product
         self._location_endpoint_type = location_endpoint_type
-        self._signer = sha_hmac1
+        self._signer = hmac_sha256
         self.add_header('x-sdk-invoke-type', 'common')
         self._path_params = None
         self._method = "GET"

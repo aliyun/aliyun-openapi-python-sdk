@@ -18,7 +18,7 @@
 # coding=utf-8
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.auth.algorithm import hmac_sha256 as default_signer
 from aliyunsdkcore.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
 
@@ -37,7 +37,7 @@ HEADER_SEPARATOR = "\n"
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 # input parameters is headers
-def refresh_sign_parameters(parameters, format=FormatType.RAW, signer=mac1):
+def refresh_sign_parameters(parameters, format=FormatType.RAW, signer=default_signer):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
     parameters["Date"] = helper.get_rfc_2616_date()
@@ -53,7 +53,7 @@ def compose_string_to_sign(
         uri_pattern=None,
         headers={},
         paths=None,
-        signer=mac1):
+        signer=default_signer):
     sign_to_string = ""
     sign_to_string += method
     sign_to_string += HEADER_SEPARATOR
@@ -128,10 +128,11 @@ def get_signature(
         uri_pattern,
         paths,
         method,
-        signer=mac1):
+        signer=default_signer):
     headers = refresh_sign_parameters(
         parameters=headers,
-        format=format)
+        format=format,
+        signer=signer)
     sign_to_string = compose_string_to_sign(
         method=method,
         queries=queries,
@@ -151,7 +152,7 @@ def get_signature_headers(
         uri_pattern,
         paths,
         method,
-        signer=mac1):
+        signer=default_signer):
     signature, sign_to_string = get_signature(
         queries,
         access_key,
