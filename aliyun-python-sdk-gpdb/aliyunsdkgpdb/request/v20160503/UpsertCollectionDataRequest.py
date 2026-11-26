@@ -24,7 +24,7 @@ import json
 class UpsertCollectionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpsertCollectionData')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpsertCollectionData','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -48,10 +48,10 @@ class UpsertCollectionDataRequest(RpcRequest):
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
 	def get_Rows(self): # Array
-		return self.get_query_params().get('Rows')
+		return self.get_body_params().get('Rows')
 
 	def set_Rows(self, Rows):  # Array
-		self.add_query_param("Rows", json.dumps(Rows))
+		self.add_body_params("Rows", json.dumps(Rows))
 	def get_NamespacePassword(self): # String
 		return self.get_query_params().get('NamespacePassword')
 
@@ -62,3 +62,8 @@ class UpsertCollectionDataRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

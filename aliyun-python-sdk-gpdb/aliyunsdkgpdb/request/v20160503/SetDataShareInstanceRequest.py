@@ -24,7 +24,7 @@ import json
 class SetDataShareInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'SetDataShareInstance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'SetDataShareInstance','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

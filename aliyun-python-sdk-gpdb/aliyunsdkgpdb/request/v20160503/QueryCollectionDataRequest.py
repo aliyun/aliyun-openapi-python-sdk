@@ -24,7 +24,7 @@ import json
 class QueryCollectionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'QueryCollectionData')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'QueryCollectionData','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -37,11 +37,31 @@ class QueryCollectionDataRequest(RpcRequest):
 
 	def set_TopK(self, TopK):  # Long
 		self.add_query_param('TopK', TopK)
+	def get_IncludeMetadataFields(self): # String
+		return self.get_query_params().get('IncludeMetadataFields')
+
+	def set_IncludeMetadataFields(self, IncludeMetadataFields):  # String
+		self.add_query_param('IncludeMetadataFields', IncludeMetadataFields)
+	def get_RelationalTableFilter(self): # Struct
+		return self.get_query_params().get('RelationalTableFilter')
+
+	def set_RelationalTableFilter(self, RelationalTableFilter):  # Struct
+		self.add_query_param("RelationalTableFilter", json.dumps(RelationalTableFilter))
 	def get_Content(self): # String
 		return self.get_query_params().get('Content')
 
 	def set_Content(self, Content):  # String
 		self.add_query_param('Content', Content)
+	def get_HybridSearchArgs(self): # Map
+		return self.get_query_params().get('HybridSearchArgs')
+
+	def set_HybridSearchArgs(self, HybridSearchArgs):  # Map
+		self.add_query_param("HybridSearchArgs", json.dumps(HybridSearchArgs))
+	def get_IncludeSparseValues(self): # Boolean
+		return self.get_query_params().get('IncludeSparseValues')
+
+	def set_IncludeSparseValues(self, IncludeSparseValues):  # Boolean
+		self.add_query_param('IncludeSparseValues', IncludeSparseValues)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -52,6 +72,21 @@ class QueryCollectionDataRequest(RpcRequest):
 
 	def set_Vector(self, Vector):  # Array
 		self.add_query_param("Vector", json.dumps(Vector))
+	def get_SparseVector(self): # Struct
+		return self.get_query_params().get('SparseVector')
+
+	def set_SparseVector(self, SparseVector):  # Struct
+		self.add_query_param("SparseVector", json.dumps(SparseVector))
+	def get_Offset(self): # Integer
+		return self.get_query_params().get('Offset')
+
+	def set_Offset(self, Offset):  # Integer
+		self.add_query_param('Offset', Offset)
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)
 	def get_Collection(self): # String
 		return self.get_query_params().get('Collection')
 
@@ -68,12 +103,32 @@ class QueryCollectionDataRequest(RpcRequest):
 	def set_NamespacePassword(self, NamespacePassword):  # String
 		self.add_query_param('NamespacePassword', NamespacePassword)
 	def get_Filter(self): # String
-		return self.get_query_params().get('Filter')
+		return self.get_body_params().get('Filter')
 
 	def set_Filter(self, Filter):  # String
-		self.add_query_param('Filter', Filter)
+		self.add_body_params('Filter', Filter)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
+	def get_Metrics(self): # String
+		return self.get_query_params().get('Metrics')
+
+	def set_Metrics(self, Metrics):  # String
+		self.add_query_param('Metrics', Metrics)
+	def get_HybridSearch(self): # String
+		return self.get_query_params().get('HybridSearch')
+
+	def set_HybridSearch(self, HybridSearch):  # String
+		self.add_query_param('HybridSearch', HybridSearch)
+	def get_IncludeValues(self): # Boolean
+		return self.get_query_params().get('IncludeValues')
+
+	def set_IncludeValues(self, IncludeValues):  # Boolean
+		self.add_query_param('IncludeValues', IncludeValues)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

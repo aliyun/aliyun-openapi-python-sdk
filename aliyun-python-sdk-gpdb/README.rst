@@ -8,7 +8,7 @@ Aliyun Python SDK is the official software development kit. It makes things easy
 
 This module works on Python versions:
 
-2.6.5 and greater
+3.7 and greater
 
 **Documentation:**
 

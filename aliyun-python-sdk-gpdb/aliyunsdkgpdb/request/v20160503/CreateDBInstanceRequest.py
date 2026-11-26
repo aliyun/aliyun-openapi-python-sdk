@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateDBInstance','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_StorageType(self, StorageType):  # String
 		self.add_query_param('StorageType', StorageType)
+	def get_DeployMode(self): # String
+		return self.get_query_params().get('DeployMode')
+
+	def set_DeployMode(self, DeployMode):  # String
+		self.add_query_param('DeployMode', DeployMode)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -85,6 +90,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_VectorConfigurationStatus(self, VectorConfigurationStatus):  # String
 		self.add_query_param('VectorConfigurationStatus', VectorConfigurationStatus)
+	def get_BackupId(self): # String
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
 	def get_EncryptionKey(self): # String
 		return self.get_query_params().get('EncryptionKey')
 
@@ -120,11 +130,26 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_AutoRenew(self): # String
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # String
+		self.add_query_param('AutoRenew', AutoRenew)
+	def get_MasterCU(self): # Integer
+		return self.get_query_params().get('MasterCU')
+
+	def set_MasterCU(self, MasterCU):  # Integer
+		self.add_query_param('MasterCU', MasterCU)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ProdType(self): # String
+		return self.get_query_params().get('ProdType')
+
+	def set_ProdType(self, ProdType):  # String
+		self.add_query_param('ProdType', ProdType)
 	def get_InstanceNetworkType(self): # String
 		return self.get_query_params().get('InstanceNetworkType')
 
@@ -170,21 +195,46 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_CreateSampleData(self, CreateSampleData):  # Boolean
 		self.add_query_param('CreateSampleData', CreateSampleData)
+	def get_StandbyVSwitchId(self): # String
+		return self.get_query_params().get('StandbyVSwitchId')
+
+	def set_StandbyVSwitchId(self, StandbyVSwitchId):  # String
+		self.add_query_param('StandbyVSwitchId', StandbyVSwitchId)
 	def get_DBInstanceGroupCount(self): # String
 		return self.get_query_params().get('DBInstanceGroupCount')
 
 	def set_DBInstanceGroupCount(self, DBInstanceGroupCount):  # String
 		self.add_query_param('DBInstanceGroupCount', DBInstanceGroupCount)
+	def get_StandbyZoneId(self): # String
+		return self.get_query_params().get('StandbyZoneId')
+
+	def set_StandbyZoneId(self, StandbyZoneId):  # String
+		self.add_query_param('StandbyZoneId', StandbyZoneId)
+	def get_CacheStorageSize(self): # String
+		return self.get_query_params().get('CacheStorageSize')
+
+	def set_CacheStorageSize(self, CacheStorageSize):  # String
+		self.add_query_param('CacheStorageSize', CacheStorageSize)
 	def get_DBInstanceMode(self): # String
 		return self.get_query_params().get('DBInstanceMode')
 
 	def set_DBInstanceMode(self, DBInstanceMode):  # String
 		self.add_query_param('DBInstanceMode', DBInstanceMode)
+	def get_MasterAISpec(self): # String
+		return self.get_query_params().get('MasterAISpec')
+
+	def set_MasterAISpec(self, MasterAISpec):  # String
+		self.add_query_param('MasterAISpec', MasterAISpec)
 	def get_UsedTime(self): # String
 		return self.get_query_params().get('UsedTime')
 
 	def set_UsedTime(self, UsedTime):  # String
 		self.add_query_param('UsedTime', UsedTime)
+	def get_EnableSSL(self): # Boolean
+		return self.get_query_params().get('EnableSSL')
+
+	def set_EnableSSL(self, EnableSSL):  # Boolean
+		self.add_query_param('EnableSSL', EnableSSL)
 	def get_VPCId(self): # String
 		return self.get_query_params().get('VPCId')
 
@@ -205,3 +255,17 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_PayType(self, PayType):  # String
 		self.add_query_param('PayType', PayType)
+	def get_SrcDbInstanceName(self): # String
+		return self.get_query_params().get('SrcDbInstanceName')
+
+	def set_SrcDbInstanceName(self, SrcDbInstanceName):  # String
+		self.add_query_param('SrcDbInstanceName', SrcDbInstanceName)
+	def get_AINodeSpecInfoss(self): # RepeatList
+		return self.get_query_params().get('AINodeSpecInfos')
+
+	def set_AINodeSpecInfoss(self, AINodeSpecInfos):  # RepeatList
+		for depth1 in range(len(AINodeSpecInfos)):
+			if AINodeSpecInfos[depth1].get('AINodeSpec') is not None:
+				self.add_query_param('AINodeSpecInfos.' + str(depth1 + 1) + '.AINodeSpec', AINodeSpecInfos[depth1].get('AINodeSpec'))
+			if AINodeSpecInfos[depth1].get('AINodeNum') is not None:
+				self.add_query_param('AINodeSpecInfos.' + str(depth1 + 1) + '.AINodeNum', AINodeSpecInfos[depth1].get('AINodeNum'))

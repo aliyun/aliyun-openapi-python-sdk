@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class CreateNamespaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateNamespace')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateNamespace','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,3 +61,8 @@ class CreateNamespaceRequest(RpcRequest):
 
 	def set_Namespace(self, Namespace):  # String
 		self.add_query_param('Namespace', Namespace)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

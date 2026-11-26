@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -94,6 +94,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_InstanceDeployTypes(self, InstanceDeployTypes):  # Array
 		for index1, value1 in enumerate(InstanceDeployTypes):
 			self.add_query_param('InstanceDeployTypes.' + str(index1 + 1), value1)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
 	def get_InstanceNetworkType(self): # String
 		return self.get_query_params().get('InstanceNetworkType')
 

@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class UpgradeDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBInstance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBInstance','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -66,6 +66,11 @@ class UpgradeDBInstanceRequest(RpcRequest):
 
 	def set_SegNodeNum(self, SegNodeNum):  # String
 		self.add_query_param('SegNodeNum', SegNodeNum)
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -76,6 +81,11 @@ class UpgradeDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceGroupCount(self, DBInstanceGroupCount):  # String
 		self.add_query_param('DBInstanceGroupCount', DBInstanceGroupCount)
+	def get_CacheStorageSize(self): # String
+		return self.get_query_params().get('CacheStorageSize')
+
+	def set_CacheStorageSize(self, CacheStorageSize):  # String
+		self.add_query_param('CacheStorageSize', CacheStorageSize)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -91,6 +101,11 @@ class UpgradeDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceClass(self, DBInstanceClass):  # String
 		self.add_query_param('DBInstanceClass', DBInstanceClass)
+	def get_ServerlessResource(self): # String
+		return self.get_query_params().get('ServerlessResource')
+
+	def set_ServerlessResource(self, ServerlessResource):  # String
+		self.add_query_param('ServerlessResource', ServerlessResource)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

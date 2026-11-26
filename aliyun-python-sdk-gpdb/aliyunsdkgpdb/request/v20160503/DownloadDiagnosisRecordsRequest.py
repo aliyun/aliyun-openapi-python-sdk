@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DownloadDiagnosisRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DownloadDiagnosisRecords')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DownloadDiagnosisRecords','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

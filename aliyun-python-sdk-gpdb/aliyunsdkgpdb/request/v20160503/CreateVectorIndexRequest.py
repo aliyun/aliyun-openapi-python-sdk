@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class CreateVectorIndexRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateVectorIndex')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'CreateVectorIndex','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,21 @@ class CreateVectorIndexRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Type(self): # String
+		return self.get_query_params().get('Type')
+
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_Nlist(self): # Integer
+		return self.get_query_params().get('Nlist')
+
+	def set_Nlist(self, Nlist):  # Integer
+		self.add_query_param('Nlist', Nlist)
+	def get_ExternalStorage(self): # Integer
+		return self.get_query_params().get('ExternalStorage')
+
+	def set_ExternalStorage(self, ExternalStorage):  # Integer
+		self.add_query_param('ExternalStorage', ExternalStorage)
 	def get_ManagerAccount(self): # String
 		return self.get_query_params().get('ManagerAccount')
 
@@ -51,6 +66,21 @@ class CreateVectorIndexRequest(RpcRequest):
 
 	def set_ManagerAccountPassword(self, ManagerAccountPassword):  # String
 		self.add_query_param('ManagerAccountPassword', ManagerAccountPassword)
+	def get_HnswEfConstruction(self): # Integer
+		return self.get_query_params().get('HnswEfConstruction')
+
+	def set_HnswEfConstruction(self, HnswEfConstruction):  # Integer
+		self.add_query_param('HnswEfConstruction', HnswEfConstruction)
+	def get_Algorithm(self): # String
+		return self.get_query_params().get('Algorithm')
+
+	def set_Algorithm(self, Algorithm):  # String
+		self.add_query_param('Algorithm', Algorithm)
+	def get_RabitqBits(self): # Integer
+		return self.get_query_params().get('RabitqBits')
+
+	def set_RabitqBits(self, RabitqBits):  # Integer
+		self.add_query_param('RabitqBits', RabitqBits)
 	def get_Collection(self): # String
 		return self.get_query_params().get('Collection')
 
@@ -61,6 +91,11 @@ class CreateVectorIndexRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_HnswM(self): # Integer
+		return self.get_query_params().get('HnswM')
+
+	def set_HnswM(self, HnswM):  # Integer
+		self.add_query_param('HnswM', HnswM)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 
@@ -71,3 +106,8 @@ class CreateVectorIndexRequest(RpcRequest):
 
 	def set_Metrics(self, Metrics):  # String
 		self.add_query_param('Metrics', Metrics)
+	def get_PqEnable(self): # Integer
+		return self.get_query_params().get('PqEnable')
+
+	def set_PqEnable(self, PqEnable):  # Integer
+		self.add_query_param('PqEnable', PqEnable)

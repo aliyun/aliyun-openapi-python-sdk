@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class UpgradeDBVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBVersion')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBVersion','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class UpgradeDBVersionRequest(RpcRequest):
 
 	def set_SwitchTimeMode(self, SwitchTimeMode):  # String
 		self.add_query_param('SwitchTimeMode', SwitchTimeMode)
+	def get_EffectiveTime(self): # String
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self, EffectiveTime):  # String
+		self.add_query_param('EffectiveTime', EffectiveTime)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

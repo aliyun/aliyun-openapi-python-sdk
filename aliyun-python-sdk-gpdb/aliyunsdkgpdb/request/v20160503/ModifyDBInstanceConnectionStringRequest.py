@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionString')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionString','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
 		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

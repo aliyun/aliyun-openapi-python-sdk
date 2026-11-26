@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBInstanceNetInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceNetInfo')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceNetInfo','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

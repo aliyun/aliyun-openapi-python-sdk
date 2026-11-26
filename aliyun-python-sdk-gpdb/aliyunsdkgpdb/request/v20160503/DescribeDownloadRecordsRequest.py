@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDownloadRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDownloadRecords')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDownloadRecords','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeDownloadRecordsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DownloadTaskType(self): # String
+		return self.get_query_params().get('DownloadTaskType')
+
+	def set_DownloadTaskType(self, DownloadTaskType):  # String
+		self.add_query_param('DownloadTaskType', DownloadTaskType)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

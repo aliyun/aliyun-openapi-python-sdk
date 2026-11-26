@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeAccountsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeAccounts')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeAccounts','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeAccountsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_AccountType(self): # String
+		return self.get_query_params().get('AccountType')
+
+	def set_AccountType(self, AccountType):  # String
+		self.add_query_param('AccountType', AccountType)
 	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 

@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBInstanceIndexUsageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceIndexUsage')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstanceIndexUsage','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DescribeDBInstanceIndexUsageRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
+	def get_Database(self): # String
+		return self.get_query_params().get('Database')
+
+	def set_Database(self, Database):  # String
+		self.add_query_param('Database', Database)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -46,3 +51,8 @@ class DescribeDBInstanceIndexUsageRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_OrderBy(self): # String
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self, OrderBy):  # String
+		self.add_query_param('OrderBy', OrderBy)

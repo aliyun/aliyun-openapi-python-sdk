@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class DescribeDBClusterPerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterPerformance')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBClusterPerformance','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,11 @@ class DescribeDBClusterPerformanceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ResourceGroupName(self): # String
+		return self.get_query_params().get('ResourceGroupName')
+
+	def set_ResourceGroupName(self, ResourceGroupName):  # String
+		self.add_query_param('ResourceGroupName', ResourceGroupName)
 	def get_NodeType(self): # String
 		return self.get_query_params().get('NodeType')
 

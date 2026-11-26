@@ -23,7 +23,7 @@ from aliyunsdkgpdb.endpoint import endpoint_data
 class InitVectorDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'InitVectorDatabase')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'InitVectorDatabase','GPDB')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,3 +51,8 @@ class InitVectorDatabaseRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)
